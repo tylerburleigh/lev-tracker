@@ -11,6 +11,15 @@ The first pass is intentionally small:
 - `examples/` shows how records should look in practice.
 - `data/` now holds the file-backed public records, review queue records, and staged promotion artifacts used by the prototype app.
 
+## Key Docs
+
+- [Project roadmap](docs/project-roadmap.md): active product, research, data, and docs task tracker.
+- [Product brief](docs/product-brief.md): product intent and domain model.
+- [Research ops state](docs/research-ops-state.md): default research work unit and queue rules.
+- [Admin review](docs/admin-review.md): candidate lifecycle, promotion readiness, and publication behavior.
+- [Evidence review](docs/evidence-review.md): review lanes, findings, and evidence-gate workflow.
+- [Publication checklist](docs/publication-checklist.md): pre-publish and post-publish checklist.
+
 ## Design Principles
 
 - Hallmarks are the primary organizing axis.
@@ -56,6 +65,14 @@ The first pass is intentionally small:
 
 ## Research Commands
 
+- `npm run research:bundle -- status --bundle <bundle-id>`
+  Prints bundle validation, evidence-review gate, promotion readiness, and publication state.
+- `npm run research:bundle -- validate --bundle <bundle-id>`
+  Runs the same bundle checks and exits nonzero if the bundle is not publishable in its current state.
+- `npm run research:bundle -- approve --bundle <bundle-id>`
+  Moves a valid, review-ready bundle to `approved`.
+- `npm run research:bundle -- publish --bundle <bundle-id>`
+  Promotes staged records, writes a `publication_event`, and moves the bundle to `published`.
 - `npm run research:review-evidence -- status --bundle <bundle-id>`
   Prints the current evidence-review state for a bundle revision, including missing lanes and blocking findings.
 - `npm run research:review-evidence -- scaffold --bundle <bundle-id> --lane <lane>`

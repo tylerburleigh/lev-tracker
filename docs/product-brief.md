@@ -15,6 +15,17 @@ The public site helps a serious non-expert answer two questions quickly:
 
 The private admin workspace supports evidence intake, review, revision, and publication.
 
+## Implementation State
+
+The current alpha has the core public and editorial surfaces in place:
+
+- public routes for overview, hallmarks, tracks, interventions, studies, findings, activity, methods, state-of-the-field notes, and admin review
+- file-backed records for sources, studies, findings, outlooks, activity items, candidate bundles, review comments, evidence reviews, and publication events
+- staged promotion artifacts under `data/staged-records/<bundle-id>/`
+- research planning state under `research/state/` and `research/backlog/`
+
+The product brief remains the intent document. Use `docs/project-roadmap.md` for the current task list and implementation status.
+
 ## Core Promise
 
 In 30 seconds, a first-time visitor should be able to see:
@@ -255,22 +266,27 @@ Explain the schema, sourcing rules, review process, and how forecast judgments a
 
 ## Public Outlook Object
 
-An `outlook` is the curator's current judgment about a thing. At minimum, the site needs:
+An `outlook` is the curator's current judgment about a thing. The current public data set includes:
 
 - one overall outlook
 - one outlook per hallmark
-- optionally one outlook per track
+- track outlooks for covered tracks
 
-Recommended outlook fields:
+Current schema fields include:
 
 - `subject_type`
 - `subject_id`
 - `current_stage`
 - `momentum`
 - `confidence`
-- `main_blocker`
-- `best_current_signal`
+- `main_blockers`
+- `best_current_signals`
 - `forecast_note`
+- `rating_change_criteria`
+- `supporting_finding_ids`
+- `supporting_source_ids`
+- `supporting_activity_item_ids`
+- `supporting_evidence`
 - `last_updated`
 
 ## Admin Workflow
@@ -296,10 +312,11 @@ The admin area is an editorial review system for incoming candidate evidence and
 ### Review Loop
 
 1. Agent submits candidate records and proposed diffs.
-2. Human reviewer inspects evidence and comments.
-3. Candidate may be sent back for revision.
-4. Agent revises and resubmits.
-5. Human approves and publishes.
+2. Evidence reviewers complete the required review lanes for the current bundle revision.
+3. Human reviewer inspects proposed changes, staged files, review findings, and promotion readiness.
+4. Candidate may be sent back for revision.
+5. Agent revises and resubmits with a new revision when needed.
+6. Human approves and publishes after the evidence gate and promotion checks are clean.
 
 This should feel closer to editorial peer review than to a CMS form.
 
@@ -311,7 +328,9 @@ This should feel closer to editorial peer review than to a CMS form.
 - related existing records
 - uncertainty flags
 - proposed milestone or outlook implications
+- required evidence-review lanes and review requirements
 - revision comments and history
+- publication event references after publishing
 
 ## Research Ops Integration
 
@@ -325,33 +344,41 @@ Research automation supports the admin workflow in two modes:
 Each session should leave durable artifacts:
 
 - session journal
-- updated track state
-- candidate bundle
+- zero or one candidate bundle
+- staged records only for material changes
 - next actions
+- regenerated planning state after session, bundle, or publication changes
 
-## Implications For The Existing Schema
+## Current Schema State And Remaining Gaps
 
-The current schema foundation is good, but it is still missing product-level objects needed by the site:
+The core product-level schemas now exist for:
 
 - `track`
 - `activity_item`
 - `outlook`
 - `candidate_bundle`
 - `review_comment`
+- `evidence_review`
 - `publication_event`
 
-Those should be added before app scaffolding hardens around the current data model.
+Remaining schema and data hardening work:
+
+- add broad validation across `data/`, `examples/`, `taxonomies/`, and `research/`
+- add app-level schemas where public pages currently rely on implicit aggregate contracts
+- document source ingestion rules for PubMed, ClinicalTrials.gov, and manual curator entry
+- normalize intervention records so intervention detail pages are useful without fallback derivation
 
 ## Version 1 Scope
 
-Version 1 should launch with:
+Version 1 alpha should continue to prioritize:
 
 - all 12 hallmarks visible
 - thin coverage accepted where necessary
 - seeded track taxonomy
 - overall outlook and hallmark outlooks
+- track outlooks where baseline coverage exists
 - clear evidence versus interpretation versus forecast separation
-- single-admin review queue
+- single-admin review queue with evidence-review gates
 - continuous record updates plus a recurring editorial summary
 
 ## Recurring Public Artifact

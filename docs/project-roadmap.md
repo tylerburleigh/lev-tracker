@@ -19,6 +19,8 @@ The project is a working alpha of the Hallmarks of Aging LEV Tracker.
 - Research coverage state: `research/state/coverage-status.v1.json`
 - Research priority queue: `research/backlog/track-priority.v1.json`
 - Research operating rules: `docs/research-ops-state.md`
+- Admin review workflow: `docs/admin-review.md`
+- Evidence review workflow: `docs/evidence-review.md`
 - Publication checklist: `docs/publication-checklist.md`
 - Public information architecture: `docs/public-site-ia.md`
 - Homepage wireframe: `docs/homepage-wireframe-spec.md`
@@ -150,17 +152,19 @@ Research runs should continue to follow `docs/research-ops-state.md`: one track 
 ## Priority 4: Documentation Cleanup
 
 1. Update `docs/product-brief.md`.
-   - It still says several product-level objects are missing, but `outlook`, `activity_item`, `candidate_bundle`, `review_comment`, evidence review, and publication event records now exist.
+   - Current status: completed.
+   - Note: product-level schemas and records now reflect the alpha state; remaining work is framed as schema and data hardening.
 
 2. Update `README.md` as implementation catches up.
-   - Keep the README as an orientation document.
-   - Keep this roadmap as the active task tracker.
+   - Current status: completed.
+   - Note: the README now points to the roadmap, product brief, research ops state, admin review, evidence review, and publication checklist docs.
 
 3. Add short docs for admin review and evidence review.
-   - Candidate lifecycle
-   - Evidence review lanes
-   - Promotion readiness
-   - Publication event expectations
+   - Current status: completed.
+   - Documents:
+     - `docs/admin-review.md`
+     - `docs/evidence-review.md`
+   - Covers candidate lifecycle, evidence review lanes, promotion readiness, publication behavior, and publication event expectations.
 
 ## Verification Baseline
 
