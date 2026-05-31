@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-autophagy-induction-source-fidelity-r1",
+  "name": "Source Fidelity review for Autophagy Induction bundle",
+  "candidate_bundle_id": "autophagy-induction-track-scan-2026-05-30",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged outlook stays within the cited human evidence boundary: it foregrounds short-term biomarker and metabolic movement, keeps the null longer-term spermidine result visible, and avoids implying durable functional benefit.",
+  "reviewed_change_ids": [
+    "create-autophagy-induction-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "autophagy-source-heterogeneous-human-signal-note",
+      "severity": "note",
+      "category": "uncertainty",
+      "applies_to_change_id": "create-autophagy-induction-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-autophagy-induction-outlook"
+      },
+      "claim_or_issue": "The supporting human evidence is heterogeneous across fasting-mimicking diet and spermidine interventions rather than one coherent intervention program.",
+      "why_it_matters": "Readers could otherwise mistake a mixed track-level baseline for a stronger single-modality efficacy story.",
+      "recommended_action": "Keep the public note explicit that the track baseline is mixed, short-term, and assembled from heterogeneous human studies.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-05-31T10:57:50.369Z",
+  "updated_at": "2026-05-31T10:58:38.137Z"
+}

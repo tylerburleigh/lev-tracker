@@ -54,6 +54,15 @@ The first pass is intentionally small:
 - The default research work unit is one `track` per run.
 - Run `npm run sync:research-planning` after a research pass to regenerate state and queue files.
 
+## Research Commands
+
+- `npm run research:review-evidence -- status --bundle <bundle-id>`
+  Prints the current evidence-review state for a bundle revision, including missing lanes and blocking findings.
+- `npm run research:review-evidence -- scaffold --bundle <bundle-id> --lane <lane>`
+  Creates a draft review JSON under `research/drafts/evidence-reviews/` with derived revision, round, and ID metadata.
+- `npm run research:review-evidence -- apply --file <draft-path>`
+  Promotes a completed review into `data/evidence-reviews/`, updates `candidate_bundle.evidence_review_ids[]`, and supersedes older same-lane reviews for the same bundle revision.
+
 ## Relationship Pattern
 
 1. A `source` documents one or more `studies`.

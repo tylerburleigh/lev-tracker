@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "autophagy-induction-track-scan-2026-05-30",
+  "name": "Autophagy induction track scan for May 30, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline for the autophagy-induction track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "submitted",
+  "submitted_at": "2026-05-31T01:03:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for autophagy induction as a longevity track, distinct from adjacent nutrient-sensing and mitophagy tracks?",
+    "hallmark_ids": [
+      "disabled_macroautophagy"
+    ],
+    "track_ids": [
+      "autophagy-induction"
+    ]
+  },
+  "source_ids": [
+    "pmid-35616942",
+    "pmid-29315079",
+    "pmid-41372565",
+    "pmid-40816210",
+    "pmid-39405978"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/35616942/",
+    "https://pubmed.ncbi.nlm.nih.gov/29315079/",
+    "https://pubmed.ncbi.nlm.nih.gov/41372565/",
+    "https://pubmed.ncbi.nlm.nih.gov/40816210/",
+    "https://pubmed.ncbi.nlm.nih.gov/39405978/"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-autophagy-induction-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-disabled-macroautophagy-outlook"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-autophagy-induction-outlook",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-autophagy-induction-outlook",
+      "file_path": "data/outlooks/track-autophagy-induction-outlook.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-track-scan-2026-05-30/track-autophagy-induction-outlook.json",
+      "summary": "Create the first public outlook for the autophagy-induction track.",
+      "rationale": "The track is coherent enough for a public baseline, but the wording should stay explicitly biomarker-weighted and mixed.",
+      "uncertainty_flags": [
+        "The strongest longer-term spermidine RCT in older adults was null on its primary cognitive endpoint.",
+        "Most positive signal comes from short-term biomarker and metabolic studies rather than durable functional aging endpoints.",
+        "The track overlaps adjacent nutrient-sensing and metabolic interventions, so attribution to autophagy itself is still limited."
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "autophagy-induction",
+      "note": "A first public baseline is justified at human_biomarker_signal, with mixed momentum and low confidence.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-05-30-autophagy-induction-bootstrap.json",
+  "next_actions": [
+    "Watch for larger or longer-duration human studies with functional aging endpoints rather than pathway engagement alone.",
+    "Check whether ongoing spermidine or fasting-related programs produce results that justify a separate public activity item."
+  ],
+  "tags": [
+    "admin"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-autophagy-induction-interpretation-forecast-r1",
+    "evidence-review-autophagy-induction-source-fidelity-r1"
+  ]
+}
