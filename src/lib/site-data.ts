@@ -65,6 +65,7 @@ export type OutlookFile = {
   main_blockers?: string[];
   best_current_signals?: string[];
   forecast_note: string;
+  supporting_source_ids?: string[];
   last_updated: string;
   scenario_2036_status?: ScenarioStatus;
   tags?: string[];
@@ -97,6 +98,7 @@ export type TrackCoverage = {
   thinCoverage?: boolean;
   statusLabel?: string;
   outlookId?: string;
+  supportingSourceIds?: string[];
 };
 
 export type ActivityItemRecord = {
@@ -357,6 +359,30 @@ async function writeJsonFile(filePath: string, value: unknown) {
   await fs.writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`, "utf8");
 }
 
+async function withFileLock<T>(lockPath: string, fn: () => Promise<T>): Promise<T> {
+  let handle: Awaited<ReturnType<typeof fs.open>> | undefined;
+
+  try {
+    handle = await fs.open(lockPath, "wx");
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "EEXIST") {
+      throw new Error(`Lock already exists: ${toWorkspaceRelativePath(lockPath)}.`);
+    }
+
+    throw error;
+  }
+
+  try {
+    return await fn();
+  } finally {
+    if (handle) {
+      await handle.close();
+    }
+
+    await fs.rm(lockPath, { force: true });
+  }
+}
+
 async function readCollection<T>(collectionPath: string): Promise<T[]> {
   const fileNames = (await fs.readdir(collectionPath))
     .filter((entry) => entry.endsWith(".json"))
@@ -397,6 +423,10 @@ function getCandidateBundlePath(bundleId: string) {
   return path.join(getCandidateBundlesRoot(), `${bundleId}.json`);
 }
 
+function getCandidateBundleLockPath(bundleId: string) {
+  return `${getCandidateBundlePath(bundleId)}.lock`;
+}
+
 function getReviewCommentPath(commentId: string) {
   return path.join(getReviewCommentsRoot(), `${commentId}.json`);
 }
@@ -428,6 +458,18 @@ async function fileExists(filePath: string) {
   } catch {
     return false;
   }
+}
+
+async function withCandidateBundleLock<T>(bundleId: string, fn: () => Promise<T>) {
+  return withFileLock(getCandidateBundleLockPath(bundleId), fn);
+}
+
+function normalizeDateTimeValue(value: string) {
+  return /^\d{4}-\d{2}-\d{2}$/.test(value) ? `${value}T00:00:00Z` : value;
+}
+
+function compareDateTimesDescending(left: string, right: string) {
+  return normalizeDateTimeValue(right).localeCompare(normalizeDateTimeValue(left));
 }
 
 function toWorkspaceRelativePath(filePath: string) {
@@ -734,7 +776,7 @@ const loadReviewComments = cache(async () => {
 
 const loadPublicationEvents = cache(async () => {
   const events = await readCollection<PublicationEventRecord>(getPublicationEventsRoot());
-  return events.sort((left, right) => right.published_at.localeCompare(left.published_at));
+  return events.sort((left, right) => compareDateTimesDescending(left.published_at, right.published_at));
 });
 
 const loadEvidenceReviews = cache(async () => {
@@ -810,6 +852,20 @@ export async function getOverallOutlook(): Promise<OutlookRecord> {
 
 export async function getOverallLastUpdated(): Promise<string> {
   noStore();
+  const [publicationEvents, outlooks] = await Promise.all([loadPublicationEvents(), loadOutlooks()]);
+
+  if (publicationEvents.length > 0) {
+    return publicationEvents[0].published_at;
+  }
+
+  const latestOutlook = [...outlooks].sort((left, right) =>
+    compareDateTimesDescending(left.last_updated, right.last_updated)
+  )[0];
+
+  if (latestOutlook) {
+    return latestOutlook.last_updated;
+  }
+
   return (await getOverallOutlook()).lastUpdated;
 }
 
@@ -860,7 +916,8 @@ export async function getTrackCoverage(trackId: string): Promise<TrackCoverage> 
     bestSignal: trackOutlook.best_current_signals?.[0],
     note: trackOutlook.forecast_note,
     lastUpdated: trackOutlook.last_updated,
-    thinCoverage: trackOutlook.tags?.includes("thin_coverage")
+    thinCoverage: trackOutlook.tags?.includes("thin_coverage"),
+    supportingSourceIds: trackOutlook.supporting_source_ids
   };
 }
 
@@ -1066,29 +1123,31 @@ export async function getOutlookIdForSubject(subjectType: SubjectType, subjectId
 }
 
 export async function updateCandidateBundleStatus(bundleId: string, status: CandidateStatus) {
-  const bundle = await readCandidateBundleFile(bundleId);
+  await withCandidateBundleLock(bundleId, async () => {
+    const bundle = await readCandidateBundleFile(bundleId);
 
-  if (!bundle) {
-    throw new Error(`Unknown candidate bundle: ${bundleId}`);
-  }
-
-  if (!canTransitionCandidateBundleStatus(bundle.lifecycle_status, status)) {
-    throw new Error(`Invalid candidate bundle status transition: ${bundle.lifecycle_status} -> ${status}`);
-  }
-
-  if (status === "approved") {
-    const evidenceReviewGate = await evaluateBundleEvidenceReviews(bundle);
-
-    if (evidenceReviewGate.eligible && !evidenceReviewGate.ready) {
-      throw new Error(
-        `Candidate bundle ${bundleId} is not ready for approval: ${evidenceReviewGate.issues.join(" ")}`
-      );
+    if (!bundle) {
+      throw new Error(`Unknown candidate bundle: ${bundleId}`);
     }
-  }
 
-  await writeJsonFile(getCandidateBundlePath(bundleId), {
-    ...bundle,
-    lifecycle_status: status
+    if (!canTransitionCandidateBundleStatus(bundle.lifecycle_status, status)) {
+      throw new Error(`Invalid candidate bundle status transition: ${bundle.lifecycle_status} -> ${status}`);
+    }
+
+    if (status === "approved") {
+      const evidenceReviewGate = await evaluateBundleEvidenceReviews(bundle);
+
+      if (evidenceReviewGate.eligible && !evidenceReviewGate.ready) {
+        throw new Error(
+          `Candidate bundle ${bundleId} is not ready for approval: ${evidenceReviewGate.issues.join(" ")}`
+        );
+      }
+    }
+
+    await writeJsonFile(getCandidateBundlePath(bundleId), {
+      ...bundle,
+      lifecycle_status: status
+    });
   });
 }
 
@@ -1100,124 +1159,128 @@ export async function appendReviewComment(input: {
   appliesToEvidenceReviewId?: string;
   appliesToFindingId?: string;
 }) {
-  const bundle = await readCandidateBundleFile(input.bundleId);
+  await withCandidateBundleLock(input.bundleId, async () => {
+    const bundle = await readCandidateBundleFile(input.bundleId);
 
-  if (!bundle) {
-    throw new Error(`Unknown candidate bundle: ${input.bundleId}`);
-  }
+    if (!bundle) {
+      throw new Error(`Unknown candidate bundle: ${input.bundleId}`);
+    }
 
-  const timestamp = new Date().toISOString();
-  const commentId = `review-${input.bundleId}-${timestamp.toLowerCase().replace(/[^0-9a-z]+/g, "-")}`;
+    const timestamp = new Date().toISOString();
+    const commentId = `review-${input.bundleId}-${timestamp.toLowerCase().replace(/[^0-9a-z]+/g, "-")}`;
 
-  const comment: ReviewCommentRecord = {
-    id: commentId,
-    name: `Review comment for ${bundle.name}`,
-    candidate_bundle_id: input.bundleId,
-    author_role: "human_reviewer",
-    comment_type: input.commentType,
-    body: input.body.trim(),
-    created_at: timestamp,
-    resolution_status: "open",
-    applies_to_change_id: input.appliesToChangeId,
-    applies_to_evidence_review_id: input.appliesToEvidenceReviewId,
-    applies_to_finding_id: input.appliesToFindingId
-  };
+    const comment: ReviewCommentRecord = {
+      id: commentId,
+      name: `Review comment for ${bundle.name}`,
+      candidate_bundle_id: input.bundleId,
+      author_role: "human_reviewer",
+      comment_type: input.commentType,
+      body: input.body.trim(),
+      created_at: timestamp,
+      resolution_status: "open",
+      applies_to_change_id: input.appliesToChangeId,
+      applies_to_evidence_review_id: input.appliesToEvidenceReviewId,
+      applies_to_finding_id: input.appliesToFindingId
+    };
 
-  await writeJsonFile(getReviewCommentPath(commentId), {
-    schema_version: "1.0.0",
-    record_type: "review_comment",
-    ...comment
-  });
+    await writeJsonFile(getReviewCommentPath(commentId), {
+      schema_version: "1.0.0",
+      record_type: "review_comment",
+      ...comment
+    });
 
-  await writeJsonFile(getCandidateBundlePath(bundle.id), {
-    ...bundle,
-    review_comment_ids: [...(bundle.review_comment_ids ?? []), commentId]
+    await writeJsonFile(getCandidateBundlePath(bundle.id), {
+      ...bundle,
+      review_comment_ids: Array.from(new Set([...(bundle.review_comment_ids ?? []), commentId]))
+    });
   });
 }
 
 export async function publishCandidateBundle(bundleId: string) {
-  const bundle = await readCandidateBundleFile(bundleId);
+  await withCandidateBundleLock(bundleId, async () => {
+    const bundle = await readCandidateBundleFile(bundleId);
 
-  if (!bundle) {
-    throw new Error(`Unknown candidate bundle: ${bundleId}`);
-  }
-
-  if (bundle.lifecycle_status === "published") {
-    throw new Error(`Candidate bundle ${bundleId} is already published.`);
-  }
-
-  const promotion = await evaluateBundlePromotion(bundle);
-
-  if (!promotion.eligible) {
-    throw new Error(`Candidate bundle ${bundleId} must be approved before publication.`);
-  }
-
-  if (!promotion.ready) {
-    throw new Error(`Candidate bundle ${bundleId} is not ready to publish: ${promotion.issues.join(" ")}`);
-  }
-
-  const evidenceReviewGate = await evaluateBundleEvidenceReviews(bundle);
-
-  if (evidenceReviewGate.eligible && !evidenceReviewGate.ready) {
-    throw new Error(
-      `Candidate bundle ${bundleId} is blocked by evidence review: ${evidenceReviewGate.issues.join(" ")}`
-    );
-  }
-
-  for (const change of promotion.changes) {
-    if (!change.targetFilePath || !change.stagedFilePath) {
-      throw new Error(`Change ${change.changeId} is missing file paths required for promotion.`);
+    if (!bundle) {
+      throw new Error(`Unknown candidate bundle: ${bundleId}`);
     }
 
-    const stagedRecord = await readJsonFile<Record<string, unknown>>(
-      resolveDataPath(change.stagedFilePath, "Staged file path")
-    );
+    if (bundle.lifecycle_status === "published") {
+      throw new Error(`Candidate bundle ${bundleId} is already published.`);
+    }
 
-    await writeJsonFile(resolveDataPath(change.targetFilePath, "Target file path"), stagedRecord);
-  }
+    const promotion = await evaluateBundlePromotion(bundle);
 
-  const timestamp = new Date().toISOString();
-  const publicationEventId = `publish-${bundle.id}-${timestamp.toLowerCase().replace(/[^0-9a-z]+/g, "-")}`;
-  const affectedOutlookIds = (
-    await Promise.all(
-      (bundle.proposed_outlook_implications ?? []).map((implication) =>
-        getOutlookIdForSubject(implication.subject_type, implication.subject_id)
+    if (!promotion.eligible) {
+      throw new Error(`Candidate bundle ${bundleId} must be approved before publication.`);
+    }
+
+    if (!promotion.ready) {
+      throw new Error(`Candidate bundle ${bundleId} is not ready to publish: ${promotion.issues.join(" ")}`);
+    }
+
+    const evidenceReviewGate = await evaluateBundleEvidenceReviews(bundle);
+
+    if (evidenceReviewGate.eligible && !evidenceReviewGate.ready) {
+      throw new Error(
+        `Candidate bundle ${bundleId} is blocked by evidence review: ${evidenceReviewGate.issues.join(" ")}`
+      );
+    }
+
+    for (const change of promotion.changes) {
+      if (!change.targetFilePath || !change.stagedFilePath) {
+        throw new Error(`Change ${change.changeId} is missing file paths required for promotion.`);
+      }
+
+      const stagedRecord = await readJsonFile<Record<string, unknown>>(
+        resolveDataPath(change.stagedFilePath, "Staged file path")
+      );
+
+      await writeJsonFile(resolveDataPath(change.targetFilePath, "Target file path"), stagedRecord);
+    }
+
+    const timestamp = new Date().toISOString();
+    const publicationEventId = `publish-${bundle.id}-${timestamp.toLowerCase().replace(/[^0-9a-z]+/g, "-")}`;
+    const affectedOutlookIds = (
+      await Promise.all(
+        (bundle.proposed_outlook_implications ?? []).map((implication) =>
+          getOutlookIdForSubject(implication.subject_type, implication.subject_id)
+        )
       )
-    )
-  ).filter((id): id is string => Boolean(id));
+    ).filter((id): id is string => Boolean(id));
 
-  const publicationEvent: PublicationEventRecord = {
-    id: publicationEventId,
-    name: `Published ${bundle.name}`,
-    summary: bundle.summary,
-    candidate_bundle_id: bundle.id,
-    event_type: "publish",
-    published_at: timestamp,
-    published_by: "tyler",
-    published_targets: bundle.proposed_changes.map((change) => ({
-      record_type: change.target_record_type,
-      record_id: change.target_record_id ?? change.change_id,
-      action: change.change_type === "create_record" ? "created" : "updated"
-    })),
-    affected_outlook_ids: affectedOutlookIds,
-    approving_evidence_review_ids: evidenceReviewGate.eligible
-      ? evidenceReviewGate.reviews.map((review) => review.id)
-      : undefined,
-    change_note:
-      bundle.proposed_outlook_implications?.[0]?.note ??
-      "A reviewed candidate bundle was published to the public site."
-  };
+    const publicationEvent: PublicationEventRecord = {
+      id: publicationEventId,
+      name: `Published ${bundle.name}`,
+      summary: bundle.summary,
+      candidate_bundle_id: bundle.id,
+      event_type: "publish",
+      published_at: timestamp,
+      published_by: "tyler",
+      published_targets: bundle.proposed_changes.map((change) => ({
+        record_type: change.target_record_type,
+        record_id: change.target_record_id ?? change.change_id,
+        action: change.change_type === "create_record" ? "created" : "updated"
+      })),
+      affected_outlook_ids: affectedOutlookIds,
+      approving_evidence_review_ids: evidenceReviewGate.eligible
+        ? evidenceReviewGate.reviews.map((review) => review.id)
+        : undefined,
+      change_note:
+        bundle.proposed_outlook_implications?.[0]?.note ??
+        "A reviewed candidate bundle was published to the public site."
+    };
 
-  await writeJsonFile(getPublicationEventPath(publicationEventId), {
-    schema_version: "1.0.0",
-    record_type: "publication_event",
-    ...publicationEvent
-  });
+    await writeJsonFile(getPublicationEventPath(publicationEventId), {
+      schema_version: "1.0.0",
+      record_type: "publication_event",
+      ...publicationEvent
+    });
 
-  await writeJsonFile(getCandidateBundlePath(bundle.id), {
-    ...bundle,
-    lifecycle_status: "published",
-    next_actions: ["Publication complete. Review downstream pages if this change affects shared surfaces."],
-    publication_event_ids: [...(bundle.publication_event_ids ?? []), publicationEventId]
+    await writeJsonFile(getCandidateBundlePath(bundle.id), {
+      ...bundle,
+      lifecycle_status: "published",
+      next_actions: ["Publication complete. Review downstream pages if this change affects shared surfaces."],
+      publication_event_ids: Array.from(new Set([...(bundle.publication_event_ids ?? []), publicationEventId]))
+    });
   });
 }

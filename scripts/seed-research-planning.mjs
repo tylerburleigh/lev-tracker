@@ -74,6 +74,18 @@ function buildBootstrapRationale(track, hasBaselineTrack) {
   return "Extend a hallmark that already has one public track so the hallmark view does not overfit a single approach.";
 }
 
+function normalizeDateTimeValue(value) {
+  return /^\d{4}-\d{2}-\d{2}$/.test(value) ? `${value}T00:00:00Z` : value;
+}
+
+function compareDateTimesDescending(left, right) {
+  return normalizeDateTimeValue(right).localeCompare(normalizeDateTimeValue(left));
+}
+
+function isMoreRecent(left, right) {
+  return normalizeDateTimeValue(left).localeCompare(normalizeDateTimeValue(right)) > 0;
+}
+
 async function main() {
   const hallmarksTaxonomy = await readJson("taxonomies/hallmarks-of-aging.v1.json");
   const trackTaxonomy = await readJson("taxonomies/track-taxonomy.v1.json");
@@ -91,7 +103,7 @@ async function main() {
   );
 
   const latestBundleByTrackId = new Map();
-  for (const bundle of bundles.sort((left, right) => right.submitted_at.localeCompare(left.submitted_at))) {
+  for (const bundle of bundles.sort((left, right) => compareDateTimesDescending(left.submitted_at, right.submitted_at))) {
     for (const trackId of bundle.scope?.track_ids ?? []) {
       if (!latestBundleByTrackId.has(trackId)) {
         latestBundleByTrackId.set(trackId, bundle);
@@ -100,7 +112,7 @@ async function main() {
   }
 
   const latestSessionByTrackId = new Map();
-  for (const session of sessions.sort((left, right) => right.completed_at.localeCompare(left.completed_at))) {
+  for (const session of sessions.sort((left, right) => compareDateTimesDescending(left.completed_at, right.completed_at))) {
     for (const trackId of session.scope?.track_ids ?? []) {
       if (!latestSessionByTrackId.has(trackId)) {
         latestSessionByTrackId.set(trackId, session);
@@ -110,7 +122,7 @@ async function main() {
 
   const bundleById = new Map(bundles.map((bundle) => [bundle.id, bundle]));
   const latestPublicationByTrackId = new Map();
-  for (const event of publicationEvents.sort((left, right) => right.published_at.localeCompare(left.published_at))) {
+  for (const event of publicationEvents.sort((left, right) => compareDateTimesDescending(left.published_at, right.published_at))) {
     const bundle = bundleById.get(event.candidate_bundle_id);
     for (const trackId of bundle?.scope?.track_ids ?? []) {
       if (!latestPublicationByTrackId.has(trackId)) {
@@ -129,21 +141,26 @@ async function main() {
       const latestSession = latestSessionByTrackId.get(track.id);
       const latestPublication = latestPublicationByTrackId.get(track.id);
       const hasTrackOutlook = trackOutlookByTrackId.has(track.id);
+      const hasPublishedBaseline =
+        hasTrackOutlook || latestBundle?.lifecycle_status === "published" || Boolean(latestPublication);
       const activeReview =
         latestBundle && !["published", "rejected"].includes(latestBundle.lifecycle_status);
-      const coverageStatus = hasTrackOutlook ? "baseline" : "not_started";
+      const coverageStatus = hasPublishedBaseline ? "baseline" : "not_started";
       const nextMode =
-        latestSession?.next_recommended_mode ?? (hasTrackOutlook ? "surveillance" : "bootstrap");
+        latestSession?.next_recommended_mode ?? (hasPublishedBaseline ? "surveillance" : "bootstrap");
       const queueState =
         activeReview ? "active_review" : latestSession?.outcome === "blocked" ? "deferred" : "ready";
 
       let notes;
       if (activeReview) {
         notes = `Candidate bundle ${latestBundle.id} is still ${latestBundle.lifecycle_status}.`;
+      } else if (
+        latestPublication &&
+        (!latestSession || isMoreRecent(latestPublication.published_at, latestSession.completed_at))
+      ) {
+        notes = `Latest publication event: ${latestPublication.id}.`;
       } else if (latestSession) {
         notes = `Latest ${latestSession.mode} session ${latestSession.id} ended as ${latestSession.outcome}.`;
-      } else if (latestPublication) {
-        notes = `Latest publication event: ${latestPublication.id}.`;
       } else if (latestBundle?.lifecycle_status === "published") {
         notes = `Latest published bundle: ${latestBundle.id}.`;
       } else if (hasTrackOutlook) {
@@ -219,7 +236,7 @@ async function main() {
       }
 
       if (left.last_session_at && right.last_session_at && left.last_session_at !== right.last_session_at) {
-        return left.last_session_at.localeCompare(right.last_session_at);
+        return compareDateTimesDescending(left.last_session_at, right.last_session_at);
       }
 
       if (left.canonical_order !== right.canonical_order) {
@@ -269,7 +286,7 @@ async function main() {
       const rightRecency = right.last_session_at ?? right.last_published_at;
 
       if (leftRecency && rightRecency && leftRecency !== rightRecency) {
-        return leftRecency.localeCompare(rightRecency);
+        return compareDateTimesDescending(leftRecency, rightRecency);
       }
 
       const leftIndex = surveillancePriority.indexOf(left.track_id);

@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-05-31T11:01:58.195Z",
+  "updated_at": "2026-05-31T11:51:33.339Z",
   "notes": [
     "Bootstrap priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Surveillance priority applies only to tracks that already have a public baseline and no active review bundle.",
@@ -381,22 +381,22 @@
     {
       "rank": 2,
       "phase_id": "surveillance-rotation",
-      "track_id": "mitophagy-enhancers",
-      "hallmark_id": "mitochondrial_dysfunction",
+      "track_id": "autophagy-induction",
+      "hallmark_id": "disabled_macroautophagy",
       "priority_tier": "now",
       "default_mode": "surveillance",
-      "rationale": "The track is thin and likely to move through contextual updates before stronger human evidence.",
-      "default_question": "What changed for Mitophagy Enhancers since the last meaningful review or publication, and does any change justify a public update?"
+      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
+      "default_question": "What changed for Autophagy Induction since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
       "rank": 3,
       "phase_id": "surveillance-rotation",
-      "track_id": "senolytics",
-      "hallmark_id": "cellular_senescence",
+      "track_id": "immune-rejuvenation",
+      "hallmark_id": "chronic_inflammation",
       "priority_tier": "now",
       "default_mode": "surveillance",
-      "rationale": "This is a visible public track where mixed signals and endpoint discipline need regular maintenance.",
-      "default_question": "What changed for Senolytics since the last meaningful review or publication, and does any change justify a public update?"
+      "rationale": "Human-functional endpoints make delta review relatively legible and high value.",
+      "default_question": "What changed for Immune Rejuvenation since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
       "rank": 4,
@@ -411,22 +411,22 @@
     {
       "rank": 5,
       "phase_id": "surveillance-rotation",
-      "track_id": "immune-rejuvenation",
-      "hallmark_id": "chronic_inflammation",
+      "track_id": "senolytics",
+      "hallmark_id": "cellular_senescence",
       "priority_tier": "soon",
       "default_mode": "surveillance",
-      "rationale": "Human-functional endpoints make delta review relatively legible and high value.",
-      "default_question": "What changed for Immune Rejuvenation since the last meaningful review or publication, and does any change justify a public update?"
+      "rationale": "This is a visible public track where mixed signals and endpoint discipline need regular maintenance.",
+      "default_question": "What changed for Senolytics since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
       "rank": 6,
       "phase_id": "surveillance-rotation",
-      "track_id": "autophagy-induction",
-      "hallmark_id": "disabled_macroautophagy",
+      "track_id": "mitophagy-enhancers",
+      "hallmark_id": "mitochondrial_dysfunction",
       "priority_tier": "later",
       "default_mode": "surveillance",
-      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
-      "default_question": "What changed for Autophagy Induction since the last meaningful review or publication, and does any change justify a public update?"
+      "rationale": "The track is thin and likely to move through contextual updates before stronger human evidence.",
+      "default_question": "What changed for Mitophagy Enhancers since the last meaningful review or publication, and does any change justify a public update?"
     }
   ]
 }
