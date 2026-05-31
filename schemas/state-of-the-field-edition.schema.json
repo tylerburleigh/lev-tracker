@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./state-of-the-field-edition.schema.json",
+  "title": "State of the field edition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "slug",
+    "title",
+    "summary",
+    "date",
+    "bullets"
+  ],
+  "properties": {
+    "slug": {
+      "$ref": "./common.schema.json#/$defs/identifier"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "date": {
+      "$ref": "./common.schema.json#/$defs/isoDate"
+    },
+    "bullets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

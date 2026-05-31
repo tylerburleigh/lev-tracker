@@ -163,14 +163,18 @@ Research runs should continue to follow `docs/research-ops-state.md`: one track 
 1. Add validation commands for JSON records.
    - Validate all files under `data/`, `examples/`, `taxonomies/`, and `research/` against schemas.
    - Make validation part of the normal verification checklist.
-   - Current status: partially implemented for candidate-bundle workflows with `npm run research:bundle -- validate --bundle <bundle-id>`.
-   - Remaining: broad schema validation across all JSON collections.
+   - Current status: implemented with `npm run validate:records`.
+   - Note: the broad validator covers every JSON file under `data/`, `examples/`, `taxonomies/`, and `research/`, including staged records and app-content records.
+   - Candidate-bundle publishability checks remain in `npm run research:bundle -- validate --bundle <bundle-id>` because they include semantic promotion, evidence-gate, and publication-readiness rules beyond schema shape.
 
 2. Add app-level schemas where the public app now has implicit content contracts.
    - Scenario lens
    - State-of-the-field editions
    - Homepage aggregate summaries
    - Hallmark insight records
+   - Current status: partially implemented.
+   - Note: `schemas/hallmark-insights.schema.json` and `schemas/state-of-the-field-edition.schema.json` now cover the current file-backed app content under `data/content/`; the 2036 scenario value remains validated through `outlook.scenario_2036_status`.
+   - Remaining: add dedicated schemas if homepage aggregate summaries or scenario-lens copy become standalone file-backed records.
 
 3. Add source ingestion rules.
    - PubMed
@@ -203,8 +207,9 @@ Research runs should continue to follow `docs/research-ops-state.md`: one track 
 Current expected checks:
 
 ```bash
+npm run validate:records
 npm run typecheck
 npm run build
 ```
 
-Last known result on 2026-05-31 after the `genome-surveillance-and-chromosome-stability` baseline publication: `npm run typecheck`, `npm run build`, `npm run research:bundle -- validate --bundle genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31`, and `npm run research:bundle -- smoke --bundle genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31 --base-url http://127.0.0.1:3002` pass.
+Last known result on 2026-05-31 after broad record validation was added: `npm run validate:records`, `npm run typecheck`, and `npm run build` pass. The previous bundle-specific baseline after the `genome-surveillance-and-chromosome-stability` publication was `npm run research:bundle -- validate --bundle genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31` and `npm run research:bundle -- smoke --bundle genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31 --base-url http://127.0.0.1:3002` passing.

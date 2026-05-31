@@ -63,6 +63,11 @@ The first pass is intentionally small:
 - The default research work unit is one `track` per run.
 - Run `npm run sync:research-planning` after a research pass to regenerate state and queue files.
 
+## Validation Commands
+
+- `npm run validate:records`
+  Validates every JSON file under `data/`, `examples/`, `taxonomies/`, and `research/` against the repository JSON Schema contracts.
+
 ## Research Commands
 
 - `npm run research:bundle -- status --bundle <bundle-id>`
@@ -93,4 +98,5 @@ The first pass is intentionally small:
 
 - Use [docs/project-roadmap.md](docs/project-roadmap.md) as the current product and research roadmap.
 - Keep `research/state/coverage-status.v1.json` and `research/backlog/track-priority.v1.json` as the generated source of truth for research coverage and next track selection.
+- Run `npm run validate:records`, `npm run typecheck`, and `npm run build` before treating roadmap implementation work as complete.
 - Run `npm run sync:research-planning` after research sessions, bundle changes, or publication events.
