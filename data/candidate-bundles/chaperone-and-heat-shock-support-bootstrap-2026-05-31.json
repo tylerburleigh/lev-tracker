@@ -1,0 +1,345 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "chaperone-and-heat-shock-support-bootstrap-2026-05-31",
+  "name": "Chaperone and heat-shock support bootstrap for May 31, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline candidate for the chaperone and heat-shock support track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-05-31T15:32:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Chaperone and Heat-Shock Support, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "loss_of_proteostasis"
+    ],
+    "track_ids": [
+      "chaperone-and-heat-shock-support"
+    ]
+  },
+  "source_ids": [
+    "pmid-34418116",
+    "pmid-40520915",
+    "fda-miplyffa-approval-2024-09-20",
+    "pmid-38782015",
+    "pmid-37739573",
+    "pmid-19214941",
+    "pmid-12750521",
+    "pmid-17928942"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/34418116/",
+    "https://pubmed.ncbi.nlm.nih.gov/40520915/",
+    "https://www.fda.gov/news-events/press-announcements/fda-approves-first-treatment-niemann-pick-disease-type-c",
+    "https://pubmed.ncbi.nlm.nih.gov/38782015/",
+    "https://pubmed.ncbi.nlm.nih.gov/37739573/",
+    "https://pubmed.ncbi.nlm.nih.gov/19214941/",
+    "https://pubmed.ncbi.nlm.nih.gov/12750521/",
+    "https://pubmed.ncbi.nlm.nih.gov/17928942/"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-chaperone-and-heat-shock-support-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-loss-of-proteostasis-outlook"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "arimoclomol-slowed-npc-disease-progression"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "miplyffa-approved-npc-neurological-symptoms"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "arimoclomol-als-phase3-null"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "arimoclomol-ibm-trial-null"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "hsf1-overexpression-extended-c-elegans-lifespan"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-34418116",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-34418116",
+      "file_path": "data/sources/pmid-34418116.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/pmid-34418116.json",
+      "summary": "Add arimoclomol NPC phase 2/3 source.",
+      "rationale": "This source anchors the strongest randomized human functional signal for the track."
+    },
+    {
+      "change_id": "create-source-pmid-40520915",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-40520915",
+      "file_path": "data/sources/pmid-40520915.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/pmid-40520915.json",
+      "summary": "Add arimoclomol NPC rescored analysis source.",
+      "rationale": "This source supplies approval-era post-hoc context for the 4-domain NPC severity endpoint."
+    },
+    {
+      "change_id": "create-source-fda-miplyffa-approval-2024-09-20",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "fda-miplyffa-approval-2024-09-20",
+      "file_path": "data/sources/fda-miplyffa-approval-2024-09-20.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/fda-miplyffa-approval-2024-09-20.json",
+      "summary": "Add FDA Miplyffa approval source.",
+      "rationale": "This source captures the regulatory status and label-level safety context for arimoclomol in NPC."
+    },
+    {
+      "change_id": "create-source-pmid-38782015",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-38782015",
+      "file_path": "data/sources/pmid-38782015.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/pmid-38782015.json",
+      "summary": "Add ORARIALS-01 arimoclomol ALS phase 3 source.",
+      "rationale": "This source provides a major null disease-program boundary for arimoclomol translation."
+    },
+    {
+      "change_id": "create-source-pmid-37739573",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-37739573",
+      "file_path": "data/sources/pmid-37739573.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/pmid-37739573.json",
+      "summary": "Add arimoclomol inclusion body myositis trial source.",
+      "rationale": "This source adds a second null functional disease-program boundary."
+    },
+    {
+      "change_id": "create-source-pmid-19214941",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-19214941",
+      "file_path": "data/sources/pmid-19214941.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/pmid-19214941.json",
+      "summary": "Add BGP-15 insulin-resistance proof-of-concept source.",
+      "rationale": "This source supplies human biomarker context for another HSP co-inducer while preserving endpoint caveats."
+    },
+    {
+      "change_id": "create-source-pmid-12750521",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-12750521",
+      "file_path": "data/sources/pmid-12750521.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/pmid-12750521.json",
+      "summary": "Add HSF-1 C. elegans aging source.",
+      "rationale": "This source anchors the animal and mechanistic aging plausibility for heat-shock-factor biology."
+    },
+    {
+      "change_id": "create-source-pmid-17928942",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-17928942",
+      "file_path": "data/sources/pmid-17928942.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/pmid-17928942.json",
+      "summary": "Add active and passive hyperthermia HSP70 source.",
+      "rationale": "This source adds a small human biomarker boundary for generic heat-shock induction claims."
+    },
+    {
+      "change_id": "create-study-arimoclomol-npc-phase-2-3",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "arimoclomol-npc-phase-2-3",
+      "file_path": "data/studies/arimoclomol-npc-phase-2-3.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/arimoclomol-npc-phase-2-3.json",
+      "summary": "Add arimoclomol NPC pivotal study record.",
+      "rationale": "The study record links the human functional and regulatory signal to the track."
+    },
+    {
+      "change_id": "create-study-arimoclomol-als-orarials-phase3",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "arimoclomol-als-orarials-phase3",
+      "file_path": "data/studies/arimoclomol-als-orarials-phase3.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/arimoclomol-als-orarials-phase3.json",
+      "summary": "Add arimoclomol ALS phase 3 study record.",
+      "rationale": "The study record captures the largest null arimoclomol boundary condition."
+    },
+    {
+      "change_id": "create-study-arimoclomol-inclusion-body-myositis-trial",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "arimoclomol-inclusion-body-myositis-trial",
+      "file_path": "data/studies/arimoclomol-inclusion-body-myositis-trial.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/arimoclomol-inclusion-body-myositis-trial.json",
+      "summary": "Add arimoclomol inclusion body myositis study record.",
+      "rationale": "The study record captures a null functional protein-aggregation disease context."
+    },
+    {
+      "change_id": "create-study-bgp15-insulin-resistance-proof-of-concept",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "bgp15-insulin-resistance-proof-of-concept",
+      "file_path": "data/studies/bgp15-insulin-resistance-proof-of-concept.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/bgp15-insulin-resistance-proof-of-concept.json",
+      "summary": "Add BGP-15 proof-of-concept study record.",
+      "rationale": "The study record captures short-term human biomarker context without overclaiming proteostasis benefit."
+    },
+    {
+      "change_id": "create-study-hsf1-c-elegans-aging-proteostasis",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "hsf1-c-elegans-aging-proteostasis",
+      "file_path": "data/studies/hsf1-c-elegans-aging-proteostasis.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/hsf1-c-elegans-aging-proteostasis.json",
+      "summary": "Add HSF-1 C. elegans aging study record.",
+      "rationale": "The study record links mechanistic lifespan and aggregation biology to the track."
+    },
+    {
+      "change_id": "create-study-active-passive-hyperthermia-hsp70-pbmcs",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "active-passive-hyperthermia-hsp70-pbmcs",
+      "file_path": "data/studies/active-passive-hyperthermia-hsp70-pbmcs.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/active-passive-hyperthermia-hsp70-pbmcs.json",
+      "summary": "Add active and passive hyperthermia HSP70 study record.",
+      "rationale": "The study record captures a human biomarker caution for heat-exposure claims."
+    },
+    {
+      "change_id": "create-finding-arimoclomol-slowed-npc-disease-progression",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "arimoclomol-slowed-npc-disease-progression",
+      "file_path": "data/findings/arimoclomol-slowed-npc-disease-progression.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/arimoclomol-slowed-npc-disease-progression.json",
+      "summary": "Add positive arimoclomol NPC functional finding.",
+      "rationale": "This finding supports the proposed human_functional_benefit stage assignment."
+    },
+    {
+      "change_id": "create-finding-arimoclomol-npc-r4dnpccss-posthoc-support",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "arimoclomol-npc-r4dnpccss-posthoc-support",
+      "file_path": "data/findings/arimoclomol-npc-r4dnpccss-posthoc-support.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/arimoclomol-npc-r4dnpccss-posthoc-support.json",
+      "summary": "Add post-hoc NPC rescored endpoint finding.",
+      "rationale": "This finding supports the regulatory readout while flagging that it is not independent replication."
+    },
+    {
+      "change_id": "create-finding-miplyffa-approved-npc-neurological-symptoms",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "miplyffa-approved-npc-neurological-symptoms",
+      "file_path": "data/findings/miplyffa-approved-npc-neurological-symptoms.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/miplyffa-approved-npc-neurological-symptoms.json",
+      "summary": "Add FDA approval finding for Miplyffa in NPC.",
+      "rationale": "This finding captures regulatory status without treating it as an aging indication."
+    },
+    {
+      "change_id": "create-finding-arimoclomol-als-phase3-null",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "arimoclomol-als-phase3-null",
+      "file_path": "data/findings/arimoclomol-als-phase3-null.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/arimoclomol-als-phase3-null.json",
+      "summary": "Add arimoclomol ALS phase 3 null finding.",
+      "rationale": "This finding supports the mixed-momentum and disease-general boundary claims."
+    },
+    {
+      "change_id": "create-finding-arimoclomol-ibm-trial-null",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "arimoclomol-ibm-trial-null",
+      "file_path": "data/findings/arimoclomol-ibm-trial-null.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/arimoclomol-ibm-trial-null.json",
+      "summary": "Add arimoclomol inclusion body myositis null finding.",
+      "rationale": "This finding adds a second functional boundary condition for arimoclomol translation."
+    },
+    {
+      "change_id": "create-finding-bgp15-improved-insulin-sensitivity-proof-of-concept",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "bgp15-improved-insulin-sensitivity-proof-of-concept",
+      "file_path": "data/findings/bgp15-improved-insulin-sensitivity-proof-of-concept.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/bgp15-improved-insulin-sensitivity-proof-of-concept.json",
+      "summary": "Add BGP-15 short-term human biomarker finding.",
+      "rationale": "This finding provides human context but constrains claims because the endpoint is metabolic."
+    },
+    {
+      "change_id": "create-finding-hsf1-overexpression-extended-c-elegans-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "hsf1-overexpression-extended-c-elegans-lifespan",
+      "file_path": "data/findings/hsf1-overexpression-extended-c-elegans-lifespan.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/hsf1-overexpression-extended-c-elegans-lifespan.json",
+      "summary": "Add HSF-1 animal lifespan and aggregation finding.",
+      "rationale": "This finding supports mechanistic plausibility without overrating human translation."
+    },
+    {
+      "change_id": "create-finding-hyperthermia-hsp70-pbmcs-no-significant-increase",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "hyperthermia-hsp70-pbmcs-no-significant-increase",
+      "file_path": "data/findings/hyperthermia-hsp70-pbmcs-no-significant-increase.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/hyperthermia-hsp70-pbmcs-no-significant-increase.json",
+      "summary": "Add hyperthermia HSP70 biomarker null finding.",
+      "rationale": "This finding limits generic claims that heat exposure reliably induces the target pathway in humans."
+    },
+    {
+      "change_id": "create-chaperone-and-heat-shock-support-outlook",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-chaperone-and-heat-shock-support-outlook",
+      "file_path": "data/outlooks/track-chaperone-and-heat-shock-support-outlook.json",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-bootstrap-2026-05-31/track-chaperone-and-heat-shock-support-outlook.json",
+      "summary": "Create the first public outlook for the chaperone and heat-shock support track.",
+      "rationale": "The track has a rare-disease human functional anchor, but the first baseline must remain low confidence and explicitly bounded by null trials and weak aging translation.",
+      "uncertainty_flags": [
+        "The strongest human signal is NPC-specific and not an aging indication.",
+        "Arimoclomol phase 3 ALS and inclusion body myositis trials were null.",
+        "Generic heat-shock biomarker evidence in humans is thin and protocol-dependent."
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "chaperone-and-heat-shock-support",
+      "note": "A first public baseline is justified at human_functional_benefit, with mixed momentum and low confidence because the functional signal is rare-disease-specific.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "loss_of_proteostasis",
+      "note": "Publishing this bundle would give loss of proteostasis its first track-level public baseline.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "evidence_review_ids": [
+    "evidence-review-chaperone-and-heat-shock-support-source-fidelity-r1",
+    "evidence-review-chaperone-and-heat-shock-support-interpretation-forecast-r1"
+  ],
+  "session_reference": "research/sessions/2026-05-31-chaperone-and-heat-shock-support-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin"
+  ],
+  "publication_event_ids": [
+    "publish-chaperone-and-heat-shock-support-bootstrap-2026-05-31-2026-05-31t15-44-20-234z"
+  ]
+}

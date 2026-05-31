@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-05-31T15:14:45.836Z",
+  "updated_at": "2026-05-31T15:44:31.059Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One bootstrap or surveillance run should cover one track unless the user explicitly narrows further.",
@@ -44,10 +44,10 @@
     {
       "hallmark_id": "loss_of_proteostasis",
       "canonical_order": 4,
-      "hallmark_bootstrap_status": "stubbed",
-      "tracked_public_outlook_count": 0,
-      "next_priority_track_id": "chaperone-and-heat-shock-support",
-      "notes": "Hallmark outlook exists, but track-level coverage has not started."
+      "hallmark_bootstrap_status": "baseline",
+      "tracked_public_outlook_count": 1,
+      "next_priority_track_id": "proteasome-enhancement",
+      "notes": "At least one track-level public baseline exists."
     },
     {
       "hallmark_id": "disabled_macroautophagy",
@@ -232,11 +232,19 @@
       "hallmark_id": "loss_of_proteostasis",
       "canonical_order": 1,
       "name": "Chaperone and Heat-Shock Support",
-      "coverage_status": "not_started",
-      "next_mode": "bootstrap",
+      "coverage_status": "baseline",
+      "next_mode": "surveillance",
       "queue_state": "ready",
-      "default_research_question": "What is the current human-relevant evidence landscape for Chaperone and Heat-Shock Support, and what belongs in the first public baseline?",
-      "notes": "No track-level public baseline has been bootstrapped yet."
+      "last_session_id": "2026-05-31-chaperone-and-heat-shock-support-bootstrap",
+      "last_session_at": "2026-05-31T15:32:00Z",
+      "last_session_mode": "bootstrap",
+      "last_session_outcome": "candidate_bundle_submitted",
+      "last_candidate_bundle_id": "chaperone-and-heat-shock-support-bootstrap-2026-05-31",
+      "last_candidate_bundle_status": "published",
+      "last_publication_event_id": "publish-chaperone-and-heat-shock-support-bootstrap-2026-05-31-2026-05-31t15-44-20-234z",
+      "last_published_at": "2026-05-31T15:44:20.234Z",
+      "default_research_question": "What changed for Chaperone and Heat-Shock Support since the last meaningful review or publication, and does any change justify a public update?",
+      "notes": "Latest publication event: publish-chaperone-and-heat-shock-support-bootstrap-2026-05-31-2026-05-31t15-44-20-234z."
     },
     {
       "track_id": "proteasome-enhancement",

@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-chaperone-and-heat-shock-support-source-fidelity-r1",
+  "name": "Source Fidelity review for Chaperone and Heat Shock Support bundle",
+  "candidate_bundle_id": "chaperone-and-heat-shock-support-bootstrap-2026-05-31",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, and finding records stay within the cited PubMed and FDA boundaries. Numeric trial claims, registry IDs, endpoint descriptions, and FDA approval wording match the cited sources closely enough for publication review; the only precision note is that the NPC phase field uses the closest available schema enum for a phase 2/3 trial.",
+  "reviewed_change_ids": [
+    "create-source-pmid-34418116",
+    "create-source-pmid-40520915",
+    "create-source-fda-miplyffa-approval-2024-09-20",
+    "create-source-pmid-38782015",
+    "create-source-pmid-37739573",
+    "create-source-pmid-19214941",
+    "create-source-pmid-12750521",
+    "create-source-pmid-17928942",
+    "create-study-arimoclomol-npc-phase-2-3",
+    "create-study-arimoclomol-als-orarials-phase3",
+    "create-study-arimoclomol-inclusion-body-myositis-trial",
+    "create-study-bgp15-insulin-resistance-proof-of-concept",
+    "create-study-hsf1-c-elegans-aging-proteostasis",
+    "create-study-active-passive-hyperthermia-hsp70-pbmcs",
+    "create-finding-arimoclomol-slowed-npc-disease-progression",
+    "create-finding-arimoclomol-npc-r4dnpccss-posthoc-support",
+    "create-finding-miplyffa-approved-npc-neurological-symptoms",
+    "create-finding-arimoclomol-als-phase3-null",
+    "create-finding-arimoclomol-ibm-trial-null",
+    "create-finding-bgp15-improved-insulin-sensitivity-proof-of-concept",
+    "create-finding-hsf1-overexpression-extended-c-elegans-lifespan",
+    "create-finding-hyperthermia-hsp70-pbmcs-no-significant-increase",
+    "create-chaperone-and-heat-shock-support-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "npc-phase2-3-schema-phase-note",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-study-arimoclomol-npc-phase-2-3",
+      "applies_to_record": {
+        "record_type": "study",
+        "record_id": "arimoclomol-npc-phase-2-3"
+      },
+      "claim_or_issue": "The source describes the arimoclomol NPC trial as phase 2/3, while the study schema only permits single phase enum values and the staged record uses phase3.",
+      "why_it_matters": "The public study record should not imply a conventional standalone phase 3 trial if the underlying publication is explicitly phase 2/3.",
+      "recommended_action": "No blocking action needed; the source short name, study name, and source summary preserve the phase 2/3 wording, while phase3 is the closest schema-compatible value for a pivotal phase 2/3 study.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "bgp15-endpoint-boundary-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-bgp15-improved-insulin-sensitivity-proof-of-concept",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "bgp15-improved-insulin-sensitivity-proof-of-concept"
+      },
+      "claim_or_issue": "The BGP-15 source tested insulin-sensitivity outcomes rather than direct chaperone engagement or proteostasis endpoints.",
+      "why_it_matters": "Using BGP-15 as direct proteostasis evidence would overstate source fidelity.",
+      "recommended_action": "No further action needed; the staged finding explicitly classifies the result as human biomarker context and includes caveats that it is not direct proteostasis or functional aging evidence.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-05-31T15:42:07.601Z",
+  "updated_at": "2026-05-31T15:42:07.601Z"
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "hyperthermia-hsp70-pbmcs-no-significant-increase",
+  "name": "Active and passive hyperthermia did not significantly increase PBMC HSP70",
+  "summary": "A small human physiology study is a caution against assuming heat exposure reliably induces intracellular HSP70 in circulating immune cells.",
+  "source_id": "pmid-17928942",
+  "study_id": "active-passive-hyperthermia-hsp70-pbmcs",
+  "intervention_ids": [
+    "active-hyperthermia",
+    "passive-hyperthermia"
+  ],
+  "track_ids": [
+    "chaperone-and-heat-shock-support"
+  ],
+  "hallmark_ids": [
+    "loss_of_proteostasis"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "null",
+  "evidence_tier": "human_biomarker",
+  "confidence": "low",
+  "statement": "In six healthy young men, neither active nor passive hyperthermia significantly increased intracellular HSP70 in PBMCs at 0 or 4 hours after exposure.",
+  "population_or_model": "Healthy young moderately trained men",
+  "time_horizon": "Immediate and 4-hour post-exposure PBMC HSP70 measurements",
+  "quantitative_note": "Peak HSP70 fold-change from rest was not significantly increased after active hyperthermia or passive hyperthermia.",
+  "caveats": [
+    "The study was very small and short-term.",
+    "PBMC intracellular HSP70 may not represent tissue proteostasis or repeated heat-exposure adaptation.",
+    "The result does not rule out other heat-shock biomarkers or protocols."
+  ],
+  "tags": [
+    "human",
+    "hyperthermia",
+    "hsp70",
+    "biomarker",
+    "null"
+  ]
+}

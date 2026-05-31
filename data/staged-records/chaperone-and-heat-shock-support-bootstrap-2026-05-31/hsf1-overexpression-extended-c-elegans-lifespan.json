@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "hsf1-overexpression-extended-c-elegans-lifespan",
+  "name": "HSF-1 activity regulated lifespan and aggregation phenotypes in C. elegans",
+  "summary": "Classic animal evidence supports the aging biology of heat-shock-factor signaling and proteostasis.",
+  "source_id": "pmid-12750521",
+  "study_id": "hsf1-c-elegans-aging-proteostasis",
+  "intervention_ids": [
+    "hsf-1-modulation"
+  ],
+  "track_ids": [
+    "chaperone-and-heat-shock-support"
+  ],
+  "hallmark_ids": [
+    "loss_of_proteostasis"
+  ],
+  "endpoint_category": "lifespan",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "low",
+  "statement": "In C. elegans, reducing hsf-1 activity shortened lifespan and accelerated tissue aging, while hsf-1 overexpression extended lifespan and small heat-shock proteins delayed protein aggregation.",
+  "population_or_model": "Caenorhabditis elegans genetic aging and aggregation models",
+  "time_horizon": "Lifespan and age-related aggregation assays",
+  "quantitative_note": "The source reports directional lifespan extension with hsf-1 overexpression and requirement of HSF-1 for daf-2 insulin/IGF-1 receptor mutant lifespan extension.",
+  "caveats": [
+    "This is worm genetics, not a therapeutic intervention in mammals or humans.",
+    "HSF-1 modulation can have context-specific effects and does not identify a safe human dosing strategy.",
+    "The result supports mechanistic plausibility more than human translation."
+  ],
+  "tags": [
+    "animal",
+    "c-elegans",
+    "hsf-1",
+    "lifespan",
+    "mechanistic"
+  ]
+}

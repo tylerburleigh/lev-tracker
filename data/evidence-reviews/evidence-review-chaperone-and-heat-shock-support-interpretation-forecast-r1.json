@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-chaperone-and-heat-shock-support-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Chaperone and Heat Shock Support bundle",
+  "candidate_bundle_id": "chaperone-and-heat-shock-support-bootstrap-2026-05-31",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The proposed outlook is appropriately bounded for a first public baseline: it assigns human_functional_benefit only because NPC has randomized functional evidence plus FDA approval, keeps confidence low, marks momentum mixed because ALS and inclusion body myositis were null, and states that this is not broad aging or LEV-relevant proteostasis restoration.",
+  "reviewed_change_ids": [
+    "create-source-pmid-34418116",
+    "create-source-pmid-40520915",
+    "create-source-fda-miplyffa-approval-2024-09-20",
+    "create-source-pmid-38782015",
+    "create-source-pmid-37739573",
+    "create-source-pmid-19214941",
+    "create-source-pmid-12750521",
+    "create-source-pmid-17928942",
+    "create-study-arimoclomol-npc-phase-2-3",
+    "create-study-arimoclomol-als-orarials-phase3",
+    "create-study-arimoclomol-inclusion-body-myositis-trial",
+    "create-study-bgp15-insulin-resistance-proof-of-concept",
+    "create-study-hsf1-c-elegans-aging-proteostasis",
+    "create-study-active-passive-hyperthermia-hsp70-pbmcs",
+    "create-finding-arimoclomol-slowed-npc-disease-progression",
+    "create-finding-arimoclomol-npc-r4dnpccss-posthoc-support",
+    "create-finding-miplyffa-approved-npc-neurological-symptoms",
+    "create-finding-arimoclomol-als-phase3-null",
+    "create-finding-arimoclomol-ibm-trial-null",
+    "create-finding-bgp15-improved-insulin-sensitivity-proof-of-concept",
+    "create-finding-hsf1-overexpression-extended-c-elegans-lifespan",
+    "create-finding-hyperthermia-hsp70-pbmcs-no-significant-increase",
+    "create-chaperone-and-heat-shock-support-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "functional-stage-is-narrow-npc-specific",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-chaperone-and-heat-shock-support-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-chaperone-and-heat-shock-support-outlook"
+      },
+      "claim_or_issue": "The outlook assigns human_functional_benefit even though the functional benefit is concentrated in NPC rather than aging-general populations.",
+      "why_it_matters": "Without explicit boundary language, the stage could read as broader validation of chaperone or heat-shock support than the evidence supports.",
+      "recommended_action": "No revision needed; the outlook's blockers, forecast note, rating-change criteria, and stage support map repeatedly state that the functional signal is NPC-specific and not broad aging evidence.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "null-arimoclomol-programs-correctly-limit-momentum",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "applies_to_change_id": "create-chaperone-and-heat-shock-support-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-chaperone-and-heat-shock-support-outlook"
+      },
+      "claim_or_issue": "Arimoclomol's positive NPC signal is counterbalanced by null ALS and inclusion body myositis trials.",
+      "why_it_matters": "The track should not imply disease-general benefit from heat-shock-response co-induction.",
+      "recommended_action": "Keep momentum as mixed and retain the support-map section that treats ALS and inclusion body myositis as disease-general boundary conditions.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "forecast-criteria-avoid-lev-window-overreach",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "create-chaperone-and-heat-shock-support-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-chaperone-and-heat-shock-support-outlook"
+      },
+      "claim_or_issue": "The forecast does not assign a credible LEV window and requires replicated human functional benefit outside rare NPC before any upgrade.",
+      "why_it_matters": "This keeps a rare-disease approval from being misread as a near-term longevity forecast.",
+      "recommended_action": "Retain the current earliest-plausible-window and rating-change criteria language.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-05-31T15:42:07.601Z",
+  "updated_at": "2026-05-31T15:42:07.601Z"
+}

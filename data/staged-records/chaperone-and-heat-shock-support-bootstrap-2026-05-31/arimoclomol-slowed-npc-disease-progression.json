@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "arimoclomol-slowed-npc-disease-progression",
+  "name": "Arimoclomol slowed NPC disease progression in a randomized phase 2/3 trial",
+  "summary": "The strongest human functional signal for this track is the NPC arimoclomol phase 2/3 trial.",
+  "source_id": "pmid-34418116",
+  "study_id": "arimoclomol-npc-phase-2-3",
+  "intervention_ids": [
+    "arimoclomol"
+  ],
+  "track_ids": [
+    "chaperone-and-heat-shock-support"
+  ],
+  "hallmark_ids": [
+    "loss_of_proteostasis"
+  ],
+  "endpoint_category": "functional",
+  "direction": "positive",
+  "evidence_tier": "human_function",
+  "confidence": "moderate",
+  "statement": "In a 12-month randomized phase 2/3 NPC trial, arimoclomol slowed progression on the 5-domain NPC Clinical Severity Scale compared with placebo.",
+  "population_or_model": "Pediatric Niemann-Pick disease type C patients, many receiving background miglustat",
+  "time_horizon": "12 months",
+  "quantitative_note": "Mean progression was 0.76 with arimoclomol versus 2.15 with placebo; treatment difference -1.40, 95% CI -2.76 to -0.03, P=0.046.",
+  "caveats": [
+    "This is rare-disease neurological evidence, not broad healthy-aging or LEV-relevant evidence.",
+    "The trial was small because NPC is rare.",
+    "The source reports industry involvement and treatment-related hypersensitivity events."
+  ],
+  "tags": [
+    "human",
+    "randomized",
+    "arimoclomol",
+    "npc",
+    "functional"
+  ]
+}

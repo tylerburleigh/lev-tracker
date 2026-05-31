@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-05-31-chaperone-and-heat-shock-support-bootstrap",
+  "name": "Chaperone and heat-shock support bootstrap pass for May 31, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-05-31T15:20:00Z",
+  "completed_at": "2026-05-31T15:32:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Chaperone and Heat-Shock Support, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "loss_of_proteostasis"
+    ],
+    "track_ids": [
+      "chaperone-and-heat-shock-support"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "chaperone-and-heat-shock-support-bootstrap-2026-05-31",
+  "summary": "The track is coherent enough for a first public baseline at human_functional_benefit because arimoclomol has randomized functional evidence and FDA approval in NPC, but the staged outlook stays low confidence with mixed momentum because that benefit is rare-disease-specific, arimoclomol failed in ALS and inclusion body myositis, and broader heat-shock biomarker evidence remains thin.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-34418116",
+    "pmid-40520915",
+    "fda-miplyffa-approval-2024-09-20",
+    "pmid-38782015",
+    "pmid-37739573",
+    "pmid-19214941",
+    "pmid-12750521",
+    "pmid-17928942"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/34418116/",
+    "https://pubmed.ncbi.nlm.nih.gov/40520915/",
+    "https://www.fda.gov/news-events/press-announcements/fda-approves-first-treatment-niemann-pick-disease-type-c",
+    "https://pubmed.ncbi.nlm.nih.gov/38782015/",
+    "https://pubmed.ncbi.nlm.nih.gov/37739573/",
+    "https://pubmed.ncbi.nlm.nih.gov/19214941/",
+    "https://pubmed.ncbi.nlm.nih.gov/12750521/",
+    "https://pubmed.ncbi.nlm.nih.gov/17928942/"
+  ],
+  "notes": [
+    "Arimoclomol is the main human anchor: the NPC phase 2/3 trial reported slower disease progression, and FDA approved Miplyffa with miglustat for NPC neurological symptoms on September 20, 2024.",
+    "The stage assignment should not be generalized to aging: NPC is a narrow rare disease context and not a direct healthy-aging or LEV endpoint.",
+    "The ALS ORARIALS-01 phase 3 trial and the inclusion body myositis randomized trial were null on their primary functional or function-survival outcomes.",
+    "BGP-15 provides short-term human biomarker context for an HSP co-inducer, but the measured endpoint was insulin sensitivity rather than direct proteostasis.",
+    "HSF-1 C. elegans work supports aging biology, while the small active/passive hyperthermia study cautions that human HSP70 induction is not automatic."
+  ],
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast review before publication.",
+    "If approved, publish the staged records as the first chaperone and heat-shock support track baseline.",
+    "After publication, refresh planning state and inspect the loss of proteostasis surfaces."
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "bgp15-improved-insulin-sensitivity-proof-of-concept",
+  "name": "BGP-15 improved insulin sensitivity in a short proof-of-concept trial",
+  "summary": "BGP-15 supplies human biomarker context for a small-molecule HSP co-inducer, but the endpoint is metabolic rather than proteostasis-specific.",
+  "source_id": "pmid-19214941",
+  "study_id": "bgp15-insulin-resistance-proof-of-concept",
+  "intervention_ids": [
+    "bgp-15"
+  ],
+  "track_ids": [
+    "chaperone-and-heat-shock-support"
+  ],
+  "hallmark_ids": [
+    "loss_of_proteostasis"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "positive",
+  "evidence_tier": "human_biomarker",
+  "confidence": "low",
+  "statement": "In nondiabetic insulin-resistant patients, 28 days of BGP-15 improved clamp-based insulin sensitivity measures compared with placebo.",
+  "population_or_model": "Nondiabetic insulin-resistant patients with impaired glucose tolerance",
+  "time_horizon": "28 days",
+  "quantitative_note": "Both 200 mg and 400 mg BGP-15 doses significantly increased whole-body insulin sensitivity and glucose-utilization measures compared with baseline and placebo.",
+  "caveats": [
+    "The endpoint is insulin sensitivity, not direct chaperone engagement, protein folding, functional aging, or disease progression.",
+    "The study was short and small.",
+    "The result should be treated as human biomarker context, not clinical proof for the proteostasis track."
+  ],
+  "tags": [
+    "human",
+    "randomized",
+    "bgp-15",
+    "biomarker"
+  ]
+}
