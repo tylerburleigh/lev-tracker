@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "canakinumab-reduced-recurrent-cardiovascular-events",
+  "name": "Canakinumab reduced recurrent cardiovascular events without lipid lowering",
+  "summary": "CANTOS is the strongest direct human proof that targeted cytokine inhibition can reduce a major age-related disease outcome.",
+  "source_id": "pmid-28845751",
+  "study_id": "cantos-canakinumab-atherosclerosis-trial",
+  "intervention_ids": [
+    "canakinumab"
+  ],
+  "track_ids": [
+    "cytokine-and-inflammasome-modulation"
+  ],
+  "hallmark_ids": [
+    "chronic_inflammation"
+  ],
+  "endpoint_category": "healthspan",
+  "direction": "positive",
+  "evidence_tier": "human_clinical_outcome",
+  "confidence": "moderate",
+  "statement": "In 10,061 post-myocardial-infarction patients with hsCRP of at least 2 mg/L, canakinumab 150 mg every 3 months lowered recurrent major cardiovascular events without lowering lipid levels.",
+  "population_or_model": "Patients with previous myocardial infarction and residual inflammatory risk",
+  "time_horizon": "Median follow-up of 3.7 years",
+  "quantitative_note": "The 150 mg dose had a primary-endpoint hazard ratio of 0.85 versus placebo (95% CI 0.74 to 0.98; P=0.021) and met the prespecified multiplicity-adjusted threshold; all-cause mortality was not significantly different.",
+  "caveats": [
+    "The benefit was in secondary cardiovascular prevention, not healthy aging or frailty prevention.",
+    "Canakinumab was associated with a higher incidence of fatal infection than placebo.",
+    "Only the 150 mg dose met the prespecified multiplicity-adjusted threshold for the primary endpoint."
+  ],
+  "tags": [
+    "human",
+    "randomized",
+    "canakinumab",
+    "il-1beta",
+    "cardiovascular-outcomes"
+  ]
+}

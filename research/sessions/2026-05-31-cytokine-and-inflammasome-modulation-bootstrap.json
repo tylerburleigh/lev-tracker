@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-05-31-cytokine-and-inflammasome-modulation-bootstrap",
+  "name": "Cytokine and inflammasome modulation bootstrap pass for May 31, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-05-31T19:20:00Z",
+  "completed_at": "2026-05-31T19:28:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Cytokine and Inflammasome Modulation, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "chronic_inflammation"
+    ],
+    "track_ids": [
+      "cytokine-and-inflammasome-modulation"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "cytokine-and-inflammasome-modulation-bootstrap-2026-05-31",
+  "summary": "The staged baseline assigns durable_disease_or_mortality_relevance with low confidence and steady momentum. The stage is supported by CANTOS canakinumab cardiovascular outcomes and low-dose colchicine cardiovascular outcome trials, while aging interpretation is limited by the CANTOS frailty null result, infection and noncardiovascular safety signals, and the fact that IL-6 outcome evidence is still pending.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-28845751",
+    "pmid-28855077",
+    "pmid-37927208",
+    "pmid-32865380",
+    "pmid-31733140",
+    "pmid-34015342",
+    "pmid-38796655",
+    "pmid-33235030",
+    "pmid-41369941",
+    "nct-05021835"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/28845751/",
+    "https://pubmed.ncbi.nlm.nih.gov/28855077/",
+    "https://pubmed.ncbi.nlm.nih.gov/37927208/",
+    "https://pubmed.ncbi.nlm.nih.gov/32865380/",
+    "https://pubmed.ncbi.nlm.nih.gov/31733140/",
+    "https://pubmed.ncbi.nlm.nih.gov/34015342/",
+    "https://pubmed.ncbi.nlm.nih.gov/38796655/",
+    "https://pubmed.ncbi.nlm.nih.gov/33235030/",
+    "https://pubmed.ncbi.nlm.nih.gov/41369941/",
+    "https://clinicaltrials.gov/study/NCT05021835"
+  ],
+  "notes": [
+    "CANTOS supplies the clearest targeted cytokine clinical-outcome signal, but it is a post-MI residual-inflammatory-risk trial and included a fatal-infection safety signal.",
+    "The CANTOS frailty post hoc analysis is the key aging boundary because IL-1beta inhibition did not reduce incident frailty.",
+    "Low-dose colchicine has replicated cardiovascular event signals in chronic coronary disease and post-MI settings, but it is broad anti-inflammatory therapy rather than selective cytokine blockade.",
+    "Ziltivekimab and clazakizumab provide strong IL-6 biomarker target-engagement signals; ZEUS outcome results are not posted yet.",
+    "Direct oral NLRP3 inhibition remains early, with dapansutrile supported here only by a small short phase 1B HFrEF study."
+  ],
+  "next_actions": [
+    "Run source-fidelity review for the staged source, study, and finding records.",
+    "Run interpretation/forecast review with attention to whether durable_disease_or_mortality_relevance is adequately bounded as disease-specific cardiovascular evidence.",
+    "If approved and published, inspect the chronic inflammation hallmark page and cytokine and inflammasome modulation track page for evidence-ladder clarity."
+  ]
+}

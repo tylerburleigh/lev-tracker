@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-cytokine-and-inflammasome-modulation-source-fidelity-r1",
+  "name": "Source Fidelity review for Cytokine And Inflammasome Modulation bundle",
+  "candidate_bundle_id": "cytokine-and-inflammasome-modulation-bootstrap-2026-05-31",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, and finding records are source-faithful for the cited PubMed and ClinicalTrials records. PMIDs, DOIs, registry IDs, population boundaries, sample sizes, durations, endpoint categories, quantitative results, and safety caveats match the checked source metadata and abstracts closely enough for editorial approval.",
+  "reviewed_change_ids": [
+    "create-source-pmid-28845751",
+    "create-source-pmid-28855077",
+    "create-source-pmid-37927208",
+    "create-source-pmid-32865380",
+    "create-source-pmid-31733140",
+    "create-source-pmid-34015342",
+    "create-source-pmid-38796655",
+    "create-source-pmid-33235030",
+    "create-source-pmid-41369941",
+    "create-source-nct-05021835",
+    "create-study-cantos-canakinumab-atherosclerosis-trial",
+    "create-study-lodoco2-colchicine-chronic-coronary-disease",
+    "create-study-colcot-colchicine-post-mi",
+    "create-study-rescue-ziltivekimab-ckd-inflammation",
+    "create-study-clazakizumab-dialysis-il6-phase2b",
+    "create-study-dapansutrile-hfref-nlrp3-phase1b",
+    "create-study-zeus-ziltivekimab-cardiovascular-outcomes",
+    "create-finding-canakinumab-reduced-recurrent-cardiovascular-events",
+    "create-finding-canakinumab-exploratory-lung-cancer-signal",
+    "create-finding-canakinumab-did-not-prevent-frailty",
+    "create-finding-colchicine-reduced-chronic-coronary-events",
+    "create-finding-colchicine-post-mi-reduced-ischemic-events-safety-signal",
+    "create-finding-ziltivekimab-reduced-inflammatory-thrombotic-biomarkers",
+    "create-finding-clazakizumab-reduced-il6-biomarkers-dialysis",
+    "create-finding-dapansutrile-hfref-early-safety-functional-signal",
+    "create-finding-zeus-ziltivekimab-outcomes-trial-active-no-results",
+    "create-outlook-track-cytokine-and-inflammasome-modulation-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "zeus-enrollment-convention-note",
+      "severity": "note",
+      "category": "uncertainty",
+      "applies_to_change_id": "create-study-zeus-ziltivekimab-cardiovascular-outcomes",
+      "applies_to_record": {
+        "record_type": "study",
+        "record_id": "zeus-ziltivekimab-cardiovascular-outcomes"
+      },
+      "claim_or_issue": "The staged ZEUS study uses the 6,376 randomized-participant count from the design paper, while the registry source lists estimated enrollment of 6,200.",
+      "why_it_matters": "Both numbers are source-backed, but they come from different source types and should not be treated as a contradiction or silently merged.",
+      "recommended_action": "Keep the staged finding's quantitative note that distinguishes the design-paper count from the registry estimate.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "dapansutrile-exploratory-comparison-note",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-dapansutrile-hfref-early-safety-functional-signal",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "dapansutrile-hfref-early-safety-functional-signal"
+      },
+      "claim_or_issue": "The dapansutrile source reports within-cohort LVEF and exercise-time changes at the 2000 mg dose, not a powered placebo-controlled efficacy comparison.",
+      "why_it_matters": "Treating the result as a confirmed functional benefit would overstate a small phase 1B safety and pharmacodynamics study.",
+      "recommended_action": "Retain the staged wording that frames this as early safety support with exploratory functional signals only.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-05-31T19:43:38.767Z",
+  "updated_at": "2026-05-31T19:43:38.767Z"
+}

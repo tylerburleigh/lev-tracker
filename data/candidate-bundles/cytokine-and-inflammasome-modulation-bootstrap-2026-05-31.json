@@ -1,0 +1,395 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "cytokine-and-inflammasome-modulation-bootstrap-2026-05-31",
+  "name": "Cytokine and inflammasome modulation bootstrap for May 31, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline for the cytokine and inflammasome modulation track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-05-31T19:28:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Cytokine and Inflammasome Modulation, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "chronic_inflammation"
+    ],
+    "track_ids": [
+      "cytokine-and-inflammasome-modulation"
+    ]
+  },
+  "source_ids": [
+    "pmid-28845751",
+    "pmid-28855077",
+    "pmid-37927208",
+    "pmid-32865380",
+    "pmid-31733140",
+    "pmid-34015342",
+    "pmid-38796655",
+    "pmid-33235030",
+    "pmid-41369941",
+    "nct-05021835"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/28845751/",
+    "https://doi.org/10.1056/NEJMoa1707914",
+    "https://pubmed.ncbi.nlm.nih.gov/28855077/",
+    "https://doi.org/10.1016/S0140-6736(17)32247-X",
+    "https://pubmed.ncbi.nlm.nih.gov/37927208/",
+    "https://doi.org/10.1111/acel.14029",
+    "https://pubmed.ncbi.nlm.nih.gov/32865380/",
+    "https://doi.org/10.1056/NEJMoa2021372",
+    "https://pubmed.ncbi.nlm.nih.gov/31733140/",
+    "https://doi.org/10.1056/NEJMoa1912388",
+    "https://pubmed.ncbi.nlm.nih.gov/34015342/",
+    "https://doi.org/10.1016/S0140-6736(21)00520-1",
+    "https://pubmed.ncbi.nlm.nih.gov/38796655/",
+    "https://doi.org/10.1038/s41591-024-03043-1",
+    "https://pubmed.ncbi.nlm.nih.gov/33235030/",
+    "https://doi.org/10.1097/FJC.0000000000000931",
+    "https://pubmed.ncbi.nlm.nih.gov/41369941/",
+    "https://doi.org/10.1001/jamacardio.2025.4491",
+    "https://clinicaltrials.gov/study/NCT05021835"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-cytokine-and-inflammasome-modulation-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-chronic-inflammation-outlook"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "canakinumab-reduced-recurrent-cardiovascular-events"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "canakinumab-did-not-prevent-frailty"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "colchicine-reduced-chronic-coronary-events"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "ziltivekimab-reduced-inflammatory-thrombotic-biomarkers"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-28845751",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-28845751",
+      "file_path": "data/sources/pmid-28845751.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/pmid-28845751.json",
+      "summary": "Add CANTOS canakinumab cardiovascular outcomes source.",
+      "rationale": "This source supplies the strongest targeted IL-1beta human disease-outcome signal for the track."
+    },
+    {
+      "change_id": "create-source-pmid-28855077",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-28855077",
+      "file_path": "data/sources/pmid-28855077.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/pmid-28855077.json",
+      "summary": "Add CANTOS exploratory lung-cancer source.",
+      "rationale": "This source captures a hypothesis-generating disease signal while preserving its exploratory boundary."
+    },
+    {
+      "change_id": "create-source-pmid-37927208",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-37927208",
+      "file_path": "data/sources/pmid-37927208.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/pmid-37927208.json",
+      "summary": "Add CANTOS frailty post hoc source.",
+      "rationale": "This source directly bounds broad aging interpretation by testing incident frailty."
+    },
+    {
+      "change_id": "create-source-pmid-32865380",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-32865380",
+      "file_path": "data/sources/pmid-32865380.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/pmid-32865380.json",
+      "summary": "Add LoDoCo2 colchicine chronic coronary disease source.",
+      "rationale": "This trial supplies replicated cardiovascular outcome support for anti-inflammatory therapy in chronic coronary disease."
+    },
+    {
+      "change_id": "create-source-pmid-31733140",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-31733140",
+      "file_path": "data/sources/pmid-31733140.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/pmid-31733140.json",
+      "summary": "Add COLCOT colchicine post-MI source.",
+      "rationale": "This trial supplies a second large colchicine cardiovascular outcome signal and a pneumonia safety caveat."
+    },
+    {
+      "change_id": "create-source-pmid-34015342",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-34015342",
+      "file_path": "data/sources/pmid-34015342.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/pmid-34015342.json",
+      "summary": "Add RESCUE ziltivekimab IL-6 biomarker source.",
+      "rationale": "This trial supplies direct IL-6 target-engagement evidence in a high-risk chronic inflammation population."
+    },
+    {
+      "change_id": "create-source-pmid-38796655",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-38796655",
+      "file_path": "data/sources/pmid-38796655.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/pmid-38796655.json",
+      "summary": "Add clazakizumab dialysis IL-6 phase 2b source.",
+      "rationale": "This trial provides an additional IL-6 biomarker signal and infection-dose boundary."
+    },
+    {
+      "change_id": "create-source-pmid-33235030",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-33235030",
+      "file_path": "data/sources/pmid-33235030.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/pmid-33235030.json",
+      "summary": "Add dapansutrile HFrEF NLRP3 phase 1B source.",
+      "rationale": "This source supplies the direct oral NLRP3 human foothold for the baseline."
+    },
+    {
+      "change_id": "create-source-pmid-41369941",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-41369941",
+      "file_path": "data/sources/pmid-41369941.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/pmid-41369941.json",
+      "summary": "Add ZEUS ziltivekimab outcomes design source.",
+      "rationale": "This source documents the phase 3 outcome test that is central to IL-6 momentum."
+    },
+    {
+      "change_id": "create-source-nct-05021835",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-05021835",
+      "file_path": "data/sources/nct-05021835.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/nct-05021835.json",
+      "summary": "Add ZEUS ClinicalTrials.gov registry source.",
+      "rationale": "The registry records current active-not-recruiting status and the absence of posted results."
+    },
+    {
+      "change_id": "create-study-cantos-canakinumab-atherosclerosis-trial",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "cantos-canakinumab-atherosclerosis-trial",
+      "file_path": "data/studies/cantos-canakinumab-atherosclerosis-trial.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/cantos-canakinumab-atherosclerosis-trial.json",
+      "summary": "Add CANTOS study record.",
+      "rationale": "This study anchors the canakinumab cardiovascular, cancer, and frailty findings."
+    },
+    {
+      "change_id": "create-study-lodoco2-colchicine-chronic-coronary-disease",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "lodoco2-colchicine-chronic-coronary-disease",
+      "file_path": "data/studies/lodoco2-colchicine-chronic-coronary-disease.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/lodoco2-colchicine-chronic-coronary-disease.json",
+      "summary": "Add LoDoCo2 study record.",
+      "rationale": "This study links the chronic coronary colchicine outcome signal to the track."
+    },
+    {
+      "change_id": "create-study-colcot-colchicine-post-mi",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "colcot-colchicine-post-mi",
+      "file_path": "data/studies/colcot-colchicine-post-mi.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/colcot-colchicine-post-mi.json",
+      "summary": "Add COLCOT study record.",
+      "rationale": "This study links the post-MI colchicine outcome signal and pneumonia caveat to the track."
+    },
+    {
+      "change_id": "create-study-rescue-ziltivekimab-ckd-inflammation",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "rescue-ziltivekimab-ckd-inflammation",
+      "file_path": "data/studies/rescue-ziltivekimab-ckd-inflammation.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/rescue-ziltivekimab-ckd-inflammation.json",
+      "summary": "Add RESCUE ziltivekimab study record.",
+      "rationale": "This study links IL-6 biomarker target engagement to the track."
+    },
+    {
+      "change_id": "create-study-clazakizumab-dialysis-il6-phase2b",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "clazakizumab-dialysis-il6-phase2b",
+      "file_path": "data/studies/clazakizumab-dialysis-il6-phase2b.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/clazakizumab-dialysis-il6-phase2b.json",
+      "summary": "Add clazakizumab phase 2b study record.",
+      "rationale": "This study broadens IL-6 biomarker support and safety context."
+    },
+    {
+      "change_id": "create-study-dapansutrile-hfref-nlrp3-phase1b",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "dapansutrile-hfref-nlrp3-phase1b",
+      "file_path": "data/studies/dapansutrile-hfref-nlrp3-phase1b.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/dapansutrile-hfref-nlrp3-phase1b.json",
+      "summary": "Add dapansutrile HFrEF study record.",
+      "rationale": "This study links the direct NLRP3 early human signal to the track."
+    },
+    {
+      "change_id": "create-study-zeus-ziltivekimab-cardiovascular-outcomes",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "zeus-ziltivekimab-cardiovascular-outcomes",
+      "file_path": "data/studies/zeus-ziltivekimab-cardiovascular-outcomes.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/zeus-ziltivekimab-cardiovascular-outcomes.json",
+      "summary": "Add ZEUS ziltivekimab phase 3 study record.",
+      "rationale": "This study is the main pending outcome trial for IL-6 inhibition."
+    },
+    {
+      "change_id": "create-finding-canakinumab-reduced-recurrent-cardiovascular-events",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "canakinumab-reduced-recurrent-cardiovascular-events",
+      "file_path": "data/findings/canakinumab-reduced-recurrent-cardiovascular-events.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/canakinumab-reduced-recurrent-cardiovascular-events.json",
+      "summary": "Add CANTOS cardiovascular outcome finding.",
+      "rationale": "This finding is central support for the disease-outcome stage assignment."
+    },
+    {
+      "change_id": "create-finding-canakinumab-exploratory-lung-cancer-signal",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "canakinumab-exploratory-lung-cancer-signal",
+      "file_path": "data/findings/canakinumab-exploratory-lung-cancer-signal.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/canakinumab-exploratory-lung-cancer-signal.json",
+      "summary": "Add CANTOS exploratory lung-cancer finding.",
+      "rationale": "This finding records a possible non-cardiovascular signal without overstating it."
+    },
+    {
+      "change_id": "create-finding-canakinumab-did-not-prevent-frailty",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "canakinumab-did-not-prevent-frailty",
+      "file_path": "data/findings/canakinumab-did-not-prevent-frailty.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/canakinumab-did-not-prevent-frailty.json",
+      "summary": "Add CANTOS frailty null finding.",
+      "rationale": "This finding is the main boundary against broad aging interpretation."
+    },
+    {
+      "change_id": "create-finding-colchicine-reduced-chronic-coronary-events",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "colchicine-reduced-chronic-coronary-events",
+      "file_path": "data/findings/colchicine-reduced-chronic-coronary-events.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/colchicine-reduced-chronic-coronary-events.json",
+      "summary": "Add LoDoCo2 colchicine cardiovascular outcome finding.",
+      "rationale": "This finding supports replicated disease-outcome benefit for anti-inflammatory therapy."
+    },
+    {
+      "change_id": "create-finding-colchicine-post-mi-reduced-ischemic-events-safety-signal",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "colchicine-post-mi-reduced-ischemic-events-safety-signal",
+      "file_path": "data/findings/colchicine-post-mi-reduced-ischemic-events-safety-signal.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/colchicine-post-mi-reduced-ischemic-events-safety-signal.json",
+      "summary": "Add COLCOT colchicine outcome and safety finding.",
+      "rationale": "This finding balances outcome support with pneumonia safety context."
+    },
+    {
+      "change_id": "create-finding-ziltivekimab-reduced-inflammatory-thrombotic-biomarkers",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ziltivekimab-reduced-inflammatory-thrombotic-biomarkers",
+      "file_path": "data/findings/ziltivekimab-reduced-inflammatory-thrombotic-biomarkers.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/ziltivekimab-reduced-inflammatory-thrombotic-biomarkers.json",
+      "summary": "Add RESCUE ziltivekimab biomarker finding.",
+      "rationale": "This finding supports IL-6 target engagement and phase 3 momentum."
+    },
+    {
+      "change_id": "create-finding-clazakizumab-reduced-il6-biomarkers-dialysis",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "clazakizumab-reduced-il6-biomarkers-dialysis",
+      "file_path": "data/findings/clazakizumab-reduced-il6-biomarkers-dialysis.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/clazakizumab-reduced-il6-biomarkers-dialysis.json",
+      "summary": "Add clazakizumab IL-6 biomarker finding.",
+      "rationale": "This finding supports IL-6 biomarker reproducibility and safety boundaries."
+    },
+    {
+      "change_id": "create-finding-dapansutrile-hfref-early-safety-functional-signal",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "dapansutrile-hfref-early-safety-functional-signal",
+      "file_path": "data/findings/dapansutrile-hfref-early-safety-functional-signal.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/dapansutrile-hfref-early-safety-functional-signal.json",
+      "summary": "Add dapansutrile direct NLRP3 early human finding.",
+      "rationale": "This finding keeps direct inflammasome inhibition present but appropriately early-stage."
+    },
+    {
+      "change_id": "create-finding-zeus-ziltivekimab-outcomes-trial-active-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "zeus-ziltivekimab-outcomes-trial-active-no-results",
+      "file_path": "data/findings/zeus-ziltivekimab-outcomes-trial-active-no-results.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/zeus-ziltivekimab-outcomes-trial-active-no-results.json",
+      "summary": "Add ZEUS pending-outcomes finding.",
+      "rationale": "This finding records the key active phase 3 trial as momentum rather than outcome evidence."
+    },
+    {
+      "change_id": "create-outlook-track-cytokine-and-inflammasome-modulation-outlook",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-cytokine-and-inflammasome-modulation-outlook",
+      "file_path": "data/outlooks/track-cytokine-and-inflammasome-modulation-outlook.json",
+      "staged_file_path": "data/staged-records/cytokine-and-inflammasome-modulation-bootstrap-2026-05-31/track-cytokine-and-inflammasome-modulation-outlook.json",
+      "summary": "Create the first public outlook for the cytokine and inflammasome modulation track.",
+      "rationale": "The track has strong disease-specific cardiovascular outcome evidence, but broad aging interpretation must remain low confidence and safety-bounded.",
+      "uncertainty_flags": [
+        "Disease-outcome evidence is cardiovascular and high-risk-population specific.",
+        "CANTOS frailty analysis was null for incident frailty.",
+        "IL-6 inhibition has strong biomarker support but pending phase 3 outcome results.",
+        "Safety risks matter for any long-term preventive use."
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "cytokine-and-inflammasome-modulation",
+      "note": "A first public baseline is justified at durable_disease_or_mortality_relevance, with steady momentum and low confidence because the clinical outcome evidence is disease-specific rather than aging-specific.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "chronic_inflammation",
+      "note": "Publishing this bundle would add the first canonical chronic inflammation track baseline and broaden the hallmark beyond immune rejuvenation, but it does not by itself require a hallmark outlook update.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-05-31-cytokine-and-inflammasome-modulation-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-cytokine-and-inflammasome-modulation-source-fidelity-r1",
+    "evidence-review-cytokine-and-inflammasome-modulation-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-cytokine-and-inflammasome-modulation-bootstrap-2026-05-31-2026-05-31t19-43-59-521z"
+  ]
+}

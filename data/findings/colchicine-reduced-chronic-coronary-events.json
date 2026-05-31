@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "colchicine-reduced-chronic-coronary-events",
+  "name": "Low-dose colchicine reduced cardiovascular events in chronic coronary disease",
+  "summary": "LoDoCo2 supports anti-inflammatory treatment as clinically relevant in chronic atherosclerotic disease.",
+  "source_id": "pmid-32865380",
+  "study_id": "lodoco2-colchicine-chronic-coronary-disease",
+  "intervention_ids": [
+    "colchicine"
+  ],
+  "track_ids": [
+    "cytokine-and-inflammasome-modulation"
+  ],
+  "hallmark_ids": [
+    "chronic_inflammation"
+  ],
+  "endpoint_category": "healthspan",
+  "direction": "positive",
+  "evidence_tier": "human_clinical_outcome",
+  "confidence": "moderate",
+  "statement": "In chronic coronary disease, 0.5 mg daily colchicine significantly lowered a composite cardiovascular event endpoint compared with placebo.",
+  "population_or_model": "Patients with chronic coronary disease",
+  "time_horizon": "Median follow-up of 28.6 months",
+  "quantitative_note": "Primary endpoint events occurred in 6.8% with colchicine versus 9.6% with placebo, HR 0.69 (95% CI 0.57 to 0.83; P<0.001).",
+  "caveats": [
+    "This is cardiovascular secondary prevention, not direct evidence of slowed biological aging.",
+    "Death from noncardiovascular causes was numerically higher with colchicine, HR 1.51 (95% CI 0.99 to 2.31).",
+    "Colchicine is broad anti-inflammatory therapy and should not be equated with selective cytokine blockade."
+  ],
+  "tags": [
+    "human",
+    "randomized",
+    "colchicine",
+    "cardiovascular-outcomes"
+  ]
+}

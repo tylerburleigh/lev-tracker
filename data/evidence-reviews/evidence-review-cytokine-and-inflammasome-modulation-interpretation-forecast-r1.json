@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-cytokine-and-inflammasome-modulation-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Cytokine And Inflammasome Modulation bundle",
+  "candidate_bundle_id": "cytokine-and-inflammasome-modulation-bootstrap-2026-05-31",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged outlook's durable_disease_or_mortality_relevance stage is defensible because CANTOS and colchicine trials supply large human cardiovascular outcome evidence. The public interpretation is appropriately low-confidence and safety-bounded because the benefit is disease-specific, frailty evidence is null, IL-6 outcome data remain pending, and direct NLRP3 evidence is still early.",
+  "reviewed_change_ids": [
+    "create-source-pmid-28845751",
+    "create-source-pmid-28855077",
+    "create-source-pmid-37927208",
+    "create-source-pmid-32865380",
+    "create-source-pmid-31733140",
+    "create-source-pmid-34015342",
+    "create-source-pmid-38796655",
+    "create-source-pmid-33235030",
+    "create-source-pmid-41369941",
+    "create-source-nct-05021835",
+    "create-study-cantos-canakinumab-atherosclerosis-trial",
+    "create-study-lodoco2-colchicine-chronic-coronary-disease",
+    "create-study-colcot-colchicine-post-mi",
+    "create-study-rescue-ziltivekimab-ckd-inflammation",
+    "create-study-clazakizumab-dialysis-il6-phase2b",
+    "create-study-dapansutrile-hfref-nlrp3-phase1b",
+    "create-study-zeus-ziltivekimab-cardiovascular-outcomes",
+    "create-finding-canakinumab-reduced-recurrent-cardiovascular-events",
+    "create-finding-canakinumab-exploratory-lung-cancer-signal",
+    "create-finding-canakinumab-did-not-prevent-frailty",
+    "create-finding-colchicine-reduced-chronic-coronary-events",
+    "create-finding-colchicine-post-mi-reduced-ischemic-events-safety-signal",
+    "create-finding-ziltivekimab-reduced-inflammatory-thrombotic-biomarkers",
+    "create-finding-clazakizumab-reduced-il6-biomarkers-dialysis",
+    "create-finding-dapansutrile-hfref-early-safety-functional-signal",
+    "create-finding-zeus-ziltivekimab-outcomes-trial-active-no-results",
+    "create-outlook-track-cytokine-and-inflammasome-modulation-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "disease-outcome-stage-boundary-note",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-outlook-track-cytokine-and-inflammasome-modulation-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-cytokine-and-inflammasome-modulation-outlook"
+      },
+      "claim_or_issue": "The durable_disease_or_mortality_relevance stage is supported by cardiovascular secondary-prevention outcomes, not broad healthy-aging, frailty, or LEV-relevant rejuvenation outcomes.",
+      "why_it_matters": "This is the key interpretation boundary for a chronic-inflammation track that could otherwise read as general aging efficacy.",
+      "recommended_action": "Keep the current low confidence, explicit cardiovascular-disease boundary, and rating-change criteria requiring older-adult functional or multimorbidity evidence for stronger aging relevance.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "il6-biomarker-outcome-boundary-note",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "create-outlook-track-cytokine-and-inflammasome-modulation-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-cytokine-and-inflammasome-modulation-outlook"
+      },
+      "claim_or_issue": "Ziltivekimab and clazakizumab support IL-6 biomarker movement, while ZEUS is only pending outcome evidence at this revision.",
+      "why_it_matters": "Biomarker suppression and an active phase 3 trial should support momentum, not a stronger outcome claim before results are available.",
+      "recommended_action": "Preserve the staged support-map split between IL-6 biomarker momentum and outcome-confirmation criteria.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "safety-prevention-boundary-note",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-outlook-track-cytokine-and-inflammasome-modulation-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-cytokine-and-inflammasome-modulation-outlook"
+      },
+      "claim_or_issue": "The outlook correctly treats infection, pneumonia, noncardiovascular mortality, and laboratory safety signals as central blockers for long-term preventive use.",
+      "why_it_matters": "A chronic-inflammation intervention could look attractive for aging prevention only if sustained risk is acceptable in less sick populations.",
+      "recommended_action": "Keep safety limitations visible in the main blockers and in any public summary of the track.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-05-31T19:43:41.780Z",
+  "updated_at": "2026-05-31T19:43:41.780Z"
+}

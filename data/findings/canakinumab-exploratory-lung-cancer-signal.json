@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "canakinumab-exploratory-lung-cancer-signal",
+  "name": "Canakinumab had an exploratory lung-cancer signal in CANTOS",
+  "summary": "The CANTOS cancer analysis suggests possible IL-1beta relevance beyond cardiovascular disease, but it is hypothesis-generating.",
+  "source_id": "pmid-28855077",
+  "study_id": "cantos-canakinumab-atherosclerosis-trial",
+  "intervention_ids": [
+    "canakinumab"
+  ],
+  "track_ids": [
+    "cytokine-and-inflammasome-modulation"
+  ],
+  "hallmark_ids": [
+    "chronic_inflammation"
+  ],
+  "endpoint_category": "healthspan",
+  "direction": "positive",
+  "evidence_tier": "human_clinical_outcome",
+  "confidence": "low",
+  "statement": "In an exploratory CANTOS analysis, canakinumab was associated with dose-dependent reductions in incident lung cancer and lung-cancer mortality, alongside the same infection-risk caveat.",
+  "population_or_model": "CANTOS participants with atherosclerosis and no previously diagnosed cancer",
+  "time_horizon": "Median follow-up of 3.7 years",
+  "quantitative_note": "Incident lung cancer hazard ratios were 0.61 for 150 mg and 0.33 for 300 mg versus placebo; lung-cancer mortality was lower in the 300 mg group with HR 0.23.",
+  "caveats": [
+    "The analysis was exploratory and requires replication in formal cancer prevention or treatment settings.",
+    "The population had atherosclerosis and residual inflammation, not a general aging cohort.",
+    "Fatal infections or sepsis were significantly more common in the canakinumab groups."
+  ],
+  "tags": [
+    "human",
+    "canakinumab",
+    "il-1beta",
+    "lung-cancer",
+    "exploratory"
+  ]
+}
