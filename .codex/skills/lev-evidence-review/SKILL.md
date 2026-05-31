@@ -17,6 +17,8 @@ Use this after research has produced a candidate bundle and before editorial app
 - `schemas/evidence-review.schema.json`
 - `schemas/candidate-bundle.schema.json`
 - `schemas/source.schema.json`, `schemas/study.schema.json`, `schemas/finding.schema.json`, and `schemas/outlook.schema.json` when those records are staged
+- `scripts/research-bundle.mjs`
+- `scripts/review-evidence.mjs`
 - `src/lib/site-data.ts` if publish or approval behavior matters
 
 Read [references/output-contract.md](references/output-contract.md) before writing anything.
@@ -24,20 +26,22 @@ Read [references/output-contract.md](references/output-contract.md) before writi
 ## Workflow
 
 1. Work on one bundle revision and one review lane at a time.
-2. Confirm the lane:
+2. Run `npm run research:bundle -- status --bundle <bundle-id>` and `npm run research:bundle -- validate --bundle <bundle-id>` before writing the review.
+3. Confirm the lane:
    - `source_fidelity`
    - `interpretation_forecast`
    - `safety_limitations`
    - `taxonomy_mapping`
    - `forecast_calibration`
-3. Compare the staged change against the live record and the claimed evidence boundaries.
+4. Use `npm run research:review-evidence -- scaffold --bundle <bundle-id> --lane <lane>` when starting a new lane review.
+5. Compare the staged change against the live record and the claimed evidence boundaries.
    - For track outlooks, verify that `supporting_evidence[]` maps each rating rationale to concrete findings, sources, support roles, and limitations.
    - For staged findings, verify that each finding has source/study provenance, endpoint boundaries, confidence, direction, and caveats.
    - Verify `rating_change_criteria` describes what would move the rating without implying the current evidence is stronger than it is.
-4. Write one `evidence_review` record under `data/evidence-reviews/`.
-5. Ensure the bundle lists that review ID in `evidence_review_ids[]`.
-6. If the new record replaces an older review in the same lane for the same revision, mark the older record `superseded`.
-7. Stop after the evidence-review layer is updated. Editorial comments, approval, and publish belong to other skills.
+6. Apply the completed review with `npm run research:review-evidence -- apply --file <draft-path>`.
+7. Run `npm run research:review-evidence -- status --bundle <bundle-id>` and `npm run research:bundle -- validate --bundle <bundle-id>` after applying.
+8. If the new record replaces an older review in the same lane for the same revision, confirm the older record is marked `superseded`.
+9. Stop after the evidence-review layer is updated. Editorial comments, approval, and publish belong to other skills.
 
 ## Review Standard
 
@@ -45,6 +49,8 @@ Read [references/output-contract.md](references/output-contract.md) before writi
 - Distinguish `activity` from `evidence`.
 - Distinguish biomarker movement from functional benefit.
 - Default to narrower claims when the source boundary is ambiguous.
+- Check extracted source facts: population/model, sample size, duration, intervention/exposure, endpoint, quantitative result, safety, funding/conflicts, and directness boundary.
+- Do not accept a higher stage unless the support map contains current evidence for that stage and the public wording states the boundary.
 - A source list is not sufficient support by itself; require explicit source -> study -> finding -> outlook rationale mapping when rating claims are public.
 - Keep caveats near the claim they qualify, including sponsor, duration, population, endpoint, and attribution limits.
 - Use `needs_human_judgment` when the evidence is bounded but the public wording still depends on curator judgment.

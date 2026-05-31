@@ -14,6 +14,7 @@ Use this for ongoing monitoring after a scope already has baseline coverage.
 - `research/backlog/track-priority.v1.json`
 - `schemas/research-session.schema.json`
 - `schemas/source.schema.json`, `schemas/study.schema.json`, `schemas/finding.schema.json`, and `schemas/outlook.schema.json`
+- `scripts/research-bundle.mjs`
 - the current public record for the scope in `data/outlooks/`, `data/sources/`, `data/studies/`, `data/findings/`, and `data/activity-items/`
 - the latest related bundle in `data/candidate-bundles/`
 - related `review-comments` and `publication-events`
@@ -36,18 +37,24 @@ Use this for ongoing monitoring after a scope already has baseline coverage.
    - `no_op`: nothing material changed
    - `activity_only`: context changed without outlook movement
    - `outlook_refresh`: the public wording or emphasis should change
-5. Write one structured session record under `research/sessions/` using `schemas/research-session.schema.json`.
-6. For `no_op`, record `outcome: "no_op"` in the session and do not touch public JSON.
-7. For a material change, stage only the affected records under `data/staged-records/<bundle-id>/`.
+5. Extract source facts before deciding whether the delta matters:
+   - population or model, sample size, duration, intervention or exposure, endpoint, quantitative result, safety signal, funding/conflicts, and directness boundary
+   - whether the change alters mechanism, biomarker movement, functional benefit, disease-specific benefit, lifespan/mortality, or only context
+6. Write one structured session record under `research/sessions/` using `schemas/research-session.schema.json`.
+7. For `no_op`, record `outcome: "no_op"` in the session and do not touch public JSON.
+8. For a material change, stage only the affected records under `data/staged-records/<bundle-id>/`.
    - If the change affects a rating rationale, update or add the relevant source, study, finding, and outlook support-map records together.
    - If only context changed, do not add rating support that the sources do not justify.
-8. Create or update `data/candidate-bundles/<bundle-id>.json` with:
+   - Assign a higher stage only when new support-map evidence reaches that stage; increased activity alone affects momentum/context, not evidence stage.
+   - For narrow disease benefit in a broad aging track, hold the broader rating lower unless the limitation is explicit and confidence remains conservative.
+9. Create or update `data/candidate-bundles/<bundle-id>.json` with:
    - `intake_mode: "surveillance"`
    - the delta question
    - minimal proposed changes
    - explicit uncertainty flags when the change is contextual only
-9. Run `npm run sync:research-planning` after the session record and any bundle edits are written.
-10. Leave publishing to the editorial skill.
+10. Run `npm run research:bundle -- validate --bundle <bundle-id>` and fix any structural, provenance, or support-map issue before handing off.
+11. Run `npm run sync:research-planning` after the session record and any bundle edits are written.
+12. Leave publishing to the editorial skill.
 
 ## Boundaries
 

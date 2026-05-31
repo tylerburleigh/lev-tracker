@@ -27,6 +27,7 @@ Do not try to initialize the whole field in one run.
 - `research/backlog/track-priority.v1.json`
 - `schemas/research-session.schema.json`
 - `schemas/source.schema.json`, `schemas/study.schema.json`, `schemas/finding.schema.json`, and `schemas/outlook.schema.json`
+- `scripts/research-bundle.mjs`
 - relevant public records in `data/outlooks/`, `data/sources/`, `data/studies/`, `data/findings/`, and `data/activity-items/`
 - prior admin history in `data/candidate-bundles/`, `data/review-comments/`, and `data/publication-events/`
 - if present, prior notes in `research/sessions/`
@@ -41,20 +42,26 @@ Do not try to initialize the whole field in one run.
 2. Confirm the bounded public question being answered.
 3. Inspect the current public layer for that scope before doing new research.
 4. Check whether a previous candidate bundle or publication event already covered the same change.
-5. Write one structured session record under `research/sessions/` using `schemas/research-session.schema.json`.
-6. Draft public record changes only as staged JSON under `data/staged-records/<bundle-id>/`.
+5. Extract source facts before drafting claims:
+   - population or model, sample size, duration, intervention or exposure, endpoint, quantitative result, safety signal, funding/conflicts, and directness boundary
+   - whether the finding supports mechanism, biomarker movement, functional benefit, disease-specific benefit, lifespan/mortality, or only context
+6. Write one structured session record under `research/sessions/` using `schemas/research-session.schema.json`.
+7. Draft public record changes only as staged JSON under `data/staged-records/<bundle-id>/`.
    - For a first public track baseline, stage source, study, finding, and outlook records together when evidence supports a rating.
    - In track outlooks with stage, momentum, confidence, blocker, or best-signal claims, include support-map fields and `rating_change_criteria`.
    - Each `supporting_evidence[]` item should map one rating rationale to concrete finding IDs, source IDs, a support role, and limitations.
-7. Create or update `data/candidate-bundles/<bundle-id>.json` with:
+   - Assign the highest stage only when the support map contains current human-relevant evidence for that stage and the outlook text names the boundary.
+   - For narrow disease benefit in a broad aging track, hold the broader rating lower unless the limitation is explicit and confidence remains conservative.
+8. Create or update `data/candidate-bundles/<bundle-id>.json` with:
    - `intake_mode: "bootstrap"`
    - scoped hallmark and track IDs
    - `proposed_changes[]` using both `file_path` and `staged_file_path`
    - a short `proposed_outlook_implications[]` entry
    - concrete `next_actions`
-8. If the pass is a no-op, record `outcome: "no_op"` in the session and do not create a bundle.
-9. Run `npm run sync:research-planning` after the session record and any bundle edits are written.
-10. Leave the bundle in `submitted` or `revised`.
+9. If the pass is a no-op, record `outcome: "no_op"` in the session and do not create a bundle.
+10. Run `npm run research:bundle -- validate --bundle <bundle-id>` and fix any structural, provenance, or support-map issue before handing off.
+11. Run `npm run sync:research-planning` after the session record and any bundle edits are written.
+12. Leave the bundle in `submitted` or `revised`.
 
 ## Boundaries
 
