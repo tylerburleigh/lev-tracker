@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "sync:research-planning": "node scripts/seed-research-planning.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.511.0",

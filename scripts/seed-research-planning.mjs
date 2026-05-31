@@ -16,6 +16,24 @@ async function writeJson(relativePath, value) {
   await fs.writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`, "utf8");
 }
 
+async function readCollection(relativePath) {
+  const directoryPath = path.join(repoRoot, relativePath);
+
+  try {
+    const fileNames = (await fs.readdir(directoryPath))
+      .filter((name) => name.endsWith(".json"))
+      .sort((left, right) => left.localeCompare(right));
+
+    return Promise.all(fileNames.map((name) => readJson(path.join(relativePath, name))));
+  } catch (error) {
+    if (error.code === "ENOENT") {
+      return [];
+    }
+
+    throw error;
+  }
+}
+
 function buildDefaultQuestion(trackName, mode) {
   if (mode === "bootstrap") {
     return `What is the current human-relevant evidence landscape for ${trackName}, and what belongs in the first public baseline?`;
@@ -59,19 +77,12 @@ function buildBootstrapRationale(track, hasBaselineTrack) {
 async function main() {
   const hallmarksTaxonomy = await readJson("taxonomies/hallmarks-of-aging.v1.json");
   const trackTaxonomy = await readJson("taxonomies/track-taxonomy.v1.json");
-  const outlookFiles = await fs.readdir(path.join(repoRoot, "data/outlooks"));
-  const bundleFiles = await fs.readdir(path.join(repoRoot, "data/candidate-bundles"));
-
-  const outlooks = await Promise.all(
-    outlookFiles
-      .filter((name) => name.endsWith(".json"))
-      .map((name) => readJson(path.join("data/outlooks", name)))
-  );
-  const bundles = await Promise.all(
-    bundleFiles
-      .filter((name) => name.endsWith(".json"))
-      .map((name) => readJson(path.join("data/candidate-bundles", name)))
-  );
+  const [outlooks, bundles, publicationEvents, sessions] = await Promise.all([
+    readCollection("data/outlooks"),
+    readCollection("data/candidate-bundles"),
+    readCollection("data/publication-events"),
+    readCollection("research/sessions")
+  ]);
 
   const trackOutlookByTrackId = new Map(
     outlooks
@@ -88,6 +99,26 @@ async function main() {
     }
   }
 
+  const latestSessionByTrackId = new Map();
+  for (const session of sessions.sort((left, right) => right.completed_at.localeCompare(left.completed_at))) {
+    for (const trackId of session.scope?.track_ids ?? []) {
+      if (!latestSessionByTrackId.has(trackId)) {
+        latestSessionByTrackId.set(trackId, session);
+      }
+    }
+  }
+
+  const bundleById = new Map(bundles.map((bundle) => [bundle.id, bundle]));
+  const latestPublicationByTrackId = new Map();
+  for (const event of publicationEvents.sort((left, right) => right.published_at.localeCompare(left.published_at))) {
+    const bundle = bundleById.get(event.candidate_bundle_id);
+    for (const trackId of bundle?.scope?.track_ids ?? []) {
+      if (!latestPublicationByTrackId.has(trackId)) {
+        latestPublicationByTrackId.set(trackId, event);
+      }
+    }
+  }
+
   const hallmarkMetaById = new Map(
     hallmarksTaxonomy.hallmarks.map((hallmark) => [hallmark.id, hallmark])
   );
@@ -95,16 +126,24 @@ async function main() {
   const trackRows = trackTaxonomy.hallmark_groups.flatMap((group) =>
     group.tracks.map((track) => {
       const latestBundle = latestBundleByTrackId.get(track.id);
+      const latestSession = latestSessionByTrackId.get(track.id);
+      const latestPublication = latestPublicationByTrackId.get(track.id);
       const hasTrackOutlook = trackOutlookByTrackId.has(track.id);
       const activeReview =
         latestBundle && !["published", "rejected"].includes(latestBundle.lifecycle_status);
       const coverageStatus = hasTrackOutlook ? "baseline" : "not_started";
-      const nextMode = hasTrackOutlook ? "surveillance" : "bootstrap";
-      const queueState = activeReview ? "active_review" : "ready";
+      const nextMode =
+        latestSession?.next_recommended_mode ?? (hasTrackOutlook ? "surveillance" : "bootstrap");
+      const queueState =
+        activeReview ? "active_review" : latestSession?.outcome === "blocked" ? "deferred" : "ready";
 
       let notes;
       if (activeReview) {
         notes = `Candidate bundle ${latestBundle.id} is still ${latestBundle.lifecycle_status}.`;
+      } else if (latestSession) {
+        notes = `Latest ${latestSession.mode} session ${latestSession.id} ended as ${latestSession.outcome}.`;
+      } else if (latestPublication) {
+        notes = `Latest publication event: ${latestPublication.id}.`;
       } else if (latestBundle?.lifecycle_status === "published") {
         notes = `Latest published bundle: ${latestBundle.id}.`;
       } else if (hasTrackOutlook) {
@@ -121,8 +160,14 @@ async function main() {
         coverage_status: coverageStatus,
         next_mode: nextMode,
         queue_state: queueState,
+        last_session_id: latestSession?.id,
+        last_session_at: latestSession?.completed_at,
+        last_session_mode: latestSession?.mode,
+        last_session_outcome: latestSession?.outcome,
         last_candidate_bundle_id: latestBundle?.id,
         last_candidate_bundle_status: latestBundle?.lifecycle_status,
+        last_publication_event_id: latestPublication?.id,
+        last_published_at: latestPublication?.published_at,
         default_research_question: buildDefaultQuestion(track.name, nextMode),
         notes
       };
@@ -169,6 +214,14 @@ async function main() {
       const leftHallmarkOrder = hallmarkMetaById.get(left.hallmark_id).canonical_order;
       const rightHallmarkOrder = hallmarkMetaById.get(right.hallmark_id).canonical_order;
 
+      if (Boolean(left.last_session_at) !== Boolean(right.last_session_at)) {
+        return left.last_session_at ? 1 : -1;
+      }
+
+      if (left.last_session_at && right.last_session_at && left.last_session_at !== right.last_session_at) {
+        return left.last_session_at.localeCompare(right.last_session_at);
+      }
+
       if (left.canonical_order !== right.canonical_order) {
         return left.canonical_order - right.canonical_order;
       }
@@ -208,6 +261,17 @@ async function main() {
   const surveillanceCandidates = [...trackRows]
     .filter((row) => row.next_mode === "surveillance" && row.queue_state === "ready")
     .sort((left, right) => {
+      if (Boolean(left.last_session_at || left.last_published_at) !== Boolean(right.last_session_at || right.last_published_at)) {
+        return left.last_session_at || left.last_published_at ? 1 : -1;
+      }
+
+      const leftRecency = left.last_session_at ?? left.last_published_at;
+      const rightRecency = right.last_session_at ?? right.last_published_at;
+
+      if (leftRecency && rightRecency && leftRecency !== rightRecency) {
+        return leftRecency.localeCompare(rightRecency);
+      }
+
       const leftIndex = surveillancePriority.indexOf(left.track_id);
       const rightIndex = surveillancePriority.indexOf(right.track_id);
 
@@ -284,11 +348,19 @@ async function main() {
     hallmarks: hallmarkRows,
     tracks: trackRows.map((row) => {
       const output = { ...row };
-      if (!output.last_candidate_bundle_id) {
-        delete output.last_candidate_bundle_id;
-      }
-      if (!output.last_candidate_bundle_status) {
-        delete output.last_candidate_bundle_status;
+      for (const optionalKey of [
+        "last_session_id",
+        "last_session_at",
+        "last_session_mode",
+        "last_session_outcome",
+        "last_candidate_bundle_id",
+        "last_candidate_bundle_status",
+        "last_publication_event_id",
+        "last_published_at"
+      ]) {
+        if (!output[optionalKey]) {
+          delete output[optionalKey];
+        }
       }
       return output;
     })

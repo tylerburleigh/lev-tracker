@@ -36,6 +36,7 @@ The first pass is intentionally small:
 - `publication_event`: a record of what was published to the public site.
 - `coverage_status`: persistent internal state for what has baseline coverage and what mode comes next.
 - `track_priority_queue`: the ordered internal queue that bootstrap and surveillance consult when scope is vague.
+- `research_session`: one bounded bootstrap or surveillance pass, including no-op outcomes.
 
 ## Editorial Flow
 
@@ -49,7 +50,9 @@ The first pass is intentionally small:
 
 - `research/state/coverage-status.v1.json` is the persistent answer to “what already has coverage?”
 - `research/backlog/track-priority.v1.json` is the persistent answer to “what should bootstrap or surveillance do next?”
+- `research/sessions/*.json` records what each bounded research pass actually did, even when it produced no bundle.
 - The default research work unit is one `track` per run.
+- Run `npm run sync:research-planning` after a research pass to regenerate state and queue files.
 
 ## Relationship Pattern
 

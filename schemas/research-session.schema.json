@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./research-session.schema.json",
+  "title": "Research session",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "id",
+    "mode",
+    "started_at",
+    "completed_at",
+    "scope",
+    "selected_via",
+    "outcome",
+    "summary",
+    "next_recommended_mode"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "record_type": {
+      "const": "research_session"
+    },
+    "id": {
+      "$ref": "./common.schema.json#/$defs/identifier"
+    },
+    "name": {
+      "type": "string"
+    },
+    "mode": {
+      "enum": [
+        "bootstrap",
+        "surveillance"
+      ]
+    },
+    "started_at": {
+      "$ref": "./common.schema.json#/$defs/dateTime"
+    },
+    "completed_at": {
+      "$ref": "./common.schema.json#/$defs/dateTime"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "question",
+        "hallmark_ids",
+        "track_ids"
+      ],
+      "properties": {
+        "question": {
+          "type": "string"
+        },
+        "hallmark_ids": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "$ref": "./common.schema.json#/$defs/hallmarkRef"
+          },
+          "uniqueItems": true
+        },
+        "track_ids": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "$ref": "./common.schema.json#/$defs/trackRef"
+          },
+          "uniqueItems": true
+        },
+        "intervention_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "./common.schema.json#/$defs/interventionRef"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "selected_via": {
+      "enum": [
+        "explicit_track",
+        "explicit_hallmark",
+        "queue_default",
+        "manual_override"
+      ]
+    },
+    "outcome": {
+      "enum": [
+        "no_op",
+        "activity_only",
+        "candidate_bundle_submitted",
+        "candidate_bundle_revised",
+        "handoff_to_editorial",
+        "blocked"
+      ]
+    },
+    "candidate_bundle_id": {
+      "$ref": "./common.schema.json#/$defs/candidateBundleRef"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "next_recommended_mode": {
+      "enum": [
+        "bootstrap",
+        "surveillance"
+      ]
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/sourceRef"
+      },
+      "uniqueItems": true
+    },
+    "source_urls": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/url"
+      },
+      "uniqueItems": true
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

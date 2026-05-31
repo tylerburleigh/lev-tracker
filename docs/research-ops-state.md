@@ -10,6 +10,8 @@ That is deliberate. A language model can usually do one bounded track pass well 
   Persistent state about what has baseline coverage, what is in active review, and what mode comes next.
 - `research/backlog/track-priority.v1.json`
   The ordered queue that bootstrap and surveillance should consult when the user is vague.
+- `research/sessions/*.json`
+  One structured record per research pass, including no-op passes that do not produce a bundle.
 
 ## Default Behavior
 
@@ -21,9 +23,15 @@ That is deliberate. A language model can usually do one bounded track pass well 
 ## What One Research Run Should Produce
 
 - one bounded scope
-- one session note when journaling is enabled
+- one structured session record under `research/sessions/`
 - zero or one candidate bundle
 - staged JSON only for records that materially changed
+
+After a session is recorded or a bundle changes, run:
+
+`npm run sync:research-planning`
+
+That command regenerates `coverage-status.v1.json` and `track-priority.v1.json` from taxonomy, sessions, bundles, and publication history.
 
 ## What A Research Run Should Not Do
 

@@ -153,11 +153,39 @@
               "deferred"
             ]
           },
+          "last_session_id": {
+            "$ref": "./common.schema.json#/$defs/identifier"
+          },
+          "last_session_at": {
+            "$ref": "./common.schema.json#/$defs/dateTime"
+          },
+          "last_session_mode": {
+            "enum": [
+              "bootstrap",
+              "surveillance"
+            ]
+          },
+          "last_session_outcome": {
+            "enum": [
+              "no_op",
+              "activity_only",
+              "candidate_bundle_submitted",
+              "candidate_bundle_revised",
+              "handoff_to_editorial",
+              "blocked"
+            ]
+          },
           "last_candidate_bundle_id": {
             "$ref": "./common.schema.json#/$defs/candidateBundleRef"
           },
           "last_candidate_bundle_status": {
             "$ref": "./common.schema.json#/$defs/candidateStatus"
+          },
+          "last_publication_event_id": {
+            "$ref": "./common.schema.json#/$defs/publicationEventRef"
+          },
+          "last_published_at": {
+            "$ref": "./common.schema.json#/$defs/dateTime"
           },
           "default_research_question": {
             "type": "string"
