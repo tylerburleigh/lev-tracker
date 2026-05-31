@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-nad-and-redox-restoration-source-fidelity-r1",
+  "name": "Source Fidelity review for Nad And Redox Restoration bundle",
+  "candidate_bundle_id": "nad-and-redox-restoration-bootstrap-2026-05-31",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, and finding records match the cited PubMed and trial-registry metadata closely enough for publication review. Titles, PMIDs, DOIs, registry IDs, intervention doses, populations, durations, and endpoint boundaries are consistent with the source records checked. The only source-fidelity caution is that the short GlyNAC dose-ranging study should remain explicitly framed as primary-endpoint-null with only post-hoc/subgroup glutathione support.",
+  "reviewed_change_ids": [
+    "update-source-pmid-29599478",
+    "update-source-pmid-35927255",
+    "create-source-pmid-31412242",
+    "create-source-pmid-31710095",
+    "create-source-pmid-33888596",
+    "create-source-pmid-35975308",
+    "create-source-pmid-35821844",
+    "create-source-pmid-29661838",
+    "update-study-nicotinamide-riboside-older-adults-nad",
+    "update-study-nicotinamide-mononucleotide-older-men-nad-muscle",
+    "create-study-nicotinamide-riboside-aged-men-skeletal-muscle",
+    "create-study-nicotinamide-riboside-obese-men-mitochondria",
+    "create-study-nicotinamide-mononucleotide-prediabetic-women-insulin",
+    "create-study-glynac-older-adults-aging-hallmarks-rct",
+    "create-study-glynac-healthy-older-adults-redox-dose-rct",
+    "create-study-mitoq-older-adults-vascular-function",
+    "create-finding-nr-older-adults-raised-nad-metabolome-biomarker",
+    "create-finding-nmn-older-men-raised-nad-muscle-function-exploratory",
+    "create-finding-nr-aged-men-muscle-nad-anti-inflammatory-no-bioenergetics",
+    "create-finding-nr-obese-insulin-resistant-men-mitochondrial-null",
+    "create-finding-nmn-prediabetic-women-muscle-insulin-sensitivity",
+    "create-finding-glynac-older-adults-improved-redox-mitochondrial-physical-function",
+    "create-finding-glynac-dose-rct-redox-status-boundary",
+    "create-finding-mitoq-older-adults-improved-vascular-endothelial-function",
+    "create-outlook-track-nad-and-redox-restoration-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "glynac-dose-primary-endpoint-boundary",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-glynac-dose-rct-redox-status-boundary",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "glynac-dose-rct-redox-status-boundary"
+      },
+      "claim_or_issue": "The staged finding correctly treats the two-week GlyNAC dose-ranging study as mixed biomarker context, but the source's primary glutathione endpoints were not significantly improved versus placebo.",
+      "why_it_matters": "If this source were later summarized as a straightforward positive GlyNAC redox trial, it would overstate the primary result.",
+      "recommended_action": "Keep this finding as boundary/context support only; do not use it to upgrade functional or durable redox claims without the existing primary-endpoint-null caveat.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "glynac-dose-sample-size-convention",
+      "severity": "note",
+      "category": "uncertainty",
+      "applies_to_change_id": "create-study-glynac-healthy-older-adults-redox-dose-rct",
+      "applies_to_record": {
+        "record_type": "study",
+        "record_id": "glynac-healthy-older-adults-redox-dose-rct"
+      },
+      "claim_or_issue": "The study sample_size value includes the young reference group, while the randomized older-adult intervention cohort was 117 enrolled and 114 completed.",
+      "why_it_matters": "Readers may otherwise interpret 134 as the randomized treatment cohort size.",
+      "recommended_action": "The staged quantitative note already preserves the cohort split; keep that note visible if the study record is displayed publicly.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-05-31T19:15:20.398Z",
+  "updated_at": "2026-05-31T19:15:20.398Z"
+}

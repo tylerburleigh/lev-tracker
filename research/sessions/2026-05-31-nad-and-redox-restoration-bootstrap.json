@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-05-31-nad-and-redox-restoration-bootstrap",
+  "name": "NAD and redox restoration bootstrap pass for May 31, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-05-31T18:00:00Z",
+  "completed_at": "2026-05-31T18:15:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for NAD and Redox Restoration, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "mitochondrial_dysfunction"
+    ],
+    "track_ids": [
+      "nad-and-redox-restoration"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "nad-and-redox-restoration-bootstrap-2026-05-31",
+  "summary": "The staged baseline assigns human_functional_benefit with low confidence and mixed momentum. The highest stage is supported by small human RCTs reporting GlyNAC physical-function improvements, NMN muscle insulin-sensitivity benefit in prediabetic women, and MitoQ vascular-function improvement, while NAD precursor evidence remains mostly biomarker-level and inconsistent for mitochondrial bioenergetics.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-29599478",
+    "pmid-35927255",
+    "pmid-31412242",
+    "pmid-31710095",
+    "pmid-33888596",
+    "pmid-35975308",
+    "pmid-35821844",
+    "pmid-29661838"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/29599478/",
+    "https://pubmed.ncbi.nlm.nih.gov/35927255/",
+    "https://pubmed.ncbi.nlm.nih.gov/31412242/",
+    "https://pubmed.ncbi.nlm.nih.gov/31710095/",
+    "https://pubmed.ncbi.nlm.nih.gov/33888596/",
+    "https://pubmed.ncbi.nlm.nih.gov/35975308/",
+    "https://pubmed.ncbi.nlm.nih.gov/35821844/",
+    "https://pubmed.ncbi.nlm.nih.gov/29661838/"
+  ],
+  "notes": [
+    "GlyNAC supplies the strongest broad older-adult functional signal, but the randomized older-adult comparison was small and needs independent replication.",
+    "NR and NMN trials support NAD-metabolite target engagement; downstream functional and mitochondrial results are mixed.",
+    "The NR obese insulin-resistant men's trial is a direct human boundary condition against broad skeletal-muscle mitochondrial claims.",
+    "MitoQ provides a redox-focused vascular physiology signal in older adults, but it is not interchangeable with NAD precursor evidence.",
+    "No staged source demonstrates durable disease prevention, mortality benefit, or LEV-relevant benefit."
+  ],
+  "next_actions": [
+    "Run source-fidelity review for every staged source, study, and finding.",
+    "Run interpretation/forecast review with special attention to the human_functional_benefit stage boundary.",
+    "If approved and published, inspect the mitochondrial dysfunction hallmark page and NAD and redox restoration track page for the new evidence ladder."
+  ]
+}

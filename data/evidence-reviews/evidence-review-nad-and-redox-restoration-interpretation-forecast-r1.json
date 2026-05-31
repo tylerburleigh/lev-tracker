@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-nad-and-redox-restoration-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Nad And Redox Restoration bundle",
+  "candidate_bundle_id": "nad-and-redox-restoration-bootstrap-2026-05-31",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged outlook's human_functional_benefit rating is defensible because at least one small older-adult GlyNAC RCT reports physical-function endpoints, with narrower NMN metabolic-function and MitoQ vascular-function support. The outlook support map correctly keeps confidence low, momentum mixed, and repeatedly states that NAD precursor, GlyNAC, and MitoQ evidence should not be merged into a broad longevity claim.",
+  "reviewed_change_ids": [
+    "update-source-pmid-29599478",
+    "update-source-pmid-35927255",
+    "create-source-pmid-31412242",
+    "create-source-pmid-31710095",
+    "create-source-pmid-33888596",
+    "create-source-pmid-35975308",
+    "create-source-pmid-35821844",
+    "create-source-pmid-29661838",
+    "update-study-nicotinamide-riboside-older-adults-nad",
+    "update-study-nicotinamide-mononucleotide-older-men-nad-muscle",
+    "create-study-nicotinamide-riboside-aged-men-skeletal-muscle",
+    "create-study-nicotinamide-riboside-obese-men-mitochondria",
+    "create-study-nicotinamide-mononucleotide-prediabetic-women-insulin",
+    "create-study-glynac-older-adults-aging-hallmarks-rct",
+    "create-study-glynac-healthy-older-adults-redox-dose-rct",
+    "create-study-mitoq-older-adults-vascular-function",
+    "create-finding-nr-older-adults-raised-nad-metabolome-biomarker",
+    "create-finding-nmn-older-men-raised-nad-muscle-function-exploratory",
+    "create-finding-nr-aged-men-muscle-nad-anti-inflammatory-no-bioenergetics",
+    "create-finding-nr-obese-insulin-resistant-men-mitochondrial-null",
+    "create-finding-nmn-prediabetic-women-muscle-insulin-sensitivity",
+    "create-finding-glynac-older-adults-improved-redox-mitochondrial-physical-function",
+    "create-finding-glynac-dose-rct-redox-status-boundary",
+    "create-finding-mitoq-older-adults-improved-vascular-endothelial-function",
+    "create-outlook-track-nad-and-redox-restoration-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "functional-stage-depends-on-small-glynac-rct",
+      "severity": "note",
+      "category": "uncertainty",
+      "applies_to_change_id": "create-outlook-track-nad-and-redox-restoration-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-nad-and-redox-restoration-outlook"
+      },
+      "claim_or_issue": "The human_functional_benefit stage depends most heavily on a small GlyNAC older-adult RCT, while NMN and MitoQ add narrower metabolic or vascular physiology support.",
+      "why_it_matters": "The stage is acceptable only if the public text keeps the small-sample, short-duration, intervention-specific boundary close to the rating.",
+      "recommended_action": "Keep the current low confidence, mixed momentum, and rating-change criteria; do not summarize this track as proven broad NAD or antioxidant functional rejuvenation.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "nad-precursor-translation-boundary",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-outlook-track-nad-and-redox-restoration-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-nad-and-redox-restoration-outlook"
+      },
+      "claim_or_issue": "The staged outlook separates NAD-metabolite target engagement from mitochondrial or functional benefit, which is necessary because NR trials include null or mixed skeletal-muscle mitochondrial endpoints.",
+      "why_it_matters": "Blood or muscle NAD-metabolite movement alone would not justify the human functional stage.",
+      "recommended_action": "Preserve the support-map split between target engagement, functional support, and NR mitochondrial boundary conditions through publication.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-05-31T19:15:23.574Z",
+  "updated_at": "2026-05-31T19:15:23.574Z"
+}

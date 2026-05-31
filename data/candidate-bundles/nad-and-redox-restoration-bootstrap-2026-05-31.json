@@ -1,0 +1,369 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "nad-and-redox-restoration-bootstrap-2026-05-31",
+  "name": "NAD and redox restoration bootstrap for May 31, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline for the NAD and redox restoration track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-05-31T18:15:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for NAD and Redox Restoration, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "mitochondrial_dysfunction"
+    ],
+    "track_ids": [
+      "nad-and-redox-restoration"
+    ]
+  },
+  "source_ids": [
+    "pmid-29599478",
+    "pmid-35927255",
+    "pmid-31412242",
+    "pmid-31710095",
+    "pmid-33888596",
+    "pmid-35975308",
+    "pmid-35821844",
+    "pmid-29661838"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/29599478/",
+    "https://doi.org/10.1038/s41467-018-03421-7",
+    "https://pubmed.ncbi.nlm.nih.gov/35927255/",
+    "https://doi.org/10.1038/s41514-022-00084-z",
+    "https://pubmed.ncbi.nlm.nih.gov/31412242/",
+    "https://doi.org/10.1016/j.celrep.2019.07.043",
+    "https://pubmed.ncbi.nlm.nih.gov/31710095/",
+    "https://doi.org/10.1113/JP278752",
+    "https://pubmed.ncbi.nlm.nih.gov/33888596/",
+    "https://doi.org/10.1126/science.abe9985",
+    "https://pubmed.ncbi.nlm.nih.gov/35975308/",
+    "https://doi.org/10.1093/gerona/glac135",
+    "https://pubmed.ncbi.nlm.nih.gov/35821844/",
+    "https://doi.org/10.3389/fragi.2022.852569",
+    "https://pubmed.ncbi.nlm.nih.gov/29661838/",
+    "https://doi.org/10.1161/HYPERTENSIONAHA.117.10787"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-nad-and-redox-restoration-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-mitochondrial-dysfunction-outlook"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "glynac-older-adults-improved-redox-mitochondrial-physical-function"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "nmn-prediabetic-women-muscle-insulin-sensitivity"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "mitoq-older-adults-improved-vascular-endothelial-function"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "nr-obese-insulin-resistant-men-mitochondrial-null"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "update-source-pmid-29599478",
+      "change_type": "update_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-29599478",
+      "file_path": "data/sources/pmid-29599478.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/pmid-29599478.json",
+      "summary": "Link the existing NR older-adult source to the NAD and redox restoration baseline.",
+      "rationale": "The source is already public as DNA repair context and also directly supports NAD-metabolite target engagement for this track."
+    },
+    {
+      "change_id": "update-source-pmid-35927255",
+      "change_type": "update_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-35927255",
+      "file_path": "data/sources/pmid-35927255.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/pmid-35927255.json",
+      "summary": "Link the existing NMN older-men source to the NAD and redox restoration baseline.",
+      "rationale": "The source is already public as DNA repair context and also directly supports NAD-metabolite target engagement for this track."
+    },
+    {
+      "change_id": "create-source-pmid-31412242",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-31412242",
+      "file_path": "data/sources/pmid-31412242.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/pmid-31412242.json",
+      "summary": "Add NR aged-muscle NAD metabolome source.",
+      "rationale": "This trial supplies direct human muscle NAD-metabolome support and a mitochondrial-bioenergetics boundary."
+    },
+    {
+      "change_id": "create-source-pmid-31710095",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-31710095",
+      "file_path": "data/sources/pmid-31710095.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/pmid-31710095.json",
+      "summary": "Add NR obese insulin-resistant men null source.",
+      "rationale": "This trial is the main boundary condition against broad NR skeletal-muscle mitochondrial claims."
+    },
+    {
+      "change_id": "create-source-pmid-33888596",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-33888596",
+      "file_path": "data/sources/pmid-33888596.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/pmid-33888596.json",
+      "summary": "Add NMN prediabetic-women insulin-sensitivity source.",
+      "rationale": "This trial supplies a narrow human metabolic-function signal for NMN."
+    },
+    {
+      "change_id": "create-source-pmid-35975308",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-35975308",
+      "file_path": "data/sources/pmid-35975308.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/pmid-35975308.json",
+      "summary": "Add GlyNAC older-adult aging-hallmarks RCT source.",
+      "rationale": "This trial supplies the strongest staged human physical-function signal for redox restoration."
+    },
+    {
+      "change_id": "create-source-pmid-35821844",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-35821844",
+      "file_path": "data/sources/pmid-35821844.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/pmid-35821844.json",
+      "summary": "Add GlyNAC redox dose-ranging source.",
+      "rationale": "This source provides a larger but short biomarker-focused redox context for GlyNAC."
+    },
+    {
+      "change_id": "create-source-pmid-29661838",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-29661838",
+      "file_path": "data/sources/pmid-29661838.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/pmid-29661838.json",
+      "summary": "Add MitoQ older-adult vascular function source.",
+      "rationale": "This trial supplies a human mitochondrial-redox vascular physiology signal."
+    },
+    {
+      "change_id": "update-study-nicotinamide-riboside-older-adults-nad",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "nicotinamide-riboside-older-adults-nad",
+      "file_path": "data/studies/nicotinamide-riboside-older-adults-nad.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/nicotinamide-riboside-older-adults-nad.json",
+      "summary": "Add NAD and redox restoration links to the existing NR older-adult study.",
+      "rationale": "The study is directly relevant to this track and should appear in track-level related studies after publication."
+    },
+    {
+      "change_id": "update-study-nicotinamide-mononucleotide-older-men-nad-muscle",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "nicotinamide-mononucleotide-older-men-nad-muscle",
+      "file_path": "data/studies/nicotinamide-mononucleotide-older-men-nad-muscle.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/nicotinamide-mononucleotide-older-men-nad-muscle.json",
+      "summary": "Add NAD and redox restoration links to the existing NMN older-men study.",
+      "rationale": "The study is directly relevant to this track and should appear in track-level related studies after publication."
+    },
+    {
+      "change_id": "create-study-nicotinamide-riboside-aged-men-skeletal-muscle",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "nicotinamide-riboside-aged-men-skeletal-muscle",
+      "file_path": "data/studies/nicotinamide-riboside-aged-men-skeletal-muscle.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/nicotinamide-riboside-aged-men-skeletal-muscle.json",
+      "summary": "Add NR aged-muscle study record.",
+      "rationale": "This record links the human muscle NAD-metabolome study to the track."
+    },
+    {
+      "change_id": "create-study-nicotinamide-riboside-obese-men-mitochondria",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "nicotinamide-riboside-obese-men-mitochondria",
+      "file_path": "data/studies/nicotinamide-riboside-obese-men-mitochondria.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/nicotinamide-riboside-obese-men-mitochondria.json",
+      "summary": "Add NR obese-men mitochondrial null study record.",
+      "rationale": "This record links the key NR boundary condition to the track."
+    },
+    {
+      "change_id": "create-study-nicotinamide-mononucleotide-prediabetic-women-insulin",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "nicotinamide-mononucleotide-prediabetic-women-insulin",
+      "file_path": "data/studies/nicotinamide-mononucleotide-prediabetic-women-insulin.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/nicotinamide-mononucleotide-prediabetic-women-insulin.json",
+      "summary": "Add NMN prediabetic-women study record.",
+      "rationale": "This record links the strongest NMN human metabolic-function signal to the track."
+    },
+    {
+      "change_id": "create-study-glynac-older-adults-aging-hallmarks-rct",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "glynac-older-adults-aging-hallmarks-rct",
+      "file_path": "data/studies/glynac-older-adults-aging-hallmarks-rct.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/glynac-older-adults-aging-hallmarks-rct.json",
+      "summary": "Add GlyNAC older-adult RCT study record.",
+      "rationale": "This record links the strongest staged human functional redox-restoration signal to the track."
+    },
+    {
+      "change_id": "create-study-glynac-healthy-older-adults-redox-dose-rct",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "glynac-healthy-older-adults-redox-dose-rct",
+      "file_path": "data/studies/glynac-healthy-older-adults-redox-dose-rct.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/glynac-healthy-older-adults-redox-dose-rct.json",
+      "summary": "Add GlyNAC redox dose-ranging study record.",
+      "rationale": "This record links a larger short-term redox-biomarker study to the track."
+    },
+    {
+      "change_id": "create-study-mitoq-older-adults-vascular-function",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "mitoq-older-adults-vascular-function",
+      "file_path": "data/studies/mitoq-older-adults-vascular-function.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/mitoq-older-adults-vascular-function.json",
+      "summary": "Add MitoQ older-adult vascular function study record.",
+      "rationale": "This record links the mitochondrial-redox vascular physiology signal to the track."
+    },
+    {
+      "change_id": "create-finding-nr-older-adults-raised-nad-metabolome-biomarker",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nr-older-adults-raised-nad-metabolome-biomarker",
+      "file_path": "data/findings/nr-older-adults-raised-nad-metabolome-biomarker.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/nr-older-adults-raised-nad-metabolome-biomarker.json",
+      "summary": "Add NR older-adult NAD-metabolite finding.",
+      "rationale": "This finding supports NAD precursor target engagement while preserving the biomarker boundary."
+    },
+    {
+      "change_id": "create-finding-nmn-older-men-raised-nad-muscle-function-exploratory",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nmn-older-men-raised-nad-muscle-function-exploratory",
+      "file_path": "data/findings/nmn-older-men-raised-nad-muscle-function-exploratory.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/nmn-older-men-raised-nad-muscle-function-exploratory.json",
+      "summary": "Add NMN older-men NAD and exploratory function finding.",
+      "rationale": "This finding supports NMN target engagement but keeps functional claims explicitly exploratory."
+    },
+    {
+      "change_id": "create-finding-nr-aged-men-muscle-nad-anti-inflammatory-no-bioenergetics",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nr-aged-men-muscle-nad-anti-inflammatory-no-bioenergetics",
+      "file_path": "data/findings/nr-aged-men-muscle-nad-anti-inflammatory-no-bioenergetics.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/nr-aged-men-muscle-nad-anti-inflammatory-no-bioenergetics.json",
+      "summary": "Add NR aged-muscle mixed biomarker finding.",
+      "rationale": "This finding balances NAD-metabolome movement against null mitochondrial bioenergetics."
+    },
+    {
+      "change_id": "create-finding-nr-obese-insulin-resistant-men-mitochondrial-null",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nr-obese-insulin-resistant-men-mitochondrial-null",
+      "file_path": "data/findings/nr-obese-insulin-resistant-men-mitochondrial-null.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/nr-obese-insulin-resistant-men-mitochondrial-null.json",
+      "summary": "Add NR skeletal-muscle mitochondrial null finding.",
+      "rationale": "This finding supports the main blocker around inconsistent NAD-to-mitochondria translation."
+    },
+    {
+      "change_id": "create-finding-nmn-prediabetic-women-muscle-insulin-sensitivity",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nmn-prediabetic-women-muscle-insulin-sensitivity",
+      "file_path": "data/findings/nmn-prediabetic-women-muscle-insulin-sensitivity.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/nmn-prediabetic-women-muscle-insulin-sensitivity.json",
+      "summary": "Add NMN metabolic-function finding.",
+      "rationale": "This finding supports the human functional stage while naming the narrow prediabetic boundary."
+    },
+    {
+      "change_id": "create-finding-glynac-older-adults-improved-redox-mitochondrial-physical-function",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "glynac-older-adults-improved-redox-mitochondrial-physical-function",
+      "file_path": "data/findings/glynac-older-adults-improved-redox-mitochondrial-physical-function.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/glynac-older-adults-improved-redox-mitochondrial-physical-function.json",
+      "summary": "Add GlyNAC functional redox-restoration finding.",
+      "rationale": "This finding is the strongest support for the human functional stage assignment."
+    },
+    {
+      "change_id": "create-finding-glynac-dose-rct-redox-status-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "glynac-dose-rct-redox-status-boundary",
+      "file_path": "data/findings/glynac-dose-rct-redox-status-boundary.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/glynac-dose-rct-redox-status-boundary.json",
+      "summary": "Add GlyNAC redox-biomarker boundary finding.",
+      "rationale": "This finding contextualizes GlyNAC as redox-biomarker support rather than durable functional proof."
+    },
+    {
+      "change_id": "create-finding-mitoq-older-adults-improved-vascular-endothelial-function",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "mitoq-older-adults-improved-vascular-endothelial-function",
+      "file_path": "data/findings/mitoq-older-adults-improved-vascular-endothelial-function.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/mitoq-older-adults-improved-vascular-endothelial-function.json",
+      "summary": "Add MitoQ vascular-function finding.",
+      "rationale": "This finding supports the redox-restoration human functional signal while preserving its surrogate endpoint boundary."
+    },
+    {
+      "change_id": "create-outlook-track-nad-and-redox-restoration-outlook",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-nad-and-redox-restoration-outlook",
+      "file_path": "data/outlooks/track-nad-and-redox-restoration-outlook.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-bootstrap-2026-05-31/track-nad-and-redox-restoration-outlook.json",
+      "summary": "Create the first public outlook for the NAD and redox restoration track.",
+      "rationale": "The track is coherent enough for a public baseline, but the outlook must stay low confidence and explicitly separate small functional signals from durable longevity claims.",
+      "uncertainty_flags": [
+        "The strongest functional evidence comes from small, short human RCTs.",
+        "NAD precursor target engagement does not consistently translate into mitochondrial function.",
+        "GlyNAC, NMN, NR, and MitoQ are mechanistically different interventions and should not be merged into one efficacy claim."
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "nad-and-redox-restoration",
+      "note": "A first public baseline is justified at human_functional_benefit, with mixed momentum and low confidence.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "mitochondrial_dysfunction",
+      "note": "Publishing this bundle would add a second mitochondrial dysfunction track baseline and broaden the hallmark beyond mitophagy enhancers, but it does not by itself update the hallmark outlook.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-05-31-nad-and-redox-restoration-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-nad-and-redox-restoration-source-fidelity-r1",
+    "evidence-review-nad-and-redox-restoration-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-nad-and-redox-restoration-bootstrap-2026-05-31-2026-05-31t19-16-08-034z"
+  ]
+}
