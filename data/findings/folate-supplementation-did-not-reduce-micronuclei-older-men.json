@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "folate-supplementation-did-not-reduce-micronuclei-older-men",
+  "name": "Folic acid did not reduce lymphocyte micronucleus index in healthy older men",
+  "summary": "A healthy older-men study supports the biomarker association between B12/homocysteine and chromosome damage but found no micronucleus reduction after folic acid supplementation.",
+  "source_id": "pmid-9230275",
+  "study_id": "older-men-folate-b12-homocysteine-micronucleus",
+  "intervention_ids": [
+    "folic-acid"
+  ],
+  "track_ids": [
+    "genome-surveillance-and-chromosome-stability"
+  ],
+  "hallmark_ids": [
+    "genomic_instability"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "mixed",
+  "evidence_tier": "human_biomarker",
+  "confidence": "low",
+  "statement": "In healthy men aged 50 to 70, abnormal folate, vitamin B12, or homocysteine status was associated with higher micronucleus index, but folic acid supplementation improved folate and homocysteine without reducing the micronucleus index.",
+  "population_or_model": "64 healthy men aged 50 to 70 years",
+  "time_horizon": "Baseline micronucleus analysis plus 4-month folic acid supplementation component",
+  "quantitative_note": "Men with abnormal folate, B12, or homocysteine values had a higher micronucleus index than men with normal values (19.2 +/- 1.1 vs 16.3 +/- 1.3; P=0.02); supplementation produced no micronucleus-index reduction.",
+  "caveats": [
+    "The supplementation component used folic acid rather than combined B12 correction for all participants.",
+    "The study is small and biomarker-only.",
+    "The null supplementation result limits broad claims that simple folate repletion improves chromosome stability in generally healthy older adults."
+  ],
+  "tags": [
+    "human",
+    "biomarker",
+    "folate",
+    "vitamin-b12",
+    "micronucleus"
+  ]
+}

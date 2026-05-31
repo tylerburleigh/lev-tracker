@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-05-31-genome-surveillance-and-chromosome-stability-bootstrap",
+  "name": "Genome surveillance and chromosome stability bootstrap pass for May 31, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-05-31T19:50:00Z",
+  "completed_at": "2026-05-31T20:05:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Genome Surveillance and Chromosome Stability, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "genomic_instability"
+    ],
+    "track_ids": [
+      "genome-surveillance-and-chromosome-stability"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31",
+  "summary": "The staged baseline assigns human_biomarker_signal with low confidence and mixed momentum. Human evidence is strongest for blood mosaic chromosomal alterations as aging- and disease-relevant biomarkers, plus a narrow dialysis folate/B12 micronucleus signal. Direct genome-surveillance interventions remain mostly animal-stage through BubR1 overexpression and SIRT2/NAD-linked BubR1 stabilization.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-42156563",
+    "pmid-36988570",
+    "pmid-34099924",
+    "pmid-15475955",
+    "pmid-23242215",
+    "pmid-24825348",
+    "pmid-18469307",
+    "pmid-9230275"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42156563/",
+    "https://pubmed.ncbi.nlm.nih.gov/36988570/",
+    "https://pubmed.ncbi.nlm.nih.gov/34099924/",
+    "https://pubmed.ncbi.nlm.nih.gov/15475955/",
+    "https://pubmed.ncbi.nlm.nih.gov/23242215/",
+    "https://pubmed.ncbi.nlm.nih.gov/24825348/",
+    "https://pubmed.ncbi.nlm.nih.gov/18469307/",
+    "https://pubmed.ncbi.nlm.nih.gov/9230275/"
+  ],
+  "notes": [
+    "The latest Nature Genetics mCA paper was included because it materially improves the human biomarker map for age-related blood chromosome mosaicism.",
+    "BubR1/SIRT2 evidence is treated as animal-stage despite lifespan effects because the modalities are transgenic, pleiotropic, or disease-model-specific.",
+    "Folate/B12 evidence is intentionally bounded: dialysis patients showed micronucleus biomarker improvement, while healthy older men did not show micronucleus improvement after folic acid supplementation.",
+    "No source supports a human functional, disease-prevention, or lifespan claim from a direct chromosome-surveillance intervention."
+  ],
+  "next_actions": [
+    "Run source-fidelity review for the staged source, study, and finding records.",
+    "Run interpretation/forecast review with attention to whether human_biomarker_signal is sufficiently bounded by the dialysis micronucleus and mCA observational evidence.",
+    "If approved and published, inspect the genomic instability hallmark page and the genome surveillance track page for evidence-ladder clarity."
+  ]
+}

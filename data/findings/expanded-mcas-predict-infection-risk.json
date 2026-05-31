@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "expanded-mcas-predict-infection-risk",
+  "name": "Expanded mosaic chromosomal alterations predicted diverse infection risk",
+  "summary": "A large multi-biobank analysis ties expanded blood mCAs to incident infections, making the biomarker clinically relevant but not yet actionable as an anti-aging intervention target.",
+  "source_id": "pmid-34099924",
+  "study_id": "mca-infection-risk-five-biobanks",
+  "track_ids": [
+    "genome-surveillance-and-chromosome-stability"
+  ],
+  "hallmark_ids": [
+    "genomic_instability"
+  ],
+  "endpoint_category": "healthspan",
+  "direction": "positive",
+  "evidence_tier": "human_clinical_outcome",
+  "confidence": "moderate",
+  "statement": "Expanded autosomal mosaic chromosomal alterations were associated with higher incident infection risk across multiple biobanks.",
+  "population_or_model": "768,762 individuals without hematological cancer at DNA acquisition",
+  "time_horizon": "Prospective incident-infection analysis after DNA acquisition",
+  "quantitative_note": "Expanded autosomal mCAs were associated with diverse incident infections (HR 1.25, 95% CI 1.15 to 1.36), including sepsis (HR 2.68) and pneumonia (HR 1.76).",
+  "caveats": [
+    "The analysis supports clinical relevance of mCAs but does not test an intervention that prevents or reverses them.",
+    "mCAs may be markers, mediators, or both.",
+    "The finding is strongest for blood and immune outcomes."
+  ],
+  "tags": [
+    "human",
+    "infection-risk",
+    "mosaic-chromosomal-alterations",
+    "observational"
+  ]
+}

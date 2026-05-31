@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "folate-b12-reduced-micronuclei-dialysis",
+  "name": "Folic acid and vitamin B12 reduced micronucleus frequency in hemodialysis patients",
+  "summary": "The clearest human intervention biomarker signal is a small high-risk dialysis study showing reduced lymphocyte micronuclei after folate and B12 supplementation.",
+  "source_id": "pmid-18469307",
+  "study_id": "hemodialysis-folate-b12-micronucleus",
+  "intervention_ids": [
+    "folic-acid",
+    "vitamin-b12"
+  ],
+  "track_ids": [
+    "genome-surveillance-and-chromosome-stability"
+  ],
+  "hallmark_ids": [
+    "genomic_instability"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "positive",
+  "evidence_tier": "human_biomarker",
+  "confidence": "low",
+  "statement": "In hemodialysis patients, folic acid and vitamin B12 supplementation reduced peripheral blood lymphocyte micronucleus frequency, a chromosomal-aberration biomarker.",
+  "population_or_model": "27 hemodialysis patients",
+  "time_horizon": "Prospective sampling before and after supplementation",
+  "quantitative_note": "The abstract reports reduced micronucleus frequency, more markedly with combined folic acid and vitamin B12 supplementation, alongside more efficient homocysteine lowering.",
+  "caveats": [
+    "The study was small and in end-stage renal failure, not a general aging-prevention population.",
+    "Micronucleus frequency is a biomarker and does not establish functional, disease, or lifespan benefit.",
+    "This one-carbon metabolism signal is adjacent to chromosome stability but not direct spindle-checkpoint enhancement."
+  ],
+  "tags": [
+    "human",
+    "biomarker",
+    "folate",
+    "vitamin-b12",
+    "micronucleus"
+  ]
+}

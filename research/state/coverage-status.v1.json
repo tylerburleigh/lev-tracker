@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-05-31T19:44:09.094Z",
+  "updated_at": "2026-05-31T20:14:59.509Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One bootstrap or surveillance run should cover one track unless the user explicitly narrows further.",
@@ -21,8 +21,8 @@
       "hallmark_id": "genomic_instability",
       "canonical_order": 1,
       "hallmark_bootstrap_status": "baseline",
-      "tracked_public_outlook_count": 1,
-      "next_priority_track_id": "genome-surveillance-and-chromosome-stability",
+      "tracked_public_outlook_count": 2,
+      "next_priority_track_id": "transposon-and-somatic-mutation-control",
       "notes": "At least one track-level public baseline exists."
     },
     {
@@ -139,11 +139,19 @@
       "hallmark_id": "genomic_instability",
       "canonical_order": 2,
       "name": "Genome Surveillance and Chromosome Stability",
-      "coverage_status": "not_started",
-      "next_mode": "bootstrap",
+      "coverage_status": "baseline",
+      "next_mode": "surveillance",
       "queue_state": "ready",
-      "default_research_question": "What is the current human-relevant evidence landscape for Genome Surveillance and Chromosome Stability, and what belongs in the first public baseline?",
-      "notes": "No track-level public baseline has been bootstrapped yet."
+      "last_session_id": "2026-05-31-genome-surveillance-and-chromosome-stability-bootstrap",
+      "last_session_at": "2026-05-31T20:05:00Z",
+      "last_session_mode": "bootstrap",
+      "last_session_outcome": "candidate_bundle_submitted",
+      "last_candidate_bundle_id": "genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31",
+      "last_candidate_bundle_status": "published",
+      "last_publication_event_id": "publish-genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31-2026-05-31t20-14-53-931z",
+      "last_published_at": "2026-05-31T20:14:53.931Z",
+      "default_research_question": "What changed for Genome Surveillance and Chromosome Stability since the last meaningful review or publication, and does any change justify a public update?",
+      "notes": "Latest publication event: publish-genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31-2026-05-31t20-14-53-931z."
     },
     {
       "track_id": "transposon-and-somatic-mutation-control",

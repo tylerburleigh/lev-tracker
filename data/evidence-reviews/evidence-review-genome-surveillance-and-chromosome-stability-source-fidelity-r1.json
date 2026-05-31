@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-genome-surveillance-and-chromosome-stability-source-fidelity-r1",
+  "name": "Source Fidelity review for Genome Surveillance And Chromosome Stability bundle",
+  "candidate_bundle_id": "genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, and finding records are source-faithful for the cited PubMed records. PMIDs, DOIs, venues, publication dates, population boundaries, sample sizes where applicable, endpoint categories, quantitative notes, and caveats match the checked source metadata and abstracts closely enough for editorial approval.",
+  "reviewed_change_ids": [
+    "create-source-pmid-42156563",
+    "create-source-pmid-36988570",
+    "create-source-pmid-34099924",
+    "create-source-pmid-15475955",
+    "create-source-pmid-23242215",
+    "create-source-pmid-24825348",
+    "create-source-pmid-18469307",
+    "create-source-pmid-9230275",
+    "create-study-uk-biobank-wgs-mosaic-chromosomal-alterations",
+    "create-study-centenarian-familial-longevity-mca-analysis",
+    "create-study-mca-infection-risk-five-biobanks",
+    "create-study-bub1b-mva-families-genetic-study",
+    "create-study-bubr1-overexpression-lifespan-mice",
+    "create-study-sirt2-nmn-bubr1-hypomorphic-mice",
+    "create-study-hemodialysis-folate-b12-micronucleus",
+    "create-study-older-men-folate-b12-homocysteine-micronucleus",
+    "create-finding-aging-blood-accrues-predictable-mcas",
+    "create-finding-lower-mca-burden-in-familial-longevity",
+    "create-finding-expanded-mcas-predict-infection-risk",
+    "create-finding-bub1b-mutations-cause-human-mosaic-aneuploidy",
+    "create-finding-bubr1-overexpression-extends-healthy-lifespan-mice",
+    "create-finding-sirt2-nmn-raises-bubr1-and-extends-bubr1-hypomorphic-lifespan",
+    "create-finding-folate-b12-reduced-micronuclei-dialysis",
+    "create-finding-folate-supplementation-did-not-reduce-micronuclei-older-men",
+    "create-outlook-track-genome-surveillance-and-chromosome-stability-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "mca-association-endpoint-boundary-note",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-expanded-mcas-predict-infection-risk",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "expanded-mcas-predict-infection-risk"
+      },
+      "claim_or_issue": "The infection-risk finding is source-faithful as an observational association between expanded mCAs and incident infections, not interventional evidence that reducing mCAs lowers infection risk.",
+      "why_it_matters": "The source reports clinically meaningful hazard ratios, but causal and therapeutic interpretation would overstate the record.",
+      "recommended_action": "Keep the staged caveats that mCAs may be markers, mediators, or both and that the study did not test an intervention.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "bubr1-animal-translation-note",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-bubr1-overexpression-extends-healthy-lifespan-mice",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "bubr1-overexpression-extends-healthy-lifespan-mice"
+      },
+      "claim_or_issue": "The BubR1 overexpression source supports mouse lifespan, tumor, aneuploidy, and tissue-deterioration claims, but not a clinically deployable human chromosome-surveillance therapy.",
+      "why_it_matters": "This is the strongest direct intervention signal in the bundle, so species and modality boundaries need to stay explicit.",
+      "recommended_action": "Retain the staged animal-model caveats and do not upgrade human stage from this source.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "folate-b12-context-note",
+      "severity": "note",
+      "category": "uncertainty",
+      "applies_to_change_id": "create-finding-folate-b12-reduced-micronuclei-dialysis",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "folate-b12-reduced-micronuclei-dialysis"
+      },
+      "claim_or_issue": "The folate/B12 source supports reduced micronucleus frequency in hemodialysis patients, while the older-men source supports a mixed boundary with no micronucleus-index reduction after folic acid supplementation.",
+      "why_it_matters": "The human intervention biomarker signal is real but context-dependent and should not read as general preventive chromosome-stability evidence.",
+      "recommended_action": "Keep both the positive dialysis finding and the older-men null supplementation boundary visible in the outlook support map.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-05-31T20:12:17.552Z",
+  "updated_at": "2026-05-31T20:12:17.552Z"
+}

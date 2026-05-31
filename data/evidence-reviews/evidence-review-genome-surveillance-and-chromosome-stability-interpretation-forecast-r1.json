@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-genome-surveillance-and-chromosome-stability-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Genome Surveillance And Chromosome Stability bundle",
+  "candidate_bundle_id": "genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged outlook's human_biomarker_signal stage is defensible because human mCA and micronucleus evidence supports chromosome-instability biomarker relevance, while the public interpretation remains low-confidence and explicitly bounded away from human functional, disease-prevention, or LEV-relevant intervention claims.",
+  "reviewed_change_ids": [
+    "create-source-pmid-42156563",
+    "create-source-pmid-36988570",
+    "create-source-pmid-34099924",
+    "create-source-pmid-15475955",
+    "create-source-pmid-23242215",
+    "create-source-pmid-24825348",
+    "create-source-pmid-18469307",
+    "create-source-pmid-9230275",
+    "create-study-uk-biobank-wgs-mosaic-chromosomal-alterations",
+    "create-study-centenarian-familial-longevity-mca-analysis",
+    "create-study-mca-infection-risk-five-biobanks",
+    "create-study-bub1b-mva-families-genetic-study",
+    "create-study-bubr1-overexpression-lifespan-mice",
+    "create-study-sirt2-nmn-bubr1-hypomorphic-mice",
+    "create-study-hemodialysis-folate-b12-micronucleus",
+    "create-study-older-men-folate-b12-homocysteine-micronucleus",
+    "create-finding-aging-blood-accrues-predictable-mcas",
+    "create-finding-lower-mca-burden-in-familial-longevity",
+    "create-finding-expanded-mcas-predict-infection-risk",
+    "create-finding-bub1b-mutations-cause-human-mosaic-aneuploidy",
+    "create-finding-bubr1-overexpression-extends-healthy-lifespan-mice",
+    "create-finding-sirt2-nmn-raises-bubr1-and-extends-bubr1-hypomorphic-lifespan",
+    "create-finding-folate-b12-reduced-micronuclei-dialysis",
+    "create-finding-folate-supplementation-did-not-reduce-micronuclei-older-men",
+    "create-outlook-track-genome-surveillance-and-chromosome-stability-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "human-biomarker-stage-boundary-note",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-outlook-track-genome-surveillance-and-chromosome-stability-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-genome-surveillance-and-chromosome-stability-outlook"
+      },
+      "claim_or_issue": "The human_biomarker_signal stage is appropriate only because the staged outlook keeps the evidence at biomarker level and names the lack of human functional, disease-prevention, or lifespan evidence from an intervention.",
+      "why_it_matters": "mCA risk associations and micronucleus movement could otherwise be misread as proven functional anti-aging benefit.",
+      "recommended_action": "Preserve the current low confidence, biomarker-stage language, and rating-change criteria requiring older-adult functional or clinical endpoint evidence for any upgrade.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "animal-lifespan-evidence-boundary-note",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "applies_to_change_id": "create-outlook-track-genome-surveillance-and-chromosome-stability-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-genome-surveillance-and-chromosome-stability-outlook"
+      },
+      "claim_or_issue": "BubR1 overexpression and SIRT2/NAD-linked BubR1 stabilization support direct genome-surveillance intervention plausibility, but they remain animal-stage and disease-model-specific.",
+      "why_it_matters": "Mouse lifespan evidence is relevant to the track but should not upgrade human maturity beyond biomarker signal.",
+      "recommended_action": "Keep BubR1 and SIRT2/NAD in best-current-signals while retaining the animal-stage and safety caveats.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "mca-risk-marker-actionability-note",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "create-outlook-track-genome-surveillance-and-chromosome-stability-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-genome-surveillance-and-chromosome-stability-outlook"
+      },
+      "claim_or_issue": "The mCA literature supports clinical relevance and risk stratification, not a validated path to modifying mCAs for aging benefit.",
+      "why_it_matters": "A biomarker becoming measurable and prognostic is not the same as an actionable rejuvenation intervention.",
+      "recommended_action": "Retain the forecast note that mCA measurement may mature as a risk biomarker before chromosome-surveillance interventions become clinically actionable.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "checkpoint-safety-boundary-note",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-outlook-track-genome-surveillance-and-chromosome-stability-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-genome-surveillance-and-chromosome-stability-outlook"
+      },
+      "claim_or_issue": "The outlook correctly treats checkpoint reinforcement safety as central because mitotic checkpoint modulation could affect cancer, fertility, tissue renewal, or proliferation.",
+      "why_it_matters": "The track's most direct mechanisms touch core cell-division machinery, so safety boundaries are part of the scientific interpretation rather than generic caution.",
+      "recommended_action": "Keep checkpoint safety visible in blockers and rating-change criteria.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-05-31T20:12:20.936Z",
+  "updated_at": "2026-05-31T20:12:20.936Z"
+}

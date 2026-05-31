@@ -1,0 +1,361 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31",
+  "name": "Genome surveillance and chromosome stability bootstrap for May 31, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline for the genome surveillance and chromosome stability track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-05-31T20:05:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Genome Surveillance and Chromosome Stability, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "genomic_instability"
+    ],
+    "track_ids": [
+      "genome-surveillance-and-chromosome-stability"
+    ]
+  },
+  "source_ids": [
+    "pmid-42156563",
+    "pmid-36988570",
+    "pmid-34099924",
+    "pmid-15475955",
+    "pmid-23242215",
+    "pmid-24825348",
+    "pmid-18469307",
+    "pmid-9230275"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42156563/",
+    "https://doi.org/10.1038/s41588-026-02592-0",
+    "https://pubmed.ncbi.nlm.nih.gov/36988570/",
+    "https://doi.org/10.1093/gerona/glad095",
+    "https://pubmed.ncbi.nlm.nih.gov/34099924/",
+    "https://doi.org/10.1038/s41591-021-01371-0",
+    "https://pubmed.ncbi.nlm.nih.gov/15475955/",
+    "https://doi.org/10.1038/ng1449",
+    "https://pubmed.ncbi.nlm.nih.gov/23242215/",
+    "https://doi.org/10.1038/ncb2643",
+    "https://pubmed.ncbi.nlm.nih.gov/24825348/",
+    "https://doi.org/10.15252/embj.201386907",
+    "https://pubmed.ncbi.nlm.nih.gov/18469307/",
+    "https://doi.org/10.1093/ndt/gfn254",
+    "https://pubmed.ncbi.nlm.nih.gov/9230275/",
+    "https://doi.org/10.1093/carcin/18.7.1329"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-genome-surveillance-and-chromosome-stability-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-genomic-instability-outlook"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "aging-blood-accrues-predictable-mcas"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "bubr1-overexpression-extends-healthy-lifespan-mice"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "folate-b12-reduced-micronuclei-dialysis"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "folate-supplementation-did-not-reduce-micronuclei-older-men"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-42156563",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-42156563",
+      "file_path": "data/sources/pmid-42156563.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/pmid-42156563.json",
+      "summary": "Add 2026 UK Biobank WGS mCA source.",
+      "rationale": "This is the latest high-resolution human map of blood mosaic chromosomal alterations and age-related clonal evolution."
+    },
+    {
+      "change_id": "create-source-pmid-36988570",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-36988570",
+      "file_path": "data/sources/pmid-36988570.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/pmid-36988570.json",
+      "summary": "Add mCAs and human longevity source.",
+      "rationale": "This source links mCA burden with centenarian and familial-longevity phenotypes."
+    },
+    {
+      "change_id": "create-source-pmid-34099924",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-34099924",
+      "file_path": "data/sources/pmid-34099924.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/pmid-34099924.json",
+      "summary": "Add mCAs and infection-risk source.",
+      "rationale": "This source gives blood mCAs clinical relevance beyond biomarker detection."
+    },
+    {
+      "change_id": "create-source-pmid-15475955",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-15475955",
+      "file_path": "data/sources/pmid-15475955.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/pmid-15475955.json",
+      "summary": "Add BUB1B MVA human genetics source.",
+      "rationale": "This source anchors BUB1B/BUBR1 as a human chromosome-surveillance node."
+    },
+    {
+      "change_id": "create-source-pmid-23242215",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-23242215",
+      "file_path": "data/sources/pmid-23242215.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/pmid-23242215.json",
+      "summary": "Add BubR1 overexpression mouse lifespan source.",
+      "rationale": "This source supplies the strongest direct animal intervention signal for chromosome-surveillance reinforcement."
+    },
+    {
+      "change_id": "create-source-pmid-24825348",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-24825348",
+      "file_path": "data/sources/pmid-24825348.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/pmid-24825348.json",
+      "summary": "Add SIRT2-BubR1 lifespan source.",
+      "rationale": "This source provides a more druggable upstream route into BubR1 biology while keeping translation boundaries visible."
+    },
+    {
+      "change_id": "create-source-pmid-18469307",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-18469307",
+      "file_path": "data/sources/pmid-18469307.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/pmid-18469307.json",
+      "summary": "Add folate/B12 dialysis micronucleus source.",
+      "rationale": "This source supplies the clearest human intervention biomarker movement signal for chromosome damage."
+    },
+    {
+      "change_id": "create-source-pmid-9230275",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-9230275",
+      "file_path": "data/sources/pmid-9230275.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/pmid-9230275.json",
+      "summary": "Add older-men folate/B12 micronucleus source.",
+      "rationale": "This source supplies an important human biomarker boundary because folic acid supplementation did not reduce micronucleus index."
+    },
+    {
+      "change_id": "create-study-uk-biobank-wgs-mosaic-chromosomal-alterations",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "uk-biobank-wgs-mosaic-chromosomal-alterations",
+      "file_path": "data/studies/uk-biobank-wgs-mosaic-chromosomal-alterations.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/uk-biobank-wgs-mosaic-chromosomal-alterations.json",
+      "summary": "Add UK Biobank mCA WGS study record.",
+      "rationale": "The study record links the latest large human mCA mapping evidence to the track."
+    },
+    {
+      "change_id": "create-study-centenarian-familial-longevity-mca-analysis",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "centenarian-familial-longevity-mca-analysis",
+      "file_path": "data/studies/centenarian-familial-longevity-mca-analysis.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/centenarian-familial-longevity-mca-analysis.json",
+      "summary": "Add centenarian/familial-longevity mCA study record.",
+      "rationale": "The study record links mCA burden to human longevity phenotypes."
+    },
+    {
+      "change_id": "create-study-mca-infection-risk-five-biobanks",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "mca-infection-risk-five-biobanks",
+      "file_path": "data/studies/mca-infection-risk-five-biobanks.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/mca-infection-risk-five-biobanks.json",
+      "summary": "Add mCA infection-risk study record.",
+      "rationale": "The study record links chromosome mosaicism to clinical infection outcomes."
+    },
+    {
+      "change_id": "create-study-bub1b-mva-families-genetic-study",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "bub1b-mva-families-genetic-study",
+      "file_path": "data/studies/bub1b-mva-families-genetic-study.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/bub1b-mva-families-genetic-study.json",
+      "summary": "Add BUB1B MVA family genetics study record.",
+      "rationale": "The study record captures human causal genetics for the spindle-checkpoint node."
+    },
+    {
+      "change_id": "create-study-bubr1-overexpression-lifespan-mice",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "bubr1-overexpression-lifespan-mice",
+      "file_path": "data/studies/bubr1-overexpression-lifespan-mice.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/bubr1-overexpression-lifespan-mice.json",
+      "summary": "Add BubR1 overexpression mouse study record.",
+      "rationale": "The study record captures the primary direct chromosome-surveillance animal intervention."
+    },
+    {
+      "change_id": "create-study-sirt2-nmn-bubr1-hypomorphic-mice",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "sirt2-nmn-bubr1-hypomorphic-mice",
+      "file_path": "data/studies/sirt2-nmn-bubr1-hypomorphic-mice.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/sirt2-nmn-bubr1-hypomorphic-mice.json",
+      "summary": "Add SIRT2/NMN BubR1 mouse study record.",
+      "rationale": "The study record captures upstream BubR1 stabilization evidence and its animal-stage boundary."
+    },
+    {
+      "change_id": "create-study-hemodialysis-folate-b12-micronucleus",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "hemodialysis-folate-b12-micronucleus",
+      "file_path": "data/studies/hemodialysis-folate-b12-micronucleus.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/hemodialysis-folate-b12-micronucleus.json",
+      "summary": "Add hemodialysis folate/B12 micronucleus study record.",
+      "rationale": "The study record links a human intervention to a chromosome-damage biomarker."
+    },
+    {
+      "change_id": "create-study-older-men-folate-b12-homocysteine-micronucleus",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "older-men-folate-b12-homocysteine-micronucleus",
+      "file_path": "data/studies/older-men-folate-b12-homocysteine-micronucleus.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/older-men-folate-b12-homocysteine-micronucleus.json",
+      "summary": "Add older-men folate/B12 micronucleus study record.",
+      "rationale": "The study record captures a human biomarker association and null folic-acid supplementation boundary."
+    },
+    {
+      "change_id": "create-finding-aging-blood-accrues-predictable-mcas",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "aging-blood-accrues-predictable-mcas",
+      "file_path": "data/findings/aging-blood-accrues-predictable-mcas.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/aging-blood-accrues-predictable-mcas.json",
+      "summary": "Add UK Biobank mCA biomarker finding.",
+      "rationale": "This finding supports the human relevance of chromosome-instability biomarkers in aging blood."
+    },
+    {
+      "change_id": "create-finding-lower-mca-burden-in-familial-longevity",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "lower-mca-burden-in-familial-longevity",
+      "file_path": "data/findings/lower-mca-burden-in-familial-longevity.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/lower-mca-burden-in-familial-longevity.json",
+      "summary": "Add mCA longevity finding.",
+      "rationale": "This finding supports a cautious connection between lower mCA burden and exceptional human aging."
+    },
+    {
+      "change_id": "create-finding-expanded-mcas-predict-infection-risk",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "expanded-mcas-predict-infection-risk",
+      "file_path": "data/findings/expanded-mcas-predict-infection-risk.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/expanded-mcas-predict-infection-risk.json",
+      "summary": "Add expanded mCA infection-risk finding.",
+      "rationale": "This finding supports clinical relevance of blood mCAs while preserving its noninterventional boundary."
+    },
+    {
+      "change_id": "create-finding-bub1b-mutations-cause-human-mosaic-aneuploidy",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "bub1b-mutations-cause-human-mosaic-aneuploidy",
+      "file_path": "data/findings/bub1b-mutations-cause-human-mosaic-aneuploidy.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/bub1b-mutations-cause-human-mosaic-aneuploidy.json",
+      "summary": "Add BUB1B MVA human genetics finding.",
+      "rationale": "This finding anchors BUB1B/BUBR1 to human chromosome-surveillance failure."
+    },
+    {
+      "change_id": "create-finding-bubr1-overexpression-extends-healthy-lifespan-mice",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "bubr1-overexpression-extends-healthy-lifespan-mice",
+      "file_path": "data/findings/bubr1-overexpression-extends-healthy-lifespan-mice.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/bubr1-overexpression-extends-healthy-lifespan-mice.json",
+      "summary": "Add BubR1 overexpression mouse lifespan finding.",
+      "rationale": "This finding supports the direct animal intervention signal."
+    },
+    {
+      "change_id": "create-finding-sirt2-nmn-raises-bubr1-and-extends-bubr1-hypomorphic-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "sirt2-nmn-raises-bubr1-and-extends-bubr1-hypomorphic-lifespan",
+      "file_path": "data/findings/sirt2-nmn-raises-bubr1-and-extends-bubr1-hypomorphic-lifespan.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/sirt2-nmn-raises-bubr1-and-extends-bubr1-hypomorphic-lifespan.json",
+      "summary": "Add SIRT2/NMN BubR1 animal finding.",
+      "rationale": "This finding supports the upstream BubR1 stabilization signal and its animal-stage boundary."
+    },
+    {
+      "change_id": "create-finding-folate-b12-reduced-micronuclei-dialysis",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "folate-b12-reduced-micronuclei-dialysis",
+      "file_path": "data/findings/folate-b12-reduced-micronuclei-dialysis.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/folate-b12-reduced-micronuclei-dialysis.json",
+      "summary": "Add dialysis folate/B12 micronucleus finding.",
+      "rationale": "This finding supports the conservative human_biomarker_signal stage assignment."
+    },
+    {
+      "change_id": "create-finding-folate-supplementation-did-not-reduce-micronuclei-older-men",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "folate-supplementation-did-not-reduce-micronuclei-older-men",
+      "file_path": "data/findings/folate-supplementation-did-not-reduce-micronuclei-older-men.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/folate-supplementation-did-not-reduce-micronuclei-older-men.json",
+      "summary": "Add older-men folate null supplementation finding.",
+      "rationale": "This finding supports the mixed momentum and biomarker-boundary claims."
+    },
+    {
+      "change_id": "create-outlook-track-genome-surveillance-and-chromosome-stability-outlook",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-genome-surveillance-and-chromosome-stability-outlook",
+      "file_path": "data/outlooks/track-genome-surveillance-and-chromosome-stability-outlook.json",
+      "staged_file_path": "data/staged-records/genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31/track-genome-surveillance-and-chromosome-stability-outlook.json",
+      "summary": "Add first public track outlook for genome surveillance and chromosome stability.",
+      "rationale": "The support map justifies a low-confidence human_biomarker_signal baseline with explicit animal and observational boundaries."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "genome-surveillance-and-chromosome-stability",
+      "note": "A first public baseline is justified at human_biomarker_signal, with mixed momentum and low confidence because human evidence is biomarker-heavy and direct checkpoint interventions remain animal-stage.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "genomic_instability",
+      "note": "Publishing this bundle would give genomic instability a second track-level public baseline beyond DNA repair enhancement.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-05-31-genome-surveillance-and-chromosome-stability-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "evidence_review_ids": [
+    "evidence-review-genome-surveillance-and-chromosome-stability-source-fidelity-r1",
+    "evidence-review-genome-surveillance-and-chromosome-stability-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31-2026-05-31t20-14-53-931z"
+  ]
+}
