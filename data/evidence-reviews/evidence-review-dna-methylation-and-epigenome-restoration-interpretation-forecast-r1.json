@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-dna-methylation-and-epigenome-restoration-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Dna Methylation And Epigenome Restoration bundle",
+  "candidate_bundle_id": "dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged interpretation is conservative and adequately audited. The proposed outlook assigns human_biomarker_signal, steady momentum, and low confidence, and the supporting evidence explicitly distinguishes small controlled DNA-methylation clock movement from uncontrolled or retrospective reversal claims, animal plausibility, and registry-only activity.",
+  "reviewed_change_ids": [
+    "create-source-pmid-31496122",
+    "create-source-pmid-33844651",
+    "create-source-pmid-34847066",
+    "create-source-pmid-37118425",
+    "create-source-pmid-39900648",
+    "create-source-pmid-41803341",
+    "create-source-nct-04375657",
+    "create-study-triim-human-epigenetic-aging-pilot",
+    "create-study-methylation-diet-lifestyle-pilot-rct",
+    "create-study-rejuvant-dnam-age-retrospective-cohort",
+    "create-study-calerie-caloric-restriction-dnam-aging",
+    "create-study-do-health-omega3-vitd-exercise-dnam-clocks",
+    "create-study-cosmos-mvm-cocoa-epigenetic-clocks",
+    "create-study-triim-x-extension-registry",
+    "create-finding-triim-human-epigenetic-age-decrease",
+    "create-finding-methylation-diet-lifestyle-horvath-age-decrease",
+    "create-finding-rejuvant-retrospective-dnam-age-decrease",
+    "create-finding-calerie-cr-slowed-dunedinpace",
+    "create-finding-do-health-omega3-small-dnam-clock-slowing",
+    "create-finding-cosmos-mvm-small-epigenetic-clock-slowing",
+    "create-finding-triim-x-registry-no-results",
+    "create-finding-casin-reduced-blood-dnam-age-aged-mice",
+    "create-outlook-track-dna-methylation-and-epigenome-restoration"
+  ],
+  "findings": [
+    {
+      "finding_id": "stage-assignment-stays-in-biomarker-lane",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-outlook-track-dna-methylation-and-epigenome-restoration",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-dna-methylation-and-epigenome-restoration-outlook"
+      },
+      "claim_or_issue": "The outlook assigns human_biomarker_signal and does not claim human functional, disease, or mortality benefit from DNA-methylation or epigenome restoration.",
+      "why_it_matters": "DNA-methylation clock movement is a surrogate endpoint; treating it as clinical aging reversal would materially overstate the evidence.",
+      "recommended_action": "No change required. Preserve the current stage and biomarker wording during editorial handling.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "controlled-evidence-and-reversal-claims-separated",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "applies_to_change_id": "create-outlook-track-dna-methylation-and-epigenome-restoration",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-dna-methylation-and-epigenome-restoration-outlook"
+      },
+      "claim_or_issue": "The support map separates larger controlled analyses with small or clock-specific effects from TRIIM and Rejuvant, where larger apparent reversal signals come from uncontrolled or retrospective designs.",
+      "why_it_matters": "Combining these evidence streams without design separation would create a misleading forecast and inflate confidence.",
+      "recommended_action": "No change required. Keep the controlled-evidence and reversal-claim boundaries as separate support-map entries.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "support-map-links-rationales-to-findings",
+      "severity": "note",
+      "category": "other",
+      "applies_to_change_id": "create-outlook-track-dna-methylation-and-epigenome-restoration",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-dna-methylation-and-epigenome-restoration-outlook"
+      },
+      "claim_or_issue": "Every major outlook rationale links to concrete finding IDs and source IDs, including stage assignment, controlled-evidence boundary, reversal-claim boundary, animal plausibility, momentum, and confidence.",
+      "why_it_matters": "A track outlook without record-level support mapping would be difficult to audit and unsafe to publish.",
+      "recommended_action": "No change required. The current support map is sufficient for editorial review.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "rating-change-criteria-are-calibrated",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "create-outlook-track-dna-methylation-and-epigenome-restoration",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-dna-methylation-and-epigenome-restoration-outlook"
+      },
+      "claim_or_issue": "The rating-change criteria require replicated randomized functional, disease, or mortality outcomes with prespecified DNA-methylation endpoints, durability, and mechanistic mediation before a stage or confidence upgrade.",
+      "why_it_matters": "Future-facing criteria should not imply that current biomarker movement already establishes LEV-relevant benefit.",
+      "recommended_action": "No change required. Keep the upgrade and weakening criteria as written.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "triim-x-not-used-as-efficacy-support",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "create-finding-triim-x-registry-no-results",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "triim-x-registry-no-results"
+      },
+      "claim_or_issue": "TRIIM-X is used only as momentum and no-results registry context, not as positive efficacy or safety evidence.",
+      "why_it_matters": "Trial activity can make a field look more mature than its results justify.",
+      "recommended_action": "No change required. Do not promote TRIIM-X into the best-current-signal list as efficacy evidence until results exist.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-05-31T23:57:06.118Z",
+  "updated_at": "2026-05-31T23:57:06.118Z"
+}

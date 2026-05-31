@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-dna-methylation-and-epigenome-restoration-source-fidelity-r1",
+  "name": "Source Fidelity review for Dna Methylation And Epigenome Restoration bundle",
+  "candidate_bundle_id": "dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Source metadata and extracted study facts are consistent with PubMed, ClinicalTrials.gov, and the existing CASIN live source. The staged records keep the evidence at the source boundary: human DNA-methylation clock endpoints are presented as biomarkers, TRIIM-X is treated as a no-results registry entry, and the CASIN mouse result remains animal evidence.",
+  "reviewed_change_ids": [
+    "create-source-pmid-31496122",
+    "create-source-pmid-33844651",
+    "create-source-pmid-34847066",
+    "create-source-pmid-37118425",
+    "create-source-pmid-39900648",
+    "create-source-pmid-41803341",
+    "create-source-nct-04375657",
+    "create-study-triim-human-epigenetic-aging-pilot",
+    "create-study-methylation-diet-lifestyle-pilot-rct",
+    "create-study-rejuvant-dnam-age-retrospective-cohort",
+    "create-study-calerie-caloric-restriction-dnam-aging",
+    "create-study-do-health-omega3-vitd-exercise-dnam-clocks",
+    "create-study-cosmos-mvm-cocoa-epigenetic-clocks",
+    "create-study-triim-x-extension-registry",
+    "create-finding-triim-human-epigenetic-age-decrease",
+    "create-finding-methylation-diet-lifestyle-horvath-age-decrease",
+    "create-finding-rejuvant-retrospective-dnam-age-decrease",
+    "create-finding-calerie-cr-slowed-dunedinpace",
+    "create-finding-do-health-omega3-small-dnam-clock-slowing",
+    "create-finding-cosmos-mvm-small-epigenetic-clock-slowing",
+    "create-finding-triim-x-registry-no-results",
+    "create-finding-casin-reduced-blood-dnam-age-aged-mice",
+    "create-outlook-track-dna-methylation-and-epigenome-restoration"
+  ],
+  "findings": [
+    {
+      "finding_id": "source-identifiers-and-metadata-verified",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_record": {
+        "record_type": "source",
+        "record_id": "pmid-31496122"
+      },
+      "claim_or_issue": "The seven newly staged source records use the expected PubMed or ClinicalTrials.gov identifiers and match the cited source titles, venues, DOI or registry IDs, and publication or posting dates closely enough for promotion.",
+      "why_it_matters": "Incorrect source identifiers or titles would break the evidence chain before any interpretation review can be trusted.",
+      "recommended_action": "No change required. Keep the PubMed URLs, DOI URLs, and ClinicalTrials.gov URL as the canonical source anchors.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "study-design-and-sample-facts-match-sources",
+      "severity": "note",
+      "category": "source_mismatch",
+      "claim_or_issue": "The staged study and finding facts match the source-level design boundaries: TRIIM is a nine-person uncontrolled pilot, the diet/lifestyle trial is a 43-person eight-week RCT, Rejuvant is a 42-person retrospective analysis, CALERIE randomized 220 adults for two years, DO-HEALTH analyzed 777 participants over three years, COSMOS analyzed 958 participants over two years, and CASIN is aged female mouse evidence.",
+      "why_it_matters": "The public evidence map depends on preserving whether a signal comes from uncontrolled, retrospective, randomized, registry-only, or animal evidence.",
+      "recommended_action": "No change required. Editorial review should keep these design boundaries visible if the bundle is published.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "registry-status-boundary-preserved",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "create-finding-triim-x-registry-no-results",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "triim-x-registry-no-results"
+      },
+      "claim_or_issue": "The TRIIM-X registry record is correctly handled as recruiting with estimated enrollment 85, phase 2 randomized design, epigenetic-age and safety endpoints, and no posted results in the ClinicalTrials.gov record.",
+      "why_it_matters": "A registry entry can show trial activity and endpoint intent, but it cannot support benefit or safety claims without posted or published results.",
+      "recommended_action": "No change required. Keep TRIIM-X out of positive support for efficacy until results are available.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "conflict-and-commercial-context-retained",
+      "severity": "note",
+      "category": "missing_caveat",
+      "claim_or_issue": "The staged finding caveats preserve relevant commercial and conflict boundaries for TRIIM, Rejuvant, CALERIE DunedinPACE, DO-HEALTH clocks, and COSMOS supplement support.",
+      "why_it_matters": "Commercial test, supplement, and clock-development contexts affect how aggressively apparent DNA-methylation-age changes should be interpreted.",
+      "recommended_action": "No change required. Keep these caveats in any published display or editorial summary.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-05-31T23:56:53.955Z",
+  "updated_at": "2026-05-31T23:56:53.955Z"
+}
