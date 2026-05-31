@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-05-31T01:05:24.521Z",
+  "updated_at": "2026-05-31T11:01:58.195Z",
   "notes": [
     "Bootstrap priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Surveillance priority applies only to tracks that already have a public baseline and no active review bundle.",
@@ -159,16 +159,6 @@
     {
       "rank": 11,
       "phase_id": "expand-uncovered-hallmarks",
-      "track_id": "lysosomal-restoration",
-      "hallmark_id": "disabled_macroautophagy",
-      "priority_tier": "soon",
-      "default_mode": "bootstrap",
-      "rationale": "Follow-on track for a hallmark that still needs broader internal coverage after its anchor track.",
-      "default_question": "What is the current human-relevant evidence landscape for Lysosomal Restoration, and what belongs in the first public baseline?"
-    },
-    {
-      "rank": 12,
-      "phase_id": "expand-uncovered-hallmarks",
       "track_id": "stem-cell-replacement-and-transplantation",
       "hallmark_id": "stem_cell_exhaustion",
       "priority_tier": "soon",
@@ -177,7 +167,7 @@
       "default_question": "What is the current human-relevant evidence landscape for Stem Cell Replacement and Transplantation, and what belongs in the first public baseline?"
     },
     {
-      "rank": 13,
+      "rank": 12,
       "phase_id": "expand-uncovered-hallmarks",
       "track_id": "extracellular-vesicle-and-secretome-therapies",
       "hallmark_id": "altered_intercellular_communication",
@@ -187,7 +177,7 @@
       "default_question": "What is the current human-relevant evidence landscape for Extracellular Vesicle and Secretome Therapies, and what belongs in the first public baseline?"
     },
     {
-      "rank": 14,
+      "rank": 13,
       "phase_id": "expand-uncovered-hallmarks",
       "track_id": "transposon-and-somatic-mutation-control",
       "hallmark_id": "genomic_instability",
@@ -197,7 +187,7 @@
       "default_question": "What is the current human-relevant evidence landscape for Transposon and Somatic Mutation Control, and what belongs in the first public baseline?"
     },
     {
-      "rank": 15,
+      "rank": 14,
       "phase_id": "expand-uncovered-hallmarks",
       "track_id": "protein-aggregate-clearance",
       "hallmark_id": "loss_of_proteostasis",
@@ -207,17 +197,7 @@
       "default_question": "What is the current human-relevant evidence landscape for Protein Aggregate Clearance, and what belongs in the first public baseline?"
     },
     {
-      "rank": 16,
-      "phase_id": "expand-uncovered-hallmarks",
-      "track_id": "selective-autophagy-and-organelle-quality-control",
-      "hallmark_id": "disabled_macroautophagy",
-      "priority_tier": "soon",
-      "default_mode": "bootstrap",
-      "rationale": "Follow-on track for a hallmark that still needs broader internal coverage after its anchor track.",
-      "default_question": "What is the current human-relevant evidence landscape for Selective Autophagy and Organelle Quality Control, and what belongs in the first public baseline?"
-    },
-    {
-      "rank": 17,
+      "rank": 15,
       "phase_id": "expand-uncovered-hallmarks",
       "track_id": "niche-rejuvenation-and-support",
       "hallmark_id": "stem_cell_exhaustion",
@@ -227,7 +207,7 @@
       "default_question": "What is the current human-relevant evidence landscape for Niche Rejuvenation and Support, and what belongs in the first public baseline?"
     },
     {
-      "rank": 18,
+      "rank": 16,
       "phase_id": "expand-uncovered-hallmarks",
       "track_id": "neuroendocrine-and-systemic-signal-reset",
       "hallmark_id": "altered_intercellular_communication",
@@ -237,17 +217,27 @@
       "default_question": "What is the current human-relevant evidence landscape for Neuroendocrine and Systemic Signal Reset, and what belongs in the first public baseline?"
     },
     {
-      "rank": 19,
+      "rank": 17,
       "phase_id": "expand-covered-hallmarks",
       "track_id": "dna-methylation-and-epigenome-restoration",
       "hallmark_id": "epigenetic_alterations",
-      "priority_tier": "later",
+      "priority_tier": "soon",
       "default_mode": "bootstrap",
       "rationale": "Extend a hallmark that already has one public track so the hallmark view does not overfit a single approach.",
       "default_question": "What is the current human-relevant evidence landscape for DNA Methylation and Epigenome Restoration, and what belongs in the first public baseline?"
     },
     {
-      "rank": 20,
+      "rank": 18,
+      "phase_id": "expand-covered-hallmarks",
+      "track_id": "lysosomal-restoration",
+      "hallmark_id": "disabled_macroautophagy",
+      "priority_tier": "soon",
+      "default_mode": "bootstrap",
+      "rationale": "Extend a hallmark that already has one public track so the hallmark view does not overfit a single approach.",
+      "default_question": "What is the current human-relevant evidence landscape for Lysosomal Restoration, and what belongs in the first public baseline?"
+    },
+    {
+      "rank": 19,
       "phase_id": "expand-covered-hallmarks",
       "track_id": "ampk-and-metabolic-modulators",
       "hallmark_id": "deregulated_nutrient_sensing",
@@ -257,7 +247,7 @@
       "default_question": "What is the current human-relevant evidence landscape for AMPK and Metabolic Modulators, and what belongs in the first public baseline?"
     },
     {
-      "rank": 21,
+      "rank": 20,
       "phase_id": "expand-covered-hallmarks",
       "track_id": "senomorphics",
       "hallmark_id": "cellular_senescence",
@@ -267,7 +257,7 @@
       "default_question": "What is the current human-relevant evidence landscape for Senomorphics, and what belongs in the first public baseline?"
     },
     {
-      "rank": 22,
+      "rank": 21,
       "phase_id": "expand-covered-hallmarks",
       "track_id": "live-biotherapeutics-and-engineered-microbes",
       "hallmark_id": "dysbiosis",
@@ -277,7 +267,7 @@
       "default_question": "What is the current human-relevant evidence landscape for Live Biotherapeutics and Engineered Microbes, and what belongs in the first public baseline?"
     },
     {
-      "rank": 23,
+      "rank": 22,
       "phase_id": "expand-covered-hallmarks",
       "track_id": "chromatin-and-histone-modulation",
       "hallmark_id": "epigenetic_alterations",
@@ -285,6 +275,16 @@
       "default_mode": "bootstrap",
       "rationale": "Extend a hallmark that already has one public track so the hallmark view does not overfit a single approach.",
       "default_question": "What is the current human-relevant evidence landscape for Chromatin and Histone Modulation, and what belongs in the first public baseline?"
+    },
+    {
+      "rank": 23,
+      "phase_id": "expand-covered-hallmarks",
+      "track_id": "selective-autophagy-and-organelle-quality-control",
+      "hallmark_id": "disabled_macroautophagy",
+      "priority_tier": "later",
+      "default_mode": "bootstrap",
+      "rationale": "Extend a hallmark that already has one public track so the hallmark view does not overfit a single approach.",
+      "default_question": "What is the current human-relevant evidence landscape for Selective Autophagy and Organelle Quality Control, and what belongs in the first public baseline?"
     },
     {
       "rank": 24,
@@ -417,6 +417,16 @@
       "default_mode": "surveillance",
       "rationale": "Human-functional endpoints make delta review relatively legible and high value.",
       "default_question": "What changed for Immune Rejuvenation since the last meaningful review or publication, and does any change justify a public update?"
+    },
+    {
+      "rank": 6,
+      "phase_id": "surveillance-rotation",
+      "track_id": "autophagy-induction",
+      "hallmark_id": "disabled_macroautophagy",
+      "priority_tier": "later",
+      "default_mode": "surveillance",
+      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
+      "default_question": "What changed for Autophagy Induction since the last meaningful review or publication, and does any change justify a public update?"
     }
   ]
 }

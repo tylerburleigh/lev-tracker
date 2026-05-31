@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-05-31T01:05:24.521Z",
+  "updated_at": "2026-05-31T11:01:58.195Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One bootstrap or surveillance run should cover one track unless the user explicitly narrows further.",
@@ -52,10 +52,10 @@
     {
       "hallmark_id": "disabled_macroautophagy",
       "canonical_order": 5,
-      "hallmark_bootstrap_status": "stubbed",
-      "tracked_public_outlook_count": 0,
+      "hallmark_bootstrap_status": "baseline",
+      "tracked_public_outlook_count": 1,
       "next_priority_track_id": "lysosomal-restoration",
-      "notes": "Hallmark outlook exists, but track-level coverage has not started."
+      "notes": "At least one track-level public baseline exists."
     },
     {
       "hallmark_id": "deregulated_nutrient_sensing",
@@ -247,17 +247,19 @@
       "hallmark_id": "disabled_macroautophagy",
       "canonical_order": 1,
       "name": "Autophagy Induction",
-      "coverage_status": "not_started",
+      "coverage_status": "baseline",
       "next_mode": "surveillance",
-      "queue_state": "active_review",
+      "queue_state": "ready",
       "last_session_id": "2026-05-30-autophagy-induction-bootstrap",
       "last_session_at": "2026-05-31T01:03:00Z",
       "last_session_mode": "bootstrap",
       "last_session_outcome": "candidate_bundle_submitted",
       "last_candidate_bundle_id": "autophagy-induction-track-scan-2026-05-30",
-      "last_candidate_bundle_status": "submitted",
+      "last_candidate_bundle_status": "published",
+      "last_publication_event_id": "publish-autophagy-induction-track-scan-2026-05-30-2026-05-31t11-01-02-701z",
+      "last_published_at": "2026-05-31T11:01:02.701Z",
       "default_research_question": "What changed for Autophagy Induction since the last meaningful review or publication, and does any change justify a public update?",
-      "notes": "Candidate bundle autophagy-induction-track-scan-2026-05-30 is still submitted."
+      "notes": "Latest bootstrap session 2026-05-30-autophagy-induction-bootstrap ended as candidate_bundle_submitted."
     },
     {
       "track_id": "lysosomal-restoration",
