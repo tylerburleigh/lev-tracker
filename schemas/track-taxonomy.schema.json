@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./track-taxonomy.schema.json",
+  "title": "Hallmark track taxonomy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "taxonomy",
+    "taxonomy_version",
+    "description",
+    "design_notes",
+    "source_basis",
+    "hallmark_groups"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "taxonomy": {
+      "type": "string",
+      "const": "hallmark_tracks"
+    },
+    "taxonomy_version": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "design_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "source_basis": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "year",
+          "url"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "year": {
+            "type": "integer",
+            "minimum": 1900
+          },
+          "citation": {
+            "type": "string"
+          },
+          "doi": {
+            "type": "string"
+          },
+          "url": {
+            "$ref": "./common.schema.json#/$defs/url"
+          }
+        }
+      }
+    },
+    "hallmark_groups": {
+      "type": "array",
+      "minItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "hallmark_id",
+          "tracks"
+        ],
+        "properties": {
+          "hallmark_id": {
+            "$ref": "./common.schema.json#/$defs/hallmarkRef"
+          },
+          "tracks": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "name",
+                "canonical_order",
+                "summary"
+              ],
+              "properties": {
+                "id": {
+                  "$ref": "./common.schema.json#/$defs/identifier"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "canonical_order": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "summary": {
+                  "type": "string"
+                },
+                "secondary_hallmark_ids": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "./common.schema.json#/$defs/hallmarkRef"
+                  },
+                  "uniqueItems": true
+                },
+                "exemplar_modalities": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "./common.schema.json#/$defs/modality"
+                  },
+                  "uniqueItems": true
+                },
+                "exemplar_interventions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "uniqueItems": true
+                },
+                "search_aliases": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "uniqueItems": true
+                },
+                "notes": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

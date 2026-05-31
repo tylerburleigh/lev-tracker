@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "senescence-watch-update-2026-05-25",
+  "name": "Cellular senescence watch update for May 25, 2026",
+  "summary": "Published bundle used to tighten the distinction between biomarker movement and functional benefit in the public senescence view.",
+  "intake_mode": "surveillance",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-05-25T15:10:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "Does current senescence evidence justify a stronger public wording change?",
+    "hallmark_ids": [
+      "cellular_senescence"
+    ],
+    "track_ids": [
+      "senolytics"
+    ]
+  },
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-cellular-senescence-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-senolytics-outlook"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "update-senescence-outlook",
+      "change_type": "update_outlook",
+      "target_record_type": "outlook",
+      "target_record_id": "hallmark-cellular-senescence-outlook",
+      "file_path": "data/outlooks/hallmark-cellular-senescence-outlook.json",
+      "summary": "Tighten public hallmark wording around functional benefit.",
+      "rationale": "The public site should be explicit that senescence is promising, but not yet a settled human-function story."
+    },
+    {
+      "change_id": "create-senescence-activity",
+      "change_type": "create_record",
+      "target_record_type": "activity_item",
+      "target_record_id": "senescence-trial-watch-expansion",
+      "file_path": "data/activity-items/senescence-trial-watch-expansion.json",
+      "summary": "Add a contextual watchlist activity item.",
+      "rationale": "New registry and publication checks matter for interpretation, but still belong in the activity lane."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "hallmark",
+      "subject_id": "cellular_senescence",
+      "note": "The hallmark remains promising but should stay below human functional benefit until stronger independent human data emerges.",
+      "confidence": "moderate"
+    }
+  ],
+  "publication_event_ids": [
+    "publish-senescence-watch-update-2026-05-25"
+  ],
+  "next_actions": [
+    "Monitor human functional endpoints in senolytic trials."
+  ],
+  "tags": [
+    "public"
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./research-coverage-status.schema.json",
+  "title": "Research coverage status",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "state_type",
+    "track_taxonomy_version",
+    "updated_at",
+    "selection_policy",
+    "hallmarks",
+    "tracks"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "state_type": {
+      "const": "coverage_status"
+    },
+    "track_taxonomy_version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "$ref": "./common.schema.json#/$defs/dateTime"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "selection_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "default_unit",
+        "max_tracks_per_bootstrap_run",
+        "max_tracks_per_surveillance_run",
+        "when_request_is_vague",
+        "when_request_is_too_broad"
+      ],
+      "properties": {
+        "default_unit": {
+          "const": "track"
+        },
+        "max_tracks_per_bootstrap_run": {
+          "const": 1
+        },
+        "max_tracks_per_surveillance_run": {
+          "const": 1
+        },
+        "when_request_is_vague": {
+          "type": "string"
+        },
+        "when_request_is_too_broad": {
+          "type": "string"
+        },
+        "when_only_hallmark_is_named": {
+          "type": "string"
+        }
+      }
+    },
+    "hallmarks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "hallmark_id",
+          "canonical_order",
+          "hallmark_bootstrap_status",
+          "tracked_public_outlook_count",
+          "next_priority_track_id"
+        ],
+        "properties": {
+          "hallmark_id": {
+            "$ref": "./common.schema.json#/$defs/hallmarkRef"
+          },
+          "canonical_order": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "hallmark_bootstrap_status": {
+            "enum": [
+              "unstarted",
+              "stubbed",
+              "baseline",
+              "deepened"
+            ]
+          },
+          "tracked_public_outlook_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "next_priority_track_id": {
+            "$ref": "./common.schema.json#/$defs/trackRef"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "tracks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "track_id",
+          "hallmark_id",
+          "canonical_order",
+          "coverage_status",
+          "next_mode",
+          "queue_state",
+          "default_research_question"
+        ],
+        "properties": {
+          "track_id": {
+            "$ref": "./common.schema.json#/$defs/trackRef"
+          },
+          "hallmark_id": {
+            "$ref": "./common.schema.json#/$defs/hallmarkRef"
+          },
+          "name": {
+            "type": "string"
+          },
+          "canonical_order": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "coverage_status": {
+            "enum": [
+              "not_started",
+              "stubbed",
+              "baseline",
+              "deepened"
+            ]
+          },
+          "next_mode": {
+            "enum": [
+              "bootstrap",
+              "surveillance"
+            ]
+          },
+          "queue_state": {
+            "enum": [
+              "ready",
+              "active_review",
+              "deferred"
+            ]
+          },
+          "last_candidate_bundle_id": {
+            "$ref": "./common.schema.json#/$defs/candidateBundleRef"
+          },
+          "last_candidate_bundle_status": {
+            "$ref": "./common.schema.json#/$defs/candidateStatus"
+          },
+          "default_research_question": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

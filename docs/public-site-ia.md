@@ -1,0 +1,566 @@
+# Public Site Information Architecture
+
+## Purpose
+
+This document defines the first public-site information architecture for the Hallmarks of Aging LEV Tracker.
+
+It assumes:
+
+- the public product is a website
+- the site is high-trust first, provocative second
+- the visitor should understand the overall LEV outlook and the state of all 12 hallmarks within 30 seconds
+- the site is driven by the current product brief and seeded hallmark/track taxonomy
+
+## Primary User Task
+
+A first-time visitor should be able to answer:
+
+1. Where are we overall on the path to LEV?
+2. Which hallmarks appear to be progressing, stalled, or thin?
+3. Why do those judgments exist?
+4. What changed recently?
+
+## Site Model
+
+The public site is a hybrid dashboard and report.
+
+It has:
+
+- a persistent navigation shell
+- a scan-first homepage
+- inspectable detail pages for hallmarks, tracks, interventions, and evidence
+- a separate activity lane
+- a readable editorial layer for forecast and interpretation
+
+## Navigation
+
+Top-level navigation:
+
+- `Overview`
+- `Hallmarks`
+- `Tracks`
+- `Activity`
+- `State of the Field`
+- `Methods`
+
+Global utilities:
+
+- search
+- latest update timestamp
+- evidence / interpretation / forecast legend
+
+The site should not lead with a conventional marketing nav. It should feel like an operational knowledge product.
+
+## Route Map
+
+- `/`
+  Homepage / Overview
+- `/hallmarks`
+  Hallmarks index
+- `/hallmarks/{hallmark_id}`
+  Hallmark detail page
+- `/tracks`
+  Track index
+- `/tracks/{track_id}`
+  Track detail page
+- `/interventions/{intervention_id}`
+  Intervention detail page
+- `/studies/{study_id}`
+  Study detail page
+- `/findings/{finding_id}`
+  Finding detail page
+- `/activity`
+  Activity feed
+- `/methods`
+  Methods and trust model
+- `/state-of-the-field`
+  Editorial archive index
+- `/state-of-the-field/{edition_slug}`
+  One editorial note
+
+## Homepage
+
+### Job
+
+Give a fast, legible answer to the entire product promise.
+
+### First Viewport
+
+The first viewport should contain four things, in this order:
+
+1. `Overall LEV outlook`
+2. `12 hallmark outlook grid`
+3. `Last updated / recent movement`
+4. `2036 scenario lens`
+
+The first viewport should not require scrolling to find the hallmark grid.
+
+### Homepage Sections
+
+#### 1. Overall LEV Outlook
+
+Fields:
+
+- overall state
+- current stage
+- momentum
+- confidence
+- main blockers
+- best current signals
+- short forecast note
+
+This is the main answer to "where are we overall?"
+
+#### 2. Hallmark Outlook Grid
+
+Twelve fixed cards in canonical hallmark order, not sorted by momentum.
+
+Reason:
+
+- a first-time user needs orientation more than ranking
+- canonical ordering is stable and easier to learn
+- ranking can be added later as a secondary view
+
+Each card should show:
+
+- hallmark name
+- current stage
+- momentum
+- confidence
+- top blocker
+- number of active tracks
+- last meaningful update
+
+Click target:
+
+- hallmark detail page
+
+#### 3. Recent Changes
+
+Compact feed of the most important recent public changes.
+
+Include:
+
+- outlook changes
+- milestone changes
+- newly published findings
+- notable activity items
+
+Do not show raw ingestion noise.
+
+#### 4. 2036 Scenario Lens
+
+This is a distinct panel, not the primary framing of the entire site.
+
+Fields:
+
+- scenario status
+- short explanation
+- what would need to change to move the status
+
+Allowed statuses:
+
+- unsupported
+- speculative
+- plausible
+- on_track
+
+#### 5. Methodology and Trust Notes
+
+Very compact block linking to Methods.
+
+Must communicate:
+
+- human-reviewed
+- source-backed
+- evidence, interpretation, and forecast are distinct
+
+## Hallmarks Index
+
+### Job
+
+Show all 12 hallmarks together in a more comparative view than the homepage.
+
+### Default View
+
+Canonical grid in hallmark order, with a view toggle for:
+
+- `grid`
+- `table`
+
+The table view should support scanning by:
+
+- stage
+- momentum
+- confidence
+- number of tracks
+- number of human-signal findings
+
+## Hallmark Detail Page
+
+### Job
+
+Explain one hallmark in a way that combines structure, evidence, and judgment.
+
+### Page Order
+
+1. Hallmark outlook
+2. Progress ladder and current stage
+3. Tracks in this hallmark
+4. Leading interventions
+5. Strongest findings
+6. Recent activity
+7. Forecast note and blockers
+
+### Hero Block
+
+Fields:
+
+- hallmark name
+- one-sentence description
+- current stage
+- momentum
+- confidence
+- main blocker
+- best current signal
+- last updated
+
+### Progress Ladder Module
+
+Show the shared five-stage ladder:
+
+1. mechanistic plausibility
+2. animal signal
+3. human biomarker signal
+4. human functional benefit
+5. durable disease or mortality relevance
+
+The page should clearly mark:
+
+- current stage
+- what evidence supports that stage
+- what evidence is missing for the next stage
+
+### Tracks Module
+
+This is the main content block on the page.
+
+Each track row or card should show:
+
+- track name
+- short summary
+- stage
+- momentum
+- confidence
+- top interventions
+- strongest signal
+- main blocker
+
+Default sort:
+
+- editorial importance first
+- then evidence density
+
+Not all 38 tracks need to be equally prominent on day one, but every seeded track under the hallmark should be reachable.
+
+### Leading Interventions Module
+
+A secondary grouping derived from tracks.
+
+Each intervention card should show:
+
+- intervention name
+- track
+- evidence snapshot
+- modality
+- latest notable finding or activity
+
+### Strongest Findings Module
+
+This is not a raw paper list.
+
+Each item should show:
+
+- finding statement
+- evidence tier
+- direction
+- confidence
+- linked source or study
+- caveat
+
+### Recent Activity Module
+
+Only contextual items:
+
+- trial launches
+- trial completions
+- company updates
+- funding events
+- regulatory events
+
+This section should be visually distinct from findings so users do not confuse motion with proof.
+
+## Track Index
+
+### Job
+
+Give a cross-hallmark view of the 38 seeded tracks.
+
+### Default Controls
+
+- filter by hallmark
+- filter by stage
+- filter by momentum
+- filter by modality
+- search by track name or alias
+
+### Default Layout
+
+Dense table or list, not a card wall.
+
+Each row should show:
+
+- track
+- primary hallmark
+- current stage
+- momentum
+- confidence
+- number of interventions
+- number of linked studies
+- last update
+
+## Track Detail Page
+
+### Job
+
+This is the operational center of the public site.
+
+If a user wants to understand what is actually happening in the field, they will often end up here.
+
+### Page Order
+
+1. Track outlook
+2. Target rationale
+3. Interventions
+4. Evidence ladder
+5. Best signals
+6. Blockers and open questions
+7. Recent changes
+8. Related hallmarks
+
+### Track Outlook Hero
+
+Fields:
+
+- track name
+- primary hallmark
+- summary
+- current stage
+- momentum
+- confidence
+- main blocker
+- best current signal
+- 2036 scenario status if relevant
+
+### Evidence Ladder Module
+
+Show the best evidence accumulated within the track across:
+
+- mechanistic
+- animal
+- human biomarker
+- human functional
+- durable outcome relevance
+
+This should make thin tracks visibly thin.
+
+### Blockers Module
+
+Explicitly list the reasons a promising track has not advanced:
+
+- safety
+- replication
+- durability
+- endpoint weakness
+- population mismatch
+- lack of human data
+
+## Intervention Detail Page
+
+### Job
+
+Show one intervention without losing the context of its track.
+
+### Page Order
+
+1. Intervention summary
+2. Primary and secondary hallmarks
+3. Track membership
+4. Evidence snapshot
+5. Linked studies
+6. Key findings
+7. Risks and open questions
+8. Related activity
+
+## Study Detail Page
+
+### Job
+
+Show one study as a structured evidence object.
+
+Fields:
+
+- title
+- study type
+- status
+- population or model
+- intervention links
+- hallmark links
+- track links
+- endpoint categories
+- source links
+- linked findings
+
+## Finding Detail Page
+
+### Job
+
+Show one atomic observation with its interpretation boundary.
+
+Fields:
+
+- plain-language statement
+- evidence tier
+- direction
+- confidence
+- study and source
+- linked hallmark and track
+- caveats
+- linked outlook or milestone impact
+
+## Activity Feed
+
+### Job
+
+Track movement without implying efficacy.
+
+### Controls
+
+- filter by lane
+- filter by hallmark
+- filter by track
+- filter by activity type
+
+### Lanes
+
+- scientific
+- commercial
+- regulatory
+
+Each activity item should always show whether it affects outlook.
+
+## State of the Field
+
+### Job
+
+Provide a recurring editorial artifact for users who want interpretation without inspecting every record.
+
+### Format
+
+Monthly editions with:
+
+- what changed
+- what did not change
+- which outlooks moved
+- what remains uncertain
+
+This is where the site can be more narrative without weakening the trust model.
+
+## Methods Page
+
+### Job
+
+Defend the product's credibility.
+
+### Sections
+
+- what the tracker is
+- what counts as evidence
+- how stages move
+- difference between evidence, interpretation, and forecast
+- what activity items mean
+- review and publication workflow
+- known limitations
+
+## Shared UI Objects
+
+### Outlook Card
+
+Used on homepage, hallmark pages, and track pages.
+
+Fields:
+
+- name
+- stage
+- momentum
+- confidence
+- blocker
+- signal
+- last updated
+
+### Stage Ladder
+
+Shared component used at overall, hallmark, and track levels.
+
+### Evidence Table
+
+Shared dense component for findings and studies.
+
+### Activity Rail
+
+Shared component for contextual updates.
+
+## Ordering Rules
+
+These rules should be consistent across the public site:
+
+- hallmarks use canonical framework order
+- tracks default to editorial importance within a hallmark
+- findings default to strongest and most decision-relevant first
+- activity defaults to newest first
+
+## Data Dependencies
+
+The public site depends on these record types:
+
+- `hallmark taxonomy`
+- `track taxonomy`
+- `track`
+- `intervention`
+- `study`
+- `finding`
+- `milestone`
+- `activity_item`
+- `outlook`
+- `publication_event`
+
+The public site does not depend directly on `candidate_bundle` or `review_comment`, though those support the admin workflow that produces public records.
+
+## Immediate Design Consequences
+
+Before the frontend is scaffolded, the data layer should support:
+
+- one overall outlook record
+- one outlook per hallmark
+- optional outlook per track
+- track records derived from the seeded taxonomy
+- publication events that drive recent changes
+
+## Next Build Step
+
+The next build artifact should be a homepage wireframe spec:
+
+- exact sections
+- component list
+- required data bindings
+- desktop and mobile layout behavior

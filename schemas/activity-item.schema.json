@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./activity-item.schema.json",
+  "title": "Activity item record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "id",
+    "name",
+    "activity_type",
+    "activity_lane",
+    "occurred_on"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "record_type": {
+      "const": "activity_item"
+    },
+    "id": {
+      "$ref": "./common.schema.json#/$defs/identifier"
+    },
+    "name": {
+      "type": "string"
+    },
+    "short_name": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "created_at": {
+      "$ref": "./common.schema.json#/$defs/dateTime"
+    },
+    "updated_at": {
+      "$ref": "./common.schema.json#/$defs/dateTime"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "activity_type": {
+      "$ref": "./common.schema.json#/$defs/activityType"
+    },
+    "activity_lane": {
+      "$ref": "./common.schema.json#/$defs/activityLane"
+    },
+    "occurred_on": {
+      "$ref": "./common.schema.json#/$defs/isoDate"
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/sourceRef"
+      },
+      "uniqueItems": true
+    },
+    "external_urls": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/url"
+      },
+      "uniqueItems": true
+    },
+    "hallmark_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/hallmarkRef"
+      },
+      "uniqueItems": true
+    },
+    "track_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/trackRef"
+      },
+      "uniqueItems": true
+    },
+    "intervention_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/interventionRef"
+      },
+      "uniqueItems": true
+    },
+    "study_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/studyRef"
+      },
+      "uniqueItems": true
+    },
+    "finding_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/findingRef"
+      },
+      "uniqueItems": true
+    },
+    "significance_note": {
+      "type": "string"
+    },
+    "affects_outlook": {
+      "type": "boolean"
+    }
+  }
+}

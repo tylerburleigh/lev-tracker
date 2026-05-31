@@ -1,0 +1,485 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./common.schema.json",
+  "title": "Common schema definitions",
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[._-][a-z0-9]+)*$",
+      "description": "Lowercase stable identifier used across records."
+    },
+    "isoDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "dateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "recordMeta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "record_type",
+        "id",
+        "name"
+      ],
+      "properties": {
+        "schema_version": {
+          "type": "string",
+          "const": "1.0.0"
+        },
+        "record_type": {
+          "type": "string"
+        },
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "short_name": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "created_at": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "hallmarkRef": {
+      "$ref": "#/$defs/identifier"
+    },
+    "sourceRef": {
+      "$ref": "#/$defs/identifier"
+    },
+    "trackRef": {
+      "$ref": "#/$defs/identifier"
+    },
+    "studyRef": {
+      "$ref": "#/$defs/identifier"
+    },
+    "interventionRef": {
+      "$ref": "#/$defs/identifier"
+    },
+    "findingRef": {
+      "$ref": "#/$defs/identifier"
+    },
+    "milestoneRef": {
+      "$ref": "#/$defs/identifier"
+    },
+    "activityItemRef": {
+      "$ref": "#/$defs/identifier"
+    },
+    "outlookRef": {
+      "$ref": "#/$defs/identifier"
+    },
+    "candidateBundleRef": {
+      "$ref": "#/$defs/identifier"
+    },
+    "reviewCommentRef": {
+      "$ref": "#/$defs/identifier"
+    },
+    "publicationEventRef": {
+      "$ref": "#/$defs/identifier"
+    },
+    "evidenceReviewRef": {
+      "$ref": "#/$defs/identifier"
+    },
+    "recordType": {
+      "type": "string",
+      "enum": [
+        "activity_item",
+        "candidate_bundle",
+        "evidence_review",
+        "finding",
+        "intervention",
+        "milestone",
+        "outlook",
+        "publication_event",
+        "review_comment",
+        "source",
+        "study",
+        "track"
+      ]
+    },
+    "recordLocator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_type",
+        "record_id"
+      ],
+      "properties": {
+        "record_type": {
+          "$ref": "#/$defs/recordType"
+        },
+        "record_id": {
+          "$ref": "#/$defs/identifier"
+        }
+      }
+    },
+    "modality": {
+      "type": "string",
+      "enum": [
+        "small_molecule",
+        "biologic",
+        "gene_therapy",
+        "cell_therapy",
+        "device",
+        "lifestyle",
+        "dietary_supplement",
+        "procedure",
+        "combination",
+        "diagnostic",
+        "other"
+      ]
+    },
+    "developmentStage": {
+      "type": "string",
+      "enum": [
+        "conceptual",
+        "discovery",
+        "preclinical",
+        "clinical",
+        "approved_for_other_indication",
+        "approved_for_aging_indication"
+      ]
+    },
+    "studyType": {
+      "type": "string",
+      "enum": [
+        "in_vitro",
+        "animal",
+        "observational",
+        "interventional",
+        "meta_analysis",
+        "review"
+      ]
+    },
+    "studyStatus": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "recruiting",
+        "active",
+        "completed",
+        "terminated",
+        "withdrawn",
+        "suspended",
+        "unknown"
+      ]
+    },
+    "phase": {
+      "type": "string",
+      "enum": [
+        "na",
+        "pilot",
+        "phase1",
+        "phase2",
+        "phase3",
+        "phase4"
+      ]
+    },
+    "endpointCategory": {
+      "type": "string",
+      "enum": [
+        "lifespan",
+        "healthspan",
+        "functional",
+        "biomarker",
+        "safety",
+        "mechanistic",
+        "regulatory",
+        "economic"
+      ]
+    },
+    "evidenceDirection": {
+      "type": "string",
+      "enum": [
+        "positive",
+        "negative",
+        "mixed",
+        "null",
+        "inconclusive",
+        "not_applicable"
+      ]
+    },
+    "evidenceTier": {
+      "type": "string",
+      "enum": [
+        "in_vitro",
+        "animal",
+        "human_biomarker",
+        "human_function",
+        "human_clinical_outcome",
+        "mortality_or_lifespan",
+        "review_or_meta_analysis",
+        "regulatory_or_program_update"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "low",
+        "moderate",
+        "high"
+      ]
+    },
+    "milestoneStatus": {
+      "type": "string",
+      "enum": [
+        "not_started",
+        "emerging",
+        "partially_met",
+        "substantially_met",
+        "met",
+        "blocked"
+      ]
+    },
+    "milestoneCategory": {
+      "type": "string",
+      "enum": [
+        "enabling",
+        "translational",
+        "clinical",
+        "regulatory",
+        "manufacturing"
+      ]
+    },
+    "levRelevance": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "progressStage": {
+      "type": "string",
+      "enum": [
+        "mechanistic_plausibility",
+        "animal_signal",
+        "human_biomarker_signal",
+        "human_functional_benefit",
+        "durable_disease_or_mortality_relevance"
+      ]
+    },
+    "momentum": {
+      "type": "string",
+      "enum": [
+        "accelerating",
+        "steady",
+        "mixed",
+        "stalled",
+        "uncertain"
+      ]
+    },
+    "subjectType": {
+      "type": "string",
+      "enum": [
+        "overall",
+        "hallmark",
+        "track",
+        "intervention"
+      ]
+    },
+    "activityType": {
+      "type": "string",
+      "enum": [
+        "trial_launch",
+        "trial_completion",
+        "results_posted",
+        "publication",
+        "correction",
+        "retraction",
+        "company_update",
+        "funding_event",
+        "regulatory_event",
+        "partnership",
+        "conference_abstract",
+        "other"
+      ]
+    },
+    "activityLane": {
+      "type": "string",
+      "enum": [
+        "scientific",
+        "commercial",
+        "regulatory"
+      ]
+    },
+    "candidateStatus": {
+      "type": "string",
+      "enum": [
+        "submitted",
+        "in_review",
+        "needs_revision",
+        "revised",
+        "approved",
+        "published",
+        "rejected"
+      ]
+    },
+    "intakeMode": {
+      "type": "string",
+      "enum": [
+        "bootstrap",
+        "surveillance",
+        "manual"
+      ]
+    },
+    "changeType": {
+      "type": "string",
+      "enum": [
+        "create_record",
+        "update_record",
+        "link_records",
+        "update_milestone",
+        "update_outlook",
+        "mark_duplicate",
+        "reject_candidate"
+      ]
+    },
+    "reviewCommentType": {
+      "type": "string",
+      "enum": [
+        "note",
+        "question",
+        "request_changes",
+        "approval",
+        "rejection",
+        "response"
+      ]
+    },
+    "reviewAuthorRole": {
+      "type": "string",
+      "enum": [
+        "agent",
+        "human_reviewer"
+      ]
+    },
+    "evidenceReviewLane": {
+      "type": "string",
+      "enum": [
+        "source_fidelity",
+        "interpretation_forecast",
+        "safety_limitations",
+        "taxonomy_mapping",
+        "forecast_calibration"
+      ]
+    },
+    "evidenceReviewStatus": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "superseded"
+      ]
+    },
+    "evidenceReviewVerdict": {
+      "type": "string",
+      "enum": [
+        "accept",
+        "needs_revision",
+        "reject",
+        "needs_human_judgment"
+      ]
+    },
+    "evidenceReviewerKind": {
+      "type": "string",
+      "enum": [
+        "agent",
+        "human"
+      ]
+    },
+    "evidenceReviewFindingSeverity": {
+      "type": "string",
+      "enum": [
+        "critical",
+        "major",
+        "minor",
+        "note"
+      ]
+    },
+    "evidenceReviewFindingCategory": {
+      "type": "string",
+      "enum": [
+        "source_mismatch",
+        "endpoint_boundary",
+        "interpretation_overreach",
+        "missing_caveat",
+        "activity_vs_evidence",
+        "safety_limitation",
+        "taxonomy_mapping",
+        "forecast_overreach",
+        "uncertainty",
+        "other"
+      ]
+    },
+    "evidenceReviewFindingResolution": {
+      "type": "string",
+      "enum": [
+        "open",
+        "addressed",
+        "closed"
+      ]
+    },
+    "resolutionStatus": {
+      "type": "string",
+      "enum": [
+        "open",
+        "addressed",
+        "closed"
+      ]
+    },
+    "publicationEventType": {
+      "type": "string",
+      "enum": [
+        "publish",
+        "update",
+        "correction",
+        "retraction",
+        "unpublish"
+      ]
+    },
+    "publicationTargetAction": {
+      "type": "string",
+      "enum": [
+        "created",
+        "updated",
+        "published",
+        "corrected",
+        "retracted",
+        "removed"
+      ]
+    },
+    "scenario2036Status": {
+      "type": "string",
+      "enum": [
+        "unsupported",
+        "speculative",
+        "plausible",
+        "on_track"
+      ]
+    }
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./research-priority-queue.schema.json",
+  "title": "Research priority queue",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "queue_type",
+    "track_taxonomy_version",
+    "updated_at",
+    "selection_policy",
+    "bootstrap_defaults",
+    "surveillance_defaults",
+    "phases",
+    "bootstrap_queue",
+    "surveillance_queue"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "queue_type": {
+      "const": "track_priority_queue"
+    },
+    "track_taxonomy_version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "$ref": "./common.schema.json#/$defs/dateTime"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "selection_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "default_unit",
+        "when_request_is_vague",
+        "when_request_is_too_broad",
+        "when_only_hallmark_is_named"
+      ],
+      "properties": {
+        "default_unit": {
+          "const": "track"
+        },
+        "when_request_is_vague": {
+          "type": "string"
+        },
+        "when_request_is_too_broad": {
+          "type": "string"
+        },
+        "when_only_hallmark_is_named": {
+          "type": "string"
+        }
+      }
+    },
+    "bootstrap_defaults": {
+      "$ref": "#/$defs/defaultBlock"
+    },
+    "surveillance_defaults": {
+      "$ref": "#/$defs/defaultBlock"
+    },
+    "phases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "phase_id",
+          "label",
+          "goal"
+        ],
+        "properties": {
+          "phase_id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "goal": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "bootstrap_queue": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/queueEntry"
+      }
+    },
+    "surveillance_queue": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/queueEntry"
+      }
+    }
+  },
+  "$defs": {
+    "defaultBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stop_after"
+      ],
+      "properties": {
+        "stop_after": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "queueEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rank",
+        "phase_id",
+        "track_id",
+        "hallmark_id",
+        "priority_tier",
+        "default_mode",
+        "rationale",
+        "default_question"
+      ],
+      "properties": {
+        "rank": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "phase_id": {
+          "type": "string"
+        },
+        "track_id": {
+          "$ref": "./common.schema.json#/$defs/trackRef"
+        },
+        "hallmark_id": {
+          "$ref": "./common.schema.json#/$defs/hallmarkRef"
+        },
+        "priority_tier": {
+          "enum": [
+            "now",
+            "soon",
+            "later"
+          ]
+        },
+        "default_mode": {
+          "enum": [
+            "bootstrap",
+            "surveillance"
+          ]
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "default_question": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

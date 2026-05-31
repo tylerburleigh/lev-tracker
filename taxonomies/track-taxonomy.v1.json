@@ -1,0 +1,831 @@
+{
+  "schema_version": "1.0.0",
+  "taxonomy": "hallmark_tracks",
+  "taxonomy_version": "1.0.0",
+  "description": "Seed track taxonomy for the Hallmarks of Aging LEV Tracker. Tracks are the stable working layer between hallmarks and specific interventions.",
+  "design_notes": [
+    "A track should be broader than one intervention and narrower than a hallmark.",
+    "This is a seeded editorial taxonomy, not a claim of scientific consensus.",
+    "Tracks may be split or merged later as evidence density and curator needs change.",
+    "Measurement methods and biomarkers are not tracks unless they are part of an intervention program.",
+    "Company activity, regulation, and funding belong in activity items, not in this taxonomy."
+  ],
+  "source_basis": [
+    {
+      "title": "Hallmarks of aging: An expanding universe",
+      "year": 2023,
+      "citation": "Lopez-Otin C, Blasco MA, Partridge L, Serrano M, Kroemer G. Cell. 2023;186(2):243-278.",
+      "doi": "10.1016/j.cell.2022.11.001",
+      "url": "https://doi.org/10.1016/j.cell.2022.11.001"
+    },
+    {
+      "title": "The hallmarks of aging as a conceptual framework for health and longevity research",
+      "year": 2024,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38292053/"
+    },
+    {
+      "title": "Insights on geroscience pre-clinical and clinical trials to promote healthy aging from the Intrinsic Capacity, Frailty and Sarcopenia Research Task Force 2025",
+      "year": 2025,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13010422/"
+    },
+    {
+      "title": "GeroScience Interest Group (GSIG)",
+      "year": 2026,
+      "url": "https://oir.nih.gov/sigs/geroscience-interest-group-gsig"
+    }
+  ],
+  "hallmark_groups": [
+    {
+      "hallmark_id": "genomic_instability",
+      "tracks": [
+        {
+          "id": "dna-repair-enhancement",
+          "name": "DNA Repair Enhancement",
+          "canonical_order": 1,
+          "summary": "Interventions intended to improve repair of age-associated DNA damage or stabilize the DNA damage response.",
+          "secondary_hallmark_ids": [
+            "telomere_attrition",
+            "epigenetic_alterations"
+          ],
+          "exemplar_modalities": [
+            "small_molecule",
+            "gene_therapy"
+          ],
+          "exemplar_interventions": [
+            "DNA repair pathway modulators",
+            "NAD-linked DNA repair support"
+          ],
+          "search_aliases": [
+            "DNA damage repair aging",
+            "DDR modulation aging",
+            "genome maintenance therapy aging"
+          ]
+        },
+        {
+          "id": "genome-surveillance-and-chromosome-stability",
+          "name": "Genome Surveillance and Chromosome Stability",
+          "canonical_order": 2,
+          "summary": "Approaches aimed at preserving chromosome segregation, checkpoint integrity, and broader genome maintenance.",
+          "exemplar_modalities": [
+            "small_molecule",
+            "gene_therapy"
+          ],
+          "search_aliases": [
+            "chromosome stability aging",
+            "aneuploidy aging intervention",
+            "genome surveillance aging"
+          ]
+        },
+        {
+          "id": "transposon-and-somatic-mutation-control",
+          "name": "Transposon and Somatic Mutation Control",
+          "canonical_order": 3,
+          "summary": "Strategies to limit age-associated mutational burden, clonal expansion, or transposable-element activity.",
+          "secondary_hallmark_ids": [
+            "chronic_inflammation"
+          ],
+          "exemplar_modalities": [
+            "small_molecule",
+            "gene_therapy"
+          ],
+          "search_aliases": [
+            "somatic mutation aging intervention",
+            "retrotransposon aging therapy",
+            "clonal hematopoiesis aging"
+          ]
+        }
+      ]
+    },
+    {
+      "hallmark_id": "telomere_attrition",
+      "tracks": [
+        {
+          "id": "telomerase-restoration",
+          "name": "Telomerase Restoration",
+          "canonical_order": 1,
+          "summary": "Interventions intended to restore telomerase activity or otherwise lengthen critically shortened telomeres.",
+          "secondary_hallmark_ids": [
+            "stem_cell_exhaustion",
+            "cellular_senescence"
+          ],
+          "exemplar_modalities": [
+            "gene_therapy",
+            "small_molecule"
+          ],
+          "exemplar_interventions": [
+            "telomerase gene therapy",
+            "telomerase activators"
+          ],
+          "search_aliases": [
+            "telomerase aging trial",
+            "telomere extension aging",
+            "telomerase restoration aging"
+          ]
+        },
+        {
+          "id": "telomere-protection-and-capping",
+          "name": "Telomere Protection and Capping",
+          "canonical_order": 2,
+          "summary": "Approaches that preserve telomere structure, capping, or shelterin-associated function without directly extending telomeres.",
+          "secondary_hallmark_ids": [
+            "genomic_instability"
+          ],
+          "exemplar_modalities": [
+            "small_molecule",
+            "gene_therapy"
+          ],
+          "search_aliases": [
+            "shelterin aging intervention",
+            "telomere protection aging",
+            "telomere capping therapy"
+          ]
+        }
+      ]
+    },
+    {
+      "hallmark_id": "epigenetic_alterations",
+      "tracks": [
+        {
+          "id": "partial-reprogramming",
+          "name": "Partial Reprogramming",
+          "canonical_order": 1,
+          "summary": "Transient reprogramming approaches intended to reverse age-associated epigenetic state without full dedifferentiation.",
+          "secondary_hallmark_ids": [
+            "telomere_attrition",
+            "stem_cell_exhaustion"
+          ],
+          "exemplar_modalities": [
+            "gene_therapy"
+          ],
+          "exemplar_interventions": [
+            "OSK-based partial reprogramming"
+          ],
+          "search_aliases": [
+            "partial reprogramming aging",
+            "epigenetic reprogramming rejuvenation",
+            "OSK aging"
+          ]
+        },
+        {
+          "id": "dna-methylation-and-epigenome-restoration",
+          "name": "DNA Methylation and Epigenome Restoration",
+          "canonical_order": 2,
+          "summary": "Interventions intended to reset or stabilize age-associated methylation and epigenomic drift.",
+          "exemplar_modalities": [
+            "small_molecule",
+            "gene_therapy"
+          ],
+          "search_aliases": [
+            "DNA methylation aging intervention",
+            "epigenome restoration aging",
+            "epigenetic rejuvenation therapy"
+          ]
+        },
+        {
+          "id": "chromatin-and-histone-modulation",
+          "name": "Chromatin and Histone Modulation",
+          "canonical_order": 3,
+          "summary": "Approaches targeting chromatin accessibility, histone state, or transcriptional organization during aging.",
+          "secondary_hallmark_ids": [
+            "loss_of_proteostasis"
+          ],
+          "exemplar_modalities": [
+            "small_molecule"
+          ],
+          "search_aliases": [
+            "histone modification aging therapy",
+            "chromatin aging intervention",
+            "chromatin remodeling aging"
+          ]
+        }
+      ]
+    },
+    {
+      "hallmark_id": "loss_of_proteostasis",
+      "tracks": [
+        {
+          "id": "chaperone-and-heat-shock-support",
+          "name": "Chaperone and Heat-Shock Support",
+          "canonical_order": 1,
+          "summary": "Strategies to bolster cellular protein folding capacity and stress-response chaperone systems.",
+          "exemplar_modalities": [
+            "small_molecule"
+          ],
+          "search_aliases": [
+            "chaperone aging therapy",
+            "heat shock response aging",
+            "proteostasis chaperone intervention"
+          ]
+        },
+        {
+          "id": "proteasome-enhancement",
+          "name": "Proteasome Enhancement",
+          "canonical_order": 2,
+          "summary": "Interventions aimed at improving proteasomal degradation of damaged or excess proteins.",
+          "secondary_hallmark_ids": [
+            "disabled_macroautophagy"
+          ],
+          "exemplar_modalities": [
+            "small_molecule"
+          ],
+          "search_aliases": [
+            "proteasome enhancement aging",
+            "ubiquitin proteasome aging therapy",
+            "proteasome activator aging"
+          ]
+        },
+        {
+          "id": "protein-aggregate-clearance",
+          "name": "Protein Aggregate Clearance",
+          "canonical_order": 3,
+          "summary": "Approaches to reduce age-associated accumulation of misfolded proteins or higher-order aggregates.",
+          "secondary_hallmark_ids": [
+            "disabled_macroautophagy",
+            "mitochondrial_dysfunction"
+          ],
+          "exemplar_modalities": [
+            "small_molecule",
+            "biologic"
+          ],
+          "search_aliases": [
+            "protein aggregate clearance aging",
+            "misfolded protein aging therapy",
+            "proteostasis aggregate intervention"
+          ]
+        }
+      ]
+    },
+    {
+      "hallmark_id": "disabled_macroautophagy",
+      "tracks": [
+        {
+          "id": "autophagy-induction",
+          "name": "Autophagy Induction",
+          "canonical_order": 1,
+          "summary": "Interventions intended to increase macroautophagic flux as a general recycling and stress-resilience strategy.",
+          "secondary_hallmark_ids": [
+            "loss_of_proteostasis",
+            "mitochondrial_dysfunction"
+          ],
+          "exemplar_modalities": [
+            "small_molecule",
+            "lifestyle"
+          ],
+          "exemplar_interventions": [
+            "rapamycin-class compounds",
+            "fasting-related protocols"
+          ],
+          "search_aliases": [
+            "autophagy induction aging",
+            "macroautophagy therapy aging",
+            "autophagic flux aging intervention"
+          ]
+        },
+        {
+          "id": "lysosomal-restoration",
+          "name": "Lysosomal Restoration",
+          "canonical_order": 2,
+          "summary": "Strategies to restore lysosomal function, acidification, trafficking, or degradative capacity.",
+          "secondary_hallmark_ids": [
+            "loss_of_proteostasis"
+          ],
+          "exemplar_modalities": [
+            "small_molecule",
+            "gene_therapy"
+          ],
+          "search_aliases": [
+            "lysosomal restoration aging",
+            "lysosome function aging therapy",
+            "lysosomal acidification aging"
+          ]
+        },
+        {
+          "id": "selective-autophagy-and-organelle-quality-control",
+          "name": "Selective Autophagy and Organelle Quality Control",
+          "canonical_order": 3,
+          "summary": "Approaches focused on targeted clearance pathways such as mitophagy and other organelle-specific quality-control systems.",
+          "secondary_hallmark_ids": [
+            "mitochondrial_dysfunction"
+          ],
+          "exemplar_modalities": [
+            "small_molecule",
+            "gene_therapy"
+          ],
+          "search_aliases": [
+            "selective autophagy aging",
+            "organelle quality control aging",
+            "targeted autophagy aging"
+          ]
+        }
+      ]
+    },
+    {
+      "hallmark_id": "deregulated_nutrient_sensing",
+      "tracks": [
+        {
+          "id": "rapalogs",
+          "name": "Rapalogs",
+          "canonical_order": 1,
+          "summary": "Interventions built around mTOR modulation as a route to aging-relevant benefit.",
+          "secondary_hallmark_ids": [
+            "disabled_macroautophagy",
+            "loss_of_proteostasis"
+          ],
+          "exemplar_modalities": [
+            "small_molecule"
+          ],
+          "exemplar_interventions": [
+            "rapamycin",
+            "everolimus",
+            "sirolimus"
+          ],
+          "search_aliases": [
+            "rapalog aging trial",
+            "mTOR aging intervention",
+            "rapamycin older adults"
+          ]
+        },
+        {
+          "id": "ampk-and-metabolic-modulators",
+          "name": "AMPK and Metabolic Modulators",
+          "canonical_order": 2,
+          "summary": "Interventions that primarily act through AMPK, glucose handling, or adjacent metabolic-control pathways.",
+          "secondary_hallmark_ids": [
+            "mitochondrial_dysfunction"
+          ],
+          "exemplar_modalities": [
+            "small_molecule"
+          ],
+          "exemplar_interventions": [
+            "metformin",
+            "berberine"
+          ],
+          "search_aliases": [
+            "AMPK aging intervention",
+            "metformin aging trial",
+            "metabolic modulator healthy aging"
+          ]
+        },
+        {
+          "id": "caloric-restriction-mimetics",
+          "name": "Caloric Restriction Mimetics",
+          "canonical_order": 3,
+          "summary": "Approaches intended to reproduce parts of the physiology of caloric restriction without full dietary restriction.",
+          "secondary_hallmark_ids": [
+            "mitochondrial_dysfunction",
+            "chronic_inflammation"
+          ],
+          "exemplar_modalities": [
+            "small_molecule",
+            "lifestyle"
+          ],
+          "exemplar_interventions": [
+            "acarbose",
+            "fasting-mimicking approaches"
+          ],
+          "search_aliases": [
+            "caloric restriction mimetic aging",
+            "fasting mimetic aging trial",
+            "CR mimetic geroscience"
+          ]
+        },
+        {
+          "id": "insulin-igf-axis-modulation",
+          "name": "Insulin and IGF Axis Modulation",
+          "canonical_order": 4,
+          "summary": "Strategies specifically targeting insulin or IGF-linked signaling in the context of aging biology.",
+          "secondary_hallmark_ids": [
+            "stem_cell_exhaustion"
+          ],
+          "exemplar_modalities": [
+            "small_molecule",
+            "biologic"
+          ],
+          "search_aliases": [
+            "IGF aging intervention",
+            "insulin signaling aging trial",
+            "IGF1 longevity therapy"
+          ]
+        }
+      ]
+    },
+    {
+      "hallmark_id": "mitochondrial_dysfunction",
+      "tracks": [
+        {
+          "id": "nad-and-redox-restoration",
+          "name": "NAD and Redox Restoration",
+          "canonical_order": 1,
+          "summary": "Approaches aimed at restoring NAD-linked metabolism, redox balance, and mitochondrial resilience.",
+          "secondary_hallmark_ids": [
+            "genomic_instability",
+            "deregulated_nutrient_sensing"
+          ],
+          "exemplar_modalities": [
+            "small_molecule",
+            "dietary_supplement"
+          ],
+          "exemplar_interventions": [
+            "NR",
+            "NMN",
+            "GlyNAC"
+          ],
+          "search_aliases": [
+            "NAD booster aging trial",
+            "redox aging intervention",
+            "mitochondrial metabolism healthy aging"
+          ]
+        },
+        {
+          "id": "mitophagy-enhancers",
+          "name": "Mitophagy Enhancers",
+          "canonical_order": 2,
+          "summary": "Interventions specifically intended to improve turnover of damaged mitochondria.",
+          "secondary_hallmark_ids": [
+            "disabled_macroautophagy"
+          ],
+          "exemplar_modalities": [
+            "small_molecule"
+          ],
+          "exemplar_interventions": [
+            "urolithin A"
+          ],
+          "search_aliases": [
+            "mitophagy enhancer aging",
+            "urolithin A aging trial",
+            "mitochondrial quality control aging"
+          ]
+        },
+        {
+          "id": "mitochondrial-biogenesis-and-dynamics",
+          "name": "Mitochondrial Biogenesis and Dynamics",
+          "canonical_order": 3,
+          "summary": "Approaches targeting mitochondrial turnover, fusion-fission balance, or biogenesis programs.",
+          "exemplar_modalities": [
+            "small_molecule",
+            "lifestyle"
+          ],
+          "search_aliases": [
+            "mitochondrial biogenesis aging",
+            "mitochondrial dynamics aging therapy",
+            "PGC1alpha aging intervention"
+          ]
+        },
+        {
+          "id": "mitochondrial-delivery-and-transplantation",
+          "name": "Mitochondrial Delivery and Transplantation",
+          "canonical_order": 4,
+          "summary": "Cellular or procedural approaches that transfer healthy mitochondria or targeted cargo to restore mitochondrial function.",
+          "exemplar_modalities": [
+            "procedure",
+            "cell_therapy"
+          ],
+          "search_aliases": [
+            "mitochondrial transplantation aging",
+            "mitochondria delivery therapy aging",
+            "mitochondrial transfer longevity"
+          ]
+        }
+      ]
+    },
+    {
+      "hallmark_id": "cellular_senescence",
+      "tracks": [
+        {
+          "id": "senolytics",
+          "name": "Senolytics",
+          "canonical_order": 1,
+          "summary": "Interventions intended to selectively eliminate senescent cells.",
+          "secondary_hallmark_ids": [
+            "chronic_inflammation"
+          ],
+          "exemplar_modalities": [
+            "small_molecule",
+            "biologic"
+          ],
+          "exemplar_interventions": [
+            "dasatinib plus quercetin",
+            "fisetin",
+            "BCL2-family targeting strategies"
+          ],
+          "search_aliases": [
+            "senolytic clinical trial",
+            "senescent cell clearance aging",
+            "D+Q aging trial"
+          ]
+        },
+        {
+          "id": "senomorphics",
+          "name": "Senomorphics",
+          "canonical_order": 2,
+          "summary": "Approaches that suppress the harmful phenotype of senescent cells without necessarily clearing them.",
+          "secondary_hallmark_ids": [
+            "chronic_inflammation",
+            "altered_intercellular_communication"
+          ],
+          "exemplar_modalities": [
+            "small_molecule"
+          ],
+          "exemplar_interventions": [
+            "rapamycin-class SASP modulation",
+            "metformin-class SASP modulation"
+          ],
+          "search_aliases": [
+            "senomorphic aging",
+            "SASP inhibition aging trial",
+            "senescence modulation therapy"
+          ]
+        },
+        {
+          "id": "immune-clearance-of-senescent-cells",
+          "name": "Immune Clearance of Senescent Cells",
+          "canonical_order": 3,
+          "summary": "Immune-based strategies that enhance recognition and removal of senescent cells.",
+          "secondary_hallmark_ids": [
+            "chronic_inflammation",
+            "altered_intercellular_communication"
+          ],
+          "exemplar_modalities": [
+            "cell_therapy",
+            "biologic"
+          ],
+          "search_aliases": [
+            "immune clearance senescent cells",
+            "CAR T senescence aging",
+            "immunosenolytic"
+          ]
+        }
+      ]
+    },
+    {
+      "hallmark_id": "stem_cell_exhaustion",
+      "tracks": [
+        {
+          "id": "stem-cell-rejuvenation",
+          "name": "Stem Cell Rejuvenation",
+          "canonical_order": 1,
+          "summary": "Approaches intended to restore function, self-renewal, or resilience in aged stem or progenitor cells.",
+          "secondary_hallmark_ids": [
+            "epigenetic_alterations",
+            "telomere_attrition"
+          ],
+          "exemplar_modalities": [
+            "small_molecule",
+            "gene_therapy"
+          ],
+          "search_aliases": [
+            "stem cell rejuvenation aging",
+            "progenitor rejuvenation aging",
+            "hematopoietic stem cell aging therapy"
+          ]
+        },
+        {
+          "id": "stem-cell-replacement-and-transplantation",
+          "name": "Stem Cell Replacement and Transplantation",
+          "canonical_order": 2,
+          "summary": "Cell replacement strategies that supply new stem or progenitor capacity to aged tissues.",
+          "secondary_hallmark_ids": [
+            "altered_intercellular_communication"
+          ],
+          "exemplar_modalities": [
+            "cell_therapy",
+            "procedure"
+          ],
+          "search_aliases": [
+            "stem cell transplant aging",
+            "regenerative cell therapy aging",
+            "progenitor replacement aging"
+          ]
+        },
+        {
+          "id": "niche-rejuvenation-and-support",
+          "name": "Niche Rejuvenation and Support",
+          "canonical_order": 3,
+          "summary": "Approaches that improve the tissue environment supporting aged stem cells rather than the cells alone.",
+          "secondary_hallmark_ids": [
+            "altered_intercellular_communication",
+            "chronic_inflammation"
+          ],
+          "exemplar_modalities": [
+            "small_molecule",
+            "biologic",
+            "cell_therapy"
+          ],
+          "search_aliases": [
+            "stem cell niche aging therapy",
+            "regenerative niche rejuvenation aging",
+            "microenvironment aging intervention"
+          ]
+        }
+      ]
+    },
+    {
+      "hallmark_id": "altered_intercellular_communication",
+      "tracks": [
+        {
+          "id": "circulating-factor-modulation",
+          "name": "Circulating Factor Modulation",
+          "canonical_order": 1,
+          "summary": "Approaches that alter age-associated systemic signals in blood or plasma.",
+          "secondary_hallmark_ids": [
+            "stem_cell_exhaustion",
+            "chronic_inflammation"
+          ],
+          "exemplar_modalities": [
+            "biologic",
+            "procedure"
+          ],
+          "search_aliases": [
+            "circulating factors aging",
+            "plasma aging intervention",
+            "systemic factors rejuvenation"
+          ]
+        },
+        {
+          "id": "extracellular-vesicle-and-secretome-therapies",
+          "name": "Extracellular Vesicle and Secretome Therapies",
+          "canonical_order": 2,
+          "summary": "Interventions using vesicles, conditioned media, or engineered secretomes to reshape signaling across tissues.",
+          "secondary_hallmark_ids": [
+            "chronic_inflammation",
+            "stem_cell_exhaustion"
+          ],
+          "exemplar_modalities": [
+            "biologic",
+            "cell_therapy"
+          ],
+          "search_aliases": [
+            "extracellular vesicle aging therapy",
+            "exosome aging trial",
+            "secretome rejuvenation"
+          ]
+        },
+        {
+          "id": "neuroendocrine-and-systemic-signal-reset",
+          "name": "Neuroendocrine and Systemic Signal Reset",
+          "canonical_order": 3,
+          "summary": "Approaches targeting endocrine, autonomic, or broader systemic signaling dysregulation associated with aging.",
+          "secondary_hallmark_ids": [
+            "deregulated_nutrient_sensing"
+          ],
+          "exemplar_modalities": [
+            "small_molecule",
+            "biologic",
+            "device"
+          ],
+          "search_aliases": [
+            "neuroendocrine aging intervention",
+            "systemic signaling aging therapy",
+            "endocrine reset healthy aging"
+          ]
+        }
+      ]
+    },
+    {
+      "hallmark_id": "chronic_inflammation",
+      "tracks": [
+        {
+          "id": "cytokine-and-inflammasome-modulation",
+          "name": "Cytokine and Inflammasome Modulation",
+          "canonical_order": 1,
+          "summary": "Approaches that directly target inflammatory cytokine pathways or inflammasome signaling in aging.",
+          "secondary_hallmark_ids": [
+            "cellular_senescence"
+          ],
+          "exemplar_modalities": [
+            "small_molecule",
+            "biologic"
+          ],
+          "search_aliases": [
+            "inflammaging intervention",
+            "inflammasome aging therapy",
+            "cytokine modulation healthy aging"
+          ]
+        },
+        {
+          "id": "immune-rejuvenation",
+          "name": "Immune Rejuvenation",
+          "canonical_order": 2,
+          "summary": "Strategies intended to restore age-impaired immune competence rather than only suppress inflammation.",
+          "secondary_hallmark_ids": [
+            "altered_intercellular_communication",
+            "stem_cell_exhaustion"
+          ],
+          "exemplar_modalities": [
+            "small_molecule",
+            "biologic",
+            "cell_therapy"
+          ],
+          "search_aliases": [
+            "immune rejuvenation aging",
+            "immunosenescence intervention",
+            "older adults immune aging trial"
+          ]
+        },
+        {
+          "id": "resolution-pathway-and-tissue-repair",
+          "name": "Resolution Pathway and Tissue Repair",
+          "canonical_order": 3,
+          "summary": "Approaches that promote resolution of sterile inflammation and more durable tissue recovery.",
+          "secondary_hallmark_ids": [
+            "altered_intercellular_communication"
+          ],
+          "exemplar_modalities": [
+            "small_molecule",
+            "dietary_supplement",
+            "biologic"
+          ],
+          "search_aliases": [
+            "inflammation resolution aging",
+            "pro-resolving mediators aging",
+            "tissue repair inflammaging"
+          ]
+        }
+      ]
+    },
+    {
+      "hallmark_id": "dysbiosis",
+      "tracks": [
+        {
+          "id": "microbiome-composition-modulation",
+          "name": "Microbiome Composition Modulation",
+          "canonical_order": 1,
+          "summary": "Approaches that alter the balance of microbial communities associated with aging.",
+          "secondary_hallmark_ids": [
+            "chronic_inflammation"
+          ],
+          "exemplar_modalities": [
+            "lifestyle",
+            "dietary_supplement"
+          ],
+          "exemplar_interventions": [
+            "probiotics",
+            "dietary modulation"
+          ],
+          "search_aliases": [
+            "microbiome aging intervention",
+            "gut microbiome healthy aging",
+            "probiotic aging trial"
+          ]
+        },
+        {
+          "id": "live-biotherapeutics-and-engineered-microbes",
+          "name": "Live Biotherapeutics and Engineered Microbes",
+          "canonical_order": 2,
+          "summary": "Targeted microbial therapeutics designed to shift aging-relevant host-microbiome interactions.",
+          "secondary_hallmark_ids": [
+            "chronic_inflammation",
+            "altered_intercellular_communication"
+          ],
+          "exemplar_modalities": [
+            "biologic"
+          ],
+          "search_aliases": [
+            "live biotherapeutic aging",
+            "engineered microbe aging therapy",
+            "microbiome therapeutic healthy aging"
+          ]
+        },
+        {
+          "id": "microbiome-metabolite-restoration",
+          "name": "Microbiome Metabolite Restoration",
+          "canonical_order": 3,
+          "summary": "Approaches centered on restoring beneficial microbial metabolites or metabolite signaling altered with age.",
+          "secondary_hallmark_ids": [
+            "chronic_inflammation",
+            "deregulated_nutrient_sensing"
+          ],
+          "exemplar_modalities": [
+            "dietary_supplement",
+            "small_molecule"
+          ],
+          "search_aliases": [
+            "postbiotic aging intervention",
+            "microbial metabolite healthy aging",
+            "short chain fatty acid aging"
+          ]
+        },
+        {
+          "id": "ecosystem-replacement",
+          "name": "Ecosystem Replacement",
+          "canonical_order": 4,
+          "summary": "Procedural approaches that replace or reset aging-associated microbial ecosystems more wholesale.",
+          "secondary_hallmark_ids": [
+            "chronic_inflammation"
+          ],
+          "exemplar_modalities": [
+            "procedure"
+          ],
+          "exemplar_interventions": [
+            "fecal microbiota transplantation"
+          ],
+          "search_aliases": [
+            "FMT aging",
+            "microbiota transplantation healthy aging",
+            "ecosystem reset microbiome aging"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-immune-rejuvenation-source-fidelity-r1",
+  "name": "Source fidelity review for immune rejuvenation bundle",
+  "candidate_bundle_id": "immune-rejuvenation-update-2026-05-30",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "skill_name": "lev-evidence-review",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged wording stays within the cited human functional context and does not imply durable disease modification.",
+  "created_at": "2026-05-30T18:12:00Z",
+  "reviewed_change_ids": [
+    "refresh-immune-rejuvenation-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "immune-source-boundary-note",
+      "severity": "note",
+      "category": "uncertainty",
+      "applies_to_change_id": "refresh-immune-rejuvenation-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-immune-rejuvenation-outlook"
+      },
+      "claim_or_issue": "The bundle relies on comparative legibility, not a stronger efficacy claim.",
+      "why_it_matters": "Readers could otherwise confuse clearer endpoints with stronger anti-aging evidence.",
+      "recommended_action": "Keep the public note explicit that the track gained legibility, not a stage move.",
+      "resolution_status": "closed"
+    }
+  ]
+}

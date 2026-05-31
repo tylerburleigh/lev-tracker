@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "hallmarks-framework-multihallmark-mapping",
+  "name": "Expanded framework supports multihallmark mapping",
+  "summary": "Framework-level finding used to justify many-to-many mappings between interventions and hallmarks.",
+  "source_id": "lopez-otin-2023-hallmarks",
+  "hallmark_ids": [
+    "genomic_instability",
+    "epigenetic_alterations",
+    "cellular_senescence",
+    "dysbiosis"
+  ],
+  "endpoint_category": "mechanistic",
+  "direction": "not_applicable",
+  "evidence_tier": "review_or_meta_analysis",
+  "confidence": "high",
+  "statement": "The expanded Hallmarks of Aging framework describes aging as a networked process, so tracker records should allow one intervention or study to map to multiple hallmarks.",
+  "caveats": [
+    "This is a schema-shaping interpretation rather than an efficacy claim."
+  ],
+  "tags": [
+    "framework",
+    "schema"
+  ]
+}

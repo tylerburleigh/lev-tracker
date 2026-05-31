@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "mitophagy-track-scan-2026-05-24",
+  "name": "Mitophagy track scan for May 24, 2026",
+  "summary": "Published bundle summarizing current public context for mitophagy enhancers.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-05-24T13:20:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current public-facing state of the mitophagy enhancers track?",
+    "hallmark_ids": [
+      "mitochondrial_dysfunction"
+    ],
+    "track_ids": [
+      "mitophagy-enhancers"
+    ]
+  },
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-mitophagy-enhancers-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-mitochondrial-dysfunction-outlook"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "update-mitophagy-outlook",
+      "change_type": "update_outlook",
+      "target_record_type": "outlook",
+      "target_record_id": "track-mitophagy-enhancers-outlook",
+      "file_path": "data/outlooks/track-mitophagy-enhancers-outlook.json",
+      "summary": "Promote a concise public reading of the mitophagy track.",
+      "rationale": "The track is now coherent enough to deserve a public-facing interpretation layer."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "mitophagy-enhancers",
+      "note": "Human biomarker signal is visible, but durable functional impact remains open.",
+      "confidence": "low"
+    }
+  ],
+  "publication_event_ids": [
+    "publish-mitophagy-track-scan-2026-05-24"
+  ],
+  "next_actions": [
+    "Revisit current human studies and outcome quality."
+  ],
+  "tags": [
+    "public"
+  ]
+}

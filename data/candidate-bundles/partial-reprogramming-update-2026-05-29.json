@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "partial-reprogramming-update-2026-05-29",
+  "name": "Partial reprogramming review update for May 29, 2026",
+  "summary": "In-review bundle intended to refine the public wording around translation risk.",
+  "intake_mode": "surveillance",
+  "lifecycle_status": "revised",
+  "submitted_at": "2026-05-29T14:40:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 2,
+  "scope": {
+    "question": "Should the public track note better separate conceptual promise from human translation readiness?",
+    "hallmark_ids": [
+      "epigenetic_alterations"
+    ],
+    "track_ids": [
+      "partial-reprogramming"
+    ]
+  },
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-partial-reprogramming-outlook"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "revise-partial-reprogramming-outlook",
+      "change_type": "update_outlook",
+      "target_record_type": "outlook",
+      "target_record_id": "track-partial-reprogramming-outlook",
+      "file_path": "data/outlooks/track-partial-reprogramming-outlook.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-update-2026-05-29/track-partial-reprogramming-outlook.json",
+      "summary": "Clarify the translation gap in the public forecast note.",
+      "rationale": "The current wording still risks reading as more imminent than the evidence supports.",
+      "uncertainty_flags": [
+        "No direct human intervention evidence"
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "partial-reprogramming",
+      "note": "No stage move is proposed. The change is interpretive discipline, not a stronger signal.",
+      "confidence": "low"
+    }
+  ],
+  "review_comment_ids": [
+    "review-partial-reprogramming-request",
+    "review-partial-reprogramming-response"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-partial-reprogramming-interpretation-r1",
+    "evidence-review-partial-reprogramming-source-fidelity-r2",
+    "evidence-review-partial-reprogramming-interpretation-r2"
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "next_actions": [
+    "Curator to decide whether the revised wording is ready for approval."
+  ],
+  "tags": [
+    "admin"
+  ]
+}

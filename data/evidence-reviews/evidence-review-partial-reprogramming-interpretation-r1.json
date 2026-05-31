@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-partial-reprogramming-interpretation-r1",
+  "name": "Initial interpretation review for partial reprogramming bundle",
+  "candidate_bundle_id": "partial-reprogramming-update-2026-05-29",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "skill_name": "lev-evidence-review",
+  "status": "superseded",
+  "verdict": "needs_revision",
+  "blocking": true,
+  "summary": "Revision 1 read too close to a near-term forecast despite the absence of direct human intervention evidence.",
+  "created_at": "2026-05-29T14:55:00Z",
+  "reviewed_change_ids": [
+    "revise-partial-reprogramming-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "partial-r1-forecast-overreach",
+      "severity": "major",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "revise-partial-reprogramming-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-partial-reprogramming-outlook"
+      },
+      "claim_or_issue": "The earlier staged wording implied near-term translation despite no direct human intervention evidence.",
+      "why_it_matters": "That would compress uncertainty into a bolder public forecast than the evidence supports.",
+      "recommended_action": "Move the human-translation caveat into the opening sentence and remove near-term phrasing.",
+      "resolution_status": "addressed"
+    }
+  ]
+}

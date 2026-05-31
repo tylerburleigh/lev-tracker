@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./review-comment.schema.json",
+  "title": "Review comment record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "id",
+    "name",
+    "candidate_bundle_id",
+    "author_role",
+    "comment_type",
+    "body",
+    "created_at",
+    "resolution_status"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "record_type": {
+      "const": "review_comment"
+    },
+    "id": {
+      "$ref": "./common.schema.json#/$defs/identifier"
+    },
+    "name": {
+      "type": "string"
+    },
+    "short_name": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "created_at": {
+      "$ref": "./common.schema.json#/$defs/dateTime"
+    },
+    "updated_at": {
+      "$ref": "./common.schema.json#/$defs/dateTime"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "candidate_bundle_id": {
+      "$ref": "./common.schema.json#/$defs/candidateBundleRef"
+    },
+    "author_role": {
+      "$ref": "./common.schema.json#/$defs/reviewAuthorRole"
+    },
+    "comment_type": {
+      "$ref": "./common.schema.json#/$defs/reviewCommentType"
+    },
+    "body": {
+      "type": "string"
+    },
+    "resolution_status": {
+      "$ref": "./common.schema.json#/$defs/resolutionStatus"
+    },
+    "parent_comment_id": {
+      "$ref": "./common.schema.json#/$defs/reviewCommentRef"
+    },
+    "applies_to_change_id": {
+      "$ref": "./common.schema.json#/$defs/identifier"
+    },
+    "applies_to_evidence_review_id": {
+      "$ref": "./common.schema.json#/$defs/evidenceReviewRef"
+    },
+    "applies_to_finding_id": {
+      "$ref": "./common.schema.json#/$defs/identifier"
+    },
+    "applies_to_record": {
+      "$ref": "./common.schema.json#/$defs/recordLocator"
+    },
+    "addressed_by_comment_id": {
+      "$ref": "./common.schema.json#/$defs/reviewCommentRef"
+    },
+    "addressed_at": {
+      "$ref": "./common.schema.json#/$defs/dateTime"
+    }
+  }
+}

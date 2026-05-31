@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "immune-rejuvenation-update-2026-05-30",
+  "name": "Immune rejuvenation update for May 30, 2026",
+  "summary": "Submitted bundle proposing a stronger public summary for a clinically legible track.",
+  "intake_mode": "surveillance",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-05-30T18:05:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "Does the current public track summary understate how legible immune functional endpoints are compared with other hallmarks?",
+    "hallmark_ids": [
+      "chronic_inflammation"
+    ],
+    "track_ids": [
+      "immune-rejuvenation"
+    ]
+  },
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-immune-rejuvenation-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-chronic-inflammation-outlook"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "refresh-immune-rejuvenation-outlook",
+      "change_type": "update_outlook",
+      "target_record_type": "outlook",
+      "target_record_id": "track-immune-rejuvenation-outlook",
+      "file_path": "data/outlooks/track-immune-rejuvenation-outlook.json",
+      "staged_file_path": "data/staged-records/immune-rejuvenation-update-2026-05-30/track-immune-rejuvenation-outlook.json",
+      "summary": "Strengthen the public summary of human functional legibility.",
+      "rationale": "Compared with many hallmarks, immune function is easier to observe in human studies without resorting to purely mechanistic proxies."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "immune-rejuvenation",
+      "note": "The track may deserve more prominence, but not necessarily a stage move.",
+      "confidence": "moderate"
+    }
+  ],
+  "review_comment_ids": [
+    "review-immune-rejuvenation-approval"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-immune-rejuvenation-source-fidelity-r1",
+    "evidence-review-immune-rejuvenation-interpretation-r1"
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin"
+  ],
+  "publication_event_ids": [
+    "publish-immune-rejuvenation-update-2026-05-30-2026-05-30t23-01-21-056z"
+  ]
+}

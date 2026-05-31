@@ -1,0 +1,246 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./candidate-bundle.schema.json",
+  "title": "Candidate bundle record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "id",
+    "name",
+    "intake_mode",
+    "lifecycle_status",
+    "submitted_at",
+    "proposed_changes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "record_type": {
+      "const": "candidate_bundle"
+    },
+    "id": {
+      "$ref": "./common.schema.json#/$defs/identifier"
+    },
+    "name": {
+      "type": "string"
+    },
+    "short_name": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "created_at": {
+      "$ref": "./common.schema.json#/$defs/dateTime"
+    },
+    "updated_at": {
+      "$ref": "./common.schema.json#/$defs/dateTime"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "intake_mode": {
+      "$ref": "./common.schema.json#/$defs/intakeMode"
+    },
+    "lifecycle_status": {
+      "$ref": "./common.schema.json#/$defs/candidateStatus"
+    },
+    "submitted_at": {
+      "$ref": "./common.schema.json#/$defs/dateTime"
+    },
+    "submitted_by": {
+      "type": "string"
+    },
+    "revision_number": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "supersedes_bundle_id": {
+      "$ref": "./common.schema.json#/$defs/candidateBundleRef"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "question": {
+          "type": "string"
+        },
+        "hallmark_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "./common.schema.json#/$defs/hallmarkRef"
+          },
+          "uniqueItems": true
+        },
+        "track_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "./common.schema.json#/$defs/trackRef"
+          },
+          "uniqueItems": true
+        },
+        "intervention_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "./common.schema.json#/$defs/interventionRef"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/sourceRef"
+      },
+      "uniqueItems": true
+    },
+    "source_urls": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/url"
+      },
+      "uniqueItems": true
+    },
+    "related_records": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/recordLocator"
+      },
+      "uniqueItems": true
+    },
+    "proposed_changes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "change_id",
+          "change_type",
+          "target_record_type",
+          "summary",
+          "rationale"
+        ],
+        "properties": {
+          "change_id": {
+            "$ref": "./common.schema.json#/$defs/identifier"
+          },
+          "change_type": {
+            "$ref": "./common.schema.json#/$defs/changeType"
+          },
+          "target_record_type": {
+            "$ref": "./common.schema.json#/$defs/recordType"
+          },
+          "target_record_id": {
+            "$ref": "./common.schema.json#/$defs/identifier"
+          },
+          "file_path": {
+            "type": "string"
+          },
+          "staged_file_path": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "uncertainty_flags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "proposed_outlook_implications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "subject_type",
+          "subject_id",
+          "note"
+        ],
+        "properties": {
+          "subject_type": {
+            "$ref": "./common.schema.json#/$defs/subjectType"
+          },
+          "subject_id": {
+            "$ref": "./common.schema.json#/$defs/identifier"
+          },
+          "note": {
+            "type": "string"
+          },
+          "confidence": {
+            "$ref": "./common.schema.json#/$defs/confidence"
+          }
+        }
+      }
+    },
+    "review_comment_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/reviewCommentRef"
+      },
+      "uniqueItems": true
+    },
+    "evidence_review_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/evidenceReviewRef"
+      },
+      "uniqueItems": true
+    },
+    "required_review_lanes": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/evidenceReviewLane"
+      },
+      "uniqueItems": true
+    },
+    "review_requirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "min_complete_reviews_per_lane": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "block_on_open_critical_findings": {
+          "type": "boolean"
+        },
+        "block_on_open_major_findings": {
+          "type": "boolean"
+        }
+      }
+    },
+    "publication_event_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/publicationEventRef"
+      },
+      "uniqueItems": true
+    },
+    "session_reference": {
+      "type": "string"
+    },
+    "next_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "sirolimus",
+  "name": "Sirolimus",
+  "summary": "mTOR-inhibiting small molecule tracked for potential geroscience applications.",
+  "aliases": [
+    "rapamycin"
+  ],
+  "modalities": [
+    "small_molecule"
+  ],
+  "target_hallmark_ids": [
+    "deregulated_nutrient_sensing"
+  ],
+  "secondary_hallmark_ids": [
+    "disabled_macroautophagy",
+    "loss_of_proteostasis"
+  ],
+  "track_ids": [
+    "rapalogs"
+  ],
+  "mechanism_summary": "Primarily modulates mTOR signaling, with downstream effects on autophagy and cellular stress handling.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "sirolimus-older-adults-phase2"
+  ],
+  "risk_flags": [
+    "immunosuppression",
+    "dose_sensitivity"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Durable functional benefit in older adults",
+      "Dose and schedule optimization for aging use cases"
+    ]
+  },
+  "tags": [
+    "rapalog",
+    "geroscience"
+  ]
+}

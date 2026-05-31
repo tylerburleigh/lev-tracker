@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-senescence-watch-update-2026-05-25",
+  "name": "Senescence review note tightened",
+  "summary": "Published an updated public hallmark note and a contextual watchlist activity item.",
+  "candidate_bundle_id": "senescence-watch-update-2026-05-25",
+  "event_type": "publish",
+  "published_at": "2026-05-25T16:00:00Z",
+  "published_by": "tyler",
+  "published_targets": [
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-cellular-senescence-outlook",
+      "action": "updated"
+    },
+    {
+      "record_type": "activity_item",
+      "record_id": "senescence-trial-watch-expansion",
+      "action": "created"
+    }
+  ],
+  "affected_outlook_ids": [
+    "hallmark-cellular-senescence-outlook"
+  ],
+  "change_note": "The site now more clearly distinguishes biomarker progress from functional benefit.",
+  "tags": [
+    "public"
+  ]
+}

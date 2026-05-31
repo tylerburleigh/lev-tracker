@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./track.schema.json",
+  "title": "Track record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "id",
+    "name",
+    "primary_hallmark_id"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "record_type": {
+      "const": "track"
+    },
+    "id": {
+      "$ref": "./common.schema.json#/$defs/identifier"
+    },
+    "name": {
+      "type": "string"
+    },
+    "short_name": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "created_at": {
+      "$ref": "./common.schema.json#/$defs/dateTime"
+    },
+    "updated_at": {
+      "$ref": "./common.schema.json#/$defs/dateTime"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "primary_hallmark_id": {
+      "$ref": "./common.schema.json#/$defs/hallmarkRef"
+    },
+    "secondary_hallmark_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/hallmarkRef"
+      },
+      "uniqueItems": true
+    },
+    "modality_focus": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/modality"
+      },
+      "uniqueItems": true
+    },
+    "approach_summary": {
+      "type": "string"
+    },
+    "mechanism_summary": {
+      "type": "string"
+    },
+    "inclusion_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "linked_intervention_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/interventionRef"
+      },
+      "uniqueItems": true
+    },
+    "linked_study_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/studyRef"
+      },
+      "uniqueItems": true
+    },
+    "linked_finding_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/findingRef"
+      },
+      "uniqueItems": true
+    },
+    "linked_milestone_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/milestoneRef"
+      },
+      "uniqueItems": true
+    },
+    "linked_activity_item_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/activityItemRef"
+      },
+      "uniqueItems": true
+    },
+    "linked_outlook_id": {
+      "$ref": "./common.schema.json#/$defs/outlookRef"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "rapalogs-update-2026-05-30",
+  "name": "Rapalogs surveillance update for May 30, 2026",
+  "summary": "Illustrative candidate bundle showing how surveillance outputs feed the admin review queue.",
+  "intake_mode": "surveillance",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-05-30T16:45:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 2,
+  "scope": {
+    "question": "Has anything changed recently in the rapalogs track that should alter public context or outlook?",
+    "hallmark_ids": [
+      "deregulated_nutrient_sensing"
+    ],
+    "track_ids": [
+      "rapalogs"
+    ],
+    "intervention_ids": [
+      "sirolimus"
+    ]
+  },
+  "source_ids": [
+    "nct05237687"
+  ],
+  "related_records": [
+    {
+      "record_type": "track",
+      "record_id": "rapalogs"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "sirolimus"
+    },
+    {
+      "record_type": "study",
+      "record_id": "sirolimus-older-adults-phase2"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "rapalogs-track-outlook"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "add-trial-update-activity-item",
+      "change_type": "create_record",
+      "target_record_type": "activity_item",
+      "target_record_id": "sirolimus-older-adults-trial-update",
+      "file_path": "examples/activity-item-sirolimus-trial-update.json",
+      "summary": "Add a contextual trial activity record.",
+      "rationale": "The trial update matters for public context and recent changes, but should remain separate from efficacy claims."
+    },
+    {
+      "change_id": "update-rapalogs-outlook",
+      "change_type": "update_outlook",
+      "target_record_type": "outlook",
+      "target_record_id": "rapalogs-track-outlook",
+      "file_path": "examples/outlook-rapalogs-track.json",
+      "summary": "Refresh the rapalogs track outlook note.",
+      "rationale": "The track outlook should reflect the latest contextual movement without overstating what changed scientifically.",
+      "uncertainty_flags": [
+        "No new functional endpoint data in this example bundle"
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "rapalogs",
+      "note": "Context changed, but the stage remains human_biomarker_signal.",
+      "confidence": "moderate"
+    }
+  ],
+  "review_comment_ids": [
+    "review-rapalogs-bundle-request",
+    "review-rapalogs-bundle-response"
+  ],
+  "publication_event_ids": [
+    "publish-rapalogs-update-2026-05-30"
+  ],
+  "session_reference": "research/sessions/2026-05-30-rapalogs.md",
+  "next_actions": [
+    "Recheck for posted results or linked publication.",
+    "Look for functional endpoints that could move the track stage."
+  ],
+  "tags": [
+    "candidate_bundle",
+    "example"
+  ]
+}

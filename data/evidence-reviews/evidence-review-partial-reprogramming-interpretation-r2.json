@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-partial-reprogramming-interpretation-r2",
+  "name": "Interpretation review for revised partial reprogramming bundle",
+  "candidate_bundle_id": "partial-reprogramming-update-2026-05-29",
+  "bundle_revision_number": 2,
+  "review_round": 2,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "skill_name": "lev-evidence-review",
+  "status": "complete",
+  "verdict": "needs_human_judgment",
+  "blocking": true,
+  "summary": "The revised wording is materially tighter, but the prominence and phrasing of conceptual promise still needs curator judgment before approval.",
+  "created_at": "2026-05-30T18:05:00Z",
+  "reviewed_change_ids": [
+    "revise-partial-reprogramming-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "partial-r2-translation-risk-prominence",
+      "severity": "major",
+      "category": "interpretation_overreach",
+      "applies_to_change_id": "revise-partial-reprogramming-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-partial-reprogramming-outlook"
+      },
+      "claim_or_issue": "Conceptual promise is still prominent enough that the public note may read as more imminent than the evidence supports.",
+      "why_it_matters": "This is the kind of wording drift that turns a careful tracker into an overconfident forecast surface.",
+      "recommended_action": "Have the curator decide whether the revised first sentence is strong enough or whether the promise framing should be trimmed again.",
+      "resolution_status": "addressed"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./milestone.schema.json",
+  "title": "Milestone record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "id",
+    "name",
+    "hallmark_ids",
+    "category",
+    "status",
+    "lev_relevance",
+    "completion_criteria"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "record_type": {
+      "const": "milestone"
+    },
+    "id": {
+      "$ref": "./common.schema.json#/$defs/identifier"
+    },
+    "name": {
+      "type": "string"
+    },
+    "short_name": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "created_at": {
+      "$ref": "./common.schema.json#/$defs/dateTime"
+    },
+    "updated_at": {
+      "$ref": "./common.schema.json#/$defs/dateTime"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "hallmark_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "./common.schema.json#/$defs/hallmarkRef"
+      },
+      "uniqueItems": true
+    },
+    "track_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/trackRef"
+      },
+      "uniqueItems": true
+    },
+    "category": {
+      "$ref": "./common.schema.json#/$defs/milestoneCategory"
+    },
+    "status": {
+      "$ref": "./common.schema.json#/$defs/milestoneStatus"
+    },
+    "lev_relevance": {
+      "$ref": "./common.schema.json#/$defs/levRelevance"
+    },
+    "completion_criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "dependent_milestone_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/milestoneRef"
+      },
+      "uniqueItems": true
+    },
+    "supporting_finding_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/findingRef"
+      },
+      "uniqueItems": true
+    },
+    "supporting_source_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/sourceRef"
+      },
+      "uniqueItems": true
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./intervention.schema.json",
+  "title": "Intervention record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "id",
+    "name",
+    "modalities",
+    "target_hallmark_ids",
+    "development_stage"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "record_type": {
+      "const": "intervention"
+    },
+    "id": {
+      "$ref": "./common.schema.json#/$defs/identifier"
+    },
+    "name": {
+      "type": "string"
+    },
+    "short_name": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "created_at": {
+      "$ref": "./common.schema.json#/$defs/dateTime"
+    },
+    "updated_at": {
+      "$ref": "./common.schema.json#/$defs/dateTime"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "modalities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "./common.schema.json#/$defs/modality"
+      },
+      "uniqueItems": true
+    },
+    "target_hallmark_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "./common.schema.json#/$defs/hallmarkRef"
+      },
+      "uniqueItems": true
+    },
+    "secondary_hallmark_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/hallmarkRef"
+      },
+      "uniqueItems": true
+    },
+    "track_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/trackRef"
+      },
+      "uniqueItems": true
+    },
+    "mechanism_summary": {
+      "type": "string"
+    },
+    "development_stage": {
+      "$ref": "./common.schema.json#/$defs/developmentStage"
+    },
+    "linked_study_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/studyRef"
+      },
+      "uniqueItems": true
+    },
+    "linked_finding_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/findingRef"
+      },
+      "uniqueItems": true
+    },
+    "risk_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "best_evidence_tier": {
+          "$ref": "./common.schema.json#/$defs/evidenceTier"
+        },
+        "human_data": {
+          "type": "boolean"
+        },
+        "open_questions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

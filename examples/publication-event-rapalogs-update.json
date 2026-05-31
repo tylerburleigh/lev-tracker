@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-rapalogs-update-2026-05-30",
+  "name": "Published rapalogs surveillance update",
+  "summary": "Illustrative publication event showing how reviewed changes become public.",
+  "candidate_bundle_id": "rapalogs-update-2026-05-30",
+  "event_type": "publish",
+  "published_at": "2026-05-30T17:15:00Z",
+  "published_by": "tyler",
+  "published_targets": [
+    {
+      "record_type": "activity_item",
+      "record_id": "sirolimus-older-adults-trial-update",
+      "action": "created"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "rapalogs-track-outlook",
+      "action": "updated"
+    }
+  ],
+  "affected_outlook_ids": [
+    "rapalogs-track-outlook"
+  ],
+  "change_note": "Published a new contextual activity item and refreshed the rapalogs track outlook note.",
+  "tags": [
+    "publication",
+    "example"
+  ]
+}
