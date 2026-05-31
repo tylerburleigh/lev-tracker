@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "human-hsc-cdc42-casin-repolarization",
+  "name": "CASIN repolarized aged human HSCs ex vivo",
+  "summary": "A human donor cell study provides direct ex vivo human-biomarker support for Cdc42-linked HSC rejuvenation.",
+  "source_id": "pmid-33440922",
+  "study_id": "human-hsc-cdc42-casin-ex-vivo",
+  "intervention_ids": [
+    "casin"
+  ],
+  "track_ids": [
+    "stem-cell-rejuvenation"
+  ],
+  "hallmark_ids": [
+    "stem_cell_exhaustion"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "positive",
+  "evidence_tier": "human_biomarker",
+  "confidence": "low",
+  "statement": "Older human HSCs showed elevated Cdc42 activity and reduced polarity, and ex vivo CASIN treatment repolarized aged human HSCs with respect to Cdc42 while shifting xenotransplant engraftment profiles toward those seen with young HSCs.",
+  "population_or_model": "Human hematopoietic stem cells from young and older donors, with xenotransplant readouts in immunodeficient mice",
+  "time_horizon": "Ex vivo treatment and xenotransplant follow-up",
+  "quantitative_note": "The staged baseline treats this as direct human-cell biomarker evidence rather than in vivo human efficacy.",
+  "caveats": [
+    "CASIN was applied ex vivo, not dosed as a human therapy.",
+    "The functional engraftment readout used immunodeficient mouse recipients.",
+    "Human donor-cell findings do not establish safety, durability, or clinical benefit in people."
+  ],
+  "tags": [
+    "human",
+    "ex-vivo",
+    "hsc",
+    "cdc42",
+    "casin"
+  ]
+}

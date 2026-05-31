@@ -106,23 +106,27 @@ Recent coverage changes:
    - Current status: published.
    - Note: `chaperone-and-heat-shock-support-bootstrap-2026-05-31` published 23 source, study, finding, and outlook records for the first public baseline after source-fidelity and interpretation/forecast reviews passed.
 
+4. `stem-cell-rejuvenation`
+   - Current status: published.
+   - Note: `stem-cell-rejuvenation-bootstrap-2026-05-31` published 19 source, study, finding, and outlook records for the first public baseline after source-fidelity and interpretation/forecast reviews passed.
+
 Next bootstrap queue items:
 
-1. `stem-cell-rejuvenation`
-2. `circulating-factor-modulation`
-3. `nad-and-redox-restoration`
-4. `cytokine-and-inflammasome-modulation`
-5. `stem-cell-replacement-and-transplantation`
-6. `extracellular-vesicle-and-secretome-therapies`
+1. `circulating-factor-modulation`
+2. `nad-and-redox-restoration`
+3. `cytokine-and-inflammasome-modulation`
+4. `extracellular-vesicle-and-secretome-therapies`
+5. `neuroendocrine-and-systemic-signal-reset`
+6. `genome-surveillance-and-chromosome-stability`
 
 Top surveillance queue items:
 
 1. `microbiome-composition-modulation`
-2. `chaperone-and-heat-shock-support`
-3. `telomerase-restoration`
-4. `dna-repair-enhancement`
-5. `autophagy-induction`
-6. `partial-reprogramming`
+2. `stem-cell-rejuvenation`
+3. `chaperone-and-heat-shock-support`
+4. `telomerase-restoration`
+5. `dna-repair-enhancement`
+6. `autophagy-induction`
 
 Research runs should continue to follow `docs/research-ops-state.md`: one track per run, one session record, zero or one candidate bundle, staged JSON only for material changes.
 

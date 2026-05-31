@@ -1,0 +1,296 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "stem-cell-rejuvenation-bootstrap-2026-05-31",
+  "name": "Stem cell rejuvenation bootstrap for May 31, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline for the stem cell rejuvenation track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-05-31T16:28:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Stem Cell Rejuvenation, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "stem_cell_exhaustion"
+    ],
+    "track_ids": [
+      "stem-cell-rejuvenation"
+    ]
+  },
+  "source_ids": [
+    "pmid-33440922",
+    "pmid-22560076",
+    "pmid-32755011",
+    "pmid-27127236",
+    "pmid-24531378",
+    "pmid-36266373"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/33440922/",
+    "https://pubmed.ncbi.nlm.nih.gov/22560076/",
+    "https://pubmed.ncbi.nlm.nih.gov/32755011/",
+    "https://pubmed.ncbi.nlm.nih.gov/27127236/",
+    "https://pubmed.ncbi.nlm.nih.gov/24531378/",
+    "https://pubmed.ncbi.nlm.nih.gov/36266373/"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-stem-cell-rejuvenation-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-stem-cell-exhaustion-outlook"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "human-hsc-cdc42-casin-repolarization"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "cdc42-inhibition-rejuvenated-aged-mouse-hsc"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "systemic-casin-extended-aged-mouse-lifespan"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "nr-rejuvenated-aged-mouse-stem-cells"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "p38-inhibition-restored-aged-musc-regeneration"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "exercise-increased-human-pax7-satellite-cells"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-33440922",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-33440922",
+      "file_path": "data/sources/pmid-33440922.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-bootstrap-2026-05-31/pmid-33440922.json",
+      "summary": "Add human HSC Cdc42 aging source.",
+      "rationale": "This source anchors the direct ex vivo human-cell biomarker signal for the baseline."
+    },
+    {
+      "change_id": "create-source-pmid-22560076",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-22560076",
+      "file_path": "data/sources/pmid-22560076.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-bootstrap-2026-05-31/pmid-22560076.json",
+      "summary": "Add CASIN mouse HSC rejuvenation source.",
+      "rationale": "This source anchors the Cdc42 inhibition animal rejuvenation signal."
+    },
+    {
+      "change_id": "create-source-pmid-32755011",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-32755011",
+      "file_path": "data/sources/pmid-32755011.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-bootstrap-2026-05-31/pmid-32755011.json",
+      "summary": "Add systemic CASIN aged-mouse lifespan source.",
+      "rationale": "This source captures animal lifespan support and its translational boundary."
+    },
+    {
+      "change_id": "create-source-pmid-27127236",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-27127236",
+      "file_path": "data/sources/pmid-27127236.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-bootstrap-2026-05-31/pmid-27127236.json",
+      "summary": "Add NAD+ repletion aged-mouse stem-cell source.",
+      "rationale": "This source captures cross-hallmark animal support for aged stem-cell functional restoration."
+    },
+    {
+      "change_id": "create-source-pmid-24531378",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-24531378",
+      "file_path": "data/sources/pmid-24531378.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-bootstrap-2026-05-31/pmid-24531378.json",
+      "summary": "Add p38 inhibition aged muscle stem-cell source.",
+      "rationale": "This source anchors pathway-targeted animal functional regeneration evidence."
+    },
+    {
+      "change_id": "create-source-pmid-36266373",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-36266373",
+      "file_path": "data/sources/pmid-36266373.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-bootstrap-2026-05-31/pmid-36266373.json",
+      "summary": "Add human exercise Pax7 satellite-cell meta-analysis source.",
+      "rationale": "This source provides human biomarker context while preserving that exercise is not a targeted stem-cell rejuvenation drug."
+    },
+    {
+      "change_id": "create-study-human-hsc-cdc42-casin-ex-vivo",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "human-hsc-cdc42-casin-ex-vivo",
+      "file_path": "data/studies/human-hsc-cdc42-casin-ex-vivo.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-bootstrap-2026-05-31/human-hsc-cdc42-casin-ex-vivo.json",
+      "summary": "Add human HSC Cdc42 and CASIN ex vivo study record.",
+      "rationale": "The study record links the direct human-cell biomarker signal to the track."
+    },
+    {
+      "change_id": "create-study-cdc42-casin-aged-hsc-rejuvenation-mice",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "cdc42-casin-aged-hsc-rejuvenation-mice",
+      "file_path": "data/studies/cdc42-casin-aged-hsc-rejuvenation-mice.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-bootstrap-2026-05-31/cdc42-casin-aged-hsc-rejuvenation-mice.json",
+      "summary": "Add Cdc42 inhibition aged mouse HSC study record.",
+      "rationale": "The study record links CASIN mouse rejuvenation evidence to the track."
+    },
+    {
+      "change_id": "create-study-systemic-casin-aged-mouse-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "systemic-casin-aged-mouse-lifespan",
+      "file_path": "data/studies/systemic-casin-aged-mouse-lifespan.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-bootstrap-2026-05-31/systemic-casin-aged-mouse-lifespan.json",
+      "summary": "Add systemic CASIN aged-mouse lifespan study record.",
+      "rationale": "The study record links animal lifespan support to the evidence ladder without treating it as human evidence."
+    },
+    {
+      "change_id": "create-study-nad-repletion-aged-mouse-stem-cell-function",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "nad-repletion-aged-mouse-stem-cell-function",
+      "file_path": "data/studies/nad-repletion-aged-mouse-stem-cell-function.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-bootstrap-2026-05-31/nad-repletion-aged-mouse-stem-cell-function.json",
+      "summary": "Add NAD+ repletion aged-mouse stem-cell study record.",
+      "rationale": "The study record captures cross-hallmark animal support while keeping the NAD overlap explicit."
+    },
+    {
+      "change_id": "create-study-p38-inhibition-aged-musc-regeneration",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "p38-inhibition-aged-musc-regeneration",
+      "file_path": "data/studies/p38-inhibition-aged-musc-regeneration.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-bootstrap-2026-05-31/p38-inhibition-aged-musc-regeneration.json",
+      "summary": "Add p38 inhibition aged muscle stem-cell study record.",
+      "rationale": "The study record links aged MuSC functional rescue to the track."
+    },
+    {
+      "change_id": "create-study-exercise-pax7-satellite-cell-human-meta",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "exercise-pax7-satellite-cell-human-meta",
+      "file_path": "data/studies/exercise-pax7-satellite-cell-human-meta.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-bootstrap-2026-05-31/exercise-pax7-satellite-cell-human-meta.json",
+      "summary": "Add human exercise Pax7 satellite-cell meta-analysis study record.",
+      "rationale": "The study record captures human biomarker responsiveness without overclaiming targeted rejuvenation."
+    },
+    {
+      "change_id": "create-finding-human-hsc-cdc42-casin-repolarization",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "human-hsc-cdc42-casin-repolarization",
+      "file_path": "data/findings/human-hsc-cdc42-casin-repolarization.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-bootstrap-2026-05-31/human-hsc-cdc42-casin-repolarization.json",
+      "summary": "Add ex vivo human HSC CASIN biomarker finding.",
+      "rationale": "This finding supports the human_biomarker_signal stage assignment."
+    },
+    {
+      "change_id": "create-finding-cdc42-inhibition-rejuvenated-aged-mouse-hsc",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "cdc42-inhibition-rejuvenated-aged-mouse-hsc",
+      "file_path": "data/findings/cdc42-inhibition-rejuvenated-aged-mouse-hsc.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-bootstrap-2026-05-31/cdc42-inhibition-rejuvenated-aged-mouse-hsc.json",
+      "summary": "Add aged mouse HSC CASIN rejuvenation finding.",
+      "rationale": "This finding supports the preclinical functional signal."
+    },
+    {
+      "change_id": "create-finding-systemic-casin-extended-aged-mouse-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "systemic-casin-extended-aged-mouse-lifespan",
+      "file_path": "data/findings/systemic-casin-extended-aged-mouse-lifespan.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-bootstrap-2026-05-31/systemic-casin-extended-aged-mouse-lifespan.json",
+      "summary": "Add systemic CASIN aged-mouse lifespan finding.",
+      "rationale": "This finding captures the animal lifespan signal and translational boundary."
+    },
+    {
+      "change_id": "create-finding-nr-rejuvenated-aged-mouse-stem-cells",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nr-rejuvenated-aged-mouse-stem-cells",
+      "file_path": "data/findings/nr-rejuvenated-aged-mouse-stem-cells.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-bootstrap-2026-05-31/nr-rejuvenated-aged-mouse-stem-cells.json",
+      "summary": "Add NR aged-mouse stem-cell function finding.",
+      "rationale": "This finding captures cross-hallmark animal evidence for stem-cell resilience."
+    },
+    {
+      "change_id": "create-finding-p38-inhibition-restored-aged-musc-regeneration",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "p38-inhibition-restored-aged-musc-regeneration",
+      "file_path": "data/findings/p38-inhibition-restored-aged-musc-regeneration.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-bootstrap-2026-05-31/p38-inhibition-restored-aged-musc-regeneration.json",
+      "summary": "Add p38 inhibition aged MuSC regeneration finding.",
+      "rationale": "This finding supports the animal functional-regeneration signal."
+    },
+    {
+      "change_id": "create-finding-exercise-increased-human-pax7-satellite-cells",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "exercise-increased-human-pax7-satellite-cells",
+      "file_path": "data/findings/exercise-increased-human-pax7-satellite-cells.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-bootstrap-2026-05-31/exercise-increased-human-pax7-satellite-cells.json",
+      "summary": "Add human exercise satellite-cell biomarker finding.",
+      "rationale": "This finding provides human biomarker context while preserving the targeted-therapy boundary."
+    },
+    {
+      "change_id": "create-outlook-track-stem-cell-rejuvenation",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-stem-cell-rejuvenation-outlook",
+      "file_path": "data/outlooks/track-stem-cell-rejuvenation-outlook.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-bootstrap-2026-05-31/track-stem-cell-rejuvenation-outlook.json",
+      "summary": "Add the first public stem cell rejuvenation track outlook.",
+      "rationale": "The staged outlook sets a conservative human_biomarker_signal baseline with low confidence and explicit translational limits."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "stem-cell-rejuvenation",
+      "note": "Create the first public track outlook at human_biomarker_signal with steady momentum and low confidence because human evidence is ex vivo or biomarker-level while functional evidence remains preclinical.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-05-31-stem-cell-rejuvenation-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin",
+    "bootstrap",
+    "stem-cell-rejuvenation"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-stem-cell-rejuvenation-source-fidelity-r1",
+    "evidence-review-stem-cell-rejuvenation-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-stem-cell-rejuvenation-bootstrap-2026-05-31-2026-05-31t16-42-37-038z"
+  ]
+}

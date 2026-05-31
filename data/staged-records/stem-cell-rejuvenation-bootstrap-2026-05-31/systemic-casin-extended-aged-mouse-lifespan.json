@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "systemic-casin-extended-aged-mouse-lifespan",
+  "name": "Systemic CASIN extended lifespan in aged female mice",
+  "summary": "A later mouse study connects systemic Cdc42 inhibition to lifespan and inflammatory/epigenetic age markers, but remains preclinical.",
+  "source_id": "pmid-32755011",
+  "study_id": "systemic-casin-aged-mouse-lifespan",
+  "intervention_ids": [
+    "casin"
+  ],
+  "track_ids": [
+    "stem-cell-rejuvenation"
+  ],
+  "hallmark_ids": [
+    "stem_cell_exhaustion"
+  ],
+  "endpoint_category": "lifespan",
+  "direction": "positive",
+  "evidence_tier": "mortality_or_lifespan",
+  "confidence": "low",
+  "statement": "A four-day systemic CASIN course in 75-week-old female C57BL/6 mice reportedly extended average and maximum lifespan while lowering aging-associated inflammatory cytokines and blood DNA-methylation age.",
+  "population_or_model": "Aged female C57BL/6 mice",
+  "time_horizon": "Post-treatment lifespan follow-up after a four-day intervention",
+  "quantitative_note": "The study reports significant extension of average and maximum lifespan; the staged baseline treats it as animal lifespan evidence, not human-relevant proof.",
+  "caveats": [
+    "Single-species, female-mouse evidence is not enough for human forecast confidence.",
+    "The mechanism may involve systemic inflammation and blood-cell epigenetic age, not only stem-cell-intrinsic rejuvenation.",
+    "Translation depends on whether systemic Cdc42 inhibition can be made safe and selective."
+  ],
+  "tags": [
+    "mouse",
+    "lifespan",
+    "cdc42",
+    "casin"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-05-31-stem-cell-rejuvenation-bootstrap",
+  "name": "Stem cell rejuvenation bootstrap pass for May 31, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-05-31T16:05:00Z",
+  "completed_at": "2026-05-31T16:40:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Stem Cell Rejuvenation, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "stem_cell_exhaustion"
+    ],
+    "track_ids": [
+      "stem-cell-rejuvenation"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "stem-cell-rejuvenation-bootstrap-2026-05-31",
+  "summary": "The track is coherent enough for a first public baseline at human_biomarker_signal, but the staged outlook stays low confidence because direct human support is ex vivo or biopsy-biomarker evidence and the strongest functional or lifespan signals remain mouse-only.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-33440922",
+    "pmid-22560076",
+    "pmid-32755011",
+    "pmid-27127236",
+    "pmid-24531378",
+    "pmid-36266373"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/33440922/",
+    "https://pubmed.ncbi.nlm.nih.gov/22560076/",
+    "https://pubmed.ncbi.nlm.nih.gov/32755011/",
+    "https://pubmed.ncbi.nlm.nih.gov/27127236/",
+    "https://pubmed.ncbi.nlm.nih.gov/24531378/",
+    "https://pubmed.ncbi.nlm.nih.gov/36266373/"
+  ],
+  "notes": [
+    "The most direct human stem-cell rejuvenation signal is ex vivo: older human HSCs show elevated Cdc42 activity and CASIN can repolarize aged human HSCs.",
+    "Mouse evidence supports Cdc42 inhibition, NAD+ repletion, and p38 MAPK inhibition as ways to restore aged stem-cell phenotypes or regenerative function.",
+    "Systemic CASIN lifespan evidence is notable but remains preclinical and may involve broader inflammatory or epigenetic-age effects.",
+    "Human exercise studies show satellite-cell biomarker responsiveness, but exercise is broad and should not be treated as a targeted stem-cell rejuvenation therapy."
+  ],
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast review before publication.",
+    "If approved, publish the staged source, study, finding, and outlook records as the first stem cell rejuvenation baseline.",
+    "After publication, inspect the stem cell exhaustion hallmark page and stem cell rejuvenation track page for evidence ladder ordering and boundary language."
+  ]
+}

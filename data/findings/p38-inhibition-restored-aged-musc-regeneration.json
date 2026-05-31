@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "p38-inhibition-restored-aged-musc-regeneration",
+  "name": "p38 inhibition restored aged muscle stem-cell regenerative function",
+  "summary": "Aged mouse muscle stem-cell evidence supports pathway-targeted restoration of self-renewal and regeneration.",
+  "source_id": "pmid-24531378",
+  "study_id": "p38-inhibition-aged-musc-regeneration",
+  "intervention_ids": [
+    "p38-mapk-inhibition"
+  ],
+  "track_ids": [
+    "stem-cell-rejuvenation"
+  ],
+  "hallmark_ids": [
+    "stem_cell_exhaustion"
+  ],
+  "endpoint_category": "functional",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "moderate",
+  "statement": "In aged mouse muscle stem cells, p38 MAPK pathway inhibition under supportive culture conditions restored self-renewal and improved strength after transplantation into injured aged muscle.",
+  "population_or_model": "Aged mouse muscle stem cells and injured aged mouse muscle",
+  "time_horizon": "Ex vivo treatment followed by transplantation and regeneration assays",
+  "quantitative_note": "The staged baseline treats strength restoration after cell handling/transplantation as animal functional evidence.",
+  "caveats": [
+    "The intervention used ex vivo cell handling and transplantation rather than a simple systemic therapy.",
+    "Muscle stem-cell rescue may not generalize to hematopoietic, neural, or epithelial stem-cell compartments.",
+    "p38 pathway inhibition has broad biology and safety questions for chronic use."
+  ],
+  "tags": [
+    "mouse",
+    "muscle-stem-cells",
+    "p38-mapk",
+    "regeneration"
+  ]
+}

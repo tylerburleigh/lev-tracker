@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "cdc42-inhibition-rejuvenated-aged-mouse-hsc",
+  "name": "Cdc42 inhibition rejuvenated aged mouse HSC phenotypes",
+  "summary": "Mouse HSC evidence supports Cdc42 inhibition as a mechanistic stem-cell rejuvenation axis.",
+  "source_id": "pmid-22560076",
+  "study_id": "cdc42-casin-aged-hsc-rejuvenation-mice",
+  "intervention_ids": [
+    "casin"
+  ],
+  "track_ids": [
+    "stem-cell-rejuvenation"
+  ],
+  "hallmark_ids": [
+    "stem_cell_exhaustion"
+  ],
+  "endpoint_category": "functional",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "moderate",
+  "statement": "In aged mouse HSCs, pharmacologic Cdc42 inhibition with CASIN restored cell polarity and histone H4K16 acetylation distribution toward young-cell patterns and improved functional HSC readouts.",
+  "population_or_model": "Aged mouse hematopoietic stem cells",
+  "time_horizon": "Ex vivo and transplant-oriented mouse assays",
+  "quantitative_note": "The key public use is direction and mechanism, not a generalizable treatment effect size.",
+  "caveats": [
+    "The strongest functional evidence remains preclinical.",
+    "HSC rejuvenation readouts do not directly establish broad organismal aging benefit.",
+    "Cdc42 inhibition safety and target engagement in humans remain unresolved."
+  ],
+  "tags": [
+    "mouse",
+    "hsc",
+    "cdc42",
+    "casin"
+  ]
+}
