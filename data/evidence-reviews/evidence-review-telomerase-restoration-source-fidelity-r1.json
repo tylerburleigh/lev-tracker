@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-telomerase-restoration-source-fidelity-r1",
+  "name": "Source Fidelity review for Telomerase Restoration bundle",
+  "candidate_bundle_id": "telomerase-restoration-bootstrap-2026-05-31",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, and finding records stay within the cited PubMed and ClinicalTrials.gov boundaries. The only precision issue found during review was the month-level estimated completion date for NCT04133649, which has been removed from the optional staged study date field rather than coerced to a day-level date.",
+  "reviewed_change_ids": [
+    "create-source-pmid-21113150",
+    "create-source-pmid-22585399",
+    "create-source-pmid-21426483",
+    "create-source-pmid-26950204",
+    "create-source-pmid-20822369",
+    "create-source-pmid-37086366",
+    "create-source-pmid-18981163",
+    "create-source-nct-04133649",
+    "create-source-pmid-40789040",
+    "create-study-tert-er-reactivation-telomerase-deficient-mice",
+    "create-study-aav9-mtert-adult-old-mice-lifespan",
+    "create-study-ta65-adult-old-mice-healthspan",
+    "create-study-ta65-human-telomere-length-rct",
+    "create-study-ta65-health-maintenance-human-cohort",
+    "create-study-ta65-post-mi-immunosenescence-rct",
+    "create-study-tat2-human-cd8-ex-vivo",
+    "create-study-libella-aav-htert-aging-phase1-registry",
+    "create-finding-tert-reactivation-reversed-degeneration-telomerase-deficient-mice",
+    "create-finding-aav9-mtert-extended-lifespan-adult-old-mice",
+    "create-finding-ta65-mouse-short-telomere-healthspan-signal",
+    "create-finding-ta65-low-dose-increased-human-telomere-length",
+    "create-finding-ta65-health-maintenance-short-telomere-immune-signal",
+    "create-finding-ta65-post-mi-immune-biomarkers-mixed",
+    "create-finding-tat2-ex-vivo-cd8-antiviral-function-positive",
+    "create-finding-libella-aav-htert-registry-no-results",
+    "create-finding-cmv-tert-lifespan-paper-retracted",
+    "create-telomerase-restoration-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "registry-month-date-precision-corrected",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-study-libella-aav-htert-aging-phase1-registry",
+      "applies_to_record": {
+        "record_type": "study",
+        "record_id": "libella-aav-htert-aging-phase1-registry"
+      },
+      "claim_or_issue": "The ClinicalTrials.gov source gives an estimated completion month for NCT04133649 rather than a day-level completion date.",
+      "why_it_matters": "Representing a month-level registry date as a specific calendar day would imply precision the source does not provide.",
+      "recommended_action": "No further action needed; the optional staged date block was removed before this review was finalized.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "retraction-source-used-as-boundary-not-support",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-finding-cmv-tert-lifespan-paper-retracted",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "cmv-tert-lifespan-paper-retracted"
+      },
+      "claim_or_issue": "The staged CMV-TERT finding cites the 2025 PNAS retraction notice, not the retracted 2022 paper, as its source.",
+      "why_it_matters": "The retracted paper should not be used as positive evidence for telomerase restoration; it should only appear as a publication-integrity boundary.",
+      "recommended_action": "No further action needed; the staged finding correctly treats the retraction as negative/contextual evidence.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-05-31T14:51:07.875Z",
+  "updated_at": "2026-05-31T14:51:07.875Z"
+}

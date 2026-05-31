@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "aav9-mtert-extended-lifespan-adult-old-mice",
+  "name": "AAV9-mTERT extended lifespan and healthspan markers in adult and old mice",
+  "summary": "A mouse gene-therapy study anchors the strongest animal lifespan signal for telomerase restoration.",
+  "source_id": "pmid-22585399",
+  "study_id": "aav9-mtert-adult-old-mice-lifespan",
+  "intervention_ids": [
+    "aav9-mtert"
+  ],
+  "track_ids": [
+    "telomerase-restoration"
+  ],
+  "hallmark_ids": [
+    "telomere_attrition"
+  ],
+  "endpoint_category": "lifespan",
+  "direction": "positive",
+  "evidence_tier": "mortality_or_lifespan",
+  "confidence": "moderate",
+  "statement": "Systemic AAV9 delivery of mouse TERT to adult and old mice improved multiple health and fitness markers and increased median lifespan without an observed increase in cancer.",
+  "population_or_model": "Adult and old mice treated with AAV9-mTERT",
+  "time_horizon": "Lifespan follow-up after adult or old-age treatment",
+  "quantitative_note": "Median lifespan increased by 24% when treated at 1 year of age and by 13% when treated at 2 years of age; catalytically inactive TERT did not reproduce the benefit.",
+  "caveats": [
+    "The evidence is in mice, not humans.",
+    "AAV vector, dose, immune response, tissue distribution, and long-term oncogenic risk remain major translation questions.",
+    "The absence of increased cancer in this mouse study is not enough to establish human safety."
+  ],
+  "tags": [
+    "animal",
+    "gene-therapy",
+    "lifespan"
+  ]
+}

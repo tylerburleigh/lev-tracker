@@ -1,0 +1,387 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "telomerase-restoration-bootstrap-2026-05-31",
+  "name": "Telomerase restoration bootstrap for May 31, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline for the telomerase restoration track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "submitted",
+  "submitted_at": "2026-05-31T14:46:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Telomerase Restoration, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "telomere_attrition"
+    ],
+    "track_ids": [
+      "telomerase-restoration"
+    ]
+  },
+  "source_ids": [
+    "pmid-21113150",
+    "pmid-22585399",
+    "pmid-21426483",
+    "pmid-26950204",
+    "pmid-20822369",
+    "pmid-37086366",
+    "pmid-18981163",
+    "nct-04133649",
+    "pmid-40789040"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/21113150/",
+    "https://pubmed.ncbi.nlm.nih.gov/22585399/",
+    "https://pubmed.ncbi.nlm.nih.gov/21426483/",
+    "https://pubmed.ncbi.nlm.nih.gov/26950204/",
+    "https://pubmed.ncbi.nlm.nih.gov/20822369/",
+    "https://pubmed.ncbi.nlm.nih.gov/37086366/",
+    "https://pubmed.ncbi.nlm.nih.gov/18981163/",
+    "https://clinicaltrials.gov/study/NCT04133649",
+    "https://pubmed.ncbi.nlm.nih.gov/40789040/"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-telomerase-restoration-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-telomere-attrition-outlook"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "aav9-mtert-extended-lifespan-adult-old-mice"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "ta65-low-dose-increased-human-telomere-length"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "ta65-post-mi-immune-biomarkers-mixed"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "libella-aav-htert-registry-no-results"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "cmv-tert-lifespan-paper-retracted"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-21113150",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-21113150",
+      "file_path": "data/sources/pmid-21113150.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/pmid-21113150.json",
+      "summary": "Add inducible telomerase-reactivation mouse source.",
+      "rationale": "This source supports the mechanistic rescue signal for severe telomere dysfunction."
+    },
+    {
+      "change_id": "create-source-pmid-22585399",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-22585399",
+      "file_path": "data/sources/pmid-22585399.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/pmid-22585399.json",
+      "summary": "Add AAV9-mTERT adult and old mouse lifespan source.",
+      "rationale": "This source anchors the strongest animal lifespan signal for telomerase restoration."
+    },
+    {
+      "change_id": "create-source-pmid-21426483",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-21426483",
+      "file_path": "data/sources/pmid-21426483.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/pmid-21426483.json",
+      "summary": "Add TA-65 adult and old mouse healthspan source.",
+      "rationale": "This source supports preclinical small-molecule telomerase-activator plausibility."
+    },
+    {
+      "change_id": "create-source-pmid-26950204",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-26950204",
+      "file_path": "data/sources/pmid-26950204.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/pmid-26950204.json",
+      "summary": "Add TA-65 human telomere-length RCT source.",
+      "rationale": "This source is the main direct human biomarker support for the stage assignment."
+    },
+    {
+      "change_id": "create-source-pmid-20822369",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-20822369",
+      "file_path": "data/sources/pmid-20822369.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/pmid-20822369.json",
+      "summary": "Add uncontrolled TA-65 health-maintenance program source.",
+      "rationale": "This source provides early human context while preserving confounding caveats."
+    },
+    {
+      "change_id": "create-source-pmid-37086366",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-37086366",
+      "file_path": "data/sources/pmid-37086366.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/pmid-37086366.json",
+      "summary": "Add TA-65 post-MI immunosenescence RCT source.",
+      "rationale": "This source supplies recent human randomized biomarker evidence and a null primary endpoint boundary."
+    },
+    {
+      "change_id": "create-source-pmid-18981163",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-18981163",
+      "file_path": "data/sources/pmid-18981163.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/pmid-18981163.json",
+      "summary": "Add TAT2 human CD8+ ex vivo source.",
+      "rationale": "This source supports mechanism-specific immune-cell plausibility without counting as in vivo benefit."
+    },
+    {
+      "change_id": "create-source-nct-04133649",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-04133649",
+      "file_path": "data/sources/nct-04133649.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/nct-04133649.json",
+      "summary": "Add Libella AAV-hTERT aging registry source.",
+      "rationale": "This source captures current human gene-therapy activity while making clear that no results are posted."
+    },
+    {
+      "change_id": "create-source-pmid-40789040",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-40789040",
+      "file_path": "data/sources/pmid-40789040.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/pmid-40789040.json",
+      "summary": "Add CMV-TERT lifespan paper retraction notice source.",
+      "rationale": "This source prevents reliance on a retracted gene-therapy lifespan claim."
+    },
+    {
+      "change_id": "create-study-tert-er-reactivation-telomerase-deficient-mice",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "tert-er-reactivation-telomerase-deficient-mice",
+      "file_path": "data/studies/tert-er-reactivation-telomerase-deficient-mice.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/tert-er-reactivation-telomerase-deficient-mice.json",
+      "summary": "Add inducible telomerase-reactivation mouse study record.",
+      "rationale": "The study record links severe telomere-dysfunction rescue to the track."
+    },
+    {
+      "change_id": "create-study-aav9-mtert-adult-old-mice-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "aav9-mtert-adult-old-mice-lifespan",
+      "file_path": "data/studies/aav9-mtert-adult-old-mice-lifespan.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/aav9-mtert-adult-old-mice-lifespan.json",
+      "summary": "Add AAV9-mTERT mouse lifespan study record.",
+      "rationale": "The study record links the animal lifespan signal to the evidence ladder."
+    },
+    {
+      "change_id": "create-study-ta65-adult-old-mice-healthspan",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "ta65-adult-old-mice-healthspan",
+      "file_path": "data/studies/ta65-adult-old-mice-healthspan.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/ta65-adult-old-mice-healthspan.json",
+      "summary": "Add TA-65 mouse healthspan study record.",
+      "rationale": "The study record links small-molecule animal evidence to the track."
+    },
+    {
+      "change_id": "create-study-ta65-human-telomere-length-rct",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "ta65-human-telomere-length-rct",
+      "file_path": "data/studies/ta65-human-telomere-length-rct.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/ta65-human-telomere-length-rct.json",
+      "summary": "Add TA-65 human telomere-length RCT study record.",
+      "rationale": "The study record anchors the human_biomarker_signal stage assignment."
+    },
+    {
+      "change_id": "create-study-ta65-health-maintenance-human-cohort",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "ta65-health-maintenance-human-cohort",
+      "file_path": "data/studies/ta65-health-maintenance-human-cohort.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/ta65-health-maintenance-human-cohort.json",
+      "summary": "Add uncontrolled TA-65 health-maintenance cohort study record.",
+      "rationale": "The study record captures a confounded human biomarker context."
+    },
+    {
+      "change_id": "create-study-ta65-post-mi-immunosenescence-rct",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "ta65-post-mi-immunosenescence-rct",
+      "file_path": "data/studies/ta65-post-mi-immunosenescence-rct.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/ta65-post-mi-immunosenescence-rct.json",
+      "summary": "Add TA-65 post-MI RCT study record.",
+      "rationale": "The study record links recent mixed human biomarker evidence to the track."
+    },
+    {
+      "change_id": "create-study-tat2-human-cd8-ex-vivo",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "tat2-human-cd8-ex-vivo",
+      "file_path": "data/studies/tat2-human-cd8-ex-vivo.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/tat2-human-cd8-ex-vivo.json",
+      "summary": "Add TAT2 human CD8+ ex vivo study record.",
+      "rationale": "The study record captures mechanism-specific human-cell evidence."
+    },
+    {
+      "change_id": "create-study-libella-aav-htert-aging-phase1-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "libella-aav-htert-aging-phase1-registry",
+      "file_path": "data/studies/libella-aav-htert-aging-phase1-registry.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/libella-aav-htert-aging-phase1-registry.json",
+      "summary": "Add Libella AAV-hTERT aging phase 1 registry study record.",
+      "rationale": "The study record captures human gene-therapy activity while preserving no-results caveats."
+    },
+    {
+      "change_id": "create-finding-tert-reactivation-reversed-degeneration-telomerase-deficient-mice",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "tert-reactivation-reversed-degeneration-telomerase-deficient-mice",
+      "file_path": "data/findings/tert-reactivation-reversed-degeneration-telomerase-deficient-mice.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/tert-reactivation-reversed-degeneration-telomerase-deficient-mice.json",
+      "summary": "Add telomerase-reactivation mouse rescue finding.",
+      "rationale": "This finding supports mechanistic plausibility while caveating the artificial model."
+    },
+    {
+      "change_id": "create-finding-aav9-mtert-extended-lifespan-adult-old-mice",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "aav9-mtert-extended-lifespan-adult-old-mice",
+      "file_path": "data/findings/aav9-mtert-extended-lifespan-adult-old-mice.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/aav9-mtert-extended-lifespan-adult-old-mice.json",
+      "summary": "Add AAV9-mTERT mouse lifespan finding.",
+      "rationale": "This finding supports the best-current-animal-signal claim."
+    },
+    {
+      "change_id": "create-finding-ta65-mouse-short-telomere-healthspan-signal",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ta65-mouse-short-telomere-healthspan-signal",
+      "file_path": "data/findings/ta65-mouse-short-telomere-healthspan-signal.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/ta65-mouse-short-telomere-healthspan-signal.json",
+      "summary": "Add TA-65 mouse healthspan finding.",
+      "rationale": "This finding supports small-molecule animal plausibility with low-confidence caveats."
+    },
+    {
+      "change_id": "create-finding-ta65-low-dose-increased-human-telomere-length",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ta65-low-dose-increased-human-telomere-length",
+      "file_path": "data/findings/ta65-low-dose-increased-human-telomere-length.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/ta65-low-dose-increased-human-telomere-length.json",
+      "summary": "Add TA-65 human telomere-length biomarker finding.",
+      "rationale": "This finding supports the human_biomarker_signal stage assignment."
+    },
+    {
+      "change_id": "create-finding-ta65-health-maintenance-short-telomere-immune-signal",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ta65-health-maintenance-short-telomere-immune-signal",
+      "file_path": "data/findings/ta65-health-maintenance-short-telomere-immune-signal.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/ta65-health-maintenance-short-telomere-immune-signal.json",
+      "summary": "Add uncontrolled TA-65 health-maintenance finding.",
+      "rationale": "This finding provides human context without upgrading confidence."
+    },
+    {
+      "change_id": "create-finding-ta65-post-mi-immune-biomarkers-mixed",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ta65-post-mi-immune-biomarkers-mixed",
+      "file_path": "data/findings/ta65-post-mi-immune-biomarkers-mixed.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/ta65-post-mi-immune-biomarkers-mixed.json",
+      "summary": "Add TA-65 post-MI mixed human biomarker finding.",
+      "rationale": "This finding supports both human biomarker signal and mixed interpretation."
+    },
+    {
+      "change_id": "create-finding-tat2-ex-vivo-cd8-antiviral-function-positive",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "tat2-ex-vivo-cd8-antiviral-function-positive",
+      "file_path": "data/findings/tat2-ex-vivo-cd8-antiviral-function-positive.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/tat2-ex-vivo-cd8-antiviral-function-positive.json",
+      "summary": "Add TAT2 ex vivo human CD8+ mechanistic finding.",
+      "rationale": "This finding supports pathway plausibility without counting as clinical benefit."
+    },
+    {
+      "change_id": "create-finding-libella-aav-htert-registry-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "libella-aav-htert-registry-no-results",
+      "file_path": "data/findings/libella-aav-htert-registry-no-results.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/libella-aav-htert-registry-no-results.json",
+      "summary": "Add AAV-hTERT registry no-results finding.",
+      "rationale": "This finding supports the gene-therapy boundary in the outlook."
+    },
+    {
+      "change_id": "create-finding-cmv-tert-lifespan-paper-retracted",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "cmv-tert-lifespan-paper-retracted",
+      "file_path": "data/findings/cmv-tert-lifespan-paper-retracted.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/cmv-tert-lifespan-paper-retracted.json",
+      "summary": "Add retracted CMV-TERT lifespan paper finding.",
+      "rationale": "This finding supports the publication-integrity boundary and mixed momentum claim."
+    },
+    {
+      "change_id": "create-telomerase-restoration-outlook",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-telomerase-restoration-outlook",
+      "file_path": "data/outlooks/track-telomerase-restoration-outlook.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-bootstrap-2026-05-31/track-telomerase-restoration-outlook.json",
+      "summary": "Create the first public outlook for the telomerase restoration track.",
+      "rationale": "The track has enough human biomarker and animal evidence for a public baseline, but the forecast should remain low confidence and explicitly safety-limited.",
+      "uncertainty_flags": [
+        "Human evidence remains biomarker-heavy and does not show durable clinical benefit.",
+        "Human AAV-hTERT gene-therapy evidence has no posted results.",
+        "Long-term telomerase activation safety and cancer-risk boundaries remain unresolved.",
+        "A prominent CMV-vector TERT mouse life-extension paper is retracted."
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "telomerase-restoration",
+      "note": "A first public baseline is justified at human_biomarker_signal, with mixed momentum and low confidence.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "telomere_attrition",
+      "note": "Publishing this bundle would give telomere attrition its first track-level public baseline.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-05-31-telomerase-restoration-bootstrap.json",
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast review before publication.",
+    "If approved, publish the staged source, study, finding, and outlook records.",
+    "After publication, inspect the telomere attrition hallmark page and telomerase restoration track page for the new evidence ladder."
+  ],
+  "tags": [
+    "admin"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-telomerase-restoration-source-fidelity-r1",
+    "evidence-review-telomerase-restoration-interpretation-forecast-r1"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-partial-reprogramming-interpretation-forecast-r2-round-3",
+  "name": "Interpretation Forecast review for Partial Reprogramming bundle",
+  "candidate_bundle_id": "partial-reprogramming-update-2026-05-29",
+  "bundle_revision_number": 2,
+  "review_round": 3,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The revised outlook foregrounds the absence of direct human intervention evidence, leaves stage and confidence unchanged, and frames conceptual breadth as unresolved translation risk rather than a signal upgrade.",
+  "reviewed_change_ids": [
+    "revise-partial-reprogramming-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "partial-r2-translation-risk-prominence-closed",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "applies_to_change_id": "revise-partial-reprogramming-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-partial-reprogramming-outlook"
+      },
+      "claim_or_issue": "The staged forecast note now opens with human translation risk and no direct human intervention evidence.",
+      "why_it_matters": "This keeps the public interpretation from treating partial reprogramming's conceptual promise as near-term LEV evidence.",
+      "recommended_action": "Accept the revised wording without a stage, confidence, or scenario upgrade.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-05-31T13:29:38.946Z",
+  "updated_at": "2026-05-31T13:29:38.946Z"
+}

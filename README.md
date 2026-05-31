@@ -74,6 +74,6 @@ The first pass is intentionally small:
 
 ## Next Steps
 
-- Add validation tooling once the runtime stack is chosen.
-- Add app-level schemas for scenarios, forecasts, or public summaries if the tracker needs them.
-- Add ingestion rules for PubMed, ClinicalTrials.gov, and manual review workflows.
+- Use [docs/project-roadmap.md](docs/project-roadmap.md) as the current product and research roadmap.
+- Keep `research/state/coverage-status.v1.json` and `research/backlog/track-priority.v1.json` as the generated source of truth for research coverage and next track selection.
+- Run `npm run sync:research-planning` after research sessions, bundle changes, or publication events.

@@ -1,0 +1,361 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "dna-repair-enhancement-bootstrap-2026-05-31",
+  "name": "DNA repair enhancement bootstrap for May 31, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline for the DNA repair enhancement track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-05-31T14:20:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for DNA Repair Enhancement, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "genomic_instability"
+    ],
+    "track_ids": [
+      "dna-repair-enhancement"
+    ]
+  },
+  "source_ids": [
+    "pmid-26488693",
+    "pmid-36856616",
+    "pmid-26355618",
+    "pmid-22086236",
+    "pmid-23349012",
+    "pmid-29036257",
+    "pmid-29599478",
+    "pmid-35927255"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/26488693/",
+    "https://pubmed.ncbi.nlm.nih.gov/36856616/",
+    "https://pubmed.ncbi.nlm.nih.gov/26355618/",
+    "https://pubmed.ncbi.nlm.nih.gov/22086236/",
+    "https://pubmed.ncbi.nlm.nih.gov/23349012/",
+    "https://pubmed.ncbi.nlm.nih.gov/29036257/",
+    "https://pubmed.ncbi.nlm.nih.gov/29599478/",
+    "https://pubmed.ncbi.nlm.nih.gov/35927255/"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-dna-repair-enhancement-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-genomic-instability-outlook"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "ontrac-nicotinamide-lower-nmsc-rate"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "ontrans-nicotinamide-null-transplant-keratinocyte-cancers"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "dna-repair-enzyme-sunscreen-lower-cpds-field-cancerization"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "photolyase-sunscreen-lower-uv-cpds-apoptosis"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-26488693",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-26488693",
+      "file_path": "data/sources/pmid-26488693.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/pmid-26488693.json",
+      "summary": "Add ONTRAC nicotinamide phase 3 source.",
+      "rationale": "This trial anchors the strongest narrow clinical skin-cancer-prevention signal in the baseline."
+    },
+    {
+      "change_id": "create-source-pmid-36856616",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-36856616",
+      "file_path": "data/sources/pmid-36856616.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/pmid-36856616.json",
+      "summary": "Add ONTRANS nicotinamide transplant-recipient phase 3 source.",
+      "rationale": "This trial provides the main clinical boundary condition for nicotinamide chemoprevention."
+    },
+    {
+      "change_id": "create-source-pmid-26355618",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-26355618",
+      "file_path": "data/sources/pmid-26355618.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/pmid-26355618.json",
+      "summary": "Add sunscreen plus DNA repair enzymes actinic-keratosis source.",
+      "rationale": "This study supplies human skin CPD and field-cancerization biomarker evidence."
+    },
+    {
+      "change_id": "create-source-pmid-22086236",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-22086236",
+      "file_path": "data/sources/pmid-22086236.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/pmid-22086236.json",
+      "summary": "Add photolyase human UV-challenge source.",
+      "rationale": "This study supplies direct human skin DNA-damage biomarker support for topical photolyase products."
+    },
+    {
+      "change_id": "create-source-pmid-23349012",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-23349012",
+      "file_path": "data/sources/pmid-23349012.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/pmid-23349012.json",
+      "summary": "Add nicotinamide UV DNA repair mechanistic source.",
+      "rationale": "This source links nicotinamide to DNA-repair-proximal UV-damage endpoints in human cells and ex vivo skin."
+    },
+    {
+      "change_id": "create-source-pmid-29036257",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-29036257",
+      "file_path": "data/sources/pmid-29036257.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/pmid-29036257.json",
+      "summary": "Add topical DNA repair enzyme actinic-keratosis trial source.",
+      "rationale": "This small RCT adds preliminary human support for actinic-keratosis improvement."
+    },
+    {
+      "change_id": "create-source-pmid-29599478",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-29599478",
+      "file_path": "data/sources/pmid-29599478.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/pmid-29599478.json",
+      "summary": "Add nicotinamide riboside older-adult NAD trial source.",
+      "rationale": "This source contextualizes NAD-linked hypotheses while showing that direct DNA repair endpoints were not measured."
+    },
+    {
+      "change_id": "create-source-pmid-35927255",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-35927255",
+      "file_path": "data/sources/pmid-35927255.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/pmid-35927255.json",
+      "summary": "Add nicotinamide mononucleotide older-men NAD trial source.",
+      "rationale": "This source contextualizes NAD-linked hypotheses while showing that direct DNA repair endpoints were not measured."
+    },
+    {
+      "change_id": "create-study-ontrac-nicotinamide-skin-cancer-chemoprevention",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "ontrac-nicotinamide-skin-cancer-chemoprevention",
+      "file_path": "data/studies/ontrac-nicotinamide-skin-cancer-chemoprevention.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/ontrac-nicotinamide-skin-cancer-chemoprevention.json",
+      "summary": "Add ONTRAC nicotinamide trial study record.",
+      "rationale": "The study record links the strongest clinical signal to the track."
+    },
+    {
+      "change_id": "create-study-ontrans-nicotinamide-transplant-skin-cancer",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "ontrans-nicotinamide-transplant-skin-cancer",
+      "file_path": "data/studies/ontrans-nicotinamide-transplant-skin-cancer.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/ontrans-nicotinamide-transplant-skin-cancer.json",
+      "summary": "Add ONTRANS nicotinamide trial study record.",
+      "rationale": "The study record links the null transplant-recipient boundary condition to the track."
+    },
+    {
+      "change_id": "create-study-sunscreen-dna-repair-enzymes-actinic-keratosis",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "sunscreen-dna-repair-enzymes-actinic-keratosis",
+      "file_path": "data/studies/sunscreen-dna-repair-enzymes-actinic-keratosis.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/sunscreen-dna-repair-enzymes-actinic-keratosis.json",
+      "summary": "Add sunscreen plus DNA repair enzymes study record.",
+      "rationale": "The study record links skin biomarker evidence to the track."
+    },
+    {
+      "change_id": "create-study-photolyase-uv-dna-damage-human-skin",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "photolyase-uv-dna-damage-human-skin",
+      "file_path": "data/studies/photolyase-uv-dna-damage-human-skin.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/photolyase-uv-dna-damage-human-skin.json",
+      "summary": "Add photolyase human UV-damage study record.",
+      "rationale": "The study record links topical photolyase DNA-damage biomarker evidence to the track."
+    },
+    {
+      "change_id": "create-study-nicotinamide-uv-dna-repair-human-skin",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "nicotinamide-uv-dna-repair-human-skin",
+      "file_path": "data/studies/nicotinamide-uv-dna-repair-human-skin.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/nicotinamide-uv-dna-repair-human-skin.json",
+      "summary": "Add nicotinamide UV DNA-repair mechanistic study record.",
+      "rationale": "The study record links direct DNA-repair-proximal mechanistic evidence to the track."
+    },
+    {
+      "change_id": "create-study-topical-dna-repair-enzyme-actinic-keratoses",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "topical-dna-repair-enzyme-actinic-keratoses",
+      "file_path": "data/studies/topical-dna-repair-enzyme-actinic-keratoses.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/topical-dna-repair-enzyme-actinic-keratoses.json",
+      "summary": "Add topical DNA repair enzyme actinic-keratoses study record.",
+      "rationale": "The study record links preliminary actinic-keratosis trial evidence to the track."
+    },
+    {
+      "change_id": "create-study-nicotinamide-riboside-older-adults-nad",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "nicotinamide-riboside-older-adults-nad",
+      "file_path": "data/studies/nicotinamide-riboside-older-adults-nad.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/nicotinamide-riboside-older-adults-nad.json",
+      "summary": "Add nicotinamide riboside older-adult NAD study record.",
+      "rationale": "The study record captures indirect NAD-linked context without treating it as direct DNA repair evidence."
+    },
+    {
+      "change_id": "create-study-nicotinamide-mononucleotide-older-men-nad-muscle",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "nicotinamide-mononucleotide-older-men-nad-muscle",
+      "file_path": "data/studies/nicotinamide-mononucleotide-older-men-nad-muscle.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/nicotinamide-mononucleotide-older-men-nad-muscle.json",
+      "summary": "Add nicotinamide mononucleotide older-men NAD study record.",
+      "rationale": "The study record captures indirect NAD-linked context without treating it as direct DNA repair evidence."
+    },
+    {
+      "change_id": "create-finding-ontrac-nicotinamide-lower-nmsc-rate",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ontrac-nicotinamide-lower-nmsc-rate",
+      "file_path": "data/findings/ontrac-nicotinamide-lower-nmsc-rate.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/ontrac-nicotinamide-lower-nmsc-rate.json",
+      "summary": "Add ONTRAC positive clinical finding.",
+      "rationale": "This finding supports the best-current-signal claim while preserving tissue and population caveats."
+    },
+    {
+      "change_id": "create-finding-ontrans-nicotinamide-null-transplant-keratinocyte-cancers",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ontrans-nicotinamide-null-transplant-keratinocyte-cancers",
+      "file_path": "data/findings/ontrans-nicotinamide-null-transplant-keratinocyte-cancers.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/ontrans-nicotinamide-null-transplant-keratinocyte-cancers.json",
+      "summary": "Add ONTRANS null clinical finding.",
+      "rationale": "This finding supports the blocker and mixed-momentum claims."
+    },
+    {
+      "change_id": "create-finding-dna-repair-enzyme-sunscreen-lower-cpds-field-cancerization",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "dna-repair-enzyme-sunscreen-lower-cpds-field-cancerization",
+      "file_path": "data/findings/dna-repair-enzyme-sunscreen-lower-cpds-field-cancerization.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/dna-repair-enzyme-sunscreen-lower-cpds-field-cancerization.json",
+      "summary": "Add sunscreen plus DNA repair enzymes biomarker finding.",
+      "rationale": "This finding supports the human_biomarker_signal stage assignment."
+    },
+    {
+      "change_id": "create-finding-photolyase-sunscreen-lower-uv-cpds-apoptosis",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "photolyase-sunscreen-lower-uv-cpds-apoptosis",
+      "file_path": "data/findings/photolyase-sunscreen-lower-uv-cpds-apoptosis.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/photolyase-sunscreen-lower-uv-cpds-apoptosis.json",
+      "summary": "Add photolyase human skin biomarker finding.",
+      "rationale": "This finding supports the human_biomarker_signal stage assignment."
+    },
+    {
+      "change_id": "create-finding-nicotinamide-enhanced-uv-dna-repair-human-skin",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nicotinamide-enhanced-uv-dna-repair-human-skin",
+      "file_path": "data/findings/nicotinamide-enhanced-uv-dna-repair-human-skin.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/nicotinamide-enhanced-uv-dna-repair-human-skin.json",
+      "summary": "Add nicotinamide mechanistic DNA-repair finding.",
+      "rationale": "This finding supports the pathway-engagement rationale without overclaiming clinical benefit."
+    },
+    {
+      "change_id": "create-finding-topical-dna-repair-enzyme-lower-actinic-keratoses",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "topical-dna-repair-enzyme-lower-actinic-keratoses",
+      "file_path": "data/findings/topical-dna-repair-enzyme-lower-actinic-keratoses.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/topical-dna-repair-enzyme-lower-actinic-keratoses.json",
+      "summary": "Add topical DNA repair enzyme actinic-keratosis finding.",
+      "rationale": "This finding supports the preliminary human signal while retaining small-study caveats."
+    },
+    {
+      "change_id": "create-finding-nicotinamide-riboside-raises-nad-no-dna-repair-endpoint",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nicotinamide-riboside-raises-nad-no-dna-repair-endpoint",
+      "file_path": "data/findings/nicotinamide-riboside-raises-nad-no-dna-repair-endpoint.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/nicotinamide-riboside-raises-nad-no-dna-repair-endpoint.json",
+      "summary": "Add nicotinamide riboside contextual finding.",
+      "rationale": "This finding explains why NAD precursor data should constrain, not upgrade, the DNA repair track rating."
+    },
+    {
+      "change_id": "create-finding-nicotinamide-mononucleotide-raises-nad-no-dna-repair-endpoint",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nicotinamide-mononucleotide-raises-nad-no-dna-repair-endpoint",
+      "file_path": "data/findings/nicotinamide-mononucleotide-raises-nad-no-dna-repair-endpoint.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/nicotinamide-mononucleotide-raises-nad-no-dna-repair-endpoint.json",
+      "summary": "Add nicotinamide mononucleotide contextual finding.",
+      "rationale": "This finding explains why NAD precursor data should constrain, not upgrade, the DNA repair track rating."
+    },
+    {
+      "change_id": "create-dna-repair-enhancement-outlook",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-dna-repair-enhancement-outlook",
+      "file_path": "data/outlooks/track-dna-repair-enhancement-outlook.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-bootstrap-2026-05-31/track-dna-repair-enhancement-outlook.json",
+      "summary": "Create the first public outlook for the DNA repair enhancement track.",
+      "rationale": "The track is coherent enough for a public baseline, but the wording should stay explicitly skin/UV-specific, biomarker-weighted, and mixed.",
+      "uncertainty_flags": [
+        "Human evidence is concentrated in UV-exposed skin rather than systemic genome maintenance.",
+        "The transplant-recipient phase 3 nicotinamide trial was null.",
+        "NAD-precursor human trials generally measure NAD metabolites rather than DNA repair endpoints."
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "dna-repair-enhancement",
+      "note": "A first public baseline is justified at human_biomarker_signal, with mixed momentum and low confidence.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "genomic_instability",
+      "note": "Publishing this bundle would give genomic instability its first track-level public baseline.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-05-31-dna-repair-enhancement-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-dna-repair-enhancement-source-fidelity-r1",
+    "evidence-review-dna-repair-enhancement-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-dna-repair-enhancement-bootstrap-2026-05-31-2026-05-31t14-32-18-294z"
+  ]
+}

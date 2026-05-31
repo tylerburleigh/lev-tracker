@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-05-31-dna-repair-enhancement-bootstrap",
+  "name": "DNA repair enhancement bootstrap pass for May 31, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-05-31T14:00:00Z",
+  "completed_at": "2026-05-31T14:20:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for DNA Repair Enhancement, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "genomic_instability"
+    ],
+    "track_ids": [
+      "dna-repair-enhancement"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "dna-repair-enhancement-bootstrap-2026-05-31",
+  "summary": "The track is coherent enough for a first public baseline, but the staged outlook stays at human_biomarker_signal with mixed momentum and low confidence because evidence is concentrated in UV-exposed skin and indirect NAD-linked studies.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-26488693",
+    "pmid-36856616",
+    "pmid-26355618",
+    "pmid-22086236",
+    "pmid-23349012",
+    "pmid-29036257",
+    "pmid-29599478",
+    "pmid-35927255"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/26488693/",
+    "https://pubmed.ncbi.nlm.nih.gov/36856616/",
+    "https://pubmed.ncbi.nlm.nih.gov/26355618/",
+    "https://pubmed.ncbi.nlm.nih.gov/22086236/",
+    "https://pubmed.ncbi.nlm.nih.gov/23349012/",
+    "https://pubmed.ncbi.nlm.nih.gov/29036257/",
+    "https://pubmed.ncbi.nlm.nih.gov/29599478/",
+    "https://pubmed.ncbi.nlm.nih.gov/35927255/"
+  ],
+  "notes": [
+    "The strongest clinical signal is ONTRAC oral nicotinamide in high-risk immunocompetent adults, but it is skin-cancer-specific and not durable after discontinuation.",
+    "The ONTRANS transplant-recipient phase 3 trial was null, so nicotinamide benefit should be treated as context-dependent.",
+    "Topical DNA repair enzyme and photolyase studies provide direct human skin biomarker support, but they are small and skin-local.",
+    "NR and NMN human trials are relevant to NAD-linked hypotheses, but they do not directly measure DNA repair endpoints."
+  ],
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast review before publication.",
+    "If approved, publish the staged source, study, finding, and outlook records as the first DNA repair enhancement baseline.",
+    "After publication, inspect the genomic instability hallmark page and DNA repair track page for the new evidence ladder."
+  ]
+}

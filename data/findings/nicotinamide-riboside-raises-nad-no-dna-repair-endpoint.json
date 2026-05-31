@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "nicotinamide-riboside-raises-nad-no-dna-repair-endpoint",
+  "name": "Nicotinamide riboside raised NAD metabolites but did not test DNA repair",
+  "summary": "Human NR data provide context for NAD-linked DNA-repair hypotheses, but the cited trial does not directly measure DNA repair.",
+  "source_id": "pmid-29599478",
+  "study_id": "nicotinamide-riboside-older-adults-nad",
+  "intervention_ids": [
+    "nicotinamide-riboside"
+  ],
+  "track_ids": [
+    "dna-repair-enhancement"
+  ],
+  "hallmark_ids": [
+    "genomic_instability"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "inconclusive",
+  "evidence_tier": "human_biomarker",
+  "confidence": "low",
+  "statement": "In a small crossover trial, nicotinamide riboside was tolerated and raised NAD metabolism in healthy middle-aged and older adults, but DNA repair endpoints were not measured.",
+  "population_or_model": "Healthy middle-aged and older adults",
+  "time_horizon": "Two 6-week intervention periods",
+  "quantitative_note": "Thirty participants were randomized and 24 completed the trial; the paper reports increased PBMC NAD+ and NAAD after NR.",
+  "caveats": [
+    "This finding is contextual for NAD-linked DNA repair support, not direct evidence of DNA repair enhancement.",
+    "Physiologic outcomes were exploratory.",
+    "Study pills, standards, and partial funding support came from the NR product sponsor."
+  ],
+  "tags": [
+    "human",
+    "nad",
+    "nicotinamide-riboside",
+    "context"
+  ]
+}

@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-05-31T11:51:33.339Z",
+  "updated_at": "2026-05-31T14:51:14.527Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One bootstrap or surveillance run should cover one track unless the user explicitly narrows further.",
@@ -20,17 +20,17 @@
     {
       "hallmark_id": "genomic_instability",
       "canonical_order": 1,
-      "hallmark_bootstrap_status": "stubbed",
-      "tracked_public_outlook_count": 0,
-      "next_priority_track_id": "dna-repair-enhancement",
-      "notes": "Hallmark outlook exists, but track-level coverage has not started."
+      "hallmark_bootstrap_status": "baseline",
+      "tracked_public_outlook_count": 1,
+      "next_priority_track_id": "genome-surveillance-and-chromosome-stability",
+      "notes": "At least one track-level public baseline exists."
     },
     {
       "hallmark_id": "telomere_attrition",
       "canonical_order": 2,
       "hallmark_bootstrap_status": "stubbed",
       "tracked_public_outlook_count": 0,
-      "next_priority_track_id": "telomerase-restoration",
+      "next_priority_track_id": "telomere-protection-and-capping",
       "notes": "Hallmark outlook exists, but track-level coverage has not started."
     },
     {
@@ -120,11 +120,19 @@
       "hallmark_id": "genomic_instability",
       "canonical_order": 1,
       "name": "DNA Repair Enhancement",
-      "coverage_status": "not_started",
-      "next_mode": "bootstrap",
+      "coverage_status": "baseline",
+      "next_mode": "surveillance",
       "queue_state": "ready",
-      "default_research_question": "What is the current human-relevant evidence landscape for DNA Repair Enhancement, and what belongs in the first public baseline?",
-      "notes": "No track-level public baseline has been bootstrapped yet."
+      "last_session_id": "2026-05-31-dna-repair-enhancement-bootstrap",
+      "last_session_at": "2026-05-31T14:20:00Z",
+      "last_session_mode": "bootstrap",
+      "last_session_outcome": "candidate_bundle_submitted",
+      "last_candidate_bundle_id": "dna-repair-enhancement-bootstrap-2026-05-31",
+      "last_candidate_bundle_status": "published",
+      "last_publication_event_id": "publish-dna-repair-enhancement-bootstrap-2026-05-31-2026-05-31t14-32-18-294z",
+      "last_published_at": "2026-05-31T14:32:18.294Z",
+      "default_research_question": "What changed for DNA Repair Enhancement since the last meaningful review or publication, and does any change justify a public update?",
+      "notes": "Latest publication event: publish-dna-repair-enhancement-bootstrap-2026-05-31-2026-05-31t14-32-18-294z."
     },
     {
       "track_id": "genome-surveillance-and-chromosome-stability",
@@ -154,10 +162,16 @@
       "canonical_order": 1,
       "name": "Telomerase Restoration",
       "coverage_status": "not_started",
-      "next_mode": "bootstrap",
-      "queue_state": "ready",
-      "default_research_question": "What is the current human-relevant evidence landscape for Telomerase Restoration, and what belongs in the first public baseline?",
-      "notes": "No track-level public baseline has been bootstrapped yet."
+      "next_mode": "surveillance",
+      "queue_state": "active_review",
+      "last_session_id": "2026-05-31-telomerase-restoration-bootstrap",
+      "last_session_at": "2026-05-31T14:46:00Z",
+      "last_session_mode": "bootstrap",
+      "last_session_outcome": "candidate_bundle_submitted",
+      "last_candidate_bundle_id": "telomerase-restoration-bootstrap-2026-05-31",
+      "last_candidate_bundle_status": "submitted",
+      "default_research_question": "What changed for Telomerase Restoration since the last meaningful review or publication, and does any change justify a public update?",
+      "notes": "Candidate bundle telomerase-restoration-bootstrap-2026-05-31 is still submitted."
     },
     {
       "track_id": "telomere-protection-and-capping",
@@ -177,15 +191,17 @@
       "name": "Partial Reprogramming",
       "coverage_status": "baseline",
       "next_mode": "surveillance",
-      "queue_state": "active_review",
+      "queue_state": "ready",
       "last_session_id": "2026-05-30-partial-reprogramming-surveillance-revision",
       "last_session_at": "2026-05-30T18:25:00Z",
       "last_session_mode": "surveillance",
       "last_session_outcome": "candidate_bundle_revised",
       "last_candidate_bundle_id": "partial-reprogramming-update-2026-05-29",
-      "last_candidate_bundle_status": "revised",
+      "last_candidate_bundle_status": "published",
+      "last_publication_event_id": "publish-partial-reprogramming-update-2026-05-29-2026-05-31t13-30-12-515z",
+      "last_published_at": "2026-05-31T13:30:12.515Z",
       "default_research_question": "What changed for Partial Reprogramming since the last meaningful review or publication, and does any change justify a public update?",
-      "notes": "Candidate bundle partial-reprogramming-update-2026-05-29 is still revised."
+      "notes": "Latest publication event: publish-partial-reprogramming-update-2026-05-29-2026-05-31t13-30-12-515z."
     },
     {
       "track_id": "dna-methylation-and-epigenome-restoration",

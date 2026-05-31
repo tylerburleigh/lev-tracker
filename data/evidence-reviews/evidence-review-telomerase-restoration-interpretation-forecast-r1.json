@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-telomerase-restoration-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Telomerase Restoration bundle",
+  "candidate_bundle_id": "telomerase-restoration-bootstrap-2026-05-31",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged outlook is appropriately conservative: human_biomarker_signal is supported by TA-65 telomere and immune/inflammation biomarker trials, while the forecast keeps confidence low because functional benefit, gene-therapy results, durability, and cancer-risk boundaries remain unresolved.",
+  "reviewed_change_ids": [
+    "create-source-pmid-21113150",
+    "create-source-pmid-22585399",
+    "create-source-pmid-21426483",
+    "create-source-pmid-26950204",
+    "create-source-pmid-20822369",
+    "create-source-pmid-37086366",
+    "create-source-pmid-18981163",
+    "create-source-nct-04133649",
+    "create-source-pmid-40789040",
+    "create-study-tert-er-reactivation-telomerase-deficient-mice",
+    "create-study-aav9-mtert-adult-old-mice-lifespan",
+    "create-study-ta65-adult-old-mice-healthspan",
+    "create-study-ta65-human-telomere-length-rct",
+    "create-study-ta65-health-maintenance-human-cohort",
+    "create-study-ta65-post-mi-immunosenescence-rct",
+    "create-study-tat2-human-cd8-ex-vivo",
+    "create-study-libella-aav-htert-aging-phase1-registry",
+    "create-finding-tert-reactivation-reversed-degeneration-telomerase-deficient-mice",
+    "create-finding-aav9-mtert-extended-lifespan-adult-old-mice",
+    "create-finding-ta65-mouse-short-telomere-healthspan-signal",
+    "create-finding-ta65-low-dose-increased-human-telomere-length",
+    "create-finding-ta65-health-maintenance-short-telomere-immune-signal",
+    "create-finding-ta65-post-mi-immune-biomarkers-mixed",
+    "create-finding-tat2-ex-vivo-cd8-antiviral-function-positive",
+    "create-finding-libella-aav-htert-registry-no-results",
+    "create-finding-cmv-tert-lifespan-paper-retracted",
+    "create-telomerase-restoration-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "biomarker-boundary-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-telomerase-restoration-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-telomerase-restoration-outlook"
+      },
+      "claim_or_issue": "The outlook assigns human_biomarker_signal but does not claim human functional, disease, mortality, or LEV-relevant benefit.",
+      "why_it_matters": "The human TA-65 evidence is primarily telomere, immune-subset, and inflammation biomarker evidence.",
+      "recommended_action": "No further action needed; keep the current biomarker-bounded stage framing through editorial review.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "gene-therapy-activity-separated-from-evidence",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "create-finding-libella-aav-htert-registry-no-results",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "libella-aav-htert-registry-no-results"
+      },
+      "claim_or_issue": "The AAV-hTERT registry record is treated as activity and boundary context rather than evidence of benefit.",
+      "why_it_matters": "A five-person single-arm registry entry with unknown status and no posted results cannot support efficacy or safety conclusions.",
+      "recommended_action": "No further action needed; preserve the no-results caveat in the outlook and finding.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "telomerase-safety-caveats-present",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-telomerase-restoration-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-telomerase-restoration-outlook"
+      },
+      "claim_or_issue": "The staged outlook explicitly flags unresolved proliferation, cancer-risk, clonal expansion, and long-term safety questions.",
+      "why_it_matters": "Safety is a central interpretive boundary for any telomerase-restoration forecast.",
+      "recommended_action": "No further action needed; retain these caveats during editorial approval and publication.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-05-31T14:51:10.973Z",
+  "updated_at": "2026-05-31T14:51:10.973Z"
+}

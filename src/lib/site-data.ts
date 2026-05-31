@@ -117,6 +117,32 @@ export type StudyRecord = {
   endpoint_categories?: string[];
   source_ids: string[];
   registry_ids?: string[];
+  dates?: {
+    start_date?: string;
+    end_date?: string;
+  };
+};
+
+export type InterventionRecord = {
+  id: string;
+  name: string;
+  short_name?: string;
+  summary?: string;
+  aliases?: string[];
+  modalities: string[];
+  target_hallmark_ids: string[];
+  secondary_hallmark_ids?: string[];
+  track_ids?: string[];
+  mechanism_summary?: string;
+  development_stage: string;
+  linked_study_ids?: string[];
+  linked_finding_ids?: string[];
+  risk_flags?: string[];
+  evidence_snapshot?: {
+    best_evidence_tier?: string;
+    human_data?: boolean;
+    open_questions?: string[];
+  };
 };
 
 export type FindingRecord = {
@@ -218,6 +244,18 @@ export type ActivityFeedItem = {
   affectsOutlook: boolean;
   hallmarkId: string;
   href: string;
+};
+
+export type HallmarkInterventionSummary = {
+  id: string;
+  name: string;
+  summary: string;
+  findingCount: number;
+  findingIds: string[];
+  trackIds: string[];
+  strongestEvidenceTier: string;
+  strongestConfidence: Confidence;
+  directions: string[];
 };
 
 export type PublicationEventRecord = {
@@ -431,6 +469,26 @@ const scenarioLabels: Record<ScenarioStatus, string> = {
   on_track: "On track"
 };
 
+const evidenceTierRank: Record<string, number> = {
+  mortality_or_lifespan: 6,
+  human_clinical_outcome: 5,
+  durable_disease_or_mortality: 5,
+  human_function: 4,
+  human_biomarker: 3,
+  animal: 2,
+  in_vitro: 1,
+  mechanistic: 1,
+  safety: 1,
+  review_or_meta_analysis: 1,
+  regulatory_or_program_update: 0
+};
+
+const confidenceRank: Record<Confidence, number> = {
+  high: 3,
+  moderate: 2,
+  low: 1
+};
+
 const candidateStatusTransitions: Record<CandidateStatus, CandidateStatus[]> = {
   submitted: ["in_review", "needs_revision", "approved", "rejected"],
   in_review: ["needs_revision", "approved", "rejected"],
@@ -496,6 +554,10 @@ function getSourcesRoot() {
 
 function getStudiesRoot() {
   return path.join(dataRoot, "studies");
+}
+
+function getInterventionsRoot() {
+  return path.join(dataRoot, "interventions");
 }
 
 function getFindingsRoot() {
@@ -844,6 +906,40 @@ function getPublicationTargetHref(recordType: string, recordId: string) {
   return "/";
 }
 
+function titleizeIdentifier(identifier: string) {
+  return identifier
+    .split("-")
+    .map((word) => (["fmd", "igf", "nad", "osk"].includes(word) ? word.toUpperCase() : word))
+    .map((word, index) => (index === 0 ? word.charAt(0).toUpperCase() + word.slice(1) : word))
+    .join(" ");
+}
+
+function getFindingStrength(finding: Pick<FindingRecord, "evidence_tier" | "confidence">) {
+  return (evidenceTierRank[finding.evidence_tier] ?? 0) * 10 + confidenceRank[finding.confidence];
+}
+
+function compareFindingsByStrength(left: FindingRecord, right: FindingRecord) {
+  const strengthOrder = getFindingStrength(right) - getFindingStrength(left);
+  if (strengthOrder !== 0) {
+    return strengthOrder;
+  }
+
+  return left.name.localeCompare(right.name);
+}
+
+function normalizeActivityItem(item: ActivityItemRecord): ActivityFeedItem {
+  return {
+    id: item.id,
+    date: item.occurred_on,
+    lane: item.activity_lane[0].toUpperCase() + item.activity_lane.slice(1),
+    title: item.name,
+    summary: item.summary ?? item.significance_note ?? "",
+    affectsOutlook: Boolean(item.affects_outlook),
+    hallmarkId: item.hallmark_ids?.[0] ?? "genomic_instability",
+    href: "/activity"
+  };
+}
+
 function getTrackGroupMap(): Map<string, TrackGroup> {
   return new Map<string, TrackGroup>(
     trackTaxonomy.hallmark_groups.map((group: TrackGroup) => [group.hallmark_id, group])
@@ -879,6 +975,18 @@ const loadSources = cache(async () => {
 const loadStudies = cache(async () => {
   try {
     return await readCollection<StudyRecord>(getStudiesRoot());
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      return [];
+    }
+
+    throw error;
+  }
+});
+
+const loadInterventions = cache(async () => {
+  try {
+    return await readCollection<InterventionRecord>(getInterventionsRoot());
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code === "ENOENT") {
       return [];
@@ -1130,20 +1238,187 @@ export async function getTrackEvidenceSupport(trackId: string): Promise<Evidence
   });
 }
 
+export async function getSourceById(sourceId: string): Promise<SourceRecord | undefined> {
+  noStore();
+  return (await loadSources()).find((source) => source.id === sourceId);
+}
+
+export async function getSourcesByIds(sourceIds: string[]): Promise<SourceRecord[]> {
+  noStore();
+  const sourceById = new Map((await loadSources()).map((source) => [source.id, source]));
+  return Array.from(new Set(sourceIds))
+    .map((sourceId) => sourceById.get(sourceId))
+    .filter((source): source is SourceRecord => Boolean(source));
+}
+
+export async function getStudyById(studyId: string): Promise<StudyRecord | undefined> {
+  noStore();
+  return (await loadStudies()).find((study) => study.id === studyId);
+}
+
+export async function getStudiesByIds(studyIds: string[]): Promise<StudyRecord[]> {
+  noStore();
+  const studyById = new Map((await loadStudies()).map((study) => [study.id, study]));
+  return Array.from(new Set(studyIds))
+    .map((studyId) => studyById.get(studyId))
+    .filter((study): study is StudyRecord => Boolean(study));
+}
+
+export async function getStudiesForIntervention(interventionId: string): Promise<StudyRecord[]> {
+  noStore();
+  return (await loadStudies()).filter((study) => study.intervention_ids?.includes(interventionId));
+}
+
+export async function getStudiesForTrack(trackId: string): Promise<StudyRecord[]> {
+  noStore();
+  return (await loadStudies())
+    .filter((study) => study.track_ids?.includes(trackId))
+    .sort((left, right) => left.name.localeCompare(right.name));
+}
+
+export async function getFindingById(findingId: string): Promise<FindingRecord | undefined> {
+  noStore();
+  return (await loadFindings()).find((finding) => finding.id === findingId);
+}
+
+export async function getFindingsByIds(findingIds: string[]): Promise<FindingRecord[]> {
+  noStore();
+  const findingById = new Map((await loadFindings()).map((finding) => [finding.id, finding]));
+  return Array.from(new Set(findingIds))
+    .map((findingId) => findingById.get(findingId))
+    .filter((finding): finding is FindingRecord => Boolean(finding));
+}
+
+export async function getFindingsForStudy(studyId: string): Promise<FindingRecord[]> {
+  noStore();
+  return (await loadFindings()).filter((finding) => finding.study_id === studyId);
+}
+
+export async function getFindingsForIntervention(interventionId: string): Promise<FindingRecord[]> {
+  noStore();
+  return (await loadFindings()).filter((finding) => finding.intervention_ids?.includes(interventionId));
+}
+
+export async function getFindingsForTrack(trackId: string): Promise<FindingRecord[]> {
+  noStore();
+  return (await loadFindings())
+    .filter((finding) => finding.track_ids?.includes(trackId))
+    .sort(compareFindingsByStrength);
+}
+
+export async function getFindingsForHallmark(hallmarkId: string): Promise<FindingRecord[]> {
+  noStore();
+  return (await loadFindings())
+    .filter((finding) => finding.hallmark_ids.includes(hallmarkId))
+    .sort(compareFindingsByStrength);
+}
+
+export async function getStrongestFindingsForHallmark(hallmarkId: string, limit = 4): Promise<FindingRecord[]> {
+  noStore();
+  return (await getFindingsForHallmark(hallmarkId)).slice(0, limit);
+}
+
+export async function getInterventionById(interventionId: string): Promise<InterventionRecord | undefined> {
+  noStore();
+  return (await loadInterventions()).find((intervention) => intervention.id === interventionId);
+}
+
+export async function getLeadingInterventionsForHallmark(
+  hallmarkId: string,
+  limit = 4
+): Promise<HallmarkInterventionSummary[]> {
+  noStore();
+  const [findings, interventions] = await Promise.all([getFindingsForHallmark(hallmarkId), loadInterventions()]);
+  const interventionById = new Map(interventions.map((intervention) => [intervention.id, intervention]));
+  const summaryById = new Map<
+    string,
+    {
+      findingIds: Set<string>;
+      trackIds: Set<string>;
+      directions: Set<string>;
+      strongestFinding: FindingRecord;
+    }
+  >();
+
+  for (const finding of findings) {
+    for (const interventionId of finding.intervention_ids ?? []) {
+      const existing = summaryById.get(interventionId);
+
+      if (existing) {
+        existing.findingIds.add(finding.id);
+        finding.track_ids?.forEach((trackId) => existing.trackIds.add(trackId));
+        existing.directions.add(finding.direction);
+
+        if (compareFindingsByStrength(finding, existing.strongestFinding) < 0) {
+          existing.strongestFinding = finding;
+        }
+      } else {
+        summaryById.set(interventionId, {
+          findingIds: new Set([finding.id]),
+          trackIds: new Set(finding.track_ids ?? []),
+          directions: new Set([finding.direction]),
+          strongestFinding: finding
+        });
+      }
+    }
+  }
+
+  return Array.from(summaryById.entries())
+    .map(([interventionId, summary]) => {
+      const intervention = interventionById.get(interventionId);
+
+      return {
+        id: interventionId,
+        name: intervention?.name ?? titleizeIdentifier(interventionId),
+        summary: intervention?.summary ?? summary.strongestFinding.summary ?? summary.strongestFinding.statement,
+        findingCount: summary.findingIds.size,
+        findingIds: Array.from(summary.findingIds),
+        trackIds: Array.from(summary.trackIds),
+        strongestEvidenceTier: summary.strongestFinding.evidence_tier,
+        strongestConfidence: summary.strongestFinding.confidence,
+        directions: Array.from(summary.directions)
+      };
+    })
+    .sort((left, right) => {
+      const strongestLeft = findings.find((finding) => finding.id === left.findingIds[0]);
+      const strongestRight = findings.find((finding) => finding.id === right.findingIds[0]);
+      const strengthOrder =
+        (strongestRight ? getFindingStrength(strongestRight) : 0) -
+        (strongestLeft ? getFindingStrength(strongestLeft) : 0);
+
+      if (strengthOrder !== 0) {
+        return strengthOrder;
+      }
+
+      const countOrder = right.findingCount - left.findingCount;
+      if (countOrder !== 0) {
+        return countOrder;
+      }
+
+      return left.name.localeCompare(right.name);
+    })
+    .slice(0, limit);
+}
+
+export async function getActivityForHallmark(hallmarkId: string, limit = 4): Promise<ActivityFeedItem[]> {
+  noStore();
+  return (await loadActivityItems())
+    .filter((item) => item.hallmark_ids?.includes(hallmarkId))
+    .slice(0, limit)
+    .map(normalizeActivityItem);
+}
+
+export async function getActivityForTrack(trackId: string, limit = 4): Promise<ActivityFeedItem[]> {
+  noStore();
+  return (await loadActivityItems())
+    .filter((item) => item.track_ids?.includes(trackId))
+    .slice(0, limit)
+    .map(normalizeActivityItem);
+}
+
 export async function getActivityFeed(): Promise<ActivityFeedItem[]> {
   noStore();
-  const items = await loadActivityItems();
-
-  return items.map((item) => ({
-    id: item.id,
-    date: item.occurred_on,
-    lane: item.activity_lane[0].toUpperCase() + item.activity_lane.slice(1),
-    title: item.name,
-    summary: item.summary ?? item.significance_note ?? "",
-    affectsOutlook: Boolean(item.affects_outlook),
-    hallmarkId: item.hallmark_ids?.[0] ?? "genomic_instability",
-    href: "/activity"
-  }));
+  return (await loadActivityItems()).map(normalizeActivityItem);
 }
 
 export async function getRecentChanges(): Promise<RecentChange[]> {
@@ -1180,6 +1455,16 @@ export async function getRecentChanges(): Promise<RecentChange[]> {
       href
     };
   });
+}
+
+export async function getRecentChangesForSubject(
+  subjectType: SubjectType,
+  subjectId: string,
+  limit = 4
+): Promise<RecentChange[]> {
+  noStore();
+  const subjectHref = getSubjectHref(subjectType, subjectId);
+  return (await getRecentChanges()).filter((change) => change.href === subjectHref).slice(0, limit);
 }
 
 export async function getStateOfTheFieldEditions(): Promise<StateOfFieldEdition[]> {

@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-dna-repair-enhancement-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Dna Repair Enhancement bundle",
+  "candidate_bundle_id": "dna-repair-enhancement-bootstrap-2026-05-31",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The proposed interpretation is appropriately conservative for a first public baseline: it assigns human_biomarker_signal despite a narrow clinical skin-cancer signal, marks momentum as mixed because ONTRANS and indirect NAD trials constrain the read, and keeps confidence low with explicit criteria for what would justify a stronger rating.",
+  "reviewed_change_ids": [
+    "create-source-pmid-26488693",
+    "create-source-pmid-36856616",
+    "create-source-pmid-26355618",
+    "create-source-pmid-22086236",
+    "create-source-pmid-23349012",
+    "create-source-pmid-29036257",
+    "create-source-pmid-29599478",
+    "create-source-pmid-35927255",
+    "create-study-ontrac-nicotinamide-skin-cancer-chemoprevention",
+    "create-study-ontrans-nicotinamide-transplant-skin-cancer",
+    "create-study-sunscreen-dna-repair-enzymes-actinic-keratosis",
+    "create-study-photolyase-uv-dna-damage-human-skin",
+    "create-study-nicotinamide-uv-dna-repair-human-skin",
+    "create-study-topical-dna-repair-enzyme-actinic-keratoses",
+    "create-study-nicotinamide-riboside-older-adults-nad",
+    "create-study-nicotinamide-mononucleotide-older-men-nad-muscle",
+    "create-finding-ontrac-nicotinamide-lower-nmsc-rate",
+    "create-finding-ontrans-nicotinamide-null-transplant-keratinocyte-cancers",
+    "create-finding-dna-repair-enzyme-sunscreen-lower-cpds-field-cancerization",
+    "create-finding-photolyase-sunscreen-lower-uv-cpds-apoptosis",
+    "create-finding-nicotinamide-enhanced-uv-dna-repair-human-skin",
+    "create-finding-topical-dna-repair-enzyme-lower-actinic-keratoses",
+    "create-finding-nicotinamide-riboside-raises-nad-no-dna-repair-endpoint",
+    "create-finding-nicotinamide-mononucleotide-raises-nad-no-dna-repair-endpoint",
+    "create-dna-repair-enhancement-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "dna-repair-stage-conservative-despite-clinical-signal-note",
+      "severity": "note",
+      "category": "uncertainty",
+      "applies_to_change_id": "create-dna-repair-enhancement-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-dna-repair-enhancement-outlook"
+      },
+      "claim_or_issue": "The bundle includes a human clinical outcome finding from ONTRAC, but the outlook still holds the track at human_biomarker_signal.",
+      "why_it_matters": "That is a defensible conservative call because the clinical signal is narrow, skin-specific, high-risk-population evidence rather than broad systemic aging evidence.",
+      "recommended_action": "Retain the current stage and the support-map explanation that treats ONTRAC as a narrow clinical signal rather than a track-wide upgrade.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "dna-repair-rating-criteria-boundary-note",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "create-dna-repair-enhancement-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-dna-repair-enhancement-outlook"
+      },
+      "claim_or_issue": "The rating-change criteria require replicated direct DNA repair engagement beyond UV-exposed skin and linkage to functional or disease outcomes.",
+      "why_it_matters": "This keeps the forecast from implying that current skin-local or NAD-metabolite data already establish durable human benefit.",
+      "recommended_action": "Keep the staged rating-change criteria as written; they are specific enough to guide future upgrades or downgrades without overstating the present baseline.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-05-31T14:29:05.237Z",
+  "updated_at": "2026-05-31T14:29:05.237Z"
+}

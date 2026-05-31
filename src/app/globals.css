@@ -148,6 +148,10 @@ time {
 .hallmark-card:hover,
 .hallmark-index-card:hover,
 .track-card:hover,
+.hallmark-module-card:hover,
+.hallmark-activity-card:hover,
+.evidence-ladder-stage:hover,
+.related-record-link:hover,
 .tracks-table__row:hover,
 .activity-card:hover,
 .feed-item:hover,
@@ -185,8 +189,19 @@ time {
   display: inline-flex;
   gap: 8px;
   align-items: center;
+  min-height: 32px;
+  padding: 0 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
   color: var(--text-soft);
   font-size: 0.9rem;
+}
+
+.legend-item:hover,
+.legend-item:focus-visible {
+  border-color: rgba(45, 124, 108, 0.24);
+  background: rgba(255, 255, 255, 0.52);
+  color: var(--text);
 }
 
 .band {
@@ -224,7 +239,8 @@ time {
 
 .hero-grid,
 .split-grid,
-.detail-grid {
+.detail-grid,
+.hallmark-outlook-grid {
   display: grid;
   gap: 18px;
 }
@@ -242,6 +258,10 @@ time {
 .hallmark-card,
 .hallmark-index-card,
 .track-card,
+.hallmark-module-card,
+.hallmark-activity-card,
+.hallmark-empty-module,
+.evidence-ladder-stage,
 .activity-card,
 .method-card,
 .editorial-card,
@@ -453,9 +473,27 @@ time {
   color: var(--text-soft);
 }
 
+.method-anchor-grid {
+  margin-bottom: 6px;
+}
+
+.method-card--anchor {
+  scroll-margin-top: 128px;
+  border-color: rgba(45, 124, 108, 0.2);
+}
+
+.method-card--anchor:target {
+  border-color: rgba(45, 124, 108, 0.48);
+  background: rgba(45, 124, 108, 0.1);
+}
+
 .hallmark-grid,
 .hallmark-index-grid,
 .track-card-grid,
+.hallmark-module-grid,
+.hallmark-activity-grid,
+.evidence-ladder,
+.related-record-grid,
 .evidence-bridge {
   display: grid;
   gap: 14px;
@@ -468,6 +506,10 @@ time {
 .hallmark-card,
 .hallmark-index-card,
 .track-card,
+.hallmark-module-card,
+.hallmark-activity-card,
+.hallmark-empty-module,
+.evidence-ladder-stage,
 .evidence-card,
 .feed-item,
 .activity-card,
@@ -636,6 +678,10 @@ time {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.hallmark-outlook-grid {
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr) minmax(280px, 0.8fr);
+}
+
 .detail-panel--muted {
   background: rgba(255, 255, 255, 0.58);
 }
@@ -680,10 +726,158 @@ time {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.hallmark-module-grid,
+.hallmark-activity-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.evidence-ladder {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.evidence-ladder-stage {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  min-height: 220px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.evidence-ladder-stage--active {
+  border-color: rgba(45, 124, 108, 0.34);
+  background: rgba(45, 124, 108, 0.1);
+}
+
+.evidence-ladder-stage__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.evidence-ladder-stage__header h3,
+.related-record-column h3 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.evidence-ladder-stage__header span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  color: var(--text-soft);
+  font-weight: 700;
+}
+
+.evidence-ladder-stage__body,
+.related-record-list {
+  display: grid;
+  gap: 10px;
+}
+
+.evidence-ladder-stage__body p,
+.related-record-list p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+
+.evidence-ladder-finding,
+.related-record-link {
+  display: grid;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.64);
+}
+
+.evidence-ladder-finding strong,
+.related-record-link strong {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.related-record-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
+.related-record-column {
+  display: grid;
+  gap: 14px;
+}
+
+.related-record-link span {
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
 .track-card {
   display: grid;
   gap: 12px;
   min-height: 212px;
+}
+
+.hallmark-module-card,
+.hallmark-activity-card,
+.hallmark-empty-module {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 14px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.hallmark-module-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--mint);
+}
+
+.hallmark-module-card__body {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+.hallmark-module-card__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.hallmark-module-card__header span {
+  flex: 0 0 auto;
+  color: var(--text-soft);
+  font-size: 0.88rem;
+}
+
+.hallmark-module-card p,
+.hallmark-activity-card p,
+.hallmark-empty-module p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+.hallmark-activity-card h3 {
+  margin: 10px 0 8px;
+  font-size: 1rem;
 }
 
 .track-card__footer {
@@ -1006,6 +1200,102 @@ time {
   max-width: 720px;
 }
 
+.track-search {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.track-search__form {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.4fr) minmax(220px, 1.4fr) repeat(2, minmax(150px, 1fr));
+  gap: 12px;
+  align-items: end;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.track-search__field {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+
+.track-search__field > span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.track-search__field--wide {
+  grid-column: span 2;
+}
+
+.track-search__input-wrap,
+.track-search__field select {
+  min-height: 40px;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--text);
+}
+
+.track-search__input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+}
+
+.track-search__input-wrap svg {
+  flex: 0 0 auto;
+  color: var(--text-soft);
+}
+
+.track-search__input-wrap input,
+.track-search__field select {
+  font: inherit;
+}
+
+.track-search__input-wrap input {
+  min-width: 0;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+}
+
+.track-search__field select {
+  padding: 0 11px;
+}
+
+.track-search__actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.track-search__summary {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  width: fit-content;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.54);
+  color: var(--text-soft);
+}
+
+.track-search__summary strong {
+  color: var(--text);
+}
+
 .tracks-table {
   display: grid;
   gap: 8px;
@@ -1017,7 +1307,14 @@ time {
 .tracks-table__head,
 .tracks-table__row {
   display: grid;
-  grid-template-columns: minmax(0, 1.8fr) minmax(180px, 0.9fr) minmax(180px, 0.8fr) 140px;
+  grid-template-columns:
+    minmax(230px, 1.45fr)
+    minmax(145px, 0.78fr)
+    minmax(150px, 0.82fr)
+    minmax(110px, 0.58fr)
+    minmax(120px, 0.62fr)
+    minmax(128px, 0.68fr)
+    minmax(105px, 0.52fr);
   gap: 14px;
   padding: 14px 16px;
 }
@@ -1036,6 +1333,23 @@ time {
 
 .tracks-table__row p {
   margin: 6px 0 0;
+  color: var(--text-soft);
+}
+
+.tracks-table__aliases {
+  display: block;
+  margin-top: 8px;
+  color: var(--slate);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.tracks-table__empty {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding: 18px 16px;
   color: var(--text-soft);
 }
 
@@ -1123,6 +1437,68 @@ time {
   border-top: 1px solid var(--border);
 }
 
+.review-card__gate {
+  display: grid;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.review-gate-summary {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
+.review-gate-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+.review-gate-grid div {
+  min-width: 0;
+}
+
+.review-gate-grid dt,
+.review-gate-issues strong {
+  margin: 0 0 4px;
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.review-gate-grid dd {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.review-gate-issues {
+  display: grid;
+  gap: 4px;
+}
+
+.review-gate-issues ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
+.review-gate-issues li {
+  line-height: 1.5;
+}
+
 .admin-detail-grid {
   width: var(--page-width);
   margin: 0 auto;
@@ -1204,11 +1580,19 @@ time {
 }
 
 .action-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   min-height: 40px;
   padding: 0 14px;
   background: rgba(255, 255, 255, 0.84);
   color: var(--text);
   cursor: pointer;
+}
+
+.action-button--secondary {
+  color: var(--text-soft);
 }
 
 .action-button--danger {
@@ -1271,6 +1655,7 @@ time {
   .hero-grid,
   .split-grid,
   .detail-grid,
+  .hallmark-outlook-grid,
   .admin-detail-grid,
   .trust-band,
   .activity-list,
@@ -1294,13 +1679,19 @@ time {
   .hallmark-grid,
   .track-card-grid,
   .evidence-bridge,
-  .hallmark-index-grid {
+  .hallmark-index-grid,
+  .hallmark-module-grid,
+  .hallmark-activity-grid,
+  .evidence-ladder {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .tracks-table__head,
-  .tracks-table__row {
-    grid-template-columns: minmax(0, 1.6fr) minmax(160px, 0.8fr) minmax(160px, 0.8fr) 110px;
+  .related-record-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .track-search__form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .evidence-inventory-item__body {
@@ -1344,6 +1735,10 @@ time {
   .hallmark-card,
   .hallmark-index-card,
   .track-card,
+  .hallmark-module-card,
+  .hallmark-activity-card,
+  .hallmark-empty-module,
+  .evidence-ladder-stage,
   .activity-card,
   .method-card,
   .editorial-card,
@@ -1361,7 +1756,24 @@ time {
   .hallmark-grid,
   .track-card-grid,
   .hallmark-index-grid,
+  .hallmark-module-grid,
+  .hallmark-activity-grid,
+  .evidence-ladder,
+  .related-record-grid,
+  .review-gate-grid,
   .admin-button-row {
+    grid-template-columns: 1fr;
+  }
+
+  .track-search__form {
+    grid-template-columns: 1fr;
+  }
+
+  .track-search__field--wide {
+    grid-column: auto;
+  }
+
+  .track-search__actions {
     grid-template-columns: 1fr;
   }
 
@@ -1377,5 +1789,10 @@ time {
   .tracks-table__row {
     grid-template-columns: 1fr;
     border-top: 1px solid var(--border);
+  }
+
+  .tracks-table__empty {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }

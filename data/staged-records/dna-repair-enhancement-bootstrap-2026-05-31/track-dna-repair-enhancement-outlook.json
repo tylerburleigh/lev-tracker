@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-dna-repair-enhancement-outlook",
+  "name": "DNA Repair Enhancement Track Outlook",
+  "subject_type": "track",
+  "subject_id": "dna-repair-enhancement",
+  "current_stage": "human_biomarker_signal",
+  "momentum": "mixed",
+  "confidence": "low",
+  "main_blockers": [
+    "Human evidence is concentrated in UV-exposed skin and skin-cancer prevention, not systemic aging-related genome maintenance across tissues.",
+    "A phase 3 transplant-recipient trial of oral nicotinamide was null, limiting generalization of the positive immunocompetent high-risk trial.",
+    "NAD-precursor human trials support NAD-metabolite movement, but usually do not measure DNA repair endpoints directly."
+  ],
+  "best_current_signals": [
+    "Oral nicotinamide reduced new nonmelanoma skin cancers and actinic keratoses in a phase 3 high-risk immunocompetent trial.",
+    "Small human skin studies of topical DNA repair enzymes or photolyase-containing creams report lower UV-induced CPDs, apoptosis, field cancerization, or actinic-keratosis burden."
+  ],
+  "forecast_note": "DNA repair enhancement deserves a first public baseline because human studies now include direct skin DNA-damage biomarkers and a narrow clinical chemoprevention signal. The baseline should stay at human_biomarker_signal because the strongest evidence is skin/UV-specific, heterogeneous, and not yet evidence of broad systemic aging benefit.",
+  "rating_change_criteria": [
+    "A stronger stage assignment would need replicated human studies showing direct DNA repair pathway engagement in aging-relevant tissues beyond UV-exposed skin, ideally tied to functional or disease outcomes.",
+    "Higher confidence would need larger independent trials that separate DNA repair mechanism from sunscreen, photoprotection, immune context, or generic NAD-metabolism effects.",
+    "The rating would weaken if additional larger nicotinamide or topical DNA repair enzyme trials are null, or if safety and off-target genome-response concerns become more visible."
+  ],
+  "supporting_finding_ids": [
+    "ontrac-nicotinamide-lower-nmsc-rate",
+    "ontrans-nicotinamide-null-transplant-keratinocyte-cancers",
+    "dna-repair-enzyme-sunscreen-lower-cpds-field-cancerization",
+    "photolyase-sunscreen-lower-uv-cpds-apoptosis",
+    "nicotinamide-enhanced-uv-dna-repair-human-skin",
+    "topical-dna-repair-enzyme-lower-actinic-keratoses",
+    "nicotinamide-riboside-raises-nad-no-dna-repair-endpoint",
+    "nicotinamide-mononucleotide-raises-nad-no-dna-repair-endpoint"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "current_stage",
+      "conclusion": "The track reaches human biomarker signal because human and ex vivo skin studies directly measure DNA-damage or DNA-repair-proximal biomarkers.",
+      "support_role": "supports",
+      "rationale": "The cited topical and nicotinamide studies move the track beyond pure mechanistic plausibility, but the endpoints remain skin-local biomarkers or premalignant skin lesions.",
+      "finding_ids": [
+        "dna-repair-enzyme-sunscreen-lower-cpds-field-cancerization",
+        "photolyase-sunscreen-lower-uv-cpds-apoptosis",
+        "nicotinamide-enhanced-uv-dna-repair-human-skin",
+        "topical-dna-repair-enzyme-lower-actinic-keratoses"
+      ],
+      "source_ids": [
+        "pmid-26355618",
+        "pmid-22086236",
+        "pmid-23349012",
+        "pmid-29036257"
+      ],
+      "limitations": [
+        "Most positive biomarker evidence is small and skin-specific.",
+        "Ex vivo mechanistic results do not establish in vivo systemic DNA repair enhancement.",
+        "Actinic keratosis changes are clinically relevant but remain a narrow skin cancer-prevention context."
+      ]
+    },
+    {
+      "label": "Narrow clinical signal",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Oral nicotinamide has a positive phase 3 skin-cancer-prevention result in high-risk immunocompetent adults, but that signal should not upgrade the whole track beyond biomarker signal.",
+      "support_role": "balances",
+      "rationale": "ONTRAC is a meaningful clinical-outcome study, but its population, tissue context, and lack of post-discontinuation benefit make it a narrow signal for this aging track.",
+      "finding_ids": [
+        "ontrac-nicotinamide-lower-nmsc-rate"
+      ],
+      "source_ids": [
+        "pmid-26488693"
+      ],
+      "limitations": [
+        "The trial tested skin cancer prevention in a high-risk population, not broad healthy-aging benefit.",
+        "Clinical benefit was not sustained after stopping nicotinamide.",
+        "The result does not prove systemic DNA repair enhancement."
+      ]
+    },
+    {
+      "label": "Boundary condition",
+      "outlook_field": "main_blockers",
+      "conclusion": "The later transplant-recipient nicotinamide trial was null, making the chemoprevention signal context-dependent.",
+      "support_role": "limits",
+      "rationale": "A phase 3 null result in immunosuppressed solid-organ transplant recipients prevents a simple generalization of nicotinamide benefit across high-risk skin-cancer contexts.",
+      "finding_ids": [
+        "ontrans-nicotinamide-null-transplant-keratinocyte-cancers"
+      ],
+      "source_ids": [
+        "pmid-36856616"
+      ],
+      "limitations": [
+        "The trial stopped early for poor recruitment.",
+        "Transplant immunosuppression may create a different risk and response context than the ONTRAC population."
+      ]
+    },
+    {
+      "label": "NAD-linked support boundary",
+      "outlook_field": "main_blockers",
+      "conclusion": "Human NR and NMN studies support NAD-boosting feasibility, but they do not directly show DNA repair enhancement.",
+      "support_role": "limits",
+      "rationale": "NAD-linked DNA repair is a plausible mechanism in this track taxonomy, yet the cited human NAD-precursor trials measured NAD metabolites and exploratory physiology, not DNA repair outcomes.",
+      "finding_ids": [
+        "nicotinamide-riboside-raises-nad-no-dna-repair-endpoint",
+        "nicotinamide-mononucleotide-raises-nad-no-dna-repair-endpoint"
+      ],
+      "source_ids": [
+        "pmid-29599478",
+        "pmid-35927255"
+      ],
+      "limitations": [
+        "NAD metabolite movement is upstream and indirect.",
+        "Neither study measured DNA repair endpoints.",
+        "Sponsor involvement and small sample sizes limit confidence."
+      ]
+    },
+    {
+      "label": "Momentum",
+      "outlook_field": "momentum",
+      "conclusion": "Momentum is mixed because a positive nicotinamide skin-cancer trial and topical biomarker studies are counterbalanced by a null transplant-recipient trial and indirect NAD-precursor evidence.",
+      "support_role": "balances",
+      "rationale": "The track has human-relevant activity, but the evidence has not converged on a replicated, systemic, aging-relevant intervention effect.",
+      "finding_ids": [
+        "ontrac-nicotinamide-lower-nmsc-rate",
+        "ontrans-nicotinamide-null-transplant-keratinocyte-cancers",
+        "dna-repair-enzyme-sunscreen-lower-cpds-field-cancerization",
+        "topical-dna-repair-enzyme-lower-actinic-keratoses",
+        "nicotinamide-riboside-raises-nad-no-dna-repair-endpoint",
+        "nicotinamide-mononucleotide-raises-nad-no-dna-repair-endpoint"
+      ],
+      "source_ids": [
+        "pmid-26488693",
+        "pmid-36856616",
+        "pmid-26355618",
+        "pmid-29036257",
+        "pmid-29599478",
+        "pmid-35927255"
+      ],
+      "limitations": [
+        "The evidence spans heterogeneous interventions.",
+        "Recent human NAD-precursor work does not directly test the DNA repair endpoint most relevant to this track."
+      ]
+    },
+    {
+      "label": "Confidence",
+      "outlook_field": "confidence",
+      "conclusion": "Confidence remains low because the evidence is narrow, heterogeneous, and mostly biomarker-weighted.",
+      "support_role": "limits",
+      "rationale": "The positive evidence is enough for a public baseline but not enough for a confident claim that DNA repair enhancement can broadly alter aging trajectories.",
+      "finding_ids": [
+        "ontrac-nicotinamide-lower-nmsc-rate",
+        "ontrans-nicotinamide-null-transplant-keratinocyte-cancers",
+        "dna-repair-enzyme-sunscreen-lower-cpds-field-cancerization",
+        "photolyase-sunscreen-lower-uv-cpds-apoptosis",
+        "nicotinamide-enhanced-uv-dna-repair-human-skin",
+        "topical-dna-repair-enzyme-lower-actinic-keratoses",
+        "nicotinamide-riboside-raises-nad-no-dna-repair-endpoint",
+        "nicotinamide-mononucleotide-raises-nad-no-dna-repair-endpoint"
+      ],
+      "source_ids": [
+        "pmid-26488693",
+        "pmid-36856616",
+        "pmid-26355618",
+        "pmid-22086236",
+        "pmid-23349012",
+        "pmid-29036257",
+        "pmid-29599478",
+        "pmid-35927255"
+      ],
+      "limitations": [
+        "No cited study demonstrates durable disease, mortality, or broad healthy-lifespan relevance through a DNA repair mechanism.",
+        "The strongest clinical evidence is tissue- and risk-context-specific."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-26488693",
+    "pmid-36856616",
+    "pmid-26355618",
+    "pmid-22086236",
+    "pmid-23349012",
+    "pmid-29036257",
+    "pmid-29599478",
+    "pmid-35927255"
+  ],
+  "last_updated": "2026-05-31",
+  "tags": [
+    "public",
+    "track",
+    "thin_coverage"
+  ]
+}

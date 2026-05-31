@@ -9,6 +9,12 @@ const navItems = [
   { href: "/state-of-the-field", label: "State of the Field", icon: BookOpenText }
 ] as const;
 
+const legendItems = [
+  { href: "/methods#evidence", label: "Evidence", icon: Microscope },
+  { href: "/methods#interpretation", label: "Interpretation", icon: Compass },
+  { href: "/methods#forecast", label: "Forecast", icon: Waypoints }
+] as const;
+
 type SiteShellProps = {
   children: React.ReactNode;
   lastUpdated: string;
@@ -47,18 +53,12 @@ export function SiteShell({ children, lastUpdated }: SiteShellProps) {
           </div>
         </div>
         <div className="legend-bar">
-          <div className="legend-item">
-            <Microscope aria-hidden="true" size={15} />
-            <span>Evidence</span>
-          </div>
-          <div className="legend-item">
-            <Compass aria-hidden="true" size={15} />
-            <span>Interpretation</span>
-          </div>
-          <div className="legend-item">
-            <Waypoints aria-hidden="true" size={15} />
-            <span>Forecast</span>
-          </div>
+          {legendItems.map(({ href, label, icon: Icon }) => (
+            <Link className="legend-item" href={href} key={href}>
+              <Icon aria-hidden="true" size={15} />
+              <span>{label}</span>
+            </Link>
+          ))}
         </div>
       </header>
       <main>{children}</main>

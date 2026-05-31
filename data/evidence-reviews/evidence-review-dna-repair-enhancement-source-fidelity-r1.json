@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-dna-repair-enhancement-source-fidelity-r1",
+  "name": "Source Fidelity review for Dna Repair Enhancement bundle",
+  "candidate_bundle_id": "dna-repair-enhancement-bootstrap-2026-05-31",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, and finding records match the cited source boundaries: the nicotinamide trials are represented as one positive high-risk immunocompetent skin-cancer signal and one null transplant-recipient boundary condition; topical photolyase and DNA repair enzyme studies are kept as small human skin biomarker or preliminary actinic-keratosis signals; NR and NMN trials are correctly treated as NAD-metabolite context without direct DNA repair endpoints.",
+  "reviewed_change_ids": [
+    "create-source-pmid-26488693",
+    "create-source-pmid-36856616",
+    "create-source-pmid-26355618",
+    "create-source-pmid-22086236",
+    "create-source-pmid-23349012",
+    "create-source-pmid-29036257",
+    "create-source-pmid-29599478",
+    "create-source-pmid-35927255",
+    "create-study-ontrac-nicotinamide-skin-cancer-chemoprevention",
+    "create-study-ontrans-nicotinamide-transplant-skin-cancer",
+    "create-study-sunscreen-dna-repair-enzymes-actinic-keratosis",
+    "create-study-photolyase-uv-dna-damage-human-skin",
+    "create-study-nicotinamide-uv-dna-repair-human-skin",
+    "create-study-topical-dna-repair-enzyme-actinic-keratoses",
+    "create-study-nicotinamide-riboside-older-adults-nad",
+    "create-study-nicotinamide-mononucleotide-older-men-nad-muscle",
+    "create-finding-ontrac-nicotinamide-lower-nmsc-rate",
+    "create-finding-ontrans-nicotinamide-null-transplant-keratinocyte-cancers",
+    "create-finding-dna-repair-enzyme-sunscreen-lower-cpds-field-cancerization",
+    "create-finding-photolyase-sunscreen-lower-uv-cpds-apoptosis",
+    "create-finding-nicotinamide-enhanced-uv-dna-repair-human-skin",
+    "create-finding-topical-dna-repair-enzyme-lower-actinic-keratoses",
+    "create-finding-nicotinamide-riboside-raises-nad-no-dna-repair-endpoint",
+    "create-finding-nicotinamide-mononucleotide-raises-nad-no-dna-repair-endpoint",
+    "create-dna-repair-enhancement-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "dna-repair-source-skin-specificity-note",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-dna-repair-enhancement-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-dna-repair-enhancement-outlook"
+      },
+      "claim_or_issue": "Most positive source-backed claims in the bundle are specific to UV-exposed skin, actinic keratoses, or skin-cancer prevention.",
+      "why_it_matters": "That boundary prevents the source set from being read as direct evidence of systemic aging-related DNA repair enhancement across tissues.",
+      "recommended_action": "Keep the staged outlook caveats and support-map limitations that describe the evidence as skin/UV-specific and biomarker-weighted.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "dna-repair-nad-precursor-indirect-note",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-dna-repair-enhancement-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-dna-repair-enhancement-outlook"
+      },
+      "claim_or_issue": "The NR and NMN human trials support NAD-metabolite movement and tolerability, but not direct DNA repair endpoint movement.",
+      "why_it_matters": "NAD-linked DNA repair is plausible taxonomy context, but treating NAD elevation itself as DNA repair efficacy would overstate the sources.",
+      "recommended_action": "Retain the staged finding direction as inconclusive for DNA repair and keep the outlook support role as limiting/contextual rather than supporting an upgrade.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-05-31T14:29:05.146Z",
+  "updated_at": "2026-05-31T14:29:05.146Z"
+}
