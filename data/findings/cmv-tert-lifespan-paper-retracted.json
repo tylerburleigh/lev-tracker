@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "cmv-tert-lifespan-paper-retracted",
+  "name": "A CMV-vector TERT lifespan paper was retracted",
+  "summary": "A retraction notice removes a prominent claimed CMV-TERT mouse lifespan signal from the active evidence base.",
+  "source_id": "pmid-40789040",
+  "intervention_ids": [
+    "cmv-tert"
+  ],
+  "track_ids": [
+    "telomerase-restoration"
+  ],
+  "hallmark_ids": [
+    "telomere_attrition"
+  ],
+  "endpoint_category": "regulatory",
+  "direction": "negative",
+  "evidence_tier": "regulatory_or_program_update",
+  "confidence": "high",
+  "statement": "The 2022 PNAS paper reporting intranasal and injectable CMV-vector TERT and follistatin life extension in mice is marked as retracted by a 2025 PNAS retraction notice.",
+  "population_or_model": "Publication record for the retracted CMV-TERT mouse gene-therapy paper",
+  "time_horizon": "Retraction notice published August 11, 2025",
+  "quantitative_note": "The retraction notice refers to PMID 35537048, which had claimed mouse median lifespan extension from MCMV-TERT.",
+  "caveats": [
+    "The retraction notice does not itself test telomerase restoration.",
+    "This finding should be used only to prevent reliance on the retracted paper as positive evidence."
+  ],
+  "tags": [
+    "retraction",
+    "publication-integrity",
+    "gene-therapy"
+  ]
+}
