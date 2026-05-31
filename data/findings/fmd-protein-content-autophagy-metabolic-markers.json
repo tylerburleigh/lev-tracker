@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "fmd-protein-content-autophagy-metabolic-markers",
+  "name": "Fasting-mimicking diet variants induced molecular autophagy markers",
+  "summary": "A short randomized FMD study supports human biomarker movement but remains endpoint-limited.",
+  "source_id": "pmid-40816210",
+  "study_id": "fmd-protein-content-autophagy-rct",
+  "intervention_ids": [
+    "fasting-mimicking-diet"
+  ],
+  "track_ids": [
+    "autophagy-induction"
+  ],
+  "hallmark_ids": [
+    "disabled_macroautophagy"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "positive",
+  "evidence_tier": "human_biomarker",
+  "confidence": "low",
+  "statement": "A 7-day randomized parallel-group study in 46 healthy adults reported molecular autophagy induction and cardiometabolic-marker movement after fasting-mimicking diet variants.",
+  "population_or_model": "Healthy adult men and women",
+  "time_horizon": "7 days",
+  "caveats": [
+    "The intervention was short and tested healthy adults rather than an aging-impaired population.",
+    "The outcome mix remains biomarker and cardiometabolic-marker weighted.",
+    "Some authors had employment ties to companies involved in the diet products or testing."
+  ],
+  "tags": [
+    "human",
+    "biomarker",
+    "fasting-mimicking-diet",
+    "signal"
+  ]
+}

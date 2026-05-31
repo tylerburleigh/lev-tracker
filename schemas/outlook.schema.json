@@ -79,6 +79,12 @@
     "forecast_note": {
       "type": "string"
     },
+    "rating_change_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "earliest_plausible_window": {
       "type": "string"
     },
@@ -98,6 +104,58 @@
         "$ref": "./common.schema.json#/$defs/activityItemRef"
       },
       "uniqueItems": true
+    },
+    "supporting_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "conclusion",
+          "support_role",
+          "rationale",
+          "finding_ids"
+        ],
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "outlook_field": {
+            "type": "string"
+          },
+          "conclusion": {
+            "type": "string"
+          },
+          "support_role": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "finding_ids": {
+            "type": "array",
+            "items": {
+              "$ref": "./common.schema.json#/$defs/findingRef"
+            },
+            "uniqueItems": true,
+            "minItems": 1
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "$ref": "./common.schema.json#/$defs/sourceRef"
+            },
+            "uniqueItems": true
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
     },
     "supporting_source_ids": {
       "type": "array",

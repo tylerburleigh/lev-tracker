@@ -18,6 +18,142 @@
     "Spermidine interventions appear tolerable in older adults and keep the track clinically visible even though efficacy remains mixed."
   ],
   "forecast_note": "Autophagy induction now deserves a public track baseline because human interventions can point to pathway-level and metabolic movement. But the current evidence remains mixed, short-term, and far from demonstrating durable healthy-lifespan benefit.",
+  "rating_change_criteria": [
+    "A stronger stage assignment would need replicated human studies where measured autophagy engagement tracks with durable functional, disease, or mortality-relevant outcomes.",
+    "Higher confidence would need larger and longer trials with independent replication, clearer endpoint relevance, and better attribution to macroautophagic flux rather than broad nutrient-sensing effects.",
+    "The rating would weaken if longer-duration human trials repeatedly remain null or if safety, tolerability, or pathway-engagement problems become more visible."
+  ],
+  "supporting_finding_ids": [
+    "fmd-pilot-autophagic-flux-metabolic-markers",
+    "fmd-protein-content-autophagy-metabolic-markers",
+    "smartage-spermidine-null-memory-outcomes",
+    "spermidine-older-adults-short-term-tolerability",
+    "high-purity-spermidine-safety-minimal-polyamine-change"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "current_stage",
+      "conclusion": "The track is at human biomarker signal because short human fasting-mimicking diet studies report autophagy-marker and metabolic-marker movement.",
+      "support_role": "supports",
+      "rationale": "These findings move the track beyond pure animal or mechanistic plausibility, but they do not show durable human function or disease/mortality relevance.",
+      "finding_ids": [
+        "fmd-pilot-autophagic-flux-metabolic-markers",
+        "fmd-protein-content-autophagy-metabolic-markers"
+      ],
+      "source_ids": [
+        "pmid-41372565",
+        "pmid-40816210"
+      ],
+      "limitations": [
+        "Both studies are short-term.",
+        "The endpoints are pathway and metabolic markers, not durable healthy-lifespan outcomes."
+      ]
+    },
+    {
+      "label": "Main blocker",
+      "outlook_field": "main_blockers",
+      "conclusion": "The strongest longer-term spermidine trial does not support upgrading the track to human functional benefit.",
+      "support_role": "limits",
+      "rationale": "A 12-month randomized trial is more duration-relevant than the short biomarker studies, and its null primary memory result keeps the track mixed.",
+      "finding_ids": [
+        "smartage-spermidine-null-memory-outcomes"
+      ],
+      "source_ids": [
+        "pmid-35616942"
+      ],
+      "limitations": [
+        "This is a spermidine result, not a decisive test of every autophagy-inducing intervention.",
+        "The population and endpoint are cognitive, so the negative result should constrain rather than close the track."
+      ]
+    },
+    {
+      "label": "Momentum",
+      "outlook_field": "momentum",
+      "conclusion": "Momentum is mixed: recent human biomarker studies keep the track active, while null and endpoint-limited spermidine data prevent a stronger read.",
+      "support_role": "balances",
+      "rationale": "The evidence set contains visible human activity and pathway engagement, but it has not converted into replicated durable functional benefit.",
+      "finding_ids": [
+        "fmd-pilot-autophagic-flux-metabolic-markers",
+        "fmd-protein-content-autophagy-metabolic-markers",
+        "smartage-spermidine-null-memory-outcomes",
+        "high-purity-spermidine-safety-minimal-polyamine-change"
+      ],
+      "source_ids": [
+        "pmid-41372565",
+        "pmid-40816210",
+        "pmid-35616942",
+        "pmid-39405978"
+      ],
+      "limitations": [
+        "Recent activity is mostly biomarker movement and short-term safety work.",
+        "The evidence comes from heterogeneous interventions rather than one coherent program."
+      ]
+    },
+    {
+      "label": "Confidence",
+      "outlook_field": "confidence",
+      "conclusion": "Confidence remains low because the positive evidence is short-term and biomarker-weighted, while the most duration-relevant efficacy trial was null.",
+      "support_role": "limits",
+      "rationale": "The cited studies are useful enough to establish a public baseline, but not strong enough to support a confident claim about durable healthy-lifespan benefit.",
+      "finding_ids": [
+        "fmd-pilot-autophagic-flux-metabolic-markers",
+        "fmd-protein-content-autophagy-metabolic-markers",
+        "smartage-spermidine-null-memory-outcomes",
+        "spermidine-older-adults-short-term-tolerability",
+        "high-purity-spermidine-safety-minimal-polyamine-change"
+      ],
+      "source_ids": [
+        "pmid-41372565",
+        "pmid-40816210",
+        "pmid-35616942",
+        "pmid-29315079",
+        "pmid-39405978"
+      ],
+      "limitations": [
+        "No cited source demonstrates durable disease, mortality, or broad healthy-aging relevance.",
+        "Safety and pathway engagement do not establish efficacy."
+      ]
+    },
+    {
+      "label": "Best current signal",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Fasting-mimicking diet studies provide the clearest current human signal for pathway engagement.",
+      "support_role": "supports",
+      "rationale": "The FMD studies directly measured autophagy-related molecular outcomes alongside metabolic changes in human participants.",
+      "finding_ids": [
+        "fmd-pilot-autophagic-flux-metabolic-markers",
+        "fmd-protein-content-autophagy-metabolic-markers"
+      ],
+      "source_ids": [
+        "pmid-41372565",
+        "pmid-40816210"
+      ],
+      "limitations": [
+        "These sources support engagement, not proven aging benefit.",
+        "The studies do not isolate whether autophagy itself is the causal lever versus broader nutrient-sensing and metabolic effects."
+      ]
+    },
+    {
+      "label": "Safety and clinical visibility",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Spermidine remains clinically visible because small human trials suggest tolerability, but efficacy remains unresolved.",
+      "support_role": "contextualizes",
+      "rationale": "The safety/tolerability findings justify continued watchfulness without counting as evidence of durable benefit.",
+      "finding_ids": [
+        "spermidine-older-adults-short-term-tolerability",
+        "high-purity-spermidine-safety-minimal-polyamine-change"
+      ],
+      "source_ids": [
+        "pmid-29315079",
+        "pmid-39405978"
+      ],
+      "limitations": [
+        "The trials were small and short.",
+        "The high-purity spermidine study saw minimal circulating polyamine movement, so pathway engagement is not settled."
+      ]
+    }
+  ],
   "supporting_source_ids": [
     "pmid-35616942",
     "pmid-29315079",

@@ -65,10 +65,78 @@ export type OutlookFile = {
   main_blockers?: string[];
   best_current_signals?: string[];
   forecast_note: string;
+  rating_change_criteria?: string[];
+  supporting_finding_ids?: string[];
+  supporting_evidence?: OutlookEvidenceLinkFile[];
   supporting_source_ids?: string[];
   last_updated: string;
   scenario_2036_status?: ScenarioStatus;
   tags?: string[];
+};
+
+export type OutlookEvidenceLinkFile = {
+  label: string;
+  outlook_field?: string;
+  conclusion: string;
+  support_role: string;
+  rationale: string;
+  finding_ids: string[];
+  source_ids?: string[];
+  limitations?: string[];
+};
+
+export type SourceRecord = {
+  id: string;
+  name: string;
+  short_name?: string;
+  summary?: string;
+  source_type: string;
+  authors?: string[];
+  venue?: string;
+  year?: number;
+  published_on?: string;
+  doi?: string;
+  pmid?: string;
+  registry_ids?: string[];
+  urls?: string[];
+};
+
+export type StudyRecord = {
+  id: string;
+  name: string;
+  summary?: string;
+  study_type: string;
+  status: string;
+  phase?: string;
+  population?: string;
+  model_system?: string;
+  sample_size?: number;
+  intervention_ids?: string[];
+  hallmark_ids?: string[];
+  track_ids?: string[];
+  endpoint_categories?: string[];
+  source_ids: string[];
+  registry_ids?: string[];
+};
+
+export type FindingRecord = {
+  id: string;
+  name: string;
+  summary?: string;
+  source_id: string;
+  study_id?: string;
+  intervention_ids?: string[];
+  track_ids?: string[];
+  hallmark_ids: string[];
+  endpoint_category: string;
+  direction: string;
+  evidence_tier: string;
+  confidence: Confidence;
+  statement: string;
+  population_or_model?: string;
+  time_horizon?: string;
+  quantitative_note?: string;
+  caveats?: string[];
 };
 
 export type OutlookRecord = {
@@ -93,12 +161,39 @@ export type TrackCoverage = {
   confidence?: Confidence;
   blocker?: string;
   bestSignal?: string;
+  ratingChangeCriteria?: string[];
   note: string;
   lastUpdated: string;
   thinCoverage?: boolean;
   statusLabel?: string;
   outlookId?: string;
+  supportingFindingIds?: string[];
+  supportingEvidence?: OutlookEvidenceLinkFile[];
   supportingSourceIds?: string[];
+  supportingSources?: SourceRecord[];
+};
+
+export type EvidenceSupportCard = {
+  label: string;
+  conclusion: string;
+  supportRole: string;
+  rationale: string;
+  limitations: string[];
+  findings: Array<{
+    id: string;
+    name: string;
+    statement: string;
+    direction: string;
+    evidenceTier: string;
+    endpointCategory: string;
+    interventionIds: string[];
+    confidence: Confidence;
+    caveats: string[];
+    quantitativeNote?: string;
+    source?: SourceRecord;
+    study?: StudyRecord;
+  }>;
+  sources: SourceRecord[];
 };
 
 export type ActivityItemRecord = {
@@ -395,6 +490,18 @@ function getOutlooksRoot() {
   return path.join(dataRoot, "outlooks");
 }
 
+function getSourcesRoot() {
+  return path.join(dataRoot, "sources");
+}
+
+function getStudiesRoot() {
+  return path.join(dataRoot, "studies");
+}
+
+function getFindingsRoot() {
+  return path.join(dataRoot, "findings");
+}
+
 function getActivityItemsRoot() {
   return path.join(dataRoot, "activity-items");
 }
@@ -488,6 +595,12 @@ function resolveDataPath(relativePath: string, label: string) {
 
 function getPromotableRecordRoot(recordType: string) {
   switch (recordType) {
+    case "source":
+      return getSourcesRoot();
+    case "study":
+      return getStudiesRoot();
+    case "finding":
+      return getFindingsRoot();
     case "outlook":
       return getOutlooksRoot();
     case "activity_item":
@@ -751,6 +864,42 @@ const loadOutlooks = cache(async () => {
   return records;
 });
 
+const loadSources = cache(async () => {
+  try {
+    return await readCollection<SourceRecord>(getSourcesRoot());
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      return [];
+    }
+
+    throw error;
+  }
+});
+
+const loadStudies = cache(async () => {
+  try {
+    return await readCollection<StudyRecord>(getStudiesRoot());
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      return [];
+    }
+
+    throw error;
+  }
+});
+
+const loadFindings = cache(async () => {
+  try {
+    return await readCollection<FindingRecord>(getFindingsRoot());
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      return [];
+    }
+
+    throw error;
+  }
+});
+
 const loadOutlookMap = cache(async () => {
   const map = new Map<string, OutlookFile>();
   for (const outlook of await loadOutlooks()) {
@@ -894,7 +1043,8 @@ export async function getHallmarkOutlooks(): Promise<OutlookRecord[]> {
 
 export async function getTrackCoverage(trackId: string): Promise<TrackCoverage> {
   noStore();
-  const trackOutlook = (await loadOutlooks()).find(
+  const [outlooks, sources] = await Promise.all([loadOutlooks(), loadSources()]);
+  const trackOutlook = outlooks.find(
     (item) => item.subject_type === "track" && item.subject_id === trackId
   );
 
@@ -914,11 +1064,70 @@ export async function getTrackCoverage(trackId: string): Promise<TrackCoverage> 
     confidence: trackOutlook.confidence,
     blocker: trackOutlook.main_blockers?.[0],
     bestSignal: trackOutlook.best_current_signals?.[0],
+    ratingChangeCriteria: trackOutlook.rating_change_criteria,
     note: trackOutlook.forecast_note,
     lastUpdated: trackOutlook.last_updated,
     thinCoverage: trackOutlook.tags?.includes("thin_coverage"),
-    supportingSourceIds: trackOutlook.supporting_source_ids
+    supportingFindingIds: trackOutlook.supporting_finding_ids,
+    supportingEvidence: trackOutlook.supporting_evidence,
+    supportingSourceIds: trackOutlook.supporting_source_ids,
+    supportingSources: trackOutlook.supporting_source_ids
+      ?.map((sourceId) => sources.find((source) => source.id === sourceId))
+      .filter((source): source is SourceRecord => Boolean(source))
   };
+}
+
+export async function getTrackEvidenceSupport(trackId: string): Promise<EvidenceSupportCard[]> {
+  noStore();
+  const [outlooks, findings, studies, sources] = await Promise.all([
+    loadOutlooks(),
+    loadFindings(),
+    loadStudies(),
+    loadSources()
+  ]);
+  const trackOutlook = outlooks.find((item) => item.subject_type === "track" && item.subject_id === trackId);
+
+  if (!trackOutlook?.supporting_evidence?.length) {
+    return [];
+  }
+
+  const findingById = new Map(findings.map((finding) => [finding.id, finding]));
+  const studyById = new Map(studies.map((study) => [study.id, study]));
+  const sourceById = new Map(sources.map((source) => [source.id, source]));
+
+  return trackOutlook.supporting_evidence.map((link) => {
+    const linkedFindings = link.finding_ids
+      .map((findingId) => findingById.get(findingId))
+      .filter((finding): finding is FindingRecord => Boolean(finding));
+    const linkedSources = Array.from(
+      new Set([...(link.source_ids ?? []), ...linkedFindings.map((finding) => finding.source_id)])
+    )
+      .map((sourceId) => sourceById.get(sourceId))
+      .filter((source): source is SourceRecord => Boolean(source));
+
+    return {
+      label: link.label,
+      conclusion: link.conclusion,
+      supportRole: link.support_role,
+      rationale: link.rationale,
+      limitations: link.limitations ?? [],
+      findings: linkedFindings.map((finding) => ({
+        id: finding.id,
+        name: finding.name,
+        statement: finding.statement,
+        direction: finding.direction,
+        evidenceTier: finding.evidence_tier,
+        endpointCategory: finding.endpoint_category,
+        interventionIds: finding.intervention_ids ?? [],
+        confidence: finding.confidence,
+        caveats: finding.caveats ?? [],
+        quantitativeNote: finding.quantitative_note,
+        source: sourceById.get(finding.source_id),
+        study: finding.study_id ? studyById.get(finding.study_id) : undefined
+      })),
+      sources: linkedSources
+    };
+  });
 }
 
 export async function getActivityFeed(): Promise<ActivityFeedItem[]> {
