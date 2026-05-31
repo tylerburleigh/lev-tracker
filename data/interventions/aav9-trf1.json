@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "aav9-trf1",
+  "name": "AAV9-TRF1",
+  "summary": "Preclinical shelterin-directed gene therapy used to test whether transient TRF1 expression can improve aging markers in mice.",
+  "aliases": [
+    "AAV9 TRF1"
+  ],
+  "modalities": [
+    "gene_therapy"
+  ],
+  "target_hallmark_ids": [
+    "telomere_attrition"
+  ],
+  "track_ids": [
+    "telomere-protection-and-capping"
+  ],
+  "mechanism_summary": "Uses AAV9-mediated TRF1 expression to support telomere protection and capping biology without primarily lengthening median telomeres.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "aav9-trf1-aging-mouse-healthspan"
+  ],
+  "linked_finding_ids": [
+    "aav9-trf1-improved-mouse-healthspan-without-lengthening"
+  ],
+  "risk_flags": [
+    "gene-therapy-translation",
+    "shelterin-dose-sensitivity",
+    "mouse-only"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether shelterin-directed intervention can be translated without increasing genomic-instability or cancer risk",
+      "Whether benefits are durable and tissue-selective outside the mouse study"
+    ]
+  },
+  "tags": [
+    "telomere-protection-and-capping",
+    "gene-therapy",
+    "trf1",
+    "mouse"
+  ]
+}

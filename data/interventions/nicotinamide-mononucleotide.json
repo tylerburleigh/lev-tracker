@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "nicotinamide-mononucleotide",
+  "name": "Nicotinamide mononucleotide",
+  "short_name": "NMN",
+  "summary": "NAD precursor with human metabolic and biomarker studies plus adjacent preclinical genome-surveillance context.",
+  "aliases": [
+    "NMN"
+  ],
+  "modalities": [
+    "dietary_supplement",
+    "small_molecule"
+  ],
+  "target_hallmark_ids": [
+    "mitochondrial_dysfunction"
+  ],
+  "secondary_hallmark_ids": [
+    "deregulated_nutrient_sensing",
+    "genomic_instability"
+  ],
+  "track_ids": [
+    "nad-and-redox-restoration",
+    "dna-repair-enhancement",
+    "genome-surveillance-and-chromosome-stability"
+  ],
+  "mechanism_summary": "Acts as an NAD precursor intended to increase NAD availability and downstream metabolic, mitochondrial, and sirtuin-linked signaling.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "nicotinamide-mononucleotide-older-men-nad-muscle",
+    "nicotinamide-mononucleotide-prediabetic-women-insulin",
+    "sirt2-nmn-bubr1-hypomorphic-mice"
+  ],
+  "linked_finding_ids": [
+    "nicotinamide-mononucleotide-raises-nad-no-dna-repair-endpoint",
+    "nmn-older-men-raised-nad-muscle-function-exploratory",
+    "nmn-prediabetic-women-muscle-insulin-sensitivity",
+    "sirt2-nmn-raises-bubr1-and-extends-bubr1-hypomorphic-lifespan"
+  ],
+  "risk_flags": [
+    "heterogeneous-human-results",
+    "surrogate-heavy",
+    "population-specific-effects"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_function",
+    "human_data": true,
+    "open_questions": [
+      "Whether metabolic-function signals generalize outside narrow trial populations",
+      "Whether NAD elevation produces durable aging-relevant outcomes rather than short-term biomarkers"
+    ]
+  },
+  "tags": [
+    "nad-and-redox-restoration",
+    "nmn",
+    "nad-precursor",
+    "metabolic-function"
+  ]
+}

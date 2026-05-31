@@ -22,6 +22,8 @@ The project is a working alpha of the Hallmarks of Aging LEV Tracker.
 - Admin review workflow: `docs/admin-review.md`
 - Evidence review workflow: `docs/evidence-review.md`
 - Publication checklist: `docs/publication-checklist.md`
+- Source ingestion rules: `docs/source-ingestion-rules.md`
+- Intervention normalization rules: `docs/intervention-normalization.md`
 - Public information architecture: `docs/public-site-ia.md`
 - Homepage wireframe: `docs/homepage-wireframe-spec.md`
 - Product intent: `docs/product-brief.md`
@@ -188,10 +190,15 @@ Research runs should continue to follow `docs/research-ops-state.md`: one track 
    - PubMed
    - ClinicalTrials.gov
    - Manual curator entry
+   - Current status: completed in `docs/source-ingestion-rules.md`.
+   - Note: the rules cover source ID conventions, source-type selection, date handling, canonical URLs, linked study/finding boundaries, and candidate-bundle checks.
 
 4. Normalize intervention records.
    - The schema exists, but the public app currently relies mostly on IDs and track exemplars.
    - Intervention records are needed before intervention detail pages can be useful.
+   - Current status: partially implemented.
+   - Note: `docs/intervention-normalization.md` defines normalization rules, `data/interventions/` now has a first public batch, and evidence pages prefer normalized intervention names where records exist.
+   - Remaining: continue filling long-tail intervention IDs and add intervention records through reviewed candidate bundles during future research passes.
 
 ## Priority 4: Documentation Cleanup
 
@@ -201,7 +208,7 @@ Research runs should continue to follow `docs/research-ops-state.md`: one track 
 
 2. Update `README.md` as implementation catches up.
    - Current status: completed.
-   - Note: the README now points to the roadmap, product brief, research ops state, admin review, evidence review, and publication checklist docs.
+   - Note: the README now points to the roadmap, product brief, research ops state, admin review, evidence review, publication checklist, source ingestion, and intervention normalization docs.
 
 3. Add short docs for admin review and evidence review.
    - Current status: completed.

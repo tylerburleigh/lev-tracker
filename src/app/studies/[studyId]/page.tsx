@@ -16,6 +16,7 @@ import {
   getConfidenceLabel,
   getFindingsForStudy,
   getHallmarkById,
+  getInterventionsByIds,
   getOverallLastUpdated,
   getSourcesByIds,
   getStudyById,
@@ -36,11 +37,13 @@ export default async function StudyDetailPage({ params }: StudyDetailPageProps) 
     notFound();
   }
 
-  const [findings, sources, lastUpdated] = await Promise.all([
+  const [findings, sources, interventions, lastUpdated] = await Promise.all([
     getFindingsForStudy(study.id),
     getSourcesByIds(study.source_ids),
+    getInterventionsByIds(study.intervention_ids ?? []),
     getOverallLastUpdated()
   ]);
+  const interventionNameById = new Map(interventions.map((intervention) => [intervention.id, intervention.name]));
 
   return (
     <SiteShell lastUpdated={formatDate(lastUpdated)}>
@@ -99,7 +102,7 @@ export default async function StudyDetailPage({ params }: StudyDetailPageProps) 
                       </span>
                     ) : (
                       <Link className="mini-link" href={`/interventions/${interventionId}`} key={interventionId}>
-                        {getTitleFromIdentifier(interventionId)}
+                        {interventionNameById.get(interventionId) ?? getTitleFromIdentifier(interventionId)}
                       </Link>
                     )
                   )}

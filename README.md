@@ -19,6 +19,8 @@ The first pass is intentionally small:
 - [Admin review](docs/admin-review.md): candidate lifecycle, promotion readiness, and publication behavior.
 - [Evidence review](docs/evidence-review.md): review lanes, findings, and evidence-gate workflow.
 - [Publication checklist](docs/publication-checklist.md): pre-publish and post-publish checklist.
+- [Source ingestion rules](docs/source-ingestion-rules.md): PubMed, ClinicalTrials.gov, and manual source conventions.
+- [Intervention normalization](docs/intervention-normalization.md): rules for turning intervention IDs into public records.
 
 ## Design Principles
 

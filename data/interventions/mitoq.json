@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "mitoq",
+  "name": "MitoQ",
+  "summary": "Mitochondrial-targeted antioxidant with a small older-adult vascular-function signal.",
+  "aliases": [
+    "mitoquinone"
+  ],
+  "modalities": [
+    "dietary_supplement",
+    "small_molecule"
+  ],
+  "target_hallmark_ids": [
+    "mitochondrial_dysfunction"
+  ],
+  "track_ids": [
+    "nad-and-redox-restoration"
+  ],
+  "mechanism_summary": "Targets antioxidant activity to mitochondria to reduce oxidative stress and support mitochondrial-redox physiology.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "mitoq-older-adults-vascular-function"
+  ],
+  "linked_finding_ids": [
+    "mitoq-older-adults-improved-vascular-endothelial-function"
+  ],
+  "risk_flags": [
+    "surrogate-physiology",
+    "small-crossover-trial",
+    "not-nad-specific"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_function",
+    "human_data": true,
+    "open_questions": [
+      "Whether vascular-function changes translate to durable clinical or functional benefit",
+      "Whether effects replicate beyond small short-term studies"
+    ]
+  },
+  "tags": [
+    "nad-and-redox-restoration",
+    "mitochondrial-antioxidant",
+    "vascular-function"
+  ]
+}

@@ -16,6 +16,7 @@ import {
   getConfidenceLabel,
   getFindingById,
   getHallmarkById,
+  getInterventionsByIds,
   getOverallLastUpdated,
   getSourceById,
   getStudyById,
@@ -36,11 +37,13 @@ export default async function FindingDetailPage({ params }: FindingDetailPagePro
     notFound();
   }
 
-  const [source, study, lastUpdated] = await Promise.all([
+  const [source, study, interventions, lastUpdated] = await Promise.all([
     getSourceById(finding.source_id),
     finding.study_id ? getStudyById(finding.study_id) : Promise.resolve(undefined),
+    getInterventionsByIds(finding.intervention_ids ?? []),
     getOverallLastUpdated()
   ]);
+  const interventionNameById = new Map(interventions.map((intervention) => [intervention.id, intervention.name]));
   const sourceHref = source ? getSourceHref(source) : undefined;
 
   return (
@@ -123,7 +126,7 @@ export default async function FindingDetailPage({ params }: FindingDetailPagePro
                       </span>
                     ) : (
                       <Link className="mini-link" href={`/interventions/${interventionId}`} key={interventionId}>
-                        {getTitleFromIdentifier(interventionId)}
+                        {interventionNameById.get(interventionId) ?? getTitleFromIdentifier(interventionId)}
                       </Link>
                     )
                   )}

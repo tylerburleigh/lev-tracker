@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "nicotinamide-riboside",
+  "name": "Nicotinamide riboside",
+  "short_name": "NR",
+  "summary": "NAD precursor with repeated human biomarker evidence, mixed mitochondrial-function results, and adjacent stem-cell and DNA-repair context.",
+  "aliases": [
+    "NR"
+  ],
+  "modalities": [
+    "dietary_supplement",
+    "small_molecule"
+  ],
+  "target_hallmark_ids": [
+    "mitochondrial_dysfunction"
+  ],
+  "secondary_hallmark_ids": [
+    "genomic_instability",
+    "deregulated_nutrient_sensing",
+    "chronic_inflammation",
+    "stem_cell_exhaustion"
+  ],
+  "track_ids": [
+    "nad-and-redox-restoration",
+    "dna-repair-enhancement",
+    "stem-cell-rejuvenation"
+  ],
+  "mechanism_summary": "Raises NAD metabolism as a precursor strategy, with downstream hypotheses around mitochondrial function, inflammatory tone, DNA repair, and tissue stem-cell support.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "nad-repletion-aged-mouse-stem-cell-function",
+    "nicotinamide-riboside-aged-men-skeletal-muscle",
+    "nicotinamide-riboside-obese-men-mitochondria",
+    "nicotinamide-riboside-older-adults-nad"
+  ],
+  "linked_finding_ids": [
+    "nicotinamide-riboside-raises-nad-no-dna-repair-endpoint",
+    "nr-aged-men-muscle-nad-anti-inflammatory-no-bioenergetics",
+    "nr-obese-insulin-resistant-men-mitochondrial-null",
+    "nr-older-adults-raised-nad-metabolome-biomarker",
+    "nr-rejuvenated-aged-mouse-stem-cells"
+  ],
+  "risk_flags": [
+    "biomarker-heavy",
+    "mixed-human-mitochondrial-results",
+    "sponsor-context"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether NAD-metabolite increases translate into replicated function or disease outcomes",
+      "Which populations, doses, and tissues show meaningful response"
+    ]
+  },
+  "tags": [
+    "nad-and-redox-restoration",
+    "nr",
+    "nad-precursor",
+    "human-biomarker"
+  ]
+}

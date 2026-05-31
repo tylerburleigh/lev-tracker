@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "therapeutic-plasma-exchange",
+  "name": "Therapeutic plasma exchange",
+  "short_name": "TPE",
+  "summary": "Plasma-exchange procedure tracked for circulating-factor modulation, with human biomarker evidence and adjacent disease-specific functional context.",
+  "aliases": [
+    "TPE"
+  ],
+  "modalities": [
+    "procedure"
+  ],
+  "target_hallmark_ids": [
+    "altered_intercellular_communication"
+  ],
+  "secondary_hallmark_ids": [
+    "chronic_inflammation",
+    "stem_cell_exhaustion"
+  ],
+  "track_ids": [
+    "circulating-factor-modulation"
+  ],
+  "mechanism_summary": "Removes and replaces circulating plasma components, potentially changing inflammatory, proteomic, glycomic, metabolomic, and other systemic signals.",
+  "development_stage": "approved_for_other_indication",
+  "linked_study_ids": [
+    "neutral-blood-exchange-plasma-dilution-mice-human-tpe",
+    "randomized-tpe-multiomics-healthy-adults",
+    "repeated-tpe-human-biological-age-proteome"
+  ],
+  "linked_finding_ids": [
+    "plasma-dilution-rejuvenated-aged-mouse-tissues",
+    "randomized-tpe-improved-biological-age-markers",
+    "tpe-shifted-human-proteome-and-immune-markers-younger"
+  ],
+  "risk_flags": [
+    "invasive-procedure",
+    "surrogate-biomarkers",
+    "protocol-heterogeneity"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether biomarker shifts translate into functional or disease endpoints",
+      "Which replacement fluids, schedules, and patient populations are relevant to aging biology"
+    ]
+  },
+  "tags": [
+    "circulating-factor-modulation",
+    "tpe",
+    "plasma-exchange",
+    "human-biomarker"
+  ]
+}

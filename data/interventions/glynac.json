@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "glynac",
+  "name": "GlyNAC",
+  "summary": "Glycine plus N-acetylcysteine nutrient-precursor combination tracked for redox, mitochondrial, inflammatory, and functional aging signals.",
+  "aliases": [
+    "glycine plus N-acetylcysteine"
+  ],
+  "modalities": [
+    "dietary_supplement",
+    "combination"
+  ],
+  "target_hallmark_ids": [
+    "mitochondrial_dysfunction"
+  ],
+  "secondary_hallmark_ids": [
+    "chronic_inflammation",
+    "deregulated_nutrient_sensing",
+    "genomic_instability",
+    "cellular_senescence",
+    "stem_cell_exhaustion"
+  ],
+  "track_ids": [
+    "nad-and-redox-restoration"
+  ],
+  "mechanism_summary": "Supplies glutathione precursors intended to improve redox status and downstream mitochondrial and inflammatory biology.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "glynac-healthy-older-adults-redox-dose-rct",
+    "glynac-older-adults-aging-hallmarks-rct"
+  ],
+  "linked_finding_ids": [
+    "glynac-dose-rct-redox-status-boundary",
+    "glynac-older-adults-improved-redox-mitochondrial-physical-function"
+  ],
+  "risk_flags": [
+    "small-human-samples",
+    "broad-endpoint-set",
+    "replication-needed"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_function",
+    "human_data": true,
+    "open_questions": [
+      "Whether functional benefits replicate in larger prespecified trials",
+      "Which effects are specific to glutathione repletion versus general nutritional support"
+    ]
+  },
+  "tags": [
+    "nad-and-redox-restoration",
+    "glynac",
+    "glutathione",
+    "human-rct"
+  ]
+}

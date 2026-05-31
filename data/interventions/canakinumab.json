@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "canakinumab",
+  "name": "Canakinumab",
+  "summary": "IL-1beta-targeting monoclonal antibody with large cardiovascular outcomes evidence in inflammatory-risk patients.",
+  "modalities": [
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "chronic_inflammation"
+  ],
+  "track_ids": [
+    "cytokine-and-inflammasome-modulation"
+  ],
+  "mechanism_summary": "Blocks IL-1beta signaling to reduce downstream inflammatory activity, including inflammasome-linked vascular inflammation.",
+  "development_stage": "approved_for_other_indication",
+  "linked_study_ids": [
+    "cantos-canakinumab-atherosclerosis-trial"
+  ],
+  "linked_finding_ids": [
+    "canakinumab-did-not-prevent-frailty",
+    "canakinumab-exploratory-lung-cancer-signal",
+    "canakinumab-reduced-recurrent-cardiovascular-events"
+  ],
+  "risk_flags": [
+    "infection-risk",
+    "secondary-prevention-population",
+    "not-healthy-aging-evidence"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_clinical_outcome",
+    "human_data": true,
+    "open_questions": [
+      "Whether cytokine inhibition can improve aging-relevant outcomes outside high-risk cardiovascular populations",
+      "Whether benefit can be separated from infection and immunosuppression tradeoffs"
+    ]
+  },
+  "tags": [
+    "cytokine-and-inflammasome-modulation",
+    "il-1beta",
+    "biologic",
+    "cardiovascular-outcomes"
+  ]
+}

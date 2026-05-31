@@ -14,6 +14,7 @@ const stagedRecordsRoot = path.join(dataRoot, "staged-records");
 const recordCollections = {
   source: "sources",
   study: "studies",
+  intervention: "interventions",
   finding: "findings",
   outlook: "outlooks",
   activity_item: "activity-items"
@@ -197,6 +198,7 @@ async function buildRecordMaps(promotionChanges) {
   const recordMaps = {
     source: new Map(),
     study: new Map(),
+    intervention: new Map(),
     finding: new Map(),
     outlook: new Map(),
     activity_item: new Map()
@@ -514,6 +516,32 @@ function validateFindingRecord(record, recordMaps, issues, warnings, label, opti
   }
 }
 
+function validateInterventionRecord(record, recordMaps, issues, warnings, label, options = {}) {
+  for (const field of ["name", "development_stage"]) {
+    addIssueForMissingString(record, field, issues, label);
+  }
+
+  if (!Array.isArray(record.modalities) || record.modalities.length === 0) {
+    issues.push(`${label} must include at least one modality.`);
+  }
+
+  if (!Array.isArray(record.target_hallmark_ids) || record.target_hallmark_ids.length === 0) {
+    issues.push(`${label} must include at least one target_hallmark_id.`);
+  }
+
+  for (const studyId of record.linked_study_ids ?? []) {
+    if (!recordExists(recordMaps, "study", studyId)) {
+      addReferenceMessage(`${label} references missing linked_study_id: ${studyId}.`, issues, warnings, options);
+    }
+  }
+
+  for (const findingId of record.linked_finding_ids ?? []) {
+    if (!recordExists(recordMaps, "finding", findingId)) {
+      addReferenceMessage(`${label} references missing linked_finding_id: ${findingId}.`, issues, warnings, options);
+    }
+  }
+}
+
 function validateOutlookSupportIds(record, recordMaps, issues, warnings, label, options = {}) {
   for (const findingId of record.supporting_finding_ids ?? []) {
     if (!recordExists(recordMaps, "finding", findingId)) {
@@ -613,6 +641,9 @@ function validateStagedRecordSemantics(promotionChanges, recordMaps, bundleStatu
         break;
       case "study":
         validateStudyRecord(record, recordMaps, issues, warnings, label, semanticOptions);
+        break;
+      case "intervention":
+        validateInterventionRecord(record, recordMaps, issues, warnings, label, semanticOptions);
         break;
       case "finding":
         validateFindingRecord(record, recordMaps, issues, warnings, label, semanticOptions);

@@ -351,22 +351,28 @@ Each session should leave durable artifacts:
 
 ## Current Schema State And Remaining Gaps
 
-The core product-level schemas now exist for:
+The core product-level schemas and validation baseline now exist for:
 
+- `source`
+- `study`
+- `finding`
 - `track`
+- `intervention`
 - `activity_item`
 - `outlook`
 - `candidate_bundle`
 - `review_comment`
 - `evidence_review`
 - `publication_event`
+- research planning state
 
 Remaining schema and data hardening work:
 
-- add broad validation across `data/`, `examples/`, `taxonomies/`, and `research/`
-- add app-level schemas where public pages currently rely on implicit aggregate contracts
-- document source ingestion rules for PubMed, ClinicalTrials.gov, and manual curator entry
-- normalize intervention records so intervention detail pages are useful without fallback derivation
+- add app-level schemas where public pages rely on implicit aggregate contracts that become standalone records
+- continue normalizing intervention records so intervention detail pages cover the long tail without fallback derivation
+
+Source ingestion rules for PubMed, ClinicalTrials.gov, and manual curator entry are documented in `docs/source-ingestion-rules.md`.
+Intervention normalization rules are documented in `docs/intervention-normalization.md`.
 
 ## Version 1 Scope
 

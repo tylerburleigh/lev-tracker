@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "dasatinib-quercetin",
+  "name": "Dasatinib plus quercetin",
+  "short_name": "D+Q",
+  "summary": "Senolytic combination tracked primarily under cellular senescence, with an adjacent mouse telomere-dysfunction finding in the current public record.",
+  "aliases": [
+    "D+Q",
+    "dasatinib and quercetin"
+  ],
+  "modalities": [
+    "combination",
+    "small_molecule",
+    "dietary_supplement"
+  ],
+  "target_hallmark_ids": [
+    "cellular_senescence"
+  ],
+  "secondary_hallmark_ids": [
+    "telomere_attrition"
+  ],
+  "track_ids": [
+    "senolytics",
+    "telomere-protection-and-capping"
+  ],
+  "mechanism_summary": "Combines a tyrosine kinase inhibitor and flavonoid to preferentially clear some senescent-cell populations.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "dq-senolytics-aged-mouse-endothelial-tif"
+  ],
+  "linked_finding_ids": [
+    "dq-senolytics-reduced-endothelial-tif-aged-mice"
+  ],
+  "risk_flags": [
+    "senolytic-specificity",
+    "off-target-toxicity",
+    "not-shelterin-directed"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Which senescent-cell populations are beneficial to clear in each tissue context",
+      "Whether telomere-dysfunction changes reflect capping repair or removal of damaged endothelial cells"
+    ]
+  },
+  "tags": [
+    "senolytics",
+    "cellular-senescence",
+    "dasatinib",
+    "quercetin"
+  ]
+}

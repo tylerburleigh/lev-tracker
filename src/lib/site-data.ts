@@ -661,6 +661,8 @@ function getPromotableRecordRoot(recordType: string) {
       return getSourcesRoot();
     case "study":
       return getStudiesRoot();
+    case "intervention":
+      return getInterventionsRoot();
     case "finding":
       return getFindingsRoot();
     case "outlook":
@@ -1321,6 +1323,14 @@ export async function getStrongestFindingsForHallmark(hallmarkId: string, limit 
 export async function getInterventionById(interventionId: string): Promise<InterventionRecord | undefined> {
   noStore();
   return (await loadInterventions()).find((intervention) => intervention.id === interventionId);
+}
+
+export async function getInterventionsByIds(interventionIds: string[]): Promise<InterventionRecord[]> {
+  noStore();
+  const interventionById = new Map((await loadInterventions()).map((intervention) => [intervention.id, intervention]));
+  return Array.from(new Set(interventionIds))
+    .map((interventionId) => interventionById.get(interventionId))
+    .filter((intervention): intervention is InterventionRecord => Boolean(intervention));
 }
 
 export async function getLeadingInterventionsForHallmark(

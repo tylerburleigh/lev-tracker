@@ -10,6 +10,7 @@ import {
   getConfidenceLabel,
   getFindingsForTrack,
   getHallmarkById,
+  getInterventionsByIds,
   getMomentumLabel,
   getOverallLastUpdated,
   getRecentChangesForSubject,
@@ -188,12 +189,13 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
   const uniqueSources = Array.from(
     new Map(evidenceSupport.flatMap((item) => item.sources).map((source) => [source.id, source])).values()
   );
+  const citedInterventionIds = Array.from(new Set(uniqueFindings.flatMap((finding) => finding.interventionIds)));
+  const citedInterventions = await getInterventionsByIds(citedInterventionIds);
+  const interventionNameById = new Map(citedInterventions.map((intervention) => [intervention.id, intervention.name]));
+  const getInterventionDisplayName = (interventionId: string) =>
+    interventionNameById.get(interventionId) ?? getInterventionLabel(interventionId);
   const citedInterventionLabels = Array.from(
-    new Set(
-      uniqueFindings
-        .flatMap((finding) => finding.interventionIds)
-        .map((interventionId) => getInterventionLabel(interventionId))
-    )
+    new Set(citedInterventionIds.map((interventionId) => getInterventionDisplayName(interventionId)))
   );
 
   return (
@@ -456,7 +458,7 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
                         <div className="pill-row">
                           {finding.interventionIds.map((interventionId) => (
                             <Link className="mini-link" href={`/interventions/${interventionId}`} key={interventionId}>
-                              {getInterventionLabel(interventionId)}
+                              {getInterventionDisplayName(interventionId)}
                             </Link>
                           ))}
                         </div>

@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "aav9-mtert",
+  "name": "AAV9-mTERT",
+  "summary": "Mouse telomerase gene therapy using AAV9 delivery of mouse TERT, tracked as a preclinical telomerase-restoration signal.",
+  "aliases": [
+    "AAV9 mouse TERT"
+  ],
+  "modalities": [
+    "gene_therapy"
+  ],
+  "target_hallmark_ids": [
+    "telomere_attrition"
+  ],
+  "track_ids": [
+    "telomerase-restoration"
+  ],
+  "mechanism_summary": "Delivers mouse TERT with a systemic AAV9 vector to increase telomerase activity in adult and old mice.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "aav9-mtert-adult-old-mice-lifespan"
+  ],
+  "linked_finding_ids": [
+    "aav9-mtert-extended-lifespan-adult-old-mice"
+  ],
+  "risk_flags": [
+    "gene-therapy-translation",
+    "oncogenic-risk-boundary",
+    "mouse-only"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "mortality_or_lifespan",
+    "human_data": false,
+    "open_questions": [
+      "Whether systemic TERT delivery can be made safe enough for human aging use",
+      "Whether lifespan and healthspan effects replicate across delivery vectors, doses, and genetic backgrounds"
+    ]
+  },
+  "tags": [
+    "telomerase-restoration",
+    "gene-therapy",
+    "mouse",
+    "lifespan"
+  ]
+}
