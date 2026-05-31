@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-circulating-factor-modulation-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Circulating Factor Modulation bundle",
+  "candidate_bundle_id": "circulating-factor-modulation-bootstrap-2026-05-31",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged outlook is interpretively conservative for a broad circulating-factor track. The human_functional_benefit stage is supported only through the AMBAR Alzheimer disease plasma-exchange program, while the forecast note, blockers, and support map explicitly keep healthy-adult TPE evidence at biomarker level, preserve animal-only boundaries, and avoid a broad LEV-relevant benefit claim.",
+  "reviewed_change_ids": [
+    "create-source-pmid-15716955",
+    "create-source-pmid-28424512",
+    "create-source-pmid-32474458",
+    "create-source-pmid-35999337",
+    "create-source-pmid-40424097",
+    "create-source-pmid-30383097",
+    "create-source-pmid-32715623",
+    "create-source-pmid-34032859",
+    "create-study-heterochronic-parabiosis-aged-progenitor-rejuvenation",
+    "create-study-human-cord-plasma-timp2-aged-mouse-hippocampus",
+    "create-study-neutral-blood-exchange-plasma-dilution-mice-human-tpe",
+    "create-study-repeated-tpe-human-biological-age-proteome",
+    "create-study-randomized-tpe-multiomics-healthy-adults",
+    "create-study-plasma-for-alzheimer-young-plasma-trial",
+    "create-study-ambar-plasma-exchange-alzheimers-trial",
+    "create-study-hsc-refractory-bloodborne-rejuvenation",
+    "create-finding-young-systemic-environment-rejuvenated-aged-progenitors",
+    "create-finding-human-cord-plasma-revitalized-aged-mouse-hippocampus",
+    "create-finding-plasma-dilution-rejuvenated-aged-mouse-tissues",
+    "create-finding-tpe-shifted-human-proteome-and-immune-markers-younger",
+    "create-finding-randomized-tpe-improved-biological-age-markers",
+    "create-finding-young-plasma-ad-safety-feasibility-limited-efficacy",
+    "create-finding-ambar-plasma-exchange-slowed-ad-functional-decline",
+    "create-finding-aged-hsc-refractory-to-bloodborne-rejuvenation",
+    "create-outlook-track-circulating-factor-modulation"
+  ],
+  "findings": [
+    {
+      "finding_id": "circulating-factor-stage-boundary-note",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-outlook-track-circulating-factor-modulation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-circulating-factor-modulation-outlook"
+      },
+      "claim_or_issue": "The track stage is upgraded to human_functional_benefit based on AMBAR, but the staged text limits that signal to Alzheimer disease-specific plasma exchange with albumin replacement.",
+      "why_it_matters": "Without that boundary, readers could infer that circulating-factor modulation has shown general healthy-aging functional benefit in humans.",
+      "recommended_action": "Keep the current stage only with the staged narrow-boundary language and low confidence rating.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "circulating-factor-biomarker-forecast-note",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "create-outlook-track-circulating-factor-modulation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-circulating-factor-modulation-outlook"
+      },
+      "claim_or_issue": "The healthy-adult TPE studies support biological-age and multi-omic biomarker movement, not durable functional, disease, or mortality benefit.",
+      "why_it_matters": "The distinction keeps the forecast from converting surrogate biomarker movement into a clinical aging claim.",
+      "recommended_action": "Retain the staged rating-change criteria requiring replicated functional or intrinsic-capacity endpoints before confidence or broad-aging interpretation increases.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "circulating-factor-tissue-specificity-note",
+      "severity": "note",
+      "category": "uncertainty",
+      "applies_to_change_id": "create-outlook-track-circulating-factor-modulation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-circulating-factor-modulation-outlook"
+      },
+      "claim_or_issue": "Animal systemic-milieu evidence is tissue specific, and aged HSC boundary evidence prevents pan-rejuvenation interpretation.",
+      "why_it_matters": "This is the main reason the outlook's momentum and confidence should remain mixed and low despite multiple positive animal studies.",
+      "recommended_action": "Keep the HSC refractory finding in the support map as an explicit limiting role.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-05-31T17:55:25.469Z",
+  "updated_at": "2026-05-31T17:55:25.469Z"
+}

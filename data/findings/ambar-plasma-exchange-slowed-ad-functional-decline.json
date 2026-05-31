@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "ambar-plasma-exchange-slowed-ad-functional-decline",
+  "name": "AMBAR plasma exchange slowed Alzheimer functional decline",
+  "summary": "AMBAR reported less decline in functional and global Alzheimer disease measures after repeated plasma exchange with albumin replacement.",
+  "source_id": "pmid-32715623",
+  "study_id": "ambar-plasma-exchange-alzheimers-trial",
+  "intervention_ids": [
+    "albumin-replacement-plasma-exchange",
+    "therapeutic-plasma-exchange-ivig"
+  ],
+  "track_ids": [
+    "circulating-factor-modulation"
+  ],
+  "hallmark_ids": [
+    "altered_intercellular_communication"
+  ],
+  "endpoint_category": "functional",
+  "direction": "positive",
+  "evidence_tier": "human_function",
+  "confidence": "moderate",
+  "statement": "In mild-to-moderate Alzheimer disease, repeated plasma exchange with albumin replacement, with or without IVIG, was associated with less functional and global decline than placebo; the cognitive endpoint was weaker and context-specific.",
+  "population_or_model": "People with mild-to-moderate Alzheimer disease",
+  "time_horizon": "14-month trial",
+  "quantitative_note": "The baseline treats AMBAR as human functional evidence for a disease-specific plasma-exchange program, not as general aging rejuvenation.",
+  "caveats": [
+    "The evidence is Alzheimer disease-specific and does not establish LEV-relevant healthy-aging benefit.",
+    "The intervention combined repeated plasma exchange with albumin replacement and sometimes IVIG.",
+    "The study was industry sponsored, and replication outside the program is important."
+  ],
+  "tags": [
+    "human",
+    "randomized",
+    "plasma-exchange",
+    "functional",
+    "alzheimers"
+  ]
+}

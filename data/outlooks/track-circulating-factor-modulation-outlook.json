@@ -1,0 +1,165 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-circulating-factor-modulation-outlook",
+  "name": "Circulating Factor Modulation Track Outlook",
+  "subject_type": "track",
+  "subject_id": "circulating-factor-modulation",
+  "current_stage": "human_functional_benefit",
+  "momentum": "mixed",
+  "confidence": "low",
+  "main_blockers": [
+    "The strongest human functional signal is Alzheimer disease-specific plasma exchange with albumin replacement, not broad healthy-aging or LEV-relevant benefit.",
+    "Healthy-adult TPE evidence is currently biomarker-level, with small samples and surrogate biological-age or multi-omic endpoints.",
+    "Animal evidence is strong for systemic-milieu effects but tissue specific; aged hematopoietic stem cells can remain refractory to bloodborne rejuvenation.",
+    "Interventions are heterogeneous and invasive: parabiosis, plasma dilution, young plasma, TPE, albumin replacement, IVIG, and candidate proteins should not be collapsed into one efficacy claim.",
+    "Safety, durability, donor-product variability, and mechanism attribution remain central limits for chronic or preventive use."
+  ],
+  "best_current_signals": [
+    "AMBAR reported less functional and global decline in mild-to-moderate Alzheimer disease after repeated plasma exchange with albumin replacement.",
+    "A randomized placebo-controlled TPE trial in adults older than 50 reported favorable multi-omic and biological-age biomarker movement, strongest with TPE plus IVIG.",
+    "Heterochronic parabiosis, plasma dilution, and human cord plasma studies show that systemic blood or plasma signals can alter aged mouse tissue function."
+  ],
+  "forecast_note": "Circulating factor modulation has enough human evidence for a first public baseline at human_functional_benefit, but only with a narrow boundary: the functional signal is disease-specific Alzheimer plasma exchange, while the healthier-adult aging signal is still biomarker-level. The track should remain low confidence with mixed momentum until replicated human studies show durable functional benefit, defined active components, and acceptable safety in aging-relevant populations.",
+  "rating_change_criteria": [
+    "Higher confidence would require independent replication of plasma-exchange or plasma-factor interventions with prespecified functional, intrinsic-capacity, disease, or durability endpoints in older adults.",
+    "A stronger broad-aging interpretation would need mechanisms that separate factor removal, albumin replacement, IVIG, donor plasma content, and procedure effects.",
+    "The rating would weaken if sham-controlled TPE biomarker findings fail replication, if AMBAR-like functional signals do not reproduce, or if safety and feasibility burdens outweigh limited benefit.",
+    "Single-factor candidates should not upgrade the track unless they show target engagement, reproducible tissue effects, and safety in human studies."
+  ],
+  "earliest_plausible_window": "No credible LEV-relevant window can be assigned before replicated human functional benefit exists outside narrow disease contexts and before long-term safety is clearer.",
+  "scenario_2036_status": "speculative",
+  "supporting_finding_ids": [
+    "ambar-plasma-exchange-slowed-ad-functional-decline",
+    "randomized-tpe-improved-biological-age-markers",
+    "tpe-shifted-human-proteome-and-immune-markers-younger",
+    "young-plasma-ad-safety-feasibility-limited-efficacy",
+    "young-systemic-environment-rejuvenated-aged-progenitors",
+    "human-cord-plasma-revitalized-aged-mouse-hippocampus",
+    "plasma-dilution-rejuvenated-aged-mouse-tissues",
+    "aged-hsc-refractory-to-bloodborne-rejuvenation"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "current_stage",
+      "conclusion": "The track reaches human functional benefit because AMBAR reported functional and global Alzheimer disease benefits from a plasma-exchange program.",
+      "support_role": "supports",
+      "rationale": "AMBAR is a randomized human trial of repeated plasma exchange with albumin replacement and provides a functional disease endpoint, while PLASMA supplies smaller feasibility and safety context for plasma infusion.",
+      "finding_ids": [
+        "ambar-plasma-exchange-slowed-ad-functional-decline",
+        "young-plasma-ad-safety-feasibility-limited-efficacy"
+      ],
+      "source_ids": [
+        "pmid-32715623",
+        "pmid-30383097"
+      ],
+      "limitations": [
+        "The functional signal is Alzheimer disease-specific.",
+        "The intervention included repeated plasma exchange, albumin replacement, and in some arms IVIG.",
+        "PLASMA was too small to establish cognitive efficacy.",
+        "Neither study demonstrates broad healthy-aging, mortality, or LEV-relevant benefit."
+      ]
+    },
+    {
+      "label": "Human aging-biomarker support",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Human TPE studies now reach aging-biomarker endpoints, including a randomized multi-omic trial in adults older than 50.",
+      "support_role": "supports",
+      "rationale": "The 2025 randomized trial is the strongest healthy-adult biomarker support, while the earlier small clinical study provides convergent but weaker proteomic and immune-marker context.",
+      "finding_ids": [
+        "randomized-tpe-improved-biological-age-markers",
+        "tpe-shifted-human-proteome-and-immune-markers-younger"
+      ],
+      "source_ids": [
+        "pmid-40424097",
+        "pmid-35999337"
+      ],
+      "limitations": [
+        "Biological-age and multi-omic markers are surrogate endpoints.",
+        "The strongest signal involved TPE plus IVIG, not a simple plasma dilution or young-plasma intervention.",
+        "Sample sizes are small for confident clinical translation."
+      ]
+    },
+    {
+      "label": "Preclinical plausibility",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Animal studies strongly support that blood or plasma environments can modulate aged tissue phenotypes.",
+      "support_role": "supports",
+      "rationale": "Heterochronic parabiosis restored aged progenitor responses, human cord plasma improved aged mouse hippocampal readouts, and neutral blood exchange/plasma dilution improved multiple aged mouse tissue assays.",
+      "finding_ids": [
+        "young-systemic-environment-rejuvenated-aged-progenitors",
+        "human-cord-plasma-revitalized-aged-mouse-hippocampus",
+        "plasma-dilution-rejuvenated-aged-mouse-tissues"
+      ],
+      "source_ids": [
+        "pmid-15716955",
+        "pmid-28424512",
+        "pmid-32474458"
+      ],
+      "limitations": [
+        "Parabiosis and mouse plasma-dilution models are not clinical interventions.",
+        "The active components and tissue-specific mechanisms remain incompletely resolved.",
+        "Mouse tissue repair and cognition assays do not establish human functional benefit."
+      ]
+    },
+    {
+      "label": "Boundary condition",
+      "outlook_field": "main_blockers",
+      "conclusion": "Bloodborne systemic rejuvenation is not a uniform tissue-general effect.",
+      "support_role": "limits",
+      "rationale": "Aged hematopoietic stem cells remained refractory to bloodborne systemic rejuvenation interventions, limiting broad claims that changing circulating factors can rejuvenate all aged compartments.",
+      "finding_ids": [
+        "aged-hsc-refractory-to-bloodborne-rejuvenation"
+      ],
+      "source_ids": [
+        "pmid-34032859"
+      ],
+      "limitations": [
+        "The finding is animal and HSC-specific.",
+        "It does not negate other tissue effects.",
+        "It does force tissue-specific claims and prevents pan-rejuvenation interpretation."
+      ]
+    },
+    {
+      "label": "Momentum and confidence",
+      "outlook_field": "confidence",
+      "conclusion": "Momentum is mixed and confidence remains low because human signals are split between disease-specific function and surrogate aging biomarkers.",
+      "support_role": "balances",
+      "rationale": "The field has recent randomized biomarker evidence and an older disease-specific functional signal, but interventions are heterogeneous, invasive, and not yet tied to durable broad-aging outcomes.",
+      "finding_ids": [
+        "ambar-plasma-exchange-slowed-ad-functional-decline",
+        "randomized-tpe-improved-biological-age-markers",
+        "young-plasma-ad-safety-feasibility-limited-efficacy",
+        "aged-hsc-refractory-to-bloodborne-rejuvenation"
+      ],
+      "source_ids": [
+        "pmid-32715623",
+        "pmid-40424097",
+        "pmid-30383097",
+        "pmid-34032859"
+      ],
+      "limitations": [
+        "No staged source demonstrates durable disease prevention, mortality benefit, or healthy-lifespan extension in humans.",
+        "Safety and feasibility burdens matter because TPE is procedural and repeated exposure may be needed.",
+        "The evidence should not be generalized to commercial young-plasma or uncharacterized plasma-product claims."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-32715623",
+    "pmid-40424097",
+    "pmid-35999337",
+    "pmid-30383097",
+    "pmid-15716955",
+    "pmid-28424512",
+    "pmid-32474458",
+    "pmid-34032859"
+  ],
+  "last_updated": "2026-05-31",
+  "tags": [
+    "public",
+    "track",
+    "thin_coverage"
+  ]
+}

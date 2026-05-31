@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "randomized-tpe-improved-biological-age-markers",
+  "name": "Randomized TPE improved multi-omic biological-age markers",
+  "summary": "A randomized placebo-controlled human trial reported favorable multi-omic aging-marker changes after TPE-based intervention, strongest with TPE plus IVIG.",
+  "source_id": "pmid-40424097",
+  "study_id": "randomized-tpe-multiomics-healthy-adults",
+  "intervention_ids": [
+    "therapeutic-plasma-exchange",
+    "therapeutic-plasma-exchange-ivig"
+  ],
+  "track_ids": [
+    "circulating-factor-modulation"
+  ],
+  "hallmark_ids": [
+    "altered_intercellular_communication",
+    "chronic_inflammation"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "positive",
+  "evidence_tier": "human_biomarker",
+  "confidence": "low",
+  "statement": "In 42 adults over 50, TPE-based treatment arms showed favorable changes across epigenetic, proteomic, glycomic, metabolomic, immune, and biological-age measures compared with sham, with the strongest signal reported for TPE plus IVIG.",
+  "population_or_model": "Adults older than 50 years in a randomized placebo-controlled trial",
+  "time_horizon": "Intervention period with multi-omic post-treatment follow-up",
+  "quantitative_note": "This is the strongest staged human aging-biomarker support, but it remains a surrogate-endpoint trial.",
+  "caveats": [
+    "The study measured biomarkers rather than intrinsic-capacity, disease, or mortality endpoints.",
+    "The sample size was small for multi-omic subgroup inference.",
+    "TPE plus IVIG is an invasive combination and cannot be generalized to simple young-plasma or single-factor claims."
+  ],
+  "tags": [
+    "human",
+    "randomized",
+    "biomarker",
+    "tpe",
+    "multiomics"
+  ]
+}

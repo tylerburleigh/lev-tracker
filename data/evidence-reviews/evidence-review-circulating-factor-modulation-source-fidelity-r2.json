@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-circulating-factor-modulation-source-fidelity-r2",
+  "name": "Source Fidelity review for Circulating Factor Modulation bundle",
+  "candidate_bundle_id": "circulating-factor-modulation-bootstrap-2026-05-31",
+  "bundle_revision_number": 2,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Revision 2 resolves the PMID 40424097 source-title mismatch. The staged source, study, and finding records now match the cited PubMed and PMC boundaries: animal parabiosis, cord-plasma, and plasma-dilution claims stay preclinical; healthy-adult TPE claims stay biomarker-level; PLASMA is feasibility and safety context; and AMBAR is Alzheimer disease-specific functional evidence.",
+  "reviewed_change_ids": [
+    "create-source-pmid-15716955",
+    "create-source-pmid-28424512",
+    "create-source-pmid-32474458",
+    "create-source-pmid-35999337",
+    "create-source-pmid-40424097",
+    "create-source-pmid-30383097",
+    "create-source-pmid-32715623",
+    "create-source-pmid-34032859",
+    "create-study-heterochronic-parabiosis-aged-progenitor-rejuvenation",
+    "create-study-human-cord-plasma-timp2-aged-mouse-hippocampus",
+    "create-study-neutral-blood-exchange-plasma-dilution-mice-human-tpe",
+    "create-study-repeated-tpe-human-biological-age-proteome",
+    "create-study-randomized-tpe-multiomics-healthy-adults",
+    "create-study-plasma-for-alzheimer-young-plasma-trial",
+    "create-study-ambar-plasma-exchange-alzheimers-trial",
+    "create-study-hsc-refractory-bloodborne-rejuvenation",
+    "create-finding-young-systemic-environment-rejuvenated-aged-progenitors",
+    "create-finding-human-cord-plasma-revitalized-aged-mouse-hippocampus",
+    "create-finding-plasma-dilution-rejuvenated-aged-mouse-tissues",
+    "create-finding-tpe-shifted-human-proteome-and-immune-markers-younger",
+    "create-finding-randomized-tpe-improved-biological-age-markers",
+    "create-finding-young-plasma-ad-safety-feasibility-limited-efficacy",
+    "create-finding-ambar-plasma-exchange-slowed-ad-functional-decline",
+    "create-finding-aged-hsc-refractory-to-bloodborne-rejuvenation",
+    "create-outlook-track-circulating-factor-modulation"
+  ],
+  "findings": [
+    {
+      "finding_id": "circulating-factor-pmid-40424097-title-resolved",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-source-pmid-40424097",
+      "applies_to_record": {
+        "record_type": "source",
+        "record_id": "pmid-40424097"
+      },
+      "claim_or_issue": "Revision 1 used a paraphrased title for PMID 40424097.",
+      "why_it_matters": "The revised staged source name now matches PubMed and can serve as a reliable public bibliographic anchor.",
+      "recommended_action": "Retain the corrected title in the staged source record.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "circulating-factor-source-boundary-r2-note",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-outlook-track-circulating-factor-modulation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-circulating-factor-modulation-outlook"
+      },
+      "claim_or_issue": "The source set mixes animal functional evidence, human surrogate biomarker evidence, a small young-plasma Alzheimer feasibility study, and a disease-specific AMBAR functional trial.",
+      "why_it_matters": "These source classes support different evidence tiers and should not be merged into a broad healthy-aging or LEV-relevant functional claim.",
+      "recommended_action": "Retain the staged caveats that keep animal effects preclinical, TPE aging signals biomarker-level, PLASMA non-efficacy-oriented, and AMBAR Alzheimer-specific.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-05-31T17:56:55.328Z",
+  "updated_at": "2026-05-31T17:56:55.328Z"
+}

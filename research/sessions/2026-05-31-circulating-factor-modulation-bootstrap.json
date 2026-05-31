@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-05-31-circulating-factor-modulation-bootstrap",
+  "name": "Circulating factor modulation bootstrap pass for May 31, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-05-31T16:55:00Z",
+  "completed_at": "2026-05-31T17:25:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Circulating Factor Modulation, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "altered_intercellular_communication"
+    ],
+    "track_ids": [
+      "circulating-factor-modulation"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_revised",
+  "candidate_bundle_id": "circulating-factor-modulation-bootstrap-2026-05-31",
+  "summary": "The track is coherent enough for a first public baseline. The staged outlook assigns human_functional_benefit because AMBAR provides a randomized disease-specific functional signal for plasma exchange in Alzheimer disease, while the broader healthy-aging case remains biomarker-level and low confidence. Revision 2 corrects the PMID 40424097 source title after source-fidelity review.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-15716955",
+    "pmid-28424512",
+    "pmid-32474458",
+    "pmid-35999337",
+    "pmid-40424097",
+    "pmid-30383097",
+    "pmid-32715623",
+    "pmid-34032859"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/15716955/",
+    "https://pubmed.ncbi.nlm.nih.gov/28424512/",
+    "https://pubmed.ncbi.nlm.nih.gov/32474458/",
+    "https://pubmed.ncbi.nlm.nih.gov/35999337/",
+    "https://pubmed.ncbi.nlm.nih.gov/40424097/",
+    "https://pubmed.ncbi.nlm.nih.gov/30383097/",
+    "https://pubmed.ncbi.nlm.nih.gov/32715623/",
+    "https://pubmed.ncbi.nlm.nih.gov/34032859/"
+  ],
+  "notes": [
+    "Heterochronic parabiosis, human cord plasma, and plasma dilution provide strong animal support that circulating milieu can alter aged tissue phenotypes.",
+    "Human TPE evidence now includes randomized aging-biomarker support in adults older than 50, but functional benefit in healthy-aging populations is still not established.",
+    "The AMBAR Alzheimer disease trial is the staged human functional anchor, but its disease-specific and procedural context keeps confidence low.",
+    "Boundary evidence from aged hematopoietic stem cells prevents pan-rejuvenation claims across all tissues."
+  ],
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast review before publication.",
+    "If approved, publish the staged source, study, finding, and outlook records as the first circulating factor modulation baseline.",
+    "After publication, inspect the altered intercellular communication hallmark page and track page to decide whether the hallmark outlook should be updated."
+  ]
+}

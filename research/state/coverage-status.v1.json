@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-05-31T16:42:39.655Z",
+  "updated_at": "2026-05-31T17:57:42.497Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One bootstrap or surveillance run should cover one track unless the user explicitly narrows further.",
@@ -92,10 +92,10 @@
     {
       "hallmark_id": "altered_intercellular_communication",
       "canonical_order": 10,
-      "hallmark_bootstrap_status": "stubbed",
-      "tracked_public_outlook_count": 0,
-      "next_priority_track_id": "circulating-factor-modulation",
-      "notes": "Hallmark outlook exists, but track-level coverage has not started."
+      "hallmark_bootstrap_status": "baseline",
+      "tracked_public_outlook_count": 1,
+      "next_priority_track_id": "extracellular-vesicle-and-secretome-therapies",
+      "notes": "At least one track-level public baseline exists."
     },
     {
       "hallmark_id": "chronic_inflammation",
@@ -500,11 +500,19 @@
       "hallmark_id": "altered_intercellular_communication",
       "canonical_order": 1,
       "name": "Circulating Factor Modulation",
-      "coverage_status": "not_started",
-      "next_mode": "bootstrap",
+      "coverage_status": "baseline",
+      "next_mode": "surveillance",
       "queue_state": "ready",
-      "default_research_question": "What is the current human-relevant evidence landscape for Circulating Factor Modulation, and what belongs in the first public baseline?",
-      "notes": "No track-level public baseline has been bootstrapped yet."
+      "last_session_id": "2026-05-31-circulating-factor-modulation-bootstrap",
+      "last_session_at": "2026-05-31T17:25:00Z",
+      "last_session_mode": "bootstrap",
+      "last_session_outcome": "candidate_bundle_revised",
+      "last_candidate_bundle_id": "circulating-factor-modulation-bootstrap-2026-05-31",
+      "last_candidate_bundle_status": "published",
+      "last_publication_event_id": "publish-circulating-factor-modulation-bootstrap-2026-05-31-2026-05-31t17-57-33-932z",
+      "last_published_at": "2026-05-31T17:57:33.932Z",
+      "default_research_question": "What changed for Circulating Factor Modulation since the last meaningful review or publication, and does any change justify a public update?",
+      "notes": "Latest publication event: publish-circulating-factor-modulation-bootstrap-2026-05-31-2026-05-31t17-57-33-932z."
     },
     {
       "track_id": "extracellular-vesicle-and-secretome-therapies",

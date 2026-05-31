@@ -1,0 +1,370 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "circulating-factor-modulation-bootstrap-2026-05-31",
+  "name": "Circulating factor modulation bootstrap for May 31, 2026",
+  "summary": "Revised bootstrap bundle establishing the first public baseline for the circulating factor modulation track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-05-31T17:26:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 2,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Circulating Factor Modulation, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "altered_intercellular_communication"
+    ],
+    "track_ids": [
+      "circulating-factor-modulation"
+    ]
+  },
+  "source_ids": [
+    "pmid-15716955",
+    "pmid-28424512",
+    "pmid-32474458",
+    "pmid-35999337",
+    "pmid-40424097",
+    "pmid-30383097",
+    "pmid-32715623",
+    "pmid-34032859"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/15716955/",
+    "https://pubmed.ncbi.nlm.nih.gov/28424512/",
+    "https://pubmed.ncbi.nlm.nih.gov/32474458/",
+    "https://pubmed.ncbi.nlm.nih.gov/35999337/",
+    "https://pubmed.ncbi.nlm.nih.gov/40424097/",
+    "https://pubmed.ncbi.nlm.nih.gov/30383097/",
+    "https://pubmed.ncbi.nlm.nih.gov/32715623/",
+    "https://pubmed.ncbi.nlm.nih.gov/34032859/"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-circulating-factor-modulation-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-altered-intercellular-communication-outlook"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "ambar-plasma-exchange-slowed-ad-functional-decline"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "randomized-tpe-improved-biological-age-markers"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "tpe-shifted-human-proteome-and-immune-markers-younger"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "young-plasma-ad-safety-feasibility-limited-efficacy"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "young-systemic-environment-rejuvenated-aged-progenitors"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "human-cord-plasma-revitalized-aged-mouse-hippocampus"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "plasma-dilution-rejuvenated-aged-mouse-tissues"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "aged-hsc-refractory-to-bloodborne-rejuvenation"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-15716955",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-15716955",
+      "file_path": "data/sources/pmid-15716955.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/pmid-15716955.json",
+      "summary": "Add heterochronic parabiosis aged progenitor source.",
+      "rationale": "This source anchors foundational animal evidence that systemic milieu can restore aged tissue repair responses."
+    },
+    {
+      "change_id": "create-source-pmid-28424512",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-28424512",
+      "file_path": "data/sources/pmid-28424512.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/pmid-28424512.json",
+      "summary": "Add human cord plasma TIMP2 aged-mouse source.",
+      "rationale": "This source captures plasma-borne factor support for aged mouse hippocampal and cognitive readouts."
+    },
+    {
+      "change_id": "create-source-pmid-32474458",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-32474458",
+      "file_path": "data/sources/pmid-32474458.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/pmid-32474458.json",
+      "summary": "Add old plasma dilution aged-mouse source.",
+      "rationale": "This source anchors the plasma dilution model and its distinction from simple young-factor replacement."
+    },
+    {
+      "change_id": "create-source-pmid-35999337",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-35999337",
+      "file_path": "data/sources/pmid-35999337.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/pmid-35999337.json",
+      "summary": "Add small human TPE biological-age source.",
+      "rationale": "This source provides human biomarker context for therapeutic plasma exchange."
+    },
+    {
+      "change_id": "create-source-pmid-40424097",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-40424097",
+      "file_path": "data/sources/pmid-40424097.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/pmid-40424097.json",
+      "summary": "Add randomized TPE multi-omics aging-biomarker source.",
+      "rationale": "This source is the strongest current human healthy-adult biomarker support for the baseline."
+    },
+    {
+      "change_id": "create-source-pmid-30383097",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-30383097",
+      "file_path": "data/sources/pmid-30383097.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/pmid-30383097.json",
+      "summary": "Add PLASMA young plasma Alzheimer trial source.",
+      "rationale": "This source provides human feasibility and safety context for plasma infusion without overclaiming efficacy."
+    },
+    {
+      "change_id": "create-source-pmid-32715623",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-32715623",
+      "file_path": "data/sources/pmid-32715623.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/pmid-32715623.json",
+      "summary": "Add AMBAR Alzheimer plasma exchange source.",
+      "rationale": "This source anchors the human functional-benefit stage assignment while keeping the disease-specific boundary explicit."
+    },
+    {
+      "change_id": "create-source-pmid-34032859",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-34032859",
+      "file_path": "data/sources/pmid-34032859.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/pmid-34032859.json",
+      "summary": "Add aged HSC bloodborne rejuvenation boundary source.",
+      "rationale": "This source prevents broad pan-tissue claims from animal systemic-milieu evidence."
+    },
+    {
+      "change_id": "create-study-heterochronic-parabiosis-aged-progenitor-rejuvenation",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "heterochronic-parabiosis-aged-progenitor-rejuvenation",
+      "file_path": "data/studies/heterochronic-parabiosis-aged-progenitor-rejuvenation.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/heterochronic-parabiosis-aged-progenitor-rejuvenation.json",
+      "summary": "Add heterochronic parabiosis aged progenitor study record.",
+      "rationale": "The study record links foundational animal systemic-milieu evidence to the track."
+    },
+    {
+      "change_id": "create-study-human-cord-plasma-timp2-aged-mouse-hippocampus",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "human-cord-plasma-timp2-aged-mouse-hippocampus",
+      "file_path": "data/studies/human-cord-plasma-timp2-aged-mouse-hippocampus.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/human-cord-plasma-timp2-aged-mouse-hippocampus.json",
+      "summary": "Add human cord plasma TIMP2 aged-mouse study record.",
+      "rationale": "The study record captures candidate plasma-factor animal support."
+    },
+    {
+      "change_id": "create-study-neutral-blood-exchange-plasma-dilution-mice-human-tpe",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "neutral-blood-exchange-plasma-dilution-mice-human-tpe",
+      "file_path": "data/studies/neutral-blood-exchange-plasma-dilution-mice-human-tpe.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/neutral-blood-exchange-plasma-dilution-mice-human-tpe.json",
+      "summary": "Add neutral blood exchange and plasma dilution study record.",
+      "rationale": "The study record captures the plasma-dilution model and its human TPE context."
+    },
+    {
+      "change_id": "create-study-repeated-tpe-human-biological-age-proteome",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "repeated-tpe-human-biological-age-proteome",
+      "file_path": "data/studies/repeated-tpe-human-biological-age-proteome.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/repeated-tpe-human-biological-age-proteome.json",
+      "summary": "Add repeated TPE human biomarker study record.",
+      "rationale": "The study record links human proteomic and biological-age markers to the track."
+    },
+    {
+      "change_id": "create-study-randomized-tpe-multiomics-healthy-adults",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "randomized-tpe-multiomics-healthy-adults",
+      "file_path": "data/studies/randomized-tpe-multiomics-healthy-adults.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/randomized-tpe-multiomics-healthy-adults.json",
+      "summary": "Add randomized TPE multi-omics healthy-adult study record.",
+      "rationale": "The study record links the strongest human aging-biomarker support to the track."
+    },
+    {
+      "change_id": "create-study-plasma-for-alzheimer-young-plasma-trial",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "plasma-for-alzheimer-young-plasma-trial",
+      "file_path": "data/studies/plasma-for-alzheimer-young-plasma-trial.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/plasma-for-alzheimer-young-plasma-trial.json",
+      "summary": "Add PLASMA young plasma Alzheimer study record.",
+      "rationale": "The study record preserves small human feasibility context without inflating efficacy."
+    },
+    {
+      "change_id": "create-study-ambar-plasma-exchange-alzheimers-trial",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "ambar-plasma-exchange-alzheimers-trial",
+      "file_path": "data/studies/ambar-plasma-exchange-alzheimers-trial.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/ambar-plasma-exchange-alzheimers-trial.json",
+      "summary": "Add AMBAR plasma exchange Alzheimer trial study record.",
+      "rationale": "The study record anchors the human functional signal and its disease-specific context."
+    },
+    {
+      "change_id": "create-study-hsc-refractory-bloodborne-rejuvenation",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "hsc-refractory-bloodborne-rejuvenation",
+      "file_path": "data/studies/hsc-refractory-bloodborne-rejuvenation.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/hsc-refractory-bloodborne-rejuvenation.json",
+      "summary": "Add aged HSC bloodborne rejuvenation boundary study record.",
+      "rationale": "The study record keeps tissue-specific boundary evidence visible in the baseline."
+    },
+    {
+      "change_id": "create-finding-young-systemic-environment-rejuvenated-aged-progenitors",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "young-systemic-environment-rejuvenated-aged-progenitors",
+      "file_path": "data/findings/young-systemic-environment-rejuvenated-aged-progenitors.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/young-systemic-environment-rejuvenated-aged-progenitors.json",
+      "summary": "Add heterochronic parabiosis animal function finding.",
+      "rationale": "This finding supports preclinical systemic-milieu plausibility."
+    },
+    {
+      "change_id": "create-finding-human-cord-plasma-revitalized-aged-mouse-hippocampus",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "human-cord-plasma-revitalized-aged-mouse-hippocampus",
+      "file_path": "data/findings/human-cord-plasma-revitalized-aged-mouse-hippocampus.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/human-cord-plasma-revitalized-aged-mouse-hippocampus.json",
+      "summary": "Add human cord plasma aged-mouse hippocampus finding.",
+      "rationale": "This finding supports candidate plasma-factor animal plausibility."
+    },
+    {
+      "change_id": "create-finding-plasma-dilution-rejuvenated-aged-mouse-tissues",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "plasma-dilution-rejuvenated-aged-mouse-tissues",
+      "file_path": "data/findings/plasma-dilution-rejuvenated-aged-mouse-tissues.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/plasma-dilution-rejuvenated-aged-mouse-tissues.json",
+      "summary": "Add plasma-dilution aged-mouse tissue finding.",
+      "rationale": "This finding supports old-factor dilution as a distinct model within the track."
+    },
+    {
+      "change_id": "create-finding-tpe-shifted-human-proteome-and-immune-markers-younger",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "tpe-shifted-human-proteome-and-immune-markers-younger",
+      "file_path": "data/findings/tpe-shifted-human-proteome-and-immune-markers-younger.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/tpe-shifted-human-proteome-and-immune-markers-younger.json",
+      "summary": "Add small human TPE biomarker finding.",
+      "rationale": "This finding provides low-confidence human biomarker support."
+    },
+    {
+      "change_id": "create-finding-randomized-tpe-improved-biological-age-markers",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "randomized-tpe-improved-biological-age-markers",
+      "file_path": "data/findings/randomized-tpe-improved-biological-age-markers.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/randomized-tpe-improved-biological-age-markers.json",
+      "summary": "Add randomized TPE multi-omics biomarker finding.",
+      "rationale": "This finding anchors the human_biomarker_signal component of the outlook."
+    },
+    {
+      "change_id": "create-finding-young-plasma-ad-safety-feasibility-limited-efficacy",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "young-plasma-ad-safety-feasibility-limited-efficacy",
+      "file_path": "data/findings/young-plasma-ad-safety-feasibility-limited-efficacy.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/young-plasma-ad-safety-feasibility-limited-efficacy.json",
+      "summary": "Add PLASMA young plasma feasibility finding.",
+      "rationale": "This finding keeps plasma infusion feasibility separate from efficacy."
+    },
+    {
+      "change_id": "create-finding-ambar-plasma-exchange-slowed-ad-functional-decline",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ambar-plasma-exchange-slowed-ad-functional-decline",
+      "file_path": "data/findings/ambar-plasma-exchange-slowed-ad-functional-decline.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/ambar-plasma-exchange-slowed-ad-functional-decline.json",
+      "summary": "Add AMBAR Alzheimer functional finding.",
+      "rationale": "This finding supports the human_functional_benefit stage with explicit disease-specific limits."
+    },
+    {
+      "change_id": "create-finding-aged-hsc-refractory-to-bloodborne-rejuvenation",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "aged-hsc-refractory-to-bloodborne-rejuvenation",
+      "file_path": "data/findings/aged-hsc-refractory-to-bloodborne-rejuvenation.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/aged-hsc-refractory-to-bloodborne-rejuvenation.json",
+      "summary": "Add aged HSC refractory boundary finding.",
+      "rationale": "This finding limits tissue-general rejuvenation claims."
+    },
+    {
+      "change_id": "create-outlook-track-circulating-factor-modulation",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-circulating-factor-modulation-outlook",
+      "file_path": "data/outlooks/track-circulating-factor-modulation-outlook.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-bootstrap-2026-05-31/track-circulating-factor-modulation-outlook.json",
+      "summary": "Add the first public circulating factor modulation track outlook.",
+      "rationale": "The staged outlook sets a conservative human_functional_benefit baseline with low confidence and explicit disease-specific, biomarker, tissue-specific, and safety boundaries."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "circulating-factor-modulation",
+      "note": "Create the first public track outlook at human_functional_benefit with mixed momentum and low confidence because human functional evidence is Alzheimer disease-specific while healthy-aging evidence remains biomarker-level.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-05-31-circulating-factor-modulation-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin",
+    "bootstrap",
+    "circulating-factor-modulation"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-circulating-factor-modulation-source-fidelity-r1",
+    "evidence-review-circulating-factor-modulation-interpretation-forecast-r1",
+    "evidence-review-circulating-factor-modulation-source-fidelity-r2",
+    "evidence-review-circulating-factor-modulation-interpretation-forecast-r2"
+  ],
+  "publication_event_ids": [
+    "publish-circulating-factor-modulation-bootstrap-2026-05-31-2026-05-31t17-57-33-932z"
+  ]
+}
