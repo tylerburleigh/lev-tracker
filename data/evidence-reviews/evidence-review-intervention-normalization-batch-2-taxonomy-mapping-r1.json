@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-intervention-normalization-batch-2-taxonomy-mapping-r1",
+  "name": "Intervention normalization batch 2 taxonomy mapping review",
+  "summary": "The seven staged intervention records preserve existing study and finding links, keep intervention summaries separate from outlook upgrades, and map each record to the correct hallmark and track context. No public evidence stage, confidence, or forecast claim changes are proposed.",
+  "candidate_bundle_id": "intervention-normalization-batch-2-2026-05-31",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "taxonomy_mapping",
+  "reviewer_kind": "agent",
+  "reviewer_id": "codex-agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "reviewed_change_ids": [
+    "create-intervention-aav-htert",
+    "create-intervention-colchicine",
+    "create-intervention-fasting-mimicking-diet",
+    "create-intervention-nicotinamide",
+    "create-intervention-spermidine",
+    "create-intervention-therapeutic-plasma-exchange-ivig",
+    "create-intervention-ziltivekimab"
+  ],
+  "findings": [
+    {
+      "finding_id": "linked-records-preserved",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "claim_or_issue": "Each staged intervention record links only to promoted study and finding IDs already using the same intervention ID.",
+      "why_it_matters": "The change normalizes page data without altering the evidence graph or creating unsupported relationships.",
+      "recommended_action": "Accept the staged linked_study_ids and linked_finding_ids as written.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "evidence-boundaries-preserved",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "claim_or_issue": "The staged records describe intervention mechanisms and evidence snapshots without proposing stage, confidence, or outlook upgrades.",
+      "why_it_matters": "Intervention normalization should improve navigation and public readability, not change scientific interpretation outside a research update.",
+      "recommended_action": "Keep this bundle as data hardening and leave outlook records unchanged.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "risk-flags-retained",
+      "severity": "note",
+      "category": "missing_caveat",
+      "claim_or_issue": "Safety and translation constraints are included for the main boundary cases: gene therapy without results, immunomodulation safety, invasive plasma exchange, skin-specific nicotinamide evidence, and null spermidine functional results.",
+      "why_it_matters": "Normalized intervention pages should not make fallback labels look more mature than the underlying evidence.",
+      "recommended_action": "Accept the staged risk flags and open questions.",
+      "resolution_status": "closed"
+    }
+  ],
+  "tags": [
+    "intervention-normalization",
+    "taxonomy-mapping",
+    "data-hardening"
+  ]
+}

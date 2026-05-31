@@ -197,7 +197,7 @@ Research runs should continue to follow `docs/research-ops-state.md`: one track 
    - The schema exists, but the public app currently relies mostly on IDs and track exemplars.
    - Intervention records are needed before intervention detail pages can be useful.
    - Current status: partially implemented.
-   - Note: `docs/intervention-normalization.md` defines normalization rules, `data/interventions/` now has a first public batch, and evidence pages prefer normalized intervention names where records exist.
+   - Note: `docs/intervention-normalization.md` defines normalization rules, `data/interventions/` now has 19 records across two reviewed public batches, and evidence pages prefer normalized intervention names where records exist.
    - Remaining: continue filling long-tail intervention IDs and add intervention records through reviewed candidate bundles during future research passes.
 
 ## Priority 4: Documentation Cleanup
@@ -227,4 +227,4 @@ npm run typecheck
 npm run build
 ```
 
-Last known result on 2026-05-31 after the `telomere-protection-and-capping` publication: `npm run research:bundle -- validate --bundle telomere-protection-and-capping-bootstrap-2026-05-31`, `npm run research:bundle -- smoke --bundle telomere-protection-and-capping-bootstrap-2026-05-31 --base-url http://127.0.0.1:3002`, `npm run validate:records`, `npm run typecheck`, and `npm run build` pass.
+Last known result on 2026-05-31 after `intervention-normalization-batch-2-2026-05-31`: `npm run research:bundle -- validate --bundle intervention-normalization-batch-2-2026-05-31`, `npm run research:bundle -- smoke --bundle intervention-normalization-batch-2-2026-05-31 --base-url http://localhost:3010`, `npm run validate:records`, `npm run typecheck`, and `npm run build` pass.

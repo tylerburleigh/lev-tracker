@@ -52,4 +52,4 @@ The summary and mechanism should describe the intervention, not the track-level 
 
 Public pages should prefer normalized intervention names and summaries. Fallback labels are still allowed for older linked IDs that do not yet have intervention records.
 
-The first public normalization batch intentionally focuses on interventions that already have promoted studies, findings, activity records, or track outlooks. Later batches should continue from the most-linked intervention IDs before filling long-tail records.
+Public normalization batches should focus first on interventions that already have promoted studies, findings, activity records, or track outlooks. Later batches should continue from the most-linked intervention IDs before filling long-tail records.

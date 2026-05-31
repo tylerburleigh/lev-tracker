@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "therapeutic-plasma-exchange-ivig",
+  "name": "Therapeutic plasma exchange plus IVIG",
+  "short_name": "TPE plus IVIG",
+  "summary": "Invasive plasma-exchange combination with IVIG, tracked separately from TPE alone because the strongest signals use combination protocols.",
+  "aliases": [
+    "TPE plus IVIG",
+    "plasma exchange plus intravenous immunoglobulin"
+  ],
+  "modalities": [
+    "combination",
+    "procedure",
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "altered_intercellular_communication"
+  ],
+  "secondary_hallmark_ids": [
+    "chronic_inflammation"
+  ],
+  "track_ids": [
+    "circulating-factor-modulation"
+  ],
+  "mechanism_summary": "Combines removal and replacement of plasma components with immunoglobulin support, potentially shifting systemic inflammatory, proteomic, and immune signals.",
+  "development_stage": "approved_for_other_indication",
+  "linked_study_ids": [
+    "ambar-plasma-exchange-alzheimers-trial",
+    "randomized-tpe-multiomics-healthy-adults"
+  ],
+  "linked_finding_ids": [
+    "ambar-plasma-exchange-slowed-ad-functional-decline",
+    "randomized-tpe-improved-biological-age-markers"
+  ],
+  "risk_flags": [
+    "invasive-combination",
+    "disease-specific-functional-signal",
+    "surrogate-biomarker-signal"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_function",
+    "human_data": true,
+    "open_questions": [
+      "Whether the IVIG component is necessary for observed signals",
+      "Whether Alzheimer disease functional context or multi-omic biomarkers translate to broader aging use cases"
+    ]
+  },
+  "tags": [
+    "circulating-factor-modulation",
+    "plasma-exchange",
+    "ivig",
+    "combination"
+  ]
+}

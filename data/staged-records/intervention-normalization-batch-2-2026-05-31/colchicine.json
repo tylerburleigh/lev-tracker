@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "colchicine",
+  "name": "Colchicine",
+  "summary": "Low-dose anti-inflammatory small molecule with replicated cardiovascular secondary-prevention outcome evidence.",
+  "modalities": [
+    "small_molecule"
+  ],
+  "target_hallmark_ids": [
+    "chronic_inflammation"
+  ],
+  "track_ids": [
+    "cytokine-and-inflammasome-modulation"
+  ],
+  "mechanism_summary": "Broad anti-inflammatory therapy that suppresses inflammasome-linked pathways and downstream inflammatory activity rather than selectively blocking one cytokine.",
+  "development_stage": "approved_for_other_indication",
+  "linked_study_ids": [
+    "colcot-colchicine-post-mi",
+    "lodoco2-colchicine-chronic-coronary-disease"
+  ],
+  "linked_finding_ids": [
+    "colchicine-post-mi-reduced-ischemic-events-safety-signal",
+    "colchicine-reduced-chronic-coronary-events"
+  ],
+  "risk_flags": [
+    "secondary-prevention-populations",
+    "serious-pneumonia-signal",
+    "noncardiovascular-mortality-signal"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_clinical_outcome",
+    "human_data": true,
+    "open_questions": [
+      "Whether low-dose chronic inflammation control has a favorable risk-benefit balance outside cardiovascular secondary prevention",
+      "Whether outcome benefits generalize to aging-relevant function, frailty, or prevention populations"
+    ]
+  },
+  "tags": [
+    "cytokine-and-inflammasome-modulation",
+    "colchicine",
+    "cardiovascular-outcomes",
+    "small-molecule"
+  ]
+}

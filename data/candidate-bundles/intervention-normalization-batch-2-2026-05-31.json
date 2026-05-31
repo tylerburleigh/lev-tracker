@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "intervention-normalization-batch-2-2026-05-31",
+  "name": "Intervention normalization batch 2 for May 31, 2026",
+  "summary": "Submitted data-hardening bundle that normalizes seven additional high-linked intervention IDs without changing the underlying evidence records or outlook ratings.",
+  "intake_mode": "manual",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-05-31T23:08:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "Can the next high-linked intervention IDs be promoted as normalized public intervention records while preserving the existing evidence boundaries?",
+    "intervention_ids": [
+      "aav-htert",
+      "colchicine",
+      "fasting-mimicking-diet",
+      "nicotinamide",
+      "spermidine",
+      "therapeutic-plasma-exchange-ivig",
+      "ziltivekimab"
+    ]
+  },
+  "source_ids": [
+    "nct-04133649",
+    "nct-05021835",
+    "pmid-23349012",
+    "pmid-26488693",
+    "pmid-29315079",
+    "pmid-31733140",
+    "pmid-32715623",
+    "pmid-32865380",
+    "pmid-34015342",
+    "pmid-35616942",
+    "pmid-36856616",
+    "pmid-39405978",
+    "pmid-40424097",
+    "pmid-40816210",
+    "pmid-41369941",
+    "pmid-41372565"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT04133649",
+    "https://clinicaltrials.gov/study/NCT05021835",
+    "https://pubmed.ncbi.nlm.nih.gov/23349012/",
+    "https://pubmed.ncbi.nlm.nih.gov/26488693/",
+    "https://pubmed.ncbi.nlm.nih.gov/29315079/",
+    "https://pubmed.ncbi.nlm.nih.gov/31733140/",
+    "https://pubmed.ncbi.nlm.nih.gov/32715623/",
+    "https://pubmed.ncbi.nlm.nih.gov/32865380/",
+    "https://pubmed.ncbi.nlm.nih.gov/34015342/",
+    "https://pubmed.ncbi.nlm.nih.gov/35616942/",
+    "https://pubmed.ncbi.nlm.nih.gov/36856616/",
+    "https://pubmed.ncbi.nlm.nih.gov/39405978/",
+    "https://pubmed.ncbi.nlm.nih.gov/40424097/",
+    "https://pubmed.ncbi.nlm.nih.gov/40816210/",
+    "https://pubmed.ncbi.nlm.nih.gov/41369941/",
+    "https://pubmed.ncbi.nlm.nih.gov/41372565/"
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-intervention-aav-htert",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "aav-htert",
+      "file_path": "data/interventions/aav-htert.json",
+      "staged_file_path": "data/staged-records/intervention-normalization-batch-2-2026-05-31/aav-htert.json",
+      "summary": "Create a normalized AAV-hTERT intervention record.",
+      "rationale": "The telomerase-restoration public record links a human registry entry to this intervention ID, but the page currently relies on fallback labeling."
+    },
+    {
+      "change_id": "create-intervention-colchicine",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "colchicine",
+      "file_path": "data/interventions/colchicine.json",
+      "staged_file_path": "data/staged-records/intervention-normalization-batch-2-2026-05-31/colchicine.json",
+      "summary": "Create a normalized colchicine intervention record.",
+      "rationale": "The chronic-inflammation baseline has two promoted low-dose colchicine cardiovascular outcome findings that should resolve to a public intervention profile."
+    },
+    {
+      "change_id": "create-intervention-fasting-mimicking-diet",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "fasting-mimicking-diet",
+      "file_path": "data/interventions/fasting-mimicking-diet.json",
+      "staged_file_path": "data/staged-records/intervention-normalization-batch-2-2026-05-31/fasting-mimicking-diet.json",
+      "summary": "Create a normalized fasting-mimicking diet intervention record.",
+      "rationale": "The autophagy-induction baseline links two promoted FMD biomarker findings and needs a normalized intervention page."
+    },
+    {
+      "change_id": "create-intervention-nicotinamide",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "nicotinamide",
+      "file_path": "data/interventions/nicotinamide.json",
+      "staged_file_path": "data/staged-records/intervention-normalization-batch-2-2026-05-31/nicotinamide.json",
+      "summary": "Create a normalized nicotinamide intervention record.",
+      "rationale": "The DNA-repair baseline links mechanistic skin DNA-repair evidence plus positive and null phase 3 skin-cancer prevention trials."
+    },
+    {
+      "change_id": "create-intervention-spermidine",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "spermidine",
+      "file_path": "data/interventions/spermidine.json",
+      "staged_file_path": "data/staged-records/intervention-normalization-batch-2-2026-05-31/spermidine.json",
+      "summary": "Create a normalized spermidine intervention record.",
+      "rationale": "The autophagy-induction baseline links three spermidine studies and findings, including the null longer-duration memory trial."
+    },
+    {
+      "change_id": "create-intervention-therapeutic-plasma-exchange-ivig",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "therapeutic-plasma-exchange-ivig",
+      "file_path": "data/interventions/therapeutic-plasma-exchange-ivig.json",
+      "staged_file_path": "data/staged-records/intervention-normalization-batch-2-2026-05-31/therapeutic-plasma-exchange-ivig.json",
+      "summary": "Create a normalized TPE plus IVIG intervention record.",
+      "rationale": "The circulating-factor baseline needs a combination intervention record distinct from TPE alone because two promoted findings include IVIG-containing protocols."
+    },
+    {
+      "change_id": "create-intervention-ziltivekimab",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "ziltivekimab",
+      "file_path": "data/interventions/ziltivekimab.json",
+      "staged_file_path": "data/staged-records/intervention-normalization-batch-2-2026-05-31/ziltivekimab.json",
+      "summary": "Create a normalized ziltivekimab intervention record.",
+      "rationale": "The chronic-inflammation baseline links phase 2 biomarker evidence and an active phase 3 outcomes trial to this intervention ID."
+    }
+  ],
+  "required_review_lanes": [
+    "taxonomy_mapping"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "evidence_review_ids": [
+    "evidence-review-intervention-normalization-batch-2-taxonomy-mapping-r1"
+  ],
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin",
+    "data-hardening",
+    "intervention-normalization"
+  ],
+  "publication_event_ids": [
+    "publish-intervention-normalization-batch-2-2026-05-31-2026-05-31t23-15-28-434z"
+  ]
+}
