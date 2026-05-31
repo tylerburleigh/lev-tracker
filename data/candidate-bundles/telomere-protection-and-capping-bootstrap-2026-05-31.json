@@ -1,0 +1,340 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "telomere-protection-and-capping-bootstrap-2026-05-31",
+  "name": "Telomere protection and capping bootstrap for May 31, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline for the telomere protection and capping track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-05-31T21:39:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Telomere Protection and Capping, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "telomere_attrition"
+    ],
+    "track_ids": [
+      "telomere-protection-and-capping"
+    ]
+  },
+  "source_ids": [
+    "pmid-28944611",
+    "pmid-23666675",
+    "pmid-24686009",
+    "pmid-30502348",
+    "pmid-37259606",
+    "pmid-40109908",
+    "pmid-16142233"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/28944611/",
+    "https://pubmed.ncbi.nlm.nih.gov/23666675/",
+    "https://pubmed.ncbi.nlm.nih.gov/24686009/",
+    "https://pubmed.ncbi.nlm.nih.gov/30502348/",
+    "https://pubmed.ncbi.nlm.nih.gov/37259606/",
+    "https://pubmed.ncbi.nlm.nih.gov/40109908/",
+    "https://pubmed.ncbi.nlm.nih.gov/16142233/"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-telomere-protection-and-capping-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-telomere-attrition-outlook"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "aav9-trf1-improved-mouse-healthspan-without-lengthening"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "human-arterial-uncapping-increases-with-age"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "dq-senolytics-reduced-endothelial-tif-aged-mice"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "trf2-overexpression-premature-aging-cancer-boundary"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-28944611",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-28944611",
+      "file_path": "data/sources/pmid-28944611.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/pmid-28944611.json",
+      "summary": "Add AAV9-TRF1 mouse healthspan source.",
+      "rationale": "This source anchors the most direct animal intervention signal for capping/protection."
+    },
+    {
+      "change_id": "create-source-pmid-23666675",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-23666675",
+      "file_path": "data/sources/pmid-23666675.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/pmid-23666675.json",
+      "summary": "Add age-related human arterial telomere uncapping source.",
+      "rationale": "This source supports human biomarker relevance while preserving the no-intervention boundary."
+    },
+    {
+      "change_id": "create-source-pmid-24686009",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-24686009",
+      "file_path": "data/sources/pmid-24686009.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/pmid-24686009.json",
+      "summary": "Add hypertension-associated arterial telomere uncapping source.",
+      "rationale": "This source supports disease-context target relevance without upgrading therapeutic stage."
+    },
+    {
+      "change_id": "create-source-pmid-30502348",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-30502348",
+      "file_path": "data/sources/pmid-30502348.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/pmid-30502348.json",
+      "summary": "Add Trf2 deletion vascular aging mouse source.",
+      "rationale": "This source supports causal shelterin/capping biology in animal vascular aging."
+    },
+    {
+      "change_id": "create-source-pmid-37259606",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-37259606",
+      "file_path": "data/sources/pmid-37259606.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/pmid-37259606.json",
+      "summary": "Add endothelial telomere dysfunction translational source.",
+      "rationale": "This source supports human endothelial biomarker relevance and animal causal biology."
+    },
+    {
+      "change_id": "create-source-pmid-40109908",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-40109908",
+      "file_path": "data/sources/pmid-40109908.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/pmid-40109908.json",
+      "summary": "Add D+Q aged-mouse endothelial telomere dysfunction source.",
+      "rationale": "This source supports an adjacent animal intervention signal and its limitations."
+    },
+    {
+      "change_id": "create-source-pmid-16142233",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-16142233",
+      "file_path": "data/sources/pmid-16142233.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/pmid-16142233.json",
+      "summary": "Add TRF2 overexpression safety-boundary source.",
+      "rationale": "This source supports the forecast boundary that shelterin upregulation is not automatically safe or protective."
+    },
+    {
+      "change_id": "create-study-aav9-trf1-aging-mouse-healthspan",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "aav9-trf1-aging-mouse-healthspan",
+      "file_path": "data/studies/aav9-trf1-aging-mouse-healthspan.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/aav9-trf1-aging-mouse-healthspan.json",
+      "summary": "Add AAV9-TRF1 mouse healthspan study record.",
+      "rationale": "The study record links the direct animal intervention signal to the track."
+    },
+    {
+      "change_id": "create-study-human-arterial-age-related-telomere-uncapping",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "human-arterial-age-related-telomere-uncapping",
+      "file_path": "data/studies/human-arterial-age-related-telomere-uncapping.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/human-arterial-age-related-telomere-uncapping.json",
+      "summary": "Add age-related human artery uncapping study record.",
+      "rationale": "The study record links human biomarker relevance to the track."
+    },
+    {
+      "change_id": "create-study-human-arterial-hypertension-telomere-uncapping",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "human-arterial-hypertension-telomere-uncapping",
+      "file_path": "data/studies/human-arterial-hypertension-telomere-uncapping.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/human-arterial-hypertension-telomere-uncapping.json",
+      "summary": "Add hypertension human artery uncapping study record.",
+      "rationale": "The study record preserves disease-context target relevance."
+    },
+    {
+      "change_id": "create-study-trf2-deletion-vascular-aging-mice",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "trf2-deletion-vascular-aging-mice",
+      "file_path": "data/studies/trf2-deletion-vascular-aging-mice.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/trf2-deletion-vascular-aging-mice.json",
+      "summary": "Add Trf2 deletion vascular aging mouse study record.",
+      "rationale": "The study record links causal loss-of-capping biology to animal vascular outcomes."
+    },
+    {
+      "change_id": "create-study-endothelial-telomere-dysfunction-vascular-metabolic-impairment",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "endothelial-telomere-dysfunction-vascular-metabolic-impairment",
+      "file_path": "data/studies/endothelial-telomere-dysfunction-vascular-metabolic-impairment.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/endothelial-telomere-dysfunction-vascular-metabolic-impairment.json",
+      "summary": "Add endothelial telomere dysfunction translational study record.",
+      "rationale": "The study record covers human endothelial target relevance and mouse causal impairment."
+    },
+    {
+      "change_id": "create-study-dq-senolytics-aged-mouse-endothelial-tif",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "dq-senolytics-aged-mouse-endothelial-tif",
+      "file_path": "data/studies/dq-senolytics-aged-mouse-endothelial-tif.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/dq-senolytics-aged-mouse-endothelial-tif.json",
+      "summary": "Add D+Q aged-mouse endothelial telomere dysfunction study record.",
+      "rationale": "The study record captures an adjacent intervention signal with mechanistic caveats."
+    },
+    {
+      "change_id": "create-study-trf2-overexpression-skin-premature-aging-cancer-mice",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "trf2-overexpression-skin-premature-aging-cancer-mice",
+      "file_path": "data/studies/trf2-overexpression-skin-premature-aging-cancer-mice.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/trf2-overexpression-skin-premature-aging-cancer-mice.json",
+      "summary": "Add TRF2 overexpression mouse safety study record.",
+      "rationale": "The study record anchors the shelterin dose/context safety boundary."
+    },
+    {
+      "change_id": "create-finding-aav9-trf1-improved-mouse-healthspan-without-lengthening",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "aav9-trf1-improved-mouse-healthspan-without-lengthening",
+      "file_path": "data/findings/aav9-trf1-improved-mouse-healthspan-without-lengthening.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/aav9-trf1-improved-mouse-healthspan-without-lengthening.json",
+      "summary": "Add direct AAV9-TRF1 animal intervention finding.",
+      "rationale": "This finding supports the animal_signal stage assignment."
+    },
+    {
+      "change_id": "create-finding-human-arterial-uncapping-increases-with-age",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "human-arterial-uncapping-increases-with-age",
+      "file_path": "data/findings/human-arterial-uncapping-increases-with-age.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/human-arterial-uncapping-increases-with-age.json",
+      "summary": "Add human age-related arterial uncapping biomarker finding.",
+      "rationale": "This finding supports human target relevance without upgrading therapeutic stage."
+    },
+    {
+      "change_id": "create-finding-human-hypertension-arterial-uncapping-senescence-signal",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "human-hypertension-arterial-uncapping-senescence-signal",
+      "file_path": "data/findings/human-hypertension-arterial-uncapping-senescence-signal.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/human-hypertension-arterial-uncapping-senescence-signal.json",
+      "summary": "Add hypertension-associated arterial uncapping finding.",
+      "rationale": "This finding supports disease-context target relevance."
+    },
+    {
+      "change_id": "create-finding-trf2-deletion-caused-vascular-uncapping-dysfunction-mice",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "trf2-deletion-caused-vascular-uncapping-dysfunction-mice",
+      "file_path": "data/findings/trf2-deletion-caused-vascular-uncapping-dysfunction-mice.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/trf2-deletion-caused-vascular-uncapping-dysfunction-mice.json",
+      "summary": "Add Trf2 deletion causal animal finding.",
+      "rationale": "This finding supports causal capping biology in animal vascular aging."
+    },
+    {
+      "change_id": "create-finding-old-human-endothelial-cells-had-more-dysfunctional-telomeres",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "old-human-endothelial-cells-had-more-dysfunctional-telomeres",
+      "file_path": "data/findings/old-human-endothelial-cells-had-more-dysfunctional-telomeres.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/old-human-endothelial-cells-had-more-dysfunctional-telomeres.json",
+      "summary": "Add older-human endothelial dysfunctional-telomere finding.",
+      "rationale": "This finding supports human endothelial biomarker relevance."
+    },
+    {
+      "change_id": "create-finding-endothelial-telomere-dysfunction-induced-vascular-metabolic-impairment",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "endothelial-telomere-dysfunction-induced-vascular-metabolic-impairment",
+      "file_path": "data/findings/endothelial-telomere-dysfunction-induced-vascular-metabolic-impairment.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/endothelial-telomere-dysfunction-induced-vascular-metabolic-impairment.json",
+      "summary": "Add endothelial telomere dysfunction animal impairment finding.",
+      "rationale": "This finding supports causal vascular and metabolic effects from endothelial telomere dysfunction."
+    },
+    {
+      "change_id": "create-finding-dq-senolytics-reduced-endothelial-tif-aged-mice",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "dq-senolytics-reduced-endothelial-tif-aged-mice",
+      "file_path": "data/findings/dq-senolytics-reduced-endothelial-tif-aged-mice.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/dq-senolytics-reduced-endothelial-tif-aged-mice.json",
+      "summary": "Add D+Q aged-mouse endothelial TIF finding.",
+      "rationale": "This finding supports an adjacent intervention signal without treating it as direct capping repair."
+    },
+    {
+      "change_id": "create-finding-trf2-overexpression-premature-aging-cancer-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "trf2-overexpression-premature-aging-cancer-boundary",
+      "file_path": "data/findings/trf2-overexpression-premature-aging-cancer-boundary.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/trf2-overexpression-premature-aging-cancer-boundary.json",
+      "summary": "Add TRF2 overexpression safety-boundary finding.",
+      "rationale": "This finding supports the low-confidence safety and calibration boundary."
+    },
+    {
+      "change_id": "create-telomere-protection-and-capping-outlook",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-telomere-protection-and-capping-outlook",
+      "file_path": "data/outlooks/track-telomere-protection-and-capping-outlook.json",
+      "staged_file_path": "data/staged-records/telomere-protection-and-capping-bootstrap-2026-05-31/track-telomere-protection-and-capping-outlook.json",
+      "summary": "Create the first public outlook for the telomere protection and capping track.",
+      "rationale": "The evidence supports a conservative animal_signal baseline with low confidence and explicit human-intervention and shelterin-safety boundaries.",
+      "uncertainty_flags": [
+        "Human evidence is target-relevance biomarker evidence, not capping-directed intervention evidence.",
+        "The most direct therapeutic signal is AAV9-TRF1 in mice.",
+        "D+Q senolytic evidence is adjacent and may reflect senescent-cell clearance rather than capping repair.",
+        "TRF2 overexpression can be harmful in mice, so shelterin modulation needs careful dose and tissue calibration."
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "telomere-protection-and-capping",
+      "note": "A first public baseline is justified at animal_signal, with uncertain momentum and low confidence.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "telomere_attrition",
+      "note": "Publishing this bundle would give telomere attrition a second track-level baseline without changing the hallmark-level stage.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-05-31-telomere-protection-and-capping-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-telomere-protection-and-capping-source-fidelity-r1",
+    "evidence-review-telomere-protection-and-capping-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-telomere-protection-and-capping-bootstrap-2026-05-31-2026-05-31t21-55-18-580z"
+  ]
+}

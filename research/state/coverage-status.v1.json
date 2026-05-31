@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-05-31T20:14:59.509Z",
+  "updated_at": "2026-05-31T21:55:22.514Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One bootstrap or surveillance run should cover one track unless the user explicitly narrows further.",
@@ -29,7 +29,7 @@
       "hallmark_id": "telomere_attrition",
       "canonical_order": 2,
       "hallmark_bootstrap_status": "baseline",
-      "tracked_public_outlook_count": 1,
+      "tracked_public_outlook_count": 2,
       "next_priority_track_id": "telomere-protection-and-capping",
       "notes": "At least one track-level public baseline exists."
     },
@@ -188,11 +188,19 @@
       "hallmark_id": "telomere_attrition",
       "canonical_order": 2,
       "name": "Telomere Protection and Capping",
-      "coverage_status": "not_started",
-      "next_mode": "bootstrap",
+      "coverage_status": "baseline",
+      "next_mode": "surveillance",
       "queue_state": "ready",
-      "default_research_question": "What is the current human-relevant evidence landscape for Telomere Protection and Capping, and what belongs in the first public baseline?",
-      "notes": "No track-level public baseline has been bootstrapped yet."
+      "last_session_id": "2026-05-31-telomere-protection-and-capping-bootstrap",
+      "last_session_at": "2026-05-31T21:39:00Z",
+      "last_session_mode": "bootstrap",
+      "last_session_outcome": "candidate_bundle_submitted",
+      "last_candidate_bundle_id": "telomere-protection-and-capping-bootstrap-2026-05-31",
+      "last_candidate_bundle_status": "published",
+      "last_publication_event_id": "publish-telomere-protection-and-capping-bootstrap-2026-05-31-2026-05-31t21-55-18-580z",
+      "last_published_at": "2026-05-31T21:55:18.580Z",
+      "default_research_question": "What changed for Telomere Protection and Capping since the last meaningful review or publication, and does any change justify a public update?",
+      "notes": "Latest publication event: publish-telomere-protection-and-capping-bootstrap-2026-05-31-2026-05-31t21-55-18-580z."
     },
     {
       "track_id": "partial-reprogramming",

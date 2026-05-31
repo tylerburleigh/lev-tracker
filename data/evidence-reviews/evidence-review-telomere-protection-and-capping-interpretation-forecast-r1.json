@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-telomere-protection-and-capping-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Telomere Protection And Capping bundle",
+  "candidate_bundle_id": "telomere-protection-and-capping-bootstrap-2026-05-31",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged outlook is appropriately conservative and has a complete support map. The animal_signal stage is supported by direct AAV9-TRF1 mouse healthspan evidence, while human artery and endothelial-cell findings are correctly framed as target-relevance biomarkers rather than capping-directed human intervention evidence. Momentum, confidence, 2036 scenario status, and rating-change criteria all preserve the main safety and translation boundaries.",
+  "reviewed_change_ids": [
+    "create-source-pmid-28944611",
+    "create-source-pmid-23666675",
+    "create-source-pmid-24686009",
+    "create-source-pmid-30502348",
+    "create-source-pmid-37259606",
+    "create-source-pmid-40109908",
+    "create-source-pmid-16142233",
+    "create-study-aav9-trf1-aging-mouse-healthspan",
+    "create-study-human-arterial-age-related-telomere-uncapping",
+    "create-study-human-arterial-hypertension-telomere-uncapping",
+    "create-study-trf2-deletion-vascular-aging-mice",
+    "create-study-endothelial-telomere-dysfunction-vascular-metabolic-impairment",
+    "create-study-dq-senolytics-aged-mouse-endothelial-tif",
+    "create-study-trf2-overexpression-skin-premature-aging-cancer-mice",
+    "create-finding-aav9-trf1-improved-mouse-healthspan-without-lengthening",
+    "create-finding-human-arterial-uncapping-increases-with-age",
+    "create-finding-human-hypertension-arterial-uncapping-senescence-signal",
+    "create-finding-trf2-deletion-caused-vascular-uncapping-dysfunction-mice",
+    "create-finding-old-human-endothelial-cells-had-more-dysfunctional-telomeres",
+    "create-finding-endothelial-telomere-dysfunction-induced-vascular-metabolic-impairment",
+    "create-finding-dq-senolytics-reduced-endothelial-tif-aged-mice",
+    "create-finding-trf2-overexpression-premature-aging-cancer-boundary",
+    "create-telomere-protection-and-capping-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "animal-signal-stage-appropriately-conservative",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "create-telomere-protection-and-capping-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-telomere-protection-and-capping-outlook"
+      },
+      "claim_or_issue": "The outlook assigns animal_signal even though it includes human biomarker associations, because the human evidence is not from a capping-directed intervention.",
+      "why_it_matters": "This avoids upgrading the track based on observational target relevance rather than therapeutic signal.",
+      "recommended_action": "Keep the current stage assignment and the explicit no-human-intervention boundary in the forecast note.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "human-target-relevance-boundary-clear",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-telomere-protection-and-capping-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-telomere-protection-and-capping-outlook"
+      },
+      "claim_or_issue": "Human artery and endothelial-cell records are used to support target relevance and blocker text, not human functional or disease benefit.",
+      "why_it_matters": "The public page must distinguish human aging-relevance from human therapeutic maturity.",
+      "recommended_action": "Retain the support-map limitations that the human evidence is observational or cell-based and does not establish reversibility.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "adjacent-dq-signal-not-overweighted",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "applies_to_change_id": "create-telomere-protection-and-capping-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-telomere-protection-and-capping-outlook"
+      },
+      "claim_or_issue": "The D+Q senolytic result is included as an adjacent mouse biomarker signal and is not treated as direct shelterin repair or capping restoration.",
+      "why_it_matters": "This prevents a cellular-senescence intervention from driving a telomere-capping track rating beyond its direct evidence.",
+      "recommended_action": "Keep the current support_role of balances and the limitations about non-shelterin mechanism and mouse translation.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "shelterin-safety-boundary-visible",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-telomere-protection-and-capping-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-telomere-protection-and-capping-outlook"
+      },
+      "claim_or_issue": "The outlook uses TRF2 overexpression harm as a calibration boundary and keeps confidence low because shelterin modulation is dose- and context-sensitive.",
+      "why_it_matters": "The track could otherwise read like generic shelterin upregulation is inherently protective.",
+      "recommended_action": "Retain the main blocker, safety support-map entry, and rating criteria requiring dose, tissue, cancer, and clonal-expansion surveillance.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "forecast-and-rating-criteria-do-not-overpromise",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "create-telomere-protection-and-capping-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-telomere-protection-and-capping-outlook"
+      },
+      "claim_or_issue": "The staged 2036 status is speculative and the earliest plausible window states that no credible LEV-relevant window can be assigned before human capping-directed biomarker and safety data exist.",
+      "why_it_matters": "This keeps the forecast layer aligned with the thin, preclinical intervention base.",
+      "recommended_action": "Keep the current speculative scenario status and no-window language.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-05-31T21:52:58.781Z",
+  "updated_at": "2026-05-31T21:52:58.781Z"
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "aav9-trf1-improved-mouse-healthspan-without-lengthening",
+  "name": "AAV9-TRF1 improved healthspan markers in adult and old mice without median telomere lengthening",
+  "summary": "AAV9-TRF1 is the most direct intervention signal for the telomere protection and capping track.",
+  "source_id": "pmid-28944611",
+  "study_id": "aav9-trf1-aging-mouse-healthspan",
+  "intervention_ids": [
+    "aav9-trf1"
+  ],
+  "track_ids": [
+    "telomere-protection-and-capping"
+  ],
+  "hallmark_ids": [
+    "telomere_attrition"
+  ],
+  "endpoint_category": "healthspan",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "low",
+  "statement": "AAV9-mediated TRF1 expression in adult and old mice improved several physiological aging markers and reduced short-telomere and telomere-associated DNA-damage signals in some tissues without significantly changing median telomere length.",
+  "population_or_model": "Adult and old wild-type mice treated with AAV9-TRF1",
+  "time_horizon": "Healthspan follow-up after adult or old-age treatment",
+  "quantitative_note": "The source reports improved neuromuscular function, glucose tolerance, cognitive function, subcutaneous fat maintenance, and chronic anemia, plus lower abundance of short telomeres and telomere-associated DNA damage in some tissues.",
+  "caveats": [
+    "The evidence is in mice, not humans.",
+    "The study supports an animal-stage capping/protection signal, not a human biomarker or clinical stage.",
+    "Vector delivery, tissue distribution, durability, immune response, and oncogenic boundaries remain unresolved for human translation."
+  ],
+  "tags": [
+    "animal",
+    "gene-therapy",
+    "trf1",
+    "healthspan"
+  ]
+}

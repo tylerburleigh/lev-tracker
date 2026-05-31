@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-telomere-protection-and-capping-source-fidelity-r1",
+  "name": "Source Fidelity review for Telomere Protection And Capping bundle",
+  "candidate_bundle_id": "telomere-protection-and-capping-bootstrap-2026-05-31",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, and finding records are source-faithful for the cited PubMed and PMC records. PMIDs, DOIs, venues, publication years, population/model descriptions, sample sizes where staged, endpoint categories, quantitative notes, and caveats match the checked source metadata, abstracts, and full-text passages closely enough for editorial approval.",
+  "reviewed_change_ids": [
+    "create-source-pmid-28944611",
+    "create-source-pmid-23666675",
+    "create-source-pmid-24686009",
+    "create-source-pmid-30502348",
+    "create-source-pmid-37259606",
+    "create-source-pmid-40109908",
+    "create-source-pmid-16142233",
+    "create-study-aav9-trf1-aging-mouse-healthspan",
+    "create-study-human-arterial-age-related-telomere-uncapping",
+    "create-study-human-arterial-hypertension-telomere-uncapping",
+    "create-study-trf2-deletion-vascular-aging-mice",
+    "create-study-endothelial-telomere-dysfunction-vascular-metabolic-impairment",
+    "create-study-dq-senolytics-aged-mouse-endothelial-tif",
+    "create-study-trf2-overexpression-skin-premature-aging-cancer-mice",
+    "create-finding-aav9-trf1-improved-mouse-healthspan-without-lengthening",
+    "create-finding-human-arterial-uncapping-increases-with-age",
+    "create-finding-human-hypertension-arterial-uncapping-senescence-signal",
+    "create-finding-trf2-deletion-caused-vascular-uncapping-dysfunction-mice",
+    "create-finding-old-human-endothelial-cells-had-more-dysfunctional-telomeres",
+    "create-finding-endothelial-telomere-dysfunction-induced-vascular-metabolic-impairment",
+    "create-finding-dq-senolytics-reduced-endothelial-tif-aged-mice",
+    "create-finding-trf2-overexpression-premature-aging-cancer-boundary",
+    "create-telomere-protection-and-capping-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "aav9-trf1-healthspan-not-median-lifespan-note",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-aav9-trf1-improved-mouse-healthspan-without-lengthening",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "aav9-trf1-improved-mouse-healthspan-without-lengthening"
+      },
+      "claim_or_issue": "The AAV9-TRF1 source supports improved mouse healthspan markers and reduced short-telomere/telomere-DNA-damage signals in some tissues, while median lifespan was not significantly changed.",
+      "why_it_matters": "This is the strongest direct intervention signal in the bundle, so keeping it as healthspan and biomarker evidence prevents overstatement.",
+      "recommended_action": "Keep the staged wording focused on mouse healthspan and telomere-protection markers, not median lifespan extension.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "human-arterial-uncapping-observational-boundary-note",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-human-arterial-uncapping-increases-with-age",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "human-arterial-uncapping-increases-with-age"
+      },
+      "claim_or_issue": "The human arterial uncapping source supports age-associated arterial biomarker differences in 104 donors and a link to P53/P21 senescence markers independent of mean telomere length.",
+      "why_it_matters": "The source does not test an intervention, so it should support human target relevance rather than a human treatment stage.",
+      "recommended_action": "Retain the staged caveats that this is observational tissue biomarker evidence and does not identify a capping-directed therapy.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "human-hypertension-uncapping-association-note",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-human-hypertension-arterial-uncapping-senescence-signal",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "human-hypertension-arterial-uncapping-senescence-signal"
+      },
+      "claim_or_issue": "The hypertension source supports age-matched associative biomarker differences: greater arterial uncapping and P53/P21 signaling in hypertensive participants without a significant mean telomere-length difference.",
+      "why_it_matters": "The source does not show that changing telomere capping treats or prevents hypertension.",
+      "recommended_action": "Keep the staged disease-context caveat and do not treat this source as therapeutic evidence.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "dq-senolytic-adjacent-mechanism-note",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "create-finding-dq-senolytics-reduced-endothelial-tif-aged-mice",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "dq-senolytics-reduced-endothelial-tif-aged-mice"
+      },
+      "claim_or_issue": "The D+Q source supports an aged-mouse senolytic reduction in endothelial DNA damage and TIF markers, with 10 mice per group treated from 21 to 24 months, but the mechanism is senescent-cell clearance rather than direct shelterin or cap repair.",
+      "why_it_matters": "Counting D+Q as a direct telomere-capping therapy would overstate the specificity of the intervention.",
+      "recommended_action": "Retain the staged wording that treats this as an adjacent signal with mechanism and species limitations.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "trf2-overexpression-safety-boundary-note",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-finding-trf2-overexpression-premature-aging-cancer-boundary",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "trf2-overexpression-premature-aging-cancer-boundary"
+      },
+      "claim_or_issue": "The TRF2 overexpression source supports the staged safety boundary: skin-directed TRF2 overexpression in mice produced telomere loss, DNA damage, premature skin deterioration, hyperpigmentation, and increased skin cancer.",
+      "why_it_matters": "This source calibrates against a simple more-shelterin-is-better interpretation.",
+      "recommended_action": "Keep this boundary visible in the outlook support map and safety caveats.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-05-31T21:51:47.075Z",
+  "updated_at": "2026-05-31T21:51:47.075Z"
+}

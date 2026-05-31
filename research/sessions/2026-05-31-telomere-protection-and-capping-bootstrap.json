@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-05-31-telomere-protection-and-capping-bootstrap",
+  "name": "Telomere protection and capping bootstrap pass for May 31, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-05-31T21:15:00Z",
+  "completed_at": "2026-05-31T21:39:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Telomere Protection and Capping, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "telomere_attrition"
+    ],
+    "track_ids": [
+      "telomere-protection-and-capping"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "telomere-protection-and-capping-bootstrap-2026-05-31",
+  "summary": "The track is coherent enough for a first public baseline at animal_signal. Human artery and endothelial-cell data support telomere uncapping as an age- and disease-relevant biomarker, but the direct intervention evidence remains preclinical, led by AAV9-TRF1 mouse healthspan data. The staged outlook keeps confidence low because shelterin biology is dose- and context-sensitive and no capping-directed human intervention with telomere-capping endpoints was identified.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-28944611",
+    "pmid-23666675",
+    "pmid-24686009",
+    "pmid-30502348",
+    "pmid-37259606",
+    "pmid-40109908",
+    "pmid-16142233"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/28944611/",
+    "https://pubmed.ncbi.nlm.nih.gov/23666675/",
+    "https://pubmed.ncbi.nlm.nih.gov/24686009/",
+    "https://pubmed.ncbi.nlm.nih.gov/30502348/",
+    "https://pubmed.ncbi.nlm.nih.gov/37259606/",
+    "https://pubmed.ncbi.nlm.nih.gov/40109908/",
+    "https://pubmed.ncbi.nlm.nih.gov/16142233/"
+  ],
+  "notes": [
+    "The most direct intervention signal is AAV9-TRF1 gene therapy in adult and old mice, which improved several healthspan markers and reduced short-telomere or telomere-associated DNA-damage signals in some tissues without significantly changing median telomere length.",
+    "Human artery studies support target relevance: telomere uncapping rises with age and hypertension and is linked to p53/p21 senescence signaling independently of mean telomere length.",
+    "Endothelial telomere dysfunction is causal in mice and associated with older human donor endothelial cells, but this still does not constitute human therapeutic evidence.",
+    "D+Q senolytics reduced endothelial telomere dysfunction-induced foci in old mice, but this is adjacent to the track and probably reflects senescent-cell clearance rather than direct telomere-capping repair.",
+    "TRF2 overexpression in mouse skin caused telomere loss, DNA damage, premature aging phenotypes, and increased cancer, so the forecast treats shelterin modulation as safety-sensitive."
+  ],
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast evidence reviews before publication.",
+    "If approved, publish the staged source, study, finding, and outlook records as the first telomere protection and capping baseline.",
+    "After publication, inspect the telomere attrition hallmark page and track page for evidence ladder ordering and capping-versus-telomerase boundaries."
+  ]
+}
