@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-05-31T23:17:58.825Z",
+  "updated_at": "2026-05-31T23:34:52.856Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One bootstrap or surveillance run should cover one track unless the user explicitly narrows further.",
@@ -38,7 +38,7 @@
       "canonical_order": 3,
       "hallmark_bootstrap_status": "baseline",
       "tracked_public_outlook_count": 1,
-      "next_priority_track_id": "dna-methylation-and-epigenome-restoration",
+      "next_priority_track_id": "chromatin-and-histone-modulation",
       "notes": "At least one track-level public baseline exists."
     },
     {
@@ -227,10 +227,16 @@
       "canonical_order": 2,
       "name": "DNA Methylation and Epigenome Restoration",
       "coverage_status": "not_started",
-      "next_mode": "bootstrap",
-      "queue_state": "ready",
-      "default_research_question": "What is the current human-relevant evidence landscape for DNA Methylation and Epigenome Restoration, and what belongs in the first public baseline?",
-      "notes": "No track-level public baseline has been bootstrapped yet."
+      "next_mode": "surveillance",
+      "queue_state": "active_review",
+      "last_session_id": "dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31",
+      "last_session_at": "2026-05-31T23:32:00Z",
+      "last_session_mode": "bootstrap",
+      "last_session_outcome": "candidate_bundle_submitted",
+      "last_candidate_bundle_id": "dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31",
+      "last_candidate_bundle_status": "submitted",
+      "default_research_question": "What changed for DNA Methylation and Epigenome Restoration since the last meaningful review or publication, and does any change justify a public update?",
+      "notes": "Candidate bundle dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31 is still submitted."
     },
     {
       "track_id": "chromatin-and-histone-modulation",

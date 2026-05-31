@@ -1,0 +1,349 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31",
+  "name": "DNA methylation and epigenome restoration bootstrap for May 31, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline for the DNA methylation and epigenome restoration track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "submitted",
+  "submitted_at": "2026-05-31T23:32:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for DNA Methylation and Epigenome Restoration, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "epigenetic_alterations"
+    ],
+    "track_ids": [
+      "dna-methylation-and-epigenome-restoration"
+    ]
+  },
+  "source_ids": [
+    "pmid-31496122",
+    "pmid-33844651",
+    "pmid-34847066",
+    "pmid-37118425",
+    "pmid-39900648",
+    "pmid-41803341",
+    "nct-04375657",
+    "pmid-32755011"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/31496122/",
+    "https://pubmed.ncbi.nlm.nih.gov/33844651/",
+    "https://pubmed.ncbi.nlm.nih.gov/34847066/",
+    "https://pubmed.ncbi.nlm.nih.gov/37118425/",
+    "https://pubmed.ncbi.nlm.nih.gov/39900648/",
+    "https://pubmed.ncbi.nlm.nih.gov/41803341/",
+    "https://clinicaltrials.gov/study/NCT04375657",
+    "https://pubmed.ncbi.nlm.nih.gov/32755011/"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-dna-methylation-and-epigenome-restoration-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-epigenetic-alterations-outlook"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "triim-human-epigenetic-age-decrease"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "methylation-diet-lifestyle-horvath-age-decrease"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "rejuvant-retrospective-dnam-age-decrease"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "calerie-cr-slowed-dunedinpace"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "do-health-omega3-small-dnam-clock-slowing"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "cosmos-mvm-small-epigenetic-clock-slowing"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "triim-x-registry-no-results"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "casin-reduced-blood-dnam-age-aged-mice"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-31496122",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-31496122",
+      "file_path": "data/sources/pmid-31496122.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/pmid-31496122.json",
+      "summary": "Add TRIIM epigenetic-aging pilot source.",
+      "rationale": "This source anchors the early uncontrolled human reversal signal and its limitations."
+    },
+    {
+      "change_id": "create-source-pmid-33844651",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-33844651",
+      "file_path": "data/sources/pmid-33844651.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/pmid-33844651.json",
+      "summary": "Add methylation-supportive diet/lifestyle pilot RCT source.",
+      "rationale": "This source supplies a small randomized human Horvath DNAmAge signal."
+    },
+    {
+      "change_id": "create-source-pmid-34847066",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-34847066",
+      "file_path": "data/sources/pmid-34847066.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/pmid-34847066.json",
+      "summary": "Add Rejuvant retrospective DNA-methylation-age source.",
+      "rationale": "This source captures a prominent but uncontrolled supplement-formulation clock claim."
+    },
+    {
+      "change_id": "create-source-pmid-37118425",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-37118425",
+      "file_path": "data/sources/pmid-37118425.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/pmid-37118425.json",
+      "summary": "Add CALERIE DNA-methylation aging source.",
+      "rationale": "This source is the strongest controlled caloric-restriction methylation-clock evidence."
+    },
+    {
+      "change_id": "create-source-pmid-39900648",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-39900648",
+      "file_path": "data/sources/pmid-39900648.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/pmid-39900648.json",
+      "summary": "Add DO-HEALTH DNA-methylation clock source.",
+      "rationale": "This source adds recent randomized older-adult methylation-clock evidence for omega-3, vitamin D, and exercise."
+    },
+    {
+      "change_id": "create-source-pmid-41803341",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-41803341",
+      "file_path": "data/sources/pmid-41803341.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/pmid-41803341.json",
+      "summary": "Add COSMOS epigenetic-clock supplement source.",
+      "rationale": "This source supplies the latest large randomized supplement evidence for selected epigenetic clocks."
+    },
+    {
+      "change_id": "create-source-nct-04375657",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-04375657",
+      "file_path": "data/sources/nct-04375657.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/nct-04375657.json",
+      "summary": "Add TRIIM-X ClinicalTrials.gov source.",
+      "rationale": "This source captures current follow-up trial status while preserving that no results are posted."
+    },
+    {
+      "change_id": "create-study-triim-human-epigenetic-aging-pilot",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "triim-human-epigenetic-aging-pilot",
+      "file_path": "data/studies/triim-human-epigenetic-aging-pilot.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/triim-human-epigenetic-aging-pilot.json",
+      "summary": "Add TRIIM pilot study record.",
+      "rationale": "The study record links the multi-agent pilot design to the track evidence map."
+    },
+    {
+      "change_id": "create-study-methylation-diet-lifestyle-pilot-rct",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "methylation-diet-lifestyle-pilot-rct",
+      "file_path": "data/studies/methylation-diet-lifestyle-pilot-rct.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/methylation-diet-lifestyle-pilot-rct.json",
+      "summary": "Add methylation-supportive diet/lifestyle pilot RCT study record.",
+      "rationale": "The study record links the randomized pilot clock signal to the track."
+    },
+    {
+      "change_id": "create-study-rejuvant-dnam-age-retrospective-cohort",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "rejuvant-dnam-age-retrospective-cohort",
+      "file_path": "data/studies/rejuvant-dnam-age-retrospective-cohort.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/rejuvant-dnam-age-retrospective-cohort.json",
+      "summary": "Add Rejuvant retrospective cohort study record.",
+      "rationale": "The study record captures the uncontrolled supplement formulation signal and its design boundary."
+    },
+    {
+      "change_id": "create-study-calerie-caloric-restriction-dnam-aging",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "calerie-caloric-restriction-dnam-aging",
+      "file_path": "data/studies/calerie-caloric-restriction-dnam-aging.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/calerie-caloric-restriction-dnam-aging.json",
+      "summary": "Add CALERIE DNA-methylation aging study record.",
+      "rationale": "The study record links the controlled caloric-restriction analysis to the track."
+    },
+    {
+      "change_id": "create-study-do-health-omega3-vitd-exercise-dnam-clocks",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "do-health-omega3-vitd-exercise-dnam-clocks",
+      "file_path": "data/studies/do-health-omega3-vitd-exercise-dnam-clocks.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/do-health-omega3-vitd-exercise-dnam-clocks.json",
+      "summary": "Add DO-HEALTH methylation-clock study record.",
+      "rationale": "The study record links the larger randomized older-adult subgroup evidence to the track."
+    },
+    {
+      "change_id": "create-study-cosmos-mvm-cocoa-epigenetic-clocks",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "cosmos-mvm-cocoa-epigenetic-clocks",
+      "file_path": "data/studies/cosmos-mvm-cocoa-epigenetic-clocks.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/cosmos-mvm-cocoa-epigenetic-clocks.json",
+      "summary": "Add COSMOS epigenetic-clock study record.",
+      "rationale": "The study record links the latest large supplement clock analysis to the track."
+    },
+    {
+      "change_id": "create-study-triim-x-extension-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "triim-x-extension-registry",
+      "file_path": "data/studies/triim-x-extension-registry.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/triim-x-extension-registry.json",
+      "summary": "Add TRIIM-X registry study record.",
+      "rationale": "The study record captures active follow-up trial status without treating it as efficacy evidence."
+    },
+    {
+      "change_id": "create-finding-triim-human-epigenetic-age-decrease",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "triim-human-epigenetic-age-decrease",
+      "file_path": "data/findings/triim-human-epigenetic-age-decrease.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/triim-human-epigenetic-age-decrease.json",
+      "summary": "Add TRIIM epigenetic-age finding.",
+      "rationale": "The finding captures the uncontrolled human reversal signal and caveats."
+    },
+    {
+      "change_id": "create-finding-methylation-diet-lifestyle-horvath-age-decrease",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "methylation-diet-lifestyle-horvath-age-decrease",
+      "file_path": "data/findings/methylation-diet-lifestyle-horvath-age-decrease.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/methylation-diet-lifestyle-horvath-age-decrease.json",
+      "summary": "Add diet/lifestyle Horvath DNAmAge finding.",
+      "rationale": "The finding captures the small randomized pilot human biomarker signal."
+    },
+    {
+      "change_id": "create-finding-rejuvant-retrospective-dnam-age-decrease",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "rejuvant-retrospective-dnam-age-decrease",
+      "file_path": "data/findings/rejuvant-retrospective-dnam-age-decrease.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/rejuvant-retrospective-dnam-age-decrease.json",
+      "summary": "Add Rejuvant DNA-methylation age finding.",
+      "rationale": "The finding captures a prominent uncontrolled supplement signal with commercial and design caveats."
+    },
+    {
+      "change_id": "create-finding-calerie-cr-slowed-dunedinpace",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "calerie-cr-slowed-dunedinpace",
+      "file_path": "data/findings/calerie-cr-slowed-dunedinpace.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/calerie-cr-slowed-dunedinpace.json",
+      "summary": "Add CALERIE DunedinPACE finding.",
+      "rationale": "The finding anchors the strongest controlled caloric-restriction biomarker signal and null clock boundary."
+    },
+    {
+      "change_id": "create-finding-do-health-omega3-small-dnam-clock-slowing",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "do-health-omega3-small-dnam-clock-slowing",
+      "file_path": "data/findings/do-health-omega3-small-dnam-clock-slowing.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/do-health-omega3-small-dnam-clock-slowing.json",
+      "summary": "Add DO-HEALTH omega-3 methylation-clock finding.",
+      "rationale": "The finding captures recent larger randomized older-adult biomarker evidence."
+    },
+    {
+      "change_id": "create-finding-cosmos-mvm-small-epigenetic-clock-slowing",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "cosmos-mvm-small-epigenetic-clock-slowing",
+      "file_path": "data/findings/cosmos-mvm-small-epigenetic-clock-slowing.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/cosmos-mvm-small-epigenetic-clock-slowing.json",
+      "summary": "Add COSMOS multivitamin/cocoa methylation-clock finding.",
+      "rationale": "The finding captures the latest large randomized supplement signal and cocoa-null boundary."
+    },
+    {
+      "change_id": "create-finding-triim-x-registry-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "triim-x-registry-no-results",
+      "file_path": "data/findings/triim-x-registry-no-results.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/triim-x-registry-no-results.json",
+      "summary": "Add TRIIM-X no-results registry finding.",
+      "rationale": "The finding captures trial momentum while blocking interpretation as efficacy evidence."
+    },
+    {
+      "change_id": "create-finding-casin-reduced-blood-dnam-age-aged-mice",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "casin-reduced-blood-dnam-age-aged-mice",
+      "file_path": "data/findings/casin-reduced-blood-dnam-age-aged-mice.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/casin-reduced-blood-dnam-age-aged-mice.json",
+      "summary": "Add CASIN aged-mouse DNA-methylation age finding.",
+      "rationale": "The finding links existing CASIN lifespan evidence to this track as animal biomarker support."
+    },
+    {
+      "change_id": "create-outlook-track-dna-methylation-and-epigenome-restoration",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-dna-methylation-and-epigenome-restoration-outlook",
+      "file_path": "data/outlooks/track-dna-methylation-and-epigenome-restoration-outlook.json",
+      "staged_file_path": "data/staged-records/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31/track-dna-methylation-and-epigenome-restoration-outlook.json",
+      "summary": "Add first public track outlook.",
+      "rationale": "The outlook gives the track a conservative human_biomarker_signal baseline with explicit support-map limitations."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "dna-methylation-and-epigenome-restoration",
+      "note": "Creates the first public baseline at human_biomarker_signal with steady momentum and low confidence.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "epigenetic_alterations",
+      "note": "Adds a second epigenetic-alterations track baseline so the hallmark page is not anchored only on partial reprogramming.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31.json",
+  "next_actions": [
+    "Run source-fidelity review for source metadata, study design, sample sizes, endpoint language, and registry status.",
+    "Run interpretation/forecast review focused on surrogate DNA-methylation clocks, small effect sizes, uncontrolled reversal claims, and confidence calibration.",
+    "If accepted, approve and publish through the file-backed bundle workflow."
+  ],
+  "tags": [
+    "bootstrap",
+    "epigenetic-alterations",
+    "dna-methylation-and-epigenome-restoration"
+  ]
+}

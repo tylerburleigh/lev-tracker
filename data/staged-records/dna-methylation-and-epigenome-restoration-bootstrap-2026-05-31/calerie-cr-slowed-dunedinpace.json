@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "calerie-cr-slowed-dunedinpace",
+  "name": "CALERIE caloric restriction slowed DunedinPACE but not clock age estimates",
+  "summary": "The strongest controlled caloric-restriction methylation evidence is a small DunedinPACE slowing signal with null findings on several biological-age clocks.",
+  "source_id": "pmid-37118425",
+  "study_id": "calerie-caloric-restriction-dnam-aging",
+  "intervention_ids": [
+    "caloric-restriction"
+  ],
+  "track_ids": [
+    "dna-methylation-and-epigenome-restoration"
+  ],
+  "hallmark_ids": [
+    "epigenetic_alterations",
+    "deregulated_nutrient_sensing"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "mixed",
+  "evidence_tier": "human_biomarker",
+  "confidence": "moderate",
+  "statement": "In the randomized CALERIE trial, caloric restriction slowed DunedinPACE over two years but did not significantly change DNA-methylation biological-age estimates including PhenoAge and GrimAge.",
+  "population_or_model": "Healthy adults without obesity",
+  "time_horizon": "Two-year intervention",
+  "quantitative_note": "The abstract characterizes the DunedinPACE treatment effect as small and notes non-significant changes in PhenoAge and GrimAge.",
+  "caveats": [
+    "This was a post hoc DNA-methylation analysis rather than the original primary clinical endpoint.",
+    "The signal was specific to pace-of-aging rather than reversal in biological-age clocks.",
+    "Effects were small and overlapping between intervention and control participants.",
+    "CALERIE does not establish that methylation changes mediate healthspan or lifespan benefit."
+  ],
+  "tags": [
+    "human",
+    "randomized",
+    "caloric-restriction",
+    "epigenetic-clock"
+  ]
+}
