@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-01-ampk-and-metabolic-modulators-bootstrap",
+  "name": "AMPK and Metabolic Modulators bootstrap pass for June 1, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-06-01T12:15:00Z",
+  "completed_at": "2026-06-01T12:45:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for AMPK and Metabolic Modulators, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "deregulated_nutrient_sensing"
+    ],
+    "track_ids": [
+      "ampk-and-metabolic-modulators"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "ampk-and-metabolic-modulators-bootstrap-2026-06-01",
+  "summary": "The first AMPK and Metabolic Modulators baseline should be conservative: low-confidence human_biomarker_signal, led by metformin rather than the whole class. MILES supplies direct older-adult metabolic and transcriptomic biomarker support, while METFORAGING adds a current 96-week epigenetic-age pilot with no significant primary result. Mouse and male monkey metformin studies plus a berberine aged-rat study support biological plausibility, but older-adult exercise, MET-PREVENT, and frailty-registry results block any human_functional_benefit upgrade.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-23540700",
+    "pmid-23900241",
+    "pmid-39270656",
+    "pmid-29806860",
+    "pmid-29383869",
+    "pmid-30548390",
+    "pmid-40147475",
+    "pmid-42023167",
+    "nct-02570672",
+    "nct-04264897"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/23540700/",
+    "https://pubmed.ncbi.nlm.nih.gov/23900241/",
+    "https://pubmed.ncbi.nlm.nih.gov/39270656/",
+    "https://pubmed.ncbi.nlm.nih.gov/29806860/",
+    "https://pubmed.ncbi.nlm.nih.gov/29383869/",
+    "https://pubmed.ncbi.nlm.nih.gov/30548390/",
+    "https://pubmed.ncbi.nlm.nih.gov/40147475/",
+    "https://pubmed.ncbi.nlm.nih.gov/42023167/",
+    "https://clinicaltrials.gov/study/NCT02570672",
+    "https://clinicaltrials.gov/study/NCT04264897"
+  ],
+  "notes": [
+    "The top bootstrap queue item was selected from research/backlog/track-priority.v1.json and research/state/coverage-status.v1.json.",
+    "Metformin is the only staged intervention with direct human aging-relevant biomarker evidence; berberine was staged only as an animal AMPK-pathway signal.",
+    "MILES supports biomarker-level human relevance but is small, short, and limited to older adults with impaired glucose tolerance.",
+    "MET-PREVENT, the exercise-training trial, and NCT02570672 registry results are the key functional boundaries and prevent a human_functional_benefit rating.",
+    "ANTHEM was completed but had no posted results in the ClinicalTrials.gov record checked during this pass."
+  ],
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast evidence review before publication.",
+    "If approved, publish the staged records as the first AMPK and Metabolic Modulators track baseline.",
+    "After publication, refresh planning state and inspect the deregulated nutrient sensing hallmark and intervention detail pages."
+  ]
+}

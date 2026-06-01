@@ -286,7 +286,7 @@ export default async function HallmarkDetailPage({ params }: HallmarkPageProps) 
                 <div className="track-card__top">
                   <strong>{track.name}</strong>
                   {coverage.thinCoverage ? (
-                    <span className="micro-badge micro-badge--muted">Coverage in progress</span>
+                    <span className="micro-badge micro-badge--muted">Thin coverage</span>
                   ) : null}
                 </div>
                 <p>{track.summary}</p>

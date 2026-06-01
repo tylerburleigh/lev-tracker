@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-ampk-and-metabolic-modulators-source-fidelity-r1",
+  "name": "Source Fidelity review for Ampk And Metabolic Modulators bundle",
+  "candidate_bundle_id": "ampk-and-metabolic-modulators-bootstrap-2026-06-01",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, intervention, finding, and outlook records stay within the cited PubMed and ClinicalTrials.gov boundaries. PubMed titles, PMIDs, DOI links, trial registry status, enrollment counts, posted-result status, populations, endpoint classes, and key quantitative claims match the cited records closely enough for publication review; the important boundaries are already preserved as animal or non-human-primate support, small human biomarker evidence, null or mixed functional evidence, and results-pending registry activity.",
+  "reviewed_change_ids": [
+    "create-source-pmid-23540700",
+    "create-source-pmid-23900241",
+    "create-source-pmid-39270656",
+    "create-source-pmid-29806860",
+    "create-source-pmid-29383869",
+    "create-source-pmid-30548390",
+    "create-source-pmid-40147475",
+    "create-source-pmid-42023167",
+    "create-source-nct-02570672",
+    "create-source-nct-04264897",
+    "create-intervention-metformin",
+    "create-intervention-berberine",
+    "create-study-metformin-c-elegans-microbiome-lifespan",
+    "create-study-metformin-middle-aged-mouse-healthspan-lifespan",
+    "create-study-metformin-male-monkey-aging-clock",
+    "create-study-berberine-aged-rat-ampk-muscle-cognition",
+    "create-study-miles-metformin-older-adults-transcriptomics",
+    "create-study-metformin-aerobic-exercise-older-adults",
+    "create-study-met-prevent-metformin-sarcopenia-frailty",
+    "create-study-metforaging-metformin-hiv-epigenetic-age",
+    "create-study-metformin-frailty-prevention-high-risk-older-adults",
+    "create-study-anthem-metformin-aging-study",
+    "create-finding-metformin-c-elegans-lifespan-context-dependent",
+    "create-finding-metformin-low-dose-improved-mouse-healthspan-lifespan",
+    "create-finding-metformin-decelerated-male-monkey-aging-clocks",
+    "create-finding-berberine-improved-aged-rat-cognition-muscle-ampk-signaling",
+    "create-finding-miles-metformin-shifted-older-adult-metabolic-transcriptomic-biomarkers",
+    "create-finding-metformin-blunted-exercise-mitochondrial-adaptations-older-adults",
+    "create-finding-met-prevent-metformin-did-not-improve-walk-speed",
+    "create-finding-metforaging-metformin-no-significant-epigenetic-age-effect",
+    "create-finding-metformin-frailty-registry-results-do-not-establish-benefit",
+    "create-finding-anthem-metformin-aging-study-completed-no-results",
+    "create-track-ampk-and-metabolic-modulators-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "ampk-metprevent-title-normalized",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-source-pmid-40147475",
+      "applies_to_record": {
+        "record_type": "source",
+        "record_id": "pmid-40147475"
+      },
+      "claim_or_issue": "The PubMed title for PMID 40147475 includes a typographic spacing character before the MET-PREVENT parenthetical, while the staged source stores the same title with a normal ASCII space.",
+      "why_it_matters": "The source title should remain a reliable bibliographic anchor, but typography normalization should not block publication when the PMID, DOI, venue, authors, and substantive title all match.",
+      "recommended_action": "No revision needed; retain the ASCII-normalized title unless the project later decides to preserve PubMed typography exactly.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ampk-frailty-registry-results-boundary-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-metformin-frailty-registry-results-do-not-establish-benefit",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "metformin-frailty-registry-results-do-not-establish-benefit"
+      },
+      "claim_or_issue": "NCT02570672 has posted ClinicalTrials.gov results, and the staged finding correctly reports the frailty-index and Fried frailty score monthly-rate values without treating them as a clear functional benefit.",
+      "why_it_matters": "Registry-posted outcomes can support a boundary finding, but they should not be inflated into a positive frailty-prevention claim without a peer-reviewed outcome interpretation and statistical context.",
+      "recommended_action": "No revision needed; retain the mixed direction, low confidence, and registry-result caveats.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ampk-anthem-no-results-status-preserved",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "create-finding-anthem-metformin-aging-study-completed-no-results",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "anthem-metformin-aging-study-completed-no-results"
+      },
+      "claim_or_issue": "NCT04264897 is completed and has no posted results in the ClinicalTrials.gov record checked for this review.",
+      "why_it_matters": "A completed trial is a watch item and momentum signal, but without posted or published results it cannot support benefit, harm, or a rating upgrade.",
+      "recommended_action": "No revision needed; retain the regulatory_or_program_update evidence tier, inconclusive direction, and no-results caveat.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ampk-human-biomarker-source-boundary-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-miles-metformin-shifted-older-adult-metabolic-transcriptomic-biomarkers",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "miles-metformin-shifted-older-adult-metabolic-transcriptomic-biomarkers"
+      },
+      "claim_or_issue": "PMID 29383869 supports older-adult metabolic and transcriptomic biomarker claims, including 14 participants, six-week treatment periods, 647 muscle genes, and 146 adipose genes, but not functional or clinical benefit.",
+      "why_it_matters": "This source is the main human anchor for the proposed stage and must stay in the biomarker lane.",
+      "recommended_action": "No revision needed; the staged finding and outlook keep this result at human_biomarker_signal and include small-sample and endpoint caveats.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-01T12:53:03.674Z",
+  "updated_at": "2026-06-01T12:53:03.674Z"
+}

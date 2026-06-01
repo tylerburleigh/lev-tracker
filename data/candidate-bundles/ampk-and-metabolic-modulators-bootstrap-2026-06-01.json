@@ -1,0 +1,454 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "ampk-and-metabolic-modulators-bootstrap-2026-06-01",
+  "name": "AMPK and Metabolic Modulators bootstrap for June 1, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline candidate for the AMPK and Metabolic Modulators track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-01T12:45:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for AMPK and Metabolic Modulators, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "deregulated_nutrient_sensing"
+    ],
+    "track_ids": [
+      "ampk-and-metabolic-modulators"
+    ]
+  },
+  "source_ids": [
+    "pmid-23540700",
+    "pmid-23900241",
+    "pmid-39270656",
+    "pmid-29806860",
+    "pmid-29383869",
+    "pmid-30548390",
+    "pmid-40147475",
+    "pmid-42023167",
+    "nct-02570672",
+    "nct-04264897"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/23540700/",
+    "https://pubmed.ncbi.nlm.nih.gov/23900241/",
+    "https://pubmed.ncbi.nlm.nih.gov/39270656/",
+    "https://pubmed.ncbi.nlm.nih.gov/29806860/",
+    "https://pubmed.ncbi.nlm.nih.gov/29383869/",
+    "https://pubmed.ncbi.nlm.nih.gov/30548390/",
+    "https://pubmed.ncbi.nlm.nih.gov/40147475/",
+    "https://pubmed.ncbi.nlm.nih.gov/42023167/",
+    "https://clinicaltrials.gov/study/NCT02570672",
+    "https://clinicaltrials.gov/study/NCT04264897"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-ampk-and-metabolic-modulators-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-deregulated-nutrient-sensing-outlook"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "metformin"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "berberine"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "miles-metformin-shifted-older-adult-metabolic-transcriptomic-biomarkers"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "met-prevent-metformin-did-not-improve-walk-speed"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "metforaging-metformin-no-significant-epigenetic-age-effect"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "anthem-metformin-aging-study-completed-no-results"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-23540700",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-23540700",
+      "file_path": "data/sources/pmid-23540700.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/pmid-23540700.json",
+      "summary": "Add metformin C. elegans microbiome lifespan source.",
+      "rationale": "This source anchors context-dependent worm lifespan evidence for metformin."
+    },
+    {
+      "change_id": "create-source-pmid-23900241",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-23900241",
+      "file_path": "data/sources/pmid-23900241.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/pmid-23900241.json",
+      "summary": "Add metformin mouse healthspan and lifespan source.",
+      "rationale": "This source anchors dose-sensitive mammalian healthspan and lifespan evidence."
+    },
+    {
+      "change_id": "create-source-pmid-39270656",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-39270656",
+      "file_path": "data/sources/pmid-39270656.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/pmid-39270656.json",
+      "summary": "Add metformin male monkey aging-clock source.",
+      "rationale": "This source adds non-human-primate biomarker and functional context for metformin."
+    },
+    {
+      "change_id": "create-source-pmid-29806860",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-29806860",
+      "file_path": "data/sources/pmid-29806860.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/pmid-29806860.json",
+      "summary": "Add berberine aged rat AMPK source.",
+      "rationale": "This source captures the staged berberine animal AMPK/SIRT1/PGC-1alpha signal."
+    },
+    {
+      "change_id": "create-source-pmid-29383869",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-29383869",
+      "file_path": "data/sources/pmid-29383869.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/pmid-29383869.json",
+      "summary": "Add MILES older-adult metformin transcriptomics source.",
+      "rationale": "This source is the main human biomarker support for the baseline rating."
+    },
+    {
+      "change_id": "create-source-pmid-30548390",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-30548390",
+      "file_path": "data/sources/pmid-30548390.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/pmid-30548390.json",
+      "summary": "Add metformin aerobic exercise adaptation source.",
+      "rationale": "This source constrains functional and safety interpretation for preventive metformin use."
+    },
+    {
+      "change_id": "create-source-pmid-40147475",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-40147475",
+      "file_path": "data/sources/pmid-40147475.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/pmid-40147475.json",
+      "summary": "Add MET-PREVENT metformin frailty trial source.",
+      "rationale": "This source provides direct older-adult physical-function evidence and tolerability boundaries."
+    },
+    {
+      "change_id": "create-source-pmid-42023167",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-42023167",
+      "file_path": "data/sources/pmid-42023167.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/pmid-42023167.json",
+      "summary": "Add METFORAGING metformin epigenetic-age source.",
+      "rationale": "This current source adds a 96-week human epigenetic-aging pilot with null primary biomarker result."
+    },
+    {
+      "change_id": "create-source-nct-02570672",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-02570672",
+      "file_path": "data/sources/nct-02570672.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/nct-02570672.json",
+      "summary": "Add metformin frailty-prevention registry source.",
+      "rationale": "This source supplies posted registry results for a direct frailty-prevention trial."
+    },
+    {
+      "change_id": "create-source-nct-04264897",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-04264897",
+      "file_path": "data/sources/nct-04264897.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/nct-04264897.json",
+      "summary": "Add ANTHEM registry source.",
+      "rationale": "This source identifies a completed, results-pending phenotype-stratified metformin aging-biomarker trial."
+    },
+    {
+      "change_id": "create-intervention-metformin",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "metformin",
+      "file_path": "data/interventions/metformin.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/metformin.json",
+      "summary": "Add normalized metformin intervention record.",
+      "rationale": "Metformin is the clinically anchored exemplar for this track and needs a public intervention record."
+    },
+    {
+      "change_id": "create-intervention-berberine",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "berberine",
+      "file_path": "data/interventions/berberine.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/berberine.json",
+      "summary": "Add normalized berberine intervention record.",
+      "rationale": "Berberine is a taxonomy exemplar with staged animal AMPK-pathway support but no human aging record."
+    },
+    {
+      "change_id": "create-study-metformin-c-elegans-microbiome-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "metformin-c-elegans-microbiome-lifespan",
+      "file_path": "data/studies/metformin-c-elegans-microbiome-lifespan.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/metformin-c-elegans-microbiome-lifespan.json",
+      "summary": "Add metformin C. elegans microbiome lifespan study.",
+      "rationale": "The study record captures context-dependent preclinical lifespan evidence."
+    },
+    {
+      "change_id": "create-study-metformin-middle-aged-mouse-healthspan-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "metformin-middle-aged-mouse-healthspan-lifespan",
+      "file_path": "data/studies/metformin-middle-aged-mouse-healthspan-lifespan.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/metformin-middle-aged-mouse-healthspan-lifespan.json",
+      "summary": "Add metformin middle-aged mouse healthspan and lifespan study.",
+      "rationale": "The study record links low-dose metformin to mammalian healthspan and lifespan data."
+    },
+    {
+      "change_id": "create-study-metformin-male-monkey-aging-clock",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "metformin-male-monkey-aging-clock",
+      "file_path": "data/studies/metformin-male-monkey-aging-clock.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/metformin-male-monkey-aging-clock.json",
+      "summary": "Add metformin male monkey aging-clock study.",
+      "rationale": "The study record captures non-human-primate aging-clock, brain, and cognition context."
+    },
+    {
+      "change_id": "create-study-berberine-aged-rat-ampk-muscle-cognition",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "berberine-aged-rat-ampk-muscle-cognition",
+      "file_path": "data/studies/berberine-aged-rat-ampk-muscle-cognition.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/berberine-aged-rat-ampk-muscle-cognition.json",
+      "summary": "Add berberine aged rat AMPK study.",
+      "rationale": "The study record captures the staged non-metformin animal AMPK signal."
+    },
+    {
+      "change_id": "create-study-miles-metformin-older-adults-transcriptomics",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "miles-metformin-older-adults-transcriptomics",
+      "file_path": "data/studies/miles-metformin-older-adults-transcriptomics.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/miles-metformin-older-adults-transcriptomics.json",
+      "summary": "Add MILES metformin older-adult transcriptomics study.",
+      "rationale": "The study record anchors the human biomarker stage assignment."
+    },
+    {
+      "change_id": "create-study-metformin-aerobic-exercise-older-adults",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "metformin-aerobic-exercise-older-adults",
+      "file_path": "data/studies/metformin-aerobic-exercise-older-adults.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/metformin-aerobic-exercise-older-adults.json",
+      "summary": "Add metformin aerobic exercise interaction study.",
+      "rationale": "The study record captures a key older-adult functional boundary."
+    },
+    {
+      "change_id": "create-study-met-prevent-metformin-sarcopenia-frailty",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "met-prevent-metformin-sarcopenia-frailty",
+      "file_path": "data/studies/met-prevent-metformin-sarcopenia-frailty.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/met-prevent-metformin-sarcopenia-frailty.json",
+      "summary": "Add MET-PREVENT metformin frailty study.",
+      "rationale": "The study record captures direct physical-performance and tolerability evidence."
+    },
+    {
+      "change_id": "create-study-metforaging-metformin-hiv-epigenetic-age",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "metforaging-metformin-hiv-epigenetic-age",
+      "file_path": "data/studies/metforaging-metformin-hiv-epigenetic-age.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/metforaging-metformin-hiv-epigenetic-age.json",
+      "summary": "Add METFORAGING metformin epigenetic-age study.",
+      "rationale": "The study record captures the current human epigenetic-age pilot."
+    },
+    {
+      "change_id": "create-study-metformin-frailty-prevention-high-risk-older-adults",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "metformin-frailty-prevention-high-risk-older-adults",
+      "file_path": "data/studies/metformin-frailty-prevention-high-risk-older-adults.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/metformin-frailty-prevention-high-risk-older-adults.json",
+      "summary": "Add metformin frailty-prevention registry study.",
+      "rationale": "The study record captures posted registry outcomes for a direct frailty-prevention trial."
+    },
+    {
+      "change_id": "create-study-anthem-metformin-aging-study",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "anthem-metformin-aging-study",
+      "file_path": "data/studies/anthem-metformin-aging-study.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/anthem-metformin-aging-study.json",
+      "summary": "Add ANTHEM metformin aging study.",
+      "rationale": "The study record captures a completed phenotype-stratified trial that has not yet posted results."
+    },
+    {
+      "change_id": "create-finding-metformin-c-elegans-lifespan-context-dependent",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "metformin-c-elegans-lifespan-context-dependent",
+      "file_path": "data/findings/metformin-c-elegans-lifespan-context-dependent.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/metformin-c-elegans-lifespan-context-dependent.json",
+      "summary": "Add context-dependent C. elegans lifespan finding.",
+      "rationale": "This finding supports preclinical plausibility while constraining simple longevity claims."
+    },
+    {
+      "change_id": "create-finding-metformin-low-dose-improved-mouse-healthspan-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "metformin-low-dose-improved-mouse-healthspan-lifespan",
+      "file_path": "data/findings/metformin-low-dose-improved-mouse-healthspan-lifespan.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/metformin-low-dose-improved-mouse-healthspan-lifespan.json",
+      "summary": "Add low-dose metformin mouse healthspan and lifespan finding.",
+      "rationale": "This finding anchors mammalian animal_signal support and dose limits."
+    },
+    {
+      "change_id": "create-finding-metformin-decelerated-male-monkey-aging-clocks",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "metformin-decelerated-male-monkey-aging-clocks",
+      "file_path": "data/findings/metformin-decelerated-male-monkey-aging-clocks.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/metformin-decelerated-male-monkey-aging-clocks.json",
+      "summary": "Add metformin male monkey aging-clock finding.",
+      "rationale": "This finding adds non-human-primate biomarker and functional support with translation limits."
+    },
+    {
+      "change_id": "create-finding-berberine-improved-aged-rat-cognition-muscle-ampk-signaling",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "berberine-improved-aged-rat-cognition-muscle-ampk-signaling",
+      "file_path": "data/findings/berberine-improved-aged-rat-cognition-muscle-ampk-signaling.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/berberine-improved-aged-rat-cognition-muscle-ampk-signaling.json",
+      "summary": "Add berberine aged rat AMPK functional finding.",
+      "rationale": "This finding documents the non-metformin preclinical AMPK-pathway signal."
+    },
+    {
+      "change_id": "create-finding-miles-metformin-shifted-older-adult-metabolic-transcriptomic-biomarkers",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "miles-metformin-shifted-older-adult-metabolic-transcriptomic-biomarkers",
+      "file_path": "data/findings/miles-metformin-shifted-older-adult-metabolic-transcriptomic-biomarkers.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/miles-metformin-shifted-older-adult-metabolic-transcriptomic-biomarkers.json",
+      "summary": "Add MILES human biomarker finding.",
+      "rationale": "This finding supports the low-confidence human_biomarker_signal stage assignment."
+    },
+    {
+      "change_id": "create-finding-metformin-blunted-exercise-mitochondrial-adaptations-older-adults",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "metformin-blunted-exercise-mitochondrial-adaptations-older-adults",
+      "file_path": "data/findings/metformin-blunted-exercise-mitochondrial-adaptations-older-adults.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/metformin-blunted-exercise-mitochondrial-adaptations-older-adults.json",
+      "summary": "Add metformin exercise-adaptation boundary finding.",
+      "rationale": "This finding limits functional and preventive interpretation."
+    },
+    {
+      "change_id": "create-finding-met-prevent-metformin-did-not-improve-walk-speed",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "met-prevent-metformin-did-not-improve-walk-speed",
+      "file_path": "data/findings/met-prevent-metformin-did-not-improve-walk-speed.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/met-prevent-metformin-did-not-improve-walk-speed.json",
+      "summary": "Add MET-PREVENT null physical-performance finding.",
+      "rationale": "This finding blocks a human_functional_benefit rating."
+    },
+    {
+      "change_id": "create-finding-metforaging-metformin-no-significant-epigenetic-age-effect",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "metforaging-metformin-no-significant-epigenetic-age-effect",
+      "file_path": "data/findings/metforaging-metformin-no-significant-epigenetic-age-effect.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/metforaging-metformin-no-significant-epigenetic-age-effect.json",
+      "summary": "Add METFORAGING null primary epigenetic-age finding.",
+      "rationale": "This finding updates the baseline with a current human biomarker boundary."
+    },
+    {
+      "change_id": "create-finding-metformin-frailty-registry-results-do-not-establish-benefit",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "metformin-frailty-registry-results-do-not-establish-benefit",
+      "file_path": "data/findings/metformin-frailty-registry-results-do-not-establish-benefit.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/metformin-frailty-registry-results-do-not-establish-benefit.json",
+      "summary": "Add frailty-prevention registry results finding.",
+      "rationale": "This finding adds direct but mixed registry-posted functional evidence."
+    },
+    {
+      "change_id": "create-finding-anthem-metformin-aging-study-completed-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "anthem-metformin-aging-study-completed-no-results",
+      "file_path": "data/findings/anthem-metformin-aging-study-completed-no-results.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/anthem-metformin-aging-study-completed-no-results.json",
+      "summary": "Add ANTHEM completed-without-results finding.",
+      "rationale": "This finding records a near-term watch item without treating it as efficacy evidence."
+    },
+    {
+      "change_id": "create-track-ampk-and-metabolic-modulators-outlook",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-ampk-and-metabolic-modulators-outlook",
+      "file_path": "data/outlooks/track-ampk-and-metabolic-modulators-outlook.json",
+      "staged_file_path": "data/staged-records/ampk-and-metabolic-modulators-bootstrap-2026-06-01/track-ampk-and-metabolic-modulators-outlook.json",
+      "summary": "Create the first public outlook for the AMPK and Metabolic Modulators track.",
+      "rationale": "A low-confidence human_biomarker_signal baseline is justified by direct metformin human biomarker evidence, while functional results remain null, mixed, or tolerability-limited.",
+      "uncertainty_flags": [
+        "Human evidence is strongest for metformin rather than the full metabolic-modulator class.",
+        "Recent human functional and frailty evidence does not support a functional-benefit upgrade.",
+        "Response may depend on baseline metabolic phenotype.",
+        "Berberine evidence staged here is animal-only."
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "ampk-and-metabolic-modulators",
+      "note": "A first public baseline is justified at low-confidence human_biomarker_signal because metformin has direct older-adult metabolic and transcriptomic biomarker evidence, but direct functional evidence remains null, mixed, or tolerability-limited.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "deregulated_nutrient_sensing",
+      "note": "Publishing this bundle would broaden deregulated nutrient sensing coverage beyond rapalogs with a distinct metformin-led metabolic-modulator baseline.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-01-ampk-and-metabolic-modulators-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-ampk-and-metabolic-modulators-source-fidelity-r1",
+    "evidence-review-ampk-and-metabolic-modulators-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-ampk-and-metabolic-modulators-bootstrap-2026-06-01-2026-06-01t13-01-41-273z"
+  ]
+}

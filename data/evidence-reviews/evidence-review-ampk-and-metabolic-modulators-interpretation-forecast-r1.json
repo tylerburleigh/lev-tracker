@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-ampk-and-metabolic-modulators-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Ampk And Metabolic Modulators bundle",
+  "candidate_bundle_id": "ampk-and-metabolic-modulators-bootstrap-2026-06-01",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged outlook is calibrated for a low-confidence human_biomarker_signal baseline. It uses MILES and METFORAGING as biomarker-level human anchors, keeps animal and non-human-primate studies in a plausibility role, rejects a human_functional_benefit upgrade because older-adult exercise, MET-PREVENT, and frailty-registry evidence are null, mixed, or tolerability-limited, and avoids assigning a credible LEV-relevant window until functional or multimorbidity evidence exists.",
+  "reviewed_change_ids": [
+    "create-source-pmid-23540700",
+    "create-source-pmid-23900241",
+    "create-source-pmid-39270656",
+    "create-source-pmid-29806860",
+    "create-source-pmid-29383869",
+    "create-source-pmid-30548390",
+    "create-source-pmid-40147475",
+    "create-source-pmid-42023167",
+    "create-source-nct-02570672",
+    "create-source-nct-04264897",
+    "create-intervention-metformin",
+    "create-intervention-berberine",
+    "create-study-metformin-c-elegans-microbiome-lifespan",
+    "create-study-metformin-middle-aged-mouse-healthspan-lifespan",
+    "create-study-metformin-male-monkey-aging-clock",
+    "create-study-berberine-aged-rat-ampk-muscle-cognition",
+    "create-study-miles-metformin-older-adults-transcriptomics",
+    "create-study-metformin-aerobic-exercise-older-adults",
+    "create-study-met-prevent-metformin-sarcopenia-frailty",
+    "create-study-metforaging-metformin-hiv-epigenetic-age",
+    "create-study-metformin-frailty-prevention-high-risk-older-adults",
+    "create-study-anthem-metformin-aging-study",
+    "create-finding-metformin-c-elegans-lifespan-context-dependent",
+    "create-finding-metformin-low-dose-improved-mouse-healthspan-lifespan",
+    "create-finding-metformin-decelerated-male-monkey-aging-clocks",
+    "create-finding-berberine-improved-aged-rat-cognition-muscle-ampk-signaling",
+    "create-finding-miles-metformin-shifted-older-adult-metabolic-transcriptomic-biomarkers",
+    "create-finding-metformin-blunted-exercise-mitochondrial-adaptations-older-adults",
+    "create-finding-met-prevent-metformin-did-not-improve-walk-speed",
+    "create-finding-metforaging-metformin-no-significant-epigenetic-age-effect",
+    "create-finding-metformin-frailty-registry-results-do-not-establish-benefit",
+    "create-finding-anthem-metformin-aging-study-completed-no-results",
+    "create-track-ampk-and-metabolic-modulators-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "ampk-human-biomarker-stage-calibrated",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-track-ampk-and-metabolic-modulators-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-ampk-and-metabolic-modulators-outlook"
+      },
+      "claim_or_issue": "The outlook assigns human_biomarker_signal from MILES and METFORAGING while preserving low confidence and explicitly separating biomarker movement from functional benefit.",
+      "why_it_matters": "MILES provides the strongest human pathway anchor, but a 14-participant, short-term biomarker and transcriptomic study should not be interpreted as durable clinical or functional benefit.",
+      "recommended_action": "No revision needed; preserve the biomarker-only stage language and the small-sample and endpoint caveats.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ampk-functional-upgrade-correctly-rejected",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "applies_to_change_id": "create-track-ampk-and-metabolic-modulators-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-ampk-and-metabolic-modulators-outlook"
+      },
+      "claim_or_issue": "The outlook does not upgrade to human_functional_benefit because the staged exercise trial, MET-PREVENT trial, and frailty-registry result do not establish a favorable older-adult functional signal.",
+      "why_it_matters": "The most direct human functional evidence is null, mixed, or tolerability-limited, so a higher stage would overstate the current aging-relevant evidence.",
+      "recommended_action": "No revision needed; keep the functional-benefit boundary and require a prespecified randomized functional endpoint before upgrading.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ampk-non-metformin-generalization-limited",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-track-ampk-and-metabolic-modulators-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-ampk-and-metabolic-modulators-outlook"
+      },
+      "claim_or_issue": "The track includes metformin and berberine records, but the human stage is led by metformin and the outlook says non-metformin modulators should not inherit that rating without their own human evidence.",
+      "why_it_matters": "Collapsing all metabolic modulators into a single metformin-led claim would blur intervention-specific evidence boundaries.",
+      "recommended_action": "No revision needed; retain intervention-specific caveats and require separate human aging-relevant evidence for berberine or other modulators.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ampk-forecast-window-conservative",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "create-track-ampk-and-metabolic-modulators-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-ampk-and-metabolic-modulators-outlook"
+      },
+      "claim_or_issue": "The forecast declines to assign a credible LEV-relevant window and limits the late-2020s expectation to possible biomarker or phenotype-stratification clarification.",
+      "why_it_matters": "Current evidence does not yet show durable function, multimorbidity, disability, or survival benefit, so a LEV timing claim would be premature.",
+      "recommended_action": "No revision needed; preserve the conservative window language and the rating-change criteria requiring functional or long-term outcome evidence.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-01T12:55:24.953Z",
+  "updated_at": "2026-06-01T12:55:24.953Z"
+}

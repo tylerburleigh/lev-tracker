@@ -1,0 +1,185 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-ampk-and-metabolic-modulators-outlook",
+  "name": "AMPK and Metabolic Modulators Track Outlook",
+  "subject_type": "track",
+  "subject_id": "ampk-and-metabolic-modulators",
+  "current_stage": "human_biomarker_signal",
+  "momentum": "mixed",
+  "confidence": "low",
+  "main_blockers": [
+    "Metformin is clinically familiar and mechanistically broad, but direct human geroscience evidence is still mostly biomarker, transcriptomic, and short-term pathway engagement rather than durable function or multimorbidity outcomes.",
+    "Human functional evidence is not yet favorable: MET-PREVENT did not improve 4-meter walk speed in vulnerable older adults, a posted frailty-prevention registry record is mixed, and metformin blunted some exercise-induced improvements in an older-adult trial.",
+    "Baseline metabolic status appears likely to matter, especially insulin sensitivity versus insulin resistance, so a single preventive recommendation would overgeneralize the evidence.",
+    "Animal and non-human-primate support is real but heterogeneous across worms, mice, monkeys, and berberine-treated rats, with dose, microbiome, sex, tissue, and pathway-specific boundaries.",
+    "The track should not collapse metformin, berberine, acarbose-like caloric-restriction mimetics, and other metabolic modulators into one evidence claim without intervention-specific records."
+  ],
+  "best_current_signals": [
+    "MILES provides the main direct human biomarker anchor: short-term metformin changed glucose handling and skeletal-muscle and adipose transcriptomic pathways in older adults with impaired glucose tolerance.",
+    "Mouse and male monkey studies provide animal and non-human-primate support for metformin effects on healthspan, lifespan, multi-omics aging indicators, and brain-aging measures, with dose and translation limits.",
+    "METFORAGING is a current 96-week human epigenetic-aging pilot in older people with HIV; it was feasible and did not attribute serious adverse events to metformin, but the primary PhenoAge result was not significant.",
+    "Berberine has a staged animal AMPK/SIRT1/PGC-1alpha signal in naturally aging rats, but no human aging-biomarker or functional finding is staged here.",
+    "ANTHEM is completed and should be watched closely because it stratifies non-diabetic adults by antecedent metabolic health, but the registry has no posted results in the current record."
+  ],
+  "forecast_note": "AMPK and metabolic modulators deserve a low-confidence human_biomarker_signal baseline, driven mainly by metformin. The strongest human support is pathway and biomarker movement in small or specialized trials, while direct older-adult function and frailty results are null, mixed, or tolerability-limited. The track could become more actionable if phenotype-stratified trials such as ANTHEM show reproducible human pathway engagement with favorable functional or safety direction, but current evidence does not support a human_functional_benefit rating.",
+  "rating_change_criteria": [
+    "A move to human_functional_benefit would require a randomized human trial showing prespecified improvement in physical function, frailty, resilience, cognition, or another aging-relevant functional endpoint, with tolerability acceptable for preventive use.",
+    "A move toward durable_disease_or_mortality_relevance would require long-term randomized evidence that a metabolic modulator delays multimorbidity, major age-related disease burden, disability, or mortality rather than only improving glucose or molecular biomarkers.",
+    "Confidence would improve if ANTHEM or similarly designed studies show that baseline insulin resistance or another measurable phenotype predicts benefit and avoids the exercise-adaptation and frailty tolerability boundaries.",
+    "The rating should weaken if completed human biomarker trials fail to reproduce pathway engagement, or if larger studies confirm functional harm, poor tolerability, B12 or renal safety issues, or negative interactions with exercise training.",
+    "Berberine or other non-metformin modulators should not inherit the metformin rating without their own human aging-relevant biomarker or functional evidence."
+  ],
+  "earliest_plausible_window": "No credible LEV-relevant window can be assigned from current evidence. By the late 2020s, completed biomarker trials may clarify whether metformin has a phenotype-stratified geroscience niche, but durable function or multimorbidity evidence would still be needed.",
+  "scenario_2036_status": "speculative",
+  "supporting_finding_ids": [
+    "metformin-c-elegans-lifespan-context-dependent",
+    "metformin-low-dose-improved-mouse-healthspan-lifespan",
+    "metformin-decelerated-male-monkey-aging-clocks",
+    "berberine-improved-aged-rat-cognition-muscle-ampk-signaling",
+    "miles-metformin-shifted-older-adult-metabolic-transcriptomic-biomarkers",
+    "metformin-blunted-exercise-mitochondrial-adaptations-older-adults",
+    "met-prevent-metformin-did-not-improve-walk-speed",
+    "metforaging-metformin-no-significant-epigenetic-age-effect",
+    "metformin-frailty-registry-results-do-not-establish-benefit",
+    "anthem-metformin-aging-study-completed-no-results"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "current_stage",
+      "conclusion": "The track reaches human_biomarker_signal because metformin has direct older-adult human pathway and metabolic biomarker evidence, but it does not reach human_functional_benefit.",
+      "support_role": "supports",
+      "rationale": "MILES showed glucose-handling and tissue-transcriptomic changes in older adults, while METFORAGING directly tested epigenetic-age biomarkers over 96 weeks but did not meet its primary PhenoAge endpoint. Together these justify a biomarker-level baseline with low confidence rather than a functional rating.",
+      "finding_ids": [
+        "miles-metformin-shifted-older-adult-metabolic-transcriptomic-biomarkers",
+        "metforaging-metformin-no-significant-epigenetic-age-effect"
+      ],
+      "source_ids": [
+        "pmid-29383869",
+        "pmid-42023167"
+      ],
+      "limitations": [
+        "MILES analyzed only 14 participants with impaired glucose tolerance.",
+        "METFORAGING enrolled older people living with HIV and was underpowered for definitive epigenetic-age conclusions.",
+        "Neither study establishes broad older-adult functional, multimorbidity, or survival benefit."
+      ]
+    },
+    {
+      "label": "Animal and preclinical support",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Animal and non-human-primate records support biological plausibility, but model and intervention heterogeneity keep confidence low.",
+      "support_role": "supports",
+      "rationale": "Metformin has C. elegans, mouse, and male monkey signals, while berberine has an aged-rat AMPK/SIRT1/PGC-1alpha functional signal. These findings show metabolic-modulator tractability across models but do not create direct human aging efficacy.",
+      "finding_ids": [
+        "metformin-c-elegans-lifespan-context-dependent",
+        "metformin-low-dose-improved-mouse-healthspan-lifespan",
+        "metformin-decelerated-male-monkey-aging-clocks",
+        "berberine-improved-aged-rat-cognition-muscle-ampk-signaling"
+      ],
+      "source_ids": [
+        "pmid-23540700",
+        "pmid-23900241",
+        "pmid-39270656",
+        "pmid-29806860"
+      ],
+      "limitations": [
+        "The worm effect is microbiome and glucose-context dependent.",
+        "The mouse metformin result is dose-sensitive, with high-dose toxicity.",
+        "The monkey study is male-only and biomarker-heavy rather than lifespan evidence.",
+        "Berberine aging evidence staged here is animal-only."
+      ]
+    },
+    {
+      "label": "Functional boundary",
+      "outlook_field": "current_stage",
+      "conclusion": "The track should not be upgraded to human_functional_benefit because direct older-adult functional evidence is null, mixed, or tolerability-limited.",
+      "support_role": "limits",
+      "rationale": "Metformin attenuated some exercise-induced improvements in older adults, MET-PREVENT did not improve 4-meter walk speed and reported poor tolerability, and NCT02570672 registry results do not establish clear frailty-prevention benefit.",
+      "finding_ids": [
+        "metformin-blunted-exercise-mitochondrial-adaptations-older-adults",
+        "met-prevent-metformin-did-not-improve-walk-speed",
+        "metformin-frailty-registry-results-do-not-establish-benefit"
+      ],
+      "source_ids": [
+        "pmid-30548390",
+        "pmid-40147475",
+        "nct-02570672"
+      ],
+      "limitations": [
+        "The exercise trial tested metformin with aerobic training rather than monotherapy.",
+        "MET-PREVENT was small and enrolled physically vulnerable older adults.",
+        "The NCT02570672 functional interpretation relies on registry-posted outcome tables rather than a peer-reviewed paper."
+      ]
+    },
+    {
+      "label": "Momentum",
+      "outlook_field": "momentum",
+      "conclusion": "Momentum is mixed because clinically relevant trials exist and continue to report, but recent functional and epigenetic-aging data do not yet clearly strengthen the rating.",
+      "support_role": "balances",
+      "rationale": "METFORAGING was published in 2026, ANTHEM is completed but lacks posted results, and direct frailty or physical-performance evidence has not shown a clean benefit. The track remains active, but recent clinical signals are not uniformly positive.",
+      "finding_ids": [
+        "metforaging-metformin-no-significant-epigenetic-age-effect",
+        "anthem-metformin-aging-study-completed-no-results",
+        "met-prevent-metformin-did-not-improve-walk-speed",
+        "metformin-frailty-registry-results-do-not-establish-benefit"
+      ],
+      "source_ids": [
+        "pmid-42023167",
+        "nct-04264897",
+        "pmid-40147475",
+        "nct-02570672"
+      ],
+      "limitations": [
+        "A completed registry without posted results cannot support benefit or harm.",
+        "Published recent human data remain small or population-specific.",
+        "Larger, phenotype-stratified outcome data are still missing."
+      ]
+    },
+    {
+      "label": "Confidence and safety",
+      "outlook_field": "confidence",
+      "conclusion": "Confidence remains low because dose, phenotype, co-intervention, and tolerability boundaries are material.",
+      "support_role": "limits",
+      "rationale": "The staged evidence includes high-dose mouse toxicity, variable exercise-trial response, MET-PREVENT tolerability concerns, registry GI adverse events, and a plausible dependence on antecedent metabolic health that ANTHEM was designed to test.",
+      "finding_ids": [
+        "metformin-low-dose-improved-mouse-healthspan-lifespan",
+        "metformin-blunted-exercise-mitochondrial-adaptations-older-adults",
+        "met-prevent-metformin-did-not-improve-walk-speed",
+        "metformin-frailty-registry-results-do-not-establish-benefit",
+        "anthem-metformin-aging-study-completed-no-results"
+      ],
+      "source_ids": [
+        "pmid-23900241",
+        "pmid-30548390",
+        "pmid-40147475",
+        "nct-02570672",
+        "nct-04264897"
+      ],
+      "limitations": [
+        "Preventive geroscience use requires a higher tolerability bar than disease treatment.",
+        "Response may differ in insulin-sensitive versus insulin-resistant people.",
+        "No staged trial has yet shown that biomarker movement produces durable clinical benefit."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-23540700",
+    "pmid-23900241",
+    "pmid-39270656",
+    "pmid-29806860",
+    "pmid-29383869",
+    "pmid-30548390",
+    "pmid-40147475",
+    "pmid-42023167",
+    "nct-02570672",
+    "nct-04264897"
+  ],
+  "last_updated": "2026-06-01",
+  "tags": [
+    "public",
+    "track",
+    "thin_coverage",
+    "metformin"
+  ]
+}
