@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-01T00:02:27.363Z",
+  "updated_at": "2026-06-01T10:27:19.352Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One bootstrap or surveillance run should cover one track unless the user explicitly narrows further.",
@@ -45,8 +45,8 @@
       "hallmark_id": "loss_of_proteostasis",
       "canonical_order": 4,
       "hallmark_bootstrap_status": "baseline",
-      "tracked_public_outlook_count": 1,
-      "next_priority_track_id": "proteasome-enhancement",
+      "tracked_public_outlook_count": 2,
+      "next_priority_track_id": "protein-aggregate-clearance",
       "notes": "At least one track-level public baseline exists."
     },
     {
@@ -275,11 +275,19 @@
       "hallmark_id": "loss_of_proteostasis",
       "canonical_order": 2,
       "name": "Proteasome Enhancement",
-      "coverage_status": "not_started",
-      "next_mode": "bootstrap",
+      "coverage_status": "baseline",
+      "next_mode": "surveillance",
       "queue_state": "ready",
-      "default_research_question": "What is the current human-relevant evidence landscape for Proteasome Enhancement, and what belongs in the first public baseline?",
-      "notes": "No track-level public baseline has been bootstrapped yet."
+      "last_session_id": "2026-06-01-proteasome-enhancement-bootstrap",
+      "last_session_at": "2026-06-01T09:55:00Z",
+      "last_session_mode": "bootstrap",
+      "last_session_outcome": "candidate_bundle_submitted",
+      "last_candidate_bundle_id": "proteasome-enhancement-bootstrap-2026-06-01",
+      "last_candidate_bundle_status": "published",
+      "last_publication_event_id": "publish-proteasome-enhancement-bootstrap-2026-06-01-2026-06-01t10-27-12-753z",
+      "last_published_at": "2026-06-01T10:27:12.753Z",
+      "default_research_question": "What changed for Proteasome Enhancement since the last meaningful review or publication, and does any change justify a public update?",
+      "notes": "Latest publication event: publish-proteasome-enhancement-bootstrap-2026-06-01-2026-06-01t10-27-12-753z."
     },
     {
       "track_id": "protein-aggregate-clearance",

@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-proteasome-enhancement-source-fidelity-r1",
+  "name": "Source Fidelity review for Proteasome Enhancement bundle",
+  "candidate_bundle_id": "proteasome-enhancement-bootstrap-2026-06-01",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, and finding records stay within the cited PubMed, DOI, and available full-text article boundaries. Bibliographic identifiers, titles, DOI links, model systems, and endpoint wording match the source set closely enough for publication review; the main source-fidelity boundaries are already preserved as in vitro human-cell evidence, C. elegans organismal evidence, and a stage-specific tauopathy mouse signal rather than human clinical evidence.",
+  "reviewed_change_ids": [
+    "create-source-pmid-20068043",
+    "create-source-pmid-22922647",
+    "create-source-pmid-26669444",
+    "create-source-pmid-26692334",
+    "create-source-pmid-26886723",
+    "create-source-pmid-36007615",
+    "create-source-pmid-37118550",
+    "create-source-pmid-41703241",
+    "create-study-nrf2-18alpha-ga-human-fibroblast-senescence",
+    "create-study-rpn6-c-elegans-longevity",
+    "create-study-camp-pka-rpn6-proteasome-cell-models",
+    "create-study-rolipram-tauopathy-proteasome-mouse-model",
+    "create-study-18alpha-ga-c-elegans-aging",
+    "create-study-open-gate-proteasome-c-elegans",
+    "create-study-cold-pa28-proteasome-c-elegans-human-cells",
+    "create-study-skn1a-proteasome-subunit-longevity",
+    "create-finding-nrf2-18alpha-ga-activated-proteasome-human-fibroblasts",
+    "create-finding-rpn6-overexpression-extended-c-elegans-lifespan",
+    "create-finding-camp-pka-rpn6-activated-mammalian-proteasomes",
+    "create-finding-rolipram-early-tauopathy-improved-proteasome-cognition-mice",
+    "create-finding-18alpha-ga-extended-c-elegans-lifespan-proteasome-dependent",
+    "create-finding-open-gate-proteasome-extended-c-elegans-lifespan-fecundity-cost",
+    "create-finding-cold-pa28-induced-proteasome-longevity-aggregation-boundary",
+    "create-finding-skn1a-proteasome-expression-required-for-longevity",
+    "create-track-proteasome-enhancement-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "proteasome-human-cell-boundary-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-nrf2-18alpha-ga-activated-proteasome-human-fibroblasts",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "nrf2-18alpha-ga-activated-proteasome-human-fibroblasts"
+      },
+      "claim_or_issue": "PMID 20068043 is a human fibroblast cell-culture study, not a human organismal intervention study.",
+      "why_it_matters": "Cellular lifespan extension and oxidative-stress survival should not be treated as human biomarker or clinical evidence.",
+      "recommended_action": "No revision needed; the staged study and finding classify the evidence as in vitro and explicitly caveat that it is not an organismal or clinical endpoint.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "proteasome-rolipram-full-text-boundary-preserved",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-finding-rolipram-early-tauopathy-improved-proteasome-cognition-mice",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "rolipram-early-tauopathy-improved-proteasome-cognition-mice"
+      },
+      "claim_or_issue": "The rolipram dose, 21-day administration window, early-stage age range, and late-stage boundary are drawn from the article full text rather than the PubMed abstract alone.",
+      "why_it_matters": "Those details are important to the staged finding's time horizon and to the claim that the mammalian disease-model signal is stage-specific.",
+      "recommended_action": "No blocking action needed; the staged source includes the DOI to the full article, and the finding keeps the claim in the animal disease-model lane with a broad cAMP-PKA caveat.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "proteasome-fecundity-safety-boundary-preserved",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-finding-open-gate-proteasome-extended-c-elegans-lifespan-fecundity-cost",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "open-gate-proteasome-extended-c-elegans-lifespan-fecundity-cost"
+      },
+      "claim_or_issue": "PMID 36007615 reports both increased C. elegans lifespan and significantly decreased fecundity after intrinsic proteasome hyperactivation.",
+      "why_it_matters": "Leaving out the reproductive tradeoff would overstate the safety profile of broad proteasome hyperactivation.",
+      "recommended_action": "No revision needed; the staged finding direction is mixed, its statement names the fecundity cost, and the outlook support map uses that tradeoff to limit confidence.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-01T10:26:43.705Z",
+  "updated_at": "2026-06-01T10:26:43.705Z"
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "skn1a-proteasome-expression-required-for-longevity",
+  "name": "Coordinated proteasome subunit expression was required for C. elegans longevity programs",
+  "summary": "A 2026 genetic study strengthens the mechanistic case that coordinated proteasome regulation is necessary for longevity and proteostasis.",
+  "source_id": "pmid-41703241",
+  "study_id": "skn1a-proteasome-subunit-longevity",
+  "track_ids": [
+    "proteasome-enhancement"
+  ],
+  "hallmark_ids": [
+    "loss_of_proteostasis"
+  ],
+  "endpoint_category": "mechanistic",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "moderate",
+  "statement": "In C. elegans, perturbing coordinated proteasome subunit gene-expression control through SKN-1A/Nrf1-linked biology impaired stress resistance, proteostasis, and multiple lifespan-extension paradigms.",
+  "population_or_model": "C. elegans SKN-1A/Nrf1 and pbs-5 promoter perturbation models",
+  "time_horizon": "Adult worm stress resistance, proteostasis, and lifespan-extension assays",
+  "quantitative_note": "The PubMed abstract reports that the pbs-5 promoter mutation completely abrogated multiple lifespan-extension paradigms.",
+  "caveats": [
+    "This is requirement evidence, not a therapeutic activation result.",
+    "The model is C. elegans, not mammals.",
+    "It supports biological importance of coordinated proteasome regulation rather than a specific intervention."
+  ],
+  "tags": [
+    "animal",
+    "c-elegans",
+    "skn-1a",
+    "nrf1",
+    "mechanistic"
+  ]
+}

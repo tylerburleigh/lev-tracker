@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "18alpha-ga-extended-c-elegans-lifespan-proteasome-dependent",
+  "name": "18alpha-GA extended C. elegans lifespan through proteasome activation",
+  "summary": "Compound-mediated proteasome activation by 18alpha-glycyrrhetinic acid is a positive worm lifespan and aggregation signal.",
+  "source_id": "pmid-26886723",
+  "study_id": "18alpha-ga-c-elegans-aging",
+  "track_ids": [
+    "proteasome-enhancement"
+  ],
+  "hallmark_ids": [
+    "loss_of_proteostasis"
+  ],
+  "endpoint_category": "lifespan",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "moderate",
+  "statement": "Feeding wild-type C. elegans 18alpha-glycyrrhetinic acid enhanced proteasome activity, extended lifespan in a SKN-1- and proteasome-dependent manner, and reduced Alzheimer's disease model aggregation phenotypes.",
+  "population_or_model": "Wild-type C. elegans, C. elegans Alzheimer's disease models, and neuronal-origin human and murine cells",
+  "time_horizon": "Adult worm lifespan and aggregation assays",
+  "quantitative_note": "The source reports enhanced proteasome activities, lower paralysis rates in Alzheimer's disease nematode models, and decreased Abeta deposits.",
+  "caveats": [
+    "The lifespan endpoint is in C. elegans, not mammals.",
+    "The compound acts through SKN-1/Nrf-like biology and may not be proteasome-specific.",
+    "No human organismal endpoint is available."
+  ],
+  "tags": [
+    "animal",
+    "c-elegans",
+    "18alpha-ga",
+    "lifespan",
+    "aggregation"
+  ]
+}

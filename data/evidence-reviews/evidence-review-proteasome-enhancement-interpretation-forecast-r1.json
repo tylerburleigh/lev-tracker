@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-proteasome-enhancement-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Proteasome Enhancement bundle",
+  "candidate_bundle_id": "proteasome-enhancement-bootstrap-2026-06-01",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The proposed outlook is appropriately conservative for a first public baseline: it assigns low-confidence animal_signal because organismal support is repeated but worm-heavy, keeps human translation below human_biomarker_signal because human evidence is cell-based, and uses rating-change criteria that require human pathway engagement or functional benefit before any upgrade.",
+  "reviewed_change_ids": [
+    "create-source-pmid-20068043",
+    "create-source-pmid-22922647",
+    "create-source-pmid-26669444",
+    "create-source-pmid-26692334",
+    "create-source-pmid-26886723",
+    "create-source-pmid-36007615",
+    "create-source-pmid-37118550",
+    "create-source-pmid-41703241",
+    "create-study-nrf2-18alpha-ga-human-fibroblast-senescence",
+    "create-study-rpn6-c-elegans-longevity",
+    "create-study-camp-pka-rpn6-proteasome-cell-models",
+    "create-study-rolipram-tauopathy-proteasome-mouse-model",
+    "create-study-18alpha-ga-c-elegans-aging",
+    "create-study-open-gate-proteasome-c-elegans",
+    "create-study-cold-pa28-proteasome-c-elegans-human-cells",
+    "create-study-skn1a-proteasome-subunit-longevity",
+    "create-finding-nrf2-18alpha-ga-activated-proteasome-human-fibroblasts",
+    "create-finding-rpn6-overexpression-extended-c-elegans-lifespan",
+    "create-finding-camp-pka-rpn6-activated-mammalian-proteasomes",
+    "create-finding-rolipram-early-tauopathy-improved-proteasome-cognition-mice",
+    "create-finding-18alpha-ga-extended-c-elegans-lifespan-proteasome-dependent",
+    "create-finding-open-gate-proteasome-extended-c-elegans-lifespan-fecundity-cost",
+    "create-finding-cold-pa28-induced-proteasome-longevity-aggregation-boundary",
+    "create-finding-skn1a-proteasome-expression-required-for-longevity",
+    "create-track-proteasome-enhancement-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "proteasome-animal-signal-stage-justified",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-track-proteasome-enhancement-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-proteasome-enhancement-outlook"
+      },
+      "claim_or_issue": "The outlook assigns animal_signal even though the organismal lifespan and proteostasis evidence is dominated by C. elegans rather than mammalian aging studies.",
+      "why_it_matters": "The stage should not imply broad mammalian or human validation.",
+      "recommended_action": "No revision needed; the outlook labels the evidence as worm-heavy, keeps confidence low, and requires mammalian aging or human pathway-engagement data for upgrades.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "proteasome-human-biomarker-upgrade-correctly-rejected",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "applies_to_change_id": "create-track-proteasome-enhancement-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-proteasome-enhancement-outlook"
+      },
+      "claim_or_issue": "Human-relevant support consists of fibroblast, mammalian-cell, HEK293, and iPSC-derived motor neuron evidence rather than an intervention study in humans.",
+      "why_it_matters": "Calling this human_biomarker_signal would overstate the directness of the evidence.",
+      "recommended_action": "Retain animal_signal and the support-map section that explicitly limits human translation to cell-based pathway plausibility.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "proteasome-mechanism-heterogeneity-limits-forecast",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "create-track-proteasome-enhancement-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-proteasome-enhancement-outlook"
+      },
+      "claim_or_issue": "The support map spans Nrf2-linked 18alpha-GA, RPN-6, cAMP-PKA/Rpn6 phosphorylation, rolipram, PA28gamma/PSME-3, and open-gate proteasome biology.",
+      "why_it_matters": "Mechanistic heterogeneity can make a track look more intervention-ready than it is if treated as one coherent therapy class.",
+      "recommended_action": "No revision needed; the staged blockers, confidence rationale, and rating-change criteria avoid a near-term LEV window and require selective pathway engagement plus safety data.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-01T10:26:43.798Z",
+  "updated_at": "2026-06-01T10:26:43.798Z"
+}

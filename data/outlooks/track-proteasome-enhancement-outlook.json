@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-proteasome-enhancement-outlook",
+  "name": "Proteasome Enhancement Track Outlook",
+  "subject_type": "track",
+  "subject_id": "proteasome-enhancement",
+  "current_stage": "animal_signal",
+  "momentum": "steady",
+  "confidence": "low",
+  "main_blockers": [
+    "There is no direct human aging, functional, or disease-modifying trial showing that a proteasome-enhancing intervention improves outcomes.",
+    "Most positive organismal evidence is in C. elegans, including genetic RPN-6, compound 18alpha-GA, cold-induced PA28gamma/PSME-3, and open-gate proteasome models.",
+    "Human-relevant evidence is mostly in vitro: fibroblast Nrf2/proteasome activation, mammalian-cell cAMP-PKA/Rpn6 phosphorylation, and cold-induced proteasome activity in human cell models.",
+    "The intervention space is heterogeneous, with Nrf2 activators, cAMP/PKA signaling, PA28gamma induction, and intrinsic gate-opening mechanisms that should not be collapsed into one therapeutic claim.",
+    "Safety and tradeoff boundaries are unresolved, including the fecundity cost in open-gate C. elegans and the nonspecific biology of broad Nrf2 or cAMP pathway activation."
+  ],
+  "best_current_signals": [
+    "RPN-6 expression and open-gate proteasome engineering extend C. elegans lifespan and improve proteotoxic-stress resistance.",
+    "18alpha-glycyrrhetinic acid activates proteasome function, extends C. elegans lifespan, and reduces aggregation phenotypes in worm Alzheimer's disease models.",
+    "cAMP-PKA signaling phosphorylates Rpn6/PSMD11 and enhances mammalian proteasome activity; rolipram shows early-stage tauopathy mouse benefit but not late-stage rescue.",
+    "Cold-induced PA28gamma/PSME-3 links proteasome activation to C. elegans longevity and reduces aggregation in worm and human-cell models.",
+    "A 2026 C. elegans study supports coordinated proteasome subunit expression as a requirement for stress resistance, proteostasis, and longevity programs."
+  ],
+  "forecast_note": "Proteasome enhancement has enough direct animal lifespan and proteotoxic-stress evidence for a low-confidence animal_signal baseline. The strongest signals are still worm-heavy and mechanism-diverse, while human evidence remains cell-based and no clinical program yet demonstrates that selective proteasome enhancement improves aging-relevant function, disease progression, or survival.",
+  "rating_change_criteria": [
+    "A move to human_biomarker_signal would require an intervention study in humans showing reproducible proteasome pathway engagement in aging-relevant tissue, with prespecified proteostasis or damage-clearance biomarkers.",
+    "A move to human_functional_benefit would require a human trial linking proteasome enhancement to functional benefit in an age-relevant or proteotoxic-disease population, while separating proteasome effects from broad Nrf2, cAMP, or stress-response activation.",
+    "Higher confidence would need mammalian aging or disease-prevention studies with durable benefit, dose-response, tissue specificity, and safety readouts for chronic pathway activation.",
+    "The rating would weaken if mammalian studies show proteasome activation causes unacceptable tissue, fertility, cancer, immune, or degradation-specific tradeoffs.",
+    "Compound or exposure claims should not upgrade the rating unless they measure proteasome activation directly and show that blocking the proteasome pathway removes the benefit."
+  ],
+  "earliest_plausible_window": "No credible LEV-relevant window can be assigned before human pathway-engagement studies and mammalian safety data establish that selective proteasome enhancement can be sustained without broad stress-pathway tradeoffs.",
+  "scenario_2036_status": "speculative",
+  "supporting_finding_ids": [
+    "nrf2-18alpha-ga-activated-proteasome-human-fibroblasts",
+    "rpn6-overexpression-extended-c-elegans-lifespan",
+    "camp-pka-rpn6-activated-mammalian-proteasomes",
+    "rolipram-early-tauopathy-improved-proteasome-cognition-mice",
+    "18alpha-ga-extended-c-elegans-lifespan-proteasome-dependent",
+    "open-gate-proteasome-extended-c-elegans-lifespan-fecundity-cost",
+    "cold-pa28-induced-proteasome-longevity-aggregation-boundary",
+    "skn1a-proteasome-expression-required-for-longevity"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "current_stage",
+      "conclusion": "The track reaches animal_signal because multiple C. elegans studies directly connect proteasome enhancement or coordinated proteasome regulation with lifespan, stress resistance, and aggregation phenotypes.",
+      "support_role": "supports",
+      "rationale": "RPN-6 expression, compound-mediated 18alpha-GA activation, open-gate proteasome engineering, cold-induced PA28gamma/PSME-3 activity, and SKN-1A-linked subunit regulation all support the biological tractability of proteasome enhancement in animal aging models.",
+      "finding_ids": [
+        "rpn6-overexpression-extended-c-elegans-lifespan",
+        "18alpha-ga-extended-c-elegans-lifespan-proteasome-dependent",
+        "open-gate-proteasome-extended-c-elegans-lifespan-fecundity-cost",
+        "cold-pa28-induced-proteasome-longevity-aggregation-boundary",
+        "skn1a-proteasome-expression-required-for-longevity"
+      ],
+      "source_ids": [
+        "pmid-22922647",
+        "pmid-26886723",
+        "pmid-36007615",
+        "pmid-37118550",
+        "pmid-41703241"
+      ],
+      "limitations": [
+        "The organismal lifespan evidence is dominated by C. elegans.",
+        "Genetic and temperature models are pathway probes, not ready therapeutic modalities.",
+        "The open-gate model includes a fecundity tradeoff that matters for safety interpretation."
+      ]
+    },
+    {
+      "label": "Human translation boundary",
+      "outlook_field": "current_stage",
+      "conclusion": "The track should not be upgraded to human_biomarker_signal because human evidence is currently cell-based rather than organismal.",
+      "support_role": "limits",
+      "rationale": "Human fibroblast Nrf2 activation, mammalian cAMP-PKA/Rpn6 proteasome activation, and cold-induced proteasome changes in human cells support pathway plausibility, but none show clinical pathway engagement or human functional benefit.",
+      "finding_ids": [
+        "nrf2-18alpha-ga-activated-proteasome-human-fibroblasts",
+        "camp-pka-rpn6-activated-mammalian-proteasomes",
+        "cold-pa28-induced-proteasome-longevity-aggregation-boundary"
+      ],
+      "source_ids": [
+        "pmid-20068043",
+        "pmid-26669444",
+        "pmid-37118550"
+      ],
+      "limitations": [
+        "Cell culture does not establish safety, dosing, tissue exposure, or organismal benefit.",
+        "Nrf2, cAMP/PKA, and cold-response biology are pleiotropic.",
+        "No cited human study tests a proteasome-enhancing intervention against an aging-relevant endpoint."
+      ]
+    },
+    {
+      "label": "Disease-model context",
+      "outlook_field": "momentum",
+      "conclusion": "Momentum is steady rather than accelerating because mammalian disease-model support exists but remains stage-specific and indirect.",
+      "support_role": "balances",
+      "rationale": "cAMP-PKA activation can increase proteasome activity and rolipram improved early tauopathy mouse outcomes, but late-stage tauopathy was not rescued and the mechanism is not selective to proteasomes.",
+      "finding_ids": [
+        "camp-pka-rpn6-activated-mammalian-proteasomes",
+        "rolipram-early-tauopathy-improved-proteasome-cognition-mice"
+      ],
+      "source_ids": [
+        "pmid-26669444",
+        "pmid-26692334"
+      ],
+      "limitations": [
+        "Rolipram is a broad cAMP-PKA pathway intervention.",
+        "The mouse result is a tauopathy disease model, not normal aging.",
+        "Failure in late-stage disease constrains disease-reversal claims."
+      ]
+    },
+    {
+      "label": "Confidence and safety",
+      "outlook_field": "confidence",
+      "conclusion": "Confidence remains low because mechanisms, models, and interventions are diverse and chronic safety is unresolved.",
+      "support_role": "limits",
+      "rationale": "The support map spans genetic proteasome subunit expression, Nrf2-linked compound effects, cAMP-PKA phosphorylation, temperature-induced PA28gamma biology, and an engineered open-gate proteasome. These signals cohere biologically but do not yet define a safe, selective, human-ready intervention class.",
+      "finding_ids": [
+        "nrf2-18alpha-ga-activated-proteasome-human-fibroblasts",
+        "camp-pka-rpn6-activated-mammalian-proteasomes",
+        "open-gate-proteasome-extended-c-elegans-lifespan-fecundity-cost",
+        "rolipram-early-tauopathy-improved-proteasome-cognition-mice"
+      ],
+      "source_ids": [
+        "pmid-20068043",
+        "pmid-26669444",
+        "pmid-36007615",
+        "pmid-26692334"
+      ],
+      "limitations": [
+        "Broadly increasing protein degradation could have tissue-specific or substrate-specific harms.",
+        "C. elegans lifespan extension can fail to translate to mammalian aging.",
+        "No chronic human safety package exists for selective proteasome enhancement in aging contexts."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-20068043",
+    "pmid-22922647",
+    "pmid-26669444",
+    "pmid-26692334",
+    "pmid-26886723",
+    "pmid-36007615",
+    "pmid-37118550",
+    "pmid-41703241"
+  ],
+  "last_updated": "2026-06-01",
+  "tags": [
+    "public",
+    "track",
+    "thin_coverage"
+  ]
+}

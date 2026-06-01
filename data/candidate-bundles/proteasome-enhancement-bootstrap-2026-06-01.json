@@ -1,0 +1,366 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "proteasome-enhancement-bootstrap-2026-06-01",
+  "name": "Proteasome enhancement bootstrap for June 1, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline candidate for the proteasome enhancement track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-01T09:55:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Proteasome Enhancement, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "loss_of_proteostasis"
+    ],
+    "track_ids": [
+      "proteasome-enhancement"
+    ]
+  },
+  "source_ids": [
+    "pmid-20068043",
+    "pmid-22922647",
+    "pmid-26669444",
+    "pmid-26692334",
+    "pmid-26886723",
+    "pmid-36007615",
+    "pmid-37118550",
+    "pmid-41703241"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/20068043/",
+    "https://pubmed.ncbi.nlm.nih.gov/22922647/",
+    "https://pubmed.ncbi.nlm.nih.gov/26669444/",
+    "https://pubmed.ncbi.nlm.nih.gov/26692334/",
+    "https://pubmed.ncbi.nlm.nih.gov/26886723/",
+    "https://pubmed.ncbi.nlm.nih.gov/36007615/",
+    "https://pubmed.ncbi.nlm.nih.gov/37118550/",
+    "https://pubmed.ncbi.nlm.nih.gov/41703241/"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-proteasome-enhancement-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-loss-of-proteostasis-outlook"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "rpn6-overexpression-extended-c-elegans-lifespan"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "18alpha-ga-extended-c-elegans-lifespan-proteasome-dependent"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "open-gate-proteasome-extended-c-elegans-lifespan-fecundity-cost"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "cold-pa28-induced-proteasome-longevity-aggregation-boundary"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "rolipram-early-tauopathy-improved-proteasome-cognition-mice"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-20068043",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-20068043",
+      "file_path": "data/sources/pmid-20068043.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/pmid-20068043.json",
+      "summary": "Add Nrf2-mediated proteasome activation in human fibroblasts source.",
+      "rationale": "This source anchors human-cell mechanistic evidence for proteasome activation and senescence delay."
+    },
+    {
+      "change_id": "create-source-pmid-22922647",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-22922647",
+      "file_path": "data/sources/pmid-22922647.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/pmid-22922647.json",
+      "summary": "Add RPN-6 C. elegans longevity source.",
+      "rationale": "This source supplies a core genetic animal lifespan signal for the track."
+    },
+    {
+      "change_id": "create-source-pmid-26669444",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-26669444",
+      "file_path": "data/sources/pmid-26669444.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/pmid-26669444.json",
+      "summary": "Add cAMP-PKA Rpn6 proteasome activation source.",
+      "rationale": "This source supports mammalian-cell tractability of proteasome activation."
+    },
+    {
+      "change_id": "create-source-pmid-26692334",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-26692334",
+      "file_path": "data/sources/pmid-26692334.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/pmid-26692334.json",
+      "summary": "Add rolipram tauopathy mouse source.",
+      "rationale": "This source provides mammalian disease-model context and a stage-specific boundary."
+    },
+    {
+      "change_id": "create-source-pmid-26886723",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-26886723",
+      "file_path": "data/sources/pmid-26886723.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/pmid-26886723.json",
+      "summary": "Add 18alpha-GA C. elegans proteasome activation source.",
+      "rationale": "This source anchors compound-mediated animal lifespan and aggregation evidence."
+    },
+    {
+      "change_id": "create-source-pmid-36007615",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-36007615",
+      "file_path": "data/sources/pmid-36007615.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/pmid-36007615.json",
+      "summary": "Add open-gate proteasome C. elegans source.",
+      "rationale": "This source directly tests intrinsic proteasome hyperactivation and exposes a fecundity tradeoff."
+    },
+    {
+      "change_id": "create-source-pmid-37118550",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-37118550",
+      "file_path": "data/sources/pmid-37118550.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/pmid-37118550.json",
+      "summary": "Add cold PA28gamma proteasome activation source.",
+      "rationale": "This recent source supports PA28gamma/PSME-3 proteasome biology across C. elegans and human-cell models."
+    },
+    {
+      "change_id": "create-source-pmid-41703241",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-41703241",
+      "file_path": "data/sources/pmid-41703241.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/pmid-41703241.json",
+      "summary": "Add 2026 coordinated proteasome subunit regulation source.",
+      "rationale": "This source updates the baseline with recent evidence that coordinated proteasome regulation is required for longevity programs."
+    },
+    {
+      "change_id": "create-study-nrf2-18alpha-ga-human-fibroblast-senescence",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "nrf2-18alpha-ga-human-fibroblast-senescence",
+      "file_path": "data/studies/nrf2-18alpha-ga-human-fibroblast-senescence.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/nrf2-18alpha-ga-human-fibroblast-senescence.json",
+      "summary": "Add human fibroblast senescence study record.",
+      "rationale": "The study record captures the human-cell mechanistic boundary for proteasome activation."
+    },
+    {
+      "change_id": "create-study-rpn6-c-elegans-longevity",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "rpn6-c-elegans-longevity",
+      "file_path": "data/studies/rpn6-c-elegans-longevity.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/rpn6-c-elegans-longevity.json",
+      "summary": "Add RPN-6 C. elegans longevity study record.",
+      "rationale": "The study record links the genetic worm lifespan signal to the track."
+    },
+    {
+      "change_id": "create-study-camp-pka-rpn6-proteasome-cell-models",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "camp-pka-rpn6-proteasome-cell-models",
+      "file_path": "data/studies/camp-pka-rpn6-proteasome-cell-models.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/camp-pka-rpn6-proteasome-cell-models.json",
+      "summary": "Add cAMP-PKA Rpn6 proteasome cell-model study record.",
+      "rationale": "The study record captures mammalian-cell pathway tractability without implying clinical evidence."
+    },
+    {
+      "change_id": "create-study-rolipram-tauopathy-proteasome-mouse-model",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "rolipram-tauopathy-proteasome-mouse-model",
+      "file_path": "data/studies/rolipram-tauopathy-proteasome-mouse-model.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/rolipram-tauopathy-proteasome-mouse-model.json",
+      "summary": "Add rolipram tauopathy mouse study record.",
+      "rationale": "The study record captures a mammalian disease-model signal and its late-stage limitation."
+    },
+    {
+      "change_id": "create-study-18alpha-ga-c-elegans-aging",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "18alpha-ga-c-elegans-aging",
+      "file_path": "data/studies/18alpha-ga-c-elegans-aging.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/18alpha-ga-c-elegans-aging.json",
+      "summary": "Add 18alpha-GA C. elegans aging study record.",
+      "rationale": "The study record anchors compound-mediated animal lifespan and aggregation evidence."
+    },
+    {
+      "change_id": "create-study-open-gate-proteasome-c-elegans",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "open-gate-proteasome-c-elegans",
+      "file_path": "data/studies/open-gate-proteasome-c-elegans.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/open-gate-proteasome-c-elegans.json",
+      "summary": "Add open-gate proteasome C. elegans study record.",
+      "rationale": "The study record captures direct intrinsic proteasome hyperactivation and tradeoff data."
+    },
+    {
+      "change_id": "create-study-cold-pa28-proteasome-c-elegans-human-cells",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "cold-pa28-proteasome-c-elegans-human-cells",
+      "file_path": "data/studies/cold-pa28-proteasome-c-elegans-human-cells.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/cold-pa28-proteasome-c-elegans-human-cells.json",
+      "summary": "Add cold-induced PA28gamma proteasome study record.",
+      "rationale": "The study record captures the recent cross-model PA28gamma/PSME-3 signal."
+    },
+    {
+      "change_id": "create-study-skn1a-proteasome-subunit-longevity",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "skn1a-proteasome-subunit-longevity",
+      "file_path": "data/studies/skn1a-proteasome-subunit-longevity.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/skn1a-proteasome-subunit-longevity.json",
+      "summary": "Add SKN-1A proteasome subunit regulation study record.",
+      "rationale": "The study record adds current mechanistic requirement evidence for proteasome regulation in longevity."
+    },
+    {
+      "change_id": "create-finding-nrf2-18alpha-ga-activated-proteasome-human-fibroblasts",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nrf2-18alpha-ga-activated-proteasome-human-fibroblasts",
+      "file_path": "data/findings/nrf2-18alpha-ga-activated-proteasome-human-fibroblasts.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/nrf2-18alpha-ga-activated-proteasome-human-fibroblasts.json",
+      "summary": "Add human fibroblast proteasome activation finding.",
+      "rationale": "This finding supports pathway plausibility but constrains the stage because it is in vitro."
+    },
+    {
+      "change_id": "create-finding-rpn6-overexpression-extended-c-elegans-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "rpn6-overexpression-extended-c-elegans-lifespan",
+      "file_path": "data/findings/rpn6-overexpression-extended-c-elegans-lifespan.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/rpn6-overexpression-extended-c-elegans-lifespan.json",
+      "summary": "Add RPN-6 worm lifespan finding.",
+      "rationale": "This finding supports the animal_signal stage assignment."
+    },
+    {
+      "change_id": "create-finding-camp-pka-rpn6-activated-mammalian-proteasomes",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "camp-pka-rpn6-activated-mammalian-proteasomes",
+      "file_path": "data/findings/camp-pka-rpn6-activated-mammalian-proteasomes.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/camp-pka-rpn6-activated-mammalian-proteasomes.json",
+      "summary": "Add cAMP-PKA mammalian proteasome activation finding.",
+      "rationale": "This finding supports human-relevant pathway tractability while remaining preclinical."
+    },
+    {
+      "change_id": "create-finding-rolipram-early-tauopathy-improved-proteasome-cognition-mice",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "rolipram-early-tauopathy-improved-proteasome-cognition-mice",
+      "file_path": "data/findings/rolipram-early-tauopathy-improved-proteasome-cognition-mice.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/rolipram-early-tauopathy-improved-proteasome-cognition-mice.json",
+      "summary": "Add rolipram tauopathy mouse mixed finding.",
+      "rationale": "This finding supplies mammalian context and stage-specific limits for momentum."
+    },
+    {
+      "change_id": "create-finding-18alpha-ga-extended-c-elegans-lifespan-proteasome-dependent",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "18alpha-ga-extended-c-elegans-lifespan-proteasome-dependent",
+      "file_path": "data/findings/18alpha-ga-extended-c-elegans-lifespan-proteasome-dependent.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/18alpha-ga-extended-c-elegans-lifespan-proteasome-dependent.json",
+      "summary": "Add 18alpha-GA worm lifespan finding.",
+      "rationale": "This finding supports animal_signal with compound-mediated proteasome activation."
+    },
+    {
+      "change_id": "create-finding-open-gate-proteasome-extended-c-elegans-lifespan-fecundity-cost",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "open-gate-proteasome-extended-c-elegans-lifespan-fecundity-cost",
+      "file_path": "data/findings/open-gate-proteasome-extended-c-elegans-lifespan-fecundity-cost.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/open-gate-proteasome-extended-c-elegans-lifespan-fecundity-cost.json",
+      "summary": "Add open-gate proteasome lifespan and fecundity finding.",
+      "rationale": "This finding supports direct proteasome hyperactivation while recording a safety-relevant tradeoff."
+    },
+    {
+      "change_id": "create-finding-cold-pa28-induced-proteasome-longevity-aggregation-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "cold-pa28-induced-proteasome-longevity-aggregation-boundary",
+      "file_path": "data/findings/cold-pa28-induced-proteasome-longevity-aggregation-boundary.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/cold-pa28-induced-proteasome-longevity-aggregation-boundary.json",
+      "summary": "Add cold-induced PA28gamma proteasome finding.",
+      "rationale": "This finding adds recent animal and human-cell evidence while preserving translation boundaries."
+    },
+    {
+      "change_id": "create-finding-skn1a-proteasome-expression-required-for-longevity",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "skn1a-proteasome-expression-required-for-longevity",
+      "file_path": "data/findings/skn1a-proteasome-expression-required-for-longevity.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/skn1a-proteasome-expression-required-for-longevity.json",
+      "summary": "Add SKN-1A coordinated proteasome expression finding.",
+      "rationale": "This finding updates the baseline with 2026 mechanistic requirement evidence."
+    },
+    {
+      "change_id": "create-track-proteasome-enhancement-outlook",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-proteasome-enhancement-outlook",
+      "file_path": "data/outlooks/track-proteasome-enhancement-outlook.json",
+      "staged_file_path": "data/staged-records/proteasome-enhancement-bootstrap-2026-06-01/track-proteasome-enhancement-outlook.json",
+      "summary": "Create the first public outlook for the proteasome enhancement track.",
+      "rationale": "A low-confidence animal_signal baseline is justified by repeated animal lifespan and proteotoxic-stress evidence, but human evidence remains cell-based and heterogeneous.",
+      "uncertainty_flags": [
+        "No direct human aging or functional trial was identified.",
+        "The organismal evidence is dominated by C. elegans.",
+        "Mechanisms are heterogeneous and include broad Nrf2, cAMP-PKA, temperature, and genetic gate-opening biology.",
+        "Chronic safety and tissue-specific tradeoffs remain unresolved."
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "proteasome-enhancement",
+      "note": "A first public baseline is justified at low-confidence animal_signal because multiple C. elegans studies connect proteasome enhancement to lifespan, stress resistance, and aggregation outcomes while human evidence remains cell-based.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "loss_of_proteostasis",
+      "note": "Publishing this bundle would broaden loss of proteostasis coverage beyond the existing chaperone and heat-shock support baseline.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-01-proteasome-enhancement-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-proteasome-enhancement-source-fidelity-r1",
+    "evidence-review-proteasome-enhancement-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-proteasome-enhancement-bootstrap-2026-06-01-2026-06-01t10-27-12-753z"
+  ]
+}

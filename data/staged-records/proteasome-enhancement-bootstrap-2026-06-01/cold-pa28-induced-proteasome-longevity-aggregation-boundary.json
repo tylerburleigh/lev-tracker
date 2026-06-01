@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "cold-pa28-induced-proteasome-longevity-aggregation-boundary",
+  "name": "Cold-induced PA28gamma proteasomes supported worm longevity and human-cell aggregation resistance",
+  "summary": "Cold-induced PA28gamma/PSME-3 biology supplies a recent proteasome-enhancement signal, but its human relevance remains cell-based.",
+  "source_id": "pmid-37118550",
+  "study_id": "cold-pa28-proteasome-c-elegans-human-cells",
+  "track_ids": [
+    "proteasome-enhancement"
+  ],
+  "hallmark_ids": [
+    "loss_of_proteostasis"
+  ],
+  "endpoint_category": "healthspan",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "low",
+  "statement": "Cold temperature induced PA28gamma/PSME-3-linked proteasome activity that was required for cold-induced C. elegans longevity and reduced disease-related protein aggregation in worm and human-cell models.",
+  "population_or_model": "C. elegans temperature-shift models, HEK293 human cells, and iPSC-derived motor neuron models",
+  "time_horizon": "Temperature-shift lifespan and cell-culture aggregation assays",
+  "quantitative_note": "The source reports that psme-3 knockdown shortened cold-induced longevity at 15 C and that moderate cooling to 36 C increased trypsin-like activity in human cells.",
+  "caveats": [
+    "The organismal longevity endpoint is in C. elegans.",
+    "Human evidence is limited to cell models and moderate-temperature pathway engagement.",
+    "Cold exposure is not equivalent to a selective proteasome-enhancing therapy."
+  ],
+  "tags": [
+    "animal",
+    "human-cell",
+    "pa28gamma",
+    "psme3",
+    "aggregation"
+  ]
+}

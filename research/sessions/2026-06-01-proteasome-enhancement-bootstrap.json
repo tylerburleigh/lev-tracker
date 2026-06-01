@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-01-proteasome-enhancement-bootstrap",
+  "name": "Proteasome enhancement bootstrap pass for June 1, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-06-01T09:35:00Z",
+  "completed_at": "2026-06-01T09:55:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Proteasome Enhancement, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "loss_of_proteostasis"
+    ],
+    "track_ids": [
+      "proteasome-enhancement"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "proteasome-enhancement-bootstrap-2026-06-01",
+  "summary": "The track supports a first public baseline at low-confidence animal_signal. Multiple C. elegans studies connect proteasome enhancement or coordinated proteasome regulation to lifespan, stress resistance, and aggregation phenotypes, and mammalian-cell plus tauopathy-mouse data support tractability. The staged outlook does not upgrade to human_biomarker_signal because human evidence remains cell-based and there is no direct human proteasome-enhancing intervention study with aging-relevant endpoints.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-20068043",
+    "pmid-22922647",
+    "pmid-26669444",
+    "pmid-26692334",
+    "pmid-26886723",
+    "pmid-36007615",
+    "pmid-37118550",
+    "pmid-41703241"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/20068043/",
+    "https://pubmed.ncbi.nlm.nih.gov/22922647/",
+    "https://pubmed.ncbi.nlm.nih.gov/26669444/",
+    "https://pubmed.ncbi.nlm.nih.gov/26692334/",
+    "https://pubmed.ncbi.nlm.nih.gov/26886723/",
+    "https://pubmed.ncbi.nlm.nih.gov/36007615/",
+    "https://pubmed.ncbi.nlm.nih.gov/37118550/",
+    "https://pubmed.ncbi.nlm.nih.gov/41703241/"
+  ],
+  "notes": [
+    "The top queue item was selected from research/backlog/track-priority.v1.json and research/state/coverage-status.v1.json.",
+    "RPN-6 expression, 18alpha-GA treatment, open-gate proteasome engineering, and cold-induced PA28gamma/PSME-3 provide the main C. elegans animal-aging support.",
+    "Human-relevant support is limited to cell systems: human fibroblast Nrf2/proteasome activation, mammalian-cell Rpn6 phosphorylation, and cold-induced trypsin-like proteasome activity in human cells.",
+    "Rolipram in tauopathy mice provides a mammalian disease-model signal but is stage-specific and broad through cAMP-PKA signaling.",
+    "The baseline should remain low confidence because the intervention mechanisms are heterogeneous and chronic safety or tissue-specific tradeoffs are unresolved."
+  ],
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast evidence review before publication.",
+    "If approved, publish the staged records as the first proteasome enhancement track baseline.",
+    "After publication, refresh planning state and inspect the loss of proteostasis hallmark surface."
+  ]
+}
