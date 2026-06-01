@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-stem-cell-replacement-and-transplantation-source-fidelity-r1",
+  "name": "Source Fidelity review for Stem Cell Replacement And Transplantation bundle",
+  "candidate_bundle_id": "stem-cell-replacement-and-transplantation-bootstrap-2026-06-01",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, finding, and outlook records stay within the cited PubMed and ClinicalTrials.gov source boundaries. Titles, PMIDs, DOI links, registry IDs, trial statuses, sample sizes, population boundaries, procedure details, endpoint classes, quantitative results, and safety caveats match the cited records closely enough for editorial approval; the staged findings preserve that laromestrocel is the direct aging-frailty functional signal, Parkinson and retinal programs are small disease-specific replacement signals, exPDite-2 is registry momentum only, and HSCT is a disease-specific high-intensity transplant boundary.",
+  "reviewed_change_ids": [
+    "create-source-pmid-41747733",
+    "create-source-pmid-40240592",
+    "create-source-pmid-41086804",
+    "create-source-nct-06944522",
+    "create-source-pmid-25458728",
+    "create-source-pmid-30644983",
+    "create-study-laromestrocel-aging-frailty-phase2b",
+    "create-study-bemdaneprocel-parkinson-phase1",
+    "create-study-a9-dpc-parkinson-phase1-2a",
+    "create-study-expdite2-bemdaneprocel-parkinson-phase3",
+    "create-study-hesc-rpe-advanced-dry-amd-stargardt-phase1-2",
+    "create-study-nonmyeloablative-hsct-relapsing-ms-rct",
+    "create-finding-laromestrocel-improved-6mwt-aging-frailty",
+    "create-finding-bemdaneprocel-pd-graft-survival-motor-signal",
+    "create-finding-a9-dpc-pd-graft-survival-motor-signal",
+    "create-finding-expdite2-bemdaneprocel-phase3-recruiting",
+    "create-finding-hesc-rpe-graft-survival-visual-signal",
+    "create-finding-nonmyeloablative-hsct-ms-progression-benefit-boundary",
+    "create-outlook-track-stem-cell-replacement-and-transplantation"
+  ],
+  "findings": [
+    {
+      "finding_id": "stem-cell-replacement-laromestrocel-source-boundary-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-laromestrocel-improved-6mwt-aging-frailty",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "laromestrocel-improved-6mwt-aging-frailty"
+      },
+      "claim_or_issue": "PMID 41747733 supports the staged laromestrocel aging-frailty claim: randomized dose-finding design, ClinicalTrials.gov NCT03169231, N = 148, 6-minute walk test primary endpoint, 63.4 m month-9 difference with 95% CI 17.1 to 109.6 and p = 0.0077, and 41.3 m month-6 difference with 95% CI -2.4 to 84.9 and p = 0.0635.",
+      "why_it_matters": "This source can support a human functional signal in an older-adult frailty population, but the source does not prove durable engraftment, tissue stem-cell replacement, or broad healthy-aging benefit.",
+      "recommended_action": "No revision needed; retain the month-6 uncertainty, paracrine or immunovascular mechanism caveat, and replication/longer-follow-up boundary already staged.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "stem-cell-replacement-parkinson-sources-boundary-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-outlook-track-stem-cell-replacement-and-transplantation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-stem-cell-replacement-and-transplantation-outlook"
+      },
+      "claim_or_issue": "PMIDs 40240592 and 41086804 support the staged Parkinson replacement claims: both reports enrolled 12 participants, used hES or hESC-derived dopaminergic progenitor grafting with immunosuppression, reported imaging consistent with graft survival, and described exploratory motor improvement or stability in open-label early-phase settings.",
+      "why_it_matters": "These are legitimate human replacement-style functional signals, but they are small, invasive, open-label, Parkinson-specific, and not broad aging interventions.",
+      "recommended_action": "No revision needed; keep the low-confidence, disease-specific, surgery/immunosuppression, and controlled-confirmation caveats.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "stem-cell-replacement-expdite2-registry-classified-correctly",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "create-finding-expdite2-bemdaneprocel-phase3-recruiting",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "expdite2-bemdaneprocel-phase3-recruiting"
+      },
+      "claim_or_issue": "NCT06944522 supports the staged registry facts: recruiting status as of the May 1, 2026 posted update, estimated enrollment of 102, randomized parallel design, triple masking, bemdaneprocel versus sham surgery, estimated March 2027 primary completion, and estimated March 2032 full completion.",
+      "why_it_matters": "The registry supports program momentum and trial design, but it has no posted efficacy results and should not be counted as outcome evidence.",
+      "recommended_action": "No revision needed; retain the regulatory_or_program_update evidence tier, not_applicable direction, and no-results caveat.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "stem-cell-replacement-retinal-source-boundary-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-hesc-rpe-graft-survival-visual-signal",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "hesc-rpe-graft-survival-visual-signal"
+      },
+      "claim_or_issue": "PMID 25458728 supports the staged retinal claim: two open-label phase 1/2 studies, 18 total participants across Stargardt macular dystrophy and atrophic age-related macular degeneration, median 22-month follow-up, no adverse proliferation or rejection signal, subretinal pigmentation in 13 of 18 eyes, and visual-acuity or quality-of-life signals monitored in a safety study.",
+      "why_it_matters": "This is useful human cell-replacement evidence, but it is disease-specific, open-label, procedure-linked, and not a controlled efficacy trial for systemic aging.",
+      "recommended_action": "No revision needed; keep the open-label safety-study and retinal-disease boundaries.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "stem-cell-replacement-hsct-source-boundary-preserved",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-finding-nonmyeloablative-hsct-ms-progression-benefit-boundary",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "nonmyeloablative-hsct-ms-progression-benefit-boundary"
+      },
+      "claim_or_issue": "PMID 30644983 supports the staged HSCT boundary: 110 randomized relapsing-remitting MS participants, 3 progression events in the HSCT group versus 34 in the disease-modifying-therapy group, hazard ratio 0.07 with 95% CI 0.02 to 0.24 and P < .001, no deaths, and no nonhematopoietic grade 4 toxicities in HSCT recipients.",
+      "why_it_matters": "The clinical outcome is strong but belongs to a disease-specific immune-ablation and reconstitution procedure, not preventive replacement of aged stem-cell reserves.",
+      "recommended_action": "No revision needed; preserve the younger MS population, conditioning, and high-intensity procedure caveats.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-01T20:11:33.472Z",
+  "updated_at": "2026-06-01T20:11:33.472Z"
+}

@@ -1,0 +1,296 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "stem-cell-replacement-and-transplantation-bootstrap-2026-06-01",
+  "name": "Stem cell replacement and transplantation bootstrap for June 1, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline for the stem cell replacement and transplantation track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-01T19:35:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Stem Cell Replacement and Transplantation, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "stem_cell_exhaustion"
+    ],
+    "track_ids": [
+      "stem-cell-replacement-and-transplantation"
+    ]
+  },
+  "source_ids": [
+    "pmid-41747733",
+    "pmid-40240592",
+    "pmid-41086804",
+    "nct-06944522",
+    "pmid-25458728",
+    "pmid-30644983"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/41747733/",
+    "https://pubmed.ncbi.nlm.nih.gov/40240592/",
+    "https://pubmed.ncbi.nlm.nih.gov/41086804/",
+    "https://clinicaltrials.gov/study/NCT06944522",
+    "https://pubmed.ncbi.nlm.nih.gov/25458728/",
+    "https://pubmed.ncbi.nlm.nih.gov/30644983/"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-stem-cell-replacement-and-transplantation-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-stem-cell-exhaustion-outlook"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "laromestrocel-improved-6mwt-aging-frailty"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "bemdaneprocel-pd-graft-survival-motor-signal"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "a9-dpc-pd-graft-survival-motor-signal"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "expdite2-bemdaneprocel-phase3-recruiting"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "hesc-rpe-graft-survival-visual-signal"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "nonmyeloablative-hsct-ms-progression-benefit-boundary"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-41747733",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-41747733",
+      "file_path": "data/sources/pmid-41747733.json",
+      "staged_file_path": "data/staged-records/stem-cell-replacement-and-transplantation-bootstrap-2026-06-01/pmid-41747733.json",
+      "summary": "Add laromestrocel aging frailty phase 2b source.",
+      "rationale": "This source anchors the direct older-adult functional signal for the first baseline."
+    },
+    {
+      "change_id": "create-source-pmid-40240592",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-40240592",
+      "file_path": "data/sources/pmid-40240592.json",
+      "staged_file_path": "data/staged-records/stem-cell-replacement-and-transplantation-bootstrap-2026-06-01/pmid-40240592.json",
+      "summary": "Add bemdaneprocel Parkinson phase 1 source.",
+      "rationale": "This source anchors recent human dopaminergic cell replacement evidence."
+    },
+    {
+      "change_id": "create-source-pmid-41086804",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-41086804",
+      "file_path": "data/sources/pmid-41086804.json",
+      "staged_file_path": "data/staged-records/stem-cell-replacement-and-transplantation-bootstrap-2026-06-01/pmid-41086804.json",
+      "summary": "Add A9-DPC Parkinson phase 1/2a source.",
+      "rationale": "This source adds an independent recent hESC-derived dopaminergic progenitor transplant signal."
+    },
+    {
+      "change_id": "create-source-nct-06944522",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-06944522",
+      "file_path": "data/sources/nct-06944522.json",
+      "staged_file_path": "data/staged-records/stem-cell-replacement-and-transplantation-bootstrap-2026-06-01/nct-06944522.json",
+      "summary": "Add exPDite-2 bemdaneprocel phase 3 registry source.",
+      "rationale": "This source captures current late-stage program momentum without treating the registry as efficacy evidence."
+    },
+    {
+      "change_id": "create-source-pmid-25458728",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-25458728",
+      "file_path": "data/sources/pmid-25458728.json",
+      "staged_file_path": "data/staged-records/stem-cell-replacement-and-transplantation-bootstrap-2026-06-01/pmid-25458728.json",
+      "summary": "Add hESC-derived RPE transplantation source.",
+      "rationale": "This source anchors retinal replacement safety and possible functional evidence."
+    },
+    {
+      "change_id": "create-source-pmid-30644983",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-30644983",
+      "file_path": "data/sources/pmid-30644983.json",
+      "staged_file_path": "data/staged-records/stem-cell-replacement-and-transplantation-bootstrap-2026-06-01/pmid-30644983.json",
+      "summary": "Add nonmyeloablative HSCT multiple sclerosis RCT source.",
+      "rationale": "This source anchors disease-specific transplant efficacy and the high-intensity safety boundary."
+    },
+    {
+      "change_id": "create-study-laromestrocel-aging-frailty-phase2b",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "laromestrocel-aging-frailty-phase2b",
+      "file_path": "data/studies/laromestrocel-aging-frailty-phase2b.json",
+      "staged_file_path": "data/staged-records/stem-cell-replacement-and-transplantation-bootstrap-2026-06-01/laromestrocel-aging-frailty-phase2b.json",
+      "summary": "Add laromestrocel aging frailty phase 2b study record.",
+      "rationale": "The study record links the direct aging-frailty functional trial to the track."
+    },
+    {
+      "change_id": "create-study-bemdaneprocel-parkinson-phase1",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "bemdaneprocel-parkinson-phase1",
+      "file_path": "data/studies/bemdaneprocel-parkinson-phase1.json",
+      "staged_file_path": "data/staged-records/stem-cell-replacement-and-transplantation-bootstrap-2026-06-01/bemdaneprocel-parkinson-phase1.json",
+      "summary": "Add bemdaneprocel Parkinson phase 1 study record.",
+      "rationale": "The study record links hES-derived dopaminergic replacement evidence to the track."
+    },
+    {
+      "change_id": "create-study-a9-dpc-parkinson-phase1-2a",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "a9-dpc-parkinson-phase1-2a",
+      "file_path": "data/studies/a9-dpc-parkinson-phase1-2a.json",
+      "staged_file_path": "data/staged-records/stem-cell-replacement-and-transplantation-bootstrap-2026-06-01/a9-dpc-parkinson-phase1-2a.json",
+      "summary": "Add A9-DPC Parkinson phase 1/2a study record.",
+      "rationale": "The study record captures a second recent dopaminergic progenitor transplantation trial."
+    },
+    {
+      "change_id": "create-study-expdite2-bemdaneprocel-parkinson-phase3",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "expdite2-bemdaneprocel-parkinson-phase3",
+      "file_path": "data/studies/expdite2-bemdaneprocel-parkinson-phase3.json",
+      "staged_file_path": "data/staged-records/stem-cell-replacement-and-transplantation-bootstrap-2026-06-01/expdite2-bemdaneprocel-parkinson-phase3.json",
+      "summary": "Add exPDite-2 phase 3 registry study record.",
+      "rationale": "The study record captures current phase 3 status for the surveillance queue."
+    },
+    {
+      "change_id": "create-study-hesc-rpe-advanced-dry-amd-stargardt-phase1-2",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "hesc-rpe-advanced-dry-amd-stargardt-phase1-2",
+      "file_path": "data/studies/hesc-rpe-advanced-dry-amd-stargardt-phase1-2.json",
+      "staged_file_path": "data/staged-records/stem-cell-replacement-and-transplantation-bootstrap-2026-06-01/hesc-rpe-advanced-dry-amd-stargardt-phase1-2.json",
+      "summary": "Add hESC-derived RPE phase 1/2 study record.",
+      "rationale": "The study record links retinal cell replacement evidence to the track."
+    },
+    {
+      "change_id": "create-study-nonmyeloablative-hsct-relapsing-ms-rct",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "nonmyeloablative-hsct-relapsing-ms-rct",
+      "file_path": "data/studies/nonmyeloablative-hsct-relapsing-ms-rct.json",
+      "staged_file_path": "data/staged-records/stem-cell-replacement-and-transplantation-bootstrap-2026-06-01/nonmyeloablative-hsct-relapsing-ms-rct.json",
+      "summary": "Add nonmyeloablative HSCT multiple sclerosis RCT study record.",
+      "rationale": "The study record captures disease-specific clinical transplant evidence and its boundary."
+    },
+    {
+      "change_id": "create-finding-laromestrocel-improved-6mwt-aging-frailty",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "laromestrocel-improved-6mwt-aging-frailty",
+      "file_path": "data/findings/laromestrocel-improved-6mwt-aging-frailty.json",
+      "staged_file_path": "data/staged-records/stem-cell-replacement-and-transplantation-bootstrap-2026-06-01/laromestrocel-improved-6mwt-aging-frailty.json",
+      "summary": "Add laromestrocel frailty physical-function finding.",
+      "rationale": "This finding supports the human_functional_benefit stage assignment."
+    },
+    {
+      "change_id": "create-finding-bemdaneprocel-pd-graft-survival-motor-signal",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "bemdaneprocel-pd-graft-survival-motor-signal",
+      "file_path": "data/findings/bemdaneprocel-pd-graft-survival-motor-signal.json",
+      "staged_file_path": "data/staged-records/stem-cell-replacement-and-transplantation-bootstrap-2026-06-01/bemdaneprocel-pd-graft-survival-motor-signal.json",
+      "summary": "Add bemdaneprocel graft-survival and motor-signal finding.",
+      "rationale": "This finding supports the human replacement-evidence signal while preserving open-label limits."
+    },
+    {
+      "change_id": "create-finding-a9-dpc-pd-graft-survival-motor-signal",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "a9-dpc-pd-graft-survival-motor-signal",
+      "file_path": "data/findings/a9-dpc-pd-graft-survival-motor-signal.json",
+      "staged_file_path": "data/staged-records/stem-cell-replacement-and-transplantation-bootstrap-2026-06-01/a9-dpc-pd-graft-survival-motor-signal.json",
+      "summary": "Add A9-DPC graft-survival and motor-signal finding.",
+      "rationale": "This finding provides independent recent Parkinson replacement evidence."
+    },
+    {
+      "change_id": "create-finding-expdite2-bemdaneprocel-phase3-recruiting",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "expdite2-bemdaneprocel-phase3-recruiting",
+      "file_path": "data/findings/expdite2-bemdaneprocel-phase3-recruiting.json",
+      "staged_file_path": "data/staged-records/stem-cell-replacement-and-transplantation-bootstrap-2026-06-01/expdite2-bemdaneprocel-phase3-recruiting.json",
+      "summary": "Add exPDite-2 phase 3 recruiting finding.",
+      "rationale": "This finding supports momentum only and explicitly avoids efficacy interpretation."
+    },
+    {
+      "change_id": "create-finding-hesc-rpe-graft-survival-visual-signal",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "hesc-rpe-graft-survival-visual-signal",
+      "file_path": "data/findings/hesc-rpe-graft-survival-visual-signal.json",
+      "staged_file_path": "data/staged-records/stem-cell-replacement-and-transplantation-bootstrap-2026-06-01/hesc-rpe-graft-survival-visual-signal.json",
+      "summary": "Add hESC-derived RPE graft-survival and visual-signal finding.",
+      "rationale": "This finding supports disease-specific human replacement evidence outside Parkinson disease."
+    },
+    {
+      "change_id": "create-finding-nonmyeloablative-hsct-ms-progression-benefit-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nonmyeloablative-hsct-ms-progression-benefit-boundary",
+      "file_path": "data/findings/nonmyeloablative-hsct-ms-progression-benefit-boundary.json",
+      "staged_file_path": "data/staged-records/stem-cell-replacement-and-transplantation-bootstrap-2026-06-01/nonmyeloablative-hsct-ms-progression-benefit-boundary.json",
+      "summary": "Add nonmyeloablative HSCT clinical-outcome boundary finding.",
+      "rationale": "This finding captures strong disease-specific transplant evidence and the high-risk boundary."
+    },
+    {
+      "change_id": "create-outlook-track-stem-cell-replacement-and-transplantation",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-stem-cell-replacement-and-transplantation-outlook",
+      "file_path": "data/outlooks/track-stem-cell-replacement-and-transplantation-outlook.json",
+      "staged_file_path": "data/staged-records/stem-cell-replacement-and-transplantation-bootstrap-2026-06-01/track-stem-cell-replacement-and-transplantation-outlook.json",
+      "summary": "Add the first public stem cell replacement and transplantation track outlook.",
+      "rationale": "The staged outlook sets a conservative human_functional_benefit baseline with low confidence and explicit procedure, mechanism, and disease-specific boundaries."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "stem-cell-replacement-and-transplantation",
+      "note": "Create the first public track outlook at human_functional_benefit with accelerating momentum and low confidence because functional human signals exist, but broad aging relevance remains limited by mechanism uncertainty, disease-specific replacement evidence, and safety/procedure burden.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-01-stem-cell-replacement-and-transplantation-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin",
+    "bootstrap",
+    "stem-cell-replacement-and-transplantation"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-stem-cell-replacement-and-transplantation-source-fidelity-r1",
+    "evidence-review-stem-cell-replacement-and-transplantation-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-stem-cell-replacement-and-transplantation-bootstrap-2026-06-01-2026-06-01t20-13-00-339z"
+  ]
+}

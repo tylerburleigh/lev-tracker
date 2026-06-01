@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-stem-cell-replacement-and-transplantation-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Stem Cell Replacement And Transplantation bundle",
+  "candidate_bundle_id": "stem-cell-replacement-and-transplantation-bootstrap-2026-06-01",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged track outlook is calibrated for a low-confidence human_functional_benefit baseline. It uses laromestrocel's randomized aging-frailty 6-minute walk improvement as the most direct geroscience-adjacent human functional signal, treats Parkinson and retinal graft studies as early disease-specific replacement support, keeps exPDite-2 as momentum rather than efficacy evidence, uses MS HSCT as a disease-specific transplant boundary, and avoids any durable disease, mortality, healthy-lifespan, or LEV-relevant timing claim.",
+  "reviewed_change_ids": [
+    "create-source-pmid-41747733",
+    "create-source-pmid-40240592",
+    "create-source-pmid-41086804",
+    "create-source-nct-06944522",
+    "create-source-pmid-25458728",
+    "create-source-pmid-30644983",
+    "create-study-laromestrocel-aging-frailty-phase2b",
+    "create-study-bemdaneprocel-parkinson-phase1",
+    "create-study-a9-dpc-parkinson-phase1-2a",
+    "create-study-expdite2-bemdaneprocel-parkinson-phase3",
+    "create-study-hesc-rpe-advanced-dry-amd-stargardt-phase1-2",
+    "create-study-nonmyeloablative-hsct-relapsing-ms-rct",
+    "create-finding-laromestrocel-improved-6mwt-aging-frailty",
+    "create-finding-bemdaneprocel-pd-graft-survival-motor-signal",
+    "create-finding-a9-dpc-pd-graft-survival-motor-signal",
+    "create-finding-expdite2-bemdaneprocel-phase3-recruiting",
+    "create-finding-hesc-rpe-graft-survival-visual-signal",
+    "create-finding-nonmyeloablative-hsct-ms-progression-benefit-boundary",
+    "create-outlook-track-stem-cell-replacement-and-transplantation"
+  ],
+  "findings": [
+    {
+      "finding_id": "stem-cell-replacement-functional-stage-calibrated",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-outlook-track-stem-cell-replacement-and-transplantation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-stem-cell-replacement-and-transplantation-outlook"
+      },
+      "claim_or_issue": "The outlook assigns human_functional_benefit because the staged evidence includes a randomized older-adult frailty functional trial plus disease-specific human functional or clinical-outcome transplant signals.",
+      "why_it_matters": "A lower biomarker-only rating would understate the 6MWT and disease functional evidence, while a stronger durable disease or mortality interpretation would overstate aging relevance.",
+      "recommended_action": "No revision needed; retain low confidence and the explicit distinction between functional signals and durable broad-aging benefit.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "stem-cell-replacement-aging-attribution-caveat-adequate",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "applies_to_change_id": "create-outlook-track-stem-cell-replacement-and-transplantation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-stem-cell-replacement-and-transplantation-outlook"
+      },
+      "claim_or_issue": "The outlook names laromestrocel as the strongest direct aging-relevant signal but states that allogeneic MSC benefit may reflect paracrine, immunovascular, or tissue-support effects rather than durable stem-cell replacement.",
+      "why_it_matters": "Without that caveat, the public baseline could imply engrafting replacement of aged stem-cell capacity when the frailty MSC result does not establish that mechanism.",
+      "recommended_action": "No revision needed; keep the mechanism-boundary language in blockers, forecast note, and rating-change criteria.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "stem-cell-replacement-registry-momentum-not-evidence",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "create-outlook-track-stem-cell-replacement-and-transplantation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-stem-cell-replacement-and-transplantation-outlook"
+      },
+      "claim_or_issue": "The outlook uses exPDite-2 to support accelerating momentum, not current efficacy or stage assignment.",
+      "why_it_matters": "A recruiting phase 3 trial can change momentum and surveillance priority, but it must not be interpreted as outcome evidence before results are posted.",
+      "recommended_action": "No revision needed; retain the support-map limitation that a recruiting registry is not efficacy evidence.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "stem-cell-replacement-safety-procedure-boundary-adequate",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-outlook-track-stem-cell-replacement-and-transplantation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-stem-cell-replacement-and-transplantation-outlook"
+      },
+      "claim_or_issue": "The outlook foregrounds transplantation burden and safety limits, including surgery, conditioning, immunosuppression, graft behavior, tumor risk, rejection, dyskinesia, and ectopic differentiation concerns.",
+      "why_it_matters": "Replacement and transplant programs may be acceptable for severe diseases while still unsuitable for preventive or broad healthy-aging use.",
+      "recommended_action": "No revision needed; preserve the safety/procedure blocker and the rating-change criterion requiring manageable long-term safety.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "stem-cell-replacement-forecast-conservative",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "create-outlook-track-stem-cell-replacement-and-transplantation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-stem-cell-replacement-and-transplantation-outlook"
+      },
+      "claim_or_issue": "The outlook sets scenario_2036_status to speculative and declines to assign a credible LEV-relevant window before controlled durable functional benefit, mechanism clarity, and manageable safety exist for specific replacement strategies.",
+      "why_it_matters": "Current evidence supports a first public baseline, not a time-bound LEV-relevant forecast.",
+      "recommended_action": "No revision needed; keep the conservative forecast note and rating-change criteria.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-01T20:11:38.824Z",
+  "updated_at": "2026-06-01T20:11:38.824Z"
+}

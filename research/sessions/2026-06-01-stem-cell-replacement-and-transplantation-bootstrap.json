@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-01-stem-cell-replacement-and-transplantation-bootstrap",
+  "name": "Stem cell replacement and transplantation bootstrap pass for June 1, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-06-01T19:05:00Z",
+  "completed_at": "2026-06-01T19:35:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Stem Cell Replacement and Transplantation, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "stem_cell_exhaustion"
+    ],
+    "track_ids": [
+      "stem-cell-replacement-and-transplantation"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "stem-cell-replacement-and-transplantation-bootstrap-2026-06-01",
+  "summary": "The track is coherent enough for a first public baseline at human_functional_benefit because an aging-frailty laromestrocel trial reports physical-function improvement and replacement or transplant programs in Parkinson disease, retinal disease, and multiple sclerosis show bounded human functional or clinical-outcome signals. The staged outlook remains low confidence because the strongest aging-relevant MSC signal may be paracrine rather than durable replacement, while the clearest engrafting replacement evidence is invasive, disease-specific, and early.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-41747733",
+    "pmid-40240592",
+    "pmid-41086804",
+    "nct-06944522",
+    "pmid-25458728",
+    "pmid-30644983"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/41747733/",
+    "https://pubmed.ncbi.nlm.nih.gov/40240592/",
+    "https://pubmed.ncbi.nlm.nih.gov/41086804/",
+    "https://clinicaltrials.gov/study/NCT06944522",
+    "https://pubmed.ncbi.nlm.nih.gov/25458728/",
+    "https://pubmed.ncbi.nlm.nih.gov/30644983/"
+  ],
+  "notes": [
+    "The most directly aging-relevant human source is the 2026 randomized phase 2b laromestrocel trial in older adults with aging frailty.",
+    "Bemdaneprocel and A9-DPC provide recent human Parkinson disease graft-survival and exploratory motor-function signals, but both published trials are small and open-label.",
+    "The exPDite-2 registry is a momentum signal only; it has no posted results as of the May 1, 2026 ClinicalTrials.gov update.",
+    "hESC-derived RPE transplantation adds human safety and possible visual-function support for replacement biology in retinal disease.",
+    "Nonmyeloablative HSCT in multiple sclerosis anchors a strong disease-specific transplant outcome and the high-intensity safety boundary."
+  ],
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast evidence reviews before publication.",
+    "If approved, publish the staged source, study, finding, and outlook records as the first stem cell replacement and transplantation baseline.",
+    "During surveillance, recheck exPDite-2 recruitment/results status and any independent replication of laromestrocel frailty findings."
+  ]
+}

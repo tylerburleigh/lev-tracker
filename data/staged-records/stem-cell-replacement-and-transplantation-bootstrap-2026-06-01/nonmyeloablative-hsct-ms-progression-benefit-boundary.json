@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "nonmyeloablative-hsct-ms-progression-benefit-boundary",
+  "name": "Nonmyeloablative HSCT delayed MS progression but remains a high-risk boundary",
+  "summary": "A randomized trial found markedly less multiple sclerosis progression after nonmyeloablative HSCT than disease-modifying therapy, while preserving the disease-specific and intensive-procedure boundary.",
+  "source_id": "pmid-30644983",
+  "study_id": "nonmyeloablative-hsct-relapsing-ms-rct",
+  "intervention_ids": [
+    "nonmyeloablative-hsct"
+  ],
+  "track_ids": [
+    "stem-cell-replacement-and-transplantation"
+  ],
+  "hallmark_ids": [
+    "stem_cell_exhaustion"
+  ],
+  "endpoint_category": "functional",
+  "direction": "positive",
+  "evidence_tier": "human_clinical_outcome",
+  "confidence": "moderate",
+  "statement": "In relapsing-remitting multiple sclerosis, nonmyeloablative HSCT reduced disease progression events versus continued disease-modifying therapy, but the intervention is an intensive immune-ablation and reconstitution procedure for a disease population.",
+  "population_or_model": "People with relapsing-remitting multiple sclerosis and recent relapses despite disease-modifying therapy",
+  "time_horizon": "Median follow-up 2 years, with some annual follow-up through 5 years",
+  "quantitative_note": "Disease progression occurred in 3 HSCT participants versus 34 disease-modifying-therapy participants; the hazard ratio for progression was 0.07 (95% CI 0.02 to 0.24; p < 0.001).",
+  "caveats": [
+    "The population was younger relapsing-remitting MS patients, not older adults with stem-cell exhaustion.",
+    "HSCT requires conditioning and immune reconstitution, making it unsuitable as a preventive aging intervention.",
+    "The trial was preliminary and requires long-term safety and replication context for broader interpretation."
+  ],
+  "tags": [
+    "human",
+    "randomized",
+    "hsct",
+    "multiple-sclerosis",
+    "clinical-outcome"
+  ]
+}
