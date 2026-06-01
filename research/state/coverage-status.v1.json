@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-05-31T23:34:52.856Z",
+  "updated_at": "2026-06-01T00:02:27.363Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One bootstrap or surveillance run should cover one track unless the user explicitly narrows further.",
@@ -37,7 +37,7 @@
       "hallmark_id": "epigenetic_alterations",
       "canonical_order": 3,
       "hallmark_bootstrap_status": "baseline",
-      "tracked_public_outlook_count": 1,
+      "tracked_public_outlook_count": 2,
       "next_priority_track_id": "chromatin-and-histone-modulation",
       "notes": "At least one track-level public baseline exists."
     },
@@ -226,17 +226,19 @@
       "hallmark_id": "epigenetic_alterations",
       "canonical_order": 2,
       "name": "DNA Methylation and Epigenome Restoration",
-      "coverage_status": "not_started",
+      "coverage_status": "baseline",
       "next_mode": "surveillance",
-      "queue_state": "active_review",
+      "queue_state": "ready",
       "last_session_id": "dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31",
       "last_session_at": "2026-05-31T23:32:00Z",
       "last_session_mode": "bootstrap",
       "last_session_outcome": "candidate_bundle_submitted",
       "last_candidate_bundle_id": "dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31",
-      "last_candidate_bundle_status": "submitted",
+      "last_candidate_bundle_status": "published",
+      "last_publication_event_id": "publish-dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31-2026-06-01t00-02-21-706z",
+      "last_published_at": "2026-06-01T00:02:21.706Z",
       "default_research_question": "What changed for DNA Methylation and Epigenome Restoration since the last meaningful review or publication, and does any change justify a public update?",
-      "notes": "Candidate bundle dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31 is still submitted."
+      "notes": "Latest publication event: publish-dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31-2026-06-01t00-02-21-706z."
     },
     {
       "track_id": "chromatin-and-histone-modulation",

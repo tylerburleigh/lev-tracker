@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "methylation-diet-lifestyle-horvath-age-decrease",
+  "name": "Methylation-supportive diet and lifestyle pilot lowered Horvath DNAmAge",
+  "summary": "A small randomized pilot reported a saliva Horvath DNAmAge decrease relative to controls after an eight-week diet and lifestyle program.",
+  "source_id": "pmid-33844651",
+  "study_id": "methylation-diet-lifestyle-pilot-rct",
+  "intervention_ids": [
+    "methylation-supportive-diet-lifestyle"
+  ],
+  "track_ids": [
+    "dna-methylation-and-epigenome-restoration"
+  ],
+  "hallmark_ids": [
+    "epigenetic_alterations"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "positive",
+  "evidence_tier": "human_biomarker",
+  "confidence": "low",
+  "statement": "In a 43-person pilot RCT, an eight-week diet and lifestyle program was associated with a 3.23-year lower Horvath DNAmAge change compared with no-intervention controls.",
+  "population_or_model": "Healthy adult males aged 50 to 72 years",
+  "time_horizon": "Eight-week intervention",
+  "quantitative_note": "The abstract reports a 3.23-year DNAmAge decrease versus controls (p=0.018) and a within-treatment decrease averaging 1.96 years with p=0.066.",
+  "caveats": [
+    "The trial was small, short, and limited to men.",
+    "The control group received no intervention, making expectancy and behavior-contact effects hard to isolate.",
+    "The intervention was multi-component, so no specific diet, supplement, sleep, exercise, or relaxation component can be credited.",
+    "The finding is a saliva DNA-methylation clock signal, not a functional aging outcome."
+  ],
+  "tags": [
+    "human",
+    "randomized",
+    "pilot",
+    "epigenetic-clock"
+  ]
+}

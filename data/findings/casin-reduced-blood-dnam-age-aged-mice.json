@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "casin-reduced-blood-dnam-age-aged-mice",
+  "name": "CASIN lowered blood DNA-methylation age in aged mice",
+  "summary": "The CASIN aged-mouse study links systemic Cdc42 inhibition to a younger blood DNA-methylation clock alongside lifespan and cytokine changes.",
+  "source_id": "pmid-32755011",
+  "study_id": "systemic-casin-aged-mouse-lifespan",
+  "intervention_ids": [
+    "casin"
+  ],
+  "track_ids": [
+    "dna-methylation-and-epigenome-restoration"
+  ],
+  "hallmark_ids": [
+    "epigenetic_alterations",
+    "stem_cell_exhaustion"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "low",
+  "statement": "A four-day systemic CASIN course in aged female C57BL/6 mice was reported to produce a younger blood DNA-methylation clock alongside reduced inflammatory cytokines and extended lifespan.",
+  "population_or_model": "Aged female C57BL/6 mice",
+  "time_horizon": "Four-day intervention with lifespan follow-up",
+  "quantitative_note": "The source reports significant average and maximum lifespan extension and a younger blood DNA-methylation clock, but this staged finding treats the methylation result as animal biomarker support.",
+  "caveats": [
+    "This is mouse evidence and does not establish human safety or efficacy.",
+    "Cdc42 inhibition may affect inflammation, blood composition, and stem-cell biology rather than directly restoring methylation patterns.",
+    "Sex, strain, dose, and safety translation remain unresolved."
+  ],
+  "tags": [
+    "mouse",
+    "cdc42",
+    "casin",
+    "epigenetic-clock"
+  ]
+}

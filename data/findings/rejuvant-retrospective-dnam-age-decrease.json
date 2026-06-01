@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "rejuvant-retrospective-dnam-age-decrease",
+  "name": "Rejuvant retrospective cohort reported lower DNA-methylation age",
+  "summary": "The Rejuvant report is a large claimed epigenetic-age shift, but it is retrospective, uncontrolled, and tied to a commercial formulation and test.",
+  "source_id": "pmid-34847066",
+  "study_id": "rejuvant-dnam-age-retrospective-cohort",
+  "intervention_ids": [
+    "rejuvant-alpha-ketoglutarate"
+  ],
+  "track_ids": [
+    "dna-methylation-and-epigenome-restoration"
+  ],
+  "hallmark_ids": [
+    "epigenetic_alterations"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "positive",
+  "evidence_tier": "human_biomarker",
+  "confidence": "low",
+  "statement": "A retrospective 42-person analysis reported lower DNA-methylation age after four to ten months of an alpha-ketoglutarate and vitamin formulation.",
+  "population_or_model": "Adults taking Rejuvant",
+  "time_horizon": "Four to ten months, averaging about seven months",
+  "quantitative_note": "The abstract reports an average 8-year decrease in biological age by the TruAge DNA methylation test.",
+  "caveats": [
+    "The study was retrospective and lacked placebo or randomized controls.",
+    "The endpoint used a commercial DNA-methylation test, and the product sponsor context creates interpretation risk.",
+    "Health, function, disease, and mortality endpoints were not established.",
+    "The result should be treated as hypothesis-generating until placebo-controlled replication exists."
+  ],
+  "tags": [
+    "human",
+    "retrospective",
+    "alpha-ketoglutarate",
+    "epigenetic-clock"
+  ]
+}

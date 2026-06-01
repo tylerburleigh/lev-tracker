@@ -1,0 +1,197 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-dna-methylation-and-epigenome-restoration-outlook",
+  "name": "DNA Methylation and Epigenome Restoration Track Outlook",
+  "subject_type": "track",
+  "subject_id": "dna-methylation-and-epigenome-restoration",
+  "current_stage": "human_biomarker_signal",
+  "momentum": "steady",
+  "confidence": "low",
+  "main_blockers": [
+    "Human evidence is still DNA-methylation-clock heavy, with no durable functional, disease, or mortality outcome tied to methylation restoration.",
+    "Signals are small or inconsistent in larger controlled analyses, and stronger reversal claims come from small, uncontrolled, retrospective, or multi-component studies.",
+    "Many interventions may move methylation as a downstream readout rather than directly restoring causal epigenomic aging mechanisms.",
+    "Clock choice, tissue source, blood-cell composition, commercial tests, and conflicts of interest remain major interpretation hazards.",
+    "TRIIM-X is listed as recruiting with no posted results, so it cannot yet resolve the safety or efficacy boundary for hormone/metformin thymus-regeneration regimens."
+  ],
+  "best_current_signals": [
+    "CALERIE randomized caloric restriction slowed DunedinPACE over two years, although PhenoAge and GrimAge did not significantly change.",
+    "DO-HEALTH reported small omega-3-associated slowing across several DNA-methylation clocks over three years, with an additive PhenoAge signal for omega-3, vitamin D, and exercise.",
+    "COSMOS reported modest multivitamin-multimineral slowing of PCGrimAge and PCPhenoAge over two years, while cocoa extract was null.",
+    "The methylation-supportive diet and lifestyle pilot RCT reported a Horvath DNAmAge decrease versus no-intervention controls after eight weeks.",
+    "TRIIM and Rejuvant provide larger apparent reversal signals, but they are uncontrolled or retrospective and should not drive a higher stage assignment.",
+    "CASIN in aged mice links a short systemic intervention to younger blood DNA-methylation age plus lifespan and inflammatory-marker movement."
+  ],
+  "forecast_note": "DNA methylation and epigenome restoration earns a first public baseline at human_biomarker_signal because multiple human intervention studies now report movement in DNA-methylation aging measures. The rating should stay conservative: larger randomized analyses show small and clock-specific effects, while the most dramatic reversal claims are not controlled enough to support functional or clinical benefit.",
+  "rating_change_criteria": [
+    "A stage upgrade would require replicated randomized trials showing functional, disease, or mortality benefit with prespecified DNA-methylation endpoints that move in the expected direction.",
+    "Higher confidence would require convergent effects across multiple validated clocks, tissues, and independent cohorts, with durability after intervention withdrawal.",
+    "Mechanistic confidence would improve if studies showed that methylation changes mediate downstream health benefits rather than merely tracking diet, body composition, inflammation, or blood-cell shifts.",
+    "The rating would weaken if larger preregistered trials fail to replicate clock movement, show no relationship between clock changes and clinical endpoints, or identify meaningful safety concerns for epigenome-targeting regimens."
+  ],
+  "earliest_plausible_window": "No credible LEV-relevant window can be assigned before methylation-clock changes are tied to replicated clinical or functional benefit.",
+  "scenario_2036_status": "speculative",
+  "supporting_finding_ids": [
+    "triim-human-epigenetic-age-decrease",
+    "methylation-diet-lifestyle-horvath-age-decrease",
+    "rejuvant-retrospective-dnam-age-decrease",
+    "calerie-cr-slowed-dunedinpace",
+    "do-health-omega3-small-dnam-clock-slowing",
+    "cosmos-mvm-small-epigenetic-clock-slowing",
+    "triim-x-registry-no-results",
+    "casin-reduced-blood-dnam-age-aged-mice"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "current_stage",
+      "conclusion": "The track reaches human biomarker signal because several human interventions report DNA-methylation aging-measure movement.",
+      "support_role": "supports",
+      "rationale": "CALERIE, DO-HEALTH, COSMOS, and the methylation-supportive diet/lifestyle RCT are human intervention studies with DNA-methylation clock endpoints. Their endpoints are biomarkers, not functional outcomes.",
+      "finding_ids": [
+        "methylation-diet-lifestyle-horvath-age-decrease",
+        "calerie-cr-slowed-dunedinpace",
+        "do-health-omega3-small-dnam-clock-slowing",
+        "cosmos-mvm-small-epigenetic-clock-slowing"
+      ],
+      "source_ids": [
+        "pmid-33844651",
+        "pmid-37118425",
+        "pmid-39900648",
+        "pmid-41803341"
+      ],
+      "limitations": [
+        "The endpoints are DNA-methylation algorithms rather than direct healthspan, disease, or survival outcomes.",
+        "Effects are small or clock-specific in the larger controlled studies.",
+        "Interventions are heterogeneous and should not be collapsed into one efficacy claim."
+      ]
+    },
+    {
+      "label": "Controlled-evidence boundary",
+      "outlook_field": "confidence",
+      "conclusion": "The better controlled evidence supports a cautious biomarker baseline, not a functional-benefit claim.",
+      "support_role": "limits",
+      "rationale": "CALERIE slowed DunedinPACE but not PhenoAge or GrimAge, DO-HEALTH showed small omega-3-centered effects, and COSMOS showed modest multivitamin effects with cocoa null.",
+      "finding_ids": [
+        "calerie-cr-slowed-dunedinpace",
+        "do-health-omega3-small-dnam-clock-slowing",
+        "cosmos-mvm-small-epigenetic-clock-slowing"
+      ],
+      "source_ids": [
+        "pmid-37118425",
+        "pmid-39900648",
+        "pmid-41803341"
+      ],
+      "limitations": [
+        "Analyses were post hoc or ancillary relative to primary clinical trial aims.",
+        "Clock response was not uniform across interventions or algorithms.",
+        "Clinical relevance of the small clock shifts remains unresolved."
+      ]
+    },
+    {
+      "label": "Reversal-claim boundary",
+      "outlook_field": "main_blockers",
+      "conclusion": "Large apparent reversal signals exist but are not strong enough to raise the stage above human biomarkers.",
+      "support_role": "limits",
+      "rationale": "TRIIM was a nine-person uncontrolled male pilot, and Rejuvant was a retrospective uncontrolled supplement analysis using a commercial product and test.",
+      "finding_ids": [
+        "triim-human-epigenetic-age-decrease",
+        "rejuvant-retrospective-dnam-age-decrease"
+      ],
+      "source_ids": [
+        "pmid-31496122",
+        "pmid-34847066"
+      ],
+      "limitations": [
+        "No randomized placebo comparison exists for these reversal claims.",
+        "Both signals are vulnerable to selection, regression-to-the-mean, blood-composition, and conflict-of-interest concerns.",
+        "Neither study proves durable health benefit."
+      ]
+    },
+    {
+      "label": "Animal plausibility",
+      "outlook_field": "best_current_signals",
+      "conclusion": "CASIN gives animal biomarker and lifespan plausibility for methylation-age movement after intervention.",
+      "support_role": "supports",
+      "rationale": "The aged-mouse CASIN study reported a younger blood DNA-methylation clock alongside lower inflammatory cytokines and extended lifespan.",
+      "finding_ids": [
+        "casin-reduced-blood-dnam-age-aged-mice"
+      ],
+      "source_ids": [
+        "pmid-32755011"
+      ],
+      "limitations": [
+        "Mouse blood methylation and lifespan data do not establish human translation.",
+        "The mechanism may be systemic or hematopoietic rather than direct epigenome restoration.",
+        "Safety and selectivity of systemic Cdc42 inhibition remain open."
+      ]
+    },
+    {
+      "label": "Momentum",
+      "outlook_field": "momentum",
+      "conclusion": "Momentum is steady because larger randomized clock analyses continue to appear and TRIIM-X is registered, but posted outcome evidence is still limited.",
+      "support_role": "balances",
+      "rationale": "DO-HEALTH and COSMOS are recent larger randomized analyses, while the TRIIM-X registry indicates follow-up work without posted results.",
+      "finding_ids": [
+        "do-health-omega3-small-dnam-clock-slowing",
+        "cosmos-mvm-small-epigenetic-clock-slowing",
+        "triim-x-registry-no-results"
+      ],
+      "source_ids": [
+        "pmid-39900648",
+        "pmid-41803341",
+        "nct-04375657"
+      ],
+      "limitations": [
+        "The recent randomized signals are modest and biomarker-only.",
+        "TRIIM-X is not evidence until results are posted or published.",
+        "The field still lacks replicated clinical endpoints."
+      ]
+    },
+    {
+      "label": "Confidence",
+      "outlook_field": "confidence",
+      "conclusion": "Confidence remains low despite multiple human biomarker signals.",
+      "support_role": "balances",
+      "rationale": "The evidence base has enough human DNA-methylation movement for a baseline, but inconsistency, small effects, surrogate endpoints, multi-component interventions, and conflicts prevent a confident forecast.",
+      "finding_ids": [
+        "triim-human-epigenetic-age-decrease",
+        "methylation-diet-lifestyle-horvath-age-decrease",
+        "rejuvant-retrospective-dnam-age-decrease",
+        "calerie-cr-slowed-dunedinpace",
+        "do-health-omega3-small-dnam-clock-slowing",
+        "cosmos-mvm-small-epigenetic-clock-slowing"
+      ],
+      "source_ids": [
+        "pmid-31496122",
+        "pmid-33844651",
+        "pmid-34847066",
+        "pmid-37118425",
+        "pmid-39900648",
+        "pmid-41803341"
+      ],
+      "limitations": [
+        "No cited human intervention demonstrates LEV-relevant clinical benefit.",
+        "The causal role of methylation-clock changes is not established.",
+        "Commercial and clock-development conflicts appear in parts of the evidence base."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-31496122",
+    "pmid-33844651",
+    "pmid-34847066",
+    "pmid-37118425",
+    "pmid-39900648",
+    "pmid-41803341",
+    "nct-04375657",
+    "pmid-32755011"
+  ],
+  "last_updated": "2026-05-31",
+  "tags": [
+    "public",
+    "track",
+    "thin_coverage"
+  ]
+}
