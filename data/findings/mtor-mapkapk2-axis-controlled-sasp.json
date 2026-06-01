@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "mtor-mapkapk2-axis-controlled-sasp",
+  "name": "mTOR-MAPKAPK2 signaling controlled SASP transcript stability",
+  "summary": "A second mTOR-SASP mechanism supports rapamycin-class senomorphic plausibility but remains preclinical.",
+  "source_id": "pmid-26280535",
+  "study_id": "mtor-mapkapk2-sasp-senescent-cell-models",
+  "intervention_ids": [
+    "sirolimus"
+  ],
+  "track_ids": [
+    "senomorphics"
+  ],
+  "hallmark_ids": [
+    "cellular_senescence"
+  ],
+  "endpoint_category": "mechanistic",
+  "direction": "positive",
+  "evidence_tier": "in_vitro",
+  "confidence": "moderate",
+  "statement": "A SASP-regulator screen identified rapamycin as a potent suppressor and linked mTOR control of MAPKAPK2 translation to ZFP36L1-dependent stability of multiple SASP component transcripts.",
+  "population_or_model": "Senescent cell models and SASP regulator assays",
+  "time_horizon": "Cell-culture and pathway perturbation assays",
+  "quantitative_note": "The PubMed abstract describes rapamycin as a potent SASP suppressor in the drug screen.",
+  "caveats": [
+    "The finding is mechanistic and does not measure human aging outcomes.",
+    "mTOR inhibition has broad effects beyond senomorphic SASP modulation.",
+    "The same pathway can influence immune and cancer-relevant senescence contexts in both beneficial and harmful directions."
+  ],
+  "tags": [
+    "sirolimus",
+    "rapamycin",
+    "mtor",
+    "mapkapk2",
+    "sasp",
+    "mechanistic"
+  ]
+}

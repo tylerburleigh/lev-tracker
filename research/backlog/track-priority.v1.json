@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-01T15:45:06.557Z",
+  "updated_at": "2026-06-01T16:26:51.781Z",
   "notes": [
     "Bootstrap priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Surveillance priority applies only to tracks that already have a public baseline and no active review bundle.",
@@ -241,6 +241,16 @@
     {
       "rank": 2,
       "phase_id": "surveillance-rotation",
+      "track_id": "senomorphics",
+      "hallmark_id": "cellular_senescence",
+      "priority_tier": "now",
+      "default_mode": "surveillance",
+      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
+      "default_question": "What changed for Senomorphics since the last meaningful review or publication, and does any change justify a public update?"
+    },
+    {
+      "rank": 3,
+      "phase_id": "surveillance-rotation",
       "track_id": "ampk-and-metabolic-modulators",
       "hallmark_id": "deregulated_nutrient_sensing",
       "priority_tier": "now",
@@ -249,17 +259,17 @@
       "default_question": "What changed for AMPK and Metabolic Modulators since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 3,
+      "rank": 4,
       "phase_id": "surveillance-rotation",
       "track_id": "lysosomal-restoration",
       "hallmark_id": "disabled_macroautophagy",
-      "priority_tier": "now",
+      "priority_tier": "soon",
       "default_mode": "surveillance",
       "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
       "default_question": "What changed for Lysosomal Restoration since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 4,
+      "rank": 5,
       "phase_id": "surveillance-rotation",
       "track_id": "proteasome-enhancement",
       "hallmark_id": "loss_of_proteostasis",
@@ -269,17 +279,17 @@
       "default_question": "What changed for Proteasome Enhancement since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 5,
+      "rank": 6,
       "phase_id": "surveillance-rotation",
       "track_id": "dna-methylation-and-epigenome-restoration",
       "hallmark_id": "epigenetic_alterations",
-      "priority_tier": "soon",
+      "priority_tier": "later",
       "default_mode": "surveillance",
       "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
       "default_question": "What changed for DNA Methylation and Epigenome Restoration since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 6,
+      "rank": 7,
       "phase_id": "surveillance-rotation",
       "track_id": "telomere-protection-and-capping",
       "hallmark_id": "telomere_attrition",
@@ -289,7 +299,7 @@
       "default_question": "What changed for Telomere Protection and Capping since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 7,
+      "rank": 8,
       "phase_id": "surveillance-rotation",
       "track_id": "genome-surveillance-and-chromosome-stability",
       "hallmark_id": "genomic_instability",
@@ -299,7 +309,7 @@
       "default_question": "What changed for Genome Surveillance and Chromosome Stability since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 8,
+      "rank": 9,
       "phase_id": "surveillance-rotation",
       "track_id": "cytokine-and-inflammasome-modulation",
       "hallmark_id": "chronic_inflammation",
@@ -309,7 +319,7 @@
       "default_question": "What changed for Cytokine and Inflammasome Modulation since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 9,
+      "rank": 10,
       "phase_id": "surveillance-rotation",
       "track_id": "nad-and-redox-restoration",
       "hallmark_id": "mitochondrial_dysfunction",
@@ -319,7 +329,7 @@
       "default_question": "What changed for NAD and Redox Restoration since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 10,
+      "rank": 11,
       "phase_id": "surveillance-rotation",
       "track_id": "circulating-factor-modulation",
       "hallmark_id": "altered_intercellular_communication",
@@ -329,7 +339,7 @@
       "default_question": "What changed for Circulating Factor Modulation since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 11,
+      "rank": 12,
       "phase_id": "surveillance-rotation",
       "track_id": "stem-cell-rejuvenation",
       "hallmark_id": "stem_cell_exhaustion",
@@ -339,7 +349,7 @@
       "default_question": "What changed for Stem Cell Rejuvenation since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 12,
+      "rank": 13,
       "phase_id": "surveillance-rotation",
       "track_id": "chaperone-and-heat-shock-support",
       "hallmark_id": "loss_of_proteostasis",
@@ -349,7 +359,7 @@
       "default_question": "What changed for Chaperone and Heat-Shock Support since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 13,
+      "rank": 14,
       "phase_id": "surveillance-rotation",
       "track_id": "telomerase-restoration",
       "hallmark_id": "telomere_attrition",
@@ -359,7 +369,7 @@
       "default_question": "What changed for Telomerase Restoration since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 14,
+      "rank": 15,
       "phase_id": "surveillance-rotation",
       "track_id": "dna-repair-enhancement",
       "hallmark_id": "genomic_instability",
@@ -369,7 +379,7 @@
       "default_question": "What changed for DNA Repair Enhancement since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 15,
+      "rank": 16,
       "phase_id": "surveillance-rotation",
       "track_id": "autophagy-induction",
       "hallmark_id": "disabled_macroautophagy",
@@ -379,7 +389,7 @@
       "default_question": "What changed for Autophagy Induction since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 16,
+      "rank": 17,
       "phase_id": "surveillance-rotation",
       "track_id": "partial-reprogramming",
       "hallmark_id": "epigenetic_alterations",
@@ -389,7 +399,7 @@
       "default_question": "What changed for Partial Reprogramming since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 17,
+      "rank": 18,
       "phase_id": "surveillance-rotation",
       "track_id": "immune-rejuvenation",
       "hallmark_id": "chronic_inflammation",
@@ -399,7 +409,7 @@
       "default_question": "What changed for Immune Rejuvenation since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 18,
+      "rank": 19,
       "phase_id": "surveillance-rotation",
       "track_id": "rapalogs",
       "hallmark_id": "deregulated_nutrient_sensing",
@@ -409,7 +419,7 @@
       "default_question": "What changed for Rapalogs since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 19,
+      "rank": 20,
       "phase_id": "surveillance-rotation",
       "track_id": "senolytics",
       "hallmark_id": "cellular_senescence",
@@ -419,7 +429,7 @@
       "default_question": "What changed for Senolytics since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 20,
+      "rank": 21,
       "phase_id": "surveillance-rotation",
       "track_id": "mitophagy-enhancers",
       "hallmark_id": "mitochondrial_dysfunction",

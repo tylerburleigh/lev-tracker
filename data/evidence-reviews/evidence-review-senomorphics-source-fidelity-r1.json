@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-senomorphics-source-fidelity-r1",
+  "name": "Source Fidelity review for Senomorphics bundle",
+  "candidate_bundle_id": "senomorphics-bootstrap-2026-06-01",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, finding, intervention, and outlook records stay within the cited PubMed and PMC source boundaries. Titles, PMIDs, DOIs, registry identifiers, sample sizes, populations, intervention timing, endpoint classes, and quantitative claims match the cited records closely enough for editorial approval; the staged findings preserve the key boundaries that topical rapamycin and metformin are small human biomarker signals, JAK inhibition is preclinical functional support, mTOR/NF-kB claims are mechanistic, and oral rapamycin is a feasibility/no-functional-change boundary.",
+  "reviewed_change_ids": [
+    "create-source-pmid-31761958",
+    "create-source-pmid-37486024",
+    "create-source-pmid-26578790",
+    "create-source-pmid-23521863",
+    "create-source-pmid-26147250",
+    "create-source-pmid-26280535",
+    "create-source-pmid-29408453",
+    "create-study-topical-rapamycin-human-skin-aging",
+    "create-study-metformin-disuse-reambulation-older-adults",
+    "create-study-jak-inhibition-aged-mouse-frailty",
+    "create-study-metformin-sasp-ikk-nfkb-cell-models",
+    "create-study-mtor-il1a-sasp-senescent-cell-models",
+    "create-study-mtor-mapkapk2-sasp-senescent-cell-models",
+    "create-study-oral-rapamycin-older-adult-feasibility",
+    "create-finding-topical-rapamycin-reduced-human-skin-p16",
+    "create-finding-metformin-reduced-older-adult-muscle-sasp-after-disuse",
+    "create-finding-jak-inhibition-reduced-sasp-and-improved-aged-mouse-function",
+    "create-finding-metformin-inhibited-sasp-through-ikk-nfkb-cell-models",
+    "create-finding-mtor-inhibition-suppressed-sasp-via-il1a-translation",
+    "create-finding-mtor-mapkapk2-axis-controlled-sasp",
+    "create-finding-oral-rapamycin-older-adults-short-term-safety-no-functional-change",
+    "update-intervention-metformin",
+    "update-intervention-sirolimus",
+    "create-outlook-track-senomorphics"
+  ],
+  "findings": [
+    {
+      "finding_id": "senomorphics-topical-rapamycin-source-boundary-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-topical-rapamycin-reduced-human-skin-p16",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "topical-rapamycin-reduced-human-skin-p16"
+      },
+      "claim_or_issue": "PMID 31761958 supports the staged human skin biomarker claim: 36 participants were enrolled, 19 discontinued or were lost to follow-up, p16INK4A decreased with P = 0.008, collagen VII increased with P = 0.0077, and NCT03103893 is the linked registry identifier.",
+      "why_it_matters": "This source can support a human_biomarker signal for topical skin exposure, but its small completed sample and local tissue scope should not be converted into systemic functional benefit.",
+      "recommended_action": "No revision needed; retain the small-sample, topical/local, and biomarker caveats already staged.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "senomorphics-metformin-disuse-source-boundary-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-metformin-reduced-older-adult-muscle-sasp-after-disuse",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "metformin-reduced-older-adult-muscle-sasp-after-disuse"
+      },
+      "claim_or_issue": "PMID 37486024 supports the staged older-adult disuse/recovery claim: n = 20 healthy adults aged 60 years or older with BMI under 30, randomized to placebo or metformin, with two-week run-in, five days of bed rest, seven days of re-ambulation, and NCT03107884 in the full-text registration statement.",
+      "why_it_matters": "The source supports muscle senescence/SASP and fibrosis-marker movement in an acute stress-recovery model, not long-term aging prevention or generalized functional benefit.",
+      "recommended_action": "No revision needed; keep the acute disuse/recovery and pleiotropic-metformin caveats.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "senomorphics-preclinical-mechanistic-sources-classified-correctly",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-outlook-track-senomorphics",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-senomorphics-outlook"
+      },
+      "claim_or_issue": "PMIDs 26578790, 23521863, 26147250, and 26280535 are staged with appropriate boundaries: JAK inhibition is human-cell plus aged-mouse functional support, metformin IKK/NF-kB is in-vitro/mechanistic, and the two mTOR-SASP studies are mechanistic rapamycin-sensitive SASP-control evidence.",
+      "why_it_matters": "These sources build biological plausibility, but only the JAK paper includes aged-mouse functional improvement and none of them is a human aging efficacy trial.",
+      "recommended_action": "No revision needed; retain the animal and in-vitro evidence tiers and avoid upgrading from these sources alone.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "senomorphics-oral-rapamycin-functional-boundary-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-oral-rapamycin-older-adults-short-term-safety-no-functional-change",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "oral-rapamycin-older-adults-short-term-safety-no-functional-change"
+      },
+      "claim_or_issue": "PMID 29408453 supports the staged feasibility and no-functional-change boundary: 25 generally healthy older adults aged 70 to 95 were randomized, 11 rapamycin and 14 placebo participants were analyzed after at least eight weeks, and no changes were seen in cognitive, physical-performance, self-perceived health, or most immune measures.",
+      "why_it_matters": "The source is useful as a systemic rapamycin safety and endpoint boundary, but it does not test senescence/SASP efficacy or justify functional benefit.",
+      "recommended_action": "No revision needed; retain the mixed direction, safety endpoint category, and no-functional-benefit caveat.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-01T16:26:06.577Z",
+  "updated_at": "2026-06-01T16:26:06.577Z"
+}

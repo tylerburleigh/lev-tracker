@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "metformin-inhibited-sasp-through-ikk-nfkb-cell-models",
+  "name": "Metformin inhibited SASP through IKK/NF-kB-linked signaling in cell models",
+  "summary": "This cell-model result explains why metformin belongs in senomorphics while keeping the direct evidence tier mechanistic.",
+  "source_id": "pmid-23521863",
+  "study_id": "metformin-sasp-ikk-nfkb-cell-models",
+  "intervention_ids": [
+    "metformin"
+  ],
+  "track_ids": [
+    "senomorphics"
+  ],
+  "hallmark_ids": [
+    "cellular_senescence"
+  ],
+  "endpoint_category": "mechanistic",
+  "direction": "positive",
+  "evidence_tier": "in_vitro",
+  "confidence": "moderate",
+  "statement": "Metformin inhibited genes encoding multiple inflammatory cytokines in cellular senescence models, reduced senescent-cell conditioned-medium stimulation of prostate cancer cell growth, and interfered with NF-kB nuclear translocation and IKK/IkB phosphorylation.",
+  "population_or_model": "Senescence-linked cell systems, AMPK-null fibroblasts, macrophages, and conditioned-media assays",
+  "time_horizon": "Cell-culture exposure in mechanistic assays",
+  "quantitative_note": "The PubMed abstract reports AMPK-independent inhibition of NF-kB pathway activation in several cell contexts.",
+  "caveats": [
+    "The source is mechanistic and cell-based.",
+    "Metformin effects on SASP cannot be cleanly separated from its broader nutrient-sensing, mitochondrial, and inflammatory actions in humans.",
+    "Cell-model SASP suppression does not establish systemic human functional benefit."
+  ],
+  "tags": [
+    "metformin",
+    "nf-kb",
+    "sasp",
+    "mechanistic",
+    "in-vitro"
+  ]
+}

@@ -5,7 +5,7 @@
   "name": "Senomorphics bootstrap for June 1, 2026",
   "summary": "First public baseline bundle for senomorphics under cellular senescence, centered on small human biomarker signals and mechanistic SASP-modulation evidence.",
   "intake_mode": "bootstrap",
-  "lifecycle_status": "submitted",
+  "lifecycle_status": "published",
   "submitted_at": "2026-06-01T15:35:00Z",
   "submitted_by": "codex-agent",
   "revision_number": 1,
@@ -322,14 +322,19 @@
   },
   "session_reference": "research/sessions/2026-06-01-senomorphics-bootstrap.json",
   "next_actions": [
-    "Run source-fidelity evidence review for all PubMed sources, registry IDs, samples, and endpoint boundaries.",
-    "Run interpretation/forecast evidence review with attention to senomorphic versus nutrient-sensing attribution.",
-    "Do not approve until reviewers accept the low-confidence human_biomarker_signal rating and the functional-benefit boundary."
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
   ],
   "tags": [
     "public",
     "bootstrap",
     "cellular-senescence",
     "senomorphics"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-senomorphics-source-fidelity-r1",
+    "evidence-review-senomorphics-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-senomorphics-bootstrap-2026-06-01-2026-06-01t16-26-47-676z"
   ]
 }

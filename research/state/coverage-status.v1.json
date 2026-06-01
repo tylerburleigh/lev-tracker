@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-01T15:45:06.557Z",
+  "updated_at": "2026-06-01T16:26:51.780Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One bootstrap or surveillance run should cover one track unless the user explicitly narrows further.",
@@ -77,7 +77,7 @@
       "hallmark_id": "cellular_senescence",
       "canonical_order": 8,
       "hallmark_bootstrap_status": "baseline",
-      "tracked_public_outlook_count": 1,
+      "tracked_public_outlook_count": 2,
       "next_priority_track_id": "immune-clearance-of-senescent-cells",
       "notes": "At least one track-level public baseline exists."
     },
@@ -493,17 +493,19 @@
       "hallmark_id": "cellular_senescence",
       "canonical_order": 2,
       "name": "Senomorphics",
-      "coverage_status": "not_started",
+      "coverage_status": "baseline",
       "next_mode": "surveillance",
-      "queue_state": "active_review",
+      "queue_state": "ready",
       "last_session_id": "2026-06-01-senomorphics-bootstrap",
       "last_session_at": "2026-06-01T15:35:00Z",
       "last_session_mode": "bootstrap",
       "last_session_outcome": "candidate_bundle_submitted",
       "last_candidate_bundle_id": "senomorphics-bootstrap-2026-06-01",
-      "last_candidate_bundle_status": "submitted",
+      "last_candidate_bundle_status": "published",
+      "last_publication_event_id": "publish-senomorphics-bootstrap-2026-06-01-2026-06-01t16-26-47-676z",
+      "last_published_at": "2026-06-01T16:26:47.676Z",
       "default_research_question": "What changed for Senomorphics since the last meaningful review or publication, and does any change justify a public update?",
-      "notes": "Candidate bundle senomorphics-bootstrap-2026-06-01 is still submitted."
+      "notes": "Latest publication event: publish-senomorphics-bootstrap-2026-06-01-2026-06-01t16-26-47-676z."
     },
     {
       "track_id": "immune-clearance-of-senescent-cells",

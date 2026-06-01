@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-senomorphics-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Senomorphics bundle",
+  "candidate_bundle_id": "senomorphics-bootstrap-2026-06-01",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged senomorphics outlook is calibrated for a low-confidence human_biomarker_signal baseline. It uses topical rapamycin skin p16/collagen VII and metformin disuse-recovery muscle senescence/SASP markers as direct but small human biomarker anchors, keeps JAK inhibition in a preclinical functional role, treats mTOR and NF-kB findings as mechanistic coherence, rejects a human_functional_benefit upgrade, and avoids a credible LEV-relevant forecast window until human senescence-marker movement is tied to durable function, tissue resilience, disease modification, and acceptable safety.",
+  "reviewed_change_ids": [
+    "create-source-pmid-31761958",
+    "create-source-pmid-37486024",
+    "create-source-pmid-26578790",
+    "create-source-pmid-23521863",
+    "create-source-pmid-26147250",
+    "create-source-pmid-26280535",
+    "create-source-pmid-29408453",
+    "create-study-topical-rapamycin-human-skin-aging",
+    "create-study-metformin-disuse-reambulation-older-adults",
+    "create-study-jak-inhibition-aged-mouse-frailty",
+    "create-study-metformin-sasp-ikk-nfkb-cell-models",
+    "create-study-mtor-il1a-sasp-senescent-cell-models",
+    "create-study-mtor-mapkapk2-sasp-senescent-cell-models",
+    "create-study-oral-rapamycin-older-adult-feasibility",
+    "create-finding-topical-rapamycin-reduced-human-skin-p16",
+    "create-finding-metformin-reduced-older-adult-muscle-sasp-after-disuse",
+    "create-finding-jak-inhibition-reduced-sasp-and-improved-aged-mouse-function",
+    "create-finding-metformin-inhibited-sasp-through-ikk-nfkb-cell-models",
+    "create-finding-mtor-inhibition-suppressed-sasp-via-il1a-translation",
+    "create-finding-mtor-mapkapk2-axis-controlled-sasp",
+    "create-finding-oral-rapamycin-older-adults-short-term-safety-no-functional-change",
+    "update-intervention-metformin",
+    "update-intervention-sirolimus",
+    "create-outlook-track-senomorphics"
+  ],
+  "findings": [
+    {
+      "finding_id": "senomorphics-human-biomarker-stage-calibrated",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-outlook-track-senomorphics",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-senomorphics-outlook"
+      },
+      "claim_or_issue": "The outlook assigns human_biomarker_signal from two human studies that directly measured senescence-linked biomarkers, while preserving low confidence and tissue/context caveats.",
+      "why_it_matters": "Topical skin p16 movement and acute disuse/recovery muscle SASP movement are enough for a conservative human biomarker baseline, but not for durable function or systemic aging benefit.",
+      "recommended_action": "No revision needed; keep the low-confidence stage language and small, local, acute-stress boundaries.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "senomorphics-functional-upgrade-correctly-rejected",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "applies_to_change_id": "create-outlook-track-senomorphics",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-senomorphics-outlook"
+      },
+      "claim_or_issue": "The outlook does not upgrade to human_functional_benefit because human functional benefit tied to senescence/SASP movement has not been shown, and the oral rapamycin older-adult pilot found no cognitive or physical-performance improvement.",
+      "why_it_matters": "A higher stage would overstate biomarker and feasibility studies as clinical efficacy.",
+      "recommended_action": "No revision needed; retain the requirement for replicated randomized human functional or resilience endpoints before upgrading.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "senomorphics-cross-track-attribution-preserved",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-outlook-track-senomorphics",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-senomorphics-outlook"
+      },
+      "claim_or_issue": "The staged outlook and intervention updates explicitly keep metformin and sirolimus cross-track attribution bounded because both drugs have broader nutrient-sensing, inflammatory, and mTOR biology beyond senomorphic SASP modulation.",
+      "why_it_matters": "Without this boundary, public pages could imply that all metformin or sirolimus geroscience evidence is specifically senomorphic.",
+      "recommended_action": "No revision needed; keep the pleiotropy and endpoint-mapping caveats.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "senomorphics-sasp-safety-and-context-caveats-adequate",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-outlook-track-senomorphics",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-senomorphics-outlook"
+      },
+      "claim_or_issue": "The outlook flags that chronic SASP suppression may disrupt beneficial senescence functions, including repair, immune surveillance, and tumor-suppression contexts, and names immune, cancer, wound-healing, and metabolic tradeoffs in the forecast criteria.",
+      "why_it_matters": "Senomorphic approaches are not purely beneficial by mechanism; safety and context are central to any preventive aging interpretation.",
+      "recommended_action": "No revision needed; preserve these safety and context caveats through approval and publication.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "senomorphics-forecast-window-conservative",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "create-outlook-track-senomorphics",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-senomorphics-outlook"
+      },
+      "claim_or_issue": "The outlook sets scenario_2036_status to speculative and declines to assign a credible LEV-relevant window before senescence-marker movement is connected to durable function, tissue resilience, disease modification, or safety-calibrated prevention.",
+      "why_it_matters": "Current evidence supports a first baseline, not timing claims for LEV-relevant impact.",
+      "recommended_action": "No revision needed; retain the conservative forecast and rating-change criteria.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-01T16:26:12.754Z",
+  "updated_at": "2026-06-01T16:26:12.754Z"
+}
