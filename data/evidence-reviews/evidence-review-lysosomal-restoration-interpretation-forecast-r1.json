@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-lysosomal-restoration-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Lysosomal Restoration bundle",
+  "candidate_bundle_id": "lysosomal-restoration-bootstrap-2026-06-01",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged outlook is calibrated to the evidence. The human_biomarker_signal stage is supported by ambroxol CNS exposure and beta-glucocerebrosidase target engagement, while the forecast note, blockers, support map, and rating-change criteria repeatedly state that the evidence is disease-specific, biomarker-level, not a broad aging or functional-benefit claim, and not yet a durable disease-modification result.",
+  "reviewed_change_ids": [
+    "create-source-pmid-18690243",
+    "create-source-pmid-32482227",
+    "create-source-pmid-40571723",
+    "create-source-pmid-28165011",
+    "create-source-pmid-31930374",
+    "create-source-pmid-40587145",
+    "create-source-pmid-41708985",
+    "create-study-lamp2a-cma-aging-liver",
+    "create-study-lysosome-function-aging-c-elegans",
+    "create-study-lysr-vha6-c-elegans-healthspan",
+    "create-study-trehalose-tfeb-batten-mouse",
+    "create-study-ambroxol-parkinson-gcase-open-label",
+    "create-study-ambroxol-pdd-randomized-phase2",
+    "create-study-aspro-pd-ambroxol-phase3",
+    "create-finding-lamp2a-restoration-improved-aged-mouse-liver-function",
+    "create-finding-lysosome-function-declined-with-age-and-supported-longevity-pathways",
+    "create-finding-lysr-vha6-rnai-extended-worm-healthspan",
+    "create-finding-trehalose-tfeb-cleared-storage-burden-and-prolonged-batten-mouse-survival",
+    "create-finding-ambroxol-open-label-parkinson-csf-target-engagement",
+    "create-finding-ambroxol-pdd-target-engagement-without-cognitive-benefit",
+    "create-finding-aspro-pd-phase3-active-no-results",
+    "create-track-lysosomal-restoration-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "lysosomal-interpretation-low-confidence-boundary-note",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "applies_to_change_id": "create-track-lysosomal-restoration-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-lysosomal-restoration-outlook"
+      },
+      "claim_or_issue": "The human_biomarker_signal assignment depends on a narrow Parkinson disease GCase target-engagement read, not a general healthy-aging biomarker program.",
+      "why_it_matters": "If later editorial wording drops the disease-specific and low-confidence qualifiers, the track would overstate the maturity of lysosomal restoration for aging.",
+      "recommended_action": "Preserve the current low-confidence label, disease-specific caveats, null cognitive-benefit boundary, and no-LEV-window language through publication.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-01T11:23:23.731Z",
+  "updated_at": "2026-06-01T11:23:23.731Z"
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-01-lysosomal-restoration-bootstrap",
+  "name": "Lysosomal restoration bootstrap pass for June 1, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-06-01T10:05:00Z",
+  "completed_at": "2026-06-01T10:38:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Lysosomal Restoration, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "disabled_macroautophagy"
+    ],
+    "track_ids": [
+      "lysosomal-restoration"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "lysosomal-restoration-bootstrap-2026-06-01",
+  "summary": "The track supports a first public baseline at low-confidence human_biomarker_signal. Aging-relevant animal evidence includes LAMP-2A restoration in old mouse liver, C. elegans lysosomal-function decline across aging and longevity pathways, and a 2025 lysosomal surveillance response that extends worm healthspan. Human evidence is narrower: ambroxol trials in Parkinson disease and Parkinson disease dementia demonstrate CNS exposure and beta-glucocerebrosidase target engagement, but clinical efficacy is not confirmed and the evidence is disease-specific rather than broad healthy-aging data.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-18690243",
+    "pmid-32482227",
+    "pmid-40571723",
+    "pmid-28165011",
+    "pmid-31930374",
+    "pmid-40587145",
+    "pmid-41708985"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/18690243/",
+    "https://pubmed.ncbi.nlm.nih.gov/32482227/",
+    "https://pubmed.ncbi.nlm.nih.gov/40571723/",
+    "https://pubmed.ncbi.nlm.nih.gov/28165011/",
+    "https://pubmed.ncbi.nlm.nih.gov/31930374/",
+    "https://pubmed.ncbi.nlm.nih.gov/40587145/",
+    "https://pubmed.ncbi.nlm.nih.gov/41708985/"
+  ],
+  "notes": [
+    "The top bootstrap queue item was selected from research/backlog/track-priority.v1.json and research/state/coverage-status.v1.json.",
+    "LAMP-2A restoration is the most direct mammalian aging intervention signal, but it is liver-specific genetic preservation rather than a deployable human therapy.",
+    "C. elegans evidence supports lysosomal function as aging-relevant, including age-related lysosomal decline, longevity-pathway dependence, and lysosomal surveillance response activation.",
+    "Trehalose/TFEB evidence supports pharmacological lysosomal-clearance tractability in a neurodegenerative storage disease model, not normal aging.",
+    "Ambroxol provides human lysosomal target-engagement evidence through beta-glucocerebrosidase biology in Parkinson disease contexts, but the 2025 randomized Parkinson disease dementia trial did not confirm cognitive benefit.",
+    "The baseline should remain low confidence because the human data are disease-specific, the interventions are heterogeneous, and no healthy-aging or durable functional trial was identified."
+  ],
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast evidence review before publication.",
+    "If approved, publish the staged records as the first lysosomal restoration track baseline.",
+    "After publication, refresh planning state and inspect the disabled macroautophagy hallmark surface."
+  ]
+}

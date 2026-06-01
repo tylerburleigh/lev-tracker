@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "lamp2a-restoration-improved-aged-mouse-liver-function",
+  "name": "LAMP-2A preservation improved aged mouse liver maintenance and function",
+  "summary": "A liver-specific LAMP-2A model provides direct mammalian aging support for restoring lysosomal degradation capacity.",
+  "source_id": "pmid-18690243",
+  "study_id": "lamp2a-cma-aging-liver",
+  "intervention_ids": [
+    "lamp2a-expression-preservation"
+  ],
+  "track_ids": [
+    "lysosomal-restoration"
+  ],
+  "hallmark_ids": [
+    "disabled_macroautophagy"
+  ],
+  "endpoint_category": "functional",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "moderate",
+  "statement": "Preventing the age-related loss of LAMP-2A and chaperone-mediated autophagy in mouse liver was associated with lower damaged-protein accumulation, better stress handling, and improved liver function in old animals.",
+  "population_or_model": "Aged liver-specific Tet-off-LAMP-2A transgenic mice",
+  "time_horizon": "Old-age liver maintenance after lifelong LAMP-2A preservation",
+  "caveats": [
+    "The intervention is genetic and liver-specific.",
+    "The study supports tissue function and cellular maintenance rather than lifespan extension.",
+    "Translation to a systemic human intervention remains unresolved."
+  ],
+  "tags": [
+    "animal",
+    "mouse",
+    "lamp2a",
+    "functional",
+    "aging"
+  ]
+}

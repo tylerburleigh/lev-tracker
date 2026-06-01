@@ -1,0 +1,331 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "lysosomal-restoration-bootstrap-2026-06-01",
+  "name": "Lysosomal restoration bootstrap for June 1, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline candidate for the lysosomal restoration track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-01T10:38:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Lysosomal Restoration, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "disabled_macroautophagy"
+    ],
+    "track_ids": [
+      "lysosomal-restoration"
+    ]
+  },
+  "source_ids": [
+    "pmid-18690243",
+    "pmid-32482227",
+    "pmid-40571723",
+    "pmid-28165011",
+    "pmid-31930374",
+    "pmid-40587145",
+    "pmid-41708985"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/18690243/",
+    "https://pubmed.ncbi.nlm.nih.gov/32482227/",
+    "https://pubmed.ncbi.nlm.nih.gov/40571723/",
+    "https://pubmed.ncbi.nlm.nih.gov/28165011/",
+    "https://pubmed.ncbi.nlm.nih.gov/31930374/",
+    "https://pubmed.ncbi.nlm.nih.gov/40587145/",
+    "https://pubmed.ncbi.nlm.nih.gov/41708985/"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-lysosomal-restoration-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-disabled-macroautophagy-outlook"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "lamp2a-restoration-improved-aged-mouse-liver-function"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "lysr-vha6-rnai-extended-worm-healthspan"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "ambroxol-open-label-parkinson-csf-target-engagement"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "ambroxol-pdd-target-engagement-without-cognitive-benefit"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-18690243",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-18690243",
+      "file_path": "data/sources/pmid-18690243.json",
+      "staged_file_path": "data/staged-records/lysosomal-restoration-bootstrap-2026-06-01/pmid-18690243.json",
+      "summary": "Add LAMP-2A restoration in aging liver source.",
+      "rationale": "This source anchors the most direct mammalian aging evidence for restoring lysosomal degradation capacity."
+    },
+    {
+      "change_id": "create-source-pmid-32482227",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-32482227",
+      "file_path": "data/sources/pmid-32482227.json",
+      "staged_file_path": "data/staged-records/lysosomal-restoration-bootstrap-2026-06-01/pmid-32482227.json",
+      "summary": "Add C. elegans lysosomal-function aging source.",
+      "rationale": "This source supports lysosomal function as aging-relevant and required for multiple worm longevity pathways."
+    },
+    {
+      "change_id": "create-source-pmid-40571723",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-40571723",
+      "file_path": "data/sources/pmid-40571723.json",
+      "staged_file_path": "data/staged-records/lysosomal-restoration-bootstrap-2026-06-01/pmid-40571723.json",
+      "summary": "Add 2025 lysosomal surveillance response source.",
+      "rationale": "This source adds current animal-healthspan evidence for a lysosome-centered adaptive response."
+    },
+    {
+      "change_id": "create-source-pmid-28165011",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-28165011",
+      "file_path": "data/sources/pmid-28165011.json",
+      "staged_file_path": "data/staged-records/lysosomal-restoration-bootstrap-2026-06-01/pmid-28165011.json",
+      "summary": "Add trehalose/TFEB lysosomal-clearance source.",
+      "rationale": "This source supports pharmacological tractability of TFEB-mediated lysosomal clearance while retaining disease-model limits."
+    },
+    {
+      "change_id": "create-source-pmid-31930374",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-31930374",
+      "file_path": "data/sources/pmid-31930374.json",
+      "staged_file_path": "data/staged-records/lysosomal-restoration-bootstrap-2026-06-01/pmid-31930374.json",
+      "summary": "Add open-label ambroxol Parkinson disease source.",
+      "rationale": "This source supplies the first human lysosomal target-engagement support through GCase biology."
+    },
+    {
+      "change_id": "create-source-pmid-40587145",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-40587145",
+      "file_path": "data/sources/pmid-40587145.json",
+      "staged_file_path": "data/staged-records/lysosomal-restoration-bootstrap-2026-06-01/pmid-40587145.json",
+      "summary": "Add randomized ambroxol Parkinson disease dementia source.",
+      "rationale": "This source supports human biomarker signal while limiting functional-benefit claims."
+    },
+    {
+      "change_id": "create-source-pmid-41708985",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-41708985",
+      "file_path": "data/sources/pmid-41708985.json",
+      "staged_file_path": "data/staged-records/lysosomal-restoration-bootstrap-2026-06-01/pmid-41708985.json",
+      "summary": "Add ASPro-PD phase 3 protocol source.",
+      "rationale": "This source documents active clinical momentum without treating protocol status as efficacy evidence."
+    },
+    {
+      "change_id": "create-study-lamp2a-cma-aging-liver",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "lamp2a-cma-aging-liver",
+      "file_path": "data/studies/lamp2a-cma-aging-liver.json",
+      "staged_file_path": "data/staged-records/lysosomal-restoration-bootstrap-2026-06-01/lamp2a-cma-aging-liver.json",
+      "summary": "Add aged mouse LAMP-2A/CMA study record.",
+      "rationale": "The study record captures the direct mammalian aging signal."
+    },
+    {
+      "change_id": "create-study-lysosome-function-aging-c-elegans",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "lysosome-function-aging-c-elegans",
+      "file_path": "data/studies/lysosome-function-aging-c-elegans.json",
+      "staged_file_path": "data/staged-records/lysosomal-restoration-bootstrap-2026-06-01/lysosome-function-aging-c-elegans.json",
+      "summary": "Add C. elegans lysosomal-function aging study record.",
+      "rationale": "The study record captures age-related lysosomal decline and longevity-pathway dependence."
+    },
+    {
+      "change_id": "create-study-lysr-vha6-c-elegans-healthspan",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "lysr-vha6-c-elegans-healthspan",
+      "file_path": "data/studies/lysr-vha6-c-elegans-healthspan.json",
+      "staged_file_path": "data/staged-records/lysosomal-restoration-bootstrap-2026-06-01/lysr-vha6-c-elegans-healthspan.json",
+      "summary": "Add lysosomal surveillance response worm study record.",
+      "rationale": "The study record captures the recent v-ATPase/LySR animal-healthspan signal."
+    },
+    {
+      "change_id": "create-study-trehalose-tfeb-batten-mouse",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "trehalose-tfeb-batten-mouse",
+      "file_path": "data/studies/trehalose-tfeb-batten-mouse.json",
+      "staged_file_path": "data/staged-records/lysosomal-restoration-bootstrap-2026-06-01/trehalose-tfeb-batten-mouse.json",
+      "summary": "Add trehalose/TFEB Batten disease model study record.",
+      "rationale": "The study record captures pharmacological lysosomal-clearance tractability and disease-model limits."
+    },
+    {
+      "change_id": "create-study-ambroxol-parkinson-gcase-open-label",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "ambroxol-parkinson-gcase-open-label",
+      "file_path": "data/studies/ambroxol-parkinson-gcase-open-label.json",
+      "staged_file_path": "data/staged-records/lysosomal-restoration-bootstrap-2026-06-01/ambroxol-parkinson-gcase-open-label.json",
+      "summary": "Add open-label ambroxol Parkinson disease study record.",
+      "rationale": "The study record anchors early human target-engagement evidence."
+    },
+    {
+      "change_id": "create-study-ambroxol-pdd-randomized-phase2",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "ambroxol-pdd-randomized-phase2",
+      "file_path": "data/studies/ambroxol-pdd-randomized-phase2.json",
+      "staged_file_path": "data/staged-records/lysosomal-restoration-bootstrap-2026-06-01/ambroxol-pdd-randomized-phase2.json",
+      "summary": "Add randomized ambroxol Parkinson disease dementia study record.",
+      "rationale": "The study record captures the controlled human target-engagement signal and null functional boundary."
+    },
+    {
+      "change_id": "create-study-aspro-pd-ambroxol-phase3",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "aspro-pd-ambroxol-phase3",
+      "file_path": "data/studies/aspro-pd-ambroxol-phase3.json",
+      "staged_file_path": "data/staged-records/lysosomal-restoration-bootstrap-2026-06-01/aspro-pd-ambroxol-phase3.json",
+      "summary": "Add ASPro-PD phase 3 study record.",
+      "rationale": "The study record captures clinical-program momentum without outcome overreach."
+    },
+    {
+      "change_id": "create-finding-lamp2a-restoration-improved-aged-mouse-liver-function",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "lamp2a-restoration-improved-aged-mouse-liver-function",
+      "file_path": "data/findings/lamp2a-restoration-improved-aged-mouse-liver-function.json",
+      "staged_file_path": "data/staged-records/lysosomal-restoration-bootstrap-2026-06-01/lamp2a-restoration-improved-aged-mouse-liver-function.json",
+      "summary": "Add aged mouse LAMP-2A functional finding.",
+      "rationale": "This finding supports animal aging relevance for restoring lysosomal degradation capacity."
+    },
+    {
+      "change_id": "create-finding-lysosome-function-declined-with-age-and-supported-longevity-pathways",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "lysosome-function-declined-with-age-and-supported-longevity-pathways",
+      "file_path": "data/findings/lysosome-function-declined-with-age-and-supported-longevity-pathways.json",
+      "staged_file_path": "data/staged-records/lysosomal-restoration-bootstrap-2026-06-01/lysosome-function-declined-with-age-and-supported-longevity-pathways.json",
+      "summary": "Add C. elegans lysosomal-aging finding.",
+      "rationale": "This finding supports mechanistic aging relevance and lifespan-pathway dependence."
+    },
+    {
+      "change_id": "create-finding-lysr-vha6-rnai-extended-worm-healthspan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "lysr-vha6-rnai-extended-worm-healthspan",
+      "file_path": "data/findings/lysr-vha6-rnai-extended-worm-healthspan.json",
+      "staged_file_path": "data/staged-records/lysosomal-restoration-bootstrap-2026-06-01/lysr-vha6-rnai-extended-worm-healthspan.json",
+      "summary": "Add lysosomal surveillance response finding.",
+      "rationale": "This finding adds current animal-healthspan momentum with explicit translation limits."
+    },
+    {
+      "change_id": "create-finding-trehalose-tfeb-cleared-storage-burden-and-prolonged-batten-mouse-survival",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "trehalose-tfeb-cleared-storage-burden-and-prolonged-batten-mouse-survival",
+      "file_path": "data/findings/trehalose-tfeb-cleared-storage-burden-and-prolonged-batten-mouse-survival.json",
+      "staged_file_path": "data/staged-records/lysosomal-restoration-bootstrap-2026-06-01/trehalose-tfeb-cleared-storage-burden-and-prolonged-batten-mouse-survival.json",
+      "summary": "Add trehalose/TFEB storage-disease finding.",
+      "rationale": "This finding supports pharmacological tractability while preserving disease-model boundaries."
+    },
+    {
+      "change_id": "create-finding-ambroxol-open-label-parkinson-csf-target-engagement",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ambroxol-open-label-parkinson-csf-target-engagement",
+      "file_path": "data/findings/ambroxol-open-label-parkinson-csf-target-engagement.json",
+      "staged_file_path": "data/staged-records/lysosomal-restoration-bootstrap-2026-06-01/ambroxol-open-label-parkinson-csf-target-engagement.json",
+      "summary": "Add open-label ambroxol human biomarker finding.",
+      "rationale": "This finding helps justify the human_biomarker_signal stage assignment."
+    },
+    {
+      "change_id": "create-finding-ambroxol-pdd-target-engagement-without-cognitive-benefit",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ambroxol-pdd-target-engagement-without-cognitive-benefit",
+      "file_path": "data/findings/ambroxol-pdd-target-engagement-without-cognitive-benefit.json",
+      "staged_file_path": "data/staged-records/lysosomal-restoration-bootstrap-2026-06-01/ambroxol-pdd-target-engagement-without-cognitive-benefit.json",
+      "summary": "Add randomized ambroxol mixed human biomarker finding.",
+      "rationale": "This finding supports human target engagement and blocks a functional-benefit upgrade."
+    },
+    {
+      "change_id": "create-finding-aspro-pd-phase3-active-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "aspro-pd-phase3-active-no-results",
+      "file_path": "data/findings/aspro-pd-phase3-active-no-results.json",
+      "staged_file_path": "data/staged-records/lysosomal-restoration-bootstrap-2026-06-01/aspro-pd-phase3-active-no-results.json",
+      "summary": "Add ASPro-PD phase 3 program-status finding.",
+      "rationale": "This finding supports clinical momentum while avoiding efficacy overclaiming."
+    },
+    {
+      "change_id": "create-track-lysosomal-restoration-outlook",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-lysosomal-restoration-outlook",
+      "file_path": "data/outlooks/track-lysosomal-restoration-outlook.json",
+      "staged_file_path": "data/staged-records/lysosomal-restoration-bootstrap-2026-06-01/track-lysosomal-restoration-outlook.json",
+      "summary": "Create the first public outlook for the lysosomal restoration track.",
+      "rationale": "A low-confidence human_biomarker_signal baseline is justified by human ambroxol target engagement, while animal aging evidence and disease-model tractability support the track without establishing human functional benefit.",
+      "uncertainty_flags": [
+        "No direct healthy-aging or broad geroscience human trial was identified.",
+        "Human evidence is disease-specific and centered on Parkinson disease GCase biology.",
+        "The randomized Parkinson disease dementia trial did not confirm cognitive benefit.",
+        "Preclinical signals are heterogeneous and include genetic, disease-model, and stress-response mechanisms.",
+        "Chronic lysosomal or autophagy-lysosome activation safety remains unresolved."
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "lysosomal-restoration",
+      "note": "A first public baseline is justified at low-confidence human_biomarker_signal because ambroxol studies show human lysosomal target engagement, while functional benefit and broad aging relevance remain unproven.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "disabled_macroautophagy",
+      "note": "Publishing this bundle would broaden disabled macroautophagy coverage beyond autophagy induction and add a distinct lysosome-focused baseline.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-01-lysosomal-restoration-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-lysosomal-restoration-source-fidelity-r1",
+    "evidence-review-lysosomal-restoration-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-lysosomal-restoration-bootstrap-2026-06-01-2026-06-01t11-24-31-086z"
+  ]
+}

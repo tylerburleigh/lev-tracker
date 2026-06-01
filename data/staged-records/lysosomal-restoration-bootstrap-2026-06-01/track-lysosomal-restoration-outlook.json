@@ -1,0 +1,183 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-lysosomal-restoration-outlook",
+  "name": "Lysosomal Restoration Track Outlook",
+  "subject_type": "track",
+  "subject_id": "lysosomal-restoration",
+  "current_stage": "human_biomarker_signal",
+  "momentum": "mixed",
+  "confidence": "low",
+  "main_blockers": [
+    "Human evidence is concentrated in Parkinson disease and Parkinson disease dementia ambroxol studies, not broad aging or healthy older-adult cohorts.",
+    "The strongest human signal is lysosomal target engagement through beta-glucocerebrosidase biology; the 2025 randomized Parkinson disease dementia trial did not confirm cognitive benefit.",
+    "Aging-relevant animal evidence is compelling but heterogeneous, spanning LAMP-2A preservation, lysosomal surveillance response activation, TFEB activation, trehalose, and worm longevity pathways.",
+    "Several signals are genetic, disease-model, or stress-response probes rather than deployable chronic interventions.",
+    "Long-term safety, tissue specificity, and the risk of overdriving lysosomal or autophagy-lysosome pathways remain unresolved."
+  ],
+  "best_current_signals": [
+    "LAMP-2A preservation restored chaperone-mediated autophagy in old mouse liver and improved cellular maintenance plus liver function.",
+    "C. elegans work shows lysosomal function declines with age and is required for multiple lifespan-extension pathways.",
+    "A 2025 lysosomal surveillance response study links partial v-ATPase perturbation to improved aggregate clearance and healthspan in worms.",
+    "Trehalose/TFEB activation supports pharmacological lysosomal-clearance tractability in Batten disease mouse and patient-cell models.",
+    "Ambroxol trials show human CNS exposure and beta-glucocerebrosidase target engagement, and ASPro-PD is moving the program into phase 3 Parkinson disease testing."
+  ],
+  "forecast_note": "Lysosomal restoration earns a low-confidence human_biomarker_signal baseline because ambroxol studies now show human lysosomal target engagement, including randomized Parkinson disease dementia data. The broader aging claim should stay conservative: direct mammalian aging evidence is mostly preclinical, human effects are disease-specific, cognitive benefit has not been confirmed, and the intervention space has not converged on a safe chronic restoration strategy.",
+  "rating_change_criteria": [
+    "A move to human_functional_benefit would require a randomized human trial linking lysosomal target engagement to functional benefit in an aging-relevant or lysosomal-dysfunction-enriched population.",
+    "A durable disease or mortality rating would require replicated disease-modifying outcomes, acceptable long-term safety, and a clear bridge from disease-specific lysosomal biology to aging-relevant decline.",
+    "Higher confidence would need independent human replication, tissue-relevant lysosomal biomarkers, dose-response evidence, and mechanistic attribution that separates lysosomal restoration from broad metabolic or stress-response effects.",
+    "The rating would weaken if phase 3 ambroxol or other lysosomal-restoration programs show no clinical benefit despite target engagement, or if chronic activation creates unacceptable neurologic, metabolic, immune, cancer, or tissue-specific risks.",
+    "New animal signals should not upgrade the stage unless they show restoration in mammalian aging tissues or support a plausible human intervention path."
+  ],
+  "earliest_plausible_window": "No credible LEV-relevant window can be assigned before human trials connect lysosomal pathway engagement to durable function, disease modification, or resilience outcomes.",
+  "scenario_2036_status": "speculative",
+  "supporting_finding_ids": [
+    "lamp2a-restoration-improved-aged-mouse-liver-function",
+    "lysosome-function-declined-with-age-and-supported-longevity-pathways",
+    "lysr-vha6-rnai-extended-worm-healthspan",
+    "trehalose-tfeb-cleared-storage-burden-and-prolonged-batten-mouse-survival",
+    "ambroxol-open-label-parkinson-csf-target-engagement",
+    "ambroxol-pdd-target-engagement-without-cognitive-benefit",
+    "aspro-pd-phase3-active-no-results"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "current_stage",
+      "conclusion": "The track reaches human_biomarker_signal because ambroxol studies demonstrate human CNS exposure and beta-glucocerebrosidase target engagement in Parkinson disease contexts.",
+      "support_role": "supports",
+      "rationale": "The open-label Parkinson disease trial provides early CSF and target-engagement evidence, and the randomized Parkinson disease dementia trial confirms target engagement under controlled conditions even though clinical benefit was not shown.",
+      "finding_ids": [
+        "ambroxol-open-label-parkinson-csf-target-engagement",
+        "ambroxol-pdd-target-engagement-without-cognitive-benefit"
+      ],
+      "source_ids": [
+        "pmid-31930374",
+        "pmid-40587145"
+      ],
+      "limitations": [
+        "Both human studies are Parkinson disease focused rather than broad aging trials.",
+        "The strongest controlled trial did not show group differences on primary or secondary cognitive and clinical outcomes.",
+        "GCase target engagement is one lysosomal mechanism, not proof that the whole track improves healthy aging."
+      ]
+    },
+    {
+      "label": "Animal aging relevance",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Preclinical aging evidence supports lysosomal restoration as biologically relevant, especially through LAMP-2A/CMA restoration and worm lysosomal-function studies.",
+      "support_role": "supports",
+      "rationale": "LAMP-2A preservation improves old mouse liver maintenance and function, while C. elegans data show that lysosomal function declines with age and is required for multiple longevity pathways.",
+      "finding_ids": [
+        "lamp2a-restoration-improved-aged-mouse-liver-function",
+        "lysosome-function-declined-with-age-and-supported-longevity-pathways"
+      ],
+      "source_ids": [
+        "pmid-18690243",
+        "pmid-32482227"
+      ],
+      "limitations": [
+        "The mouse evidence is tissue-specific and genetic.",
+        "The worm evidence is mechanistic and organismal but not mammalian therapeutic evidence.",
+        "Neither source establishes durable human benefit."
+      ]
+    },
+    {
+      "label": "Recent animal momentum",
+      "outlook_field": "momentum",
+      "conclusion": "Momentum is supported by a recent lysosomal surveillance response result, but it remains preclinical and mechanistically unusual.",
+      "support_role": "balances",
+      "rationale": "The 2025 LySR study shows improved aggregate clearance and healthspan in worms after partial v-ATPase perturbation, which is relevant to lysosomal restoration but not a simple acidification or human-therapy result.",
+      "finding_ids": [
+        "lysr-vha6-rnai-extended-worm-healthspan"
+      ],
+      "source_ids": [
+        "pmid-40571723"
+      ],
+      "limitations": [
+        "The model is C. elegans.",
+        "The intervention is RNAi-based partial v-ATPase perturbation.",
+        "The result should be interpreted as a targetable stress response, not as direct clinical guidance."
+      ]
+    },
+    {
+      "label": "Pharmacological tractability",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Trehalose/TFEB and ambroxol provide pharmacological footholds for lysosomal pathway engagement.",
+      "support_role": "supports",
+      "rationale": "Trehalose activated TFEB and improved lysosomal storage-disease outcomes in preclinical systems, while ambroxol has human target-engagement and active phase 3 Parkinson disease testing.",
+      "finding_ids": [
+        "trehalose-tfeb-cleared-storage-burden-and-prolonged-batten-mouse-survival",
+        "ambroxol-open-label-parkinson-csf-target-engagement",
+        "aspro-pd-phase3-active-no-results"
+      ],
+      "source_ids": [
+        "pmid-28165011",
+        "pmid-31930374",
+        "pmid-41708985"
+      ],
+      "limitations": [
+        "Trehalose is broad and the strongest in vivo result is a storage-disease model.",
+        "ASPro-PD is a protocol/program-status source and has no outcome results yet.",
+        "Ambroxol's mechanism is GCase-centered and disease-specific."
+      ]
+    },
+    {
+      "label": "Functional benefit boundary",
+      "outlook_field": "current_stage",
+      "conclusion": "The track should not be upgraded to human_functional_benefit because controlled ambroxol data did not confirm cognitive or clinical benefit.",
+      "support_role": "limits",
+      "rationale": "The randomized Parkinson disease dementia trial is stronger than the open-label target-engagement trial for clinical interpretation, and it found no evidence of group differences on primary or secondary outcomes despite biomarker engagement.",
+      "finding_ids": [
+        "ambroxol-pdd-target-engagement-without-cognitive-benefit"
+      ],
+      "source_ids": [
+        "pmid-40587145"
+      ],
+      "limitations": [
+        "The trial was modest and disease-specific, so it should constrain rather than close the track.",
+        "Longer or genetically enriched trials could still differ.",
+        "No human study in this bundle tests broad aging function."
+      ]
+    },
+    {
+      "label": "Confidence and safety",
+      "outlook_field": "confidence",
+      "conclusion": "Confidence remains low because evidence is mechanistically diverse and chronic safety for lysosomal restoration is not settled.",
+      "support_role": "limits",
+      "rationale": "The support set combines LAMP-2A preservation, lysosomal surveillance response activation, TFEB/trehalose, GCase chaperoning, and phase 3 trial momentum. These cohere around lysosomal restoration but do not define one mature, safe, generalizable intervention class.",
+      "finding_ids": [
+        "lamp2a-restoration-improved-aged-mouse-liver-function",
+        "lysr-vha6-rnai-extended-worm-healthspan",
+        "trehalose-tfeb-cleared-storage-burden-and-prolonged-batten-mouse-survival",
+        "ambroxol-pdd-target-engagement-without-cognitive-benefit"
+      ],
+      "source_ids": [
+        "pmid-18690243",
+        "pmid-40571723",
+        "pmid-28165011",
+        "pmid-40587145"
+      ],
+      "limitations": [
+        "Lysosomal activation can be beneficial or harmful depending on tissue, dose, substrate, and disease context.",
+        "Human tolerability in Parkinson disease does not establish long-term preventive use in aging.",
+        "Disease-specific target engagement does not prove systemic rejuvenation."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-18690243",
+    "pmid-32482227",
+    "pmid-40571723",
+    "pmid-28165011",
+    "pmid-31930374",
+    "pmid-40587145",
+    "pmid-41708985"
+  ],
+  "last_updated": "2026-06-01",
+  "tags": [
+    "public",
+    "track",
+    "thin_coverage"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "lysr-vha6-rnai-extended-worm-healthspan",
+  "name": "Partial v-ATPase perturbation activated a lysosomal surveillance response and extended worm healthspan",
+  "summary": "A 2025 C. elegans study identifies an adaptive lysosomal surveillance response that improves proteotoxic-stress handling and longevity phenotypes.",
+  "source_id": "pmid-40571723",
+  "study_id": "lysr-vha6-c-elegans-healthspan",
+  "intervention_ids": [
+    "lysosomal-surveillance-response-activation",
+    "vha6-rnai"
+  ],
+  "track_ids": [
+    "lysosomal-restoration"
+  ],
+  "hallmark_ids": [
+    "disabled_macroautophagy"
+  ],
+  "endpoint_category": "lifespan",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "moderate",
+  "statement": "In C. elegans, partial RNAi of v-ATPase subunits such as vha-6 induced a lysosomal surveillance response that boosted lysosomal activity, improved protein-aggregate clearance, and extended healthspan.",
+  "population_or_model": "C. elegans partial v-ATPase RNAi and proteotoxic disease models",
+  "time_horizon": "Adult worm lifespan and aggregate-clearance assays",
+  "quantitative_note": "The abstract and institutional summary describe lifespan extension of about 60% after silencing selected v-ATPase subunits.",
+  "caveats": [
+    "This is worm evidence and depends on a stress-response induction paradigm.",
+    "v-ATPase biology is context-sensitive, and partial deacidification should not be read as a direct mammalian therapeutic recommendation.",
+    "The result supports a targetable lysosomal response more than a ready intervention."
+  ],
+  "tags": [
+    "animal",
+    "c-elegans",
+    "v-atpase",
+    "lysr",
+    "lifespan"
+  ]
+}

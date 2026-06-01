@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-01T10:27:19.352Z",
+  "updated_at": "2026-06-01T11:24:39.837Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One bootstrap or surveillance run should cover one track unless the user explicitly narrows further.",
@@ -53,8 +53,8 @@
       "hallmark_id": "disabled_macroautophagy",
       "canonical_order": 5,
       "hallmark_bootstrap_status": "baseline",
-      "tracked_public_outlook_count": 1,
-      "next_priority_track_id": "lysosomal-restoration",
+      "tracked_public_outlook_count": 2,
+      "next_priority_track_id": "selective-autophagy-and-organelle-quality-control",
       "notes": "At least one track-level public baseline exists."
     },
     {
@@ -324,11 +324,19 @@
       "hallmark_id": "disabled_macroautophagy",
       "canonical_order": 2,
       "name": "Lysosomal Restoration",
-      "coverage_status": "not_started",
-      "next_mode": "bootstrap",
+      "coverage_status": "baseline",
+      "next_mode": "surveillance",
       "queue_state": "ready",
-      "default_research_question": "What is the current human-relevant evidence landscape for Lysosomal Restoration, and what belongs in the first public baseline?",
-      "notes": "No track-level public baseline has been bootstrapped yet."
+      "last_session_id": "2026-06-01-lysosomal-restoration-bootstrap",
+      "last_session_at": "2026-06-01T10:38:00Z",
+      "last_session_mode": "bootstrap",
+      "last_session_outcome": "candidate_bundle_submitted",
+      "last_candidate_bundle_id": "lysosomal-restoration-bootstrap-2026-06-01",
+      "last_candidate_bundle_status": "published",
+      "last_publication_event_id": "publish-lysosomal-restoration-bootstrap-2026-06-01-2026-06-01t11-24-31-086z",
+      "last_published_at": "2026-06-01T11:24:31.086Z",
+      "default_research_question": "What changed for Lysosomal Restoration since the last meaningful review or publication, and does any change justify a public update?",
+      "notes": "Latest publication event: publish-lysosomal-restoration-bootstrap-2026-06-01-2026-06-01t11-24-31-086z."
     },
     {
       "track_id": "selective-autophagy-and-organelle-quality-control",

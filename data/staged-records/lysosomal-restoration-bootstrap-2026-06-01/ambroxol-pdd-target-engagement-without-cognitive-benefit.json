@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "ambroxol-pdd-target-engagement-without-cognitive-benefit",
+  "name": "Randomized ambroxol PDD trial showed target engagement but did not confirm cognitive benefit",
+  "summary": "A randomized human trial strengthens target-engagement evidence while limiting functional-benefit claims.",
+  "source_id": "pmid-40587145",
+  "study_id": "ambroxol-pdd-randomized-phase2",
+  "intervention_ids": [
+    "ambroxol"
+  ],
+  "track_ids": [
+    "lysosomal-restoration"
+  ],
+  "hallmark_ids": [
+    "disabled_macroautophagy"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "mixed",
+  "evidence_tier": "human_biomarker",
+  "confidence": "moderate",
+  "statement": "In a 55-participant randomized Parkinson disease dementia trial, ambroxol was safe and tolerated and demonstrated beta-glucocerebrosidase target engagement, but there was no evidence of group differences on primary or secondary cognitive and clinical outcomes.",
+  "population_or_model": "Patients older than 50 years with Parkinson disease dementia",
+  "time_horizon": "52 weeks",
+  "quantitative_note": "The high-dose group had higher beta-glucocerebrosidase levels at week 26 than placebo, while gastrointestinal adverse events were more frequent with ambroxol.",
+  "caveats": [
+    "The trial was modest in size and single-center.",
+    "The target-engagement result is disease-specific and does not establish broad aging benefit.",
+    "Null primary outcomes prevent upgrading the track to human functional benefit."
+  ],
+  "tags": [
+    "human",
+    "randomized-trial",
+    "ambroxol",
+    "gcase",
+    "mixed"
+  ]
+}
