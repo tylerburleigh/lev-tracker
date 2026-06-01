@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-senomorphics-outlook",
+  "name": "Senomorphics Track Outlook",
+  "subject_type": "track",
+  "subject_id": "senomorphics",
+  "current_stage": "human_biomarker_signal",
+  "momentum": "steady",
+  "confidence": "low",
+  "main_blockers": [
+    "Direct human evidence is small, local, or acute-stress focused: topical rapamycin skin p16 and metformin disuse-recovery muscle SASP markers are biomarker signals, not durable aging outcomes.",
+    "Most strong mechanistic support comes from cell systems and aged-mouse studies rather than replicated human functional trials.",
+    "Core candidate drugs are pleiotropic: rapamycin/sirolimus and metformin also belong to nutrient-sensing tracks, so senomorphic attribution needs careful endpoint mapping.",
+    "SASP suppression is not universally beneficial because senescence secretory programs can support wound repair, immune surveillance, and tumor suppression in some contexts.",
+    "Long-term preventive safety remains unresolved for systemic SASP modulation, especially for immunomodulatory paths such as mTOR and JAK inhibition."
+  ],
+  "best_current_signals": [
+    "Topical rapamycin reduced p16INK4A and increased collagen VII in a small human skin-aging trial.",
+    "Metformin pre-treatment lowered skeletal-muscle senescence/SASP markers and recovery fibrosis signals in a small older-adult bed-rest study.",
+    "JAK inhibition suppresses SASP in senescent human cell systems and improved inflammation plus physical function in aged mice.",
+    "mTOR-SASP mechanistic studies identify rapamycin-sensitive IL1A and MAPKAPK2/ZFP36L1 pathways as tractable SASP control points.",
+    "A short-term oral rapamycin older-adult pilot supports feasibility but does not establish functional benefit or senescence-marker efficacy."
+  ],
+  "forecast_note": "Senomorphics earn a low-confidence human_biomarker_signal baseline because there are now direct human senescence-marker signals for topical rapamycin in skin and metformin in an older-adult disuse/recovery model. The broader LEV interpretation should stay conservative: the field has strong mechanistic coherence around SASP suppression, but human evidence remains small, tissue- or stress-context specific, and confounded by pleiotropic nutrient-sensing and inflammatory pathways. A functional or durable-disease rating would require randomized human trials that pre-specify senescence/SASP biomarkers and connect them to sustained tissue resilience, function, or disease modification without unacceptable immune, cancer, wound-healing, or metabolic tradeoffs.",
+  "rating_change_criteria": [
+    "A move to human_functional_benefit would require replicated randomized human trials showing that a senomorphic intervention improves function or resilience while also moving senescence/SASP biomarkers in the intended tissue.",
+    "A durable disease or mortality rating would require disease-modifying or event-level outcomes plus a credible bridge from SASP modulation to broad aging biology.",
+    "Higher confidence would require larger human studies, clearer dose-response, tissue-relevant biomarkers, and separation of senomorphic effects from general anti-inflammatory, metabolic, or mTOR effects.",
+    "The rating would weaken if human trials show biomarker changes without functional benefit, unacceptable infection or wound-healing risk, or evidence that chronic SASP suppression disrupts beneficial senescence programs.",
+    "New mechanistic or animal studies should not upgrade the stage unless they directly support a feasible human intervention path and preserve the SASP context boundary."
+  ],
+  "earliest_plausible_window": "No credible LEV-relevant window can be assigned before senomorphic trials connect human senescence-marker movement to durable function, tissue resilience, disease modification, or safety-calibrated prevention.",
+  "scenario_2036_status": "speculative",
+  "supporting_finding_ids": [
+    "topical-rapamycin-reduced-human-skin-p16",
+    "metformin-reduced-older-adult-muscle-sasp-after-disuse",
+    "jak-inhibition-reduced-sasp-and-improved-aged-mouse-function",
+    "metformin-inhibited-sasp-through-ikk-nfkb-cell-models",
+    "mtor-inhibition-suppressed-sasp-via-il1a-translation",
+    "mtor-mapkapk2-axis-controlled-sasp",
+    "oral-rapamycin-older-adults-short-term-safety-no-functional-change"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "current_stage",
+      "conclusion": "The track reaches human_biomarker_signal because two small human studies directly measured senescence-linked biomarkers after candidate senomorphic interventions.",
+      "support_role": "supports",
+      "rationale": "Topical rapamycin reduced skin p16INK4A and increased collagen VII, while metformin pre-treatment in older adults undergoing bed rest and recovery was associated with reduced skeletal-muscle cellular senescence/SASP markers and fibrosis-related signals.",
+      "finding_ids": [
+        "topical-rapamycin-reduced-human-skin-p16",
+        "metformin-reduced-older-adult-muscle-sasp-after-disuse"
+      ],
+      "source_ids": [
+        "pmid-31761958",
+        "pmid-37486024"
+      ],
+      "limitations": [
+        "Both studies are small and context-specific.",
+        "The rapamycin evidence is local to skin and topical dosing.",
+        "The metformin evidence uses acute disuse and recovery, not long-term aging outcomes."
+      ]
+    },
+    {
+      "label": "Mechanistic coherence",
+      "outlook_field": "best_current_signals",
+      "conclusion": "mTOR and NF-kB pathway studies support a coherent SASP-modulation thesis for rapamycin-class agents and metformin.",
+      "support_role": "supports",
+      "rationale": "Rapamycin-sensitive mTOR mechanisms regulate SASP through IL1A translation and MAPKAPK2/ZFP36L1 transcript control, while metformin suppresses inflammatory SASP genes through IKK/NF-kB-linked signaling in cell models.",
+      "finding_ids": [
+        "metformin-inhibited-sasp-through-ikk-nfkb-cell-models",
+        "mtor-inhibition-suppressed-sasp-via-il1a-translation",
+        "mtor-mapkapk2-axis-controlled-sasp"
+      ],
+      "source_ids": [
+        "pmid-23521863",
+        "pmid-26147250",
+        "pmid-26280535"
+      ],
+      "limitations": [
+        "These findings are primarily in vitro and mechanistic.",
+        "Both metformin and rapamycin have broad effects beyond senomorphic SASP suppression.",
+        "Mechanistic plausibility does not define the right tissue, dose, schedule, or clinical population."
+      ]
+    },
+    {
+      "label": "Preclinical function",
+      "outlook_field": "best_current_signals",
+      "conclusion": "JAK inhibition provides preclinical functional support by reducing SASP-linked inflammation and improving aged-mouse physical function.",
+      "support_role": "supports",
+      "rationale": "The JAK study bridges senescent human cell SASP suppression with aged-mouse systemic inflammation and physical-function improvement after 10 weeks of treatment.",
+      "finding_ids": [
+        "jak-inhibition-reduced-sasp-and-improved-aged-mouse-function"
+      ],
+      "source_ids": [
+        "pmid-26578790"
+      ],
+      "limitations": [
+        "The functional result is animal evidence.",
+        "Human JAK inhibition carries immune and infection-risk concerns.",
+        "The source does not establish an aging-prevention indication."
+      ]
+    },
+    {
+      "label": "Functional benefit boundary",
+      "outlook_field": "current_stage",
+      "conclusion": "The track should not be upgraded to human_functional_benefit because systemic human data do not yet show functional improvement tied to senescence/SASP modulation.",
+      "support_role": "limits",
+      "rationale": "The oral rapamycin older-adult pilot supports short-term feasibility but found no cognitive, physical-performance, self-perceived health, or broad immune improvement, and it was not a senescence-endpoint efficacy trial.",
+      "finding_ids": [
+        "oral-rapamycin-older-adults-short-term-safety-no-functional-change"
+      ],
+      "source_ids": [
+        "pmid-29408453"
+      ],
+      "limitations": [
+        "The trial was small and short.",
+        "It tested systemic rapamycin, not the full senomorphic class.",
+        "It did not rule out benefit from different dosing, populations, or endpoint selection."
+      ]
+    },
+    {
+      "label": "Confidence and safety",
+      "outlook_field": "confidence",
+      "conclusion": "Confidence remains low because senomorphic effects are tissue-, context-, and pathway-dependent, and chronic suppression of senescence signaling may carry tradeoffs.",
+      "support_role": "limits",
+      "rationale": "The support set mixes topical skin biomarkers, acute disuse/recovery muscle biomarkers, in vitro pathway studies, and aged-mouse JAK data. That is enough for a baseline, but not enough for broad preventive claims.",
+      "finding_ids": [
+        "topical-rapamycin-reduced-human-skin-p16",
+        "metformin-reduced-older-adult-muscle-sasp-after-disuse",
+        "jak-inhibition-reduced-sasp-and-improved-aged-mouse-function",
+        "oral-rapamycin-older-adults-short-term-safety-no-functional-change"
+      ],
+      "source_ids": [
+        "pmid-31761958",
+        "pmid-37486024",
+        "pmid-26578790",
+        "pmid-29408453"
+      ],
+      "limitations": [
+        "Senescence and SASP can support repair and immune surveillance in some contexts.",
+        "Rapamycin, metformin, and JAK inhibition each have pathway-specific safety and attribution issues.",
+        "Aging-relevant benefit requires durable function or disease outcomes, not biomarkers alone."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-31761958",
+    "pmid-37486024",
+    "pmid-26578790",
+    "pmid-23521863",
+    "pmid-26147250",
+    "pmid-26280535",
+    "pmid-29408453"
+  ],
+  "last_updated": "2026-06-01",
+  "tags": [
+    "public",
+    "track",
+    "thin_coverage"
+  ]
+}

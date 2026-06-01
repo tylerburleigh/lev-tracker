@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "mtor-inhibition-suppressed-sasp-via-il1a-translation",
+  "name": "mTOR inhibition suppressed SASP through IL1A translation control",
+  "summary": "This mechanistic rapamycin finding anchors an mTOR-to-SASP pathway relevant to senomorphic interpretation.",
+  "source_id": "pmid-26147250",
+  "study_id": "mtor-il1a-sasp-senescent-cell-models",
+  "intervention_ids": [
+    "sirolimus"
+  ],
+  "track_ids": [
+    "senomorphics"
+  ],
+  "hallmark_ids": [
+    "cellular_senescence"
+  ],
+  "endpoint_category": "mechanistic",
+  "direction": "positive",
+  "evidence_tier": "in_vitro",
+  "confidence": "moderate",
+  "statement": "In senescent-cell models, mTOR activity supported the pro-tumorigenic SASP by promoting IL1A translation, and rapamycin-sensitive mTOR inhibition suppressed SASP output through that pathway.",
+  "population_or_model": "Senescent human cell models focused on IL1A and SASP signaling",
+  "time_horizon": "Cell-culture mechanistic assays",
+  "quantitative_note": "The source identifies IL1A translation as an mTOR-linked control point for SASP regulation.",
+  "caveats": [
+    "The evidence is mechanistic and largely cell-based.",
+    "SASP can have context-dependent tumor-suppressive, immune-surveillance, and repair roles, so suppression is not automatically beneficial.",
+    "This finding supports biological plausibility more than clinical readiness."
+  ],
+  "tags": [
+    "sirolimus",
+    "rapamycin",
+    "mtor",
+    "il1a",
+    "sasp",
+    "mechanistic"
+  ]
+}

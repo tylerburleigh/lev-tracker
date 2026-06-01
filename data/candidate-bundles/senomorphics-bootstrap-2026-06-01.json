@@ -1,0 +1,335 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "senomorphics-bootstrap-2026-06-01",
+  "name": "Senomorphics bootstrap for June 1, 2026",
+  "summary": "First public baseline bundle for senomorphics under cellular senescence, centered on small human biomarker signals and mechanistic SASP-modulation evidence.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "submitted",
+  "submitted_at": "2026-06-01T15:35:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Senomorphics, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "cellular_senescence"
+    ],
+    "track_ids": [
+      "senomorphics"
+    ]
+  },
+  "source_ids": [
+    "pmid-31761958",
+    "pmid-37486024",
+    "pmid-26578790",
+    "pmid-23521863",
+    "pmid-26147250",
+    "pmid-26280535",
+    "pmid-29408453"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/31761958/",
+    "https://pubmed.ncbi.nlm.nih.gov/37486024/",
+    "https://pubmed.ncbi.nlm.nih.gov/26578790/",
+    "https://pubmed.ncbi.nlm.nih.gov/23521863/",
+    "https://pubmed.ncbi.nlm.nih.gov/26147250/",
+    "https://pubmed.ncbi.nlm.nih.gov/26280535/",
+    "https://pubmed.ncbi.nlm.nih.gov/29408453/"
+  ],
+  "related_records": [
+    {
+      "record_type": "intervention",
+      "record_id": "sirolimus"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "metformin"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-senomorphics-outlook"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-31761958",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-31761958",
+      "file_path": "data/sources/pmid-31761958.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/pmid-31761958.json",
+      "summary": "Add topical rapamycin human skin senescence source.",
+      "rationale": "This source anchors the most direct human senescence-marker signal for rapamycin-class senomorphic evidence."
+    },
+    {
+      "change_id": "create-source-pmid-37486024",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-37486024",
+      "file_path": "data/sources/pmid-37486024.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/pmid-37486024.json",
+      "summary": "Add metformin older-adult muscle senescence/SASP source.",
+      "rationale": "This source supplies a direct human skeletal-muscle senescence/SASP biomarker signal for metformin in an acute stress-recovery model."
+    },
+    {
+      "change_id": "create-source-pmid-26578790",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-26578790",
+      "file_path": "data/sources/pmid-26578790.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/pmid-26578790.json",
+      "summary": "Add JAK inhibition SASP and aged-mouse frailty source.",
+      "rationale": "This source anchors the main preclinical functional senomorphic signal and human-cell SASP suppression evidence."
+    },
+    {
+      "change_id": "create-source-pmid-23521863",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-23521863",
+      "file_path": "data/sources/pmid-23521863.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/pmid-23521863.json",
+      "summary": "Add metformin IKK/NF-kB SASP mechanism source.",
+      "rationale": "This source explains metformin's senomorphic mechanism without upgrading it beyond mechanistic evidence."
+    },
+    {
+      "change_id": "create-source-pmid-26147250",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-26147250",
+      "file_path": "data/sources/pmid-26147250.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/pmid-26147250.json",
+      "summary": "Add mTOR IL1A SASP mechanism source.",
+      "rationale": "This source supports rapamycin-class SASP suppression through an mTOR-linked IL1A mechanism."
+    },
+    {
+      "change_id": "create-source-pmid-26280535",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-26280535",
+      "file_path": "data/sources/pmid-26280535.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/pmid-26280535.json",
+      "summary": "Add mTOR MAPKAPK2 SASP mechanism source.",
+      "rationale": "This source provides a second rapamycin-sensitive SASP-control mechanism through MAPKAPK2/ZFP36L1."
+    },
+    {
+      "change_id": "create-source-pmid-29408453",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-29408453",
+      "file_path": "data/sources/pmid-29408453.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/pmid-29408453.json",
+      "summary": "Add oral rapamycin older-adult feasibility source.",
+      "rationale": "This source constrains systemic rapamycin interpretation by separating short-term feasibility from functional efficacy."
+    },
+    {
+      "change_id": "create-study-topical-rapamycin-human-skin-aging",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "topical-rapamycin-human-skin-aging",
+      "file_path": "data/studies/topical-rapamycin-human-skin-aging.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/topical-rapamycin-human-skin-aging.json",
+      "summary": "Add topical rapamycin human skin study.",
+      "rationale": "The study record links the human p16 skin biomarker signal to the senomorphics track."
+    },
+    {
+      "change_id": "create-study-metformin-disuse-reambulation-older-adults",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "metformin-disuse-reambulation-older-adults",
+      "file_path": "data/studies/metformin-disuse-reambulation-older-adults.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/metformin-disuse-reambulation-older-adults.json",
+      "summary": "Add metformin older-adult disuse/recovery study.",
+      "rationale": "The study record links older-adult muscle senescence/SASP markers to a bounded metformin stress-recovery context."
+    },
+    {
+      "change_id": "create-study-jak-inhibition-aged-mouse-frailty",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "jak-inhibition-aged-mouse-frailty",
+      "file_path": "data/studies/jak-inhibition-aged-mouse-frailty.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/jak-inhibition-aged-mouse-frailty.json",
+      "summary": "Add JAK inhibition SASP and aged-mouse frailty study.",
+      "rationale": "The study record captures preclinical function plus human-cell SASP suppression without treating it as human efficacy."
+    },
+    {
+      "change_id": "create-study-metformin-sasp-ikk-nfkb-cell-models",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "metformin-sasp-ikk-nfkb-cell-models",
+      "file_path": "data/studies/metformin-sasp-ikk-nfkb-cell-models.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/metformin-sasp-ikk-nfkb-cell-models.json",
+      "summary": "Add metformin SASP mechanism study.",
+      "rationale": "The study record keeps metformin's IKK/NF-kB-linked SASP mechanism distinct from human outcome claims."
+    },
+    {
+      "change_id": "create-study-mtor-il1a-sasp-senescent-cell-models",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "mtor-il1a-sasp-senescent-cell-models",
+      "file_path": "data/studies/mtor-il1a-sasp-senescent-cell-models.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/mtor-il1a-sasp-senescent-cell-models.json",
+      "summary": "Add mTOR IL1A senescent-cell SASP study.",
+      "rationale": "The study record links rapamycin-sensitive mTOR/IL1A biology to SASP suppression."
+    },
+    {
+      "change_id": "create-study-mtor-mapkapk2-sasp-senescent-cell-models",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "mtor-mapkapk2-sasp-senescent-cell-models",
+      "file_path": "data/studies/mtor-mapkapk2-sasp-senescent-cell-models.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/mtor-mapkapk2-sasp-senescent-cell-models.json",
+      "summary": "Add mTOR MAPKAPK2 senescent-cell SASP study.",
+      "rationale": "The study record supports rapamycin-class SASP suppression while preserving the in-vitro boundary."
+    },
+    {
+      "change_id": "create-study-oral-rapamycin-older-adult-feasibility",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "oral-rapamycin-older-adult-feasibility",
+      "file_path": "data/studies/oral-rapamycin-older-adult-feasibility.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/oral-rapamycin-older-adult-feasibility.json",
+      "summary": "Add oral rapamycin older-adult feasibility study.",
+      "rationale": "The study record supplies a systemic human rapamycin safety and no-functional-change boundary."
+    },
+    {
+      "change_id": "create-finding-topical-rapamycin-reduced-human-skin-p16",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "topical-rapamycin-reduced-human-skin-p16",
+      "file_path": "data/findings/topical-rapamycin-reduced-human-skin-p16.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/topical-rapamycin-reduced-human-skin-p16.json",
+      "summary": "Add topical rapamycin human p16 biomarker finding.",
+      "rationale": "This finding anchors the track's human biomarker stage assignment."
+    },
+    {
+      "change_id": "create-finding-metformin-reduced-older-adult-muscle-sasp-after-disuse",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "metformin-reduced-older-adult-muscle-sasp-after-disuse",
+      "file_path": "data/findings/metformin-reduced-older-adult-muscle-sasp-after-disuse.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/metformin-reduced-older-adult-muscle-sasp-after-disuse.json",
+      "summary": "Add metformin older-adult muscle senescence/SASP finding.",
+      "rationale": "This finding adds a direct but context-limited human senescence/SASP biomarker signal."
+    },
+    {
+      "change_id": "create-finding-jak-inhibition-reduced-sasp-and-improved-aged-mouse-function",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "jak-inhibition-reduced-sasp-and-improved-aged-mouse-function",
+      "file_path": "data/findings/jak-inhibition-reduced-sasp-and-improved-aged-mouse-function.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/jak-inhibition-reduced-sasp-and-improved-aged-mouse-function.json",
+      "summary": "Add JAK inhibition preclinical function finding.",
+      "rationale": "This finding supplies the strongest preclinical functional bridge for senomorphic SASP modulation."
+    },
+    {
+      "change_id": "create-finding-metformin-inhibited-sasp-through-ikk-nfkb-cell-models",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "metformin-inhibited-sasp-through-ikk-nfkb-cell-models",
+      "file_path": "data/findings/metformin-inhibited-sasp-through-ikk-nfkb-cell-models.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/metformin-inhibited-sasp-through-ikk-nfkb-cell-models.json",
+      "summary": "Add metformin IKK/NF-kB SASP mechanism finding.",
+      "rationale": "This finding supports senomorphic plausibility while remaining mechanistic."
+    },
+    {
+      "change_id": "create-finding-mtor-inhibition-suppressed-sasp-via-il1a-translation",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "mtor-inhibition-suppressed-sasp-via-il1a-translation",
+      "file_path": "data/findings/mtor-inhibition-suppressed-sasp-via-il1a-translation.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/mtor-inhibition-suppressed-sasp-via-il1a-translation.json",
+      "summary": "Add mTOR IL1A SASP mechanism finding.",
+      "rationale": "This finding supports rapamycin-class SASP modulation through IL1A translation control."
+    },
+    {
+      "change_id": "create-finding-mtor-mapkapk2-axis-controlled-sasp",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "mtor-mapkapk2-axis-controlled-sasp",
+      "file_path": "data/findings/mtor-mapkapk2-axis-controlled-sasp.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/mtor-mapkapk2-axis-controlled-sasp.json",
+      "summary": "Add mTOR MAPKAPK2 SASP mechanism finding.",
+      "rationale": "This finding adds a second mTOR-SASP mechanism for rapamycin-class senomorphic plausibility."
+    },
+    {
+      "change_id": "create-finding-oral-rapamycin-older-adults-short-term-safety-no-functional-change",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "oral-rapamycin-older-adults-short-term-safety-no-functional-change",
+      "file_path": "data/findings/oral-rapamycin-older-adults-short-term-safety-no-functional-change.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/oral-rapamycin-older-adults-short-term-safety-no-functional-change.json",
+      "summary": "Add oral rapamycin functional-boundary finding.",
+      "rationale": "This finding prevents systemic rapamycin feasibility data from being overread as functional senomorphic efficacy."
+    },
+    {
+      "change_id": "update-intervention-metformin",
+      "change_type": "update_record",
+      "target_record_type": "intervention",
+      "target_record_id": "metformin",
+      "file_path": "data/interventions/metformin.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/metformin.json",
+      "summary": "Update metformin intervention cross-links for senomorphics.",
+      "rationale": "Metformin now has staged senomorphic studies and findings, so the normalized intervention record should expose the cross-track link while preserving AMPK attribution limits."
+    },
+    {
+      "change_id": "update-intervention-sirolimus",
+      "change_type": "update_record",
+      "target_record_type": "intervention",
+      "target_record_id": "sirolimus",
+      "file_path": "data/interventions/sirolimus.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/sirolimus.json",
+      "summary": "Update sirolimus intervention cross-links for senomorphics.",
+      "rationale": "Rapamycin-class evidence is central to this baseline, so sirolimus should link to senomorphic staged studies and findings."
+    },
+    {
+      "change_id": "create-outlook-track-senomorphics",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-senomorphics-outlook",
+      "file_path": "data/outlooks/track-senomorphics-outlook.json",
+      "staged_file_path": "data/staged-records/senomorphics-bootstrap-2026-06-01/track-senomorphics-outlook.json",
+      "summary": "Add first public senomorphics track outlook.",
+      "rationale": "The staged source and finding set supports a conservative low-confidence human_biomarker_signal baseline with explicit functional and safety boundaries.",
+      "uncertainty_flags": [
+        "Human evidence is small and context-specific",
+        "Systemic functional benefit remains unproven",
+        "SASP suppression has context-dependent safety and repair tradeoffs"
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "senomorphics",
+      "note": "A first public baseline is justified at low-confidence human_biomarker_signal because topical rapamycin and metformin have direct but small human senescence/SASP biomarker signals, while mechanistic and aged-mouse data support SASP modulation without establishing durable human function.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "cellular_senescence",
+      "note": "Publishing this bundle would broaden cellular senescence coverage beyond senolytics by adding a phenotype-modulation track with clear boundaries from cell clearance.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-01-senomorphics-bootstrap.json",
+  "next_actions": [
+    "Run source-fidelity evidence review for all PubMed sources, registry IDs, samples, and endpoint boundaries.",
+    "Run interpretation/forecast evidence review with attention to senomorphic versus nutrient-sensing attribution.",
+    "Do not approve until reviewers accept the low-confidence human_biomarker_signal rating and the functional-benefit boundary."
+  ],
+  "tags": [
+    "public",
+    "bootstrap",
+    "cellular-senescence",
+    "senomorphics"
+  ]
+}

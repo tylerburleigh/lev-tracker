@@ -36,7 +36,10 @@ There are no active editorial blockers. The current workflow cleanup items are c
 
 Active editorial review:
 
-None currently.
+1. `senomorphics-bootstrap-2026-06-01`
+   - Current status: `submitted`
+   - Needs: source-fidelity and interpretation/forecast evidence reviews.
+   - Note: stages the first senomorphics baseline with a low-confidence `human_biomarker_signal` outlook, led by small human biomarker signals for topical rapamycin in skin and metformin in older-adult disuse/recovery muscle, with mechanistic SASP-modulation support and explicit functional-benefit boundaries.
 
 Recently completed:
 
@@ -124,7 +127,9 @@ Recent coverage changes:
 
 Active coverage review:
 
-None currently.
+1. `senomorphics`
+   - Current status: active review.
+   - Note: `senomorphics-bootstrap-2026-06-01` stages 24 source, intervention, study, finding, and outlook changes for the first public baseline. The proposed outlook assigns a low-confidence `human_biomarker_signal` baseline because topical rapamycin and metformin have direct but small human senescence/SASP biomarker signals, while mechanistic and aged-mouse evidence support SASP modulation without establishing durable human function.
 
 Published coverage changes:
 
@@ -182,14 +187,14 @@ Published coverage changes:
 
 Next bootstrap queue items:
 
-1. `senomorphics`
-2. `stem-cell-replacement-and-transplantation`
-3. `extracellular-vesicle-and-secretome-therapies`
-4. `live-biotherapeutics-and-engineered-microbes`
-5. `transposon-and-somatic-mutation-control`
-6. `chromatin-and-histone-modulation`
-7. `protein-aggregate-clearance`
-8. `selective-autophagy-and-organelle-quality-control`
+1. `stem-cell-replacement-and-transplantation`
+2. `extracellular-vesicle-and-secretome-therapies`
+3. `live-biotherapeutics-and-engineered-microbes`
+4. `transposon-and-somatic-mutation-control`
+5. `chromatin-and-histone-modulation`
+6. `protein-aggregate-clearance`
+7. `selective-autophagy-and-organelle-quality-control`
+8. `caloric-restriction-mimetics`
 
 Top surveillance queue items:
 
@@ -263,4 +268,4 @@ npm run typecheck
 npm run build
 ```
 
-Last known result on 2026-06-01 after publishing `ampk-and-metabolic-modulators-bootstrap-2026-06-01`: `npm run research:bundle -- status --bundle ampk-and-metabolic-modulators-bootstrap-2026-06-01`, `npm run research:bundle -- validate --bundle ampk-and-metabolic-modulators-bootstrap-2026-06-01`, `npm run research:bundle -- smoke --bundle ampk-and-metabolic-modulators-bootstrap-2026-06-01 --base-url http://localhost:3010`, `npm run sync:research-planning`, `npm run validate:records`, `npm run typecheck`, and `npm run build` pass. The AMPK bundle is published, its publication event is recorded, and the track now appears in the surveillance queue.
+Last known result on 2026-06-01 after staging `senomorphics-bootstrap-2026-06-01`: `npm run research:bundle -- validate --bundle senomorphics-bootstrap-2026-06-01` reports clean structure and promotion readiness, with the expected missing evidence-review lanes because the bundle is still `submitted`; `npm run sync:research-planning`, `npm run validate:records`, `npm run typecheck`, and `npm run build` pass. The prior AMPK bundle remains published and committed, and `senomorphics` is now in active review pending source-fidelity and interpretation/forecast evidence reviews.

@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-01-senomorphics-bootstrap",
+  "name": "Senomorphics bootstrap pass for June 1, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-06-01T14:45:00Z",
+  "completed_at": "2026-06-01T15:35:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Senomorphics, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "cellular_senescence"
+    ],
+    "track_ids": [
+      "senomorphics"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "senomorphics-bootstrap-2026-06-01",
+  "summary": "Prepared a first public baseline for senomorphics at low-confidence human_biomarker_signal. The strongest direct human signals are small and context-limited: topical rapamycin reduced skin p16INK4A and metformin reduced skeletal-muscle senescence/SASP markers in an older-adult disuse/recovery model. Mechanistic mTOR, NF-kB, and JAK evidence supports SASP modulation, but functional benefit and long-term preventive safety remain unresolved.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-31761958",
+    "pmid-37486024",
+    "pmid-26578790",
+    "pmid-23521863",
+    "pmid-26147250",
+    "pmid-26280535",
+    "pmid-29408453"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/31761958/",
+    "https://pubmed.ncbi.nlm.nih.gov/37486024/",
+    "https://pubmed.ncbi.nlm.nih.gov/26578790/",
+    "https://pubmed.ncbi.nlm.nih.gov/23521863/",
+    "https://pubmed.ncbi.nlm.nih.gov/26147250/",
+    "https://pubmed.ncbi.nlm.nih.gov/26280535/",
+    "https://pubmed.ncbi.nlm.nih.gov/29408453/"
+  ],
+  "notes": [
+    "Kept senolytic clearance results out of scope unless they directly informed the boundary between clearance and phenotype modulation.",
+    "Treated broad anti-inflammatory outcomes as insufficient for this track unless a source tied the intervention to senescence/SASP biology.",
+    "The staged outlook assigns human_biomarker_signal, not human_functional_benefit, because direct human functional evidence tied to senescence/SASP movement is not yet established."
+  ],
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast evidence reviews before approval.",
+    "Check whether future trials pre-specify senescence/SASP biomarkers and durable function or tissue-resilience endpoints.",
+    "Keep sirolimus and metformin cross-track attribution explicit in review because both records also support nutrient-sensing tracks."
+  ]
+}

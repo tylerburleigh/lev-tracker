@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "metformin",
+  "name": "Metformin",
+  "summary": "Approved biguanide diabetes drug tracked as the main clinically tested AMPK and glucose-handling geroscience candidate, with additional senomorphic/SASP-modulation evidence in bounded contexts.",
+  "aliases": [
+    "Glucophage",
+    "biguanide"
+  ],
+  "modalities": [
+    "small_molecule"
+  ],
+  "target_hallmark_ids": [
+    "deregulated_nutrient_sensing"
+  ],
+  "secondary_hallmark_ids": [
+    "mitochondrial_dysfunction",
+    "disabled_macroautophagy",
+    "chronic_inflammation",
+    "cellular_senescence"
+  ],
+  "track_ids": [
+    "ampk-and-metabolic-modulators",
+    "senomorphics"
+  ],
+  "mechanism_summary": "Acts through glucose and insulin biology with indirect AMPK activation, mitochondrial complex I effects, microbiome and folate-methionine changes, inflammatory signaling, IKK/NF-kB-linked SASP modulation, and other pleiotropic pathways; not all reported geroscience effects are AMPK-specific.",
+  "development_stage": "approved_for_other_indication",
+  "linked_study_ids": [
+    "metformin-c-elegans-microbiome-lifespan",
+    "metformin-middle-aged-mouse-healthspan-lifespan",
+    "metformin-male-monkey-aging-clock",
+    "miles-metformin-older-adults-transcriptomics",
+    "metformin-aerobic-exercise-older-adults",
+    "met-prevent-metformin-sarcopenia-frailty",
+    "metforaging-metformin-hiv-epigenetic-age",
+    "metformin-frailty-prevention-high-risk-older-adults",
+    "anthem-metformin-aging-study",
+    "metformin-disuse-reambulation-older-adults",
+    "metformin-sasp-ikk-nfkb-cell-models"
+  ],
+  "linked_finding_ids": [
+    "metformin-c-elegans-lifespan-context-dependent",
+    "metformin-low-dose-improved-mouse-healthspan-lifespan",
+    "metformin-decelerated-male-monkey-aging-clocks",
+    "miles-metformin-shifted-older-adult-metabolic-transcriptomic-biomarkers",
+    "metformin-blunted-exercise-mitochondrial-adaptations-older-adults",
+    "met-prevent-metformin-did-not-improve-walk-speed",
+    "metforaging-metformin-no-significant-epigenetic-age-effect",
+    "metformin-frailty-registry-results-do-not-establish-benefit",
+    "anthem-metformin-aging-study-completed-no-results",
+    "metformin-reduced-older-adult-muscle-sasp-after-disuse",
+    "metformin-inhibited-sasp-through-ikk-nfkb-cell-models"
+  ],
+  "risk_flags": [
+    "gastrointestinal-intolerance",
+    "context-dependent-response",
+    "exercise-adaptation-blunting",
+    "renal-and-b12-monitoring",
+    "functional-benefit-unresolved",
+    "pleiotropic-sasp-attribution"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether biomarker and transcriptomic changes translate into physical function, frailty, multimorbidity, or survival benefit in non-diabetic older adults",
+      "Which baseline metabolic phenotypes benefit versus worsen with chronic metformin exposure",
+      "Whether SASP and senescence-marker movement in acute stress-recovery settings generalizes to durable senomorphic benefit",
+      "Whether ongoing or completed larger aging-focused trials confirm a human geroscience signal without unacceptable tolerability tradeoffs"
+    ]
+  },
+  "tags": [
+    "ampk-and-metabolic-modulators",
+    "senomorphics",
+    "metformin",
+    "biguanide",
+    "geroscience"
+  ]
+}
