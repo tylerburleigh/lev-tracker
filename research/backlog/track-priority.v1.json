@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-01T20:13:09.750Z",
+  "updated_at": "2026-06-01T20:58:47.984Z",
   "notes": [
     "Bootstrap priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Surveillance priority applies only to tracks that already have a public baseline and no active review bundle.",
@@ -59,16 +59,6 @@
     {
       "rank": 1,
       "phase_id": "expand-covered-hallmarks",
-      "track_id": "extracellular-vesicle-and-secretome-therapies",
-      "hallmark_id": "altered_intercellular_communication",
-      "priority_tier": "now",
-      "default_mode": "bootstrap",
-      "rationale": "Extend a hallmark that already has one public track so the hallmark view does not overfit a single approach.",
-      "default_question": "What is the current human-relevant evidence landscape for Extracellular Vesicle and Secretome Therapies, and what belongs in the first public baseline?"
-    },
-    {
-      "rank": 2,
-      "phase_id": "expand-covered-hallmarks",
       "track_id": "live-biotherapeutics-and-engineered-microbes",
       "hallmark_id": "dysbiosis",
       "priority_tier": "now",
@@ -77,7 +67,7 @@
       "default_question": "What is the current human-relevant evidence landscape for Live Biotherapeutics and Engineered Microbes, and what belongs in the first public baseline?"
     },
     {
-      "rank": 3,
+      "rank": 2,
       "phase_id": "expand-covered-hallmarks",
       "track_id": "transposon-and-somatic-mutation-control",
       "hallmark_id": "genomic_instability",
@@ -87,7 +77,7 @@
       "default_question": "What is the current human-relevant evidence landscape for Transposon and Somatic Mutation Control, and what belongs in the first public baseline?"
     },
     {
-      "rank": 4,
+      "rank": 3,
       "phase_id": "expand-covered-hallmarks",
       "track_id": "chromatin-and-histone-modulation",
       "hallmark_id": "epigenetic_alterations",
@@ -97,7 +87,7 @@
       "default_question": "What is the current human-relevant evidence landscape for Chromatin and Histone Modulation, and what belongs in the first public baseline?"
     },
     {
-      "rank": 5,
+      "rank": 4,
       "phase_id": "expand-covered-hallmarks",
       "track_id": "protein-aggregate-clearance",
       "hallmark_id": "loss_of_proteostasis",
@@ -107,7 +97,7 @@
       "default_question": "What is the current human-relevant evidence landscape for Protein Aggregate Clearance, and what belongs in the first public baseline?"
     },
     {
-      "rank": 6,
+      "rank": 5,
       "phase_id": "expand-covered-hallmarks",
       "track_id": "selective-autophagy-and-organelle-quality-control",
       "hallmark_id": "disabled_macroautophagy",
@@ -117,7 +107,7 @@
       "default_question": "What is the current human-relevant evidence landscape for Selective Autophagy and Organelle Quality Control, and what belongs in the first public baseline?"
     },
     {
-      "rank": 7,
+      "rank": 6,
       "phase_id": "expand-covered-hallmarks",
       "track_id": "caloric-restriction-mimetics",
       "hallmark_id": "deregulated_nutrient_sensing",
@@ -127,7 +117,7 @@
       "default_question": "What is the current human-relevant evidence landscape for Caloric Restriction Mimetics, and what belongs in the first public baseline?"
     },
     {
-      "rank": 8,
+      "rank": 7,
       "phase_id": "expand-covered-hallmarks",
       "track_id": "mitochondrial-biogenesis-and-dynamics",
       "hallmark_id": "mitochondrial_dysfunction",
@@ -137,17 +127,17 @@
       "default_question": "What is the current human-relevant evidence landscape for Mitochondrial Biogenesis and Dynamics, and what belongs in the first public baseline?"
     },
     {
-      "rank": 9,
+      "rank": 8,
       "phase_id": "expand-covered-hallmarks",
       "track_id": "immune-clearance-of-senescent-cells",
       "hallmark_id": "cellular_senescence",
-      "priority_tier": "soon",
+      "priority_tier": "now",
       "default_mode": "bootstrap",
       "rationale": "Extend a hallmark that already has one public track so the hallmark view does not overfit a single approach.",
       "default_question": "What is the current human-relevant evidence landscape for Immune Clearance of Senescent Cells, and what belongs in the first public baseline?"
     },
     {
-      "rank": 10,
+      "rank": 9,
       "phase_id": "expand-covered-hallmarks",
       "track_id": "niche-rejuvenation-and-support",
       "hallmark_id": "stem_cell_exhaustion",
@@ -157,7 +147,7 @@
       "default_question": "What is the current human-relevant evidence landscape for Niche Rejuvenation and Support, and what belongs in the first public baseline?"
     },
     {
-      "rank": 11,
+      "rank": 10,
       "phase_id": "expand-covered-hallmarks",
       "track_id": "neuroendocrine-and-systemic-signal-reset",
       "hallmark_id": "altered_intercellular_communication",
@@ -167,7 +157,7 @@
       "default_question": "What is the current human-relevant evidence landscape for Neuroendocrine and Systemic Signal Reset, and what belongs in the first public baseline?"
     },
     {
-      "rank": 12,
+      "rank": 11,
       "phase_id": "expand-covered-hallmarks",
       "track_id": "resolution-pathway-and-tissue-repair",
       "hallmark_id": "chronic_inflammation",
@@ -177,7 +167,7 @@
       "default_question": "What is the current human-relevant evidence landscape for Resolution Pathway and Tissue Repair, and what belongs in the first public baseline?"
     },
     {
-      "rank": 13,
+      "rank": 12,
       "phase_id": "expand-covered-hallmarks",
       "track_id": "microbiome-metabolite-restoration",
       "hallmark_id": "dysbiosis",
@@ -187,7 +177,7 @@
       "default_question": "What is the current human-relevant evidence landscape for Microbiome Metabolite Restoration, and what belongs in the first public baseline?"
     },
     {
-      "rank": 14,
+      "rank": 13,
       "phase_id": "expand-covered-hallmarks",
       "track_id": "insulin-igf-axis-modulation",
       "hallmark_id": "deregulated_nutrient_sensing",
@@ -197,7 +187,7 @@
       "default_question": "What is the current human-relevant evidence landscape for Insulin and IGF Axis Modulation, and what belongs in the first public baseline?"
     },
     {
-      "rank": 15,
+      "rank": 14,
       "phase_id": "expand-covered-hallmarks",
       "track_id": "mitochondrial-delivery-and-transplantation",
       "hallmark_id": "mitochondrial_dysfunction",
@@ -207,7 +197,7 @@
       "default_question": "What is the current human-relevant evidence landscape for Mitochondrial Delivery and Transplantation, and what belongs in the first public baseline?"
     },
     {
-      "rank": 16,
+      "rank": 15,
       "phase_id": "expand-covered-hallmarks",
       "track_id": "ecosystem-replacement",
       "hallmark_id": "dysbiosis",
@@ -231,6 +221,16 @@
     {
       "rank": 2,
       "phase_id": "surveillance-rotation",
+      "track_id": "extracellular-vesicle-and-secretome-therapies",
+      "hallmark_id": "altered_intercellular_communication",
+      "priority_tier": "now",
+      "default_mode": "surveillance",
+      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
+      "default_question": "What changed for Extracellular Vesicle and Secretome Therapies since the last meaningful review or publication, and does any change justify a public update?"
+    },
+    {
+      "rank": 3,
+      "phase_id": "surveillance-rotation",
       "track_id": "stem-cell-replacement-and-transplantation",
       "hallmark_id": "stem_cell_exhaustion",
       "priority_tier": "now",
@@ -239,17 +239,17 @@
       "default_question": "What changed for Stem Cell Replacement and Transplantation since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 3,
+      "rank": 4,
       "phase_id": "surveillance-rotation",
       "track_id": "senomorphics",
       "hallmark_id": "cellular_senescence",
-      "priority_tier": "now",
+      "priority_tier": "soon",
       "default_mode": "surveillance",
       "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
       "default_question": "What changed for Senomorphics since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 4,
+      "rank": 5,
       "phase_id": "surveillance-rotation",
       "track_id": "ampk-and-metabolic-modulators",
       "hallmark_id": "deregulated_nutrient_sensing",
@@ -259,17 +259,17 @@
       "default_question": "What changed for AMPK and Metabolic Modulators since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 5,
+      "rank": 6,
       "phase_id": "surveillance-rotation",
       "track_id": "lysosomal-restoration",
       "hallmark_id": "disabled_macroautophagy",
-      "priority_tier": "soon",
+      "priority_tier": "later",
       "default_mode": "surveillance",
       "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
       "default_question": "What changed for Lysosomal Restoration since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 6,
+      "rank": 7,
       "phase_id": "surveillance-rotation",
       "track_id": "proteasome-enhancement",
       "hallmark_id": "loss_of_proteostasis",
@@ -279,7 +279,7 @@
       "default_question": "What changed for Proteasome Enhancement since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 7,
+      "rank": 8,
       "phase_id": "surveillance-rotation",
       "track_id": "dna-methylation-and-epigenome-restoration",
       "hallmark_id": "epigenetic_alterations",
@@ -289,7 +289,7 @@
       "default_question": "What changed for DNA Methylation and Epigenome Restoration since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 8,
+      "rank": 9,
       "phase_id": "surveillance-rotation",
       "track_id": "telomere-protection-and-capping",
       "hallmark_id": "telomere_attrition",
@@ -299,7 +299,7 @@
       "default_question": "What changed for Telomere Protection and Capping since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 9,
+      "rank": 10,
       "phase_id": "surveillance-rotation",
       "track_id": "genome-surveillance-and-chromosome-stability",
       "hallmark_id": "genomic_instability",
@@ -309,7 +309,7 @@
       "default_question": "What changed for Genome Surveillance and Chromosome Stability since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 10,
+      "rank": 11,
       "phase_id": "surveillance-rotation",
       "track_id": "cytokine-and-inflammasome-modulation",
       "hallmark_id": "chronic_inflammation",
@@ -319,7 +319,7 @@
       "default_question": "What changed for Cytokine and Inflammasome Modulation since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 11,
+      "rank": 12,
       "phase_id": "surveillance-rotation",
       "track_id": "nad-and-redox-restoration",
       "hallmark_id": "mitochondrial_dysfunction",
@@ -329,7 +329,7 @@
       "default_question": "What changed for NAD and Redox Restoration since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 12,
+      "rank": 13,
       "phase_id": "surveillance-rotation",
       "track_id": "circulating-factor-modulation",
       "hallmark_id": "altered_intercellular_communication",
@@ -339,7 +339,7 @@
       "default_question": "What changed for Circulating Factor Modulation since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 13,
+      "rank": 14,
       "phase_id": "surveillance-rotation",
       "track_id": "stem-cell-rejuvenation",
       "hallmark_id": "stem_cell_exhaustion",
@@ -349,7 +349,7 @@
       "default_question": "What changed for Stem Cell Rejuvenation since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 14,
+      "rank": 15,
       "phase_id": "surveillance-rotation",
       "track_id": "chaperone-and-heat-shock-support",
       "hallmark_id": "loss_of_proteostasis",
@@ -359,7 +359,7 @@
       "default_question": "What changed for Chaperone and Heat-Shock Support since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 15,
+      "rank": 16,
       "phase_id": "surveillance-rotation",
       "track_id": "telomerase-restoration",
       "hallmark_id": "telomere_attrition",
@@ -369,7 +369,7 @@
       "default_question": "What changed for Telomerase Restoration since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 16,
+      "rank": 17,
       "phase_id": "surveillance-rotation",
       "track_id": "dna-repair-enhancement",
       "hallmark_id": "genomic_instability",
@@ -379,7 +379,7 @@
       "default_question": "What changed for DNA Repair Enhancement since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 17,
+      "rank": 18,
       "phase_id": "surveillance-rotation",
       "track_id": "autophagy-induction",
       "hallmark_id": "disabled_macroautophagy",
@@ -389,7 +389,7 @@
       "default_question": "What changed for Autophagy Induction since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 18,
+      "rank": 19,
       "phase_id": "surveillance-rotation",
       "track_id": "partial-reprogramming",
       "hallmark_id": "epigenetic_alterations",
@@ -399,7 +399,7 @@
       "default_question": "What changed for Partial Reprogramming since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 19,
+      "rank": 20,
       "phase_id": "surveillance-rotation",
       "track_id": "immune-rejuvenation",
       "hallmark_id": "chronic_inflammation",
@@ -409,7 +409,7 @@
       "default_question": "What changed for Immune Rejuvenation since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 20,
+      "rank": 21,
       "phase_id": "surveillance-rotation",
       "track_id": "rapalogs",
       "hallmark_id": "deregulated_nutrient_sensing",
@@ -419,7 +419,7 @@
       "default_question": "What changed for Rapalogs since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 21,
+      "rank": 22,
       "phase_id": "surveillance-rotation",
       "track_id": "senolytics",
       "hallmark_id": "cellular_senescence",
@@ -429,7 +429,7 @@
       "default_question": "What changed for Senolytics since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 22,
+      "rank": 23,
       "phase_id": "surveillance-rotation",
       "track_id": "mitophagy-enhancers",
       "hallmark_id": "mitochondrial_dysfunction",

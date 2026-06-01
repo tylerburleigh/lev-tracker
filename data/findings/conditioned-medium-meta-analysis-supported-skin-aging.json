@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "conditioned-medium-meta-analysis-supported-skin-aging",
+  "name": "Conditioned medium meta-analysis supported skin antiaging endpoints",
+  "summary": "A meta-analysis of RCTs found that topical stem-cell conditioned medium enhanced facial resurfacing effects on wrinkle, pigmentation, pore, and overall skin outcomes.",
+  "source_id": "pmid-36396862",
+  "study_id": "conditioned-medium-skin-aging-rct-meta-analysis",
+  "intervention_ids": [
+    "stem-cell-conditioned-medium"
+  ],
+  "track_ids": [
+    "extracellular-vesicle-and-secretome-therapies"
+  ],
+  "hallmark_ids": [
+    "altered_intercellular_communication"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "positive",
+  "evidence_tier": "review_or_meta_analysis",
+  "confidence": "moderate",
+  "statement": "A systematic review and meta-analysis included five randomized controlled trials and reported significant improvements for wrinkles, pigmentation, pores, and overall skin condition when topical stem-cell conditioned medium was added to resurfacing modalities.",
+  "population_or_model": "Human facial skin-aging RCTs of conditioned medium plus nonsurgical resurfacing",
+  "time_horizon": "Short dermatologic treatment and follow-up windows across included RCTs",
+  "quantitative_note": "The reported meta-analysis p values were p = 0.0006 for wrinkles, p = 0.004 for pigmentation, p = 0.01 for pores, and p < 0.0001 for overall skin condition.",
+  "caveats": [
+    "The evidence aggregates dermatologic appearance and instrumented skin endpoints rather than systemic aging outcomes.",
+    "Conditioned media are complex secretomes and may not isolate extracellular vesicle-specific mechanisms.",
+    "The source rated the evidence as Level III and included heterogeneous resurfacing modalities."
+  ],
+  "tags": [
+    "human",
+    "skin-aging",
+    "conditioned-medium",
+    "meta-analysis"
+  ]
+}
