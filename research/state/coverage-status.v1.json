@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-01T20:58:47.984Z",
+  "updated_at": "2026-06-01T22:44:39.907Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One bootstrap or surveillance run should cover one track unless the user explicitly narrows further.",
@@ -109,8 +109,8 @@
       "hallmark_id": "dysbiosis",
       "canonical_order": 12,
       "hallmark_bootstrap_status": "baseline",
-      "tracked_public_outlook_count": 1,
-      "next_priority_track_id": "live-biotherapeutics-and-engineered-microbes",
+      "tracked_public_outlook_count": 2,
+      "next_priority_track_id": "microbiome-metabolite-restoration",
       "notes": "At least one track-level public baseline exists."
     }
   ],
@@ -681,11 +681,19 @@
       "hallmark_id": "dysbiosis",
       "canonical_order": 2,
       "name": "Live Biotherapeutics and Engineered Microbes",
-      "coverage_status": "not_started",
-      "next_mode": "bootstrap",
+      "coverage_status": "baseline",
+      "next_mode": "surveillance",
       "queue_state": "ready",
-      "default_research_question": "What is the current human-relevant evidence landscape for Live Biotherapeutics and Engineered Microbes, and what belongs in the first public baseline?",
-      "notes": "No track-level public baseline has been bootstrapped yet."
+      "last_session_id": "2026-06-01-live-biotherapeutics-and-engineered-microbes-bootstrap",
+      "last_session_at": "2026-06-01T21:21:00Z",
+      "last_session_mode": "bootstrap",
+      "last_session_outcome": "candidate_bundle_submitted",
+      "last_candidate_bundle_id": "live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01",
+      "last_candidate_bundle_status": "published",
+      "last_publication_event_id": "publish-live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01-2026-06-01t22-40-10-852z",
+      "last_published_at": "2026-06-01T22:40:10.852Z",
+      "default_research_question": "What changed for Live Biotherapeutics and Engineered Microbes since the last meaningful review or publication, and does any change justify a public update?",
+      "notes": "Latest publication event: publish-live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01-2026-06-01t22-40-10-852z."
     },
     {
       "track_id": "microbiome-metabolite-restoration",

@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-live-biotherapeutics-and-engineered-microbes-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Live Biotherapeutics And Engineered Microbes bundle",
+  "candidate_bundle_id": "live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "needs_human_judgment",
+  "blocking": false,
+  "summary": "The staged interpretation is acceptable as a low-confidence, curator-judgment-dependent baseline. The support map correctly assigns the stage from the narrow TWK10 frail-older-adult functional signal, keeps Akkermansia in the biomarker/metabolic lane, treats JS-3, engineered E. coli, and indoles as preclinical aging or mechanism support, and keeps SYNB1618 as non-aging engineered-microbe feasibility. The main residual judgment is taxonomy: TWK10 is a strain-defined live microbial intervention, but it overlaps with the broader probiotic/composition-modulation track.",
+  "reviewed_change_ids": [
+    "create-source-pmid-42120725",
+    "create-source-pmid-39879980",
+    "create-source-pmid-31263284",
+    "create-source-pmid-34361902",
+    "create-source-pmid-42034299",
+    "create-source-pmid-28622510",
+    "create-source-pmid-28827345",
+    "create-source-pmid-34294923",
+    "create-study-pasteurized-akkermansia-muct-weight-maintenance-rct",
+    "create-study-akk-wst01-type2-diabetes-rct",
+    "create-study-akkermansia-muciniphila-insulin-resistant-pilot",
+    "create-study-twk10-frail-older-adults-rct",
+    "create-study-l-paracasei-js3-c-elegans-elderly-fermentation",
+    "create-study-engineered-ecoli-longevity-screen",
+    "create-study-microbial-indoles-healthspan-models",
+    "create-study-synb1618-pku-phase1-2a",
+    "create-finding-pasteurized-akkermansia-muct-reduced-weight-regain",
+    "create-finding-akk-wst01-baseline-dependent-metabolic-response",
+    "create-finding-akkermansia-pilot-safe-metabolic-biomarkers",
+    "create-finding-twk10-improved-frailty-muscle-function",
+    "create-finding-l-paracasei-js3-lifespan-antioxidant-elderly-microbiota",
+    "create-finding-engineered-ecoli-mutants-extended-c-elegans-lifespan",
+    "create-finding-commensal-indoles-extended-healthspan-models",
+    "create-finding-synb1618-engineered-ecoli-human-phe-pharmacodynamics",
+    "create-track-live-biotherapeutics-and-engineered-microbes-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "live-biotherapeutics-functional-stage-narrowly-supported",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-track-live-biotherapeutics-and-engineered-microbes-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-live-biotherapeutics-and-engineered-microbes-outlook"
+      },
+      "claim_or_issue": "The outlook assigns human_functional_benefit because TWK10 improved functional measures in frail older adults, not because the broader class has replicated functional aging benefit.",
+      "why_it_matters": "A human_biomarker_signal rating would understate the presence of a human functional older-adult trial, while a confident or broad functional-benefit claim would overstate the evidence.",
+      "recommended_action": "No revision needed; retain low confidence and keep the public wording explicitly anchored to TWK10 rather than the whole modality.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "live-biotherapeutics-taxonomy-overlap-needs-curator-awareness",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-track-live-biotherapeutics-and-engineered-microbes-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-live-biotherapeutics-and-engineered-microbes-outlook"
+      },
+      "claim_or_issue": "TWK10 is a strain-defined live microbial intervention and can fit this track, but it also overlaps with the separate microbiome-composition-modulation track where probiotics are an exemplar intervention class.",
+      "why_it_matters": "If the curator interprets TWK10 as generic probiotic composition modulation rather than a targeted live biotherapeutic, the current_stage for this track would likely fall to human_biomarker_signal or animal_signal.",
+      "recommended_action": "No blocking revision needed because the staged outlook names the overlap and limits the rating; curator approval should consciously accept this taxonomy mapping.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "live-biotherapeutics-akkermansia-not-overstated",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-track-live-biotherapeutics-and-engineered-microbes-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-live-biotherapeutics-and-engineered-microbes-outlook"
+      },
+      "claim_or_issue": "The outlook uses Akkermansia evidence to support human biomarker and metabolic translation, while explicitly noting that major results are metabolic, pasteurized, baseline-dependent, or not aging-function outcomes.",
+      "why_it_matters": "This prevents metabolic biomarker or weight-maintenance findings from being read as broad healthy-aging functional evidence.",
+      "recommended_action": "No revision needed; retain the pasteurized-product, baseline-dependence, metabolic-endpoint, and no-aging-function limitations.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "live-biotherapeutics-engineered-microbe-human-boundary-clear",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "create-track-live-biotherapeutics-and-engineered-microbes-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-live-biotherapeutics-and-engineered-microbes-outlook"
+      },
+      "claim_or_issue": "The outlook treats SYNB1618 as engineered-microbe human feasibility and pharmacodynamics, not as dysbiosis, frailty, aging, or functional evidence.",
+      "why_it_matters": "A rare-metabolic-disease engineered-biotic trial can support platform feasibility, but it should not drive the aging-stage rating.",
+      "recommended_action": "No revision needed; keep SYNB1618 in the boundary and feasibility support role.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "live-biotherapeutics-forecast-conservative",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "create-track-live-biotherapeutics-and-engineered-microbes-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-live-biotherapeutics-and-engineered-microbes-outlook"
+      },
+      "claim_or_issue": "The outlook sets scenario_2036_status to speculative, declines to assign a credible LEV-relevant window, and requires replicated strain-defined functional trials plus chronic safety before confidence or stage can strengthen.",
+      "why_it_matters": "Current evidence supports a first public baseline, not a durable disease, mortality, broad healthy-lifespan, or time-bound LEV claim.",
+      "recommended_action": "No revision needed; keep the conservative forecast note and rating-change criteria.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-01T22:29:03.376Z",
+  "updated_at": "2026-06-01T22:29:03.376Z"
+}

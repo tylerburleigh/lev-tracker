@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-01-live-biotherapeutics-and-engineered-microbes-bootstrap",
+  "name": "Live biotherapeutics and engineered microbes bootstrap pass for June 1, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-06-01T20:55:00Z",
+  "completed_at": "2026-06-01T21:21:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Live Biotherapeutics and Engineered Microbes, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "dysbiosis"
+    ],
+    "track_ids": [
+      "live-biotherapeutics-and-engineered-microbes"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01",
+  "summary": "The track is ready for a first public baseline at low-confidence human_functional_benefit, but the stage should be read narrowly. TWK10 supplies the main frail-older-adult functional signal, while Akkermansia supplies stronger human biomarker and metabolic translation and engineered microbes supply preclinical aging biology plus non-aging human feasibility. The central limitations are strain specificity, small functional trials, pasteurized-versus-live product boundaries, baseline microbiome dependence, preclinical engineered-aging evidence, and lack of durable human aging outcomes.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-42120725",
+    "pmid-39879980",
+    "pmid-31263284",
+    "pmid-34361902",
+    "pmid-42034299",
+    "pmid-28622510",
+    "pmid-28827345",
+    "pmid-34294923"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42120725/",
+    "https://doi.org/10.1038/s41591-026-04394-7",
+    "https://clinicaltrials.gov/study/NCT05417360",
+    "https://pubmed.ncbi.nlm.nih.gov/39879980/",
+    "https://doi.org/10.1016/j.cmet.2024.12.010",
+    "https://clinicaltrials.gov/study/NCT04797442",
+    "https://pubmed.ncbi.nlm.nih.gov/31263284/",
+    "https://doi.org/10.1038/s41591-019-0495-2",
+    "https://clinicaltrials.gov/study/NCT02637115",
+    "https://pubmed.ncbi.nlm.nih.gov/34361902/",
+    "https://doi.org/10.3390/microorganisms9071466",
+    "https://clinicaltrials.gov/study/NCT04893746",
+    "https://pubmed.ncbi.nlm.nih.gov/42034299/",
+    "https://doi.org/10.1016/j.jnutbio.2026.110390",
+    "https://pubmed.ncbi.nlm.nih.gov/28622510/",
+    "https://doi.org/10.1016/j.cell.2017.05.036",
+    "https://pubmed.ncbi.nlm.nih.gov/28827345/",
+    "https://doi.org/10.1073/pnas.1706464114",
+    "https://pubmed.ncbi.nlm.nih.gov/34294923/",
+    "https://doi.org/10.1038/s42255-021-00430-7",
+    "https://clinicaltrials.gov/study/NCT03516487"
+  ],
+  "notes": [
+    "TWK10 is the only staged source with an older-adult functional endpoint, so the human_functional_benefit stage is intentionally low confidence and narrow.",
+    "The Akkermansia sources are useful human biomarker anchors, but the strongest 2019 and 2026 results involve pasteurized products and the 2025 live-strain result is baseline-dependent.",
+    "The 2026 JS-3 source is direct aging-model evidence, but its elderly-human component is in vitro fermentation rather than a human ingestion trial.",
+    "The engineered E. coli longevity screen and indole healthspan paper support engineerable microbial mechanisms but remain preclinical.",
+    "SYNB1618 is included to establish human engineered-microbe dosing and pharmacodynamic feasibility, not aging efficacy.",
+    "Reviewers should check taxonomy mapping carefully because some probiotic and metabolite evidence could overlap with microbiome-composition-modulation or microbiome-metabolite-restoration."
+  ],
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast evidence reviews before publication.",
+    "During review, decide whether the TWK10 functional finding belongs in this track, the broader microbiome-composition track, or both with explicit caveats.",
+    "If approved, publish the staged source, study, finding, and outlook records as the first live-biotherapeutics-and-engineered-microbes baseline.",
+    "Consider a later intervention-normalization pass for TWK10, Akkermansia MucT or AKK-WST01, JS-3, and SYNB1618 if the bundle is published."
+  ]
+}

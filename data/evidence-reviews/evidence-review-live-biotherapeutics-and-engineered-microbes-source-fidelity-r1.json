@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-live-biotherapeutics-and-engineered-microbes-source-fidelity-r1",
+  "name": "Source Fidelity review for Live Biotherapeutics And Engineered Microbes bundle",
+  "candidate_bundle_id": "live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, finding, and outlook records are faithful to the cited PubMed, DOI, PMC, and ClinicalTrials.gov source boundaries. Titles, PMIDs, DOIs, registry IDs, trial designs, sample sizes, durations, populations, endpoint classes, quantitative results, and safety caveats are materially aligned. One minor attribution issue should be cleaned up when convenient: the engineered E. coli longevity finding says the PubMed record reports all quantitative details, but two of those details are from the full-text PMC article rather than the PubMed abstract.",
+  "reviewed_change_ids": [
+    "create-source-pmid-42120725",
+    "create-source-pmid-39879980",
+    "create-source-pmid-31263284",
+    "create-source-pmid-34361902",
+    "create-source-pmid-42034299",
+    "create-source-pmid-28622510",
+    "create-source-pmid-28827345",
+    "create-source-pmid-34294923",
+    "create-study-pasteurized-akkermansia-muct-weight-maintenance-rct",
+    "create-study-akk-wst01-type2-diabetes-rct",
+    "create-study-akkermansia-muciniphila-insulin-resistant-pilot",
+    "create-study-twk10-frail-older-adults-rct",
+    "create-study-l-paracasei-js3-c-elegans-elderly-fermentation",
+    "create-study-engineered-ecoli-longevity-screen",
+    "create-study-microbial-indoles-healthspan-models",
+    "create-study-synb1618-pku-phase1-2a",
+    "create-finding-pasteurized-akkermansia-muct-reduced-weight-regain",
+    "create-finding-akk-wst01-baseline-dependent-metabolic-response",
+    "create-finding-akkermansia-pilot-safe-metabolic-biomarkers",
+    "create-finding-twk10-improved-frailty-muscle-function",
+    "create-finding-l-paracasei-js3-lifespan-antioxidant-elderly-microbiota",
+    "create-finding-engineered-ecoli-mutants-extended-c-elegans-lifespan",
+    "create-finding-commensal-indoles-extended-healthspan-models",
+    "create-finding-synb1618-engineered-ecoli-human-phe-pharmacodynamics",
+    "create-track-live-biotherapeutics-and-engineered-microbes-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "live-biotherapeutics-akkermansia-human-sources-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-track-live-biotherapeutics-and-engineered-microbes-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-live-biotherapeutics-and-engineered-microbes-outlook"
+      },
+      "claim_or_issue": "PMIDs 42120725, 39879980, and 31263284 support the staged Akkermansia facts: n = 90 pasteurized MucT weight-maintenance RCT with less regain and no serious treatment-related adverse events; n = 58 AKK-WST01 overweight or obese type 2 diabetes RCT with no overall between-group body-weight or HbA1c advantage but low-baseline-Akkermansia subgroup response; and n = 40 enrolled, n = 32 completed insulin-resistant volunteer pilot with safety plus pasteurized-arm metabolic biomarker movement.",
+      "why_it_matters": "These sources support human metabolic biomarker and safety relevance but not broad aging-function or mortality benefit.",
+      "recommended_action": "No revision needed; retain the biomarker, pasteurized-product, baseline-dependence, and metabolic-disease caveats already staged.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "live-biotherapeutics-twk10-source-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-twk10-improved-frailty-muscle-function",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "twk10-improved-frailty-muscle-function"
+      },
+      "claim_or_issue": "PMID 34361902 and NCT04893746 support the staged TWK10 facts: 68 elderly subjects recruited, 13 excluded or withdrawn before randomization, 55 randomized into placebo, low-dose, or high-dose groups, 17 placebo plus 12 low-dose plus 13 high-dose completers, 18-week dosing, and reported improvements or tendencies in muscle mass, grip strength, lower-limb strength, gait speed, balance, and endurance, especially with high-dose TWK10.",
+      "why_it_matters": "This is the source-fact basis for the staged human functional signal, but it remains small, strain-specific, and attrition-limited.",
+      "recommended_action": "No revision needed; retain the low confidence, attrition, strain-specificity, and company-affiliation caveats already staged.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "live-biotherapeutics-js3-source-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-l-paracasei-js3-lifespan-antioxidant-elderly-microbiota",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "l-paracasei-js3-lifespan-antioxidant-elderly-microbiota"
+      },
+      "claim_or_issue": "PMID 42034299 supports the staged JS-3 facts: JS-3 increased mean C. elegans lifespan by 28.02%, improved thermal and oxidative stress survival and motility, reduced lipofuscin and ROS, changed antioxidant readouts, and modulated elderly-donor gut microbiota in vitro.",
+      "why_it_matters": "The source is direct aging-model evidence, but the elderly-human component is an in vitro fermentation result rather than a human ingestion trial.",
+      "recommended_action": "No revision needed; keep the animal/in vitro evidence tier and human-intervention caveat.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "live-biotherapeutics-engineered-ecoli-quant-note-attribution",
+      "severity": "minor",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-finding-engineered-ecoli-mutants-extended-c-elegans-lifespan",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "engineered-ecoli-mutants-extended-c-elegans-lifespan"
+      },
+      "claim_or_issue": "The staged quantitative note says the PubMed record reports 29 lifespan-extending mutants, 21 adult-only-active mutants, and 23 MG1655-validated mutants. PubMed supports the 3,983-screen, 29-mutant, dozen disease-model, and five colanic-acid facts; the 21 adult-only and 23 MG1655 details are visible in the PMC full text rather than the PubMed abstract.",
+      "why_it_matters": "The facts are source-backed, but the attribution should not imply the PubMed abstract alone contains all of them.",
+      "recommended_action": "In a later revision, either add the PMC URL to the source record and change the note to full-text attribution, or simplify the quantitative note to PubMed-abstract-supported facts only.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "live-biotherapeutics-indole-and-synb1618-sources-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-track-live-biotherapeutics-and-engineered-microbes-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-live-biotherapeutics-and-engineered-microbes-outlook"
+      },
+      "claim_or_issue": "PMID 28827345 supports commensal-indole healthspan evidence across C. elegans, Drosophila, and mice with negligible maximal-lifespan effect, and PMID 34294923 supports SYNB1618 first-in-human facts: n = 56 healthy volunteers, n = 14 phenylketonuria participants, randomized placebo-controlled inpatient phase 1/2a design, maximum tolerated dose of 2 x 10^11 CFU, bacterial clearance within 4 days after dosing, and dose-responsive phenylalanine-metabolite pharmacodynamics.",
+      "why_it_matters": "These sources support microbe-derived effector plausibility and engineered-microbe human feasibility, but they do not support aging-directed human functional benefit.",
+      "recommended_action": "No revision needed; retain the staged mechanism, animal, disease-specific, and non-aging indication boundaries.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-01T22:28:58.218Z",
+  "updated_at": "2026-06-01T22:28:58.218Z"
+}

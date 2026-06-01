@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-live-biotherapeutics-and-engineered-microbes-outlook",
+  "name": "Live Biotherapeutics and Engineered Microbes Track Outlook",
+  "subject_type": "track",
+  "subject_id": "live-biotherapeutics-and-engineered-microbes",
+  "current_stage": "human_functional_benefit",
+  "momentum": "accelerating",
+  "confidence": "low",
+  "main_blockers": [
+    "The human functional signal is narrow and strain-specific, anchored mainly by one small TWK10 frailty trial rather than replicated aging-function studies across the modality.",
+    "The strongest Akkermansia human evidence is metabolic and cardiometabolic biomarker evidence, and some of the clearest effects come from pasteurized rather than live products.",
+    "Engineered-microbe evidence that is closest to aging is still preclinical, dominated by C. elegans lifespan or healthspan models and microbe-derived metabolites.",
+    "Human engineered-live-biotherapeutic trials show feasibility and pharmacodynamics in rare metabolic disease, but not aging, frailty, intrinsic capacity, dysbiosis reversal, or chronic prevention.",
+    "Translation depends on strain selection, baseline microbiome state, colonization, dosing durability, safety under chronic use, manufacturing quality, and avoiding broad probiotic generalization."
+  ],
+  "best_current_signals": [
+    "Lactobacillus plantarum TWK10 improved muscle and functional measures in frail older adults over 18 weeks, providing the narrow human functional anchor.",
+    "Akkermansia muciniphila trials now include 2019, 2025, and 2026 human RCTs with safety and metabolic biomarker or weight-maintenance signals, including baseline-dependent response.",
+    "JS-3 and engineered E. coli/colanic-acid studies show direct preclinical aging or healthspan signals in C. elegans and other models.",
+    "SYNB1618 demonstrates that engineered E. coli Nissle can be dosed in humans with measurable pharmacodynamic activity, though in phenylketonuria rather than aging."
+  ],
+  "forecast_note": "Live biotherapeutics and engineered microbes merit a low-confidence human_functional_benefit baseline only if the rating is read narrowly: TWK10 supplies a small frail-older-adult functional signal, while Akkermansia supplies stronger biomarker and metabolic translation and engineered microbes supply platform feasibility plus preclinical aging biology. The track should not be interpreted as having broad or durable aging efficacy until replicated strain-defined trials show functional, intrinsic-capacity, disease-progression, or durability benefits in aging-relevant populations.",
+  "rating_change_criteria": [
+    "Higher confidence at human_functional_benefit would require independent replication of TWK10-like or other strain-defined live-biotherapeutic benefits on prespecified frailty, sarcopenia, cognition, immune resilience, intrinsic-capacity, or disease-progression endpoints.",
+    "A durable disease or mortality relevance upgrade would require longer controlled trials showing persistent clinical benefit, reduced age-related disease progression, or mortality-relevant outcomes without unacceptable safety or colonization risks.",
+    "A biomarker-only downgrade would be warranted if the TWK10 functional signal fails replication or is judged to belong only to broad probiotic composition modulation rather than targeted live biotherapeutics.",
+    "Engineered-microbe claims should not upgrade the track until aging-relevant human studies show target engagement plus functional or clinical benefit, not only feasibility in rare metabolic disease.",
+    "Akkermansia results should be treated as biomarker support unless live or pasteurized formulations produce replicated aging-relevant functional outcomes and clarify which baseline microbiome states respond."
+  ],
+  "earliest_plausible_window": "No credible LEV-relevant window can be assigned before replicated strain-defined human functional trials and chronic-safety packages exist.",
+  "scenario_2036_status": "speculative",
+  "supporting_finding_ids": [
+    "twk10-improved-frailty-muscle-function",
+    "pasteurized-akkermansia-muct-reduced-weight-regain",
+    "akk-wst01-baseline-dependent-metabolic-response",
+    "akkermansia-pilot-safe-metabolic-biomarkers",
+    "l-paracasei-js3-lifespan-antioxidant-elderly-microbiota",
+    "engineered-ecoli-mutants-extended-c-elegans-lifespan",
+    "commensal-indoles-extended-healthspan-models",
+    "synb1618-engineered-ecoli-human-phe-pharmacodynamics"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "current_stage",
+      "conclusion": "The track reaches low-confidence human_functional_benefit because a strain-defined live microbial intervention improved functional measures in frail older adults.",
+      "support_role": "supports",
+      "rationale": "TWK10 is the only staged source that directly tests a live microbial strain against aging-relevant function in older adults, including muscle strength, gait, balance, endurance, and body-composition measures.",
+      "finding_ids": [
+        "twk10-improved-frailty-muscle-function"
+      ],
+      "source_ids": [
+        "pmid-34361902"
+      ],
+      "limitations": [
+        "The trial was small and had attrition.",
+        "The result is specific to TWK10 and should not be generalized to all probiotics, live biotherapeutics, or engineered microbes.",
+        "Replication with prespecified functional endpoints is needed before confidence can rise."
+      ]
+    },
+    {
+      "label": "Human biomarker and metabolic translation",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Akkermansia provides the strongest current human biomarker and metabolic translation signal for the track.",
+      "support_role": "supports",
+      "rationale": "Across 2019, 2025, and 2026 human studies, Akkermansia interventions show safety and signals in insulin sensitivity, insulinemia, cholesterol, weight maintenance, HbA1c, fat mass, or baseline-dependent colonization response.",
+      "finding_ids": [
+        "pasteurized-akkermansia-muct-reduced-weight-regain",
+        "akk-wst01-baseline-dependent-metabolic-response",
+        "akkermansia-pilot-safe-metabolic-biomarkers"
+      ],
+      "source_ids": [
+        "pmid-42120725",
+        "pmid-39879980",
+        "pmid-31263284"
+      ],
+      "limitations": [
+        "The strongest results are metabolic, not aging-function outcomes.",
+        "Some key products are pasteurized rather than live.",
+        "The 2025 live-strain response depended on baseline Akkermansia abundance and did not show overall between-group benefit."
+      ]
+    },
+    {
+      "label": "Direct aging biology and engineerable mechanisms",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Preclinical aging and healthspan evidence supports biological plausibility for strain engineering and microbe-derived effector programs.",
+      "support_role": "supports",
+      "rationale": "JS-3 extends C. elegans lifespan, engineered E. coli genetic variants alter C. elegans longevity through pathways including colanic acid, and commensal indoles extend healthspan readouts across worms, flies, and mice.",
+      "finding_ids": [
+        "l-paracasei-js3-lifespan-antioxidant-elderly-microbiota",
+        "engineered-ecoli-mutants-extended-c-elegans-lifespan",
+        "commensal-indoles-extended-healthspan-models"
+      ],
+      "source_ids": [
+        "pmid-42034299",
+        "pmid-28622510",
+        "pmid-28827345"
+      ],
+      "limitations": [
+        "Most direct aging evidence is C. elegans or other model-system evidence.",
+        "In vitro elderly-microbiota fermentation is not a human intervention.",
+        "Microbial metabolites are mechanism leads and may map partly to the separate microbiome-metabolite-restoration track."
+      ]
+    },
+    {
+      "label": "Engineered human feasibility boundary",
+      "outlook_field": "main_blockers",
+      "conclusion": "Human engineered-microbe feasibility is real, but aging-directed evidence is absent.",
+      "support_role": "balances",
+      "rationale": "SYNB1618 shows engineered E. coli Nissle can be dosed in humans, clear after dosing, and generate strain-specific pharmacodynamic metabolites, but the indication was phenylketonuria and dosing was short.",
+      "finding_ids": [
+        "synb1618-engineered-ecoli-human-phe-pharmacodynamics"
+      ],
+      "source_ids": [
+        "pmid-34294923"
+      ],
+      "limitations": [
+        "The trial does not test dysbiosis, frailty, or aging endpoints.",
+        "Rare metabolic disease pharmacodynamics do not establish chronic-aging safety or efficacy.",
+        "The study was sponsored by the therapeutic developer."
+      ]
+    },
+    {
+      "label": "Momentum and confidence",
+      "outlook_field": "confidence",
+      "conclusion": "Momentum is accelerating, but confidence remains low because the human evidence is heterogeneous and the functional rating rests on a narrow anchor.",
+      "support_role": "balances",
+      "rationale": "Recent Akkermansia trials, a 2026 JS-3 aging paper, and clinical engineered-biotic feasibility show active movement, while endpoint type, strain specificity, baseline microbiome dependence, and modality boundaries remain unresolved.",
+      "finding_ids": [
+        "twk10-improved-frailty-muscle-function",
+        "pasteurized-akkermansia-muct-reduced-weight-regain",
+        "akk-wst01-baseline-dependent-metabolic-response",
+        "l-paracasei-js3-lifespan-antioxidant-elderly-microbiota",
+        "synb1618-engineered-ecoli-human-phe-pharmacodynamics"
+      ],
+      "source_ids": [
+        "pmid-34361902",
+        "pmid-42120725",
+        "pmid-39879980",
+        "pmid-42034299",
+        "pmid-34294923"
+      ],
+      "limitations": [
+        "No staged source demonstrates durable disease prevention, mortality benefit, or broad healthy-lifespan extension in humans.",
+        "The track spans conventional strain-defined probiotics, pasteurized next-generation microbes, microbial metabolites, and engineered bacteria.",
+        "Taxonomy mapping should be reviewed so broad probiotic composition effects are not double-counted against the separate microbiome-composition track."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-34361902",
+    "pmid-42120725",
+    "pmid-39879980",
+    "pmid-31263284",
+    "pmid-42034299",
+    "pmid-28622510",
+    "pmid-28827345",
+    "pmid-34294923"
+  ],
+  "last_updated": "2026-06-01",
+  "tags": [
+    "public",
+    "track",
+    "thin_coverage"
+  ]
+}

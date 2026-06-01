@@ -1,0 +1,389 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01",
+  "name": "Live biotherapeutics and engineered microbes bootstrap for June 1, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline candidate for the live biotherapeutics and engineered microbes track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-01T21:21:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Live Biotherapeutics and Engineered Microbes, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "dysbiosis"
+    ],
+    "track_ids": [
+      "live-biotherapeutics-and-engineered-microbes"
+    ]
+  },
+  "source_ids": [
+    "pmid-42120725",
+    "pmid-39879980",
+    "pmid-31263284",
+    "pmid-34361902",
+    "pmid-42034299",
+    "pmid-28622510",
+    "pmid-28827345",
+    "pmid-34294923"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42120725/",
+    "https://doi.org/10.1038/s41591-026-04394-7",
+    "https://clinicaltrials.gov/study/NCT05417360",
+    "https://pubmed.ncbi.nlm.nih.gov/39879980/",
+    "https://doi.org/10.1016/j.cmet.2024.12.010",
+    "https://clinicaltrials.gov/study/NCT04797442",
+    "https://pubmed.ncbi.nlm.nih.gov/31263284/",
+    "https://doi.org/10.1038/s41591-019-0495-2",
+    "https://clinicaltrials.gov/study/NCT02637115",
+    "https://pubmed.ncbi.nlm.nih.gov/34361902/",
+    "https://doi.org/10.3390/microorganisms9071466",
+    "https://clinicaltrials.gov/study/NCT04893746",
+    "https://pubmed.ncbi.nlm.nih.gov/42034299/",
+    "https://doi.org/10.1016/j.jnutbio.2026.110390",
+    "https://pubmed.ncbi.nlm.nih.gov/28622510/",
+    "https://doi.org/10.1016/j.cell.2017.05.036",
+    "https://pubmed.ncbi.nlm.nih.gov/28827345/",
+    "https://doi.org/10.1073/pnas.1706464114",
+    "https://pubmed.ncbi.nlm.nih.gov/34294923/",
+    "https://doi.org/10.1038/s42255-021-00430-7",
+    "https://clinicaltrials.gov/study/NCT03516487"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-live-biotherapeutics-and-engineered-microbes-outlook"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "twk10-improved-frailty-muscle-function"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "pasteurized-akkermansia-muct-reduced-weight-regain"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "akk-wst01-baseline-dependent-metabolic-response"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "akkermansia-pilot-safe-metabolic-biomarkers"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "l-paracasei-js3-lifespan-antioxidant-elderly-microbiota"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "engineered-ecoli-mutants-extended-c-elegans-lifespan"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "commensal-indoles-extended-healthspan-models"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "synb1618-engineered-ecoli-human-phe-pharmacodynamics"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-42120725",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-42120725",
+      "file_path": "data/sources/pmid-42120725.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/pmid-42120725.json",
+      "summary": "Add pasteurized Akkermansia MucT weight-maintenance RCT source.",
+      "rationale": "This source adds the latest human Akkermansia metabolic translation signal."
+    },
+    {
+      "change_id": "create-source-pmid-39879980",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-39879980",
+      "file_path": "data/sources/pmid-39879980.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/pmid-39879980.json",
+      "summary": "Add AKK-WST01 type 2 diabetes RCT source.",
+      "rationale": "This source captures baseline-microbiome-dependent human live Akkermansia evidence."
+    },
+    {
+      "change_id": "create-source-pmid-31263284",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-31263284",
+      "file_path": "data/sources/pmid-31263284.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/pmid-31263284.json",
+      "summary": "Add first human Akkermansia proof-of-concept source.",
+      "rationale": "This source anchors early safety and human biomarker evidence for live or pasteurized Akkermansia."
+    },
+    {
+      "change_id": "create-source-pmid-34361902",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-34361902",
+      "file_path": "data/sources/pmid-34361902.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/pmid-34361902.json",
+      "summary": "Add TWK10 frail older adults RCT source.",
+      "rationale": "This source supplies the narrow human functional anchor for the staged track outlook."
+    },
+    {
+      "change_id": "create-source-pmid-42034299",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-42034299",
+      "file_path": "data/sources/pmid-42034299.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/pmid-42034299.json",
+      "summary": "Add 2026 JS-3 anti-aging probiotic model source.",
+      "rationale": "This source updates the track with direct C. elegans lifespan and elderly-microbiota in vitro evidence."
+    },
+    {
+      "change_id": "create-source-pmid-28622510",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-28622510",
+      "file_path": "data/sources/pmid-28622510.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/pmid-28622510.json",
+      "summary": "Add engineered E. coli C. elegans longevity source.",
+      "rationale": "This source anchors preclinical engineered-microbe aging biology."
+    },
+    {
+      "change_id": "create-source-pmid-28827345",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-28827345",
+      "file_path": "data/sources/pmid-28827345.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/pmid-28827345.json",
+      "summary": "Add microbial indoles healthspan source.",
+      "rationale": "This source supports microbe-derived effector mechanisms and aging-relevant healthspan biology."
+    },
+    {
+      "change_id": "create-source-pmid-34294923",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-34294923",
+      "file_path": "data/sources/pmid-34294923.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/pmid-34294923.json",
+      "summary": "Add SYNB1618 first-in-human engineered E. coli source.",
+      "rationale": "This source supports human engineered-live-biotherapeutic feasibility while preserving the non-aging indication boundary."
+    },
+    {
+      "change_id": "create-study-pasteurized-akkermansia-muct-weight-maintenance-rct",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "pasteurized-akkermansia-muct-weight-maintenance-rct",
+      "file_path": "data/studies/pasteurized-akkermansia-muct-weight-maintenance-rct.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/pasteurized-akkermansia-muct-weight-maintenance-rct.json",
+      "summary": "Add pasteurized Akkermansia MucT human weight-maintenance study.",
+      "rationale": "The study record captures design, population, and endpoint boundaries for the newest Akkermansia evidence."
+    },
+    {
+      "change_id": "create-study-akk-wst01-type2-diabetes-rct",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "akk-wst01-type2-diabetes-rct",
+      "file_path": "data/studies/akk-wst01-type2-diabetes-rct.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/akk-wst01-type2-diabetes-rct.json",
+      "summary": "Add AKK-WST01 type 2 diabetes trial study.",
+      "rationale": "The study record captures baseline-dependent live Akkermansia human evidence."
+    },
+    {
+      "change_id": "create-study-akkermansia-muciniphila-insulin-resistant-pilot",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "akkermansia-muciniphila-insulin-resistant-pilot",
+      "file_path": "data/studies/akkermansia-muciniphila-insulin-resistant-pilot.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/akkermansia-muciniphila-insulin-resistant-pilot.json",
+      "summary": "Add Akkermansia proof-of-concept pilot study.",
+      "rationale": "The study record captures early human safety and biomarker evidence."
+    },
+    {
+      "change_id": "create-study-twk10-frail-older-adults-rct",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "twk10-frail-older-adults-rct",
+      "file_path": "data/studies/twk10-frail-older-adults-rct.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/twk10-frail-older-adults-rct.json",
+      "summary": "Add TWK10 frail older adults functional study.",
+      "rationale": "The study record links the human functional signal to the track."
+    },
+    {
+      "change_id": "create-study-l-paracasei-js3-c-elegans-elderly-fermentation",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "l-paracasei-js3-c-elegans-elderly-fermentation",
+      "file_path": "data/studies/l-paracasei-js3-c-elegans-elderly-fermentation.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/l-paracasei-js3-c-elegans-elderly-fermentation.json",
+      "summary": "Add JS-3 C. elegans and elderly-microbiota fermentation study.",
+      "rationale": "The study record captures direct aging-model evidence and its in vitro human-microbiota boundary."
+    },
+    {
+      "change_id": "create-study-engineered-ecoli-longevity-screen",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "engineered-ecoli-longevity-screen",
+      "file_path": "data/studies/engineered-ecoli-longevity-screen.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/engineered-ecoli-longevity-screen.json",
+      "summary": "Add engineered E. coli C. elegans longevity study.",
+      "rationale": "The study record captures genetic microbial engineering evidence for organismal lifespan in a model system."
+    },
+    {
+      "change_id": "create-study-microbial-indoles-healthspan-models",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "microbial-indoles-healthspan-models",
+      "file_path": "data/studies/microbial-indoles-healthspan-models.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/microbial-indoles-healthspan-models.json",
+      "summary": "Add microbial indoles model healthspan study.",
+      "rationale": "The study record captures microbe-derived effector biology relevant to engineered microbial programs."
+    },
+    {
+      "change_id": "create-study-synb1618-pku-phase1-2a",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "synb1618-pku-phase1-2a",
+      "file_path": "data/studies/synb1618-pku-phase1-2a.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/synb1618-pku-phase1-2a.json",
+      "summary": "Add SYNB1618 engineered E. coli first-in-human study.",
+      "rationale": "The study record captures human engineered-microbe feasibility while preserving the disease-specific boundary."
+    },
+    {
+      "change_id": "create-finding-pasteurized-akkermansia-muct-reduced-weight-regain",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "pasteurized-akkermansia-muct-reduced-weight-regain",
+      "file_path": "data/findings/pasteurized-akkermansia-muct-reduced-weight-regain.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/pasteurized-akkermansia-muct-reduced-weight-regain.json",
+      "summary": "Add pasteurized Akkermansia weight-maintenance finding.",
+      "rationale": "This finding supports human biomarker and metabolic translation while flagging the pasteurized-product boundary."
+    },
+    {
+      "change_id": "create-finding-akk-wst01-baseline-dependent-metabolic-response",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "akk-wst01-baseline-dependent-metabolic-response",
+      "file_path": "data/findings/akk-wst01-baseline-dependent-metabolic-response.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/akk-wst01-baseline-dependent-metabolic-response.json",
+      "summary": "Add AKK-WST01 baseline-dependent metabolic finding.",
+      "rationale": "This finding supports human live-strain biomarker relevance while limiting broad generalization."
+    },
+    {
+      "change_id": "create-finding-akkermansia-pilot-safe-metabolic-biomarkers",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "akkermansia-pilot-safe-metabolic-biomarkers",
+      "file_path": "data/findings/akkermansia-pilot-safe-metabolic-biomarkers.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/akkermansia-pilot-safe-metabolic-biomarkers.json",
+      "summary": "Add Akkermansia pilot safety and biomarker finding.",
+      "rationale": "This finding anchors early human Akkermansia safety and metabolic biomarker evidence."
+    },
+    {
+      "change_id": "create-finding-twk10-improved-frailty-muscle-function",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "twk10-improved-frailty-muscle-function",
+      "file_path": "data/findings/twk10-improved-frailty-muscle-function.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/twk10-improved-frailty-muscle-function.json",
+      "summary": "Add TWK10 frailty functional finding.",
+      "rationale": "This finding supports the low-confidence human_functional_benefit stage assignment."
+    },
+    {
+      "change_id": "create-finding-l-paracasei-js3-lifespan-antioxidant-elderly-microbiota",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "l-paracasei-js3-lifespan-antioxidant-elderly-microbiota",
+      "file_path": "data/findings/l-paracasei-js3-lifespan-antioxidant-elderly-microbiota.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/l-paracasei-js3-lifespan-antioxidant-elderly-microbiota.json",
+      "summary": "Add JS-3 preclinical aging finding.",
+      "rationale": "This finding supports direct aging-model plausibility without upgrading the clinical rating."
+    },
+    {
+      "change_id": "create-finding-engineered-ecoli-mutants-extended-c-elegans-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "engineered-ecoli-mutants-extended-c-elegans-lifespan",
+      "file_path": "data/findings/engineered-ecoli-mutants-extended-c-elegans-lifespan.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/engineered-ecoli-mutants-extended-c-elegans-lifespan.json",
+      "summary": "Add engineered E. coli worm lifespan finding.",
+      "rationale": "This finding supports preclinical engineered-microbe aging biology."
+    },
+    {
+      "change_id": "create-finding-commensal-indoles-extended-healthspan-models",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "commensal-indoles-extended-healthspan-models",
+      "file_path": "data/findings/commensal-indoles-extended-healthspan-models.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/commensal-indoles-extended-healthspan-models.json",
+      "summary": "Add commensal indoles healthspan finding.",
+      "rationale": "This finding supports microbe-derived effector biology while flagging metabolite-track overlap."
+    },
+    {
+      "change_id": "create-finding-synb1618-engineered-ecoli-human-phe-pharmacodynamics",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "synb1618-engineered-ecoli-human-phe-pharmacodynamics",
+      "file_path": "data/findings/synb1618-engineered-ecoli-human-phe-pharmacodynamics.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/synb1618-engineered-ecoli-human-phe-pharmacodynamics.json",
+      "summary": "Add SYNB1618 human pharmacodynamic finding.",
+      "rationale": "This finding supports engineered-microbe human feasibility while limiting aging interpretation."
+    },
+    {
+      "change_id": "create-track-live-biotherapeutics-and-engineered-microbes-outlook",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-live-biotherapeutics-and-engineered-microbes-outlook",
+      "file_path": "data/outlooks/track-live-biotherapeutics-and-engineered-microbes-outlook.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01/track-live-biotherapeutics-and-engineered-microbes-outlook.json",
+      "summary": "Create the first public outlook for the live biotherapeutics and engineered microbes track.",
+      "rationale": "A low-confidence human_functional_benefit baseline is justified only narrowly by TWK10's frail-older-adult functional signal, while Akkermansia remains biomarker-heavy and engineered-microbe aging evidence remains mostly preclinical.",
+      "uncertainty_flags": [
+        "The stage depends on whether TWK10 is accepted as a targeted live-biotherapeutic anchor rather than only broad probiotic composition modulation.",
+        "The human functional signal is small and not yet independently replicated.",
+        "Akkermansia evidence is stronger for biomarkers and weight maintenance than aging function, and key products are pasteurized.",
+        "Engineered-microbe aging evidence is preclinical; human engineered-microbe trials are disease-specific."
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "live-biotherapeutics-and-engineered-microbes",
+      "note": "Create the first public track outlook at low-confidence human_functional_benefit, anchored narrowly by TWK10 frailty-function evidence and bounded by biomarker-heavy Akkermansia data plus preclinical engineered-microbe aging evidence.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "dysbiosis",
+      "note": "Publishing this bundle would broaden dysbiosis coverage beyond microbiome-composition modulation, but the hallmark outlook should remain conservative until functional evidence is replicated and taxonomy overlap is resolved.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-01-live-biotherapeutics-and-engineered-microbes-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin",
+    "bootstrap",
+    "live-biotherapeutics-and-engineered-microbes"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-live-biotherapeutics-and-engineered-microbes-source-fidelity-r1",
+    "evidence-review-live-biotherapeutics-and-engineered-microbes-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01-2026-06-01t22-40-10-852z"
+  ]
+}
