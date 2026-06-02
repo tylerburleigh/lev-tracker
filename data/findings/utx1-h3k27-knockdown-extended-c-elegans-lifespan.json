@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "utx1-h3k27-knockdown-extended-c-elegans-lifespan",
+  "name": "UTX-1 H3K27 demethylase knockdown extended C. elegans lifespan",
+  "summary": "UTX-1 supports a second histone-methylation axis for worm lifespan regulation.",
+  "source_id": "pmid-21834846",
+  "study_id": "utx1-h3k27-c-elegans-lifespan",
+  "track_ids": [
+    "chromatin-and-histone-modulation"
+  ],
+  "hallmark_ids": [
+    "epigenetic_alterations"
+  ],
+  "endpoint_category": "lifespan",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "moderate",
+  "statement": "UTX-1, a H3K27 demethylase, regulated C. elegans lifespan through a germline-independent, insulin/DAF-16-dependent mechanism associated with H3K27me3 biology.",
+  "population_or_model": "Caenorhabditis elegans H3K27me3, RNAi, daf-16, and lifespan assays",
+  "time_horizon": "Adult worm lifespan assays",
+  "quantitative_note": "The PubMed abstract reports lifespan regulation but does not provide one percentage effect size.",
+  "caveats": [
+    "This is worm genetic/pathway evidence rather than a therapeutic intervention.",
+    "The pathway depends on insulin/DAF-16 biology and may overlap nutrient-sensing tracks.",
+    "H3K27 methylation biology is developmentally sensitive and not obviously safe to modulate chronically."
+  ],
+  "tags": [
+    "animal",
+    "c-elegans",
+    "h3k27me3",
+    "utx1"
+  ]
+}

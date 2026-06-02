@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan",
+  "name": "Butyrate recovered histone acylation and extended mitochondrial-deficiency mouse lifespan",
+  "summary": "A 2026 disease-model result adds recent mammalian context but is not a normal-aging or human trial signal.",
+  "source_id": "pmid-41826362",
+  "study_id": "tributyrin-mito-deficient-mouse-lifespan",
+  "intervention_ids": [
+    "tributyrin"
+  ],
+  "track_ids": [
+    "chromatin-and-histone-modulation"
+  ],
+  "hallmark_ids": [
+    "epigenetic_alterations",
+    "mitochondrial_dysfunction",
+    "dysbiosis"
+  ],
+  "endpoint_category": "lifespan",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "low",
+  "statement": "In inducible TFAM-deficient mice, tributyrin/butyrate supplementation delayed multiple signs of multimorbidity, extended lifespan, and recovered intestinal epigenetic histone acylation marks lost with mitochondrial deficiency.",
+  "population_or_model": "Inducible TFAM-deficient mice with premature mitochondrial-dysfunction multimorbidity",
+  "time_horizon": "Post-induction disease course and survival follow-up",
+  "quantitative_note": "The PubMed abstract reports lifespan extension but does not provide a percentage effect size.",
+  "caveats": [
+    "This is a severe mitochondrial-deficiency disease model, not normal aging.",
+    "The intervention is also microbiome/metabolite and mitochondrial-context biology, not isolated chromatin modulation.",
+    "No human mitochondrial-disease or aging trial result is established here."
+  ],
+  "tags": [
+    "animal",
+    "mouse-disease-model",
+    "butyrate",
+    "histone-acylation"
+  ]
+}

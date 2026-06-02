@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-02T00:31:36.054Z",
+  "updated_at": "2026-06-02T11:35:43.357Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One bootstrap or surveillance run should cover one track unless the user explicitly narrows further.",
@@ -37,7 +37,7 @@
       "hallmark_id": "epigenetic_alterations",
       "canonical_order": 3,
       "hallmark_bootstrap_status": "baseline",
-      "tracked_public_outlook_count": 2,
+      "tracked_public_outlook_count": 3,
       "next_priority_track_id": "chromatin-and-histone-modulation",
       "notes": "At least one track-level public baseline exists."
     },
@@ -253,11 +253,19 @@
       "hallmark_id": "epigenetic_alterations",
       "canonical_order": 3,
       "name": "Chromatin and Histone Modulation",
-      "coverage_status": "not_started",
-      "next_mode": "bootstrap",
+      "coverage_status": "baseline",
+      "next_mode": "surveillance",
       "queue_state": "ready",
-      "default_research_question": "What is the current human-relevant evidence landscape for Chromatin and Histone Modulation, and what belongs in the first public baseline?",
-      "notes": "No track-level public baseline has been bootstrapped yet."
+      "last_session_id": "2026-06-02-chromatin-and-histone-modulation-bootstrap",
+      "last_session_at": "2026-06-02T11:05:00Z",
+      "last_session_mode": "bootstrap",
+      "last_session_outcome": "candidate_bundle_submitted",
+      "last_candidate_bundle_id": "chromatin-and-histone-modulation-bootstrap-2026-06-02",
+      "last_candidate_bundle_status": "published",
+      "last_publication_event_id": "publish-chromatin-and-histone-modulation-bootstrap-2026-06-02-2026-06-02t11-35-30-622z",
+      "last_published_at": "2026-06-02T11:35:30.622Z",
+      "default_research_question": "What changed for Chromatin and Histone Modulation since the last meaningful review or publication, and does any change justify a public update?",
+      "notes": "Latest publication event: publish-chromatin-and-histone-modulation-bootstrap-2026-06-02-2026-06-02t11-35-30-622z."
     },
     {
       "track_id": "chaperone-and-heat-shock-support",

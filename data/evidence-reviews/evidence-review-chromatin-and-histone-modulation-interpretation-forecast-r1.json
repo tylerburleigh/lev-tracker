@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-chromatin-and-histone-modulation-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Chromatin And Histone Modulation bundle",
+  "candidate_bundle_id": "chromatin-and-histone-modulation-bootstrap-2026-06-02",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "needs_human_judgment",
+  "blocking": false,
+  "summary": "The proposed outlook is conservative and evidence-mapped: low-confidence animal_signal is anchored to mouse and model-organism lifespan, healthspan, senescence, and chromatin-mark evidence, while human translation is explicitly held below human_biomarker_signal. The support map preserves boundary-track caveats for autophagy, nutrient sensing, NAD/sirtuin biology, mitochondrial dysfunction, microbiome-derived metabolites, senescence, and DNA repair, and no blocking interpretation or forecast overreach was found.",
+  "reviewed_change_ids": [
+    "create-source-pmid-19801973",
+    "create-source-pmid-20555324",
+    "create-source-pmid-21834846",
+    "create-source-pmid-22367546",
+    "create-source-pmid-24582957",
+    "create-source-pmid-25127866",
+    "create-source-pmid-33408182",
+    "create-source-pmid-34050173",
+    "create-source-pmid-41826362",
+    "create-study-beta-hydroxybutyrate-hdac-c-elegans-lifespan",
+    "create-study-h3k4me3-complex-c-elegans-lifespan",
+    "create-study-kat7-crispr-senescence-aged-mice",
+    "create-study-male-sirt6-transgenic-lifespan-mice",
+    "create-study-sirt6-overexpression-healthy-lifespan-mice",
+    "create-study-spermidine-hat-autophagy-longevity-models",
+    "create-study-srt1720-standard-diet-mouse-lifespan",
+    "create-study-tributyrin-mito-deficient-mouse-lifespan",
+    "create-study-utx1-h3k27-c-elegans-lifespan",
+    "create-finding-beta-hydroxybutyrate-hdac-extended-c-elegans-lifespan",
+    "create-finding-butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan",
+    "create-finding-h3k4me3-complex-deficiency-extended-c-elegans-lifespan",
+    "create-finding-kat7-inactivation-extended-aged-mouse-lifespan",
+    "create-finding-sirt6-overexpression-extended-male-mouse-lifespan",
+    "create-finding-sirt6-overexpression-reduced-frailty-extended-mouse-lifespan",
+    "create-finding-spermidine-histone-hypoacetylation-longevity-autophagy",
+    "create-finding-srt1720-standard-diet-mean-lifespan-healthspan-mice",
+    "create-finding-utx1-h3k27-knockdown-extended-c-elegans-lifespan",
+    "create-outlook-track-chromatin-and-histone-modulation-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "animal-signal-stage-needs-curator-judgment",
+      "severity": "note",
+      "category": "uncertainty",
+      "applies_to_change_id": "create-outlook-track-chromatin-and-histone-modulation-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-chromatin-and-histone-modulation-outlook"
+      },
+      "claim_or_issue": "The animal_signal stage rests on a heterogeneous preclinical evidence base, including genetic or transgenic mouse studies, small-molecule sirtuin or metabolite studies, C. elegans histone-modifier genetics, and a mitochondrial-deficiency mouse model.",
+      "why_it_matters": "The stage is defensible only because the outlook is explicitly low confidence and does not claim a coherent, human-ready intervention class.",
+      "recommended_action": "No blocking revision required; curator should keep the animal_signal assignment low confidence unless selective mammalian intervention studies and human pathway-engagement data emerge.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "human-biomarker-upgrade-boundary-preserved",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "create-outlook-track-chromatin-and-histone-modulation-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-chromatin-and-histone-modulation-outlook"
+      },
+      "claim_or_issue": "The staged outlook declines a human_biomarker_signal upgrade despite human-cell and adjacent intervention material.",
+      "why_it_matters": "That boundary is appropriate because the bundle does not include a human intervention study showing controlled chromatin or histone pathway engagement tied to aging-relevant biomarkers, function, disease progression, or survival.",
+      "recommended_action": "No revision required; preserve the explicit upgrade criteria requiring human chromatin or histone pathway engagement plus aging-relevant biomarkers and acceptable safety.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "boundary-track-attribution-caveats-adequate",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-outlook-track-chromatin-and-histone-modulation-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-chromatin-and-histone-modulation-outlook"
+      },
+      "claim_or_issue": "Several support branches overlap other tracks, including spermidine/autophagy, beta-hydroxybutyrate and butyrate/metabolism or microbiome biology, SIRT1/SIRT6 nutrient and NAD biology, KAT7/senescence, and SIRT6/DNA repair.",
+      "why_it_matters": "Without direct rescue, pathway engagement, or attribution experiments, those branches should support chromatin-aging relevance without implying isolated chromatin causality.",
+      "recommended_action": "No blocking revision required; keep the current support-map limitations and rating-change criteria that prevent boundary-track evidence from upgrading this track without direct chromatin or histone engagement.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-02T11:29:53.543Z",
+  "updated_at": "2026-06-02T11:29:53.543Z"
+}

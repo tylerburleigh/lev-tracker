@@ -1,0 +1,392 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "chromatin-and-histone-modulation-bootstrap-2026-06-02",
+  "name": "Chromatin and histone modulation bootstrap for June 2, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline candidate for the chromatin and histone modulation track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-02T11:05:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Chromatin and Histone Modulation, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "epigenetic_alterations"
+    ],
+    "track_ids": [
+      "chromatin-and-histone-modulation"
+    ]
+  },
+  "source_ids": [
+    "pmid-33408182",
+    "pmid-34050173",
+    "pmid-22367546",
+    "pmid-24582957",
+    "pmid-19801973",
+    "pmid-25127866",
+    "pmid-20555324",
+    "pmid-21834846",
+    "pmid-41826362"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/33408182/",
+    "https://pubmed.ncbi.nlm.nih.gov/34050173/",
+    "https://pubmed.ncbi.nlm.nih.gov/22367546/",
+    "https://pubmed.ncbi.nlm.nih.gov/24582957/",
+    "https://pubmed.ncbi.nlm.nih.gov/19801973/",
+    "https://pubmed.ncbi.nlm.nih.gov/25127866/",
+    "https://pubmed.ncbi.nlm.nih.gov/20555324/",
+    "https://pubmed.ncbi.nlm.nih.gov/21834846/",
+    "https://pubmed.ncbi.nlm.nih.gov/41826362/"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-chromatin-and-histone-modulation-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-epigenetic-alterations-outlook"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "kat7-inactivation-extended-aged-mouse-lifespan"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "sirt6-overexpression-reduced-frailty-extended-mouse-lifespan"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "srt1720-standard-diet-mean-lifespan-healthspan-mice"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "h3k4me3-complex-deficiency-extended-c-elegans-lifespan"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-19801973",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-19801973",
+      "file_path": "data/sources/pmid-19801973.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/pmid-19801973.json",
+      "summary": "Create source record for Induction of autophagy by spermidine promotes longevity.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-source-pmid-20555324",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-20555324",
+      "file_path": "data/sources/pmid-20555324.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/pmid-20555324.json",
+      "summary": "Create source record for Members of the H3K4 trimethylation complex regulate lifespan in a germline-dependent manner in C. elegans.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-source-pmid-21834846",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-21834846",
+      "file_path": "data/sources/pmid-21834846.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/pmid-21834846.json",
+      "summary": "Create source record for The H3K27 demethylase UTX-1 regulates C. elegans lifespan in a germline-independent, insulin-dependent manner.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-source-pmid-22367546",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-22367546",
+      "file_path": "data/sources/pmid-22367546.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/pmid-22367546.json",
+      "summary": "Create source record for The sirtuin SIRT6 regulates lifespan in male mice.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-source-pmid-24582957",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-24582957",
+      "file_path": "data/sources/pmid-24582957.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/pmid-24582957.json",
+      "summary": "Create source record for The SIRT1 activator SRT1720 extends lifespan and improves health of mice fed a standard diet.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-source-pmid-25127866",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-25127866",
+      "file_path": "data/sources/pmid-25127866.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/pmid-25127866.json",
+      "summary": "Create source record for D-beta-hydroxybutyrate extends lifespan in C. elegans.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-source-pmid-33408182",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-33408182",
+      "file_path": "data/sources/pmid-33408182.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/pmid-33408182.json",
+      "summary": "Create source record for A genome-wide CRISPR-based screen identifies KAT7 as a driver of cellular senescence.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-source-pmid-34050173",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-34050173",
+      "file_path": "data/sources/pmid-34050173.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/pmid-34050173.json",
+      "summary": "Create source record for Restoration of energy homeostasis by SIRT6 extends healthy lifespan.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-source-pmid-41826362",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-41826362",
+      "file_path": "data/sources/pmid-41826362.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/pmid-41826362.json",
+      "summary": "Create source record for Butyrate extends health and lifespan in mice with mitochondrial deficiency.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-study-beta-hydroxybutyrate-hdac-c-elegans-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "beta-hydroxybutyrate-hdac-c-elegans-lifespan",
+      "file_path": "data/studies/beta-hydroxybutyrate-hdac-c-elegans-lifespan.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/beta-hydroxybutyrate-hdac-c-elegans-lifespan.json",
+      "summary": "Create study record for D-beta-hydroxybutyrate HDAC C. elegans lifespan study.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-study-h3k4me3-complex-c-elegans-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "h3k4me3-complex-c-elegans-lifespan",
+      "file_path": "data/studies/h3k4me3-complex-c-elegans-lifespan.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/h3k4me3-complex-c-elegans-lifespan.json",
+      "summary": "Create study record for H3K4me3 complex C. elegans lifespan study.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-study-kat7-crispr-senescence-aged-mice",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "kat7-crispr-senescence-aged-mice",
+      "file_path": "data/studies/kat7-crispr-senescence-aged-mice.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/kat7-crispr-senescence-aged-mice.json",
+      "summary": "Create study record for KAT7 CRISPR senescence and aged-mouse experiments.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-study-male-sirt6-transgenic-lifespan-mice",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "male-sirt6-transgenic-lifespan-mice",
+      "file_path": "data/studies/male-sirt6-transgenic-lifespan-mice.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/male-sirt6-transgenic-lifespan-mice.json",
+      "summary": "Create study record for Male SIRT6 transgenic mouse lifespan study.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-study-sirt6-overexpression-healthy-lifespan-mice",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "sirt6-overexpression-healthy-lifespan-mice",
+      "file_path": "data/studies/sirt6-overexpression-healthy-lifespan-mice.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/sirt6-overexpression-healthy-lifespan-mice.json",
+      "summary": "Create study record for SIRT6 overexpression healthy lifespan mouse study.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-study-spermidine-hat-autophagy-longevity-models",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "spermidine-hat-autophagy-longevity-models",
+      "file_path": "data/studies/spermidine-hat-autophagy-longevity-models.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/spermidine-hat-autophagy-longevity-models.json",
+      "summary": "Create study record for Spermidine histone acetylation and longevity models.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-study-srt1720-standard-diet-mouse-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "srt1720-standard-diet-mouse-lifespan",
+      "file_path": "data/studies/srt1720-standard-diet-mouse-lifespan.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/srt1720-standard-diet-mouse-lifespan.json",
+      "summary": "Create study record for SRT1720 standard-diet mouse lifespan study.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-study-tributyrin-mito-deficient-mouse-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "tributyrin-mito-deficient-mouse-lifespan",
+      "file_path": "data/studies/tributyrin-mito-deficient-mouse-lifespan.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/tributyrin-mito-deficient-mouse-lifespan.json",
+      "summary": "Create study record for Tributyrin mitochondrial-deficiency mouse lifespan study.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-study-utx1-h3k27-c-elegans-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "utx1-h3k27-c-elegans-lifespan",
+      "file_path": "data/studies/utx1-h3k27-c-elegans-lifespan.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/utx1-h3k27-c-elegans-lifespan.json",
+      "summary": "Create study record for UTX-1 H3K27 demethylase C. elegans lifespan study.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-finding-beta-hydroxybutyrate-hdac-extended-c-elegans-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "beta-hydroxybutyrate-hdac-extended-c-elegans-lifespan",
+      "file_path": "data/findings/beta-hydroxybutyrate-hdac-extended-c-elegans-lifespan.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/beta-hydroxybutyrate-hdac-extended-c-elegans-lifespan.json",
+      "summary": "Create finding record for Beta-hydroxybutyrate extended C. elegans lifespan through HDAC-linked biology.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-finding-butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan",
+      "file_path": "data/findings/butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan.json",
+      "summary": "Create finding record for Butyrate recovered histone acylation and extended mitochondrial-deficiency mouse lifespan.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-finding-h3k4me3-complex-deficiency-extended-c-elegans-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "h3k4me3-complex-deficiency-extended-c-elegans-lifespan",
+      "file_path": "data/findings/h3k4me3-complex-deficiency-extended-c-elegans-lifespan.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/h3k4me3-complex-deficiency-extended-c-elegans-lifespan.json",
+      "summary": "Create finding record for H3K4me3 complex deficiency extended C. elegans lifespan.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-finding-kat7-inactivation-extended-aged-mouse-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "kat7-inactivation-extended-aged-mouse-lifespan",
+      "file_path": "data/findings/kat7-inactivation-extended-aged-mouse-lifespan.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/kat7-inactivation-extended-aged-mouse-lifespan.json",
+      "summary": "Create finding record for KAT7 inactivation alleviated senescence and extended aged mouse lifespan.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-finding-sirt6-overexpression-extended-male-mouse-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "sirt6-overexpression-extended-male-mouse-lifespan",
+      "file_path": "data/findings/sirt6-overexpression-extended-male-mouse-lifespan.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/sirt6-overexpression-extended-male-mouse-lifespan.json",
+      "summary": "Create finding record for Earlier SIRT6 overexpression extended lifespan only in male mice.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-finding-sirt6-overexpression-reduced-frailty-extended-mouse-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "sirt6-overexpression-reduced-frailty-extended-mouse-lifespan",
+      "file_path": "data/findings/sirt6-overexpression-reduced-frailty-extended-mouse-lifespan.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/sirt6-overexpression-reduced-frailty-extended-mouse-lifespan.json",
+      "summary": "Create finding record for SIRT6 overexpression reduced frailty and extended mouse lifespan.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-finding-spermidine-histone-hypoacetylation-longevity-autophagy",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "spermidine-histone-hypoacetylation-longevity-autophagy",
+      "file_path": "data/findings/spermidine-histone-hypoacetylation-longevity-autophagy.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/spermidine-histone-hypoacetylation-longevity-autophagy.json",
+      "summary": "Create finding record for Spermidine induced histone hypoacetylation and longevity-linked autophagy.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-finding-srt1720-standard-diet-mean-lifespan-healthspan-mice",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "srt1720-standard-diet-mean-lifespan-healthspan-mice",
+      "file_path": "data/findings/srt1720-standard-diet-mean-lifespan-healthspan-mice.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/srt1720-standard-diet-mean-lifespan-healthspan-mice.json",
+      "summary": "Create finding record for SRT1720 improved healthspan and mean lifespan in standard-diet mice.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-finding-utx1-h3k27-knockdown-extended-c-elegans-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "utx1-h3k27-knockdown-extended-c-elegans-lifespan",
+      "file_path": "data/findings/utx1-h3k27-knockdown-extended-c-elegans-lifespan.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/utx1-h3k27-knockdown-extended-c-elegans-lifespan.json",
+      "summary": "Create finding record for UTX-1 H3K27 demethylase knockdown extended C. elegans lifespan.",
+      "rationale": "This record supports the first chromatin and histone modulation baseline."
+    },
+    {
+      "change_id": "create-outlook-track-chromatin-and-histone-modulation-outlook",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-chromatin-and-histone-modulation-outlook",
+      "file_path": "data/outlooks/track-chromatin-and-histone-modulation-outlook.json",
+      "staged_file_path": "data/staged-records/chromatin-and-histone-modulation-bootstrap-2026-06-02/track-chromatin-and-histone-modulation-outlook.json",
+      "summary": "Create outlook record for Chromatin and Histone Modulation Track Outlook.",
+      "rationale": "This outlook establishes the first public track baseline with a conservative evidence support map."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "chromatin-and-histone-modulation",
+      "note": "A first public baseline is justified at low-confidence animal_signal because several animal and model-organism studies connect chromatin or histone modulation to lifespan, senescence, frailty, or multimorbidity, while direct human evidence is absent.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "epigenetic_alterations",
+      "note": "Publishing this bundle would broaden epigenetic alterations coverage beyond partial reprogramming and DNA methylation/epigenome restoration.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-02-chromatin-and-histone-modulation-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-chromatin-and-histone-modulation-source-fidelity-r1",
+    "evidence-review-chromatin-and-histone-modulation-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-chromatin-and-histone-modulation-bootstrap-2026-06-02-2026-06-02t11-35-30-622z"
+  ]
+}

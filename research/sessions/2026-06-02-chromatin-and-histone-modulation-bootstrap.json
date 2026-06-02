@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-02-chromatin-and-histone-modulation-bootstrap",
+  "name": "Chromatin and histone modulation bootstrap pass for June 2, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-06-02T10:45:00Z",
+  "completed_at": "2026-06-02T11:05:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Chromatin and Histone Modulation, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "epigenetic_alterations"
+    ],
+    "track_ids": [
+      "chromatin-and-histone-modulation"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "chromatin-and-histone-modulation-bootstrap-2026-06-02",
+  "summary": "The track supports a first public baseline at low-confidence animal_signal. KAT7 inactivation, SIRT6 overexpression, SRT1720 supplementation, spermidine-linked acetylation/autophagy biology, beta-hydroxybutyrate HDAC biology, H3K4/H3K27 modifier genetics, and a 2026 butyrate/histone-acylation mouse disease-model result provide animal or model-organism lifespan and healthspan support. The staged outlook does not upgrade to human_biomarker_signal because no direct human chromatin or histone intervention study shows aging-relevant pathway engagement, function, disease modification, or survival benefit.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-33408182",
+    "pmid-34050173",
+    "pmid-22367546",
+    "pmid-24582957",
+    "pmid-19801973",
+    "pmid-25127866",
+    "pmid-20555324",
+    "pmid-21834846",
+    "pmid-41826362"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/33408182/",
+    "https://pubmed.ncbi.nlm.nih.gov/34050173/",
+    "https://pubmed.ncbi.nlm.nih.gov/22367546/",
+    "https://pubmed.ncbi.nlm.nih.gov/24582957/",
+    "https://pubmed.ncbi.nlm.nih.gov/19801973/",
+    "https://pubmed.ncbi.nlm.nih.gov/25127866/",
+    "https://pubmed.ncbi.nlm.nih.gov/20555324/",
+    "https://pubmed.ncbi.nlm.nih.gov/21834846/",
+    "https://pubmed.ncbi.nlm.nih.gov/41826362/"
+  ],
+  "notes": [
+    "The top bootstrap queue item was selected from research/backlog/track-priority.v1.json and research/state/coverage-status.v1.json.",
+    "KAT7 and SIRT6 provide the strongest mammalian lifespan support, but both are genetic or transgenic interventions rather than validated clinical modalities.",
+    "SRT1720 provides small-molecule mammalian support, but it is broad SIRT1/NAD biology and maximum-lifespan boundaries remain important.",
+    "Spermidine and beta-hydroxybutyrate are useful chromatin/histone examples but overlap heavily with autophagy and nutrient-sensing interpretation.",
+    "H3K4me3 and H3K27me3 modifier studies show direct chromatin-state lifespan regulation in C. elegans, with translation and safety caveats.",
+    "The 2026 butyrate result is current mammalian support, but it is a mitochondrial-deficiency/dysbiosis disease-model result, not a normal-aging or human trial."
+  ],
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast evidence review before publication.",
+    "If approved, publish the staged records as the first chromatin and histone modulation track baseline.",
+    "After publication, refresh planning state and inspect the epigenetic alterations hallmark surface."
+  ]
+}
