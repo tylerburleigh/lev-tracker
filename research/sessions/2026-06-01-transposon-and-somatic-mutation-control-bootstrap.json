@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-01-transposon-and-somatic-mutation-control-bootstrap",
+  "name": "Transposon and somatic mutation control bootstrap pass for June 1, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-06-01T23:10:00Z",
+  "completed_at": "2026-06-01T23:49:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Transposon and Somatic Mutation Control, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "genomic_instability"
+    ],
+    "track_ids": [
+      "transposon-and-somatic-mutation-control"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "transposon-and-somatic-mutation-control-bootstrap-2026-06-01",
+  "summary": "The track supports a first public baseline at low-confidence human_biomarker_signal. The direct LINE1 and reverse-transcriptase branch has mechanistic and aged-mouse support plus a small open-label human 3TC biomarker signal in early Alzheimer's disease. The CHIP branch has stronger human disease-outcome relevance through CANTOS TET2 analyses, but those findings mainly test downstream IL-1beta biology rather than direct somatic mutation or clone control.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-25247314",
+    "pmid-30728521",
+    "pmid-36949552",
+    "pmid-37446327",
+    "pmid-40104524",
+    "pmid-35385050",
+    "pmid-38701435",
+    "pmid-39107561"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/25247314/",
+    "https://pubmed.ncbi.nlm.nih.gov/30728521/",
+    "https://pubmed.ncbi.nlm.nih.gov/36949552/",
+    "https://pubmed.ncbi.nlm.nih.gov/37446327/",
+    "https://pubmed.ncbi.nlm.nih.gov/40104524/",
+    "https://pubmed.ncbi.nlm.nih.gov/35385050/",
+    "https://pubmed.ncbi.nlm.nih.gov/38701435/",
+    "https://pubmed.ncbi.nlm.nih.gov/39107561/"
+  ],
+  "notes": [
+    "The top bootstrap queue item was selected from research/backlog/track-priority.v1.json and research/state/coverage-status.v1.json.",
+    "SIRT6 and De Cecco LINE1 studies anchor mechanism: LINE1 repression weakens with stress or age, and cytoplasmic LINE1 cDNA can activate type I interferon signaling.",
+    "3TC/lamivudine has animal functional support in old wild-type mice and tauopathy mice, but the broad aging translation remains preclinical.",
+    "ART-AD supplies the human biomarker-stage anchor, but it is small, open-label, Alzheimer's-specific, and not definitive target-engagement evidence for human aging tissues.",
+    "CANTOS TET2 CHIP analyses are included as disease-relevance support and explicitly bounded as downstream IL-1beta modulation rather than mutation-burden or clone-size control.",
+    "TIMI trial-cohort data were included as a limiting finding because CHIP did not identify greater benefit from several standard cardiovascular therapy classes."
+  ],
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast evidence review before publication.",
+    "If approved, publish the staged records as the first transposon and somatic mutation control track baseline.",
+    "After publication, refresh planning state and inspect the genomic instability hallmark surface.",
+    "Future surveillance should watch controlled ART-AD follow-up trials and prospective CHIP-targeted IL-1beta, IL-18, NLRP3, or clone-dynamics studies."
+  ]
+}

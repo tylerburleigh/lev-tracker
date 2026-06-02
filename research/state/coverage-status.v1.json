@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-01T22:44:39.907Z",
+  "updated_at": "2026-06-02T00:31:36.054Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One bootstrap or surveillance run should cover one track unless the user explicitly narrows further.",
@@ -21,7 +21,7 @@
       "hallmark_id": "genomic_instability",
       "canonical_order": 1,
       "hallmark_bootstrap_status": "baseline",
-      "tracked_public_outlook_count": 2,
+      "tracked_public_outlook_count": 3,
       "next_priority_track_id": "transposon-and-somatic-mutation-control",
       "notes": "At least one track-level public baseline exists."
     },
@@ -158,11 +158,19 @@
       "hallmark_id": "genomic_instability",
       "canonical_order": 3,
       "name": "Transposon and Somatic Mutation Control",
-      "coverage_status": "not_started",
-      "next_mode": "bootstrap",
+      "coverage_status": "baseline",
+      "next_mode": "surveillance",
       "queue_state": "ready",
-      "default_research_question": "What is the current human-relevant evidence landscape for Transposon and Somatic Mutation Control, and what belongs in the first public baseline?",
-      "notes": "No track-level public baseline has been bootstrapped yet."
+      "last_session_id": "2026-06-01-transposon-and-somatic-mutation-control-bootstrap",
+      "last_session_at": "2026-06-01T23:49:00Z",
+      "last_session_mode": "bootstrap",
+      "last_session_outcome": "candidate_bundle_submitted",
+      "last_candidate_bundle_id": "transposon-and-somatic-mutation-control-bootstrap-2026-06-01",
+      "last_candidate_bundle_status": "published",
+      "last_publication_event_id": "publish-transposon-and-somatic-mutation-control-bootstrap-2026-06-01-2026-06-02t00-31-27-696z",
+      "last_published_at": "2026-06-02T00:31:27.696Z",
+      "default_research_question": "What changed for Transposon and Somatic Mutation Control since the last meaningful review or publication, and does any change justify a public update?",
+      "notes": "Latest publication event: publish-transposon-and-somatic-mutation-control-bootstrap-2026-06-01-2026-06-02t00-31-27-696z."
     },
     {
       "track_id": "telomerase-restoration",

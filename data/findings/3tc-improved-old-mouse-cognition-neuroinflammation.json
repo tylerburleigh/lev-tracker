@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "3tc-improved-old-mouse-cognition-neuroinflammation",
+  "name": "3TC improved cognition and neuroinflammation markers in old mice",
+  "summary": "3TC provides the strongest aging-directed animal functional signal for reverse transcriptase inhibition in this track.",
+  "source_id": "pmid-36949552",
+  "study_id": "3tc-aged-mouse-cognitive-dysfunction",
+  "intervention_ids": [
+    "lamivudine"
+  ],
+  "track_ids": [
+    "transposon-and-somatic-mutation-control"
+  ],
+  "hallmark_ids": [
+    "genomic_instability",
+    "chronic_inflammation"
+  ],
+  "endpoint_category": "functional",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "low",
+  "statement": "In old wild-type mice, 3TC improved cognitive performance and reduced neuroinflammation and cytoplasmic DNA or innate-immune activation markers, with supporting evidence that transposable-element transcripts accumulate with human brain aging.",
+  "population_or_model": "Old wild-type mice with supporting C. elegans and human brain transcriptome analyses",
+  "time_horizon": "Six-week 3TC treatment in old mice in the main reported experiment",
+  "quantitative_note": "Reported mouse cognitive testing used approximately 14 to 16 animals per group, with hippocampal RNA sequencing in 6 animals per group.",
+  "caveats": [
+    "The functional intervention result is animal evidence.",
+    "Human transcriptome association does not prove human intervention benefit.",
+    "The mechanism is plausible but not fully isolated to LINE1 or a specific retrotransposon class."
+  ],
+  "tags": [
+    "3tc",
+    "lamivudine",
+    "brain-aging",
+    "mouse-function"
+  ]
+}

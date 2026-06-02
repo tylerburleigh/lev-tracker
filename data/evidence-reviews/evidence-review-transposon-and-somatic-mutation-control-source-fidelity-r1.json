@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-transposon-and-somatic-mutation-control-source-fidelity-r1",
+  "name": "Source Fidelity review for Transposon And Somatic Mutation Control bundle",
+  "candidate_bundle_id": "transposon-and-somatic-mutation-control-bootstrap-2026-06-01",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, intervention, and finding records match the cited PubMed and registry records closely enough for publication review. The LINE1/SIRT6, De Cecco lamivudine, 3TC mouse cognition, tauopathy mouse, ART-AD, CANTOS/TET2, CANTOS malignancy, and TIMI CHIP claims preserve source boundaries, endpoint type, sample size where material, and major caveats.",
+  "reviewed_change_ids": [
+    "create-source-pmid-25247314",
+    "create-source-pmid-30728521",
+    "create-source-pmid-36949552",
+    "create-source-pmid-37446327",
+    "create-source-pmid-40104524",
+    "create-source-pmid-35385050",
+    "create-source-pmid-38701435",
+    "create-source-pmid-39107561",
+    "create-intervention-lamivudine",
+    "create-study-sirt6-line1-repression-aging-models",
+    "create-study-l1-senescence-aged-mouse-lamivudine",
+    "create-study-3tc-aged-mouse-cognitive-dysfunction",
+    "create-study-lamivudine-p301s-tauopathy-mice",
+    "create-study-art-ad-lamivudine-early-alzheimers",
+    "create-study-cantos-tet2-chip-canakinumab-substudy",
+    "create-study-cantos-chip-canakinumab-cancer-incidence",
+    "create-study-timi-chip-cardiovascular-treatment-benefit",
+    "create-finding-sirt6-line1-repression-failed-with-age-stress",
+    "create-finding-l1-cdna-drove-ifn-aging-lamivudine-reduced-inflammation",
+    "create-finding-3tc-improved-old-mouse-cognition-neuroinflammation",
+    "create-finding-lamivudine-reduced-tauopathy-pathology-mouse-function",
+    "create-finding-art-ad-lamivudine-safe-biomarker-signal",
+    "create-finding-tet2-chip-canakinumab-mace-exploratory-benefit",
+    "create-finding-tet2-chip-canakinumab-lower-solid-tumor-incidence",
+    "create-finding-timi-chip-no-greater-standard-cv-treatment-benefit",
+    "create-track-transposon-and-somatic-mutation-control-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "art-ad-phase-label-registry-boundary",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-study-art-ad-lamivudine-early-alzheimers",
+      "applies_to_record": {
+        "record_type": "study",
+        "record_id": "art-ad-lamivudine-early-alzheimers"
+      },
+      "claim_or_issue": "The registry lists NCT04552795 as phase 1/2, while the publication describes ART-AD as a phase IIa open-label trial; the staged study uses the repo enum value phase2.",
+      "why_it_matters": "This is a minor metadata compression caused by the schema enum, not a substantive source-fidelity failure.",
+      "recommended_action": "No revision required; keep the public wording focused on the 24-week open-label phase IIa publication and preserve the registry ID for traceability.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "chip-cantos-downstream-mechanism-boundary",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-tet2-chip-canakinumab-mace-exploratory-benefit",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "tet2-chip-canakinumab-mace-exploratory-benefit"
+      },
+      "claim_or_issue": "The CANTOS/TET2 source supports exploratory cardiovascular outcome association with canakinumab in TET2 CHIP patients, but it does not show reduction of mutation burden or clone size.",
+      "why_it_matters": "The staged finding and outlook correctly frame this as downstream IL-1beta modulation, so the boundary is preserved.",
+      "recommended_action": "No revision required; retain the explicit downstream-inflammatory caveat during editorial approval.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-02T00:30:46.159Z",
+  "updated_at": "2026-06-02T00:30:46.159Z"
+}

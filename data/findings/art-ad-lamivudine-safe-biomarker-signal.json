@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "art-ad-lamivudine-safe-biomarker-signal",
+  "name": "ART-AD 3TC was tolerated with exploratory fluid biomarker movement",
+  "summary": "The first human 3TC signal for this track is a small open-label Alzheimer's study with safety and biomarker movement but no controlled functional evidence.",
+  "source_id": "pmid-40104524",
+  "study_id": "art-ad-lamivudine-early-alzheimers",
+  "intervention_ids": [
+    "lamivudine"
+  ],
+  "track_ids": [
+    "transposon-and-somatic-mutation-control"
+  ],
+  "hallmark_ids": [
+    "genomic_instability",
+    "chronic_inflammation"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "positive",
+  "evidence_tier": "human_biomarker",
+  "confidence": "low",
+  "statement": "In 12 early Alzheimer's disease participants treated open-label with 300 mg daily 3TC for 24 weeks, cognition was stable, safety was favorable, CSF GFAP decreased, and plasma Abeta42/40 increased.",
+  "population_or_model": "Early Alzheimer's disease participants with MMSE greater than 24 and CDR of 0.5",
+  "time_horizon": "24 weeks",
+  "quantitative_note": "The abstract reports CSF GFAP P=0.03 and plasma Abeta42/40 P=0.009; CSF biomarker analyses included 9 participants and plasma analyses included 12.",
+  "caveats": [
+    "The trial was open-label and enrolled only 12 participants.",
+    "The population had early Alzheimer's disease rather than a general aging or prevention indication.",
+    "The biomarker changes do not prove direct suppression of retrotransposon activity in human aging tissues.",
+    "Controlled replication is required before functional or disease-modifying claims."
+  ],
+  "tags": [
+    "human",
+    "open-label",
+    "3tc",
+    "lamivudine",
+    "biomarker"
+  ]
+}

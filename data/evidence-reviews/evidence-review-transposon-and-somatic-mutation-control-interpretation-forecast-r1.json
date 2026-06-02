@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-transposon-and-somatic-mutation-control-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Transposon And Somatic Mutation Control bundle",
+  "candidate_bundle_id": "transposon-and-somatic-mutation-control-bootstrap-2026-06-01",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "needs_human_judgment",
+  "blocking": false,
+  "summary": "The proposed outlook is conservative and evidence-mapped: low-confidence human_biomarker_signal is anchored to ART-AD's small open-label human biomarker signal, while animal LINE1/3TC evidence and exploratory CANTOS/TET2 CHIP outcome analyses are kept in their proper support roles. The bundle should be approvable after curator review, with no blocking interpretation or support-map issue found.",
+  "reviewed_change_ids": [
+    "create-source-pmid-25247314",
+    "create-source-pmid-30728521",
+    "create-source-pmid-36949552",
+    "create-source-pmid-37446327",
+    "create-source-pmid-40104524",
+    "create-source-pmid-35385050",
+    "create-source-pmid-38701435",
+    "create-source-pmid-39107561",
+    "create-intervention-lamivudine",
+    "create-study-sirt6-line1-repression-aging-models",
+    "create-study-l1-senescence-aged-mouse-lamivudine",
+    "create-study-3tc-aged-mouse-cognitive-dysfunction",
+    "create-study-lamivudine-p301s-tauopathy-mice",
+    "create-study-art-ad-lamivudine-early-alzheimers",
+    "create-study-cantos-tet2-chip-canakinumab-substudy",
+    "create-study-cantos-chip-canakinumab-cancer-incidence",
+    "create-study-timi-chip-cardiovascular-treatment-benefit",
+    "create-finding-sirt6-line1-repression-failed-with-age-stress",
+    "create-finding-l1-cdna-drove-ifn-aging-lamivudine-reduced-inflammation",
+    "create-finding-3tc-improved-old-mouse-cognition-neuroinflammation",
+    "create-finding-lamivudine-reduced-tauopathy-pathology-mouse-function",
+    "create-finding-art-ad-lamivudine-safe-biomarker-signal",
+    "create-finding-tet2-chip-canakinumab-mace-exploratory-benefit",
+    "create-finding-tet2-chip-canakinumab-lower-solid-tumor-incidence",
+    "create-finding-timi-chip-no-greater-standard-cv-treatment-benefit",
+    "create-track-transposon-and-somatic-mutation-control-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "stage-assignment-needs-curator-judgment",
+      "severity": "note",
+      "category": "uncertainty",
+      "applies_to_change_id": "create-track-transposon-and-somatic-mutation-control-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-transposon-and-somatic-mutation-control-outlook"
+      },
+      "claim_or_issue": "The human_biomarker_signal stage rests on ART-AD, a 12-person open-label Alzheimer's disease study with fluid biomarker movement rather than a controlled aging or target-engagement trial.",
+      "why_it_matters": "The stage is defensible only because the outlook is explicitly low confidence, disease-context bounded, and does not claim human functional benefit.",
+      "recommended_action": "No blocking revision required; curator should be aware that this is a borderline first-baseline stage call and should not be upgraded without controlled human target-engagement data.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "chip-branch-taxonomy-boundary-preserved",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-track-transposon-and-somatic-mutation-control-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-transposon-and-somatic-mutation-control-outlook"
+      },
+      "claim_or_issue": "The staged outlook combines LINE1/reverse-transcriptase biology with CHIP/TET2 outcome evidence under one track.",
+      "why_it_matters": "Those branches are both in scope for transposon and somatic mutation control, but the CANTOS branch overlaps cytokine and inflammasome modulation and should not be read as direct clone-control evidence.",
+      "recommended_action": "No blocking revision required; keep the staged caveats that CANTOS/TET2 evidence is downstream IL-1beta modulation and that LINE1 and CHIP are distinct branches.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "support-map-and-rating-criteria-adequate",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "create-track-transposon-and-somatic-mutation-control-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-transposon-and-somatic-mutation-control-outlook"
+      },
+      "claim_or_issue": "The outlook support map links each rationale to concrete finding and source IDs, and the rating-change criteria require controlled target engagement, functional benefit, or prospective disease-outcome evidence before upgrades.",
+      "why_it_matters": "This prevents the stage, momentum, and forecast text from implying stronger current evidence than the staged findings support.",
+      "recommended_action": "No revision required; preserve the current rating-change criteria and no-LEV-window forecast through publication.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-02T00:30:56.435Z",
+  "updated_at": "2026-06-02T00:30:56.435Z"
+}

@@ -1,0 +1,372 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "transposon-and-somatic-mutation-control-bootstrap-2026-06-01",
+  "name": "Transposon and somatic mutation control bootstrap for June 1, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline candidate for the transposon and somatic mutation control track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-01T23:49:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Transposon and Somatic Mutation Control, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "genomic_instability"
+    ],
+    "track_ids": [
+      "transposon-and-somatic-mutation-control"
+    ]
+  },
+  "source_ids": [
+    "pmid-25247314",
+    "pmid-30728521",
+    "pmid-36949552",
+    "pmid-37446327",
+    "pmid-40104524",
+    "pmid-35385050",
+    "pmid-38701435",
+    "pmid-39107561"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/25247314/",
+    "https://pubmed.ncbi.nlm.nih.gov/30728521/",
+    "https://pubmed.ncbi.nlm.nih.gov/36949552/",
+    "https://pubmed.ncbi.nlm.nih.gov/37446327/",
+    "https://pubmed.ncbi.nlm.nih.gov/40104524/",
+    "https://pubmed.ncbi.nlm.nih.gov/35385050/",
+    "https://pubmed.ncbi.nlm.nih.gov/38701435/",
+    "https://pubmed.ncbi.nlm.nih.gov/39107561/"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-transposon-and-somatic-mutation-control-outlook"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "lamivudine"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "art-ad-lamivudine-safe-biomarker-signal"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "3tc-improved-old-mouse-cognition-neuroinflammation"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "tet2-chip-canakinumab-mace-exploratory-benefit"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "timi-chip-no-greater-standard-cv-treatment-benefit"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-25247314",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-25247314",
+      "file_path": "data/sources/pmid-25247314.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/pmid-25247314.json",
+      "summary": "Add SIRT6 LINE1 repression source.",
+      "rationale": "This source anchors LINE1 repression and age/stress derepression biology for the track."
+    },
+    {
+      "change_id": "create-source-pmid-30728521",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-30728521",
+      "file_path": "data/sources/pmid-30728521.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/pmid-30728521.json",
+      "summary": "Add LINE1 senescence inflammation and aged-mouse lamivudine source.",
+      "rationale": "This source supplies the core animal biomarker intervention signal for reverse transcriptase inhibition."
+    },
+    {
+      "change_id": "create-source-pmid-36949552",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-36949552",
+      "file_path": "data/sources/pmid-36949552.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/pmid-36949552.json",
+      "summary": "Add 3TC old-mouse cognition source.",
+      "rationale": "This source provides the strongest direct aging-directed animal functional support for the 3TC branch."
+    },
+    {
+      "change_id": "create-source-pmid-37446327",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-37446327",
+      "file_path": "data/sources/pmid-37446327.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/pmid-37446327.json",
+      "summary": "Add lamivudine tauopathy mouse source.",
+      "rationale": "This source supplies disease-model support and boundaries for neurodegeneration claims."
+    },
+    {
+      "change_id": "create-source-pmid-40104524",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-40104524",
+      "file_path": "data/sources/pmid-40104524.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/pmid-40104524.json",
+      "summary": "Add ART-AD 3TC human biomarker source.",
+      "rationale": "This source anchors the proposed human_biomarker_signal stage while preserving the open-label limitation."
+    },
+    {
+      "change_id": "create-source-pmid-35385050",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-35385050",
+      "file_path": "data/sources/pmid-35385050.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/pmid-35385050.json",
+      "summary": "Add CANTOS TET2 CHIP canakinumab source.",
+      "rationale": "This source supports the CHIP disease-outcome branch while bounding it as downstream IL-1beta modulation."
+    },
+    {
+      "change_id": "create-source-pmid-38701435",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-38701435",
+      "file_path": "data/sources/pmid-38701435.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/pmid-38701435.json",
+      "summary": "Add CANTOS CHIP cancer-incidence source.",
+      "rationale": "This source adds a second exploratory disease-outcome signal for TET2 CHIP and IL-1beta blockade."
+    },
+    {
+      "change_id": "create-source-pmid-39107561",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-39107561",
+      "file_path": "data/sources/pmid-39107561.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/pmid-39107561.json",
+      "summary": "Add TIMI CHIP cardiovascular treatment-benefit source.",
+      "rationale": "This source supplies a large limiting analysis for broad CHIP treatment extrapolation."
+    },
+    {
+      "change_id": "create-intervention-lamivudine",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "lamivudine",
+      "file_path": "data/interventions/lamivudine.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/lamivudine.json",
+      "summary": "Create normalized lamivudine intervention record.",
+      "rationale": "Lamivudine is the central repurposed reverse transcriptase inhibitor in the staged LINE1 and ART-AD evidence."
+    },
+    {
+      "change_id": "create-study-sirt6-line1-repression-aging-models",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "sirt6-line1-repression-aging-models",
+      "file_path": "data/studies/sirt6-line1-repression-aging-models.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/sirt6-line1-repression-aging-models.json",
+      "summary": "Add SIRT6 LINE1 repression study record.",
+      "rationale": "The study record captures the mechanistic repression boundary for LINE1 biology."
+    },
+    {
+      "change_id": "create-study-l1-senescence-aged-mouse-lamivudine",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "l1-senescence-aged-mouse-lamivudine",
+      "file_path": "data/studies/l1-senescence-aged-mouse-lamivudine.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/l1-senescence-aged-mouse-lamivudine.json",
+      "summary": "Add LINE1 senescence and aged-mouse lamivudine study record.",
+      "rationale": "The study record links LINE1/cDNA/IFN mechanism to aged-mouse reverse transcriptase inhibition evidence."
+    },
+    {
+      "change_id": "create-study-3tc-aged-mouse-cognitive-dysfunction",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "3tc-aged-mouse-cognitive-dysfunction",
+      "file_path": "data/studies/3tc-aged-mouse-cognitive-dysfunction.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/3tc-aged-mouse-cognitive-dysfunction.json",
+      "summary": "Add 3TC aged-mouse cognitive dysfunction study record.",
+      "rationale": "The study record captures the aging-directed animal functional signal for 3TC."
+    },
+    {
+      "change_id": "create-study-lamivudine-p301s-tauopathy-mice",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "lamivudine-p301s-tauopathy-mice",
+      "file_path": "data/studies/lamivudine-p301s-tauopathy-mice.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/lamivudine-p301s-tauopathy-mice.json",
+      "summary": "Add lamivudine tauopathy mouse study record.",
+      "rationale": "The study record captures a disease-model extension of the 3TC neurodegeneration signal."
+    },
+    {
+      "change_id": "create-study-art-ad-lamivudine-early-alzheimers",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "art-ad-lamivudine-early-alzheimers",
+      "file_path": "data/studies/art-ad-lamivudine-early-alzheimers.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/art-ad-lamivudine-early-alzheimers.json",
+      "summary": "Add ART-AD 3TC early Alzheimer's study record.",
+      "rationale": "The study record captures the first human biomarker foothold for the lamivudine branch."
+    },
+    {
+      "change_id": "create-study-cantos-tet2-chip-canakinumab-substudy",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "cantos-tet2-chip-canakinumab-substudy",
+      "file_path": "data/studies/cantos-tet2-chip-canakinumab-substudy.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/cantos-tet2-chip-canakinumab-substudy.json",
+      "summary": "Add CANTOS TET2 CHIP canakinumab substudy record.",
+      "rationale": "The study record captures the CHIP-specific CANTOS cardiovascular outcome boundary."
+    },
+    {
+      "change_id": "create-study-cantos-chip-canakinumab-cancer-incidence",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "cantos-chip-canakinumab-cancer-incidence",
+      "file_path": "data/studies/cantos-chip-canakinumab-cancer-incidence.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/cantos-chip-canakinumab-cancer-incidence.json",
+      "summary": "Add CANTOS CHIP cancer-incidence study record.",
+      "rationale": "The study record captures the second CANTOS CHIP disease-relevance signal."
+    },
+    {
+      "change_id": "create-study-timi-chip-cardiovascular-treatment-benefit",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "timi-chip-cardiovascular-treatment-benefit",
+      "file_path": "data/studies/timi-chip-cardiovascular-treatment-benefit.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/timi-chip-cardiovascular-treatment-benefit.json",
+      "summary": "Add TIMI CHIP cardiovascular treatment-benefit study record.",
+      "rationale": "The study record captures the large human limiting analysis for CHIP and standard cardiovascular therapies."
+    },
+    {
+      "change_id": "create-finding-sirt6-line1-repression-failed-with-age-stress",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "sirt6-line1-repression-failed-with-age-stress",
+      "file_path": "data/findings/sirt6-line1-repression-failed-with-age-stress.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/sirt6-line1-repression-failed-with-age-stress.json",
+      "summary": "Add SIRT6 LINE1 age/stress derepression finding.",
+      "rationale": "This finding supports mechanistic plausibility for LINE1 repression as a track target."
+    },
+    {
+      "change_id": "create-finding-l1-cdna-drove-ifn-aging-lamivudine-reduced-inflammation",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "l1-cdna-drove-ifn-aging-lamivudine-reduced-inflammation",
+      "file_path": "data/findings/l1-cdna-drove-ifn-aging-lamivudine-reduced-inflammation.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/l1-cdna-drove-ifn-aging-lamivudine-reduced-inflammation.json",
+      "summary": "Add LINE1 cDNA/interferon and aged-mouse lamivudine finding.",
+      "rationale": "This finding supports the animal biomarker and inflammation-control branch."
+    },
+    {
+      "change_id": "create-finding-3tc-improved-old-mouse-cognition-neuroinflammation",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "3tc-improved-old-mouse-cognition-neuroinflammation",
+      "file_path": "data/findings/3tc-improved-old-mouse-cognition-neuroinflammation.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/3tc-improved-old-mouse-cognition-neuroinflammation.json",
+      "summary": "Add 3TC old-mouse cognition and neuroinflammation finding.",
+      "rationale": "This finding supplies animal functional support while preserving the preclinical boundary."
+    },
+    {
+      "change_id": "create-finding-lamivudine-reduced-tauopathy-pathology-mouse-function",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "lamivudine-reduced-tauopathy-pathology-mouse-function",
+      "file_path": "data/findings/lamivudine-reduced-tauopathy-pathology-mouse-function.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/lamivudine-reduced-tauopathy-pathology-mouse-function.json",
+      "summary": "Add lamivudine tauopathy mouse pathology and function finding.",
+      "rationale": "This finding adds disease-model support and its aging-translation limit."
+    },
+    {
+      "change_id": "create-finding-art-ad-lamivudine-safe-biomarker-signal",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "art-ad-lamivudine-safe-biomarker-signal",
+      "file_path": "data/findings/art-ad-lamivudine-safe-biomarker-signal.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/art-ad-lamivudine-safe-biomarker-signal.json",
+      "summary": "Add ART-AD 3TC human biomarker finding.",
+      "rationale": "This finding anchors the proposed human_biomarker_signal stage assignment."
+    },
+    {
+      "change_id": "create-finding-tet2-chip-canakinumab-mace-exploratory-benefit",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "tet2-chip-canakinumab-mace-exploratory-benefit",
+      "file_path": "data/findings/tet2-chip-canakinumab-mace-exploratory-benefit.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/tet2-chip-canakinumab-mace-exploratory-benefit.json",
+      "summary": "Add TET2 CHIP canakinumab MACE finding.",
+      "rationale": "This finding supports CHIP disease-outcome relevance while limiting interpretation to downstream IL-1beta modulation."
+    },
+    {
+      "change_id": "create-finding-tet2-chip-canakinumab-lower-solid-tumor-incidence",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "tet2-chip-canakinumab-lower-solid-tumor-incidence",
+      "file_path": "data/findings/tet2-chip-canakinumab-lower-solid-tumor-incidence.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/tet2-chip-canakinumab-lower-solid-tumor-incidence.json",
+      "summary": "Add TET2 CHIP canakinumab solid-tumor incidence finding.",
+      "rationale": "This finding adds a second exploratory CHIP disease-relevance signal and its caveats."
+    },
+    {
+      "change_id": "create-finding-timi-chip-no-greater-standard-cv-treatment-benefit",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "timi-chip-no-greater-standard-cv-treatment-benefit",
+      "file_path": "data/findings/timi-chip-no-greater-standard-cv-treatment-benefit.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/timi-chip-no-greater-standard-cv-treatment-benefit.json",
+      "summary": "Add TIMI CHIP standard cardiovascular therapy limiting finding.",
+      "rationale": "This finding prevents overgeneralizing CHIP status into broad treatment-response claims."
+    },
+    {
+      "change_id": "create-track-transposon-and-somatic-mutation-control-outlook",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-transposon-and-somatic-mutation-control-outlook",
+      "file_path": "data/outlooks/track-transposon-and-somatic-mutation-control-outlook.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-bootstrap-2026-06-01/track-transposon-and-somatic-mutation-control-outlook.json",
+      "summary": "Create the first public outlook for the transposon and somatic mutation control track.",
+      "rationale": "A low-confidence human_biomarker_signal baseline is justified by a small open-label 3TC human biomarker study, with animal functional support and CHIP disease-outcome signals that remain carefully bounded.",
+      "uncertainty_flags": [
+        "The direct human 3TC evidence is open-label and small.",
+        "The CHIP outcome evidence is mostly exploratory and downstream of clonal mutation biology.",
+        "LINE1 suppression and clonal hematopoiesis are distinct intervention branches.",
+        "No staged source shows controlled human functional benefit or direct mutation-burden reduction."
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "transposon-and-somatic-mutation-control",
+      "note": "A first public baseline is justified at low-confidence human_biomarker_signal because ART-AD supplies a small open-label human 3TC biomarker signal, while animal LINE1/3TC data and exploratory CHIP/TET2 outcome analyses supply bounded support.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "genomic_instability",
+      "note": "Publishing this bundle would broaden genomic instability coverage beyond DNA repair and genome surveillance into LINE1/reverse-transcriptase biology and CHIP-linked somatic mutation risk.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-01-transposon-and-somatic-mutation-control-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-transposon-and-somatic-mutation-control-source-fidelity-r1",
+    "evidence-review-transposon-and-somatic-mutation-control-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-transposon-and-somatic-mutation-control-bootstrap-2026-06-01-2026-06-02t00-31-27-696z"
+  ]
+}

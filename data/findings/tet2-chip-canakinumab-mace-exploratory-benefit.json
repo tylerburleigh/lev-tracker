@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "tet2-chip-canakinumab-mace-exploratory-benefit",
+  "name": "TET2 CHIP patients had exploratory MACE reduction with canakinumab",
+  "summary": "CANTOS suggests an actionable human disease-outcome signal for TET2 clonal hematopoiesis, but as downstream IL-1beta inhibition rather than direct clone control.",
+  "source_id": "pmid-35385050",
+  "study_id": "cantos-tet2-chip-canakinumab-substudy",
+  "intervention_ids": [
+    "canakinumab"
+  ],
+  "track_ids": [
+    "transposon-and-somatic-mutation-control"
+  ],
+  "hallmark_ids": [
+    "genomic_instability",
+    "chronic_inflammation"
+  ],
+  "endpoint_category": "healthspan",
+  "direction": "positive",
+  "evidence_tier": "human_clinical_outcome",
+  "confidence": "low",
+  "statement": "In the CANTOS sequencing subset, patients with TET2 clonal hematopoiesis had fewer major adverse cardiovascular events while taking canakinumab than while taking placebo.",
+  "population_or_model": "Post-myocardial-infarction CANTOS participants with elevated hsCRP and baseline CHIP sequencing",
+  "time_horizon": "CANTOS follow-up through the cardiovascular outcome trial period",
+  "quantitative_note": "The reported TET2 CHIP canakinumab association had hazard ratio 0.38 for MACE versus placebo (95% CI 0.15 to 0.96), with an equivocal interaction test versus others (P for interaction=0.14).",
+  "caveats": [
+    "This was an exploratory genomic substudy.",
+    "Canakinumab blocks IL-1beta signaling and does not directly reduce somatic mutation burden or clone size in this record.",
+    "The population was secondary cardiovascular prevention with residual inflammation.",
+    "This source should not be double-counted as broad cytokine-modulation efficacy without the CHIP-specific boundary."
+  ],
+  "tags": [
+    "human",
+    "cantos",
+    "tet2",
+    "clonal-hematopoiesis",
+    "canakinumab"
+  ]
+}

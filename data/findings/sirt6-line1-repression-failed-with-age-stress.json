@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "sirt6-line1-repression-failed-with-age-stress",
+  "name": "SIRT6 LINE1 repression failed with stress and age",
+  "summary": "SIRT6 supplies a mechanistic node for suppressing LINE1 retrotransposons, but the result is not yet an intervention in humans.",
+  "source_id": "pmid-25247314",
+  "study_id": "sirt6-line1-repression-aging-models",
+  "track_ids": [
+    "transposon-and-somatic-mutation-control"
+  ],
+  "hallmark_ids": [
+    "genomic_instability",
+    "chronic_inflammation"
+  ],
+  "endpoint_category": "mechanistic",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "moderate",
+  "statement": "SIRT6 repressed LINE1 retrotransposons through KAP1-linked chromatin regulation, but SIRT6 depletion from LINE1 loci during stress or aging allowed retroelement activation.",
+  "population_or_model": "Human and mouse cellular systems plus mouse tissues",
+  "time_horizon": "Age and stress comparison models",
+  "quantitative_note": "The study is a mechanistic repression model rather than a clinical or organismal aging-intervention trial.",
+  "caveats": [
+    "This finding supports target biology, not a tested therapy.",
+    "SIRT6 has broad DNA repair, metabolism, and chromatin roles, so LINE1 attribution is not isolated in vivo.",
+    "No human intervention was tested."
+  ],
+  "tags": [
+    "line1",
+    "sirt6",
+    "mechanistic"
+  ]
+}

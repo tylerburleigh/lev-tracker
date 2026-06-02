@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-transposon-and-somatic-mutation-control-outlook",
+  "name": "Transposon and Somatic Mutation Control Track Outlook",
+  "subject_type": "track",
+  "subject_id": "transposon-and-somatic-mutation-control",
+  "current_stage": "human_biomarker_signal",
+  "momentum": "steady",
+  "confidence": "low",
+  "main_blockers": [
+    "The direct transposon-control intervention evidence is still mostly animal or open-label human biomarker evidence; no controlled human aging-function trial has shown benefit from reverse transcriptase inhibition.",
+    "ART-AD is a small early Alzheimer's disease open-label study, so its CSF GFAP and plasma Abeta42/40 shifts should not be read as disease-modifying or broad-aging proof.",
+    "The strongest CHIP outcome signals come from canakinumab analyses in CANTOS and mainly test downstream IL-1beta biology in TET2 clonal hematopoiesis, not reduction of somatic mutation burden or clone size.",
+    "Clonal hematopoiesis and LINE1 biology are related by aging and inflammation but are mechanistically distinct; they should not be collapsed into one therapeutic claim.",
+    "Chronic preventive use of reverse transcriptase inhibitors or cytokine blockade would need stronger safety, target-engagement, resistance-context, tissue-specific, and durability evidence."
+  ],
+  "best_current_signals": [
+    "SIRT6 and senescence studies give coherent LINE1 suppression biology, including evidence that SIRT6 repression fails with stress or age and that LINE1 cDNA can drive type I interferon activation.",
+    "Lamivudine reduced LINE1-linked interferon and inflammatory activation in aged mice, and 3TC improved cognition plus neuroinflammation markers in old wild-type mice.",
+    "ART-AD provides a first small human biomarker foothold for 3TC in an aging-adjacent neurodegeneration context, with tolerability, stable cognition, lower CSF GFAP, and higher plasma Abeta42/40 over 24 weeks.",
+    "CANTOS exploratory analyses suggest TET2 CHIP patients may have cardiovascular and solid-tumor outcome benefit from IL-1beta blockade, but the signal is disease-specific and downstream of clonal mutation biology.",
+    "Large TIMI trial-cohort data strengthen CHIP cardiovascular relevance while limiting broad extrapolation: CHIP did not identify greater benefit from several standard cardiovascular therapy classes."
+  ],
+  "forecast_note": "Transposon and somatic mutation control merits a low-confidence human_biomarker_signal baseline. The direct LINE1/reverse-transcriptase branch has animal functional and inflammatory evidence plus a small open-label human biomarker signal from 3TC in early Alzheimer's disease. The CHIP branch has more mature human disease-outcome relevance through CANTOS/TET2 analyses, but those data primarily support downstream inflammatory-risk modulation rather than direct control of somatic mutation burden or clonal expansion. The track should not be upgraded to human_functional_benefit or durable disease relevance until controlled human studies show target engagement tied to functional, clinical, or clone-control outcomes in aging-relevant populations.",
+  "rating_change_criteria": [
+    "A stronger human_biomarker_signal baseline would require controlled human studies showing that reverse transcriptase inhibition reduces prespecified LINE1, retrotransposon cDNA, cGAS-STING, interferon, or tissue-inflammatory biomarkers in an aging-relevant population.",
+    "A move to human_functional_benefit would require randomized evidence that a transposon-control strategy improves cognition, physical function, immune resilience, frailty, or another aging-relevant functional endpoint with accompanying target engagement.",
+    "A durable disease or mortality relevance upgrade would require prospective CHIP-targeted or transposon-targeted trials that reduce major age-related disease events, malignant transformation, or mortality while clarifying whether mutation burden, clone size, or downstream inflammatory biology is being modified.",
+    "Confidence would increase if ART-AD-like 3TC biomarker findings replicate in larger placebo-controlled trials or if CHIP-directed IL-1beta/NLRP3 programs show outcome or clone-dynamics benefit beyond post hoc CANTOS signals.",
+    "The rating would weaken if controlled 3TC trials fail to move target-engagement biomarkers, if human retrotransposon activation proves too context-specific to target, or if chronic reverse transcriptase or cytokine inhibition has unacceptable preventive-use safety tradeoffs."
+  ],
+  "earliest_plausible_window": "No credible LEV-relevant window can be assigned; biomarker and disease-risk-stratified trials may mature before broad preventive aging use is plausible.",
+  "scenario_2036_status": "speculative",
+  "supporting_finding_ids": [
+    "sirt6-line1-repression-failed-with-age-stress",
+    "l1-cdna-drove-ifn-aging-lamivudine-reduced-inflammation",
+    "3tc-improved-old-mouse-cognition-neuroinflammation",
+    "lamivudine-reduced-tauopathy-pathology-mouse-function",
+    "art-ad-lamivudine-safe-biomarker-signal",
+    "tet2-chip-canakinumab-mace-exploratory-benefit",
+    "tet2-chip-canakinumab-lower-solid-tumor-incidence",
+    "timi-chip-no-greater-standard-cv-treatment-benefit"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "current_stage",
+      "conclusion": "The track reaches human_biomarker_signal because 3TC has a small human Alzheimer's disease biomarker signal, while direct aging-function evidence remains preclinical.",
+      "support_role": "supports",
+      "rationale": "ART-AD treated 12 early Alzheimer's disease participants with 3TC for 24 weeks and reported favorable safety, stable cognition, lower CSF GFAP, and higher plasma Abeta42/40. This is enough for a low-confidence human biomarker foothold but not for functional or disease-modifying claims.",
+      "finding_ids": [
+        "art-ad-lamivudine-safe-biomarker-signal"
+      ],
+      "source_ids": [
+        "pmid-40104524"
+      ],
+      "limitations": [
+        "The trial was open-label and small.",
+        "The population had early Alzheimer's disease rather than a general aging indication.",
+        "The biomarker movement was not sufficient to prove direct retrotransposon suppression in human aging tissues."
+      ]
+    },
+    {
+      "label": "LINE1 and reverse transcriptase intervention biology",
+      "outlook_field": "best_current_signals",
+      "conclusion": "LINE1 suppression has coherent mechanism and animal intervention evidence.",
+      "support_role": "supports",
+      "rationale": "SIRT6 represses LINE1 but loses repression with stress and age; senescent-cell LINE1 cDNA can drive type I interferon signaling; lamivudine reduces aged-mouse inflammatory activation; and 3TC improves old-mouse cognitive and neuroinflammatory readouts.",
+      "finding_ids": [
+        "sirt6-line1-repression-failed-with-age-stress",
+        "l1-cdna-drove-ifn-aging-lamivudine-reduced-inflammation",
+        "3tc-improved-old-mouse-cognition-neuroinflammation",
+        "lamivudine-reduced-tauopathy-pathology-mouse-function"
+      ],
+      "source_ids": [
+        "pmid-25247314",
+        "pmid-30728521",
+        "pmid-36949552",
+        "pmid-37446327"
+      ],
+      "limitations": [
+        "Most direct intervention data are mouse data.",
+        "Tauopathy mouse benefit is disease-model evidence, not normal aging evidence.",
+        "Reverse transcriptase inhibitors may affect biology beyond endogenous retrotransposons."
+      ]
+    },
+    {
+      "label": "CHIP disease-outcome relevance",
+      "outlook_field": "best_current_signals",
+      "conclusion": "TET2 clonal hematopoiesis has human disease-outcome relevance, but the intervention signal is downstream inflammatory modulation.",
+      "support_role": "balances",
+      "rationale": "CANTOS analyses report lower MACE and lower non-hematological malignancy incidence among TET2-mutant patients assigned canakinumab, supporting the clinical relevance of CHIP-linked inflammatory biology.",
+      "finding_ids": [
+        "tet2-chip-canakinumab-mace-exploratory-benefit",
+        "tet2-chip-canakinumab-lower-solid-tumor-incidence"
+      ],
+      "source_ids": [
+        "pmid-35385050",
+        "pmid-38701435"
+      ],
+      "limitations": [
+        "The CANTOS CHIP analyses were exploratory or post hoc.",
+        "Canakinumab does not directly reduce mutation burden or clone size in the staged evidence.",
+        "The evidence belongs partly to cytokine and inflammasome modulation and should not upgrade this track without the CHIP-specific boundary."
+      ]
+    },
+    {
+      "label": "Broad treatment extrapolation boundary",
+      "outlook_field": "main_blockers",
+      "conclusion": "CHIP status does not generally identify greater benefit from standard cardiovascular therapies.",
+      "support_role": "limits",
+      "rationale": "The large TIMI analysis found CHIP associated with incident coronary events but found no significant treatment-effect heterogeneity for the tested PCSK9, SGLT2, P2Y12, or FXa-directed therapies.",
+      "finding_ids": [
+        "timi-chip-no-greater-standard-cv-treatment-benefit"
+      ],
+      "source_ids": [
+        "pmid-39107561"
+      ],
+      "limitations": [
+        "The tested therapies were not designed to control CHIP clone biology.",
+        "This limits broad cardiovascular drug extrapolation but does not rule out CHIP-targeted IL-1beta, IL-18, NLRP3, or clone-directed strategies.",
+        "CHIP subtype, clone size, and disease context may matter."
+      ]
+    },
+    {
+      "label": "Momentum and confidence",
+      "outlook_field": "confidence",
+      "conclusion": "Momentum is steady and confidence low because human evidence is emerging but fragmented across mechanistically distinct branches.",
+      "support_role": "balances",
+      "rationale": "The track spans LINE1/reverse-transcriptase biology, aging-brain mouse data, an early human 3TC biomarker study, and CHIP/TET2 inflammatory-outcome analyses. These support active translation, but not a mature unified intervention class.",
+      "finding_ids": [
+        "art-ad-lamivudine-safe-biomarker-signal",
+        "3tc-improved-old-mouse-cognition-neuroinflammation",
+        "tet2-chip-canakinumab-mace-exploratory-benefit",
+        "timi-chip-no-greater-standard-cv-treatment-benefit"
+      ],
+      "source_ids": [
+        "pmid-40104524",
+        "pmid-36949552",
+        "pmid-35385050",
+        "pmid-39107561"
+      ],
+      "limitations": [
+        "No staged source shows controlled human functional benefit for transposon suppression.",
+        "No staged source shows direct reduction of somatic mutation burden or clonal expansion in humans.",
+        "Safety and target-engagement standards for chronic preventive use remain unresolved."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-25247314",
+    "pmid-30728521",
+    "pmid-36949552",
+    "pmid-37446327",
+    "pmid-40104524",
+    "pmid-35385050",
+    "pmid-38701435",
+    "pmid-39107561"
+  ],
+  "last_updated": "2026-06-01",
+  "tags": [
+    "public",
+    "track",
+    "thin_coverage"
+  ]
+}
