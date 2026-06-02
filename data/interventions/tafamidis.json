@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "tafamidis",
+  "name": "Tafamidis",
+  "summary": "Small-molecule transthyretin stabilizer with randomized ATTR-CM evidence for reduced mortality, cardiovascular hospitalization, and functional decline.",
+  "modalities": [
+    "small_molecule"
+  ],
+  "target_hallmark_ids": [
+    "loss_of_proteostasis"
+  ],
+  "track_ids": [
+    "protein-aggregate-clearance"
+  ],
+  "mechanism_summary": "Binds transthyretin to prevent tetramer dissociation and amyloidogenesis; it is a preventive stabilizer rather than a direct aggregate-clearing therapy.",
+  "development_stage": "approved_for_other_indication",
+  "linked_study_ids": [
+    "attr-act-tafamidis-attr-cm"
+  ],
+  "linked_finding_ids": [
+    "tafamidis-reduced-attr-cm-mortality-hospitalizations"
+  ],
+  "risk_flags": [
+    "not-direct-clearance",
+    "attr-specific",
+    "disease-treatment-not-aging"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_clinical_outcome",
+    "human_data": true,
+    "open_questions": [
+      "Whether TTR stabilization can meaningfully regress established amyloid burden",
+      "How early treatment must begin to alter long-term age-associated ATTR trajectory"
+    ]
+  },
+  "tags": [
+    "protein-aggregate-clearance",
+    "transthyretin-amyloidosis",
+    "attr-cm",
+    "small-molecule"
+  ]
+}

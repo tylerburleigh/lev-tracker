@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-02-selective-autophagy-and-organelle-quality-control-bootstrap",
+  "name": "Selective autophagy and organelle quality control bootstrap pass for June 2, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-06-02T14:00:00Z",
+  "completed_at": "2026-06-02T14:20:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Selective Autophagy and Organelle Quality Control, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "disabled_macroautophagy"
+    ],
+    "track_ids": [
+      "selective-autophagy-and-organelle-quality-control"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02",
+  "summary": "The track supports a first public baseline at low-confidence human_functional_benefit. The rating is anchored narrowly to urolithin A, where randomized human trials report muscle endurance or strength signals plus mitochondrial and inflammatory biomarker movement. The interpretation stays bounded because primary or harder functional endpoints were mixed, the clinical evidence is short and sponsor-heavy, MitoImmune is immune biomarker/cell-function rather than clinical outcome evidence, and non-urolithin targeted mitophagy remains preclinical with a 2026 USP30 cybrid study showing mitophagy induction without significant mutant-mtDNA load reduction.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-27400265",
+    "pmid-32694802",
+    "pmid-35050355",
+    "pmid-35584623",
+    "pmid-41174221",
+    "pmid-33890401",
+    "pmid-41587019"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/27400265/",
+    "https://pubmed.ncbi.nlm.nih.gov/32694802/",
+    "https://pubmed.ncbi.nlm.nih.gov/35050355/",
+    "https://pubmed.ncbi.nlm.nih.gov/35584623/",
+    "https://pubmed.ncbi.nlm.nih.gov/41174221/",
+    "https://pubmed.ncbi.nlm.nih.gov/33890401/",
+    "https://pubmed.ncbi.nlm.nih.gov/41587019/"
+  ],
+  "notes": [
+    "The top bootstrap queue item was selected from research/backlog/track-priority.v1.json and research/state/coverage-status.v1.json.",
+    "The public question was scoped to the disabled_macroautophagy track while preserving a secondary mitochondrial_dysfunction boundary because the strongest evidence is mitophagy.",
+    "Urolithin A is the only clinical intervention with repeated human RCT signals found in this pass.",
+    "ENERGIZE supports a functional signal through muscle endurance but did not significantly improve 6-minute walk distance or maximal ATP production versus placebo.",
+    "ATLAS supports a muscle-strength signal but did not significantly improve the primary peak-power endpoint.",
+    "MitoImmune is current and relevant for immune aging, but it is 28 days and uses immune-cell composition, metabolism, and ex vivo function rather than clinical immune outcomes.",
+    "USP30 inhibition was included as a targeted-organelle-quality-control axis because it directly modulates mitophagy, but it remains preclinical and the 2026 MF-094 cybrid result is an important negative-boundary finding."
+  ],
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast evidence review before publication.",
+    "If approved, publish the staged records as the first selective autophagy and organelle quality control track baseline.",
+    "During review, check urolithin A conflicts, MitoImmune's 2026 author correction, and whether human_functional_benefit should remain narrow rather than be downgraded to human_biomarker_signal."
+  ]
+}

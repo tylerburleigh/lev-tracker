@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "acoramidis",
+  "name": "Acoramidis",
+  "summary": "High-affinity transthyretin stabilizer with randomized ATTR-CM evidence on a mortality, morbidity, biomarker, and function hierarchy.",
+  "modalities": [
+    "small_molecule"
+  ],
+  "target_hallmark_ids": [
+    "loss_of_proteostasis"
+  ],
+  "track_ids": [
+    "protein-aggregate-clearance"
+  ],
+  "mechanism_summary": "Stabilizes TTR tetramers to inhibit dissociation and new amyloid formation rather than directly clearing existing deposits.",
+  "development_stage": "approved_for_other_indication",
+  "linked_study_ids": [
+    "attribute-cm-acoramidis"
+  ],
+  "linked_finding_ids": [
+    "acoramidis-improved-attr-cm-hierarchical-outcome"
+  ],
+  "risk_flags": [
+    "not-direct-clearance",
+    "attr-specific",
+    "disease-treatment-not-aging"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_clinical_outcome",
+    "human_data": true,
+    "open_questions": [
+      "Whether TTR stabilization changes aggregate burden or mainly slows additional deposition",
+      "How the hierarchical endpoint should be interpreted for broader proteostasis claims"
+    ]
+  },
+  "tags": [
+    "protein-aggregate-clearance",
+    "transthyretin-amyloidosis",
+    "attr-cm",
+    "small-molecule"
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-selective-autophagy-and-organelle-quality-control-source-fidelity-r1",
+  "name": "Source Fidelity review for Selective Autophagy And Organelle Quality Control bundle",
+  "candidate_bundle_id": "selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, intervention, finding, and outlook records match the cited PubMed and PMC source boundaries closely enough for publication review. The urolithin A records preserve the short duration, mixed primary endpoint results, human biomarker versus functional endpoint split, and commercial conflict caveats; the USP30 records preserve the preclinical mechanistic scope and the 2026 mutant-mtDNA null boundary.",
+  "reviewed_change_ids": [
+    "create-source-pmid-27400265",
+    "create-source-pmid-32694802",
+    "create-source-pmid-35050355",
+    "create-source-pmid-35584623",
+    "create-source-pmid-41174221",
+    "create-source-pmid-33890401",
+    "create-source-pmid-41587019",
+    "create-intervention-urolithin-a",
+    "create-intervention-usp30-inhibition",
+    "create-study-urolithin-a-c-elegans-rodent-mitophagy",
+    "create-study-urolithin-a-first-in-human-mitochondrial-biomarker",
+    "create-study-energize-urolithin-a-older-adults",
+    "create-study-atlas-urolithin-a-middle-aged-adults",
+    "create-study-mitoimmune-urolithin-a-immune-aging",
+    "create-study-usp30-st539-mouse-mitophagy",
+    "create-study-mf094-usp30-mtdna-cybrids",
+    "create-finding-urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+    "create-finding-urolithin-a-safe-mitochondrial-signature-older-adults",
+    "create-finding-urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+    "create-finding-urolithin-a-improved-middle-aged-muscle-strength-performance",
+    "create-finding-urolithin-a-shifted-immune-aging-biomarkers-function",
+    "create-finding-usp30-inhibition-induced-tissue-specific-mouse-mitophagy",
+    "create-finding-mf094-induced-mitophagy-without-mtdna-load-reduction",
+    "create-track-selective-autophagy-and-organelle-quality-control-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "urolithin-a-human-trial-conflicts-preserved",
+      "severity": "note",
+      "category": "missing_caveat",
+      "applies_to_change_id": "create-track-selective-autophagy-and-organelle-quality-control-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-selective-autophagy-and-organelle-quality-control-outlook"
+      },
+      "claim_or_issue": "The leading human urolithin A trials include visible Amazentis/Mitopure sponsorship, employee, board, shareholder, patent, or consulting relationships.",
+      "why_it_matters": "The human_functional_benefit stage is anchored mostly to one commercial program, so source fidelity depends on keeping those conflicts close to the public interpretation.",
+      "recommended_action": "No revision required; retain the staged caveats and outlook language that describe the evidence as short-duration, sponsor-heavy, and dominated by urolithin A.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "urolithin-a-primary-endpoint-boundaries-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-track-selective-autophagy-and-organelle-quality-control-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-selective-autophagy-and-organelle-quality-control-outlook"
+      },
+      "claim_or_issue": "ENERGIZE reported positive muscle-endurance and biomarker findings but not significant 6-minute-walk or ATP-production primary endpoints; ATLAS reported muscle-strength and biomarker movement but not significant peak-power primary endpoint improvement.",
+      "why_it_matters": "These endpoint boundaries determine whether the public stage can be interpreted as narrow functional benefit rather than durable mobility, frailty, disease, or mortality relevance.",
+      "recommended_action": "No revision required; the staged findings and outlook already keep the positive functional signal narrow and explicitly name the non-significant endpoint boundaries.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "mitoimmune-author-correction-and-outcome-boundary-preserved",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-finding-urolithin-a-shifted-immune-aging-biomarkers-function",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "urolithin-a-shifted-immune-aging-biomarkers-function"
+      },
+      "claim_or_issue": "The 2025 MitoImmune PubMed record includes an author correction and reports immune-cell composition, metabolism, and ex vivo function over 28 days rather than clinical immune outcomes.",
+      "why_it_matters": "The finding should support biomarker and cell-function context, not infection, vaccine-response, morbidity, or mortality claims.",
+      "recommended_action": "No revision required; the staged finding names the author-correction check and keeps the result in the biomarker/cell-function lane.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "usp30-mtdna-null-boundary-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-mf094-induced-mitophagy-without-mtdna-load-reduction",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "mf094-induced-mitophagy-without-mtdna-load-reduction"
+      },
+      "claim_or_issue": "The 2026 MF-094 source reports increased mitochondrial ubiquitination and mitolysosome formation but only a small non-significant mutant-mtDNA load reduction after chronic treatment.",
+      "why_it_matters": "This is the key source-level boundary preventing mitophagy marker movement from being read as damage-burden clearance.",
+      "recommended_action": "No revision required; retain the staged negative-boundary finding and use it as a limitation in the outlook support map.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-02T14:32:11.486Z",
+  "updated_at": "2026-06-02T14:32:11.486Z"
+}

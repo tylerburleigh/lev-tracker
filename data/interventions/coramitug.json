@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "coramitug",
+  "name": "Coramitug",
+  "summary": "Humanized monoclonal antibody targeting misfolded transthyretin, tested as a cardiac amyloid-depleting approach in ATTR-CM.",
+  "modalities": [
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "loss_of_proteostasis"
+  ],
+  "track_ids": [
+    "protein-aggregate-clearance"
+  ],
+  "mechanism_summary": "Targets misfolded and aggregated TTR and is designed to promote clearance of existing transthyretin amyloid through antibody-mediated phagocytosis.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "coramitug-attr-cm-phase2"
+  ],
+  "linked_finding_ids": [
+    "coramitug-reduced-ntprobnp-without-6mwt-benefit"
+  ],
+  "risk_flags": [
+    "phase2",
+    "biomarker-functional-discordance",
+    "attr-cm-specific"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether NT-proBNP and echocardiographic signals translate into walking, hospitalization, or mortality benefits",
+      "Whether amyloid-depleting antibodies can reverse established cardiac dysfunction"
+    ]
+  },
+  "tags": [
+    "protein-aggregate-clearance",
+    "transthyretin-amyloidosis",
+    "attr-cm",
+    "monoclonal-antibody"
+  ]
+}

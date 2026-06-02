@@ -1,0 +1,450 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "protein-aggregate-clearance-bootstrap-2026-06-02",
+  "name": "Protein aggregate clearance bootstrap for June 2, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline candidate for the protein aggregate clearance track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-02T11:51:38Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Protein Aggregate Clearance, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "loss_of_proteostasis"
+    ],
+    "track_ids": [
+      "protein-aggregate-clearance"
+    ]
+  },
+  "source_ids": [
+    "pmid-36449413",
+    "pmid-37459141",
+    "pmid-37212440",
+    "pmid-41212997",
+    "pmid-37888916",
+    "pmid-30145929",
+    "pmid-38197816",
+    "pmid-39213194"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/36449413/",
+    "https://pubmed.ncbi.nlm.nih.gov/37459141/",
+    "https://pubmed.ncbi.nlm.nih.gov/37212440/",
+    "https://pubmed.ncbi.nlm.nih.gov/41212997/",
+    "https://pubmed.ncbi.nlm.nih.gov/37888916/",
+    "https://pubmed.ncbi.nlm.nih.gov/30145929/",
+    "https://pubmed.ncbi.nlm.nih.gov/38197816/",
+    "https://pubmed.ncbi.nlm.nih.gov/39213194/"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-protein-aggregate-clearance-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-loss-of-proteostasis-outlook"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "lecanemab-reduced-amyloid-and-slowed-early-ad-decline"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "donanemab-cleared-amyloid-and-slowed-early-ad-decline"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "ni006-reduced-attr-cm-amyloid-load-biomarkers"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "coramitug-reduced-ntprobnp-without-6mwt-benefit"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "tafamidis-reduced-attr-cm-mortality-hospitalizations"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "vutrisiran-reduced-attr-cm-death-cv-events"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-36449413",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-36449413",
+      "file_path": "data/sources/pmid-36449413.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/pmid-36449413.json",
+      "summary": "Add Clarity AD lecanemab source.",
+      "rationale": "This source anchors phase 3 amyloid-beta lowering plus cognitive and functional slowing in early Alzheimer's disease."
+    },
+    {
+      "change_id": "create-source-pmid-37459141",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-37459141",
+      "file_path": "data/sources/pmid-37459141.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/pmid-37459141.json",
+      "summary": "Add TRAILBLAZER-ALZ 2 donanemab source.",
+      "rationale": "This source adds a second phase 3 amyloid-removal Alzheimer's trial with clinical slowing and ARIA caveats."
+    },
+    {
+      "change_id": "create-source-pmid-37212440",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-37212440",
+      "file_path": "data/sources/pmid-37212440.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/pmid-37212440.json",
+      "summary": "Add NI006 ATTR-CM phase 1 source.",
+      "rationale": "This source anchors direct human ATTR amyloid-depletion biomarker evidence."
+    },
+    {
+      "change_id": "create-source-pmid-41212997",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-41212997",
+      "file_path": "data/sources/pmid-41212997.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/pmid-41212997.json",
+      "summary": "Add coramitug ATTR-CM phase 2 source.",
+      "rationale": "This current source adds phase 2 direct-depleter biomarker support and a functional-boundary result."
+    },
+    {
+      "change_id": "create-source-pmid-37888916",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-37888916",
+      "file_path": "data/sources/pmid-37888916.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/pmid-37888916.json",
+      "summary": "Add APOLLO-B patisiran source.",
+      "rationale": "This source supports human functional relevance for TTR-lowering in ATTR cardiac amyloidosis."
+    },
+    {
+      "change_id": "create-source-pmid-30145929",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-30145929",
+      "file_path": "data/sources/pmid-30145929.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/pmid-30145929.json",
+      "summary": "Add ATTR-ACT tafamidis source.",
+      "rationale": "This source anchors mortality and cardiovascular hospitalization benefit in age-associated ATTR-CM."
+    },
+    {
+      "change_id": "create-source-pmid-38197816",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-38197816",
+      "file_path": "data/sources/pmid-38197816.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/pmid-38197816.json",
+      "summary": "Add ATTRibute-CM acoramidis source.",
+      "rationale": "This source adds a second randomized TTR-stabilizer clinical-outcome signal in ATTR-CM."
+    },
+    {
+      "change_id": "create-source-pmid-39213194",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-39213194",
+      "file_path": "data/sources/pmid-39213194.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/pmid-39213194.json",
+      "summary": "Add HELIOS-B vutrisiran source.",
+      "rationale": "This source strengthens ATTR-CM disease-outcome evidence for TTR-lowering, including death and cardiovascular events."
+    },
+    {
+      "change_id": "create-study-clarity-ad-lecanemab-early-alzheimers",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "clarity-ad-lecanemab-early-alzheimers",
+      "file_path": "data/studies/clarity-ad-lecanemab-early-alzheimers.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/clarity-ad-lecanemab-early-alzheimers.json",
+      "summary": "Add Clarity AD lecanemab study record.",
+      "rationale": "The study record captures population, duration, endpoints, and amyloid-positive boundary for the lecanemab finding."
+    },
+    {
+      "change_id": "create-study-trailblazer-alz2-donanemab-early-alzheimers",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "trailblazer-alz2-donanemab-early-alzheimers",
+      "file_path": "data/studies/trailblazer-alz2-donanemab-early-alzheimers.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/trailblazer-alz2-donanemab-early-alzheimers.json",
+      "summary": "Add TRAILBLAZER-ALZ 2 donanemab study record.",
+      "rationale": "The study record captures the amyloid and tau pathology inclusion boundary for donanemab."
+    },
+    {
+      "change_id": "create-study-ni006-attr-cm-phase1",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "ni006-attr-cm-phase1",
+      "file_path": "data/studies/ni006-attr-cm-phase1.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/ni006-attr-cm-phase1.json",
+      "summary": "Add NI006 phase 1 study record.",
+      "rationale": "The study record captures the direct-depletion biomarker-only boundary."
+    },
+    {
+      "change_id": "create-study-coramitug-attr-cm-phase2",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "coramitug-attr-cm-phase2",
+      "file_path": "data/studies/coramitug-attr-cm-phase2.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/coramitug-attr-cm-phase2.json",
+      "summary": "Add coramitug phase 2 study record.",
+      "rationale": "The study record captures direct-depleter biomarker support and the absent 6-minute-walk benefit."
+    },
+    {
+      "change_id": "create-study-apollo-b-patisiran-attr-cm",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "apollo-b-patisiran-attr-cm",
+      "file_path": "data/studies/apollo-b-patisiran-attr-cm.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/apollo-b-patisiran-attr-cm.json",
+      "summary": "Add APOLLO-B patisiran study record.",
+      "rationale": "The study record captures functional ATTR-CM evidence for TTR precursor suppression."
+    },
+    {
+      "change_id": "create-study-attr-act-tafamidis-attr-cm",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "attr-act-tafamidis-attr-cm",
+      "file_path": "data/studies/attr-act-tafamidis-attr-cm.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/attr-act-tafamidis-attr-cm.json",
+      "summary": "Add ATTR-ACT tafamidis study record.",
+      "rationale": "The study record captures the mortality and hospitalization anchor for ATTR-CM."
+    },
+    {
+      "change_id": "create-study-attribute-cm-acoramidis",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "attribute-cm-acoramidis",
+      "file_path": "data/studies/attribute-cm-acoramidis.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/attribute-cm-acoramidis.json",
+      "summary": "Add ATTRibute-CM acoramidis study record.",
+      "rationale": "The study record captures the hierarchical mortality, morbidity, biomarker, and function endpoint."
+    },
+    {
+      "change_id": "create-study-helios-b-vutrisiran-attr-cm",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "helios-b-vutrisiran-attr-cm",
+      "file_path": "data/studies/helios-b-vutrisiran-attr-cm.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/helios-b-vutrisiran-attr-cm.json",
+      "summary": "Add HELIOS-B vutrisiran study record.",
+      "rationale": "The study record captures death, cardiovascular-event, function, and background-tafamidis context."
+    },
+    {
+      "change_id": "create-finding-lecanemab-reduced-amyloid-and-slowed-early-ad-decline",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "lecanemab-reduced-amyloid-and-slowed-early-ad-decline",
+      "file_path": "data/findings/lecanemab-reduced-amyloid-and-slowed-early-ad-decline.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/lecanemab-reduced-amyloid-and-slowed-early-ad-decline.json",
+      "summary": "Add lecanemab amyloid-lowering clinical finding.",
+      "rationale": "This finding supports direct human aggregate-load movement with functional slowing, bounded by disease specificity and ARIA."
+    },
+    {
+      "change_id": "create-finding-donanemab-cleared-amyloid-and-slowed-early-ad-decline",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "donanemab-cleared-amyloid-and-slowed-early-ad-decline",
+      "file_path": "data/findings/donanemab-cleared-amyloid-and-slowed-early-ad-decline.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/donanemab-cleared-amyloid-and-slowed-early-ad-decline.json",
+      "summary": "Add donanemab amyloid-clearance clinical finding.",
+      "rationale": "This finding adds a second phase 3 Alzheimer's antibody signal with safety and disease-stage boundaries."
+    },
+    {
+      "change_id": "create-finding-ni006-reduced-attr-cm-amyloid-load-biomarkers",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ni006-reduced-attr-cm-amyloid-load-biomarkers",
+      "file_path": "data/findings/ni006-reduced-attr-cm-amyloid-load-biomarkers.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/ni006-reduced-attr-cm-amyloid-load-biomarkers.json",
+      "summary": "Add NI006 direct ATTR amyloid-depletion biomarker finding.",
+      "rationale": "This finding supports direct-depleter plausibility while limiting the claim to phase 1 biomarkers."
+    },
+    {
+      "change_id": "create-finding-coramitug-reduced-ntprobnp-without-6mwt-benefit",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "coramitug-reduced-ntprobnp-without-6mwt-benefit",
+      "file_path": "data/findings/coramitug-reduced-ntprobnp-without-6mwt-benefit.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/coramitug-reduced-ntprobnp-without-6mwt-benefit.json",
+      "summary": "Add coramitug mixed phase 2 biomarker and function finding.",
+      "rationale": "This finding updates the direct-depleter class with current biomarker support and a functional limitation."
+    },
+    {
+      "change_id": "create-finding-patisiran-preserved-6mwt-attr-cm",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "patisiran-preserved-6mwt-attr-cm",
+      "file_path": "data/findings/patisiran-preserved-6mwt-attr-cm.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/patisiran-preserved-6mwt-attr-cm.json",
+      "summary": "Add APOLLO-B patisiran functional ATTR-CM finding.",
+      "rationale": "This finding supports human functional relevance for TTR-lowering without calling it direct aggregate clearance."
+    },
+    {
+      "change_id": "create-finding-tafamidis-reduced-attr-cm-mortality-hospitalizations",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "tafamidis-reduced-attr-cm-mortality-hospitalizations",
+      "file_path": "data/findings/tafamidis-reduced-attr-cm-mortality-hospitalizations.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/tafamidis-reduced-attr-cm-mortality-hospitalizations.json",
+      "summary": "Add ATTR-ACT tafamidis outcome finding.",
+      "rationale": "This finding anchors the proposed durable disease-outcome stage."
+    },
+    {
+      "change_id": "create-finding-acoramidis-improved-attr-cm-hierarchical-outcome",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "acoramidis-improved-attr-cm-hierarchical-outcome",
+      "file_path": "data/findings/acoramidis-improved-attr-cm-hierarchical-outcome.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/acoramidis-improved-attr-cm-hierarchical-outcome.json",
+      "summary": "Add ATTRibute-CM acoramidis outcome finding.",
+      "rationale": "This finding adds randomized TTR-stabilizer outcome support and preserves the non-clearance mechanism boundary."
+    },
+    {
+      "change_id": "create-finding-vutrisiran-reduced-attr-cm-death-cv-events",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "vutrisiran-reduced-attr-cm-death-cv-events",
+      "file_path": "data/findings/vutrisiran-reduced-attr-cm-death-cv-events.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/vutrisiran-reduced-attr-cm-death-cv-events.json",
+      "summary": "Add HELIOS-B vutrisiran clinical-outcome finding.",
+      "rationale": "This finding strengthens ATTR-CM outcome support for TTR-lowering in the track baseline."
+    },
+    {
+      "change_id": "create-intervention-lecanemab",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "lecanemab",
+      "file_path": "data/interventions/lecanemab.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/lecanemab.json",
+      "summary": "Normalize lecanemab intervention record.",
+      "rationale": "The intervention record supports evidence-page naming and links for the lecanemab study and finding."
+    },
+    {
+      "change_id": "create-intervention-donanemab",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "donanemab",
+      "file_path": "data/interventions/donanemab.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/donanemab.json",
+      "summary": "Normalize donanemab intervention record.",
+      "rationale": "The intervention record supports evidence-page naming and links for the donanemab study and finding."
+    },
+    {
+      "change_id": "create-intervention-ni006",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "ni006",
+      "file_path": "data/interventions/ni006.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/ni006.json",
+      "summary": "Normalize NI006 intervention record.",
+      "rationale": "The intervention record separates direct ATTR amyloid depletion from TTR stabilization or precursor suppression."
+    },
+    {
+      "change_id": "create-intervention-coramitug",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "coramitug",
+      "file_path": "data/interventions/coramitug.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/coramitug.json",
+      "summary": "Normalize coramitug intervention record.",
+      "rationale": "The intervention record captures the emerging direct ATTR amyloid-depleter mechanism and current phase 2 boundary."
+    },
+    {
+      "change_id": "create-intervention-patisiran",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "patisiran",
+      "file_path": "data/interventions/patisiran.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/patisiran.json",
+      "summary": "Normalize patisiran intervention record.",
+      "rationale": "The intervention record captures TTR precursor suppression and prevents confusing it with direct deposit clearance."
+    },
+    {
+      "change_id": "create-intervention-tafamidis",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "tafamidis",
+      "file_path": "data/interventions/tafamidis.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/tafamidis.json",
+      "summary": "Normalize tafamidis intervention record.",
+      "rationale": "The intervention record captures the leading ATTR-CM stabilizer outcome signal and non-clearance mechanism."
+    },
+    {
+      "change_id": "create-intervention-acoramidis",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "acoramidis",
+      "file_path": "data/interventions/acoramidis.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/acoramidis.json",
+      "summary": "Normalize acoramidis intervention record.",
+      "rationale": "The intervention record captures the second TTR-stabilizer ATTR-CM outcome signal and its mechanism boundary."
+    },
+    {
+      "change_id": "create-intervention-vutrisiran",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "vutrisiran",
+      "file_path": "data/interventions/vutrisiran.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/vutrisiran.json",
+      "summary": "Normalize vutrisiran intervention record.",
+      "rationale": "The intervention record captures TTR RNA interference outcome support and precursor-suppression boundary."
+    },
+    {
+      "change_id": "create-track-protein-aggregate-clearance-outlook",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-protein-aggregate-clearance-outlook",
+      "file_path": "data/outlooks/track-protein-aggregate-clearance-outlook.json",
+      "staged_file_path": "data/staged-records/protein-aggregate-clearance-bootstrap-2026-06-02/track-protein-aggregate-clearance-outlook.json",
+      "summary": "Create the first public outlook for the protein aggregate clearance track.",
+      "rationale": "A low-confidence durable_disease_or_mortality_relevance baseline is justified by ATTR-CM outcome evidence and amyloid-removal Alzheimer's trials, but broad aging claims remain tightly bounded.",
+      "uncertainty_flags": [
+        "The strongest clinical evidence is disease-specific.",
+        "Several leading ATTR-CM therapies prevent new amyloid formation or suppress TTR production rather than directly clearing existing deposits.",
+        "Direct ATTR depleter antibodies remain biomarker-stage.",
+        "Alzheimer amyloid antibodies have meaningful ARIA and infusion-burden safety constraints."
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "protein-aggregate-clearance",
+      "note": "A first public baseline is justified at low-confidence durable_disease_or_mortality_relevance because ATTR-CM has randomized mortality, morbidity, and cardiovascular-event evidence and Alzheimer's amyloid-removal antibodies show direct pathology lowering with modest clinical slowing.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "loss_of_proteostasis",
+      "note": "Publishing this bundle would complete the third seeded loss-of-proteostasis track baseline and broaden the hallmark beyond chaperone support and proteasome enhancement.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-02-protein-aggregate-clearance-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-protein-aggregate-clearance-source-fidelity-r1",
+    "evidence-review-protein-aggregate-clearance-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-protein-aggregate-clearance-bootstrap-2026-06-02-2026-06-02t12-29-42-280z"
+  ]
+}

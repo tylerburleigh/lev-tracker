@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "coramitug-reduced-ntprobnp-without-6mwt-benefit",
+  "name": "Coramitug reduced NT-proBNP but not 6-minute-walk distance",
+  "summary": "Coramitug supplies recent phase 2 direct-clearance biomarker evidence in ATTR-CM, while blocking a functional-benefit upgrade for this depleter-antibody class.",
+  "source_id": "pmid-41212997",
+  "study_id": "coramitug-attr-cm-phase2",
+  "intervention_ids": [
+    "coramitug"
+  ],
+  "track_ids": [
+    "protein-aggregate-clearance"
+  ],
+  "hallmark_ids": [
+    "loss_of_proteostasis"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "mixed",
+  "evidence_tier": "human_biomarker",
+  "confidence": "low",
+  "statement": "In ATTR cardiomyopathy, 60 mg/kg coramitug significantly reduced NT-proBNP compared with placebo at week 52, but neither dose significantly improved 6-minute-walk distance.",
+  "population_or_model": "Patients with ATTR cardiomyopathy, most receiving background disease-modifying therapy",
+  "time_horizon": "52-week treatment period with safety follow-up to 64 weeks",
+  "quantitative_note": "The 60 mg/kg dose reduced NT-proBNP by 48% versus placebo (95% CI -65% to -22%; P=0.0017); 6-minute-walk change was not statistically different from placebo.",
+  "caveats": [
+    "The biomarker result is promising but does not yet prove functional recovery or outcome benefit.",
+    "Most participants were already receiving disease-modifying ATTR therapy, complicating attribution.",
+    "The sample was modest, mostly male, and largely New York Heart Association class II."
+  ],
+  "tags": [
+    "human",
+    "phase2",
+    "coramitug",
+    "attr-cm",
+    "amyloid-depletion"
+  ]
+}

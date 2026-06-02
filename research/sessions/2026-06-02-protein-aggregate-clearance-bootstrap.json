@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-02-protein-aggregate-clearance-bootstrap",
+  "name": "Protein aggregate clearance bootstrap",
+  "mode": "bootstrap",
+  "started_at": "2026-06-02T11:35:00Z",
+  "completed_at": "2026-06-02T11:51:38Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Protein Aggregate Clearance, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "loss_of_proteostasis"
+    ],
+    "track_ids": [
+      "protein-aggregate-clearance"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "protein-aggregate-clearance-bootstrap-2026-06-02",
+  "summary": "Created a submitted bootstrap bundle for the first protein aggregate clearance public baseline. The evidence map separates Alzheimer's amyloid-beta antibody trials, ATTR-CM stabilizer and RNAi outcome trials, and direct ATTR amyloid-depleter antibody biomarker trials. The proposed track outlook assigns low-confidence durable_disease_or_mortality_relevance because ATTR-CM has randomized mortality, morbidity, and cardiovascular-event evidence while Alzheimer's antibodies show amyloid lowering with modest clinical slowing; broad LEV-relevant proteostasis restoration remains unproven.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-36449413",
+    "pmid-37459141",
+    "pmid-37212440",
+    "pmid-41212997",
+    "pmid-37888916",
+    "pmid-30145929",
+    "pmid-38197816",
+    "pmid-39213194"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/36449413/",
+    "https://pubmed.ncbi.nlm.nih.gov/37459141/",
+    "https://pubmed.ncbi.nlm.nih.gov/37212440/",
+    "https://pubmed.ncbi.nlm.nih.gov/41212997/",
+    "https://pubmed.ncbi.nlm.nih.gov/37888916/",
+    "https://pubmed.ncbi.nlm.nih.gov/30145929/",
+    "https://pubmed.ncbi.nlm.nih.gov/38197816/",
+    "https://pubmed.ncbi.nlm.nih.gov/39213194/"
+  ],
+  "notes": [
+    "Bounded scope was chosen from the top ready bootstrap queue item.",
+    "The staged outlook treats ATTR-CM outcome evidence as disease-specific evidence for an age-associated amyloid condition, not as a broad aging claim.",
+    "Direct aggregate-depleter antibodies NI006 and coramitug are separated from TTR stabilizers and RNAi silencers because the latter reduce amyloid formation or precursor supply rather than actively clearing deposits.",
+    "Anti-amyloid Alzheimer's antibodies support direct pathology lowering with clinical slowing but carry ARIA and infusion-burden limitations."
+  ],
+  "next_actions": [
+    "Run bundle validation and research-planning sync.",
+    "Submit source-fidelity and interpretation/forecast evidence reviews before approval.",
+    "Review whether future taxonomy should split protein aggregate clearance into Alzheimer's amyloid immunotherapy, ATTR precursor suppression, and ATTR amyloid-depleter subtracks if the evidence diverges."
+  ]
+}

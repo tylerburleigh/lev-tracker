@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "lecanemab",
+  "name": "Lecanemab",
+  "summary": "Amyloid-beta protofibril monoclonal antibody with phase 3 early-Alzheimer's evidence for amyloid lowering and modest slowing of decline.",
+  "modalities": [
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "loss_of_proteostasis"
+  ],
+  "track_ids": [
+    "protein-aggregate-clearance"
+  ],
+  "mechanism_summary": "Binds soluble amyloid-beta protofibrils and lowers brain amyloid burden in amyloid-positive early Alzheimer's disease.",
+  "development_stage": "approved_for_other_indication",
+  "linked_study_ids": [
+    "clarity-ad-lecanemab-early-alzheimers"
+  ],
+  "linked_finding_ids": [
+    "lecanemab-reduced-amyloid-and-slowed-early-ad-decline"
+  ],
+  "risk_flags": [
+    "aria",
+    "infusion-reactions",
+    "disease-specific"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_function",
+    "human_data": true,
+    "open_questions": [
+      "Whether amyloid lowering produces durable functional benefit beyond early Alzheimer's disease populations",
+      "How to balance modest clinical slowing against ARIA and infusion burden"
+    ]
+  },
+  "tags": [
+    "protein-aggregate-clearance",
+    "amyloid-beta",
+    "alzheimers-disease",
+    "monoclonal-antibody"
+  ]
+}

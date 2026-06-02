@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "patisiran",
+  "name": "Patisiran",
+  "summary": "Lipid nanoparticle RNA interference therapeutic that lowers hepatic transthyretin production, with functional evidence in ATTR cardiac amyloidosis.",
+  "modalities": [
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "loss_of_proteostasis"
+  ],
+  "track_ids": [
+    "protein-aggregate-clearance"
+  ],
+  "mechanism_summary": "Suppresses hepatic TTR synthesis to reduce the supply of amyloid-forming transthyretin rather than directly removing existing deposits.",
+  "development_stage": "approved_for_other_indication",
+  "linked_study_ids": [
+    "apollo-b-patisiran-attr-cm"
+  ],
+  "linked_finding_ids": [
+    "patisiran-preserved-6mwt-attr-cm"
+  ],
+  "risk_flags": [
+    "infusion-reactions",
+    "not-direct-clearance",
+    "attr-specific"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_function",
+    "human_data": true,
+    "open_questions": [
+      "How much cardiac benefit comes from lowered precursor supply versus aggregate regression",
+      "Whether functional effects persist and reduce harder clinical outcomes in ATTR-CM"
+    ]
+  },
+  "tags": [
+    "protein-aggregate-clearance",
+    "transthyretin-amyloidosis",
+    "attr-cm",
+    "rna-interference"
+  ]
+}

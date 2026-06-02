@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "donanemab",
+  "name": "Donanemab",
+  "summary": "Amyloid-plaque monoclonal antibody with phase 3 early-Alzheimer's evidence for amyloid clearance and slowing of clinical progression.",
+  "modalities": [
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "loss_of_proteostasis"
+  ],
+  "track_ids": [
+    "protein-aggregate-clearance"
+  ],
+  "mechanism_summary": "Targets insoluble modified amyloid-beta in plaques and supports plaque removal, with treatment stopped in trial participants meeting amyloid-clearance criteria.",
+  "development_stage": "approved_for_other_indication",
+  "linked_study_ids": [
+    "trailblazer-alz2-donanemab-early-alzheimers"
+  ],
+  "linked_finding_ids": [
+    "donanemab-cleared-amyloid-and-slowed-early-ad-decline"
+  ],
+  "risk_flags": [
+    "aria",
+    "infusion-reactions",
+    "treatment-related-deaths",
+    "disease-specific"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_function",
+    "human_data": true,
+    "open_questions": [
+      "Whether amyloid clearance translates into durable benefit in broader or earlier populations",
+      "How ARIA risk changes net benefit across APOE and disease-stage strata"
+    ]
+  },
+  "tags": [
+    "protein-aggregate-clearance",
+    "amyloid-beta",
+    "alzheimers-disease",
+    "monoclonal-antibody"
+  ]
+}

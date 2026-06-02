@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "ni006",
+  "name": "NI006",
+  "summary": "Recombinant human anti-ATTR monoclonal antibody developed to deplete cardiac transthyretin amyloid deposits.",
+  "modalities": [
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "loss_of_proteostasis"
+  ],
+  "track_ids": [
+    "protein-aggregate-clearance"
+  ],
+  "mechanism_summary": "Targets transthyretin amyloid and is intended to promote removal of deposited ATTR by phagocytic immune cells.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "ni006-attr-cm-phase1"
+  ],
+  "linked_finding_ids": [
+    "ni006-reduced-attr-cm-amyloid-load-biomarkers"
+  ],
+  "risk_flags": [
+    "phase1",
+    "biomarker-only",
+    "attr-cm-specific"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether apparent amyloid-load biomarker reduction leads to functional or outcome benefit",
+      "Whether chronic antibody-mediated ATTR depletion is safe in larger and longer trials"
+    ]
+  },
+  "tags": [
+    "protein-aggregate-clearance",
+    "transthyretin-amyloidosis",
+    "attr-cm",
+    "monoclonal-antibody"
+  ]
+}

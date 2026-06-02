@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "mf094-induced-mitophagy-without-mtdna-load-reduction",
+  "name": "MF-094 induced mitophagy but did not significantly reduce mutant mtDNA load",
+  "summary": "A 2026 USP30 inhibition study shows a key translation boundary: mitophagy induction did not solve a disease-relevant mutant-mtDNA endpoint in cybrids.",
+  "source_id": "pmid-41587019",
+  "study_id": "mf094-usp30-mtdna-cybrids",
+  "intervention_ids": [
+    "usp30-inhibition"
+  ],
+  "track_ids": [
+    "selective-autophagy-and-organelle-quality-control",
+    "mitophagy-enhancers"
+  ],
+  "hallmark_ids": [
+    "disabled_macroautophagy",
+    "mitochondrial_dysfunction"
+  ],
+  "endpoint_category": "mechanistic",
+  "direction": "mixed",
+  "evidence_tier": "in_vitro",
+  "confidence": "moderate",
+  "statement": "In heteroplasmic mitochondrial disease cybrids, MF-094 increased mitochondrial ubiquitination and mitolysosome formation, but chronic treatment for 3 to 6 weeks produced only a small non-significant reduction in mutant mtDNA load.",
+  "population_or_model": "143B cybrid cells with 40% or 80% m.8993T>G mutant mtDNA",
+  "time_horizon": "24-hour mitophagy assays and 3- to 6-week chronic treatment assays",
+  "quantitative_note": "The abstract reports chronic treatment evoked only a small 5% non-significant reduction in mutant mtDNA load.",
+  "caveats": [
+    "This is an in vitro mitochondrial disease model, not normal aging.",
+    "Mitophagy induction did not translate into the intended mutant-mtDNA burden reduction.",
+    "The result constrains targeted-mitophagy optimism for damage-burden reduction."
+  ],
+  "tags": [
+    "in-vitro",
+    "usp30",
+    "mitophagy",
+    "mtdna",
+    "negative-boundary"
+  ]
+}

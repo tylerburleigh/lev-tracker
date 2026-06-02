@@ -1,0 +1,358 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02",
+  "name": "Selective autophagy and organelle quality control bootstrap for June 2, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline candidate for the selective autophagy and organelle quality control track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-02T14:20:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Selective Autophagy and Organelle Quality Control, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "disabled_macroautophagy"
+    ],
+    "track_ids": [
+      "selective-autophagy-and-organelle-quality-control"
+    ]
+  },
+  "source_ids": [
+    "pmid-27400265",
+    "pmid-32694802",
+    "pmid-35050355",
+    "pmid-35584623",
+    "pmid-41174221",
+    "pmid-33890401",
+    "pmid-41587019"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/27400265/",
+    "https://pubmed.ncbi.nlm.nih.gov/32694802/",
+    "https://pubmed.ncbi.nlm.nih.gov/35050355/",
+    "https://pubmed.ncbi.nlm.nih.gov/35584623/",
+    "https://pubmed.ncbi.nlm.nih.gov/41174221/",
+    "https://pubmed.ncbi.nlm.nih.gov/33890401/",
+    "https://pubmed.ncbi.nlm.nih.gov/41587019/"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-selective-autophagy-and-organelle-quality-control-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-disabled-macroautophagy-outlook"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "urolithin-a"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "usp30-inhibition"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "urolithin-a-improved-older-adult-muscle-endurance-biomarkers"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "urolithin-a-improved-middle-aged-muscle-strength-performance"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "urolithin-a-shifted-immune-aging-biomarkers-function"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "mf094-induced-mitophagy-without-mtdna-load-reduction"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-27400265",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-27400265",
+      "file_path": "data/sources/pmid-27400265.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/pmid-27400265.json",
+      "summary": "Add Ryu urolithin A animal mitophagy source.",
+      "rationale": "This source anchors the preclinical mitophagy, worm lifespan, and rodent muscle-function signal for urolithin A."
+    },
+    {
+      "change_id": "create-source-pmid-32694802",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-32694802",
+      "file_path": "data/sources/pmid-32694802.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/pmid-32694802.json",
+      "summary": "Add first-in-human urolithin A mitochondrial biomarker source.",
+      "rationale": "This source establishes human safety, bioavailability, and mitochondrial biomarker movement."
+    },
+    {
+      "change_id": "create-source-pmid-35050355",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-35050355",
+      "file_path": "data/sources/pmid-35050355.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/pmid-35050355.json",
+      "summary": "Add ENERGIZE older-adult urolithin A RCT source.",
+      "rationale": "This source supplies the older-adult human muscle-endurance signal and mixed primary-endpoint boundary."
+    },
+    {
+      "change_id": "create-source-pmid-35584623",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-35584623",
+      "file_path": "data/sources/pmid-35584623.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/pmid-35584623.json",
+      "summary": "Add ATLAS middle-aged urolithin A RCT source.",
+      "rationale": "This source supplies the middle-aged human muscle-strength and mitochondrial-biomarker signal with a primary peak-power boundary."
+    },
+    {
+      "change_id": "create-source-pmid-41174221",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-41174221",
+      "file_path": "data/sources/pmid-41174221.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/pmid-41174221.json",
+      "summary": "Add MitoImmune urolithin A immune-aging RCT source.",
+      "rationale": "This recent source adds human immune-aging biomarker and immune-cell function context for urolithin A."
+    },
+    {
+      "change_id": "create-source-pmid-33890401",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-33890401",
+      "file_path": "data/sources/pmid-33890401.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/pmid-33890401.json",
+      "summary": "Add ST-539 USP30 mouse mitophagy source.",
+      "rationale": "This source supports pharmacological tractability of targeted mitophagy beyond urolithin A."
+    },
+    {
+      "change_id": "create-source-pmid-41587019",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-41587019",
+      "file_path": "data/sources/pmid-41587019.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/pmid-41587019.json",
+      "summary": "Add 2026 MF-094 USP30 cybrid source.",
+      "rationale": "This source records a current negative-boundary result where mitophagy induction did not significantly reduce mutant mtDNA load."
+    },
+    {
+      "change_id": "create-intervention-urolithin-a",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "urolithin-a",
+      "file_path": "data/interventions/urolithin-a.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/urolithin-a.json",
+      "summary": "Normalize urolithin A intervention record.",
+      "rationale": "The intervention record links the clinical mitophagy evidence and flags the short-duration, sponsor-heavy evidence boundary."
+    },
+    {
+      "change_id": "create-intervention-usp30-inhibition",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "usp30-inhibition",
+      "file_path": "data/interventions/usp30-inhibition.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/usp30-inhibition.json",
+      "summary": "Normalize USP30 inhibition intervention record.",
+      "rationale": "The intervention record captures an emerging targeted mitophagy axis and its preclinical/null-endpoint limits."
+    },
+    {
+      "change_id": "create-study-urolithin-a-c-elegans-rodent-mitophagy",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "urolithin-a-c-elegans-rodent-mitophagy",
+      "file_path": "data/studies/urolithin-a-c-elegans-rodent-mitophagy.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/urolithin-a-c-elegans-rodent-mitophagy.json",
+      "summary": "Add urolithin A animal mitophagy study record.",
+      "rationale": "The study record captures preclinical lifespan, muscle-function, and mitophagy endpoints."
+    },
+    {
+      "change_id": "create-study-urolithin-a-first-in-human-mitochondrial-biomarker",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "urolithin-a-first-in-human-mitochondrial-biomarker",
+      "file_path": "data/studies/urolithin-a-first-in-human-mitochondrial-biomarker.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/urolithin-a-first-in-human-mitochondrial-biomarker.json",
+      "summary": "Add first-in-human urolithin A biomarker study record.",
+      "rationale": "The study record captures human safety and mitochondrial biomarker movement without implying functional benefit."
+    },
+    {
+      "change_id": "create-study-energize-urolithin-a-older-adults",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "energize-urolithin-a-older-adults",
+      "file_path": "data/studies/energize-urolithin-a-older-adults.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/energize-urolithin-a-older-adults.json",
+      "summary": "Add ENERGIZE older-adult urolithin A study record.",
+      "rationale": "The study record captures the older-adult RCT's functional, biomarker, and safety endpoints."
+    },
+    {
+      "change_id": "create-study-atlas-urolithin-a-middle-aged-adults",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "atlas-urolithin-a-middle-aged-adults",
+      "file_path": "data/studies/atlas-urolithin-a-middle-aged-adults.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/atlas-urolithin-a-middle-aged-adults.json",
+      "summary": "Add ATLAS middle-aged urolithin A study record.",
+      "rationale": "The study record captures the second human functional and biomarker RCT signal."
+    },
+    {
+      "change_id": "create-study-mitoimmune-urolithin-a-immune-aging",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "mitoimmune-urolithin-a-immune-aging",
+      "file_path": "data/studies/mitoimmune-urolithin-a-immune-aging.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/mitoimmune-urolithin-a-immune-aging.json",
+      "summary": "Add MitoImmune urolithin A immune-aging study record.",
+      "rationale": "The study record captures the recent immune aging biomarker and ex vivo function trial."
+    },
+    {
+      "change_id": "create-study-usp30-st539-mouse-mitophagy",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "usp30-st539-mouse-mitophagy",
+      "file_path": "data/studies/usp30-st539-mouse-mitophagy.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/usp30-st539-mouse-mitophagy.json",
+      "summary": "Add ST-539 USP30 mouse mitophagy study record.",
+      "rationale": "The study record captures direct pharmacological reporter-model mitophagy evidence."
+    },
+    {
+      "change_id": "create-study-mf094-usp30-mtdna-cybrids",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "mf094-usp30-mtdna-cybrids",
+      "file_path": "data/studies/mf094-usp30-mtdna-cybrids.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/mf094-usp30-mtdna-cybrids.json",
+      "summary": "Add MF-094 USP30 cybrid study record.",
+      "rationale": "The study record captures the 2026 mitophagy induction but mutant-mtDNA null boundary."
+    },
+    {
+      "change_id": "create-finding-urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+      "file_path": "data/findings/urolithin-a-extended-worm-lifespan-improved-rodent-muscle.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/urolithin-a-extended-worm-lifespan-improved-rodent-muscle.json",
+      "summary": "Add urolithin A animal lifespan and muscle-function finding.",
+      "rationale": "This finding supports preclinical mechanism and animal aging relevance."
+    },
+    {
+      "change_id": "create-finding-urolithin-a-safe-mitochondrial-signature-older-adults",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "urolithin-a-safe-mitochondrial-signature-older-adults",
+      "file_path": "data/findings/urolithin-a-safe-mitochondrial-signature-older-adults.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/urolithin-a-safe-mitochondrial-signature-older-adults.json",
+      "summary": "Add urolithin A human safety and biomarker finding.",
+      "rationale": "This finding supports the human biomarker signal while preserving a non-functional boundary."
+    },
+    {
+      "change_id": "create-finding-urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+      "file_path": "data/findings/urolithin-a-improved-older-adult-muscle-endurance-biomarkers.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/urolithin-a-improved-older-adult-muscle-endurance-biomarkers.json",
+      "summary": "Add ENERGIZE mixed human functional finding.",
+      "rationale": "This finding is one of the two direct supports for a narrow human_functional_benefit baseline."
+    },
+    {
+      "change_id": "create-finding-urolithin-a-improved-middle-aged-muscle-strength-performance",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "urolithin-a-improved-middle-aged-muscle-strength-performance",
+      "file_path": "data/findings/urolithin-a-improved-middle-aged-muscle-strength-performance.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/urolithin-a-improved-middle-aged-muscle-strength-performance.json",
+      "summary": "Add ATLAS mixed human functional finding.",
+      "rationale": "This finding is the second direct support for a narrow human_functional_benefit baseline."
+    },
+    {
+      "change_id": "create-finding-urolithin-a-shifted-immune-aging-biomarkers-function",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "urolithin-a-shifted-immune-aging-biomarkers-function",
+      "file_path": "data/findings/urolithin-a-shifted-immune-aging-biomarkers-function.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/urolithin-a-shifted-immune-aging-biomarkers-function.json",
+      "summary": "Add MitoImmune human immune-aging biomarker finding.",
+      "rationale": "This finding updates the baseline with recent human immune-aging evidence while keeping clinical-outcome limits explicit."
+    },
+    {
+      "change_id": "create-finding-usp30-inhibition-induced-tissue-specific-mouse-mitophagy",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "usp30-inhibition-induced-tissue-specific-mouse-mitophagy",
+      "file_path": "data/findings/usp30-inhibition-induced-tissue-specific-mouse-mitophagy.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/usp30-inhibition-induced-tissue-specific-mouse-mitophagy.json",
+      "summary": "Add USP30 mouse mitophagy finding.",
+      "rationale": "This finding supports targeted mitophagy tractability outside urolithin A."
+    },
+    {
+      "change_id": "create-finding-mf094-induced-mitophagy-without-mtdna-load-reduction",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "mf094-induced-mitophagy-without-mtdna-load-reduction",
+      "file_path": "data/findings/mf094-induced-mitophagy-without-mtdna-load-reduction.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/mf094-induced-mitophagy-without-mtdna-load-reduction.json",
+      "summary": "Add MF-094 USP30 negative-boundary finding.",
+      "rationale": "This finding constrains interpretation by showing mitophagy-marker movement without significant mutant-mtDNA burden reduction."
+    },
+    {
+      "change_id": "create-track-selective-autophagy-and-organelle-quality-control-outlook",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-selective-autophagy-and-organelle-quality-control-outlook",
+      "file_path": "data/outlooks/track-selective-autophagy-and-organelle-quality-control-outlook.json",
+      "staged_file_path": "data/staged-records/selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02/track-selective-autophagy-and-organelle-quality-control-outlook.json",
+      "summary": "Create the first public outlook for the selective autophagy and organelle quality control track.",
+      "rationale": "A low-confidence human_functional_benefit baseline is justified by urolithin A human muscle endurance and strength signals, but the evidence remains endpoint-mixed and intervention-narrow.",
+      "uncertainty_flags": [
+        "Human evidence is dominated by urolithin A.",
+        "Functional endpoints are mixed and short-duration.",
+        "Mitophagy target engagement does not prove causality for human functional signals.",
+        "USP30 inhibition remains preclinical and has a 2026 mutant-mtDNA null boundary."
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "selective-autophagy-and-organelle-quality-control",
+      "note": "Publishing this bundle would establish a first public baseline at low-confidence human_functional_benefit, anchored narrowly to urolithin A muscle endurance and strength trials with mixed endpoint and attribution caveats.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "disabled_macroautophagy",
+      "note": "Publishing this bundle would add a third disabled macroautophagy baseline beyond autophagy induction and lysosomal restoration, with an important secondary boundary to mitochondrial dysfunction.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-02-selective-autophagy-and-organelle-quality-control-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-selective-autophagy-and-organelle-quality-control-source-fidelity-r1",
+    "evidence-review-selective-autophagy-and-organelle-quality-control-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02-2026-06-02t14-33-46-625z"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "vutrisiran-reduced-attr-cm-death-cv-events",
+  "name": "Vutrisiran reduced ATTR-CM death and cardiovascular events",
+  "summary": "HELIOS-B strengthens disease-outcome evidence for TTR-lowering in ATTR-CM, including all-cause death and recurrent cardiovascular events.",
+  "source_id": "pmid-39213194",
+  "study_id": "helios-b-vutrisiran-attr-cm",
+  "intervention_ids": [
+    "vutrisiran"
+  ],
+  "track_ids": [
+    "protein-aggregate-clearance"
+  ],
+  "hallmark_ids": [
+    "loss_of_proteostasis"
+  ],
+  "endpoint_category": "healthspan",
+  "direction": "positive",
+  "evidence_tier": "human_clinical_outcome",
+  "confidence": "moderate",
+  "statement": "In ATTR cardiomyopathy, vutrisiran lowered the risk of death from any cause and recurrent cardiovascular events and preserved functional capacity and quality of life.",
+  "population_or_model": "Patients with ATTR cardiomyopathy, with and without baseline tafamidis",
+  "time_horizon": "Up to 36 months for the primary endpoint and 42 months for all-cause death analysis",
+  "quantitative_note": "The primary composite hazard ratio was 0.72 in the overall population (95% CI 0.56 to 0.93; P=0.01), and all-cause death through 42 months had HR 0.65 (95% CI 0.46 to 0.90; P=0.01); 6-minute-walk difference was 26.5 m and KCCQ-OS difference was 5.8 points.",
+  "caveats": [
+    "Vutrisiran suppresses hepatic TTR production rather than directly removing deposited amyloid.",
+    "The result is highly relevant to age-associated amyloid cardiomyopathy but not proof of broad aggregate clearance across aging tissues.",
+    "The trial allowed background tafamidis, requiring careful interpretation of monotherapy versus add-on contexts."
+  ],
+  "tags": [
+    "human",
+    "randomized",
+    "vutrisiran",
+    "attr-cm",
+    "clinical-outcome"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+  "name": "Urolithin A induced mitophagy, extended worm lifespan, and improved rodent muscle function",
+  "summary": "Urolithin A supplies the core animal aging and mitophagy proof-of-concept for the track.",
+  "source_id": "pmid-27400265",
+  "study_id": "urolithin-a-c-elegans-rodent-mitophagy",
+  "intervention_ids": [
+    "urolithin-a"
+  ],
+  "track_ids": [
+    "selective-autophagy-and-organelle-quality-control",
+    "mitophagy-enhancers"
+  ],
+  "hallmark_ids": [
+    "disabled_macroautophagy",
+    "mitochondrial_dysfunction"
+  ],
+  "endpoint_category": "lifespan",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "moderate",
+  "statement": "Urolithin A induced mitophagy in vitro and in vivo, prevented age-associated dysfunctional mitochondrial accumulation in C. elegans, extended worm lifespan, prolonged worm activity, and improved exercise capacity in rodent muscle-function models.",
+  "population_or_model": "C. elegans aging models, mouse models of age-related muscle-function decline, and young rats",
+  "time_horizon": "Across organismal aging experiments and rodent exercise-capacity studies",
+  "quantitative_note": "The abstract reports C. elegans lifespan extension and improved exercise capacity in two mouse models of age-related muscle-function decline, but the staged finding does not rely on a single extracted percentage.",
+  "caveats": [
+    "The lifespan evidence is in C. elegans, not mammals.",
+    "Rodent evidence supports muscle function and exercise capacity rather than lifespan.",
+    "The intervention may affect broader mitochondrial and metabolic pathways, so mitophagy causality should remain bounded."
+  ],
+  "tags": [
+    "animal",
+    "urolithin-a",
+    "mitophagy",
+    "lifespan",
+    "muscle-function"
+  ]
+}

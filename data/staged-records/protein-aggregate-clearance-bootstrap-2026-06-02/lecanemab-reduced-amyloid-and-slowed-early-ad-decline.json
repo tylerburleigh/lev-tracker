@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "lecanemab-reduced-amyloid-and-slowed-early-ad-decline",
+  "name": "Lecanemab reduced amyloid burden and slowed early Alzheimer's decline",
+  "summary": "Clarity AD provides direct human evidence that antibody-mediated amyloid-beta lowering can slow decline in early Alzheimer's disease, with ARIA and infusion-reaction caveats.",
+  "source_id": "pmid-36449413",
+  "study_id": "clarity-ad-lecanemab-early-alzheimers",
+  "intervention_ids": [
+    "lecanemab"
+  ],
+  "track_ids": [
+    "protein-aggregate-clearance"
+  ],
+  "hallmark_ids": [
+    "loss_of_proteostasis"
+  ],
+  "endpoint_category": "functional",
+  "direction": "positive",
+  "evidence_tier": "human_function",
+  "confidence": "moderate",
+  "statement": "In early Alzheimer's disease, lecanemab reduced amyloid PET burden and produced moderately less cognitive and functional decline than placebo at 18 months.",
+  "population_or_model": "Adults aged 50 to 90 years with early Alzheimer's disease and amyloid evidence",
+  "time_horizon": "18 months",
+  "quantitative_note": "CDR-SB change was 1.21 with lecanemab versus 1.66 with placebo, difference -0.45 (95% CI -0.67 to -0.23; P<0.001); amyloid PET burden fell by 59.1 centiloids more than placebo in the substudy.",
+  "caveats": [
+    "The benefit is disease-specific and modest rather than a broad aging or proteostasis-restoration outcome.",
+    "Lecanemab caused infusion reactions in 26.4% of participants and amyloid-related imaging abnormalities with edema or effusion in 12.6%.",
+    "The study does not establish long-term dementia prevention, mortality benefit, or generalized aggregate clearance outside amyloid-beta disease."
+  ],
+  "tags": [
+    "human",
+    "randomized",
+    "lecanemab",
+    "alzheimers-disease",
+    "amyloid-beta"
+  ]
+}

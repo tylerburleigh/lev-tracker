@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-protein-aggregate-clearance-source-fidelity-r1",
+  "name": "Source Fidelity review for Protein Aggregate Clearance bundle",
+  "candidate_bundle_id": "protein-aggregate-clearance-bootstrap-2026-06-02",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, intervention, finding, and outlook records match the cited PubMed and PMC source boundaries closely enough for publication review. The lecanemab, donanemab, NI006, coramitug, patisiran, tafamidis, acoramidis, and vutrisiran claims preserve population, disease context, duration, endpoint type, quantitative results, and directness caveats; disease-specific ATTR-CM and early Alzheimer disease evidence is not presented as generalized LEV-relevant proteostasis restoration.",
+  "reviewed_change_ids": [
+    "create-source-pmid-36449413",
+    "create-source-pmid-37459141",
+    "create-source-pmid-37212440",
+    "create-source-pmid-41212997",
+    "create-source-pmid-37888916",
+    "create-source-pmid-30145929",
+    "create-source-pmid-38197816",
+    "create-source-pmid-39213194",
+    "create-study-clarity-ad-lecanemab-early-alzheimers",
+    "create-study-trailblazer-alz2-donanemab-early-alzheimers",
+    "create-study-ni006-attr-cm-phase1",
+    "create-study-coramitug-attr-cm-phase2",
+    "create-study-apollo-b-patisiran-attr-cm",
+    "create-study-attr-act-tafamidis-attr-cm",
+    "create-study-attribute-cm-acoramidis",
+    "create-study-helios-b-vutrisiran-attr-cm",
+    "create-finding-lecanemab-reduced-amyloid-and-slowed-early-ad-decline",
+    "create-finding-donanemab-cleared-amyloid-and-slowed-early-ad-decline",
+    "create-finding-ni006-reduced-attr-cm-amyloid-load-biomarkers",
+    "create-finding-coramitug-reduced-ntprobnp-without-6mwt-benefit",
+    "create-finding-patisiran-preserved-6mwt-attr-cm",
+    "create-finding-tafamidis-reduced-attr-cm-mortality-hospitalizations",
+    "create-finding-acoramidis-improved-attr-cm-hierarchical-outcome",
+    "create-finding-vutrisiran-reduced-attr-cm-death-cv-events",
+    "create-intervention-lecanemab",
+    "create-intervention-donanemab",
+    "create-intervention-ni006",
+    "create-intervention-coramitug",
+    "create-intervention-patisiran",
+    "create-intervention-tafamidis",
+    "create-intervention-acoramidis",
+    "create-intervention-vutrisiran",
+    "create-track-protein-aggregate-clearance-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "clarity-ad-date-field-boundary",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-study-clarity-ad-lecanemab-early-alzheimers",
+      "applies_to_record": {
+        "record_type": "study",
+        "record_id": "clarity-ad-lecanemab-early-alzheimers"
+      },
+      "claim_or_issue": "The staged Clarity AD study dates include 2022-11-29, which appears to reflect article publication timing rather than a trial completion or last-participant date.",
+      "why_it_matters": "Date semantics should not be read as trial-completion metadata if the staged study is later used for chronology or surveillance logic.",
+      "recommended_action": "No blocking revision required because the staged duration, population, endpoints, and quantitative findings are source-aligned; optionally replace or remove the end date before publication if stricter study-date semantics are desired.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "coramitug-publication-date-convention",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-source-pmid-41212997",
+      "applies_to_record": {
+        "record_type": "source",
+        "record_id": "pmid-41212997"
+      },
+      "claim_or_issue": "The coramitug source uses the Circulation issue/publication date of 2026-01-27, while PubMed/PMC metadata also expose an online publication date in November 2025.",
+      "why_it_matters": "This is a publication-metadata convention rather than an evidence mismatch, but it matters for chronological searches and surveillance cutoffs.",
+      "recommended_action": "No revision required; retain the PMID, DOI, and PMC URL for traceability, and treat the date as a publication metadata convention rather than a trial timing claim.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "intervention-approval-status-not-efficacy-source",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-intervention-vutrisiran",
+      "applies_to_record": {
+        "record_type": "intervention",
+        "record_id": "vutrisiran"
+      },
+      "claim_or_issue": "Several intervention records include approval-status metadata for disease indications, but those approvals are background context and are not the evidentiary basis for the protein-aggregate-clearance outlook.",
+      "why_it_matters": "This keeps regulatory status from being read as anti-aging or LEV-relevant efficacy evidence.",
+      "recommended_action": "No revision required; keep public interpretation tied to the linked trial findings, endpoint categories, and caveats rather than approval labels.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-02T12:23:51.243Z",
+  "updated_at": "2026-06-02T12:23:51.243Z"
+}

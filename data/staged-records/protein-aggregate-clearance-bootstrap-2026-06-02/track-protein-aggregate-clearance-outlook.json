@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-protein-aggregate-clearance-outlook",
+  "name": "Protein Aggregate Clearance Track Outlook",
+  "subject_type": "track",
+  "subject_id": "protein-aggregate-clearance",
+  "current_stage": "durable_disease_or_mortality_relevance",
+  "momentum": "accelerating",
+  "confidence": "low",
+  "main_blockers": [
+    "The strongest clinical wins are disease-specific: Alzheimer's amyloid-beta antibodies and ATTR cardiomyopathy therapies do not yet prove broad aging or systemic proteostasis restoration.",
+    "Some ATTR-CM outcome therapies reduce new amyloid formation or precursor supply rather than directly clearing existing aggregates.",
+    "Direct amyloid-depleting ATTR antibodies have human biomarker signals but no confirmed functional, hospitalization, or mortality benefit yet.",
+    "Anti-amyloid Alzheimer's antibodies show modest slowing and meaningful safety burdens, especially ARIA, infusion reactions, and treatment monitoring.",
+    "The field remains split across different substrates, including amyloid-beta, transthyretin, tau-adjacent biology, and other misfolded proteins, so one track rating should not imply cross-aggregate translation."
+  ],
+  "best_current_signals": [
+    "Tafamidis and vutrisiran reduce clinical outcome burden in ATTR cardiomyopathy, including mortality or composite death and cardiovascular-event endpoints.",
+    "Acoramidis adds a second TTR-stabilizer ATTR-CM signal on a mortality, hospitalization, biomarker, and functional hierarchy.",
+    "Lecanemab and donanemab lower amyloid pathology and slow cognitive or functional decline in early Alzheimer's disease.",
+    "NI006 and coramitug are direct ATTR amyloid-depleting antibody approaches with human cardiac amyloid-load or NT-proBNP biomarker support.",
+    "Patisiran preserves 6-minute-walk distance and health-status scores in ATTR cardiac amyloidosis, supporting human functional relevance for TTR-lowering."
+  ],
+  "forecast_note": "Protein aggregate clearance reaches a low-confidence durable_disease_or_mortality_relevance baseline because age-associated amyloid diseases now have randomized human outcome evidence, especially ATTR-CM mortality and cardiovascular-event trials, alongside Alzheimer's amyloid-removal trials showing biomarker lowering with modest clinical slowing. The rating should remain tightly bounded: these are substrate- and disease-specific successes, direct aggregate-depleter antibodies are still biomarker-stage, and none of the evidence demonstrates generalized LEV-relevant proteostasis restoration across aging tissues.",
+  "rating_change_criteria": [
+    "Higher confidence would require replicated disease-outcome evidence from direct aggregate-depleting interventions, not only precursor suppression or aggregation prevention.",
+    "A stronger broad-aging interpretation would require interventions that reduce aggregate burden in aging-relevant tissues and improve function outside narrow amyloid-disease populations.",
+    "The momentum rating would weaken if larger direct-depleter trials fail functional or outcome endpoints, or if ARIA, cardiac inflammation, infusion burden, or other safety issues dominate net benefit.",
+    "A more granular split may be needed if Alzheimer's amyloid immunotherapy, ATTR precursor suppression, and ATTR amyloid-depleter antibodies diverge enough to merit separate public outlooks.",
+    "Claims about aggregate clearance should not upgrade the rating unless the study measures aggregate load or a mechanistically adjacent biomarker and links it to a clinical endpoint."
+  ],
+  "earliest_plausible_window": "Clinically meaningful disease-specific aggregate programs already exist, but a LEV-relevant window cannot be assigned until direct aggregate-clearance strategies show safe, durable function or outcome benefit across age-associated tissues or multiple aggregate substrates.",
+  "scenario_2036_status": "plausible",
+  "supporting_finding_ids": [
+    "lecanemab-reduced-amyloid-and-slowed-early-ad-decline",
+    "donanemab-cleared-amyloid-and-slowed-early-ad-decline",
+    "ni006-reduced-attr-cm-amyloid-load-biomarkers",
+    "coramitug-reduced-ntprobnp-without-6mwt-benefit",
+    "patisiran-preserved-6mwt-attr-cm",
+    "tafamidis-reduced-attr-cm-mortality-hospitalizations",
+    "acoramidis-improved-attr-cm-hierarchical-outcome",
+    "vutrisiran-reduced-attr-cm-death-cv-events"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "current_stage",
+      "conclusion": "The track reaches durable_disease_or_mortality_relevance because ATTR-CM therapies reduce mortality, hospitalization, or composite cardiovascular outcomes in an age-associated amyloid disease.",
+      "support_role": "supports",
+      "rationale": "Tafamidis reduced all-cause mortality and cardiovascular-related hospitalizations, acoramidis improved a mortality, morbidity, biomarker, and function hierarchy, and vutrisiran reduced death and recurrent cardiovascular events while preserving function and quality of life.",
+      "finding_ids": [
+        "tafamidis-reduced-attr-cm-mortality-hospitalizations",
+        "acoramidis-improved-attr-cm-hierarchical-outcome",
+        "vutrisiran-reduced-attr-cm-death-cv-events"
+      ],
+      "source_ids": [
+        "pmid-30145929",
+        "pmid-38197816",
+        "pmid-39213194"
+      ],
+      "limitations": [
+        "The strongest outcome evidence is ATTR-CM specific.",
+        "Tafamidis and acoramidis stabilize TTR, while vutrisiran suppresses TTR production; these are not direct deposit-clearing mechanisms.",
+        "Disease-outcome benefit should not be read as generalized aging reversal."
+      ]
+    },
+    {
+      "label": "Direct aggregate-lowering clinical signal",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Alzheimer antibodies and ATTR depleter antibodies show direct aggregate-load or aggregate-adjacent biomarker movement in humans.",
+      "support_role": "supports",
+      "rationale": "Lecanemab reduced amyloid PET burden and slowed early Alzheimer's decline, donanemab achieved high amyloid-clearance rates while slowing early Alzheimer's progression, NI006 appeared to reduce cardiac amyloid-load imaging markers, and coramitug reduced NT-proBNP at 52 weeks.",
+      "finding_ids": [
+        "lecanemab-reduced-amyloid-and-slowed-early-ad-decline",
+        "donanemab-cleared-amyloid-and-slowed-early-ad-decline",
+        "ni006-reduced-attr-cm-amyloid-load-biomarkers",
+        "coramitug-reduced-ntprobnp-without-6mwt-benefit"
+      ],
+      "source_ids": [
+        "pmid-36449413",
+        "pmid-37459141",
+        "pmid-37212440",
+        "pmid-41212997"
+      ],
+      "limitations": [
+        "Alzheimer trials show modest clinical slowing and material ARIA risk.",
+        "NI006 is phase 1 and coramitug phase 2 did not significantly improve 6-minute-walk distance.",
+        "Amyloid-beta and transthyretin are different substrates with different tissues, risks, and disease contexts."
+      ]
+    },
+    {
+      "label": "Functional but not direct-clearance boundary",
+      "outlook_field": "current_stage",
+      "conclusion": "TTR-lowering can preserve function in ATTR-CM, but this should be treated as precursor-suppression support rather than direct aggregate-clearance proof.",
+      "support_role": "balances",
+      "rationale": "Patisiran preserved 6-minute-walk distance and KCCQ-OS score over 12 months, while vutrisiran reduced harder outcomes over longer follow-up. Both suppress hepatic TTR production rather than actively removing deposits.",
+      "finding_ids": [
+        "patisiran-preserved-6mwt-attr-cm",
+        "vutrisiran-reduced-attr-cm-death-cv-events"
+      ],
+      "source_ids": [
+        "pmid-37888916",
+        "pmid-39213194"
+      ],
+      "limitations": [
+        "The mechanism reduces precursor supply, not existing aggregate load directly.",
+        "APOLLO-B did not show significant benefit on the listed composite secondary endpoints.",
+        "ATTR-CM function and heart-failure outcomes do not establish systemic aging benefit."
+      ]
+    },
+    {
+      "label": "Confidence and translation boundary",
+      "outlook_field": "confidence",
+      "conclusion": "Confidence remains low because the evidence base is clinically strong in narrow diseases but heterogeneous and not yet generalized across aging proteostasis.",
+      "support_role": "limits",
+      "rationale": "The support map combines amyloid-beta immunotherapy, TTR stabilization, TTR RNA interference, and emerging TTR-depleter antibodies. These mechanisms all affect protein aggregation biology but differ enough that broad claims would be premature.",
+      "finding_ids": [
+        "lecanemab-reduced-amyloid-and-slowed-early-ad-decline",
+        "donanemab-cleared-amyloid-and-slowed-early-ad-decline",
+        "coramitug-reduced-ntprobnp-without-6mwt-benefit",
+        "tafamidis-reduced-attr-cm-mortality-hospitalizations",
+        "vutrisiran-reduced-attr-cm-death-cv-events"
+      ],
+      "source_ids": [
+        "pmid-36449413",
+        "pmid-37459141",
+        "pmid-41212997",
+        "pmid-30145929",
+        "pmid-39213194"
+      ],
+      "limitations": [
+        "Different aggregate substrates may not translate across tissues or diseases.",
+        "Safety and monitoring burdens are nontrivial for amyloid antibodies.",
+        "No cited study shows broad healthy-aging, multimorbidity, frailty, or LEV-relevant benefit."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-36449413",
+    "pmid-37459141",
+    "pmid-37212440",
+    "pmid-41212997",
+    "pmid-37888916",
+    "pmid-30145929",
+    "pmid-38197816",
+    "pmid-39213194"
+  ],
+  "last_updated": "2026-06-02",
+  "tags": [
+    "public",
+    "track",
+    "thin_coverage"
+  ]
+}

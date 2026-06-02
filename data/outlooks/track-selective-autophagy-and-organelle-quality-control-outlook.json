@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-selective-autophagy-and-organelle-quality-control-outlook",
+  "name": "Selective Autophagy and Organelle Quality Control Track Outlook",
+  "subject_type": "track",
+  "subject_id": "selective-autophagy-and-organelle-quality-control",
+  "current_stage": "human_functional_benefit",
+  "momentum": "steady",
+  "confidence": "low",
+  "main_blockers": [
+    "The strongest human evidence is concentrated in urolithin A, so the rating should not imply that every selective-autophagy or organelle-quality-control lever is clinically mature.",
+    "Human urolithin A trials are short and mixed: muscle endurance or strength signals are positive, but older-adult 6-minute-walk and ATP endpoints and middle-aged peak-power endpoints were not significant.",
+    "Mitophagy-linked biomarkers do not prove that mitophagy causally drives the human functional signals.",
+    "The track overlaps the separate mitophagy-enhancers, mitochondrial biogenesis, autophagy-induction, and nutrient-sensing surfaces, making attribution important.",
+    "USP30 inhibition is mechanistically attractive but remains preclinical, and a 2026 cybrid study induced mitophagy without significantly reducing mutant mtDNA load."
+  ],
+  "best_current_signals": [
+    "Urolithin A has repeated randomized human studies with muscle endurance, muscle strength, mitochondrial biomarker, and inflammatory-marker movement.",
+    "A 2025 randomized urolithin A trial reported short-term immune-cell composition, metabolism, and ex vivo function changes relevant to immune aging.",
+    "Preclinical urolithin A evidence connects mitophagy induction to C. elegans lifespan extension and rodent muscle-function improvement.",
+    "USP30 inhibition provides a targeted mitophagy mechanism with mouse-reporter support, while also exposing important translation limits."
+  ],
+  "forecast_note": "Selective autophagy and organelle quality control earns a low-confidence human_functional_benefit baseline because urolithin A has randomized human muscle endurance and strength signals alongside mitochondrial biomarker movement. The rating should stay narrow: the clinical evidence is short-duration, sponsor-heavy, and mostly one intervention; endpoint results are mixed; and broader targeted organelle-quality-control strategies such as USP30 inhibition remain preclinical or mechanistic.",
+  "rating_change_criteria": [
+    "Higher confidence would require independently replicated, longer-duration trials where mitophagy or selective-organelle quality-control engagement tracks with durable mobility, frailty, immune, disease, or mortality outcomes.",
+    "A stronger stage assignment would require clinical benefit beyond short-term muscle testing, ideally with prespecified primary functional endpoints and clear target-engagement-to-outcome linkage.",
+    "Momentum would accelerate if non-urolithin targeted autophagy programs, such as USP30 or other organelle-specific pathways, show in vivo functional benefit with acceptable safety.",
+    "The rating would weaken if larger urolithin A trials fail functional endpoints, if mitophagy biomarkers decouple from outcomes, or if chronic targeted-mitophagy safety issues emerge.",
+    "Claims for this track should explicitly separate mitophagy-specific evidence from broader mitochondrial metabolism, exercise-response, nutrient-sensing, or general macroautophagy effects."
+  ],
+  "earliest_plausible_window": "A supplement-level human signal already exists, but a LEV-relevant window cannot be assigned until selective-organelle quality-control interventions show durable functional or disease-relevant benefit with replicated target engagement.",
+  "scenario_2036_status": "plausible",
+  "supporting_finding_ids": [
+    "urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+    "urolithin-a-safe-mitochondrial-signature-older-adults",
+    "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+    "urolithin-a-improved-middle-aged-muscle-strength-performance",
+    "urolithin-a-shifted-immune-aging-biomarkers-function",
+    "usp30-inhibition-induced-tissue-specific-mouse-mitophagy",
+    "mf094-induced-mitophagy-without-mtdna-load-reduction"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "current_stage",
+      "conclusion": "The track reaches human_functional_benefit because randomized urolithin A trials report human muscle endurance or strength signals.",
+      "support_role": "supports",
+      "rationale": "ENERGIZE found improved hand and leg muscle endurance in older adults, and ATLAS reported about 12% muscle-strength improvement in middle-aged adults. Both studies also reported mitochondrial or inflammatory biomarker movement.",
+      "finding_ids": [
+        "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+        "urolithin-a-improved-middle-aged-muscle-strength-performance"
+      ],
+      "source_ids": [
+        "pmid-35050355",
+        "pmid-35584623"
+      ],
+      "limitations": [
+        "The older-adult trial did not significantly improve 6-minute walk distance or maximal ATP production versus placebo.",
+        "The middle-aged adult trial did not significantly improve the primary peak-power endpoint.",
+        "The functional readouts are short-term muscle testing outcomes, not durable aging, disease, or mortality outcomes."
+      ]
+    },
+    {
+      "label": "Human biomarker and immune-aging signal",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Urolithin A has human mitochondrial and immune-aging biomarker support beyond muscle testing.",
+      "support_role": "supports",
+      "rationale": "The first-in-human study showed safety, bioavailability, acylcarnitine changes, and skeletal-muscle mitochondrial gene-expression movement. MitoImmune later reported shifts in CD8+ cell metabolism, immune-cell composition, and ex vivo immune-cell function.",
+      "finding_ids": [
+        "urolithin-a-safe-mitochondrial-signature-older-adults",
+        "urolithin-a-shifted-immune-aging-biomarkers-function"
+      ],
+      "source_ids": [
+        "pmid-32694802",
+        "pmid-41174221"
+      ],
+      "limitations": [
+        "These studies are biomarker and cell-function weighted.",
+        "MitoImmune was only 28 days and does not show infection, vaccine-response, morbidity, or mortality benefit.",
+        "The 2025 immune trial has a 2026 author correction and commercial conflicts that require source-fidelity review."
+      ]
+    },
+    {
+      "label": "Preclinical mechanism",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Animal and reporter-model evidence supports the biological tractability of mitophagy activation.",
+      "support_role": "supports",
+      "rationale": "Urolithin A directly links mitophagy induction to C. elegans lifespan and rodent muscle-function signals, while USP30 inhibition shows pharmacological activation of mitophagy in mouse reporter systems.",
+      "finding_ids": [
+        "urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+        "usp30-inhibition-induced-tissue-specific-mouse-mitophagy"
+      ],
+      "source_ids": [
+        "pmid-27400265",
+        "pmid-33890401"
+      ],
+      "limitations": [
+        "The lifespan signal is non-mammalian.",
+        "Mouse-reporter mitophagy activation is not equivalent to aging efficacy.",
+        "The track remains heavily weighted toward mitophagy, with little mature evidence for other selective organelle-autophagy pathways."
+      ]
+    },
+    {
+      "label": "Translation boundary",
+      "outlook_field": "main_blockers",
+      "conclusion": "Mechanistic mitophagy induction does not automatically imply removal of disease- or aging-relevant mitochondrial damage burden.",
+      "support_role": "limits",
+      "rationale": "The 2026 MF-094 study induced mitochondrial ubiquitination and mitolysosome formation in cybrids but did not significantly reduce mutant mtDNA load after chronic treatment.",
+      "finding_ids": [
+        "mf094-induced-mitophagy-without-mtdna-load-reduction"
+      ],
+      "source_ids": [
+        "pmid-41587019"
+      ],
+      "limitations": [
+        "This is an in vitro mitochondrial disease model rather than normal aging.",
+        "It is still directly relevant as a warning that mitophagy markers may not translate into damage-burden reduction."
+      ]
+    },
+    {
+      "label": "Confidence",
+      "outlook_field": "confidence",
+      "conclusion": "Confidence remains low because clinical evidence is short, endpoint-mixed, and dominated by one commercial urolithin A program.",
+      "support_role": "limits",
+      "rationale": "The support map combines useful human signals with non-significant primary or harder endpoints, preclinical mechanism studies, and one in vitro negative-boundary result.",
+      "finding_ids": [
+        "urolithin-a-safe-mitochondrial-signature-older-adults",
+        "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+        "urolithin-a-improved-middle-aged-muscle-strength-performance",
+        "urolithin-a-shifted-immune-aging-biomarkers-function",
+        "mf094-induced-mitophagy-without-mtdna-load-reduction"
+      ],
+      "source_ids": [
+        "pmid-32694802",
+        "pmid-35050355",
+        "pmid-35584623",
+        "pmid-41174221",
+        "pmid-41587019"
+      ],
+      "limitations": [
+        "No cited source demonstrates durable healthy-lifespan, frailty, disease, infection, hospitalization, or mortality benefit.",
+        "Target engagement and mitochondrial biomarker movement are not sufficient for a confident LEV-relevant claim.",
+        "Commercial sponsorship is visible across the leading urolithin A clinical evidence."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-27400265",
+    "pmid-32694802",
+    "pmid-35050355",
+    "pmid-35584623",
+    "pmid-41174221",
+    "pmid-33890401",
+    "pmid-41587019"
+  ],
+  "last_updated": "2026-06-02",
+  "tags": [
+    "public",
+    "track",
+    "thin_coverage"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "ni006-reduced-attr-cm-amyloid-load-biomarkers",
+  "name": "NI006 reduced ATTR-CM amyloid-load biomarkers in phase 1",
+  "summary": "NI006 is direct human biomarker evidence for an antibody intended to remove existing cardiac transthyretin amyloid.",
+  "source_id": "pmid-37212440",
+  "study_id": "ni006-attr-cm-phase1",
+  "intervention_ids": [
+    "ni006"
+  ],
+  "track_ids": [
+    "protein-aggregate-clearance"
+  ],
+  "hallmark_ids": [
+    "loss_of_proteostasis"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "positive",
+  "evidence_tier": "human_biomarker",
+  "confidence": "low",
+  "statement": "In ATTR cardiomyopathy, NI006 was designed to remove cardiac ATTR through phagocytic immune cells and, at doses of at least 10 mg/kg, appeared to reduce imaging-based amyloid-load markers over 12 months.",
+  "population_or_model": "Patients with wild-type or variant ATTR cardiomyopathy and chronic heart failure",
+  "time_horizon": "Four monthly infusions plus open-label extension through 12 months of biomarker observation",
+  "quantitative_note": "The phase 1 report states that cardiac tracer uptake and extracellular volume appeared reduced at doses of at least 10 mg/kg, with median NT-proBNP and troponin T levels also seeming to fall.",
+  "caveats": [
+    "This was a small phase 1 trial designed primarily for safety and pharmacokinetics.",
+    "The evidence is biomarker-level and does not establish functional, hospitalization, or mortality benefit.",
+    "ATTR cardiomyopathy is an age-associated amyloid disease but not a general aging-proteostasis endpoint."
+  ],
+  "tags": [
+    "human",
+    "phase1",
+    "ni006",
+    "attr-cm",
+    "amyloid-depletion"
+  ]
+}

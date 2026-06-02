@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-selective-autophagy-and-organelle-quality-control-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Selective Autophagy And Organelle Quality Control bundle",
+  "candidate_bundle_id": "selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "needs_human_judgment",
+  "blocking": false,
+  "summary": "The staged interpretation is acceptable as a low-confidence, curator-judgment-dependent baseline. The support map correctly uses urolithin A muscle endurance and strength RCT findings to justify a narrow human_functional_benefit stage, keeps first-in-human and immune-aging urolithin A evidence in the biomarker or cell-function lane, treats USP30 inhibition as preclinical mechanism and limitation support, and avoids assigning a LEV-relevant time window.",
+  "reviewed_change_ids": [
+    "create-source-pmid-27400265",
+    "create-source-pmid-32694802",
+    "create-source-pmid-35050355",
+    "create-source-pmid-35584623",
+    "create-source-pmid-41174221",
+    "create-source-pmid-33890401",
+    "create-source-pmid-41587019",
+    "create-intervention-urolithin-a",
+    "create-intervention-usp30-inhibition",
+    "create-study-urolithin-a-c-elegans-rodent-mitophagy",
+    "create-study-urolithin-a-first-in-human-mitochondrial-biomarker",
+    "create-study-energize-urolithin-a-older-adults",
+    "create-study-atlas-urolithin-a-middle-aged-adults",
+    "create-study-mitoimmune-urolithin-a-immune-aging",
+    "create-study-usp30-st539-mouse-mitophagy",
+    "create-study-mf094-usp30-mtdna-cybrids",
+    "create-finding-urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+    "create-finding-urolithin-a-safe-mitochondrial-signature-older-adults",
+    "create-finding-urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+    "create-finding-urolithin-a-improved-middle-aged-muscle-strength-performance",
+    "create-finding-urolithin-a-shifted-immune-aging-biomarkers-function",
+    "create-finding-usp30-inhibition-induced-tissue-specific-mouse-mitophagy",
+    "create-finding-mf094-induced-mitophagy-without-mtdna-load-reduction",
+    "create-track-selective-autophagy-and-organelle-quality-control-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "selective-autophagy-functional-stage-narrowly-supported",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-track-selective-autophagy-and-organelle-quality-control-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-selective-autophagy-and-organelle-quality-control-outlook"
+      },
+      "claim_or_issue": "The outlook assigns human_functional_benefit because ENERGIZE and ATLAS report human muscle endurance or strength signals, not because the track has durable mobility, frailty, disease, or mortality evidence.",
+      "why_it_matters": "A human_biomarker_signal rating would understate the presence of functional muscle testing outcomes, while an unqualified functional-benefit claim would overstate short and mixed trials.",
+      "recommended_action": "No revision required; keep low confidence and keep the public wording anchored to short-term urolithin A muscle endpoints with explicit non-significant primary or harder endpoint caveats.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "selective-autophagy-stage-requires-curator-judgment",
+      "severity": "note",
+      "category": "uncertainty",
+      "applies_to_change_id": "create-track-selective-autophagy-and-organelle-quality-control-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-selective-autophagy-and-organelle-quality-control-outlook"
+      },
+      "claim_or_issue": "The choice between low-confidence human_functional_benefit and human_biomarker_signal depends on whether the curator treats muscle endurance and strength tests as sufficient functional evidence despite mixed primary endpoints.",
+      "why_it_matters": "The evidence is bounded correctly, but the stage label is a public-facing judgment call on the ladder threshold.",
+      "recommended_action": "No blocking revision required; editorial approval should consciously accept the narrow functional-stage interpretation or downgrade to human_biomarker_signal if stricter primary-endpoint criteria are preferred.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "selective-autophagy-mitophagy-overlap-needs-curator-awareness",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-track-selective-autophagy-and-organelle-quality-control-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-selective-autophagy-and-organelle-quality-control-outlook"
+      },
+      "claim_or_issue": "The strongest evidence is mitophagy-focused urolithin A, which overlaps the separate mitophagy-enhancers and mitochondrial-dysfunction surfaces.",
+      "why_it_matters": "The track can reasonably include mitophagy as selective organelle autophagy, but the public interpretation should not imply broad coverage across pexophagy, ER-phagy, ribophagy, or other selective-autophagy pathways.",
+      "recommended_action": "No revision required; retain the overlap and attribution blockers, and consider future surveillance for the older mitophagy-enhancers outlook because these records may make it stale.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "selective-autophagy-usp30-not-stage-driving",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-track-selective-autophagy-and-organelle-quality-control-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-selective-autophagy-and-organelle-quality-control-outlook"
+      },
+      "claim_or_issue": "USP30 inhibition is used as mechanistic tractability and translation-boundary evidence, not as support for the human_functional_benefit stage.",
+      "why_it_matters": "USP30 evidence is animal or in vitro, and MF-094 failed to significantly reduce mutant mtDNA load despite inducing mitophagy markers.",
+      "recommended_action": "No revision required; keep USP30 in best-signal and blocker context rather than as human-stage evidence.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "selective-autophagy-forecast-conservative",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "create-track-selective-autophagy-and-organelle-quality-control-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-selective-autophagy-and-organelle-quality-control-outlook"
+      },
+      "claim_or_issue": "The forecast note and earliest plausible window decline to assign a LEV-relevant timing claim and require durable functional or disease-relevant benefit with replicated target engagement before strengthening the rating.",
+      "why_it_matters": "This keeps a supplement-level human signal from becoming a time-bound LEV or broad healthy-lifespan forecast.",
+      "recommended_action": "No revision required; retain the current conservative forecast note, scenario status, and rating-change criteria.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-02T14:33:06.818Z",
+  "updated_at": "2026-06-02T14:33:06.818Z"
+}
