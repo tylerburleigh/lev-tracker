@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-neuroendocrine-and-systemic-signal-reset-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Neuroendocrine And Systemic Signal Reset bundle",
+  "candidate_bundle_id": "neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "needs_human_judgment",
+  "blocking": false,
+  "summary": "The staged interpretation is bounded and publishable with curator judgment. The human_biomarker_signal stage is supported narrowly by TRIIM's small uncontrolled human epigenetic-age and immunosenescence-marker signal, while TRIIM-X is correctly treated as no-results momentum and the hypothalamic, oxytocin, and klotho findings are kept as animal or nonhuman-primate plausibility rather than human functional benefit. The mixed momentum label and inclusion of heterogeneous modalities remain editorial judgments, but the support map and rating-change criteria state the boundaries clearly.",
+  "reviewed_change_ids": [
+    "update-study-triim-human-epigenetic-aging-pilot",
+    "update-finding-triim-human-epigenetic-age-decrease",
+    "update-source-nct-04375657",
+    "update-study-triim-x-extension-registry",
+    "update-finding-triim-x-registry-no-results",
+    "update-study-oxytocin-aged-muscle-regeneration-mice",
+    "update-finding-oxytocin-improved-aged-muscle-stem-cell-activation",
+    "create-source-pmid-23636330",
+    "create-study-hypothalamic-nfkb-gnrh-aging-mice",
+    "create-finding-hypothalamic-nfkb-inhibition-gnrh-decelerated-mouse-aging",
+    "create-source-pmid-28746310",
+    "create-study-hypothalamic-stem-cell-exosome-aging-mice",
+    "create-finding-hypothalamic-stem-cell-exosomes-slowed-mouse-aging",
+    "create-source-nature-aging-klotho-nhp-2023",
+    "create-study-klotho-aged-rhesus-cognition",
+    "create-finding-klotho-improved-aged-rhesus-cognition",
+    "create-outlook-track-neuroendocrine-and-systemic-signal-reset"
+  ],
+  "findings": [
+    {
+      "finding_id": "neuroendocrine-stage-anchor-is-narrow",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-outlook-track-neuroendocrine-and-systemic-signal-reset",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-neuroendocrine-and-systemic-signal-reset-outlook"
+      },
+      "claim_or_issue": "The human_biomarker_signal stage rests on TRIIM, an uncontrolled nine-man pilot with biomarker endpoints and conflict disclosures.",
+      "why_it_matters": "This is enough for a low-confidence biomarker baseline only because the outlook explicitly avoids functional, disease, mortality, or LEV-relevant benefit claims.",
+      "recommended_action": "Keep the current low-confidence wording and do not promote the track to human_functional_benefit unless randomized human functional or clinical outcome evidence appears.",
+      "resolution_status": "open"
+    },
+    {
+      "finding_id": "neuroendocrine-heterogeneous-track-boundary",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-outlook-track-neuroendocrine-and-systemic-signal-reset",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-neuroendocrine-and-systemic-signal-reset-outlook"
+      },
+      "claim_or_issue": "The support map combines endocrine combinations, hypothalamic central manipulations, cell/exosome approaches, oxytocin, and klotho under one broad track.",
+      "why_it_matters": "The taxonomy supports this broad grouping, but public interpretation could overgeneralize if these distinct modalities are presented as one validated therapeutic class.",
+      "recommended_action": "Preserve the current blocker and rating-change language requiring a defined modality, dose, mechanism, durability, and safety before any stronger track-level claim.",
+      "resolution_status": "open"
+    },
+    {
+      "finding_id": "neuroendocrine-momentum-curator-judgment",
+      "severity": "note",
+      "category": "uncertainty",
+      "applies_to_change_id": "create-outlook-track-neuroendocrine-and-systemic-signal-reset",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-neuroendocrine-and-systemic-signal-reset-outlook"
+      },
+      "claim_or_issue": "The staged outlook uses mixed momentum because there is a registered follow-up human trial and several preclinical signals, but no posted TRIIM-X results or mature human functional program.",
+      "why_it_matters": "Momentum is a qualitative editorial label; stronger wording could imply more clinical maturity than the staged evidence supports.",
+      "recommended_action": "Keep mixed momentum unless future surveillance finds posted randomized human results or a current clinical program with outcome data.",
+      "resolution_status": "open"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-02T21:03:52.537Z",
+  "updated_at": "2026-06-02T21:03:52.537Z"
+}

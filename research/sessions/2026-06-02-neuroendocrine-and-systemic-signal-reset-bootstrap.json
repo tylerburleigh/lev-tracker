@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-02-neuroendocrine-and-systemic-signal-reset-bootstrap",
+  "name": "Neuroendocrine and systemic signal reset bootstrap pass for June 2, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-06-02T20:05:00Z",
+  "completed_at": "2026-06-02T20:30:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Neuroendocrine and Systemic Signal Reset, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "altered_intercellular_communication"
+    ],
+    "track_ids": [
+      "neuroendocrine-and-systemic-signal-reset"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02",
+  "summary": "The track is coherent enough for a first public baseline at human_biomarker_signal, anchored narrowly to TRIIM's small uncontrolled human epigenetic-age and immunosenescence-marker signal. Animal and nonhuman-primate sources support neuroendocrine and systemic signaling plausibility, but no reviewed source establishes durable human functional, disease, mortality, or LEV-relevant benefit.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-31496122",
+    "nct-04375657",
+    "pmid-24915299",
+    "pmid-23636330",
+    "pmid-28746310",
+    "nature-aging-klotho-nhp-2023"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/31496122/",
+    "https://clinicaltrials.gov/study/NCT04375657",
+    "https://pubmed.ncbi.nlm.nih.gov/24915299/",
+    "https://pubmed.ncbi.nlm.nih.gov/23636330/",
+    "https://pubmed.ncbi.nlm.nih.gov/28746310/",
+    "https://www.nature.com/articles/s43587-023-00441-x"
+  ],
+  "notes": [
+    "The roadmap and generated queue selected this track as the top ready bootstrap item.",
+    "TRIIM and TRIIM-X records were already public under the DNA methylation track; this pass stages cross-track updates rather than duplicating them.",
+    "The ClinicalTrials.gov API record available on June 2, 2026 still lists TRIIM-X as recruiting with no posted results, status verified May 2025, last update posted May 7, 2025, and estimated completion December 2025.",
+    "Oxytocin records were already public under niche rejuvenation and support; this pass stages track-link updates because the source is also a systemic hormone signal.",
+    "New source/study/finding records add hypothalamic IKK-beta/NF-kappaB/GnRH, hypothalamic stem-cell exosomal miRNA, and klotho aged-rhesus evidence.",
+    "Klotho uses a manual Nature Aging source ID because the PubMed hit identified during search was a short commentary rather than the primary open-access article."
+  ],
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast evidence reviews before publication.",
+    "If approved, publish the staged study, finding, source, and outlook records as the first neuroendocrine and systemic signal reset baseline.",
+    "After publication, inspect the altered intercellular communication hallmark page and the neuroendocrine track page for related-evidence ordering and cross-track boundary language."
+  ]
+}

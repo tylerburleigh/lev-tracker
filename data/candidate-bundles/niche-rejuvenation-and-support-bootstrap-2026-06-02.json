@@ -1,0 +1,288 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "niche-rejuvenation-and-support-bootstrap-2026-06-02",
+  "name": "Niche rejuvenation and support bootstrap for June 2, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline candidate for the niche rejuvenation and support track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-02T19:45:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Niche Rejuvenation and Support, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "stem_cell_exhaustion"
+    ],
+    "track_ids": [
+      "niche-rejuvenation-and-support"
+    ],
+    "intervention_ids": [
+      "heterochronic-parabiosis",
+      "neutral-blood-exchange",
+      "therapeutic-plasma-exchange",
+      "bloodborne-systemic-rejuvenation",
+      "oxytocin",
+      "fibronectin-niche-reconstitution",
+      "nfkb-inhibition",
+      "sodium-salicylate"
+    ]
+  },
+  "source_ids": [
+    "pmid-15716955",
+    "pmid-32474458",
+    "pmid-24915299",
+    "pmid-27376579",
+    "pmid-27852976",
+    "pmid-34032859"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/15716955/",
+    "https://pubmed.ncbi.nlm.nih.gov/32474458/",
+    "https://pubmed.ncbi.nlm.nih.gov/24915299/",
+    "https://pubmed.ncbi.nlm.nih.gov/27376579/",
+    "https://pubmed.ncbi.nlm.nih.gov/27852976/",
+    "https://pubmed.ncbi.nlm.nih.gov/34032859/"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-niche-rejuvenation-and-support-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-stem-cell-exhaustion-outlook"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "young-systemic-environment-rejuvenated-aged-progenitors"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "plasma-dilution-rejuvenated-aged-mouse-tissues"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "oxytocin-improved-aged-muscle-stem-cell-activation"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "fibronectin-reconstitution-restored-aged-muscle-regeneration"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "nfkb-inhibition-improved-aged-muscle-repair"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "aged-hsc-refractory-to-bloodborne-rejuvenation"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "update-study-heterochronic-parabiosis-aged-progenitor-rejuvenation",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "heterochronic-parabiosis-aged-progenitor-rejuvenation",
+      "file_path": "data/studies/heterochronic-parabiosis-aged-progenitor-rejuvenation.json",
+      "staged_file_path": "data/staged-records/niche-rejuvenation-and-support-bootstrap-2026-06-02/heterochronic-parabiosis-aged-progenitor-rejuvenation.json",
+      "summary": "Add niche rejuvenation and support track linkage to the heterochronic parabiosis study.",
+      "rationale": "The study directly tests systemic niche influence on aged progenitor repair and should support the new track outlook."
+    },
+    {
+      "change_id": "update-study-neutral-blood-exchange-plasma-dilution-mice-human-tpe",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "neutral-blood-exchange-plasma-dilution-mice-human-tpe",
+      "file_path": "data/studies/neutral-blood-exchange-plasma-dilution-mice-human-tpe.json",
+      "staged_file_path": "data/staged-records/niche-rejuvenation-and-support-bootstrap-2026-06-02/neutral-blood-exchange-plasma-dilution-mice-human-tpe.json",
+      "summary": "Add niche rejuvenation and support track linkage to the plasma-dilution study.",
+      "rationale": "The study is relevant as systemic-milieu support for aged tissue repair while remaining animal-level evidence."
+    },
+    {
+      "change_id": "update-study-hsc-refractory-bloodborne-rejuvenation",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "hsc-refractory-bloodborne-rejuvenation",
+      "file_path": "data/studies/hsc-refractory-bloodborne-rejuvenation.json",
+      "staged_file_path": "data/staged-records/niche-rejuvenation-and-support-bootstrap-2026-06-02/hsc-refractory-bloodborne-rejuvenation.json",
+      "summary": "Add niche rejuvenation and support track linkage to the HSC refractory boundary study.",
+      "rationale": "This study constrains tissue-general systemic niche rejuvenation claims."
+    },
+    {
+      "change_id": "update-finding-young-systemic-environment-rejuvenated-aged-progenitors",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "young-systemic-environment-rejuvenated-aged-progenitors",
+      "file_path": "data/findings/young-systemic-environment-rejuvenated-aged-progenitors.json",
+      "staged_file_path": "data/staged-records/niche-rejuvenation-and-support-bootstrap-2026-06-02/young-systemic-environment-rejuvenated-aged-progenitors.json",
+      "summary": "Add niche rejuvenation and support track linkage to the young systemic environment finding.",
+      "rationale": "This finding anchors systemic-milieu animal support for the first track baseline."
+    },
+    {
+      "change_id": "update-finding-plasma-dilution-rejuvenated-aged-mouse-tissues",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "plasma-dilution-rejuvenated-aged-mouse-tissues",
+      "file_path": "data/findings/plasma-dilution-rejuvenated-aged-mouse-tissues.json",
+      "staged_file_path": "data/staged-records/niche-rejuvenation-and-support-bootstrap-2026-06-02/plasma-dilution-rejuvenated-aged-mouse-tissues.json",
+      "summary": "Add niche rejuvenation and support track linkage to the plasma-dilution animal finding.",
+      "rationale": "This finding supports the systemic-environment component of the new track while preserving its animal-level boundary."
+    },
+    {
+      "change_id": "update-finding-aged-hsc-refractory-to-bloodborne-rejuvenation",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "aged-hsc-refractory-to-bloodborne-rejuvenation",
+      "file_path": "data/findings/aged-hsc-refractory-to-bloodborne-rejuvenation.json",
+      "staged_file_path": "data/staged-records/niche-rejuvenation-and-support-bootstrap-2026-06-02/aged-hsc-refractory-to-bloodborne-rejuvenation.json",
+      "summary": "Add niche rejuvenation and support track linkage to the HSC refractory boundary finding.",
+      "rationale": "This finding prevents overbroad claims that bloodborne or systemic niche support works uniformly across aged stem-cell compartments."
+    },
+    {
+      "change_id": "create-source-pmid-24915299",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-24915299",
+      "file_path": "data/sources/pmid-24915299.json",
+      "staged_file_path": "data/staged-records/niche-rejuvenation-and-support-bootstrap-2026-06-02/pmid-24915299.json",
+      "summary": "Add oxytocin aged muscle regeneration source.",
+      "rationale": "This source anchors animal evidence for a declining systemic hormone that supports aged muscle stem-cell activation and regeneration."
+    },
+    {
+      "change_id": "create-source-pmid-27376579",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-27376579",
+      "file_path": "data/sources/pmid-27376579.json",
+      "staged_file_path": "data/staged-records/niche-rejuvenation-and-support-bootstrap-2026-06-02/pmid-27376579.json",
+      "summary": "Add fibronectin aged muscle niche source.",
+      "rationale": "This source supplies direct extracellular-matrix niche-reconstitution evidence for the track."
+    },
+    {
+      "change_id": "create-source-pmid-27852976",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-27852976",
+      "file_path": "data/sources/pmid-27852976.json",
+      "staged_file_path": "data/staged-records/niche-rejuvenation-and-support-bootstrap-2026-06-02/pmid-27852976.json",
+      "summary": "Add NF-kB myofiber satellite-cell niche source.",
+      "rationale": "This source captures cell-non-autonomous inflammatory niche support and a pharmacological aged-mouse repair signal."
+    },
+    {
+      "change_id": "create-study-oxytocin-aged-muscle-regeneration-mice",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "oxytocin-aged-muscle-regeneration-mice",
+      "file_path": "data/studies/oxytocin-aged-muscle-regeneration-mice.json",
+      "staged_file_path": "data/staged-records/niche-rejuvenation-and-support-bootstrap-2026-06-02/oxytocin-aged-muscle-regeneration-mice.json",
+      "summary": "Add oxytocin aged mouse muscle regeneration study record.",
+      "rationale": "The study record maps systemic hormone support to aged muscle stem-cell activation and repair endpoints."
+    },
+    {
+      "change_id": "create-study-fibronectin-aged-muscle-niche-reconstitution",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "fibronectin-aged-muscle-niche-reconstitution",
+      "file_path": "data/studies/fibronectin-aged-muscle-niche-reconstitution.json",
+      "staged_file_path": "data/staged-records/niche-rejuvenation-and-support-bootstrap-2026-06-02/fibronectin-aged-muscle-niche-reconstitution.json",
+      "summary": "Add fibronectin aged muscle niche reconstitution study record.",
+      "rationale": "The study record maps extracellular-matrix niche support to aged muscle stem-cell and regeneration endpoints."
+    },
+    {
+      "change_id": "create-study-nfkb-myofiber-aged-satellite-cell-niche",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "nfkb-myofiber-aged-satellite-cell-niche",
+      "file_path": "data/studies/nfkb-myofiber-aged-satellite-cell-niche.json",
+      "staged_file_path": "data/staged-records/niche-rejuvenation-and-support-bootstrap-2026-06-02/nfkb-myofiber-aged-satellite-cell-niche.json",
+      "summary": "Add NF-kB myofiber satellite-cell niche study record.",
+      "rationale": "The study record maps inflammatory cell-non-autonomous myofiber signaling to satellite-cell niche and aged repair endpoints."
+    },
+    {
+      "change_id": "create-finding-oxytocin-improved-aged-muscle-stem-cell-activation",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "oxytocin-improved-aged-muscle-stem-cell-activation",
+      "file_path": "data/findings/oxytocin-improved-aged-muscle-stem-cell-activation.json",
+      "staged_file_path": "data/staged-records/niche-rejuvenation-and-support-bootstrap-2026-06-02/oxytocin-improved-aged-muscle-stem-cell-activation.json",
+      "summary": "Add oxytocin aged muscle stem-cell activation finding.",
+      "rationale": "This finding supports animal_signal by showing a systemic hormone can improve aged muscle stem-cell activation and repair in mice."
+    },
+    {
+      "change_id": "create-finding-fibronectin-reconstitution-restored-aged-muscle-regeneration",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "fibronectin-reconstitution-restored-aged-muscle-regeneration",
+      "file_path": "data/findings/fibronectin-reconstitution-restored-aged-muscle-regeneration.json",
+      "staged_file_path": "data/staged-records/niche-rejuvenation-and-support-bootstrap-2026-06-02/fibronectin-reconstitution-restored-aged-muscle-regeneration.json",
+      "summary": "Add fibronectin niche-reconstitution finding.",
+      "rationale": "This finding provides direct animal evidence that restoring an aged extracellular-matrix niche component can improve regeneration."
+    },
+    {
+      "change_id": "create-finding-nfkb-inhibition-improved-aged-muscle-repair",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nfkb-inhibition-improved-aged-muscle-repair",
+      "file_path": "data/findings/nfkb-inhibition-improved-aged-muscle-repair.json",
+      "staged_file_path": "data/staged-records/niche-rejuvenation-and-support-bootstrap-2026-06-02/nfkb-inhibition-improved-aged-muscle-repair.json",
+      "summary": "Add NF-kB inhibition aged muscle repair finding.",
+      "rationale": "This finding supports animal_signal for a cell-non-autonomous inflammatory niche mechanism."
+    },
+    {
+      "change_id": "create-outlook-track-niche-rejuvenation-and-support",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-niche-rejuvenation-and-support-outlook",
+      "file_path": "data/outlooks/track-niche-rejuvenation-and-support-outlook.json",
+      "staged_file_path": "data/staged-records/niche-rejuvenation-and-support-bootstrap-2026-06-02/track-niche-rejuvenation-and-support-outlook.json",
+      "summary": "Create the first public outlook for the Niche Rejuvenation and Support track.",
+      "rationale": "A low-confidence animal_signal baseline is justified by multiple mouse niche-support and systemic-milieu findings, while human niche-engagement evidence remains absent.",
+      "uncertainty_flags": [
+        "The stage-driving evidence is animal-level.",
+        "Systemic milieu, endocrine, extracellular-matrix, and inflammatory niche mechanisms may not translate as one unified intervention class.",
+        "Human plasma-exchange biomarker context is adjacent but does not measure stem-cell niche engagement.",
+        "Overlap with circulating-factor modulation and stem-cell rejuvenation requires review."
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "niche-rejuvenation-and-support",
+      "note": "Create the first public track outlook at animal_signal with steady momentum and low confidence because mouse systemic-milieu, hormone, ECM, and inflammatory-niche interventions support repair while human niche-engagement evidence is absent.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "stem_cell_exhaustion",
+      "note": "Publishing this bundle would broaden stem-cell exhaustion coverage beyond cell-intrinsic rejuvenation and replacement/transplantation with a niche-support baseline.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-02-niche-rejuvenation-and-support-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin",
+    "bootstrap",
+    "niche-rejuvenation-and-support"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-niche-rejuvenation-and-support-source-fidelity-r1",
+    "evidence-review-niche-rejuvenation-and-support-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-niche-rejuvenation-and-support-bootstrap-2026-06-02-2026-06-02t20-05-01-386z"
+  ]
+}

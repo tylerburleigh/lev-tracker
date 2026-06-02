@@ -1,0 +1,267 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02",
+  "name": "Neuroendocrine and systemic signal reset bootstrap for June 2, 2026",
+  "summary": "Bootstrap bundle establishing the first public baseline for the neuroendocrine and systemic signal reset track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-02T20:30:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Neuroendocrine and Systemic Signal Reset, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "altered_intercellular_communication"
+    ],
+    "track_ids": [
+      "neuroendocrine-and-systemic-signal-reset"
+    ]
+  },
+  "source_ids": [
+    "pmid-31496122",
+    "nct-04375657",
+    "pmid-24915299",
+    "pmid-23636330",
+    "pmid-28746310",
+    "nature-aging-klotho-nhp-2023"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/31496122/",
+    "https://clinicaltrials.gov/study/NCT04375657",
+    "https://pubmed.ncbi.nlm.nih.gov/24915299/",
+    "https://pubmed.ncbi.nlm.nih.gov/23636330/",
+    "https://pubmed.ncbi.nlm.nih.gov/28746310/",
+    "https://www.nature.com/articles/s43587-023-00441-x"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-neuroendocrine-and-systemic-signal-reset-outlook"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "triim-human-epigenetic-age-decrease"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "triim-x-registry-no-results"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "oxytocin-improved-aged-muscle-stem-cell-activation"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "hypothalamic-nfkb-inhibition-gnrh-decelerated-mouse-aging"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "hypothalamic-stem-cell-exosomes-slowed-mouse-aging"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "klotho-improved-aged-rhesus-cognition"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "update-study-triim-human-epigenetic-aging-pilot",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "triim-human-epigenetic-aging-pilot",
+      "file_path": "data/studies/triim-human-epigenetic-aging-pilot.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02/triim-human-epigenetic-aging-pilot.json",
+      "summary": "Cross-link the TRIIM human pilot study to the neuroendocrine track.",
+      "rationale": "The regimen is a systemic endocrine thymus-regeneration intervention and anchors the track's human biomarker stage."
+    },
+    {
+      "change_id": "update-finding-triim-human-epigenetic-age-decrease",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "triim-human-epigenetic-age-decrease",
+      "file_path": "data/findings/triim-human-epigenetic-age-decrease.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02/triim-human-epigenetic-age-decrease.json",
+      "summary": "Cross-link the TRIIM biomarker finding to the neuroendocrine track.",
+      "rationale": "TRIIM is the strongest human intervention evidence for this track, but remains bounded to biomarker interpretation."
+    },
+    {
+      "change_id": "update-source-nct-04375657",
+      "change_type": "update_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-04375657",
+      "file_path": "data/sources/nct-04375657.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02/nct-04375657.json",
+      "summary": "Refresh and cross-tag the TRIIM-X registry source.",
+      "rationale": "The current ClinicalTrials.gov record remains no-results context for both epigenetic and neuroendocrine interpretations."
+    },
+    {
+      "change_id": "update-study-triim-x-extension-registry",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "triim-x-extension-registry",
+      "file_path": "data/studies/triim-x-extension-registry.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02/triim-x-extension-registry.json",
+      "summary": "Cross-link the TRIIM-X registry study to the neuroendocrine track.",
+      "rationale": "The registry describes a follow-up randomized phase 2 endocrine combination regimen but has no posted outcomes."
+    },
+    {
+      "change_id": "update-finding-triim-x-registry-no-results",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "triim-x-registry-no-results",
+      "file_path": "data/findings/triim-x-registry-no-results.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02/triim-x-registry-no-results.json",
+      "summary": "Refresh the TRIIM-X no-results finding and cross-link it to the neuroendocrine track.",
+      "rationale": "The no-results registry record constrains the track's momentum and prevents overclaiming clinical follow-up."
+    },
+    {
+      "change_id": "update-study-oxytocin-aged-muscle-regeneration-mice",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "oxytocin-aged-muscle-regeneration-mice",
+      "file_path": "data/studies/oxytocin-aged-muscle-regeneration-mice.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02/oxytocin-aged-muscle-regeneration-mice.json",
+      "summary": "Cross-link the systemic oxytocin mouse study to the neuroendocrine track.",
+      "rationale": "Oxytocin is a circulating hormone signal and supplies animal support for systemic endocrine reset."
+    },
+    {
+      "change_id": "update-finding-oxytocin-improved-aged-muscle-stem-cell-activation",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "oxytocin-improved-aged-muscle-stem-cell-activation",
+      "file_path": "data/findings/oxytocin-improved-aged-muscle-stem-cell-activation.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02/oxytocin-improved-aged-muscle-stem-cell-activation.json",
+      "summary": "Cross-link the systemic oxytocin animal finding to the neuroendocrine track.",
+      "rationale": "This finding supports peripheral endocrine plausibility while remaining animal-only."
+    },
+    {
+      "change_id": "create-source-pmid-23636330",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-23636330",
+      "file_path": "data/sources/pmid-23636330.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02/pmid-23636330.json",
+      "summary": "Add hypothalamic IKK-beta/NF-kappaB and GnRH aging source.",
+      "rationale": "This source anchors central immune-neuroendocrine animal support for the track."
+    },
+    {
+      "change_id": "create-study-hypothalamic-nfkb-gnrh-aging-mice",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "hypothalamic-nfkb-gnrh-aging-mice",
+      "file_path": "data/studies/hypothalamic-nfkb-gnrh-aging-mice.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02/hypothalamic-nfkb-gnrh-aging-mice.json",
+      "summary": "Add hypothalamic NF-kappaB and GnRH mouse study record.",
+      "rationale": "The study links central hypothalamic signaling interventions to aging phenotypes and lifespan in animals."
+    },
+    {
+      "change_id": "create-finding-hypothalamic-nfkb-inhibition-gnrh-decelerated-mouse-aging",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "hypothalamic-nfkb-inhibition-gnrh-decelerated-mouse-aging",
+      "file_path": "data/findings/hypothalamic-nfkb-inhibition-gnrh-decelerated-mouse-aging.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02/hypothalamic-nfkb-inhibition-gnrh-decelerated-mouse-aging.json",
+      "summary": "Add hypothalamic NF-kappaB/GnRH animal lifespan finding.",
+      "rationale": "This finding supports central immune-neuroendocrine aging control while preserving animal-only limits."
+    },
+    {
+      "change_id": "create-source-pmid-28746310",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-28746310",
+      "file_path": "data/sources/pmid-28746310.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02/pmid-28746310.json",
+      "summary": "Add hypothalamic stem-cell exosomal miRNA aging source.",
+      "rationale": "This source adds preclinical central secretory evidence for aging-speed control."
+    },
+    {
+      "change_id": "create-study-hypothalamic-stem-cell-exosome-aging-mice",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "hypothalamic-stem-cell-exosome-aging-mice",
+      "file_path": "data/studies/hypothalamic-stem-cell-exosome-aging-mice.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02/hypothalamic-stem-cell-exosome-aging-mice.json",
+      "summary": "Add hypothalamic stem-cell exosome mouse study record.",
+      "rationale": "The study links hypothalamic cell-secreted exosomes to systemic aging phenotypes in mice."
+    },
+    {
+      "change_id": "create-finding-hypothalamic-stem-cell-exosomes-slowed-mouse-aging",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "hypothalamic-stem-cell-exosomes-slowed-mouse-aging",
+      "file_path": "data/findings/hypothalamic-stem-cell-exosomes-slowed-mouse-aging.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02/hypothalamic-stem-cell-exosomes-slowed-mouse-aging.json",
+      "summary": "Add hypothalamic exosome animal aging finding.",
+      "rationale": "This finding supports neuroendocrine secretory plausibility while remaining preclinical."
+    },
+    {
+      "change_id": "create-source-nature-aging-klotho-nhp-2023",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nature-aging-klotho-nhp-2023",
+      "file_path": "data/sources/nature-aging-klotho-nhp-2023.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02/nature-aging-klotho-nhp-2023.json",
+      "summary": "Add primary Nature Aging klotho aged-rhesus source.",
+      "rationale": "This source anchors the nonhuman-primate systemic hormone/protein functional signal."
+    },
+    {
+      "change_id": "create-study-klotho-aged-rhesus-cognition",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "klotho-aged-rhesus-cognition",
+      "file_path": "data/studies/klotho-aged-rhesus-cognition.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02/klotho-aged-rhesus-cognition.json",
+      "summary": "Add aged rhesus klotho cognition study record.",
+      "rationale": "The study captures a human-relevant animal functional signal for systemic klotho."
+    },
+    {
+      "change_id": "create-finding-klotho-improved-aged-rhesus-cognition",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "klotho-improved-aged-rhesus-cognition",
+      "file_path": "data/findings/klotho-improved-aged-rhesus-cognition.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02/klotho-improved-aged-rhesus-cognition.json",
+      "summary": "Add low-dose klotho aged-rhesus cognition finding.",
+      "rationale": "This finding supports peripheral systemic-signal functional plausibility in a nonhuman primate model."
+    },
+    {
+      "change_id": "create-outlook-track-neuroendocrine-and-systemic-signal-reset",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-neuroendocrine-and-systemic-signal-reset-outlook",
+      "file_path": "data/outlooks/track-neuroendocrine-and-systemic-signal-reset-outlook.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02/track-neuroendocrine-and-systemic-signal-reset-outlook.json",
+      "summary": "Create the first public track outlook baseline.",
+      "rationale": "The support map justifies a conservative low-confidence human_biomarker_signal baseline anchored to TRIIM, with animal and nonhuman-primate support treated as plausibility."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "neuroendocrine-and-systemic-signal-reset",
+      "note": "Create a low-confidence human_biomarker_signal baseline anchored narrowly to TRIIM's uncontrolled human biomarker signal, with animal and nonhuman-primate evidence supporting plausibility but not functional human benefit.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-02-neuroendocrine-and-systemic-signal-reset-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "evidence_review_ids": [
+    "evidence-review-neuroendocrine-and-systemic-signal-reset-source-fidelity-r1",
+    "evidence-review-neuroendocrine-and-systemic-signal-reset-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02-2026-06-02t21-04-50-553z"
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-neuroendocrine-and-systemic-signal-reset-outlook",
+  "name": "Neuroendocrine and Systemic Signal Reset Track Outlook",
+  "subject_type": "track",
+  "subject_id": "neuroendocrine-and-systemic-signal-reset",
+  "current_stage": "human_biomarker_signal",
+  "momentum": "mixed",
+  "confidence": "low",
+  "main_blockers": [
+    "The strongest human intervention signal is TRIIM, a nine-participant uncontrolled male pilot with epigenetic-age and immunosenescence biomarkers rather than randomized functional, disease, or mortality endpoints.",
+    "TRIIM-X supplies registered follow-up momentum, but the ClinicalTrials.gov record available on June 2, 2026 has no posted results and still lists recruiting status with a stale estimated completion date.",
+    "Animal support is biologically coherent but translationally heterogeneous: hypothalamic NF-kappaB/GnRH, hypothalamic stem-cell exosomes, oxytocin, and klotho do not represent one deployable modality.",
+    "Central hypothalamic manipulation, recombinant growth hormone combinations, reproductive-axis signaling, oxytocin, and klotho each carry distinct dosing, safety, durability, and active-component questions.",
+    "Several signals overlap neighboring tracks, especially DNA methylation, nutrient sensing, niche support, circulating factors, and inflammation, so public claims need tight track-boundary language."
+  ],
+  "best_current_signals": [
+    "TRIIM reported lower DNA-methylation epigenetic age and immunosenescence-marker movement after one year in nine healthy men.",
+    "TRIIM-X is a randomized phase 2 registry entry for a related thymus-regeneration and endocrine combination regimen, but has no posted results in the current registry record.",
+    "Mouse hypothalamic IKK-beta/NF-kappaB and GnRH studies support central immune-neuroendocrine control of aging phenotypes and lifespan in animals.",
+    "Hypothalamic stem/progenitor-cell and exosome studies support a preclinical central secretory mechanism for aging-speed control.",
+    "Systemic oxytocin and low-dose klotho provide peripheral hormone/protein animal support, including aged-mouse muscle regeneration and aged-rhesus memory improvement."
+  ],
+  "forecast_note": "Neuroendocrine and systemic signal reset has enough source-backed evidence for a first public baseline at human_biomarker_signal, but the stage should be low confidence and narrowly anchored to TRIIM's small uncontrolled human biomarker signal. The broader track is still preclinical for functional aging benefit: animal and nonhuman-primate results make neuroendocrine/systemic signaling plausible, while no reviewed source establishes durable human functional, disease, mortality, or LEV-relevant benefit.",
+  "rating_change_criteria": [
+    "A human_functional_benefit upgrade would require randomized, controlled older-adult evidence with prespecified functional, intrinsic-capacity, disease, or durability endpoints and acceptable endocrine/metabolic safety.",
+    "Higher confidence at the current stage would require independent replication of TRIIM-like biomarker effects and clear separation of growth hormone, DHEA, metformin, thymus, and epigenetic-clock contributions.",
+    "Animal or nonhuman-primate hormone/protein studies should not upgrade the track unless paired with human target engagement and aging-relevant endpoints.",
+    "The rating would weaken if TRIIM-X or independent follow-up fails to replicate biomarker movement, reveals safety constraints, or remains unpublished despite registry maturity.",
+    "Track claims should remain bounded unless a single modality shows reproducible dose, mechanism, durability, and safety across endocrine, autonomic, or systemic signaling endpoints."
+  ],
+  "earliest_plausible_window": "No credible LEV-relevant window can be assigned before randomized human evidence shows durable functional or disease-relevant benefit from a clearly defined neuroendocrine or systemic-signal intervention.",
+  "scenario_2036_status": "speculative",
+  "supporting_finding_ids": [
+    "triim-human-epigenetic-age-decrease",
+    "triim-x-registry-no-results",
+    "hypothalamic-nfkb-inhibition-gnrh-decelerated-mouse-aging",
+    "hypothalamic-stem-cell-exosomes-slowed-mouse-aging",
+    "klotho-improved-aged-rhesus-cognition",
+    "oxytocin-improved-aged-muscle-stem-cell-activation"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "current_stage",
+      "conclusion": "The track reaches human_biomarker_signal because TRIIM is a human intervention study with epigenetic-age and immunosenescence-marker movement.",
+      "support_role": "supports",
+      "rationale": "TRIIM directly tested a systemic endocrine combination regimen in humans and measured aging-relevant biomarkers over one year.",
+      "finding_ids": [
+        "triim-human-epigenetic-age-decrease"
+      ],
+      "source_ids": [
+        "pmid-31496122"
+      ],
+      "limitations": [
+        "TRIIM was uncontrolled and included only nine men.",
+        "The active contribution of growth hormone, DHEA, metformin, vitamin D, zinc, and thymus changes is not separable.",
+        "The finding is a biomarker signal and does not establish functional, disease, mortality, or LEV-relevant benefit."
+      ]
+    },
+    {
+      "label": "Human follow-up boundary",
+      "outlook_field": "momentum",
+      "conclusion": "TRIIM-X shows follow-up clinical activity but cannot support efficacy or safety until results are posted or published.",
+      "support_role": "limits",
+      "rationale": "The registry describes a randomized phase 2 design with epigenetic-age, thymus-regeneration, safety, and immunosenescence endpoints, but the current registry record has no results.",
+      "finding_ids": [
+        "triim-x-registry-no-results"
+      ],
+      "source_ids": [
+        "nct-04375657"
+      ],
+      "limitations": [
+        "Registry status may lag real-world progress.",
+        "No posted results means the record is program momentum rather than outcome evidence.",
+        "The estimated completion date in the registry is stale relative to the current date."
+      ]
+    },
+    {
+      "label": "Central neuroendocrine animal support",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Mouse studies support hypothalamic immune-neuroendocrine and secretory control of aging phenotypes.",
+      "support_role": "supports",
+      "rationale": "Hypothalamic IKK-beta/NF-kappaB and GnRH experiments connect central inflammatory-neuroendocrine signaling to aging phenotypes and lifespan, while hypothalamic stem-cell exosome work supports a secretory miRNA mechanism.",
+      "finding_ids": [
+        "hypothalamic-nfkb-inhibition-gnrh-decelerated-mouse-aging",
+        "hypothalamic-stem-cell-exosomes-slowed-mouse-aging"
+      ],
+      "source_ids": [
+        "pmid-23636330",
+        "pmid-28746310"
+      ],
+      "limitations": [
+        "These are animal studies with central manipulations.",
+        "The intervention forms are not directly deployable human therapies.",
+        "Inflammation, reproductive-axis, and cell/exosome mechanisms should not be collapsed into one clinical claim."
+      ]
+    },
+    {
+      "label": "Peripheral hormone and protein support",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Peripheral endocrine-style interventions add animal functional support, including aged mouse muscle repair and aged rhesus cognition.",
+      "support_role": "supports",
+      "rationale": "Oxytocin supplies systemic hormone evidence in aged mouse muscle regeneration, and klotho supplies a higher-order preclinical cognition signal in aged nonhuman primates.",
+      "finding_ids": [
+        "oxytocin-improved-aged-muscle-stem-cell-activation",
+        "klotho-improved-aged-rhesus-cognition"
+      ],
+      "source_ids": [
+        "pmid-24915299",
+        "nature-aging-klotho-nhp-2023"
+      ],
+      "limitations": [
+        "Neither source is human intervention evidence.",
+        "Oxytocin and klotho are mechanistically distinct and do not define a single therapeutic class.",
+        "Short-term tissue repair or cognitive-task results do not establish durable aging modification."
+      ]
+    },
+    {
+      "label": "Confidence and boundary",
+      "outlook_field": "confidence",
+      "conclusion": "Confidence remains low because human evidence is biomarker-only and the animal evidence spans distinct mechanisms and intervention forms.",
+      "support_role": "balances",
+      "rationale": "The support map contains one small uncontrolled human biomarker study, one no-results human registry, and several animal or nonhuman-primate signals with different translational constraints.",
+      "finding_ids": [
+        "triim-human-epigenetic-age-decrease",
+        "triim-x-registry-no-results",
+        "hypothalamic-nfkb-inhibition-gnrh-decelerated-mouse-aging",
+        "hypothalamic-stem-cell-exosomes-slowed-mouse-aging",
+        "klotho-improved-aged-rhesus-cognition",
+        "oxytocin-improved-aged-muscle-stem-cell-activation"
+      ],
+      "source_ids": [
+        "pmid-31496122",
+        "nct-04375657",
+        "pmid-23636330",
+        "pmid-28746310",
+        "nature-aging-klotho-nhp-2023",
+        "pmid-24915299"
+      ],
+      "limitations": [
+        "No staged source demonstrates durable human functional benefit or mortality relevance.",
+        "Safety and feasibility differ substantially across hormone, biologic, central, and combination-regimen approaches.",
+        "Neighboring-track overlap requires conservative public interpretation."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-31496122",
+    "nct-04375657",
+    "pmid-23636330",
+    "pmid-28746310",
+    "nature-aging-klotho-nhp-2023",
+    "pmid-24915299"
+  ],
+  "last_updated": "2026-06-02",
+  "tags": [
+    "public",
+    "track",
+    "thin_coverage"
+  ]
+}

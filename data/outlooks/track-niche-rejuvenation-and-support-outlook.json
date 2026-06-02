@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-niche-rejuvenation-and-support-outlook",
+  "name": "Niche Rejuvenation and Support Track Outlook",
+  "subject_type": "track",
+  "subject_id": "niche-rejuvenation-and-support",
+  "current_stage": "animal_signal",
+  "momentum": "steady",
+  "confidence": "low",
+  "main_blockers": [
+    "Direct in vivo human evidence for rejuvenating a stem-cell niche and improving tissue function is still absent.",
+    "Most support comes from mouse injury, parabiosis, plasma-dilution, hormone, inflammatory, and extracellular-matrix models that may not translate cleanly to humans.",
+    "Niche interventions can be tissue-specific and may carry risks from broad systemic factor removal, endocrine signaling, inflammatory suppression, or matrix remodeling."
+  ],
+  "best_current_signals": [
+    "Heterochronic parabiosis and neutral plasma dilution show that the aged systemic environment can modulate mouse progenitor activity and tissue-repair readouts.",
+    "Oxytocin, fibronectin niche reconstitution, and myofiber NF-kB pathway inhibition improve aged mouse skeletal-muscle stem-cell activation, niche signaling, or muscle repair.",
+    "Aged HSC refractoriness to bloodborne rejuvenation is an important boundary showing that systemic niche support is not uniformly effective across stem-cell compartments."
+  ],
+  "forecast_note": "Niche rejuvenation and support deserves a first public baseline at animal_signal. The strongest evidence directly manipulates aged mouse systemic or local stem-cell environments and restores repair phenotypes, but human evidence is still indirect and no staged source demonstrates durable human functional benefit from a targeted niche-support intervention.",
+  "rating_change_criteria": [
+    "A human_biomarker_signal upgrade would need an in vivo human intervention showing aging-relevant stem-cell niche marker movement, not just general proteomic or inflammatory changes.",
+    "A human_functional_benefit upgrade would need a controlled older-adult or disease-adjacent trial linking niche marker movement to tissue repair, strength, hematopoietic, or neurogenic function.",
+    "Confidence would improve with replicated aged-animal studies that separate systemic-factor removal, local ECM restoration, endocrine support, and anti-inflammatory effects by tissue and dose.",
+    "The rating would weaken if animal niche-reconstitution signals fail independent replication or if interventions show unacceptable repair, immune, fibrosis, tumor, or endocrine tradeoffs."
+  ],
+  "earliest_plausible_window": "No credible LEV-relevant window can be assigned until a human study measures stem-cell niche engagement and ties it to functional tissue repair or resilience.",
+  "scenario_2036_status": "speculative",
+  "supporting_finding_ids": [
+    "young-systemic-environment-rejuvenated-aged-progenitors",
+    "plasma-dilution-rejuvenated-aged-mouse-tissues",
+    "oxytocin-improved-aged-muscle-stem-cell-activation",
+    "fibronectin-reconstitution-restored-aged-muscle-regeneration",
+    "nfkb-inhibition-improved-aged-muscle-repair",
+    "aged-hsc-refractory-to-bloodborne-rejuvenation"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "current_stage",
+      "conclusion": "The track reaches animal signal because multiple mouse interventions improve aged systemic or local stem-cell environments and restore tissue-repair readouts.",
+      "support_role": "supports",
+      "rationale": "Parabiosis, plasma dilution, oxytocin, fibronectin reconstitution, and NF-kB pathway modulation each test an extrinsic or niche-support mechanism in aged animal repair contexts.",
+      "finding_ids": [
+        "young-systemic-environment-rejuvenated-aged-progenitors",
+        "plasma-dilution-rejuvenated-aged-mouse-tissues",
+        "oxytocin-improved-aged-muscle-stem-cell-activation",
+        "fibronectin-reconstitution-restored-aged-muscle-regeneration",
+        "nfkb-inhibition-improved-aged-muscle-repair"
+      ],
+      "source_ids": [
+        "pmid-15716955",
+        "pmid-32474458",
+        "pmid-24915299",
+        "pmid-27376579",
+        "pmid-27852976"
+      ],
+      "limitations": [
+        "All stage-driving efficacy evidence is animal-level.",
+        "The findings span different tissues, intervention classes, and injury models.",
+        "No finding establishes durable older-human functional benefit."
+      ]
+    },
+    {
+      "label": "Direct niche mechanisms",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Local and systemic niche mechanisms are actionable in aged mouse muscle repair models.",
+      "support_role": "supports",
+      "rationale": "Fibronectin reconstitution directly restores an aged extracellular-matrix niche component, oxytocin supplies a declining systemic hormone signal, and NF-kB inhibition targets a cell-non-autonomous myofiber-to-satellite-cell restraint.",
+      "finding_ids": [
+        "oxytocin-improved-aged-muscle-stem-cell-activation",
+        "fibronectin-reconstitution-restored-aged-muscle-regeneration",
+        "nfkb-inhibition-improved-aged-muscle-repair"
+      ],
+      "source_ids": [
+        "pmid-24915299",
+        "pmid-27376579",
+        "pmid-27852976"
+      ],
+      "limitations": [
+        "The direct niche data are concentrated in skeletal muscle.",
+        "Hormone, ECM, and inflammatory interventions have distinct safety and delivery problems.",
+        "Mouse repair after induced injury may overstate healthy-aging translation."
+      ]
+    },
+    {
+      "label": "Systemic milieu support",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Systemic environment manipulation can improve aged progenitor and tissue readouts in mice, but it remains broad and mechanistically unresolved.",
+      "support_role": "balances",
+      "rationale": "Young circulation and old plasma dilution both support the importance of the aged milieu, while their clinical translatability is constrained by broad factor exchange and unclear active components.",
+      "finding_ids": [
+        "young-systemic-environment-rejuvenated-aged-progenitors",
+        "plasma-dilution-rejuvenated-aged-mouse-tissues"
+      ],
+      "source_ids": [
+        "pmid-15716955",
+        "pmid-32474458"
+      ],
+      "limitations": [
+        "Parabiosis is not a clinical intervention.",
+        "Plasma dilution may remove many pro-aging or compensatory factors at once.",
+        "Human therapeutic plasma exchange context is not enough to claim stem-cell niche rejuvenation."
+      ]
+    },
+    {
+      "label": "Boundary evidence",
+      "outlook_field": "main_blockers",
+      "conclusion": "Systemic rejuvenation is not tissue-general: aged HSCs can remain refractory even when other bloodborne interventions look rejuvenating.",
+      "support_role": "limits",
+      "rationale": "The HSC boundary finding prevents broad claims that a young or diluted systemic environment will rescue every aged stem-cell compartment.",
+      "finding_ids": [
+        "aged-hsc-refractory-to-bloodborne-rejuvenation"
+      ],
+      "source_ids": [
+        "pmid-34032859"
+      ],
+      "limitations": [
+        "The finding is mouse and HSC-specific.",
+        "It does not rule out more targeted local niche repair.",
+        "It does require the public baseline to distinguish muscle, liver, brain, and hematopoietic niches."
+      ]
+    },
+    {
+      "label": "Momentum and confidence",
+      "outlook_field": "confidence",
+      "conclusion": "Momentum is steady but confidence remains low because convergent animal evidence has not become a human niche-engagement or functional-benefit program.",
+      "support_role": "balances",
+      "rationale": "The field has multiple mechanistic levers and replicated extrinsic-aging concepts, but translation remains preclinical and tissue-fragmented.",
+      "finding_ids": [
+        "young-systemic-environment-rejuvenated-aged-progenitors",
+        "plasma-dilution-rejuvenated-aged-mouse-tissues",
+        "oxytocin-improved-aged-muscle-stem-cell-activation",
+        "fibronectin-reconstitution-restored-aged-muscle-regeneration",
+        "nfkb-inhibition-improved-aged-muscle-repair",
+        "aged-hsc-refractory-to-bloodborne-rejuvenation"
+      ],
+      "source_ids": [
+        "pmid-15716955",
+        "pmid-32474458",
+        "pmid-24915299",
+        "pmid-27376579",
+        "pmid-27852976",
+        "pmid-34032859"
+      ],
+      "limitations": [
+        "No staged source tests a targeted niche-support intervention in older humans.",
+        "Long-term safety for chronic niche manipulation is unresolved.",
+        "Aging niches differ by tissue, inflammatory state, disease context, and repair demand."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-15716955",
+    "pmid-32474458",
+    "pmid-24915299",
+    "pmid-27376579",
+    "pmid-27852976",
+    "pmid-34032859"
+  ],
+  "last_updated": "2026-06-02",
+  "tags": [
+    "public",
+    "track",
+    "thin_coverage"
+  ]
+}
