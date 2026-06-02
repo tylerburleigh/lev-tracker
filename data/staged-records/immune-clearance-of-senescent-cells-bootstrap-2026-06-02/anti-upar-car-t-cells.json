@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "anti-upar-car-t-cells",
+  "name": "Anti-uPAR CAR T Cells",
+  "summary": "Preclinical senolytic cell-therapy strategy using chimeric antigen receptor T cells to target uPAR-positive senescent cells.",
+  "aliases": [
+    "uPAR CAR T cells",
+    "senolytic CAR T cells targeting uPAR",
+    "anti-uPAR senolytic CAR T"
+  ],
+  "modalities": [
+    "cell_therapy",
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "cellular_senescence"
+  ],
+  "secondary_hallmark_ids": [
+    "chronic_inflammation",
+    "stem_cell_exhaustion",
+    "dysbiosis"
+  ],
+  "track_ids": [
+    "immune-clearance-of-senescent-cells"
+  ],
+  "mechanism_summary": "Redirects T cells toward uPAR-expressing senescent cells, aiming to clear target cells through immune cytotoxicity and thereby reduce senescence-associated tissue dysfunction.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "upar-car-t-senescence-pathology-models",
+    "anti-upar-car-t-aging-metabolic-dysfunction",
+    "anti-upar-car-t-aged-intestinal-regeneration"
+  ],
+  "linked_finding_ids": [
+    "upar-car-t-cleared-senescent-cells-in-pathology-models",
+    "upar-car-t-improved-aged-mouse-metabolic-fitness",
+    "upar-car-t-improved-aged-intestinal-regeneration"
+  ],
+  "risk_flags": [
+    "no-human-aging-trial",
+    "car-t-safety-and-cytokine-risk",
+    "autologous-or-engineered-cell-manufacturing",
+    "upar-normal-tissue-expression",
+    "target-specificity-and-beneficial-senescence-tradeoffs",
+    "patent-and-commercial-conflict-disclosure"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether uPAR-positive senescent-cell targeting is safe enough for non-oncology aging contexts",
+      "Which tissues and senescent-cell states are appropriate targets without disrupting repair or immune surveillance",
+      "Whether CAR T persistence can be tuned to avoid over-clearance, cytokine toxicity, or on-target off-tissue effects",
+      "Whether preclinical metabolic and intestinal benefits translate to treated humans"
+    ]
+  },
+  "tags": [
+    "immune-clearance-of-senescent-cells",
+    "car-t",
+    "upar",
+    "senolytic",
+    "preclinical"
+  ]
+}

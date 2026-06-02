@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-mitochondrial-biogenesis-and-dynamics-source-fidelity-r1",
+  "name": "Source Fidelity review for Mitochondrial Biogenesis And Dynamics bundle",
+  "candidate_bundle_id": "mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, finding, intervention, activity, and outlook records stay within the cited PubMed, PMC, and ClinicalTrials.gov source boundaries. The human exercise sources support the staged functional and mitochondrial-adaptation claims; the metformin trial is correctly used as an exercise-interaction boundary; berberine remains animal-only PGC-1alpha-adjacent support; STRIDE is accurately treated as a posted rare-disease druglike null/boundary result; and SHAPE is kept activity-only with no efficacy claim.",
+  "reviewed_change_ids": [
+    "create-source-pmid-28273480",
+    "create-source-pmid-23873965",
+    "create-source-pmid-17520024",
+    "create-source-nct-04535609",
+    "create-source-nct-07275424",
+    "create-intervention-structured-exercise-training",
+    "update-intervention-metformin",
+    "update-intervention-berberine",
+    "create-study-exercise-training-modes-young-old-humans",
+    "create-study-aerobic-exercise-training-older-men-mitochondrial-biogenesis-dynamics",
+    "create-study-resistance-exercise-aging-human-skeletal-muscle",
+    "create-study-mavodelpar-stride-primary-mitochondrial-myopathy",
+    "create-study-elamipretide-shape-healthy-aging",
+    "update-study-metformin-aerobic-exercise-older-adults",
+    "update-study-berberine-aged-rat-ampk-muscle-cognition",
+    "create-finding-hiit-improved-older-adult-mitochondrial-respiration-proteome",
+    "create-finding-aerobic-training-increased-biogenesis-dynamics-older-men",
+    "create-finding-resistance-training-reversed-muscle-mitochondrial-aging-signature",
+    "create-finding-mavodelpar-stride-no-12mwt-advantage",
+    "update-finding-metformin-blunted-exercise-mitochondrial-adaptations-older-adults",
+    "update-finding-berberine-improved-aged-rat-cognition-muscle-ampk-signaling",
+    "create-activity-elamipretide-shape-healthy-aging-recruiting",
+    "create-track-mitochondrial-biogenesis-and-dynamics-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "mitochondrial-biogenesis-exercise-source-boundary-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-hiit-improved-older-adult-mitochondrial-respiration-proteome",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "hiit-improved-older-adult-mitochondrial-respiration-proteome"
+      },
+      "claim_or_issue": "PMID 28273480 supports the staged 12-week supervised exercise claim: HIIT and combined training improved aerobic capacity, only HIIT and combined training improved skeletal-muscle mitochondrial respiration, and HIIT increased mitochondrial protein synthesis and mitochondrial protein abundance especially in older adults.",
+      "why_it_matters": "This source can support human_function evidence for exercise-linked mitochondrial adaptation, but only within supervised exercise and not as a druglike biogenesis therapy.",
+      "recommended_action": "No revision needed; keep the staged caveats that the evidence is exercise-specific, supervised, and not a pharmacologic mitochondrial-biogenesis intervention.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "mitochondrial-biogenesis-small-human-exercise-sources-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-track-mitochondrial-biogenesis-and-dynamics-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-mitochondrial-biogenesis-and-dynamics-outlook"
+      },
+      "claim_or_issue": "PMID 23873965 supports the staged aerobic-training marker claim in a small young/older male cohort, and PMID 17520024 supports the resistance-training strength and mitochondrial-function-enriched transcriptome reversal claim in 25 older and 26 younger adults with 14 older paired pre/post training samples.",
+      "why_it_matters": "These sources strengthen the human exercise baseline but are small, skeletal-muscle-focused, and not durable clinical-outcome trials.",
+      "recommended_action": "No revision needed; retain the small-sample, surrogate-marker, and modality-specific limitations already staged.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "mitochondrial-biogenesis-druglike-boundary-sources-preserved",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-finding-mavodelpar-stride-no-12mwt-advantage",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "mavodelpar-stride-no-12mwt-advantage"
+      },
+      "claim_or_issue": "NCT04535609 supports the staged STRIDE boundary: the phase 2 primary mitochondrial myopathy study enrolled 213 participants, was completed, and posted mean 12-minute walk change of 26.75 m with mavodelpar versus 30.89 m with placebo over 24 weeks.",
+      "why_it_matters": "The registry result is correctly used to limit broad PPAR-delta or druglike mitochondrial-modulation claims, while avoiding overgeneralization from a rare-disease trial.",
+      "recommended_action": "No revision needed; keep the trial-registry, rare-disease, and not-healthy-aging caveats.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "mitochondrial-biogenesis-metformin-berberine-boundaries-preserved",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "update-finding-metformin-blunted-exercise-mitochondrial-adaptations-older-adults",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "metformin-blunted-exercise-mitochondrial-adaptations-older-adults"
+      },
+      "claim_or_issue": "PMID 30548390 supports the metformin exercise-interaction boundary in older adults randomized to placebo n=26 or metformin n=27 during 12 weeks of aerobic exercise training, while PMID 29806860 supports only animal berberine evidence for AMPK/SIRT1/PGC-1alpha-linked muscle and cognitive effects in naturally aging rats.",
+      "why_it_matters": "These updated records should appear on the mitochondrial-biogenesis track as boundary or animal-adjacent evidence, not as human druglike efficacy.",
+      "recommended_action": "No revision needed; preserve the pleiotropy, co-intervention, animal-only, and no-human-aging-evidence caveats in the staged records.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "mitochondrial-biogenesis-elamipretide-activity-only-preserved",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "create-activity-elamipretide-shape-healthy-aging-recruiting",
+      "applies_to_record": {
+        "record_type": "activity_item",
+        "record_id": "elamipretide-shape-healthy-aging-recruiting"
+      },
+      "claim_or_issue": "NCT07275424 supports the staged activity-only treatment: the SHAPE elamipretide pilot is recruiting, open-label and single-arm, estimates 30 adults aged 65 to 80, and lists safety/tolerability as the primary outcome with no posted results.",
+      "why_it_matters": "A recruiting single-arm registry entry can support surveillance context but should not move the outlook stage or efficacy interpretation.",
+      "recommended_action": "No revision needed; keep this as non-outlook-moving activity until results are posted.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-02T18:38:09.184Z",
+  "updated_at": "2026-06-02T18:38:09.184Z"
+}

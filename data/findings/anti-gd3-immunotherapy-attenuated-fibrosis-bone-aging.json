@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "anti-gd3-immunotherapy-attenuated-fibrosis-bone-aging",
+  "name": "Anti-GD3 immunotherapy attenuated fibrosis and bone aging signals",
+  "summary": "GD3 adds a newer senescence immune-checkpoint target with mouse fibrosis and bone-remodeling effects.",
+  "source_id": "pmid-39730825",
+  "study_id": "gd3-senescence-immune-checkpoint-aging",
+  "intervention_ids": [
+    "anti-gd3-senescence-immunotherapy"
+  ],
+  "track_ids": [
+    "immune-clearance-of-senescent-cells"
+  ],
+  "hallmark_ids": [
+    "cellular_senescence"
+  ],
+  "endpoint_category": "functional",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "moderate",
+  "statement": "GD3 upregulation on senescent cells suppressed NK-cell-mediated immunosurveillance, and targeting GD3-positive senescent cells with anti-GD3 immunotherapy attenuated experimentally induced or age-related lung and liver fibrosis and age-related bone remodeling in mice.",
+  "population_or_model": "Human and mouse senescent cell systems plus mouse fibrosis and bone-remodeling models",
+  "time_horizon": "Preclinical fibrosis and age-related tissue-remodeling treatment windows",
+  "quantitative_note": "The source reports GD3 upregulation with aging in liver, lung, kidney, and bone contexts and mouse attenuation of fibrosis and bone-remodeling phenotypes after anti-GD3 immunotherapy.",
+  "caveats": [
+    "The intervention evidence is mouse-based.",
+    "GD3 biology may not be senescent-cell-exclusive.",
+    "Fibrosis and bone remodeling are bounded tissue contexts, not broad aging efficacy."
+  ],
+  "tags": [
+    "animal",
+    "gd3",
+    "nk-cells",
+    "immune-checkpoint",
+    "fibrosis"
+  ]
+}

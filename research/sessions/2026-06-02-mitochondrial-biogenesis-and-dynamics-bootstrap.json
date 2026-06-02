@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-02-mitochondrial-biogenesis-and-dynamics-bootstrap",
+  "name": "Mitochondrial biogenesis and dynamics bootstrap pass for June 2, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-06-02T17:20:00Z",
+  "completed_at": "2026-06-02T17:45:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Mitochondrial Biogenesis and Dynamics, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "mitochondrial_dysfunction"
+    ],
+    "track_ids": [
+      "mitochondrial-biogenesis-and-dynamics"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02",
+  "summary": "The staged baseline assigns low-confidence human_functional_benefit. Structured exercise is the direct human anchor: HIIT and combined training improve older-adult aerobic capacity while HIIT increases mitochondrial respiration, mitochondrial protein synthesis, and mitochondrial protein abundance; aerobic training increases PGC-1alpha, oxidative enzymes, MFN1, MFN2, and FIS1 in older men; resistance training improves strength and shifts a mitochondrial-function-enriched aging transcriptome toward younger levels. Druglike translation remains bounded by a posted mavodelpar PMM null functional result, metformin blunting some exercise mitochondrial adaptations, and animal-only berberine PGC-1alpha evidence.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-28273480",
+    "pmid-23873965",
+    "pmid-17520024",
+    "pmid-30548390",
+    "pmid-29806860",
+    "nct-04535609",
+    "nct-07275424"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/28273480/",
+    "https://pubmed.ncbi.nlm.nih.gov/23873965/",
+    "https://pubmed.ncbi.nlm.nih.gov/17520024/",
+    "https://pubmed.ncbi.nlm.nih.gov/30548390/",
+    "https://pubmed.ncbi.nlm.nih.gov/29806860/",
+    "https://clinicaltrials.gov/study/NCT04535609",
+    "https://clinicaltrials.gov/study/NCT07275424"
+  ],
+  "notes": [
+    "The top bootstrap queue item was selected from research/backlog/track-priority.v1.json and research/state/coverage-status.v1.json.",
+    "The public question was scoped to one mitochondrial_dysfunction track: mitochondrial-biogenesis-and-dynamics.",
+    "Structured exercise was treated as the stage anchor because it has the clearest older-adult human functional and mitochondrial-biology evidence.",
+    "Mavodelpar STRIDE was treated as a disease-specific drug boundary because posted registry results do not show a 12-minute walk advantage over placebo.",
+    "The SHAPE elamipretide registry was staged as activity/context only because it is recruiting, single-arm, and has no posted results.",
+    "The staged outlook does not imply that exercise benefits are exclusively mitochondrial or that druglike PGC-1alpha, PPAR, or cardiolipin programs have proven broad aging efficacy."
+  ],
+  "next_actions": [
+    "Run source-fidelity review for the staged PubMed and ClinicalTrials.gov records.",
+    "Run interpretation/forecast review with special attention to whether structured exercise should justify human_functional_benefit for this track.",
+    "During review, check overlap boundaries with NAD/redox restoration, mitophagy enhancers, AMPK/metabolic modulators, and general exercise physiology.",
+    "If approved and published, inspect the mitochondrial dysfunction hallmark page and the mitochondrial biogenesis and dynamics track page for evidence-ladder coherence."
+  ]
+}

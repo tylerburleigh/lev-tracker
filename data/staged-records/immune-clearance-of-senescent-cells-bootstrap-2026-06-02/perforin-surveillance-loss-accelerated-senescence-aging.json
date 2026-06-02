@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "perforin-surveillance-loss-accelerated-senescence-aging",
+  "name": "Perforin surveillance loss accelerated senescence and aging",
+  "summary": "Perforin-deficient mice support the core premise that immune cytotoxicity helps restrain senescent-cell accumulation with age.",
+  "source_id": "pmid-30575733",
+  "study_id": "perforin-deficient-aging-immune-surveillance-study",
+  "track_ids": [
+    "immune-clearance-of-senescent-cells"
+  ],
+  "hallmark_ids": [
+    "cellular_senescence"
+  ],
+  "endpoint_category": "mechanistic",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "moderate",
+  "statement": "Prf1-deficient mice with impaired cytotoxic immune surveillance accumulated more senescent cells and chronic inflammation, developed multiple age-related phenotypes with lower survival, and showed additional senescent-cell burden and shortened lifespan when crossed with a progeroid LMNA model.",
+  "population_or_model": "Prf1 knockout mice and LMNA+/G609G progeroid mice",
+  "time_horizon": "Aging cohorts through young, adult, and 24-month old mice plus progeroid survival analyses",
+  "quantitative_note": "At 24 months, Prf1-deficient mice had up to 43% SA-beta-gal-positive cells in examined tissues versus around 10% in wild-type controls, with 2- to 4-fold higher burden depending on tissue.",
+  "caveats": [
+    "This is loss-of-function immune biology, not a therapeutic enhancement trial.",
+    "ABT-737 rescue in the source is small-molecule senolysis, not immune clearance.",
+    "Perforin deficiency also affects cancer and infection surveillance, so some aging phenotypes may be indirect."
+  ],
+  "tags": [
+    "animal",
+    "perforin",
+    "immune-surveillance",
+    "senescence-burden",
+    "mechanistic"
+  ]
+}

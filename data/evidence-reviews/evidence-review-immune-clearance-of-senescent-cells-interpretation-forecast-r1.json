@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-immune-clearance-of-senescent-cells-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Immune Clearance Of Senescent Cells bundle",
+  "candidate_bundle_id": "immune-clearance-of-senescent-cells-bootstrap-2026-06-02",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged immune-clearance outlook is calibrated for a low-confidence animal_signal baseline. It uses uPAR CAR T, NKG2D-CAR T, and anti-GD3 mouse or nonhuman-primate evidence as the stage anchor; treats HLA-E/NKG2A and CMV-antigen CD4 T-cell findings as human mechanistic or ex vivo support rather than treated-human efficacy; records accelerating momentum without raising confidence; and keeps the forecast speculative with no LEV-relevant window until human trials demonstrate selective senescent-cell target engagement, durable tissue benefit, and acceptable immune safety.",
+  "reviewed_change_ids": [
+    "create-source-pmid-32555459",
+    "create-source-pmid-38267706",
+    "create-source-pmid-41291258",
+    "create-source-pmid-37585504",
+    "create-source-pmid-30575733",
+    "create-source-pmid-31160572",
+    "create-source-pmid-39730825",
+    "create-source-pmid-37001502",
+    "create-intervention-anti-upar-car-t-cells",
+    "create-intervention-nkg2d-car-t-cells",
+    "create-intervention-anti-gd3-senescence-immunotherapy",
+    "create-intervention-hla-e-nkg2a-senescence-checkpoint-blockade",
+    "create-study-upar-car-t-senescence-pathology-models",
+    "create-study-anti-upar-car-t-aging-metabolic-dysfunction",
+    "create-study-anti-upar-car-t-aged-intestinal-regeneration",
+    "create-study-nkg2d-car-t-aged-mice-nonhuman-primate-study",
+    "create-study-perforin-deficient-aging-immune-surveillance-study",
+    "create-study-hla-e-nkg2a-senescent-cell-evasion-study",
+    "create-study-gd3-senescence-immune-checkpoint-aging",
+    "create-study-cytotoxic-cd4-cmv-senescent-skin-study",
+    "create-finding-upar-car-t-cleared-senescent-cells-in-pathology-models",
+    "create-finding-upar-car-t-improved-aged-mouse-metabolic-fitness",
+    "create-finding-upar-car-t-improved-aged-intestinal-regeneration",
+    "create-finding-nkg2d-car-t-cleared-senescent-cells-aged-mice-primates",
+    "create-finding-perforin-surveillance-loss-accelerated-senescence-aging",
+    "create-finding-hla-e-nkg2a-blockade-boosted-senescent-cell-immune-response",
+    "create-finding-anti-gd3-immunotherapy-attenuated-fibrosis-bone-aging",
+    "create-finding-cd4-ctl-targeted-cmv-antigen-senescent-human-skin-fibroblasts",
+    "create-outlook-track-immune-clearance-of-senescent-cells"
+  ],
+  "findings": [
+    {
+      "finding_id": "immune-clearance-animal-signal-stage-calibrated",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-outlook-track-immune-clearance-of-senescent-cells",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-immune-clearance-of-senescent-cells-outlook"
+      },
+      "claim_or_issue": "The outlook assigns animal_signal from multiple preclinical intervention clusters: anti-uPAR CAR T pathology, metabolic-aging, and intestinal-aging mouse studies; NKG2D-CAR T aged mouse and aged nonhuman-primate senescent-cell clearance; and anti-GD3 mouse fibrosis and bone-remodeling effects.",
+      "why_it_matters": "The staged evidence supports an animal baseline for immune-mediated senescent-cell clearance, but not treated-human biomarker or functional benefit.",
+      "recommended_action": "No revision needed; retain animal_signal and the low-confidence stage boundary.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "immune-clearance-human-mechanism-upgrade-correctly-rejected",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "applies_to_change_id": "create-outlook-track-immune-clearance-of-senescent-cells",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-immune-clearance-of-senescent-cells-outlook"
+      },
+      "claim_or_issue": "The outlook does not upgrade to human_biomarker_signal because the human HLA-E/NKG2A and CMV-antigen CD4 T-cell sources are mechanistic, tissue-observational, or ex vivo, and no treated-human aging study shows target engagement or reduced senescent-cell burden.",
+      "why_it_matters": "A human-stage upgrade would overstate mechanism and tissue association as interventional human evidence.",
+      "recommended_action": "No revision needed; preserve the requirement for treated-human target engagement and acute immune-safety evidence before upgrading.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "immune-clearance-momentum-confidence-balance-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-outlook-track-immune-clearance-of-senescent-cells",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-immune-clearance-of-senescent-cells-outlook"
+      },
+      "claim_or_issue": "The outlook's accelerating momentum is justified by recent uPAR CAR T aging-mouse work, NKG2D-CAR T nonhuman-primate evidence, GD3 checkpoint work, and human mechanistic sources, while confidence stays low because translation remains preclinical.",
+      "why_it_matters": "Momentum can be high without implying near-term clinical readiness or a higher evidence stage.",
+      "recommended_action": "No revision needed; keep accelerating momentum paired with low confidence.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "immune-clearance-target-selectivity-and-safety-caveats-adequate",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-outlook-track-immune-clearance-of-senescent-cells",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-immune-clearance-of-senescent-cells-outlook"
+      },
+      "claim_or_issue": "The outlook names the central safety and translation constraints: target selectivity across uPAR, NKG2D ligands, GD3, HLA-E, and CMV-antigen contexts; CAR T manufacturing, persistence, cytokine, lymphodepletion, and dose-control risks; and possible loss of beneficial senescence functions.",
+      "why_it_matters": "Immune clearance is not just target engagement; preventive or broad aging use requires unusually strong control over off-target injury, immune toxicity, repair, tumor-suppression, infection, and cancer tradeoffs.",
+      "recommended_action": "No revision needed; retain these safety and beneficial-senescence caveats through approval and publication.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "immune-clearance-track-attribution-preserved",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-outlook-track-immune-clearance-of-senescent-cells",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-immune-clearance-of-senescent-cells-outlook"
+      },
+      "claim_or_issue": "The outlook keeps immune-mediated senescent-cell clearance separate from generic oncology CAR T, broad checkpoint blockade, and small-molecule senolysis unless a source specifically tests senescent-cell immune clearance.",
+      "why_it_matters": "Without this boundary, public records could import broader oncology or senolytic evidence into this track without target-specific support.",
+      "recommended_action": "No revision needed; keep trial-watch and evidence attribution tied to senescent-cell immune-clearance mechanisms.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "immune-clearance-forecast-window-conservative",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "create-outlook-track-immune-clearance-of-senescent-cells",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-immune-clearance-of-senescent-cells-outlook"
+      },
+      "claim_or_issue": "The outlook sets scenario_2036_status to speculative and declines to assign an earliest plausible LEV-relevant window before human trials show selective senescent-cell clearance, durable tissue benefit, and aging-appropriate safety.",
+      "why_it_matters": "Current evidence establishes a fast-moving preclinical baseline, not timing claims for LEV-relevant impact.",
+      "recommended_action": "No revision needed; preserve the conservative forecast and rating-change criteria.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-02T18:45:12.021Z",
+  "updated_at": "2026-06-02T18:45:12.021Z"
+}

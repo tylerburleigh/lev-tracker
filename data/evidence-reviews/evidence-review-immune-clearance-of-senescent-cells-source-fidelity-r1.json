@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-immune-clearance-of-senescent-cells-source-fidelity-r1",
+  "name": "Source Fidelity review for Immune Clearance Of Senescent Cells bundle",
+  "candidate_bundle_id": "immune-clearance-of-senescent-cells-bootstrap-2026-06-02",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, finding, intervention, and outlook records stay within the cited PubMed and PMC source boundaries. The bundle correctly treats uPAR CAR T, NKG2D-CAR T, and anti-GD3 immunotherapy as preclinical animal or nonhuman-primate signals; uses perforin-deficient mice as immune-surveillance rationale rather than therapeutic immune enhancement; keeps HLA-E/NKG2A and CMV-antigen CD4 T-cell data as human mechanistic, tissue, or ex vivo evidence; and does not create treated-human aging efficacy claims.",
+  "reviewed_change_ids": [
+    "create-source-pmid-32555459",
+    "create-source-pmid-38267706",
+    "create-source-pmid-41291258",
+    "create-source-pmid-37585504",
+    "create-source-pmid-30575733",
+    "create-source-pmid-31160572",
+    "create-source-pmid-39730825",
+    "create-source-pmid-37001502",
+    "create-intervention-anti-upar-car-t-cells",
+    "create-intervention-nkg2d-car-t-cells",
+    "create-intervention-anti-gd3-senescence-immunotherapy",
+    "create-intervention-hla-e-nkg2a-senescence-checkpoint-blockade",
+    "create-study-upar-car-t-senescence-pathology-models",
+    "create-study-anti-upar-car-t-aging-metabolic-dysfunction",
+    "create-study-anti-upar-car-t-aged-intestinal-regeneration",
+    "create-study-nkg2d-car-t-aged-mice-nonhuman-primate-study",
+    "create-study-perforin-deficient-aging-immune-surveillance-study",
+    "create-study-hla-e-nkg2a-senescent-cell-evasion-study",
+    "create-study-gd3-senescence-immune-checkpoint-aging",
+    "create-study-cytotoxic-cd4-cmv-senescent-skin-study",
+    "create-finding-upar-car-t-cleared-senescent-cells-in-pathology-models",
+    "create-finding-upar-car-t-improved-aged-mouse-metabolic-fitness",
+    "create-finding-upar-car-t-improved-aged-intestinal-regeneration",
+    "create-finding-nkg2d-car-t-cleared-senescent-cells-aged-mice-primates",
+    "create-finding-perforin-surveillance-loss-accelerated-senescence-aging",
+    "create-finding-hla-e-nkg2a-blockade-boosted-senescent-cell-immune-response",
+    "create-finding-anti-gd3-immunotherapy-attenuated-fibrosis-bone-aging",
+    "create-finding-cd4-ctl-targeted-cmv-antigen-senescent-human-skin-fibroblasts",
+    "create-outlook-track-immune-clearance-of-senescent-cells"
+  ],
+  "findings": [
+    {
+      "finding_id": "immune-clearance-upar-pathology-source-boundary-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-upar-car-t-cleared-senescent-cells-in-pathology-models",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "upar-car-t-cleared-senescent-cells-in-pathology-models"
+      },
+      "claim_or_issue": "PMID 32555459 supports the staged foundational uPAR CAR T claim: uPAR was identified as a senescence-associated surface target, uPAR-specific CAR T cells ablated senescent cells in vitro and in vivo, and mouse lung adenocarcinoma and liver fibrosis models showed pathology-model benefit.",
+      "why_it_matters": "This source can anchor engineered immune senolysis, but only as preclinical disease-model evidence rather than treated-human aging efficacy.",
+      "recommended_action": "No revision needed; keep the pathology-model, animal, and no-human-aging-efficacy boundaries.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "immune-clearance-upar-aging-mouse-sources-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-upar-car-t-improved-aged-mouse-metabolic-fitness",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "upar-car-t-improved-aged-mouse-metabolic-fitness"
+      },
+      "claim_or_issue": "PMIDs 38267706 and 41291258 support the staged anti-uPAR CAR T aging-mouse claims: the 2024 study reports exercise-capacity and metabolic effects in physiological aging and high-fat-diet mouse models, and the 2026 study reports intestinal barrier, regeneration, inflammation, mucosal immune, microbiome, and fitness-related effects in aged mice.",
+      "why_it_matters": "These sources strengthen the animal_signal baseline, but they do not establish human target engagement, treated-human biomarkers, or functional benefit.",
+      "recommended_action": "No revision needed; retain the mouse-only and cell-therapy translation limitations.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "immune-clearance-nkg2d-primate-bridge-preserved",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-finding-nkg2d-car-t-cleared-senescent-cells-aged-mice-primates",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "nkg2d-car-t-cleared-senescent-cells-aged-mice-primates"
+      },
+      "claim_or_issue": "PMID 37585504 supports the staged NKG2D-CAR T bridge: NKG2D ligands were upregulated on senescent cells, NKG2D-CAR T cells improved aging-associated pathology and physical performance in mouse models, and autologous human NKG2D-CAR T cells deleted naturally occurring senescent cells in aged nonhuman primates without observed adverse effects in the report.",
+      "why_it_matters": "The nonhuman-primate signal is translationally important, but it remains preclinical and should not be presented as treated-human efficacy.",
+      "recommended_action": "No revision needed; preserve the aged-mouse, nonhuman-primate, and no-human-aging-trial caveats.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "immune-clearance-surveillance-and-hlae-boundaries-preserved",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-finding-perforin-surveillance-loss-accelerated-senescence-aging",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "perforin-surveillance-loss-accelerated-senescence-aging"
+      },
+      "claim_or_issue": "PMID 30575733 supports the premise that perforin-deficient mice accumulate more senescent cells and show accelerated aging phenotypes, while PMID 31160572 supports HLA-E/NKG2A immune-evasion biology and in-vitro blockade of senescent-cell immune inhibition in human skin and cell systems.",
+      "why_it_matters": "These sources support immune-surveillance rationale and human-mechanistic checkpoint biology, but perforin deficiency is not a therapeutic intervention and HLA-E/NKG2A blockade is not yet in-vivo human aging efficacy.",
+      "recommended_action": "No revision needed; keep the loss-of-function, senolytic-rescue, in-vitro, and human-mechanistic boundaries.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "immune-clearance-gd3-checkpoint-source-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-anti-gd3-immunotherapy-attenuated-fibrosis-bone-aging",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "anti-gd3-immunotherapy-attenuated-fibrosis-bone-aging"
+      },
+      "claim_or_issue": "PMID 39730825 supports the staged GD3 claim: senescent cells upregulated GD3 to suppress NK-cell immunosurveillance, and anti-GD3 immunotherapy attenuated experimentally induced or age-related mouse lung and liver fibrosis plus age-related bone remodeling.",
+      "why_it_matters": "GD3 is a credible senescence immune-checkpoint target in the staged source, but the intervention evidence remains preclinical and mouse-centered.",
+      "recommended_action": "No revision needed; retain the mouse-intervention and target-selectivity caveats.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "immune-clearance-cd4-cmv-human-ex-vivo-boundary-preserved",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "create-finding-cd4-ctl-targeted-cmv-antigen-senescent-human-skin-fibroblasts",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "cd4-ctl-targeted-cmv-antigen-senescent-human-skin-fibroblasts"
+      },
+      "claim_or_issue": "PMID 37001502 supports the staged human skin and ex vivo claim: senescent fibroblasts expressed HLA-II and HCMV-gB, cytotoxic CD4 T-cell recruitment was associated with lower senescent fibroblast burden in old skin, and skin-resident CD4 CTLs eliminated HCMV-gB-positive senescent fibroblasts in an HLA-II-dependent manner.",
+      "why_it_matters": "This is human-relevant immune-clearance mechanism evidence, but not an interventional treated-human trial or a stage-upgrading efficacy result.",
+      "recommended_action": "No revision needed; preserve the observational, ex vivo, CMV-history, and no-treated-human-efficacy limitations.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-02T18:44:09.910Z",
+  "updated_at": "2026-06-02T18:44:09.910Z"
+}

@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-mitochondrial-biogenesis-and-dynamics-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Mitochondrial Biogenesis And Dynamics bundle",
+  "candidate_bundle_id": "mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged mitochondrial biogenesis and dynamics outlook is calibrated for a low-confidence human_functional_benefit baseline anchored to structured exercise, not to a validated druglike mitochondrial therapy. The interpretation preserves the small, supervised, skeletal-muscle-centered human exercise boundaries; treats metformin, mavodelpar, berberine, and elamipretide as limiting or activity-only signals; keeps cross-track attribution bounded across AMPK, NAD/redox, mitophagy, and exercise physiology; and avoids a LEV-relevant forecast window until durable functional or clinical-outcome evidence links mitochondrial biogenesis or dynamics interventions to aging-relevant trajectories.",
+  "reviewed_change_ids": [
+    "create-source-pmid-28273480",
+    "create-source-pmid-23873965",
+    "create-source-pmid-17520024",
+    "create-source-nct-04535609",
+    "create-source-nct-07275424",
+    "create-intervention-structured-exercise-training",
+    "update-intervention-metformin",
+    "update-intervention-berberine",
+    "create-study-exercise-training-modes-young-old-humans",
+    "create-study-aerobic-exercise-training-older-men-mitochondrial-biogenesis-dynamics",
+    "create-study-resistance-exercise-aging-human-skeletal-muscle",
+    "create-study-mavodelpar-stride-primary-mitochondrial-myopathy",
+    "create-study-elamipretide-shape-healthy-aging",
+    "update-study-metformin-aerobic-exercise-older-adults",
+    "update-study-berberine-aged-rat-ampk-muscle-cognition",
+    "create-finding-hiit-improved-older-adult-mitochondrial-respiration-proteome",
+    "create-finding-aerobic-training-increased-biogenesis-dynamics-older-men",
+    "create-finding-resistance-training-reversed-muscle-mitochondrial-aging-signature",
+    "create-finding-mavodelpar-stride-no-12mwt-advantage",
+    "update-finding-metformin-blunted-exercise-mitochondrial-adaptations-older-adults",
+    "update-finding-berberine-improved-aged-rat-cognition-muscle-ampk-signaling",
+    "create-activity-elamipretide-shape-healthy-aging-recruiting",
+    "create-track-mitochondrial-biogenesis-and-dynamics-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "mitochondrial-biogenesis-human-function-stage-calibrated",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-track-mitochondrial-biogenesis-and-dynamics-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-mitochondrial-biogenesis-and-dynamics-outlook"
+      },
+      "claim_or_issue": "The outlook assigns human_functional_benefit from structured exercise findings that combine older-adult functional gains with mitochondrial respiration, protein-synthesis, biogenesis, and fusion/fission marker movement, while keeping confidence low.",
+      "why_it_matters": "The staged evidence can support a conservative human functional baseline for supervised exercise, but it would overstate the field if generalized to durable clinical outcomes or pharmacologic mitochondrial-biogenesis interventions.",
+      "recommended_action": "No revision needed; keep the exercise-specific, supervised, small-study, and skeletal-muscle limitations attached to the stage assignment.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "mitochondrial-biogenesis-druglike-upgrade-correctly-rejected",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "applies_to_change_id": "create-track-mitochondrial-biogenesis-and-dynamics-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-mitochondrial-biogenesis-and-dynamics-outlook"
+      },
+      "claim_or_issue": "The outlook does not treat mavodelpar, metformin, berberine, or elamipretide as evidence for druglike human functional benefit: STRIDE did not show a posted 12-minute-walk advantage, metformin blunted some exercise adaptations, berberine remains animal-only, and SHAPE has no posted efficacy results.",
+      "why_it_matters": "A druglike upgrade would collapse boundary, animal, and activity signals into therapeutic efficacy that the staged sources do not establish.",
+      "recommended_action": "No revision needed; retain the requirement for controlled human functional benefit with target engagement in aging-relevant populations before strengthening druglike claims.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "mitochondrial-biogenesis-cross-track-attribution-preserved",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-track-mitochondrial-biogenesis-and-dynamics-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-mitochondrial-biogenesis-and-dynamics-outlook"
+      },
+      "claim_or_issue": "The outlook explicitly bounds attribution where evidence overlaps NAD/redox restoration, mitophagy enhancement, AMPK modulation, cardiolipin biology, nutrient sensing, and general exercise physiology.",
+      "why_it_matters": "Without this boundary, public records could imply that broad exercise, metformin, berberine, or mitochondrial-function evidence specifically validates mitochondrial biogenesis and dynamics as an isolated aging intervention track.",
+      "recommended_action": "No revision needed; keep the cross-track attribution caveats through approval and publication.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "mitochondrial-biogenesis-forecast-window-conservative",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "create-track-mitochondrial-biogenesis-and-dynamics-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-mitochondrial-biogenesis-and-dynamics-outlook"
+      },
+      "claim_or_issue": "The outlook sets scenario_2036_status to speculative and declines to assign an earliest plausible LEV-relevant window before durable functional or clinical-outcome evidence connects mitochondrial biogenesis or dynamics interventions to aging-relevant trajectories.",
+      "why_it_matters": "Current staged evidence establishes a first public baseline, not timing claims for LEV-relevant impact.",
+      "recommended_action": "No revision needed; preserve the conservative forecast and rating-change criteria.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "mitochondrial-biogenesis-confidence-caveats-adequate",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-track-mitochondrial-biogenesis-and-dynamics-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-mitochondrial-biogenesis-and-dynamics-outlook"
+      },
+      "claim_or_issue": "The outlook's low-confidence language and main blockers preserve the central limitations: small and short human studies, supervised exercise context, skeletal-muscle concentration, pleiotropic target biology, and no staged disease, disability, multimorbidity, mortality, or LEV-relevant outcome evidence.",
+      "why_it_matters": "These caveats prevent a legitimate exercise-linked mitochondrial adaptation signal from being read as broad gerotherapeutic efficacy.",
+      "recommended_action": "No revision needed; retain the low-confidence status and the stated requirements for larger older-adult trials with durable function or clinical outcomes.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-02T18:40:17.527Z",
+  "updated_at": "2026-06-02T18:40:17.527Z"
+}

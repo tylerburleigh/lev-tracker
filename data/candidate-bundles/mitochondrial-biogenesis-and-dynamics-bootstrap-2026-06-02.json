@@ -1,0 +1,363 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02",
+  "name": "Mitochondrial biogenesis and dynamics bootstrap for June 2, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline candidate for the mitochondrial biogenesis and dynamics track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-02T17:45:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Mitochondrial Biogenesis and Dynamics, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "mitochondrial_dysfunction"
+    ],
+    "track_ids": [
+      "mitochondrial-biogenesis-and-dynamics"
+    ],
+    "intervention_ids": [
+      "structured-exercise-training",
+      "metformin",
+      "berberine",
+      "mavodelpar",
+      "elamipretide"
+    ]
+  },
+  "source_ids": [
+    "pmid-28273480",
+    "pmid-23873965",
+    "pmid-17520024",
+    "pmid-30548390",
+    "pmid-29806860",
+    "nct-04535609",
+    "nct-07275424"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/28273480/",
+    "https://pubmed.ncbi.nlm.nih.gov/23873965/",
+    "https://pubmed.ncbi.nlm.nih.gov/17520024/",
+    "https://pubmed.ncbi.nlm.nih.gov/30548390/",
+    "https://pubmed.ncbi.nlm.nih.gov/29806860/",
+    "https://clinicaltrials.gov/study/NCT04535609",
+    "https://clinicaltrials.gov/study/NCT07275424"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-mitochondrial-biogenesis-and-dynamics-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-mitochondrial-dysfunction-outlook"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "structured-exercise-training"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "metformin"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "berberine"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "hiit-improved-older-adult-mitochondrial-respiration-proteome"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "aerobic-training-increased-biogenesis-dynamics-older-men"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "resistance-training-reversed-muscle-mitochondrial-aging-signature"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "mavodelpar-stride-no-12mwt-advantage"
+    },
+    {
+      "record_type": "activity_item",
+      "record_id": "elamipretide-shape-healthy-aging-recruiting"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-28273480",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-28273480",
+      "file_path": "data/sources/pmid-28273480.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/pmid-28273480.json",
+      "summary": "Add HIIT and resistance exercise training source.",
+      "rationale": "This source anchors the strongest human functional and mitochondrial adaptation signal for the track."
+    },
+    {
+      "change_id": "create-source-pmid-23873965",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-23873965",
+      "file_path": "data/sources/pmid-23873965.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/pmid-23873965.json",
+      "summary": "Add aerobic training mitochondrial biogenesis and dynamics marker source.",
+      "rationale": "This source directly measures PGC-1alpha, oxidative enzymes, and fusion/fission proteins in older human skeletal muscle."
+    },
+    {
+      "change_id": "create-source-pmid-17520024",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-17520024",
+      "file_path": "data/sources/pmid-17520024.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/pmid-17520024.json",
+      "summary": "Add resistance exercise skeletal-muscle aging transcriptome source.",
+      "rationale": "This source supplies a human resistance-training functional signal with mitochondrial-enriched transcriptome reversal."
+    },
+    {
+      "change_id": "create-source-nct-04535609",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-04535609",
+      "file_path": "data/sources/nct-04535609.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/nct-04535609.json",
+      "summary": "Add STRIDE mavodelpar registry source.",
+      "rationale": "This posted-results registry record constrains PPAR-delta druglike translation claims."
+    },
+    {
+      "change_id": "create-source-nct-07275424",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-07275424",
+      "file_path": "data/sources/nct-07275424.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/nct-07275424.json",
+      "summary": "Add SHAPE elamipretide healthy-aging registry source.",
+      "rationale": "This registry supplies activity context for a direct older-adult mitochondrial trial without treating it as efficacy evidence."
+    },
+    {
+      "change_id": "create-intervention-structured-exercise-training",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "structured-exercise-training",
+      "file_path": "data/interventions/structured-exercise-training.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/structured-exercise-training.json",
+      "summary": "Normalize structured exercise as the main human intervention class for the track.",
+      "rationale": "The intervention record makes the exercise anchor inspectable while preserving modality, adherence, and attribution boundaries."
+    },
+    {
+      "change_id": "update-intervention-metformin",
+      "change_type": "update_record",
+      "target_record_type": "intervention",
+      "target_record_id": "metformin",
+      "file_path": "data/interventions/metformin.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/metformin.json",
+      "summary": "Add mitochondrial biogenesis and dynamics boundary links to metformin.",
+      "rationale": "Metformin's older-adult exercise interaction constrains mitochondrial adaptation claims for this track."
+    },
+    {
+      "change_id": "update-intervention-berberine",
+      "change_type": "update_record",
+      "target_record_type": "intervention",
+      "target_record_id": "berberine",
+      "file_path": "data/interventions/berberine.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/berberine.json",
+      "summary": "Add mitochondrial biogenesis and dynamics links to berberine.",
+      "rationale": "The existing aged-rat AMPK/SIRT1/PGC-1alpha signal is relevant as animal-only boundary support for this track."
+    },
+    {
+      "change_id": "create-study-exercise-training-modes-young-old-humans",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "exercise-training-modes-young-old-humans",
+      "file_path": "data/studies/exercise-training-modes-young-old-humans.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/exercise-training-modes-young-old-humans.json",
+      "summary": "Add exercise training modes human study record.",
+      "rationale": "This study links structured exercise to older-adult functional and mitochondrial adaptation endpoints."
+    },
+    {
+      "change_id": "create-study-aerobic-exercise-training-older-men-mitochondrial-biogenesis-dynamics",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "aerobic-exercise-training-older-men-mitochondrial-biogenesis-dynamics",
+      "file_path": "data/studies/aerobic-exercise-training-older-men-mitochondrial-biogenesis-dynamics.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/aerobic-exercise-training-older-men-mitochondrial-biogenesis-dynamics.json",
+      "summary": "Add aerobic training biogenesis/dynamics marker study record.",
+      "rationale": "This study directly maps the track's biogenesis and dynamics marker claims."
+    },
+    {
+      "change_id": "create-study-resistance-exercise-aging-human-skeletal-muscle",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "resistance-exercise-aging-human-skeletal-muscle",
+      "file_path": "data/studies/resistance-exercise-aging-human-skeletal-muscle.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/resistance-exercise-aging-human-skeletal-muscle.json",
+      "summary": "Add resistance exercise skeletal-muscle aging study record.",
+      "rationale": "This study adds a human strength and mitochondrial-enriched transcriptome signal."
+    },
+    {
+      "change_id": "create-study-mavodelpar-stride-primary-mitochondrial-myopathy",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "mavodelpar-stride-primary-mitochondrial-myopathy",
+      "file_path": "data/studies/mavodelpar-stride-primary-mitochondrial-myopathy.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/mavodelpar-stride-primary-mitochondrial-myopathy.json",
+      "summary": "Add STRIDE mavodelpar PMM trial record.",
+      "rationale": "This study record captures the main posted PPAR-delta disease-trial boundary."
+    },
+    {
+      "change_id": "create-study-elamipretide-shape-healthy-aging",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "elamipretide-shape-healthy-aging",
+      "file_path": "data/studies/elamipretide-shape-healthy-aging.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/elamipretide-shape-healthy-aging.json",
+      "summary": "Add SHAPE elamipretide healthy-aging trial record.",
+      "rationale": "This study record tracks a recruiting older-adult mitochondrial trial without creating an efficacy finding."
+    },
+    {
+      "change_id": "update-study-metformin-aerobic-exercise-older-adults",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "metformin-aerobic-exercise-older-adults",
+      "file_path": "data/studies/metformin-aerobic-exercise-older-adults.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/metformin-aerobic-exercise-older-adults.json",
+      "summary": "Add mitochondrial biogenesis and dynamics links to the metformin exercise study.",
+      "rationale": "This older-adult exercise interaction study should appear as a boundary record for the track."
+    },
+    {
+      "change_id": "update-study-berberine-aged-rat-ampk-muscle-cognition",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "berberine-aged-rat-ampk-muscle-cognition",
+      "file_path": "data/studies/berberine-aged-rat-ampk-muscle-cognition.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/berberine-aged-rat-ampk-muscle-cognition.json",
+      "summary": "Add mitochondrial biogenesis and dynamics links to the berberine aged-rat study.",
+      "rationale": "This animal study includes PGC-1alpha-linked mitochondrial biology relevant to the track."
+    },
+    {
+      "change_id": "create-finding-hiit-improved-older-adult-mitochondrial-respiration-proteome",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "hiit-improved-older-adult-mitochondrial-respiration-proteome",
+      "file_path": "data/findings/hiit-improved-older-adult-mitochondrial-respiration-proteome.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/hiit-improved-older-adult-mitochondrial-respiration-proteome.json",
+      "summary": "Add HIIT older-adult mitochondrial respiration and proteome finding.",
+      "rationale": "This finding supports the human_functional_benefit stage assignment."
+    },
+    {
+      "change_id": "create-finding-aerobic-training-increased-biogenesis-dynamics-older-men",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "aerobic-training-increased-biogenesis-dynamics-older-men",
+      "file_path": "data/findings/aerobic-training-increased-biogenesis-dynamics-older-men.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/aerobic-training-increased-biogenesis-dynamics-older-men.json",
+      "summary": "Add aerobic training biogenesis and dynamics marker finding.",
+      "rationale": "This finding directly supports the track's mitochondrial biogenesis and dynamics marker claims."
+    },
+    {
+      "change_id": "create-finding-resistance-training-reversed-muscle-mitochondrial-aging-signature",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "resistance-training-reversed-muscle-mitochondrial-aging-signature",
+      "file_path": "data/findings/resistance-training-reversed-muscle-mitochondrial-aging-signature.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/resistance-training-reversed-muscle-mitochondrial-aging-signature.json",
+      "summary": "Add resistance training mitochondrial aging-signature finding.",
+      "rationale": "This finding broadens exercise support beyond aerobic and HIIT modalities."
+    },
+    {
+      "change_id": "create-finding-mavodelpar-stride-no-12mwt-advantage",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "mavodelpar-stride-no-12mwt-advantage",
+      "file_path": "data/findings/mavodelpar-stride-no-12mwt-advantage.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/mavodelpar-stride-no-12mwt-advantage.json",
+      "summary": "Add mavodelpar STRIDE null functional finding.",
+      "rationale": "This finding constrains druglike PPAR-delta mitochondrial biogenesis translation claims."
+    },
+    {
+      "change_id": "update-finding-metformin-blunted-exercise-mitochondrial-adaptations-older-adults",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "metformin-blunted-exercise-mitochondrial-adaptations-older-adults",
+      "file_path": "data/findings/metformin-blunted-exercise-mitochondrial-adaptations-older-adults.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/metformin-blunted-exercise-mitochondrial-adaptations-older-adults.json",
+      "summary": "Add mitochondrial biogenesis and dynamics links to the metformin exercise boundary finding.",
+      "rationale": "This finding limits broad claims that pharmacologic metabolic modulation improves exercise-linked mitochondrial adaptation."
+    },
+    {
+      "change_id": "update-finding-berberine-improved-aged-rat-cognition-muscle-ampk-signaling",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "berberine-improved-aged-rat-cognition-muscle-ampk-signaling",
+      "file_path": "data/findings/berberine-improved-aged-rat-cognition-muscle-ampk-signaling.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/berberine-improved-aged-rat-cognition-muscle-ampk-signaling.json",
+      "summary": "Add mitochondrial biogenesis and dynamics links to the berberine animal finding.",
+      "rationale": "This finding supplies animal-only PGC-1alpha-linked support while preserving human translation limits."
+    },
+    {
+      "change_id": "create-activity-elamipretide-shape-healthy-aging-recruiting",
+      "change_type": "create_record",
+      "target_record_type": "activity_item",
+      "target_record_id": "elamipretide-shape-healthy-aging-recruiting",
+      "file_path": "data/activity-items/elamipretide-shape-healthy-aging-recruiting.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/elamipretide-shape-healthy-aging-recruiting.json",
+      "summary": "Add SHAPE elamipretide trial-watch activity item.",
+      "rationale": "The trial is relevant surveillance context but should not affect the evidence stage before results are posted."
+    },
+    {
+      "change_id": "create-track-mitochondrial-biogenesis-and-dynamics-outlook",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-mitochondrial-biogenesis-and-dynamics-outlook",
+      "file_path": "data/outlooks/track-mitochondrial-biogenesis-and-dynamics-outlook.json",
+      "staged_file_path": "data/staged-records/mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02/track-mitochondrial-biogenesis-and-dynamics-outlook.json",
+      "summary": "Create the first public outlook for the Mitochondrial Biogenesis and Dynamics track.",
+      "rationale": "A low-confidence human_functional_benefit baseline is justified by structured-exercise human functional and mitochondrial evidence while druglike translation remains bounded.",
+      "uncertainty_flags": [
+        "The highest stage is anchored to exercise, not a druglike intervention.",
+        "Exercise-driven mitochondrial adaptation is not exclusively attributable to biogenesis or fusion/fission pathways.",
+        "Druglike programs remain disease-specific, null, animal-only, or activity-only.",
+        "Overlap with NAD/redox, mitophagy, AMPK, and general exercise physiology requires review."
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "mitochondrial-biogenesis-and-dynamics",
+      "note": "A first public baseline is justified at low-confidence human_functional_benefit because structured exercise improves older-adult function while moving mitochondrial respiration, protein synthesis, biogenesis, and dynamics markers.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "mitochondrial_dysfunction",
+      "note": "Publishing this bundle would broaden mitochondrial dysfunction coverage beyond NAD/redox restoration and mitophagy enhancers with an exercise-anchored biogenesis/dynamics baseline.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-02-mitochondrial-biogenesis-and-dynamics-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-mitochondrial-biogenesis-and-dynamics-source-fidelity-r1",
+    "evidence-review-mitochondrial-biogenesis-and-dynamics-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02-2026-06-02t19-00-55-783z"
+  ]
+}

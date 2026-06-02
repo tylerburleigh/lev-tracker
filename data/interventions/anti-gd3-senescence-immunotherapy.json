@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "anti-gd3-senescence-immunotherapy",
+  "name": "Anti-GD3 Senescence Immunotherapy",
+  "summary": "Preclinical immune-checkpoint strategy targeting GD3-positive senescent cells that evade NK-cell immunosurveillance.",
+  "aliases": [
+    "anti-GD3 immunotherapy",
+    "GD3 senescence immune checkpoint blockade",
+    "GD3-targeted senolytic immunotherapy"
+  ],
+  "modalities": [
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "cellular_senescence"
+  ],
+  "secondary_hallmark_ids": [
+    "chronic_inflammation",
+    "altered_intercellular_communication"
+  ],
+  "track_ids": [
+    "immune-clearance-of-senescent-cells"
+  ],
+  "mechanism_summary": "Targets a ganglioside immune-evasion feature of senescent cells, aiming to restore NK-cell-mediated immunosurveillance or directly remove GD3-positive senescent cells.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "gd3-senescence-immune-checkpoint-aging"
+  ],
+  "linked_finding_ids": [
+    "anti-gd3-immunotherapy-attenuated-fibrosis-bone-aging"
+  ],
+  "risk_flags": [
+    "no-human-aging-trial",
+    "ganglioside-off-target-risk",
+    "nk-cell-context-specificity",
+    "fibrosis-and-bone-model-boundary"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether GD3 is selective enough across human senescent-cell states and tissues",
+      "Whether anti-GD3 targeting safely restores clearance rather than disrupting normal ganglioside biology",
+      "Which age-related indications are most appropriate for translation"
+    ]
+  },
+  "tags": [
+    "immune-clearance-of-senescent-cells",
+    "gd3",
+    "nk-cells",
+    "immune-checkpoint",
+    "preclinical"
+  ]
+}

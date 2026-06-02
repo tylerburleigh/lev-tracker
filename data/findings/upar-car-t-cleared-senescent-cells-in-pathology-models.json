@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "upar-car-t-cleared-senescent-cells-in-pathology-models",
+  "name": "uPAR CAR T cells cleared senescent cells in pathology models",
+  "summary": "The foundational uPAR CAR T study supports immune-engineered senolysis in vivo, but only in preclinical pathology models.",
+  "source_id": "pmid-32555459",
+  "study_id": "upar-car-t-senescence-pathology-models",
+  "intervention_ids": [
+    "anti-upar-car-t-cells"
+  ],
+  "track_ids": [
+    "immune-clearance-of-senescent-cells"
+  ],
+  "hallmark_ids": [
+    "cellular_senescence"
+  ],
+  "endpoint_category": "functional",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "moderate",
+  "statement": "uPAR-specific CAR T cells eliminated senescent cells in vitro and in vivo, extended survival in a mouse lung adenocarcinoma model treated with senescence-inducing therapy, and restored tissue homeostasis in mouse liver fibrosis models.",
+  "population_or_model": "Senescent cell systems plus mouse lung cancer and liver fibrosis models",
+  "time_horizon": "Preclinical disease-model treatment windows",
+  "quantitative_note": "The source reports in vivo senescent-cell ablation, extended survival in treated lung adenocarcinoma-bearing mice, and liver tissue-homeostasis restoration after uPAR CAR T treatment.",
+  "caveats": [
+    "The strongest in vivo results are disease and injury models, not natural human aging.",
+    "uPAR is not exclusive to senescent cells, so target-specificity and tissue-context safety remain central.",
+    "The source discloses patent interests related to the CAR T approach."
+  ],
+  "tags": [
+    "animal",
+    "car-t",
+    "upar",
+    "senolytic",
+    "fibrosis"
+  ]
+}

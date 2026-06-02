@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-02-immune-clearance-of-senescent-cells-bootstrap",
+  "name": "Immune clearance of senescent cells bootstrap pass for June 2, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-06-02T18:15:00Z",
+  "completed_at": "2026-06-02T19:05:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Immune Clearance of Senescent Cells, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "cellular_senescence"
+    ],
+    "track_ids": [
+      "immune-clearance-of-senescent-cells"
+    ],
+    "intervention_ids": [
+      "anti-upar-car-t-cells",
+      "nkg2d-car-t-cells",
+      "anti-gd3-senescence-immunotherapy",
+      "hla-e-nkg2a-senescence-checkpoint-blockade"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "immune-clearance-of-senescent-cells-bootstrap-2026-06-02",
+  "summary": "Prepared a first public baseline for immune clearance of senescent cells at low-confidence animal_signal. The strongest intervention evidence is engineered or checkpoint-based immune clearance in mice, with NKG2D-CAR T target engagement in aged nonhuman primates and a 2026 anti-uPAR CAR T intestinal-aging mouse extension. Human evidence supports recognition and evasion mechanisms through HLA-E/NKG2A and CMV-antigen-directed CD4 cytotoxic T cells, but no treated-human aging trial was identified.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-32555459",
+    "pmid-38267706",
+    "pmid-41291258",
+    "pmid-37585504",
+    "pmid-30575733",
+    "pmid-31160572",
+    "pmid-39730825",
+    "pmid-37001502"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/32555459/",
+    "https://pubmed.ncbi.nlm.nih.gov/38267706/",
+    "https://pubmed.ncbi.nlm.nih.gov/41291258/",
+    "https://pubmed.ncbi.nlm.nih.gov/37585504/",
+    "https://pubmed.ncbi.nlm.nih.gov/30575733/",
+    "https://pubmed.ncbi.nlm.nih.gov/31160572/",
+    "https://pubmed.ncbi.nlm.nih.gov/39730825/",
+    "https://pubmed.ncbi.nlm.nih.gov/37001502/"
+  ],
+  "notes": [
+    "ClinicalTrials.gov searches for senolytic CAR T, uPAR CAR T, and senescent-cell CAR T did not identify a direct treated-human aging trial for this track.",
+    "Kept small-molecule senolytics out of scope except where they clarify immune-surveillance biology, because this track is immune-mediated clearance rather than generic senolytic killing.",
+    "Assigned animal_signal despite human mechanistic evidence because human HLA-E/NKG2A and CMV-CD4 sources do not test an intervention in treated humans.",
+    "Classified momentum as accelerating because direct CAR T aging evidence expanded in 2024 and 2026 and NKG2D-CAR T includes aged nonhuman-primate target engagement."
+  ],
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast evidence reviews before approval.",
+    "Confirm during review that the staged animal_signal rating does not overread human tissue or ex vivo mechanism as treated-human efficacy.",
+    "Keep CAR T safety, target-selectivity, persistence, manufacturing, beneficial-senescence, and checkpoint-activation caveats visible in any publication.",
+    "Continue surveillance for a registered human trial or posted result specifically testing immune-mediated senescent-cell clearance."
+  ]
+}

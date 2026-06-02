@@ -1,0 +1,427 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "immune-clearance-of-senescent-cells-bootstrap-2026-06-02",
+  "name": "Immune clearance of senescent cells bootstrap for June 2, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline candidate for the immune clearance of senescent cells track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-02T19:05:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Immune Clearance of Senescent Cells, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "cellular_senescence"
+    ],
+    "track_ids": [
+      "immune-clearance-of-senescent-cells"
+    ],
+    "intervention_ids": [
+      "anti-upar-car-t-cells",
+      "nkg2d-car-t-cells",
+      "anti-gd3-senescence-immunotherapy",
+      "hla-e-nkg2a-senescence-checkpoint-blockade"
+    ]
+  },
+  "source_ids": [
+    "pmid-32555459",
+    "pmid-38267706",
+    "pmid-41291258",
+    "pmid-37585504",
+    "pmid-30575733",
+    "pmid-31160572",
+    "pmid-39730825",
+    "pmid-37001502"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/32555459/",
+    "https://pubmed.ncbi.nlm.nih.gov/38267706/",
+    "https://pubmed.ncbi.nlm.nih.gov/41291258/",
+    "https://pubmed.ncbi.nlm.nih.gov/37585504/",
+    "https://pubmed.ncbi.nlm.nih.gov/30575733/",
+    "https://pubmed.ncbi.nlm.nih.gov/31160572/",
+    "https://pubmed.ncbi.nlm.nih.gov/39730825/",
+    "https://pubmed.ncbi.nlm.nih.gov/37001502/"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-immune-clearance-of-senescent-cells-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-cellular-senescence-outlook"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "anti-upar-car-t-cells"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "nkg2d-car-t-cells"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "anti-gd3-senescence-immunotherapy"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "hla-e-nkg2a-senescence-checkpoint-blockade"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "upar-car-t-improved-aged-mouse-metabolic-fitness"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "upar-car-t-improved-aged-intestinal-regeneration"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "nkg2d-car-t-cleared-senescent-cells-aged-mice-primates"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "anti-gd3-immunotherapy-attenuated-fibrosis-bone-aging"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-32555459",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-32555459",
+      "file_path": "data/sources/pmid-32555459.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/pmid-32555459.json",
+      "summary": "Add foundational uPAR CAR T senolytic source.",
+      "rationale": "This source anchors the first engineered immune-clearance proof of concept for senescent cells in vivo."
+    },
+    {
+      "change_id": "create-source-pmid-38267706",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-38267706",
+      "file_path": "data/sources/pmid-38267706.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/pmid-38267706.json",
+      "summary": "Add uPAR CAR T metabolic aging mouse source.",
+      "rationale": "This source supplies direct physiological-aging mouse evidence for uPAR CAR T effects on fitness and metabolic endpoints."
+    },
+    {
+      "change_id": "create-source-pmid-41291258",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-41291258",
+      "file_path": "data/sources/pmid-41291258.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/pmid-41291258.json",
+      "summary": "Add 2026 uPAR CAR T intestinal aging source.",
+      "rationale": "This source is the newest direct anti-uPAR CAR T aging-relevant animal signal and expands the evidence into tissue regeneration."
+    },
+    {
+      "change_id": "create-source-pmid-37585504",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-37585504",
+      "file_path": "data/sources/pmid-37585504.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/pmid-37585504.json",
+      "summary": "Add NKG2D-CAR T aged mouse and nonhuman-primate source.",
+      "rationale": "This source adds an independent CAR T target and the strongest nonhuman-primate bridge in the bundle."
+    },
+    {
+      "change_id": "create-source-pmid-30575733",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-30575733",
+      "file_path": "data/sources/pmid-30575733.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/pmid-30575733.json",
+      "summary": "Add perforin-deficient immune surveillance source.",
+      "rationale": "This source supports the core premise that cytotoxic immune surveillance restrains senescent-cell accumulation during aging."
+    },
+    {
+      "change_id": "create-source-pmid-31160572",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-31160572",
+      "file_path": "data/sources/pmid-31160572.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/pmid-31160572.json",
+      "summary": "Add HLA-E/NKG2A senescent-cell immune evasion source.",
+      "rationale": "This source supplies a human tissue and in-vitro immune-checkpoint mechanism without creating an efficacy upgrade."
+    },
+    {
+      "change_id": "create-source-pmid-39730825",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-39730825",
+      "file_path": "data/sources/pmid-39730825.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/pmid-39730825.json",
+      "summary": "Add GD3 senescence immune-checkpoint source.",
+      "rationale": "This source adds a newer NK-evasion target with anti-GD3 mouse intervention evidence."
+    },
+    {
+      "change_id": "create-source-pmid-37001502",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-37001502",
+      "file_path": "data/sources/pmid-37001502.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/pmid-37001502.json",
+      "summary": "Add CMV-antigen CD4 T-cell senescent-cell clearance source.",
+      "rationale": "This source provides human skin and ex vivo evidence for natural immune recognition of senescent cells."
+    },
+    {
+      "change_id": "create-intervention-anti-upar-car-t-cells",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "anti-upar-car-t-cells",
+      "file_path": "data/interventions/anti-upar-car-t-cells.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/anti-upar-car-t-cells.json",
+      "summary": "Normalize anti-uPAR CAR T cells as a preclinical immune-clearance intervention.",
+      "rationale": "uPAR CAR T is the largest direct intervention cluster in this track baseline."
+    },
+    {
+      "change_id": "create-intervention-nkg2d-car-t-cells",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "nkg2d-car-t-cells",
+      "file_path": "data/interventions/nkg2d-car-t-cells.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/nkg2d-car-t-cells.json",
+      "summary": "Normalize NKG2D-CAR T cells as a preclinical immune-clearance intervention.",
+      "rationale": "NKG2D-CAR T supplies an independent engineered-cell target and a nonhuman-primate bridge."
+    },
+    {
+      "change_id": "create-intervention-anti-gd3-senescence-immunotherapy",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "anti-gd3-senescence-immunotherapy",
+      "file_path": "data/interventions/anti-gd3-senescence-immunotherapy.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/anti-gd3-senescence-immunotherapy.json",
+      "summary": "Normalize anti-GD3 senescence immunotherapy as a preclinical checkpoint-style intervention.",
+      "rationale": "GD3 provides a newer immune-evasion target with mouse intervention evidence."
+    },
+    {
+      "change_id": "create-intervention-hla-e-nkg2a-senescence-checkpoint-blockade",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "hla-e-nkg2a-senescence-checkpoint-blockade",
+      "file_path": "data/interventions/hla-e-nkg2a-senescence-checkpoint-blockade.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/hla-e-nkg2a-senescence-checkpoint-blockade.json",
+      "summary": "Normalize HLA-E/NKG2A senescence checkpoint blockade as a human-mechanistic intervention concept.",
+      "rationale": "This record keeps human checkpoint biology visible while preserving the in-vitro and safety boundary."
+    },
+    {
+      "change_id": "create-study-upar-car-t-senescence-pathology-models",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "upar-car-t-senescence-pathology-models",
+      "file_path": "data/studies/upar-car-t-senescence-pathology-models.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/upar-car-t-senescence-pathology-models.json",
+      "summary": "Add uPAR CAR T pathology-model study record.",
+      "rationale": "This study maps the foundational uPAR CAR T source to the immune-clearance track."
+    },
+    {
+      "change_id": "create-study-anti-upar-car-t-aging-metabolic-dysfunction",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "anti-upar-car-t-aging-metabolic-dysfunction",
+      "file_path": "data/studies/anti-upar-car-t-aging-metabolic-dysfunction.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/anti-upar-car-t-aging-metabolic-dysfunction.json",
+      "summary": "Add anti-uPAR CAR T metabolic aging study record.",
+      "rationale": "This study anchors physiological-aging mouse function and metabolic endpoints."
+    },
+    {
+      "change_id": "create-study-anti-upar-car-t-aged-intestinal-regeneration",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "anti-upar-car-t-aged-intestinal-regeneration",
+      "file_path": "data/studies/anti-upar-car-t-aged-intestinal-regeneration.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/anti-upar-car-t-aged-intestinal-regeneration.json",
+      "summary": "Add anti-uPAR CAR T aged intestinal regeneration study record.",
+      "rationale": "This study captures the newest 2026 tissue-regeneration extension."
+    },
+    {
+      "change_id": "create-study-nkg2d-car-t-aged-mice-nonhuman-primate-study",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "nkg2d-car-t-aged-mice-nonhuman-primate-study",
+      "file_path": "data/studies/nkg2d-car-t-aged-mice-nonhuman-primate-study.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/nkg2d-car-t-aged-mice-nonhuman-primate-study.json",
+      "summary": "Add NKG2D-CAR T aged mouse and primate study record.",
+      "rationale": "This study adds nonhuman-primate senescent-cell deletion to the baseline while keeping it preclinical."
+    },
+    {
+      "change_id": "create-study-perforin-deficient-aging-immune-surveillance-study",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "perforin-deficient-aging-immune-surveillance-study",
+      "file_path": "data/studies/perforin-deficient-aging-immune-surveillance-study.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/perforin-deficient-aging-immune-surveillance-study.json",
+      "summary": "Add perforin-deficient immune surveillance study record.",
+      "rationale": "This study provides the mechanistic aging rationale for immune surveillance of senescent cells."
+    },
+    {
+      "change_id": "create-study-hla-e-nkg2a-senescent-cell-evasion-study",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "hla-e-nkg2a-senescent-cell-evasion-study",
+      "file_path": "data/studies/hla-e-nkg2a-senescent-cell-evasion-study.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/hla-e-nkg2a-senescent-cell-evasion-study.json",
+      "summary": "Add HLA-E/NKG2A senescent-cell evasion study record.",
+      "rationale": "This study records the human tissue and in-vitro checkpoint evidence without treating it as human efficacy."
+    },
+    {
+      "change_id": "create-study-gd3-senescence-immune-checkpoint-aging",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "gd3-senescence-immune-checkpoint-aging",
+      "file_path": "data/studies/gd3-senescence-immune-checkpoint-aging.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/gd3-senescence-immune-checkpoint-aging.json",
+      "summary": "Add GD3 senescence immune-checkpoint study record.",
+      "rationale": "This study records the GD3 immune-evasion and anti-GD3 mouse intervention signal."
+    },
+    {
+      "change_id": "create-study-cytotoxic-cd4-cmv-senescent-skin-study",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "cytotoxic-cd4-cmv-senescent-skin-study",
+      "file_path": "data/studies/cytotoxic-cd4-cmv-senescent-skin-study.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/cytotoxic-cd4-cmv-senescent-skin-study.json",
+      "summary": "Add cytotoxic CD4 CMV senescent human skin study record.",
+      "rationale": "This study captures natural human immune-clearance mechanism evidence."
+    },
+    {
+      "change_id": "create-finding-upar-car-t-cleared-senescent-cells-in-pathology-models",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "upar-car-t-cleared-senescent-cells-in-pathology-models",
+      "file_path": "data/findings/upar-car-t-cleared-senescent-cells-in-pathology-models.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/upar-car-t-cleared-senescent-cells-in-pathology-models.json",
+      "summary": "Add foundational uPAR CAR T senolytic finding.",
+      "rationale": "This finding supports the animal_signal stage assignment while preserving disease-model boundaries."
+    },
+    {
+      "change_id": "create-finding-upar-car-t-improved-aged-mouse-metabolic-fitness",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "upar-car-t-improved-aged-mouse-metabolic-fitness",
+      "file_path": "data/findings/upar-car-t-improved-aged-mouse-metabolic-fitness.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/upar-car-t-improved-aged-mouse-metabolic-fitness.json",
+      "summary": "Add anti-uPAR CAR T aged-mouse metabolic and fitness finding.",
+      "rationale": "This finding anchors a direct physiological-aging mouse functional signal."
+    },
+    {
+      "change_id": "create-finding-upar-car-t-improved-aged-intestinal-regeneration",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "upar-car-t-improved-aged-intestinal-regeneration",
+      "file_path": "data/findings/upar-car-t-improved-aged-intestinal-regeneration.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/upar-car-t-improved-aged-intestinal-regeneration.json",
+      "summary": "Add anti-uPAR CAR T aged intestinal regeneration finding.",
+      "rationale": "This finding anchors the newest 2026 aging-relevant CAR T extension."
+    },
+    {
+      "change_id": "create-finding-nkg2d-car-t-cleared-senescent-cells-aged-mice-primates",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nkg2d-car-t-cleared-senescent-cells-aged-mice-primates",
+      "file_path": "data/findings/nkg2d-car-t-cleared-senescent-cells-aged-mice-primates.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/nkg2d-car-t-cleared-senescent-cells-aged-mice-primates.json",
+      "summary": "Add NKG2D-CAR T aged mouse and primate finding.",
+      "rationale": "This finding supplies independent engineered immune-clearance evidence and the nonhuman-primate bridge."
+    },
+    {
+      "change_id": "create-finding-perforin-surveillance-loss-accelerated-senescence-aging",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "perforin-surveillance-loss-accelerated-senescence-aging",
+      "file_path": "data/findings/perforin-surveillance-loss-accelerated-senescence-aging.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/perforin-surveillance-loss-accelerated-senescence-aging.json",
+      "summary": "Add perforin immune-surveillance aging mechanism finding.",
+      "rationale": "This finding supports the biological premise that cytotoxic immune surveillance restrains senescent-cell accumulation."
+    },
+    {
+      "change_id": "create-finding-hla-e-nkg2a-blockade-boosted-senescent-cell-immune-response",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "hla-e-nkg2a-blockade-boosted-senescent-cell-immune-response",
+      "file_path": "data/findings/hla-e-nkg2a-blockade-boosted-senescent-cell-immune-response.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/hla-e-nkg2a-blockade-boosted-senescent-cell-immune-response.json",
+      "summary": "Add HLA-E/NKG2A senescent-cell evasion finding.",
+      "rationale": "This finding supports human mechanism while limiting the stage to preclinical intervention evidence."
+    },
+    {
+      "change_id": "create-finding-anti-gd3-immunotherapy-attenuated-fibrosis-bone-aging",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "anti-gd3-immunotherapy-attenuated-fibrosis-bone-aging",
+      "file_path": "data/findings/anti-gd3-immunotherapy-attenuated-fibrosis-bone-aging.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/anti-gd3-immunotherapy-attenuated-fibrosis-bone-aging.json",
+      "summary": "Add anti-GD3 senescence immune-checkpoint finding.",
+      "rationale": "This finding broadens the intervention set beyond CAR T while remaining animal-stage."
+    },
+    {
+      "change_id": "create-finding-cd4-ctl-targeted-cmv-antigen-senescent-human-skin-fibroblasts",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "cd4-ctl-targeted-cmv-antigen-senescent-human-skin-fibroblasts",
+      "file_path": "data/findings/cd4-ctl-targeted-cmv-antigen-senescent-human-skin-fibroblasts.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/cd4-ctl-targeted-cmv-antigen-senescent-human-skin-fibroblasts.json",
+      "summary": "Add cytotoxic CD4 T-cell CMV senescent-cell clearance finding.",
+      "rationale": "This finding gives a human-mechanistic natural clearance signal without treating it as an intervention."
+    },
+    {
+      "change_id": "create-outlook-track-immune-clearance-of-senescent-cells",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-immune-clearance-of-senescent-cells-outlook",
+      "file_path": "data/outlooks/track-immune-clearance-of-senescent-cells-outlook.json",
+      "staged_file_path": "data/staged-records/immune-clearance-of-senescent-cells-bootstrap-2026-06-02/track-immune-clearance-of-senescent-cells-outlook.json",
+      "summary": "Add first public immune-clearance track outlook.",
+      "rationale": "The staged evidence supports a low-confidence animal_signal baseline with accelerating momentum and explicit human-efficacy and safety boundaries.",
+      "uncertainty_flags": [
+        "No direct treated-human aging trial",
+        "Engineered cell therapy evidence remains preclinical",
+        "Target specificity and beneficial senescence boundaries remain unresolved",
+        "Human mechanism evidence should not be overread as efficacy"
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "immune-clearance-of-senescent-cells",
+      "note": "A first public baseline is justified at low-confidence animal_signal because multiple immune-mediated senescent-cell clearance strategies show animal signals, while human evidence remains mechanistic or ex vivo.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "cellular_senescence",
+      "note": "Publishing this bundle would broaden cellular senescence coverage beyond small-molecule senolytics and senomorphics by adding immune-mediated clearance, with clear boundaries from human efficacy claims.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-02-immune-clearance-of-senescent-cells-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "public",
+    "bootstrap",
+    "cellular-senescence",
+    "immune-clearance-of-senescent-cells"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-immune-clearance-of-senescent-cells-source-fidelity-r1",
+    "evidence-review-immune-clearance-of-senescent-cells-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-immune-clearance-of-senescent-cells-bootstrap-2026-06-02-2026-06-02t19-01-04-272z"
+  ]
+}

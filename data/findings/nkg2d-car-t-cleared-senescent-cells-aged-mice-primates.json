@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "nkg2d-car-t-cleared-senescent-cells-aged-mice-primates",
+  "name": "NKG2D-CAR T cells cleared senescent cells in aged mice and primates",
+  "summary": "NKG2D-CAR T cells provide an independent engineered immune-clearance animal and nonhuman-primate signal.",
+  "source_id": "pmid-37585504",
+  "study_id": "nkg2d-car-t-aged-mice-nonhuman-primate-study",
+  "intervention_ids": [
+    "nkg2d-car-t-cells"
+  ],
+  "track_ids": [
+    "immune-clearance-of-senescent-cells"
+  ],
+  "hallmark_ids": [
+    "cellular_senescence"
+  ],
+  "endpoint_category": "functional",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "moderate",
+  "statement": "NKG2D-CAR T cells selectively diminished senescent cells in vitro, alleviated multiple aging-associated pathologies and improved physical performance in irradiated and aged mice, and deleted naturally occurring senescent cells in aged nonhuman primates without observed adverse effects.",
+  "population_or_model": "Senescent human cell systems, irradiated and aged mice, and aged nonhuman primates",
+  "time_horizon": "Preclinical treatment and safety-observation windows",
+  "quantitative_note": "The source reports aged-mouse physical-performance improvement and senescent-cell deletion in aged nonhuman primates, but no treated-human efficacy data.",
+  "caveats": [
+    "Nonhuman-primate target engagement is not equivalent to human aging efficacy.",
+    "NKG2D ligands can appear in stressed non-senescent contexts, creating target-specificity questions.",
+    "Cell therapy safety and manufacturing hurdles remain unresolved for preventive aging use."
+  ],
+  "tags": [
+    "animal",
+    "nonhuman-primate",
+    "car-t",
+    "nkg2d",
+    "physical-performance"
+  ]
+}
