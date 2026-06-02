@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-caloric-restriction-mimetics-source-fidelity-r1",
+  "name": "Source Fidelity review for Caloric Restriction Mimetics bundle",
+  "candidate_bundle_id": "caloric-restriction-mimetics-bootstrap-2026-06-02",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, finding, intervention, and outlook records match the cited PubMed, PMC, and ClinicalTrials.gov facts closely enough for publication review. The FMD records preserve the human biomarker and exploratory-analysis boundary, and the acarbose records preserve the animal-only, sex-dependent lifespan and healthspan boundary.",
+  "reviewed_change_ids": [
+    "create-source-pmid-28202779",
+    "create-source-pmid-38378685",
+    "create-source-pmid-30688027",
+    "create-source-pmid-32990683",
+    "create-intervention-acarbose",
+    "create-study-fmd-aging-risk-factor-rct",
+    "create-study-fmd-biological-age-risk-marker-analysis",
+    "create-study-acarbose-het3-mouse-lifespan-dose-study",
+    "create-study-acarbose-aged-mouse-physical-function-cardiac-study",
+    "create-finding-fmd-reduced-aging-risk-markers-rct",
+    "create-finding-fmd-biological-age-immune-metabolic-marker-signal",
+    "create-finding-acarbose-extended-het3-mouse-lifespan-sex-dependent",
+    "create-finding-acarbose-improved-aged-mouse-physical-function-cardiac-lipids",
+    "create-track-caloric-restriction-mimetics-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "fmd-registry-enrollment-context",
+      "severity": "note",
+      "category": "uncertainty",
+      "applies_to_change_id": "create-study-fmd-aging-risk-factor-rct",
+      "applies_to_record": {
+        "record_type": "study",
+        "record_id": "fmd-aging-risk-factor-rct"
+      },
+      "claim_or_issue": "The staged FMD risk-factor study uses the article-level randomized sample size of 100, while the ClinicalTrials.gov registry lists 102 actual enrolled participants for NCT02158897.",
+      "why_it_matters": "This is a common article-versus-registry distinction and should remain visible during review, but it does not undermine the staged finding because the efficacy claim is tied to the published randomized-trial abstract.",
+      "recommended_action": "No revision required. Keep the registry ID attached and avoid using the registry enrollment count as the basis for the published article's efficacy sample unless the staged study is later revised for registry-specific detail.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-02T16:57:13.817Z",
+  "updated_at": "2026-06-02T16:57:13.817Z"
+}

@@ -1,0 +1,264 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "caloric-restriction-mimetics-bootstrap-2026-06-02",
+  "name": "Caloric restriction mimetics bootstrap for June 2, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline candidate for the caloric restriction mimetics track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-02T14:55:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Caloric Restriction Mimetics, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "deregulated_nutrient_sensing"
+    ],
+    "track_ids": [
+      "caloric-restriction-mimetics"
+    ],
+    "intervention_ids": [
+      "fasting-mimicking-diet",
+      "acarbose"
+    ]
+  },
+  "source_ids": [
+    "pmid-28202779",
+    "pmid-38378685",
+    "pmid-41372565",
+    "pmid-40816210",
+    "pmid-30688027",
+    "pmid-32990683",
+    "pmid-37118425"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/28202779/",
+    "https://pubmed.ncbi.nlm.nih.gov/38378685/",
+    "https://pubmed.ncbi.nlm.nih.gov/41372565/",
+    "https://pubmed.ncbi.nlm.nih.gov/40816210/",
+    "https://pubmed.ncbi.nlm.nih.gov/30688027/",
+    "https://pubmed.ncbi.nlm.nih.gov/32990683/",
+    "https://pubmed.ncbi.nlm.nih.gov/37118425/",
+    "https://clinicaltrials.gov/study/NCT02158897",
+    "https://clinicaltrials.gov/study/NCT04150159"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-caloric-restriction-mimetics-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-deregulated-nutrient-sensing-outlook"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "fasting-mimicking-diet"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "acarbose"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "fmd-reduced-aging-risk-markers-rct"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "fmd-biological-age-immune-metabolic-marker-signal"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "acarbose-extended-het3-mouse-lifespan-sex-dependent"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "acarbose-improved-aged-mouse-physical-function-cardiac-lipids"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-28202779",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-28202779",
+      "file_path": "data/sources/pmid-28202779.json",
+      "staged_file_path": "data/staged-records/caloric-restriction-mimetics-bootstrap-2026-06-02/pmid-28202779.json",
+      "summary": "Add FMD aging risk-factor RCT source.",
+      "rationale": "This source anchors the main human randomized FMD biomarker and safety signal."
+    },
+    {
+      "change_id": "create-source-pmid-38378685",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-38378685",
+      "file_path": "data/sources/pmid-38378685.json",
+      "staged_file_path": "data/staged-records/caloric-restriction-mimetics-bootstrap-2026-06-02/pmid-38378685.json",
+      "summary": "Add FMD biological-age and disease-risk marker source.",
+      "rationale": "This source provides the current biological-age, hepatic-fat, insulin-resistance, and immune-ratio biomarker signal."
+    },
+    {
+      "change_id": "create-source-pmid-30688027",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-30688027",
+      "file_path": "data/sources/pmid-30688027.json",
+      "staged_file_path": "data/staged-records/caloric-restriction-mimetics-bootstrap-2026-06-02/pmid-30688027.json",
+      "summary": "Add acarbose HET3 mouse lifespan source.",
+      "rationale": "This source anchors the strongest acarbose mouse lifespan signal and its sex-dependent boundary."
+    },
+    {
+      "change_id": "create-source-pmid-32990683",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-32990683",
+      "file_path": "data/sources/pmid-32990683.json",
+      "staged_file_path": "data/staged-records/caloric-restriction-mimetics-bootstrap-2026-06-02/pmid-32990683.json",
+      "summary": "Add acarbose aged-mouse physical-function source.",
+      "rationale": "This source supports animal healthspan and functional context beyond lifespan."
+    },
+    {
+      "change_id": "create-intervention-acarbose",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "acarbose",
+      "file_path": "data/interventions/acarbose.json",
+      "staged_file_path": "data/staged-records/caloric-restriction-mimetics-bootstrap-2026-06-02/acarbose.json",
+      "summary": "Normalize acarbose intervention record.",
+      "rationale": "The intervention record captures acarbose as a small-molecule CR-mimetic candidate with animal aging evidence and human-aging translation gaps."
+    },
+    {
+      "change_id": "create-study-fmd-aging-risk-factor-rct",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "fmd-aging-risk-factor-rct",
+      "file_path": "data/studies/fmd-aging-risk-factor-rct.json",
+      "staged_file_path": "data/staged-records/caloric-restriction-mimetics-bootstrap-2026-06-02/fmd-aging-risk-factor-rct.json",
+      "summary": "Add FMD aging risk-factor RCT study record.",
+      "rationale": "The study record captures the main randomized human FMD biomarker trial for this track."
+    },
+    {
+      "change_id": "create-study-fmd-biological-age-risk-marker-analysis",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "fmd-biological-age-risk-marker-analysis",
+      "file_path": "data/studies/fmd-biological-age-risk-marker-analysis.json",
+      "staged_file_path": "data/staged-records/caloric-restriction-mimetics-bootstrap-2026-06-02/fmd-biological-age-risk-marker-analysis.json",
+      "summary": "Add FMD biological-age marker analysis study record.",
+      "rationale": "The study record captures the secondary/exploratory human biomarker analysis without treating it as functional evidence."
+    },
+    {
+      "change_id": "create-study-acarbose-het3-mouse-lifespan-dose-study",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "acarbose-het3-mouse-lifespan-dose-study",
+      "file_path": "data/studies/acarbose-het3-mouse-lifespan-dose-study.json",
+      "staged_file_path": "data/staged-records/caloric-restriction-mimetics-bootstrap-2026-06-02/acarbose-het3-mouse-lifespan-dose-study.json",
+      "summary": "Add acarbose HET3 mouse lifespan study record.",
+      "rationale": "The study record captures the repeated ITP dose study and sex-dependent lifespan boundary."
+    },
+    {
+      "change_id": "create-study-acarbose-aged-mouse-physical-function-cardiac-study",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "acarbose-aged-mouse-physical-function-cardiac-study",
+      "file_path": "data/studies/acarbose-aged-mouse-physical-function-cardiac-study.json",
+      "staged_file_path": "data/staged-records/caloric-restriction-mimetics-bootstrap-2026-06-02/acarbose-aged-mouse-physical-function-cardiac-study.json",
+      "summary": "Add acarbose aged-mouse function study record.",
+      "rationale": "The study record captures acarbose healthspan and physical-function evidence in aging mice."
+    },
+    {
+      "change_id": "create-finding-fmd-reduced-aging-risk-markers-rct",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "fmd-reduced-aging-risk-markers-rct",
+      "file_path": "data/findings/fmd-reduced-aging-risk-markers-rct.json",
+      "staged_file_path": "data/staged-records/caloric-restriction-mimetics-bootstrap-2026-06-02/fmd-reduced-aging-risk-markers-rct.json",
+      "summary": "Add FMD randomized biomarker finding.",
+      "rationale": "This finding supports the human_biomarker_signal stage assignment."
+    },
+    {
+      "change_id": "create-finding-fmd-biological-age-immune-metabolic-marker-signal",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "fmd-biological-age-immune-metabolic-marker-signal",
+      "file_path": "data/findings/fmd-biological-age-immune-metabolic-marker-signal.json",
+      "staged_file_path": "data/staged-records/caloric-restriction-mimetics-bootstrap-2026-06-02/fmd-biological-age-immune-metabolic-marker-signal.json",
+      "summary": "Add FMD biological-age and immune-metabolic marker finding.",
+      "rationale": "This finding adds current human biomarker support while preserving secondary-analysis and sponsor/IP boundaries."
+    },
+    {
+      "change_id": "create-finding-acarbose-extended-het3-mouse-lifespan-sex-dependent",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "acarbose-extended-het3-mouse-lifespan-sex-dependent",
+      "file_path": "data/findings/acarbose-extended-het3-mouse-lifespan-sex-dependent.json",
+      "staged_file_path": "data/staged-records/caloric-restriction-mimetics-bootstrap-2026-06-02/acarbose-extended-het3-mouse-lifespan-sex-dependent.json",
+      "summary": "Add acarbose mouse lifespan finding.",
+      "rationale": "This finding supports preclinical lifespan relevance and constrains translation by sex and species."
+    },
+    {
+      "change_id": "create-finding-acarbose-improved-aged-mouse-physical-function-cardiac-lipids",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "acarbose-improved-aged-mouse-physical-function-cardiac-lipids",
+      "file_path": "data/findings/acarbose-improved-aged-mouse-physical-function-cardiac-lipids.json",
+      "staged_file_path": "data/staged-records/caloric-restriction-mimetics-bootstrap-2026-06-02/acarbose-improved-aged-mouse-physical-function-cardiac-lipids.json",
+      "summary": "Add acarbose aged-mouse function finding.",
+      "rationale": "This finding supports acarbose animal healthspan relevance without upgrading the human stage."
+    },
+    {
+      "change_id": "create-track-caloric-restriction-mimetics-outlook",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-caloric-restriction-mimetics-outlook",
+      "file_path": "data/outlooks/track-caloric-restriction-mimetics-outlook.json",
+      "staged_file_path": "data/staged-records/caloric-restriction-mimetics-bootstrap-2026-06-02/track-caloric-restriction-mimetics-outlook.json",
+      "summary": "Create the first public outlook for the Caloric Restriction Mimetics track.",
+      "rationale": "A low-confidence human_biomarker_signal baseline is justified by FMD human biomarker evidence, while acarbose remains animal-only for aging outcomes.",
+      "uncertainty_flags": [
+        "FMD evidence is biomarker-heavy and partly exploratory.",
+        "FMD sponsor and intellectual-property conflicts require review.",
+        "Acarbose mouse lifespan effects are sex-dependent and not direct human aging evidence.",
+        "Full caloric restriction evidence is contextual and should not inflate the mimetic rating."
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "caloric-restriction-mimetics",
+      "note": "A first public baseline is justified at low-confidence human_biomarker_signal because FMD has direct human biomarker and risk-factor evidence, while acarbose supplies animal lifespan and healthspan support.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "deregulated_nutrient_sensing",
+      "note": "Publishing this bundle would broaden deregulated nutrient sensing coverage beyond rapalogs and metformin-led metabolic modulators with a distinct FMD/acarbose caloric-restriction-mimetic baseline.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-02-caloric-restriction-mimetics-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-caloric-restriction-mimetics-source-fidelity-r1",
+    "evidence-review-caloric-restriction-mimetics-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-caloric-restriction-mimetics-bootstrap-2026-06-02-2026-06-02t16-58-47-625z"
+  ]
+}

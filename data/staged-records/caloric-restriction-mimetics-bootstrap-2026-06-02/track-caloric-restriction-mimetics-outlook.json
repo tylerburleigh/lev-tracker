@@ -1,0 +1,170 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-caloric-restriction-mimetics-outlook",
+  "name": "Caloric Restriction Mimetics Track Outlook",
+  "subject_type": "track",
+  "subject_id": "caloric-restriction-mimetics",
+  "current_stage": "human_biomarker_signal",
+  "momentum": "steady",
+  "confidence": "low",
+  "main_blockers": [
+    "The strongest human evidence is still biomarker and risk-factor movement from fasting-mimicking diet studies, not durable human function, disease incidence, or mortality.",
+    "FMD is a periodic dietary program, so its evidence should not be generalized to drug-like caloric-restriction mimetics without intervention-specific support.",
+    "The most reproducible lifespan signal is acarbose in mice, with materially stronger male effects and no direct human aging trial.",
+    "Sponsor, intellectual-property, secondary-analysis, and short-duration boundaries remain important for the FMD biological-age claims."
+  ],
+  "best_current_signals": [
+    "Three monthly FMD cycles in generally healthy adults reduced aging- and disease-risk biomarkers including body fat, blood pressure, and IGF-1 without reported serious adverse effects in the main randomized trial.",
+    "A 2024 FMD analysis reported movement in insulin resistance, hepatic fat, lymphoid-to-myeloid ratio, and a median biological-age estimate, with replication context from a second completed study.",
+    "Short 2025 FMD studies already in the public record report autophagy and cardiometabolic marker movement in healthy adults.",
+    "Acarbose repeatedly extends lifespan in genetically heterogeneous mice and improves aged-mouse physical-function and cardiac/lipid measures, but this remains animal evidence."
+  ],
+  "forecast_note": "Caloric restriction mimetics merit a first public baseline at low-confidence human_biomarker_signal. FMD supplies the direct human biomarker anchor, while acarbose supplies stronger animal lifespan and healthspan evidence. The track should not be upgraded to human_functional_benefit until a mimetic intervention shows replicated, prespecified human functional or disease-relevant benefit under tolerable preventive-use conditions.",
+  "rating_change_criteria": [
+    "A move to human_functional_benefit would require a randomized human trial of FMD, acarbose, or another defined mimetic showing prespecified improvement in physical function, immune resilience, frailty, cognition, or another aging-relevant functional endpoint.",
+    "A move toward durable_disease_or_mortality_relevance would require long-term randomized evidence that a mimetic reduces age-related disease burden, disability, multimorbidity, or mortality rather than only changing cardiometabolic or biological-age biomarkers.",
+    "Confidence would improve if FMD biological-age and immune-metabolic signals replicate independently with transparent conflict handling, prespecified endpoints, and clear separation from weight-loss effects.",
+    "Acarbose should not inherit a human geroscience rating unless human trials in non-diabetic or risk-stratified adults show favorable pathway engagement, tolerability, and aging-relevant clinical direction.",
+    "The rating should weaken if larger FMD studies fail to reproduce biomarker movement, if biological-age effects disappear after adjustment for weight or risk status, or if tolerability/adherence problems limit preventive use."
+  ],
+  "earliest_plausible_window": "No credible LEV-relevant window can be assigned from current evidence. By the late 2020s, larger FMD or glucose-spike modulation studies could clarify human biomarker reproducibility, but durable functional or disease evidence would still be needed.",
+  "scenario_2036_status": "speculative",
+  "supporting_finding_ids": [
+    "fmd-reduced-aging-risk-markers-rct",
+    "fmd-biological-age-immune-metabolic-marker-signal",
+    "fmd-pilot-autophagic-flux-metabolic-markers",
+    "fmd-protein-content-autophagy-metabolic-markers",
+    "acarbose-extended-het3-mouse-lifespan-sex-dependent",
+    "acarbose-improved-aged-mouse-physical-function-cardiac-lipids",
+    "calerie-cr-slowed-dunedinpace"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "current_stage",
+      "conclusion": "The track reaches human_biomarker_signal because FMD has repeated human biomarker and risk-factor signals, but it does not reach human_functional_benefit.",
+      "support_role": "supports",
+      "rationale": "The 2017 randomized FMD trial reported movement in body fat, blood pressure, IGF-1, and other risk markers, while the 2024 analysis reported metabolic, hepatic, immune-ratio, and biological-age marker movement. Existing 2025 FMD records add short-term autophagy and cardiometabolic marker support.",
+      "finding_ids": [
+        "fmd-reduced-aging-risk-markers-rct",
+        "fmd-biological-age-immune-metabolic-marker-signal",
+        "fmd-pilot-autophagic-flux-metabolic-markers",
+        "fmd-protein-content-autophagy-metabolic-markers"
+      ],
+      "source_ids": [
+        "pmid-28202779",
+        "pmid-38378685",
+        "pmid-41372565",
+        "pmid-40816210"
+      ],
+      "limitations": [
+        "The human evidence is biomarker- and risk-factor-weighted.",
+        "The FMD evidence does not show durable function, disease incidence, multimorbidity, or mortality benefit.",
+        "FMD is a dietary program and should not automatically generalize to small-molecule mimetics."
+      ]
+    },
+    {
+      "label": "Animal lifespan and healthspan support",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Acarbose provides robust animal lifespan and healthspan support for the track, but it remains below a human stage upgrade.",
+      "support_role": "supports",
+      "rationale": "The ITP acarbose study reported significant lifespan effects at multiple doses across three sites, with larger male effects, and a separate aged-mouse study reported improved physical function and cardiac/lipid aging measures.",
+      "finding_ids": [
+        "acarbose-extended-het3-mouse-lifespan-sex-dependent",
+        "acarbose-improved-aged-mouse-physical-function-cardiac-lipids"
+      ],
+      "source_ids": [
+        "pmid-30688027",
+        "pmid-32990683"
+      ],
+      "limitations": [
+        "The acarbose aging-efficacy evidence is animal-only.",
+        "The lifespan signal is stronger in male mice than female mice.",
+        "Human acarbose use for diabetes does not establish preventive aging benefit."
+      ]
+    },
+    {
+      "label": "Caloric restriction context",
+      "outlook_field": "main_blockers",
+      "conclusion": "Direct caloric restriction supports the nutrient-sensing premise but should not inflate a mimetic rating.",
+      "support_role": "contextualizes",
+      "rationale": "CALERIE provides controlled human caloric-restriction evidence with DunedinPACE slowing but null PhenoAge and GrimAge biological-age changes. That supports the broader nutrient-sensing rationale while remaining a full dietary-restriction intervention, not a mimetic.",
+      "finding_ids": [
+        "calerie-cr-slowed-dunedinpace"
+      ],
+      "source_ids": [
+        "pmid-37118425"
+      ],
+      "limitations": [
+        "CALERIE is caloric restriction itself, not a caloric-restriction mimetic.",
+        "The methylation result was mixed and does not establish durable clinical benefit."
+      ]
+    },
+    {
+      "label": "Momentum",
+      "outlook_field": "momentum",
+      "conclusion": "Momentum is steady because current human FMD studies and repeated acarbose animal results keep the field active, while no recent result yet changes the evidence tier.",
+      "support_role": "balances",
+      "rationale": "The field has current and recent human biomarker publications for FMD, plus reproducible mouse acarbose support. However, the evidence has not crossed into replicated human function or disease outcomes.",
+      "finding_ids": [
+        "fmd-biological-age-immune-metabolic-marker-signal",
+        "fmd-pilot-autophagic-flux-metabolic-markers",
+        "fmd-protein-content-autophagy-metabolic-markers",
+        "acarbose-extended-het3-mouse-lifespan-sex-dependent"
+      ],
+      "source_ids": [
+        "pmid-38378685",
+        "pmid-41372565",
+        "pmid-40816210",
+        "pmid-30688027"
+      ],
+      "limitations": [
+        "Recent human activity is mainly biomarker movement.",
+        "Acarbose momentum comes from animal aging studies rather than human geroscience trials.",
+        "No staged result establishes durable functional or disease relevance."
+      ]
+    },
+    {
+      "label": "Confidence",
+      "outlook_field": "confidence",
+      "conclusion": "Confidence remains low because the human evidence is biomarker-heavy and the strongest lifespan result is preclinical.",
+      "support_role": "limits",
+      "rationale": "FMD studies support pathway and risk-marker movement, but sponsor/IP ties, exploratory analyses, short windows, and lack of durable endpoints keep confidence low. Acarbose strengthens biological plausibility but remains animal-only for aging outcomes.",
+      "finding_ids": [
+        "fmd-reduced-aging-risk-markers-rct",
+        "fmd-biological-age-immune-metabolic-marker-signal",
+        "acarbose-extended-het3-mouse-lifespan-sex-dependent",
+        "acarbose-improved-aged-mouse-physical-function-cardiac-lipids"
+      ],
+      "source_ids": [
+        "pmid-28202779",
+        "pmid-38378685",
+        "pmid-30688027",
+        "pmid-32990683"
+      ],
+      "limitations": [
+        "Preventive geroscience use requires better tolerability, adherence, and durability evidence than short biomarker studies provide.",
+        "The biological-age signal needs independent replication and clear separation from weight-loss effects.",
+        "Mouse lifespan benefits cannot be assumed to translate to human aging outcomes."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-28202779",
+    "pmid-38378685",
+    "pmid-41372565",
+    "pmid-40816210",
+    "pmid-30688027",
+    "pmid-32990683",
+    "pmid-37118425"
+  ],
+  "last_updated": "2026-06-02",
+  "tags": [
+    "public",
+    "track",
+    "thin_coverage",
+    "fasting-mimicking-diet",
+    "acarbose"
+  ]
+}

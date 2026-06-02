@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-02-caloric-restriction-mimetics-bootstrap",
+  "name": "Caloric restriction mimetics bootstrap pass for June 2, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-06-02T14:40:00Z",
+  "completed_at": "2026-06-02T14:55:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Caloric Restriction Mimetics, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "deregulated_nutrient_sensing"
+    ],
+    "track_ids": [
+      "caloric-restriction-mimetics"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "caloric-restriction-mimetics-bootstrap-2026-06-02",
+  "summary": "The track supports a first public baseline at low-confidence human_biomarker_signal. Fasting-mimicking diet studies supply the direct human biomarker anchor through cardiometabolic, IGF-1, hepatic-fat, immune-ratio, biological-age, autophagy-marker, and metabolic-marker movement, while acarbose supplies reproducible mouse lifespan and healthspan support. The interpretation stays bounded because FMD evidence is biomarker-heavy, sponsor/IP-linked, partially exploratory, and not a durable functional or disease-outcome trial; acarbose aging evidence remains animal-only and sex-dependent.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-28202779",
+    "pmid-38378685",
+    "pmid-41372565",
+    "pmid-40816210",
+    "pmid-30688027",
+    "pmid-32990683",
+    "pmid-37118425"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/28202779/",
+    "https://pubmed.ncbi.nlm.nih.gov/38378685/",
+    "https://pubmed.ncbi.nlm.nih.gov/41372565/",
+    "https://pubmed.ncbi.nlm.nih.gov/40816210/",
+    "https://pubmed.ncbi.nlm.nih.gov/30688027/",
+    "https://pubmed.ncbi.nlm.nih.gov/32990683/",
+    "https://pubmed.ncbi.nlm.nih.gov/37118425/",
+    "https://clinicaltrials.gov/study/NCT02158897",
+    "https://clinicaltrials.gov/study/NCT04150159"
+  ],
+  "notes": [
+    "The top bootstrap queue item was selected from research/backlog/track-priority.v1.json and research/state/coverage-status.v1.json.",
+    "The public question was scoped to one deregulated_nutrient_sensing track: caloric-restriction-mimetics.",
+    "FMD was treated as the main human biomarker anchor because it is an exemplar intervention for the track and has multiple human studies with aging-adjacent biomarkers.",
+    "Acarbose was treated as the main small-molecule animal anchor because ITP mouse studies show lifespan and healthspan effects, but no direct human aging trial was found in this pass.",
+    "CALERIE caloric restriction was included only as contextual support for nutrient-sensing plausibility because it is full caloric restriction rather than a mimetic.",
+    "The staged outlook does not upgrade to human_functional_benefit because no mimetic intervention in this pass showed replicated prespecified human functional, disease, multimorbidity, or mortality benefit."
+  ],
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast evidence review before publication.",
+    "If approved, publish the staged records as the first caloric restriction mimetics track baseline.",
+    "During review, check FMD sponsor/IP conflicts, whether the 2024 biological-age analysis should be described as exploratory, and whether acarbose should remain animal-only despite approved use for diabetes."
+  ]
+}

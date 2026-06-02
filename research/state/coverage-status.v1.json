@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-02T14:40:02.757Z",
+  "updated_at": "2026-06-02T16:59:02.020Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One bootstrap or surveillance run should cover one track unless the user explicitly narrows further.",
@@ -61,8 +61,8 @@
       "hallmark_id": "deregulated_nutrient_sensing",
       "canonical_order": 6,
       "hallmark_bootstrap_status": "baseline",
-      "tracked_public_outlook_count": 2,
-      "next_priority_track_id": "caloric-restriction-mimetics",
+      "tracked_public_outlook_count": 3,
+      "next_priority_track_id": "insulin-igf-axis-modulation",
       "notes": "At least one track-level public baseline exists."
     },
     {
@@ -424,11 +424,19 @@
       "hallmark_id": "deregulated_nutrient_sensing",
       "canonical_order": 3,
       "name": "Caloric Restriction Mimetics",
-      "coverage_status": "not_started",
-      "next_mode": "bootstrap",
+      "coverage_status": "baseline",
+      "next_mode": "surveillance",
       "queue_state": "ready",
-      "default_research_question": "What is the current human-relevant evidence landscape for Caloric Restriction Mimetics, and what belongs in the first public baseline?",
-      "notes": "No track-level public baseline has been bootstrapped yet."
+      "last_session_id": "2026-06-02-caloric-restriction-mimetics-bootstrap",
+      "last_session_at": "2026-06-02T14:55:00Z",
+      "last_session_mode": "bootstrap",
+      "last_session_outcome": "candidate_bundle_submitted",
+      "last_candidate_bundle_id": "caloric-restriction-mimetics-bootstrap-2026-06-02",
+      "last_candidate_bundle_status": "published",
+      "last_publication_event_id": "publish-caloric-restriction-mimetics-bootstrap-2026-06-02-2026-06-02t16-58-47-625z",
+      "last_published_at": "2026-06-02T16:58:47.625Z",
+      "default_research_question": "What changed for Caloric Restriction Mimetics since the last meaningful review or publication, and does any change justify a public update?",
+      "notes": "Latest publication event: publish-caloric-restriction-mimetics-bootstrap-2026-06-02-2026-06-02t16-58-47-625z."
     },
     {
       "track_id": "insulin-igf-axis-modulation",
