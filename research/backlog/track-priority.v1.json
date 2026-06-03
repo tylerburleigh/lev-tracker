@@ -2,10 +2,11 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-03T18:32:33.004Z",
+  "updated_at": "2026-06-03T19:41:47.423Z",
   "notes": [
     "Bootstrap priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Surveillance priority applies only to tracks that already have a public baseline and no active review bundle.",
+    "Coverage-repair priority applies when the latest coverage assessment recommends repairing source-completeness gaps before ordinary surveillance.",
     "The queue is a curator planning tool, not a public forecast."
   ],
   "selection_policy": {
@@ -26,6 +27,13 @@
       "The delta window has been checked and either nothing material changed or one bounded update is ready.",
       "The evidence stays in activity-only territory and does not justify outlook movement.",
       "The pass begins to broaden into fresh baseline research and should be handed back to bootstrap instead."
+    ]
+  },
+  "coverage_repair_defaults": {
+    "stop_after": [
+      "The known source-completeness gaps named in the latest coverage assessment have been checked.",
+      "The coverage verdict, known gaps, and next coverage action can be updated without changing public claims.",
+      "New evidence materially changes the outlook and should move into a bounded surveillance or outlook-refresh bundle."
     ]
   },
   "phases": [
@@ -53,6 +61,11 @@
       "phase_id": "surveillance-rotation",
       "label": "Surveillance Rotation",
       "goal": "Revisit established tracks for meaningful deltas without redoing full baseline research."
+    },
+    {
+      "phase_id": "coverage-repair",
+      "label": "Coverage Repair",
+      "goal": "Repair known source-completeness gaps without treating historical completeness work as ordinary surveillance."
     }
   ],
   "bootstrap_queue": [],
@@ -437,5 +450,6 @@
       "rationale": "The track is thin and likely to move through contextual updates before stronger human evidence.",
       "default_question": "What changed for Mitophagy Enhancers since the last meaningful review or publication, and does any change justify a public update?"
     }
-  ]
+  ],
+  "coverage_repair_queue": []
 }

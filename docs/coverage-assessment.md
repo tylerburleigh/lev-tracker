@@ -68,7 +68,8 @@ Do not update it for every small source or activity record. The artifact should 
 4. List `covered_source_ids[]` and `covered_finding_ids[]` that anchor the assessment.
 5. Record known coverage, evidence, or operational gaps.
 6. Set `next_coverage_action` to the smallest useful next step.
-7. Run `npm run validate:records`.
+7. Set `next_recommended_mode` to `surveillance` when normal delta monitoring should continue, or `coverage_repair` when source-completeness gaps should be repaired before ordinary surveillance.
+8. Run `npm run validate:records`.
 
 ## Planning Integration
 
@@ -79,5 +80,6 @@ Coverage assessments are validated internal artifacts. `npm run sync:research-pl
 - known gap count
 - high-priority known gap count
 - next coverage action
+- last coverage recommended mode, and the resulting track `next_mode`
 
 Use these generated fields when deciding whether a track needs ordinary surveillance or a coverage-repair pass. Use `research/coverage-assessments/` directly when you need the category-level rationale and source lists.

@@ -12,9 +12,11 @@
     "selection_policy",
     "bootstrap_defaults",
     "surveillance_defaults",
+    "coverage_repair_defaults",
     "phases",
     "bootstrap_queue",
-    "surveillance_queue"
+    "surveillance_queue",
+    "coverage_repair_queue"
   ],
   "properties": {
     "schema_version": {
@@ -65,6 +67,9 @@
     "surveillance_defaults": {
       "$ref": "#/$defs/defaultBlock"
     },
+    "coverage_repair_defaults": {
+      "$ref": "#/$defs/defaultBlock"
+    },
     "phases": {
       "type": "array",
       "items": {
@@ -95,6 +100,12 @@
       }
     },
     "surveillance_queue": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/queueEntry"
+      }
+    },
+    "coverage_repair_queue": {
       "type": "array",
       "items": {
         "$ref": "#/$defs/queueEntry"
@@ -155,7 +166,8 @@
         "default_mode": {
           "enum": [
             "bootstrap",
-            "surveillance"
+            "surveillance",
+            "coverage_repair"
           ]
         },
         "rationale": {

@@ -37,6 +37,49 @@
     "https://pubmed.ncbi.nlm.nih.gov/42166751/",
     "https://clinicaltrials.gov/search?term=microbiome%20older%20adults"
   ],
+  "materiality_decision": {
+    "material_delta": "outlook_refresh",
+    "public_update_needed": true,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The pass found one positive post-baseline human RCT and one limiting older-adult RCT that changed the support map and momentum language, while excluded protocol or method-limited context did not justify additional staged records."
+  },
+  "search_log": [
+    {
+      "source_name": "PubMed",
+      "query": "microbiome OR microbiota OR probiotic OR prebiotic OR synbiotic with aging, aged, older-adult, and elderly terms; filtered to the delta window from 2026-05-11 through 2026-06-03",
+      "checked_at": "2026-06-03T15:55:00Z",
+      "summary": "Found two material staged sources, PMID 42226670 and PMID 42168724, plus excluded context sources PMID 42197087 and PMID 42166751."
+    },
+    {
+      "source_name": "ClinicalTrials.gov",
+      "query": "microbiome older adults",
+      "checked_at": "2026-06-03T15:55:00Z",
+      "url": "https://clinicaltrials.gov/search?term=microbiome%20older%20adults",
+      "summary": "Checked older-adult microbiome and probiotic activity; no registry update justified a public activity-only record."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "pmid-42197087",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42197087/",
+      "decision": "method_limit",
+      "reason": "Not staged because the aerobic exercise study in malnourished octogenarians had no control arm and high dropout, making the microbiota findings observational associations rather than causal microbiome-composition evidence."
+    },
+    {
+      "reference": "pmid-42166751",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42166751/",
+      "decision": "context_only",
+      "reason": "Not staged because the BCAA supplementation paper was protocol context with gut microbiota secondary outcomes rather than results evidence."
+    },
+    {
+      "reference": "clinicaltrials-gov-microbiome-older-adults-2026-06-03",
+      "url": "https://clinicaltrials.gov/search?term=microbiome%20older%20adults",
+      "decision": "unchanged_registry",
+      "reason": "No checked older-adult microbiome or probiotic registry update justified an activity-only public record in this delta pass."
+    }
+  ],
   "notes": [
     "Scope was selected from the top ready surveillance queue item.",
     "Delta window used for source discovery: 2026-05-11 through 2026-06-03, based on the current public outlook last_updated date.",

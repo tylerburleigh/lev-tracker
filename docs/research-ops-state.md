@@ -25,6 +25,7 @@ That is deliberate. A language model can usually do one bounded track pass well 
 - If the user names only a `hallmark`, choose the highest-priority track inside that hallmark or ask the user to pick one.
 - If the user says something too broad like `go find research`, decompose to one track-level pass.
 - If the user is vague but clearly wants `bootstrap` or `surveillance`, choose the top ready item from the matching queue and state the assumption.
+- If the user is vague but the selected track's latest coverage assessment recommends `coverage_repair`, run coverage repair before ordinary surveillance.
 
 ## What One Research Run Should Produce
 
@@ -40,17 +41,32 @@ After a session is recorded or a bundle changes, run:
 
 That command regenerates `coverage-status.v1.json` and `track-priority.v1.json` from taxonomy, sessions, bundles, and publication history.
 
-Coverage assessments are validated internal artifacts and are folded into generated planning state. `coverage-status.v1.json` surfaces the latest assessment ID, verdict, known gap counts, and next coverage action for each track that has an assessment. Use the full assessment record when deciding whether the next pass should be ordinary surveillance or a `coverage_repair` pass.
+Coverage assessments are validated internal artifacts and are folded into generated planning state. `coverage-status.v1.json` surfaces the latest assessment ID, verdict, known gap counts, next coverage action, and latest coverage-recommended mode for each track that has an assessment. Use the full assessment record when deciding whether the next pass should be ordinary surveillance or a `coverage_repair` pass.
 
 ## Surveillance Outcomes
 
-Surveillance has three valid outcomes:
+Surveillance is a sorting pass. It has four valid outcomes:
 
 - `no_op`: the pass found no material public change. Write the session record, preserve the search log, and do not create a candidate bundle or staged JSON.
 - `activity_only`: a trial, company, regulatory, conference, or program event changed, but evidence interpretation does not. Write the session record; create a bundle only when the public activity or source layer should change.
 - `outlook_refresh`: evidence, safety, trial results, support maps, or forecast language changed enough to update public records. Create a minimal candidate bundle and staged JSON for the changed records only.
+- `coverage_repair`: the pass mainly checks source-completeness gaps identified by a coverage assessment. Update the assessment; create public staged JSON only if the repair changes public claims.
 
 No-op sessions are successful surveillance work. They keep the review clock visible without growing the candidate-bundle backlog.
+
+Research session records should make the sorting decision explicit with `materiality_decision`, `search_log`, and `excluded_sources` when relevant. Reviewed-but-excluded sources are part of the audit trail, not clutter.
+
+## Coverage Repair
+
+Coverage repair is not normal delta surveillance. Use it when the question is whether the track has covered the right seminal anchors, recent reviews, null or limiting evidence, safety/durability evidence, active trials, or taxonomy boundaries.
+
+A coverage-repair run should usually produce:
+
+- a `research_session` with `mode: "coverage_repair"`
+- a new or updated `coverage_assessment`
+- no public bundle unless the repair changes the public outlook, source layer, or support map
+
+`npm run sync:research-planning` emits `coverage_repair_queue` when a latest coverage assessment recommends that mode.
 
 ## Active vs Historical Artifacts
 

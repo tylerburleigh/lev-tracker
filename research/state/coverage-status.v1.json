@@ -2,16 +2,17 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-03T18:32:33.004Z",
+  "updated_at": "2026-06-03T19:41:47.423Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
-    "One bootstrap or surveillance run should cover one track unless the user explicitly narrows further.",
+    "One bootstrap, surveillance, or coverage-repair run should cover one track unless the user explicitly narrows further.",
     "Coverage status is planning state, not a claim about scientific maturity."
   ],
   "selection_policy": {
     "default_unit": "track",
     "max_tracks_per_bootstrap_run": 1,
     "max_tracks_per_surveillance_run": 1,
+    "max_tracks_per_coverage_repair_run": 1,
     "when_request_is_vague": "Choose the highest-priority ready track from the matching queue and state the assumption.",
     "when_request_is_too_broad": "Push back and decompose the request to one track-level pass.",
     "when_only_hallmark_is_named": "Choose the highest-priority track within that hallmark, or ask the user to pick one if there is no clear anchor."
@@ -783,6 +784,7 @@
       "known_gap_count": 3,
       "high_priority_gap_count": 1,
       "next_coverage_action": "Keep normal surveillance rotation. If this track is revisited before another material delta appears, use coverage_repair rather than surveillance to audit seminal anchors and recent reviews.",
+      "last_coverage_recommended_mode": "surveillance",
       "default_research_question": "What changed for Microbiome Composition Modulation since the last meaningful review or publication, and does any change justify a public update?",
       "notes": "Latest publication event: publish-microbiome-composition-modulation-surveillance-2026-06-03-2026-06-03t16-38-15-119z."
     },
@@ -846,6 +848,7 @@
       "known_gap_count": 5,
       "high_priority_gap_count": 2,
       "next_coverage_action": "Keep ecosystem replacement in normal surveillance with special attention to NCT05598112, NCT06649981, and related publications. If revisited before trial results appear, use coverage_repair to audit recent aging-FMT reviews and seminal anchors rather than expanding the public claim.",
+      "last_coverage_recommended_mode": "surveillance",
       "default_research_question": "What changed for Ecosystem Replacement since the last meaningful review or publication, and does any change justify a public update?",
       "notes": "Latest publication event: publish-ecosystem-replacement-bootstrap-2026-06-03-2026-06-03t14-40-25-040z."
     }

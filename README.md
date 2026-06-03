@@ -48,8 +48,8 @@ The first pass is intentionally small:
 - `publication_event`: a record of what was published to the public site.
 - `coverage_status`: persistent internal state for what has baseline coverage and what mode comes next.
 - `coverage_assessment`: internal track-level assessment of source completeness, evidence categories, and known gaps.
-- `track_priority_queue`: the ordered internal queue that bootstrap and surveillance consult when scope is vague.
-- `research_session`: one bounded bootstrap or surveillance pass, including no-op outcomes.
+- `track_priority_queue`: the ordered internal queue that bootstrap, surveillance, and coverage repair consult when scope is vague.
+- `research_session`: one bounded bootstrap, surveillance, or coverage-repair pass, including no-op and coverage-assessment-only outcomes.
 
 ## Editorial Flow
 
@@ -62,10 +62,10 @@ The first pass is intentionally small:
 ## Research Planning State
 
 - `research/state/coverage-status.v1.json` is the persistent answer to “what already has coverage?”
-- `research/backlog/track-priority.v1.json` is the persistent answer to “what should bootstrap or surveillance do next?”
+- `research/backlog/track-priority.v1.json` is the persistent answer to “what should bootstrap, surveillance, or coverage repair do next?”
 - `research/sessions/*.json` records what each bounded research pass actually did, even when it produced no bundle.
 - `research/coverage-assessments/*.json` records how complete a track's source and evidence landscape appears, plus known gaps.
-- `npm run sync:research-planning` surfaces the latest coverage assessment verdict and gap counts in `coverage-status.v1.json`.
+- `npm run sync:research-planning` surfaces the latest coverage assessment verdict, gap counts, next action, and recommended next mode in `coverage-status.v1.json`.
 - The default research work unit is one `track` per run.
 - Run `npm run sync:research-planning` after a research pass to regenerate state and queue files.
 

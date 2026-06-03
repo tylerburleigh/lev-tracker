@@ -39,6 +39,7 @@
         "default_unit",
         "max_tracks_per_bootstrap_run",
         "max_tracks_per_surveillance_run",
+        "max_tracks_per_coverage_repair_run",
         "when_request_is_vague",
         "when_request_is_too_broad"
       ],
@@ -50,6 +51,9 @@
           "const": 1
         },
         "max_tracks_per_surveillance_run": {
+          "const": 1
+        },
+        "max_tracks_per_coverage_repair_run": {
           "const": 1
         },
         "when_request_is_vague": {
@@ -143,7 +147,8 @@
           "next_mode": {
             "enum": [
               "bootstrap",
-              "surveillance"
+              "surveillance",
+              "coverage_repair"
             ]
           },
           "queue_state": {
@@ -162,13 +167,15 @@
           "last_session_mode": {
             "enum": [
               "bootstrap",
-              "surveillance"
+              "surveillance",
+              "coverage_repair"
             ]
           },
           "last_session_outcome": {
             "enum": [
               "no_op",
               "activity_only",
+              "coverage_assessment_updated",
               "candidate_bundle_submitted",
               "candidate_bundle_revised",
               "handoff_to_editorial",
@@ -210,6 +217,13 @@
           },
           "next_coverage_action": {
             "type": "string"
+          },
+          "last_coverage_recommended_mode": {
+            "enum": [
+              "bootstrap",
+              "surveillance",
+              "coverage_repair"
+            ]
           },
           "default_research_question": {
             "type": "string"

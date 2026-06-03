@@ -39,6 +39,10 @@ function buildDefaultQuestion(trackName, mode) {
     return `What is the current human-relevant evidence landscape for ${trackName}, and what belongs in the first public baseline?`;
   }
 
+  if (mode === "coverage_repair") {
+    return `Which known source-completeness gaps for ${trackName} need repair, and does resolving them change the coverage verdict or public boundaries?`;
+  }
+
   return `What changed for ${trackName} since the last meaningful review or publication, and does any change justify a public update?`;
 }
 
@@ -84,6 +88,20 @@ function compareDateTimesDescending(left, right) {
 
 function isMoreRecent(left, right) {
   return normalizeDateTimeValue(left).localeCompare(normalizeDateTimeValue(right)) > 0;
+}
+
+function chooseNextMode(latestSession, latestCoverageAssessment, hasPublishedBaseline) {
+  const fallbackMode = hasPublishedBaseline ? "surveillance" : "bootstrap";
+  const sessionMode = latestSession?.next_recommended_mode;
+  const coverageMode = latestCoverageAssessment?.next_recommended_mode;
+
+  if (sessionMode && coverageMode) {
+    return isMoreRecent(latestCoverageAssessment.assessed_at, latestSession.completed_at)
+      ? coverageMode
+      : sessionMode;
+  }
+
+  return coverageMode ?? sessionMode ?? fallbackMode;
 }
 
 async function main() {
@@ -157,8 +175,7 @@ async function main() {
       const activeReview =
         latestBundle && !["published", "rejected"].includes(latestBundle.lifecycle_status);
       const coverageStatus = hasPublishedBaseline ? "baseline" : "not_started";
-      const nextMode =
-        latestSession?.next_recommended_mode ?? (hasPublishedBaseline ? "surveillance" : "bootstrap");
+      const nextMode = chooseNextMode(latestSession, latestCoverageAssessment, hasPublishedBaseline);
       const queueState =
         activeReview ? "active_review" : latestSession?.outcome === "blocked" ? "deferred" : "ready";
 
@@ -202,6 +219,7 @@ async function main() {
         known_gap_count: latestCoverageAssessment?.known_gaps?.length,
         high_priority_gap_count: latestCoverageAssessment?.known_gaps?.filter((gap) => gap.priority === "high").length,
         next_coverage_action: latestCoverageAssessment?.next_coverage_action,
+        last_coverage_recommended_mode: latestCoverageAssessment?.next_recommended_mode,
         default_research_question: buildDefaultQuestion(track.name, nextMode),
         notes
       };
@@ -336,8 +354,48 @@ async function main() {
       default_question: row.default_research_question
     }));
 
+  const coverageRepairCandidates = [...trackRows]
+    .filter((row) => row.next_mode === "coverage_repair" && row.queue_state === "ready")
+    .sort((left, right) => {
+      const highPriorityGapDifference =
+        (right.high_priority_gap_count ?? 0) - (left.high_priority_gap_count ?? 0);
+      if (highPriorityGapDifference !== 0) {
+        return highPriorityGapDifference;
+      }
+
+      const knownGapDifference = (right.known_gap_count ?? 0) - (left.known_gap_count ?? 0);
+      if (knownGapDifference !== 0) {
+        return knownGapDifference;
+      }
+
+      const leftAssessedAt = left.last_coverage_assessed_at ?? left.last_session_at ?? left.last_published_at;
+      const rightAssessedAt = right.last_coverage_assessed_at ?? right.last_session_at ?? right.last_published_at;
+      if (leftAssessedAt && rightAssessedAt && leftAssessedAt !== rightAssessedAt) {
+        return compareDateTimesDescending(rightAssessedAt, leftAssessedAt);
+      }
+
+      const leftHallmarkOrder = hallmarkMetaById.get(left.hallmark_id).canonical_order;
+      const rightHallmarkOrder = hallmarkMetaById.get(right.hallmark_id).canonical_order;
+      return leftHallmarkOrder - rightHallmarkOrder || left.canonical_order - right.canonical_order;
+    })
+    .map((row, index) => ({
+      rank: index + 1,
+      phase_id: "coverage-repair",
+      track_id: row.track_id,
+      hallmark_id: row.hallmark_id,
+      priority_tier: index < 3 ? "now" : index < 8 ? "soon" : "later",
+      default_mode: "coverage_repair",
+      rationale:
+        row.next_coverage_action ??
+        "Latest coverage assessment recommends source-completeness repair before ordinary surveillance.",
+      default_question: row.default_research_question,
+      notes: row.last_coverage_assessment_id
+        ? `Latest coverage assessment: ${row.last_coverage_assessment_id}.`
+        : undefined
+    }));
+
   const nextPriorityTrackIdByHallmark = new Map();
-  for (const entry of [...bootstrapCandidates, ...surveillanceCandidates]) {
+  for (const entry of [...bootstrapCandidates, ...coverageRepairCandidates, ...surveillanceCandidates]) {
     if (!nextPriorityTrackIdByHallmark.has(entry.hallmark_id)) {
       nextPriorityTrackIdByHallmark.set(entry.hallmark_id, entry.track_id);
     }
@@ -368,13 +426,14 @@ async function main() {
     updated_at: new Date().toISOString(),
     notes: [
       "The unit of research work is a track, not a hallmark.",
-      "One bootstrap or surveillance run should cover one track unless the user explicitly narrows further.",
+      "One bootstrap, surveillance, or coverage-repair run should cover one track unless the user explicitly narrows further.",
       "Coverage status is planning state, not a claim about scientific maturity."
     ],
     selection_policy: {
       default_unit: "track",
       max_tracks_per_bootstrap_run: 1,
       max_tracks_per_surveillance_run: 1,
+      max_tracks_per_coverage_repair_run: 1,
       when_request_is_vague: "Choose the highest-priority ready track from the matching queue and state the assumption.",
       when_request_is_too_broad: "Push back and decompose the request to one track-level pass.",
       when_only_hallmark_is_named: "Choose the highest-priority track within that hallmark, or ask the user to pick one if there is no clear anchor."
@@ -396,7 +455,8 @@ async function main() {
         "coverage_verdict",
         "known_gap_count",
         "high_priority_gap_count",
-        "next_coverage_action"
+        "next_coverage_action",
+        "last_coverage_recommended_mode"
       ]) {
         if (output[optionalKey] === undefined || output[optionalKey] === null) {
           delete output[optionalKey];
@@ -414,6 +474,7 @@ async function main() {
     notes: [
       "Bootstrap priority is front-loaded toward one anchor track per uncovered hallmark.",
       "Surveillance priority applies only to tracks that already have a public baseline and no active review bundle.",
+      "Coverage-repair priority applies when the latest coverage assessment recommends repairing source-completeness gaps before ordinary surveillance.",
       "The queue is a curator planning tool, not a public forecast."
     ],
     selection_policy: {
@@ -434,6 +495,13 @@ async function main() {
         "The delta window has been checked and either nothing material changed or one bounded update is ready.",
         "The evidence stays in activity-only territory and does not justify outlook movement.",
         "The pass begins to broaden into fresh baseline research and should be handed back to bootstrap instead."
+      ]
+    },
+    coverage_repair_defaults: {
+      stop_after: [
+        "The known source-completeness gaps named in the latest coverage assessment have been checked.",
+        "The coverage verdict, known gaps, and next coverage action can be updated without changing public claims.",
+        "New evidence materially changes the outlook and should move into a bounded surveillance or outlook-refresh bundle."
       ]
     },
     phases: [
@@ -461,10 +529,22 @@ async function main() {
         phase_id: "surveillance-rotation",
         label: "Surveillance Rotation",
         goal: "Revisit established tracks for meaningful deltas without redoing full baseline research."
+      },
+      {
+        phase_id: "coverage-repair",
+        label: "Coverage Repair",
+        goal: "Repair known source-completeness gaps without treating historical completeness work as ordinary surveillance."
       }
     ],
     bootstrap_queue: bootstrapCandidates,
-    surveillance_queue: surveillanceCandidates
+    surveillance_queue: surveillanceCandidates,
+    coverage_repair_queue: coverageRepairCandidates.map((entry) => {
+      const output = { ...entry };
+      if (output.notes === undefined || output.notes === null) {
+        delete output.notes;
+      }
+      return output;
+    })
   };
 
   await writeJson("research/state/coverage-status.v1.json", coverageStatus);

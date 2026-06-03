@@ -31,15 +31,41 @@ Record the search log in `research/sessions/`, including query/source names, dat
 
 ## Materiality Decision
 
+Treat surveillance as a sorting pass first. The job is to decide whether the delta belongs in `no_op`, `activity_only`, `outlook_refresh`, or `coverage_repair`, not to force a public update.
+
 Choose one outcome:
 
 - `no_op`: nothing material changed. Write the session record only. Do not create a candidate bundle or staged JSON.
 - `activity_only`: a real-world activity changed, but public evidence interpretation does not move. Write the session record; create a bundle only if a public `activity_item` or `source` record is worth publishing.
 - `outlook_refresh`: evidence, safety, trial results, taxonomy mapping, or forecast support changed enough to update public records. Create the smallest candidate bundle that captures the change.
+- `coverage_repair`: the pass primarily addresses source-completeness gaps from a coverage assessment. Update or create a coverage assessment; only create a public bundle if the repair also changes public records.
 
 Avoid staging records for contextual noise, duplicate sources, unchanged registries, or speculative implications.
 
 If the pass primarily improves confidence about source completeness rather than changing public records, update or create a `coverage_assessment` and keep the public layer unchanged.
+
+Functional endpoints are important for stage upgrades, but they are not the only decision-relevant signal. Safety, durability, null results, registry results, corrections, retractions, mechanism, taxonomy boundaries, and biomarker evidence can be material when they affect the current public claim.
+
+Record a `materiality_decision` in the research session with:
+
+- `material_delta`
+- `public_update_needed`
+- `activity_only`
+- `coverage_assessment_needed`
+- `recommended_next_mode`
+- `rationale`
+
+## Excluded Sources
+
+Record reviewed-but-excluded sources in `excluded_sources[]` when they are close enough that a future reviewer might otherwise re-check them. Include the PMID, registry ID, URL, or other reference; the exclusion decision; and the reason.
+
+Use excluded-source records for:
+
+- method-limited studies that look relevant but cannot support a causal or public claim
+- protocols, registry entries, or conference records with no results
+- duplicate or unchanged registry/publication records
+- wrong-scope papers that overlap terms but not the track
+- context that informed boundaries but did not merit a public source or finding record
 
 ## Record Changes
 
@@ -62,10 +88,13 @@ Create or update `research/coverage-assessments/<track-id>-coverage-<date>.json`
 
 Do not update coverage assessments just to mirror every source or activity item. The assessment is for category-level completeness and known gaps.
 
+Set `next_recommended_mode` in the coverage assessment. Use `surveillance` when normal delta monitoring should continue, and `coverage_repair` when known source-completeness gaps should be repaired before another ordinary surveillance pass.
+
 ## Review Lanes
 
 - `no_op`: no evidence review.
 - `activity_only`: no evidence review when only a session record is written. If a bundle stages source or activity records, normally require `source_fidelity` only.
+- `coverage_repair`: no evidence review when only a coverage assessment changes. If public records change, use the review lanes required by the public change.
 - `outlook_refresh`: require `source_fidelity` and `interpretation_forecast`.
 - Add `safety_limitations` when adverse events, population limits, disease-specific boundaries, dosing, durability, or risk/benefit framing materially change.
 - Add `taxonomy_mapping` when a track, hallmark, intervention, study, or finding link changes.

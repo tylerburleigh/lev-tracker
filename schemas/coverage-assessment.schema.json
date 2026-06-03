@@ -18,7 +18,8 @@
     "evidence_categories",
     "covered_source_ids",
     "known_gaps",
-    "next_coverage_action"
+    "next_coverage_action",
+    "next_recommended_mode"
   ],
   "properties": {
     "schema_version": {
@@ -231,6 +232,13 @@
     },
     "next_coverage_action": {
       "type": "string"
+    },
+    "next_recommended_mode": {
+      "enum": [
+        "bootstrap",
+        "surveillance",
+        "coverage_repair"
+      ]
     },
     "tags": {
       "type": "array",

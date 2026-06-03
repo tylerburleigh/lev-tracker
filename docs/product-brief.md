@@ -334,18 +334,21 @@ This should feel closer to editorial peer review than to a CMS form.
 
 ## Research Ops Integration
 
-Research automation supports the admin workflow in two modes:
+Research automation supports the admin workflow in three modes:
 
 - `bootstrap`
   Build initial coverage for a hallmark, track, or evidence question.
 - `surveillance`
   Recheck known areas for changes since the last search.
+- `coverage_repair`
+  Repair known source-completeness gaps from coverage assessments without treating historical completeness work as ordinary surveillance.
 
 Each session should leave durable artifacts:
 
 - session journal
 - zero or one candidate bundle
 - staged records only for material changes
+- structured materiality decision and excluded-source trail when applicable
 - next actions
 - regenerated planning state after session, bundle, or publication changes
 

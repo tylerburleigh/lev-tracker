@@ -33,7 +33,8 @@
     "mode": {
       "enum": [
         "bootstrap",
-        "surveillance"
+        "surveillance",
+        "coverage_repair"
       ]
     },
     "started_at": {
@@ -93,6 +94,7 @@
       "enum": [
         "no_op",
         "activity_only",
+        "coverage_assessment_updated",
         "candidate_bundle_submitted",
         "candidate_bundle_revised",
         "handoff_to_editorial",
@@ -108,8 +110,118 @@
     "next_recommended_mode": {
       "enum": [
         "bootstrap",
-        "surveillance"
+        "surveillance",
+        "coverage_repair"
       ]
+    },
+    "materiality_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "material_delta",
+        "public_update_needed",
+        "activity_only",
+        "coverage_assessment_needed",
+        "recommended_next_mode",
+        "rationale"
+      ],
+      "properties": {
+        "material_delta": {
+          "enum": [
+            "none",
+            "activity_only",
+            "outlook_refresh",
+            "coverage_repair_needed",
+            "blocked"
+          ]
+        },
+        "public_update_needed": {
+          "type": "boolean"
+        },
+        "activity_only": {
+          "type": "boolean"
+        },
+        "coverage_assessment_needed": {
+          "type": "boolean"
+        },
+        "recommended_next_mode": {
+          "enum": [
+            "bootstrap",
+            "surveillance",
+            "coverage_repair"
+          ]
+        },
+        "rationale": {
+          "type": "string"
+        }
+      }
+    },
+    "search_log": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_name",
+          "checked_at",
+          "summary"
+        ],
+        "properties": {
+          "source_name": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          },
+          "checked_at": {
+            "$ref": "./common.schema.json#/$defs/dateTime"
+          },
+          "url": {
+            "$ref": "./common.schema.json#/$defs/url"
+          },
+          "summary": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "excluded_sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "reference",
+          "decision",
+          "reason"
+        ],
+        "properties": {
+          "reference": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "$ref": "./common.schema.json#/$defs/url"
+          },
+          "decision": {
+            "enum": [
+              "not_material",
+              "duplicate",
+              "context_only",
+              "wrong_scope",
+              "method_limit",
+              "no_results",
+              "unchanged_registry",
+              "not_retrieved"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
     },
     "source_ids": {
       "type": "array",
