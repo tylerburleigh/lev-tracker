@@ -215,7 +215,15 @@ These are the main gaps between the implemented app and `docs/public-site-ia.md`
 
 ## Priority 2: Research Coverage
 
-Bootstrap coverage is complete for all 38 seeded tracks. The current goal is surveillance rotation: one track-level delta pass at a time, starting with `microbiome-composition-modulation`, with `no_op` and `activity_only` outcomes treated as successful results when the public evidence state does not materially change.
+Bootstrap coverage is complete for all 38 seeded tracks. The first surveillance pass is also complete: `microbiome-composition-modulation-surveillance-2026-06-03` was reviewed, published, and promoted to public records.
+
+The current goal is to continue surveillance rotation one track-level delta pass at a time, with `no_op` and `activity_only` outcomes treated as successful results when the public evidence state does not materially change. The generated queue can immediately re-list recently published high-priority tracks because it does not enforce a cooldown; unless deliberately doing a rapid follow-up, the next distinct surveillance target is `ecosystem-replacement`.
+
+Most recent published surveillance changes:
+
+1. `microbiome-composition-modulation`
+   - Current status: published.
+   - Note: `microbiome-composition-modulation-surveillance-2026-06-03` published 8 source, intervention, study, finding, and outlook records after source-fidelity review passed and interpretation/forecast review completed with a non-blocking `needs_human_judgment` verdict. The public outlook remains low-confidence `human_biomarker_signal`, changes momentum to `mixed`, and explicitly bounds the TBC169 chronic-constipation synbiotic RCT plus the null healthy-older-adult online physical activity microbiome RCT.
 
 Most recent published baseline changes:
 
@@ -360,12 +368,18 @@ Next bootstrap queue items:
 
 Top surveillance queue items:
 
+Generated queue order:
+
 1. `microbiome-composition-modulation`
 2. `ecosystem-replacement`
 3. `mitochondrial-delivery-and-transplantation`
 4. `insulin-igf-axis-modulation`
 5. `microbiome-metabolite-restoration`
 6. `resolution-pathway-and-tissue-repair`
+
+Next distinct target after the just-published microbiome-composition pass:
+
+1. `ecosystem-replacement`
 
 Research runs should continue to follow `docs/research-ops-state.md`: one track per run, one session record, zero or one candidate bundle, staged JSON only for material changes.
 
