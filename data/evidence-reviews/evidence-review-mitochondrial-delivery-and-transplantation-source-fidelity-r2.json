@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-mitochondrial-delivery-and-transplantation-source-fidelity-r2",
+  "name": "Source Fidelity review for Mitochondrial Delivery And Transplantation bundle",
+  "candidate_bundle_id": "mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03",
+  "bundle_revision_number": 2,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Revision 2 addresses the only blocking source-fidelity issue from revision 1: the aged-rat prefrontal-cortex stress study now records 24 aged rats across four groups and notes the 7 young rats used for mitochondrial sourcing. The staged source, study, finding, intervention, activity, and outlook records now stay within the cited PubMed, PMC full-text, and ClinicalTrials.gov source boundaries closely enough for editorial approval review.",
+  "reviewed_change_ids": [
+    "create-source-pmid-32071554",
+    "create-source-pmid-35834060",
+    "create-source-pmid-37275757",
+    "create-source-pmid-39039808",
+    "create-source-pmid-33349443",
+    "create-source-pmid-39628322",
+    "create-source-nct-02851758",
+    "create-source-nct-04998357",
+    "create-intervention-autologous-mitochondrial-transplantation",
+    "create-intervention-young-donor-mitochondrial-transfusion",
+    "create-intervention-ex-vivo-mitochondrial-transfer",
+    "create-study-young-mitochondria-aged-mouse-mitotherapy",
+    "create-study-mitochondrial-transfusion-aged-mouse-hippocampus",
+    "create-study-young-mitochondria-aged-rat-pfc-stress",
+    "create-study-mito-transfer-aged-cd4-t-cells",
+    "create-study-pediatric-cardiac-autologous-mt-iri",
+    "create-study-acute-stroke-autologous-mt-phase1",
+    "create-activity-autologous-mt-cardiac-ecmo-trial-recruiting",
+    "create-activity-autologous-mt-cerebral-ischemia-trial-recruiting",
+    "create-finding-young-mitochondria-improved-aged-mouse-cognition-motor",
+    "create-finding-mitochondrial-transfusion-upregulated-sdhb-aged-mice",
+    "create-finding-young-mitochondria-reduced-aged-rat-pfc-apoptosis",
+    "create-finding-mito-transfer-reduced-elderly-human-t-cell-senescence-ex-vivo",
+    "create-finding-pediatric-cardiac-mt-ecmo-separation-pilot",
+    "create-finding-acute-stroke-mt-phase1-no-significant-adverse-events",
+    "create-track-mitochondrial-delivery-and-transplantation-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "aged-rat-study-sample-size-corrected",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-study-young-mitochondria-aged-rat-pfc-stress",
+      "applies_to_record": {
+        "record_type": "study",
+        "record_id": "young-mitochondria-aged-rat-pfc-stress"
+      },
+      "claim_or_issue": "Revision 1 listed sample_size 12 for the aged-rat stress study, while the source reports 24 aged rats across four groups plus 7 young donor/source rats.",
+      "why_it_matters": "The corrected staged record now distinguishes the study-level aged-animal count from the n = 3 plotted biomarker comparisons captured in the related finding.",
+      "recommended_action": "No further source-fidelity revision required for this issue.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-03T12:02:41.696Z",
+  "updated_at": "2026-06-03T12:02:41.696Z"
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "young-donor-mitochondrial-transfusion",
+  "name": "Young-Donor Mitochondrial Transfusion",
+  "summary": "Preclinical transfer or infusion of mitochondria isolated from young donors into aged animals or aged tissues.",
+  "aliases": [
+    "young mitochondria transplantation",
+    "mitotherapy",
+    "mitochondrial transfusion"
+  ],
+  "modalities": [
+    "procedure",
+    "cell_therapy"
+  ],
+  "target_hallmark_ids": [
+    "mitochondrial_dysfunction"
+  ],
+  "track_ids": [
+    "mitochondrial-delivery-and-transplantation"
+  ],
+  "mechanism_summary": "The intervention concept attempts to supplement aged or stressed tissues with mitochondria from young donors, with proposed effects on ATP production, oxidative stress, mitochondrial-complex abundance, apoptosis, and tissue bioenergetics.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "young-mitochondria-aged-mouse-mitotherapy",
+    "mitochondrial-transfusion-aged-mouse-hippocampus",
+    "young-mitochondria-aged-rat-pfc-stress"
+  ],
+  "linked_finding_ids": [
+    "young-mitochondria-improved-aged-mouse-cognition-motor",
+    "mitochondrial-transfusion-upregulated-sdhb-aged-mice",
+    "young-mitochondria-reduced-aged-rat-pfc-apoptosis"
+  ],
+  "risk_flags": [
+    "animal-only-aging-evidence",
+    "source-compatibility-and-immunogenicity-uncertain",
+    "biodistribution-and-engraftment-unclear",
+    "durability-unknown",
+    "human-manufacturing-path-not-established"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether young-donor mitochondrial delivery can be safely translated outside animal models",
+      "Whether functional improvements persist beyond short experimental windows",
+      "Which tissues receive, retain, and functionally integrate transferred mitochondria after systemic delivery",
+      "Whether allogeneic or engineered sources can avoid immune and mtDNA-compatibility concerns"
+    ]
+  },
+  "tags": [
+    "mitochondrial-delivery-and-transplantation",
+    "young-mitochondria",
+    "aged-animals",
+    "mitotherapy",
+    "preclinical"
+  ]
+}

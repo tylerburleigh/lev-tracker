@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "ex-vivo-mitochondrial-transfer",
+  "name": "Ex Vivo Mitochondrial Transfer",
+  "summary": "Cell-therapy style mitochondrial transfer performed outside the body before cellular testing or reinfusion.",
+  "aliases": [
+    "mito-transfer",
+    "artificial mitochondrial transfer",
+    "mitochondrial augmentation"
+  ],
+  "modalities": [
+    "cell_therapy"
+  ],
+  "target_hallmark_ids": [
+    "mitochondrial_dysfunction"
+  ],
+  "secondary_hallmark_ids": [
+    "cellular_senescence",
+    "chronic_inflammation"
+  ],
+  "track_ids": [
+    "mitochondrial-delivery-and-transplantation"
+  ],
+  "mechanism_summary": "The approach transfers isolated mitochondria into recipient cells ex vivo, with the goal of improving bioenergetic state, activation capacity, differentiation, or senescence-associated phenotypes before any therapeutic cell use.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "mito-transfer-aged-cd4-t-cells"
+  ],
+  "linked_finding_ids": [
+    "mito-transfer-reduced-elderly-human-t-cell-senescence-ex-vivo"
+  ],
+  "risk_flags": [
+    "ex-vivo-not-treated-human-efficacy",
+    "cell-product-manufacturing-burden",
+    "durability-after-transfer-uncertain",
+    "aging-relevance-may-be-context-specific"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "in_vitro",
+    "human_data": true,
+    "open_questions": [
+      "Whether ex vivo mitochondrial transfer can generate durable in vivo benefit after cell delivery",
+      "Which elderly-human cell types are viable therapeutic targets",
+      "Whether improved cell biomarkers translate to clinically meaningful immune or tissue function",
+      "How donor mitochondria source, compatibility, and quality control should be standardized"
+    ]
+  },
+  "tags": [
+    "mitochondrial-delivery-and-transplantation",
+    "ex-vivo",
+    "cell-therapy",
+    "immune-senescence",
+    "human-cells"
+  ]
+}

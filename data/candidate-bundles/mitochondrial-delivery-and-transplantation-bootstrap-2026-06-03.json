@@ -1,0 +1,408 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03",
+  "name": "Mitochondrial delivery and transplantation bootstrap for June 3, 2026",
+  "summary": "Revised bootstrap bundle establishing the first public baseline candidate for the mitochondrial delivery and transplantation track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-03T11:22:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 2,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Mitochondrial Delivery and Transplantation, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "mitochondrial_dysfunction"
+    ],
+    "track_ids": [
+      "mitochondrial-delivery-and-transplantation"
+    ],
+    "intervention_ids": [
+      "autologous-mitochondrial-transplantation",
+      "young-donor-mitochondrial-transfusion",
+      "ex-vivo-mitochondrial-transfer"
+    ]
+  },
+  "source_ids": [
+    "pmid-32071554",
+    "pmid-35834060",
+    "pmid-37275757",
+    "pmid-39039808",
+    "pmid-33349443",
+    "pmid-39628322",
+    "nct-02851758",
+    "nct-04998357"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/32071554/",
+    "https://pubmed.ncbi.nlm.nih.gov/35834060/",
+    "https://pubmed.ncbi.nlm.nih.gov/37275757/",
+    "https://pubmed.ncbi.nlm.nih.gov/39039808/",
+    "https://pubmed.ncbi.nlm.nih.gov/33349443/",
+    "https://pubmed.ncbi.nlm.nih.gov/39628322/",
+    "https://clinicaltrials.gov/study/NCT02851758",
+    "https://clinicaltrials.gov/study/NCT04998357"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-mitochondrial-delivery-and-transplantation-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-mitochondrial-dysfunction-outlook"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "autologous-mitochondrial-transplantation"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "young-donor-mitochondrial-transfusion"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "ex-vivo-mitochondrial-transfer"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "young-mitochondria-improved-aged-mouse-cognition-motor"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "mitochondrial-transfusion-upregulated-sdhb-aged-mice"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "young-mitochondria-reduced-aged-rat-pfc-apoptosis"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "mito-transfer-reduced-elderly-human-t-cell-senescence-ex-vivo"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "pediatric-cardiac-mt-ecmo-separation-pilot"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "acute-stroke-mt-phase1-no-significant-adverse-events"
+    },
+    {
+      "record_type": "activity_item",
+      "record_id": "autologous-mt-cardiac-ecmo-trial-recruiting"
+    },
+    {
+      "record_type": "activity_item",
+      "record_id": "autologous-mt-cerebral-ischemia-trial-recruiting"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-32071554",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-32071554",
+      "file_path": "data/sources/pmid-32071554.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/pmid-32071554.json",
+      "summary": "Add aged mouse young-mitochondria mitotherapy source.",
+      "rationale": "This source anchors the direct aged-animal functional signal for the track."
+    },
+    {
+      "change_id": "create-source-pmid-35834060",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-35834060",
+      "file_path": "data/sources/pmid-35834060.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/pmid-35834060.json",
+      "summary": "Add aged mouse hippocampal mitochondrial transfusion source.",
+      "rationale": "This source adds target-tissue mitochondrial biomarker support in aged animals."
+    },
+    {
+      "change_id": "create-source-pmid-37275757",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-37275757",
+      "file_path": "data/sources/pmid-37275757.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/pmid-37275757.json",
+      "summary": "Add aged rat prefrontal-cortex young-mitochondria source.",
+      "rationale": "This source supplies a second aged-animal CNS mechanistic signal."
+    },
+    {
+      "change_id": "create-source-pmid-39039808",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-39039808",
+      "file_path": "data/sources/pmid-39039808.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/pmid-39039808.json",
+      "summary": "Add aged mouse and elderly human CD4 T-cell mito-transfer source.",
+      "rationale": "This source supplies elderly-human ex vivo support while retaining the treated-human boundary."
+    },
+    {
+      "change_id": "create-source-pmid-33349443",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-33349443",
+      "file_path": "data/sources/pmid-33349443.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/pmid-33349443.json",
+      "summary": "Add pediatric cardiac mitochondrial transplantation pilot source.",
+      "rationale": "This source captures the most efficacy-adjacent treated-human signal while preserving acute pediatric disease limits."
+    },
+    {
+      "change_id": "create-source-pmid-39628322",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-39628322",
+      "file_path": "data/sources/pmid-39628322.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/pmid-39628322.json",
+      "summary": "Add acute stroke autologous mitochondrial transplant phase 1 source.",
+      "rationale": "This source adds human-brain safety and feasibility context without upgrading aging efficacy."
+    },
+    {
+      "change_id": "create-source-nct-02851758",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-02851758",
+      "file_path": "data/sources/nct-02851758.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/nct-02851758.json",
+      "summary": "Add recruiting pediatric ECMO ischemia mitochondrial transplantation registry source.",
+      "rationale": "This registry is trial-watch context and should not be interpreted as posted efficacy evidence."
+    },
+    {
+      "change_id": "create-source-nct-04998357",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-04998357",
+      "file_path": "data/sources/nct-04998357.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/nct-04998357.json",
+      "summary": "Add recruiting cerebral ischemia mitochondrial transplant registry source.",
+      "rationale": "This registry contextualizes the stroke phase 1 publication and confirms the no-results-posted boundary."
+    },
+    {
+      "change_id": "create-intervention-autologous-mitochondrial-transplantation",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "autologous-mitochondrial-transplantation",
+      "file_path": "data/interventions/autologous-mitochondrial-transplantation.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/autologous-mitochondrial-transplantation.json",
+      "summary": "Normalize autologous mitochondrial transplantation.",
+      "rationale": "The intervention record makes the human procedural evidence inspectable while preserving source, route, and disease-context limits."
+    },
+    {
+      "change_id": "create-intervention-young-donor-mitochondrial-transfusion",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "young-donor-mitochondrial-transfusion",
+      "file_path": "data/interventions/young-donor-mitochondrial-transfusion.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/young-donor-mitochondrial-transfusion.json",
+      "summary": "Normalize young-donor mitochondrial transfusion.",
+      "rationale": "The intervention record groups the direct aged-animal mitotherapy evidence and distinguishes it from autologous human acute-disease transplantation."
+    },
+    {
+      "change_id": "create-intervention-ex-vivo-mitochondrial-transfer",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "ex-vivo-mitochondrial-transfer",
+      "file_path": "data/interventions/ex-vivo-mitochondrial-transfer.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/ex-vivo-mitochondrial-transfer.json",
+      "summary": "Normalize ex vivo mitochondrial transfer.",
+      "rationale": "The intervention record keeps elderly-human cell evidence separate from treated-human evidence."
+    },
+    {
+      "change_id": "create-study-young-mitochondria-aged-mouse-mitotherapy",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "young-mitochondria-aged-mouse-mitotherapy",
+      "file_path": "data/studies/young-mitochondria-aged-mouse-mitotherapy.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/young-mitochondria-aged-mouse-mitotherapy.json",
+      "summary": "Add aged mouse mitotherapy study record.",
+      "rationale": "This study anchors the animal_signal stage assignment."
+    },
+    {
+      "change_id": "create-study-mitochondrial-transfusion-aged-mouse-hippocampus",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "mitochondrial-transfusion-aged-mouse-hippocampus",
+      "file_path": "data/studies/mitochondrial-transfusion-aged-mouse-hippocampus.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/mitochondrial-transfusion-aged-mouse-hippocampus.json",
+      "summary": "Add aged mouse hippocampal mitochondrial transfusion study record.",
+      "rationale": "This study adds aged-animal mitochondrial biomarker support."
+    },
+    {
+      "change_id": "create-study-young-mitochondria-aged-rat-pfc-stress",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "young-mitochondria-aged-rat-pfc-stress",
+      "file_path": "data/studies/young-mitochondria-aged-rat-pfc-stress.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/young-mitochondria-aged-rat-pfc-stress.json",
+      "summary": "Add aged rat young-mitochondria stress study record.",
+      "rationale": "This study adds a small mechanistic CNS aging-context signal."
+    },
+    {
+      "change_id": "create-study-mito-transfer-aged-cd4-t-cells",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "mito-transfer-aged-cd4-t-cells",
+      "file_path": "data/studies/mito-transfer-aged-cd4-t-cells.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/mito-transfer-aged-cd4-t-cells.json",
+      "summary": "Add aged mouse and elderly human CD4 T-cell mito-transfer study record.",
+      "rationale": "This study captures the human-cell support while preserving ex vivo directness limits."
+    },
+    {
+      "change_id": "create-study-pediatric-cardiac-autologous-mt-iri",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "pediatric-cardiac-autologous-mt-iri",
+      "file_path": "data/studies/pediatric-cardiac-autologous-mt-iri.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/pediatric-cardiac-autologous-mt-iri.json",
+      "summary": "Add pediatric cardiac autologous mitochondrial transplantation pilot study.",
+      "rationale": "This study records the strongest human clinical signal while keeping it disease-specific."
+    },
+    {
+      "change_id": "create-study-acute-stroke-autologous-mt-phase1",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "acute-stroke-autologous-mt-phase1",
+      "file_path": "data/studies/acute-stroke-autologous-mt-phase1.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/acute-stroke-autologous-mt-phase1.json",
+      "summary": "Add acute cerebral ischemia autologous mitochondrial transplant phase 1 study.",
+      "rationale": "This study records human-brain safety and feasibility context."
+    },
+    {
+      "change_id": "create-activity-autologous-mt-cardiac-ecmo-trial-recruiting",
+      "change_type": "create_record",
+      "target_record_type": "activity_item",
+      "target_record_id": "autologous-mt-cardiac-ecmo-trial-recruiting",
+      "file_path": "data/activity-items/autologous-mt-cardiac-ecmo-trial-recruiting.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/autologous-mt-cardiac-ecmo-trial-recruiting.json",
+      "summary": "Add cardiac ECMO autologous mitochondrial transplantation trial-watch activity item.",
+      "rationale": "This trial status is relevant context but not efficacy evidence."
+    },
+    {
+      "change_id": "create-activity-autologous-mt-cerebral-ischemia-trial-recruiting",
+      "change_type": "create_record",
+      "target_record_type": "activity_item",
+      "target_record_id": "autologous-mt-cerebral-ischemia-trial-recruiting",
+      "file_path": "data/activity-items/autologous-mt-cerebral-ischemia-trial-recruiting.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/autologous-mt-cerebral-ischemia-trial-recruiting.json",
+      "summary": "Add cerebral ischemia autologous mitochondrial transplantation trial-watch activity item.",
+      "rationale": "This trial status contextualizes the phase 1 source while retaining the no-registry-results boundary."
+    },
+    {
+      "change_id": "create-finding-young-mitochondria-improved-aged-mouse-cognition-motor",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "young-mitochondria-improved-aged-mouse-cognition-motor",
+      "file_path": "data/findings/young-mitochondria-improved-aged-mouse-cognition-motor.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/young-mitochondria-improved-aged-mouse-cognition-motor.json",
+      "summary": "Add aged mouse functional mitotherapy finding.",
+      "rationale": "This finding supports the animal_signal stage assignment."
+    },
+    {
+      "change_id": "create-finding-mitochondrial-transfusion-upregulated-sdhb-aged-mice",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "mitochondrial-transfusion-upregulated-sdhb-aged-mice",
+      "file_path": "data/findings/mitochondrial-transfusion-upregulated-sdhb-aged-mice.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/mitochondrial-transfusion-upregulated-sdhb-aged-mice.json",
+      "summary": "Add aged mouse hippocampal SDHB biomarker finding.",
+      "rationale": "This finding supports the animal biomarker portion of the baseline."
+    },
+    {
+      "change_id": "create-finding-young-mitochondria-reduced-aged-rat-pfc-apoptosis",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "young-mitochondria-reduced-aged-rat-pfc-apoptosis",
+      "file_path": "data/findings/young-mitochondria-reduced-aged-rat-pfc-apoptosis.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/young-mitochondria-reduced-aged-rat-pfc-apoptosis.json",
+      "summary": "Add aged rat PFC apoptosis marker finding.",
+      "rationale": "This finding adds a second aged-animal CNS mechanism signal."
+    },
+    {
+      "change_id": "create-finding-mito-transfer-reduced-elderly-human-t-cell-senescence-ex-vivo",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "mito-transfer-reduced-elderly-human-t-cell-senescence-ex-vivo",
+      "file_path": "data/findings/mito-transfer-reduced-elderly-human-t-cell-senescence-ex-vivo.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/mito-transfer-reduced-elderly-human-t-cell-senescence-ex-vivo.json",
+      "summary": "Add elderly human CD4 T-cell ex vivo mito-transfer finding.",
+      "rationale": "This finding supports human-cell plausibility while limiting the stage because it is ex vivo."
+    },
+    {
+      "change_id": "create-finding-pediatric-cardiac-mt-ecmo-separation-pilot",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "pediatric-cardiac-mt-ecmo-separation-pilot",
+      "file_path": "data/findings/pediatric-cardiac-mt-ecmo-separation-pilot.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/pediatric-cardiac-mt-ecmo-separation-pilot.json",
+      "summary": "Add pediatric acute cardiac mitochondrial transplantation pilot finding.",
+      "rationale": "This finding records the human clinical signal and its acute pediatric boundary."
+    },
+    {
+      "change_id": "create-finding-acute-stroke-mt-phase1-no-significant-adverse-events",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "acute-stroke-mt-phase1-no-significant-adverse-events",
+      "file_path": "data/findings/acute-stroke-mt-phase1-no-significant-adverse-events.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/acute-stroke-mt-phase1-no-significant-adverse-events.json",
+      "summary": "Add acute stroke phase 1 safety finding.",
+      "rationale": "This finding supports clinical feasibility and safety context but not aging efficacy."
+    },
+    {
+      "change_id": "create-track-mitochondrial-delivery-and-transplantation-outlook",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-mitochondrial-delivery-and-transplantation-outlook",
+      "file_path": "data/outlooks/track-mitochondrial-delivery-and-transplantation-outlook.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03/track-mitochondrial-delivery-and-transplantation-outlook.json",
+      "summary": "Create the first public outlook for the Mitochondrial Delivery and Transplantation track.",
+      "rationale": "A low-confidence animal_signal baseline is justified by aged-animal functional and biomarker findings, while human evidence remains acute disease-specific or ex vivo.",
+      "uncertainty_flags": [
+        "The direct aging stage anchor is animal evidence.",
+        "The strongest human clinical signal is pediatric acute ischemia-reperfusion injury, not aging.",
+        "The acute stroke phase 1 result is safety and feasibility evidence only.",
+        "The elderly-human T-cell result is ex vivo and should not be treated as a human intervention trial.",
+        "Overlap with mitochondrial biogenesis/dynamics, mitophagy, cellular senescence, and immune aging requires review."
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "mitochondrial-delivery-and-transplantation",
+      "note": "A first public baseline is justified at low-confidence animal_signal because aged-animal mitochondrial delivery studies show functional or tissue-biomarker improvement, while human evidence remains acute disease-specific or ex vivo.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "mitochondrial_dysfunction",
+      "note": "Publishing this bundle would broaden mitochondrial dysfunction coverage to procedural and cell-therapy delivery approaches while keeping the stage below treated-human aging benefit.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-03-mitochondrial-delivery-and-transplantation-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-mitochondrial-delivery-and-transplantation-source-fidelity-r1",
+    "evidence-review-mitochondrial-delivery-and-transplantation-interpretation-forecast-r1",
+    "evidence-review-mitochondrial-delivery-and-transplantation-source-fidelity-r2",
+    "evidence-review-mitochondrial-delivery-and-transplantation-interpretation-forecast-r2"
+  ],
+  "publication_event_ids": [
+    "publish-mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03-2026-06-03t12-03-58-481z"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-mitochondrial-delivery-and-transplantation-interpretation-forecast-r2",
+  "name": "Interpretation Forecast review for Mitochondrial Delivery And Transplantation bundle",
+  "candidate_bundle_id": "mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03",
+  "bundle_revision_number": 2,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "needs_human_judgment",
+  "blocking": false,
+  "summary": "Revision 2 does not change the interpretation/forecast calibration. The staged outlook remains appropriate for publication review: animal_signal is supported by direct aged-animal functional and biomarker findings, elderly-human CD4+ T-cell evidence remains ex vivo, and the pediatric cardiac plus acute-stroke human records remain acute disease-specific translation rather than aging efficacy. The non-blocking human-judgment verdict is retained because final public framing still depends on curator weighting of provocative human procedural signals that do not test healthy aging or durable LEV-relevant outcomes.",
+  "reviewed_change_ids": [
+    "create-source-pmid-32071554",
+    "create-source-pmid-35834060",
+    "create-source-pmid-37275757",
+    "create-source-pmid-39039808",
+    "create-source-pmid-33349443",
+    "create-source-pmid-39628322",
+    "create-source-nct-02851758",
+    "create-source-nct-04998357",
+    "create-intervention-autologous-mitochondrial-transplantation",
+    "create-intervention-young-donor-mitochondrial-transfusion",
+    "create-intervention-ex-vivo-mitochondrial-transfer",
+    "create-study-young-mitochondria-aged-mouse-mitotherapy",
+    "create-study-mitochondrial-transfusion-aged-mouse-hippocampus",
+    "create-study-young-mitochondria-aged-rat-pfc-stress",
+    "create-study-mito-transfer-aged-cd4-t-cells",
+    "create-study-pediatric-cardiac-autologous-mt-iri",
+    "create-study-acute-stroke-autologous-mt-phase1",
+    "create-activity-autologous-mt-cardiac-ecmo-trial-recruiting",
+    "create-activity-autologous-mt-cerebral-ischemia-trial-recruiting",
+    "create-finding-young-mitochondria-improved-aged-mouse-cognition-motor",
+    "create-finding-mitochondrial-transfusion-upregulated-sdhb-aged-mice",
+    "create-finding-young-mitochondria-reduced-aged-rat-pfc-apoptosis",
+    "create-finding-mito-transfer-reduced-elderly-human-t-cell-senescence-ex-vivo",
+    "create-finding-pediatric-cardiac-mt-ecmo-separation-pilot",
+    "create-finding-acute-stroke-mt-phase1-no-significant-adverse-events",
+    "create-track-mitochondrial-delivery-and-transplantation-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "animal-signal-stage-still-calibrated-r2",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "applies_to_change_id": "create-track-mitochondrial-delivery-and-transplantation-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-mitochondrial-delivery-and-transplantation-outlook"
+      },
+      "claim_or_issue": "The revision 2 sample-size correction does not strengthen the evidence beyond animal_signal.",
+      "why_it_matters": "The corrected aged-rat record improves source fidelity, but the track still lacks treated-human aging biomarker, functional, clinical-outcome, or durability evidence.",
+      "recommended_action": "No interpretation revision required. Preserve animal_signal, low confidence, and the staged rating-change criteria.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "human-translation-boundaries-still-clear-r2",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-track-mitochondrial-delivery-and-transplantation-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-mitochondrial-delivery-and-transplantation-outlook"
+      },
+      "claim_or_issue": "The staged outlook still separates acute human procedural evidence and ex vivo elderly-human cell evidence from aging efficacy.",
+      "why_it_matters": "This prevents the pediatric cardiac pilot, stroke phase 1 safety report, and elderly-human CD4+ T-cell assays from being read as controlled treated-human aging benefit.",
+      "recommended_action": "No revision required. Keep the acute-disease, ex vivo, and trial-watch limitations in the outlook support map.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-03T12:03:06.840Z",
+  "updated_at": "2026-06-03T12:03:06.840Z"
+}

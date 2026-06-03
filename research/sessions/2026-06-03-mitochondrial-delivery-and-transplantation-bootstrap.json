@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-03-mitochondrial-delivery-and-transplantation-bootstrap",
+  "name": "Mitochondrial delivery and transplantation bootstrap pass for June 3, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-06-03T10:50:00Z",
+  "completed_at": "2026-06-03T11:22:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Mitochondrial Delivery and Transplantation, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "mitochondrial_dysfunction"
+    ],
+    "track_ids": [
+      "mitochondrial-delivery-and-transplantation"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03",
+  "summary": "The staged baseline assigns low-confidence animal_signal. Direct aging-relevant support is anchored to aged-animal mitochondrial delivery: young-mouse mitochondria improved aged-mouse cognitive and motor performance while shifting ATP and ROS, hippocampal mitochondrial transfusion up-regulated SDHB in aged mice, and young-rat mitochondria reduced prefrontal-cortex oxidative-stress and apoptosis markers in stressed aged rats. Human relevance is encouraging but bounded: ex vivo elderly-human CD4+ T-cell mito-transfer improved activation and senescence/exhaustion marker patterns, the pediatric cardiac pilot reported better ECMO separation after acute ischemia-reperfusion injury, and the acute-stroke phase 1 report found no significant adverse events in four treated subjects. None of the human evidence establishes treated-human aging efficacy.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-32071554",
+    "pmid-35834060",
+    "pmid-37275757",
+    "pmid-39039808",
+    "pmid-33349443",
+    "pmid-39628322",
+    "nct-02851758",
+    "nct-04998357"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/32071554/",
+    "https://pubmed.ncbi.nlm.nih.gov/35834060/",
+    "https://pubmed.ncbi.nlm.nih.gov/37275757/",
+    "https://pubmed.ncbi.nlm.nih.gov/39039808/",
+    "https://pubmed.ncbi.nlm.nih.gov/33349443/",
+    "https://pubmed.ncbi.nlm.nih.gov/39628322/",
+    "https://clinicaltrials.gov/study/NCT02851758",
+    "https://clinicaltrials.gov/study/NCT04998357"
+  ],
+  "notes": [
+    "The top bootstrap queue item was selected from research/backlog/track-priority.v1.json and research/state/coverage-status.v1.json.",
+    "The public question was scoped to one mitochondrial_dysfunction track: mitochondrial-delivery-and-transplantation.",
+    "The direct stage anchor is animal evidence because no treated-human aging trial or older-adult aging-relevant efficacy result was identified.",
+    "The pediatric cardiac and acute-stroke human records were treated as acute disease translation and safety/feasibility context, not as aging efficacy evidence.",
+    "The elderly-human CD4+ T-cell result was kept at ex vivo support because it is not a treated-human intervention.",
+    "Registry records for NCT02851758 and NCT04998357 were staged as trial-watch context and source records, with status as of June 3, 2026."
+  ],
+  "next_actions": [
+    "Run source-fidelity review for the staged PubMed and ClinicalTrials.gov records.",
+    "Run interpretation/forecast review with special attention to whether ex vivo elderly-human cells or acute human ischemia trials should remain below human_biomarker_signal for aging.",
+    "During review, check overlap boundaries with mitochondrial biogenesis/dynamics, selective autophagy/mitophagy, cellular senescence, and immune aging tracks.",
+    "If approved and published, inspect the mitochondrial dysfunction hallmark page and the mitochondrial delivery and transplantation track page for evidence-ladder coherence."
+  ]
+}

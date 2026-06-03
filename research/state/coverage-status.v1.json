@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-03T10:41:01.519Z",
+  "updated_at": "2026-06-03T12:04:06.552Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One bootstrap or surveillance run should cover one track unless the user explicitly narrows further.",
@@ -69,7 +69,7 @@
       "hallmark_id": "mitochondrial_dysfunction",
       "canonical_order": 7,
       "hallmark_bootstrap_status": "baseline",
-      "tracked_public_outlook_count": 3,
+      "tracked_public_outlook_count": 4,
       "next_priority_track_id": "mitochondrial-delivery-and-transplantation",
       "notes": "At least one track-level public baseline exists."
     },
@@ -519,11 +519,19 @@
       "hallmark_id": "mitochondrial_dysfunction",
       "canonical_order": 4,
       "name": "Mitochondrial Delivery and Transplantation",
-      "coverage_status": "not_started",
-      "next_mode": "bootstrap",
+      "coverage_status": "baseline",
+      "next_mode": "surveillance",
       "queue_state": "ready",
-      "default_research_question": "What is the current human-relevant evidence landscape for Mitochondrial Delivery and Transplantation, and what belongs in the first public baseline?",
-      "notes": "No track-level public baseline has been bootstrapped yet."
+      "last_session_id": "2026-06-03-mitochondrial-delivery-and-transplantation-bootstrap",
+      "last_session_at": "2026-06-03T11:22:00Z",
+      "last_session_mode": "bootstrap",
+      "last_session_outcome": "candidate_bundle_submitted",
+      "last_candidate_bundle_id": "mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03",
+      "last_candidate_bundle_status": "published",
+      "last_publication_event_id": "publish-mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03-2026-06-03t12-03-58-481z",
+      "last_published_at": "2026-06-03T12:03:58.481Z",
+      "default_research_question": "What changed for Mitochondrial Delivery and Transplantation since the last meaningful review or publication, and does any change justify a public update?",
+      "notes": "Latest publication event: publish-mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03-2026-06-03t12-03-58-481z."
     },
     {
       "track_id": "senolytics",

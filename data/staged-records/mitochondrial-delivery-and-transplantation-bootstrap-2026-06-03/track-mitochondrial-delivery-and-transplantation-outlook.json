@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-mitochondrial-delivery-and-transplantation-outlook",
+  "name": "Mitochondrial Delivery and Transplantation Track Outlook",
+  "subject_type": "track",
+  "subject_id": "mitochondrial-delivery-and-transplantation",
+  "current_stage": "animal_signal",
+  "momentum": "mixed",
+  "confidence": "low",
+  "main_blockers": [
+    "No treated-human healthy-aging or older-adult aging trial has shown mitochondrial delivery improves durable function, multimorbidity, disease risk, or survival.",
+    "Human clinical evidence is concentrated in small acute ischemia-reperfusion settings or ex vivo cell work rather than broad aging intervention.",
+    "Animal aging studies are small, short, and mostly CNS or immune-context experiments rather than replicated lifespan or durable healthspan programs.",
+    "Dose, route, mitochondrial source, quality control, tissue targeting, mtDNA compatibility, immunogenicity, and manufacturing scalability remain unresolved.",
+    "The track overlaps mitochondrial biogenesis, mitophagy, senescence, immune aging, acute injury repair, and cell therapy, so attribution needs careful curation."
+  ],
+  "best_current_signals": [
+    "Young-donor mitochondrial delivery improved cognitive and motor performance in aged mice while shifting ATP and ROS biomarkers.",
+    "Additional aged-animal studies report hippocampal mitochondrial-complex marker movement and reduced prefrontal-cortex oxidative-stress or apoptosis markers.",
+    "Ex vivo mitochondrial transfer improved activation, cytokine, exhaustion, and senescence marker patterns in elderly human CD4+ T cells, but this is not a treated-human trial.",
+    "Autologous mitochondrial transplantation has early human safety or efficacy-adjacent signals in severe acute ischemia settings, including pediatric postcardiotomy cardiogenic shock and acute ischemic stroke.",
+    "Recruiting registry records show continued cardiac and cerebral ischemia translation work, but registry status should not be mistaken for aging efficacy."
+  ],
+  "forecast_note": "Mitochondrial delivery and transplantation earns a low-confidence animal_signal baseline because direct aging evidence is currently strongest in aged animal mitotherapy experiments. The human evidence is useful for feasibility and safety, and one pediatric cardiac pilot is clinically provocative, but those data remain acute disease-specific and do not justify a human aging-benefit stage.",
+  "rating_change_criteria": [
+    "Move to human_biomarker_signal if a controlled treated-human study in older adults or an aging-relevant condition shows target-tissue mitochondrial uptake plus mitochondrial, senescence, inflammatory, or bioenergetic biomarker movement with acceptable safety.",
+    "Move to human_functional_benefit only if controlled human data show prespecified functional benefit in older adults or aging-relevant disease populations beyond acute procedural salvage.",
+    "Consider durable disease or mortality relevance only after larger controlled trials show durable clinical outcomes and clarify whether the mechanism is mitochondrial delivery rather than acute revascularization or procedural care.",
+    "Keep the stage at animal_signal if new human evidence remains limited to feasibility, safety, ex vivo cell assays, or acute disease-specific compassionate/pilot use.",
+    "Lower momentum if replication fails, mitochondrial quality-control barriers persist, or immunogenicity, mtDNA compatibility, off-target biodistribution, or manufacturing issues become limiting."
+  ],
+  "earliest_plausible_window": "No LEV-relevant window can be assigned before controlled treated-human aging-relevant biomarker and functional data exist.",
+  "scenario_2036_status": "speculative",
+  "supporting_finding_ids": [
+    "young-mitochondria-improved-aged-mouse-cognition-motor",
+    "mitochondrial-transfusion-upregulated-sdhb-aged-mice",
+    "young-mitochondria-reduced-aged-rat-pfc-apoptosis",
+    "mito-transfer-reduced-elderly-human-t-cell-senescence-ex-vivo",
+    "pediatric-cardiac-mt-ecmo-separation-pilot",
+    "acute-stroke-mt-phase1-no-significant-adverse-events"
+  ],
+  "supporting_activity_item_ids": [
+    "autologous-mt-cardiac-ecmo-trial-recruiting",
+    "autologous-mt-cerebral-ischemia-trial-recruiting"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "current_stage",
+      "conclusion": "The current public baseline should be animal_signal because direct aging-relevant functional evidence is in aged animals, not treated humans.",
+      "support_role": "supports",
+      "rationale": "Aged mice receiving young mitochondria showed cognitive and motor improvement with ATP and ROS movement, while aged-mouse hippocampal and aged-rat prefrontal-cortex studies add biomarker support.",
+      "finding_ids": [
+        "young-mitochondria-improved-aged-mouse-cognition-motor",
+        "mitochondrial-transfusion-upregulated-sdhb-aged-mice",
+        "young-mitochondria-reduced-aged-rat-pfc-apoptosis"
+      ],
+      "source_ids": [
+        "pmid-32071554",
+        "pmid-35834060",
+        "pmid-37275757"
+      ],
+      "limitations": [
+        "The strongest direct aging studies are animal studies with short follow-up.",
+        "No staged animal source establishes lifespan extension or durable multimorbidity benefit.",
+        "Delivery route, biodistribution, compatibility, and durability remain unresolved."
+      ]
+    },
+    {
+      "label": "Human-cell support",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Elderly-human cell evidence supports mechanistic plausibility but does not upgrade the stage to human_biomarker_signal.",
+      "support_role": "supports",
+      "rationale": "Mito-transfer improved elderly human CD4+ T-cell activation/proliferation readouts and exhaustion/senescence marker patterns ex vivo, while aged-mouse infection models supported immune-cell function.",
+      "finding_ids": [
+        "mito-transfer-reduced-elderly-human-t-cell-senescence-ex-vivo"
+      ],
+      "source_ids": [
+        "pmid-39039808"
+      ],
+      "limitations": [
+        "The elderly-human evidence is ex vivo rather than a treated-human intervention.",
+        "The mouse work is an infection model, not general healthy aging.",
+        "Cell-product durability and in vivo aging benefit remain unproven."
+      ]
+    },
+    {
+      "label": "Human clinical translation boundary",
+      "outlook_field": "main_blockers",
+      "conclusion": "Human clinical records show acute disease feasibility and safety but do not establish aging efficacy.",
+      "support_role": "limits",
+      "rationale": "The pediatric cardiac pilot reported better ECMO separation and ventricular recovery after acute ischemia-reperfusion injury, and the acute-stroke phase 1 report found no significant adverse events in four treated subjects, but both are acute disease settings.",
+      "finding_ids": [
+        "pediatric-cardiac-mt-ecmo-separation-pilot",
+        "acute-stroke-mt-phase1-no-significant-adverse-events"
+      ],
+      "source_ids": [
+        "pmid-33349443",
+        "pmid-39628322",
+        "nct-02851758",
+        "nct-04998357"
+      ],
+      "limitations": [
+        "The cardiac evidence is non-randomized, retrospective, pediatric, and acute injury focused.",
+        "The stroke evidence is phase 1 safety and feasibility with four treated subjects.",
+        "Neither source tests a healthy-aging intervention or durable LEV-relevant outcome."
+      ]
+    },
+    {
+      "label": "Momentum and confidence",
+      "outlook_field": "confidence",
+      "conclusion": "Momentum is mixed and confidence remains low because translation is active, but the aging-relevant evidence base is thin.",
+      "support_role": "balances",
+      "rationale": "Animal aging signals, elderly-human ex vivo cell data, and acute human safety/feasibility trials point in the same direction mechanistically, but each evidence class has major directness limits.",
+      "finding_ids": [
+        "young-mitochondria-improved-aged-mouse-cognition-motor",
+        "mito-transfer-reduced-elderly-human-t-cell-senescence-ex-vivo",
+        "acute-stroke-mt-phase1-no-significant-adverse-events",
+        "pediatric-cardiac-mt-ecmo-separation-pilot"
+      ],
+      "source_ids": [
+        "pmid-32071554",
+        "pmid-39039808",
+        "pmid-39628322",
+        "pmid-33349443"
+      ],
+      "limitations": [
+        "No staged record establishes controlled treated-human aging benefit.",
+        "Clinical trial activity is mostly acute ischemia or safety focused.",
+        "The field still needs replication, standardization, and clearer tissue-targeting evidence."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-32071554",
+    "pmid-35834060",
+    "pmid-37275757",
+    "pmid-39039808",
+    "pmid-33349443",
+    "pmid-39628322",
+    "nct-02851758",
+    "nct-04998357"
+  ],
+  "last_updated": "2026-06-03",
+  "tags": [
+    "public",
+    "track",
+    "thin_coverage"
+  ]
+}
