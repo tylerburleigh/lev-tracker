@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-microbiome-composition-modulation-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Microbiome Composition Modulation bundle",
+  "candidate_bundle_id": "microbiome-composition-modulation-surveillance-2026-06-03",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "needs_human_judgment",
+  "blocking": false,
+  "summary": "The proposed outlook interpretation is bounded and ready for human approval, with one non-blocking judgment call: keeping the track at low-confidence human_biomarker_signal and changing momentum to mixed. That framing is defensible because the new TBC169 RCT is a real human symptom signal but is chronic-constipation-specific, product-specific, and limited by exploratory microbiome sampling, while the new healthy-older-adult exercise RCT is null for gut microbiome composition. The support map, blockers, and rating-change criteria adequately separate composition-modulation evidence from adjacent live-biotherapeutic, metabolite, diet, and exercise mechanisms.",
+  "reviewed_change_ids": [
+    "create-source-pmid-42226670",
+    "create-source-pmid-42168724",
+    "create-intervention-heyndrickxia-coagulans-tbc169-synbiotic",
+    "create-study-tbc169-synbiotic-chronic-constipation-middle-aged-elderly",
+    "create-finding-tbc169-synbiotic-improved-constipation-middle-aged-elderly",
+    "create-study-online-physical-activity-gut-microbiome-older-adults",
+    "create-finding-online-physical-activity-no-microbiome-change-older-adults",
+    "update-outlook-track-microbiome-composition-modulation"
+  ],
+  "findings": [
+    {
+      "finding_id": "interpretation-disease-specific-functional-boundary",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "update-outlook-track-microbiome-composition-modulation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-microbiome-composition-modulation-outlook"
+      },
+      "claim_or_issue": "The staged outlook treats the TBC169 trial as a meaningful human symptom signal but does not upgrade the track to human_functional_benefit.",
+      "why_it_matters": "A chronic-constipation endpoint in a product-specific synbiotic trial is not equivalent to replicated aging-relevant function, resilience, disease-prevention, lifespan, or mortality benefit.",
+      "recommended_action": "No revision required; human approver should confirm that low-confidence human_biomarker_signal remains the preferred public stage despite the human_function evidence tier on the disease-specific finding.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "interpretation-mixed-momentum-human-judgment",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "update-outlook-track-microbiome-composition-modulation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-microbiome-composition-modulation-outlook"
+      },
+      "claim_or_issue": "Changing momentum to mixed is reasonable but depends on weighing a positive disease-specific synbiotic RCT against a null healthy-older-adult exercise/microbiome RCT.",
+      "why_it_matters": "Momentum is a forecast summary rather than a directly observed source fact, so it should remain visible as a human approval judgment.",
+      "recommended_action": "No revision required; approve as staged if mixed is the intended public signal, or choose steady only if the reviewer wants momentum to emphasize trial volume over interpretive heterogeneity.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "interpretation-support-map-complete",
+      "severity": "note",
+      "category": "uncertainty",
+      "applies_to_change_id": "update-outlook-track-microbiome-composition-modulation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-microbiome-composition-modulation-outlook"
+      },
+      "claim_or_issue": "The staged outlook adds concrete supporting_finding_ids, source_ids, support roles, limitations, and rating-change criteria for the new and existing evidence.",
+      "why_it_matters": "This gives future surveillance passes a clear audit trail for why the stage stayed low confidence and what evidence would be needed to change it.",
+      "recommended_action": "No change required.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "interpretation-adjacent-track-boundaries-preserved",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "update-outlook-track-microbiome-composition-modulation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-microbiome-composition-modulation-outlook"
+      },
+      "claim_or_issue": "The outlook explicitly separates DS-01, polyphenol/metabolite, exercise, live-biotherapeutic, and ecosystem evidence from the composition-modulation claim.",
+      "why_it_matters": "The microbiome tracks overlap heavily, so preserving attribution boundaries avoids upgrading this track using evidence that belongs primarily to adjacent mechanisms.",
+      "recommended_action": "No change required.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-03T16:22:39.062Z",
+  "updated_at": "2026-06-03T16:22:39.062Z"
+}

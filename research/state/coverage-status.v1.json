@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-03T15:00:08.904Z",
+  "updated_at": "2026-06-03T16:26:47.924Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One bootstrap or surveillance run should cover one track unless the user explicitly narrows further.",
@@ -110,7 +110,7 @@
       "canonical_order": 12,
       "hallmark_bootstrap_status": "baseline",
       "tracked_public_outlook_count": 4,
-      "next_priority_track_id": "microbiome-composition-modulation",
+      "next_priority_track_id": "ecosystem-replacement",
       "notes": "At least one track-level public baseline exists."
     }
   ],
@@ -768,9 +768,15 @@
       "name": "Microbiome Composition Modulation",
       "coverage_status": "baseline",
       "next_mode": "surveillance",
-      "queue_state": "ready",
+      "queue_state": "active_review",
+      "last_session_id": "2026-06-03-microbiome-composition-modulation-surveillance",
+      "last_session_at": "2026-06-03T15:55:00Z",
+      "last_session_mode": "surveillance",
+      "last_session_outcome": "candidate_bundle_submitted",
+      "last_candidate_bundle_id": "microbiome-composition-modulation-surveillance-2026-06-03",
+      "last_candidate_bundle_status": "approved",
       "default_research_question": "What changed for Microbiome Composition Modulation since the last meaningful review or publication, and does any change justify a public update?",
-      "notes": "Public track outlook exists without bundle history in the local queue."
+      "notes": "Candidate bundle microbiome-composition-modulation-surveillance-2026-06-03 is still approved."
     },
     {
       "track_id": "live-biotherapeutics-and-engineered-microbes",

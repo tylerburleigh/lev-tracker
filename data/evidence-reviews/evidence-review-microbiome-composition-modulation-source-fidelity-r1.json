@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-microbiome-composition-modulation-source-fidelity-r1",
+  "name": "Source Fidelity review for Microbiome Composition Modulation bundle",
+  "candidate_bundle_id": "microbiome-composition-modulation-surveillance-2026-06-03",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, intervention, finding, and outlook changes are faithful to the reviewed PubMed records and preserve the material source boundaries. PMID 42226670 is represented as a 140-participant randomized double-blind chronic-constipation synbiotic RCT in adults aged at least 45 years, with symptom and post-intervention microbiome signals plus the missing-baseline-fecal-sample and combination-product caveats. PMID 42168724 is represented as a 92-participant healthy-older-adult online physical activity RCT with no between-group gut microbiome composition change and the high-baseline-fitness limitation. No source-fidelity issue blocks approval.",
+  "reviewed_change_ids": [
+    "create-source-pmid-42226670",
+    "create-source-pmid-42168724",
+    "create-intervention-heyndrickxia-coagulans-tbc169-synbiotic",
+    "create-study-tbc169-synbiotic-chronic-constipation-middle-aged-elderly",
+    "create-finding-tbc169-synbiotic-improved-constipation-middle-aged-elderly",
+    "create-study-online-physical-activity-gut-microbiome-older-adults",
+    "create-finding-online-physical-activity-no-microbiome-change-older-adults",
+    "update-outlook-track-microbiome-composition-modulation"
+  ],
+  "findings": [
+    {
+      "finding_id": "source-fidelity-tbc169-boundary-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-tbc169-synbiotic-improved-constipation-middle-aged-elderly",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "tbc169-synbiotic-improved-constipation-middle-aged-elderly"
+      },
+      "claim_or_issue": "The TBC169 finding accurately records the positive constipation outcomes and exploratory post-intervention microbiome differences without treating them as broad aging-functional evidence.",
+      "why_it_matters": "The source population has chronic constipation and the intervention is a synbiotic combination product, so source fidelity depends on keeping disease, attribution, and sampling limits visible.",
+      "recommended_action": "No change required; keep the constipation-specific endpoint, combination-product attribution, missing baseline fecal sampling caveat, and mild transient adverse-event framing in the staged records.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "source-fidelity-exercise-null-boundary-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-online-physical-activity-no-microbiome-change-older-adults",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "online-physical-activity-no-microbiome-change-older-adults"
+      },
+      "claim_or_issue": "The online physical activity finding accurately records the null gut microbiome composition result while separating exploratory cognition and brain-connectivity signals from microbiome evidence.",
+      "why_it_matters": "This prevents general exercise benefits from being double-counted as microbiome composition modulation evidence.",
+      "recommended_action": "No change required; keep the null composition result and high-baseline-fitness limitation as staged.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "source-fidelity-date-and-registry-fields-ok",
+      "severity": "note",
+      "category": "other",
+      "applies_to_change_id": "create-source-pmid-42168724",
+      "applies_to_record": {
+        "record_type": "source",
+        "record_id": "pmid-42168724"
+      },
+      "claim_or_issue": "The staged source metadata uses the day-level publication date where available and preserves DOI, PMID, and registry identifiers for both new sources.",
+      "why_it_matters": "Accurate identifiers and dates are needed for future surveillance deltas and auditability.",
+      "recommended_action": "No change required.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-03T16:22:36.044Z",
+  "updated_at": "2026-06-03T16:22:36.044Z"
+}

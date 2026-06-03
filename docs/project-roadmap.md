@@ -33,11 +33,15 @@ Generated research state should be changed through source records, sessions, bun
 
 ## Priority 0: Editorial State
 
-No submitted or approved bootstrap bundle is waiting on editorial action. There are no active editorial blockers.
+No submitted or approved bootstrap bundle is waiting on editorial action. One approved surveillance bundle is active and ready to publish.
 
 Active editorial review:
 
-- None.
+- `microbiome-composition-modulation-surveillance-2026-06-03`
+  - Current status: `approved`
+  - Evidence review gate: ready; `source_fidelity` accepted and `interpretation_forecast` completed with a non-blocking `needs_human_judgment` verdict.
+  - Next action: publish through the admin route.
+  - Note: the staged outlook refresh keeps the track at low-confidence `human_biomarker_signal`, changes momentum to `mixed`, and adds support-map evidence for the TBC169 chronic-constipation synbiotic RCT plus the null healthy-older-adult online physical activity microbiome RCT.
 
 Recently completed:
 
@@ -340,7 +344,9 @@ Additional recently published coverage:
 
 Active coverage review:
 
-- None.
+- `microbiome-composition-modulation-surveillance-2026-06-03`
+  - Current status: approved surveillance bundle.
+  - Note: source, intervention, study, finding, and outlook records are staged; source-fidelity and interpretation/forecast reviews are complete and non-blocking, so the next action is publication.
 
 Current coverage inventory:
 
@@ -355,7 +361,7 @@ Next bootstrap queue items:
 
 Top surveillance queue items:
 
-1. `microbiome-composition-modulation`
+1. `ecosystem-replacement`
 2. `mitochondrial-delivery-and-transplantation`
 3. `insulin-igf-axis-modulation`
 4. `microbiome-metabolite-restoration`
@@ -427,4 +433,4 @@ npm run build
 npm run research:bundle -- smoke --bundle <bundle-id> --base-url <local-url>
 ```
 
-Last known result on 2026-06-03 after publishing `ecosystem-replacement-bootstrap-2026-06-03`: bundle validation passes structural, provenance, support-map, promotion-file, evidence-gate, and publication-event checks with no issues or warnings. Required `source_fidelity` and `interpretation_forecast` reviews are complete with no blocking reviews or open blocking findings, and the bundle lifecycle is now `published`. `npm run sync:research-planning`, `npm run validate:records`, `npm run audit:data`, `npm run typecheck`, and `npm run build` pass; the data audit reports a known non-blocking intervention-normalization warning for 140 references across 71 non-normalized intervention IDs. The generated bootstrap queue is empty, all 38 seeded tracks now have public baseline outlooks, and the top surveillance queue starts with `microbiome-composition-modulation`.
+Last known result on 2026-06-03 after approving `microbiome-composition-modulation-surveillance-2026-06-03`: bundle validation passes structural, provenance, support-map, promotion-file, evidence-gate, and publication-readiness checks with no issues or warnings. Required `source_fidelity` and `interpretation_forecast` reviews are complete with no blocking reviews or open blocking findings, and the bundle lifecycle is now `approved`. `npm run sync:research-planning`, `npm run validate:records`, `npm run audit:data`, `npm run typecheck`, and `npm run build` pass; the data audit reports a known non-blocking intervention-normalization warning for 140 references across 71 non-normalized intervention IDs. The generated bootstrap queue is empty, all 38 seeded tracks now have public baseline outlooks, and the top surveillance queue starts with `ecosystem-replacement` while the active microbiome-composition surveillance bundle awaits publication.

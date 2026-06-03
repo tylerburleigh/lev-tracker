@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-03-microbiome-composition-modulation-surveillance",
+  "name": "Microbiome Composition Modulation Surveillance",
+  "mode": "surveillance",
+  "started_at": "2026-06-03T15:30:00Z",
+  "completed_at": "2026-06-03T15:55:00Z",
+  "scope": {
+    "question": "What changed for Microbiome Composition Modulation since the last meaningful review or publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "dysbiosis"
+    ],
+    "track_ids": [
+      "microbiome-composition-modulation"
+    ],
+    "intervention_ids": [
+      "heyndrickxia-coagulans-tbc169-synbiotic",
+      "structured-exercise-training",
+      "multi-species-synbiotic-ds-01",
+      "indole-3-propionic-acid"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "microbiome-composition-modulation-surveillance-2026-06-03",
+  "summary": "Surveillance found one material positive post-baseline RCT and one material limiting RCT. PMID 42226670 reports a TBC169 synbiotic trial in middle-aged and elderly adults with chronic constipation, with symptom and quality-of-life improvements plus exploratory post-intervention microbiome composition differences. PMID 42168724 reports no gut microbiome composition change after an 8-week online-guided physical activity RCT in healthy older adults. Staged an outlook-refresh bundle that keeps the track at low-confidence human_biomarker_signal, changes momentum to mixed, and adds explicit support-map boundaries.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-42226670",
+    "pmid-42168724"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42226670/",
+    "https://pubmed.ncbi.nlm.nih.gov/42168724/",
+    "https://pubmed.ncbi.nlm.nih.gov/42197087/",
+    "https://pubmed.ncbi.nlm.nih.gov/42166751/",
+    "https://clinicaltrials.gov/search?term=microbiome%20older%20adults"
+  ],
+  "notes": [
+    "Scope was selected from the top ready surveillance queue item.",
+    "Delta window used for source discovery: 2026-05-11 through 2026-06-03, based on the current public outlook last_updated date.",
+    "PubMed searches checked microbiome, microbiota, probiotic, prebiotic, and synbiotic terms with aging, aged, older-adult, and elderly terms, filtered to publication or entry dates in the delta window.",
+    "PMID 42197087, an aerobic exercise study in malnourished octogenarians, was not staged because the authors explicitly state that the no-control design and high dropout make the microbiota results observational associations rather than causal evidence.",
+    "PMID 42166751, a BCAA supplementation protocol with gut microbiota secondary outcomes, was not staged because it is protocol context rather than microbiome-composition evidence.",
+    "ClinicalTrials.gov search was checked for older-adult microbiome/probiotic activity; no registry update in the delta pass justified a public activity-only record."
+  ],
+  "next_actions": [
+    "Run evidence reviews for source_fidelity and interpretation_forecast on microbiome-composition-modulation-surveillance-2026-06-03.",
+    "If reviews pass, approve and publish the surveillance bundle.",
+    "Continue surveillance queue with ecosystem-replacement after this bundle clears editorial review."
+  ]
+}

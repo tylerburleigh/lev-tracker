@@ -1,0 +1,175 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "microbiome-composition-modulation-surveillance-2026-06-03",
+  "name": "Microbiome Composition Modulation Surveillance for June 3, 2026",
+  "summary": "Surveillance bundle for the microbiome-composition-modulation track, adding a new disease-specific synbiotic constipation RCT and a null healthy-older-adult exercise/microbiome RCT while keeping the public stage at low-confidence human_biomarker_signal.",
+  "intake_mode": "surveillance",
+  "lifecycle_status": "approved",
+  "submitted_at": "2026-06-03T15:47:15Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What changed for Microbiome Composition Modulation since the last meaningful review or publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "dysbiosis"
+    ],
+    "track_ids": [
+      "microbiome-composition-modulation"
+    ],
+    "intervention_ids": [
+      "heyndrickxia-coagulans-tbc169-synbiotic",
+      "structured-exercise-training",
+      "multi-species-synbiotic-ds-01",
+      "indole-3-propionic-acid"
+    ]
+  },
+  "source_ids": [
+    "pmid-42226670",
+    "pmid-42168724",
+    "pmid-40944126",
+    "pmid-35315592"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42226670/",
+    "https://pubmed.ncbi.nlm.nih.gov/42168724/",
+    "https://pubmed.ncbi.nlm.nih.gov/40944126/",
+    "https://pubmed.ncbi.nlm.nih.gov/35315592/"
+  ],
+  "related_records": [
+    {
+      "record_type": "track",
+      "record_id": "microbiome-composition-modulation"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-microbiome-composition-modulation-outlook"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "ds-01-increased-urolithin-a-butyrate-crp"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "polyphenol-diet-increased-ipa-older-adults"
+    },
+    {
+      "record_type": "activity_item",
+      "record_id": "microbiome-program-watch-lane"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-42226670",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-42226670",
+      "file_path": "data/sources/pmid-42226670.json",
+      "staged_file_path": "data/staged-records/microbiome-composition-modulation-surveillance-2026-06-03/pmid-42226670.json",
+      "summary": "Add TBC169 synbiotic chronic-constipation RCT source.",
+      "rationale": "This is a new post-baseline human RCT in middle-aged and elderly adults that materially affects the track evidence map."
+    },
+    {
+      "change_id": "create-source-pmid-42168724",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-42168724",
+      "file_path": "data/sources/pmid-42168724.json",
+      "staged_file_path": "data/staged-records/microbiome-composition-modulation-surveillance-2026-06-03/pmid-42168724.json",
+      "summary": "Add healthy-older-adult online physical activity microbiome RCT source.",
+      "rationale": "This new RCT reports no microbiome composition change and limits broad lifestyle-to-microbiome claims."
+    },
+    {
+      "change_id": "create-intervention-heyndrickxia-coagulans-tbc169-synbiotic",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "heyndrickxia-coagulans-tbc169-synbiotic",
+      "file_path": "data/interventions/heyndrickxia-coagulans-tbc169-synbiotic.json",
+      "staged_file_path": "data/staged-records/microbiome-composition-modulation-surveillance-2026-06-03/heyndrickxia-coagulans-tbc169-synbiotic.json",
+      "summary": "Normalize TBC169 synbiotic intervention.",
+      "rationale": "The new RCT uses a product-specific combination intervention that should not be collapsed into generic probiotics."
+    },
+    {
+      "change_id": "create-study-tbc169-synbiotic-chronic-constipation-middle-aged-elderly",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "tbc169-synbiotic-chronic-constipation-middle-aged-elderly",
+      "file_path": "data/studies/tbc169-synbiotic-chronic-constipation-middle-aged-elderly.json",
+      "staged_file_path": "data/staged-records/microbiome-composition-modulation-surveillance-2026-06-03/tbc169-synbiotic-chronic-constipation-middle-aged-elderly.json",
+      "summary": "Add TBC169 synbiotic chronic-constipation study.",
+      "rationale": "The study supplies the population, design, endpoint, intervention, and source links for the new finding."
+    },
+    {
+      "change_id": "create-finding-tbc169-synbiotic-improved-constipation-middle-aged-elderly",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "tbc169-synbiotic-improved-constipation-middle-aged-elderly",
+      "file_path": "data/findings/tbc169-synbiotic-improved-constipation-middle-aged-elderly.json",
+      "staged_file_path": "data/staged-records/microbiome-composition-modulation-surveillance-2026-06-03/tbc169-synbiotic-improved-constipation-middle-aged-elderly.json",
+      "summary": "Add disease-specific human symptom and microbiome finding.",
+      "rationale": "The finding records the positive constipation outcome while preserving the baseline-sampling and aging-endpoint boundaries."
+    },
+    {
+      "change_id": "create-study-online-physical-activity-gut-microbiome-older-adults",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "online-physical-activity-gut-microbiome-older-adults",
+      "file_path": "data/studies/online-physical-activity-gut-microbiome-older-adults.json",
+      "staged_file_path": "data/staged-records/microbiome-composition-modulation-surveillance-2026-06-03/online-physical-activity-gut-microbiome-older-adults.json",
+      "summary": "Add healthy-older-adult online physical activity microbiome RCT study.",
+      "rationale": "The study supplies a null microbiome-composition boundary for lifestyle/exercise claims."
+    },
+    {
+      "change_id": "create-finding-online-physical-activity-no-microbiome-change-older-adults",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "online-physical-activity-no-microbiome-change-older-adults",
+      "file_path": "data/findings/online-physical-activity-no-microbiome-change-older-adults.json",
+      "staged_file_path": "data/staged-records/microbiome-composition-modulation-surveillance-2026-06-03/online-physical-activity-no-microbiome-change-older-adults.json",
+      "summary": "Add null microbiome-composition finding from older-adult exercise RCT.",
+      "rationale": "The finding prevents over-attribution of generic exercise benefits to microbiome composition modulation."
+    },
+    {
+      "change_id": "update-outlook-track-microbiome-composition-modulation",
+      "change_type": "update_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-microbiome-composition-modulation-outlook",
+      "file_path": "data/outlooks/track-microbiome-composition-modulation-outlook.json",
+      "staged_file_path": "data/staged-records/microbiome-composition-modulation-surveillance-2026-06-03/track-microbiome-composition-modulation-outlook.json",
+      "summary": "Refresh outlook support map after surveillance.",
+      "rationale": "The existing public outlook has sparse support mapping and should reflect the new positive disease-specific RCT plus the null older-adult exercise/microbiome boundary without upgrading the stage."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "microbiome-composition-modulation",
+      "note": "Keep the stage at low-confidence human_biomarker_signal, change momentum to mixed, and add support-map evidence for the new TBC169 RCT and null older-adult exercise/microbiome RCT.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": false
+  },
+  "session_reference": "research/sessions/2026-06-03-microbiome-composition-modulation-surveillance.json",
+  "next_actions": [
+    "Human reviewer approval can proceed because source_fidelity and interpretation_forecast evidence reviews are complete and non-blocking.",
+    "After approval, publish through the admin route.",
+    "After publication, re-run research planning sync and inspect the microbiome-composition track page."
+  ],
+  "tags": [
+    "surveillance",
+    "dysbiosis",
+    "microbiome-composition-modulation"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-microbiome-composition-modulation-source-fidelity-r1",
+    "evidence-review-microbiome-composition-modulation-interpretation-forecast-r1"
+  ]
+}
