@@ -1,0 +1,303 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "ecosystem-replacement-coverage-2026-06-03",
+  "name": "Ecosystem Replacement Coverage Assessment for June 3, 2026",
+  "short_name": "Ecosystem replacement coverage",
+  "track_id": "ecosystem-replacement",
+  "hallmark_id": "dysbiosis",
+  "assessment_type": "bootstrap",
+  "assessed_at": "2026-06-03T18:30:52Z",
+  "assessment_window": {
+    "from": "2026-06-03T12:45:00Z",
+    "to": "2026-06-03T14:40:25.040Z",
+    "basis": "Backfill assessment of the published ecosystem-replacement bootstrap baseline from session start through publication; no new source search was run for this assessment."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is adequate for the current public claim: low-confidence human_biomarker_signal with accelerating momentum. The bootstrap baseline includes animal lifespan and healthspan anchors, narrow treated-human metabolic biomarker evidence, human donor-strain engraftment synthesis, older-adult CDI disease-context safety evidence, two direct older-adult FMT aging trial-watch records, and explicit taxonomy boundaries. Coverage is not strong because direct older-adult aging efficacy results are not yet posted, preventive-aging safety and durability remain thin, and recent-review plus seminal-anchor triangulation has not been formally audited.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-06-03-ecosystem-replacement-bootstrap"
+    ],
+    "candidate_bundle_ids": [
+      "ecosystem-replacement-bootstrap-2026-06-03"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-ecosystem-replacement-source-fidelity-r1",
+      "evidence-review-ecosystem-replacement-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-ecosystem-replacement-bootstrap-2026-06-03-2026-06-03t14-40-25-040z"
+    ],
+    "outlook_ids": [
+      "track-ecosystem-replacement-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes a small lean-donor FMT metabolic-syndrome trial as the narrow treated-human biomarker anchor, older-adult CDI FMT context, and two direct older-adult oral FMT aging trials as no-results activity records. This is enough for the current low-confidence human_biomarker_signal claim, but not for human functional benefit.",
+      "source_ids": [
+        "pmid-22728514",
+        "pmid-27134658",
+        "nct-05598112",
+        "nct-06649981",
+        "pmid-41629813"
+      ],
+      "finding_ids": [
+        "lean-donor-fmt-increased-insulin-sensitivity-metabolic-syndrome",
+        "older-adult-cdi-fmt-safety-disease-boundary",
+        "aging-fmt-capsules-trial-recruiting-no-results",
+        "armor-young-donor-fmt-protocol-no-results"
+      ],
+      "gap_note": "Direct older-adult aging trial outcomes remain unavailable, so trial activity supports momentum rather than efficacy."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "thin",
+      "rationale": "The human landscape is represented mainly through interventional, disease-context, registry, and engraftment synthesis records. Observational healthy-aging, centenarian, frailty, infection-resilience, or donor-recipient natural-experiment evidence was not systematically mapped.",
+      "source_ids": [
+        "pmid-36109637"
+      ],
+      "finding_ids": [
+        "fmt-engraftment-variable-across-human-diseases"
+      ],
+      "gap_note": "A future coverage repair pass should decide whether observational aging-microbiome or donor-recipient studies add decision-relevant boundaries."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "strong",
+      "rationale": "The baseline captures the main direct aging-efficacy support: killifish lifespan, progeroid mouse healthspan and lifespan, and multiple aged-mouse frailty, cognition, gut barrier, inflammatory, SCFA, metabolic, and transcriptomic readouts after young or FMT-based microbiota transfer.",
+      "source_ids": [
+        "pmid-28826469",
+        "pmid-31332389",
+        "pmid-35501923",
+        "pmid-38739944",
+        "pmid-39812540",
+        "pmid-40444969"
+      ],
+      "finding_ids": [
+        "young-microbiota-extended-killifish-lifespan",
+        "wild-type-fmt-extended-progeroid-mouse-healthspan-lifespan",
+        "young-fmt-reversed-aged-mouse-gut-eye-brain-inflammation",
+        "fmt-attenuated-old-mouse-frailty-gut-muscle-axis",
+        "young-trained-fmt-improved-old-mouse-cognition",
+        "young-fmt-improved-old-mouse-frailty-grip-metabolism"
+      ]
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "Mechanistic support includes donor-strain engraftment, butyrate-producing microbiota, Akkermansia-linked and secondary bile-acid context, SCFA signals, gut barrier, inflammation, LPS/TLR4, gut-brain-axis, and donor-selection boundaries.",
+      "source_ids": [
+        "pmid-22728514",
+        "pmid-31332389",
+        "pmid-35501923",
+        "pmid-38739944",
+        "pmid-39812540",
+        "pmid-40444969",
+        "pmid-36109637"
+      ],
+      "finding_ids": [
+        "lean-donor-fmt-increased-insulin-sensitivity-metabolic-syndrome",
+        "fmt-engraftment-variable-across-human-diseases",
+        "wild-type-fmt-extended-progeroid-mouse-healthspan-lifespan",
+        "young-fmt-reversed-aged-mouse-gut-eye-brain-inflammation",
+        "fmt-attenuated-old-mouse-frailty-gut-muscle-axis",
+        "young-trained-fmt-improved-old-mouse-cognition",
+        "young-fmt-improved-old-mouse-frailty-grip-metabolism"
+      ]
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The support map explicitly preserves limiting evidence: human metabolic and engraftment evidence is indirect for aging, older-adult CDI experience is disease-context evidence, and direct older-adult FMT aging trials have no posted efficacy results.",
+      "source_ids": [
+        "pmid-22728514",
+        "pmid-27134658",
+        "pmid-36109637",
+        "nct-05598112",
+        "nct-06649981",
+        "pmid-41629813"
+      ],
+      "finding_ids": [
+        "lean-donor-fmt-increased-insulin-sensitivity-metabolic-syndrome",
+        "older-adult-cdi-fmt-safety-disease-boundary",
+        "fmt-engraftment-variable-across-human-diseases",
+        "aging-fmt-capsules-trial-recruiting-no-results",
+        "armor-young-donor-fmt-protocol-no-results"
+      ]
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "Older-adult CDI records and active aging-trial protocols provide safety context, but preventive or elective aging use needs stronger donor-screening, pathogen-transfer, undesired-trait transfer, manufacturing, route, dose, pretreatment, repeat-dosing, durability, and long-term older-adult safety evidence.",
+      "source_ids": [
+        "pmid-27134658",
+        "nct-05598112",
+        "nct-06649981",
+        "pmid-41629813"
+      ],
+      "finding_ids": [
+        "older-adult-cdi-fmt-safety-disease-boundary",
+        "aging-fmt-capsules-trial-recruiting-no-results",
+        "armor-young-donor-fmt-protocol-no-results"
+      ],
+      "gap_note": "Preventive-aging risk tolerance is narrower than recurrent-infection treatment context."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "strong",
+      "rationale": "The bootstrap verified NCT05598112 and ARMOR/NCT06649981 through ClinicalTrials.gov on June 3, 2026 and staged them as no-results trial-watch context for direct older-adult FMT aging programs.",
+      "source_ids": [
+        "nct-05598112",
+        "nct-06649981",
+        "pmid-41629813"
+      ],
+      "finding_ids": [
+        "aging-fmt-capsules-trial-recruiting-no-results",
+        "armor-young-donor-fmt-protocol-no-results"
+      ],
+      "gap_note": "Registry status and posted results should be rechecked on every surveillance pass."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "adequate",
+      "rationale": "The support map includes a 2022 Nature Medicine shotgun-metagenomic systematic meta-analysis of FMT donor strain engraftment across disease cohorts, which is decision-relevant for human mechanism and implementation. It does not yet include a formal triangulation of recent ecosystem-replacement aging reviews.",
+      "source_ids": [
+        "pmid-36109637"
+      ],
+      "finding_ids": [
+        "fmt-engraftment-variable-across-human-diseases"
+      ],
+      "gap_note": "Recent review triangulation is meaningful but incomplete because the included synthesis is engraftment-focused rather than a full aging-FMT source-landscape review."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes obvious anchor categories for the current claim: the killifish lifespan paper, progeroid mouse FMT lifespan-healthspan paper, lean-donor human metabolic trial, older-adult CDI boundary source, and human engraftment meta-analysis. No formal must-include or citation-network audit has been recorded.",
+      "source_ids": [
+        "pmid-28826469",
+        "pmid-31332389",
+        "pmid-22728514",
+        "pmid-27134658",
+        "pmid-36109637"
+      ],
+      "finding_ids": [
+        "young-microbiota-extended-killifish-lifespan",
+        "wild-type-fmt-extended-progeroid-mouse-healthspan-lifespan",
+        "lean-donor-fmt-increased-insulin-sensitivity-metabolic-syndrome",
+        "older-adult-cdi-fmt-safety-disease-boundary",
+        "fmt-engraftment-variable-across-human-diseases"
+      ],
+      "gap_note": "This category is adequate for a published baseline but not strong without explicit citation-network or review triangulation."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "strong",
+      "rationale": "The outlook and evidence review explicitly distinguish ecosystem replacement from microbiome composition modulation, live biotherapeutics, metabolite restoration, diet, exercise-conditioned donor status, defined strains, and Akkermansia or SCFA-linked mechanisms.",
+      "source_ids": [
+        "pmid-22728514",
+        "pmid-31332389",
+        "pmid-39812540",
+        "pmid-40444969",
+        "pmid-36109637",
+        "pmid-41629813"
+      ],
+      "finding_ids": [
+        "lean-donor-fmt-increased-insulin-sensitivity-metabolic-syndrome",
+        "wild-type-fmt-extended-progeroid-mouse-healthspan-lifespan",
+        "young-trained-fmt-improved-old-mouse-cognition",
+        "young-fmt-improved-old-mouse-frailty-grip-metabolism",
+        "fmt-engraftment-variable-across-human-diseases",
+        "armor-young-donor-fmt-protocol-no-results"
+      ]
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-28826469",
+    "pmid-31332389",
+    "pmid-35501923",
+    "pmid-38739944",
+    "pmid-39812540",
+    "pmid-40444969",
+    "pmid-22728514",
+    "pmid-27134658",
+    "pmid-36109637",
+    "nct-05598112",
+    "nct-06649981",
+    "pmid-41629813"
+  ],
+  "covered_finding_ids": [
+    "young-microbiota-extended-killifish-lifespan",
+    "wild-type-fmt-extended-progeroid-mouse-healthspan-lifespan",
+    "young-fmt-reversed-aged-mouse-gut-eye-brain-inflammation",
+    "fmt-attenuated-old-mouse-frailty-gut-muscle-axis",
+    "young-trained-fmt-improved-old-mouse-cognition",
+    "young-fmt-improved-old-mouse-frailty-grip-metabolism",
+    "lean-donor-fmt-increased-insulin-sensitivity-metabolic-syndrome",
+    "older-adult-cdi-fmt-safety-disease-boundary",
+    "fmt-engraftment-variable-across-human-diseases",
+    "aging-fmt-capsules-trial-recruiting-no-results",
+    "armor-young-donor-fmt-protocol-no-results"
+  ],
+  "search_log_summary": "This backfill assessment reviewed the published bootstrap session, bundle, evidence reviews, publication event, and public outlook. The underlying bootstrap selected ecosystem replacement from the generated queue, scoped the pass to fecal microbiota transplantation, staged 12 sources, and verified NCT05598112 and NCT06649981 through ClinicalTrials.gov on June 3, 2026.",
+  "source_selection_notes": [
+    "PMID 28826469 and PMID 31332389 anchor the animal lifespan and healthspan case.",
+    "PMID 35501923, PMID 38739944, PMID 39812540, and PMID 40444969 broaden the aged-animal functional, gut-brain, gut-barrier, inflammatory, frailty, grip-strength, and metabolic support map.",
+    "PMID 22728514 is included as the narrow treated-human metabolic biomarker anchor, not as direct aging efficacy.",
+    "PMID 27134658 is included as older-adult CDI disease-context safety and feasibility evidence, not healthy-aging benefit.",
+    "PMID 36109637 is included because donor strain engraftment is a key human mechanistic and implementation boundary.",
+    "NCT05598112, NCT06649981, and PMID 41629813 are included as direct older-adult FMT aging trial-watch context without posted efficacy results."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "direct-older-adult-aging-results-not-posted",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "The direct older-adult oral FMT aging trials are registry or protocol records without posted efficacy results, so they support momentum rather than human aging benefit.",
+      "priority": "high",
+      "suggested_action": "During surveillance, recheck NCT05598112, NCT06649981, and related publications for posted safety, microbiome, biomarker, frailty, functional, cognitive, or resilience outcomes."
+    },
+    {
+      "gap_id": "preventive-aging-safety-durability-thin",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Older-adult CDI and protocol context do not establish long-term preventive-aging safety, durability, donor-screening adequacy, pathogen-transfer risk, undesired-trait transfer risk, or repeat-dosing risk.",
+      "priority": "high",
+      "suggested_action": "Keep confidence low until controlled older-adult aging studies report safety, durability, and engraftment alongside functional or biomarker endpoints."
+    },
+    {
+      "gap_id": "recent-aging-fmt-review-triangulation-incomplete",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "The support map includes an engraftment meta-analysis, but recent FMT-for-aging reviews have not been explicitly reconciled against included anchors and public boundaries.",
+      "priority": "medium",
+      "suggested_action": "Run a coverage_repair pass that compares recent aging-FMT reviews and meta-analyses with the current source list and records any missing decision-relevant anchors."
+    },
+    {
+      "gap_id": "formal-seminal-anchor-audit-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "seminal_anchors",
+      "description": "The baseline includes plausible anchor papers, but no formal must-include or citation-network audit has been recorded for ecosystem replacement.",
+      "priority": "medium",
+      "suggested_action": "During coverage repair, triangulate highly cited primary papers, review-cited anchors, and current support-map sources."
+    },
+    {
+      "gap_id": "observational-healthy-aging-landscape-thin",
+      "gap_type": "coverage_gap",
+      "category": "human_observational_or_natural_experiment",
+      "description": "Healthy-aging observational, centenarian, frailty, infection-resilience, and donor-recipient natural-experiment evidence has not been systematically mapped for this track.",
+      "priority": "low",
+      "suggested_action": "Only expand this lane if future surveillance suggests observational evidence would materially change stage, confidence, taxonomy boundaries, or safety interpretation."
+    }
+  ],
+  "next_coverage_action": "Keep ecosystem replacement in normal surveillance with special attention to NCT05598112, NCT06649981, and related publications. If revisited before trial results appear, use coverage_repair to audit recent aging-FMT reviews and seminal anchors rather than expanding the public claim.",
+  "tags": [
+    "coverage-assessment",
+    "bootstrap",
+    "dysbiosis",
+    "ecosystem-replacement"
+  ]
+}
