@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-03T21:34:18.973Z",
+  "generated_at": "2026-06-03T21:50:09.849Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-03T21:34:18.872Z",
-    "research_priority_queue_updated_at": "2026-06-03T21:34:18.873Z",
+    "research_coverage_status_updated_at": "2026-06-03T21:50:09.745Z",
+    "research_priority_queue_updated_at": "2026-06-03T21:50:09.745Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
-    "surveillance_queue_count": 38,
-    "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 35,
+    "surveillance_queue_count": 37,
+    "coverage_repair_queue_count": 1,
+    "coverage_assessment_backlog_count": 34,
     "unnormalized_intervention_id_count": 71,
     "unnormalized_intervention_reference_count": 140
   },
@@ -31,8 +31,8 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "surveillance-insulin-igf-axis-modulation",
-    "top_mode": "surveillance",
+    "top_work_item_id": "coverage-repair-insulin-igf-axis-modulation",
+    "top_mode": "coverage_repair",
     "active_editorial_count": 0,
     "ready_research_count": 38,
     "data_hardening_count": 1,
@@ -44,14 +44,14 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "surveillance-insulin-igf-axis-modulation",
-      "mode": "surveillance",
+      "item_id": "coverage-repair-insulin-igf-axis-modulation",
+      "mode": "coverage_repair",
       "domain": "research",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Run surveillance for Insulin and IGF Axis Modulation",
-      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 4; rank 1 was recently handled by a surveillance or coverage-repair session.",
-      "default_action": "Run one track-level surveillance pass, record materiality, excluded sources, and a session; create a bundle only for a material public change.",
+      "title": "Repair coverage for Insulin and IGF Axis Modulation",
+      "rationale": "Run a bounded coverage-repair pass focused on acarbose aging registries, FMD/longevity-diet trial-watch records, and recent review triangulation before ordinary surveillance resumes.",
+      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
       "track_id": "insulin-igf-axis-modulation",
       "hallmark_id": "deregulated_nutrient_sensing",
       "references": [
@@ -62,6 +62,42 @@
         {
           "record_type": "hallmark",
           "record_id": "deregulated_nutrient_sensing"
+        }
+      ],
+      "runbook_path": "docs/coverage-assessment.md",
+      "source_paths": [
+        "research/backlog/track-priority.v1.json",
+        "research/state/coverage-status.v1.json",
+        "research/coverage-assessments",
+        "docs/coverage-assessment.md"
+      ],
+      "signals": [
+        {
+          "name": "generated_queue_rank",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "item_id": "surveillance-microbiome-metabolite-restoration",
+      "mode": "surveillance",
+      "domain": "research",
+      "priority_tier": "now",
+      "status": "ready",
+      "title": "Run surveillance for Microbiome Metabolite Restoration",
+      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 4; rank 1 was recently handled by a surveillance or coverage-repair session.",
+      "default_action": "Run one track-level surveillance pass, record materiality, excluded sources, and a session; create a bundle only for a material public change.",
+      "track_id": "microbiome-metabolite-restoration",
+      "hallmark_id": "dysbiosis",
+      "references": [
+        {
+          "record_type": "track",
+          "record_id": "microbiome-metabolite-restoration"
+        },
+        {
+          "record_type": "hallmark",
+          "record_id": "dysbiosis"
         }
       ],
       "runbook_path": "docs/surveillance-checklist.md",
@@ -86,25 +122,25 @@
       ]
     },
     {
-      "rank": 2,
-      "item_id": "coverage-assessment-backfill-insulin-igf-axis-modulation",
+      "rank": 3,
+      "item_id": "coverage-assessment-backfill-microbiome-metabolite-restoration",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for Insulin and IGF Axis Modulation",
-      "rationale": "35 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the surveillance queue.",
+      "title": "Backfill coverage assessment for Microbiome Metabolite Restoration",
+      "rationale": "34 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the surveillance queue.",
       "default_action": "Review the published outlook, session, bundle, evidence reviews, and publication event, then create a coverage assessment without changing public records.",
-      "track_id": "insulin-igf-axis-modulation",
-      "hallmark_id": "deregulated_nutrient_sensing",
+      "track_id": "microbiome-metabolite-restoration",
+      "hallmark_id": "dysbiosis",
       "references": [
         {
           "record_type": "track",
-          "record_id": "insulin-igf-axis-modulation"
+          "record_id": "microbiome-metabolite-restoration"
         },
         {
           "record_type": "hallmark",
-          "record_id": "deregulated_nutrient_sensing"
+          "record_id": "dysbiosis"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",
@@ -116,7 +152,7 @@
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 35
+          "value": 34
         },
         {
           "name": "generated_surveillance_queue_rank",
@@ -129,7 +165,7 @@
       ]
     },
     {
-      "rank": 3,
+      "rank": 4,
       "item_id": "data-normalization-intervention-refs",
       "mode": "data_normalization",
       "domain": "data",

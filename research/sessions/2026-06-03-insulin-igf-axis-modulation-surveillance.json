@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-03-insulin-igf-axis-modulation-surveillance",
+  "name": "Insulin and IGF Axis Modulation Surveillance",
+  "mode": "surveillance",
+  "started_at": "2026-06-03T21:33:20Z",
+  "completed_at": "2026-06-03T21:46:44Z",
+  "scope": {
+    "question": "What changed for Insulin and IGF Axis Modulation since the June 3, 2026 publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "deregulated_nutrient_sensing"
+    ],
+    "track_ids": [
+      "insulin-igf-axis-modulation"
+    ],
+    "intervention_ids": [
+      "growth-hormone-igf-axis-attenuation",
+      "dietary-protein-restriction",
+      "growth-hormone-administration",
+      "fasting-mimicking-diet",
+      "acarbose"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "coverage_assessment_updated",
+  "summary": "Same-day PubMed surveillance after the insulin/IGF baseline publication found no material public-update delta. The only post-publication PubMed hit close enough to review was adjacent cardiometabolic tirzepatide biomarker context rather than an insulin/GH/IGF aging intervention. Narrow ClinicalTrials.gov checks surfaced pre-window acarbose and FMD/longevity-diet registry records that were not staged in the public insulin/IGF support map; these are historical source-completeness gaps, not same-day evidence changes. A coverage assessment was added and recommends coverage repair before another ordinary surveillance pass.",
+  "next_recommended_mode": "coverage_repair",
+  "materiality_decision": {
+    "material_delta": "coverage_repair_needed",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "coverage_repair",
+    "rationale": "No checked post-publication source changes the current human_biomarker_signal stage, steady momentum, low confidence, blockers, or best-current-signal language. The useful finding is that older acarbose aging and FMD/longevity-diet registry records should be handled as coverage repair rather than ordinary surveillance."
+  },
+  "search_log": [
+    {
+      "source_name": "NCBI PubMed ESearch",
+      "query": "((insulin-like growth factor OR IGF-1 OR IGF1R OR growth hormone receptor OR insulin signaling OR acarbose OR fasting mimicking diet) AND (aging OR longevity OR lifespan OR frailty OR older adults)) AND 2026/06/03[Date - Publication]",
+      "checked_at": "2026-06-03T21:36:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=((insulin-like+growth+factor+OR+IGF-1+OR+IGF1R+OR+growth+hormone+receptor+OR+insulin+signaling+OR+acarbose+OR+fasting+mimicking+diet)+AND+(aging+OR+longevity+OR+lifespan+OR+frailty+OR+older+adults))+AND+2026%2F06%2F03%5BDate+-+Publication%5D",
+      "summary": "No records found."
+    },
+    {
+      "source_name": "NCBI PubMed ESearch and ESummary",
+      "query": "((insulin-like growth factor OR IGF-1 OR IGF1R OR growth hormone receptor) AND (human OR trial OR older OR aging)) AND 2026/06/03[Date - Publication]",
+      "checked_at": "2026-06-03T21:39:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=((insulin-like+growth+factor+OR+IGF-1+OR+IGF1R+OR+growth+hormone+receptor)+AND+(human+OR+trial+OR+older+OR+aging))+AND+2026%2F06%2F03%5BDate+-+Publication%5D",
+      "summary": "Returned PMID 42233927, PMID 42233597, and PMID 42230695; none warranted public insulin/IGF-axis aging updates."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "Aging condition with acarbose intervention; aging condition with fasting mimicking diet intervention; broader aging/frailty/longevity terms with GH/IGF/acarbose/FMD interventions.",
+      "checked_at": "2026-06-03T21:43:00Z",
+      "url": "https://clinicaltrials.gov/search?cond=Aging&intr=acarbose",
+      "summary": "Identified pre-window acarbose aging registry records with posted results and FMD/longevity-diet registry records without posted results. These should be reviewed in coverage repair."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 42233927",
+      "title": "Comprehensive Long-Term Changes in Cardiovascular Risk Biomarkers With Tirzepatide: A SURMOUNT-1 Post Hoc Analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42233927/",
+      "decision": "context_only",
+      "reason": "Same-day post hoc obesity trial biomarker analysis with HOMA-IR and cardiometabolic markers. It is adjacent metabolic context, not intentional insulin/GH/IGF-axis aging modulation and not enough to alter the current outlook."
+    },
+    {
+      "reference": "PMID 42233597",
+      "title": "The Framework of Precision Pharmacotherapy in Metabolic Dysfunction-Associated Steatohepatitis: A Network Meta-Analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42233597/",
+      "decision": "wrong_scope",
+      "reason": "MASH pharmacotherapy meta-analysis, not an insulin/GH/IGF-axis aging intervention or longevity-relevant endpoint update."
+    },
+    {
+      "reference": "PMID 42230695",
+      "title": "Silymarin conserves the efficacy of quinolone and sulfonamide in Nile tilapia subjected to aflatoxicosis and Streptococcus agalactiae infection",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42230695/",
+      "decision": "wrong_scope",
+      "reason": "Fish toxicology and infection model, not relevant to the track's aging evidence map."
+    },
+    {
+      "reference": "NCT02953093",
+      "title": "Study of Acarbose in Longevity",
+      "url": "https://clinicaltrials.gov/study/NCT02953093",
+      "decision": "context_only",
+      "reason": "Pre-window terminated acarbose aging registry with posted results and n = 28. It may be a coverage-repair source, but it is not a post-publication surveillance delta."
+    },
+    {
+      "reference": "NCT02865499",
+      "title": "Acarbose Anti-aging Effects in Geriatric Subjects (Substudy B & C)",
+      "url": "https://clinicaltrials.gov/study/NCT02865499",
+      "decision": "context_only",
+      "reason": "Pre-window completed n = 8 acarbose registry with posted microbiome results. It should be handled during coverage repair if used, not as a same-day public update."
+    },
+    {
+      "reference": "NCT07255300",
+      "title": "Follow up Study of Varapodio Trial: Effect of Longevity and Fasting Mimicking Diet on Risk Factors Age Correlated and Biomarkers of Aging",
+      "url": "https://clinicaltrials.gov/study/NCT07255300",
+      "decision": "no_results",
+      "reason": "Recruiting FMD follow-up registry last updated before this surveillance pass and without posted results."
+    },
+    {
+      "reference": "NCT07065955",
+      "title": "Longevity Diet and the Fasting-mimicking Diet",
+      "url": "https://clinicaltrials.gov/study/NCT07065955",
+      "decision": "no_results",
+      "reason": "Completed FMD/longevity-diet registry without posted results as of this pass; potentially useful trial-watch context for coverage repair."
+    }
+  ],
+  "source_ids": [
+    "pmid-21325617",
+    "pmid-18316725",
+    "pmid-24618355",
+    "pmid-28202779",
+    "pmid-12483226",
+    "pmid-15498882",
+    "pmid-34811874",
+    "pmid-35952979",
+    "pmid-12543978",
+    "pmid-17928362",
+    "pmid-30688027",
+    "pmid-24606898",
+    "pmid-12425705"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42233927/",
+    "https://pubmed.ncbi.nlm.nih.gov/42233597/",
+    "https://pubmed.ncbi.nlm.nih.gov/42230695/",
+    "https://clinicaltrials.gov/study/NCT02953093",
+    "https://clinicaltrials.gov/study/NCT02865499",
+    "https://clinicaltrials.gov/study/NCT07255300",
+    "https://clinicaltrials.gov/study/NCT07065955"
+  ],
+  "notes": [
+    "The delta window was extremely short because the baseline was published earlier on June 3, 2026.",
+    "The tirzepatide SURMOUNT-1 biomarker analysis is relevant to adjacent metabolic-risk tracks but does not test aging-directed insulin/GH/IGF-axis attenuation.",
+    "The acarbose human registry records are older than the baseline and should be reviewed as source-completeness repair, especially because the public outlook currently uses acarbose as animal lifespan support.",
+    "FMD/longevity-diet registry records could improve activity and trial-watch coverage, but no checked registry supplied posted aging biomarker, functional, disease, or mortality results."
+  ],
+  "next_actions": [
+    "Run coverage repair for insulin/IGF axis modulation before ordinary surveillance.",
+    "During repair, decide whether NCT02953093, NCT02865499, NCT07255300, NCT07065955, and NCT05698654 should become public trial-watch, limiting, or excluded-context records.",
+    "Do not create a surveillance bundle from this pass because no post-publication source warrants a public outlook update."
+  ]
+}
