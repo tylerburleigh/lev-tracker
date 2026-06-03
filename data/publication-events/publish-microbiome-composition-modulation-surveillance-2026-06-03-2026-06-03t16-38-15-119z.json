@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-microbiome-composition-modulation-surveillance-2026-06-03-2026-06-03t16-38-15-119z",
+  "name": "Published Microbiome Composition Modulation Surveillance for June 3, 2026",
+  "summary": "Surveillance bundle for the microbiome-composition-modulation track, adding a new disease-specific synbiotic constipation RCT and a null healthy-older-adult exercise/microbiome RCT while keeping the public stage at low-confidence human_biomarker_signal.",
+  "candidate_bundle_id": "microbiome-composition-modulation-surveillance-2026-06-03",
+  "event_type": "publish",
+  "published_at": "2026-06-03T16:38:15.119Z",
+  "published_by": "tyler",
+  "published_targets": [
+    {
+      "record_type": "source",
+      "record_id": "pmid-42226670",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "pmid-42168724",
+      "action": "created"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "heyndrickxia-coagulans-tbc169-synbiotic",
+      "action": "created"
+    },
+    {
+      "record_type": "study",
+      "record_id": "tbc169-synbiotic-chronic-constipation-middle-aged-elderly",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "tbc169-synbiotic-improved-constipation-middle-aged-elderly",
+      "action": "created"
+    },
+    {
+      "record_type": "study",
+      "record_id": "online-physical-activity-gut-microbiome-older-adults",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "online-physical-activity-no-microbiome-change-older-adults",
+      "action": "created"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-microbiome-composition-modulation-outlook",
+      "action": "updated"
+    }
+  ],
+  "affected_outlook_ids": [
+    "track-microbiome-composition-modulation-outlook"
+  ],
+  "approving_evidence_review_ids": [
+    "evidence-review-microbiome-composition-modulation-interpretation-forecast-r1",
+    "evidence-review-microbiome-composition-modulation-source-fidelity-r1"
+  ],
+  "change_note": "Keep the stage at low-confidence human_biomarker_signal, change momentum to mixed, and add support-map evidence for the new TBC169 RCT and null older-adult exercise/microbiome RCT."
+}

@@ -5,7 +5,7 @@
   "name": "Microbiome Composition Modulation Surveillance for June 3, 2026",
   "summary": "Surveillance bundle for the microbiome-composition-modulation track, adding a new disease-specific synbiotic constipation RCT and a null healthy-older-adult exercise/microbiome RCT while keeping the public stage at low-confidence human_biomarker_signal.",
   "intake_mode": "surveillance",
-  "lifecycle_status": "approved",
+  "lifecycle_status": "published",
   "submitted_at": "2026-06-03T15:47:15Z",
   "submitted_by": "codex-agent",
   "revision_number": 1,
@@ -159,9 +159,7 @@
   },
   "session_reference": "research/sessions/2026-06-03-microbiome-composition-modulation-surveillance.json",
   "next_actions": [
-    "Human reviewer approval can proceed because source_fidelity and interpretation_forecast evidence reviews are complete and non-blocking.",
-    "After approval, publish through the admin route.",
-    "After publication, re-run research planning sync and inspect the microbiome-composition track page."
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
   ],
   "tags": [
     "surveillance",
@@ -171,5 +169,8 @@
   "evidence_review_ids": [
     "evidence-review-microbiome-composition-modulation-source-fidelity-r1",
     "evidence-review-microbiome-composition-modulation-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-microbiome-composition-modulation-surveillance-2026-06-03-2026-06-03t16-38-15-119z"
   ]
 }
