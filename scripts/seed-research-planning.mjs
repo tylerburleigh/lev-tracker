@@ -89,11 +89,12 @@ function isMoreRecent(left, right) {
 async function main() {
   const hallmarksTaxonomy = await readJson("taxonomies/hallmarks-of-aging.v1.json");
   const trackTaxonomy = await readJson("taxonomies/track-taxonomy.v1.json");
-  const [outlooks, bundles, publicationEvents, sessions] = await Promise.all([
+  const [outlooks, bundles, publicationEvents, sessions, coverageAssessments] = await Promise.all([
     readCollection("data/outlooks"),
     readCollection("data/candidate-bundles"),
     readCollection("data/publication-events"),
-    readCollection("research/sessions")
+    readCollection("research/sessions"),
+    readCollection("research/coverage-assessments")
   ]);
 
   const trackOutlookByTrackId = new Map(
@@ -120,6 +121,15 @@ async function main() {
     }
   }
 
+  const latestCoverageAssessmentByTrackId = new Map();
+  for (const assessment of coverageAssessments.sort((left, right) =>
+    compareDateTimesDescending(left.assessed_at, right.assessed_at)
+  )) {
+    if (!latestCoverageAssessmentByTrackId.has(assessment.track_id)) {
+      latestCoverageAssessmentByTrackId.set(assessment.track_id, assessment);
+    }
+  }
+
   const bundleById = new Map(bundles.map((bundle) => [bundle.id, bundle]));
   const latestPublicationByTrackId = new Map();
   for (const event of publicationEvents.sort((left, right) => compareDateTimesDescending(left.published_at, right.published_at))) {
@@ -139,6 +149,7 @@ async function main() {
     group.tracks.map((track) => {
       const latestBundle = latestBundleByTrackId.get(track.id);
       const latestSession = latestSessionByTrackId.get(track.id);
+      const latestCoverageAssessment = latestCoverageAssessmentByTrackId.get(track.id);
       const latestPublication = latestPublicationByTrackId.get(track.id);
       const hasTrackOutlook = trackOutlookByTrackId.has(track.id);
       const hasPublishedBaseline =
@@ -185,6 +196,12 @@ async function main() {
         last_candidate_bundle_status: latestBundle?.lifecycle_status,
         last_publication_event_id: latestPublication?.id,
         last_published_at: latestPublication?.published_at,
+        last_coverage_assessment_id: latestCoverageAssessment?.id,
+        last_coverage_assessed_at: latestCoverageAssessment?.assessed_at,
+        coverage_verdict: latestCoverageAssessment?.coverage_verdict,
+        known_gap_count: latestCoverageAssessment?.known_gaps?.length,
+        high_priority_gap_count: latestCoverageAssessment?.known_gaps?.filter((gap) => gap.priority === "high").length,
+        next_coverage_action: latestCoverageAssessment?.next_coverage_action,
         default_research_question: buildDefaultQuestion(track.name, nextMode),
         notes
       };
@@ -373,9 +390,15 @@ async function main() {
         "last_candidate_bundle_id",
         "last_candidate_bundle_status",
         "last_publication_event_id",
-        "last_published_at"
+        "last_published_at",
+        "last_coverage_assessment_id",
+        "last_coverage_assessed_at",
+        "coverage_verdict",
+        "known_gap_count",
+        "high_priority_gap_count",
+        "next_coverage_action"
       ]) {
-        if (!output[optionalKey]) {
+        if (output[optionalKey] === undefined || output[optionalKey] === null) {
           delete output[optionalKey];
         }
       }

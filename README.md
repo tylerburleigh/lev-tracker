@@ -65,6 +65,7 @@ The first pass is intentionally small:
 - `research/backlog/track-priority.v1.json` is the persistent answer to “what should bootstrap or surveillance do next?”
 - `research/sessions/*.json` records what each bounded research pass actually did, even when it produced no bundle.
 - `research/coverage-assessments/*.json` records how complete a track's source and evidence landscape appears, plus known gaps.
+- `npm run sync:research-planning` surfaces the latest coverage assessment verdict and gap counts in `coverage-status.v1.json`.
 - The default research work unit is one `track` per run.
 - Run `npm run sync:research-planning` after a research pass to regenerate state and queue files.
 

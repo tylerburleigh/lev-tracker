@@ -40,7 +40,7 @@ After a session is recorded or a bundle changes, run:
 
 That command regenerates `coverage-status.v1.json` and `track-priority.v1.json` from taxonomy, sessions, bundles, and publication history.
 
-Coverage assessments are currently validated internal artifacts but are not yet folded into generated planning state. Use them directly when deciding whether the next pass should be ordinary surveillance or a `coverage_repair` pass.
+Coverage assessments are validated internal artifacts and are folded into generated planning state. `coverage-status.v1.json` surfaces the latest assessment ID, verdict, known gap counts, and next coverage action for each track that has an assessment. Use the full assessment record when deciding whether the next pass should be ordinary surveillance or a `coverage_repair` pass.
 
 ## Surveillance Outcomes
 

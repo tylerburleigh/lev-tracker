@@ -187,6 +187,30 @@
           "last_published_at": {
             "$ref": "./common.schema.json#/$defs/dateTime"
           },
+          "last_coverage_assessment_id": {
+            "$ref": "./common.schema.json#/$defs/identifier"
+          },
+          "last_coverage_assessed_at": {
+            "$ref": "./common.schema.json#/$defs/dateTime"
+          },
+          "coverage_verdict": {
+            "enum": [
+              "thin",
+              "adequate",
+              "strong"
+            ]
+          },
+          "known_gap_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "high_priority_gap_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "next_coverage_action": {
+            "type": "string"
+          },
           "default_research_question": {
             "type": "string"
           },

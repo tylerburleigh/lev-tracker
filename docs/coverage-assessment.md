@@ -72,13 +72,12 @@ Do not update it for every small source or activity record. The artifact should 
 
 ## Planning Integration
 
-For now, coverage assessments are validated internal artifacts. `research/state/coverage-status.v1.json` does not yet surface coverage quality.
-
-The intended next integration is to teach `npm run sync:research-planning` to expose:
+Coverage assessments are validated internal artifacts. `npm run sync:research-planning` surfaces the latest assessment for each track in `research/state/coverage-status.v1.json`:
 
 - latest coverage assessment ID
 - coverage verdict
 - known gap count
+- high-priority known gap count
 - next coverage action
 
-Until that is implemented, use `research/coverage-assessments/` directly when deciding whether a track needs ordinary surveillance or a coverage-repair pass.
+Use these generated fields when deciding whether a track needs ordinary surveillance or a coverage-repair pass. Use `research/coverage-assessments/` directly when you need the category-level rationale and source lists.
