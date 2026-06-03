@@ -14,6 +14,7 @@ Use this after research has produced a candidate bundle and before editorial app
 - live target files referenced by each `file_path`
 - existing `data/evidence-reviews/` records for the same bundle
 - related `data/review-comments/` when they affect the current revision
+- related `research/coverage-assessments/` records when the bundle changes a track outlook or support map
 - `schemas/evidence-review.schema.json`
 - `schemas/candidate-bundle.schema.json`
 - `schemas/source.schema.json`, `schemas/study.schema.json`, `schemas/finding.schema.json`, and `schemas/outlook.schema.json` when those records are staged
@@ -36,6 +37,7 @@ Read [references/output-contract.md](references/output-contract.md) before writi
 4. Use `npm run research:review-evidence -- scaffold --bundle <bundle-id> --lane <lane>` when starting a new lane review.
 5. Compare the staged change against the live record and the claimed evidence boundaries.
    - For track outlooks, verify that `supporting_evidence[]` maps each rating rationale to concrete findings, sources, support roles, and limitations.
+   - For track outlooks, check the latest coverage assessment when one exists and flag any known gap that should qualify or block the proposed interpretation.
    - For staged findings, verify that each finding has source/study provenance, endpoint boundaries, confidence, direction, and caveats.
    - Verify `rating_change_criteria` describes what would move the rating without implying the current evidence is stronger than it is.
 6. Apply the completed review with `npm run research:review-evidence -- apply --file <draft-path>`.
@@ -53,6 +55,7 @@ Read [references/output-contract.md](references/output-contract.md) before writi
 - Do not accept a higher stage unless the support map contains current evidence for that stage and the public wording states the boundary.
 - A source list is not sufficient support by itself; require explicit source -> study -> finding -> outlook rationale mapping when rating claims are public.
 - Keep caveats near the claim they qualify, including sponsor, duration, population, endpoint, and attribution limits.
+- Treat `coverage_verdict: "thin"` or high-priority coverage gaps as a reason to preserve conservative public language unless the bundle explicitly repairs those gaps.
 - Use `needs_human_judgment` when the evidence is bounded but the public wording still depends on curator judgment.
 
 ## Boundaries

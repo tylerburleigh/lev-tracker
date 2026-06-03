@@ -1,0 +1,268 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./coverage-assessment.schema.json",
+  "title": "Coverage assessment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "id",
+    "name",
+    "track_id",
+    "hallmark_id",
+    "assessment_type",
+    "assessed_at",
+    "coverage_verdict",
+    "summary",
+    "evidence_categories",
+    "covered_source_ids",
+    "known_gaps",
+    "next_coverage_action"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "record_type": {
+      "const": "coverage_assessment"
+    },
+    "id": {
+      "$ref": "./common.schema.json#/$defs/identifier"
+    },
+    "name": {
+      "type": "string"
+    },
+    "short_name": {
+      "type": "string"
+    },
+    "track_id": {
+      "$ref": "./common.schema.json#/$defs/trackRef"
+    },
+    "hallmark_id": {
+      "$ref": "./common.schema.json#/$defs/hallmarkRef"
+    },
+    "assessment_type": {
+      "enum": [
+        "bootstrap",
+        "surveillance",
+        "coverage_repair",
+        "manual"
+      ]
+    },
+    "assessed_at": {
+      "$ref": "./common.schema.json#/$defs/dateTime"
+    },
+    "assessment_window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "basis"
+      ],
+      "properties": {
+        "from": {
+          "$ref": "./common.schema.json#/$defs/dateTime"
+        },
+        "to": {
+          "$ref": "./common.schema.json#/$defs/dateTime"
+        },
+        "basis": {
+          "type": "string"
+        }
+      }
+    },
+    "coverage_verdict": {
+      "enum": [
+        "thin",
+        "adequate",
+        "strong"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "reviewed_artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "research_session_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "./common.schema.json#/$defs/identifier"
+          },
+          "uniqueItems": true
+        },
+        "candidate_bundle_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "./common.schema.json#/$defs/candidateBundleRef"
+          },
+          "uniqueItems": true
+        },
+        "evidence_review_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "./common.schema.json#/$defs/evidenceReviewRef"
+          },
+          "uniqueItems": true
+        },
+        "publication_event_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "./common.schema.json#/$defs/publicationEventRef"
+          },
+          "uniqueItems": true
+        },
+        "outlook_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "./common.schema.json#/$defs/outlookRef"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "evidence_categories": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "category",
+          "coverage_level",
+          "rationale"
+        ],
+        "properties": {
+          "category": {
+            "$ref": "#/$defs/coverageCategory"
+          },
+          "coverage_level": {
+            "$ref": "#/$defs/coverageLevel"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "$ref": "./common.schema.json#/$defs/sourceRef"
+            },
+            "uniqueItems": true
+          },
+          "finding_ids": {
+            "type": "array",
+            "items": {
+              "$ref": "./common.schema.json#/$defs/findingRef"
+            },
+            "uniqueItems": true
+          },
+          "gap_note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "covered_source_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/sourceRef"
+      },
+      "uniqueItems": true
+    },
+    "covered_finding_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/findingRef"
+      },
+      "uniqueItems": true
+    },
+    "search_log_summary": {
+      "type": "string"
+    },
+    "source_selection_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "known_gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "gap_id",
+          "gap_type",
+          "category",
+          "description",
+          "priority",
+          "suggested_action"
+        ],
+        "properties": {
+          "gap_id": {
+            "$ref": "./common.schema.json#/$defs/identifier"
+          },
+          "gap_type": {
+            "enum": [
+              "coverage_gap",
+              "evidence_gap",
+              "operational_gap"
+            ]
+          },
+          "category": {
+            "$ref": "#/$defs/coverageCategory"
+          },
+          "description": {
+            "type": "string"
+          },
+          "priority": {
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "suggested_action": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "next_coverage_action": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "coverageCategory": {
+      "enum": [
+        "human_interventional",
+        "human_observational_or_natural_experiment",
+        "animal_lifespan_or_healthspan",
+        "mechanistic",
+        "null_negative_or_limiting",
+        "safety_durability",
+        "active_trials_registries",
+        "recent_reviews_meta_analyses",
+        "seminal_anchors",
+        "taxonomy_boundary"
+      ]
+    },
+    "coverageLevel": {
+      "enum": [
+        "not_checked",
+        "thin",
+        "adequate",
+        "strong",
+        "not_applicable"
+      ]
+    }
+  }
+}

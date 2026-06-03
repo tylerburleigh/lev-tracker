@@ -8,6 +8,7 @@ Use this checklist for track-level surveillance after baseline bootstrap. Survei
 2. Record the track ID, hallmark ID, and reason it is next in the queue.
 3. Identify the last relevant publication event, bundle, outlook `last_updated`, and research session.
 4. Define the delta window from that prior checkpoint through the current review date.
+5. Check whether `research/coverage-assessments/` already has an assessment for the track and note any known gaps.
 
 ## Baseline Snapshot
 
@@ -15,6 +16,7 @@ Use this checklist for track-level surveillance after baseline bootstrap. Survei
 - Current supporting finding IDs, source IDs, study IDs, intervention IDs, and activity item IDs.
 - Current trial or program records that were explicitly marked no-results, pending, active, recruiting, terminated, or activity-only.
 - Known caveats from the latest evidence reviews.
+- Current coverage verdict, category-level gaps, and next coverage action when a coverage assessment exists.
 
 ## Watch Sources
 
@@ -37,6 +39,8 @@ Choose one outcome:
 
 Avoid staging records for contextual noise, duplicate sources, unchanged registries, or speculative implications.
 
+If the pass primarily improves confidence about source completeness rather than changing public records, update or create a `coverage_assessment` and keep the public layer unchanged.
+
 ## Record Changes
 
 For `activity_only` or `outlook_refresh` bundles:
@@ -46,6 +50,17 @@ For `activity_only` or `outlook_refresh` bundles:
 3. Keep each finding atomic and linked to source, study, track, hallmark, and intervention IDs when applicable.
 4. Update outlook support maps only when the public interpretation changes.
 5. Keep `data/staged-records/<bundle-id>/` as the bundle's proposed public state; once published, that directory is immutable audit history, not active work.
+
+## Coverage Assessment
+
+Create or update `research/coverage-assessments/<track-id>-coverage-<date>.json` when surveillance:
+
+- changes the outlook or support map
+- resolves a known source-completeness gap
+- discovers a material missing evidence category
+- shows that a track needs `coverage_repair` rather than ordinary delta surveillance
+
+Do not update coverage assessments just to mirror every source or activity item. The assessment is for category-level completeness and known gaps.
 
 ## Review Lanes
 

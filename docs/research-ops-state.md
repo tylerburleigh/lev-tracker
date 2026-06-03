@@ -12,8 +12,12 @@ That is deliberate. A language model can usually do one bounded track pass well 
   The ordered queue that bootstrap and surveillance should consult when the user is vague.
 - `research/sessions/*.json`
   One structured record per research pass, including no-op passes that do not produce a bundle.
+- `research/coverage-assessments/*.json`
+  Internal track-level assessments of source-landscape completeness, category coverage, known gaps, and the next coverage action.
 - `docs/surveillance-checklist.md`
   The operating checklist for post-bootstrap surveillance passes.
+- `docs/coverage-assessment.md`
+  The rubric for judging whether a track is thin, adequate, or strong from a coverage standpoint.
 
 ## Default Behavior
 
@@ -28,12 +32,15 @@ That is deliberate. A language model can usually do one bounded track pass well 
 - one structured session record under `research/sessions/`
 - zero or one candidate bundle
 - staged JSON only for records that materially changed
+- a coverage assessment when the pass materially changes source-landscape confidence or creates a first track baseline
 
 After a session is recorded or a bundle changes, run:
 
 `npm run sync:research-planning`
 
 That command regenerates `coverage-status.v1.json` and `track-priority.v1.json` from taxonomy, sessions, bundles, and publication history.
+
+Coverage assessments are currently validated internal artifacts but are not yet folded into generated planning state. Use them directly when deciding whether the next pass should be ordinary surveillance or a `coverage_repair` pass.
 
 ## Surveillance Outcomes
 
@@ -55,3 +62,4 @@ No-op sessions are successful surveillance work. They keep the review clock visi
 - silently broaden from one track into the whole field
 - publish directly
 - confuse contextual activity with evidence
+- treat a published baseline as proof that source coverage is strong

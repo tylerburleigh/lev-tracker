@@ -13,6 +13,7 @@ Use this for the admin side of the tracker after research has already produced a
 - staged files under `data/staged-records/<bundle-id>/`
 - live target files referenced by each `file_path`
 - related `data/review-comments/` and `data/publication-events/`
+- related `research/coverage-assessments/` when a track outlook or support map changes
 - source, study, finding, and outlook schemas when those record types are staged
 - `scripts/research-bundle.mjs`
 - the current admin workflow implementation in `src/lib/site-data.ts` and `src/app/admin/review/`
@@ -28,6 +29,7 @@ Use this for the admin side of the tracker after research has already produced a
    - valid `staged_file_path`
 4. Compare staged JSON to the live public record before changing status.
    - If a track outlook rating changes, confirm the bundle stages or already has the linked source, study, finding, support-map, and rating-change records.
+   - If a coverage assessment exists, confirm the staged public claim does not ignore a high-priority known coverage gap.
    - Confirm source extraction covers population/model, sample size, duration, intervention/exposure, endpoint, quantitative result, safety, funding/conflicts, and directness boundary.
    - Confirm stage, momentum, and confidence do not exceed the support-map evidence, especially for narrow disease benefits in broad aging tracks.
 5. If the change is not ready, add a review comment and move the bundle to `needs_revision`.

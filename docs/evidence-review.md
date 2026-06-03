@@ -2,6 +2,8 @@
 
 Evidence reviews are structured verification passes against a candidate bundle revision. They are separate from admin comments: comments drive editorial conversation, while evidence reviews decide whether staged changes are source-faithful, bounded, and publishable.
 
+When a bundle changes a track outlook, reviewers should also check the latest relevant `coverage_assessment` when one exists. The assessment does not replace source fidelity or support-map review, but it helps identify whether the bundle is making a public claim while a major evidence category remains knowingly thin.
+
 ## Lanes
 
 Supported review lanes are:
@@ -46,6 +48,7 @@ Edit the generated draft under `research/drafts/evidence-reviews/`:
 - set `blocking` to `true` only when the bundle should not advance
 - keep `reviewed_change_ids[]` limited to the bundle changes actually reviewed
 - add findings for concrete issues, boundaries, or caveats
+- note any coverage-assessment gap that should block or qualify the proposed interpretation
 
 Apply a completed review:
 

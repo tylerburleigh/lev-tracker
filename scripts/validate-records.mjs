@@ -12,6 +12,7 @@ const validationRoots = ["data", "examples", "taxonomies", "research"];
 const schemaByRecordType = {
   activity_item: "./activity-item.schema.json",
   candidate_bundle: "./candidate-bundle.schema.json",
+  coverage_assessment: "./coverage-assessment.schema.json",
   evidence_review: "./evidence-review.schema.json",
   finding: "./finding.schema.json",
   intervention: "./intervention.schema.json",

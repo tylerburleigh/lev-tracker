@@ -1,0 +1,177 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "microbiome-composition-modulation-coverage-2026-06-03",
+  "name": "Microbiome Composition Modulation Coverage Assessment for June 3, 2026",
+  "short_name": "Microbiome composition coverage",
+  "track_id": "microbiome-composition-modulation",
+  "hallmark_id": "dysbiosis",
+  "assessment_type": "surveillance",
+  "assessed_at": "2026-06-03T16:45:00Z",
+  "assessment_window": {
+    "from": "2026-05-11T00:00:00Z",
+    "to": "2026-06-03T16:38:15.119Z",
+    "basis": "Delta window from the prior public outlook last_updated date through publication of microbiome-composition-modulation-surveillance-2026-06-03."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is adequate for the current public claim: low-confidence human_biomarker_signal with mixed momentum. The track has meaningful human biomarker, metabolite, microbiome-composition, and disease-specific symptom evidence, a new null older-adult composition trial, and explicit taxonomy boundaries. Coverage is not strong because no formal seminal-anchor audit or citation-network check has been recorded, and replicated aging-relevant human functional benefit has not yet been established for a stage upgrade.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-06-03-microbiome-composition-modulation-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "microbiome-composition-modulation-surveillance-2026-06-03"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-microbiome-composition-modulation-source-fidelity-r1",
+      "evidence-review-microbiome-composition-modulation-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-microbiome-composition-modulation-surveillance-2026-06-03-2026-06-03t16-38-15-119z"
+    ],
+    "outlook_ids": [
+      "track-microbiome-composition-modulation-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "The public record includes meaningful human interventional evidence for DS-01/polyphenol target engagement and the new TBC169 synbiotic constipation RCT, but these data support narrower biomarker, metabolite, microbiome-composition, and symptom claims rather than a broad aging-functional stage upgrade.",
+      "source_ids": [
+        "pmid-42226670",
+        "pmid-40944126",
+        "pmid-35315592"
+      ],
+      "finding_ids": [
+        "tbc169-synbiotic-improved-constipation-middle-aged-elderly",
+        "ds-01-increased-urolithin-a-butyrate-crp",
+        "polyphenol-diet-increased-ipa-older-adults"
+      ],
+      "gap_note": "Human interventional coverage is meaningful but currently supports narrower claims than replicated aging-relevant functional benefit."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "thin",
+      "rationale": "The current public support map is driven primarily by interventions and biomarker studies; observational aging-microbiome literature is not comprehensively mapped for this track.",
+      "gap_note": "A future coverage repair pass should decide whether observational centenarian, frailty, infection-resilience, or diet-microbiome studies add decision-relevant boundaries."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "thin",
+      "rationale": "The published track claim does not depend on animal lifespan or healthspan evidence, and animal composition-modulation anchors were not the focus of the surveillance delta.",
+      "gap_note": "Animal anchors may be useful for completeness but are not needed for the current low-confidence human_biomarker_signal rating."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "The support map captures microbiome diversity, composition, metabolite, and inflammation-adjacent signals while separating composition modulation from metabolite restoration and live-biotherapeutic mechanisms.",
+      "source_ids": [
+        "pmid-42226670",
+        "pmid-40944126",
+        "pmid-35315592"
+      ]
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The new online physical activity RCT supplies a current null older-adult gut microbiome composition result, and the outlook explicitly uses it to limit broad lifestyle-to-microbiome claims.",
+      "source_ids": [
+        "pmid-42168724"
+      ],
+      "finding_ids": [
+        "online-physical-activity-no-microbiome-change-older-adults"
+      ]
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "The TBC169 source reports mild transient adverse events, but long-term durability, infection risk, tolerability, and population-specific safety are not deeply covered.",
+      "source_ids": [
+        "pmid-42226670"
+      ],
+      "gap_note": "Safety and durability should become a higher-priority review lane if future evidence proposes a stage or confidence upgrade."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "The surveillance session checked ClinicalTrials.gov for older-adult microbiome/probiotic activity and did not find a registry update that justified a public activity-only record.",
+      "gap_note": "Registry checks should be repeated during each surveillance pass because recruitment status and posted results can change."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "The pass prioritized primary delta evidence and did not stage a recent review or meta-analysis as a synthesis anchor.",
+      "gap_note": "A coverage repair pass should triangulate current review articles against the public support map."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "thin",
+      "rationale": "The baseline and surveillance records include decision-relevant anchors, but the project has not yet recorded a formal must-include or citation-network audit for this track.",
+      "gap_note": "This is the main reason the verdict is adequate rather than strong."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "strong",
+      "rationale": "The outlook and evidence review explicitly separate composition modulation from live biotherapeutics, microbiome metabolite restoration, ecosystem replacement, diet, and exercise mechanisms.",
+      "source_ids": [
+        "pmid-42226670",
+        "pmid-42168724",
+        "pmid-40944126",
+        "pmid-35315592"
+      ]
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-42226670",
+    "pmid-42168724",
+    "pmid-40944126",
+    "pmid-35315592"
+  ],
+  "covered_finding_ids": [
+    "tbc169-synbiotic-improved-constipation-middle-aged-elderly",
+    "online-physical-activity-no-microbiome-change-older-adults",
+    "ds-01-increased-urolithin-a-butyrate-crp",
+    "polyphenol-diet-increased-ipa-older-adults"
+  ],
+  "search_log_summary": "The surveillance session checked PubMed delta queries for microbiome, microbiota, probiotic, prebiotic, and synbiotic terms with aging, aged, older-adult, and elderly terms; reviewed PMID 42226670, PMID 42168724, PMID 42197087, and PMID 42166751; and checked ClinicalTrials.gov for older-adult microbiome/probiotic activity.",
+  "source_selection_notes": [
+    "PMID 42226670 was included because it added a material disease-specific human symptom and microbiome-composition signal.",
+    "PMID 42168724 was included because it added a material null older-adult microbiome-composition boundary.",
+    "PMID 42197087 was not staged because its no-control design and dropout made microbiome findings observational associations.",
+    "PMID 42166751 was not staged because it was protocol context rather than results evidence."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "formal-seminal-anchor-audit-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "seminal_anchors",
+      "description": "No explicit must-include or citation-network audit has been recorded for the track's historical seminal papers.",
+      "priority": "medium",
+      "suggested_action": "Run a coverage_repair pass that triangulates review articles, highly cited primary papers, and existing support-map anchors."
+    },
+    {
+      "gap_id": "aging-functional-upgrade-evidence-not-yet-established",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "Existing human data are meaningful for biomarker, metabolite, microbiome-composition, symptom, and boundary claims, but they do not yet establish replicated aging-relevant functional benefit sufficient for a stage upgrade.",
+      "priority": "high",
+      "suggested_action": "Do not upgrade beyond low-confidence human_biomarker_signal until controlled older-adult trials show prespecified aging-relevant functional benefit with microbiome support."
+    },
+    {
+      "gap_id": "recent-review-triangulation-thin",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "Recent review and meta-analysis coverage has not been explicitly reconciled with the public support map.",
+      "priority": "medium",
+      "suggested_action": "During a coverage_repair pass, compare recent reviews against included source IDs and document any missing decision-relevant anchors."
+    }
+  ],
+  "next_coverage_action": "Keep normal surveillance rotation. If this track is revisited before another material delta appears, use coverage_repair rather than surveillance to audit seminal anchors and recent reviews.",
+  "tags": [
+    "coverage-assessment",
+    "surveillance",
+    "dysbiosis",
+    "microbiome-composition-modulation"
+  ]
+}

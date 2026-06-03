@@ -16,6 +16,7 @@ The first pass is intentionally small:
 - [Project roadmap](docs/project-roadmap.md): active product, research, data, and docs task tracker.
 - [Product brief](docs/product-brief.md): product intent and domain model.
 - [Research ops state](docs/research-ops-state.md): default research work unit and queue rules.
+- [Coverage assessment](docs/coverage-assessment.md): internal rubric for source-landscape completeness and known evidence gaps.
 - [Admin review](docs/admin-review.md): candidate lifecycle, promotion readiness, and publication behavior.
 - [Evidence review](docs/evidence-review.md): review lanes, findings, and evidence-gate workflow.
 - [Publication checklist](docs/publication-checklist.md): pre-publish and post-publish checklist.
@@ -46,6 +47,7 @@ The first pass is intentionally small:
 - `review_comment`: feedback exchanged during admin review.
 - `publication_event`: a record of what was published to the public site.
 - `coverage_status`: persistent internal state for what has baseline coverage and what mode comes next.
+- `coverage_assessment`: internal track-level assessment of source completeness, evidence categories, and known gaps.
 - `track_priority_queue`: the ordered internal queue that bootstrap and surveillance consult when scope is vague.
 - `research_session`: one bounded bootstrap or surveillance pass, including no-op outcomes.
 
@@ -62,6 +64,7 @@ The first pass is intentionally small:
 - `research/state/coverage-status.v1.json` is the persistent answer to “what already has coverage?”
 - `research/backlog/track-priority.v1.json` is the persistent answer to “what should bootstrap or surveillance do next?”
 - `research/sessions/*.json` records what each bounded research pass actually did, even when it produced no bundle.
+- `research/coverage-assessments/*.json` records how complete a track's source and evidence landscape appears, plus known gaps.
 - The default research work unit is one `track` per run.
 - Run `npm run sync:research-planning` after a research pass to regenerate state and queue files.
 
