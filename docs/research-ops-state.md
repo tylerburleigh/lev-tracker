@@ -12,6 +12,8 @@ That is deliberate. A language model can usually do one bounded track pass well 
   The ordered queue that bootstrap and surveillance should consult when the user is vague.
 - `research/sessions/*.json`
   One structured record per research pass, including no-op passes that do not produce a bundle.
+- `docs/surveillance-checklist.md`
+  The operating checklist for post-bootstrap surveillance passes.
 
 ## Default Behavior
 
@@ -32,6 +34,20 @@ After a session is recorded or a bundle changes, run:
 `npm run sync:research-planning`
 
 That command regenerates `coverage-status.v1.json` and `track-priority.v1.json` from taxonomy, sessions, bundles, and publication history.
+
+## Surveillance Outcomes
+
+Surveillance has three valid outcomes:
+
+- `no_op`: the pass found no material public change. Write the session record, preserve the search log, and do not create a candidate bundle or staged JSON.
+- `activity_only`: a trial, company, regulatory, conference, or program event changed, but evidence interpretation does not. Write the session record; create a bundle only when the public activity or source layer should change.
+- `outlook_refresh`: evidence, safety, trial results, support maps, or forecast language changed enough to update public records. Create a minimal candidate bundle and staged JSON for the changed records only.
+
+No-op sessions are successful surveillance work. They keep the review clock visible without growing the candidate-bundle backlog.
+
+## Active vs Historical Artifacts
+
+`data/staged-records/<bundle-id>/` is active only while the matching bundle is non-terminal. After a bundle is `published` or `rejected`, the staged directory is immutable audit history and should not be treated as pending work.
 
 ## What A Research Run Should Not Do
 

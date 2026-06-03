@@ -14,6 +14,17 @@ Supported review lanes are:
 
 A bundle lists its required lanes in `required_review_lanes[]`. The evidence gate is ready when each required lane has the configured number of complete reviews, no complete review is blocking, no complete review has `needs_revision` or `reject`, and no configured blocking findings remain open.
 
+## Surveillance Scope
+
+Surveillance does not always need a candidate bundle or evidence review:
+
+- `no_op`: no evidence review. The research session is the audit record.
+- `activity_only`: no evidence review when only a session record is written. If a bundle stages public source or activity records, normally require `source_fidelity` only.
+- `outlook_refresh`: require `source_fidelity` and `interpretation_forecast`.
+- Add `safety_limitations` when new safety, dosing, population, disease-specific, or durability boundaries could affect public interpretation.
+- Add `taxonomy_mapping` when track, hallmark, intervention, study, or finding links materially change.
+- Add `forecast_calibration` when timing, scenario, or forecast language materially changes.
+
 ## Workflow
 
 Check current review state:

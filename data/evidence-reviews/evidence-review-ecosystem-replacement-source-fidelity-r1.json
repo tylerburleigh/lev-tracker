@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-ecosystem-replacement-source-fidelity-r1",
+  "name": "Source Fidelity review for Ecosystem Replacement bundle",
+  "candidate_bundle_id": "ecosystem-replacement-bootstrap-2026-06-03",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, finding, and outlook records are faithful to the checked PubMed and ClinicalTrials.gov records. Bibliographic identifiers, titles, DOI links, model systems, trial statuses, endpoint directions, and no-results trial boundaries match the cited source set closely enough for publication review. The main source-fidelity boundaries are already preserved: direct aging benefit evidence is animal-only, human support is metabolic biomarker, engraftment, or disease-context safety evidence, and aging-specific human trials are registered activity without reported outcomes.",
+  "reviewed_change_ids": [
+    "create-source-pmid-28826469",
+    "create-source-pmid-31332389",
+    "create-source-pmid-35501923",
+    "create-source-pmid-38739944",
+    "create-source-pmid-39812540",
+    "create-source-pmid-40444969",
+    "create-source-pmid-22728514",
+    "create-source-pmid-27134658",
+    "create-source-pmid-36109637",
+    "create-source-nct-05598112",
+    "create-source-nct-06649981",
+    "create-source-pmid-41629813",
+    "create-intervention-fecal-microbiota-transplantation",
+    "create-study-killifish-young-microbiota-lifespan",
+    "create-study-progeroid-mouse-fmt-healthspan-lifespan",
+    "create-study-young-aged-mouse-fmt-gut-eye-brain",
+    "create-study-fmt-old-mouse-frailty-gut-muscle-axis",
+    "create-study-young-trained-donor-fmt-old-mouse-cognition",
+    "create-study-young-fmt-old-mouse-metabolic-frailty",
+    "create-study-lean-donor-fmt-metabolic-syndrome",
+    "create-study-older-adult-cdi-fmt-case-series",
+    "create-study-fmt-strain-engraftment-meta-analysis",
+    "create-study-fmt-capsules-aging-frailty-trial",
+    "create-study-armor-young-donor-fmt-resilient-aging",
+    "create-finding-young-microbiota-extended-killifish-lifespan",
+    "create-finding-wild-type-fmt-extended-progeroid-mouse-healthspan-lifespan",
+    "create-finding-young-fmt-reversed-aged-mouse-gut-eye-brain-inflammation",
+    "create-finding-fmt-attenuated-old-mouse-frailty-gut-muscle-axis",
+    "create-finding-young-trained-fmt-improved-old-mouse-cognition",
+    "create-finding-young-fmt-improved-old-mouse-frailty-grip-metabolism",
+    "create-finding-lean-donor-fmt-increased-insulin-sensitivity-metabolic-syndrome",
+    "create-finding-older-adult-cdi-fmt-safety-disease-boundary",
+    "create-finding-fmt-engraftment-variable-across-human-diseases",
+    "create-finding-aging-fmt-capsules-trial-recruiting-no-results",
+    "create-finding-armor-young-donor-fmt-protocol-no-results",
+    "create-outlook-track-ecosystem-replacement"
+  ],
+  "findings": [
+    {
+      "finding_id": "ecosystem-nct05598112-phase-normalized",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-source-nct-05598112",
+      "applies_to_record": {
+        "record_type": "source",
+        "record_id": "nct-05598112"
+      },
+      "claim_or_issue": "The ClinicalTrials.gov record reports NCT05598112 as Early Phase 1, while the staged source stores phase1.",
+      "why_it_matters": "Trial phase affects evidence-stage interpretation, but the local source schema does not provide a distinct early_phase1 value.",
+      "recommended_action": "No revision needed under the current schema; retain phase1 as the nearest supported normalized value and keep the no-results caveat.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ecosystem-human-disease-context-boundary-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-lean-donor-fmt-increased-insulin-sensitivity-metabolic-syndrome",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "lean-donor-fmt-increased-insulin-sensitivity-metabolic-syndrome"
+      },
+      "claim_or_issue": "PMID 22728514 supports improved insulin sensitivity after lean-donor FMT in men with metabolic syndrome, not an aging intervention endpoint.",
+      "why_it_matters": "Treating this as human aging efficacy would overstate the directness of the human evidence.",
+      "recommended_action": "No revision needed; the staged finding and outlook use it as metabolic biomarker support and explicitly caveat that it is not geroscience or aging-outcome evidence.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ecosystem-aging-trials-no-results-preserved",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "create-finding-aging-fmt-capsules-trial-recruiting-no-results",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "aging-fmt-capsules-trial-recruiting-no-results"
+      },
+      "claim_or_issue": "NCT05598112 and NCT06649981 are aging-focused FMT capsule trials, but the registry records do not report results.",
+      "why_it_matters": "Clinical-trial activity should support momentum and watchlist status, not human efficacy.",
+      "recommended_action": "No revision needed; the staged findings label both trials as no-results records and use them as activity signals rather than outcome evidence.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-03T14:04:47.333Z",
+  "updated_at": "2026-06-03T14:04:47.333Z"
+}

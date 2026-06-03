@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "older-adult-cdi-fmt-safety-disease-boundary",
+  "name": "Older-adult CDI FMT case review supports disease-context safety but not aging efficacy",
+  "summary": "Older-adult CDI experience supports feasibility and disease-context effectiveness in older recipients while bounding aging interpretation.",
+  "source_id": "pmid-27134658",
+  "study_id": "older-adult-cdi-fmt-case-series",
+  "intervention_ids": [
+    "fecal-microbiota-transplantation"
+  ],
+  "track_ids": [
+    "ecosystem-replacement"
+  ],
+  "hallmark_ids": [
+    "dysbiosis"
+  ],
+  "endpoint_category": "safety",
+  "direction": "positive",
+  "evidence_tier": "human_clinical_outcome",
+  "confidence": "low",
+  "statement": "In a case review of adults aged 65 or older treated with FMT for Clostridium difficile infection, CDI resolved in 27 of 31 respondents; serious adverse events and deaths occurred during follow-up but were not attributed to FMT, and the most common reported adverse event was subjective worsening of arthritis in 4 of 31 respondents.",
+  "population_or_model": "Adults aged 65 years or older with Clostridium difficile infection",
+  "time_horizon": "Clinical follow-up after FMT for CDI",
+  "quantitative_note": "CDI resolution was reported in 27 of 31 respondents, and subjective worsening of arthritis in 4 of 31 respondents.",
+  "caveats": [
+    "This is recurrent or refractory infection treatment, not aging, frailty, or healthy-aging intervention evidence.",
+    "Case-review safety does not substitute for controlled chronic-use safety in older adults.",
+    "Disease eradication should not be counted as ecosystem-replacement benefit for non-CDI aging populations."
+  ],
+  "tags": [
+    "human",
+    "older-adults",
+    "safety",
+    "c-difficile"
+  ]
+}

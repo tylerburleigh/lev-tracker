@@ -1,0 +1,186 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-ecosystem-replacement-outlook",
+  "name": "Ecosystem Replacement Track Outlook",
+  "subject_type": "track",
+  "subject_id": "ecosystem-replacement",
+  "current_stage": "human_biomarker_signal",
+  "momentum": "accelerating",
+  "confidence": "low",
+  "main_blockers": [
+    "The most aging-specific benefits remain animal evidence: killifish lifespan, progeroid mouse healthspan/lifespan, and aged-mouse frailty, cognition, gut barrier, inflammatory, and metabolic readouts.",
+    "Human FMT evidence supports engraftment and metabolic or disease-context effects, but the cited human studies do not show treated-human aging, frailty, cognitive, mobility, disease-prevention, disability, or mortality benefit.",
+    "The two direct older-adult aging trials are registry or protocol signals with no posted efficacy results as of June 3, 2026.",
+    "FMT is a crude ecosystem transfer with donor-screening, pathogen-transfer, trait-transfer, manufacturing, route, dose, pretreatment, and repeat-dosing safety issues that matter more in preventive aging use than in severe recurrent infection.",
+    "Donor strain engraftment is variable across diseases and depends on recipient state, antibiotics, route, taxonomy, donor abundance, and donor-recipient compatibility.",
+    "Young-donor, active-donor, lean-donor, wild-type-donor, Akkermansia-linked, and SCFA-linked results overlap neighboring microbiome-composition, live-biotherapeutic, and metabolite-restoration tracks."
+  ],
+  "best_current_signals": [
+    "Young-donor microbiota extended lifespan and delayed behavioral decline in African turquoise killifish, giving the track a vertebrate lifespan anchor.",
+    "Wild-type donor FMT improved healthspan and lifespan in two progeroid mouse models, with Akkermansia and secondary bile-acid biology implicated as possible mediators.",
+    "Aged-mouse studies report improved frailty, grip strength, body composition, cognition, gut barrier, SCFA, inflammatory, metabolomic, and transcriptomic readouts after young or FMT-based microbiota replacement.",
+    "Lean-donor intestinal microbiota infusion increased insulin sensitivity and butyrate-producing microbiota in a small human metabolic-syndrome study, supplying a narrow human biomarker proof-of-concept.",
+    "Older-adult CDI experience and cross-disease metagenomic analyses show that FMT can be delivered to older people and can engraft donor strains, but these are disease-treatment or mechanistic context rather than aging efficacy.",
+    "NCT05598112 and ARMOR/NCT06649981 now directly test oral FMT capsules in older adults for frailty, strength, functional autonomy, safety, microbiome, metabolic, cognitive, or resilience outcomes."
+  ],
+  "forecast_note": "Ecosystem replacement earns a low-confidence human_biomarker_signal baseline because human FMT can shift microbiota and metabolic biomarkers, including a small metabolic-syndrome study with improved insulin sensitivity and butyrate-producer signals, and because cross-disease metagenomic analyses show donor strain engraftment is measurable. The direct aging-efficacy case is still animal-led: young or wild-type donor microbiota improves lifespan, healthspan, frailty, cognition, inflammatory, gut barrier, and metabolic readouts in fish and mice. The active older-adult FMT trials are important momentum signals, but until they report safety and functional or biomarker results, public claims should stay below human functional benefit and should distinguish ecosystem replacement from probiotic, live-biotherapeutic, metabolite, and composition-modulation evidence.",
+  "rating_change_criteria": [
+    "Higher confidence at human_biomarker_signal would require replicated older-adult FMT trials showing durable donor engraftment plus prespecified movement in frailty, inflammatory, metabolic, gut-barrier, microbiome-age, or cognitive biomarkers with acceptable safety.",
+    "A human_functional_benefit upgrade would require controlled older-adult trials such as NCT05598112 or ARMOR to improve prespecified frailty, functional autonomy, strength, mobility, cognition, resilience, or intrinsic-capacity endpoints, not only microbiome composition.",
+    "A durable disease or mortality relevance upgrade would require longer controlled evidence that ecosystem replacement reduces age-related disease progression, hospitalization, disability, infection burden, or mortality-relevant outcomes.",
+    "The rating should weaken toward animal_signal if active older-adult trials are null, unsafe, fail to engraft, or show only transient microbiome shifts without biomarker movement.",
+    "Future reviews should avoid double-counting benefits that are better attributed to defined live biotherapeutics, Akkermansia, microbial metabolites, prebiotics, diet, exercise-conditioned donors, or microbiome-composition modulation.",
+    "Any preventive-aging interpretation needs explicit pathogen-transfer, undesired-trait transfer, donor-screening, long-term safety, and regulatory/manufacturing evidence."
+  ],
+  "earliest_plausible_window": "Older-adult FMT aging trials are active, with registry completion dates in 2027, so biomarker or early functional readouts could clarify the track within the late 2020s; no credible LEV-relevant window exists before replicated older-adult safety and functional evidence.",
+  "scenario_2036_status": "speculative",
+  "supporting_finding_ids": [
+    "young-microbiota-extended-killifish-lifespan",
+    "wild-type-fmt-extended-progeroid-mouse-healthspan-lifespan",
+    "young-fmt-reversed-aged-mouse-gut-eye-brain-inflammation",
+    "fmt-attenuated-old-mouse-frailty-gut-muscle-axis",
+    "young-trained-fmt-improved-old-mouse-cognition",
+    "young-fmt-improved-old-mouse-frailty-grip-metabolism",
+    "lean-donor-fmt-increased-insulin-sensitivity-metabolic-syndrome",
+    "older-adult-cdi-fmt-safety-disease-boundary",
+    "fmt-engraftment-variable-across-human-diseases",
+    "aging-fmt-capsules-trial-recruiting-no-results",
+    "armor-young-donor-fmt-protocol-no-results"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "current_stage",
+      "conclusion": "The track reaches low-confidence human_biomarker_signal, but not human_functional_benefit, because human FMT evidence shows metabolic biomarker movement and donor-strain engraftment rather than aging efficacy.",
+      "support_role": "supports",
+      "rationale": "Lean-donor intestinal microbiota transfer increased insulin sensitivity and butyrate-producing microbiota in metabolic syndrome, and a cross-disease metagenomic meta-analysis shows donor strain engraftment is measurable and associated with clinical success across disease cohorts.",
+      "finding_ids": [
+        "lean-donor-fmt-increased-insulin-sensitivity-metabolic-syndrome",
+        "fmt-engraftment-variable-across-human-diseases"
+      ],
+      "source_ids": [
+        "pmid-22728514",
+        "pmid-36109637"
+      ],
+      "limitations": [
+        "The metabolic-syndrome study was small, male-only, and not an older-adult aging trial.",
+        "Engraftment is mechanistic and does not prove healthy-aging benefit.",
+        "No cited human source reports durable functional, disease-prevention, disability, or mortality benefit from aging-directed FMT."
+      ]
+    },
+    {
+      "label": "Direct aging animal evidence",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Animal evidence supports the plausibility that replacing an aged microbial ecosystem can affect lifespan, healthspan, frailty, cognition, and inflammatory aging readouts.",
+      "support_role": "supports",
+      "rationale": "Young microbiota extended killifish lifespan, wild-type donor FMT improved healthspan and lifespan in progeroid mice, and aged-mouse studies report improvements in gut barrier, inflammation, frailty, grip strength, body composition, cognition, SCFAs, and metabolic or brain transcriptomic markers.",
+      "finding_ids": [
+        "young-microbiota-extended-killifish-lifespan",
+        "wild-type-fmt-extended-progeroid-mouse-healthspan-lifespan",
+        "young-fmt-reversed-aged-mouse-gut-eye-brain-inflammation",
+        "fmt-attenuated-old-mouse-frailty-gut-muscle-axis",
+        "young-trained-fmt-improved-old-mouse-cognition",
+        "young-fmt-improved-old-mouse-frailty-grip-metabolism"
+      ],
+      "source_ids": [
+        "pmid-28826469",
+        "pmid-31332389",
+        "pmid-35501923",
+        "pmid-38739944",
+        "pmid-39812540",
+        "pmid-40444969"
+      ],
+      "limitations": [
+        "Killifish and mouse FMT effects may not translate to humans.",
+        "Progeroid models are accelerated-aging disease models, not normal human aging.",
+        "Animal donor age, exercise status, pretreatment, dosing route, microbiome composition, and facility ecology vary across studies."
+      ]
+    },
+    {
+      "label": "Human safety and disease-context boundary",
+      "outlook_field": "main_blockers",
+      "conclusion": "Older-adult FMT experience exists, but it is CDI disease-treatment context and should not upgrade aging efficacy.",
+      "support_role": "balances",
+      "rationale": "The older-adult CDI case review reported 27 of 31 respondents resolving CDI after FMT and no causative attribution for serious adverse events or deaths, but the indication was infection eradication in people aged 65 or older.",
+      "finding_ids": [
+        "older-adult-cdi-fmt-safety-disease-boundary"
+      ],
+      "source_ids": [
+        "pmid-27134658"
+      ],
+      "limitations": [
+        "CDI resolution is not a frailty, aging, or healthy-lifespan endpoint.",
+        "Preventive or elective aging use would require stronger donor-screening, long-term safety, and risk-benefit evidence.",
+        "Case-review safety is not controlled chronic-use safety."
+      ]
+    },
+    {
+      "label": "Aging trial activity",
+      "outlook_field": "momentum",
+      "conclusion": "Momentum is accelerating because two older-adult oral FMT programs directly test frailty, functional autonomy, strength, safety, microbiome, metabolic, cognitive, or resilience outcomes.",
+      "support_role": "supports",
+      "rationale": "NCT05598112 is recruiting adults aged 70 to 85 years for week-96 frailty outcomes, and ARMOR/NCT06649981 is active-not-recruiting with young physically active donor FMT capsules and published protocol-level outcomes.",
+      "finding_ids": [
+        "aging-fmt-capsules-trial-recruiting-no-results",
+        "armor-young-donor-fmt-protocol-no-results"
+      ],
+      "source_ids": [
+        "nct-05598112",
+        "nct-06649981",
+        "pmid-41629813"
+      ],
+      "limitations": [
+        "Neither trial has posted efficacy results as of June 3, 2026.",
+        "Protocol and registry activity should not be treated as evidence of benefit.",
+        "Trial status and results should be rechecked before publication and future surveillance."
+      ]
+    },
+    {
+      "label": "Confidence and implementation boundary",
+      "outlook_field": "confidence",
+      "conclusion": "Confidence remains low because the human evidence is indirect for aging and the intervention is operationally and biologically variable.",
+      "support_role": "limits",
+      "rationale": "The support map combines animal aging effects, a small metabolic-syndrome biomarker study, older-adult CDI disease-context safety, cross-disease engraftment data, and no-results older-adult aging trials.",
+      "finding_ids": [
+        "fmt-engraftment-variable-across-human-diseases",
+        "older-adult-cdi-fmt-safety-disease-boundary",
+        "aging-fmt-capsules-trial-recruiting-no-results",
+        "armor-young-donor-fmt-protocol-no-results"
+      ],
+      "source_ids": [
+        "pmid-36109637",
+        "pmid-27134658",
+        "nct-05598112",
+        "nct-06649981",
+        "pmid-41629813"
+      ],
+      "limitations": [
+        "Donor-recipient compatibility, antibiotics, route, baseline dysbiosis, and donor strain abundance can materially alter engraftment.",
+        "FMT can transfer undesired organisms or traits, so preventive aging use has a narrower risk tolerance than recurrent CDI treatment.",
+        "The track boundary overlaps multiple microbiome intervention categories."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-28826469",
+    "pmid-31332389",
+    "pmid-35501923",
+    "pmid-38739944",
+    "pmid-39812540",
+    "pmid-40444969",
+    "pmid-22728514",
+    "pmid-27134658",
+    "pmid-36109637",
+    "nct-05598112",
+    "nct-06649981",
+    "pmid-41629813"
+  ],
+  "last_updated": "2026-06-03",
+  "tags": [
+    "public",
+    "track",
+    "thin_coverage",
+    "ecosystem-replacement"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "wild-type-fmt-extended-progeroid-mouse-healthspan-lifespan",
+  "name": "Wild-type FMT improved progeroid mouse healthspan and lifespan",
+  "summary": "Wild-type donor FMT provides mammalian lifespan and healthspan support in accelerated-aging models.",
+  "source_id": "pmid-31332389",
+  "study_id": "progeroid-mouse-fmt-healthspan-lifespan",
+  "intervention_ids": [
+    "fecal-microbiota-transplantation"
+  ],
+  "track_ids": [
+    "ecosystem-replacement"
+  ],
+  "hallmark_ids": [
+    "dysbiosis"
+  ],
+  "endpoint_category": "lifespan",
+  "direction": "positive",
+  "evidence_tier": "mortality_or_lifespan",
+  "confidence": "moderate",
+  "statement": "In two progeroid mouse models, fecal microbiota transplantation from wild-type mice enhanced healthspan and lifespan, while Akkermansia muciniphila was sufficient to produce beneficial effects and metabolomics implicated secondary bile-acid restoration.",
+  "population_or_model": "Two progeroid mouse models with human progeria and centenarian microbiome context",
+  "time_horizon": "Healthspan and lifespan follow-up in accelerated-aging models",
+  "quantitative_note": "The PubMed abstract reports enhanced healthspan and lifespan but does not provide numeric effect sizes.",
+  "caveats": [
+    "The intervention was tested in progeroid models rather than naturally aged animals.",
+    "Akkermansia sufficiency overlaps live-biotherapeutic and microbiome-composition tracks.",
+    "Human progeria dysbiosis context is observational and does not establish human FMT efficacy."
+  ],
+  "tags": [
+    "lifespan",
+    "animal",
+    "progeroid-mice",
+    "healthspan"
+  ]
+}

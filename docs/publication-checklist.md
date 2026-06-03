@@ -64,7 +64,14 @@ The publish action:
    npm run sync:research-planning
    ```
 
-6. Run the normal app checks:
+6. Run data validation and integrity checks:
+
+   ```bash
+   npm run validate:records
+   npm run audit:data
+   ```
+
+7. Run the normal app checks:
 
    ```bash
    npm run typecheck

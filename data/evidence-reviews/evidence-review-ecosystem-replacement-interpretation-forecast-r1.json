@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-ecosystem-replacement-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Ecosystem Replacement bundle",
+  "candidate_bundle_id": "ecosystem-replacement-bootstrap-2026-06-03",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "needs_human_judgment",
+  "blocking": false,
+  "summary": "The staged interpretation is bounded and publishable with curator judgment. Low-confidence human_biomarker_signal is narrowly supported by treated-human FMT metabolic biomarker movement and donor-strain engraftment, while direct aging-efficacy support remains animal-led and the two older-adult FMT aging trials are correctly treated as no-results activity signals. The review leaves a nonblocking human-judgment verdict because final public interpretation depends on curator weighting of metabolic-disease human biomarker evidence, cross-disease engraftment evidence, crude FMT safety tradeoffs, and overlap with adjacent microbiome tracks.",
+  "reviewed_change_ids": [
+    "create-source-pmid-28826469",
+    "create-source-pmid-31332389",
+    "create-source-pmid-35501923",
+    "create-source-pmid-38739944",
+    "create-source-pmid-39812540",
+    "create-source-pmid-40444969",
+    "create-source-pmid-22728514",
+    "create-source-pmid-27134658",
+    "create-source-pmid-36109637",
+    "create-source-nct-05598112",
+    "create-source-nct-06649981",
+    "create-source-pmid-41629813",
+    "create-intervention-fecal-microbiota-transplantation",
+    "create-study-killifish-young-microbiota-lifespan",
+    "create-study-progeroid-mouse-fmt-healthspan-lifespan",
+    "create-study-young-aged-mouse-fmt-gut-eye-brain",
+    "create-study-fmt-old-mouse-frailty-gut-muscle-axis",
+    "create-study-young-trained-donor-fmt-old-mouse-cognition",
+    "create-study-young-fmt-old-mouse-metabolic-frailty",
+    "create-study-lean-donor-fmt-metabolic-syndrome",
+    "create-study-older-adult-cdi-fmt-case-series",
+    "create-study-fmt-strain-engraftment-meta-analysis",
+    "create-study-fmt-capsules-aging-frailty-trial",
+    "create-study-armor-young-donor-fmt-resilient-aging",
+    "create-finding-young-microbiota-extended-killifish-lifespan",
+    "create-finding-wild-type-fmt-extended-progeroid-mouse-healthspan-lifespan",
+    "create-finding-young-fmt-reversed-aged-mouse-gut-eye-brain-inflammation",
+    "create-finding-fmt-attenuated-old-mouse-frailty-gut-muscle-axis",
+    "create-finding-young-trained-fmt-improved-old-mouse-cognition",
+    "create-finding-young-fmt-improved-old-mouse-frailty-grip-metabolism",
+    "create-finding-lean-donor-fmt-increased-insulin-sensitivity-metabolic-syndrome",
+    "create-finding-older-adult-cdi-fmt-safety-disease-boundary",
+    "create-finding-fmt-engraftment-variable-across-human-diseases",
+    "create-finding-aging-fmt-capsules-trial-recruiting-no-results",
+    "create-finding-armor-young-donor-fmt-protocol-no-results",
+    "create-outlook-track-ecosystem-replacement"
+  ],
+  "findings": [
+    {
+      "finding_id": "ecosystem-biomarker-stage-curator-judgment",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "applies_to_change_id": "create-outlook-track-ecosystem-replacement",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-ecosystem-replacement-outlook"
+      },
+      "claim_or_issue": "The outlook assigns low-confidence human_biomarker_signal from human FMT metabolic biomarker movement and donor-strain engraftment rather than aging-specific human biomarker outcomes.",
+      "why_it_matters": "A stronger reading would overstate disease-adjacent and mechanistic human evidence as direct treated-human aging efficacy.",
+      "recommended_action": "No revision required. Keep the current low-confidence stage and the explicit statement that the cited human sources do not show aging, frailty, cognitive, mobility, disease-prevention, disability, or mortality benefit.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ecosystem-animal-aging-not-human-upgrade",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-outlook-track-ecosystem-replacement",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-ecosystem-replacement-outlook"
+      },
+      "claim_or_issue": "Killifish and mouse FMT studies provide the direct lifespan, frailty, cognition, gut-barrier, inflammatory, and metabolic aging signals.",
+      "why_it_matters": "Those animal results strengthen plausibility, but they do not justify a human_functional_benefit or durable disease-relevance stage without controlled older-adult outcomes.",
+      "recommended_action": "No revision required. Preserve the outlook language that public claims should stay below human functional benefit until older-adult trials report functional or biomarker results.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ecosystem-trial-activity-momentum-boundary",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "create-outlook-track-ecosystem-replacement",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-ecosystem-replacement-outlook"
+      },
+      "claim_or_issue": "NCT05598112 and ARMOR/NCT06649981 directly test older-adult FMT capsule programs, but neither has posted efficacy results as of June 3, 2026.",
+      "why_it_matters": "Active programs can justify accelerating momentum and surveillance priority, but they should not be counted as evidence of benefit.",
+      "recommended_action": "No revision required. Keep the no-results wording and recheck registry status and posted results during the next surveillance pass.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ecosystem-taxonomy-overlap-preserved",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-outlook-track-ecosystem-replacement",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-ecosystem-replacement-outlook"
+      },
+      "claim_or_issue": "Young-donor, active-donor, lean-donor, wild-type-donor, Akkermansia-linked, SCFA-linked, and engraftment findings overlap microbiome-composition, live-biotherapeutic, and metabolite-restoration tracks.",
+      "why_it_matters": "Without explicit taxonomy boundaries, the ecosystem-replacement track could double-count benefits better attributed to defined microbial strains, metabolites, diet, or exercise-conditioned donors.",
+      "recommended_action": "No revision required. Preserve the staged overlap caveat and rating-change criterion that future reviews avoid double-counting adjacent microbiome mechanisms.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ecosystem-preventive-safety-forecast-conservative",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-outlook-track-ecosystem-replacement",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-ecosystem-replacement-outlook"
+      },
+      "claim_or_issue": "FMT has donor-screening, pathogen-transfer, undesired-trait-transfer, manufacturing, route, dose, pretreatment, and repeat-dosing concerns that matter more in preventive aging than in recurrent infection.",
+      "why_it_matters": "A preventive-aging forecast needs a narrower risk tolerance than disease-treatment FMT, especially before chronic-use older-adult safety data are available.",
+      "recommended_action": "No revision required. Keep low confidence, speculative 2036 status, and the statement that no credible LEV-relevant window exists before replicated older-adult safety and functional evidence.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-03T14:06:01.128Z",
+  "updated_at": "2026-06-03T14:06:01.128Z"
+}

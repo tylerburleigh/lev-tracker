@@ -1,0 +1,468 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "ecosystem-replacement-bootstrap-2026-06-03",
+  "name": "Ecosystem replacement bootstrap for June 3, 2026",
+  "summary": "Bootstrap bundle establishing the first public baseline candidate for the ecosystem replacement track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-03T13:20:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Ecosystem Replacement, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "dysbiosis"
+    ],
+    "track_ids": [
+      "ecosystem-replacement"
+    ],
+    "intervention_ids": [
+      "fecal-microbiota-transplantation"
+    ]
+  },
+  "source_ids": [
+    "pmid-28826469",
+    "pmid-31332389",
+    "pmid-35501923",
+    "pmid-38739944",
+    "pmid-39812540",
+    "pmid-40444969",
+    "pmid-22728514",
+    "pmid-27134658",
+    "pmid-36109637",
+    "nct-05598112",
+    "nct-06649981",
+    "pmid-41629813"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/28826469/",
+    "https://pubmed.ncbi.nlm.nih.gov/31332389/",
+    "https://pubmed.ncbi.nlm.nih.gov/35501923/",
+    "https://pubmed.ncbi.nlm.nih.gov/38739944/",
+    "https://pubmed.ncbi.nlm.nih.gov/39812540/",
+    "https://pubmed.ncbi.nlm.nih.gov/40444969/",
+    "https://pubmed.ncbi.nlm.nih.gov/22728514/",
+    "https://pubmed.ncbi.nlm.nih.gov/27134658/",
+    "https://pubmed.ncbi.nlm.nih.gov/36109637/",
+    "https://clinicaltrials.gov/study/NCT05598112",
+    "https://clinicaltrials.gov/study/NCT06649981",
+    "https://pubmed.ncbi.nlm.nih.gov/41629813/"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-ecosystem-replacement-outlook"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "fecal-microbiota-transplantation"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "lean-donor-fmt-increased-insulin-sensitivity-metabolic-syndrome"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "young-microbiota-extended-killifish-lifespan"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "young-fmt-improved-old-mouse-frailty-grip-metabolism"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "armor-young-donor-fmt-protocol-no-results"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-28826469",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-28826469",
+      "file_path": "data/sources/pmid-28826469.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/pmid-28826469.json",
+      "summary": "Add killifish young-microbiota lifespan source.",
+      "rationale": "This source supplies the vertebrate lifespan anchor for ecosystem replacement."
+    },
+    {
+      "change_id": "create-source-pmid-31332389",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-31332389",
+      "file_path": "data/sources/pmid-31332389.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/pmid-31332389.json",
+      "summary": "Add progeroid mouse FMT healthspan and lifespan source.",
+      "rationale": "This source supplies mammalian accelerated-aging healthspan and lifespan support."
+    },
+    {
+      "change_id": "create-source-pmid-35501923",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-35501923",
+      "file_path": "data/sources/pmid-35501923.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/pmid-35501923.json",
+      "summary": "Add young-aged mouse FMT gut, eye, and brain source.",
+      "rationale": "This source supports aged-animal inflammatory and barrier readouts after microbiota exchange."
+    },
+    {
+      "change_id": "create-source-pmid-38739944",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-38739944",
+      "file_path": "data/sources/pmid-38739944.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/pmid-38739944.json",
+      "summary": "Add old mouse FMT frailty gut-muscle source.",
+      "rationale": "This source supports the aged-animal frailty and gut-muscle-axis component of the baseline."
+    },
+    {
+      "change_id": "create-source-pmid-39812540",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-39812540",
+      "file_path": "data/sources/pmid-39812540.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/pmid-39812540.json",
+      "summary": "Add young-trained donor FMT cognition source.",
+      "rationale": "This source adds recent aged-mouse gut-brain-axis and donor-selection evidence."
+    },
+    {
+      "change_id": "create-source-pmid-40444969",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-40444969",
+      "file_path": "data/sources/pmid-40444969.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/pmid-40444969.json",
+      "summary": "Add young-to-old mouse FMT metabolic health source.",
+      "rationale": "This recent source supports aged-animal frailty, grip-strength, body-composition, metabolomic, and neuroinflammatory readouts."
+    },
+    {
+      "change_id": "create-source-pmid-22728514",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-22728514",
+      "file_path": "data/sources/pmid-22728514.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/pmid-22728514.json",
+      "summary": "Add lean-donor FMT metabolic syndrome source.",
+      "rationale": "This source supplies the narrow human biomarker proof-of-concept used for the staged stage assignment."
+    },
+    {
+      "change_id": "create-source-pmid-27134658",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-27134658",
+      "file_path": "data/sources/pmid-27134658.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/pmid-27134658.json",
+      "summary": "Add older-adult CDI FMT source.",
+      "rationale": "This source supplies older-adult safety and disease-context boundary evidence."
+    },
+    {
+      "change_id": "create-source-pmid-36109637",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-36109637",
+      "file_path": "data/sources/pmid-36109637.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/pmid-36109637.json",
+      "summary": "Add FMT donor strain engraftment meta-analysis source.",
+      "rationale": "This source supports human engraftment plausibility and implementation blockers."
+    },
+    {
+      "change_id": "create-source-nct-05598112",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-05598112",
+      "file_path": "data/sources/nct-05598112.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/nct-05598112.json",
+      "summary": "Add recruiting oral FMT aging trial registry source.",
+      "rationale": "This registry is direct older-adult aging trial-watch context with no posted results."
+    },
+    {
+      "change_id": "create-source-nct-06649981",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-06649981",
+      "file_path": "data/sources/nct-06649981.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/nct-06649981.json",
+      "summary": "Add ARMOR young-donor FMT aging registry source.",
+      "rationale": "This registry confirms active-not-recruiting direct older-adult aging trial status and no posted results."
+    },
+    {
+      "change_id": "create-source-pmid-41629813",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-41629813",
+      "file_path": "data/sources/pmid-41629813.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/pmid-41629813.json",
+      "summary": "Add ARMOR resilient-aging trial protocol source.",
+      "rationale": "This protocol supplies direct human aging-focused FMT trial design and endpoint context."
+    },
+    {
+      "change_id": "create-intervention-fecal-microbiota-transplantation",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "fecal-microbiota-transplantation",
+      "file_path": "data/interventions/fecal-microbiota-transplantation.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/fecal-microbiota-transplantation.json",
+      "summary": "Normalize fecal microbiota transplantation for ecosystem replacement.",
+      "rationale": "The track needs a public intervention record that groups FMT evidence while preserving aging-specific and approved-use boundaries."
+    },
+    {
+      "change_id": "create-study-killifish-young-microbiota-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "killifish-young-microbiota-lifespan",
+      "file_path": "data/studies/killifish-young-microbiota-lifespan.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/killifish-young-microbiota-lifespan.json",
+      "summary": "Add killifish young-donor microbiota lifespan study.",
+      "rationale": "This study anchors the vertebrate lifespan evidence for the staged outlook."
+    },
+    {
+      "change_id": "create-study-progeroid-mouse-fmt-healthspan-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "progeroid-mouse-fmt-healthspan-lifespan",
+      "file_path": "data/studies/progeroid-mouse-fmt-healthspan-lifespan.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/progeroid-mouse-fmt-healthspan-lifespan.json",
+      "summary": "Add progeroid mouse FMT healthspan and lifespan study.",
+      "rationale": "This study adds mammalian lifespan and healthspan support with progeroid-model caveats."
+    },
+    {
+      "change_id": "create-study-young-aged-mouse-fmt-gut-eye-brain",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "young-aged-mouse-fmt-gut-eye-brain",
+      "file_path": "data/studies/young-aged-mouse-fmt-gut-eye-brain.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/young-aged-mouse-fmt-gut-eye-brain.json",
+      "summary": "Add young-aged mouse FMT gut, eye, and brain study.",
+      "rationale": "This study supports causality between aged microbiota and inflammatory tissue aging readouts."
+    },
+    {
+      "change_id": "create-study-fmt-old-mouse-frailty-gut-muscle-axis",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "fmt-old-mouse-frailty-gut-muscle-axis",
+      "file_path": "data/studies/fmt-old-mouse-frailty-gut-muscle-axis.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/fmt-old-mouse-frailty-gut-muscle-axis.json",
+      "summary": "Add old mouse FMT frailty gut-muscle study.",
+      "rationale": "This study supplies frailty and gut-muscle-axis animal support."
+    },
+    {
+      "change_id": "create-study-young-trained-donor-fmt-old-mouse-cognition",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "young-trained-donor-fmt-old-mouse-cognition",
+      "file_path": "data/studies/young-trained-donor-fmt-old-mouse-cognition.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/young-trained-donor-fmt-old-mouse-cognition.json",
+      "summary": "Add young-trained donor FMT cognition study.",
+      "rationale": "This study supplies recent gut-brain-axis and donor-selection animal support."
+    },
+    {
+      "change_id": "create-study-young-fmt-old-mouse-metabolic-frailty",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "young-fmt-old-mouse-metabolic-frailty",
+      "file_path": "data/studies/young-fmt-old-mouse-metabolic-frailty.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/young-fmt-old-mouse-metabolic-frailty.json",
+      "summary": "Add young-to-old mouse FMT metabolic frailty study.",
+      "rationale": "This study supplies recent aged-mouse frailty, grip-strength, body-composition, metabolomic, and neuroinflammatory evidence."
+    },
+    {
+      "change_id": "create-study-lean-donor-fmt-metabolic-syndrome",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "lean-donor-fmt-metabolic-syndrome",
+      "file_path": "data/studies/lean-donor-fmt-metabolic-syndrome.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/lean-donor-fmt-metabolic-syndrome.json",
+      "summary": "Add lean-donor FMT metabolic syndrome study.",
+      "rationale": "This study supplies the human biomarker anchor while preserving disease-context boundaries."
+    },
+    {
+      "change_id": "create-study-older-adult-cdi-fmt-case-series",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "older-adult-cdi-fmt-case-series",
+      "file_path": "data/studies/older-adult-cdi-fmt-case-series.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/older-adult-cdi-fmt-case-series.json",
+      "summary": "Add older-adult CDI FMT case review study.",
+      "rationale": "This study provides older-adult safety and disease-context evidence without upgrading aging efficacy."
+    },
+    {
+      "change_id": "create-study-fmt-strain-engraftment-meta-analysis",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "fmt-strain-engraftment-meta-analysis",
+      "file_path": "data/studies/fmt-strain-engraftment-meta-analysis.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/fmt-strain-engraftment-meta-analysis.json",
+      "summary": "Add FMT donor strain engraftment meta-analysis study.",
+      "rationale": "This study supports human engraftment plausibility and implementation limitations."
+    },
+    {
+      "change_id": "create-study-fmt-capsules-aging-frailty-trial",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "fmt-capsules-aging-frailty-trial",
+      "file_path": "data/studies/fmt-capsules-aging-frailty-trial.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/fmt-capsules-aging-frailty-trial.json",
+      "summary": "Add recruiting oral FMT aging frailty trial study.",
+      "rationale": "This study supplies direct older-adult aging trial-watch context with no posted results."
+    },
+    {
+      "change_id": "create-study-armor-young-donor-fmt-resilient-aging",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "armor-young-donor-fmt-resilient-aging",
+      "file_path": "data/studies/armor-young-donor-fmt-resilient-aging.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/armor-young-donor-fmt-resilient-aging.json",
+      "summary": "Add ARMOR young-donor FMT resilient-aging trial study.",
+      "rationale": "This study supplies the direct young-active-donor older-adult trial protocol context."
+    },
+    {
+      "change_id": "create-finding-young-microbiota-extended-killifish-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "young-microbiota-extended-killifish-lifespan",
+      "file_path": "data/findings/young-microbiota-extended-killifish-lifespan.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/young-microbiota-extended-killifish-lifespan.json",
+      "summary": "Add killifish lifespan finding.",
+      "rationale": "This finding captures the vertebrate lifespan signal and its translation caveats."
+    },
+    {
+      "change_id": "create-finding-wild-type-fmt-extended-progeroid-mouse-healthspan-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "wild-type-fmt-extended-progeroid-mouse-healthspan-lifespan",
+      "file_path": "data/findings/wild-type-fmt-extended-progeroid-mouse-healthspan-lifespan.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/wild-type-fmt-extended-progeroid-mouse-healthspan-lifespan.json",
+      "summary": "Add progeroid mouse healthspan and lifespan finding.",
+      "rationale": "This finding captures mammalian lifespan support with accelerated-aging boundaries."
+    },
+    {
+      "change_id": "create-finding-young-fmt-reversed-aged-mouse-gut-eye-brain-inflammation",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "young-fmt-reversed-aged-mouse-gut-eye-brain-inflammation",
+      "file_path": "data/findings/young-fmt-reversed-aged-mouse-gut-eye-brain-inflammation.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/young-fmt-reversed-aged-mouse-gut-eye-brain-inflammation.json",
+      "summary": "Add aged-mouse gut, eye, and brain inflammatory finding.",
+      "rationale": "This finding supports the tissue-inflammation side of the animal baseline."
+    },
+    {
+      "change_id": "create-finding-fmt-attenuated-old-mouse-frailty-gut-muscle-axis",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "fmt-attenuated-old-mouse-frailty-gut-muscle-axis",
+      "file_path": "data/findings/fmt-attenuated-old-mouse-frailty-gut-muscle-axis.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/fmt-attenuated-old-mouse-frailty-gut-muscle-axis.json",
+      "summary": "Add old-mouse frailty gut-muscle finding.",
+      "rationale": "This finding supplies functional frailty and mechanism support in old mice."
+    },
+    {
+      "change_id": "create-finding-young-trained-fmt-improved-old-mouse-cognition",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "young-trained-fmt-improved-old-mouse-cognition",
+      "file_path": "data/findings/young-trained-fmt-improved-old-mouse-cognition.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/young-trained-fmt-improved-old-mouse-cognition.json",
+      "summary": "Add young-trained donor FMT cognition finding.",
+      "rationale": "This finding captures recent gut-brain-axis animal evidence and donor-selection caveats."
+    },
+    {
+      "change_id": "create-finding-young-fmt-improved-old-mouse-frailty-grip-metabolism",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "young-fmt-improved-old-mouse-frailty-grip-metabolism",
+      "file_path": "data/findings/young-fmt-improved-old-mouse-frailty-grip-metabolism.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/young-fmt-improved-old-mouse-frailty-grip-metabolism.json",
+      "summary": "Add young-to-old mouse metabolic frailty finding.",
+      "rationale": "This finding captures recent aged-mouse functional and metabolic evidence."
+    },
+    {
+      "change_id": "create-finding-lean-donor-fmt-increased-insulin-sensitivity-metabolic-syndrome",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "lean-donor-fmt-increased-insulin-sensitivity-metabolic-syndrome",
+      "file_path": "data/findings/lean-donor-fmt-increased-insulin-sensitivity-metabolic-syndrome.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/lean-donor-fmt-increased-insulin-sensitivity-metabolic-syndrome.json",
+      "summary": "Add lean-donor FMT human biomarker finding.",
+      "rationale": "This finding is the narrow human biomarker anchor for the staged outlook."
+    },
+    {
+      "change_id": "create-finding-older-adult-cdi-fmt-safety-disease-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "older-adult-cdi-fmt-safety-disease-boundary",
+      "file_path": "data/findings/older-adult-cdi-fmt-safety-disease-boundary.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/older-adult-cdi-fmt-safety-disease-boundary.json",
+      "summary": "Add older-adult CDI FMT safety boundary finding.",
+      "rationale": "This finding prevents older-adult disease-treatment evidence from being interpreted as aging efficacy."
+    },
+    {
+      "change_id": "create-finding-fmt-engraftment-variable-across-human-diseases",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "fmt-engraftment-variable-across-human-diseases",
+      "file_path": "data/findings/fmt-engraftment-variable-across-human-diseases.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/fmt-engraftment-variable-across-human-diseases.json",
+      "summary": "Add cross-disease human FMT engraftment finding.",
+      "rationale": "This finding supports mechanistic plausibility and implementation blockers around donor strain engraftment."
+    },
+    {
+      "change_id": "create-finding-aging-fmt-capsules-trial-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "aging-fmt-capsules-trial-recruiting-no-results",
+      "file_path": "data/findings/aging-fmt-capsules-trial-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/aging-fmt-capsules-trial-recruiting-no-results.json",
+      "summary": "Add no-results context for recruiting oral FMT aging trial.",
+      "rationale": "The trial is direct aging-relevant activity but should not be treated as efficacy evidence."
+    },
+    {
+      "change_id": "create-finding-armor-young-donor-fmt-protocol-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "armor-young-donor-fmt-protocol-no-results",
+      "file_path": "data/findings/armor-young-donor-fmt-protocol-no-results.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/armor-young-donor-fmt-protocol-no-results.json",
+      "summary": "Add no-results context for ARMOR young-donor FMT protocol.",
+      "rationale": "The protocol is direct older-adult trial activity but no efficacy results are available."
+    },
+    {
+      "change_id": "create-outlook-track-ecosystem-replacement",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-ecosystem-replacement-outlook",
+      "file_path": "data/outlooks/track-ecosystem-replacement-outlook.json",
+      "staged_file_path": "data/staged-records/ecosystem-replacement-bootstrap-2026-06-03/track-ecosystem-replacement-outlook.json",
+      "summary": "Create first public ecosystem replacement track outlook.",
+      "rationale": "The staged support map justifies a low-confidence human_biomarker_signal baseline with explicit animal-led and no-results human-aging-trial boundaries."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "ecosystem-replacement",
+      "note": "Publishing this bundle would establish the first public ecosystem replacement baseline at low-confidence human_biomarker_signal, with direct aging benefit still animal-led and human aging trials still no-results.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-03-ecosystem-replacement-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "evidence_review_ids": [
+    "evidence-review-ecosystem-replacement-source-fidelity-r1",
+    "evidence-review-ecosystem-replacement-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-ecosystem-replacement-bootstrap-2026-06-03-2026-06-03t14-40-25-040z"
+  ]
+}

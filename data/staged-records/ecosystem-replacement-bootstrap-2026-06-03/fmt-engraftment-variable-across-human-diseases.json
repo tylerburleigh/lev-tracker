@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "fmt-engraftment-variable-across-human-diseases",
+  "name": "FMT donor strain engraftment varied across human disease cohorts",
+  "summary": "Human FMT can produce donor strain engraftment, but the effect is variable and shaped by procedure, disease, antibiotics, route, taxonomy, and donor-recipient factors.",
+  "source_id": "pmid-36109637",
+  "study_id": "fmt-strain-engraftment-meta-analysis",
+  "intervention_ids": [
+    "fecal-microbiota-transplantation"
+  ],
+  "track_ids": [
+    "ecosystem-replacement"
+  ],
+  "hallmark_ids": [
+    "dysbiosis"
+  ],
+  "endpoint_category": "mechanistic",
+  "direction": "mixed",
+  "evidence_tier": "review_or_meta_analysis",
+  "confidence": "moderate",
+  "statement": "Across donor, pre-FMT recipient, and post-FMT recipient triads from eight disease types, higher donor strain engraftment was associated with clinical success across studies, while engraftment varied with multi-route delivery, antibiotic treatment, infectious versus noncommunicable disease context, taxonomy, abundance, and prevalence.",
+  "population_or_model": "FMT donor-recipient triads across eight human disease settings",
+  "time_horizon": "Post-FMT metagenomic follow-up across included cohorts",
+  "quantitative_note": "The abstract reports 226 triads and an across-study association between higher donor strain engraftment and clinical success with P = 0.017.",
+  "caveats": [
+    "The meta-analysis did not test aging, frailty, or young-donor resilient-aging outcomes.",
+    "Clinical success definitions varied by disease cohort.",
+    "Engraftment is a necessary mechanistic signal for ecosystem replacement but is not itself evidence of healthy-aging benefit."
+  ],
+  "tags": [
+    "human",
+    "engraftment",
+    "metagenomics",
+    "review"
+  ]
+}

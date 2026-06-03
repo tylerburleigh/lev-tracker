@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-03-ecosystem-replacement-bootstrap",
+  "name": "Ecosystem replacement bootstrap pass for June 3, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-06-03T12:45:00Z",
+  "completed_at": "2026-06-03T13:20:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Ecosystem Replacement, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "dysbiosis"
+    ],
+    "track_ids": [
+      "ecosystem-replacement"
+    ],
+    "intervention_ids": [
+      "fecal-microbiota-transplantation"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "ecosystem-replacement-bootstrap-2026-06-03",
+  "summary": "The staged baseline assigns low-confidence human_biomarker_signal. Direct aging-relevant support is animal-led: young microbiota extended killifish lifespan, wild-type donor FMT improved healthspan and lifespan in progeroid mice, and aged-mouse FMT studies report improved frailty, grip strength, body composition, cognition, gut barrier, SCFAs, inflammatory, metabolomic, and transcriptomic readouts. Human evidence supports only a bounded biomarker and implementation case: lean-donor FMT improved insulin sensitivity in a small metabolic-syndrome trial, older-adult CDI case review supports disease-context feasibility and safety, and metagenomic analyses show donor strain engraftment is measurable but variable. NCT05598112 and ARMOR/NCT06649981 are direct older-adult aging trials but had no posted efficacy results as of June 3, 2026.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-28826469",
+    "pmid-31332389",
+    "pmid-35501923",
+    "pmid-38739944",
+    "pmid-39812540",
+    "pmid-40444969",
+    "pmid-22728514",
+    "pmid-27134658",
+    "pmid-36109637",
+    "nct-05598112",
+    "nct-06649981",
+    "pmid-41629813"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/28826469/",
+    "https://pubmed.ncbi.nlm.nih.gov/31332389/",
+    "https://pubmed.ncbi.nlm.nih.gov/35501923/",
+    "https://pubmed.ncbi.nlm.nih.gov/38739944/",
+    "https://pubmed.ncbi.nlm.nih.gov/39812540/",
+    "https://pubmed.ncbi.nlm.nih.gov/40444969/",
+    "https://pubmed.ncbi.nlm.nih.gov/22728514/",
+    "https://pubmed.ncbi.nlm.nih.gov/27134658/",
+    "https://pubmed.ncbi.nlm.nih.gov/36109637/",
+    "https://clinicaltrials.gov/study/NCT05598112",
+    "https://clinicaltrials.gov/study/NCT06649981",
+    "https://pubmed.ncbi.nlm.nih.gov/41629813/"
+  ],
+  "notes": [
+    "The top ready bootstrap queue item was selected from research/backlog/track-priority.v1.json and research/state/coverage-status.v1.json.",
+    "The public question was scoped to one dysbiosis track: ecosystem-replacement.",
+    "The staged outlook uses human_biomarker_signal because lean-donor FMT has human metabolic biomarker evidence and FMT engraftment is measurable in human cohorts, but confidence remains low because direct aging benefit is not shown in humans.",
+    "The direct aging-benefit evidence remains animal-led, with fish lifespan, progeroid mouse lifespan and healthspan, and aged-mouse frailty, cognition, barrier, inflammatory, SCFA, metabolic, and transcriptomic readouts.",
+    "Older-adult CDI evidence was treated as safety and disease-context feasibility, not aging efficacy.",
+    "NCT05598112 and ARMOR/NCT06649981 were verified through ClinicalTrials.gov API on June 3, 2026 and staged as no-results trial-watch context."
+  ],
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast evidence reviews before publication.",
+    "During interpretation review, decide whether the human metabolic and engraftment evidence is sufficient for human_biomarker_signal or whether the public stage should remain animal_signal until direct older-adult aging trial results post.",
+    "Before publication, recheck NCT05598112 and NCT06649981 for status or posted results.",
+    "If approved and published, inspect the dysbiosis hallmark page and ecosystem replacement track page for taxonomy overlap with microbiome composition, live biotherapeutics, and metabolite restoration tracks."
+  ]
+}
