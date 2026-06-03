@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "ghr-deficiency-reduced-human-cancer-diabetes-signaling",
+  "name": "GHR deficiency cohort had low cancer, diabetes, insulin, and pro-aging signaling",
+  "summary": "The Ecuadorian GHRD cohort is the clearest human natural-experiment anchor for low GH/IGF signaling and disease-protection hypotheses.",
+  "source_id": "pmid-21325617",
+  "study_id": "ecuadorian-ghr-deficiency-cohort",
+  "intervention_ids": [
+    "growth-hormone-igf-axis-attenuation"
+  ],
+  "track_ids": [
+    "insulin-igf-axis-modulation"
+  ],
+  "hallmark_ids": [
+    "deregulated_nutrient_sensing"
+  ],
+  "endpoint_category": "healthspan",
+  "direction": "positive",
+  "evidence_tier": "human_clinical_outcome",
+  "confidence": "low",
+  "statement": "In a 22-year Ecuadorian growth-hormone-receptor-deficiency cohort, affected individuals had severe IGF-1 deficiency, lower insulin and HOMA-IR, one nonlethal malignancy, and no diabetes, while unaffected relatives had higher cancer and diabetes prevalence.",
+  "population_or_model": "Ecuadorian individuals with severe growth hormone receptor deficiency and unaffected relatives",
+  "time_horizon": "22-year cohort follow-up",
+  "quantitative_note": "The report cites one nonlethal malignancy and no diabetes among affected individuals versus 17% cancer and 5% diabetes in controls, with insulin 1.4 uU/ml versus 4.4 and HOMA-IR 0.34 versus 0.96.",
+  "caveats": [
+    "This is a developmental genetic natural experiment, not an adult-onset intervention.",
+    "Severe lifelong GHR deficiency is not equivalent to a practical preventive therapy.",
+    "The cohort is rare and should not be treated as direct proof that intentional GH/IGF attenuation improves healthy lifespan."
+  ],
+  "tags": [
+    "human",
+    "natural-experiment",
+    "growth-hormone-receptor-deficiency",
+    "igf-1",
+    "cancer",
+    "diabetes"
+  ]
+}

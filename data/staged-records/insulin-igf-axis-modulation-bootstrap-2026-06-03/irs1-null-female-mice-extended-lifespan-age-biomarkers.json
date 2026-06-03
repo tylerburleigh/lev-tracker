@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "irs1-null-female-mice-extended-lifespan-age-biomarkers",
+  "name": "IRS1 null female mice had extended lifespan and delayed age-sensitive biomarkers",
+  "summary": "IRS1 deletion supports downstream insulin-signaling modulation but also shows sex and insulin-resistance boundaries.",
+  "source_id": "pmid-17928362",
+  "study_id": "irs1-null-mouse-lifespan-biomarkers",
+  "intervention_ids": [
+    "growth-hormone-igf-axis-attenuation"
+  ],
+  "track_ids": [
+    "insulin-igf-axis-modulation"
+  ],
+  "hallmark_ids": [
+    "deregulated_nutrient_sensing"
+  ],
+  "endpoint_category": "lifespan",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "moderate",
+  "statement": "Female Irs1 null mice were long-lived and showed delayed age-sensitive skin, bone, immune, and motor biomarkers despite mild insulin resistance.",
+  "population_or_model": "Irs1 null mice",
+  "time_horizon": "Long-term genetic lifespan and biomarker study",
+  "quantitative_note": "The source reports a female-biased lifespan effect with multiple delayed age-related biomarkers.",
+  "caveats": [
+    "This is mouse genetic evidence with sex-specific benefit.",
+    "IRS1 deletion caused mild insulin resistance, complicating simple translation.",
+    "Downstream insulin-signaling genetics do not directly specify a safe human intervention."
+  ],
+  "tags": [
+    "animal",
+    "mouse",
+    "irs1",
+    "insulin-signaling",
+    "lifespan",
+    "sex-specific"
+  ]
+}

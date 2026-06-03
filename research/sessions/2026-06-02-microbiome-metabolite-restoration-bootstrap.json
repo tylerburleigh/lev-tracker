@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-02-microbiome-metabolite-restoration-bootstrap",
+  "name": "Microbiome Metabolite Restoration Bootstrap",
+  "mode": "bootstrap",
+  "started_at": "2026-06-02T23:05:00Z",
+  "completed_at": "2026-06-03T00:20:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Microbiome Metabolite Restoration, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "dysbiosis"
+    ],
+    "track_ids": [
+      "microbiome-metabolite-restoration"
+    ],
+    "intervention_ids": [
+      "urolithin-a",
+      "sodium-butyrate",
+      "tributyrin",
+      "microbial-indoles",
+      "indole-3-propionic-acid",
+      "lithocholic-acid",
+      "multi-species-synbiotic-ds-01"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "microbiome-metabolite-restoration-bootstrap-2026-06-02",
+  "summary": "Staged a first public baseline for microbiome metabolite restoration. The staged outlook assigns low-confidence human_functional_benefit, anchored narrowly to urolithin A muscle endurance or strength trials, while DS-01, sodium butyrate, indole-3-propionic acid, butyrate/tributyrin, microbial indoles, and lithocholic acid remain mostly biomarker, metabolic-risk, or preclinical support.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-27400265",
+    "pmid-32694802",
+    "pmid-35050355",
+    "pmid-35584623",
+    "pmid-39002645",
+    "pmid-41174221",
+    "nct-06556706",
+    "pmid-40944126",
+    "pmid-41880673",
+    "pmid-35315592",
+    "pmid-28827345",
+    "pmid-41826362",
+    "pmid-41540161",
+    "pmid-39695227"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/27400265/",
+    "https://pubmed.ncbi.nlm.nih.gov/32694802/",
+    "https://pubmed.ncbi.nlm.nih.gov/35050355/",
+    "https://pubmed.ncbi.nlm.nih.gov/35584623/",
+    "https://pubmed.ncbi.nlm.nih.gov/39002645/",
+    "https://pubmed.ncbi.nlm.nih.gov/41174221/",
+    "https://clinicaltrials.gov/study/NCT06556706",
+    "https://pubmed.ncbi.nlm.nih.gov/40944126/",
+    "https://pubmed.ncbi.nlm.nih.gov/41880673/",
+    "https://pubmed.ncbi.nlm.nih.gov/35315592/",
+    "https://pubmed.ncbi.nlm.nih.gov/28827345/",
+    "https://pubmed.ncbi.nlm.nih.gov/41826362/",
+    "https://pubmed.ncbi.nlm.nih.gov/41540161/",
+    "https://pubmed.ncbi.nlm.nih.gov/39695227/"
+  ],
+  "notes": [
+    "The public baseline should not generalize the urolithin A functional signal to all microbial metabolites.",
+    "Existing urolithin A, microbial indole, and tributyrin records were staged as updates to add the microbiome-metabolite-restoration mapping without removing their neighboring-track context.",
+    "NCT06556706 was checked through the ClinicalTrials.gov API on 2026-06-02 local time and had completed status with no posted results."
+  ],
+  "next_actions": [
+    "Run source_fidelity and interpretation_forecast evidence reviews for revision 1.",
+    "Recheck NCT06556706 for posted results before publication.",
+    "If approved, publish the staged bundle and inspect the dysbiosis hallmark and microbiome-metabolite-restoration track pages."
+  ]
+}

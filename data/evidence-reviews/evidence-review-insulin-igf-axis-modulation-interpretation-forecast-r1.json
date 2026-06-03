@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-insulin-igf-axis-modulation-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Insulin Igf Axis Modulation bundle",
+  "candidate_bundle_id": "insulin-igf-axis-modulation-bootstrap-2026-06-03",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "needs_human_judgment",
+  "blocking": false,
+  "summary": "The staged outlook is calibrated for publication review: low-confidence human_biomarker_signal is supported by human natural-experiment, genetic, observational, and FMD biomarker evidence, while animal lifespan models are correctly treated as biological support rather than a human stage upgrade. The review leaves a non-blocking human-judgment verdict because the final public interpretation depends on curator weighting of rare lifelong genetic evidence, adjacent FMD/acarbose records, and endocrine safety tradeoffs.",
+  "reviewed_change_ids": [
+    "create-intervention-growth-hormone-igf-axis-attenuation",
+    "create-intervention-dietary-protein-restriction",
+    "create-intervention-growth-hormone-administration",
+    "update-intervention-fasting-mimicking-diet",
+    "update-intervention-acarbose",
+    "create-source-pmid-21325617",
+    "create-source-pmid-18316725",
+    "create-source-pmid-24618355",
+    "create-source-pmid-12483226",
+    "create-source-pmid-15498882",
+    "create-source-pmid-34811874",
+    "create-source-pmid-35952979",
+    "create-source-pmid-12543978",
+    "create-source-pmid-17928362",
+    "create-source-pmid-24606898",
+    "create-source-pmid-12425705",
+    "create-study-ecuadorian-ghr-deficiency-cohort",
+    "create-study-igf1r-centenarian-mutation-cohort",
+    "create-study-low-igf1-exceptional-longevity-cohort",
+    "create-study-igf1r-heterozygous-mouse-lifespan",
+    "create-study-ghrko-cr-signaling-mouse-study",
+    "create-study-adult-ghr-disruption-mouse-lifespan",
+    "create-study-adipocyte-ghr-disruption-mouse-lifespan",
+    "create-study-firko-adipose-insulin-receptor-mouse-lifespan",
+    "create-study-irs1-null-mouse-lifespan-biomarkers",
+    "create-study-protein-intake-igf1-mortality-nhanes-mouse",
+    "create-study-growth-hormone-sex-steroid-older-adult-rct",
+    "update-study-fmd-aging-risk-factor-rct",
+    "update-study-acarbose-het3-mouse-lifespan-dose-study",
+    "create-finding-ghr-deficiency-reduced-human-cancer-diabetes-signaling",
+    "create-finding-igf1r-centenarian-mutations-reduced-signaling",
+    "create-finding-low-igf1-predicted-survival-exceptional-longevity",
+    "create-finding-igf1r-heterozygous-mice-extended-lifespan",
+    "create-finding-ghrko-cr-overlap-reduced-akt-foxo-signaling",
+    "create-finding-adult-ghr-disruption-improved-insulin-sensitivity-lifespan",
+    "create-finding-adipocyte-ghr-disruption-improved-frailty-lifespan",
+    "create-finding-firko-mice-extended-lifespan-adipose-insulin-receptor",
+    "create-finding-irs1-null-female-mice-extended-lifespan-age-biomarkers",
+    "create-finding-low-protein-intake-igf1-mortality-age-boundary",
+    "create-finding-growth-hormone-older-adults-lean-mass-adverse-effects",
+    "update-finding-fmd-reduced-aging-risk-markers-rct",
+    "update-finding-acarbose-extended-het3-mouse-lifespan-sex-dependent",
+    "create-outlook-track-insulin-igf-axis-modulation"
+  ],
+  "findings": [
+    {
+      "finding_id": "natural-experiment-stage-curator-judgment",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "applies_to_change_id": "create-outlook-track-insulin-igf-axis-modulation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-insulin-igf-axis-modulation-outlook"
+      },
+      "claim_or_issue": "The stage assignment uses rare human natural-experiment and centenarian-genetic support alongside FMD biomarker movement, but deliberately stops at human_biomarker_signal.",
+      "why_it_matters": "A higher stage would over-read lifelong genetic or observational evidence as intentional adult-onset intervention efficacy; the staged text avoids that overreach, but editorial judgment is still needed for how prominently to present the human natural-experiment signal.",
+      "recommended_action": "No revision required. Keep the current limitations that distinguish natural experiments and biomarkers from functional, disease-incidence, or mortality evidence for an aging-directed intervention.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "conceptual-family-best-evidence-label-boundary",
+      "severity": "note",
+      "category": "missing_caveat",
+      "applies_to_change_id": "create-intervention-growth-hormone-igf-axis-attenuation",
+      "applies_to_record": {
+        "record_type": "intervention",
+        "record_id": "growth-hormone-igf-axis-attenuation"
+      },
+      "claim_or_issue": "The intervention-family evidence snapshot lists best_evidence_tier as human_clinical_outcome even though the human support is a natural experiment and not a tested adult intervention.",
+      "why_it_matters": "The field has human disease-protection signals, but a reader could misinterpret the tier as clinical-trial evidence unless the nearby caveats remain visible.",
+      "recommended_action": "No revision required. Preserve the staged summary, conceptual development stage, risk flags, and open questions that explicitly say human intervention evidence is absent.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "cross-track-fmd-acarbose-attribution-boundary",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-outlook-track-insulin-igf-axis-modulation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-insulin-igf-axis-modulation-outlook"
+      },
+      "claim_or_issue": "The outlook uses FMD and acarbose as cross-track support even though they are already anchored in autophagy induction and caloric-restriction-mimetic records.",
+      "why_it_matters": "The staged outlook correctly treats these as adjacent nutrient-sensing and glucose/IGF signals, not as proof of a specific insulin/IGF gerotherapy; maintaining that attribution avoids taxonomy-driven evidence inflation.",
+      "recommended_action": "No revision required. During editorial approval, keep FMD and acarbose framed as adjacent support and do not let their evidence upgrade the track beyond the stated low-confidence biomarker baseline.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "steady-momentum-rating-is-conservative",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "create-outlook-track-insulin-igf-axis-modulation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-insulin-igf-axis-modulation-outlook"
+      },
+      "claim_or_issue": "Recent adult-onset and tissue-specific mouse studies refine translation, but the staged outlook assigns steady rather than accelerating momentum.",
+      "why_it_matters": "This avoids forecasting overreach because recent progress is preclinical and does not yet create a human functional or disease-outcome intervention path.",
+      "recommended_action": "No revision required. Keep the steady momentum rating unless later surveillance finds active human geroscience trials with functional endpoints.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-03T10:21:24.937Z",
+  "updated_at": "2026-06-03T10:21:24.937Z"
+}

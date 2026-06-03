@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-03-insulin-igf-axis-modulation-bootstrap",
+  "name": "Insulin and IGF Axis Modulation Bootstrap",
+  "mode": "bootstrap",
+  "started_at": "2026-06-03T09:00:00Z",
+  "completed_at": "2026-06-03T10:11:19Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Insulin and IGF Axis Modulation, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "deregulated_nutrient_sensing"
+    ],
+    "track_ids": [
+      "insulin-igf-axis-modulation"
+    ],
+    "intervention_ids": [
+      "growth-hormone-igf-axis-attenuation",
+      "dietary-protein-restriction",
+      "growth-hormone-administration",
+      "fasting-mimicking-diet",
+      "acarbose"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "insulin-igf-axis-modulation-bootstrap-2026-06-03",
+  "summary": "Staged the first public baseline for the insulin and IGF axis modulation track. The proposed outlook assigns low-confidence human_biomarker_signal based on human natural experiments, genetics, observational IGF-1 survival evidence, and randomized FMD biomarker movement, while animal lifespan models provide stronger mechanistic support and GH/protein evidence defines safety and age-boundary limitations.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-21325617",
+    "pmid-18316725",
+    "pmid-24618355",
+    "pmid-28202779",
+    "pmid-12483226",
+    "pmid-15498882",
+    "pmid-34811874",
+    "pmid-35952979",
+    "pmid-12543978",
+    "pmid-17928362",
+    "pmid-30688027",
+    "pmid-24606898",
+    "pmid-12425705"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/21325617/",
+    "https://pubmed.ncbi.nlm.nih.gov/18316725/",
+    "https://pubmed.ncbi.nlm.nih.gov/24618355/",
+    "https://pubmed.ncbi.nlm.nih.gov/28202779/",
+    "https://pubmed.ncbi.nlm.nih.gov/12483226/",
+    "https://pubmed.ncbi.nlm.nih.gov/15498882/",
+    "https://pubmed.ncbi.nlm.nih.gov/34811874/",
+    "https://pubmed.ncbi.nlm.nih.gov/35952979/",
+    "https://pubmed.ncbi.nlm.nih.gov/12543978/",
+    "https://pubmed.ncbi.nlm.nih.gov/17928362/",
+    "https://pubmed.ncbi.nlm.nih.gov/30688027/",
+    "https://pubmed.ncbi.nlm.nih.gov/24606898/",
+    "https://pubmed.ncbi.nlm.nih.gov/12425705/"
+  ],
+  "notes": [
+    "Scope deliberately stayed within one track under deregulated nutrient sensing.",
+    "The outlook keeps rare human genetic and natural-experiment evidence below durable disease relevance because it is not an intentional adult-onset intervention.",
+    "FMD and acarbose are staged as cross-track support rather than reassigned away from autophagy induction or caloric-restriction mimetics.",
+    "Growth hormone administration is included as opposite-direction safety context, not as a positive geroprotective intervention."
+  ],
+  "next_actions": [
+    "Run source-fidelity review for all newly staged PubMed-backed source, study, and finding records.",
+    "Run interpretation-forecast review on the proposed human_biomarker_signal stage, steady momentum, and low confidence assignment.",
+    "Check taxonomy mapping for overlap with caloric-restriction mimetics, neuroendocrine/systemic signal reset, autophagy induction, and protein/nutrition records before publication.",
+    "Do not publish until required evidence review lanes are complete."
+  ]
+}

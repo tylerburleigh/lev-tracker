@@ -1,0 +1,564 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "insulin-igf-axis-modulation-bootstrap-2026-06-03",
+  "name": "Insulin and IGF axis modulation bootstrap for June 3, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline candidate for the insulin and IGF axis modulation track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-03T10:11:19Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Insulin and IGF Axis Modulation, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "deregulated_nutrient_sensing"
+    ],
+    "track_ids": [
+      "insulin-igf-axis-modulation"
+    ],
+    "intervention_ids": [
+      "growth-hormone-igf-axis-attenuation",
+      "dietary-protein-restriction",
+      "growth-hormone-administration",
+      "fasting-mimicking-diet",
+      "acarbose"
+    ]
+  },
+  "source_ids": [
+    "pmid-21325617",
+    "pmid-18316725",
+    "pmid-24618355",
+    "pmid-28202779",
+    "pmid-12483226",
+    "pmid-15498882",
+    "pmid-34811874",
+    "pmid-35952979",
+    "pmid-12543978",
+    "pmid-17928362",
+    "pmid-30688027",
+    "pmid-24606898",
+    "pmid-12425705"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/21325617/",
+    "https://pubmed.ncbi.nlm.nih.gov/18316725/",
+    "https://pubmed.ncbi.nlm.nih.gov/24618355/",
+    "https://pubmed.ncbi.nlm.nih.gov/28202779/",
+    "https://pubmed.ncbi.nlm.nih.gov/12483226/",
+    "https://pubmed.ncbi.nlm.nih.gov/15498882/",
+    "https://pubmed.ncbi.nlm.nih.gov/34811874/",
+    "https://pubmed.ncbi.nlm.nih.gov/35952979/",
+    "https://pubmed.ncbi.nlm.nih.gov/12543978/",
+    "https://pubmed.ncbi.nlm.nih.gov/17928362/",
+    "https://pubmed.ncbi.nlm.nih.gov/30688027/",
+    "https://pubmed.ncbi.nlm.nih.gov/24606898/",
+    "https://pubmed.ncbi.nlm.nih.gov/12425705/"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-insulin-igf-axis-modulation-outlook"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "growth-hormone-igf-axis-attenuation"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "dietary-protein-restriction"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "growth-hormone-administration"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "fasting-mimicking-diet"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "acarbose"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "ghr-deficiency-reduced-human-cancer-diabetes-signaling"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "igf1r-centenarian-mutations-reduced-signaling"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "low-igf1-predicted-survival-exceptional-longevity"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "fmd-reduced-aging-risk-markers-rct"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "growth-hormone-older-adults-lean-mass-adverse-effects"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-intervention-growth-hormone-igf-axis-attenuation",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "growth-hormone-igf-axis-attenuation",
+      "file_path": "data/interventions/growth-hormone-igf-axis-attenuation.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/growth-hormone-igf-axis-attenuation.json",
+      "summary": "Add GH, IGF, and insulin axis attenuation intervention-family record.",
+      "rationale": "This family anchors the natural-experiment, genetic, and animal lifespan evidence for reducing insulin/GH/IGF-linked growth signaling."
+    },
+    {
+      "change_id": "create-intervention-dietary-protein-restriction",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "dietary-protein-restriction",
+      "file_path": "data/interventions/dietary-protein-restriction.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/dietary-protein-restriction.json",
+      "summary": "Add dietary protein restriction intervention record.",
+      "rationale": "Protein restriction provides a human IGF-1 and nutrition boundary for the track."
+    },
+    {
+      "change_id": "create-intervention-growth-hormone-administration",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "growth-hormone-administration",
+      "file_path": "data/interventions/growth-hormone-administration.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/growth-hormone-administration.json",
+      "summary": "Add growth hormone administration safety-boundary record.",
+      "rationale": "Older-adult GH administration defines opposite-direction endocrine safety constraints for track interpretation."
+    },
+    {
+      "change_id": "update-intervention-fasting-mimicking-diet",
+      "change_type": "update_record",
+      "target_record_type": "intervention",
+      "target_record_id": "fasting-mimicking-diet",
+      "file_path": "data/interventions/fasting-mimicking-diet.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/fasting-mimicking-diet.json",
+      "summary": "Link FMD to insulin/IGF and caloric-restriction-mimetic support.",
+      "rationale": "FMD has randomized human IGF-1 biomarker movement and is already an adjacent autophagy/nutrient-sensing record."
+    },
+    {
+      "change_id": "update-intervention-acarbose",
+      "change_type": "update_record",
+      "target_record_type": "intervention",
+      "target_record_id": "acarbose",
+      "file_path": "data/interventions/acarbose.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/acarbose.json",
+      "summary": "Link acarbose to insulin-axis support.",
+      "rationale": "Acarbose is a glucose-excursion intervention with robust mouse lifespan evidence adjacent to insulin-axis modulation."
+    },
+    {
+      "change_id": "create-source-pmid-21325617",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-21325617",
+      "file_path": "data/sources/pmid-21325617.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/pmid-21325617.json",
+      "summary": "Add Ecuadorian GHRD cohort source.",
+      "rationale": "This source anchors the human natural-experiment evidence for GH/IGF deficiency and low cancer/diabetes prevalence."
+    },
+    {
+      "change_id": "create-source-pmid-18316725",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-18316725",
+      "file_path": "data/sources/pmid-18316725.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/pmid-18316725.json",
+      "summary": "Add IGF1R centenarian genetics source.",
+      "rationale": "This source anchors human genetic plausibility for reduced IGF1R signaling and exceptional longevity."
+    },
+    {
+      "change_id": "create-source-pmid-24618355",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-24618355",
+      "file_path": "data/sources/pmid-24618355.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/pmid-24618355.json",
+      "summary": "Add low IGF-1 exceptional-longevity survival source.",
+      "rationale": "This source anchors the human observational survival signal and subgroup boundary."
+    },
+    {
+      "change_id": "create-source-pmid-12483226",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-12483226",
+      "file_path": "data/sources/pmid-12483226.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/pmid-12483226.json",
+      "summary": "Add IGF1R heterozygous mouse lifespan source.",
+      "rationale": "This source anchors classic mouse lifespan support for partial IGF1R deficiency."
+    },
+    {
+      "change_id": "create-source-pmid-15498882",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-15498882",
+      "file_path": "data/sources/pmid-15498882.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/pmid-15498882.json",
+      "summary": "Add GHRKO and caloric-restriction signaling source.",
+      "rationale": "This source anchors mechanistic overlap between GHR disruption, low insulin/IGF signaling, and caloric-restriction biology."
+    },
+    {
+      "change_id": "create-source-pmid-34811874",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-34811874",
+      "file_path": "data/sources/pmid-34811874.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/pmid-34811874.json",
+      "summary": "Add adult-onset GHR disruption mouse source.",
+      "rationale": "This source anchors adult-onset mouse evidence that partially addresses developmental-translatability concerns."
+    },
+    {
+      "change_id": "create-source-pmid-35952979",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-35952979",
+      "file_path": "data/sources/pmid-35952979.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/pmid-35952979.json",
+      "summary": "Add adipocyte GHR disruption mouse source.",
+      "rationale": "This source anchors tissue-specific mouse support and the sex/tissue boundary."
+    },
+    {
+      "change_id": "create-source-pmid-12543978",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-12543978",
+      "file_path": "data/sources/pmid-12543978.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/pmid-12543978.json",
+      "summary": "Add FIRKO mouse lifespan source.",
+      "rationale": "This source anchors tissue-specific insulin receptor evidence for lifespan extension in mice."
+    },
+    {
+      "change_id": "create-source-pmid-17928362",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-17928362",
+      "file_path": "data/sources/pmid-17928362.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/pmid-17928362.json",
+      "summary": "Add IRS1 null mouse lifespan source.",
+      "rationale": "This source anchors downstream insulin-signaling lifespan and age-biomarker evidence."
+    },
+    {
+      "change_id": "create-source-pmid-24606898",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-24606898",
+      "file_path": "data/sources/pmid-24606898.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/pmid-24606898.json",
+      "summary": "Add protein intake, IGF-1, mortality, and mouse tumor source.",
+      "rationale": "This source anchors the age-dependent nutrition boundary for IGF-linked intervention claims."
+    },
+    {
+      "change_id": "create-source-pmid-12425705",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-12425705",
+      "file_path": "data/sources/pmid-12425705.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/pmid-12425705.json",
+      "summary": "Add older-adult GH administration randomized trial source.",
+      "rationale": "This source anchors direct human endocrine safety boundary evidence."
+    },
+    {
+      "change_id": "create-study-ecuadorian-ghr-deficiency-cohort",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "ecuadorian-ghr-deficiency-cohort",
+      "file_path": "data/studies/ecuadorian-ghr-deficiency-cohort.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/ecuadorian-ghr-deficiency-cohort.json",
+      "summary": "Add Ecuadorian GHRD cohort study record.",
+      "rationale": "This study records the rare human natural experiment central to stage interpretation."
+    },
+    {
+      "change_id": "create-study-igf1r-centenarian-mutation-cohort",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "igf1r-centenarian-mutation-cohort",
+      "file_path": "data/studies/igf1r-centenarian-mutation-cohort.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/igf1r-centenarian-mutation-cohort.json",
+      "summary": "Add IGF1R centenarian mutation study record.",
+      "rationale": "This study records human exceptional-longevity genetics support."
+    },
+    {
+      "change_id": "create-study-low-igf1-exceptional-longevity-cohort",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "low-igf1-exceptional-longevity-cohort",
+      "file_path": "data/studies/low-igf1-exceptional-longevity-cohort.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/low-igf1-exceptional-longevity-cohort.json",
+      "summary": "Add low IGF-1 exceptional-longevity study record.",
+      "rationale": "This study records human IGF-1 survival association support and limitations."
+    },
+    {
+      "change_id": "create-study-igf1r-heterozygous-mouse-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "igf1r-heterozygous-mouse-lifespan",
+      "file_path": "data/studies/igf1r-heterozygous-mouse-lifespan.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/igf1r-heterozygous-mouse-lifespan.json",
+      "summary": "Add IGF1R heterozygous mouse lifespan study record.",
+      "rationale": "This study records classic animal lifespan support for IGF1R attenuation."
+    },
+    {
+      "change_id": "create-study-ghrko-cr-signaling-mouse-study",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "ghrko-cr-signaling-mouse-study",
+      "file_path": "data/studies/ghrko-cr-signaling-mouse-study.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/ghrko-cr-signaling-mouse-study.json",
+      "summary": "Add GHRKO and caloric-restriction signaling study record.",
+      "rationale": "This study records mechanistic overlap with nutrient-sensing and caloric-restriction biology."
+    },
+    {
+      "change_id": "create-study-adult-ghr-disruption-mouse-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "adult-ghr-disruption-mouse-lifespan",
+      "file_path": "data/studies/adult-ghr-disruption-mouse-lifespan.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/adult-ghr-disruption-mouse-lifespan.json",
+      "summary": "Add adult-onset GHR disruption mouse study record.",
+      "rationale": "This study records adult-onset animal evidence relevant to translation."
+    },
+    {
+      "change_id": "create-study-adipocyte-ghr-disruption-mouse-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "adipocyte-ghr-disruption-mouse-lifespan",
+      "file_path": "data/studies/adipocyte-ghr-disruption-mouse-lifespan.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/adipocyte-ghr-disruption-mouse-lifespan.json",
+      "summary": "Add adipocyte GHR disruption mouse study record.",
+      "rationale": "This study records tissue-specific animal evidence and functional-aging boundaries."
+    },
+    {
+      "change_id": "create-study-firko-adipose-insulin-receptor-mouse-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "firko-adipose-insulin-receptor-mouse-lifespan",
+      "file_path": "data/studies/firko-adipose-insulin-receptor-mouse-lifespan.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/firko-adipose-insulin-receptor-mouse-lifespan.json",
+      "summary": "Add FIRKO mouse lifespan study record.",
+      "rationale": "This study records tissue-specific insulin receptor lifespan evidence."
+    },
+    {
+      "change_id": "create-study-irs1-null-mouse-lifespan-biomarkers",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "irs1-null-mouse-lifespan-biomarkers",
+      "file_path": "data/studies/irs1-null-mouse-lifespan-biomarkers.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/irs1-null-mouse-lifespan-biomarkers.json",
+      "summary": "Add IRS1 null mouse lifespan and biomarker study record.",
+      "rationale": "This study records downstream insulin-signaling aging evidence."
+    },
+    {
+      "change_id": "create-study-protein-intake-igf1-mortality-nhanes-mouse",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "protein-intake-igf1-mortality-nhanes-mouse",
+      "file_path": "data/studies/protein-intake-igf1-mortality-nhanes-mouse.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/protein-intake-igf1-mortality-nhanes-mouse.json",
+      "summary": "Add protein intake, IGF-1, mortality, and mouse study record.",
+      "rationale": "This study records the age-dependent human nutrition and IGF-1 boundary."
+    },
+    {
+      "change_id": "create-study-growth-hormone-sex-steroid-older-adult-rct",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "growth-hormone-sex-steroid-older-adult-rct",
+      "file_path": "data/studies/growth-hormone-sex-steroid-older-adult-rct.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/growth-hormone-sex-steroid-older-adult-rct.json",
+      "summary": "Add older-adult GH randomized trial study record.",
+      "rationale": "This study records direct human endocrine safety and functional-boundary evidence."
+    },
+    {
+      "change_id": "update-study-fmd-aging-risk-factor-rct",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "fmd-aging-risk-factor-rct",
+      "file_path": "data/studies/fmd-aging-risk-factor-rct.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/fmd-aging-risk-factor-rct.json",
+      "summary": "Add insulin/IGF track mapping to FMD aging-risk study.",
+      "rationale": "The trial measured IGF-1 and supplies randomized human biomarker support for the track."
+    },
+    {
+      "change_id": "update-study-acarbose-het3-mouse-lifespan-dose-study",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "acarbose-het3-mouse-lifespan-dose-study",
+      "file_path": "data/studies/acarbose-het3-mouse-lifespan-dose-study.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/acarbose-het3-mouse-lifespan-dose-study.json",
+      "summary": "Add insulin-axis track mapping to acarbose lifespan study.",
+      "rationale": "Acarbose's glucose-excursion mechanism is relevant to insulin-axis modulation."
+    },
+    {
+      "change_id": "create-finding-ghr-deficiency-reduced-human-cancer-diabetes-signaling",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ghr-deficiency-reduced-human-cancer-diabetes-signaling",
+      "file_path": "data/findings/ghr-deficiency-reduced-human-cancer-diabetes-signaling.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/ghr-deficiency-reduced-human-cancer-diabetes-signaling.json",
+      "summary": "Add GHRD human natural-experiment finding.",
+      "rationale": "This finding supports human pathway relevance while naming developmental-natural-experiment limitations."
+    },
+    {
+      "change_id": "create-finding-igf1r-centenarian-mutations-reduced-signaling",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "igf1r-centenarian-mutations-reduced-signaling",
+      "file_path": "data/findings/igf1r-centenarian-mutations-reduced-signaling.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/igf1r-centenarian-mutations-reduced-signaling.json",
+      "summary": "Add IGF1R centenarian genetics finding.",
+      "rationale": "This finding supports human genetic plausibility for reduced IGF1R signaling."
+    },
+    {
+      "change_id": "create-finding-low-igf1-predicted-survival-exceptional-longevity",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "low-igf1-predicted-survival-exceptional-longevity",
+      "file_path": "data/findings/low-igf1-predicted-survival-exceptional-longevity.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/low-igf1-predicted-survival-exceptional-longevity.json",
+      "summary": "Add low IGF-1 exceptional-longevity survival finding.",
+      "rationale": "This finding supports human survival plausibility while preserving subgroup limitations."
+    },
+    {
+      "change_id": "create-finding-igf1r-heterozygous-mice-extended-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "igf1r-heterozygous-mice-extended-lifespan",
+      "file_path": "data/findings/igf1r-heterozygous-mice-extended-lifespan.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/igf1r-heterozygous-mice-extended-lifespan.json",
+      "summary": "Add IGF1R heterozygous mouse lifespan finding.",
+      "rationale": "This finding supports animal lifespan plausibility and sex-boundary interpretation."
+    },
+    {
+      "change_id": "create-finding-ghrko-cr-overlap-reduced-akt-foxo-signaling",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ghrko-cr-overlap-reduced-akt-foxo-signaling",
+      "file_path": "data/findings/ghrko-cr-overlap-reduced-akt-foxo-signaling.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/ghrko-cr-overlap-reduced-akt-foxo-signaling.json",
+      "summary": "Add GHRKO and caloric-restriction mechanistic finding.",
+      "rationale": "This finding supports nutrient-sensing mechanism without elevating human intervention maturity."
+    },
+    {
+      "change_id": "create-finding-adult-ghr-disruption-improved-insulin-sensitivity-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "adult-ghr-disruption-improved-insulin-sensitivity-lifespan",
+      "file_path": "data/findings/adult-ghr-disruption-improved-insulin-sensitivity-lifespan.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/adult-ghr-disruption-improved-insulin-sensitivity-lifespan.json",
+      "summary": "Add adult-onset GHR disruption mouse finding.",
+      "rationale": "This finding supplies animal support closer to adult intervention timing than germline dwarf models."
+    },
+    {
+      "change_id": "create-finding-adipocyte-ghr-disruption-improved-frailty-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "adipocyte-ghr-disruption-improved-frailty-lifespan",
+      "file_path": "data/findings/adipocyte-ghr-disruption-improved-frailty-lifespan.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/adipocyte-ghr-disruption-improved-frailty-lifespan.json",
+      "summary": "Add adipocyte GHR disruption mouse finding.",
+      "rationale": "This finding supports tissue-specific translation and sex-boundary interpretation."
+    },
+    {
+      "change_id": "create-finding-firko-mice-extended-lifespan-adipose-insulin-receptor",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "firko-mice-extended-lifespan-adipose-insulin-receptor",
+      "file_path": "data/findings/firko-mice-extended-lifespan-adipose-insulin-receptor.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/firko-mice-extended-lifespan-adipose-insulin-receptor.json",
+      "summary": "Add FIRKO mouse lifespan finding.",
+      "rationale": "This finding supports tissue-specific insulin receptor modulation as an animal lifespan signal."
+    },
+    {
+      "change_id": "create-finding-irs1-null-female-mice-extended-lifespan-age-biomarkers",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "irs1-null-female-mice-extended-lifespan-age-biomarkers",
+      "file_path": "data/findings/irs1-null-female-mice-extended-lifespan-age-biomarkers.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/irs1-null-female-mice-extended-lifespan-age-biomarkers.json",
+      "summary": "Add IRS1 null mouse lifespan and age-biomarker finding.",
+      "rationale": "This finding supports downstream insulin-signaling relevance while preserving sex and insulin-resistance caveats."
+    },
+    {
+      "change_id": "create-finding-low-protein-intake-igf1-mortality-age-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "low-protein-intake-igf1-mortality-age-boundary",
+      "file_path": "data/findings/low-protein-intake-igf1-mortality-age-boundary.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/low-protein-intake-igf1-mortality-age-boundary.json",
+      "summary": "Add protein intake and IGF-1 age-boundary finding.",
+      "rationale": "This finding prevents overgeneralized protein-restriction or IGF-lowering claims."
+    },
+    {
+      "change_id": "create-finding-growth-hormone-older-adults-lean-mass-adverse-effects",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "growth-hormone-older-adults-lean-mass-adverse-effects",
+      "file_path": "data/findings/growth-hormone-older-adults-lean-mass-adverse-effects.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/growth-hormone-older-adults-lean-mass-adverse-effects.json",
+      "summary": "Add older-adult GH safety-boundary finding.",
+      "rationale": "This finding documents endocrine adverse effects and limits broad anabolic interpretations."
+    },
+    {
+      "change_id": "update-finding-fmd-reduced-aging-risk-markers-rct",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "fmd-reduced-aging-risk-markers-rct",
+      "file_path": "data/findings/fmd-reduced-aging-risk-markers-rct.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/fmd-reduced-aging-risk-markers-rct.json",
+      "summary": "Add insulin/IGF mapping to FMD biomarker finding.",
+      "rationale": "The finding explicitly reports IGF-1 reduction in a randomized human biomarker study."
+    },
+    {
+      "change_id": "update-finding-acarbose-extended-het3-mouse-lifespan-sex-dependent",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "acarbose-extended-het3-mouse-lifespan-sex-dependent",
+      "file_path": "data/findings/acarbose-extended-het3-mouse-lifespan-sex-dependent.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/acarbose-extended-het3-mouse-lifespan-sex-dependent.json",
+      "summary": "Add insulin-axis mapping to acarbose mouse lifespan finding.",
+      "rationale": "Acarbose supplies glucose-handling animal lifespan context for the track."
+    },
+    {
+      "change_id": "create-outlook-track-insulin-igf-axis-modulation",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-insulin-igf-axis-modulation-outlook",
+      "file_path": "data/outlooks/track-insulin-igf-axis-modulation-outlook.json",
+      "staged_file_path": "data/staged-records/insulin-igf-axis-modulation-bootstrap-2026-06-03/track-insulin-igf-axis-modulation-outlook.json",
+      "summary": "Add first insulin and IGF axis modulation track outlook.",
+      "rationale": "The outlook proposes a low-confidence human_biomarker_signal baseline with explicit natural-experiment, animal, safety, momentum, and confidence support maps."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "insulin-igf-axis-modulation",
+      "note": "Set the first public track baseline to low-confidence human_biomarker_signal with steady momentum; human relevance is real but not yet an aging-directed functional or disease-outcome intervention signal.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-03-insulin-igf-axis-modulation-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "evidence_review_ids": [
+    "evidence-review-insulin-igf-axis-modulation-source-fidelity-r1",
+    "evidence-review-insulin-igf-axis-modulation-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-insulin-igf-axis-modulation-bootstrap-2026-06-03-2026-06-03t10-23-40-450z"
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-resolution-pathway-and-tissue-repair-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Resolution Pathway And Tissue Repair bundle",
+  "candidate_bundle_id": "resolution-pathway-and-tissue-repair-bootstrap-2026-06-02",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "needs_human_judgment",
+  "blocking": false,
+  "summary": "The staged outlook is calibrated for publication review: low-confidence human_biomarker_signal is supported by human lipid-mediator, leukocyte, cytokine, and disease-adjacent wound-biomarker records, while direct RvD1/MaR1 repair evidence remains animal-stage support. The review leaves a non-blocking human-judgment verdict because final public interpretation depends on curator weighting of precursor fish-oil/SPM products, direct SPM animal repair studies, and a completed older-adult venous-ulcer trial without posted results.",
+  "reviewed_change_ids": [
+    "create-intervention-resolvin-d1",
+    "create-intervention-maresin-1",
+    "create-intervention-spm-enriched-marine-oil",
+    "create-intervention-epa-dha-oral-supplementation",
+    "create-source-pmid-25217168",
+    "create-source-pmid-34075679",
+    "create-source-pmid-32794246",
+    "create-source-pmid-31829100",
+    "create-source-nct-03347006",
+    "create-source-pmid-35349683",
+    "create-source-nct-04701138",
+    "create-source-pmid-32696697",
+    "create-source-nct-02719665",
+    "create-source-pmid-29735019",
+    "create-source-doi-10.1111-wrr.12558",
+    "create-source-nct-03576989",
+    "create-study-aged-resolution-nano-proresolving-medicines",
+    "create-study-rvd1-aged-muscle-injury-regeneration",
+    "create-study-maresin1-aged-fracture-healing-mice",
+    "create-study-spm-enriched-marine-oil-healthy-volunteers",
+    "create-study-spm-active-obesity-bioavailability",
+    "create-study-spm-emulsion-pad-healthy-volunteers",
+    "create-study-epa-dha-chronic-venous-leg-ulcer-pilot",
+    "create-study-epa-dha-cvlu-older-adults-registry",
+    "create-finding-aged-mice-resolution-deficit-rescued-by-nano-proresolving-medicines",
+    "create-finding-rvd1-improved-aged-muscle-functional-recovery",
+    "create-finding-maresin1-improved-aged-bone-fracture-healing",
+    "create-finding-enriched-marine-oil-raised-human-spms-immune-responses",
+    "create-finding-spm-active-increased-select-spms-obesity",
+    "create-finding-marine-oil-pad-altered-lipid-mediators-leukocyte-phenotype",
+    "create-finding-epa-dha-lowered-cytokines-aging-cvlu-adults",
+    "create-finding-epa-dha-reduced-cvlu-pmn-activation-wound-area-trend",
+    "create-finding-completed-omega3-cvlu-trial-no-posted-results",
+    "create-outlook-track-resolution-pathway-and-tissue-repair"
+  ],
+  "findings": [
+    {
+      "finding_id": "human-biomarker-stage-curator-judgment",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "applies_to_change_id": "create-outlook-track-resolution-pathway-and-tissue-repair",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-resolution-pathway-and-tissue-repair-outlook"
+      },
+      "claim_or_issue": "The stage assignment uses human target-engagement and biomarker evidence plus a chronic venous leg ulcer repair-adjacent pilot, but deliberately stops at human_biomarker_signal.",
+      "why_it_matters": "A higher stage would over-read biomarker movement and disease-adjacent wound trends as general human tissue-repair or healthy-aging functional benefit.",
+      "recommended_action": "No revision required. Keep the current low-confidence human_biomarker_signal stage unless later surveillance finds controlled human repair or functional endpoints.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "animal-repair-not-human-upgrade",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "create-finding-rvd1-improved-aged-muscle-functional-recovery",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "rvd1-improved-aged-muscle-functional-recovery"
+      },
+      "claim_or_issue": "RvD1 and MaR1 provide direct aged-tissue repair support in mouse muscle and bone models.",
+      "why_it_matters": "These studies strengthen biological plausibility for the track, but they do not justify a human functional-benefit stage without direct human intervention outcomes.",
+      "recommended_action": "No revision required. Keep animal repair records as mechanistic support beneath the human biomarker baseline.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "commercial-spm-supplement-attribution-boundary",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-intervention-spm-enriched-marine-oil",
+      "applies_to_record": {
+        "record_type": "intervention",
+        "record_id": "spm-enriched-marine-oil"
+      },
+      "claim_or_issue": "Human SPM Active and enriched marine-oil records are product/formulation-specific target-engagement evidence.",
+      "why_it_matters": "Conflating those products with pure direct SPM pharmacology would inflate the intervention class and obscure fish-oil precursor mechanisms.",
+      "recommended_action": "No revision required. Preserve the staged product and precursor boundaries during editorial approval.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "steady-momentum-registry-boundary",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "create-outlook-track-resolution-pathway-and-tissue-repair",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-resolution-pathway-and-tissue-repair-outlook"
+      },
+      "claim_or_issue": "The staged outlook assigns steady momentum while carrying completed registry context for NCT03576989 without posted results.",
+      "why_it_matters": "This is conservative: completed trials without posted results should remain surveillance signals, not evidence of accelerating translational progress.",
+      "recommended_action": "No revision required. Keep steady momentum until posted results or new active trials add direct human repair endpoints.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-03T10:36:38.321Z",
+  "updated_at": "2026-06-03T10:36:38.321Z"
+}

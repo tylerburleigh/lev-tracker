@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "spm-enriched-marine-oil",
+  "name": "SPM-enriched Marine Oil",
+  "summary": "Oral marine-oil supplement formulations enriched for specialized pro-resolving mediator pathway metabolites or precursors, including products studied as SPM Active or SPM Emulsion.",
+  "aliases": [
+    "SPM Active",
+    "SPM Emulsion",
+    "enriched marine oil supplement",
+    "specialized pro-resolving mediator supplement"
+  ],
+  "modalities": [
+    "dietary_supplement"
+  ],
+  "target_hallmark_ids": [
+    "chronic_inflammation"
+  ],
+  "secondary_hallmark_ids": [
+    "altered_intercellular_communication"
+  ],
+  "track_ids": [
+    "resolution-pathway-and-tissue-repair"
+  ],
+  "mechanism_summary": "Aims to raise circulating SPMs or SPM-pathway metabolites and shift leukocyte or macrophage phenotypes toward pro-resolution activity.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "spm-enriched-marine-oil-healthy-volunteers",
+    "spm-active-obesity-bioavailability",
+    "spm-emulsion-pad-healthy-volunteers"
+  ],
+  "linked_finding_ids": [
+    "enriched-marine-oil-raised-human-spms-immune-responses",
+    "spm-active-increased-select-spms-obesity",
+    "marine-oil-pad-altered-lipid-mediators-leukocyte-phenotype"
+  ],
+  "risk_flags": [
+    "supplement-commercial-sponsor",
+    "heterogeneous-formulations",
+    "target-engagement-not-efficacy",
+    "short-duration-human-studies"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether increased circulating SPMs translate into improved tissue repair or aging-relevant function",
+      "Which formulation, dose, and metabolite profile is clinically meaningful",
+      "Whether effects are reproducible in older adults with repair deficits rather than young healthy volunteers or disease-specific cohorts"
+    ]
+  },
+  "tags": [
+    "resolution-pathway-and-tissue-repair",
+    "spm",
+    "marine-oil",
+    "human-biomarker"
+  ]
+}

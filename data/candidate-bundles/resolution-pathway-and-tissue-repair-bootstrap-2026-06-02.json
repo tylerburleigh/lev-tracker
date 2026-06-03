@@ -1,0 +1,472 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "resolution-pathway-and-tissue-repair-bootstrap-2026-06-02",
+  "name": "Resolution pathway and tissue repair bootstrap for June 2, 2026",
+  "summary": "Submitted bootstrap bundle establishing the first public baseline candidate for the resolution pathway and tissue repair track.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-02T22:15:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Resolution Pathway and Tissue Repair, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "chronic_inflammation"
+    ],
+    "track_ids": [
+      "resolution-pathway-and-tissue-repair"
+    ],
+    "intervention_ids": [
+      "resolvin-d1",
+      "maresin-1",
+      "spm-enriched-marine-oil",
+      "epa-dha-oral-supplementation"
+    ]
+  },
+  "source_ids": [
+    "pmid-25217168",
+    "pmid-34075679",
+    "pmid-32794246",
+    "pmid-31829100",
+    "nct-03347006",
+    "pmid-35349683",
+    "nct-04701138",
+    "pmid-32696697",
+    "nct-02719665",
+    "pmid-29735019",
+    "doi-10.1111-wrr.12558",
+    "nct-03576989"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/25217168/",
+    "https://pubmed.ncbi.nlm.nih.gov/34075679/",
+    "https://pubmed.ncbi.nlm.nih.gov/32794246/",
+    "https://pubmed.ncbi.nlm.nih.gov/31829100/",
+    "https://clinicaltrials.gov/study/NCT03347006",
+    "https://pubmed.ncbi.nlm.nih.gov/35349683/",
+    "https://clinicaltrials.gov/study/NCT04701138",
+    "https://pubmed.ncbi.nlm.nih.gov/32696697/",
+    "https://clinicaltrials.gov/study/NCT02719665",
+    "https://pubmed.ncbi.nlm.nih.gov/29735019/",
+    "https://doi.org/10.1111/wrr.12558",
+    "https://clinicaltrials.gov/study/NCT03576989"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-resolution-pathway-and-tissue-repair-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-chronic-inflammation-outlook"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "rvd1-improved-aged-muscle-functional-recovery"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "maresin1-improved-aged-bone-fracture-healing"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "enriched-marine-oil-raised-human-spms-immune-responses"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "epa-dha-reduced-cvlu-pmn-activation-wound-area-trend"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "completed-omega3-cvlu-trial-no-posted-results"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-intervention-resolvin-d1",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "resolvin-d1",
+      "file_path": "data/interventions/resolvin-d1.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/resolvin-d1.json",
+      "summary": "Add Resolvin D1 intervention record.",
+      "rationale": "RvD1 anchors direct preclinical pro-resolving mediator repair evidence for the track."
+    },
+    {
+      "change_id": "create-intervention-maresin-1",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "maresin-1",
+      "file_path": "data/interventions/maresin-1.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/maresin-1.json",
+      "summary": "Add Maresin 1 intervention record.",
+      "rationale": "MaR1 anchors direct preclinical aged bone-repair evidence for the track."
+    },
+    {
+      "change_id": "create-intervention-spm-enriched-marine-oil",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "spm-enriched-marine-oil",
+      "file_path": "data/interventions/spm-enriched-marine-oil.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/spm-enriched-marine-oil.json",
+      "summary": "Add SPM-enriched marine oil intervention record.",
+      "rationale": "SPM-enriched marine oil supplies direct human target-engagement and leukocyte phenotype evidence."
+    },
+    {
+      "change_id": "create-intervention-epa-dha-oral-supplementation",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "epa-dha-oral-supplementation",
+      "file_path": "data/interventions/epa-dha-oral-supplementation.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/epa-dha-oral-supplementation.json",
+      "summary": "Add EPA+DHA oral supplementation intervention record.",
+      "rationale": "EPA+DHA is the human wound-repair precursor strategy with chronic venous leg ulcer biomarker data."
+    },
+    {
+      "change_id": "create-source-pmid-25217168",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-25217168",
+      "file_path": "data/sources/pmid-25217168.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/pmid-25217168.json",
+      "summary": "Add aged mouse resolution-deficit source.",
+      "rationale": "This source anchors the age-related inflammation-resolution deficit and nano-proresolving medicine mechanism."
+    },
+    {
+      "change_id": "create-source-pmid-34075679",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-34075679",
+      "file_path": "data/sources/pmid-34075679.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/pmid-34075679.json",
+      "summary": "Add aged muscle RvD1 repair source.",
+      "rationale": "This source anchors direct RvD1 animal support for aged tissue repair."
+    },
+    {
+      "change_id": "create-source-pmid-32794246",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-32794246",
+      "file_path": "data/sources/pmid-32794246.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/pmid-32794246.json",
+      "summary": "Add Maresin 1 aged bone regeneration source.",
+      "rationale": "This source anchors direct MaR1 animal support for aged fracture repair."
+    },
+    {
+      "change_id": "create-source-pmid-31829100",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-31829100",
+      "file_path": "data/sources/pmid-31829100.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/pmid-31829100.json",
+      "summary": "Add enriched marine oil healthy-volunteer SPM source.",
+      "rationale": "This source supplies randomized human SPM target-engagement evidence."
+    },
+    {
+      "change_id": "create-source-nct-03347006",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-03347006",
+      "file_path": "data/sources/nct-03347006.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/nct-03347006.json",
+      "summary": "Add SPM Active healthy-volunteer registry source.",
+      "rationale": "The registry documents current posted results and trial metadata for the healthy-volunteer SPM study."
+    },
+    {
+      "change_id": "create-source-pmid-35349683",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-35349683",
+      "file_path": "data/sources/pmid-35349683.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/pmid-35349683.json",
+      "summary": "Add SPM Active obesity bioavailability source.",
+      "rationale": "This source supplies middle-aged and older-adult human SPM-pathway target-engagement evidence."
+    },
+    {
+      "change_id": "create-source-nct-04701138",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-04701138",
+      "file_path": "data/sources/nct-04701138.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/nct-04701138.json",
+      "summary": "Add SPM Active obesity registry source.",
+      "rationale": "The registry records posted results and trial metadata for the SPM Active obesity bioavailability study."
+    },
+    {
+      "change_id": "create-source-pmid-32696697",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-32696697",
+      "file_path": "data/sources/pmid-32696697.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/pmid-32696697.json",
+      "summary": "Add marine oil PAD leukocyte phenotype source.",
+      "rationale": "This source supplies human disease-adjacent lipid mediator and leukocyte phenotype support."
+    },
+    {
+      "change_id": "create-source-nct-02719665",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-02719665",
+      "file_path": "data/sources/nct-02719665.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/nct-02719665.json",
+      "summary": "Add OMEGA-SPM PAD registry source.",
+      "rationale": "The registry records current no-posted-results status for the PAD and SPM Emulsion study."
+    },
+    {
+      "change_id": "create-source-pmid-29735019",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-29735019",
+      "file_path": "data/sources/pmid-29735019.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/pmid-29735019.json",
+      "summary": "Add EPA+DHA chronic venous leg ulcer cytokine source.",
+      "rationale": "This source anchors human inflammatory cytokine lowering in a chronic wound population."
+    },
+    {
+      "change_id": "create-source-doi-10.1111-wrr.12558",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "doi-10.1111-wrr.12558",
+      "file_path": "data/sources/doi-10.1111-wrr.12558.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/doi-10.1111-wrr.12558.json",
+      "summary": "Add EPA+DHA chronic venous leg ulcer PMN source.",
+      "rationale": "This DOI-backed source anchors wound-fluid PMN activation and wound-area trend evidence without forcing an incorrect PubMed ID."
+    },
+    {
+      "change_id": "create-source-nct-03576989",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-03576989",
+      "file_path": "data/sources/nct-03576989.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/nct-03576989.json",
+      "summary": "Add completed older-adult omega-3 venous-ulcer registry source.",
+      "rationale": "The registry is a key translation watch item because it is completed but has no posted results as of June 2, 2026."
+    },
+    {
+      "change_id": "create-study-aged-resolution-nano-proresolving-medicines",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "aged-resolution-nano-proresolving-medicines",
+      "file_path": "data/studies/aged-resolution-nano-proresolving-medicines.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/aged-resolution-nano-proresolving-medicines.json",
+      "summary": "Add aged mouse resolution study record.",
+      "rationale": "This study maps age-impaired resolution and proresolving medicine response to the track."
+    },
+    {
+      "change_id": "create-study-rvd1-aged-muscle-injury-regeneration",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "rvd1-aged-muscle-injury-regeneration",
+      "file_path": "data/studies/rvd1-aged-muscle-injury-regeneration.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/rvd1-aged-muscle-injury-regeneration.json",
+      "summary": "Add RvD1 aged muscle injury study record.",
+      "rationale": "This study maps direct RvD1 treatment to aged muscle repair and force-recovery endpoints."
+    },
+    {
+      "change_id": "create-study-maresin1-aged-fracture-healing-mice",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "maresin1-aged-fracture-healing-mice",
+      "file_path": "data/studies/maresin1-aged-fracture-healing-mice.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/maresin1-aged-fracture-healing-mice.json",
+      "summary": "Add MaR1 aged fracture healing study record.",
+      "rationale": "This study maps direct MaR1 treatment to aged bone repair endpoints."
+    },
+    {
+      "change_id": "create-study-spm-enriched-marine-oil-healthy-volunteers",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "spm-enriched-marine-oil-healthy-volunteers",
+      "file_path": "data/studies/spm-enriched-marine-oil-healthy-volunteers.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/spm-enriched-marine-oil-healthy-volunteers.json",
+      "summary": "Add SPM-enriched marine oil healthy-volunteer study record.",
+      "rationale": "This study anchors the strongest controlled human SPM target-engagement evidence."
+    },
+    {
+      "change_id": "create-study-spm-active-obesity-bioavailability",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "spm-active-obesity-bioavailability",
+      "file_path": "data/studies/spm-active-obesity-bioavailability.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/spm-active-obesity-bioavailability.json",
+      "summary": "Add SPM Active obesity bioavailability study record.",
+      "rationale": "This study supplies human SPM-pathway biomarker support in a middle-aged and older adult obesity cohort."
+    },
+    {
+      "change_id": "create-study-spm-emulsion-pad-healthy-volunteers",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "spm-emulsion-pad-healthy-volunteers",
+      "file_path": "data/studies/spm-emulsion-pad-healthy-volunteers.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/spm-emulsion-pad-healthy-volunteers.json",
+      "summary": "Add SPM Emulsion PAD and healthy-volunteer study record.",
+      "rationale": "This study captures disease-adjacent human SPM biomarker and leukocyte phenotype support."
+    },
+    {
+      "change_id": "create-study-epa-dha-chronic-venous-leg-ulcer-pilot",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "epa-dha-chronic-venous-leg-ulcer-pilot",
+      "file_path": "data/studies/epa-dha-chronic-venous-leg-ulcer-pilot.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/epa-dha-chronic-venous-leg-ulcer-pilot.json",
+      "summary": "Add EPA+DHA chronic venous leg ulcer pilot study record.",
+      "rationale": "This study links omega-3 precursor supplementation to human wound inflammation endpoints."
+    },
+    {
+      "change_id": "create-study-epa-dha-cvlu-older-adults-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "epa-dha-cvlu-older-adults-registry",
+      "file_path": "data/studies/epa-dha-cvlu-older-adults-registry.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/epa-dha-cvlu-older-adults-registry.json",
+      "summary": "Add completed older-adult EPA+DHA venous-ulcer registry study record.",
+      "rationale": "This study is the key current translation watch item for possible human functional-benefit upgrade."
+    },
+    {
+      "change_id": "create-finding-aged-mice-resolution-deficit-rescued-by-nano-proresolving-medicines",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "aged-mice-resolution-deficit-rescued-by-nano-proresolving-medicines",
+      "file_path": "data/findings/aged-mice-resolution-deficit-rescued-by-nano-proresolving-medicines.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/aged-mice-resolution-deficit-rescued-by-nano-proresolving-medicines.json",
+      "summary": "Add aged-mouse resolution deficit finding.",
+      "rationale": "This finding establishes the age-linked resolution biology behind the track."
+    },
+    {
+      "change_id": "create-finding-rvd1-improved-aged-muscle-functional-recovery",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "rvd1-improved-aged-muscle-functional-recovery",
+      "file_path": "data/findings/rvd1-improved-aged-muscle-functional-recovery.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/rvd1-improved-aged-muscle-functional-recovery.json",
+      "summary": "Add RvD1 aged muscle recovery finding.",
+      "rationale": "This finding anchors direct RvD1 aged-animal functional repair support."
+    },
+    {
+      "change_id": "create-finding-maresin1-improved-aged-bone-fracture-healing",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "maresin1-improved-aged-bone-fracture-healing",
+      "file_path": "data/findings/maresin1-improved-aged-bone-fracture-healing.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/maresin1-improved-aged-bone-fracture-healing.json",
+      "summary": "Add MaR1 aged bone repair finding.",
+      "rationale": "This finding anchors direct MaR1 aged-animal functional repair support."
+    },
+    {
+      "change_id": "create-finding-enriched-marine-oil-raised-human-spms-immune-responses",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "enriched-marine-oil-raised-human-spms-immune-responses",
+      "file_path": "data/findings/enriched-marine-oil-raised-human-spms-immune-responses.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/enriched-marine-oil-raised-human-spms-immune-responses.json",
+      "summary": "Add human SPM target-engagement finding.",
+      "rationale": "This finding supports human_biomarker_signal for the track."
+    },
+    {
+      "change_id": "create-finding-spm-active-increased-select-spms-obesity",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "spm-active-increased-select-spms-obesity",
+      "file_path": "data/findings/spm-active-increased-select-spms-obesity.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/spm-active-increased-select-spms-obesity.json",
+      "summary": "Add SPM Active obesity target-engagement finding.",
+      "rationale": "This finding adds middle-aged and older adult human biomarker support while preserving uncontrolled-study limits."
+    },
+    {
+      "change_id": "create-finding-marine-oil-pad-altered-lipid-mediators-leukocyte-phenotype",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "marine-oil-pad-altered-lipid-mediators-leukocyte-phenotype",
+      "file_path": "data/findings/marine-oil-pad-altered-lipid-mediators-leukocyte-phenotype.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/marine-oil-pad-altered-lipid-mediators-leukocyte-phenotype.json",
+      "summary": "Add PAD marine-oil leukocyte phenotype finding.",
+      "rationale": "This finding broadens human biomarker support to a disease-adjacent vascular cohort."
+    },
+    {
+      "change_id": "create-finding-epa-dha-lowered-cytokines-aging-cvlu-adults",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "epa-dha-lowered-cytokines-aging-cvlu-adults",
+      "file_path": "data/findings/epa-dha-lowered-cytokines-aging-cvlu-adults.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/epa-dha-lowered-cytokines-aging-cvlu-adults.json",
+      "summary": "Add EPA+DHA cytokine-lowering finding.",
+      "rationale": "This finding supports human inflammatory biomarker movement in a chronic wound cohort."
+    },
+    {
+      "change_id": "create-finding-epa-dha-reduced-cvlu-pmn-activation-wound-area-trend",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "epa-dha-reduced-cvlu-pmn-activation-wound-area-trend",
+      "file_path": "data/findings/epa-dha-reduced-cvlu-pmn-activation-wound-area-trend.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/epa-dha-reduced-cvlu-pmn-activation-wound-area-trend.json",
+      "summary": "Add EPA+DHA wound-fluid PMN finding.",
+      "rationale": "This finding captures human wound-microenvironment biomarker support and the bounded wound-area trend."
+    },
+    {
+      "change_id": "create-finding-completed-omega3-cvlu-trial-no-posted-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "completed-omega3-cvlu-trial-no-posted-results",
+      "file_path": "data/findings/completed-omega3-cvlu-trial-no-posted-results.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/completed-omega3-cvlu-trial-no-posted-results.json",
+      "summary": "Add no-posted-results boundary finding for the completed larger trial.",
+      "rationale": "This finding prevents over-interpreting the completed older-adult wound trial before results are public."
+    },
+    {
+      "change_id": "create-outlook-track-resolution-pathway-and-tissue-repair",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-resolution-pathway-and-tissue-repair-outlook",
+      "file_path": "data/outlooks/track-resolution-pathway-and-tissue-repair-outlook.json",
+      "staged_file_path": "data/staged-records/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02/track-resolution-pathway-and-tissue-repair-outlook.json",
+      "summary": "Create the first public outlook for the Resolution Pathway and Tissue Repair track.",
+      "rationale": "A low-confidence human_biomarker_signal baseline is justified by human SPM and omega-3 biomarker evidence, while functional repair claims remain bounded by animal evidence and missing larger-trial results.",
+      "uncertainty_flags": [
+        "Direct RvD1 and MaR1 repair evidence is animal-level.",
+        "Human evidence is mostly biomarker or target-engagement evidence.",
+        "SPM-enriched marine oil and EPA+DHA precursor supplementation should not be treated as direct SPM efficacy.",
+        "NCT03576989 is completed but lacks posted results as of the June 2, 2026 API view."
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "resolution-pathway-and-tissue-repair",
+      "note": "Create the first public track outlook at low-confidence human_biomarker_signal because human SPM and omega-3 studies support target engagement and inflammatory-resolution biomarkers, while direct tissue repair efficacy remains animal-level or unconfirmed.",
+      "confidence": "low"
+    },
+    {
+      "subject_type": "hallmark",
+      "subject_id": "chronic_inflammation",
+      "note": "Publishing this bundle would broaden chronic inflammation coverage beyond cytokine/inflammasome suppression and immune rejuvenation with an active-resolution and tissue-repair track.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-02-resolution-pathway-and-tissue-repair-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin",
+    "bootstrap",
+    "resolution-pathway-and-tissue-repair"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-resolution-pathway-and-tissue-repair-source-fidelity-r1",
+    "evidence-review-resolution-pathway-and-tissue-repair-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-resolution-pathway-and-tissue-repair-bootstrap-2026-06-02-2026-06-03t10-38-26-730z"
+  ]
+}

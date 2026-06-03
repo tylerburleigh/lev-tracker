@@ -1,0 +1,202 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-insulin-igf-axis-modulation-outlook",
+  "name": "Insulin and IGF Axis Modulation Track Outlook",
+  "subject_type": "track",
+  "subject_id": "insulin-igf-axis-modulation",
+  "current_stage": "human_biomarker_signal",
+  "momentum": "steady",
+  "confidence": "low",
+  "main_blockers": [
+    "The strongest human-relevant support comes from rare genetic natural experiments, centenarian genetics, observational IGF-1 survival analyses, and FMD biomarker movement rather than intentional aging-directed intervention trials.",
+    "Human GH/IGF and protein-intake signals are strongly age-, sex-, tissue-, disease-history-, and baseline-nutrition-dependent, making broad axis suppression unsafe to infer.",
+    "Severe lifelong GH receptor deficiency, IGF1R mutations, and mouse genetic models are not directly translatable into adult-onset preventive therapies.",
+    "Growth hormone and IGF biology supports muscle, bone, tissue repair, and glucose regulation in some contexts, so endocrine modulation has material frailty, repair, cancer, and diabetes tradeoffs.",
+    "Acarbose and fasting-mimicking diet are important adjacent signals but overlap caloric-restriction-mimetic and autophagy tracks and should not be treated as proof of a specific insulin/IGF-axis therapy."
+  ],
+  "best_current_signals": [
+    "The Ecuadorian GHRD cohort links severe GH receptor and IGF-1 deficiency to low insulin resistance, low diabetes prevalence, and low cancer prevalence in a rare human natural experiment.",
+    "IGF1R variants in centenarians and lower IGF-1 survival associations in exceptional-longevity cohorts support human genetic and observational plausibility for reduced insulin/IGF signaling, with subgroup limits.",
+    "Three monthly FMD cycles reduced IGF-1 and other risk markers in a randomized human biomarker trial, but without functional, disease-incidence, or mortality endpoints.",
+    "Adult-onset and tissue-specific GHR disruption, IGF1R heterozygosity, FIRKO mice, IRS1 null mice, and acarbose all support animal lifespan or healthspan relevance for insulin/GH/IGF signaling.",
+    "Protein-intake and GH-administration studies provide important negative or mixed translation boundaries: protein restriction may be age-dependent, and GH administration in older adults caused frequent adverse effects."
+  ],
+  "forecast_note": "Insulin and IGF axis modulation earns a low-confidence human_biomarker_signal baseline. The biology has unusually strong cross-species genetic support and human natural-experiment plausibility, but there is no aging-directed human intervention showing durable functional, disease, or mortality benefit from intentionally lowering or reshaping insulin/GH/IGF signaling. The public framing should emphasize precise axis, tissue, sex, age, and nutrition context rather than broad endocrine suppression.",
+  "rating_change_criteria": [
+    "A move to human_functional_benefit would require a randomized human intervention that intentionally modulates insulin, GH, IGF-1, IGF1R, or a defined downstream node and improves prespecified physical function, frailty, immune resilience, cognition, or another aging-relevant functional endpoint without unacceptable endocrine harms.",
+    "A move toward durable_disease_or_mortality_relevance would require long-term controlled evidence that a defined axis-modulating strategy reduces age-related disease incidence, multimorbidity, disability, or mortality-relevant outcomes in an appropriate risk group.",
+    "Confidence would improve if adult-onset partial modulation, tissue-selective delivery, or responder selection reproduces pathway engagement and safety in humans while preserving muscle, bone, repair, and glucose control.",
+    "Protein-restriction claims should remain limited unless randomized human studies separate IGF-1 lowering from calorie balance, protein source, muscle loss, frailty, and age effects.",
+    "The rating should weaken if larger human biomarker studies fail to reproduce IGF-1 or insulin-resistance improvements, or if endocrine adverse effects, frailty, sarcopenia, impaired repair, or glucose dysregulation dominate plausible preventive-use strategies."
+  ],
+  "earliest_plausible_window": "No credible LEV-relevant window can be assigned from current evidence. Near-term progress would most likely come from safer tissue-selective or responder-selected endocrine modulation and from human trials measuring function in addition to IGF-1 or insulin markers.",
+  "scenario_2036_status": "speculative",
+  "supporting_finding_ids": [
+    "ghr-deficiency-reduced-human-cancer-diabetes-signaling",
+    "igf1r-centenarian-mutations-reduced-signaling",
+    "low-igf1-predicted-survival-exceptional-longevity",
+    "fmd-reduced-aging-risk-markers-rct",
+    "igf1r-heterozygous-mice-extended-lifespan",
+    "ghrko-cr-overlap-reduced-akt-foxo-signaling",
+    "adult-ghr-disruption-improved-insulin-sensitivity-lifespan",
+    "adipocyte-ghr-disruption-improved-frailty-lifespan",
+    "firko-mice-extended-lifespan-adipose-insulin-receptor",
+    "irs1-null-female-mice-extended-lifespan-age-biomarkers",
+    "acarbose-extended-het3-mouse-lifespan-sex-dependent",
+    "low-protein-intake-igf1-mortality-age-boundary",
+    "growth-hormone-older-adults-lean-mass-adverse-effects"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "current_stage",
+      "conclusion": "The track reaches human_biomarker_signal because direct human evidence shows pathway and risk-marker relevance, but it does not reach human_functional_benefit or durable disease relevance for an intentional aging intervention.",
+      "support_role": "supports",
+      "rationale": "The GHRD natural experiment links low GH/IGF signaling to low insulin resistance, cancer, and diabetes; centenarian IGF1R and nonagenarian IGF-1 studies add human longevity plausibility; and FMD provides randomized human IGF-1 biomarker movement.",
+      "finding_ids": [
+        "ghr-deficiency-reduced-human-cancer-diabetes-signaling",
+        "igf1r-centenarian-mutations-reduced-signaling",
+        "low-igf1-predicted-survival-exceptional-longevity",
+        "fmd-reduced-aging-risk-markers-rct"
+      ],
+      "source_ids": [
+        "pmid-21325617",
+        "pmid-18316725",
+        "pmid-24618355",
+        "pmid-28202779"
+      ],
+      "limitations": [
+        "The strongest disease-protection evidence is a rare developmental natural experiment, not a therapy.",
+        "The centenarian and IGF-1 survival evidence is genetic or observational and subgroup-dependent.",
+        "FMD shows biomarkers and risk factors, not durable functional, disease-incidence, or mortality benefit.",
+        "No cited human study intentionally tests an insulin/IGF-axis gerotherapy with aging-relevant functional outcomes."
+      ]
+    },
+    {
+      "label": "Animal lifespan and healthspan biology",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Animal studies provide strong biological plausibility that insulin/GH/IGF signaling can affect lifespan and healthspan, but they remain below a human intervention upgrade.",
+      "support_role": "supports",
+      "rationale": "Partial IGF1R deficiency, adult-onset GHR disruption, adipocyte-specific GHR disruption, fat-specific insulin receptor deletion, IRS1 deletion, and acarbose all point to insulin/GH/IGF-linked nutrient sensing as an aging-relevant pathway.",
+      "finding_ids": [
+        "igf1r-heterozygous-mice-extended-lifespan",
+        "ghrko-cr-overlap-reduced-akt-foxo-signaling",
+        "adult-ghr-disruption-improved-insulin-sensitivity-lifespan",
+        "adipocyte-ghr-disruption-improved-frailty-lifespan",
+        "firko-mice-extended-lifespan-adipose-insulin-receptor",
+        "irs1-null-female-mice-extended-lifespan-age-biomarkers",
+        "acarbose-extended-het3-mouse-lifespan-sex-dependent"
+      ],
+      "source_ids": [
+        "pmid-12483226",
+        "pmid-15498882",
+        "pmid-34811874",
+        "pmid-35952979",
+        "pmid-12543978",
+        "pmid-17928362",
+        "pmid-30688027"
+      ],
+      "limitations": [
+        "Most evidence is genetic mouse evidence rather than clinically deployable modulation.",
+        "Sex-specific and tissue-specific effects are recurrent.",
+        "Acarbose is an approved diabetes drug with animal aging evidence, not a demonstrated human geroscience intervention.",
+        "Animal lifespan gains cannot be assumed to translate to human healthy-lifespan benefit."
+      ]
+    },
+    {
+      "label": "Translation and safety boundary",
+      "outlook_field": "main_blockers",
+      "conclusion": "Human translation is constrained by age-dependent nutrition signals and endocrine adverse effects.",
+      "support_role": "limits",
+      "rationale": "The protein-intake study reported opposite mortality associations in middle-aged versus older adults, while the older-adult GH randomized trial showed body-composition changes accompanied by glucose intolerance, diabetes, edema, carpal tunnel syndrome, and arthralgia signals.",
+      "finding_ids": [
+        "low-protein-intake-igf1-mortality-age-boundary",
+        "growth-hormone-older-adults-lean-mass-adverse-effects"
+      ],
+      "source_ids": [
+        "pmid-24606898",
+        "pmid-12425705"
+      ],
+      "limitations": [
+        "Protein intake was observational and does not specify a safe restriction protocol.",
+        "GH administration is opposite-direction evidence, but it defines an important endocrine safety boundary.",
+        "Older adults may require higher protein or anabolic support to preserve muscle, bone, and resilience."
+      ]
+    },
+    {
+      "label": "Momentum",
+      "outlook_field": "momentum",
+      "conclusion": "Momentum is steady because recent adult-onset and tissue-specific mouse studies refine translation, while human evidence has not yet crossed beyond biomarker and natural-experiment support.",
+      "support_role": "balances",
+      "rationale": "The field has newer adult-onset GHR and adipocyte GHR mouse evidence plus durable classic genetic and acarbose signals, but no current aging-directed human functional trial anchor.",
+      "finding_ids": [
+        "adult-ghr-disruption-improved-insulin-sensitivity-lifespan",
+        "adipocyte-ghr-disruption-improved-frailty-lifespan",
+        "ghr-deficiency-reduced-human-cancer-diabetes-signaling",
+        "fmd-reduced-aging-risk-markers-rct"
+      ],
+      "source_ids": [
+        "pmid-34811874",
+        "pmid-35952979",
+        "pmid-21325617",
+        "pmid-28202779"
+      ],
+      "limitations": [
+        "The newer translational refinements are animal studies.",
+        "Human biomarker and genetic evidence is not the same as intervention momentum.",
+        "No source in this bundle establishes a near-term disease or functional endpoint transition."
+      ]
+    },
+    {
+      "label": "Confidence",
+      "outlook_field": "confidence",
+      "conclusion": "Confidence remains low because cross-species plausibility is strong but the human intervention surface is undefined and safety-sensitive.",
+      "support_role": "limits",
+      "rationale": "Support combines rare human genetics, observational survival and protein-intake associations, FMD biomarkers, and multiple mouse genetics or pharmacology signals. The intervention target, timing, dose, tissue selectivity, and responder group remain unresolved.",
+      "finding_ids": [
+        "ghr-deficiency-reduced-human-cancer-diabetes-signaling",
+        "low-igf1-predicted-survival-exceptional-longevity",
+        "low-protein-intake-igf1-mortality-age-boundary",
+        "growth-hormone-older-adults-lean-mass-adverse-effects",
+        "igf1r-heterozygous-mice-extended-lifespan"
+      ],
+      "source_ids": [
+        "pmid-21325617",
+        "pmid-24618355",
+        "pmid-24606898",
+        "pmid-12425705",
+        "pmid-12483226"
+      ],
+      "limitations": [
+        "Human evidence is not yet an intentional aging-intervention evidence base.",
+        "The field has plausible benefit and plausible harm from the same broad endocrine axes.",
+        "Track-level claims must not generalize from lifelong genetic deficiency to adult preventive treatment."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-21325617",
+    "pmid-18316725",
+    "pmid-24618355",
+    "pmid-28202779",
+    "pmid-12483226",
+    "pmid-15498882",
+    "pmid-34811874",
+    "pmid-35952979",
+    "pmid-12543978",
+    "pmid-17928362",
+    "pmid-30688027",
+    "pmid-24606898",
+    "pmid-12425705"
+  ],
+  "last_updated": "2026-06-03",
+  "tags": [
+    "public",
+    "track",
+    "thin_coverage",
+    "insulin-igf-axis-modulation",
+    "growth-hormone",
+    "igf-1"
+  ]
+}

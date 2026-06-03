@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-resolution-pathway-and-tissue-repair-source-fidelity-r1",
+  "name": "Source Fidelity review for Resolution Pathway And Tissue Repair bundle",
+  "candidate_bundle_id": "resolution-pathway-and-tissue-repair-bootstrap-2026-06-02",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, finding, intervention, and outlook records match the cited PubMed/E-utilities and ClinicalTrials.gov facts closely enough for publication review. The bundle preserves the critical source boundaries: aged-mouse RvD1/MaR1 repair data are not treated as human efficacy, human fish-oil/SPM records are biomarker and target-engagement evidence, EPA+DHA venous-ulcer studies remain disease-adjacent repair evidence, and completed registry entries without posted results are kept as watch items rather than efficacy claims.",
+  "reviewed_change_ids": [
+    "create-intervention-resolvin-d1",
+    "create-intervention-maresin-1",
+    "create-intervention-spm-enriched-marine-oil",
+    "create-intervention-epa-dha-oral-supplementation",
+    "create-source-pmid-25217168",
+    "create-source-pmid-34075679",
+    "create-source-pmid-32794246",
+    "create-source-pmid-31829100",
+    "create-source-nct-03347006",
+    "create-source-pmid-35349683",
+    "create-source-nct-04701138",
+    "create-source-pmid-32696697",
+    "create-source-nct-02719665",
+    "create-source-pmid-29735019",
+    "create-source-doi-10.1111-wrr.12558",
+    "create-source-nct-03576989",
+    "create-study-aged-resolution-nano-proresolving-medicines",
+    "create-study-rvd1-aged-muscle-injury-regeneration",
+    "create-study-maresin1-aged-fracture-healing-mice",
+    "create-study-spm-enriched-marine-oil-healthy-volunteers",
+    "create-study-spm-active-obesity-bioavailability",
+    "create-study-spm-emulsion-pad-healthy-volunteers",
+    "create-study-epa-dha-chronic-venous-leg-ulcer-pilot",
+    "create-study-epa-dha-cvlu-older-adults-registry",
+    "create-finding-aged-mice-resolution-deficit-rescued-by-nano-proresolving-medicines",
+    "create-finding-rvd1-improved-aged-muscle-functional-recovery",
+    "create-finding-maresin1-improved-aged-bone-fracture-healing",
+    "create-finding-enriched-marine-oil-raised-human-spms-immune-responses",
+    "create-finding-spm-active-increased-select-spms-obesity",
+    "create-finding-marine-oil-pad-altered-lipid-mediators-leukocyte-phenotype",
+    "create-finding-epa-dha-lowered-cytokines-aging-cvlu-adults",
+    "create-finding-epa-dha-reduced-cvlu-pmn-activation-wound-area-trend",
+    "create-finding-completed-omega3-cvlu-trial-no-posted-results",
+    "create-outlook-track-resolution-pathway-and-tissue-repair"
+  ],
+  "findings": [
+    {
+      "finding_id": "registry-status-recheck-boundary",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-finding-completed-omega3-cvlu-trial-no-posted-results",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "completed-omega3-cvlu-trial-no-posted-results"
+      },
+      "claim_or_issue": "The completed older-adult EPA+DHA venous-ulcer trial is used only as a registry watch item because the current ClinicalTrials.gov API view shows NCT03576989 as completed with hasResults=false.",
+      "why_it_matters": "Registry status can change over time, and completion without posted results cannot support either positive or negative efficacy interpretation.",
+      "recommended_action": "No revision required. Keep this finding framed as a no-results surveillance boundary and recheck the registry during later surveillance before upgrading or downgrading the track.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "precursor-vs-direct-spm-source-boundary",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-outlook-track-resolution-pathway-and-tissue-repair",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-resolution-pathway-and-tissue-repair-outlook"
+      },
+      "claim_or_issue": "Several human records test EPA+DHA, fish-oil, SPM-enriched marine oil, or SPM Active products rather than direct RvD1 or MaR1 administration.",
+      "why_it_matters": "Those sources support target engagement and lipid-mediator changes, but not direct specialized pro-resolving mediator efficacy in humans.",
+      "recommended_action": "No revision required. Preserve the staged intervention and finding caveats that separate precursor or enriched-oil supplementation from direct SPM repair claims.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "cvlu-disease-adjacent-repair-boundary",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-epa-dha-reduced-cvlu-pmn-activation-wound-area-trend",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "epa-dha-reduced-cvlu-pmn-activation-wound-area-trend"
+      },
+      "claim_or_issue": "The chronic venous leg ulcer evidence is wound-disease-adjacent and biomarker-heavy, with wound-area trends from a small pilot study.",
+      "why_it_matters": "The source supports a repair-relevant signal, but broad healthy-aging tissue-repair claims would overstate source fidelity.",
+      "recommended_action": "No revision required. Keep the finding in the human_biomarker tier and maintain the disease-adjacent wound-care caveats.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "doi-backed-pmn-source-boundary",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-source-doi-10.1111-wrr.12558",
+      "applies_to_record": {
+        "record_type": "source",
+        "record_id": "doi-10.1111-wrr.12558"
+      },
+      "claim_or_issue": "The EPA+DHA wound-fluid PMN finding is backed by DOI 10.1111/wrr.12558 rather than a staged PubMed source record.",
+      "why_it_matters": "This is acceptable when the DOI record is complete, but reviewers should not infer missing provenance from the absence of a PMID-form source ID.",
+      "recommended_action": "No revision required. Keep the DOI source record and associated study/finding linkage as staged.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-03T10:36:38.311Z",
+  "updated_at": "2026-06-03T10:36:38.311Z"
+}

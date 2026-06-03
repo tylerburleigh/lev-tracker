@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "epa-dha-reduced-cvlu-pmn-activation-wound-area-trend",
+  "name": "EPA+DHA reduced chronic venous ulcer PMN activation with wound-area trends",
+  "summary": "In a chronic venous leg ulcer randomized study, EPA+DHA lowered activated PMNs in wound fluid and showed larger wound-area reductions than control, but the staged interpretation treats this as biomarker-heavy support.",
+  "source_id": "doi-10.1111-wrr.12558",
+  "study_id": "epa-dha-chronic-venous-leg-ulcer-pilot",
+  "intervention_ids": [
+    "epa-dha-oral-supplementation"
+  ],
+  "track_ids": [
+    "resolution-pathway-and-tissue-repair"
+  ],
+  "hallmark_ids": [
+    "chronic_inflammation",
+    "altered_intercellular_communication"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "positive",
+  "evidence_tier": "human_biomarker",
+  "confidence": "low",
+  "statement": "In chronic venous leg ulcer patients receiving standard care, EPA+DHA supplementation reduced the percentage of CD66b+ activated PMNs in wound fluid by day 56 and showed greater wound-area reduction than control at day 28 and day 56, with wound-area reduction inversely related to PMN and activated PMN markers.",
+  "population_or_model": "Patients with chronic venous leg ulcers receiving standard compression and wound care",
+  "time_horizon": "56-day randomized adjunct supplementation study",
+  "quantitative_note": "The source reports wound-area reductions of 57% and 76% in EPA+DHA at days 28 and 56 versus 35% and 59% in control, but the staged rating does not treat this as definitive human functional benefit.",
+  "caveats": [
+    "The finding is from a small pilot study.",
+    "The clearest endpoint is wound-fluid inflammatory activity rather than a prespecified definitive healing outcome.",
+    "EPA+DHA may act through broader omega-3 mechanisms, not only SPM generation."
+  ],
+  "tags": [
+    "human-biomarker",
+    "omega-3",
+    "wound-healing"
+  ]
+}

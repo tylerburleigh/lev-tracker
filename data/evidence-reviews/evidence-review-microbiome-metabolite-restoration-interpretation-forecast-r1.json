@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-microbiome-metabolite-restoration-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Microbiome Metabolite Restoration bundle",
+  "candidate_bundle_id": "microbiome-metabolite-restoration-bootstrap-2026-06-02",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "needs_human_judgment",
+  "blocking": false,
+  "summary": "The staged outlook is calibrated for publication review: human_functional_benefit is low-confidence and rests narrowly on urolithin A muscle endurance or strength signals, while DS-01, sodium butyrate, polyphenol-mediated IPA, indoles, tributyrin/butyrate, IPA, and lithocholic acid remain target-engagement, metabolic-risk, or preclinical support. The review leaves a non-blocking human-judgment verdict because final public interpretation depends on curator weighting of urolithin-specific functional evidence, commercial and taxonomy overlap, and the completed no-results frail older-adult urolithin A registry.",
+  "reviewed_change_ids": [
+    "update-study-atlas-urolithin-a-middle-aged-adults",
+    "update-finding-butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan",
+    "update-finding-commensal-indoles-extended-healthspan-models",
+    "create-finding-completed-frail-urolithin-a-trial-no-results",
+    "create-finding-ds-01-increased-urolithin-a-butyrate-crp",
+    "create-study-ds-01-synbiotic-urolithin-butyrate-healthy-adults",
+    "update-study-energize-urolithin-a-older-adults",
+    "create-intervention-indole-3-propionic-acid",
+    "create-finding-ipa-improved-aged-mouse-muscle-bone-fly-lifespan",
+    "create-study-ipa-musculoskeletal-healthspan-aged-models",
+    "create-study-lithocholic-acid-cr-mimetic-animal-aging",
+    "create-finding-lithocholic-acid-cr-mimetic-improved-animal-healthspan",
+    "create-intervention-lithocholic-acid",
+    "update-study-microbial-indoles-healthspan-models",
+    "create-intervention-microbial-indoles",
+    "update-study-mitoimmune-urolithin-a-immune-aging",
+    "create-intervention-multi-species-synbiotic-ds-01",
+    "create-source-nct-06556706",
+    "create-source-pmid-35315592",
+    "create-source-pmid-39002645",
+    "create-source-pmid-39695227",
+    "create-source-pmid-40944126",
+    "create-source-pmid-41540161",
+    "create-source-pmid-41880673",
+    "create-finding-polyphenol-diet-increased-ipa-older-adults",
+    "create-study-polyphenol-rich-diet-ipa-older-adults",
+    "create-finding-sodium-butyrate-improved-metabolic-markers-overweight-t2d",
+    "create-study-sodium-butyrate-overweight-t2d-rct",
+    "create-intervention-sodium-butyrate",
+    "create-outlook-track-microbiome-metabolite-restoration",
+    "update-study-tributyrin-mito-deficient-mouse-lifespan",
+    "create-intervention-tributyrin",
+    "update-study-urolithin-a-c-elegans-rodent-mitophagy",
+    "update-finding-urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+    "update-study-urolithin-a-first-in-human-mitochondrial-biomarker",
+    "create-study-urolithin-a-frail-older-adults-registry",
+    "create-study-urolithin-a-human-systematic-review",
+    "update-finding-urolithin-a-improved-middle-aged-muscle-strength-performance",
+    "update-finding-urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+    "create-finding-urolithin-a-review-human-muscle-biomarker-boundary",
+    "update-finding-urolithin-a-safe-mitochondrial-signature-older-adults",
+    "update-finding-urolithin-a-shifted-immune-aging-biomarkers-function",
+    "update-intervention-urolithin-a"
+  ],
+  "findings": [
+    {
+      "finding_id": "urolithin-specific-stage-judgment",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "applies_to_change_id": "create-outlook-track-microbiome-metabolite-restoration",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-microbiome-metabolite-restoration-outlook"
+      },
+      "claim_or_issue": "The human_functional_benefit stage is driven by direct urolithin A supplementation, not by broad evidence that restoring microbial metabolites as a class improves human aging function.",
+      "why_it_matters": "Generalizing the urolithin A signal to SCFAs, indoles, bile acids, diet-mediated production, or synbiotics would inflate the track maturity.",
+      "recommended_action": "No revision required. Keep the staged forecast note and blockers that make the stage metabolite-specific and endpoint-specific.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "mixed-primary-endpoint-boundary",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "update-finding-urolithin-a-improved-middle-aged-muscle-strength-performance",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "urolithin-a-improved-middle-aged-muscle-strength-performance"
+      },
+      "claim_or_issue": "The human functional urolithin A studies include positive muscle-test signals but mixed or missed primary endpoints, and the systematic review reports no broader physical-function benefit.",
+      "why_it_matters": "This justifies low confidence and prevents the stage from being read as durable mobility, frailty, disability, disease, or mortality relevance.",
+      "recommended_action": "No revision required. Preserve low confidence and the rating-change criteria requiring longer independently replicated functional outcomes.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "accelerating-momentum-preclinical-mix",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "create-outlook-track-microbiome-metabolite-restoration",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-microbiome-metabolite-restoration-outlook"
+      },
+      "claim_or_issue": "The accelerating momentum rating draws on recent human biomarker/metabolic studies, a 2026 sodium butyrate RCT, recent preclinical IPA and lithocholic-acid studies, and the completed frail older-adult urolithin A registry.",
+      "why_it_matters": "This indicates an active evidence base, but most recent additions do not show aging-functional human benefit.",
+      "recommended_action": "No revision required. Keep the accelerating momentum rating tied to activity while preserving low confidence and endpoint caveats.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "taxonomy-overlap-boundary",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-outlook-track-microbiome-metabolite-restoration",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-microbiome-metabolite-restoration-outlook"
+      },
+      "claim_or_issue": "Key records overlap neighboring tracks: urolithin A is also a mitophagy intervention, DS-01 is a synbiotic/live-biotherapeutic product, and lithocholic acid intersects calorie-restriction and nutrient-sensing biology.",
+      "why_it_matters": "Without this boundary, taxonomy overlap could double-count adjacent evidence and overstate microbiome-metabolite restoration as the causal intervention class.",
+      "recommended_action": "No revision required. Preserve cross-track IDs and main blockers that call out attribution limits.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "low-confidence-preserved",
+      "severity": "note",
+      "category": "missing_caveat",
+      "applies_to_change_id": "create-outlook-track-microbiome-metabolite-restoration",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-microbiome-metabolite-restoration-outlook"
+      },
+      "claim_or_issue": "The staged outlook keeps confidence low despite assigning human_functional_benefit.",
+      "why_it_matters": "That low confidence is warranted because no cited source demonstrates durable healthy-lifespan extension, disability reduction, age-related disease prevention, or mortality relevance in humans.",
+      "recommended_action": "No revision required. Keep low confidence until replicated human trials show prespecified aging-relevant functional or clinical endpoints.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-03T10:40:15.042Z",
+  "updated_at": "2026-06-03T10:40:15.042Z"
+}

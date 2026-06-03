@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "growth-hormone-older-adults-lean-mass-adverse-effects",
+  "name": "Growth hormone in older adults changed body composition but caused frequent adverse effects",
+  "summary": "The older-adult GH randomized trial is a direct human safety boundary for increasing rather than attenuating the GH/IGF axis.",
+  "source_id": "pmid-12425705",
+  "study_id": "growth-hormone-sex-steroid-older-adult-rct",
+  "intervention_ids": [
+    "growth-hormone-administration"
+  ],
+  "track_ids": [
+    "insulin-igf-axis-modulation",
+    "neuroendocrine-and-systemic-signal-reset"
+  ],
+  "hallmark_ids": [
+    "deregulated_nutrient_sensing"
+  ],
+  "endpoint_category": "safety",
+  "direction": "negative",
+  "evidence_tier": "human_function",
+  "confidence": "moderate",
+  "statement": "In 131 healthy adults aged 65 to 88, 26 weeks of growth hormone with or without sex steroids increased lean mass and reduced fat mass but did not provide broad significant functional gains and caused frequent adverse effects, including glucose intolerance or diabetes in GH-treated men.",
+  "population_or_model": "Healthy women and men aged 65 to 88 years",
+  "time_horizon": "26 weeks",
+  "quantitative_note": "The report notes glucose intolerance or diabetes in 18 GH-treated men versus 7 men not receiving GH, alongside edema, carpal tunnel syndrome, and arthralgia signals.",
+  "caveats": [
+    "This study tests GH administration, the opposite direction from GH/IGF attenuation.",
+    "Body-composition changes should not be interpreted as geroprotective functional benefit.",
+    "The safety signal reinforces that endocrine modulation in older adults requires careful risk selection."
+  ],
+  "tags": [
+    "human",
+    "randomized",
+    "growth-hormone",
+    "older-adults",
+    "safety",
+    "glucose-intolerance"
+  ]
+}

@@ -1,0 +1,552 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "microbiome-metabolite-restoration-bootstrap-2026-06-02",
+  "name": "Microbiome Metabolite Restoration Bootstrap",
+  "short_name": "Microbiome Metabolite Restoration",
+  "summary": "Submitted first public baseline for the microbiome-metabolite-restoration track, assigning a low-confidence human_functional_benefit outlook anchored narrowly to urolithin A and bounded by biomarker-heavy or preclinical evidence for other metabolites.",
+  "created_at": "2026-06-03T00:20:00Z",
+  "updated_at": "2026-06-03T00:20:00Z",
+  "tags": [
+    "bootstrap",
+    "dysbiosis",
+    "microbiome-metabolite-restoration"
+  ],
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-03T00:20:00Z",
+  "submitted_by": "codex",
+  "revision_number": 1,
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Microbiome Metabolite Restoration, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "dysbiosis"
+    ],
+    "track_ids": [
+      "microbiome-metabolite-restoration"
+    ],
+    "intervention_ids": [
+      "urolithin-a",
+      "sodium-butyrate",
+      "tributyrin",
+      "microbial-indoles",
+      "indole-3-propionic-acid",
+      "lithocholic-acid",
+      "multi-species-synbiotic-ds-01"
+    ]
+  },
+  "source_ids": [
+    "pmid-27400265",
+    "pmid-32694802",
+    "pmid-35050355",
+    "pmid-35584623",
+    "pmid-39002645",
+    "pmid-41174221",
+    "nct-06556706",
+    "pmid-40944126",
+    "pmid-41880673",
+    "pmid-35315592",
+    "pmid-28827345",
+    "pmid-41826362",
+    "pmid-41540161",
+    "pmid-39695227"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/27400265/",
+    "https://pubmed.ncbi.nlm.nih.gov/32694802/",
+    "https://pubmed.ncbi.nlm.nih.gov/35050355/",
+    "https://pubmed.ncbi.nlm.nih.gov/35584623/",
+    "https://pubmed.ncbi.nlm.nih.gov/39002645/",
+    "https://pubmed.ncbi.nlm.nih.gov/41174221/",
+    "https://clinicaltrials.gov/study/NCT06556706",
+    "https://pubmed.ncbi.nlm.nih.gov/40944126/",
+    "https://pubmed.ncbi.nlm.nih.gov/41880673/",
+    "https://pubmed.ncbi.nlm.nih.gov/35315592/",
+    "https://pubmed.ncbi.nlm.nih.gov/28827345/",
+    "https://pubmed.ncbi.nlm.nih.gov/41826362/",
+    "https://pubmed.ncbi.nlm.nih.gov/41540161/",
+    "https://pubmed.ncbi.nlm.nih.gov/39695227/"
+  ],
+  "related_records": [
+    {
+      "record_type": "track",
+      "record_id": "microbiome-metabolite-restoration"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-microbiome-metabolite-restoration-outlook"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "urolithin-a"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "sodium-butyrate"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "indole-3-propionic-acid"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "update-study-atlas-urolithin-a-middle-aged-adults",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "atlas-urolithin-a-middle-aged-adults",
+      "file_path": "data/studies/atlas-urolithin-a-middle-aged-adults.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/atlas-urolithin-a-middle-aged-adults.json",
+      "summary": "Add microbiome-metabolite-restoration mapping to ATLAS urolithin A study.",
+      "rationale": "ATLAS is part of the direct urolithin A evidence used for the metabolite-restoration baseline."
+    },
+    {
+      "change_id": "update-finding-butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan",
+      "file_path": "data/findings/butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan.json",
+      "summary": "Add microbiome-metabolite-restoration mapping to tributyrin/butyrate mouse finding.",
+      "rationale": "The finding directly supports butyrate-restoration biology while retaining its chromatin and mitochondrial caveats."
+    },
+    {
+      "change_id": "update-finding-commensal-indoles-extended-healthspan-models",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "commensal-indoles-extended-healthspan-models",
+      "file_path": "data/findings/commensal-indoles-extended-healthspan-models.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/commensal-indoles-extended-healthspan-models.json",
+      "summary": "Add microbiome-metabolite-restoration mapping to microbial indoles healthspan finding.",
+      "rationale": "The finding is a direct microbe-derived metabolite healthspan signal and should support this track as well as live-biotherapeutic context."
+    },
+    {
+      "change_id": "create-finding-completed-frail-urolithin-a-trial-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "completed-frail-urolithin-a-trial-no-results",
+      "file_path": "data/findings/completed-frail-urolithin-a-trial-no-results.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/completed-frail-urolithin-a-trial-no-results.json",
+      "summary": "Add no-results context for completed frail older adult urolithin A trial.",
+      "rationale": "The completed registry is material pending evidence and a publication-time recheck item."
+    },
+    {
+      "change_id": "create-finding-ds-01-increased-urolithin-a-butyrate-crp",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ds-01-increased-urolithin-a-butyrate-crp",
+      "file_path": "data/findings/ds-01-increased-urolithin-a-butyrate-crp.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/ds-01-increased-urolithin-a-butyrate-crp.json",
+      "summary": "Add DS-01 human metabolite target-engagement finding.",
+      "rationale": "This finding anchors human urolithin A and butyrate production evidence without overstating functional benefit."
+    },
+    {
+      "change_id": "create-study-ds-01-synbiotic-urolithin-butyrate-healthy-adults",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "ds-01-synbiotic-urolithin-butyrate-healthy-adults",
+      "file_path": "data/studies/ds-01-synbiotic-urolithin-butyrate-healthy-adults.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/ds-01-synbiotic-urolithin-butyrate-healthy-adults.json",
+      "summary": "Add DS-01 synbiotic metabolite-production study.",
+      "rationale": "The study supplies human target-engagement context for endogenous urolithin A and butyrate production."
+    },
+    {
+      "change_id": "update-study-energize-urolithin-a-older-adults",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "energize-urolithin-a-older-adults",
+      "file_path": "data/studies/energize-urolithin-a-older-adults.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/energize-urolithin-a-older-adults.json",
+      "summary": "Add microbiome-metabolite-restoration mapping to ENERGIZE urolithin A study.",
+      "rationale": "ENERGIZE is the older-adult functional anchor for the staged outlook."
+    },
+    {
+      "change_id": "create-intervention-indole-3-propionic-acid",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "indole-3-propionic-acid",
+      "file_path": "data/interventions/indole-3-propionic-acid.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/indole-3-propionic-acid.json",
+      "summary": "Create indole-3-propionic acid intervention record.",
+      "rationale": "IPA is a distinct microbial tryptophan metabolite with human biomarker and animal healthspan signals."
+    },
+    {
+      "change_id": "create-finding-ipa-improved-aged-mouse-muscle-bone-fly-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ipa-improved-aged-mouse-muscle-bone-fly-lifespan",
+      "file_path": "data/findings/ipa-improved-aged-mouse-muscle-bone-fly-lifespan.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/ipa-improved-aged-mouse-muscle-bone-fly-lifespan.json",
+      "summary": "Add IPA animal muscle, bone, and fly lifespan finding.",
+      "rationale": "The finding supplies direct animal support for IPA while preserving the nonhuman boundary."
+    },
+    {
+      "change_id": "create-study-ipa-musculoskeletal-healthspan-aged-models",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "ipa-musculoskeletal-healthspan-aged-models",
+      "file_path": "data/studies/ipa-musculoskeletal-healthspan-aged-models.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/ipa-musculoskeletal-healthspan-aged-models.json",
+      "summary": "Add IPA aged-mouse and Drosophila study.",
+      "rationale": "This study supports the preclinical IPA component of the track baseline."
+    },
+    {
+      "change_id": "create-study-lithocholic-acid-cr-mimetic-animal-aging",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "lithocholic-acid-cr-mimetic-animal-aging",
+      "file_path": "data/studies/lithocholic-acid-cr-mimetic-animal-aging.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/lithocholic-acid-cr-mimetic-animal-aging.json",
+      "summary": "Add lithocholic-acid animal aging study.",
+      "rationale": "Lithocholic acid is a recent bile-acid metabolite signal relevant to the preclinical side of the track."
+    },
+    {
+      "change_id": "create-finding-lithocholic-acid-cr-mimetic-improved-animal-healthspan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "lithocholic-acid-cr-mimetic-improved-animal-healthspan",
+      "file_path": "data/findings/lithocholic-acid-cr-mimetic-improved-animal-healthspan.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/lithocholic-acid-cr-mimetic-improved-animal-healthspan.json",
+      "summary": "Add lithocholic-acid AMPK and animal healthspan finding.",
+      "rationale": "The finding captures the preclinical bile-acid signal and safety/taxonomy boundary."
+    },
+    {
+      "change_id": "create-intervention-lithocholic-acid",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "lithocholic-acid",
+      "file_path": "data/interventions/lithocholic-acid.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/lithocholic-acid.json",
+      "summary": "Create lithocholic acid intervention record.",
+      "rationale": "The track needs a normalized record for bile-acid metabolite evidence."
+    },
+    {
+      "change_id": "update-study-microbial-indoles-healthspan-models",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "microbial-indoles-healthspan-models",
+      "file_path": "data/studies/microbial-indoles-healthspan-models.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/microbial-indoles-healthspan-models.json",
+      "summary": "Add microbiome-metabolite-restoration mapping to microbial indoles study.",
+      "rationale": "The study directly tests microbe-derived metabolite healthspan signals."
+    },
+    {
+      "change_id": "create-intervention-microbial-indoles",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "microbial-indoles",
+      "file_path": "data/interventions/microbial-indoles.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/microbial-indoles.json",
+      "summary": "Create microbial indoles intervention-family record.",
+      "rationale": "Existing indole finding records reference this metabolite family and the new track needs normalized intervention context."
+    },
+    {
+      "change_id": "update-study-mitoimmune-urolithin-a-immune-aging",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "mitoimmune-urolithin-a-immune-aging",
+      "file_path": "data/studies/mitoimmune-urolithin-a-immune-aging.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/mitoimmune-urolithin-a-immune-aging.json",
+      "summary": "Add microbiome-metabolite-restoration mapping to MitoImmune urolithin A study.",
+      "rationale": "MitoImmune is recent human biomarker support for urolithin A in the track."
+    },
+    {
+      "change_id": "create-intervention-multi-species-synbiotic-ds-01",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "multi-species-synbiotic-ds-01",
+      "file_path": "data/interventions/multi-species-synbiotic-ds-01.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/multi-species-synbiotic-ds-01.json",
+      "summary": "Create DS-01 synbiotic intervention record.",
+      "rationale": "The DS-01 trial is a human metabolite-production signal with overlap across dysbiosis tracks."
+    },
+    {
+      "change_id": "create-source-nct-06556706",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-06556706",
+      "file_path": "data/sources/nct-06556706.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/nct-06556706.json",
+      "summary": "Add frail older adult urolithin A registry source.",
+      "rationale": "The completed no-results registry is material pending evidence for the track."
+    },
+    {
+      "change_id": "create-source-pmid-35315592",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-35315592",
+      "file_path": "data/sources/pmid-35315592.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/pmid-35315592.json",
+      "summary": "Add older-adult IPA diet source.",
+      "rationale": "This source supports human biomarker evidence for indole-3-propionic acid production."
+    },
+    {
+      "change_id": "create-source-pmid-39002645",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-39002645",
+      "file_path": "data/sources/pmid-39002645.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/pmid-39002645.json",
+      "summary": "Add urolithin A human systematic review source.",
+      "rationale": "The review bounds the urolithin A human functional and biomarker interpretation."
+    },
+    {
+      "change_id": "create-source-pmid-39695227",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-39695227",
+      "file_path": "data/sources/pmid-39695227.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/pmid-39695227.json",
+      "summary": "Add lithocholic acid animal aging source.",
+      "rationale": "This source supports the bile-acid metabolite preclinical signal."
+    },
+    {
+      "change_id": "create-source-pmid-40944126",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-40944126",
+      "file_path": "data/sources/pmid-40944126.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/pmid-40944126.json",
+      "summary": "Add DS-01 synbiotic urolithin A and butyrate source.",
+      "rationale": "This source supports human metabolite-production target engagement."
+    },
+    {
+      "change_id": "create-source-pmid-41540161",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-41540161",
+      "file_path": "data/sources/pmid-41540161.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/pmid-41540161.json",
+      "summary": "Add IPA aged-mouse and Drosophila source.",
+      "rationale": "This source supports animal healthspan and lifespan evidence for IPA."
+    },
+    {
+      "change_id": "create-source-pmid-41880673",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-41880673",
+      "file_path": "data/sources/pmid-41880673.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/pmid-41880673.json",
+      "summary": "Add oral sodium butyrate metabolic RCT source.",
+      "rationale": "This source supports direct human butyrate supplementation evidence."
+    },
+    {
+      "change_id": "create-finding-polyphenol-diet-increased-ipa-older-adults",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "polyphenol-diet-increased-ipa-older-adults",
+      "file_path": "data/findings/polyphenol-diet-increased-ipa-older-adults.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/polyphenol-diet-increased-ipa-older-adults.json",
+      "summary": "Add older-adult IPA biomarker finding.",
+      "rationale": "The finding supplies human target-engagement support for IPA with subgroup limitations."
+    },
+    {
+      "change_id": "create-study-polyphenol-rich-diet-ipa-older-adults",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "polyphenol-rich-diet-ipa-older-adults",
+      "file_path": "data/studies/polyphenol-rich-diet-ipa-older-adults.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/polyphenol-rich-diet-ipa-older-adults.json",
+      "summary": "Add polyphenol-rich diet IPA older-adult study.",
+      "rationale": "The study supplies older-adult metabolite target-engagement evidence."
+    },
+    {
+      "change_id": "create-finding-sodium-butyrate-improved-metabolic-markers-overweight-t2d",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "sodium-butyrate-improved-metabolic-markers-overweight-t2d",
+      "file_path": "data/findings/sodium-butyrate-improved-metabolic-markers-overweight-t2d.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/sodium-butyrate-improved-metabolic-markers-overweight-t2d.json",
+      "summary": "Add oral sodium butyrate metabolic finding.",
+      "rationale": "The finding gives direct human butyrate supplementation context while limiting the aging inference."
+    },
+    {
+      "change_id": "create-study-sodium-butyrate-overweight-t2d-rct",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "sodium-butyrate-overweight-t2d-rct",
+      "file_path": "data/studies/sodium-butyrate-overweight-t2d-rct.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/sodium-butyrate-overweight-t2d-rct.json",
+      "summary": "Add oral sodium butyrate metabolic RCT study.",
+      "rationale": "The study supplies direct human butyrate supplementation evidence."
+    },
+    {
+      "change_id": "create-intervention-sodium-butyrate",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "sodium-butyrate",
+      "file_path": "data/interventions/sodium-butyrate.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/sodium-butyrate.json",
+      "summary": "Create sodium butyrate intervention record.",
+      "rationale": "The track needs a normalized direct butyrate supplementation record."
+    },
+    {
+      "change_id": "create-outlook-track-microbiome-metabolite-restoration",
+      "change_type": "create_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-microbiome-metabolite-restoration-outlook",
+      "file_path": "data/outlooks/track-microbiome-metabolite-restoration-outlook.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/track-microbiome-metabolite-restoration-outlook.json",
+      "summary": "Create first public track outlook.",
+      "rationale": "The staged source and finding map supports a low-confidence human_functional_benefit baseline with explicit boundaries."
+    },
+    {
+      "change_id": "update-study-tributyrin-mito-deficient-mouse-lifespan",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "tributyrin-mito-deficient-mouse-lifespan",
+      "file_path": "data/studies/tributyrin-mito-deficient-mouse-lifespan.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/tributyrin-mito-deficient-mouse-lifespan.json",
+      "summary": "Add microbiome-metabolite-restoration mapping to tributyrin mouse study.",
+      "rationale": "The study is direct preclinical butyrate-restoration evidence."
+    },
+    {
+      "change_id": "create-intervention-tributyrin",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "tributyrin",
+      "file_path": "data/interventions/tributyrin.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/tributyrin.json",
+      "summary": "Create tributyrin intervention record.",
+      "rationale": "The track needs a normalized butyrate-prodrug record."
+    },
+    {
+      "change_id": "update-study-urolithin-a-c-elegans-rodent-mitophagy",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "urolithin-a-c-elegans-rodent-mitophagy",
+      "file_path": "data/studies/urolithin-a-c-elegans-rodent-mitophagy.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/urolithin-a-c-elegans-rodent-mitophagy.json",
+      "summary": "Add microbiome-metabolite-restoration mapping to urolithin A animal study.",
+      "rationale": "The study anchors preclinical urolithin A metabolite evidence."
+    },
+    {
+      "change_id": "update-finding-urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+      "file_path": "data/findings/urolithin-a-extended-worm-lifespan-improved-rodent-muscle.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/urolithin-a-extended-worm-lifespan-improved-rodent-muscle.json",
+      "summary": "Add microbiome-metabolite-restoration mapping to urolithin A animal finding.",
+      "rationale": "The finding supports preclinical urolithin A metabolite and mitophagy evidence."
+    },
+    {
+      "change_id": "update-study-urolithin-a-first-in-human-mitochondrial-biomarker",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "urolithin-a-first-in-human-mitochondrial-biomarker",
+      "file_path": "data/studies/urolithin-a-first-in-human-mitochondrial-biomarker.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/urolithin-a-first-in-human-mitochondrial-biomarker.json",
+      "summary": "Add microbiome-metabolite-restoration mapping to first-in-human urolithin A study.",
+      "rationale": "The study supplies older-adult human safety and biomarker evidence for the track."
+    },
+    {
+      "change_id": "create-study-urolithin-a-frail-older-adults-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "urolithin-a-frail-older-adults-registry",
+      "file_path": "data/studies/urolithin-a-frail-older-adults-registry.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/urolithin-a-frail-older-adults-registry.json",
+      "summary": "Add frail older adult urolithin A registry study.",
+      "rationale": "The completed no-results frailty study is important pending evidence."
+    },
+    {
+      "change_id": "create-study-urolithin-a-human-systematic-review",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "urolithin-a-human-systematic-review",
+      "file_path": "data/studies/urolithin-a-human-systematic-review.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/urolithin-a-human-systematic-review.json",
+      "summary": "Add urolithin A human systematic-review study record.",
+      "rationale": "The review bounds the functional stage and mixed endpoint interpretation."
+    },
+    {
+      "change_id": "update-finding-urolithin-a-improved-middle-aged-muscle-strength-performance",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "urolithin-a-improved-middle-aged-muscle-strength-performance",
+      "file_path": "data/findings/urolithin-a-improved-middle-aged-muscle-strength-performance.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/urolithin-a-improved-middle-aged-muscle-strength-performance.json",
+      "summary": "Add microbiome-metabolite-restoration mapping to ATLAS urolithin A finding.",
+      "rationale": "The finding is one of the human functional supports for the staged outlook."
+    },
+    {
+      "change_id": "update-finding-urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+      "file_path": "data/findings/urolithin-a-improved-older-adult-muscle-endurance-biomarkers.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/urolithin-a-improved-older-adult-muscle-endurance-biomarkers.json",
+      "summary": "Add microbiome-metabolite-restoration mapping to ENERGIZE urolithin A finding.",
+      "rationale": "The finding is the older-adult functional anchor for the staged outlook."
+    },
+    {
+      "change_id": "create-finding-urolithin-a-review-human-muscle-biomarker-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "urolithin-a-review-human-muscle-biomarker-boundary",
+      "file_path": "data/findings/urolithin-a-review-human-muscle-biomarker-boundary.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/urolithin-a-review-human-muscle-biomarker-boundary.json",
+      "summary": "Add urolithin A systematic-review boundary finding.",
+      "rationale": "The finding captures the mixed human endpoint interpretation needed for the outlook support map."
+    },
+    {
+      "change_id": "update-finding-urolithin-a-safe-mitochondrial-signature-older-adults",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "urolithin-a-safe-mitochondrial-signature-older-adults",
+      "file_path": "data/findings/urolithin-a-safe-mitochondrial-signature-older-adults.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/urolithin-a-safe-mitochondrial-signature-older-adults.json",
+      "summary": "Add microbiome-metabolite-restoration mapping to first-in-human urolithin A finding.",
+      "rationale": "The finding supplies human biomarker support for the metabolite-restoration baseline."
+    },
+    {
+      "change_id": "update-finding-urolithin-a-shifted-immune-aging-biomarkers-function",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "urolithin-a-shifted-immune-aging-biomarkers-function",
+      "file_path": "data/findings/urolithin-a-shifted-immune-aging-biomarkers-function.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/urolithin-a-shifted-immune-aging-biomarkers-function.json",
+      "summary": "Add microbiome-metabolite-restoration mapping to MitoImmune urolithin A finding.",
+      "rationale": "The finding supplies recent immune-aging biomarker support for the track."
+    },
+    {
+      "change_id": "update-intervention-urolithin-a",
+      "change_type": "update_record",
+      "target_record_type": "intervention",
+      "target_record_id": "urolithin-a",
+      "file_path": "data/interventions/urolithin-a.json",
+      "staged_file_path": "data/staged-records/microbiome-metabolite-restoration-bootstrap-2026-06-02/urolithin-a.json",
+      "summary": "Add microbiome-metabolite-restoration mapping to urolithin A intervention.",
+      "rationale": "Urolithin A is the direct postbiotic intervention anchoring the staged outlook."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "microbiome-metabolite-restoration",
+      "note": "Publishing this bundle would establish the first public baseline at low-confidence human_functional_benefit, anchored narrowly to urolithin A and bounded by biomarker or preclinical evidence for other microbial metabolites.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-02-microbiome-metabolite-restoration-bootstrap.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "evidence_review_ids": [
+    "evidence-review-microbiome-metabolite-restoration-source-fidelity-r1",
+    "evidence-review-microbiome-metabolite-restoration-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-microbiome-metabolite-restoration-bootstrap-2026-06-02-2026-06-03t10-40-48-569z"
+  ]
+}

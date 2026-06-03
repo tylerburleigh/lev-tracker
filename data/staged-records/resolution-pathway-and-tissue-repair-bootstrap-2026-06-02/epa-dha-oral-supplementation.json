@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "epa-dha-oral-supplementation",
+  "name": "EPA+DHA Oral Supplementation",
+  "summary": "Oral eicosapentaenoic acid and docosahexaenoic acid supplementation used as a pro-resolving precursor strategy in chronic venous leg ulcer inflammation and wound-healing studies.",
+  "aliases": [
+    "EPA+DHA",
+    "fish oil",
+    "omega-3 fatty acid oral therapy"
+  ],
+  "modalities": [
+    "dietary_supplement"
+  ],
+  "target_hallmark_ids": [
+    "chronic_inflammation"
+  ],
+  "secondary_hallmark_ids": [
+    "altered_intercellular_communication"
+  ],
+  "track_ids": [
+    "resolution-pathway-and-tissue-repair"
+  ],
+  "mechanism_summary": "Provides EPA and DHA precursors for downstream lipid mediators and may reduce chronic wound inflammatory cytokines, neutrophil activation, and protease-heavy wound microenvironments.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "epa-dha-chronic-venous-leg-ulcer-pilot",
+    "epa-dha-cvlu-older-adults-registry"
+  ],
+  "linked_finding_ids": [
+    "epa-dha-lowered-cytokines-aging-cvlu-adults",
+    "epa-dha-reduced-cvlu-pmn-activation-wound-area-trend",
+    "completed-omega3-cvlu-trial-no-posted-results"
+  ],
+  "risk_flags": [
+    "dietary-supplement-heterogeneity",
+    "wound-disease-population",
+    "definitive-trial-results-not-posted"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether EPA+DHA produces clinically meaningful wound healing beyond biomarker and wound-area trends",
+      "Whether benefits are mediated by SPM generation rather than broader omega-3 effects",
+      "Whether the completed older-adult chronic venous leg ulcer trial reports positive, null, or mixed results"
+    ]
+  },
+  "tags": [
+    "resolution-pathway-and-tissue-repair",
+    "omega-3",
+    "wound-healing",
+    "human-biomarker"
+  ]
+}

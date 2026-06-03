@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-microbiome-metabolite-restoration-source-fidelity-r1",
+  "name": "Source Fidelity review for Microbiome Metabolite Restoration bundle",
+  "candidate_bundle_id": "microbiome-metabolite-restoration-bootstrap-2026-06-02",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, finding, intervention, and outlook records match the cited PubMed/E-utilities and ClinicalTrials.gov facts closely enough for publication review. The bundle preserves the core source boundaries: urolithin A carries the narrow human functional signal with mixed primary endpoints, DS-01 is treated as synbiotic metabolite target engagement rather than aging-functional efficacy, sodium butyrate is a short metabolic-risk trial rather than an aging trial, non-urolithin indole/SCFA/bile-acid records remain mostly preclinical or biomarker-level, and the completed frail older-adult urolithin A registry is kept as no-results context.",
+  "reviewed_change_ids": [
+    "update-study-atlas-urolithin-a-middle-aged-adults",
+    "update-finding-butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan",
+    "update-finding-commensal-indoles-extended-healthspan-models",
+    "create-finding-completed-frail-urolithin-a-trial-no-results",
+    "create-finding-ds-01-increased-urolithin-a-butyrate-crp",
+    "create-study-ds-01-synbiotic-urolithin-butyrate-healthy-adults",
+    "update-study-energize-urolithin-a-older-adults",
+    "create-intervention-indole-3-propionic-acid",
+    "create-finding-ipa-improved-aged-mouse-muscle-bone-fly-lifespan",
+    "create-study-ipa-musculoskeletal-healthspan-aged-models",
+    "create-study-lithocholic-acid-cr-mimetic-animal-aging",
+    "create-finding-lithocholic-acid-cr-mimetic-improved-animal-healthspan",
+    "create-intervention-lithocholic-acid",
+    "update-study-microbial-indoles-healthspan-models",
+    "create-intervention-microbial-indoles",
+    "update-study-mitoimmune-urolithin-a-immune-aging",
+    "create-intervention-multi-species-synbiotic-ds-01",
+    "create-source-nct-06556706",
+    "create-source-pmid-35315592",
+    "create-source-pmid-39002645",
+    "create-source-pmid-39695227",
+    "create-source-pmid-40944126",
+    "create-source-pmid-41540161",
+    "create-source-pmid-41880673",
+    "create-finding-polyphenol-diet-increased-ipa-older-adults",
+    "create-study-polyphenol-rich-diet-ipa-older-adults",
+    "create-finding-sodium-butyrate-improved-metabolic-markers-overweight-t2d",
+    "create-study-sodium-butyrate-overweight-t2d-rct",
+    "create-intervention-sodium-butyrate",
+    "create-outlook-track-microbiome-metabolite-restoration",
+    "update-study-tributyrin-mito-deficient-mouse-lifespan",
+    "create-intervention-tributyrin",
+    "update-study-urolithin-a-c-elegans-rodent-mitophagy",
+    "update-finding-urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+    "update-study-urolithin-a-first-in-human-mitochondrial-biomarker",
+    "create-study-urolithin-a-frail-older-adults-registry",
+    "create-study-urolithin-a-human-systematic-review",
+    "update-finding-urolithin-a-improved-middle-aged-muscle-strength-performance",
+    "update-finding-urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+    "create-finding-urolithin-a-review-human-muscle-biomarker-boundary",
+    "update-finding-urolithin-a-safe-mitochondrial-signature-older-adults",
+    "update-finding-urolithin-a-shifted-immune-aging-biomarkers-function",
+    "update-intervention-urolithin-a"
+  ],
+  "findings": [
+    {
+      "finding_id": "urolithin-functional-endpoint-boundary",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "update-finding-urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "urolithin-a-improved-older-adult-muscle-endurance-biomarkers"
+      },
+      "claim_or_issue": "The urolithin A human-functional records support muscle endurance or strength signals, but ENERGIZE missed 6-minute-walk and ATP endpoints, ATLAS missed peak power, and the review reports no broader physical-function benefit.",
+      "why_it_matters": "The source evidence can support a narrow human_functional_benefit baseline, but broader mobility, frailty, disease, or longevity claims would be source overreach.",
+      "recommended_action": "No revision required. Preserve the staged mixed-endpoint caveats and low-confidence rating around the human functional stage.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ds01-synbiotic-attribution-boundary",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-finding-ds-01-increased-urolithin-a-butyrate-crp",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "ds-01-increased-urolithin-a-butyrate-crp"
+      },
+      "claim_or_issue": "The DS-01 record tests a product-specific synbiotic that combines live microbes and substrate, increasing urolithin A production and butyrate in a small healthy-adult RCT.",
+      "why_it_matters": "The source supports human metabolite target engagement, but the intervention overlaps live-biotherapeutic and microbiome-composition tracks and does not test aging-functional outcomes.",
+      "recommended_action": "No revision required. Keep DS-01 framed as biomarker/target-engagement support and preserve its cross-track attribution.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "butyrate-metabolic-risk-boundary",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-sodium-butyrate-improved-metabolic-markers-overweight-t2d",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "sodium-butyrate-improved-metabolic-markers-overweight-t2d"
+      },
+      "claim_or_issue": "The sodium butyrate RCT is a small 12-week proof-of-concept metabolic-risk study in overweight or obese adults with and without type 2 diabetes.",
+      "why_it_matters": "The source supports direct human butyrate supplementation and metabolic endpoint movement, but not older-adult, frailty, healthspan, or durable disease-progression benefit.",
+      "recommended_action": "No revision required. Keep the finding in the low-confidence metabolic/biomarker boundary used by the staged outlook.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "trial-registry-no-results-boundary",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-finding-completed-frail-urolithin-a-trial-no-results",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "completed-frail-urolithin-a-trial-no-results"
+      },
+      "claim_or_issue": "The current ClinicalTrials.gov API view shows NCT06556706 as completed with 26 enrolled participants and hasResults=false.",
+      "why_it_matters": "The frail older-adult registry is important pending evidence, but completion without posted results cannot support an efficacy upgrade or downgrade.",
+      "recommended_action": "No revision required. Keep the record as no-results registry context and recheck during later surveillance.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "existing-source-update-reuse",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-outlook-track-microbiome-metabolite-restoration",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-microbiome-metabolite-restoration-outlook"
+      },
+      "claim_or_issue": "Several updated urolithin A, microbial indole, and butyrate records rely on existing public source records, while the bundle creates only the newer or missing source records.",
+      "why_it_matters": "This is acceptable because the existing source records are already present in the public layer, but reviewers should not mistake the absence of staged source creates for missing provenance.",
+      "recommended_action": "No revision required. Preserve existing-source reuse for the updated records and keep all supporting_source_ids in the outlook.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-03T10:40:15.025Z",
+  "updated_at": "2026-06-03T10:40:15.025Z"
+}

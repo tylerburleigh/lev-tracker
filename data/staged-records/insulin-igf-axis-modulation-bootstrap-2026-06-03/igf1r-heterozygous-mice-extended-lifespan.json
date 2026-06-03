@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "igf1r-heterozygous-mice-extended-lifespan",
+  "name": "Partial IGF1R deficiency extended mouse lifespan",
+  "summary": "IGF1R heterozygosity provides classic animal lifespan support for reduced insulin/IGF signaling.",
+  "source_id": "pmid-12483226",
+  "study_id": "igf1r-heterozygous-mouse-lifespan",
+  "intervention_ids": [
+    "growth-hormone-igf-axis-attenuation"
+  ],
+  "track_ids": [
+    "insulin-igf-axis-modulation"
+  ],
+  "hallmark_ids": [
+    "deregulated_nutrient_sensing"
+  ],
+  "endpoint_category": "lifespan",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "moderate",
+  "statement": "Igf1r heterozygous mice showed increased average lifespan and greater resistance to oxidative stress, with the clearest lifespan effect in females.",
+  "population_or_model": "Igf1r heterozygous mice",
+  "time_horizon": "Long-term genetic lifespan study",
+  "quantitative_note": "The source reports 26% average lifespan extension overall, 33% in females, and a nonsignificant 16% increase in males.",
+  "caveats": [
+    "This is germline genetic mouse evidence, not adult pharmacologic modulation.",
+    "The sex-specific effect cautions against treating IGF1R attenuation as uniformly beneficial.",
+    "Mouse lifespan extension does not establish human aging benefit."
+  ],
+  "tags": [
+    "animal",
+    "mouse",
+    "igf1r",
+    "lifespan",
+    "sex-specific"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-02-resolution-pathway-and-tissue-repair-bootstrap",
+  "name": "Resolution pathway and tissue repair bootstrap pass for June 2, 2026",
+  "mode": "bootstrap",
+  "started_at": "2026-06-02T21:45:00Z",
+  "completed_at": "2026-06-02T22:15:00Z",
+  "scope": {
+    "question": "What is the current human-relevant evidence landscape for Resolution Pathway and Tissue Repair, and what belongs in the first public baseline?",
+    "hallmark_ids": [
+      "chronic_inflammation"
+    ],
+    "track_ids": [
+      "resolution-pathway-and-tissue-repair"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "resolution-pathway-and-tissue-repair-bootstrap-2026-06-02",
+  "summary": "The track is coherent enough for a first public baseline at low-confidence human_biomarker_signal. Direct RvD1 and MaR1 repair evidence is aged-animal level, while human evidence supports SPM or omega-3 target engagement, inflammatory cytokine lowering, wound-fluid PMN modulation, and leukocyte phenotype shifts without definitive human repair outcomes.",
+  "next_recommended_mode": "surveillance",
+  "source_ids": [
+    "pmid-25217168",
+    "pmid-34075679",
+    "pmid-32794246",
+    "pmid-31829100",
+    "nct-03347006",
+    "pmid-35349683",
+    "nct-04701138",
+    "pmid-32696697",
+    "nct-02719665",
+    "pmid-29735019",
+    "doi-10.1111-wrr.12558",
+    "nct-03576989"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/25217168/",
+    "https://pubmed.ncbi.nlm.nih.gov/34075679/",
+    "https://pubmed.ncbi.nlm.nih.gov/32794246/",
+    "https://pubmed.ncbi.nlm.nih.gov/31829100/",
+    "https://clinicaltrials.gov/study/NCT03347006",
+    "https://pubmed.ncbi.nlm.nih.gov/35349683/",
+    "https://clinicaltrials.gov/study/NCT04701138",
+    "https://pubmed.ncbi.nlm.nih.gov/32696697/",
+    "https://clinicaltrials.gov/study/NCT02719665",
+    "https://pubmed.ncbi.nlm.nih.gov/29735019/",
+    "https://doi.org/10.1111/wrr.12558",
+    "https://clinicaltrials.gov/study/NCT03576989"
+  ],
+  "notes": [
+    "The pass keeps direct RvD1 and MaR1 animal repair evidence separate from SPM-enriched marine oil and EPA+DHA precursor supplementation human biomarker evidence.",
+    "NCT03576989 was checked through the ClinicalTrials.gov API on June 2, 2026: the trial is completed with actual completion on December 18, 2024 and hasResults=false.",
+    "NCT03347006 and NCT04701138 have posted registry results; they support target engagement or biomarker movement rather than tissue-repair outcomes.",
+    "The staged outlook assigns human_biomarker_signal rather than human_functional_benefit because the human wound-area data are small and biomarker-heavy, while the larger older-adult wound trial lacks posted results."
+  ],
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast evidence reviews before publication.",
+    "Before any publication, recheck ClinicalTrials.gov for NCT03576989 result posting.",
+    "If approved, publish the staged intervention, source, study, finding, and outlook records as the first resolution pathway and tissue repair baseline.",
+    "After publication, inspect the chronic inflammation hallmark page and the new track page for boundary language separating direct SPMs from omega-3 precursor supplementation."
+  ]
+}

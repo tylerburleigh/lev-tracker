@@ -1,0 +1,205 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-microbiome-metabolite-restoration-outlook",
+  "name": "Microbiome Metabolite Restoration Track Outlook",
+  "subject_type": "track",
+  "subject_id": "microbiome-metabolite-restoration",
+  "current_stage": "human_functional_benefit",
+  "momentum": "accelerating",
+  "confidence": "low",
+  "main_blockers": [
+    "The human functional rating is narrow and rests mainly on urolithin A muscle endurance or strength signals, not replicated durable frailty, mobility, disease, or mortality outcomes.",
+    "Urolithin A is both a microbiome-derived postbiotic and a mitophagy intervention, so the stage should not be generalized to all microbial metabolites or to endogenous metabolite restoration.",
+    "Most non-urolithin metabolite evidence remains biomarker, metabolic-risk, animal, invertebrate, or indirect diet/synbiotic target engagement rather than aging-functional human evidence.",
+    "Synbiotic and diet-mediated metabolite production overlaps live-biotherapeutic and microbiome-composition tracks, making taxonomy attribution important.",
+    "Chronic dosing, tissue delivery, baseline microbiome dependence, metabolite-producer status, kidney function, bile-acid safety, and commercial conflicts remain unresolved."
+  ],
+  "best_current_signals": [
+    "Urolithin A has randomized human trials with muscle endurance or strength signals, mitochondrial or inflammatory biomarker movement, and a 2024 systematic review summarizing both the signal and the lack of broader physical-function benefit.",
+    "A 2025 DS-01 synbiotic RCT showed human target engagement by increasing urinary urolithin A production, fecal butyrate in low-baseline producers, and inflammation-linked markers, but without aging-functional endpoints.",
+    "A 2026 sodium butyrate proof-of-concept RCT increased serum butyrate and improved short-term metabolic measures in overweight or obese adults, including type 2 diabetes subgroup signals.",
+    "Indole-3-propionic acid has older-adult diet-mediated biomarker support plus 2026 aged-mouse muscle and bone and Drosophila lifespan signals.",
+    "Butyrate/tributyrin, microbial indoles, and lithocholic acid provide recent or classic animal healthspan, lifespan, or calorie-restriction-like mechanistic support."
+  ],
+  "forecast_note": "Microbiome metabolite restoration earns a low-confidence human_functional_benefit baseline only because direct urolithin A supplementation, a gut-microbiome-derived postbiotic strategy, has short randomized human muscle endurance or strength signals. The broader track remains earlier: DS-01, sodium butyrate, and polyphenol-rich diet studies show human metabolite target engagement or metabolic-risk movement, while indoles, butyrate prodrugs, and lithocholic acid remain mostly preclinical for aging. Claims should therefore read as metabolite-specific and endpoint-specific, not as broad proof that restoring microbial metabolites produces durable healthy-lifespan benefit.",
+  "rating_change_criteria": [
+    "Higher confidence at human_functional_benefit would require independent, longer urolithin A or other direct-metabolite trials showing prespecified improvements in mobility, frailty, intrinsic capacity, immune resilience, cognition, or other aging-relevant functional endpoints.",
+    "A durable disease or mortality relevance upgrade would require controlled evidence that metabolite restoration reduces age-related disease progression, hospitalization, disability, or mortality-relevant outcomes with acceptable chronic safety.",
+    "The stage would weaken if larger urolithin A trials miss functional endpoints, if benefits are limited to biomarkers or exercise-test surrogates, or if the frail-older-adult registry posts null or safety-limiting results.",
+    "Non-urolithin metabolites should not upgrade the track until direct or clearly metabolite-mediated human studies show target engagement plus functional or clinical benefit, not only microbiome composition or metabolite concentration changes.",
+    "Bile-acid and SCFA programs should show chronic dosing, delivery, safety, and responder-selection evidence before being interpreted as practical aging interventions."
+  ],
+  "earliest_plausible_window": "Supplement-level urolithin A and biomarker-level metabolite restoration signals already exist, but no credible LEV-relevant window can be assigned before longer replicated human functional or disease-relevant trials exist.",
+  "scenario_2036_status": "plausible",
+  "supporting_finding_ids": [
+    "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+    "urolithin-a-improved-middle-aged-muscle-strength-performance",
+    "urolithin-a-review-human-muscle-biomarker-boundary",
+    "urolithin-a-safe-mitochondrial-signature-older-adults",
+    "urolithin-a-shifted-immune-aging-biomarkers-function",
+    "ds-01-increased-urolithin-a-butyrate-crp",
+    "sodium-butyrate-improved-metabolic-markers-overweight-t2d",
+    "polyphenol-diet-increased-ipa-older-adults",
+    "urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+    "commensal-indoles-extended-healthspan-models",
+    "butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan",
+    "ipa-improved-aged-mouse-muscle-bone-fly-lifespan",
+    "lithocholic-acid-cr-mimetic-improved-animal-healthspan",
+    "completed-frail-urolithin-a-trial-no-results"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "current_stage",
+      "conclusion": "The track reaches low-confidence human_functional_benefit because direct urolithin A supplementation has randomized human muscle endurance or strength signals.",
+      "support_role": "supports",
+      "rationale": "ENERGIZE reported improved fatigue-test muscle endurance in adults aged 65 to 90 years, ATLAS reported about 12% muscle-strength improvement in untrained overweight middle-aged adults, and the systematic review summarizes urolithin A human muscle and biomarker signals while emphasizing physical-function limits.",
+      "finding_ids": [
+        "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+        "urolithin-a-improved-middle-aged-muscle-strength-performance",
+        "urolithin-a-review-human-muscle-biomarker-boundary"
+      ],
+      "source_ids": [
+        "pmid-35050355",
+        "pmid-35584623",
+        "pmid-39002645"
+      ],
+      "limitations": [
+        "The older-adult 6-minute-walk and maximal ATP endpoints were not significant.",
+        "The middle-aged primary peak-power endpoint was not significant.",
+        "The systematic review reports no benefit on broader physical function, anthropometrics, or cardiovascular outcomes.",
+        "The stage is urolithin-specific and should not imply broad clinical maturity for all microbial metabolites."
+      ]
+    },
+    {
+      "label": "Human metabolite target engagement",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Human evidence beyond urolithin A is mostly target engagement or metabolic-risk movement.",
+      "support_role": "supports",
+      "rationale": "DS-01 increased urolithin A production and fecal butyrate in a healthy-adult RCT, sodium butyrate increased serum butyrate and improved short-term metabolic measures, and a polyphenol-rich diet increased serum indole-3-propionic acid in an older-adult subgroup.",
+      "finding_ids": [
+        "ds-01-increased-urolithin-a-butyrate-crp",
+        "sodium-butyrate-improved-metabolic-markers-overweight-t2d",
+        "polyphenol-diet-increased-ipa-older-adults",
+        "urolithin-a-safe-mitochondrial-signature-older-adults"
+      ],
+      "source_ids": [
+        "pmid-40944126",
+        "pmid-41880673",
+        "pmid-35315592",
+        "pmid-32694802"
+      ],
+      "limitations": [
+        "DS-01 combines live microbes and polyphenol substrate, so it overlaps other dysbiosis tracks.",
+        "The sodium butyrate trial was small, metabolic-risk focused, and not an older-adult aging trial.",
+        "The IPA diet signal was subgroup-dependent and biomarker-level.",
+        "Target engagement is not sufficient for durable healthspan claims."
+      ]
+    },
+    {
+      "label": "Preclinical aging biology",
+      "outlook_field": "best_current_signals",
+      "conclusion": "Animal and invertebrate evidence supports multiple microbial-metabolite mechanisms, but most remain preclinical for aging.",
+      "support_role": "supports",
+      "rationale": "Urolithin A, commensal indoles, tributyrin/butyrate, indole-3-propionic acid, and lithocholic acid have healthspan, lifespan, muscle, bone, histone-acylation, or AMPK-linked signals in model systems.",
+      "finding_ids": [
+        "urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+        "commensal-indoles-extended-healthspan-models",
+        "butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan",
+        "ipa-improved-aged-mouse-muscle-bone-fly-lifespan",
+        "lithocholic-acid-cr-mimetic-improved-animal-healthspan"
+      ],
+      "source_ids": [
+        "pmid-27400265",
+        "pmid-28827345",
+        "pmid-41826362",
+        "pmid-41540161",
+        "pmid-39695227"
+      ],
+      "limitations": [
+        "Several lifespan signals are in C. elegans, Drosophila, or severe disease-model mice.",
+        "IPA mouse treatment was subcutaneous rather than a gut-restoration strategy.",
+        "Lithocholic acid raises safety and nutrient-sensing taxonomy issues.",
+        "Preclinical healthspan signals do not establish human efficacy."
+      ]
+    },
+    {
+      "label": "Clinical activity and pending evidence",
+      "outlook_field": "momentum",
+      "conclusion": "Momentum is accelerating because recent human biomarker trials, a 2026 sodium butyrate RCT, a 2026 IPA animal study, a lithocholic-acid Nature paper, and a completed frail-older-adult urolithin A registry all add relevant signal or pending evidence.",
+      "support_role": "balances",
+      "rationale": "The recent evidence base is active across direct supplements, synbiotic metabolite production, diet-mediated IPA, SCFA supplementation, and preclinical bile-acid or tryptophan-metabolite mechanisms, while the frail-older-adult urolithin A registry remains no-results context.",
+      "finding_ids": [
+        "urolithin-a-shifted-immune-aging-biomarkers-function",
+        "ds-01-increased-urolithin-a-butyrate-crp",
+        "sodium-butyrate-improved-metabolic-markers-overweight-t2d",
+        "ipa-improved-aged-mouse-muscle-bone-fly-lifespan",
+        "lithocholic-acid-cr-mimetic-improved-animal-healthspan",
+        "completed-frail-urolithin-a-trial-no-results"
+      ],
+      "source_ids": [
+        "pmid-41174221",
+        "pmid-40944126",
+        "pmid-41880673",
+        "pmid-41540161",
+        "pmid-39695227",
+        "nct-06556706"
+      ],
+      "limitations": [
+        "Most recent additions do not show aging-functional human benefit.",
+        "The frailty registry should be rechecked before publication because posted results would materially affect interpretation.",
+        "Activity does not remove the need for longer, independently replicated clinical outcomes."
+      ]
+    },
+    {
+      "label": "Confidence and boundary",
+      "outlook_field": "confidence",
+      "conclusion": "Confidence remains low because the functional rating is narrow, mechanistic attribution is overlapping, and non-urolithin metabolite evidence is mostly biomarker or preclinical.",
+      "support_role": "limits",
+      "rationale": "The support map combines short urolithin A trials with mixed endpoints, commercial conflicts, indirect metabolite-production studies, metabolic-risk trials, and model-system evidence for SCFAs, indoles, and bile acids.",
+      "finding_ids": [
+        "urolithin-a-review-human-muscle-biomarker-boundary",
+        "sodium-butyrate-improved-metabolic-markers-overweight-t2d",
+        "polyphenol-diet-increased-ipa-older-adults",
+        "butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan",
+        "lithocholic-acid-cr-mimetic-improved-animal-healthspan"
+      ],
+      "source_ids": [
+        "pmid-39002645",
+        "pmid-41880673",
+        "pmid-35315592",
+        "pmid-41826362",
+        "pmid-39695227"
+      ],
+      "limitations": [
+        "No cited source demonstrates durable healthy-lifespan extension, disease-prevention benefit, disability reduction, or mortality benefit in humans.",
+        "Several interventions belong partly to neighboring tracks such as mitophagy enhancement, live biotherapeutics, microbiome composition modulation, nutrient sensing, or caloric-restriction mimetics.",
+        "Baseline producer status and tissue exposure are central unresolved variables for translation."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-27400265",
+    "pmid-32694802",
+    "pmid-35050355",
+    "pmid-35584623",
+    "pmid-39002645",
+    "pmid-41174221",
+    "nct-06556706",
+    "pmid-40944126",
+    "pmid-41880673",
+    "pmid-35315592",
+    "pmid-28827345",
+    "pmid-41826362",
+    "pmid-41540161",
+    "pmid-39695227"
+  ],
+  "last_updated": "2026-06-02",
+  "tags": [
+    "public",
+    "track",
+    "thin_coverage",
+    "microbiome-metabolite-restoration"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "urolithin-a-review-human-muscle-biomarker-boundary",
+  "name": "Systematic review found urolithin A human muscle and biomarker signals but no physical-function benefit",
+  "summary": "The urolithin A review helps bound the track's human-functional stage assignment.",
+  "source_id": "pmid-39002645",
+  "study_id": "urolithin-a-human-systematic-review",
+  "intervention_ids": [
+    "urolithin-a"
+  ],
+  "track_ids": [
+    "microbiome-metabolite-restoration",
+    "selective-autophagy-and-organelle-quality-control",
+    "mitophagy-enhancers"
+  ],
+  "hallmark_ids": [
+    "dysbiosis",
+    "disabled_macroautophagy",
+    "mitochondrial_dysfunction"
+  ],
+  "endpoint_category": "functional",
+  "direction": "mixed",
+  "evidence_tier": "review_or_meta_analysis",
+  "confidence": "low",
+  "statement": "A 2024 systematic review of five human urolithin A studies with 250 healthy participants found dose-dependent anti-inflammatory effects, mitochondrial/autophagy/fatty-acid-oxidation biomarker movement, and muscle strength or endurance signals, but no effect on anthropometrics, cardiovascular outcomes, or physical function.",
+  "population_or_model": "Healthy human participants across five urolithin A studies",
+  "time_horizon": "28 days to 4 months",
+  "quantitative_note": "The review summarizes 10 to 1000 mg/day urolithin A across five studies and 250 healthy individuals.",
+  "caveats": [
+    "This is a secondary synthesis, not an additional primary trial.",
+    "The review reinforces mixed functional interpretation: muscle-test signals are not the same as broader physical function.",
+    "Longer and more physiologically diverse trials were identified as needed."
+  ],
+  "tags": [
+    "human",
+    "urolithin-a",
+    "systematic-review",
+    "mixed-endpoints",
+    "physical-function-boundary"
+  ]
+}
