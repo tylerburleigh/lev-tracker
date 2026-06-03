@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "triim-regimen",
+  "name": "TRIIM regimen",
+  "summary": "Combination thymus-regeneration regimen using growth hormone, DHEA, metformin, vitamin D, and zinc, tracked for an uncontrolled human epigenetic-age and immunosenescence pilot plus a no-results extension registry.",
+  "aliases": [
+    "TRIIM",
+    "TRIIM-X style regimen",
+    "Thymus Regeneration, Immunorestoration and Insulin Mitigation"
+  ],
+  "modalities": [
+    "combination",
+    "biologic",
+    "small_molecule",
+    "dietary_supplement"
+  ],
+  "target_hallmark_ids": [
+    "altered_intercellular_communication"
+  ],
+  "secondary_hallmark_ids": [
+    "epigenetic_alterations"
+  ],
+  "track_ids": [
+    "neuroendocrine-and-systemic-signal-reset",
+    "dna-methylation-and-epigenome-restoration"
+  ],
+  "mechanism_summary": "Combines endocrine and metabolic components intended to support thymic regeneration while mitigating growth-hormone-associated insulin effects and measuring immune and epigenetic-aging biomarkers.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "triim-human-epigenetic-aging-pilot",
+    "triim-x-extension-registry"
+  ],
+  "linked_finding_ids": [
+    "triim-human-epigenetic-age-decrease",
+    "triim-x-registry-no-results"
+  ],
+  "risk_flags": [
+    "uncontrolled-small-pilot",
+    "male-only-pilot",
+    "endocrine-risk",
+    "combination-attribution",
+    "conflicts-and-patent-interests",
+    "extension-registry-no-results"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether the uncontrolled epigenetic-age signal replicates in randomized TRIIM-X-style testing",
+      "Which regimen component drives any observed immune or epigenetic biomarker change",
+      "Whether endocrine risks and long-term safety are acceptable in aging-directed use"
+    ]
+  },
+  "tags": [
+    "neuroendocrine-and-systemic-signal-reset",
+    "dna-methylation-and-epigenome-restoration",
+    "epigenetic-clock",
+    "human-biomarker"
+  ]
+}

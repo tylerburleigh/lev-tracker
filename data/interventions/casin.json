@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "casin",
+  "name": "CASIN",
+  "summary": "Small-molecule Cdc42 inhibitor tracked for preclinical hematopoietic stem-cell rejuvenation, mouse lifespan and epigenetic-age signals, and ex vivo human HSC repolarization.",
+  "aliases": [
+    "Cdc42 activity-specific inhibitor"
+  ],
+  "modalities": [
+    "small_molecule"
+  ],
+  "target_hallmark_ids": [
+    "stem_cell_exhaustion"
+  ],
+  "secondary_hallmark_ids": [
+    "epigenetic_alterations"
+  ],
+  "track_ids": [
+    "stem-cell-rejuvenation",
+    "dna-methylation-and-epigenome-restoration"
+  ],
+  "mechanism_summary": "Inhibits Cdc42 signaling, a polarity and cytoskeletal regulator implicated in aged hematopoietic stem-cell function and associated epigenetic-marker changes.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "cdc42-casin-aged-hsc-rejuvenation-mice",
+    "human-hsc-cdc42-casin-ex-vivo",
+    "systemic-casin-aged-mouse-lifespan"
+  ],
+  "linked_finding_ids": [
+    "casin-reduced-blood-dnam-age-aged-mice",
+    "cdc42-inhibition-rejuvenated-aged-mouse-hsc",
+    "human-hsc-cdc42-casin-repolarization",
+    "systemic-casin-extended-aged-mouse-lifespan"
+  ],
+  "risk_flags": [
+    "preclinical-systemic-safety",
+    "ex-vivo-human-only",
+    "mouse-lifespan-translation",
+    "pleiotropic-cdc42-biology"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "mortality_or_lifespan",
+    "human_data": true,
+    "open_questions": [
+      "Whether systemic Cdc42 inhibition can be made safe and selective in humans",
+      "Whether ex vivo aged human HSC repolarization predicts treated-human benefit",
+      "Whether mouse lifespan and DNA-methylation signals replicate across sex, strain, and dose"
+    ]
+  },
+  "tags": [
+    "stem-cell-rejuvenation",
+    "cdc42",
+    "hsc",
+    "preclinical"
+  ]
+}

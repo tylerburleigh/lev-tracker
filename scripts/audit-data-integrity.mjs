@@ -26,6 +26,7 @@ const checkedRecordTypes = new Set([
 const issues = [];
 const warnings = [];
 const missingOptionalRefs = new Map();
+const maxOptionalRefDetails = Number.parseInt(process.env.AUDIT_DATA_MAX_OPTIONAL_DETAILS ?? "100", 10);
 let refsChecked = 0;
 let sourceExternalIdsChecked = 0;
 
@@ -120,10 +121,34 @@ function checkOptionalRef(filePath, fieldPath, value, allowedSet, expectedType) 
     return;
   }
 
-  const existing = missingOptionalRefs.get(expectedType) ?? { ids: new Set(), refs: 0 };
-  existing.ids.add(value);
+  const refsById = missingOptionalRefs.get(expectedType) ?? new Map();
+  const existing = refsById.get(value) ?? { refs: 0, files: new Set() };
   existing.refs += 1;
-  missingOptionalRefs.set(expectedType, existing);
+  existing.files.add(`${filePath}:${fieldPath}`);
+  refsById.set(value, existing);
+  missingOptionalRefs.set(expectedType, refsById);
+}
+
+function countOptionalRefs(refsById) {
+  return [...refsById.values()].reduce((total, summary) => total + summary.refs, 0);
+}
+
+function formatOptionalRefDetails(refsById) {
+  const details = [...refsById.entries()]
+    .map(([id, summary]) => ({ id, refs: summary.refs }))
+    .sort((a, b) => b.refs - a.refs || a.id.localeCompare(b.id));
+
+  const visibleDetails = Number.isFinite(maxOptionalRefDetails)
+    ? details.slice(0, Math.max(maxOptionalRefDetails, 0))
+    : details;
+
+  const lines = visibleDetails.map((detail) => `  - ${detail.id}: ${detail.refs} reference(s)`);
+  const remaining = details.length - visibleDetails.length;
+  if (remaining > 0) {
+    lines.push(`  - ... ${remaining} more ID(s); set AUDIT_DATA_MAX_OPTIONAL_DETAILS higher to show more`);
+  }
+
+  return lines;
 }
 
 function checkOptionalRefArray(filePath, fieldPath, values, allowedSet, expectedType) {
@@ -133,9 +158,13 @@ function checkOptionalRefArray(filePath, fieldPath, values, allowedSet, expected
 }
 
 function flushOptionalReferenceWarnings() {
-  for (const [expectedType, summary] of missingOptionalRefs.entries()) {
+  for (const [expectedType, refsById] of missingOptionalRefs.entries()) {
     warnings.push(
-      `${summary.refs} reference(s) point to ${summary.ids.size} non-normalized ${expectedType} ID(s); this is non-blocking until normalization is complete`,
+      [
+        `${countOptionalRefs(refsById)} reference(s) point to ${refsById.size} non-normalized ${expectedType} ID(s); this is non-blocking until normalization is complete`,
+        `  Unnormalized ${expectedType} IDs by reference count:`,
+        ...formatOptionalRefDetails(refsById),
+      ].join("\n"),
     );
   }
 }

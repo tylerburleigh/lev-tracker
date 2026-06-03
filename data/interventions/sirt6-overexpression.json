@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "sirt6-overexpression",
+  "name": "SIRT6 overexpression",
+  "summary": "Preclinical SIRT6 gain-of-function intervention represented by transgenic mouse studies reporting lifespan, frailty, metabolic, and IGF1-linked signals.",
+  "aliases": [
+    "Sirt6 overexpression",
+    "SIRT6 transgenic overexpression"
+  ],
+  "modalities": [
+    "gene_therapy"
+  ],
+  "target_hallmark_ids": [
+    "epigenetic_alterations"
+  ],
+  "track_ids": [
+    "chromatin-and-histone-modulation"
+  ],
+  "mechanism_summary": "Increases SIRT6 activity, a chromatin-linked deacylase and genome-maintenance regulator with overlapping roles in DNA repair, metabolism, inflammation, and IGF1-related signaling.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "male-sirt6-transgenic-lifespan-mice",
+    "sirt6-overexpression-healthy-lifespan-mice"
+  ],
+  "linked_finding_ids": [
+    "sirt6-overexpression-extended-male-mouse-lifespan",
+    "sirt6-overexpression-reduced-frailty-extended-mouse-lifespan"
+  ],
+  "risk_flags": [
+    "transgenic-not-deployable-therapy",
+    "mouse-only",
+    "broad-pleiotropic-target",
+    "sex-and-background-boundaries"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "mortality_or_lifespan",
+    "human_data": false,
+    "open_questions": [
+      "Whether SIRT6 activation can be delivered safely and controllably in humans",
+      "Whether lifespan and frailty effects replicate outside transgenic mouse models",
+      "Which SIRT6 mechanism is most responsible for aging-relevant benefit"
+    ]
+  },
+  "tags": [
+    "chromatin-and-histone-modulation",
+    "sirt6",
+    "mouse",
+    "lifespan"
+  ]
+}

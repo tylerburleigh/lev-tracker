@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "bemdaneprocel",
+  "name": "Bemdaneprocel",
+  "summary": "Human embryonic stem cell-derived dopaminergic neuron progenitor therapy tracked as a disease-specific stem-cell replacement program in Parkinson disease.",
+  "aliases": [
+    "BRT-DA01",
+    "hES-derived dopaminergic neuron progenitors"
+  ],
+  "modalities": [
+    "cell_therapy"
+  ],
+  "target_hallmark_ids": [
+    "stem_cell_exhaustion"
+  ],
+  "track_ids": [
+    "stem-cell-replacement-and-transplantation"
+  ],
+  "mechanism_summary": "Uses transplanted dopaminergic neuron progenitors intended to replace lost nigrostriatal dopaminergic function after stereotactic grafting into the putamen.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "bemdaneprocel-parkinson-phase1",
+    "expdite2-bemdaneprocel-parkinson-phase3"
+  ],
+  "linked_finding_ids": [
+    "bemdaneprocel-pd-graft-survival-motor-signal",
+    "expdite2-bemdaneprocel-phase3-recruiting"
+  ],
+  "risk_flags": [
+    "invasive-grafting",
+    "immunosuppression",
+    "disease-specific-replacement",
+    "phase3-no-results"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_function",
+    "human_data": true,
+    "open_questions": [
+      "Whether sham-controlled phase 3 testing confirms motor benefit and durability",
+      "Whether graft survival and function can be balanced against surgical and immunosuppression risks",
+      "Whether disease-specific neuronal replacement informs broader stem-cell exhaustion forecasts"
+    ]
+  },
+  "tags": [
+    "stem-cell-replacement-and-transplantation",
+    "cell-therapy",
+    "parkinson-disease",
+    "clinical"
+  ]
+}

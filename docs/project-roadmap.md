@@ -394,8 +394,8 @@ Research runs should continue to follow `docs/research-ops-state.md`: one track 
    - The schema exists, but the public app currently relies mostly on IDs and track exemplars.
    - Intervention records are needed before intervention detail pages can be useful.
    - Current status: partially implemented.
-   - Note: `docs/intervention-normalization.md` defines normalization rules, `data/interventions/` now has 55 records with cross-track updates through reviewed public batches, and evidence pages prefer normalized intervention names where records exist.
-   - Remaining: continue filling long-tail intervention IDs and add intervention records through reviewed candidate bundles during future research passes.
+   - Note: `docs/intervention-normalization.md` defines normalization rules, `data/interventions/` now has 63 records with cross-track updates through reviewed public batches, and evidence pages prefer normalized intervention names where records exist.
+   - Remaining: continue filling long-tail intervention IDs from the `npm run audit:data` warning output; the current known backlog is 140 references across 71 non-normalized intervention IDs.
 
 ## Priority 4: Documentation Cleanup
 
@@ -427,4 +427,4 @@ npm run build
 npm run research:bundle -- smoke --bundle <bundle-id> --base-url <local-url>
 ```
 
-Last known result on 2026-06-03 after publishing `ecosystem-replacement-bootstrap-2026-06-03`: bundle validation passes structural, provenance, support-map, promotion-file, evidence-gate, and publication-event checks with no issues or warnings. Required `source_fidelity` and `interpretation_forecast` reviews are complete with no blocking reviews or open blocking findings, and the bundle lifecycle is now `published`. `npm run sync:research-planning`, `npm run validate:records`, `npm run audit:data`, `npm run typecheck`, and `npm run build` pass; the data audit reports the known non-blocking intervention-normalization warning. The generated bootstrap queue is empty, all 38 seeded tracks now have public baseline outlooks, and the top surveillance queue starts with `microbiome-composition-modulation`.
+Last known result on 2026-06-03 after publishing `ecosystem-replacement-bootstrap-2026-06-03`: bundle validation passes structural, provenance, support-map, promotion-file, evidence-gate, and publication-event checks with no issues or warnings. Required `source_fidelity` and `interpretation_forecast` reviews are complete with no blocking reviews or open blocking findings, and the bundle lifecycle is now `published`. `npm run sync:research-planning`, `npm run validate:records`, `npm run audit:data`, `npm run typecheck`, and `npm run build` pass; the data audit reports a known non-blocking intervention-normalization warning for 140 references across 71 non-normalized intervention IDs. The generated bootstrap queue is empty, all 38 seeded tracks now have public baseline outlooks, and the top surveillance queue starts with `microbiome-composition-modulation`.

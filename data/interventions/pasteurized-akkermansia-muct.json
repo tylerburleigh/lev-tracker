@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "pasteurized-akkermansia-muct",
+  "name": "Pasteurized Akkermansia muciniphila MucT",
+  "summary": "Pasteurized Akkermansia muciniphila MucT preparation tracked for human metabolic and inflammation-linked biomarker studies in overweight, obese, or insulin-resistant adults.",
+  "aliases": [
+    "Pasteurized Akkermansia MucT",
+    "Pasteurized Akkermansia muciniphila",
+    "Akkermansia MucT"
+  ],
+  "modalities": [
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "dysbiosis"
+  ],
+  "secondary_hallmark_ids": [
+    "chronic_inflammation"
+  ],
+  "track_ids": [
+    "live-biotherapeutics-and-engineered-microbes"
+  ],
+  "mechanism_summary": "Uses a non-live pasteurized Akkermansia preparation intended to influence metabolic, inflammatory, and gut-barrier-linked host signals without relying on durable live engraftment.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "akkermansia-muciniphila-insulin-resistant-pilot",
+    "pasteurized-akkermansia-muct-weight-maintenance-rct"
+  ],
+  "linked_finding_ids": [
+    "akkermansia-pilot-safe-metabolic-biomarkers",
+    "pasteurized-akkermansia-muct-reduced-weight-regain"
+  ],
+  "risk_flags": [
+    "pasteurized-not-live",
+    "metabolic-biomarker-not-aging-function",
+    "commercial-conflicts"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether metabolic biomarker or weight-maintenance signals translate into aging-relevant function",
+      "Whether pasteurized product effects should be separated from live-biotherapeutic engraftment claims",
+      "Whether benefits are durable beyond short metabolic trials"
+    ]
+  },
+  "tags": [
+    "live-biotherapeutics-and-engineered-microbes",
+    "akkermansia",
+    "pasteurized-biotic",
+    "human-biomarker"
+  ]
+}

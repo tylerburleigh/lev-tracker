@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "topical-dna-repair-enzymes",
+  "name": "Topical DNA repair enzymes",
+  "summary": "Topical skin products containing DNA repair enzymes, sometimes combined with sunscreen, tracked for small human actinic-keratosis and UV-damage biomarker studies.",
+  "aliases": [
+    "DNA repair enzyme lotion",
+    "Sunscreen plus DNA repair enzymes"
+  ],
+  "modalities": [
+    "biologic",
+    "combination"
+  ],
+  "target_hallmark_ids": [
+    "genomic_instability"
+  ],
+  "track_ids": [
+    "dna-repair-enhancement"
+  ],
+  "mechanism_summary": "Applies DNA repair enzyme-containing topical formulations to reduce UV-induced DNA damage markers and premalignant skin-field burden in localized dermatologic contexts.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "sunscreen-dna-repair-enzymes-actinic-keratosis",
+    "topical-dna-repair-enzyme-actinic-keratoses"
+  ],
+  "linked_finding_ids": [
+    "dna-repair-enzyme-sunscreen-lower-cpds-field-cancerization",
+    "topical-dna-repair-enzyme-lower-actinic-keratoses"
+  ],
+  "risk_flags": [
+    "topical-skin-only",
+    "small-trials",
+    "biomarker-and-premalignant-endpoints",
+    "not-systemic-dna-repair"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether localized skin biomarker changes translate into durable clinical prevention",
+      "Whether effects depend on sunscreen co-intervention or specific enzyme formulation",
+      "Whether the evidence has any relevance beyond dermatologic UV-damage contexts"
+    ]
+  },
+  "tags": [
+    "dna-repair-enhancement",
+    "topical",
+    "actinic-keratosis",
+    "human-biomarker"
+  ]
+}

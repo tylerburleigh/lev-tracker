@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "folic-acid",
+  "name": "Folic acid",
+  "summary": "Established folate supplement tracked for small human biomarker studies of lymphocyte micronucleus frequency and one-carbon metabolism in chromosome-stability contexts.",
+  "aliases": [
+    "Folate supplementation",
+    "Vitamin B9"
+  ],
+  "modalities": [
+    "dietary_supplement"
+  ],
+  "target_hallmark_ids": [
+    "genomic_instability"
+  ],
+  "track_ids": [
+    "genome-surveillance-and-chromosome-stability"
+  ],
+  "mechanism_summary": "Supports one-carbon metabolism and nucleotide/methylation biology that can influence homocysteine and chromosomal damage biomarkers such as micronucleus frequency.",
+  "development_stage": "approved_for_other_indication",
+  "linked_study_ids": [
+    "hemodialysis-folate-b12-micronucleus",
+    "older-men-folate-b12-homocysteine-micronucleus"
+  ],
+  "linked_finding_ids": [
+    "folate-b12-reduced-micronuclei-dialysis",
+    "folate-supplementation-did-not-reduce-micronuclei-older-men"
+  ],
+  "risk_flags": [
+    "biomarker-only",
+    "population-specific-dialysis-signal",
+    "healthy-older-men-null-supplementation"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether chromosome-stability biomarker changes depend on baseline folate, B12, homocysteine, or renal-disease status",
+      "Whether micronucleus changes translate into durable functional or disease outcomes",
+      "Whether folic acid alone is sufficient outside deficiency or high-risk metabolic contexts"
+    ]
+  },
+  "tags": [
+    "genome-surveillance-and-chromosome-stability",
+    "folate",
+    "micronucleus",
+    "human-biomarker"
+  ]
+}

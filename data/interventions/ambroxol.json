@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "ambroxol",
+  "name": "Ambroxol",
+  "summary": "Small-molecule lysosomal-restoration intervention tracked through Parkinson disease studies that test glucocerebrosidase target engagement and clinical progression endpoints.",
+  "aliases": [
+    "High-dose ambroxol",
+    "Ambroxol hydrochloride"
+  ],
+  "modalities": [
+    "small_molecule"
+  ],
+  "target_hallmark_ids": [
+    "disabled_macroautophagy"
+  ],
+  "track_ids": [
+    "lysosomal-restoration"
+  ],
+  "mechanism_summary": "Acts as a pharmacologic chaperone candidate for glucocerebrosidase biology, with human studies using Parkinson disease and Parkinson disease dementia as disease-specific lysosomal target-engagement contexts.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "ambroxol-parkinson-gcase-open-label",
+    "ambroxol-pdd-randomized-phase2",
+    "aspro-pd-ambroxol-phase3"
+  ],
+  "linked_finding_ids": [
+    "ambroxol-open-label-parkinson-csf-target-engagement",
+    "ambroxol-pdd-target-engagement-without-cognitive-benefit",
+    "aspro-pd-phase3-active-no-results"
+  ],
+  "risk_flags": [
+    "disease-specific-evidence",
+    "target-engagement-not-functional-benefit",
+    "phase3-program-no-results"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether glucocerebrosidase target engagement translates into durable functional benefit",
+      "Whether Parkinson disease data generalize to broader lysosomal aging biology",
+      "Whether ASPro-PD or later trials report clinically meaningful outcomes"
+    ]
+  },
+  "tags": [
+    "lysosomal-restoration",
+    "gcase",
+    "parkinson-disease",
+    "clinical"
+  ]
+}
