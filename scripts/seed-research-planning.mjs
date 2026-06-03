@@ -387,11 +387,15 @@ async function main() {
       default_mode: "coverage_repair",
       rationale:
         row.next_coverage_action ??
-        "Latest coverage assessment recommends source-completeness repair before ordinary surveillance.",
+        (row.last_coverage_assessment_id
+          ? "Latest coverage assessment recommends source-completeness repair before ordinary surveillance."
+          : "Latest research session recommends source-completeness repair before ordinary surveillance."),
       default_question: row.default_research_question,
       notes: row.last_coverage_assessment_id
         ? `Latest coverage assessment: ${row.last_coverage_assessment_id}.`
-        : undefined
+        : row.last_session_id
+          ? `Latest session: ${row.last_session_id}.`
+          : undefined
     }));
 
   const nextPriorityTrackIdByHallmark = new Map();

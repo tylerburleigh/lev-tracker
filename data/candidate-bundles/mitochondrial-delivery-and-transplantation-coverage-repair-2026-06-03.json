@@ -1,0 +1,187 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03",
+  "name": "Mitochondrial delivery and transplantation coverage repair for June 3, 2026",
+  "summary": "Coverage-repair bundle that adds a missed xenogeneic mitochondrial transplantation animal-aging source and a targeted-delivery technology source while keeping the track at low-confidence animal_signal.",
+  "intake_mode": "manual",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-03T21:06:55Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "Which source-completeness gaps for Mitochondrial Delivery and Transplantation need repair, and do PMID 42171348 or PMID 41986718 change the public boundaries?",
+    "hallmark_ids": [
+      "mitochondrial_dysfunction"
+    ],
+    "track_ids": [
+      "mitochondrial-delivery-and-transplantation"
+    ],
+    "intervention_ids": [
+      "xenogeneic-mitochondrial-transplantation",
+      "cell-type-targeted-mitochondrial-transplantation"
+    ]
+  },
+  "source_ids": [
+    "pmid-42171348",
+    "pmid-41986718"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42171348/",
+    "https://pubmed.ncbi.nlm.nih.gov/41986718/",
+    "https://doi.org/10.1002/advs.75806",
+    "https://doi.org/10.1038/s41586-026-10391-0"
+  ],
+  "related_records": [
+    {
+      "record_type": "outlook",
+      "record_id": "track-mitochondrial-delivery-and-transplantation-outlook"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "xenogeneic-mitochondrial-transplantation"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "cell-type-targeted-mitochondrial-transplantation"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "xeno-mt-improved-age-associated-phenotypes-mice"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "mitocatch-targeted-mt-rescued-cell-degeneration"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-42171348",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-42171348",
+      "file_path": "data/sources/pmid-42171348.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03/pmid-42171348.json",
+      "summary": "Add xenogeneic mitochondrial transplantation mouse-aging source.",
+      "rationale": "The source is direct animal-aging evidence for mitochondrial delivery and should be represented in the support map."
+    },
+    {
+      "change_id": "create-source-pmid-41986718",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-41986718",
+      "file_path": "data/sources/pmid-41986718.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03/pmid-41986718.json",
+      "summary": "Add MitoCatch targeted mitochondrial delivery source.",
+      "rationale": "The source addresses a core delivery-targeting blocker while remaining preclinical/platform evidence."
+    },
+    {
+      "change_id": "create-intervention-xenogeneic-mitochondrial-transplantation",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "xenogeneic-mitochondrial-transplantation",
+      "file_path": "data/interventions/xenogeneic-mitochondrial-transplantation.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03/xenogeneic-mitochondrial-transplantation.json",
+      "summary": "Normalize xenogeneic mitochondrial transplantation.",
+      "rationale": "The xeno-MT evidence has source-compatibility and immunogenicity boundaries distinct from young-donor or autologous mitochondrial transfer."
+    },
+    {
+      "change_id": "create-intervention-cell-type-targeted-mitochondrial-transplantation",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "cell-type-targeted-mitochondrial-transplantation",
+      "file_path": "data/interventions/cell-type-targeted-mitochondrial-transplantation.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03/cell-type-targeted-mitochondrial-transplantation.json",
+      "summary": "Normalize cell-type-targeted mitochondrial transplantation.",
+      "rationale": "The MitoCatch platform is a delivery technology rather than generic mitochondrial transplantation and needs a bounded intervention profile."
+    },
+    {
+      "change_id": "create-study-xeno-mt-age-associated-phenotypes-mice",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "xeno-mt-age-associated-phenotypes-mice",
+      "file_path": "data/studies/xeno-mt-age-associated-phenotypes-mice.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03/xeno-mt-age-associated-phenotypes-mice.json",
+      "summary": "Add xeno-MT mouse age-associated phenotype study.",
+      "rationale": "The study broadens animal-aging support and captures donor mitochondrial quality-control boundaries."
+    },
+    {
+      "change_id": "create-study-mitocatch-cell-type-targeted-mitochondrial-delivery",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "mitocatch-cell-type-targeted-mitochondrial-delivery",
+      "file_path": "data/studies/mitocatch-cell-type-targeted-mitochondrial-delivery.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03/mitocatch-cell-type-targeted-mitochondrial-delivery.json",
+      "summary": "Add MitoCatch targeted delivery study.",
+      "rationale": "The study addresses delivery specificity and cell-targeting feasibility while preserving preclinical and non-aging boundaries."
+    },
+    {
+      "change_id": "create-finding-xeno-mt-improved-age-associated-phenotypes-mice",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "xeno-mt-improved-age-associated-phenotypes-mice",
+      "file_path": "data/findings/xeno-mt-improved-age-associated-phenotypes-mice.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03/xeno-mt-improved-age-associated-phenotypes-mice.json",
+      "summary": "Add xeno-MT mouse aging phenotype finding.",
+      "rationale": "This finding should join the animal_signal support map while keeping long-term safety and donor-equivalence caveats visible."
+    },
+    {
+      "change_id": "create-finding-mitocatch-targeted-mt-rescued-cell-degeneration",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "mitocatch-targeted-mt-rescued-cell-degeneration",
+      "file_path": "data/findings/mitocatch-targeted-mt-rescued-cell-degeneration.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03/mitocatch-targeted-mt-rescued-cell-degeneration.json",
+      "summary": "Add targeted mitochondrial delivery platform finding.",
+      "rationale": "This finding updates the delivery-targeting boundary without upgrading the track to human evidence."
+    },
+    {
+      "change_id": "update-outlook-track-mitochondrial-delivery-and-transplantation",
+      "change_type": "update_outlook",
+      "target_record_type": "outlook",
+      "target_record_id": "track-mitochondrial-delivery-and-transplantation-outlook",
+      "file_path": "data/outlooks/track-mitochondrial-delivery-and-transplantation-outlook.json",
+      "staged_file_path": "data/staged-records/mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03/track-mitochondrial-delivery-and-transplantation-outlook.json",
+      "summary": "Update the public support map while preserving low-confidence animal_signal.",
+      "rationale": "The repair adds missing animal-aging and targeting-platform evidence, but neither source supplies treated-human aging efficacy.",
+      "uncertainty_flags": [
+        "PMID 42171348 is animal evidence with unresolved xenogeneic donor equivalence and long-term safety.",
+        "PMID 41986718 is platform and injury-model evidence, not an older-adult aging trial.",
+        "The current stage remains animal_signal and confidence remains low."
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "mitochondrial-delivery-and-transplantation",
+      "note": "The repair strengthens animal and delivery-platform coverage but does not change stage, confidence, or LEV-relevant timing because treated-human aging evidence remains absent.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-03-mitochondrial-delivery-and-transplantation-coverage-repair.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin",
+    "coverage-repair",
+    "mitochondrial-delivery-and-transplantation"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03-source-fidelity-r1",
+    "evidence-review-mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03-2026-06-03t21-32-56-692z"
+  ]
+}

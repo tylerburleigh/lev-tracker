@@ -49,6 +49,7 @@ The first pass is intentionally small:
 - `coverage_status`: persistent internal state for what has baseline coverage and what mode comes next.
 - `coverage_assessment`: internal track-level assessment of source completeness, evidence categories, and known gaps.
 - `track_priority_queue`: the ordered internal queue that bootstrap, surveillance, and coverage repair consult when scope is vague.
+- `work_triage`: unified generated dispatcher for what the agent should work on next.
 - `research_session`: one bounded bootstrap, surveillance, or coverage-repair pass, including no-op and coverage-assessment-only outcomes.
 
 ## Editorial Flow
@@ -61,18 +62,20 @@ The first pass is intentionally small:
 
 ## Research Planning State
 
+- `ops/triage-state.v1.json` is the persistent answer to “what should the agent work on next?”
 - `research/state/coverage-status.v1.json` is the persistent answer to “what already has coverage?”
 - `research/backlog/track-priority.v1.json` is the persistent answer to “what should bootstrap, surveillance, or coverage repair do next?”
 - `research/sessions/*.json` records what each bounded research pass actually did, even when it produced no bundle.
 - `research/coverage-assessments/*.json` records how complete a track's source and evidence landscape appears, plus known gaps.
 - `npm run sync:research-planning` surfaces the latest coverage assessment verdict, gap counts, next action, and recommended next mode in `coverage-status.v1.json`.
+- `npm run sync:research-planning` also regenerates `ops/triage-state.v1.json`.
 - The default research work unit is one `track` per run.
 - Run `npm run sync:research-planning` after a research pass to regenerate state and queue files.
 
 ## Validation Commands
 
 - `npm run validate:records`
-  Validates every JSON file under `data/`, `examples/`, `taxonomies/`, and `research/` against the repository JSON Schema contracts.
+  Validates every JSON file under `data/`, `examples/`, `taxonomies/`, `research/`, and `ops/` against the repository JSON Schema contracts.
 
 ## Research Commands
 
@@ -103,6 +106,7 @@ The first pass is intentionally small:
 ## Next Steps
 
 - Use [docs/project-roadmap.md](docs/project-roadmap.md) as the current product and research roadmap.
+- Use [docs/triage-workflow.md](docs/triage-workflow.md) and `ops/triage-state.v1.json` when deciding what to work on next.
 - Keep `research/state/coverage-status.v1.json` and `research/backlog/track-priority.v1.json` as the generated source of truth for research coverage and next track selection.
 - Run `npm run validate:records`, `npm run typecheck`, and `npm run build` before treating roadmap implementation work as complete.
 - Run `npm run sync:research-planning` after research sessions, bundle changes, or publication events.

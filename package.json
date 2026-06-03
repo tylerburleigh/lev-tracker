@@ -9,7 +9,8 @@
     "typecheck": "tsc --noEmit",
     "validate:records": "node scripts/validate-records.mjs",
     "audit:data": "node scripts/audit-data-integrity.mjs",
-    "sync:research-planning": "node scripts/seed-research-planning.mjs",
+    "sync:research-planning": "node scripts/seed-research-planning.mjs && node scripts/seed-work-triage.mjs",
+    "sync:work-triage": "node scripts/seed-work-triage.mjs",
     "research:bundle": "node scripts/research-bundle.mjs",
     "research:review-evidence": "node scripts/review-evidence.mjs"
   },

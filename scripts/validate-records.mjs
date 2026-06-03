@@ -7,7 +7,7 @@ import addFormats from "ajv-formats";
 
 const workspaceRoot = process.cwd();
 const schemaRoot = path.join(workspaceRoot, "schemas");
-const validationRoots = ["data", "examples", "taxonomies", "research"];
+const validationRoots = ["data", "examples", "taxonomies", "research", "ops"];
 
 const schemaByRecordType = {
   activity_item: "./activity-item.schema.json",
@@ -30,6 +30,7 @@ const schemaByExactPath = {
   "data/content/hallmark-insights.json": "./hallmark-insights.schema.json",
   "research/backlog/track-priority.v1.json": "./research-priority-queue.schema.json",
   "research/state/coverage-status.v1.json": "./research-coverage-status.schema.json",
+  "ops/triage-state.v1.json": "./work-triage.schema.json",
   "taxonomies/hallmarks-of-aging.v1.json": "./hallmarks-taxonomy.schema.json",
   "taxonomies/track-taxonomy.v1.json": "./track-taxonomy.schema.json"
 };

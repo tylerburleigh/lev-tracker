@@ -1,0 +1,267 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "mitochondrial-delivery-and-transplantation-coverage-2026-06-03",
+  "name": "Mitochondrial Delivery and Transplantation Coverage Assessment for June 3, 2026",
+  "short_name": "Mitochondrial delivery coverage",
+  "track_id": "mitochondrial-delivery-and-transplantation",
+  "hallmark_id": "mitochondrial_dysfunction",
+  "assessment_type": "coverage_repair",
+  "assessed_at": "2026-06-03T21:06:55Z",
+  "assessment_window": {
+    "from": "2026-06-03T10:50:00Z",
+    "to": "2026-06-03T21:06:55Z",
+    "basis": "Coverage repair after the published bootstrap and no-op surveillance pass identified pre-window source-completeness gaps."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is adequate for the current public claim: low-confidence animal_signal. The baseline already covered young-donor aged-animal mitotherapy, hippocampal mitochondrial transfusion, aged-rat stress biomarker evidence, elderly-human ex vivo CD4+ T-cell support, acute pediatric cardiac translation, acute-stroke phase 1 safety, and two no-results registry watches. Coverage repair adds a missing xenogeneic mitochondrial transplantation animal-aging source and a targeted-delivery platform source. Coverage is not strong because treated-human aging evidence is absent, direct animal lifespan or durable multimorbidity evidence is absent, long-term safety and source compatibility remain unresolved, and recent-review triangulation is still selective rather than exhaustive.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-06-03-mitochondrial-delivery-and-transplantation-bootstrap",
+      "2026-06-03-mitochondrial-delivery-and-transplantation-surveillance",
+      "2026-06-03-mitochondrial-delivery-and-transplantation-coverage-repair"
+    ],
+    "candidate_bundle_ids": [
+      "mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03",
+      "mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-mitochondrial-delivery-and-transplantation-source-fidelity-r2",
+      "evidence-review-mitochondrial-delivery-and-transplantation-interpretation-forecast-r2"
+    ],
+    "publication_event_ids": [
+      "publish-mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03-2026-06-03t12-03-58-481z"
+    ],
+    "outlook_ids": [
+      "track-mitochondrial-delivery-and-transplantation-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "thin",
+      "rationale": "Human interventional evidence remains acute disease-specific: pediatric ischemia-reperfusion cardiac use, acute-stroke phase 1 safety, and no-results cardiac or cerebral ischemia registry watches. The reproductive RCT identified during repair is wrong-scope for healthy-aging or older-adult function.",
+      "source_ids": [
+        "pmid-33349443",
+        "pmid-39628322",
+        "nct-02851758",
+        "nct-04998357"
+      ],
+      "finding_ids": [
+        "pediatric-cardiac-mt-ecmo-separation-pilot",
+        "acute-stroke-mt-phase1-no-significant-adverse-events"
+      ],
+      "gap_note": "No controlled treated-human healthy-aging or older-adult aging-relevant trial is represented."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "not_applicable",
+      "rationale": "The current public claim does not depend on observational human evidence. Human relevance comes from acute interventional translation, ex vivo elderly-human cells, and platform evidence rather than natural-experiment cohorts.",
+      "gap_note": "Only revisit if donor-recipient or clinical-use observational evidence becomes decision-relevant for safety or durability."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "Animal coverage now includes young-mitochondria aged-mouse functional evidence, xenogeneic mitochondrial transplantation with selected mouse age-associated phenotypes, aged-mouse hippocampal mitochondrial-complex marker movement, and aged-rat oxidative-stress or apoptosis marker evidence.",
+      "source_ids": [
+        "pmid-32071554",
+        "pmid-42171348",
+        "pmid-35834060",
+        "pmid-37275757"
+      ],
+      "finding_ids": [
+        "young-mitochondria-improved-aged-mouse-cognition-motor",
+        "xeno-mt-improved-age-associated-phenotypes-mice",
+        "mitochondrial-transfusion-upregulated-sdhb-aged-mice",
+        "young-mitochondria-reduced-aged-rat-pfc-apoptosis"
+      ],
+      "gap_note": "Coverage remains short of strong because no represented source establishes lifespan extension or durable multimorbidity benefit."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "Mechanistic coverage includes ATP and ROS movement, mitochondrial-complex marker movement, apoptosis and oxidative-stress markers, elderly-human T-cell activation and senescence markers, xeno-MT donor mitochondrial integrity dependence, and MitoCatch cell-type targeting.",
+      "source_ids": [
+        "pmid-32071554",
+        "pmid-35834060",
+        "pmid-37275757",
+        "pmid-39039808",
+        "pmid-42171348",
+        "pmid-41986718"
+      ],
+      "finding_ids": [
+        "young-mitochondria-improved-aged-mouse-cognition-motor",
+        "mitochondrial-transfusion-upregulated-sdhb-aged-mice",
+        "young-mitochondria-reduced-aged-rat-pfc-apoptosis",
+        "mito-transfer-reduced-elderly-human-t-cell-senescence-ex-vivo",
+        "xeno-mt-improved-age-associated-phenotypes-mice",
+        "mitocatch-targeted-mt-rescued-cell-degeneration"
+      ]
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The support map explicitly preserves limiting evidence: human clinical evidence is acute disease-specific, elderly-human evidence is ex vivo, registry records lack posted results, xeno-MT depends on donor mitochondrial integrity, and MitoCatch is platform evidence rather than aging efficacy.",
+      "source_ids": [
+        "pmid-39039808",
+        "pmid-33349443",
+        "pmid-39628322",
+        "nct-02851758",
+        "nct-04998357",
+        "pmid-42171348",
+        "pmid-41986718"
+      ],
+      "finding_ids": [
+        "mito-transfer-reduced-elderly-human-t-cell-senescence-ex-vivo",
+        "pediatric-cardiac-mt-ecmo-separation-pilot",
+        "acute-stroke-mt-phase1-no-significant-adverse-events",
+        "xeno-mt-improved-age-associated-phenotypes-mice",
+        "mitocatch-targeted-mt-rescued-cell-degeneration"
+      ]
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "Safety coverage includes acute human feasibility and safety context plus xeno-MT short-term tolerability language, but chronic preventive-aging safety, donor compatibility, immune effects, off-target biodistribution, germline relevance, durability, and manufacturing remain unresolved.",
+      "source_ids": [
+        "pmid-33349443",
+        "pmid-39628322",
+        "pmid-42171348",
+        "pmid-41986718"
+      ],
+      "finding_ids": [
+        "pediatric-cardiac-mt-ecmo-separation-pilot",
+        "acute-stroke-mt-phase1-no-significant-adverse-events",
+        "xeno-mt-improved-age-associated-phenotypes-mice",
+        "mitocatch-targeted-mt-rescued-cell-degeneration"
+      ],
+      "gap_note": "Preventive or chronic aging use would need much stronger safety, biodistribution, compatibility, durability, and quality-control evidence."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "The track includes NCT02851758 and NCT04998357 as no-results trial-watch records for cardiac ECMO and cerebral ischemia translation. No aging-specific registry was identified during this repair.",
+      "source_ids": [
+        "nct-02851758",
+        "nct-04998357"
+      ],
+      "gap_note": "Registry status and posted results should be rechecked during future surveillance."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "adequate",
+      "rationale": "The repair checked recent cardiovascular, kidney-aging, stroke, and aging-brain review context, and staged primary sources rather than adding review records. Reviews support boundary awareness but do not change the public evidence stage.",
+      "source_ids": [
+        "pmid-42123597",
+        "pmid-41643906",
+        "pmid-42229862"
+      ],
+      "gap_note": "This is selective triangulation rather than a full citation-network review."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The current source set covers the main local anchor categories: aged-animal mitotherapy, xenogeneic animal-aging MT, elderly-human ex vivo immune-cell transfer, targeted delivery, acute cardiac translation, acute-stroke safety, and trial registries.",
+      "source_ids": [
+        "pmid-32071554",
+        "pmid-42171348",
+        "pmid-39039808",
+        "pmid-41986718",
+        "pmid-33349443",
+        "pmid-39628322"
+      ],
+      "gap_note": "No formal citation-network audit has been recorded."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The support map now separates young-donor, xenogeneic, cell-type-targeted, ex vivo, and autologous acute-disease approaches, and the repair excludes reproductive ART and review-only context from stage movement.",
+      "source_ids": [
+        "pmid-42171348",
+        "pmid-41986718",
+        "pmid-42129850",
+        "pmid-41643906",
+        "pmid-42123597"
+      ],
+      "finding_ids": [
+        "xeno-mt-improved-age-associated-phenotypes-mice",
+        "mitocatch-targeted-mt-rescued-cell-degeneration"
+      ]
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-32071554",
+    "pmid-35834060",
+    "pmid-37275757",
+    "pmid-39039808",
+    "pmid-33349443",
+    "pmid-39628322",
+    "nct-02851758",
+    "nct-04998357",
+    "pmid-42171348",
+    "pmid-41986718",
+    "pmid-42123597",
+    "pmid-41643906",
+    "pmid-42129850",
+    "pmid-42229862"
+  ],
+  "covered_finding_ids": [
+    "young-mitochondria-improved-aged-mouse-cognition-motor",
+    "mitochondrial-transfusion-upregulated-sdhb-aged-mice",
+    "young-mitochondria-reduced-aged-rat-pfc-apoptosis",
+    "mito-transfer-reduced-elderly-human-t-cell-senescence-ex-vivo",
+    "pediatric-cardiac-mt-ecmo-separation-pilot",
+    "acute-stroke-mt-phase1-no-significant-adverse-events",
+    "xeno-mt-improved-age-associated-phenotypes-mice",
+    "mitocatch-targeted-mt-rescued-cell-degeneration"
+  ],
+  "search_log_summary": "Coverage repair reviewed the published bootstrap records, the no-op surveillance session, PubMed metadata and abstracts for PMID 42171348 and PMID 41986718, and recent context or boundary records PMID 42123597, PMID 41643906, PMID 42129850, and PMID 42229862.",
+  "source_selection_notes": [
+    "PMID 42171348 was staged because it directly broadens animal-aging evidence for mitochondrial delivery.",
+    "PMID 41986718 was staged because it addresses targeted mitochondrial delivery, a central public blocker, while remaining preclinical.",
+    "PMID 42123597, PMID 41643906, and PMID 42229862 were retained as review context rather than public support-map records.",
+    "PMID 42129850 was excluded from the support map because its human RCT context is recurrent assisted reproductive technology failure, not aging efficacy."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "no-treated-human-aging-efficacy",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "No controlled treated-human healthy-aging or older-adult aging-relevant mitochondrial-delivery trial has shown biomarker, functional, disease, disability, or mortality benefit.",
+      "priority": "high",
+      "suggested_action": "Keep the stage at animal_signal until controlled older-adult or aging-relevant human studies report target-tissue mitochondrial uptake plus biomarker or functional outcomes."
+    },
+    {
+      "gap_id": "preventive-safety-durability-uncertain",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Long-term safety, durability, donor compatibility, immune response, mtDNA compatibility, off-target biodistribution, germline relevance, and manufacturing quality control remain unresolved.",
+      "priority": "high",
+      "suggested_action": "Require explicit safety, biodistribution, persistence, donor-quality, and compatibility evidence before strengthening confidence or broadening preventive-aging interpretation."
+    },
+    {
+      "gap_id": "lifespan-and-durable-healthspan-absent",
+      "gap_type": "evidence_gap",
+      "category": "animal_lifespan_or_healthspan",
+      "description": "The animal evidence includes functional and selected age-associated phenotypes but not replicated lifespan extension or durable multimorbidity outcomes.",
+      "priority": "medium",
+      "suggested_action": "During future surveillance, prioritize animal studies that report durability, lifespan, multimorbidity, or validated healthspan endpoints rather than short biomarker windows alone."
+    },
+    {
+      "gap_id": "formal-citation-network-audit-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "seminal_anchors",
+      "description": "The repair reviewed obvious recent candidates and local anchors, but no formal citation-network or review-cited-anchor audit has been recorded.",
+      "priority": "medium",
+      "suggested_action": "Run a deeper citation-network audit only if the track is being prepared for a higher-confidence claim or if future reviews reveal missing primary anchors."
+    }
+  ],
+  "next_coverage_action": "Review and publish the staged coverage-repair bundle if evidence reviews pass; after publication, return mitochondrial delivery and transplantation to ordinary surveillance.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-assessment",
+    "coverage-repair",
+    "mitochondrial_dysfunction",
+    "mitochondrial-delivery-and-transplantation"
+  ]
+}

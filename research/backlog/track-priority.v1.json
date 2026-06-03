@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-03T19:41:47.423Z",
+  "updated_at": "2026-06-03T21:34:18.873Z",
   "notes": [
     "Bootstrap priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Surveillance priority applies only to tracks that already have a public baseline and no active review bundle.",
@@ -73,12 +73,12 @@
     {
       "rank": 1,
       "phase_id": "surveillance-rotation",
-      "track_id": "microbiome-composition-modulation",
-      "hallmark_id": "dysbiosis",
+      "track_id": "mitochondrial-delivery-and-transplantation",
+      "hallmark_id": "mitochondrial_dysfunction",
       "priority_tier": "now",
       "default_mode": "surveillance",
-      "rationale": "This area changes quickly and needs regular sorting of activity versus evidence.",
-      "default_question": "What changed for Microbiome Composition Modulation since the last meaningful review or publication, and does any change justify a public update?"
+      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
+      "default_question": "What changed for Mitochondrial Delivery and Transplantation since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
       "rank": 2,
@@ -93,12 +93,12 @@
     {
       "rank": 3,
       "phase_id": "surveillance-rotation",
-      "track_id": "mitochondrial-delivery-and-transplantation",
-      "hallmark_id": "mitochondrial_dysfunction",
+      "track_id": "microbiome-composition-modulation",
+      "hallmark_id": "dysbiosis",
       "priority_tier": "now",
       "default_mode": "surveillance",
-      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
-      "default_question": "What changed for Mitochondrial Delivery and Transplantation since the last meaningful review or publication, and does any change justify a public update?"
+      "rationale": "This area changes quickly and needs regular sorting of activity versus evidence.",
+      "default_question": "What changed for Microbiome Composition Modulation since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
       "rank": 4,

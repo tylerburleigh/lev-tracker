@@ -1,0 +1,143 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-03-mitochondrial-delivery-and-transplantation-surveillance",
+  "name": "Mitochondrial delivery and transplantation surveillance pass for June 3, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-03T20:18:00Z",
+  "completed_at": "2026-06-03T20:45:38Z",
+  "scope": {
+    "question": "What changed for Mitochondrial Delivery and Transplantation since the June 3, 2026 bootstrap publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "mitochondrial_dysfunction"
+    ],
+    "track_ids": [
+      "mitochondrial-delivery-and-transplantation"
+    ],
+    "intervention_ids": [
+      "autologous-mitochondrial-transplantation",
+      "young-donor-mitochondrial-transfusion",
+      "ex-vivo-mitochondrial-transfer"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "no_op",
+  "summary": "No material post-publication delta was found for the public outlook. NCT02851758 remains recruiting with no results section, NCT04998357 remains recruiting with no results section, and PubMed same-day delta checks found no new treated-human aging, functional, safety, or efficacy result that would change the low-confidence animal_signal baseline. The pass did identify pre-publication-window source-completeness issues: PMID 42171348 reports xenogeneic mitochondrial transplantation improving selected age-associated phenotypes in mice, PMID 41986718 reports a targeted mitochondrial-delivery platform with human and mouse cell-type targeting, and several 2026 reviews or adjacent studies clarify cardiac, kidney, stroke, fertility, and delivery-technology boundaries. These should be handled as coverage repair rather than silently staged as a surveillance delta.",
+  "next_recommended_mode": "coverage_repair",
+  "materiality_decision": {
+    "material_delta": "coverage_repair_needed",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "coverage_repair",
+    "rationale": "The direct post-publication surveillance question found no public-update delta, but pre-window searches surfaced potentially decision-relevant source-completeness gaps, including a direct animal-aging xeno-MT paper and a targeted-delivery technology paper that were not in the published baseline. Those are not post-publication deltas, so the right next step is a coverage-repair pass that audits recent primary papers, reviews, and taxonomy boundaries before changing public records."
+  },
+  "search_log": [
+    {
+      "source_name": "ClinicalTrials.gov",
+      "query": "NCT02851758",
+      "checked_at": "2026-06-03T20:28:00Z",
+      "url": "https://clinicaltrials.gov/study/NCT02851758",
+      "summary": "Record remains RECRUITING, last posted update January 5, 2026, with estimated primary completion June 2027 and no results section."
+    },
+    {
+      "source_name": "ClinicalTrials.gov",
+      "query": "NCT04998357",
+      "checked_at": "2026-06-03T20:29:00Z",
+      "url": "https://clinicaltrials.gov/study/NCT04998357",
+      "summary": "Record remains RECRUITING, last posted update May 21, 2025, with estimated primary completion April 29, 2026, estimated completion October 29, 2026, and no results section."
+    },
+    {
+      "source_name": "ClinicalTrials.gov",
+      "query": "mitochondrial transplantation",
+      "checked_at": "2026-06-03T20:30:00Z",
+      "url": "https://clinicaltrials.gov/search?term=mitochondrial%20transplantation",
+      "summary": "Broad registry search did not find a new posted-results treated-human aging study for this track. It did surface adjacent no-results or wrong-scope records, including reproductive and organ-transplant contexts that should be considered only during taxonomy or coverage repair."
+    },
+    {
+      "source_name": "PubMed",
+      "query": "(mitochondrial transplantation OR mitochondria transplantation OR mitochondrial transfer OR mitotherapy) AND (aging OR ageing OR aged OR elderly OR senescence OR ischemia OR stroke OR cardiac), same-day Entrez delta",
+      "checked_at": "2026-06-03T20:32:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22mitochondrial%20transplantation%22%5BTitle%2FAbstract%5D%20OR%20%22mitochondria%20transplantation%22%5BTitle%2FAbstract%5D%20OR%20%22mitochondrial%20transfer%22%5BTitle%2FAbstract%5D%20OR%20mitotherapy%5BTitle%2FAbstract%5D%29%20AND%20%28aging%5BTitle%2FAbstract%5D%20OR%20ageing%5BTitle%2FAbstract%5D%20OR%20aged%5BTitle%2FAbstract%5D%20OR%20elderly%5BTitle%2FAbstract%5D%20OR%20senescence%5BTitle%2FAbstract%5D%20OR%20ischemia%5BTitle%2FAbstract%5D%20OR%20stroke%5BTitle%2FAbstract%5D%20OR%20cardiac%5BTitle%2FAbstract%5D%29",
+      "summary": "The same-day Entrez-date check returned PMID 42229862, a June 1, 2026 narrative review of mitochondrial dynamics and endogenous mitochondrial transfer in the aging brain. It is context, not a new treated-intervention result."
+    },
+    {
+      "source_name": "PubMed",
+      "query": "2026 mitochondrial transplantation, mitochondrial transfer, and mitotherapy terms with aging, aged, elderly, senescence, ischemia, stroke, and cardiac terms",
+      "checked_at": "2026-06-03T20:38:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22mitochondrial%20transplantation%22%5BTitle%2FAbstract%5D%20OR%20%22mitochondria%20transplantation%22%5BTitle%2FAbstract%5D%20OR%20%22mitochondrial%20transfer%22%5BTitle%2FAbstract%5D%20OR%20mitotherapy%5BTitle%2FAbstract%5D%29%20AND%20%28aging%5BTitle%2FAbstract%5D%20OR%20ageing%5BTitle%2FAbstract%5D%20OR%20aged%5BTitle%2FAbstract%5D%20OR%20elderly%5BTitle%2FAbstract%5D%20OR%20senescence%5BTitle%2FAbstract%5D%20OR%20ischemia%5BTitle%2FAbstract%5D%20OR%20stroke%5BTitle%2FAbstract%5D%20OR%20cardiac%5BTitle%2FAbstract%5D%29%20AND%202026%5Bdp%5D",
+      "summary": "Found no post-publication primary result requiring public update, but did identify pre-window coverage-repair candidates including PMID 42171348, PMID 41986718, PMID 42123597, PMID 41643906, and PMID 42129850."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "pmid-42229862",
+      "title": "Cell-specific energy crisis in the ageing brain: Mitochondrial dynamics drives neuron-glia metabolic uncoupling and neurodegeneration",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42229862/",
+      "decision": "context_only",
+      "reason": "Same-day indexed review discusses endogenous mitochondrial transfer and aging-brain bioenergetics, but it is not a new treated mitochondrial-delivery intervention result and does not change the public stage, momentum, or support map."
+    },
+    {
+      "reference": "pmid-42171348",
+      "title": "Xenogeneic Mitochondrial Transplantation Improves Selected Age-Associated Phenotypes in Mice",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42171348/",
+      "decision": "context_only",
+      "reason": "Potentially decision-relevant direct animal-aging evidence, but it predates the June 3 publication window and should be evaluated in a coverage-repair pass rather than treated as a surveillance delta."
+    },
+    {
+      "reference": "pmid-41986718",
+      "title": "Cell-type-targeted mitochondrial transplantation rescues cell degeneration",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41986718/",
+      "decision": "context_only",
+      "reason": "Potentially important delivery-technology and human-cell/mouse in vivo context, but it predates the publication window and is not direct aging efficacy; coverage repair should decide whether and how it affects technology and targeting boundaries."
+    },
+    {
+      "reference": "pmid-42123597",
+      "title": "Therapeutic Impact of Mitochondrial Transplants for Cardiovascular Diseases",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42123597/",
+      "decision": "context_only",
+      "reason": "Recent cardiovascular review predates the surveillance window and is synthesis context, not new primary aging or older-adult efficacy evidence."
+    },
+    {
+      "reference": "pmid-42129850",
+      "title": "Autologous bone marrow mesenchymal stem cell mitochondrial transplantation in recurrent assisted reproductive technology failure: a randomized controlled trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42129850/",
+      "decision": "wrong_scope",
+      "reason": "Human RCT context is reproductive/ART failure rather than healthy-aging or LEV-relevant treated-human function; it may inform taxonomy boundaries during coverage repair but does not change this track outlook."
+    },
+    {
+      "reference": "clinicaltrials-gov-mitochondrial-transplantation-2026-06-03",
+      "url": "https://clinicaltrials.gov/search?term=mitochondrial%20transplantation",
+      "decision": "unchanged_registry",
+      "reason": "No checked registry result supplied posted treated-human aging, functional, safety, or efficacy outcomes after the baseline publication."
+    }
+  ],
+  "source_ids": [
+    "nct-02851758",
+    "nct-04998357",
+    "pmid-39628322"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT02851758",
+    "https://clinicaltrials.gov/study/NCT04998357",
+    "https://pubmed.ncbi.nlm.nih.gov/39628322/",
+    "https://pubmed.ncbi.nlm.nih.gov/42229862/",
+    "https://pubmed.ncbi.nlm.nih.gov/42171348/",
+    "https://pubmed.ncbi.nlm.nih.gov/41986718/",
+    "https://pubmed.ncbi.nlm.nih.gov/42123597/",
+    "https://pubmed.ncbi.nlm.nih.gov/42129850/",
+    "https://clinicaltrials.gov/search?term=mitochondrial%20transplantation"
+  ],
+  "notes": [
+    "Triage selected this track as the next distinct surveillance target after ecosystem-replacement.",
+    "No coverage assessment exists yet for this track; triage separately listed coverage-assessment backfill as the next same-track maintenance task.",
+    "The public outlook remains low-confidence animal_signal because no checked post-publication source reports treated-human aging efficacy or durable functional benefit.",
+    "PMID 42171348 and PMID 41986718 look more important than ordinary excluded context, but they are source-completeness and boundary issues, not post-publication deltas.",
+    "Coverage repair should audit recent primary papers, delivery-technology papers, cardiovascular/kidney/stroke reviews, reproductive mitochondrial-transfer boundaries, and whether the current public support map should add a xeno-MT animal-aging finding."
+  ],
+  "next_actions": [
+    "Run coverage repair for mitochondrial delivery and transplantation before the next ordinary surveillance pass.",
+    "During coverage repair, decide whether PMID 42171348 and PMID 41986718 warrant staged public source, study, finding, or outlook-support updates.",
+    "Backfill a coverage assessment after the coverage-repair decision so planning state records the category-level coverage verdict and known gaps."
+  ]
+}

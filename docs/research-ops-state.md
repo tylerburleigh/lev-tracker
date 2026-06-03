@@ -6,6 +6,8 @@ That is deliberate. A language model can usually do one bounded track pass well 
 
 ## The Split
 
+- `ops/triage-state.v1.json`
+  Unified generated dispatcher for what the agent should work on next across editorial, research, coverage repair, and data hardening.
 - `research/state/coverage-status.v1.json`
   Persistent state about what has baseline coverage, what is in active review, and what mode comes next.
 - `research/backlog/track-priority.v1.json`
@@ -18,9 +20,12 @@ That is deliberate. A language model can usually do one bounded track pass well 
   The operating checklist for post-bootstrap surveillance passes.
 - `docs/coverage-assessment.md`
   The rubric for judging whether a track is thin, adequate, or strong from a coverage standpoint.
+- `docs/triage-workflow.md`
+  The operating rules for choosing the next work item when the user is vague.
 
 ## Default Behavior
 
+- If the user asks what to work on next or says `go`, regenerate planning state and consult `ops/triage-state.v1.json`.
 - If the user names a `track`, use that track.
 - If the user names only a `hallmark`, choose the highest-priority track inside that hallmark or ask the user to pick one.
 - If the user says something too broad like `go find research`, decompose to one track-level pass.
@@ -39,7 +44,7 @@ After a session is recorded or a bundle changes, run:
 
 `npm run sync:research-planning`
 
-That command regenerates `coverage-status.v1.json` and `track-priority.v1.json` from taxonomy, sessions, bundles, and publication history.
+That command regenerates `coverage-status.v1.json`, `track-priority.v1.json`, and `ops/triage-state.v1.json` from taxonomy, sessions, bundles, publication history, coverage assessments, and data-hardening signals.
 
 Coverage assessments are validated internal artifacts and are folded into generated planning state. `coverage-status.v1.json` surfaces the latest assessment ID, verdict, known gap counts, next coverage action, and latest coverage-recommended mode for each track that has an assessment. Use the full assessment record when deciding whether the next pass should be ordinary surveillance or a `coverage_repair` pass.
 

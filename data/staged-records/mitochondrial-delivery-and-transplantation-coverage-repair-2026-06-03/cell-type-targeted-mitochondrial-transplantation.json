@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "cell-type-targeted-mitochondrial-transplantation",
+  "name": "Cell-Type-Targeted Mitochondrial Transplantation",
+  "summary": "Engineered delivery of donor mitochondria to selected cell types, exemplified by binder-based MitoCatch targeting of mitochondria to disease-affected cells.",
+  "aliases": [
+    "MitoCatch",
+    "targeted mitochondrial transplantation",
+    "cell-targeted mitochondria delivery"
+  ],
+  "modalities": [
+    "procedure",
+    "cell_therapy",
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "mitochondrial_dysfunction"
+  ],
+  "track_ids": [
+    "mitochondrial-delivery-and-transplantation"
+  ],
+  "mechanism_summary": "Targeting binders attach donor mitochondria to selected recipient cell surfaces or bridge mitochondria to target cells, aiming to improve uptake, cytosolic exposure, intracellular mitochondrial dynamics, and rescue of mitochondrial-dysfunction-linked cellular injury.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "mitocatch-cell-type-targeted-mitochondrial-delivery"
+  ],
+  "linked_finding_ids": [
+    "mitocatch-targeted-mt-rescued-cell-degeneration"
+  ],
+  "risk_flags": [
+    "platform-not-tested-for-aging-efficacy",
+    "targeting-specificity-and-off-target-uptake-uncertain",
+    "manufacturing-and-quality-control-burden",
+    "clinical-delivery-route-unresolved"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": true,
+    "open_questions": [
+      "Whether cell-type targeting improves outcomes in aged tissues rather than acute or genetic injury models",
+      "How tissue distribution, immune response, and mitochondrial persistence behave in vivo",
+      "Whether targeted uptake translates to durable bioenergetic and functional benefit",
+      "Which cell types are realistic therapeutic targets for aging-relevant disease"
+    ]
+  },
+  "tags": [
+    "mitochondrial-delivery-and-transplantation",
+    "targeted-delivery",
+    "mitocatch",
+    "preclinical"
+  ]
+}

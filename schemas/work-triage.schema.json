@@ -1,0 +1,306 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./work-triage.schema.json",
+  "title": "Work triage state",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "state_type",
+    "generated_at",
+    "source_state",
+    "selection_policy",
+    "summary",
+    "work_items"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "state_type": {
+      "const": "work_triage"
+    },
+    "generated_at": {
+      "$ref": "./common.schema.json#/$defs/dateTime"
+    },
+    "source_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "research_coverage_status_updated_at",
+        "research_priority_queue_updated_at",
+        "active_candidate_bundle_count",
+        "bootstrap_queue_count",
+        "surveillance_queue_count",
+        "coverage_repair_queue_count",
+        "coverage_assessment_backlog_count",
+        "unnormalized_intervention_id_count",
+        "unnormalized_intervention_reference_count"
+      ],
+      "properties": {
+        "research_coverage_status_updated_at": {
+          "$ref": "./common.schema.json#/$defs/dateTime"
+        },
+        "research_priority_queue_updated_at": {
+          "$ref": "./common.schema.json#/$defs/dateTime"
+        },
+        "active_candidate_bundle_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "bootstrap_queue_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "surveillance_queue_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "coverage_repair_queue_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "coverage_assessment_backlog_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unnormalized_intervention_id_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unnormalized_intervention_reference_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "selection_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "default_instruction",
+        "when_user_asks_whats_next",
+        "when_user_says_go",
+        "priority_order"
+      ],
+      "properties": {
+        "default_instruction": {
+          "type": "string"
+        },
+        "when_user_asks_whats_next": {
+          "type": "string"
+        },
+        "when_user_says_go": {
+          "type": "string"
+        },
+        "priority_order": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/workMode"
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "top_work_item_id",
+        "top_mode",
+        "active_editorial_count",
+        "ready_research_count",
+        "data_hardening_count"
+      ],
+      "properties": {
+        "top_work_item_id": {
+          "$ref": "./common.schema.json#/$defs/identifier"
+        },
+        "top_mode": {
+          "$ref": "#/$defs/workMode"
+        },
+        "active_editorial_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "ready_research_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "data_hardening_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "work_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "rank",
+          "item_id",
+          "mode",
+          "domain",
+          "priority_tier",
+          "status",
+          "title",
+          "rationale",
+          "default_action",
+          "source_paths"
+        ],
+        "properties": {
+          "rank": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "item_id": {
+            "$ref": "./common.schema.json#/$defs/identifier"
+          },
+          "mode": {
+            "$ref": "#/$defs/workMode"
+          },
+          "domain": {
+            "enum": [
+              "editorial",
+              "research",
+              "data",
+              "docs",
+              "app",
+              "ops"
+            ]
+          },
+          "priority_tier": {
+            "enum": [
+              "now",
+              "soon",
+              "later"
+            ]
+          },
+          "status": {
+            "enum": [
+              "ready",
+              "active",
+              "blocked",
+              "informational"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "default_action": {
+            "type": "string"
+          },
+          "track_id": {
+            "$ref": "./common.schema.json#/$defs/trackRef"
+          },
+          "hallmark_id": {
+            "$ref": "./common.schema.json#/$defs/hallmarkRef"
+          },
+          "candidate_bundle_id": {
+            "$ref": "./common.schema.json#/$defs/candidateBundleRef"
+          },
+          "runbook_path": {
+            "type": "string"
+          },
+          "command": {
+            "type": "string"
+          },
+          "source_paths": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "references": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "record_type",
+                "record_id"
+              ],
+              "properties": {
+                "record_type": {
+                  "$ref": "#/$defs/referenceRecordType"
+                },
+                "record_id": {
+                  "$ref": "./common.schema.json#/$defs/identifier"
+                }
+              }
+            }
+          },
+          "signals": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "name",
+                "value"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": [
+                    "string",
+                    "number",
+                    "boolean"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "workMode": {
+      "enum": [
+        "editorial_review",
+        "publish",
+        "bootstrap",
+        "surveillance",
+        "coverage_repair",
+        "coverage_assessment_backfill",
+        "data_normalization",
+        "schema_hardening",
+        "docs_sync",
+        "app_surface_check"
+      ]
+    },
+    "referenceRecordType": {
+      "enum": [
+        "activity_item",
+        "candidate_bundle",
+        "coverage_assessment",
+        "evidence_review",
+        "finding",
+        "hallmark",
+        "intervention",
+        "outlook",
+        "publication_event",
+        "research_session",
+        "source",
+        "study",
+        "track"
+      ]
+    }
+  }
+}

@@ -195,7 +195,7 @@ function deriveReviewRound(revisionReviews, laneReviews, explicitReviewRound) {
 
 function deriveReviewId(bundle, lane, revisionNumber, reviewRound, laneReviews) {
   const laneSlug = lane.replaceAll("_", "-");
-  const base = `evidence-review-${getBundleScopeSlug(bundle)}-${laneSlug}-r${revisionNumber}`;
+  const base = `evidence-review-${bundle.id}-${laneSlug}-r${revisionNumber}`;
   return laneReviews.length > 0 ? `${base}-round-${reviewRound}` : base;
 }
 
@@ -565,6 +565,15 @@ async function commandApply(options) {
   finalReview.updated_at = timestamp;
 
   const finalReviewPath = path.join(evidenceReviewsRoot, `${finalReview.id}.json`);
+  if (await fileExists(finalReviewPath)) {
+    const existingReview = await readJson(finalReviewPath);
+    if (existingReview.candidate_bundle_id !== bundleId) {
+      fail(
+        `Refusing to overwrite ${toPosixRelative(finalReviewPath)}: existing review belongs to ${existingReview.candidate_bundle_id}, not ${bundleId}.`
+      );
+    }
+  }
+
   await writeJson(finalReviewPath, finalReview);
 
   await withFileLock(`${bundlePath}.lock`, async () => {

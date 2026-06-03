@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-03-ecosystem-replacement-surveillance",
+  "name": "Ecosystem replacement surveillance pass for June 3, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-03T20:00:37Z",
+  "completed_at": "2026-06-03T20:16:15Z",
+  "scope": {
+    "question": "What changed for Ecosystem Replacement since the June 3, 2026 bootstrap publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "dysbiosis"
+    ],
+    "track_ids": [
+      "ecosystem-replacement"
+    ],
+    "intervention_ids": [
+      "fecal-microbiota-transplantation"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "no_op",
+  "summary": "No material post-publication delta was found. NCT05598112 remains recruiting with no results section, NCT06649981 remains active-not-recruiting with no results section, and the ARMOR protocol remains the latest indexed trial publication tied to those direct older-adult FMT aging programs. PubMed searches for same-day post-baseline FMT aging, frailty, older-adult, or sarcopenia records returned no new records. A DDW 2026/UTMB report on autologous preserved-youth microbiome transfer in aging mice was reviewed as context, but it predates the June 3 publication window, is conference/news coverage rather than a peer-reviewed full source, and does not alter the current public stage, confidence, momentum, or support map.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "none",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The only direct older-adult aging trials checked still have no posted efficacy or safety results, and no new PubMed-indexed record entered the delta window. The pre-window DDW animal report may be worth watching for a peer-reviewed paper, but preliminary animal conference coverage does not change an already animal-led, low-confidence human_biomarker_signal outlook."
+  },
+  "search_log": [
+    {
+      "source_name": "ClinicalTrials.gov",
+      "query": "NCT05598112",
+      "checked_at": "2026-06-03T20:12:00Z",
+      "url": "https://clinicaltrials.gov/study/NCT05598112",
+      "summary": "Record remains RECRUITING, last posted update December 31, 2025, with estimated primary completion December 31, 2026 and no results section."
+    },
+    {
+      "source_name": "ClinicalTrials.gov",
+      "query": "NCT06649981",
+      "checked_at": "2026-06-03T20:12:00Z",
+      "url": "https://clinicaltrials.gov/study/NCT06649981",
+      "summary": "Record remains ACTIVE_NOT_RECRUITING, last posted update April 20, 2026, with estimated primary completion September 30, 2026 and no results section."
+    },
+    {
+      "source_name": "PubMed",
+      "query": "NCT05598112 OR NCT06649981 OR ARMOR fecal microbiota aging",
+      "checked_at": "2026-06-03T20:13:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=NCT05598112%20OR%20NCT06649981%20OR%20ARMOR%20fecal%20microbiota%20aging",
+      "summary": "The only indexed match was PMID 41629813, the already published ARMOR trial protocol included in the baseline."
+    },
+    {
+      "source_name": "PubMed",
+      "query": "(fecal microbiota transplantation OR fecal microbiota transplant OR FMT) AND (aging OR ageing OR frailty OR older adults OR sarcopenia), same-day delta",
+      "checked_at": "2026-06-03T20:14:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22fecal%20microbiota%20transplantation%22%5BTitle%2FAbstract%5D%20OR%20%22fecal%20microbiota%20transplant%22%5BTitle%2FAbstract%5D%20OR%20FMT%5BTitle%2FAbstract%5D%29%20AND%20%28aging%5BTitle%2FAbstract%5D%20OR%20ageing%5BTitle%2FAbstract%5D%20OR%20frailty%5BTitle%2FAbstract%5D%20OR%20%22older%20adults%22%5BTitle%2FAbstract%5D%20OR%20sarcopenia%5BTitle%2FAbstract%5D%29",
+      "summary": "Date-filtered checks for June 3, 2026 publication or Entrez-entry dates returned no records in the delta window."
+    },
+    {
+      "source_name": "DDW News and UTMB News",
+      "query": "preserved youthful microbiome aging mice liver cancer FMT DDW 2026",
+      "checked_at": "2026-06-03T20:15:00Z",
+      "url": "https://news.ddw.org/news/restoring-a-youthful-gut-microbiome-prevents-liver-cancer-and-reverses-hepatic-aging-in-mice/",
+      "summary": "Reviewed pre-window DDW 2026 coverage of autologous preserved-youth microbiome transfer in aged mice; treated as watchlist context rather than a material post-publication delta."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "DDW 2026 presentation",
+      "title": "Restoration of a youthful gut microbiome reduced liver aging and suppressed tumorigenesis in older mice",
+      "url": "https://news.ddw.org/news/restoring-a-youthful-gut-microbiome-prevents-liver-cancer-and-reverses-hepatic-aging-in-mice/",
+      "decision": "context_only",
+      "reason": "Conference/news coverage predates the June 3, 2026 publication window and is not a peer-reviewed full source. The reported aged-mouse liver signals do not change the current animal-led public interpretation or justify adding support-map evidence without the full study."
+    },
+    {
+      "reference": "UTMB News, May 27, 2026",
+      "title": "Turning back the clock on the microbiome is key to preventing liver cancer and aging, study finds",
+      "url": "https://www.utmb.edu/research/utmb-research/research-news-articles/utmb-news/2026/05/27/turning-back-the-clock-on-the-microbiome-is-key-to-preventing-liver-cancer-and-aging--study-finds",
+      "decision": "duplicate",
+      "reason": "Institutional news coverage describes the same DDW presentation and does not add independently published outcomes."
+    },
+    {
+      "reference": "PMID 41629813",
+      "title": "Randomized, double-blind, placebo-controlled trial of fecal microbiota transplantation from young physically active donors to promote resilient aging: clinical trial protocol (ARMOR study)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41629813/",
+      "decision": "duplicate",
+      "reason": "Already included in the published ecosystem-replacement baseline as protocol-level, no-results trial context."
+    }
+  ],
+  "source_ids": [
+    "nct-05598112",
+    "nct-06649981",
+    "pmid-41629813"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT05598112",
+    "https://clinicaltrials.gov/study/NCT06649981",
+    "https://pubmed.ncbi.nlm.nih.gov/41629813/",
+    "https://news.ddw.org/news/restoring-a-youthful-gut-microbiome-prevents-liver-cancer-and-reverses-hepatic-aging-in-mice/",
+    "https://www.utmb.edu/research/utmb-research/research-news-articles/utmb-news/2026/05/27/turning-back-the-clock-on-the-microbiome-is-key-to-preventing-liver-cancer-and-aging--study-finds"
+  ],
+  "notes": [
+    "Triage selected this track as the next distinct surveillance target after microbiome-composition-modulation.",
+    "The latest coverage assessment recommends ordinary surveillance, with special attention to NCT05598112, NCT06649981, and related publications.",
+    "The direct older-adult FMT aging evidence remains trial-watch activity without posted outcome results.",
+    "The DDW 2026 autologous microbiome mouse-liver report should be revisited if a peer-reviewed paper, abstract record, or clinical trial registration appears."
+  ],
+  "next_actions": [
+    "Continue ordinary surveillance for ecosystem replacement on the next rotation unless trial results, a peer-reviewed DDW follow-up, or a safety signal appears.",
+    "Keep coverage repair as a separate future task for recent-review and seminal-anchor triangulation if the track is revisited before older-adult trial results post."
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03-source-fidelity-r1",
+  "name": "Source Fidelity review for Mitochondrial Delivery And Transplantation bundle",
+  "candidate_bundle_id": "mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged coverage-repair records are faithful to the cited source boundaries. PMID 42171348 is represented as mouse xenogeneic mitochondrial transplantation evidence for selected age-associated phenotypes with donor-quality, donor-equivalence, and long-term safety caveats. PMID 41986718 is represented as MitoCatch targeted-delivery platform evidence in human and mouse cell systems plus mouse injury models, not treated-human aging efficacy. The interventions, studies, findings, and outlook update preserve those limits closely enough for editorial approval review.",
+  "reviewed_change_ids": [
+    "create-source-pmid-42171348",
+    "create-source-pmid-41986718",
+    "create-intervention-xenogeneic-mitochondrial-transplantation",
+    "create-intervention-cell-type-targeted-mitochondrial-transplantation",
+    "create-study-xeno-mt-age-associated-phenotypes-mice",
+    "create-study-mitocatch-cell-type-targeted-mitochondrial-delivery",
+    "create-finding-xeno-mt-improved-age-associated-phenotypes-mice",
+    "create-finding-mitocatch-targeted-mt-rescued-cell-degeneration",
+    "update-outlook-track-mitochondrial-delivery-and-transplantation"
+  ],
+  "findings": [
+    {
+      "finding_id": "xeno-mt-mouse-source-boundary-preserved",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-finding-xeno-mt-improved-age-associated-phenotypes-mice",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "xeno-mt-improved-age-associated-phenotypes-mice"
+      },
+      "claim_or_issue": "The staged xeno-MT finding describes mouse evidence for selected age-associated phenotypes and mitochondrial functional readouts, with efficacy tied to donor mitochondrial integrity.",
+      "why_it_matters": "This matches the PubMed abstract and avoids over-reading the source as a human aging, lifespan, durable healthspan, or broadly donor-equivalent result.",
+      "recommended_action": "No source-fidelity revision required. Preserve the mouse-only, donor-quality, donor-equivalence, and long-term safety caveats through approval.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "mitocatch-platform-source-boundary-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-mitocatch-targeted-mt-rescued-cell-degeneration",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "mitocatch-targeted-mt-rescued-cell-degeneration"
+      },
+      "claim_or_issue": "The staged MitoCatch finding limits the claim to targeted mitochondrial delivery in human and mouse cell systems plus in vitro and mouse injury-model rescue.",
+      "why_it_matters": "The source supports platform plausibility and disease-model rescue, but not treated-human aging efficacy or older-adult functional benefit.",
+      "recommended_action": "No source-fidelity revision required. Keep the platform, cell-system, and injury-model caveats in the finding and outlook support map.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "coverage-repair-context-sources-not-overstaged",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "update-outlook-track-mitochondrial-delivery-and-transplantation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-mitochondrial-delivery-and-transplantation-outlook"
+      },
+      "claim_or_issue": "The staged outlook adds the two primary coverage-repair sources while leaving recent reviews and reproductive ART context out of the public support map.",
+      "why_it_matters": "This keeps source use aligned with the track taxonomy and avoids moving reproductive, review-only, or adjacent disease-context evidence into the LEV-relevant support set.",
+      "recommended_action": "No revision required. Keep excluded review and reproductive-context records as coverage-assessment context rather than public evidence records.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-03T21:28:38.745Z",
+  "updated_at": "2026-06-03T21:28:38.745Z"
+}

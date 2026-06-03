@@ -343,6 +343,8 @@ Research automation supports the admin workflow in three modes:
 - `coverage_repair`
   Repair known source-completeness gaps from coverage assessments without treating historical completeness work as ordinary surveillance.
 
+`ops/triage-state.v1.json` sits above those modes as the dispatcher for vague "what's next?" requests. It can also surface editorial, publication, data-normalization, documentation, schema, or app-surface work when those should take precedence over new research.
+
 Each session should leave durable artifacts:
 
 - session journal

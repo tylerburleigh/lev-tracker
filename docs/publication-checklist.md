@@ -85,3 +85,4 @@ The publish action:
 - updated bundle status and `publication_event_ids[]`
 - regenerated `research/state/coverage-status.v1.json`
 - regenerated `research/backlog/track-priority.v1.json`
+- regenerated `ops/triage-state.v1.json`

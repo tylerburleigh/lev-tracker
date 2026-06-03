@@ -8,6 +8,7 @@ const terminalBundleStatuses = new Set(["published", "rejected"]);
 const recordDirectories = {
   activity_item: "data/activity-items",
   candidate_bundle: "data/candidate-bundles",
+  evidence_review: "data/evidence-reviews",
   finding: "data/findings",
   intervention: "data/interventions",
   outlook: "data/outlooks",
@@ -29,6 +30,7 @@ const missingOptionalRefs = new Map();
 const maxOptionalRefDetails = Number.parseInt(process.env.AUDIT_DATA_MAX_OPTIONAL_DETAILS ?? "100", 10);
 let refsChecked = 0;
 let sourceExternalIdsChecked = 0;
+let evidenceReviewRefsChecked = 0;
 
 async function pathExists(relativePath) {
   return existsSync(path.join(workspaceRoot, relativePath));
@@ -90,6 +92,28 @@ async function readRecords(recordType) {
 
 function buildIdSet(records) {
   return new Set(records.map(({ record }) => record.id).filter(Boolean));
+}
+
+function buildRecordMap(records, recordLabel) {
+  const recordsById = new Map();
+
+  for (const { record, filePath } of records) {
+    if (!record.id) {
+      continue;
+    }
+
+    const existing = recordsById.get(record.id);
+    if (existing) {
+      issues.push(
+        `duplicate ${recordLabel} ID "${record.id}" on ${existing.filePath} and ${filePath}`,
+      );
+      continue;
+    }
+
+    recordsById.set(record.id, { record, filePath });
+  }
+
+  return recordsById;
 }
 
 function addRefIssue(filePath, fieldPath, value, expectedType) {
@@ -330,6 +354,43 @@ function auditRecordReferences(recordsByType, sets) {
   }
 }
 
+function auditCandidateBundleEvidenceReviews(candidateBundles, evidenceReviews) {
+  const reviewsById = buildRecordMap(evidenceReviews, "evidence_review");
+  const bundlesById = buildRecordMap(candidateBundles, "candidate_bundle");
+
+  for (const { record: review, filePath: reviewPath } of evidenceReviews) {
+    if (!review.candidate_bundle_id) {
+      continue;
+    }
+
+    evidenceReviewRefsChecked += 1;
+    if (!bundlesById.has(review.candidate_bundle_id)) {
+      issues.push(
+        `${reviewPath}: candidate_bundle_id references missing candidate_bundle "${review.candidate_bundle_id}"`,
+      );
+    }
+  }
+
+  for (const { record: bundle, filePath: bundlePath } of candidateBundles) {
+    for (const [index, reviewId] of (bundle.evidence_review_ids ?? []).entries()) {
+      evidenceReviewRefsChecked += 1;
+      const reviewEntry = reviewsById.get(reviewId);
+      if (!reviewEntry) {
+        issues.push(
+          `${bundlePath}: evidence_review_ids[${index}] references missing evidence_review "${reviewId}"`,
+        );
+        continue;
+      }
+
+      if (reviewEntry.record.candidate_bundle_id !== bundle.id) {
+        issues.push(
+          `${bundlePath}: evidence_review_ids[${index}] references "${reviewId}" from bundle "${reviewEntry.record.candidate_bundle_id}"`,
+        );
+      }
+    }
+  }
+}
+
 function buildReferenceSets(recordsByType, taxonomies) {
   return {
     activityItemIds: buildIdSet(recordsByType.activity_item ?? []),
@@ -471,6 +532,8 @@ async function main() {
   }
 
   const candidateBundles = liveRecordsByType.candidate_bundle ?? [];
+  auditCandidateBundleEvidenceReviews(candidateBundles, liveRecordsByType.evidence_review ?? []);
+
   const { activeBundleIds, activeBundles, activeRecordsByType, activeStagedRecords } =
     await auditActiveBundles(candidateBundles, liveRecordsByType);
 
@@ -528,6 +591,7 @@ async function main() {
       `${activeStagedDirectories.length} active staged director${activeStagedDirectories.length === 1 ? "y" : "ies"}`,
       `${historicalStagedDirectories.length} historical staged director${historicalStagedDirectories.length === 1 ? "y" : "ies"}`,
       `${refsChecked} cross-record reference(s) checked`,
+      `${evidenceReviewRefsChecked} evidence-review reference(s) checked`,
       `${sourceExternalIdsChecked} source external identifier(s) checked`,
     ].join(", ") + ".",
   );

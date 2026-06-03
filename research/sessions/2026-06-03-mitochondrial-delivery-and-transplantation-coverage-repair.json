@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-03-mitochondrial-delivery-and-transplantation-coverage-repair",
+  "name": "Mitochondrial delivery and transplantation coverage repair for June 3, 2026",
+  "mode": "coverage_repair",
+  "started_at": "2026-06-03T20:48:00Z",
+  "completed_at": "2026-06-03T21:06:55Z",
+  "scope": {
+    "question": "Which known source-completeness gaps for Mitochondrial Delivery and Transplantation need repair, and does resolving them change the coverage verdict or public boundaries?",
+    "hallmark_ids": [
+      "mitochondrial_dysfunction"
+    ],
+    "track_ids": [
+      "mitochondrial-delivery-and-transplantation"
+    ],
+    "intervention_ids": [
+      "xenogeneic-mitochondrial-transplantation",
+      "cell-type-targeted-mitochondrial-transplantation"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03",
+  "summary": "Coverage repair found that PMID 42171348 and PMID 41986718 warrant staged public updates. PMID 42171348 adds direct animal-aging evidence for xenogeneic mitochondrial transplantation improving selected mouse age-associated phenotypes and mitochondrial functional readouts, with donor mitochondrial integrity, donor equivalence, long-term safety, and germline relevance caveats. PMID 41986718 adds targeted delivery-platform evidence through MitoCatch, which improves the tissue-targeting plausibility case but remains preclinical and non-aging-efficacy evidence. The staged outlook keeps the track at low-confidence animal_signal and does not move momentum or LEV timing.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "outlook_refresh",
+    "public_update_needed": true,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The repair resolved the main source-completeness gap identified by surveillance and staged a bounded support-map update. The additions strengthen animal and platform coverage but do not justify a stage upgrade because treated-human aging evidence remains absent."
+  },
+  "search_log": [
+    {
+      "source_name": "PubMed",
+      "query": "PMID 42171348",
+      "checked_at": "2026-06-03T20:52:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42171348/",
+      "summary": "Confirmed bibliographic metadata and abstract for the xenogeneic mitochondrial transplantation mouse age-associated phenotype study."
+    },
+    {
+      "source_name": "PubMed and PMC",
+      "query": "PMID 41986718",
+      "checked_at": "2026-06-03T20:53:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41986718/",
+      "summary": "Confirmed bibliographic metadata, DOI, PMC availability, and abstract for the MitoCatch targeted mitochondrial delivery platform study."
+    },
+    {
+      "source_name": "PubMed",
+      "query": "PMID 42123597, PMID 41643906, PMID 42129850, PMID 42229862",
+      "checked_at": "2026-06-03T21:00:00Z",
+      "summary": "Reviewed recent cardiovascular, kidney-aging, reproductive RCT, and aging-brain context records. They were recorded as coverage context or taxonomy boundaries rather than staged support-map changes."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "pmid-42123597",
+      "title": "Therapeutic Impact of Mitochondrial Transplants for Cardiovascular Diseases",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42123597/",
+      "decision": "context_only",
+      "reason": "Recent cardiovascular review is useful triangulation for acute-disease translation but does not add primary aging or older-adult efficacy evidence beyond the staged sources."
+    },
+    {
+      "reference": "pmid-41643906",
+      "title": "Mitochondrial transfer: A novel mechanism and promising therapeutic strategy in ageing kidney",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41643906/",
+      "decision": "context_only",
+      "reason": "Kidney-aging review supports the general mitochondrial-transfer mechanism landscape but does not add a primary treated-intervention result for the public support map."
+    },
+    {
+      "reference": "pmid-42129850",
+      "title": "Autologous bone marrow mesenchymal stem cell mitochondrial transplantation in recurrent assisted reproductive technology failure: a randomized controlled trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42129850/",
+      "decision": "wrong_scope",
+      "reason": "Human RCT evidence is reproductive/ART failure context rather than healthy-aging, older-adult function, or LEV-relevant treated-human benefit."
+    },
+    {
+      "reference": "pmid-42229862",
+      "title": "Cell-specific energy crisis in the ageing brain: Mitochondrial dynamics drives neuron-glia metabolic uncoupling and neurodegeneration",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42229862/",
+      "decision": "context_only",
+      "reason": "Narrative aging-brain review discusses endogenous mitochondrial transfer but does not add a new treated mitochondrial-delivery intervention result."
+    }
+  ],
+  "source_ids": [
+    "pmid-42171348",
+    "pmid-41986718",
+    "pmid-42123597",
+    "pmid-41643906",
+    "pmid-42129850",
+    "pmid-42229862"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42171348/",
+    "https://pubmed.ncbi.nlm.nih.gov/41986718/",
+    "https://pubmed.ncbi.nlm.nih.gov/42123597/",
+    "https://pubmed.ncbi.nlm.nih.gov/41643906/",
+    "https://pubmed.ncbi.nlm.nih.gov/42129850/",
+    "https://pubmed.ncbi.nlm.nih.gov/42229862/"
+  ],
+  "notes": [
+    "Coverage repair was selected from research/backlog/track-priority.v1.json after the prior surveillance pass recommended source-completeness repair.",
+    "The repair stages PMID 42171348 because it is direct animal-aging evidence and materially improves the animal support map.",
+    "The repair stages PMID 41986718 because delivery targeting is a named blocker in the current outlook and the source directly addresses that platform limitation.",
+    "The staged outlook preserves animal_signal, low confidence, mixed momentum, and no LEV-relevant window because no treated-human aging evidence was found.",
+    "Recent review and reproductive records were kept as context or taxonomy-boundary notes rather than staged evidence."
+  ],
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast reviews for mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03.",
+    "If reviews pass, publish the repair bundle and rerun planning state.",
+    "After publication, continue ordinary surveillance for this track."
+  ]
+}

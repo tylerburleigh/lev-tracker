@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03-2026-06-03t21-32-56-692z",
+  "name": "Published Mitochondrial delivery and transplantation coverage repair for June 3, 2026",
+  "summary": "Coverage-repair bundle that adds a missed xenogeneic mitochondrial transplantation animal-aging source and a targeted-delivery technology source while keeping the track at low-confidence animal_signal.",
+  "candidate_bundle_id": "mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03",
+  "event_type": "publish",
+  "published_at": "2026-06-03T21:32:56.692Z",
+  "published_by": "tyler",
+  "published_targets": [
+    {
+      "record_type": "source",
+      "record_id": "pmid-42171348",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "pmid-41986718",
+      "action": "created"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "xenogeneic-mitochondrial-transplantation",
+      "action": "created"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "cell-type-targeted-mitochondrial-transplantation",
+      "action": "created"
+    },
+    {
+      "record_type": "study",
+      "record_id": "xeno-mt-age-associated-phenotypes-mice",
+      "action": "created"
+    },
+    {
+      "record_type": "study",
+      "record_id": "mitocatch-cell-type-targeted-mitochondrial-delivery",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "xeno-mt-improved-age-associated-phenotypes-mice",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "mitocatch-targeted-mt-rescued-cell-degeneration",
+      "action": "created"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-mitochondrial-delivery-and-transplantation-outlook",
+      "action": "updated"
+    }
+  ],
+  "affected_outlook_ids": [
+    "track-mitochondrial-delivery-and-transplantation-outlook"
+  ],
+  "approving_evidence_review_ids": [
+    "evidence-review-mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03-interpretation-forecast-r1",
+    "evidence-review-mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03-source-fidelity-r1"
+  ],
+  "change_note": "The repair strengthens animal and delivery-platform coverage but does not change stage, confidence, or LEV-relevant timing because treated-human aging evidence remains absent."
+}

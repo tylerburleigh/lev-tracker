@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0.0",
+  "state_type": "work_triage",
+  "generated_at": "2026-06-03T21:34:18.973Z",
+  "source_state": {
+    "research_coverage_status_updated_at": "2026-06-03T21:34:18.872Z",
+    "research_priority_queue_updated_at": "2026-06-03T21:34:18.873Z",
+    "active_candidate_bundle_count": 0,
+    "bootstrap_queue_count": 0,
+    "surveillance_queue_count": 38,
+    "coverage_repair_queue_count": 0,
+    "coverage_assessment_backlog_count": 35,
+    "unnormalized_intervention_id_count": 71,
+    "unnormalized_intervention_reference_count": 140
+  },
+  "selection_policy": {
+    "default_instruction": "When the user asks what to work on, consult rank 1 first and state the assumption before acting.",
+    "when_user_asks_whats_next": "Summarize the top ranked item plus any active editorial blockers or data-hardening warnings.",
+    "when_user_says_go": "Proceed with rank 1 unless the user has named a different mode, track, bundle, or priority.",
+    "priority_order": [
+      "publish",
+      "editorial_review",
+      "bootstrap",
+      "coverage_repair",
+      "surveillance",
+      "coverage_assessment_backfill",
+      "data_normalization",
+      "schema_hardening",
+      "docs_sync",
+      "app_surface_check"
+    ]
+  },
+  "summary": {
+    "top_work_item_id": "surveillance-insulin-igf-axis-modulation",
+    "top_mode": "surveillance",
+    "active_editorial_count": 0,
+    "ready_research_count": 38,
+    "data_hardening_count": 1,
+    "notes": [
+      "Roadmap remains narrative context; this file is the operational dispatcher.",
+      "The top surveillance item intentionally prefers the next distinct target when the generated queue starts with a recently handled track."
+    ]
+  },
+  "work_items": [
+    {
+      "rank": 1,
+      "item_id": "surveillance-insulin-igf-axis-modulation",
+      "mode": "surveillance",
+      "domain": "research",
+      "priority_tier": "now",
+      "status": "ready",
+      "title": "Run surveillance for Insulin and IGF Axis Modulation",
+      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 4; rank 1 was recently handled by a surveillance or coverage-repair session.",
+      "default_action": "Run one track-level surveillance pass, record materiality, excluded sources, and a session; create a bundle only for a material public change.",
+      "track_id": "insulin-igf-axis-modulation",
+      "hallmark_id": "deregulated_nutrient_sensing",
+      "references": [
+        {
+          "record_type": "track",
+          "record_id": "insulin-igf-axis-modulation"
+        },
+        {
+          "record_type": "hallmark",
+          "record_id": "deregulated_nutrient_sensing"
+        }
+      ],
+      "runbook_path": "docs/surveillance-checklist.md",
+      "source_paths": [
+        "research/backlog/track-priority.v1.json",
+        "research/state/coverage-status.v1.json",
+        "docs/surveillance-checklist.md"
+      ],
+      "signals": [
+        {
+          "name": "generated_queue_rank",
+          "value": 4
+        },
+        {
+          "name": "last_session_mode",
+          "value": "bootstrap"
+        },
+        {
+          "name": "has_coverage_assessment",
+          "value": false
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "item_id": "coverage-assessment-backfill-insulin-igf-axis-modulation",
+      "mode": "coverage_assessment_backfill",
+      "domain": "research",
+      "priority_tier": "soon",
+      "status": "ready",
+      "title": "Backfill coverage assessment for Insulin and IGF Axis Modulation",
+      "rationale": "35 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the surveillance queue.",
+      "default_action": "Review the published outlook, session, bundle, evidence reviews, and publication event, then create a coverage assessment without changing public records.",
+      "track_id": "insulin-igf-axis-modulation",
+      "hallmark_id": "deregulated_nutrient_sensing",
+      "references": [
+        {
+          "record_type": "track",
+          "record_id": "insulin-igf-axis-modulation"
+        },
+        {
+          "record_type": "hallmark",
+          "record_id": "deregulated_nutrient_sensing"
+        }
+      ],
+      "runbook_path": "docs/coverage-assessment.md",
+      "source_paths": [
+        "research/backlog/track-priority.v1.json",
+        "research/state/coverage-status.v1.json",
+        "docs/coverage-assessment.md"
+      ],
+      "signals": [
+        {
+          "name": "coverage_assessment_backlog_count",
+          "value": 35
+        },
+        {
+          "name": "generated_surveillance_queue_rank",
+          "value": 4
+        },
+        {
+          "name": "track_next_mode",
+          "value": "surveillance"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "item_id": "data-normalization-intervention-refs",
+      "mode": "data_normalization",
+      "domain": "data",
+      "priority_tier": "soon",
+      "status": "ready",
+      "title": "Normalize 71 intervention ID(s)",
+      "rationale": "140 live reference(s) point to non-normalized intervention IDs. The data audit treats this as non-blocking, but it remains the main known data-hardening backlog.",
+      "default_action": "Continue the intervention-normalization backlog in small reviewed batches, then rerun audit and planning sync.",
+      "runbook_path": "docs/intervention-normalization.md",
+      "command": "npm run audit:data",
+      "source_paths": [
+        "docs/intervention-normalization.md",
+        "scripts/audit-data-integrity.mjs"
+      ],
+      "signals": [
+        {
+          "name": "missing_intervention_id_count",
+          "value": 71
+        },
+        {
+          "name": "missing_intervention_reference_count",
+          "value": 140
+        },
+        {
+          "name": "missing_intervention:a9-dpc",
+          "value": 2
+        },
+        {
+          "name": "missing_intervention:active-hyperthermia",
+          "value": 2
+        },
+        {
+          "name": "missing_intervention:adipose-msc-derived-exosomes",
+          "value": 2
+        },
+        {
+          "name": "missing_intervention:adipose-stem-cell-exosome-solution",
+          "value": 2
+        },
+        {
+          "name": "missing_intervention:akk-wst01",
+          "value": 2
+        },
+        {
+          "name": "missing_intervention:akkermansia-muciniphila",
+          "value": 2
+        },
+        {
+          "name": "missing_intervention:albumin-replacement-plasma-exchange",
+          "value": 2
+        },
+        {
+          "name": "missing_intervention:bgp-15",
+          "value": 2
+        }
+      ]
+    }
+  ]
+}
