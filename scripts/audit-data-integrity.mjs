@@ -12,6 +12,7 @@ const recordDirectories = {
   finding: "data/findings",
   intervention: "data/interventions",
   outlook: "data/outlooks",
+  publication_event: "data/publication-events",
   source: "data/sources",
   study: "data/studies",
 };
@@ -339,6 +340,18 @@ function auditOutlook(record, filePath, sets) {
   }
 }
 
+function auditPublicationEvent(record, filePath, sets) {
+  checkRef(filePath, "candidate_bundle_id", record.candidate_bundle_id, sets.candidateBundleIds, "candidate_bundle");
+  checkRefArray(filePath, "affected_outlook_ids[]", record.affected_outlook_ids, sets.outlookIds, "outlook");
+  checkRefArray(
+    filePath,
+    "approving_evidence_review_ids[]",
+    record.approving_evidence_review_ids,
+    sets.evidenceReviewIds,
+    "evidence_review",
+  );
+}
+
 function auditRecordReferences(recordsByType, sets) {
   for (const { record, filePath } of recordsByType.finding ?? []) {
     auditFinding(record, filePath, sets);
@@ -351,6 +364,56 @@ function auditRecordReferences(recordsByType, sets) {
   }
   for (const { record, filePath } of recordsByType.outlook ?? []) {
     auditOutlook(record, filePath, sets);
+  }
+  for (const { record, filePath } of recordsByType.publication_event ?? []) {
+    auditPublicationEvent(record, filePath, sets);
+  }
+}
+
+async function auditContentReviewMetadata(sets) {
+  const hallmarkInsightsPath = "data/content/hallmark-insights.json";
+  const hallmarkInsights = await readJson(hallmarkInsightsPath);
+  if (Array.isArray(hallmarkInsights)) {
+    for (const [index, insight] of hallmarkInsights.entries()) {
+      const fieldPath = `hallmark_insights[${index}]`;
+      checkRef(hallmarkInsightsPath, `${fieldPath}.hallmark_id`, insight.hallmark_id, sets.hallmarkIds, "hallmark");
+      checkRefArray(
+        hallmarkInsightsPath,
+        `${fieldPath}.related_outlook_ids[]`,
+        insight.related_outlook_ids,
+        sets.outlookIds,
+        "outlook",
+      );
+      checkRefArray(
+        hallmarkInsightsPath,
+        `${fieldPath}.related_publication_event_ids[]`,
+        insight.related_publication_event_ids,
+        sets.publicationEventIds,
+        "publication_event",
+      );
+    }
+  }
+
+  for (const filePath of await walkJsonFiles("data/content/state-of-the-field")) {
+    const edition = await readJson(filePath);
+    if (!edition) {
+      continue;
+    }
+
+    checkRefArray(
+      filePath,
+      "related_outlook_ids[]",
+      edition.related_outlook_ids,
+      sets.outlookIds,
+      "outlook",
+    );
+    checkRefArray(
+      filePath,
+      "related_publication_event_ids[]",
+      edition.related_publication_event_ids,
+      sets.publicationEventIds,
+      "publication_event",
+    );
   }
 }
 
@@ -394,9 +457,13 @@ function auditCandidateBundleEvidenceReviews(candidateBundles, evidenceReviews) 
 function buildReferenceSets(recordsByType, taxonomies) {
   return {
     activityItemIds: buildIdSet(recordsByType.activity_item ?? []),
+    candidateBundleIds: buildIdSet(recordsByType.candidate_bundle ?? []),
+    evidenceReviewIds: buildIdSet(recordsByType.evidence_review ?? []),
     findingIds: buildIdSet(recordsByType.finding ?? []),
     hallmarkIds: taxonomies.hallmarkIds,
     interventionIds: buildIdSet(recordsByType.intervention ?? []),
+    outlookIds: buildIdSet(recordsByType.outlook ?? []),
+    publicationEventIds: buildIdSet(recordsByType.publication_event ?? []),
     sourceIds: buildIdSet(recordsByType.source ?? []),
     studyIds: buildIdSet(recordsByType.study ?? []),
     trackIds: taxonomies.trackIds,
@@ -546,6 +613,7 @@ async function main() {
   }
 
   auditRecordReferences(liveRecordsByType, liveSets);
+  await auditContentReviewMetadata(liveSets);
 
   const activeRecordsToAudit = {};
   for (const entry of activeStagedRecords) {

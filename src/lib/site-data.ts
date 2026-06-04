@@ -390,14 +390,22 @@ export type EvidenceReviewRecord = {
   findings: EvidenceReviewFindingRecord[];
 };
 
-export type HallmarkInsight = {
+export type CuratedContentReviewMeta = {
+  last_reviewed: string;
+  review_reason: string;
+  related_publication_event_ids?: string[];
+  related_outlook_ids?: string[];
+};
+
+export type HallmarkInsight = CuratedContentReviewMeta & {
   hallmark_id: string;
   overview: string;
   next_stage_requirement: string;
   key_question: string;
+  related_outlook_ids: string[];
 };
 
-export type StateOfFieldEdition = {
+export type StateOfFieldEdition = CuratedContentReviewMeta & {
   slug: string;
   title: string;
   summary: string;

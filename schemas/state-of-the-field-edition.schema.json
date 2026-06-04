@@ -9,7 +9,9 @@
     "title",
     "summary",
     "date",
-    "bullets"
+    "bullets",
+    "last_reviewed",
+    "review_reason"
   ],
   "properties": {
     "slug": {
@@ -33,6 +35,27 @@
         "type": "string",
         "minLength": 1
       }
+    },
+    "last_reviewed": {
+      "$ref": "./common.schema.json#/$defs/isoDate"
+    },
+    "review_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "related_publication_event_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/publicationEventRef"
+      },
+      "uniqueItems": true
+    },
+    "related_outlook_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/outlookRef"
+      },
+      "uniqueItems": true
     }
   }
 }

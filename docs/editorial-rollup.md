@@ -31,7 +31,16 @@ Run the rollup before routine research when any of these are true:
 
 ## Content Publish Path
 
-Curated content files are currently published directly through reviewed file edits rather than candidate bundles. Treat the rollup item, changed source paths, and this checklist as the audit trail until content records gain explicit review metadata.
+Curated content files are currently published directly through reviewed file edits rather than candidate bundles. Treat the rollup item, changed source paths, required review metadata, and this checklist as the audit trail.
+
+When updating hallmark insight copy, set:
+
+- `last_reviewed` to the review date
+- `review_reason` to the specific outlook or publication activity that prompted review
+- `related_outlook_ids` to the hallmark or track outlook records reviewed
+- `related_publication_event_ids` when publication events directly prompted the review
+
+When updating a state-of-field edition, set `last_reviewed`, `review_reason`, and any directly related publication or outlook IDs.
 
 If the review changes evidence records, outlook ratings, stages, confidence, scenario status, or forecast windows, stop and use the evidence-review and candidate-bundle workflow instead.
 

@@ -301,7 +301,7 @@ function buildEditorialRollupItem({
       ? `No ${currentMonth} state-of-field edition exists after current-month publication activity.`
       : undefined,
     staleHallmarkInsightIds.length > 0
-      ? `${staleHallmarkInsightIds.length} hallmark insight(s) lack review metadata after affected outlook changes.`
+      ? `${staleHallmarkInsightIds.length} hallmark insight(s) are unreviewed or older than affected outlook changes.`
       : undefined,
     forecastSurfaceGap
       ? "The shell presents Forecast as a public surface, but no forecast route exists."

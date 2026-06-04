@@ -181,6 +181,8 @@ The public record pipeline is strong for promoted evidence records, but the high
 
 Goal: make public summary surfaces update deliberately after meaningful public evidence changes, without forcing every surveillance pass to edit narrative copy.
 
+Status on 2026-06-04: first-pass implementation is in place. `editorial_rollup` is a valid generated triage mode, rollup triggers are documented, the public forecast legend now points to the method explanation, curated content schemas require review metadata, and existing curated content has a conservative `2026-05-30` review baseline. The current generated triage item still correctly asks for a June editorial rollup because June publication activity is newer than that baseline.
+
 Planned work:
 
 1. Add `editorial_rollup` as a triage mode.
