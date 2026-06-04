@@ -238,7 +238,6 @@ time {
 }
 
 .hero-grid,
-.split-grid,
 .detail-grid,
 .hallmark-outlook-grid {
   display: grid;
@@ -253,7 +252,6 @@ time {
 .hero-card,
 .snapshot-panel,
 .feed-panel,
-.scenario-panel,
 .detail-panel,
 .hallmark-card,
 .hallmark-index-card,
@@ -272,8 +270,7 @@ time {
 }
 
 .hero-card,
-.snapshot-panel,
-.scenario-panel {
+.snapshot-panel {
   color: var(--text-inverse);
   background: var(--surface-deep);
   border-color: rgba(255, 255, 255, 0.12);
@@ -318,7 +315,7 @@ time {
 
 .status-chip,
 .micro-badge,
-.page-hero__stats span {
+.page-hero__stats span:not(.stage-badge) {
   display: inline-flex;
   align-items: center;
   min-height: 30px;
@@ -368,10 +365,76 @@ time {
 }
 
 .micro-badge--outline,
-.page-hero__stats span {
+.page-hero__stats span:not(.stage-badge) {
   color: var(--text-soft);
   border-color: var(--border);
   background: rgba(255, 255, 255, 0.54);
+}
+
+.stage-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 34px;
+  padding: 7px 12px 7px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--stage-border);
+  background: var(--stage-bg);
+  color: var(--stage-color);
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.18;
+  overflow-wrap: anywhere;
+}
+
+.stage-badge::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: var(--stage-color);
+  box-shadow: 0 0 0 3px var(--stage-dot-bg);
+}
+
+.stage-badge--mechanistic {
+  --stage-color: #596660;
+  --stage-bg: rgba(89, 102, 96, 0.2);
+  --stage-border: rgba(89, 102, 96, 0.42);
+  --stage-dot-bg: rgba(89, 102, 96, 0.14);
+}
+
+.stage-badge--animal {
+  --stage-color: #955a16;
+  --stage-bg: rgba(166, 111, 34, 0.22);
+  --stage-border: rgba(166, 111, 34, 0.46);
+  --stage-dot-bg: rgba(166, 111, 34, 0.16);
+}
+
+.stage-badge--biomarker {
+  --stage-color: #1f6398;
+  --stage-bg: rgba(47, 111, 159, 0.2);
+  --stage-border: rgba(47, 111, 159, 0.42);
+  --stage-dot-bg: rgba(47, 111, 159, 0.15);
+}
+
+.stage-badge--functional {
+  --stage-color: #1f715f;
+  --stage-bg: rgba(45, 124, 108, 0.2);
+  --stage-border: rgba(45, 124, 108, 0.44);
+  --stage-dot-bg: rgba(45, 124, 108, 0.15);
+}
+
+.stage-badge--durable {
+  --stage-color: #8a4057;
+  --stage-bg: rgba(147, 76, 99, 0.21);
+  --stage-border: rgba(147, 76, 99, 0.44);
+  --stage-dot-bg: rgba(147, 76, 99, 0.15);
 }
 
 .hero-card__columns {
@@ -393,7 +456,6 @@ time {
 
 .hero-card__columns p,
 .snapshot-panel p,
-.scenario-panel p,
 .hallmark-card__blocker,
 .feed-item p,
 .detail-panel p,
@@ -545,9 +607,7 @@ time {
 }
 
 .hallmark-card__stage {
-  font-family: var(--font-display);
-  font-size: 1.12rem;
-  line-height: 1.22;
+  align-self: start;
 }
 
 .hallmark-card__meta,
@@ -582,12 +642,7 @@ time {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(229, 235, 227, 0.54));
 }
 
-.split-grid {
-  grid-template-columns: minmax(0, 1.6fr) minmax(300px, 0.9fr);
-}
-
 .feed-panel,
-.scenario-panel,
 .detail-panel,
 .evidence-card,
 .activity-card,
@@ -609,24 +664,6 @@ time {
 
 .feed-item__title {
   font-weight: 600;
-}
-
-.scenario-panel {
-  display: grid;
-  gap: 18px;
-}
-
-.scenario-panel__summary {
-  color: rgba(244, 247, 241, 0.84);
-}
-
-.scenario-panel__box {
-  display: grid;
-  grid-template-columns: 18px 1fr;
-  gap: 12px;
-  padding: 14px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.06);
 }
 
 .section-link--block {
@@ -1653,7 +1690,6 @@ time {
   .site-header__inner,
   .page-hero__inner,
   .hero-grid,
-  .split-grid,
   .detail-grid,
   .hallmark-outlook-grid,
   .admin-detail-grid,
@@ -1729,7 +1765,6 @@ time {
   .hero-card,
   .snapshot-panel,
   .feed-panel,
-  .scenario-panel,
   .detail-panel,
   .evidence-inventory,
   .hallmark-card,

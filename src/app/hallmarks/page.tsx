@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { PageHero } from "@/components/page-hero";
 import { SiteShell } from "@/components/site-shell";
+import { StageBadge } from "@/components/stage-badge";
 import { formatDate } from "@/lib/date";
 import {
   getConfidenceLabel,
@@ -9,7 +10,6 @@ import {
   getHallmarks,
   getOverallLastUpdated,
   getMomentumLabel,
-  getStageLabel,
   getTrackCountForHallmark
 } from "@/lib/site-data";
 
@@ -37,7 +37,7 @@ export default async function HallmarksIndexPage() {
                   <span>{getTrackCountForHallmark(hallmark.id)} tracks</span>
                 </div>
                 <div className="hallmark-index-card__metrics">
-                  <span>{getStageLabel(outlook.stage)}</span>
+                  <StageBadge stage={outlook.stage} />
                   <span>{getMomentumLabel(outlook.momentum)}</span>
                   <span>{getConfidenceLabel(outlook.confidence)}</span>
                 </div>

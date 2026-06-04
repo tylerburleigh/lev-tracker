@@ -4,6 +4,7 @@ import { Activity, FlaskConical, ListChecks, TriangleAlert } from "lucide-react"
 
 import { PageHero } from "@/components/page-hero";
 import { SiteShell } from "@/components/site-shell";
+import { StageBadge } from "@/components/stage-badge";
 import { formatDate } from "@/lib/date";
 import { getDirectionTone, getReadableLabel } from "@/lib/evidence-format";
 import {
@@ -57,7 +58,7 @@ export default async function HallmarkDetailPage({ params }: HallmarkPageProps) 
         summary={hallmark.description}
       >
         <div className="page-hero__stats">
-          <span>{getStageLabel(outlook.stage)}</span>
+          <StageBadge stage={outlook.stage} />
           <span>{getMomentumLabel(outlook.momentum)}</span>
           <span>{getConfidenceLabel(outlook.confidence)}</span>
         </div>

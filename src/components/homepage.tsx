@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { ArrowRight, BookMarked, Clock3, Radar, ShieldCheck, Sparkles, TriangleAlert } from "lucide-react";
+import { ArrowRight, BookMarked, Clock3, Radar, ShieldCheck, Sparkles } from "lucide-react";
 
+import { StageBadge } from "@/components/stage-badge";
 import {
   getConfidenceLabel,
   getHomepageData,
   getMomentumLabel,
-  getScenarioLabel,
   getStageLabel,
   getTrackCountForHallmark
 } from "@/lib/site-data";
@@ -32,6 +32,7 @@ function statusTone(value: string) {
 export async function Homepage() {
   const { overallOutlook: overview, hallmarkOutlooks, hallmarks, recentChanges, snapshot } =
     await getHomepageData();
+  const visibleRecentChanges = recentChanges.slice(0, 3);
 
   return (
     <>
@@ -131,7 +132,7 @@ export async function Homepage() {
                     <span className="micro-badge micro-badge--muted">Thin coverage</span>
                   ) : null}
                 </div>
-                <div className="hallmark-card__stage">{getStageLabel(outlook.stage)}</div>
+                <StageBadge stage={outlook.stage} className="hallmark-card__stage" />
                 <div className="hallmark-card__meta">
                   <span className={`micro-badge ${statusTone(getMomentumLabel(outlook.momentum))}`}>
                     {getMomentumLabel(outlook.momentum)}
@@ -152,7 +153,7 @@ export async function Homepage() {
       </section>
 
       <section className="band band--split">
-        <div className="page-shell split-grid">
+        <div className="page-shell">
           <article className="feed-panel">
             <div className="panel-header">
               <div>
@@ -165,7 +166,7 @@ export async function Homepage() {
               </Link>
             </div>
             <div className="feed-list">
-              {recentChanges.map((change) => (
+              {visibleRecentChanges.map((change) => (
                 <Link className="feed-item" key={change.id} href={change.href}>
                   <div className="feed-item__top">
                     <span className="feed-item__title">{change.title}</span>
@@ -180,30 +181,6 @@ export async function Homepage() {
               ))}
             </div>
           </article>
-
-          <aside className="scenario-panel">
-            <div className="panel-header panel-header--stacked">
-              <span className="section-kicker">2036 scenario lens</span>
-              <h2>{getScenarioLabel(overview.scenario2036Status ?? "speculative")}</h2>
-            </div>
-            <p className="scenario-panel__summary">
-              The project uses 2036 as a deliberately provocative checkpoint, not as a precise forecast.
-            </p>
-            <div className="scenario-panel__box">
-              <TriangleAlert aria-hidden="true" size={18} />
-              <div>
-                <strong>What would need to change</strong>
-                <p>
-                  Several hallmarks would need to cross from biomarker-heavy progress into replicated human
-                  functional benefit, with stronger evidence that gains can stack rather than stall.
-                </p>
-              </div>
-            </div>
-            <Link className="section-link section-link--block" href="/state-of-the-field/2026-05">
-              <span>Read the current editorial note</span>
-              <ArrowRight aria-hidden="true" size={16} />
-            </Link>
-          </aside>
         </div>
       </section>
 
