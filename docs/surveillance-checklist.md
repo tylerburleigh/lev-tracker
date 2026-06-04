@@ -22,12 +22,12 @@ Use this checklist for track-level surveillance after baseline bootstrap. Survei
 
 Check only sources that can plausibly change the public state for the scoped track:
 
-- PubMed and publisher pages for new primary studies, reviews with material synthesis, corrections, or retractions.
-- ClinicalTrials.gov or other primary registries for new trials, status changes, completion, posted results, or termination.
-- FDA, EMA, sponsor, company, conference, or grant pages when they directly affect a tracked intervention, study, or activity item.
+- PubMed or NCBI E-utilities for new primary studies, reviews with material synthesis, corrections, or retractions. This is required for biomedical track surveillance.
+- ClinicalTrials.gov API or other primary registries for new trials, status changes, completion, posted results, termination, or unposted-results annotations. This is required when human studies, registries, or trial-watch records could affect the track.
+- DOI, publisher, preprint, conference, FDA, EMA, sponsor, company, grant, or broader web search when the track is fast-moving, commercial, preprint-heavy, or likely to have non-PubMed sources.
 - Existing public source URLs when the prior record was time-sensitive.
 
-Record the search log in `research/sessions/`, including query/source names, date checked, and relevant URLs even when nothing material changed.
+Treat non-primary web hits as leads unless they point to verifiable source data. Record the search log in `research/sessions/`, including query/source names, date checked, search terms, and relevant URLs even when nothing material changed.
 
 ## Materiality Decision
 
