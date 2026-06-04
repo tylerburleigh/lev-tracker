@@ -1,0 +1,293 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "resolution-pathway-and-tissue-repair-coverage-2026-06-04",
+  "name": "Resolution Pathway and Tissue Repair Coverage Assessment",
+  "track_id": "resolution-pathway-and-tissue-repair",
+  "hallmark_id": "chronic_inflammation",
+  "assessment_type": "surveillance",
+  "assessed_at": "2026-06-04T12:03:25Z",
+  "assessment_window": {
+    "from": "2026-06-03T10:38:26.730Z",
+    "to": "2026-06-04T12:03:25Z",
+    "basis": "Delta surveillance from the published baseline event through the current surveillance pass."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is adequate for the current low-confidence human_biomarker_signal public baseline. The support map includes aged-animal RvD1, MaR1, and nano-proresolving tissue-repair evidence; human SPM-enriched fish-oil and SPM-active bioavailability or target-engagement studies; EPA/DHA chronic venous leg ulcer biomarker and wound-fluid studies; and registry monitoring for the larger older-adult CVLU trial. Coverage is not strong because direct human RvD1 or MaR1 tissue-repair efficacy, definitive human wound-repair outcomes, chronic safety and durability, and posted results from NCT03576989 remain missing.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-06-02-resolution-pathway-and-tissue-repair-bootstrap",
+      "2026-06-04-resolution-pathway-and-tissue-repair-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "resolution-pathway-and-tissue-repair-bootstrap-2026-06-02"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-resolution-pathway-and-tissue-repair-source-fidelity-r1",
+      "evidence-review-resolution-pathway-and-tissue-repair-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-resolution-pathway-and-tissue-repair-bootstrap-2026-06-02-2026-06-03t10-38-26-730z"
+    ],
+    "outlook_ids": [
+      "track-resolution-pathway-and-tissue-repair-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "Human interventional evidence covers SPM-enriched marine oil target engagement, SPM-active bioavailability in obesity, and EPA/DHA chronic venous leg ulcer inflammatory or wound-fluid markers, but not definitive human tissue-repair efficacy.",
+      "source_ids": [
+        "pmid-31829100",
+        "nct-03347006",
+        "pmid-35349683",
+        "nct-04701138",
+        "pmid-32696697",
+        "nct-02719665",
+        "pmid-29735019",
+        "doi-10.1111-wrr.12558",
+        "nct-03576989"
+      ],
+      "finding_ids": [
+        "enriched-marine-oil-raised-human-spms-immune-responses",
+        "spm-active-increased-select-spms-obesity",
+        "marine-oil-pad-altered-lipid-mediators-leukocyte-phenotype",
+        "epa-dha-lowered-cytokines-aging-cvlu-adults",
+        "epa-dha-reduced-cvlu-pmn-activation-wound-area-trend",
+        "completed-omega3-cvlu-trial-no-posted-results"
+      ],
+      "gap_note": "The human evidence supports target engagement and inflammatory-resolution markers, not direct repair efficacy for RvD1, MaR1, or direct SPM therapy."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "not_applicable",
+      "rationale": "The current public claim is intervention-stage and does not rely on observational or natural-experiment evidence.",
+      "gap_note": "Observational wound, inflammatory-resolution, or SPM-biomarker studies could provide context but would not independently upgrade the stage."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "Aged-animal repair evidence anchors the direct RvD1, MaR1, and nano-proresolving branches, including aged inflammatory-resolution deficits, muscle injury recovery, and fracture healing.",
+      "source_ids": [
+        "pmid-25217168",
+        "pmid-34075679",
+        "pmid-32794246"
+      ],
+      "finding_ids": [
+        "aged-mice-resolution-deficit-rescued-by-nano-proresolving-medicines",
+        "rvd1-improved-aged-muscle-functional-recovery",
+        "maresin1-improved-aged-bone-fracture-healing"
+      ],
+      "gap_note": "These are tissue-repair healthspan models rather than lifespan studies, and they do not establish human efficacy."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes specialized pro-resolving mediator biology, EPA/DHA precursor relationships, leukocyte phenotype and phagocytosis changes, cytokine and PMN activation markers, and aged-resolution impairment mechanisms.",
+      "source_ids": [
+        "pmid-25217168",
+        "pmid-34075679",
+        "pmid-32794246",
+        "pmid-31829100",
+        "pmid-35349683",
+        "pmid-32696697",
+        "pmid-29735019"
+      ],
+      "finding_ids": [
+        "aged-mice-resolution-deficit-rescued-by-nano-proresolving-medicines",
+        "rvd1-improved-aged-muscle-functional-recovery",
+        "maresin1-improved-aged-bone-fracture-healing",
+        "enriched-marine-oil-raised-human-spms-immune-responses",
+        "spm-active-increased-select-spms-obesity",
+        "marine-oil-pad-altered-lipid-mediators-leukocyte-phenotype",
+        "epa-dha-lowered-cytokines-aging-cvlu-adults",
+        "epa-dha-reduced-cvlu-pmn-activation-wound-area-trend"
+      ]
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The public outlook and evidence reviews explicitly capture the main limitations: direct SPM repair is animal-level, human evidence is biomarker-focused, EPA/DHA precursor therapy is not interchangeable with direct RvD1 or MaR1 delivery, and the larger older-adult CVLU trial has no posted results.",
+      "source_ids": [
+        "nct-03576989",
+        "nct-02719665",
+        "doi-10.1111-wrr.12558"
+      ],
+      "finding_ids": [
+        "completed-omega3-cvlu-trial-no-posted-results",
+        "epa-dha-reduced-cvlu-pmn-activation-wound-area-trend"
+      ],
+      "gap_note": "No definitive negative larger trial result is available yet; the strongest limiting record is still absence of posted outcomes."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "Short-term human fish-oil, SPM-active, and EPA/DHA studies provide some tolerability context, but direct SPM human safety, frail or older wound-population safety, chronic durability, and product-specific safety boundaries are weak.",
+      "source_ids": [
+        "pmid-31829100",
+        "pmid-35349683",
+        "pmid-29735019",
+        "doi-10.1111-wrr.12558",
+        "nct-03576989"
+      ],
+      "finding_ids": [
+        "enriched-marine-oil-raised-human-spms-immune-responses",
+        "spm-active-increased-select-spms-obesity",
+        "epa-dha-lowered-cytokines-aging-cvlu-adults",
+        "epa-dha-reduced-cvlu-pmn-activation-wound-area-trend",
+        "completed-omega3-cvlu-trial-no-posted-results"
+      ],
+      "gap_note": "Longer direct-SPM and older-adult wound-population safety data remain important watch items."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "Current surveillance rechecked the baseline registries. NCT03347006 and NCT04701138 have posted results, NCT02719665 remains completed without results, and NCT03576989 remains completed without posted results but with official unposted-results submission activity.",
+      "source_ids": [
+        "nct-03347006",
+        "nct-04701138",
+        "nct-02719665",
+        "nct-03576989"
+      ],
+      "finding_ids": [
+        "completed-omega3-cvlu-trial-no-posted-results",
+        "enriched-marine-oil-raised-human-spms-immune-responses",
+        "spm-active-increased-select-spms-obesity",
+        "marine-oil-pad-altered-lipid-mediators-leukocyte-phenotype"
+      ],
+      "gap_note": "NCT03576989 posted results are the highest-priority active-trial gap."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "The baseline is built primarily from primary sources and registries. It does not yet include a recent systematic review or meta-analysis specifically integrating SPMs, EPA/DHA, aging, and human tissue repair.",
+      "gap_note": "A future coverage repair could add review-level triangulation if the track advances beyond biomarker-stage claims."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes major direct aged-animal RvD1, MaR1, and resolution-deficit anchors plus representative human target-engagement and CVLU biomarker anchors.",
+      "source_ids": [
+        "pmid-25217168",
+        "pmid-34075679",
+        "pmid-32794246",
+        "pmid-31829100",
+        "pmid-32696697",
+        "pmid-29735019"
+      ],
+      "finding_ids": [
+        "aged-mice-resolution-deficit-rescued-by-nano-proresolving-medicines",
+        "rvd1-improved-aged-muscle-functional-recovery",
+        "maresin1-improved-aged-bone-fracture-healing",
+        "enriched-marine-oil-raised-human-spms-immune-responses",
+        "epa-dha-lowered-cytokines-aging-cvlu-adults",
+        "epa-dha-reduced-cvlu-pmn-activation-wound-area-trend"
+      ],
+      "gap_note": "A deeper historical SPM-discovery and repair-biology audit could improve strong-level coverage, but is not required for the current low-confidence baseline."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The outlook and evidence reviews explicitly separate direct RvD1 and MaR1, SPM-enriched marine oil, SPM-active products, and EPA/DHA precursor therapy, and they keep CVLU wound evidence distinct from broad LEV tissue repair claims.",
+      "source_ids": [
+        "pmid-31829100",
+        "pmid-35349683",
+        "pmid-32696697",
+        "pmid-29735019",
+        "doi-10.1111-wrr.12558",
+        "nct-03576989"
+      ],
+      "finding_ids": [
+        "enriched-marine-oil-raised-human-spms-immune-responses",
+        "spm-active-increased-select-spms-obesity",
+        "marine-oil-pad-altered-lipid-mediators-leukocyte-phenotype",
+        "epa-dha-lowered-cytokines-aging-cvlu-adults",
+        "epa-dha-reduced-cvlu-pmn-activation-wound-area-trend",
+        "completed-omega3-cvlu-trial-no-posted-results"
+      ]
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-25217168",
+    "pmid-34075679",
+    "pmid-32794246",
+    "pmid-31829100",
+    "nct-03347006",
+    "pmid-35349683",
+    "nct-04701138",
+    "pmid-32696697",
+    "nct-02719665",
+    "pmid-29735019",
+    "doi-10.1111-wrr.12558",
+    "nct-03576989"
+  ],
+  "covered_finding_ids": [
+    "aged-mice-resolution-deficit-rescued-by-nano-proresolving-medicines",
+    "rvd1-improved-aged-muscle-functional-recovery",
+    "maresin1-improved-aged-bone-fracture-healing",
+    "enriched-marine-oil-raised-human-spms-immune-responses",
+    "spm-active-increased-select-spms-obesity",
+    "marine-oil-pad-altered-lipid-mediators-leukocyte-phenotype",
+    "epa-dha-lowered-cytokines-aging-cvlu-adults",
+    "epa-dha-reduced-cvlu-pmn-activation-wound-area-trend",
+    "completed-omega3-cvlu-trial-no-posted-results"
+  ],
+  "search_log_summary": "Delta surveillance checked PubMed same-window result queries, PubMed NCT/title lookup for NCT03576989, direct ClinicalTrials.gov records for NCT03576989, NCT03347006, NCT04701138, and NCT02719665, plus a broader ClinicalTrials.gov search for pro-resolving mediator and omega-3 wound or repair trials. No public-update material was found.",
+  "source_selection_notes": [
+    "PMID 31948466 was excluded as the 2020 NCT03576989 protocol rather than a new results paper.",
+    "NCT03576989 remains public no-results context and should be watched because the official record shows unposted-results submission activity.",
+    "NCT01747447 and NCT06036485 were excluded as wrong-scope omega-3-related registries.",
+    "No new same-window PubMed result changed the current support map."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "nct03576989-results-gap",
+      "gap_type": "evidence_gap",
+      "category": "active_trials_registries",
+      "description": "The completed older-adult chronic venous leg ulcer EPA/DHA trial has no posted results, despite official unposted-results submission and reset activity.",
+      "priority": "high",
+      "suggested_action": "Recheck NCT03576989 and PubMed for posted results or linked publications during the next surveillance pass."
+    },
+    {
+      "gap_id": "direct-spm-human-repair-gap",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "No human study yet tests direct RvD1, MaR1, or comparable direct specialized pro-resolving mediator therapy against tissue-repair outcomes.",
+      "priority": "high",
+      "suggested_action": "Watch for direct-SPM human repair, wound, muscle, bone, or regenerative-medicine trials before considering a stage upgrade."
+    },
+    {
+      "gap_id": "human-repair-endpoint-gap",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "Existing human evidence is strongest for SPM bioavailability, leukocyte phenotype, inflammatory cytokines, wound-fluid PMNs, and wound-area trends rather than definitive repair efficacy.",
+      "priority": "high",
+      "suggested_action": "Require prespecified repair or healing endpoints, preferably in older or impaired-repair populations, before strengthening public claims."
+    },
+    {
+      "gap_id": "direct-spm-safety-durability-gap",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Direct-SPM human safety, chronic dosing, product-specific exposure, and durability remain thinly covered.",
+      "priority": "medium",
+      "suggested_action": "Track longer safety, dose-ranging, and durability reports for RvD1, MaR1, or defined SPM products."
+    },
+    {
+      "gap_id": "recent-review-triangulation-gap",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "The current record set does not include a recent systematic review specific to SPMs, EPA/DHA, aging, and human tissue repair.",
+      "priority": "low",
+      "suggested_action": "Consider coverage repair for review-level triangulation only if future public claims move beyond low-confidence biomarker-stage framing."
+    }
+  ],
+  "next_coverage_action": "Continue ordinary surveillance for posted NCT03576989 results, direct-SPM human repair studies, and safety/durability evidence. Coverage repair is not required before the next delta pass.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "resolution-pathway-and-tissue-repair",
+    "chronic-inflammation",
+    "surveillance",
+    "adequate-coverage"
+  ]
+}

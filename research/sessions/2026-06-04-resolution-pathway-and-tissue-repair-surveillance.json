@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-04-resolution-pathway-and-tissue-repair-surveillance",
+  "name": "Resolution Pathway and Tissue Repair Surveillance",
+  "mode": "surveillance",
+  "started_at": "2026-06-04T11:56:00Z",
+  "completed_at": "2026-06-04T12:03:25Z",
+  "scope": {
+    "question": "What changed for resolution pathway and tissue repair since the 2026-06-03 public baseline publication?",
+    "hallmark_ids": [
+      "chronic_inflammation"
+    ],
+    "track_ids": [
+      "resolution-pathway-and-tissue-repair"
+    ],
+    "intervention_ids": [
+      "epa-dha-oral-supplementation",
+      "maresin-1",
+      "resolvin-d1",
+      "spm-enriched-marine-oil"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "coverage_assessment_updated",
+  "summary": "Ran a delta surveillance pass from the 2026-06-03 resolution-pathway-and-tissue-repair publication through 2026-06-04. PubMed same-window searches returned no new result publications, and an NCT03576989/title search only returned the 2020 protocol. ClinicalTrials.gov still lists NCT03576989 as completed with no posted results, although the official unposted-results annotation shows submission and reset activity through May 2026. The other baseline registries remain consistent with the published interpretation. No public outlook, source, study, finding, or activity bundle is warranted. Created the first internal coverage assessment for the track and kept next mode as surveillance.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "activity_only",
+    "public_update_needed": false,
+    "activity_only": true,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The only current activity signal is registry-process context for NCT03576989; it does not provide posted efficacy, biomarker, safety, or wound-repair results. Existing posted-result registries and PubMed evidence still support the low-confidence human_biomarker_signal baseline, with direct RvD1 and MaR1 repair evidence remaining aged-animal level."
+  },
+  "search_log": [
+    {
+      "source_name": "PubMed ESearch",
+      "query": "(resolvin OR resolvin D1 OR maresin OR maresin 1 OR specialized pro-resolving mediator OR pro-resolving mediator OR EPA DHA OR omega-3) AND (wound healing OR tissue repair OR chronic venous leg ulcer OR fracture healing OR muscle regeneration OR older adults OR aging), publication date 2026-06-03 to 2026-06-04",
+      "checked_at": "2026-06-04T11:58:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28resolvin%20OR%20resolvin%20D1%20OR%20maresin%20OR%20maresin%201%20OR%20specialized%20pro-resolving%20mediator%20OR%20pro-resolving%20mediator%20OR%20EPA%20DHA%20OR%20omega-3%29%20AND%20%28wound%20healing%20OR%20tissue%20repair%20OR%20chronic%20venous%20leg%20ulcer%20OR%20fracture%20healing%20OR%20muscle%20regeneration%20OR%20older%20adults%20OR%20aging%29",
+      "summary": "Returned zero PubMed records in the same-window delta query."
+    },
+    {
+      "source_name": "PubMed ESearch and ESummary",
+      "query": "NCT03576989 OR \"Impact of Omega-3 Fatty Acid Oral Therapy on Healing of Chronic Venous Leg Ulcers\"",
+      "checked_at": "2026-06-04T12:02:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=NCT03576989%20OR%20%22Impact%20of%20Omega-3%20Fatty%20Acid%20Oral%20Therapy%20on%20Healing%20of%20Chronic%20Venous%20Leg%20Ulcers%22",
+      "summary": "Returned PMID 31948466, the 2020 protocol for the omega-3 CVLU older-adult trial, not a new results publication."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "NCT03576989",
+      "checked_at": "2026-06-04T11:59:00Z",
+      "url": "https://clinicaltrials.gov/study/NCT03576989",
+      "summary": "NCT03576989 remains completed, lists actual enrollment of 296 and primary completion on 2024-12-18, and has no posted results. The official annotation includes unposted-results release/reset events and submission tracking through 2026-05-18."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "NCT03347006, NCT04701138, and NCT02719665",
+      "checked_at": "2026-06-04T12:00:00Z",
+      "url": "https://clinicaltrials.gov/",
+      "summary": "NCT03347006 and NCT04701138 remain completed with posted results; NCT02719665 remains completed with no posted results. None changes the public interpretation."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "(resolvin OR maresin OR specialized pro-resolving mediator OR omega-3 OR EPA DHA) AND (wound OR ulcer OR tissue repair OR older adult OR aging)",
+      "checked_at": "2026-06-04T11:59:00Z",
+      "url": "https://clinicaltrials.gov/search?term=%28resolvin%20OR%20maresin%20OR%20specialized%20pro-resolving%20mediator%20OR%20omega-3%20OR%20EPA%20DHA%29%20AND%20%28wound%20OR%20ulcer%20OR%20tissue%20repair%20OR%20older%20adult%20OR%20aging%29",
+      "summary": "Returned broad omega-3, wound-product, bone, cancer, ICU, and other wrong-scope trials. No relevant result-bearing delta was found beyond unchanged baseline registries."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "NCT03576989",
+      "title": "Impact of Omega-3 Fatty Acid Oral Therapy on Healing of Chronic Venous Leg Ulcers in Older Adults",
+      "url": "https://clinicaltrials.gov/study/NCT03576989",
+      "decision": "unchanged_registry",
+      "reason": "The registry remains completed with no posted results as of 2026-06-04. The unposted-results annotation and submission tracking are surveillance context only until outcome results are released."
+    },
+    {
+      "reference": "PMID 31948466",
+      "title": "Impact of omega-3 fatty acid oral therapy on healing of chronic venous leg ulcers in older adults: Study protocol for a randomized controlled single-center trial.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31948466/",
+      "decision": "duplicate",
+      "reason": "Protocol paper for the already captured NCT03576989 registry; it is not a new outcome publication."
+    },
+    {
+      "reference": "NCT03347006",
+      "title": "SPM Regulation by Fish Oil Supplements in Healthy Volunteers",
+      "url": "https://clinicaltrials.gov/study/NCT03347006",
+      "decision": "unchanged_registry",
+      "reason": "Registry remains completed with posted results and continues to support target engagement rather than tissue-repair efficacy."
+    },
+    {
+      "reference": "NCT04701138",
+      "title": "Bioavailability of SPMs in Obese Humans",
+      "url": "https://clinicaltrials.gov/study/NCT04701138",
+      "decision": "unchanged_registry",
+      "reason": "Registry remains completed with posted results and continues to support bioavailability or target-engagement context rather than direct tissue-repair outcomes."
+    },
+    {
+      "reference": "NCT02719665",
+      "title": "THE OMEGA-SPM-DOSE and OMEGA-SPM-PAD: Specialized Pro-Resolving Mediators in Patients With Peripheral Artery Disease",
+      "url": "https://clinicaltrials.gov/study/NCT02719665",
+      "decision": "unchanged_registry",
+      "reason": "Registry remains completed with no posted results and does not alter the current public baseline."
+    },
+    {
+      "reference": "NCT01747447",
+      "title": "Vitamin D and Omega-3 Trial Effects on Bone Structure and Architecture",
+      "url": "https://clinicaltrials.gov/study/NCT01747447",
+      "decision": "wrong_scope",
+      "reason": "Large omega-3-related substudy with posted results, but it does not test specialized pro-resolving mediator tissue repair, wound healing, aged muscle regeneration, or fracture repair as framed by this track."
+    },
+    {
+      "reference": "NCT06036485",
+      "title": "Kerecis Omega 3 Compared to Standard of Care Procedures",
+      "url": "https://clinicaltrials.gov/study/NCT06036485",
+      "decision": "wrong_scope",
+      "reason": "Withdrawn wound-technology registry using omega-3 fish-skin material, not oral EPA/DHA precursor therapy, direct SPM delivery, or resolution-pathway target engagement."
+    }
+  ],
+  "source_ids": [
+    "pmid-25217168",
+    "pmid-34075679",
+    "pmid-32794246",
+    "pmid-31829100",
+    "nct-03347006",
+    "pmid-35349683",
+    "nct-04701138",
+    "pmid-32696697",
+    "nct-02719665",
+    "pmid-29735019",
+    "doi-10.1111-wrr.12558",
+    "nct-03576989"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/31948466/",
+    "https://clinicaltrials.gov/study/NCT03576989",
+    "https://clinicaltrials.gov/study/NCT03347006",
+    "https://clinicaltrials.gov/study/NCT04701138",
+    "https://clinicaltrials.gov/study/NCT02719665",
+    "https://clinicaltrials.gov/study/NCT01747447",
+    "https://clinicaltrials.gov/study/NCT06036485"
+  ],
+  "notes": [
+    "No candidate bundle was created because all deltas were no-results, unchanged registry status, protocol-only, or wrong-scope context.",
+    "NCT03576989 remains the key near-term watch item because its official record shows unposted-results submission activity but no released outcome results.",
+    "The public track boundary remains unchanged: direct RvD1 and MaR1 repair support is aged-animal evidence, while human SPM and omega-3 evidence is target-engagement or inflammatory-biomarker evidence."
+  ],
+  "next_actions": [
+    "Continue ordinary surveillance for posted NCT03576989 results or linked publications.",
+    "Create a public update only if the older-adult CVLU trial posts results or a new human direct-SPM tissue-repair study reports outcome data.",
+    "Use coverage repair only if future public claims require stronger direct-SPM human safety, durability, or seminal-anchor auditing."
+  ]
+}
