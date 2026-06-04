@@ -1,0 +1,180 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-04-insulin-igf-axis-modulation-coverage-repair",
+  "name": "Insulin and IGF Axis Modulation Coverage Repair",
+  "mode": "coverage_repair",
+  "started_at": "2026-06-04T10:03:00Z",
+  "completed_at": "2026-06-04T10:34:59Z",
+  "scope": {
+    "question": "Which known source-completeness gaps for Insulin and IGF Axis Modulation need repair, and does resolving them change the coverage verdict or public boundaries?",
+    "hallmark_ids": [
+      "deregulated_nutrient_sensing"
+    ],
+    "track_ids": [
+      "insulin-igf-axis-modulation"
+    ],
+    "intervention_ids": [
+      "growth-hormone-igf-axis-attenuation",
+      "dietary-protein-restriction",
+      "growth-hormone-administration",
+      "fasting-mimicking-diet",
+      "acarbose"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "coverage_assessment_updated",
+  "summary": "Coverage repair checked the acarbose aging registry records, FMD/longevity-diet trial-watch records, and recent review/meta-analysis context named by the June 3 coverage assessment. NCT02953093 posted results after early termination, but the planned tissue gene-expression, serum miRNA, and fecal microbiome endpoints were not analyzable or not reported. NCT02865499 posted a very small uncontrolled microbiome result that does not establish aging efficacy. The FMD/longevity-diet registries remain no-results or recruiting/unknown-status context. Recent PubMed review triangulation did not reveal a missing primary anchor that would change the public stage, blockers, support map, or confidence. The repaired assessment can move from thin to adequate coverage while retaining high-priority evidence gaps and returning the track to ordinary surveillance.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "none",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The checked registries and reviews clarify source coverage but do not add a controlled human functional, disease, disability, multimorbidity, or mortality result. The current low-confidence human_biomarker_signal public outlook remains bounded and does not need a candidate bundle from this repair."
+  },
+  "search_log": [
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "NCT02953093",
+      "checked_at": "2026-06-04T10:16:00Z",
+      "url": "https://clinicaltrials.gov/study/NCT02953093",
+      "summary": "Terminated phase 2 crossover acarbose study in older men; results posted June 24, 2025, after early termination for lack of funding. Posted outcome entries report no analyzable tissue gene-expression data, no serum miRNA sequencing results, and uninterpretable fecal microbiome results."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "NCT02865499",
+      "checked_at": "2026-06-04T10:16:00Z",
+      "url": "https://clinicaltrials.gov/study/NCT02865499",
+      "summary": "Completed single-group acarbose pilot in geriatric subjects with 8 enrolled and 6 analyzed; posted microbiome outcome does not provide controlled aging biomarker, functional, disease, or mortality evidence."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "NCT05698654, NCT07065955, NCT07255300",
+      "checked_at": "2026-06-04T10:17:00Z",
+      "url": "https://clinicaltrials.gov/study/NCT05698654",
+      "summary": "FMD/longevity-diet records remain trial-watch context: NCT05698654 has unknown overall status with no posted results, NCT07065955 is completed retrospective no-results context, and NCT07255300 is recruiting follow-up context through 2027."
+    },
+    {
+      "source_name": "NCBI PubMed ESearch and ESummary",
+      "query": "Recent reviews for insulin-like growth factor aging, acarbose aging/longevity, fasting-mimicking diet aging, and protein restriction IGF-1 aging, 2024-2026",
+      "checked_at": "2026-06-04T10:25:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Recent review/meta-analysis triangulation identified acarbose clinical-trial-progress review context, GH treatment and GH/IGF inflammation reviews, amino-acid restriction review context, FMD review context, and human IGF-1 dietary meta-analyses. None required a public insulin/IGF-axis outlook update."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "NCT02953093",
+      "title": "Study of Acarbose in Longevity",
+      "url": "https://clinicaltrials.gov/study/NCT02953093",
+      "decision": "context_only",
+      "reason": "Terminated early with posted but non-informative primary and secondary outcome entries. It is useful limiting context for acarbose translation but not a public support-map update."
+    },
+    {
+      "reference": "NCT02865499",
+      "title": "Acarbose Anti-aging Effects in Geriatric Subjects (Substudy B & C)",
+      "url": "https://clinicaltrials.gov/study/NCT02865499",
+      "decision": "context_only",
+      "reason": "Very small uncontrolled acarbose pilot with a microbiome-only posted outcome and no aging functional, disease, disability, multimorbidity, or mortality endpoint."
+    },
+    {
+      "reference": "NCT05698654",
+      "title": "Fasting-mimicking Diet and Longevity Diet, Body Composition and Aging",
+      "url": "https://clinicaltrials.gov/study/NCT05698654",
+      "decision": "no_results",
+      "reason": "No posted public results; unknown overall status with last known recruiting status, so it remains trial-watch context."
+    },
+    {
+      "reference": "NCT07065955",
+      "title": "Longevity Diet and the Fasting-mimicking Diet",
+      "url": "https://clinicaltrials.gov/study/NCT07065955",
+      "decision": "no_results",
+      "reason": "Completed retrospective registry record without posted results; useful for monitoring but not evidence for a public insulin/IGF-axis update."
+    },
+    {
+      "reference": "NCT07255300",
+      "title": "Follow up Study of Varapodio Trial: Effect of Longevity and Fasting Mimicking Diet on Risk Factors Age Correlated and Biomarkers of Aging",
+      "url": "https://clinicaltrials.gov/study/NCT07255300",
+      "decision": "no_results",
+      "reason": "Recruiting follow-up registry with estimated completion in 2027 and no posted results."
+    },
+    {
+      "reference": "PMID 38966557",
+      "title": "Repurposing effect of cardiovascular-metabolic drug to increase lifespan: a systematic review of animal studies and current clinical trial progress",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38966557/",
+      "decision": "context_only",
+      "reason": "Recent systematic review confirms acarbose animal-lifespan and registry relevance but does not add a reviewed human acarbose aging efficacy result."
+    },
+    {
+      "reference": "PMID 38489867",
+      "title": "Growth hormone treatment in aged patients with comorbidities: A systematic review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38489867/",
+      "decision": "context_only",
+      "reason": "Recent GH treatment review supports the existing safety-sensitive GH boundary rather than a positive insulin/IGF-axis gerotherapy update."
+    },
+    {
+      "reference": "PMID 38757144",
+      "title": "Amino acid restriction, aging, and longevity: an update",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38757144/",
+      "decision": "context_only",
+      "reason": "Recent amino-acid restriction review reinforces translational uncertainty and animal-model concentration for protein restriction rather than changing the public track rating."
+    },
+    {
+      "reference": "PMID 38287649",
+      "title": "Effects of the periodic fasting-mimicking diet on health, lifespan, and multiple diseases: a narrative review and clinical implications",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38287649/",
+      "decision": "context_only",
+      "reason": "Recent FMD review context reinforces cross-track FMD relevance but does not supersede the already promoted FMD human biomarker records."
+    },
+    {
+      "reference": "PMID 39396675",
+      "title": "Effect of ketogenic diets on insulin-like growth factor (IGF)-1 in humans: A systematic review and meta-analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39396675/",
+      "decision": "context_only",
+      "reason": "Human dietary IGF-1-lowering meta-analysis is adjacent nutrition context, not a defined aging-directed insulin/IGF-axis intervention with functional or durable clinical endpoints."
+    }
+  ],
+  "source_ids": [
+    "pmid-21325617",
+    "pmid-18316725",
+    "pmid-24618355",
+    "pmid-28202779",
+    "pmid-38378685",
+    "pmid-12483226",
+    "pmid-15498882",
+    "pmid-34811874",
+    "pmid-35952979",
+    "pmid-12543978",
+    "pmid-17928362",
+    "pmid-30688027",
+    "pmid-24606898",
+    "pmid-12425705"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT02953093",
+    "https://clinicaltrials.gov/study/NCT02865499",
+    "https://clinicaltrials.gov/study/NCT05698654",
+    "https://clinicaltrials.gov/study/NCT07065955",
+    "https://clinicaltrials.gov/study/NCT07255300",
+    "https://pubmed.ncbi.nlm.nih.gov/38966557/",
+    "https://pubmed.ncbi.nlm.nih.gov/38489867/",
+    "https://pubmed.ncbi.nlm.nih.gov/39639711/",
+    "https://pubmed.ncbi.nlm.nih.gov/38757144/",
+    "https://pubmed.ncbi.nlm.nih.gov/38287649/",
+    "https://pubmed.ncbi.nlm.nih.gov/39166749/",
+    "https://pubmed.ncbi.nlm.nih.gov/39614363/",
+    "https://pubmed.ncbi.nlm.nih.gov/39396675/"
+  ],
+  "notes": [
+    "The acarbose registry results are explicitly logged as coverage-repair exclusions rather than staged because they do not alter the current public boundary.",
+    "The already promoted FMD biological-age marker source is relevant cross-track context, but the insulin/IGF outlook already states FMD biomarker movement and blocks functional or durable-outcome upgrades.",
+    "Recent review searches did not identify a missing primary anchor strong enough to change the track's stage, confidence, or forecast language."
+  ],
+  "next_actions": [
+    "Resume ordinary surveillance for insulin/IGF axis modulation.",
+    "Monitor FMD/longevity-diet registry records for posted results, especially NCT05698654 and NCT07255300.",
+    "Stage a public candidate bundle only if future acarbose, FMD, or endocrine-modulation results change the support map or public boundaries."
+  ]
+}

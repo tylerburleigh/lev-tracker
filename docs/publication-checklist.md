@@ -64,14 +64,16 @@ The publish action:
    npm run sync:research-planning
    ```
 
-6. Run data validation and integrity checks:
+6. Inspect `ops/triage-state.v1.json`. If it emits an `editorial_rollup` item, handle it with `docs/editorial-rollup.md` before routine research unless the curator explicitly defers the public-summary update.
+
+7. Run data validation and integrity checks:
 
    ```bash
    npm run validate:records
    npm run audit:data
    ```
 
-7. Run the normal app checks:
+8. Run the normal app checks:
 
    ```bash
    npm run typecheck

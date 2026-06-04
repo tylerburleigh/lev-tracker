@@ -11,6 +11,35 @@ async function readJson(relativePath) {
   return JSON.parse(await fs.readFile(filePath, "utf8"));
 }
 
+async function readTextIfExists(relativePath) {
+  const filePath = path.join(repoRoot, relativePath);
+
+  try {
+    return await fs.readFile(filePath, "utf8");
+  } catch (error) {
+    if (error.code === "ENOENT") {
+      return "";
+    }
+
+    throw error;
+  }
+}
+
+async function pathExists(relativePath) {
+  const filePath = path.join(repoRoot, relativePath);
+
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch (error) {
+    if (error.code === "ENOENT") {
+      return false;
+    }
+
+    throw error;
+  }
+}
+
 async function writeJson(relativePath, value) {
   const filePath = path.join(repoRoot, relativePath);
   await fs.mkdir(path.dirname(filePath), { recursive: true });
@@ -39,6 +68,55 @@ function compactObject(value) {
   return Object.fromEntries(
     Object.entries(value).filter(([, entryValue]) => entryValue !== undefined && entryValue !== null)
   );
+}
+
+function datePart(value) {
+  if (!value) {
+    return undefined;
+  }
+
+  const text = String(value);
+  const directDate = text.match(/^\d{4}-\d{2}-\d{2}/);
+  if (directDate) {
+    return directDate[0];
+  }
+
+  const parsedDate = new Date(text);
+  if (Number.isNaN(parsedDate.valueOf())) {
+    return undefined;
+  }
+
+  return parsedDate.toISOString().slice(0, 10);
+}
+
+function monthPart(value) {
+  return datePart(value)?.slice(0, 7);
+}
+
+function timestampValue(value) {
+  const parsed = Date.parse(value ?? "");
+  return Number.isNaN(parsed) ? 0 : parsed;
+}
+
+function isAfterDate(left, right) {
+  const leftDate = datePart(left);
+  const rightDate = datePart(right);
+
+  if (!leftDate) {
+    return false;
+  }
+
+  if (!rightDate) {
+    return true;
+  }
+
+  return leftDate > rightDate;
+}
+
+function latestBy(records, accessor) {
+  return records
+    .filter((record) => accessor(record))
+    .sort((left, right) => timestampValue(accessor(right)) - timestampValue(accessor(left)))[0];
 }
 
 function buildStatusByTrack(coverageStatus) {
@@ -124,6 +202,191 @@ function buildEditorialItems(activeBundles) {
         }
       ]
     });
+  });
+}
+
+function setLatestHallmarkDate(latestDatesByHallmarkId, hallmarkId, eventDate) {
+  if (!hallmarkId || !eventDate) {
+    return;
+  }
+
+  const previousDate = latestDatesByHallmarkId.get(hallmarkId);
+  if (!previousDate || eventDate > previousDate) {
+    latestDatesByHallmarkId.set(hallmarkId, eventDate);
+  }
+}
+
+function affectedHallmarkDatesForEvents(events, outlookById, statusByTrack) {
+  const latestDatesByHallmarkId = new Map();
+
+  for (const event of events) {
+    const eventDate = datePart(event.published_at);
+
+    for (const outlookId of event.affected_outlook_ids ?? []) {
+      const outlook = outlookById.get(outlookId);
+      if (!outlook) {
+        continue;
+      }
+
+      if (outlook.subject_type === "hallmark") {
+        setLatestHallmarkDate(latestDatesByHallmarkId, outlook.subject_id, eventDate);
+      }
+
+      if (outlook.subject_type === "track") {
+        const trackStatus = statusByTrack.get(outlook.subject_id);
+        setLatestHallmarkDate(latestDatesByHallmarkId, trackStatus?.hallmark_id, eventDate);
+      }
+    }
+  }
+
+  return latestDatesByHallmarkId;
+}
+
+function buildEditorialRollupItem({
+  publicationEvents,
+  stateOfFieldEditions,
+  hallmarkInsights,
+  outlooks,
+  statusByTrack,
+  siteShellText,
+  hasForecastRoute
+}) {
+  const meaningfulPublicationEvents = publicationEvents
+    .filter((event) => (event.affected_outlook_ids?.length ?? 0) > 0)
+    .sort((left, right) => timestampValue(right.published_at) - timestampValue(left.published_at));
+  const latestAffectedPublicationEvent = meaningfulPublicationEvents[0];
+  const latestStateOfFieldEdition = latestBy(stateOfFieldEditions, (edition) => edition.date);
+  const latestStateOfFieldDate = latestStateOfFieldEdition?.date;
+  const outlookById = new Map(outlooks.map((outlook) => [outlook.id, outlook]));
+  const overallOutlook = outlooks.find((outlook) => outlook.subject_type === "overall");
+  const latestNonOverallOutlook = latestBy(
+    outlooks.filter((outlook) => outlook.subject_type !== "overall"),
+    (outlook) => outlook.last_updated
+  );
+  const currentMonth = new Date().toISOString().slice(0, 7);
+  const hasCurrentMonthStateOfField = stateOfFieldEditions.some(
+    (edition) => monthPart(edition.date) === currentMonth || edition.slug === currentMonth
+  );
+  const hasCurrentMonthPublicationActivity = meaningfulPublicationEvents.some(
+    (event) => monthPart(event.published_at) === currentMonth
+  );
+  const eventsSinceLatestStateOfField = meaningfulPublicationEvents.filter((event) =>
+    isAfterDate(event.published_at, latestStateOfFieldDate)
+  );
+  const latestDatesByChangedHallmarkId = affectedHallmarkDatesForEvents(
+    eventsSinceLatestStateOfField,
+    outlookById,
+    statusByTrack
+  );
+  const insightsByHallmarkId = new Map(hallmarkInsights.map((insight) => [insight.hallmark_id, insight]));
+  const staleHallmarkInsightIds = [...latestDatesByChangedHallmarkId.entries()]
+    .filter(([hallmarkId, latestEventDate]) => {
+      const insight = insightsByHallmarkId.get(hallmarkId);
+      return !insight?.last_reviewed || isAfterDate(latestEventDate, insight.last_reviewed);
+    })
+    .map(([hallmarkId]) => hallmarkId)
+    .sort((left, right) => left.localeCompare(right));
+  const forecastSurfaceGap = siteShellText.includes('label: "Forecast"') && !hasForecastRoute;
+  const triggerMessages = [
+    latestAffectedPublicationEvent &&
+    isAfterDate(latestAffectedPublicationEvent.published_at, latestStateOfFieldDate)
+      ? `Latest affected publication event ${latestAffectedPublicationEvent.id} is newer than the latest state-of-field edition.`
+      : undefined,
+    overallOutlook &&
+    latestNonOverallOutlook &&
+    isAfterDate(latestNonOverallOutlook.last_updated, overallOutlook.last_updated)
+      ? `Overall outlook last_updated ${overallOutlook.last_updated} is older than the latest hallmark or track outlook change ${latestNonOverallOutlook.last_updated}.`
+      : undefined,
+    hasCurrentMonthPublicationActivity && !hasCurrentMonthStateOfField
+      ? `No ${currentMonth} state-of-field edition exists after current-month publication activity.`
+      : undefined,
+    staleHallmarkInsightIds.length > 0
+      ? `${staleHallmarkInsightIds.length} hallmark insight(s) lack review metadata after affected outlook changes.`
+      : undefined,
+    forecastSurfaceGap
+      ? "The shell presents Forecast as a public surface, but no forecast route exists."
+      : undefined
+  ].filter(Boolean);
+
+  if (triggerMessages.length === 0) {
+    return undefined;
+  }
+
+  return compactObject({
+    item_id: "editorial-rollup-public-summary-surfaces",
+    mode: "editorial_rollup",
+    domain: "editorial",
+    priority_tier: "now",
+    status: "ready",
+    title: "Review public editorial rollup surfaces",
+    rationale: triggerMessages.join(" "),
+    default_action:
+      "Review overall outlook, state-of-field edition, hallmark insight copy, and forecast-facing method links; update public content only when the reviewed record warrants it.",
+    runbook_path: "docs/editorial-rollup.md",
+    source_paths: [
+      "data/publication-events",
+      "data/outlooks",
+      "data/content/state-of-the-field",
+      "data/content/hallmark-insights.json",
+      "src/components/site-shell.tsx",
+      "docs/editorial-rollup.md"
+    ],
+    references: [
+      latestAffectedPublicationEvent
+        ? {
+            record_type: "publication_event",
+            record_id: latestAffectedPublicationEvent.id
+          }
+        : undefined,
+      overallOutlook
+        ? {
+            record_type: "outlook",
+            record_id: overallOutlook.id
+          }
+        : undefined
+    ].filter(Boolean),
+    signals: [
+      {
+        name: "trigger_count",
+        value: triggerMessages.length
+      },
+      {
+        name: "latest_affected_publication_event_id",
+        value: latestAffectedPublicationEvent?.id ?? "none"
+      },
+      {
+        name: "latest_affected_publication_event_date",
+        value: datePart(latestAffectedPublicationEvent?.published_at) ?? "none"
+      },
+      {
+        name: "latest_state_of_field_date",
+        value: latestStateOfFieldDate ?? "none"
+      },
+      {
+        name: "overall_outlook_last_updated",
+        value: overallOutlook?.last_updated ?? "none"
+      },
+      {
+        name: "latest_non_overall_outlook_updated",
+        value: latestNonOverallOutlook?.last_updated ?? "none"
+      },
+      {
+        name: "stale_hallmark_insight_count",
+        value: staleHallmarkInsightIds.length
+      },
+      {
+        name: "first_stale_hallmark_insight_id",
+        value: staleHallmarkInsightIds[0] ?? "none"
+      },
+      {
+        name: "no_current_month_state_of_field",
+        value: hasCurrentMonthPublicationActivity && !hasCurrentMonthStateOfField
+      },
+      {
+        name: "forecast_surface_gap",
+        value: forecastSurfaceGap
+      }
+    ]
   });
 }
 
@@ -383,7 +646,12 @@ async function main() {
     findings,
     studies,
     activityItems,
-    outlooks
+    outlooks,
+    publicationEvents,
+    stateOfFieldEditions,
+    hallmarkInsights,
+    siteShellText,
+    hasForecastRoute
   ] = await Promise.all([
     readJson("research/state/coverage-status.v1.json"),
     readJson("research/backlog/track-priority.v1.json"),
@@ -392,7 +660,12 @@ async function main() {
     readCollection("data/findings"),
     readCollection("data/studies"),
     readCollection("data/activity-items"),
-    readCollection("data/outlooks")
+    readCollection("data/outlooks"),
+    readCollection("data/publication-events"),
+    readCollection("data/content/state-of-the-field"),
+    readJson("data/content/hallmark-insights.json"),
+    readTextIfExists("src/components/site-shell.tsx"),
+    pathExists("src/app/forecast/page.tsx")
   ]);
 
   const statusByTrack = buildStatusByTrack(coverageStatus);
@@ -411,6 +684,15 @@ async function main() {
   ).length;
 
   const editorialItems = buildEditorialItems(activeBundles);
+  const editorialRollupItem = buildEditorialRollupItem({
+    publicationEvents,
+    stateOfFieldEditions,
+    hallmarkInsights,
+    outlooks,
+    statusByTrack,
+    siteShellText,
+    hasForecastRoute
+  });
   const bootstrapItems = buildBootstrapItems(priorityQueue.bootstrap_queue, statusByTrack);
   const coverageRepairItems = buildCoverageRepairItems(priorityQueue.coverage_repair_queue, statusByTrack);
   const surveillanceItem = buildSurveillanceItem(priorityQueue.surveillance_queue, statusByTrack);
@@ -419,6 +701,7 @@ async function main() {
 
   const workItems = rankWorkItems([
     ...editorialItems,
+    editorialRollupItem,
     ...bootstrapItems,
     ...coverageRepairItems,
     surveillanceItem,
@@ -449,6 +732,7 @@ async function main() {
       priority_order: [
         "publish",
         "editorial_review",
+        "editorial_rollup",
         "bootstrap",
         "coverage_repair",
         "surveillance",

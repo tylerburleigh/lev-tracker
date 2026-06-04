@@ -1,0 +1,275 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "insulin-igf-axis-modulation-coverage-repair-2026-06-04",
+  "name": "Insulin and IGF Axis Modulation Coverage Repair for June 4, 2026",
+  "short_name": "Insulin/IGF axis coverage repair",
+  "track_id": "insulin-igf-axis-modulation",
+  "hallmark_id": "deregulated_nutrient_sensing",
+  "assessment_type": "coverage_repair",
+  "assessed_at": "2026-06-04T10:34:59Z",
+  "assessment_window": {
+    "from": "2026-06-03T21:46:44Z",
+    "to": "2026-06-04T10:34:59Z",
+    "basis": "Coverage repair created after the June 3 assessment requested acarbose registry, FMD/longevity-diet registry, and recent-review triangulation before ordinary surveillance resumed."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is now adequate for the current low-confidence human_biomarker_signal public claim. The repair pass checked the acarbose human aging registries, FMD/longevity-diet trial-watch records, and recent review/meta-analysis context that were missing from the previous coverage map. The registry checks add limiting and trial-watch context rather than public-update evidence: NCT02953093 was terminated and posted non-analyzable or unreported biomarker endpoints, NCT02865499 was a very small uncontrolled microbiome pilot, and the FMD/longevity-diet registry records still lack posted aging-outcome results or remain recruiting context. Recent review triangulation did not identify a missing primary anchor that would change the support map. The track still has high-priority evidence gaps around intentional human functional trials and preventive endocrine safety, but those are evidence limitations rather than unresolved source-completeness blockers.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-06-03-insulin-igf-axis-modulation-bootstrap",
+      "2026-06-03-insulin-igf-axis-modulation-surveillance",
+      "2026-06-04-insulin-igf-axis-modulation-coverage-repair"
+    ],
+    "candidate_bundle_ids": [
+      "insulin-igf-axis-modulation-bootstrap-2026-06-03"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-insulin-igf-axis-modulation-source-fidelity-r1",
+      "evidence-review-insulin-igf-axis-modulation-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-insulin-igf-axis-modulation-bootstrap-2026-06-03-2026-06-03t10-23-40-450z"
+    ],
+    "outlook_ids": [
+      "track-insulin-igf-axis-modulation-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "The current support map includes FMD randomized biomarker movement, a promoted 2024 FMD biological-age and immune-metabolic marker analysis from the adjacent caloric-restriction-mimetics track, older-adult GH administration safety context, and acarbose aging registry checks. The acarbose records do not support an upgrade: NCT02953093 posted non-analyzable or unreported biomarker endpoints after termination, and NCT02865499 was a tiny uncontrolled microbiome pilot. No intentional insulin/GH/IGF-axis aging intervention shows functional, disease-incidence, disability, multimorbidity, or mortality benefit.",
+      "source_ids": [
+        "pmid-28202779",
+        "pmid-38378685",
+        "pmid-12425705"
+      ],
+      "finding_ids": [
+        "fmd-reduced-aging-risk-markers-rct",
+        "fmd-biological-age-immune-metabolic-marker-signal",
+        "growth-hormone-older-adults-lean-mass-adverse-effects"
+      ],
+      "gap_note": "Coverage repair resolved the acarbose registry source-completeness gap; the remaining gap is absence of positive controlled human aging-function evidence."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "adequate",
+      "rationale": "The public baseline covers Ecuadorian GHRD natural-experiment evidence, IGF1R centenarian genetics, and exceptional-longevity IGF-1 survival associations with subgroup caveats.",
+      "source_ids": [
+        "pmid-21325617",
+        "pmid-18316725",
+        "pmid-24618355"
+      ],
+      "finding_ids": [
+        "ghr-deficiency-reduced-human-cancer-diabetes-signaling",
+        "igf1r-centenarian-mutations-reduced-signaling",
+        "low-igf1-predicted-survival-exceptional-longevity"
+      ]
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes classic and recent animal support across IGF1R heterozygosity, GHR disruption, adipocyte-specific GHR disruption, fat-specific insulin receptor knockout, IRS1 null mice, and acarbose HET3 lifespan evidence. Recent acarbose review triangulation reinforced the animal-lifespan support without adding a human-efficacy anchor.",
+      "source_ids": [
+        "pmid-12483226",
+        "pmid-15498882",
+        "pmid-34811874",
+        "pmid-35952979",
+        "pmid-12543978",
+        "pmid-17928362",
+        "pmid-30688027"
+      ],
+      "finding_ids": [
+        "igf1r-heterozygous-mice-extended-lifespan",
+        "ghrko-cr-overlap-reduced-akt-foxo-signaling",
+        "adult-ghr-disruption-improved-insulin-sensitivity-lifespan",
+        "adipocyte-ghr-disruption-improved-frailty-lifespan",
+        "firko-mice-extended-lifespan-adipose-insulin-receptor",
+        "irs1-null-female-mice-extended-lifespan-age-biomarkers",
+        "acarbose-extended-het3-mouse-lifespan-sex-dependent"
+      ],
+      "gap_note": "Animal support remains heterogeneous by sex, tissue, timing, and intervention class."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "Mechanistic coverage includes GH/IGF deficiency, IGF1R signaling, insulin sensitivity, Akt/Foxo signaling, protein intake and IGF-1 interactions, acarbose glucose-excursion context, and FMD insulin-resistance/biological-age biomarker context.",
+      "source_ids": [
+        "pmid-21325617",
+        "pmid-18316725",
+        "pmid-15498882",
+        "pmid-34811874",
+        "pmid-35952979",
+        "pmid-17928362",
+        "pmid-24606898",
+        "pmid-38378685"
+      ]
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The support map explicitly includes age-dependent protein-intake boundaries, opposite-direction GH administration safety harms, subgroup limits in human IGF-1 survival evidence, the non-interventional nature of rare genetic support, and acarbose registry limitations logged in the coverage-repair session.",
+      "source_ids": [
+        "pmid-24606898",
+        "pmid-12425705",
+        "pmid-24618355"
+      ],
+      "finding_ids": [
+        "low-protein-intake-igf1-mortality-age-boundary",
+        "growth-hormone-older-adults-lean-mass-adverse-effects",
+        "low-igf1-predicted-survival-exceptional-longevity"
+      ],
+      "gap_note": "Acarbose registry limitations were recorded as explicit coverage-repair exclusions rather than public support-map changes."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "Safety coverage is explicit but the evidence remains weak for preventive gerotherapy use. The strongest human safety boundary is older-adult GH administration harm context; acarbose registry adverse-event reporting is too small and short to establish preventive endocrine or metabolic safety, and FMD/longevity-diet registries do not yet provide durable public results.",
+      "source_ids": [
+        "pmid-12425705",
+        "pmid-24606898"
+      ],
+      "finding_ids": [
+        "growth-hormone-older-adults-lean-mass-adverse-effects",
+        "low-protein-intake-igf1-mortality-age-boundary"
+      ],
+      "gap_note": "The remaining issue is an evidence gap, not an unresolved source-completeness gap."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "Coverage repair checked the named registry records. NCT02953093 and NCT02865499 have posted results but do not add material public evidence; NCT05698654 has unknown overall status and no results; NCT07065955 is completed retrospective no-results context; and NCT07255300 is recruiting follow-up context with estimated completion in 2027.",
+      "gap_note": "Return to ordinary surveillance and monitor FMD/longevity-diet registry records for posted results."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "adequate",
+      "rationale": "Selective PubMed triangulation checked recent reviews and meta-analyses for acarbose aging trial progress, GH treatment in aged patients, GH/IGF inflammation and aging, amino-acid/protein restriction, FMD, and dietary IGF-1 modulation. The review set reinforced existing public boundaries and did not identify a missing primary anchor requiring a public update.",
+      "gap_note": "Future surveillance can revisit reviews if a new trial result or consensus review materially changes human translation."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes major local anchors for GHRD, IGF1R centenarian genetics, low IGF-1 survival, IGF1R mouse lifespan, GHRKO signaling, adult-onset and tissue-specific GHR mouse work, FIRKO, IRS1 null mice, acarbose, protein intake, GH administration, and FMD biomarker evidence. Review triangulation did not reveal a missing seminal primary source for the current claim.",
+      "source_ids": [
+        "pmid-21325617",
+        "pmid-18316725",
+        "pmid-24618355",
+        "pmid-12483226",
+        "pmid-15498882",
+        "pmid-34811874",
+        "pmid-35952979",
+        "pmid-12543978",
+        "pmid-17928362",
+        "pmid-30688027",
+        "pmid-24606898",
+        "pmid-12425705",
+        "pmid-28202779",
+        "pmid-38378685"
+      ]
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The public outlook keeps FMD and acarbose as cross-track support, separates GH administration as opposite-direction safety context, avoids treating rare lifelong genetic evidence as an adult-onset therapy, and now records acarbose/FMD registry checks as coverage context rather than inflationary public support.",
+      "source_ids": [
+        "pmid-28202779",
+        "pmid-38378685",
+        "pmid-30688027",
+        "pmid-12425705"
+      ],
+      "finding_ids": [
+        "fmd-reduced-aging-risk-markers-rct",
+        "fmd-biological-age-immune-metabolic-marker-signal",
+        "acarbose-extended-het3-mouse-lifespan-sex-dependent",
+        "growth-hormone-older-adults-lean-mass-adverse-effects"
+      ]
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-21325617",
+    "pmid-18316725",
+    "pmid-24618355",
+    "pmid-28202779",
+    "pmid-38378685",
+    "pmid-12483226",
+    "pmid-15498882",
+    "pmid-34811874",
+    "pmid-35952979",
+    "pmid-12543978",
+    "pmid-17928362",
+    "pmid-30688027",
+    "pmid-24606898",
+    "pmid-12425705"
+  ],
+  "covered_finding_ids": [
+    "ghr-deficiency-reduced-human-cancer-diabetes-signaling",
+    "igf1r-centenarian-mutations-reduced-signaling",
+    "low-igf1-predicted-survival-exceptional-longevity",
+    "fmd-reduced-aging-risk-markers-rct",
+    "fmd-biological-age-immune-metabolic-marker-signal",
+    "igf1r-heterozygous-mice-extended-lifespan",
+    "ghrko-cr-overlap-reduced-akt-foxo-signaling",
+    "adult-ghr-disruption-improved-insulin-sensitivity-lifespan",
+    "adipocyte-ghr-disruption-improved-frailty-lifespan",
+    "firko-mice-extended-lifespan-adipose-insulin-receptor",
+    "irs1-null-female-mice-extended-lifespan-age-biomarkers",
+    "acarbose-extended-het3-mouse-lifespan-sex-dependent",
+    "low-protein-intake-igf1-mortality-age-boundary",
+    "growth-hormone-older-adults-lean-mass-adverse-effects"
+  ],
+  "search_log_summary": "Coverage repair reviewed the June 3 outlook and assessment, checked ClinicalTrials.gov API records for NCT02953093, NCT02865499, NCT05698654, NCT07065955, and NCT07255300, and used PubMed ESearch/ESummary/EFetch to triangulate recent reviews and meta-analyses around acarbose aging trial progress, GH/IGF modulation, protein or amino-acid restriction, FMD, and dietary IGF-1 modulation.",
+  "source_selection_notes": [
+    "NCT02953093 was excluded from public staging because the phase 2 acarbose crossover study terminated early for lack of funding and posted no analyzable primary tissue RNA-seq, serum miRNA, or interpretable fecal microbiome outcome data.",
+    "NCT02865499 was excluded from public staging because the acarbose pilot was single-group, very small, microbiome-only, and not an aging functional, disease, disability, multimorbidity, or mortality result.",
+    "NCT05698654, NCT07065955, and NCT07255300 remain trial-watch context because they lack posted public results or are recruiting/unknown-status records as of this repair pass.",
+    "PMID 38966557 confirms acarbose animal-lifespan and clinical-registry relevance but does not add a human acarbose aging efficacy result.",
+    "PMID 38489867 and PMID 39639711 reinforce that GH/IGF biology is safety-sensitive and context-dependent; they do not support broad endocrine suppression as a gerotherapy.",
+    "PMID 38757144 and PMID 39166749 reinforce that protein or amino-acid restriction and nutrition-linked GH/IGF modulation remain translationally complex and age/context dependent.",
+    "PMID 38287649 and the already promoted PMID 38378685 support FMD as cross-track human biomarker context, while still falling short of durable functional or clinical-outcome evidence for this track.",
+    "PMID 39614363 and PMID 39396675 were treated as adjacent dietary IGF-1 modulation context, not as insulin/IGF-axis aging intervention anchors."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "no-intentional-human-aging-functional-trial",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "No controlled human intervention intentionally modulating insulin, GH, IGF-1, IGF1R, or a defined downstream node has shown aging-relevant functional, disease, disability, multimorbidity, or mortality benefit.",
+      "priority": "high",
+      "suggested_action": "Keep the public stage at human_biomarker_signal unless future controlled human studies report functional or durable clinical outcomes with acceptable endocrine safety."
+    },
+    {
+      "gap_id": "preventive-endocrine-safety-and-durability-uncertain",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Adult-onset preventive endocrine modulation remains safety-sensitive because muscle, bone, repair, cancer, diabetes, frailty, and glucose-control tradeoffs are unresolved.",
+      "priority": "high",
+      "suggested_action": "Require explicit safety, durability, tissue-selectivity, and responder-selection evidence before strengthening confidence."
+    },
+    {
+      "gap_id": "fmd-longevity-diet-results-pending",
+      "gap_type": "evidence_gap",
+      "category": "active_trials_registries",
+      "description": "FMD/longevity-diet registry records are relevant to trial watch, but current checked records do not yet provide posted public results that would clarify aging biomarkers, durability, safety, or functional translation.",
+      "priority": "medium",
+      "suggested_action": "Monitor FMD/longevity-diet registries during ordinary surveillance and stage a public update only if posted results change the support map or boundaries."
+    },
+    {
+      "gap_id": "cross-track-attribution-needs-maintenance",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "FMD and acarbose are cross-track evidence shared with caloric-restriction mimetics and related nutrient-sensing tracks, so future updates could accidentally inflate the insulin/IGF claim by inheritance.",
+      "priority": "medium",
+      "suggested_action": "Keep future public changes explicit about whether evidence supports insulin/GH/IGF-axis modulation itself or only adjacent metabolic, CR-mimetic, or autophagy mechanisms."
+    }
+  ],
+  "next_coverage_action": "Resume ordinary surveillance for insulin/IGF axis modulation. Watch acarbose publications and FMD/longevity-diet registry results, but do not run another coverage-repair pass unless a reviewer identifies a new source-completeness gap.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-assessment",
+    "coverage-repair",
+    "deregulated_nutrient_sensing",
+    "insulin-igf-axis-modulation"
+  ]
+}

@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-03T21:50:09.849Z",
+  "generated_at": "2026-06-04T10:46:23.885Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-03T21:50:09.745Z",
-    "research_priority_queue_updated_at": "2026-06-03T21:50:09.745Z",
+    "research_coverage_status_updated_at": "2026-06-04T10:38:11.828Z",
+    "research_priority_queue_updated_at": "2026-06-04T10:38:11.829Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
-    "surveillance_queue_count": 37,
-    "coverage_repair_queue_count": 1,
+    "surveillance_queue_count": 38,
+    "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 34,
     "unnormalized_intervention_id_count": 71,
     "unnormalized_intervention_reference_count": 140
@@ -20,6 +20,7 @@
     "priority_order": [
       "publish",
       "editorial_review",
+      "editorial_rollup",
       "bootstrap",
       "coverage_repair",
       "surveillance",
@@ -31,8 +32,8 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-repair-insulin-igf-axis-modulation",
-    "top_mode": "coverage_repair",
+    "top_work_item_id": "editorial-rollup-public-summary-surfaces",
+    "top_mode": "editorial_rollup",
     "active_editorial_count": 0,
     "ready_research_count": 38,
     "data_hardening_count": 1,
@@ -44,37 +45,73 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "coverage-repair-insulin-igf-axis-modulation",
-      "mode": "coverage_repair",
-      "domain": "research",
+      "item_id": "editorial-rollup-public-summary-surfaces",
+      "mode": "editorial_rollup",
+      "domain": "editorial",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Repair coverage for Insulin and IGF Axis Modulation",
-      "rationale": "Run a bounded coverage-repair pass focused on acarbose aging registries, FMD/longevity-diet trial-watch records, and recent review triangulation before ordinary surveillance resumes.",
-      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
-      "track_id": "insulin-igf-axis-modulation",
-      "hallmark_id": "deregulated_nutrient_sensing",
+      "title": "Review public editorial rollup surfaces",
+      "rationale": "Latest affected publication event publish-mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03-2026-06-03t21-32-56-692z is newer than the latest state-of-field edition. Overall outlook last_updated 2026-05-30 is older than the latest hallmark or track outlook change 2026-06-03. No 2026-06 state-of-field edition exists after current-month publication activity. 12 hallmark insight(s) lack review metadata after affected outlook changes.",
+      "default_action": "Review overall outlook, state-of-field edition, hallmark insight copy, and forecast-facing method links; update public content only when the reviewed record warrants it.",
+      "runbook_path": "docs/editorial-rollup.md",
+      "source_paths": [
+        "data/publication-events",
+        "data/outlooks",
+        "data/content/state-of-the-field",
+        "data/content/hallmark-insights.json",
+        "src/components/site-shell.tsx",
+        "docs/editorial-rollup.md"
+      ],
       "references": [
         {
-          "record_type": "track",
-          "record_id": "insulin-igf-axis-modulation"
+          "record_type": "publication_event",
+          "record_id": "publish-mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03-2026-06-03t21-32-56-692z"
         },
         {
-          "record_type": "hallmark",
-          "record_id": "deregulated_nutrient_sensing"
+          "record_type": "outlook",
+          "record_id": "overall-lev-outlook"
         }
-      ],
-      "runbook_path": "docs/coverage-assessment.md",
-      "source_paths": [
-        "research/backlog/track-priority.v1.json",
-        "research/state/coverage-status.v1.json",
-        "research/coverage-assessments",
-        "docs/coverage-assessment.md"
       ],
       "signals": [
         {
-          "name": "generated_queue_rank",
-          "value": 1
+          "name": "trigger_count",
+          "value": 4
+        },
+        {
+          "name": "latest_affected_publication_event_id",
+          "value": "publish-mitochondrial-delivery-and-transplantation-coverage-repair-2026-06-03-2026-06-03t21-32-56-692z"
+        },
+        {
+          "name": "latest_affected_publication_event_date",
+          "value": "2026-06-03"
+        },
+        {
+          "name": "latest_state_of_field_date",
+          "value": "2026-05-30"
+        },
+        {
+          "name": "overall_outlook_last_updated",
+          "value": "2026-05-30"
+        },
+        {
+          "name": "latest_non_overall_outlook_updated",
+          "value": "2026-06-03"
+        },
+        {
+          "name": "stale_hallmark_insight_count",
+          "value": 12
+        },
+        {
+          "name": "first_stale_hallmark_insight_id",
+          "value": "altered_intercellular_communication"
+        },
+        {
+          "name": "no_current_month_state_of_field",
+          "value": true
+        },
+        {
+          "name": "forecast_surface_gap",
+          "value": false
         }
       ]
     },
@@ -86,7 +123,7 @@
       "priority_tier": "now",
       "status": "ready",
       "title": "Run surveillance for Microbiome Metabolite Restoration",
-      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 4; rank 1 was recently handled by a surveillance or coverage-repair session.",
+      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 5; rank 1 was recently handled by a surveillance or coverage-repair session.",
       "default_action": "Run one track-level surveillance pass, record materiality, excluded sources, and a session; create a bundle only for a material public change.",
       "track_id": "microbiome-metabolite-restoration",
       "hallmark_id": "dysbiosis",
@@ -109,7 +146,7 @@
       "signals": [
         {
           "name": "generated_queue_rank",
-          "value": 4
+          "value": 5
         },
         {
           "name": "last_session_mode",
@@ -156,7 +193,7 @@
         },
         {
           "name": "generated_surveillance_queue_rank",
-          "value": 4
+          "value": 5
         },
         {
           "name": "track_next_mode",

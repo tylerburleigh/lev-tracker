@@ -12,7 +12,7 @@ const navItems = [
 const legendItems = [
   { href: "/methods#evidence", label: "Evidence", icon: Microscope },
   { href: "/methods#interpretation", label: "Interpretation", icon: Compass },
-  { href: "/methods#forecast", label: "Forecast", icon: Waypoints }
+  { href: "/methods#forecast", label: "Forecast Method", icon: Waypoints }
 ] as const;
 
 type SiteShellProps = {
