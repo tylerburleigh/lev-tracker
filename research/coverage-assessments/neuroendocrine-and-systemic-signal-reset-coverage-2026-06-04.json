@@ -1,0 +1,283 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "neuroendocrine-and-systemic-signal-reset-coverage-2026-06-04",
+  "name": "Neuroendocrine and Systemic Signal Reset Coverage Assessment",
+  "track_id": "neuroendocrine-and-systemic-signal-reset",
+  "hallmark_id": "altered_intercellular_communication",
+  "assessment_type": "surveillance",
+  "assessed_at": "2026-06-04T13:10:43Z",
+  "assessment_window": {
+    "from": "2026-06-02T21:04:50.553Z",
+    "to": "2026-06-04T13:10:43Z",
+    "basis": "Delta surveillance from the published baseline event through the current surveillance pass."
+  },
+  "coverage_verdict": "thin",
+  "summary": "Coverage is enough to support the current low-confidence human_biomarker_signal public baseline, but it is still thin as a coverage map. The public support map anchors the stage to TRIIM's small uncontrolled human biomarker signal and includes animal or nonhuman-primate plausibility from hypothalamic NF-kappaB/GnRH, hypothalamic stem-cell exosomes, oxytocin, and klotho. The surveillance pass found no public-update result, but it surfaced close not-yet-curated S1PC/eNAMPT aged-mouse plus human-biomarker context and recruiting klotho gene-therapy registries with no posted results. Those source-completeness questions should be handled as coverage repair before another ordinary surveillance pass.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-06-02-neuroendocrine-and-systemic-signal-reset-bootstrap",
+      "2026-06-04-neuroendocrine-and-systemic-signal-reset-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-neuroendocrine-and-systemic-signal-reset-source-fidelity-r1",
+      "evidence-review-neuroendocrine-and-systemic-signal-reset-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-neuroendocrine-and-systemic-signal-reset-bootstrap-2026-06-02-2026-06-02t21-04-50-553z"
+    ],
+    "outlook_ids": [
+      "track-neuroendocrine-and-systemic-signal-reset-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "thin",
+      "rationale": "TRIIM anchors the public human_biomarker_signal stage, and TRIIM-X is captured as a randomized no-results registry. Human interventional coverage remains thin because TRIIM is a nine-participant uncontrolled male pilot, TRIIM-X still has no results, and close klotho gene-therapy registries have not yet been curated as trial-watch or excluded records.",
+      "source_ids": [
+        "pmid-31496122",
+        "nct-04375657"
+      ],
+      "finding_ids": [
+        "triim-human-epigenetic-age-decrease",
+        "triim-x-registry-no-results"
+      ],
+      "gap_note": "NCT07216781 and NCT07285629 should be evaluated during coverage repair."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "not_applicable",
+      "rationale": "The current public claim is intervention-stage and does not rely on observational or natural-experiment evidence.",
+      "gap_note": "Observational endocrine or circulating-factor associations may provide context but should not upgrade the intervention stage."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "The support map includes central hypothalamic lifespan and aging-phenotype studies, hypothalamic stem-cell exosome aging studies, systemic oxytocin aged-muscle regeneration, and aged-rhesus klotho cognition.",
+      "source_ids": [
+        "pmid-23636330",
+        "pmid-28746310",
+        "nature-aging-klotho-nhp-2023",
+        "pmid-24915299"
+      ],
+      "finding_ids": [
+        "hypothalamic-nfkb-inhibition-gnrh-decelerated-mouse-aging",
+        "hypothalamic-stem-cell-exosomes-slowed-mouse-aging",
+        "klotho-improved-aged-rhesus-cognition",
+        "oxytocin-improved-aged-muscle-stem-cell-activation"
+      ],
+      "gap_note": "PMID 42102814 adds close aged-mouse systemic signaling context but is not yet curated."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "The baseline covers endocrine combination therapy, hypothalamic inflammatory-neuroendocrine signaling, hypothalamic secretory exosomes, systemic oxytocin, and klotho protein signaling.",
+      "source_ids": [
+        "pmid-31496122",
+        "pmid-23636330",
+        "pmid-28746310",
+        "nature-aging-klotho-nhp-2023",
+        "pmid-24915299"
+      ],
+      "finding_ids": [
+        "triim-human-epigenetic-age-decrease",
+        "hypothalamic-nfkb-inhibition-gnrh-decelerated-mouse-aging",
+        "hypothalamic-stem-cell-exosomes-slowed-mouse-aging",
+        "klotho-improved-aged-rhesus-cognition",
+        "oxytocin-improved-aged-muscle-stem-cell-activation"
+      ],
+      "gap_note": "The adipose eNAMPT to hypothalamus mechanism from PMID 42102814 should be assessed during coverage repair."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The outlook and reviews explicitly record the limiting points: TRIIM is small and uncontrolled, TRIIM-X has no posted results, the modalities are heterogeneous, and none of the animal or NHP signals proves durable human function.",
+      "source_ids": [
+        "pmid-31496122",
+        "nct-04375657",
+        "pmid-23636330",
+        "pmid-28746310",
+        "nature-aging-klotho-nhp-2023",
+        "pmid-24915299"
+      ],
+      "finding_ids": [
+        "triim-human-epigenetic-age-decrease",
+        "triim-x-registry-no-results",
+        "hypothalamic-nfkb-inhibition-gnrh-decelerated-mouse-aging",
+        "hypothalamic-stem-cell-exosomes-slowed-mouse-aging",
+        "klotho-improved-aged-rhesus-cognition",
+        "oxytocin-improved-aged-muscle-stem-cell-activation"
+      ],
+      "gap_note": "There is no definitive negative randomized human result yet."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "Safety coverage is thin because the track spans recombinant growth hormone combinations, DHEA/metformin, hypothalamic or reproductive-axis signaling, oxytocin, klotho protein, and possible gene-therapy delivery, with little durable human safety evidence.",
+      "source_ids": [
+        "pmid-31496122",
+        "nct-04375657",
+        "nature-aging-klotho-nhp-2023",
+        "pmid-24915299"
+      ],
+      "finding_ids": [
+        "triim-human-epigenetic-age-decrease",
+        "triim-x-registry-no-results",
+        "klotho-improved-aged-rhesus-cognition",
+        "oxytocin-improved-aged-muscle-stem-cell-activation"
+      ],
+      "gap_note": "The new klotho gene-therapy registries make safety/durability coverage more important, but they have no results."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "thin",
+      "rationale": "TRIIM-X is captured and rechecked, but surveillance surfaced NCT07216781 and NCT07285629 as close recruiting klotho gene-therapy registries with no results. They are not yet represented publicly or as formal exclusions.",
+      "source_ids": [
+        "nct-04375657"
+      ],
+      "finding_ids": [
+        "triim-x-registry-no-results"
+      ],
+      "gap_note": "Coverage repair should decide how to represent or exclude the klotho gene-therapy registries."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "Surveillance checked one broad 2026 aging-modulation review that mentions TRIIM-style modulation, but no recent systematic review or focused review triangulation is recorded for this heterogeneous track.",
+      "gap_note": "Coverage repair should check recent review context only enough to catch missing primary anchors or limiting evidence."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "thin",
+      "rationale": "Major anchors for TRIIM, hypothalamic NF-kappaB/GnRH, hypothalamic stem-cell exosomes, klotho NHP cognition, and oxytocin aged muscle are represented, but the surveillance pass found a close eNAMPT/S1PC systemic-signaling source that is not yet adjudicated.",
+      "source_ids": [
+        "pmid-31496122",
+        "pmid-23636330",
+        "pmid-28746310",
+        "nature-aging-klotho-nhp-2023",
+        "pmid-24915299"
+      ],
+      "finding_ids": [
+        "triim-human-epigenetic-age-decrease",
+        "hypothalamic-nfkb-inhibition-gnrh-decelerated-mouse-aging",
+        "hypothalamic-stem-cell-exosomes-slowed-mouse-aging",
+        "klotho-improved-aged-rhesus-cognition",
+        "oxytocin-improved-aged-muscle-stem-cell-activation"
+      ],
+      "gap_note": "Coverage repair should adjudicate whether PMID 42102814 is a public anchor, cross-track context, or exclusion."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The outlook already bounds overlap with DNA methylation, nutrient sensing, niche support, circulating factors, and inflammation. The S1PC/eNAMPT and klotho gene-therapy items reinforce the need to keep systemic-signal claims separate from NAD, metabolite, circulating-factor, and gene-therapy tracks.",
+      "source_ids": [
+        "pmid-31496122",
+        "nct-04375657",
+        "nature-aging-klotho-nhp-2023",
+        "pmid-24915299"
+      ],
+      "finding_ids": [
+        "triim-human-epigenetic-age-decrease",
+        "triim-x-registry-no-results",
+        "klotho-improved-aged-rhesus-cognition",
+        "oxytocin-improved-aged-muscle-stem-cell-activation"
+      ],
+      "gap_note": "Future public updates should avoid inheriting evidence from adjacent mechanisms without explicit attribution."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-31496122",
+    "nct-04375657",
+    "pmid-23636330",
+    "pmid-28746310",
+    "nature-aging-klotho-nhp-2023",
+    "pmid-24915299"
+  ],
+  "covered_finding_ids": [
+    "triim-human-epigenetic-age-decrease",
+    "triim-x-registry-no-results",
+    "hypothalamic-nfkb-inhibition-gnrh-decelerated-mouse-aging",
+    "hypothalamic-stem-cell-exosomes-slowed-mouse-aging",
+    "klotho-improved-aged-rhesus-cognition",
+    "oxytocin-improved-aged-muscle-stem-cell-activation"
+  ],
+  "search_log_summary": "Delta surveillance checked PubMed same-window searches, TRIIM-X PubMed/title searches, direct NCT04375657 status, broader ClinicalTrials.gov TRIIM/thymus/epigenetic-age searches, klotho/oxytocin/GnRH registry searches, and S1PC/eNAMPT PubMed and registry searches. No public-update result was found, but S1PC/eNAMPT and klotho gene-therapy trial-watch records warrant coverage repair.",
+  "source_selection_notes": [
+    "PMID 42102814 was excluded from this surveillance pass as context-only because it does not provide randomized human functional evidence, but it is close enough to require coverage-repair adjudication.",
+    "NCT07216781 and NCT07285629 were excluded from public records for now because they are recruiting or early no-results klotho gene-therapy registries.",
+    "NCT04375657 remains public no-results context and should continue to be watched.",
+    "PMID 42230502 was excluded as animal hypothalamic/HPA biomarker context that does not change the track baseline.",
+    "PMID 41994361 was excluded as a broad review rather than a primary result source."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "triim-x-results-gap",
+      "gap_type": "evidence_gap",
+      "category": "active_trials_registries",
+      "description": "TRIIM-X remains recruiting with no posted results despite a stale estimated completion date, so the main human follow-up signal is still unresolved.",
+      "priority": "high",
+      "suggested_action": "Recheck NCT04375657 and PubMed during coverage repair and subsequent surveillance."
+    },
+    {
+      "gap_id": "s1pc-enampt-coverage-gap",
+      "gap_type": "coverage_gap",
+      "category": "seminal_anchors",
+      "description": "PMID 42102814 adds close S1PC/eNAMPT adipose-hypothalamic signaling evidence with aged-mouse function and human circulating-biomarker context, but it is not represented publicly or as a formal exclusion.",
+      "priority": "high",
+      "suggested_action": "Run coverage repair to decide whether PMID 42102814 should be staged as a public source/study/finding, assigned to an adjacent track, or recorded as explicit context-only exclusion."
+    },
+    {
+      "gap_id": "klotho-gene-therapy-registry-gap",
+      "gap_type": "coverage_gap",
+      "category": "active_trials_registries",
+      "description": "NCT07216781 and NCT07285629 are recruiting or early no-results klotho plasmid gene-therapy registries close to the klotho branch, but they are not curated as trial-watch or exclusion records.",
+      "priority": "high",
+      "suggested_action": "During coverage repair, decide whether these registries warrant public trial-watch context or explicit excluded-source notes."
+    },
+    {
+      "gap_id": "human-functional-endpoint-gap",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "No reviewed intervention shows randomized human functional, intrinsic-capacity, disease, durability, mortality, or LEV-relevant benefit from a defined neuroendocrine or systemic-signal reset modality.",
+      "priority": "high",
+      "suggested_action": "Do not upgrade beyond human_biomarker_signal until controlled human functional or durable clinical outcomes appear."
+    },
+    {
+      "gap_id": "heterogeneous-safety-durability-gap",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Growth hormone combinations, DHEA/metformin, hypothalamic manipulation, GnRH, oxytocin, klotho protein, and gene-therapy delivery each have different preventive-use safety and durability constraints.",
+      "priority": "high",
+      "suggested_action": "Require modality-specific safety, dosing, durability, and active-component evidence before increasing confidence."
+    },
+    {
+      "gap_id": "recent-review-triangulation-gap",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "No focused recent-review or citation-network audit is recorded for this heterogeneous track.",
+      "priority": "medium",
+      "suggested_action": "Use coverage repair to check review-level triangulation only as needed to catch missing primary anchors and limiting evidence."
+    },
+    {
+      "gap_id": "cross-track-attribution-gap",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "S1PC/eNAMPT, klotho, TRIIM, oxytocin, and hypothalamic interventions overlap NAD/redox, metabolite restoration, circulating factors, niche support, DNA methylation, nutrient sensing, and gene-therapy framing.",
+      "priority": "medium",
+      "suggested_action": "Keep future public changes explicit about which evidence supports neuroendocrine/systemic signal reset itself versus adjacent mechanisms."
+    }
+  ],
+  "next_coverage_action": "Run a bounded coverage-repair pass focused on PMID 42102814, NCT07216781, NCT07285629, and brief recent-review triangulation before ordinary surveillance resumes.",
+  "next_recommended_mode": "coverage_repair",
+  "tags": [
+    "neuroendocrine-and-systemic-signal-reset",
+    "altered-intercellular-communication",
+    "surveillance",
+    "thin-coverage",
+    "coverage-repair-needed"
+  ]
+}
