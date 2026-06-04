@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-04-microbiome-metabolite-restoration-surveillance",
+  "name": "Microbiome Metabolite Restoration Surveillance",
+  "mode": "surveillance",
+  "started_at": "2026-06-04T11:22:00Z",
+  "completed_at": "2026-06-04T11:28:00Z",
+  "scope": {
+    "question": "What changed for microbiome metabolite restoration since the 2026-06-03 public baseline publication?",
+    "hallmark_ids": [
+      "dysbiosis"
+    ],
+    "track_ids": [
+      "microbiome-metabolite-restoration"
+    ],
+    "intervention_ids": [
+      "urolithin-a",
+      "sodium-butyrate",
+      "tributyrin",
+      "microbial-indoles",
+      "indole-3-propionic-acid",
+      "lithocholic-acid",
+      "multi-species-synbiotic-ds-01"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "coverage_assessment_updated",
+  "summary": "Ran a delta surveillance pass from the 2026-06-03 microbiome-metabolite-restoration publication through 2026-06-04. PubMed returned two close same-window records and ClinicalTrials.gov showed NCT06556706 remains completed with no posted results; the newly updated NIA urolithin A glucose-metabolism trial is recruiting with no results. No public outlook, source, study, finding, or activity bundle is warranted. Created the first internal coverage assessment for the track and kept next mode as surveillance.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "activity_only",
+    "public_update_needed": false,
+    "activity_only": true,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "surveillance",
+    "rationale": "New same-window items were contextual only: one observational microbiome-arterial-stiffness paper, one broad muscle-brain-gut review, one recruiting urolithin A glucose-metabolism registry without results, and unchanged no-results status for the completed frail older-adult urolithin A registry. These do not alter the low-confidence human_functional_benefit baseline, support map, blockers, or forecast language."
+  },
+  "search_log": [
+    {
+      "source_name": "PubMed ESearch",
+      "query": "(urolithin A OR butyrate OR indole-3-propionic acid OR lithocholic acid OR microbiome-derived metabolite OR microbial metabolite) AND (aging OR older adults OR frailty OR muscle OR healthspan OR lifespan), publication date 2026-06-03 to 2026-06-04",
+      "checked_at": "2026-06-04T11:24:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28urolithin%20A%20OR%20butyrate%20OR%20indole-3-propionic%20acid%20OR%20lithocholic%20acid%20OR%20microbiome-derived%20metabolite%20OR%20microbial%20metabolite%29%20AND%20%28aging%20OR%20older%20adults%20OR%20frailty%20OR%20muscle%20OR%20healthspan%20OR%20lifespan%29",
+      "summary": "Returned PMID 42237575 and PMID 42234268. Neither changes the public track interpretation."
+    },
+    {
+      "source_name": "PubMed ESummary and EFetch",
+      "query": "PMID 42237575 and PMID 42234268",
+      "checked_at": "2026-06-04T11:25:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42237575/",
+      "summary": "PMID 42237575 is an observational Baltimore Longitudinal Study of Aging microbiome and arterial-stiffness paper; PMID 42234268 is a broad muscle-brain-gut axis review. Both are context-only for this track."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "NCT06556706",
+      "checked_at": "2026-06-04T11:25:00Z",
+      "url": "https://clinicaltrials.gov/study/NCT06556706",
+      "summary": "NCT06556706 remains completed, lists 26 frail older adults and 2025-04-25 completion, and still has no posted results."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "Urolithin A",
+      "checked_at": "2026-06-04T11:26:00Z",
+      "url": "https://clinicaltrials.gov/search?term=Urolithin%20A",
+      "summary": "Returned multiple urolithin A registries. The only same-window relevant update was NCT06274749, an NIA recruiting trial in adults 55 years and older focused on glucose metabolism, mitochondrial measures, and microbiome composition with no results posted."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "sodium butyrate OR tributyrin OR indole-3-propionic acid OR lithocholic acid",
+      "checked_at": "2026-06-04T11:26:00Z",
+      "url": "https://clinicaltrials.gov/search?term=sodium%20butyrate%20OR%20tributyrin%20OR%20indole-3-propionic%20acid%20OR%20lithocholic%20acid",
+      "summary": "Returned butyrate or tributyrin trials, including recruiting or completed studies in non-aging indications or no-results contexts. No new result changes the current public track claim."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 42237575",
+      "title": "Longitudinal associations of the gut microbiome with arterial stiffness in US adults: findings from the Baltimore Longitudinal Study of Aging.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42237575/",
+      "decision": "context_only",
+      "reason": "Observational microbiome feature and arterial-stiffness associations are relevant context for butyrate-producing pathways, but they do not test metabolite restoration or change the public intervention-stage claim."
+    },
+    {
+      "reference": "PMID 42234268",
+      "title": "A systematic review of molecular signaling in the muscle-brain-gut axis: exercise-induced myokines and microbial metabolites as key mediators.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42234268/",
+      "decision": "context_only",
+      "reason": "Broad review of exercise-related myokines and microbial metabolites; it does not add a specific aging-functional metabolite-restoration result beyond the current support map."
+    },
+    {
+      "reference": "NCT06556706",
+      "title": "Impact of Urolithin A (Mitopure) on Mitochondrial Quality in Muscle of Frail Older Adults",
+      "url": "https://clinicaltrials.gov/study/NCT06556706",
+      "decision": "unchanged_registry",
+      "reason": "Registry remains completed with no posted results; this was already captured as a public no-results context record."
+    },
+    {
+      "reference": "NCT06274749",
+      "title": "Effects of Urolithin A Supplementation on Glucose Metabolism in Healthy Adults 55 >= Years Old",
+      "url": "https://clinicaltrials.gov/study/NCT06274749",
+      "decision": "no_results",
+      "reason": "Recruiting NIA urolithin A trial with no posted results. The metabolic and microbiome endpoints are relevant future surveillance context but do not currently justify a public source or outlook update."
+    }
+  ],
+  "source_ids": [
+    "pmid-27400265",
+    "pmid-32694802",
+    "pmid-35050355",
+    "pmid-35584623",
+    "pmid-39002645",
+    "pmid-41174221",
+    "nct-06556706",
+    "pmid-40944126",
+    "pmid-41880673",
+    "pmid-35315592",
+    "pmid-28827345",
+    "pmid-41826362",
+    "pmid-41540161",
+    "pmid-39695227"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42237575/",
+    "https://pubmed.ncbi.nlm.nih.gov/42234268/",
+    "https://clinicaltrials.gov/study/NCT06556706",
+    "https://clinicaltrials.gov/study/NCT06274749"
+  ],
+  "notes": [
+    "No candidate bundle was created because all same-window deltas were contextual, review-level, no-results, or already represented.",
+    "The frail older-adult urolithin A registry remains the key result-watch item for this track.",
+    "The new NIA glucose-metabolism urolithin A registry should be watched, but its results would likely affect nutrient-sensing and metabolic framing as well as microbiome-metabolite restoration."
+  ],
+  "next_actions": [
+    "Continue ordinary surveillance for posted NCT06556706 results or publications.",
+    "Recheck NCT06274749 when recruitment or results status changes.",
+    "Use coverage repair only if future review needs deeper seminal-anchor or active-trial completeness work."
+  ]
+}

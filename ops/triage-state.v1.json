@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-04T11:21:04.523Z",
+  "generated_at": "2026-06-04T11:30:11.799Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-04T10:38:11.828Z",
-    "research_priority_queue_updated_at": "2026-06-04T10:38:11.829Z",
+    "research_coverage_status_updated_at": "2026-06-04T11:30:11.603Z",
+    "research_priority_queue_updated_at": "2026-06-04T11:30:11.604Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 38,
     "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 34,
+    "coverage_assessment_backlog_count": 33,
     "unnormalized_intervention_id_count": 71,
     "unnormalized_intervention_reference_count": 140
   },
@@ -32,7 +32,7 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "surveillance-microbiome-metabolite-restoration",
+    "top_work_item_id": "surveillance-resolution-pathway-and-tissue-repair",
     "top_mode": "surveillance",
     "active_editorial_count": 0,
     "ready_research_count": 38,
@@ -45,24 +45,24 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "surveillance-microbiome-metabolite-restoration",
+      "item_id": "surveillance-resolution-pathway-and-tissue-repair",
       "mode": "surveillance",
       "domain": "research",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Run surveillance for Microbiome Metabolite Restoration",
-      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 5; rank 1 was recently handled by a surveillance or coverage-repair session.",
+      "title": "Run surveillance for Resolution Pathway and Tissue Repair",
+      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 6; rank 1 was recently handled by a surveillance or coverage-repair session.",
       "default_action": "Run one track-level surveillance pass, record materiality, excluded sources, and a session; create a bundle only for a material public change.",
-      "track_id": "microbiome-metabolite-restoration",
-      "hallmark_id": "dysbiosis",
+      "track_id": "resolution-pathway-and-tissue-repair",
+      "hallmark_id": "chronic_inflammation",
       "references": [
         {
           "record_type": "track",
-          "record_id": "microbiome-metabolite-restoration"
+          "record_id": "resolution-pathway-and-tissue-repair"
         },
         {
           "record_type": "hallmark",
-          "record_id": "dysbiosis"
+          "record_id": "chronic_inflammation"
         }
       ],
       "runbook_path": "docs/surveillance-checklist.md",
@@ -74,7 +74,7 @@
       "signals": [
         {
           "name": "generated_queue_rank",
-          "value": 5
+          "value": 6
         },
         {
           "name": "last_session_mode",
@@ -88,24 +88,24 @@
     },
     {
       "rank": 2,
-      "item_id": "coverage-assessment-backfill-microbiome-metabolite-restoration",
+      "item_id": "coverage-assessment-backfill-resolution-pathway-and-tissue-repair",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for Microbiome Metabolite Restoration",
-      "rationale": "34 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the surveillance queue.",
+      "title": "Backfill coverage assessment for Resolution Pathway and Tissue Repair",
+      "rationale": "33 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the surveillance queue.",
       "default_action": "Review the published outlook, session, bundle, evidence reviews, and publication event, then create a coverage assessment without changing public records.",
-      "track_id": "microbiome-metabolite-restoration",
-      "hallmark_id": "dysbiosis",
+      "track_id": "resolution-pathway-and-tissue-repair",
+      "hallmark_id": "chronic_inflammation",
       "references": [
         {
           "record_type": "track",
-          "record_id": "microbiome-metabolite-restoration"
+          "record_id": "resolution-pathway-and-tissue-repair"
         },
         {
           "record_type": "hallmark",
-          "record_id": "dysbiosis"
+          "record_id": "chronic_inflammation"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",
@@ -117,11 +117,11 @@
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 34
+          "value": 33
         },
         {
           "name": "generated_surveillance_queue_rank",
-          "value": 5
+          "value": 6
         },
         {
           "name": "track_next_mode",

@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-04T10:38:11.828Z",
+  "updated_at": "2026-06-04T11:30:11.603Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One bootstrap, surveillance, or coverage-repair run should cover one track unless the user explicitly narrows further.",
@@ -111,7 +111,7 @@
       "canonical_order": 12,
       "hallmark_bootstrap_status": "baseline",
       "tracked_public_outlook_count": 4,
-      "next_priority_track_id": "ecosystem-replacement",
+      "next_priority_track_id": "microbiome-metabolite-restoration",
       "notes": "At least one track-level public baseline exists."
     }
   ],
@@ -829,16 +829,23 @@
       "coverage_status": "baseline",
       "next_mode": "surveillance",
       "queue_state": "ready",
-      "last_session_id": "2026-06-02-microbiome-metabolite-restoration-bootstrap",
-      "last_session_at": "2026-06-03T00:20:00Z",
-      "last_session_mode": "bootstrap",
-      "last_session_outcome": "candidate_bundle_submitted",
+      "last_session_id": "2026-06-04-microbiome-metabolite-restoration-surveillance",
+      "last_session_at": "2026-06-04T11:28:00Z",
+      "last_session_mode": "surveillance",
+      "last_session_outcome": "coverage_assessment_updated",
       "last_candidate_bundle_id": "microbiome-metabolite-restoration-bootstrap-2026-06-02",
       "last_candidate_bundle_status": "published",
       "last_publication_event_id": "publish-microbiome-metabolite-restoration-bootstrap-2026-06-02-2026-06-03t10-40-48-569z",
       "last_published_at": "2026-06-03T10:40:48.569Z",
+      "last_coverage_assessment_id": "microbiome-metabolite-restoration-coverage-2026-06-04",
+      "last_coverage_assessed_at": "2026-06-04T11:28:00Z",
+      "coverage_verdict": "adequate",
+      "known_gap_count": 4,
+      "high_priority_gap_count": 2,
+      "next_coverage_action": "Continue ordinary surveillance for posted urolithin A trial results, new direct-metabolite human functional trials, and safety/durability evidence. Coverage repair is not required before the next delta pass.",
+      "last_coverage_recommended_mode": "surveillance",
       "default_research_question": "What changed for Microbiome Metabolite Restoration since the last meaningful review or publication, and does any change justify a public update?",
-      "notes": "Latest publication event: publish-microbiome-metabolite-restoration-bootstrap-2026-06-02-2026-06-03t10-40-48-569z."
+      "notes": "Latest surveillance session 2026-06-04-microbiome-metabolite-restoration-surveillance ended as coverage_assessment_updated."
     },
     {
       "track_id": "ecosystem-replacement",

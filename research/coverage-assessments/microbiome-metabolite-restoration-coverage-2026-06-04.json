@@ -1,0 +1,284 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "microbiome-metabolite-restoration-coverage-2026-06-04",
+  "name": "Microbiome Metabolite Restoration Coverage Assessment",
+  "track_id": "microbiome-metabolite-restoration",
+  "hallmark_id": "dysbiosis",
+  "assessment_type": "surveillance",
+  "assessed_at": "2026-06-04T11:28:00Z",
+  "assessment_window": {
+    "from": "2026-06-03T10:40:48.569Z",
+    "to": "2026-06-04T11:28:00Z",
+    "basis": "Delta surveillance from the published baseline event through the current surveillance pass."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is adequate for the current low-confidence human_functional_benefit public baseline. The support map includes direct urolithin A human functional trials, human metabolite target-engagement studies, a completed no-results frailty registry, recent preclinical aging mechanisms across urolithin A, indoles, butyrate, IPA, and lithocholic acid, and a recent urolithin A human systematic review. Coverage is not strong because non-urolithin human functional evidence, chronic safety and durability, active-trial result tracking, and broad seminal-anchor triangulation remain incomplete.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-06-02-microbiome-metabolite-restoration-bootstrap",
+      "2026-06-04-microbiome-metabolite-restoration-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "microbiome-metabolite-restoration-bootstrap-2026-06-02"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-microbiome-metabolite-restoration-source-fidelity-r1",
+      "evidence-review-microbiome-metabolite-restoration-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-microbiome-metabolite-restoration-bootstrap-2026-06-02-2026-06-03t10-40-48-569z"
+    ],
+    "outlook_ids": [
+      "track-microbiome-metabolite-restoration-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "Direct urolithin A randomized human trials anchor the current functional stage, while DS-01 and sodium butyrate provide human target-engagement or metabolic-risk evidence without aging-functional endpoints.",
+      "source_ids": [
+        "pmid-35050355",
+        "pmid-35584623",
+        "pmid-32694802",
+        "pmid-41174221",
+        "pmid-40944126",
+        "pmid-41880673"
+      ],
+      "finding_ids": [
+        "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+        "urolithin-a-improved-middle-aged-muscle-strength-performance",
+        "urolithin-a-safe-mitochondrial-signature-older-adults",
+        "urolithin-a-shifted-immune-aging-biomarkers-function",
+        "ds-01-increased-urolithin-a-butyrate-crp",
+        "sodium-butyrate-improved-metabolic-markers-overweight-t2d"
+      ],
+      "gap_note": "Replicated longer functional trials in older or frail adults remain missing."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "thin",
+      "rationale": "The public baseline includes diet-mediated IPA biomarker evidence in older adults, and surveillance found a new BLSA observational microbiome/arterial-stiffness paper, but direct observational evidence for metabolite restoration and aging outcomes remains limited.",
+      "source_ids": [
+        "pmid-35315592"
+      ],
+      "finding_ids": [
+        "polyphenol-diet-increased-ipa-older-adults"
+      ],
+      "gap_note": "Observational associations should not be treated as intervention evidence."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "Multiple preclinical model systems cover urolithin A, microbial indoles, butyrate/tributyrin, IPA, and lithocholic acid healthspan or lifespan signals.",
+      "source_ids": [
+        "pmid-27400265",
+        "pmid-28827345",
+        "pmid-41826362",
+        "pmid-41540161",
+        "pmid-39695227"
+      ],
+      "finding_ids": [
+        "urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+        "commensal-indoles-extended-healthspan-models",
+        "butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan",
+        "ipa-improved-aged-mouse-muscle-bone-fly-lifespan",
+        "lithocholic-acid-cr-mimetic-improved-animal-healthspan"
+      ],
+      "gap_note": "Several signals are in invertebrates, severe disease models, or non-oral/non-restoration delivery contexts."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "The support map includes mitophagy, mitochondrial biomarkers, SCFA/HDAC or histone-acylation biology, tryptophan-metabolite biology, and bile-acid AMPK mechanisms.",
+      "source_ids": [
+        "pmid-27400265",
+        "pmid-32694802",
+        "pmid-41174221",
+        "pmid-40944126",
+        "pmid-41826362",
+        "pmid-39695227"
+      ],
+      "finding_ids": [
+        "urolithin-a-safe-mitochondrial-signature-older-adults",
+        "urolithin-a-shifted-immune-aging-biomarkers-function",
+        "ds-01-increased-urolithin-a-butyrate-crp",
+        "butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan",
+        "lithocholic-acid-cr-mimetic-improved-animal-healthspan"
+      ]
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The baseline explicitly captures the urolithin A systematic-review boundary, mixed primary endpoints, and a completed frail older-adult registry with no posted results.",
+      "source_ids": [
+        "pmid-39002645",
+        "nct-06556706"
+      ],
+      "finding_ids": [
+        "urolithin-a-review-human-muscle-biomarker-boundary",
+        "completed-frail-urolithin-a-trial-no-results"
+      ]
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "Human urolithin A safety and sodium butyrate short-term tolerability are represented, but long-duration dosing, frail-population safety, bile-acid safety, kidney-function boundaries, and durability are not strong.",
+      "source_ids": [
+        "pmid-32694802",
+        "pmid-35050355",
+        "pmid-41880673",
+        "nct-06556706"
+      ],
+      "finding_ids": [
+        "urolithin-a-safe-mitochondrial-signature-older-adults",
+        "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+        "sodium-butyrate-improved-metabolic-markers-overweight-t2d",
+        "completed-frail-urolithin-a-trial-no-results"
+      ],
+      "gap_note": "Chronic safety and frailty-specific results remain important watch items."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "The completed frail older-adult urolithin A registry is captured publicly, and surveillance checked current urolithin A registries including the recruiting NIA glucose-metabolism trial.",
+      "source_ids": [
+        "nct-06556706"
+      ],
+      "finding_ids": [
+        "completed-frail-urolithin-a-trial-no-results"
+      ],
+      "gap_note": "NCT06274749 should be watched for results but does not require a public record yet."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "adequate",
+      "rationale": "A 2024 urolithin A human systematic review anchors the human boundary. A 2026 broad muscle-brain-gut axis review was checked during surveillance and judged context-only.",
+      "source_ids": [
+        "pmid-39002645"
+      ],
+      "finding_ids": [
+        "urolithin-a-review-human-muscle-biomarker-boundary"
+      ]
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes seminal or anchor records for urolithin A mitophagy, older-adult urolithin A human trials, microbial indoles, SCFA/butyrate biology, and recent lithocholic-acid aging biology.",
+      "source_ids": [
+        "pmid-27400265",
+        "pmid-35050355",
+        "pmid-35584623",
+        "pmid-28827345",
+        "pmid-41826362",
+        "pmid-39695227"
+      ],
+      "finding_ids": [
+        "urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+        "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+        "urolithin-a-improved-middle-aged-muscle-strength-performance",
+        "commensal-indoles-extended-healthspan-models",
+        "butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan",
+        "lithocholic-acid-cr-mimetic-improved-animal-healthspan"
+      ],
+      "gap_note": "A deeper historical metabolite-restoration review could still improve strong-level confidence."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The outlook and evidence review explicitly bound overlaps with mitophagy, selective autophagy, live biotherapeutics, microbiome composition, nutrient sensing, and caloric-restriction mimetics.",
+      "source_ids": [
+        "pmid-39002645",
+        "pmid-40944126",
+        "pmid-39695227"
+      ],
+      "finding_ids": [
+        "urolithin-a-review-human-muscle-biomarker-boundary",
+        "ds-01-increased-urolithin-a-butyrate-crp",
+        "lithocholic-acid-cr-mimetic-improved-animal-healthspan"
+      ]
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-27400265",
+    "pmid-32694802",
+    "pmid-35050355",
+    "pmid-35584623",
+    "pmid-39002645",
+    "pmid-41174221",
+    "nct-06556706",
+    "pmid-40944126",
+    "pmid-41880673",
+    "pmid-35315592",
+    "pmid-28827345",
+    "pmid-41826362",
+    "pmid-41540161",
+    "pmid-39695227"
+  ],
+  "covered_finding_ids": [
+    "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+    "urolithin-a-improved-middle-aged-muscle-strength-performance",
+    "urolithin-a-review-human-muscle-biomarker-boundary",
+    "urolithin-a-safe-mitochondrial-signature-older-adults",
+    "urolithin-a-shifted-immune-aging-biomarkers-function",
+    "ds-01-increased-urolithin-a-butyrate-crp",
+    "sodium-butyrate-improved-metabolic-markers-overweight-t2d",
+    "polyphenol-diet-increased-ipa-older-adults",
+    "urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+    "commensal-indoles-extended-healthspan-models",
+    "butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan",
+    "ipa-improved-aged-mouse-muscle-bone-fly-lifespan",
+    "lithocholic-acid-cr-mimetic-improved-animal-healthspan",
+    "completed-frail-urolithin-a-trial-no-results"
+  ],
+  "search_log_summary": "Delta surveillance checked PubMed for 2026-06-03 through 2026-06-04, the NCT06556706 registry, urolithin A registries, and butyrate/tributyrin/IPA/lithocholic-acid registries. No public-update material was found.",
+  "source_selection_notes": [
+    "PMID 42237575 was excluded as context-only observational microbiome evidence, not metabolite-restoration intervention evidence.",
+    "PMID 42234268 was excluded as a broad review that does not change the current support map.",
+    "NCT06274749 was excluded from public records for now because it is recruiting and has no results.",
+    "NCT06556706 remains public no-results context and should continue to be watched."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "non-urolithin-human-function-gap",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "Non-urolithin metabolites do not yet have direct or clearly metabolite-mediated human functional aging evidence.",
+      "priority": "high",
+      "suggested_action": "Keep ordinary surveillance focused on direct-metabolite human trials and results postings."
+    },
+    {
+      "gap_id": "frailty-urolithin-results-gap",
+      "gap_type": "evidence_gap",
+      "category": "active_trials_registries",
+      "description": "The completed frail older-adult urolithin A trial has no posted results, and those results could materially affect confidence.",
+      "priority": "high",
+      "suggested_action": "Recheck NCT06556706 and PubMed for results or linked publications in the next surveillance pass."
+    },
+    {
+      "gap_id": "chronic-safety-durability-gap",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Chronic dosing, durability, frailty-specific safety, kidney-function boundaries, and bile-acid safety remain weakly covered.",
+      "priority": "medium",
+      "suggested_action": "Track longer studies and safety-focused reports before increasing confidence."
+    },
+    {
+      "gap_id": "seminal-anchor-depth-gap",
+      "gap_type": "coverage_gap",
+      "category": "seminal_anchors",
+      "description": "The baseline includes major anchors, but a deeper historical audit of SCFA, indole, bile-acid, and urolithin metabolite-restoration anchors could improve strong-level coverage.",
+      "priority": "low",
+      "suggested_action": "Consider coverage repair only if future public claims lean more heavily on non-urolithin metabolite families."
+    }
+  ],
+  "next_coverage_action": "Continue ordinary surveillance for posted urolithin A trial results, new direct-metabolite human functional trials, and safety/durability evidence. Coverage repair is not required before the next delta pass.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "microbiome-metabolite-restoration",
+    "dysbiosis",
+    "surveillance",
+    "adequate-coverage"
+  ]
+}
