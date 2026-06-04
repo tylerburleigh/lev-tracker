@@ -1,0 +1,227 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04",
+  "name": "Neuroendocrine and Systemic Signal Reset Coverage Repair for June 4, 2026",
+  "summary": "Coverage-repair bundle that adds S1PC/eNAMPT adipose-hypothalamic support, normalizes klotho-related interventions, and adds klotho plasmid gene-therapy trial-watch records while keeping the track at low-confidence human_biomarker_signal.",
+  "intake_mode": "manual",
+  "lifecycle_status": "submitted",
+  "submitted_at": "2026-06-04T19:12:18Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "Which source-completeness gaps for Neuroendocrine and Systemic Signal Reset need repair, and do PMID 42102814, NCT07216781, or NCT07285629 change the public boundaries?",
+    "hallmark_ids": [
+      "altered_intercellular_communication"
+    ],
+    "track_ids": [
+      "neuroendocrine-and-systemic-signal-reset"
+    ],
+    "intervention_ids": [
+      "s1pc",
+      "klotho",
+      "klotho-and-follistatin-plasmid-gene-therapy",
+      "triim-regimen"
+    ]
+  },
+  "source_ids": [
+    "pmid-42102814",
+    "nct-07216781",
+    "nct-07285629"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42102814/",
+    "https://doi.org/10.1016/j.cmet.2026.04.006",
+    "https://clinicaltrials.gov/study/NCT07216781",
+    "https://clinicaltrials.gov/study/NCT07285629"
+  ],
+  "related_records": [
+    {
+      "record_type": "track",
+      "record_id": "neuroendocrine-and-systemic-signal-reset"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-neuroendocrine-and-systemic-signal-reset-outlook"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "s1pc"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "klotho"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "klotho-and-follistatin-plasmid-gene-therapy"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-42102814",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-42102814",
+      "file_path": "data/sources/pmid-42102814.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04/pmid-42102814.json",
+      "summary": "Add S1PC/eNAMPT adipose-hypothalamic source.",
+      "rationale": "The source repairs a missing systemic-signaling branch with aged-mouse functional evidence and human circulating-biomarker context."
+    },
+    {
+      "change_id": "create-source-nct-07216781",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-07216781",
+      "file_path": "data/sources/nct-07216781.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04/nct-07216781.json",
+      "summary": "Add klotho plasmid gene-therapy registry source.",
+      "rationale": "The registry is close human trial-watch context for the klotho branch but has no posted results."
+    },
+    {
+      "change_id": "create-source-nct-07285629",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-07285629",
+      "file_path": "data/sources/nct-07285629.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04/nct-07285629.json",
+      "summary": "Add klotho and follistatin plasmid gene-therapy registry source.",
+      "rationale": "The registry is close human trial-watch context and adds combination-attribution and gene-therapy safety boundaries."
+    },
+    {
+      "change_id": "create-intervention-s1pc",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "s1pc",
+      "file_path": "data/interventions/s1pc.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04/s1pc.json",
+      "summary": "Normalize S1PC as a bounded neuroendocrine/systemic signaling intervention.",
+      "rationale": "S1PC should not be collapsed into generic garlic extract, NAD restoration, or direct eNAMPT delivery."
+    },
+    {
+      "change_id": "create-intervention-klotho",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "klotho",
+      "file_path": "data/interventions/klotho.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04/klotho.json",
+      "summary": "Normalize klotho intervention context.",
+      "rationale": "The existing klotho NHP support and new klotho gene-therapy trial-watch records need a shared normalized intervention profile."
+    },
+    {
+      "change_id": "create-intervention-klotho-and-follistatin-plasmid-gene-therapy",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "klotho-and-follistatin-plasmid-gene-therapy",
+      "file_path": "data/interventions/klotho-and-follistatin-plasmid-gene-therapy.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04/klotho-and-follistatin-plasmid-gene-therapy.json",
+      "summary": "Normalize the klotho/follistatin combination gene-therapy program.",
+      "rationale": "The combination registry has attribution and safety boundaries distinct from klotho-alone records."
+    },
+    {
+      "change_id": "create-study-s1pc-enampt-aged-mouse-and-human-biomarker",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "s1pc-enampt-aged-mouse-and-human-biomarker-study",
+      "file_path": "data/studies/s1pc-enampt-aged-mouse-and-human-biomarker-study.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04/s1pc-enampt-aged-mouse-and-human-biomarker-study.json",
+      "summary": "Add S1PC/eNAMPT mixed translational study.",
+      "rationale": "The study supplies the model, human biomarker context, intervention, endpoints, and source linkage for the new finding."
+    },
+    {
+      "change_id": "create-study-klotho-plasmid-gene-therapy-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "klotho-plasmid-gene-therapy-registry",
+      "file_path": "data/studies/klotho-plasmid-gene-therapy-registry.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04/klotho-plasmid-gene-therapy-registry.json",
+      "summary": "Add klotho plasmid gene-therapy no-results registry study.",
+      "rationale": "The study makes human trial-watch context explicit without implying efficacy."
+    },
+    {
+      "change_id": "create-study-klotho-follistatin-plasmid-gene-therapy-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "klotho-follistatin-plasmid-gene-therapy-registry",
+      "file_path": "data/studies/klotho-follistatin-plasmid-gene-therapy-registry.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04/klotho-follistatin-plasmid-gene-therapy-registry.json",
+      "summary": "Add klotho/follistatin plasmid gene-therapy no-results registry study.",
+      "rationale": "The study records the combination trial-watch context and endpoint boundaries."
+    },
+    {
+      "change_id": "create-finding-s1pc-increased-enampt-and-improved-aged-mouse-muscle",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "s1pc-increased-enampt-and-improved-aged-mouse-muscle",
+      "file_path": "data/findings/s1pc-increased-enampt-and-improved-aged-mouse-muscle.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04/s1pc-increased-enampt-and-improved-aged-mouse-muscle.json",
+      "summary": "Add bounded S1PC/eNAMPT animal and human-biomarker finding.",
+      "rationale": "The finding strengthens systemic-signaling plausibility while preserving animal and biomarker-only limits."
+    },
+    {
+      "change_id": "create-finding-klotho-plasmid-gene-therapy-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "klotho-plasmid-gene-therapy-recruiting-no-results",
+      "file_path": "data/findings/klotho-plasmid-gene-therapy-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04/klotho-plasmid-gene-therapy-recruiting-no-results.json",
+      "summary": "Add klotho plasmid trial-watch finding.",
+      "rationale": "The finding keeps no-results human activity visible without using it as evidence of benefit."
+    },
+    {
+      "change_id": "create-finding-klotho-follistatin-plasmid-gene-therapy-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "klotho-follistatin-plasmid-gene-therapy-recruiting-no-results",
+      "file_path": "data/findings/klotho-follistatin-plasmid-gene-therapy-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04/klotho-follistatin-plasmid-gene-therapy-recruiting-no-results.json",
+      "summary": "Add klotho/follistatin plasmid trial-watch finding.",
+      "rationale": "The finding records the combination trial-watch and attribution boundary without using it as evidence of benefit."
+    },
+    {
+      "change_id": "update-outlook-track-neuroendocrine-and-systemic-signal-reset",
+      "change_type": "update_outlook",
+      "target_record_type": "outlook",
+      "target_record_id": "track-neuroendocrine-and-systemic-signal-reset-outlook",
+      "file_path": "data/outlooks/track-neuroendocrine-and-systemic-signal-reset-outlook.json",
+      "staged_file_path": "data/staged-records/neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04/track-neuroendocrine-and-systemic-signal-reset-outlook.json",
+      "summary": "Update support map for repaired eNAMPT and klotho trial-watch coverage.",
+      "rationale": "The repair resolves the internal source-completeness gaps while preserving stage, momentum, confidence, and conservative LEV timing.",
+      "uncertainty_flags": [
+        "PMID 42102814 provides aged-mouse functional support and human biomarker context, not randomized human functional evidence.",
+        "NCT07216781 and NCT07285629 are recruiting, single-group, no-results gene-therapy registries.",
+        "The current stage remains human_biomarker_signal and confidence remains low."
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "neuroendocrine-and-systemic-signal-reset",
+      "note": "Repair strengthens source completeness for eNAMPT and klotho trial-watch coverage but does not change stage, confidence, momentum, or LEV-relevant timing because controlled human functional evidence remains absent.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast",
+    "safety_limitations",
+    "taxonomy_mapping"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-04-neuroendocrine-and-systemic-signal-reset-coverage-repair.json",
+  "next_actions": [
+    "Run source-fidelity, interpretation/forecast, safety/limitations, and taxonomy-mapping reviews.",
+    "If reviews pass, publish the repair bundle and rerun planning state.",
+    "After publication, return neuroendocrine and systemic signal reset to ordinary surveillance."
+  ],
+  "tags": [
+    "admin",
+    "coverage-repair",
+    "neuroendocrine-and-systemic-signal-reset"
+  ]
+}

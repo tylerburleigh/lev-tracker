@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-04-neuroendocrine-and-systemic-signal-reset-coverage-repair",
+  "name": "Neuroendocrine and Systemic Signal Reset Coverage Repair",
+  "mode": "coverage_repair",
+  "started_at": "2026-06-04T18:55:00Z",
+  "completed_at": "2026-06-04T19:12:18Z",
+  "scope": {
+    "question": "Which source-completeness gaps for neuroendocrine and systemic signal reset need repair, and do PMID 42102814, NCT07216781, or NCT07285629 change the public boundaries?",
+    "hallmark_ids": [
+      "altered_intercellular_communication"
+    ],
+    "track_ids": [
+      "neuroendocrine-and-systemic-signal-reset"
+    ],
+    "intervention_ids": [
+      "s1pc",
+      "klotho",
+      "klotho-and-follistatin-plasmid-gene-therapy",
+      "triim-regimen"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04",
+  "summary": "Coverage repair found that PMID 42102814, NCT07216781, and NCT07285629 warrant staged public updates. PMID 42102814 adds an adipose-hypothalamic S1PC/eNAMPT branch with aged-mouse muscle and frailty-index effects plus human circulating-eNAMPT biomarker context. NCT07216781 and NCT07285629 add recruiting no-results human klotho plasmid and klotho/follistatin plasmid gene-therapy trial-watch context. The staged outlook keeps the track at low-confidence human_biomarker_signal and mixed momentum because controlled human functional, disease, durability, or mortality evidence remains absent.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "outlook_refresh",
+    "public_update_needed": true,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The repair resolves the source-completeness gaps identified by surveillance and stages a bounded support-map update. The additions improve public coverage of eNAMPT and klotho trial-watch activity but do not justify a stage, confidence, momentum, or timing upgrade."
+  },
+  "search_log": [
+    {
+      "source_name": "PubMed ESummary and EFetch",
+      "query": "PMID 42102814",
+      "checked_at": "2026-06-04T19:00:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42102814/",
+      "summary": "Confirmed the S1PC/eNAMPT source metadata, abstract, DOI, publication date, aged-mouse functional claims, human circulating-eNAMPT biomarker context, and disclosed patent/company interests."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "NCT07216781",
+      "checked_at": "2026-06-04T19:01:00Z",
+      "url": "https://clinicaltrials.gov/study/NCT07216781",
+      "summary": "Confirmed recruiting single-group phase 1 klotho plasmid gene-therapy registry, estimated enrollment 24, healthy volunteers aged 23 to 90 years, no posted results, and biomarker/safety/cognitive/epigenetic-age endpoints."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "NCT07285629",
+      "checked_at": "2026-06-04T19:02:00Z",
+      "url": "https://clinicaltrials.gov/study/NCT07285629",
+      "summary": "Confirmed recruiting single-group early phase 1 klotho/follistatin plasmid gene-therapy registry, estimated enrollment 30, healthy adults aged 50 to 80 years, no posted results, and biomarker/safety/cognitive/functional/epigenetic-age endpoints."
+    },
+    {
+      "source_name": "PubMed ESearch and ESummary",
+      "query": "(eNAMPT OR extracellular nicotinamide phosphoribosyltransferase OR hypothalamic NAD OR adipose hypothalamic) AND (aging OR longevity OR lifespan)",
+      "checked_at": "2026-06-04T19:04:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28eNAMPT%20OR%20extracellular%20nicotinamide%20phosphoribosyltransferase%20OR%20hypothalamic%20NAD%20OR%20adipose%20hypothalamic%29%20AND%20%28aging%20OR%20longevity%20OR%20lifespan%29",
+      "summary": "Found eNAMPT/NAD World and adipose-hypothalamic anchors including PMID 31204283, PMID 38194970, PMID 39870672, PMID 41285826, and PMID 42102814. The repair stages PMID 42102814 as the narrow current public addition and records deeper eNAMPT triangulation as future context rather than broadening this bundle."
+    },
+    {
+      "source_name": "PubMed and web search",
+      "query": "neuroendocrine systemic signal reset aging TRIIM klotho eNAMPT review 2026; NCT07216781; NCT07285629",
+      "checked_at": "2026-06-04T19:05:00Z",
+      "url": "https://clinicaltrials.gov/",
+      "summary": "Broader search surfaced ClinicalTrials.gov pages, PubMed PMID 42102814, Minicircle and secondary web pages, and broad review/context pages. Non-primary hits were treated as leads only and not used as public evidence."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 31204283",
+      "title": "Extracellular Vesicle-Contained eNAMPT Delays Aging and Extends Lifespan in Mice.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31204283/",
+      "decision": "context_only",
+      "reason": "Important eNAMPT mouse lifespan anchor, but staging it would broaden this repair beyond the three named gap targets. PMID 42102814 is used as the current bounded public repair record."
+    },
+    {
+      "reference": "PMID 38194970",
+      "title": "DMH(Ppp1r17) neurons regulate aging and lifespan in mice through hypothalamic-adipose inter-tissue communication.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38194970/",
+      "decision": "context_only",
+      "reason": "Relevant adipose-hypothalamic mouse lifespan anchor for future deeper repair, but not staged in this bounded bundle."
+    },
+    {
+      "reference": "PMID 39870672",
+      "title": "NAD World 3.0: the importance of the NMN transporter and eNAMPT in mammalian aging and longevity control.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39870672/",
+      "decision": "context_only",
+      "reason": "Review-level triangulation supports eNAMPT branch relevance, but it does not itself change the public stage or require a support-map record in this bounded repair."
+    },
+    {
+      "reference": "PMID 41285826",
+      "title": "Human plasma-derived eNAMPT-containing extracellular vesicles promote NAD+ biosynthesis and thermogenesis in mice.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41285826/",
+      "decision": "context_only",
+      "reason": "Close eNAMPT context with human plasma-derived EVs and mouse outcomes, but not one of the named repair targets and not necessary for the current support-map update."
+    },
+    {
+      "reference": "Minicircle website and secondary web pages",
+      "url": "https://minicircle.io/",
+      "decision": "context_only",
+      "reason": "Commercial and secondary pages were treated as leads only; ClinicalTrials.gov records provide the verifiable registry facts used for public records."
+    }
+  ],
+  "source_ids": [
+    "pmid-31496122",
+    "nct-04375657",
+    "pmid-23636330",
+    "pmid-28746310",
+    "nature-aging-klotho-nhp-2023",
+    "pmid-24915299",
+    "pmid-42102814",
+    "nct-07216781",
+    "nct-07285629"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42102814/",
+    "https://doi.org/10.1016/j.cmet.2026.04.006",
+    "https://clinicaltrials.gov/study/NCT07216781",
+    "https://clinicaltrials.gov/study/NCT07285629",
+    "https://pubmed.ncbi.nlm.nih.gov/31204283/",
+    "https://pubmed.ncbi.nlm.nih.gov/38194970/",
+    "https://pubmed.ncbi.nlm.nih.gov/39870672/",
+    "https://pubmed.ncbi.nlm.nih.gov/41285826/",
+    "https://minicircle.io/"
+  ],
+  "notes": [
+    "The repair stages a public bundle because PMID 42102814 and the klotho registries should be visible in the support map and trial-watch boundary, not only internal notes.",
+    "The staged outlook keeps current_stage human_biomarker_signal, momentum mixed, confidence low, and earliest plausible window unchanged.",
+    "Deeper eNAMPT coverage remains useful future context, but this repair stays bounded to the named gap targets and records broader eNAMPT anchors as excluded context."
+  ],
+  "next_actions": [
+    "Run source-fidelity, interpretation/forecast, safety/limitations, and taxonomy-mapping reviews for neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04.",
+    "If reviews pass, publish the repair bundle and rerun planning state.",
+    "After publication, return neuroendocrine and systemic signal reset to ordinary surveillance."
+  ]
+}

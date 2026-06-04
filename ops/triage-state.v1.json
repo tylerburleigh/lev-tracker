@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-04T13:13:22.787Z",
+  "generated_at": "2026-06-04T19:20:14.617Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-04T13:13:22.681Z",
-    "research_priority_queue_updated_at": "2026-06-04T13:13:22.682Z",
-    "active_candidate_bundle_count": 0,
+    "research_coverage_status_updated_at": "2026-06-04T19:20:14.414Z",
+    "research_priority_queue_updated_at": "2026-06-04T19:20:14.414Z",
+    "active_candidate_bundle_count": 1,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 37,
-    "coverage_repair_queue_count": 1,
+    "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 31,
     "unnormalized_intervention_id_count": 71,
     "unnormalized_intervention_reference_count": 140
@@ -32,10 +32,10 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-repair-neuroendocrine-and-systemic-signal-reset",
-    "top_mode": "coverage_repair",
-    "active_editorial_count": 0,
-    "ready_research_count": 38,
+    "top_work_item_id": "editorial_review-neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04",
+    "top_mode": "editorial_review",
+    "active_editorial_count": 1,
+    "ready_research_count": 37,
     "data_hardening_count": 1,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
@@ -45,37 +45,35 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "coverage-repair-neuroendocrine-and-systemic-signal-reset",
-      "mode": "coverage_repair",
-      "domain": "research",
+      "item_id": "editorial_review-neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04",
+      "mode": "editorial_review",
+      "domain": "editorial",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Repair coverage for Neuroendocrine and Systemic Signal Reset",
-      "rationale": "Run a bounded coverage-repair pass focused on PMID 42102814, NCT07216781, NCT07285629, and brief recent-review triangulation before ordinary surveillance resumes.",
-      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
-      "track_id": "neuroendocrine-and-systemic-signal-reset",
-      "hallmark_id": "altered_intercellular_communication",
+      "title": "Review active bundle neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04",
+      "rationale": "Candidate bundle neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04 is submitted, so editorial work takes precedence over new research.",
+      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
+      "candidate_bundle_id": "neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04",
+      "runbook_path": "docs/admin-review.md",
+      "command": "npm run research:bundle -- validate --bundle neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04",
+      "source_paths": [
+        "data/candidate-bundles",
+        "docs/admin-review.md"
+      ],
       "references": [
         {
-          "record_type": "track",
-          "record_id": "neuroendocrine-and-systemic-signal-reset"
-        },
-        {
-          "record_type": "hallmark",
-          "record_id": "altered_intercellular_communication"
+          "record_type": "candidate_bundle",
+          "record_id": "neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04"
         }
-      ],
-      "runbook_path": "docs/coverage-assessment.md",
-      "source_paths": [
-        "research/backlog/track-priority.v1.json",
-        "research/state/coverage-status.v1.json",
-        "research/coverage-assessments",
-        "docs/coverage-assessment.md"
       ],
       "signals": [
         {
-          "name": "generated_queue_rank",
-          "value": 1
+          "name": "lifecycle_status",
+          "value": "submitted"
+        },
+        {
+          "name": "proposed_change_count",
+          "value": 13
         }
       ]
     },
