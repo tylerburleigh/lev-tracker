@@ -1,0 +1,263 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-05-caloric-restriction-mimetics-surveillance",
+  "name": "Caloric Restriction Mimetics Surveillance",
+  "mode": "surveillance",
+  "started_at": "2026-06-05T22:45:00Z",
+  "completed_at": "2026-06-05T23:01:35Z",
+  "scope": {
+    "question": "What changed for Caloric Restriction Mimetics since the June 2, 2026 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "deregulated_nutrient_sensing"
+    ],
+    "track_ids": [
+      "caloric-restriction-mimetics"
+    ],
+    "intervention_ids": [
+      "fasting-mimicking-diet",
+      "acarbose"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "coverage_assessment_updated",
+  "summary": "Surveillance found no post-baseline public-update delta for the caloric-restriction-mimetics outlook. PubMed, ClinicalTrials.gov, preprint, and web checks after the June 2, 2026 publication did not identify new FMD, acarbose, or caloric-restriction-mimetic evidence that changes the current low-confidence human_biomarker_signal stage, blockers, momentum, confidence, or best-current-signal language. The useful finding is a pre-baseline Scientific Reports Mimio fasting-mimetic supplement RCT and its NCT06790407 registry record, which are not represented in the current FMD/acarbose support map. Because that source is historical and needs source-fidelity review, this pass adds a coverage assessment and recommends coverage repair rather than staging a public bundle.",
+  "next_recommended_mode": "coverage_repair",
+  "materiality_decision": {
+    "material_delta": "coverage_repair_needed",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "coverage_repair",
+    "rationale": "No checked post-publication source changes the public outlook. However, PMID 41720867 and NCT06790407 are pre-window evidence for a defined fasting-mimetic supplement with small human biomarker data, and the current public map describes FMD as the direct human biomarker anchor while treating acarbose as animal support. That mismatch is a source-completeness gap to handle in coverage repair."
+  },
+  "search_log": [
+    {
+      "source_name": "NCBI PubMed ESearch and ESummary",
+      "query": "(fasting mimicking diet OR fasting-mimicking diet OR ProLon OR longevity diet OR acarbose OR caloric restriction mimetic OR calorie restriction mimetic OR CALERIE OR periodic fasting) AND (aging OR older OR longevity OR lifespan OR healthspan OR biomarker OR biological age OR frailty OR sarcopenia OR metabolic), Entrez date 2026-06-02 through 2026-06-05",
+      "checked_at": "2026-06-05T22:57:39Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned PMID 42247255, PMID 42229346, PMID 42228537, and PMID 42225652. None supplied a post-baseline FMD, acarbose, or defined CR-mimetic aging result requiring public update."
+    },
+    {
+      "source_name": "NCBI PubMed ESearch and ESummary",
+      "query": "Same CR-mimetic query with publication date 2026-06-02 through 2026-06-05",
+      "checked_at": "2026-06-05T22:57:39Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned PMID 42228537, PMID 42048138, PMID 41968725, and PMID 41811994. These were diet, insect, telomere, or broad context records outside the public-update scope."
+    },
+    {
+      "source_name": "NCBI PubMed correction and retraction check",
+      "query": "Baseline PMIDs 28202779, 38378685, 41372565, 40816210, 30688027, 32990683, and 37118425 with retraction, erratum, or expression-of-concern publication types",
+      "checked_at": "2026-06-05T22:57:39Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "No correction, retraction, or expression-of-concern records were found for the baseline sources."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "Baseline FMD registry records NCT02158897 and NCT04150159",
+      "checked_at": "2026-06-05T22:57:39Z",
+      "url": "https://clinicaltrials.gov/",
+      "summary": "NCT02158897 remains completed with last update posted April 6, 2017 and no posted results; NCT04150159 remains completed with last update posted July 31, 2020 and no posted results. Neither is a current delta."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "Updated records from 2026-06-02 through 2026-06-05 for fasting mimicking diet, ProLon, longevity diet, acarbose, caloric restriction, aging, longevity, older adults, frailty, biomarker, and healthspan terms",
+      "checked_at": "2026-06-05T22:58:00Z",
+      "url": "https://clinicaltrials.gov/search",
+      "summary": "Returned NCT01802346 and NCT07218445. Both were updated during the window but are not public-update evidence for this track: one is oncology low-calorie diet support around chemotherapy with no posted results, and the other is tirzepatide plus hypocaloric diet/lifestyle with no posted results."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "Trial-watch records NCT06115551, NCT06560996, NCT02953093, NCT02865499, NCT05698654, NCT07065955, and NCT07255300",
+      "checked_at": "2026-06-05T22:59:00Z",
+      "url": "https://clinicaltrials.gov/",
+      "summary": "No watched record produced a post-baseline public-update delta. The FMD/longevity-diet records lack posted results or remain recruiting/unknown/completed without posted results; acarbose records remain limiting historical context already reviewed in the adjacent insulin/IGF repair pass."
+    },
+    {
+      "source_name": "bioRxiv and medRxiv APIs",
+      "query": "fasting, ProLon, longevity diet, acarbose, caloric restriction, CALERIE, or CR-mimetic terms from 2026-06-02 through 2026-06-05",
+      "checked_at": "2026-06-05T22:59:30Z",
+      "url": "https://api.biorxiv.org/",
+      "summary": "bioRxiv returned one false-positive prenatal cortical-circuit record and medRxiv returned no material hits."
+    },
+    {
+      "source_name": "Web search",
+      "query": "fasting mimicking diet ProLon aging trial results June 2026; acarbose longevity aging trial results June 2026; NCT07255300 fasting mimicking diet biomarkers aging results; NCT07065955 longevity diet fasting mimicking diet results",
+      "checked_at": "2026-06-05T23:00:00Z",
+      "url": "https://www.google.com/search?q=fasting+mimicking+diet+ProLon+aging+trial+results+June+2026",
+      "summary": "Returned mostly baseline FMD publications, ClinicalTrials.gov pages, consumer articles, and NCT07065955 coverage without posted registry results. It also surfaced PMID 41720867/PMCID PMC12953901 for Mimio, a pre-baseline fasting-mimetic supplement RCT that should be reviewed during coverage repair."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "NCT06790407 Mimio Biomimetic Cell Care metabolic health study",
+      "checked_at": "2026-06-05T23:01:00Z",
+      "url": "https://clinicaltrials.gov/study/NCT06790407",
+      "summary": "NCT06790407 is completed, industry-sponsored, last updated May 11, 2025, and has no posted registry results. It matches the Mimio publication enough to treat as a coverage-repair candidate, not a surveillance-window update."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 41720867",
+      "title": "A novel fasting mimetic (Mimio) creates fasting-like benefits to hunger control, oxidative stress, and cardiometabolic health in humans",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41720867/",
+      "decision": "context_only",
+      "reason": "Pre-baseline Scientific Reports RCT of a defined fasting-mimetic supplement in overweight older adults with elevated HbA1c. It may be coverage-repair evidence, but it is not a post-publication surveillance delta and needs source-fidelity review before any public record update."
+    },
+    {
+      "reference": "NCT06790407",
+      "title": "Observational Metabolic Health Study",
+      "url": "https://clinicaltrials.gov/study/NCT06790407",
+      "decision": "context_only",
+      "reason": "Completed Mimio registry record with no posted results and last update before the baseline. It should be reviewed alongside PMID 41720867 during coverage repair."
+    },
+    {
+      "reference": "PMID 42247255",
+      "title": "Genome mining of amylases and amylase inhibitors from Streptomyces",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42247255/",
+      "decision": "wrong_scope",
+      "reason": "Microbial amylase/acarbose biosynthesis and enzyme-engineering paper, not an aging intervention result."
+    },
+    {
+      "reference": "PMID 42229346",
+      "title": "Novel pyridazinone-based N-phenylacetamides as alpha-glucosidase-selective and dual alpha-glucosidase/aldose reductase inhibitors",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42229346/",
+      "decision": "wrong_scope",
+      "reason": "Medicinal chemistry and in vitro diabetes-enzyme inhibitor paper, not a geroscience or aging-endpoint update."
+    },
+    {
+      "reference": "PMID 42228537",
+      "title": "Mating-dependent lifespan cost of sterol depletion in male Drosophila melanogaster",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42228537/",
+      "decision": "context_only",
+      "reason": "Diet, reproduction, and lifespan biology in Drosophila; useful general context but not a defined CR-mimetic support-map change."
+    },
+    {
+      "reference": "PMID 42225652",
+      "title": "Insights into the therapeutic strategies for aging and aging-associated diseases",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42225652/",
+      "decision": "context_only",
+      "reason": "Broad aging-therapeutics review mentioning CR-mimetic classes but not adding new primary FMD, acarbose, or Mimio evidence for public staging."
+    },
+    {
+      "reference": "PMID 42048138",
+      "title": "Digest: Trade-offs between diet and growth reveal genetic variation in aging",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42048138/",
+      "decision": "wrong_scope",
+      "reason": "Evolution digest, not a caloric-restriction-mimetic intervention result."
+    },
+    {
+      "reference": "PMID 41968725",
+      "title": "Cell-type-specific knockdown of the Drosophila neuropeptide CCHamide1 modifies sleep, metabolic, and fitness phenotypes",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41968725/",
+      "decision": "wrong_scope",
+      "reason": "Drosophila neuropeptide biology, not a human or translational CR-mimetic intervention."
+    },
+    {
+      "reference": "PMID 41811994",
+      "title": "Cryptic genetic variation revealed by diet uncovers a trade-off between growth and telomere length",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41811994/",
+      "decision": "wrong_scope",
+      "reason": "Diet and telomere biology in spadefoot tadpoles, not a tracked intervention update."
+    },
+    {
+      "reference": "NCT01802346",
+      "title": "Controlled Low Calorie Diet in Reducing Side Effects and Increasing Response to Chemotherapy in Patients With Breast or Prostate Cancer",
+      "url": "https://clinicaltrials.gov/study/NCT01802346",
+      "decision": "wrong_scope",
+      "reason": "Updated during the window but focused on oncology chemotherapy support, active not recruiting, and no posted results."
+    },
+    {
+      "reference": "NCT07218445",
+      "title": "The Effect of Tirzepatide on Menopausal Vasomotor Symptoms and Biological Aging in Post-menopausal Women With Obesity",
+      "url": "https://clinicaltrials.gov/study/NCT07218445",
+      "decision": "no_results",
+      "reason": "Recruiting tirzepatide plus hypocaloric diet/lifestyle study with biological-aging outcomes but no posted results and not a defined FMD/acarbose CR-mimetic intervention."
+    },
+    {
+      "reference": "NCT02953093",
+      "title": "Study of Acarbose in Longevity",
+      "url": "https://clinicaltrials.gov/study/NCT02953093",
+      "decision": "context_only",
+      "reason": "Historical terminated acarbose study with non-informative posted outcome entries, already reviewed as limiting context in the adjacent insulin/IGF coverage repair pass."
+    },
+    {
+      "reference": "NCT02865499",
+      "title": "Acarbose Anti-aging Effects in Geriatric Subjects",
+      "url": "https://clinicaltrials.gov/study/NCT02865499",
+      "decision": "context_only",
+      "reason": "Very small uncontrolled acarbose microbiome pilot with posted results; limiting context rather than public support for human aging efficacy."
+    },
+    {
+      "reference": "NCT05698654",
+      "title": "FMD and Longevity Diet, Body Composition and Aging",
+      "url": "https://clinicaltrials.gov/study/NCT05698654",
+      "decision": "no_results",
+      "reason": "No posted results and no post-baseline status or results delta."
+    },
+    {
+      "reference": "NCT07065955",
+      "title": "Longevity Diet and the Fasting-mimicking Diet",
+      "url": "https://clinicaltrials.gov/study/NCT07065955",
+      "decision": "no_results",
+      "reason": "Completed FMD/longevity-diet registry with no posted results as of this surveillance pass."
+    },
+    {
+      "reference": "NCT07255300",
+      "title": "Follow up Study of Varapodio Trial: Effect of Longevity and Fasting Mimicking Diet on Risk Factors Age Correlated and Biomarkers of Aging",
+      "url": "https://clinicaltrials.gov/study/NCT07255300",
+      "decision": "no_results",
+      "reason": "Recruiting follow-up study with no posted results and no same-window public-update delta."
+    },
+    {
+      "reference": "NCT06115551",
+      "title": "Fasting Mimicking Diet and Autophagy",
+      "url": "https://clinicaltrials.gov/study/NCT06115551",
+      "decision": "unchanged_registry",
+      "reason": "Unknown status, last updated April 4, 2024, and no posted registry results; already represented indirectly by the published autophagy-marker source."
+    },
+    {
+      "reference": "NCT06560996",
+      "title": "Very Low-calorie Diet & Cardiometabolic Health",
+      "url": "https://clinicaltrials.gov/study/NCT06560996",
+      "decision": "unchanged_registry",
+      "reason": "Completed before the window with no posted registry results and no same-window update."
+    }
+  ],
+  "source_ids": [
+    "pmid-28202779",
+    "pmid-38378685",
+    "pmid-41372565",
+    "pmid-40816210",
+    "pmid-30688027",
+    "pmid-32990683",
+    "pmid-37118425"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/41720867/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12953901/",
+    "https://clinicaltrials.gov/study/NCT06790407",
+    "https://pubmed.ncbi.nlm.nih.gov/42247255/",
+    "https://pubmed.ncbi.nlm.nih.gov/42229346/",
+    "https://pubmed.ncbi.nlm.nih.gov/42228537/",
+    "https://pubmed.ncbi.nlm.nih.gov/42225652/",
+    "https://clinicaltrials.gov/study/NCT01802346",
+    "https://clinicaltrials.gov/study/NCT07218445",
+    "https://clinicaltrials.gov/study/NCT02953093",
+    "https://clinicaltrials.gov/study/NCT02865499",
+    "https://clinicaltrials.gov/study/NCT05698654",
+    "https://clinicaltrials.gov/study/NCT07065955",
+    "https://clinicaltrials.gov/study/NCT07255300"
+  ],
+  "notes": [
+    "The delta window runs from the public baseline publication at 2026-06-02T16:58:47.625Z through this surveillance pass on 2026-06-05.",
+    "PMID 41720867 is not a post-baseline update because it was published February 20, 2026 and entered PubMed before the June 2 baseline.",
+    "The Mimio RCT is potentially relevant because it tests a defined fasting-mimetic supplement rather than an FMD dietary cycle, but it remains small, sponsored, short-duration, biomarker-weighted, and without functional, disease, disability, multimorbidity, or mortality endpoints.",
+    "No candidate bundle was staged because the public outlook should not be updated until the historical Mimio source, registry, related pilot sources, and trial-watch context are reviewed together."
+  ],
+  "next_actions": [
+    "Run coverage repair for caloric restriction mimetics before ordinary surveillance resumes.",
+    "During repair, decide whether PMID 41720867, NCT06790407, related Mimio pilot sources, acarbose human registry records, and FMD/longevity-diet trial-watch records should become public support, limiting, activity, or explicit exclusion records.",
+    "Keep the public stage at low-confidence human_biomarker_signal unless repaired evidence adds replicated functional or durable disease-relevant human outcomes."
+  ]
+}
