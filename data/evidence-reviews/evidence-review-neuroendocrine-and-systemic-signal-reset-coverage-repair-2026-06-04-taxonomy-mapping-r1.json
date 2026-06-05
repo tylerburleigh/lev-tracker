@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04-taxonomy-mapping-r1",
+  "name": "Taxonomy Mapping review for Neuroendocrine And Systemic Signal Reset bundle",
+  "candidate_bundle_id": "neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "taxonomy_mapping",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged taxonomy mappings are coherent for revision 1. S1PC/eNAMPT, klotho, and the klotho/follistatin plasmid program are mapped to altered intercellular communication and the neuroendocrine-and-systemic-signal-reset track while preserving explicit overlap with NAD/redox, metabolite, circulating-factor, gene-therapy, nutrient-sensing, and niche-support concepts. The finding, study, source, intervention, and outlook support maps link the new record IDs consistently, and the local phase enum appropriately collapses ClinicalTrials.gov Early Phase 1 into phase1 while preserving the early-phase wording in summaries and findings.",
+  "reviewed_change_ids": [
+    "create-source-pmid-42102814",
+    "create-source-nct-07216781",
+    "create-source-nct-07285629",
+    "create-intervention-s1pc",
+    "create-intervention-klotho",
+    "create-intervention-klotho-and-follistatin-plasmid-gene-therapy",
+    "create-study-s1pc-enampt-aged-mouse-and-human-biomarker",
+    "create-study-klotho-plasmid-gene-therapy-registry",
+    "create-study-klotho-follistatin-plasmid-gene-therapy-registry",
+    "create-finding-s1pc-increased-enampt-and-improved-aged-mouse-muscle",
+    "create-finding-klotho-plasmid-gene-therapy-recruiting-no-results",
+    "create-finding-klotho-follistatin-plasmid-gene-therapy-recruiting-no-results",
+    "update-outlook-track-neuroendocrine-and-systemic-signal-reset"
+  ],
+  "findings": [
+    {
+      "finding_id": "s1pc-cross-track-boundary",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-intervention-s1pc",
+      "applies_to_record": {
+        "record_type": "intervention",
+        "record_id": "s1pc"
+      },
+      "claim_or_issue": "S1PC/eNAMPT plausibly overlaps NAD/redox and metabolite-restoration framing, but this bundle maps it to neuroendocrine/systemic signal reset because the staged support centers on adipose eNAMPT, hypothalamic targeting, and muscle/frailty effects.",
+      "why_it_matters": "Cross-track overlap could otherwise make public readers treat NAD restoration, aged garlic extract, eNAMPT vesicles, and S1PC as interchangeable.",
+      "recommended_action": "Keep the staged caveats separating S1PC, aged garlic extract, eNAMPT extracellular vesicles, and direct NAD restoration.",
+      "resolution_status": "open"
+    },
+    {
+      "finding_id": "klotho-combination-attribution-taxonomy",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-intervention-klotho-and-follistatin-plasmid-gene-therapy",
+      "applies_to_record": {
+        "record_type": "intervention",
+        "record_id": "klotho-and-follistatin-plasmid-gene-therapy"
+      },
+      "claim_or_issue": "The klotho/follistatin finding links both the broad klotho intervention and the specific combination intervention.",
+      "why_it_matters": "That mapping is useful for klotho branch surveillance, but public interpretation must not attribute future combination outcomes to klotho alone.",
+      "recommended_action": "Preserve the combination-attribution caveat in the finding and outlook support-map limitations.",
+      "resolution_status": "open"
+    },
+    {
+      "finding_id": "early-phase-one-schema-compression",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-study-klotho-follistatin-plasmid-gene-therapy-registry",
+      "applies_to_record": {
+        "record_type": "study",
+        "record_id": "klotho-follistatin-plasmid-gene-therapy-registry"
+      },
+      "claim_or_issue": "ClinicalTrials.gov labels NCT07285629 as Early Phase 1, while the local study schema supports phase1 but not an early-phase subtype.",
+      "why_it_matters": "The normalized phase field is necessarily less granular than the source registry.",
+      "recommended_action": "Keep phase set to phase1 for schema compatibility and preserve early phase 1 wording in the study/source summaries and finding statement.",
+      "resolution_status": "open"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-05T11:52:00.299Z",
+  "updated_at": "2026-06-05T11:52:00.299Z"
+}

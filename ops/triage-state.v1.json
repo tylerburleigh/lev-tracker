@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-04T19:20:14.617Z",
+  "generated_at": "2026-06-05T11:54:18.536Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-04T19:20:14.414Z",
-    "research_priority_queue_updated_at": "2026-06-04T19:20:14.414Z",
-    "active_candidate_bundle_count": 1,
+    "research_coverage_status_updated_at": "2026-06-05T11:54:18.441Z",
+    "research_priority_queue_updated_at": "2026-06-05T11:54:18.442Z",
+    "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
-    "surveillance_queue_count": 37,
+    "surveillance_queue_count": 38,
     "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 31,
-    "unnormalized_intervention_id_count": 71,
-    "unnormalized_intervention_reference_count": 140
+    "unnormalized_intervention_id_count": 70,
+    "unnormalized_intervention_reference_count": 138
   },
   "selection_policy": {
     "default_instruction": "When the user asks what to work on, consult rank 1 first and state the assumption before acting.",
@@ -32,10 +32,10 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "editorial_review-neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04",
-    "top_mode": "editorial_review",
-    "active_editorial_count": 1,
-    "ready_research_count": 37,
+    "top_work_item_id": "editorial-rollup-public-summary-surfaces",
+    "top_mode": "editorial_rollup",
+    "active_editorial_count": 0,
+    "ready_research_count": 38,
     "data_hardening_count": 1,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
@@ -45,35 +45,73 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "editorial_review-neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04",
-      "mode": "editorial_review",
+      "item_id": "editorial-rollup-public-summary-surfaces",
+      "mode": "editorial_rollup",
       "domain": "editorial",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Review active bundle neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04",
-      "rationale": "Candidate bundle neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04 is submitted, so editorial work takes precedence over new research.",
-      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
-      "candidate_bundle_id": "neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04",
-      "runbook_path": "docs/admin-review.md",
-      "command": "npm run research:bundle -- validate --bundle neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04",
+      "title": "Review public editorial rollup surfaces",
+      "rationale": "Latest affected publication event publish-neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04-2026-06-05t11-54-07-498z is newer than the latest state-of-field edition. 1 hallmark insight(s) are unreviewed or older than affected outlook changes.",
+      "default_action": "Review overall outlook, state-of-field edition, hallmark insight copy, and forecast-facing method links; update public content only when the reviewed record warrants it.",
+      "runbook_path": "docs/editorial-rollup.md",
       "source_paths": [
-        "data/candidate-bundles",
-        "docs/admin-review.md"
+        "data/publication-events",
+        "data/outlooks",
+        "data/content/state-of-the-field",
+        "data/content/hallmark-insights.json",
+        "src/components/site-shell.tsx",
+        "docs/editorial-rollup.md"
       ],
       "references": [
         {
-          "record_type": "candidate_bundle",
-          "record_id": "neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04"
+          "record_type": "publication_event",
+          "record_id": "publish-neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04-2026-06-05t11-54-07-498z"
+        },
+        {
+          "record_type": "outlook",
+          "record_id": "overall-lev-outlook"
         }
       ],
       "signals": [
         {
-          "name": "lifecycle_status",
-          "value": "submitted"
+          "name": "trigger_count",
+          "value": 2
         },
         {
-          "name": "proposed_change_count",
-          "value": 13
+          "name": "latest_affected_publication_event_id",
+          "value": "publish-neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04-2026-06-05t11-54-07-498z"
+        },
+        {
+          "name": "latest_affected_publication_event_date",
+          "value": "2026-06-05"
+        },
+        {
+          "name": "latest_state_of_field_date",
+          "value": "2026-06-04"
+        },
+        {
+          "name": "overall_outlook_last_updated",
+          "value": "2026-06-04"
+        },
+        {
+          "name": "latest_non_overall_outlook_updated",
+          "value": "2026-06-04"
+        },
+        {
+          "name": "stale_hallmark_insight_count",
+          "value": 1
+        },
+        {
+          "name": "first_stale_hallmark_insight_id",
+          "value": "altered_intercellular_communication"
+        },
+        {
+          "name": "no_current_month_state_of_field",
+          "value": false
+        },
+        {
+          "name": "forecast_surface_gap",
+          "value": false
         }
       ]
     },
@@ -85,7 +123,7 @@
       "priority_tier": "now",
       "status": "ready",
       "title": "Run surveillance for Niche Rejuvenation and Support",
-      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 7; rank 1 was recently handled by a surveillance or coverage-repair session.",
+      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 8; rank 1 was recently handled by a surveillance or coverage-repair session.",
       "default_action": "Run one track-level surveillance pass, record materiality, excluded sources, and a session; create a bundle only for a material public change.",
       "track_id": "niche-rejuvenation-and-support",
       "hallmark_id": "stem_cell_exhaustion",
@@ -108,7 +146,7 @@
       "signals": [
         {
           "name": "generated_queue_rank",
-          "value": 7
+          "value": 8
         },
         {
           "name": "last_session_mode",
@@ -155,7 +193,7 @@
         },
         {
           "name": "generated_surveillance_queue_rank",
-          "value": 7
+          "value": 8
         },
         {
           "name": "track_next_mode",
@@ -170,8 +208,8 @@
       "domain": "data",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Normalize 71 intervention ID(s)",
-      "rationale": "140 live reference(s) point to non-normalized intervention IDs. The data audit treats this as non-blocking, but it remains the main known data-hardening backlog.",
+      "title": "Normalize 70 intervention ID(s)",
+      "rationale": "138 live reference(s) point to non-normalized intervention IDs. The data audit treats this as non-blocking, but it remains the main known data-hardening backlog.",
       "default_action": "Continue the intervention-normalization backlog in small reviewed batches, then rerun audit and planning sync.",
       "runbook_path": "docs/intervention-normalization.md",
       "command": "npm run audit:data",
@@ -182,11 +220,11 @@
       "signals": [
         {
           "name": "missing_intervention_id_count",
-          "value": 71
+          "value": 70
         },
         {
           "name": "missing_intervention_reference_count",
-          "value": 140
+          "value": 138
         },
         {
           "name": "missing_intervention:a9-dpc",

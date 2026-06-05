@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04-source-fidelity-r1",
+  "name": "Source Fidelity review for Neuroendocrine And Systemic Signal Reset bundle",
+  "candidate_bundle_id": "neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The revision 1 staged source, study, finding, intervention, and outlook records are source-faithful. PubMed metadata and abstract text support PMID 42102814 as a Cell Metabolism S1PC/LKB1/SIRT1/eNAMPT paper with aged-mouse muscle and frailty effects plus human circulating-eNAMPT biomarker context, and the current ClinicalTrials.gov API records support NCT07216781 and NCT07285629 as recruiting single-group Minicircle gene-therapy studies with no posted results. The staged records preserve the key abstract-only, registry-only, no-results, single-group, and conflict-of-interest boundaries.",
+  "reviewed_change_ids": [
+    "create-source-pmid-42102814",
+    "create-source-nct-07216781",
+    "create-source-nct-07285629",
+    "create-intervention-s1pc",
+    "create-intervention-klotho",
+    "create-intervention-klotho-and-follistatin-plasmid-gene-therapy",
+    "create-study-s1pc-enampt-aged-mouse-and-human-biomarker",
+    "create-study-klotho-plasmid-gene-therapy-registry",
+    "create-study-klotho-follistatin-plasmid-gene-therapy-registry",
+    "create-finding-s1pc-increased-enampt-and-improved-aged-mouse-muscle",
+    "create-finding-klotho-plasmid-gene-therapy-recruiting-no-results",
+    "create-finding-klotho-follistatin-plasmid-gene-therapy-recruiting-no-results",
+    "update-outlook-track-neuroendocrine-and-systemic-signal-reset"
+  ],
+  "findings": [
+    {
+      "finding_id": "coverage-repair-registry-current-status-boundary",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "update-outlook-track-neuroendocrine-and-systemic-signal-reset",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-neuroendocrine-and-systemic-signal-reset-outlook"
+      },
+      "claim_or_issue": "NCT07216781 and NCT07285629 were checked against the current ClinicalTrials.gov API during review and still had no results section, but registry status is time-sensitive.",
+      "why_it_matters": "The staged public wording is source-faithful only while these records remain no-results trial-watch items rather than outcome evidence.",
+      "recommended_action": "Keep the no-results caveat and recheck both registries before publication if the bundle is delayed materially.",
+      "resolution_status": "open"
+    },
+    {
+      "finding_id": "s1pc-abstract-quantitative-boundary",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-s1pc-increased-enampt-and-improved-aged-mouse-muscle",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "s1pc-increased-enampt-and-improved-aged-mouse-muscle"
+      },
+      "claim_or_issue": "The PubMed abstract supports the qualitative S1PC/eNAMPT, aged-mouse muscle, frailty-index, and human circulating-biomarker claims, but not full sample-size, dose, duration, or effect-estimate extraction.",
+      "why_it_matters": "A public finding should not imply more quantitative certainty than the staged source record supports.",
+      "recommended_action": "Preserve the existing caveat that quantitative and protocol details are not fully specified in the PubMed abstract.",
+      "resolution_status": "open"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-05T11:51:47.251Z",
+  "updated_at": "2026-06-05T11:51:47.251Z"
+}
