@@ -1,0 +1,272 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-05-caloric-restriction-mimetics-coverage-repair",
+  "name": "Caloric Restriction Mimetics Coverage Repair",
+  "mode": "coverage_repair",
+  "started_at": "2026-06-05T23:05:00Z",
+  "completed_at": "2026-06-05T23:14:29Z",
+  "scope": {
+    "question": "Which known source-completeness gaps for Caloric Restriction Mimetics need repair, and does resolving them change the coverage verdict or public boundaries?",
+    "hallmark_ids": [
+      "deregulated_nutrient_sensing"
+    ],
+    "track_ids": [
+      "caloric-restriction-mimetics"
+    ],
+    "intervention_ids": [
+      "fasting-mimicking-diet",
+      "acarbose"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "coverage_assessment_updated",
+  "summary": "Coverage repair checked the Mimio human biomarker RCT, its registry, related fasting-metabolite and supplement dose-escalation sources, acarbose human aging registry limitations, FMD/longevity-diet trial-watch records, and recent review/primary-source triangulation. The Mimio RCT is relevant to the taxonomy as a non-dietary fasting-mimetic supplement, but it remains small, sponsor-funded, 8 weeks long, biomarker and subjective-outcome weighted, and without functional, disease, disability, multimorbidity, mortality, or reported biological-age results. Acarbose human registry records remain limiting context rather than human aging efficacy evidence. FMD/longevity-diet registries remain no-results or trial-watch context. A recent acarbose cognition preprint adds animal healthspan context but is not peer-reviewed and does not change the current support map. The repaired assessment can move from thin to adequate coverage for the current low-confidence human_biomarker_signal claim while returning the track to ordinary surveillance.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "none",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The repaired sources clarify source completeness and taxonomy boundaries but do not change the public stage, momentum, confidence, blockers, best-current-signal language, or rating-change criteria. No checked source adds replicated human functional or durable disease-relevant evidence."
+  },
+  "search_log": [
+    {
+      "source_name": "PubMed, PMC, and ClinicalTrials.gov",
+      "query": "PMID 41720867, PMCID PMC12953901, and NCT06790407",
+      "checked_at": "2026-06-05T23:08:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41720867/",
+      "summary": "Confirmed the Mimio RCT as a February 20, 2026 Scientific Reports article testing an 8-week daily supplement in overweight older adults with elevated HbA1c. The publication reports hunger/satiety, digestive, lipid, oxidized LDL, and fasting-glucose signals, no significant cognitive or quality-of-life differences, and no adverse-event excess; the registry remains completed with no posted results."
+    },
+    {
+      "source_name": "PubMed and ClinicalTrials.gov",
+      "query": "PMID 39549554, PMID 36811567, NCT05017428, and NCT03487679",
+      "checked_at": "2026-06-05T23:10:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39549554/",
+      "summary": "Checked related Mimio-formulation and fasting-metabolite sources. PMID 39549554 is a 5-person dose-escalation study showing supplement bioavailability and ex vivo anti-inflammatory/antioxidant signals; PMID 36811567 is a 20-person fasting-metabolite pilot with C. elegans lifespan assays. They support mechanism context but not human aging efficacy."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "NCT02953093 and NCT02865499",
+      "checked_at": "2026-06-05T23:10:30Z",
+      "url": "https://clinicaltrials.gov/study/NCT02953093",
+      "summary": "Rechecked acarbose human aging registries. NCT02953093 is terminated with posted but non-analyzable or unreported primary and secondary endpoints; NCT02865499 is a very small uncontrolled microbiome-only study. Neither supplies human aging efficacy evidence."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "NCT05698654, NCT07065955, NCT07255300, NCT06115551, and NCT06560996",
+      "checked_at": "2026-06-05T23:11:00Z",
+      "url": "https://clinicaltrials.gov/study/NCT05698654",
+      "summary": "Rechecked FMD, longevity-diet, and very-low-calorie-diet trial-watch records. The records remain no-results, unknown-status, recruiting, or completed-without-posted-results context and do not change public claims."
+    },
+    {
+      "source_name": "NCBI PubMed ESearch and ESummary",
+      "query": "Recent review triangulation for CR mimetics, FMD, acarbose, spermidine, nicotinamide, palmitoylethanolamide, oleoylethanolamide, glucose-spike modulation, aging, longevity, lifespan, healthspan, biological age, frailty, and older adults, 2024-2026",
+      "checked_at": "2026-06-05T23:12:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Recent review search returned broad aging therapeutics, FMD, acarbose, polyamine/autophagy, and spermidine-food review context. PMID 38966557, PMID 38287649, PMID 42225652, PMID 42086115, and PMID 42235230 did not reveal a missing primary anchor that changes the current public support map."
+    },
+    {
+      "source_name": "NCBI PubMed ESearch and ESummary",
+      "query": "Recent primary and preprint triangulation for FMD, acarbose, ProLon, caloric-restriction mimetics, aging, longevity, lifespan, healthspan, biomarkers, and biological age, 2024-2026",
+      "checked_at": "2026-06-05T23:13:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned adjacent records including PMID 42094534, PMID 42081078, and PMID 42060951. PMID 42094534 is a relevant acarbose normal-aging cognition preprint but not peer-reviewed; other close hits were mouse islet or oncology feasibility context rather than public support-map changes."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 41720867",
+      "title": "A novel fasting mimetic (Mimio) creates fasting-like benefits to hunger control, oxidative stress, and cardiometabolic health in humans",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41720867/",
+      "decision": "context_only",
+      "reason": "Relevant non-dietary fasting-mimetic supplement RCT, but small, sponsor-funded, 8 weeks long, with 42 evaluable participants for subjective outcomes and 33 for blood markers. It reports cardiometabolic biomarkers rather than aging functional, disease, disability, multimorbidity, mortality, or reported biological-age endpoints."
+    },
+    {
+      "reference": "NCT06790407",
+      "title": "Observational Metabolic Health Study",
+      "url": "https://clinicaltrials.gov/study/NCT06790407",
+      "decision": "no_results",
+      "reason": "Completed Mimio registry with no posted results; useful registry provenance for PMID 41720867 but not a separate public result."
+    },
+    {
+      "reference": "PMID 39549554",
+      "title": "Absorption, anti-inflammatory, antioxidant, and cardioprotective impacts of a novel fasting mimetic containing spermidine, nicotinamide, palmitoylethanolamide, and oleoylethanolamide",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39549554/",
+      "decision": "context_only",
+      "reason": "Five-person dose-escalation study in healthy young adult men showing bioavailability and ex vivo plasma anti-inflammatory/antioxidant signals. Mechanistic support only, not aging efficacy."
+    },
+    {
+      "reference": "NCT05017428",
+      "title": "Absorption and Digestion Kinetics of Human Metabolites",
+      "url": "https://clinicaltrials.gov/study/NCT05017428",
+      "decision": "no_results",
+      "reason": "Completed n = 5 registry record for the dose-escalation source, without posted registry results."
+    },
+    {
+      "reference": "PMID 36811567",
+      "title": "Human fasting modulates macrophage function and upregulates multiple bioactive metabolites that extend lifespan in Caenorhabditis elegans",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36811567/",
+      "decision": "context_only",
+      "reason": "Mechanistic fasting-metabolite source and C. elegans lifespan assay. It supports the origin of the Mimio formulation but does not test a human CR-mimetic intervention for aging outcomes."
+    },
+    {
+      "reference": "NCT03487679",
+      "title": "Effects of Prolonged Fasting on Microbiome and HDL",
+      "url": "https://clinicaltrials.gov/study/NCT03487679",
+      "decision": "no_results",
+      "reason": "Completed fasting-metabolite pilot registry with no posted results; article evidence is mechanistic context only."
+    },
+    {
+      "reference": "NCT02953093",
+      "title": "Study of Acarbose in Longevity",
+      "url": "https://clinicaltrials.gov/study/NCT02953093",
+      "decision": "context_only",
+      "reason": "Terminated human acarbose crossover study with posted but non-informative tissue gene-expression, serum miRNA, and fecal microbiome outcome entries."
+    },
+    {
+      "reference": "NCT02865499",
+      "title": "Acarbose Anti-aging Effects in Geriatric Subjects",
+      "url": "https://clinicaltrials.gov/study/NCT02865499",
+      "decision": "context_only",
+      "reason": "Very small uncontrolled acarbose microbiome pilot with no controlled aging biomarker, functional, disease, disability, multimorbidity, or mortality endpoint."
+    },
+    {
+      "reference": "NCT05698654",
+      "title": "Fasting-mimicking Diet and Longevity Diet, Body Composition and Aging",
+      "url": "https://clinicaltrials.gov/study/NCT05698654",
+      "decision": "no_results",
+      "reason": "Unknown-status FMD/longevity-diet randomized registry with no posted results."
+    },
+    {
+      "reference": "NCT07065955",
+      "title": "Longevity Diet and the Fasting-mimicking Diet",
+      "url": "https://clinicaltrials.gov/study/NCT07065955",
+      "decision": "no_results",
+      "reason": "Completed retrospective longevity-diet/FMD registry with no posted results."
+    },
+    {
+      "reference": "NCT07255300",
+      "title": "Follow up Study of Varapodio Trial: Effect of Longevity and Fasting Mimicking Diet on Risk Factors Age Correlated and Biomarkers of Aging",
+      "url": "https://clinicaltrials.gov/study/NCT07255300",
+      "decision": "no_results",
+      "reason": "Recruiting FMD/longevity-diet follow-up record with no posted results and expected completion in 2027."
+    },
+    {
+      "reference": "NCT06115551",
+      "title": "Fasting Mimicking Diet and Autophagy",
+      "url": "https://clinicaltrials.gov/study/NCT06115551",
+      "decision": "unchanged_registry",
+      "reason": "Unknown-status autophagy-marker registry with no posted results; already represented by the published FMD autophagy source in the public map."
+    },
+    {
+      "reference": "NCT06560996",
+      "title": "Very Low-calorie Diet & Cardiometabolic Health",
+      "url": "https://clinicaltrials.gov/study/NCT06560996",
+      "decision": "no_results",
+      "reason": "Completed very-low-calorie diet/autophagy marker registry with no posted results and no current public update."
+    },
+    {
+      "reference": "PMID 42094534",
+      "title": "Acarbose improves cognitive function in a mouse model of normal aging but not Alzheimer's disease",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42094534/",
+      "decision": "context_only",
+      "reason": "Relevant acarbose animal-healthspan preprint, but it is not peer-reviewed and does not change the already published acarbose animal lifespan/healthspan boundary."
+    },
+    {
+      "reference": "PMID 42081078",
+      "title": "Effects of Intermittent Fasting-Mimicking Diet on Pancreatic Islet Plasticity",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42081078/",
+      "decision": "context_only",
+      "reason": "Mouse pancreatic-islet plasticity paper, not a human aging, function, disease-burden, or longevity result."
+    },
+    {
+      "reference": "PMID 42060951",
+      "title": "Brief Report: A Pilot Study Evaluating the Feasibility, Safety, and Compliance With a Fasting-Mimicking Diet in Patients With Metastatic Non-Small Cell Lung Cancer",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42060951/",
+      "decision": "wrong_scope",
+      "reason": "Oncology feasibility/compliance context, not a CR-mimetic healthy-aging or LEV-relevant outcome update."
+    },
+    {
+      "reference": "PMID 38966557",
+      "title": "Repurposing effect of cardiovascular-metabolic drug to increase lifespan",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38966557/",
+      "decision": "context_only",
+      "reason": "Systematic review reinforces acarbose animal-lifespan and clinical-trial-progress context, but does not add human acarbose aging efficacy."
+    },
+    {
+      "reference": "PMID 38287649",
+      "title": "Effects of the periodic fasting-mimicking diet on health, lifespan, and multiple diseases",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38287649/",
+      "decision": "context_only",
+      "reason": "Narrative FMD review supports the existing FMD biomarker and trial-watch boundary without adding a new primary anchor."
+    },
+    {
+      "reference": "PMID 42225652",
+      "title": "Insights into the therapeutic strategies for aging and aging-associated diseases",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42225652/",
+      "decision": "context_only",
+      "reason": "Broad aging therapeutics review, not a new primary CR-mimetic source."
+    },
+    {
+      "reference": "PMID 42086115",
+      "title": "Polyamines and autophagy as a dynamic regulatory network in skeletal muscle regeneration and aging",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42086115/",
+      "decision": "context_only",
+      "reason": "Polyamine/autophagy review context for spermidine biology, not a Mimio or CR-mimetic human aging result."
+    },
+    {
+      "reference": "PMID 42235230",
+      "title": "Spermidine in food and health",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42235230/",
+      "decision": "context_only",
+      "reason": "Spermidine review context, not a track-level public update for defined CR mimetics."
+    }
+  ],
+  "source_ids": [
+    "pmid-28202779",
+    "pmid-38378685",
+    "pmid-41372565",
+    "pmid-40816210",
+    "pmid-30688027",
+    "pmid-32990683",
+    "pmid-37118425"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/41720867/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12953901/",
+    "https://clinicaltrials.gov/study/NCT06790407",
+    "https://pubmed.ncbi.nlm.nih.gov/39549554/",
+    "https://clinicaltrials.gov/study/NCT05017428",
+    "https://pubmed.ncbi.nlm.nih.gov/36811567/",
+    "https://clinicaltrials.gov/study/NCT03487679",
+    "https://clinicaltrials.gov/study/NCT02953093",
+    "https://clinicaltrials.gov/study/NCT02865499",
+    "https://clinicaltrials.gov/study/NCT05698654",
+    "https://clinicaltrials.gov/study/NCT07065955",
+    "https://clinicaltrials.gov/study/NCT07255300",
+    "https://clinicaltrials.gov/study/NCT06115551",
+    "https://clinicaltrials.gov/study/NCT06560996",
+    "https://pubmed.ncbi.nlm.nih.gov/42094534/",
+    "https://pubmed.ncbi.nlm.nih.gov/42081078/",
+    "https://pubmed.ncbi.nlm.nih.gov/42060951/",
+    "https://pubmed.ncbi.nlm.nih.gov/38966557/",
+    "https://pubmed.ncbi.nlm.nih.gov/38287649/",
+    "https://pubmed.ncbi.nlm.nih.gov/42225652/",
+    "https://pubmed.ncbi.nlm.nih.gov/42086115/",
+    "https://pubmed.ncbi.nlm.nih.gov/42235230/"
+  ],
+  "notes": [
+    "Coverage repair was selected from the generated triage queue after the June 5 surveillance pass recommended source-completeness repair.",
+    "PMID 41720867 is relevant to the track taxonomy but not strong enough to stage as a public outlook update because it is a small short-duration biomarker and subjective-outcome RCT with sponsor funding and no durable aging endpoint.",
+    "The Mimio registry lists biological-age testing among secondary outcomes, but the checked publication and registry do not provide posted biological-age results.",
+    "PMID 42094534 should be watched for peer-reviewed publication because it may add acarbose animal-healthspan support, but the current public acarbose animal boundary is already represented by peer-reviewed lifespan and physical-function sources.",
+    "No new intervention record was created for Mimio because the repaired evidence does not yet justify a public support-map update."
+  ],
+  "next_actions": [
+    "Resume ordinary surveillance for caloric restriction mimetics.",
+    "Watch for posted results or peer-reviewed publications from NCT06790407, NCT05698654, NCT07065955, NCT07255300, NCT06115551, NCT06560996, and PMID 42094534.",
+    "Stage a public candidate bundle only if future Mimio, FMD, acarbose, or other CR-mimetic evidence changes the stage, support map, blockers, confidence, or rating-change criteria."
+  ]
+}

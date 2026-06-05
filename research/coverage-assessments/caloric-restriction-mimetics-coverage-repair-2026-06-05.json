@@ -1,0 +1,246 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "caloric-restriction-mimetics-coverage-repair-2026-06-05",
+  "name": "Caloric Restriction Mimetics Coverage Repair Assessment for June 5, 2026",
+  "short_name": "CR mimetics coverage repair",
+  "track_id": "caloric-restriction-mimetics",
+  "hallmark_id": "deregulated_nutrient_sensing",
+  "assessment_type": "coverage_repair",
+  "assessed_at": "2026-06-05T23:14:29Z",
+  "assessment_window": {
+    "from": "2026-06-02T16:58:47.625Z",
+    "to": "2026-06-05T23:14:29Z",
+    "basis": "Coverage repair created after the June 5 surveillance assessment requested Mimio, acarbose registry, FMD/longevity-diet trial-watch, and recent-review triangulation before ordinary surveillance resumed."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is now adequate for the current low-confidence human_biomarker_signal public claim. The repair pass checked the Mimio fasting-mimetic supplement RCT, related fasting-metabolite and supplement dose-escalation sources, the Mimio registry, human acarbose aging registries, FMD/longevity-diet trial-watch records, and recent review/primary-source triangulation. These checks repair the source-completeness gaps named in the prior assessment but do not change the public stage or support map: Mimio remains a small, sponsor-funded, short-duration, biomarker/subjective-outcome signal without reported aging functional, disease, disability, multimorbidity, mortality, or biological-age results; acarbose human records remain limiting context; FMD/longevity-diet registries remain no-results context; and the recent acarbose cognition preprint is a watch item rather than peer-reviewed support. Ordinary surveillance can resume while retaining high-priority evidence gaps around replicated human functional and durable clinical outcomes.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-06-02-caloric-restriction-mimetics-bootstrap",
+      "2026-06-05-caloric-restriction-mimetics-surveillance",
+      "2026-06-05-caloric-restriction-mimetics-coverage-repair"
+    ],
+    "candidate_bundle_ids": [
+      "caloric-restriction-mimetics-bootstrap-2026-06-02"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-caloric-restriction-mimetics-source-fidelity-r1",
+      "evidence-review-caloric-restriction-mimetics-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-caloric-restriction-mimetics-bootstrap-2026-06-02-2026-06-02t16-58-47-625z"
+    ],
+    "outlook_ids": [
+      "track-caloric-restriction-mimetics-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "The current support map includes FMD human biomarker/risk-factor studies and CALERIE direct-caloric-restriction context. Coverage repair checked the main non-dietary Mimio supplement RCT, its dose-escalation and fasting-metabolite rationale sources, and human acarbose aging registry records. The human intervention landscape is adequately mapped for the current low-confidence biomarker claim, but it still lacks replicated functional or durable clinical outcome evidence.",
+      "source_ids": [
+        "pmid-28202779",
+        "pmid-38378685",
+        "pmid-41372565",
+        "pmid-40816210",
+        "pmid-37118425"
+      ],
+      "finding_ids": [
+        "fmd-reduced-aging-risk-markers-rct",
+        "fmd-biological-age-immune-metabolic-marker-signal",
+        "fmd-pilot-autophagic-flux-metabolic-markers",
+        "fmd-protein-content-autophagy-metabolic-markers",
+        "calerie-cr-slowed-dunedinpace"
+      ],
+      "gap_note": "The remaining issue is an evidence gap, not a source-completeness gap: no checked human CR-mimetic intervention establishes functional, disease, disability, multimorbidity, or mortality benefit."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes peer-reviewed acarbose mouse lifespan and aged-mouse physical-function/cardiac/lipid records. Repair also identified an acarbose normal-aging cognition preprint, but it remains unreviewed and does not change the existing animal boundary.",
+      "source_ids": [
+        "pmid-30688027",
+        "pmid-32990683"
+      ],
+      "finding_ids": [
+        "acarbose-extended-het3-mouse-lifespan-sex-dependent",
+        "acarbose-improved-aged-mouse-physical-function-cardiac-lipids"
+      ],
+      "gap_note": "Watch PMID 42094534 for peer-reviewed publication or replication."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "Mechanistic coverage now includes the published FMD/autophagy and FMD metabolic-marker anchors, acarbose glucose-excursion biology, CALERIE context, and explicit review of Mimio's fasting-metabolite rationale and supplement bioavailability/ex vivo signal sources. This is adequate for the current claim without implying durable human benefit.",
+      "source_ids": [
+        "pmid-28202779",
+        "pmid-38378685",
+        "pmid-41372565",
+        "pmid-40816210",
+        "pmid-30688027",
+        "pmid-37118425"
+      ],
+      "finding_ids": [
+        "fmd-reduced-aging-risk-markers-rct",
+        "fmd-biological-age-immune-metabolic-marker-signal",
+        "fmd-pilot-autophagic-flux-metabolic-markers",
+        "fmd-protein-content-autophagy-metabolic-markers",
+        "acarbose-extended-het3-mouse-lifespan-sex-dependent",
+        "calerie-cr-slowed-dunedinpace"
+      ]
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The repaired map explicitly accounts for Mimio trial limitations, human acarbose registry limitations, no-results FMD/longevity-diet registry records, and the direct-CR-not-mimetic boundary for CALERIE. These limiting sources clarify why no public upgrade or public bundle is warranted.",
+      "source_ids": [
+        "pmid-28202779",
+        "pmid-38378685",
+        "pmid-37118425"
+      ],
+      "finding_ids": [
+        "fmd-reduced-aging-risk-markers-rct",
+        "fmd-biological-age-immune-metabolic-marker-signal",
+        "calerie-cr-slowed-dunedinpace"
+      ]
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "Safety and durability evidence remains thin as a field-level limitation. FMD and Mimio sources are short-duration; acarbose human aging registries are too small or non-informative; and no source establishes long-term preventive-use tolerability, adherence, frailty, sarcopenia, bone, cognition, disease-burden, or mortality benefit.",
+      "source_ids": [
+        "pmid-28202779",
+        "pmid-41372565",
+        "pmid-40816210"
+      ],
+      "finding_ids": [
+        "fmd-reduced-aging-risk-markers-rct",
+        "fmd-pilot-autophagic-flux-metabolic-markers",
+        "fmd-protein-content-autophagy-metabolic-markers"
+      ],
+      "gap_note": "This remains an evidence gap requiring future long-duration human data, not another immediate coverage-repair pass."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "Coverage repair checked the named Mimio, acarbose, FMD/longevity-diet, FMD-autophagy, and very-low-calorie-diet registries. Current records are no-results, recruiting, unknown-status, or limiting context; ordinary surveillance should watch for posted results.",
+      "gap_note": "Watch NCT06790407, NCT05698654, NCT07065955, NCT07255300, NCT06115551, and NCT06560996 for posted results or peer-reviewed publications."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "adequate",
+      "rationale": "Recent PubMed triangulation checked FMD, acarbose, broad aging-therapeutics, polyamine/autophagy, and spermidine review context. The review set reinforced current boundaries and did not identify a missing primary source that changes the public claim.",
+      "gap_note": "Use ordinary surveillance for future review-driven deltas unless a reviewer identifies a specific missing anchor."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The current public baseline includes major FMD biomarker, acarbose animal lifespan/healthspan, and CALERIE direct-CR context anchors. Repair reviewed the main Mimio/formulation sources and decided they are context for now rather than additional public anchors.",
+      "source_ids": [
+        "pmid-28202779",
+        "pmid-38378685",
+        "pmid-41372565",
+        "pmid-40816210",
+        "pmid-30688027",
+        "pmid-32990683",
+        "pmid-37118425"
+      ],
+      "finding_ids": [
+        "fmd-reduced-aging-risk-markers-rct",
+        "fmd-biological-age-immune-metabolic-marker-signal",
+        "fmd-pilot-autophagic-flux-metabolic-markers",
+        "fmd-protein-content-autophagy-metabolic-markers",
+        "acarbose-extended-het3-mouse-lifespan-sex-dependent",
+        "acarbose-improved-aged-mouse-physical-function-cardiac-lipids",
+        "calerie-cr-slowed-dunedinpace"
+      ]
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The repair explicitly separates FMD dietary-program evidence, acarbose glucose-spike modulation, CALERIE direct caloric restriction context, and Mimio-like supplement mimetics. Mimio is relevant to the category but should not inflate the track beyond low-confidence biomarker support.",
+      "source_ids": [
+        "pmid-28202779",
+        "pmid-30688027",
+        "pmid-37118425"
+      ],
+      "finding_ids": [
+        "fmd-reduced-aging-risk-markers-rct",
+        "acarbose-extended-het3-mouse-lifespan-sex-dependent",
+        "calerie-cr-slowed-dunedinpace"
+      ]
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-28202779",
+    "pmid-38378685",
+    "pmid-41372565",
+    "pmid-40816210",
+    "pmid-30688027",
+    "pmid-32990683",
+    "pmid-37118425"
+  ],
+  "covered_finding_ids": [
+    "fmd-reduced-aging-risk-markers-rct",
+    "fmd-biological-age-immune-metabolic-marker-signal",
+    "fmd-pilot-autophagic-flux-metabolic-markers",
+    "fmd-protein-content-autophagy-metabolic-markers",
+    "acarbose-extended-het3-mouse-lifespan-sex-dependent",
+    "acarbose-improved-aged-mouse-physical-function-cardiac-lipids",
+    "calerie-cr-slowed-dunedinpace"
+  ],
+  "search_log_summary": "Coverage repair reviewed the June 2 public outlook and bootstrap artifacts, the June 5 surveillance assessment, the Mimio Scientific Reports RCT and registry, related Mimio-formulation and fasting-metabolite sources, acarbose human aging registry records, FMD/longevity-diet trial-watch records, recent PubMed reviews, and close primary/preprint PubMed hits around FMD and acarbose.",
+  "source_selection_notes": [
+    "PMID 41720867 was not staged because it is a small, sponsor-funded, short-duration biomarker/subjective-outcome RCT without reported aging functional, disease, disability, multimorbidity, mortality, or biological-age results.",
+    "NCT06790407 was not staged because it is a completed Mimio registry with no posted results.",
+    "PMID 39549554 and PMID 36811567 were not staged because they provide Mimio-formulation mechanism, bioavailability, ex vivo, and C. elegans context rather than human aging efficacy.",
+    "NCT02953093 and NCT02865499 were retained as limiting acarbose human registry context rather than public support records.",
+    "NCT05698654, NCT07065955, NCT07255300, NCT06115551, and NCT06560996 remain trial-watch/no-results context.",
+    "PMID 42094534 is a relevant acarbose animal-healthspan preprint to watch, but peer-reviewed acarbose animal lifespan and physical-function records already support the current public boundary.",
+    "Recent review triangulation did not identify a missing primary anchor that changes the current low-confidence human_biomarker_signal stage."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "no-replicated-human-functional-or-durable-outcome",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "No FMD, acarbose, Mimio, or other defined caloric-restriction-mimetic intervention has replicated prespecified human functional, disease-incidence, disability, multimorbidity, or mortality benefit under preventive-use conditions.",
+      "priority": "high",
+      "suggested_action": "Keep the public stage at low-confidence human_biomarker_signal unless future controlled human studies report functional or durable clinical outcomes with acceptable tolerability and adherence."
+    },
+    {
+      "gap_id": "preventive-use-safety-and-durability-thin",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Short FMD and Mimio studies plus small or non-informative human acarbose registries do not establish long-term preventive-use safety, adherence, or durability.",
+      "priority": "high",
+      "suggested_action": "Require longer-duration human safety, adherence, and durability data before increasing confidence or changing rating criteria."
+    },
+    {
+      "gap_id": "acarbose-cognition-preprint-watch",
+      "gap_type": "evidence_gap",
+      "category": "animal_lifespan_or_healthspan",
+      "description": "A recent acarbose normal-aging cognition preprint may add animal healthspan context if peer-reviewed or replicated.",
+      "priority": "medium",
+      "suggested_action": "Monitor PMID 42094534 for peer-reviewed publication or replication during ordinary surveillance."
+    },
+    {
+      "gap_id": "taxonomy-boundary-for-diet-supplement-and-druglike-mimetics",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "The track combines dietary programs, drug-like glucose-spike modulation, direct caloric restriction context, and supplement-like fasting mimetics, so future updates could overgeneralize one intervention class to another.",
+      "priority": "medium",
+      "suggested_action": "Keep future public changes explicit about whether evidence supports FMD, acarbose, direct CR context, Mimio-like supplements, or the broader CR-mimetic category."
+    }
+  ],
+  "next_coverage_action": "Resume ordinary surveillance for caloric restriction mimetics. Watch Mimio, FMD/longevity-diet registries, human acarbose results, and acarbose cognition follow-up, but do not run another coverage-repair pass unless a reviewer identifies a new source-completeness gap.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-assessment",
+    "coverage-repair",
+    "deregulated_nutrient_sensing",
+    "caloric-restriction-mimetics"
+  ]
+}

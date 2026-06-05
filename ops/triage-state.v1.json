@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-05T23:04:59.542Z",
+  "generated_at": "2026-06-05T23:17:44.332Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-05T23:04:59.435Z",
-    "research_priority_queue_updated_at": "2026-06-05T23:04:59.435Z",
+    "research_coverage_status_updated_at": "2026-06-05T23:17:44.241Z",
+    "research_priority_queue_updated_at": "2026-06-05T23:17:44.242Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
-    "surveillance_queue_count": 37,
-    "coverage_repair_queue_count": 1,
+    "surveillance_queue_count": 38,
+    "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 30,
     "unnormalized_intervention_id_count": 70,
     "unnormalized_intervention_reference_count": 138
@@ -32,8 +32,8 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-repair-caloric-restriction-mimetics",
-    "top_mode": "coverage_repair",
+    "top_work_item_id": "surveillance-selective-autophagy-and-organelle-quality-control",
+    "top_mode": "surveillance",
     "active_editorial_count": 0,
     "ready_research_count": 38,
     "data_hardening_count": 1,
@@ -45,49 +45,13 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "coverage-repair-caloric-restriction-mimetics",
-      "mode": "coverage_repair",
-      "domain": "research",
-      "priority_tier": "now",
-      "status": "ready",
-      "title": "Repair coverage for Caloric Restriction Mimetics",
-      "rationale": "Run a bounded coverage-repair pass focused on Mimio human biomarker evidence, acarbose human registry limitations, FMD/longevity-diet trial-watch records, and recent review triangulation before ordinary surveillance resumes.",
-      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
-      "track_id": "caloric-restriction-mimetics",
-      "hallmark_id": "deregulated_nutrient_sensing",
-      "references": [
-        {
-          "record_type": "track",
-          "record_id": "caloric-restriction-mimetics"
-        },
-        {
-          "record_type": "hallmark",
-          "record_id": "deregulated_nutrient_sensing"
-        }
-      ],
-      "runbook_path": "docs/coverage-assessment.md",
-      "source_paths": [
-        "research/backlog/track-priority.v1.json",
-        "research/state/coverage-status.v1.json",
-        "research/coverage-assessments",
-        "docs/coverage-assessment.md"
-      ],
-      "signals": [
-        {
-          "name": "generated_queue_rank",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "rank": 2,
       "item_id": "surveillance-selective-autophagy-and-organelle-quality-control",
       "mode": "surveillance",
       "domain": "research",
       "priority_tier": "now",
       "status": "ready",
       "title": "Run surveillance for Selective Autophagy and Organelle Quality Control",
-      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 11; rank 1 was recently handled by a surveillance or coverage-repair session.",
+      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 12; rank 1 was recently handled by a surveillance or coverage-repair session.",
       "default_action": "Run one track-level surveillance pass, record materiality, excluded sources, and a session; create a bundle only for a material public change.",
       "track_id": "selective-autophagy-and-organelle-quality-control",
       "hallmark_id": "disabled_macroautophagy",
@@ -110,7 +74,7 @@
       "signals": [
         {
           "name": "generated_queue_rank",
-          "value": 11
+          "value": 12
         },
         {
           "name": "last_session_mode",
@@ -123,7 +87,7 @@
       ]
     },
     {
-      "rank": 3,
+      "rank": 2,
       "item_id": "coverage-assessment-backfill-mitochondrial-biogenesis-and-dynamics",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
@@ -157,7 +121,7 @@
         },
         {
           "name": "generated_surveillance_queue_rank",
-          "value": 1
+          "value": 2
         },
         {
           "name": "track_next_mode",
@@ -166,7 +130,7 @@
       ]
     },
     {
-      "rank": 4,
+      "rank": 3,
       "item_id": "data-normalization-intervention-refs",
       "mode": "data_normalization",
       "domain": "data",
