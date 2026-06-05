@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-05T12:00:35.937Z",
+  "generated_at": "2026-06-05T13:01:26.801Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-05T11:54:18.441Z",
-    "research_priority_queue_updated_at": "2026-06-05T11:54:18.442Z",
+    "research_coverage_status_updated_at": "2026-06-05T13:01:26.692Z",
+    "research_priority_queue_updated_at": "2026-06-05T13:01:26.693Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 38,
@@ -32,7 +32,7 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "surveillance-niche-rejuvenation-and-support",
+    "top_work_item_id": "surveillance-immune-clearance-of-senescent-cells",
     "top_mode": "surveillance",
     "active_editorial_count": 0,
     "ready_research_count": 38,
@@ -45,24 +45,24 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "surveillance-niche-rejuvenation-and-support",
+      "item_id": "surveillance-immune-clearance-of-senescent-cells",
       "mode": "surveillance",
       "domain": "research",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Run surveillance for Niche Rejuvenation and Support",
-      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 8; rank 1 was recently handled by a surveillance or coverage-repair session.",
+      "title": "Run surveillance for Immune Clearance of Senescent Cells",
+      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 9; rank 1 was recently handled by a surveillance or coverage-repair session.",
       "default_action": "Run one track-level surveillance pass, record materiality, excluded sources, and a session; create a bundle only for a material public change.",
-      "track_id": "niche-rejuvenation-and-support",
-      "hallmark_id": "stem_cell_exhaustion",
+      "track_id": "immune-clearance-of-senescent-cells",
+      "hallmark_id": "cellular_senescence",
       "references": [
         {
           "record_type": "track",
-          "record_id": "niche-rejuvenation-and-support"
+          "record_id": "immune-clearance-of-senescent-cells"
         },
         {
           "record_type": "hallmark",
-          "record_id": "stem_cell_exhaustion"
+          "record_id": "cellular_senescence"
         }
       ],
       "runbook_path": "docs/surveillance-checklist.md",
@@ -74,7 +74,7 @@
       "signals": [
         {
           "name": "generated_queue_rank",
-          "value": 8
+          "value": 9
         },
         {
           "name": "last_session_mode",
@@ -121,7 +121,7 @@
         },
         {
           "name": "generated_surveillance_queue_rank",
-          "value": 8
+          "value": 1
         },
         {
           "name": "track_next_mode",

@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-05-niche-rejuvenation-and-support-surveillance",
+  "name": "Niche rejuvenation and support surveillance pass for June 5, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-05T12:05:00Z",
+  "completed_at": "2026-06-05T12:59:23Z",
+  "scope": {
+    "question": "What changed for Niche Rejuvenation and Support since the 2026-06-02 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "stem_cell_exhaustion"
+    ],
+    "track_ids": [
+      "niche-rejuvenation-and-support"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "no_op",
+  "summary": "Ran a delta surveillance pass from the 2026-06-02T20:05:01Z public baseline publication through 2026-06-05. PubMed publication-date and Entrez-date checks returned two close records: PMID 42236693, a skin fibroblast glycation/ECM paper, and PMID 42228536, a PNAS mouse study of 15-PGDH inhibition during semaglutide-associated muscle repair. The first is wrong-scope, and the second is adjacent muscle stem-cell repair context but does not test aged niche rejuvenation, a targeted niche-support intervention in older humans, or human niche-engagement endpoints. PubMed review and correction/retraction checks, ClinicalTrials.gov queries for aging plasma exchange and muscle/stem-cell niche terms, bioRxiv/medRxiv date-window screens, and broader web search did not identify a material post-publication source. No public outlook, source, study, finding, activity, bundle, or coverage assessment update is warranted.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "none",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The public baseline already states a low-confidence animal_signal position driven by mouse systemic-milieu and local muscle-niche support, with direct human niche-engagement evidence absent. The only close new primary hit is animal and mechanistically adjacent rather than a direct aged-niche or human result, while registry checks found no posted results or relevant status movement."
+  },
+  "search_log": [
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "(stem cell niche OR satellite cell niche OR hematopoietic stem cell niche OR muscle stem cell OR plasma dilution OR heterochronic parabiosis OR fibronectin OR oxytocin) AND (aging OR aged OR rejuvenation OR regeneration), publication and Entrez dates 2026-06-02 to 2026-06-05",
+      "checked_at": "2026-06-05T12:18:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22stem%20cell%20niche%22%20OR%20%22satellite%20cell%20niche%22%20OR%20%22hematopoietic%20stem%20cell%20niche%22%20OR%20%22muscle%20stem%20cell%22%20OR%20%22plasma%20dilution%22%20OR%20%22heterochronic%20parabiosis%22%20OR%20fibronectin%20OR%20oxytocin%29%20AND%20%28aging%20OR%20aged%20OR%20rejuvenation%20OR%20regeneration%29",
+      "summary": "Returned PMIDs 42236693 and 42228536. Neither supplies direct aged-niche rejuvenation or human niche-engagement evidence for the track."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "query": "(stem cell niche OR tissue stem cell OR skeletal muscle system) AND review AND (aging OR ageing OR rejuvenation), Entrez dates 2026-06-02 to 2026-06-05",
+      "checked_at": "2026-06-05T12:32:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22stem%20cell%20niche%22%20OR%20%22tissue%20stem%20cell%22%20OR%20%22skeletal%20muscle%20system%22%29%20AND%20review%20AND%20%28aging%20OR%20ageing%20OR%20rejuvenation%29",
+      "summary": "Returned zero same-window review records."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "query": "Baseline support PMIDs 15716955, 32474458, 24915299, 27376579, 27852976, and 34032859 with retraction, erratum, or expression-of-concern publication types",
+      "checked_at": "2026-06-05T12:46:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned zero correction, retraction, erratum, or expression-of-concern records for the six supporting baseline PMIDs."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "(therapeutic plasma exchange OR plasmapheresis) AND (aging OR epigenetic OR biomarker)",
+      "checked_at": "2026-06-05T12:35:00Z",
+      "url": "https://clinicaltrials.gov/search?term=%28%22therapeutic%20plasma%20exchange%22%20OR%20plasmapheresis%29%20%28aging%20OR%20epigenetic%20OR%20biomarker%29",
+      "summary": "Aging plasma-exchange records remain no-results context: NCT06534450 is active-not-recruiting with no posted results and last update in 2024; NCT05004220 is completed with no posted results; NCT05054894 is unknown status with no posted results. No post-baseline registry delta changes the public interpretation."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "(stem cell niche OR satellite cell OR muscle stem cell) AND (aging OR aged OR sarcopenia OR regeneration)",
+      "checked_at": "2026-06-05T12:36:00Z",
+      "url": "https://clinicaltrials.gov/search?term=%28%22stem%20cell%20niche%22%20OR%20%22satellite%20cell%22%20OR%20%22muscle%20stem%20cell%22%29%20%28aging%20OR%20aged%20OR%20sarcopenia%20OR%20regeneration%29",
+      "summary": "Returned muscle, exercise, PAD, sarcopenia, and biopsy studies, including one PAD device/exercise record updated on 2026-06-04, but no targeted niche-support intervention with older-human niche-engagement or functional result data."
+    },
+    {
+      "source_name": "bioRxiv and medRxiv APIs",
+      "query": "Date window 2026-06-02 to 2026-06-05 with stem cell niche, muscle stem, satellite cell, plasma dilution, therapeutic plasma exchange, oxytocin, fibronectin, aging, ageing, rejuvenation, and sarcopenia screens",
+      "checked_at": "2026-06-05T12:33:00Z",
+      "url": "https://api.biorxiv.org/",
+      "summary": "Title and abstract screening found no material direct preprint for aged niche rejuvenation or older-human niche-engagement. Returned items were false-positive or wrong-scope imaging, neurology, orthopedics, bioengineering, or systems-biology records."
+    },
+    {
+      "source_name": "Web search",
+      "query": "stem cell niche aging rejuvenation 2026; 15-PGDH inhibition semaglutide muscle repair 2026; therapeutic plasma exchange aging biomarkers epigenetics NCT06534450; niche rejuvenation stem cell aging",
+      "checked_at": "2026-06-05T12:39:00Z",
+      "url": "https://www.google.com/search?q=stem%20cell%20niche%20aging%20rejuvenation%202026",
+      "summary": "Returned the already checked PubMed 15-PGDH paper, the unchanged NCT06534450 registry, broad pre-window reviews, and non-primary context. No primary source lead changed materiality."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 42228536",
+      "title": "15-PGDH inhibition promotes muscle repair and strength recovery during GLP-1 receptor agonist-induced weight loss.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42228536/",
+      "decision": "context_only",
+      "reason": "The study is a mouse obesity/semaglutide injury-repair model with muscle stem-cell function and strength endpoints. It is adjacent to muscle repair but does not test aged niche rejuvenation, a local or systemic niche-support intervention in older humans, or human niche-engagement outcomes."
+    },
+    {
+      "reference": "PMID 42236693",
+      "title": "Protective Effect of Physalis alkekengi Extract on MGO-Induced Nonenzymatic Glycation Fibroblasts via ECM-Integrin Interactions.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42236693/",
+      "decision": "wrong_scope",
+      "reason": "Skin fibroblast glycation, ECM, and cosmetic or functional-food context; it does not address stem-cell niches, aged tissue progenitor function, or niche-support interventions."
+    },
+    {
+      "reference": "NCT06534450",
+      "title": "The Effects Of Therapeutic Plasma Exchange (TPE) On Age Related Biomarkers And Epigenetics",
+      "url": "https://clinicaltrials.gov/study/NCT06534450",
+      "decision": "unchanged_registry",
+      "reason": "The record remains active-not-recruiting with no posted results and no post-baseline status movement. It is adjacent plasma-exchange biomarker context, not direct human stem-cell niche engagement."
+    },
+    {
+      "reference": "NCT05004220",
+      "title": "Effects of Plasmapheresis on Aging Biomarkers",
+      "url": "https://clinicaltrials.gov/study/NCT05004220",
+      "decision": "unchanged_registry",
+      "reason": "The record remains completed with no posted results and no current delta."
+    },
+    {
+      "reference": "NCT05054894",
+      "title": "Plasmapheresis for Treatment of Age-Related Frailty",
+      "url": "https://clinicaltrials.gov/study/NCT05054894",
+      "decision": "unchanged_registry",
+      "reason": "The record remains unknown status with no posted results and no current delta."
+    },
+    {
+      "reference": "NCT03871075",
+      "title": "Intermittent Pneumatic Compression With and Without Exercise to Improve Functioning in Peripheral Artery Disease",
+      "url": "https://clinicaltrials.gov/study/NCT03871075",
+      "decision": "wrong_scope",
+      "reason": "Registry updated on 2026-06-04 but tests PAD compression/exercise, not aged stem-cell niche rejuvenation or a targeted niche-support therapy."
+    },
+    {
+      "reference": "Frontiers 10.3389/fcell.2026.1830358",
+      "title": "Stem cell dysfunction and rejuvenation strategies in ageing: emerging advances in regenerative medicine",
+      "url": "https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2026.1830358/full",
+      "decision": "context_only",
+      "reason": "Broad review published before the 2026-06-02 baseline checkpoint. It is not a new primary aged-niche or human niche-engagement result and does not justify an ordinary surveillance update."
+    }
+  ],
+  "source_ids": [
+    "pmid-15716955",
+    "pmid-32474458",
+    "pmid-24915299",
+    "pmid-27376579",
+    "pmid-27852976",
+    "pmid-34032859"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42228536/",
+    "https://pubmed.ncbi.nlm.nih.gov/42236693/",
+    "https://clinicaltrials.gov/study/NCT06534450",
+    "https://clinicaltrials.gov/study/NCT05004220",
+    "https://clinicaltrials.gov/study/NCT05054894",
+    "https://clinicaltrials.gov/study/NCT03871075",
+    "https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2026.1830358/full"
+  ],
+  "notes": [
+    "Triage selected this as the top ready work item because it is the next distinct surveillance target after recently handled tracks.",
+    "No coverage assessment exists yet for this track; triage separately lists coverage-assessment backfill as a follow-on maintenance item, but this ordinary surveillance pass did not discover a material category-level change requiring coverage repair.",
+    "The public boundary remains unchanged: systemic-milieu, oxytocin, fibronectin, and NF-kB support is animal-level, while human plasma-exchange biomarker context remains adjacent until a study measures stem-cell niche engagement."
+  ],
+  "next_actions": [
+    "Continue ordinary surveillance on the next rotation unless a targeted aged-niche, plasma-exchange, muscle-regeneration, or human niche-engagement result appears.",
+    "Run the queued coverage-assessment backfill as a separate task if the user wants internal source-landscape completeness work next.",
+    "Create a public bundle only if future evidence changes stage, confidence, momentum, blockers, safety, durability, or support-map wording."
+  ]
+}
