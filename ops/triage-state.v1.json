@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-05T11:54:18.536Z",
+  "generated_at": "2026-06-05T12:00:35.937Z",
   "source_state": {
     "research_coverage_status_updated_at": "2026-06-05T11:54:18.441Z",
     "research_priority_queue_updated_at": "2026-06-05T11:54:18.442Z",
@@ -32,8 +32,8 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "editorial-rollup-public-summary-surfaces",
-    "top_mode": "editorial_rollup",
+    "top_work_item_id": "surveillance-niche-rejuvenation-and-support",
+    "top_mode": "surveillance",
     "active_editorial_count": 0,
     "ready_research_count": 38,
     "data_hardening_count": 1,
@@ -45,78 +45,6 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "editorial-rollup-public-summary-surfaces",
-      "mode": "editorial_rollup",
-      "domain": "editorial",
-      "priority_tier": "now",
-      "status": "ready",
-      "title": "Review public editorial rollup surfaces",
-      "rationale": "Latest affected publication event publish-neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04-2026-06-05t11-54-07-498z is newer than the latest state-of-field edition. 1 hallmark insight(s) are unreviewed or older than affected outlook changes.",
-      "default_action": "Review overall outlook, state-of-field edition, hallmark insight copy, and forecast-facing method links; update public content only when the reviewed record warrants it.",
-      "runbook_path": "docs/editorial-rollup.md",
-      "source_paths": [
-        "data/publication-events",
-        "data/outlooks",
-        "data/content/state-of-the-field",
-        "data/content/hallmark-insights.json",
-        "src/components/site-shell.tsx",
-        "docs/editorial-rollup.md"
-      ],
-      "references": [
-        {
-          "record_type": "publication_event",
-          "record_id": "publish-neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04-2026-06-05t11-54-07-498z"
-        },
-        {
-          "record_type": "outlook",
-          "record_id": "overall-lev-outlook"
-        }
-      ],
-      "signals": [
-        {
-          "name": "trigger_count",
-          "value": 2
-        },
-        {
-          "name": "latest_affected_publication_event_id",
-          "value": "publish-neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04-2026-06-05t11-54-07-498z"
-        },
-        {
-          "name": "latest_affected_publication_event_date",
-          "value": "2026-06-05"
-        },
-        {
-          "name": "latest_state_of_field_date",
-          "value": "2026-06-04"
-        },
-        {
-          "name": "overall_outlook_last_updated",
-          "value": "2026-06-04"
-        },
-        {
-          "name": "latest_non_overall_outlook_updated",
-          "value": "2026-06-04"
-        },
-        {
-          "name": "stale_hallmark_insight_count",
-          "value": 1
-        },
-        {
-          "name": "first_stale_hallmark_insight_id",
-          "value": "altered_intercellular_communication"
-        },
-        {
-          "name": "no_current_month_state_of_field",
-          "value": false
-        },
-        {
-          "name": "forecast_surface_gap",
-          "value": false
-        }
-      ]
-    },
-    {
-      "rank": 2,
       "item_id": "surveillance-niche-rejuvenation-and-support",
       "mode": "surveillance",
       "domain": "research",
@@ -159,7 +87,7 @@
       ]
     },
     {
-      "rank": 3,
+      "rank": 2,
       "item_id": "coverage-assessment-backfill-niche-rejuvenation-and-support",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
@@ -202,7 +130,7 @@
       ]
     },
     {
-      "rank": 4,
+      "rank": 3,
       "item_id": "data-normalization-intervention-refs",
       "mode": "data_normalization",
       "domain": "data",
