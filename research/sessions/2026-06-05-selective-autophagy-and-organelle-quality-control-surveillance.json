@@ -1,0 +1,222 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-05-selective-autophagy-and-organelle-quality-control-surveillance",
+  "name": "Selective autophagy and organelle quality control surveillance pass for June 5, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-05T23:05:00Z",
+  "completed_at": "2026-06-05T23:29:20Z",
+  "scope": {
+    "question": "What changed for Selective Autophagy and Organelle Quality Control since the 2026-06-02 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "disabled_macroautophagy"
+    ],
+    "track_ids": [
+      "selective-autophagy-and-organelle-quality-control"
+    ],
+    "intervention_ids": [
+      "urolithin-a",
+      "usp30-inhibition"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "no_op",
+  "summary": "Ran a delta surveillance pass from the 2026-06-02T14:33:46.625Z public baseline publication through 2026-06-05. PubMed date-window searches found same-window urolithin A derivative, mitophagy, deubiquitinase, senescent-adipose, cardiac-aging, toxicology, and disease-model records, but none supplied new human selective-autophagy target engagement, functional aging benefit, USP30 clinical activity, safety/durability evidence, or a correction that changes the current low-confidence human_functional_benefit outlook. The closest post-baseline primary source, PMID 42240896, tests the urolithin A derivative UA-36 in Friedreich's ataxia cell and mouse models and is preclinical disease-model context rather than aging evidence. ClinicalTrials.gov checks found the baseline urolithin A registries unchanged without posted results; the same-window NCT06274749 update is a recruiting healthy-volunteer urolithin A glucose-metabolism trial with no results. Preprint and web screens did not identify a material public delta. No public outlook, source, study, finding, activity, bundle, or coverage assessment update is warranted.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "none",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The public baseline already frames this track as low-confidence human_functional_benefit anchored narrowly to urolithin A muscle endurance or strength signals, with biomarker-heavy immune evidence, mixed endpoints, commercial-program concentration, and preclinical USP30 boundaries. Current PubMed, ClinicalTrials.gov, preprint, and web checks did not identify a post-baseline result that changes stage, confidence, momentum, blockers, support-map wording, safety interpretation, activity status, or coverage priority."
+  },
+  "search_log": [
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "(urolithin A OR urolithin-a OR Mitopure OR USP30 OR ST-539 OR MF-094 OR MF094 OR mitophagy OR selective autophagy OR organelle quality control OR mitochondrial quality control) AND (aging OR older OR elderly OR frailty OR sarcopenia OR muscle OR endurance OR strength OR immune OR immunosenescence OR longevity OR lifespan OR healthspan OR trial OR human OR clinical), Entrez dates and publication dates 2026-06-02 to 2026-06-05",
+      "checked_at": "2026-06-05T23:15:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22urolithin%20A%22%20OR%20urolithin-a%20OR%20Mitopure%20OR%20USP30%20OR%20%22ST-539%22%20OR%20%22MF-094%22%20OR%20MF094%20OR%20mitophagy%20OR%20%22selective%20autophagy%22%20OR%20%22organelle%20quality%20control%22%20OR%20%22mitochondrial%20quality%20control%22%29%20AND%20%28aging%20OR%20older%20OR%20elderly%20OR%20frailty%20OR%20sarcopenia%20OR%20muscle%20OR%20endurance%20OR%20strength%20OR%20immune%20OR%20immunosenescence%20OR%20longevity%20OR%20lifespan%20OR%20healthspan%20OR%20trial%20OR%20human%20OR%20clinical%29",
+      "summary": "Returned 33 Entrez-date records and 18 publication-date records. Close records included PMID 42240896, PMID 42236747, PMID 42243035, PMID 42231423, PMID 42229233, PMID 42240235, and PMID 42241015. They were preclinical disease-model, review, senolytic-adipose, cardiac-aging, toxicology, cancer, or exercise-cachexia context and did not change the public selective-autophagy outlook."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "query": "(urolithin A OR urolithin-a OR Mitopure) AND (aging OR older OR frailty OR sarcopenia OR muscle OR immune OR trial OR clinical), Entrez dates 2026-06-02 to 2026-06-05",
+      "checked_at": "2026-06-05T23:15:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22urolithin%20A%22%20OR%20urolithin-a%20OR%20Mitopure%29%20AND%20%28aging%20OR%20older%20OR%20frailty%20OR%20sarcopenia%20OR%20muscle%20OR%20immune%20OR%20trial%20OR%20clinical%29",
+      "summary": "Returned one same-window urolithin-specific record, PMID 42240896. It reports UA-36 in Friedreich's ataxia models and is not a human aging or supplement-program update."
+    },
+    {
+      "source_name": "PubMed ESearch and ESummary",
+      "query": "USP30 OR ST-539 OR MF-094 OR MF094 with mitophagy, mitochondria, aging, muscle, mtDNA, or disease terms; 2026 publication-year and current all-date screens",
+      "checked_at": "2026-06-05T23:17:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28USP30%20OR%20%22ST-539%22%20OR%20%22MF-094%22%20OR%20MF094%29%20AND%20%28mitophagy%20OR%20mitochondria%20OR%20aging%20OR%20muscle%20OR%20mtDNA%20OR%20disease%29",
+      "summary": "Returned 17 2026 USP30-related records in the broad screen. No post-baseline USP30 aging or clinical result was found; the public MF-094 cybrid boundary source PMID 41587019 remains the direct 2026 selective-mitophagy translation boundary."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "query": "Supporting PMIDs 27400265, 32694802, 35050355, 35584623, 41174221, 33890401, and 41587019 with retraction, erratum, corrected-and-republished, or expression-of-concern publication types",
+      "checked_at": "2026-06-05T23:17:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned zero correction, retraction, erratum, corrected-and-republished, or expression-of-concern records for the seven supporting PubMed sources."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "Baseline urolithin A registry records NCT03283462, NCT03464500, NCT05735886, and frail older-adult watch record NCT06556706",
+      "checked_at": "2026-06-05T23:20:00Z",
+      "url": "https://clinicaltrials.gov/search?term=Urolithin%20A",
+      "summary": "ENERGIZE NCT03283462, ATLAS NCT03464500, MitoImmune NCT05735886, and frail older-adult NCT06556706 remain completed with no posted registry results and no same-window status movement."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "Urolithin A OR Mitopure",
+      "checked_at": "2026-06-05T23:22:00Z",
+      "url": "https://clinicaltrials.gov/search?term=Urolithin%20A%20OR%20Mitopure",
+      "summary": "Returned urolithin A, pomegranate, Mitopure, cosmetic, cancer, cognition, muscle, obesity, sleep, and metabolism studies. The same-window relevant update was NCT06274749, recruiting and no-results, with 180 estimated adults aged 55 years and older and glucose-metabolism, exercise, imaging, and related measures. Other relevant no-results watch records such as NCT07231783, NCT07060898, NCT06990256, and NCT07377136 were pre-window or not result-bearing."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "USP30 OR ST-539 OR MF-094 OR MF094 OR mitophagy; and mitophagy OR mitochondrial quality control with aging, frailty, sarcopenia, or older-adult terms",
+      "checked_at": "2026-06-05T23:22:00Z",
+      "url": "https://clinicaltrials.gov/search?term=USP30%20OR%20ST-539%20OR%20MF-094%20OR%20MF094%20OR%20mitophagy",
+      "summary": "Returned no USP30 therapeutic registry result and no direct aging-relevant selective-autophagy result. Hits were urolithin A, observational mitophagy or mitochondrial-function studies, ICU/cardiovascular/disease records, or unrelated clinical contexts without posted results."
+    },
+    {
+      "source_name": "bioRxiv and medRxiv APIs",
+      "query": "Date window 2026-06-02 to 2026-06-05 with urolithin, Mitopure, USP30, ST-539, MF-094, MF094, mitophagy, selective autophagy, organelle quality, and mitochondrial quality screens",
+      "checked_at": "2026-06-05T23:24:00Z",
+      "url": "https://api.biorxiv.org/",
+      "summary": "Returned zero matching bioRxiv or medRxiv title/abstract hits in the date window."
+    },
+    {
+      "source_name": "Web search and primary-source follow-up",
+      "query": "urolithin A Mitopure clinical trial results June 2026; USP30 inhibitor mitophagy aging 2026 ST-539 MF-094; UA-36 urolithin A derivative Friedreich ataxia 2026 mitophagy",
+      "checked_at": "2026-06-05T23:27:00Z",
+      "url": "https://www.google.com/search?q=urolithin%20A%20Mitopure%20clinical%20trial%20results%20June%202026",
+      "summary": "Returned ClinicalTrials.gov mirrors, baseline urolithin A and USP30 papers, pre-window reviews or preclinical papers, and non-primary discussion pages. A July 2025 medRxiv systematic-review preprint and March 2026 mouse cognitive-aging urolithin A paper are historical context rather than post-baseline deltas."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 42240896",
+      "title": "Autophagy activation by urolithin-a derivative UA-36 mitigates Friedreich's ataxia pathologies induced by frataxin deficiency.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42240896/",
+      "decision": "context_only",
+      "reason": "Post-baseline primary source using a urolithin A derivative in Friedreich's ataxia cell and mouse models. It supports autophagy and mitochondrial-quality-control tractability but does not test aging, older humans, direct urolithin A supplementation, or a public-stage-changing endpoint."
+    },
+    {
+      "reference": "PMID 42236747",
+      "title": "Targeting mitophagy for neuroprotection: mechanisms and therapeutic opportunities.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42236747/",
+      "decision": "context_only",
+      "reason": "Review-level neuroprotection context. It does not add new intervention results, human target engagement, or selective-autophagy aging efficacy evidence."
+    },
+    {
+      "reference": "PMID 42243035",
+      "title": "Deubiquitinases at organelle quality control bottlenecks in neurodegeneration.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42243035/",
+      "decision": "context_only",
+      "reason": "Review-level deubiquitinase and organelle-quality-control context. It may inform future USP30 surveillance but does not provide a result that changes the current USP30 preclinical boundary."
+    },
+    {
+      "reference": "PMID 42231423",
+      "title": "Suppression of senescent metabolism of adipose tissue by rebalancing mitochondrial homeostasis via a selective drug delivery system.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42231423/",
+      "decision": "wrong_scope",
+      "reason": "Aged-mouse targeted dasatinib plus quercetin delivery and adipose senescence paper. Mitophagy is a proposed mechanism, but the intervention belongs more naturally to senolytic or delivery-platform surveillance than to this urolithin A/USP30 selective-autophagy baseline."
+    },
+    {
+      "reference": "PMID 42229233",
+      "title": "CHK1 activates mitophagy to attenuate cardiac aging via inhibiting AHSA1-ubiquitination.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42229233/",
+      "decision": "context_only",
+      "reason": "Pre-window publication date but same-window Entrez visibility. It is a mouse and cell cardiac-aging mechanism paper around CHK1 overexpression, not a staged intervention or human selective-autophagy result."
+    },
+    {
+      "reference": "PMID 42240235",
+      "title": "Chlorogenic Acid Modulates PINK1-Parkin-Mediated Mitochondrial Quality Control in T-2 Toxin-Induced Thymic Immunotoxicity.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42240235/",
+      "decision": "wrong_scope",
+      "reason": "Toxin-induced thymic immunotoxicity model and dietary chlorogenic acid mechanism context; not an aging or human selective-organelle-quality-control intervention result."
+    },
+    {
+      "reference": "NCT06274749",
+      "title": "Effects of Urolithin A Supplementation on Glucose Metabolism in Healthy Adults 55 >= Years Old",
+      "url": "https://clinicaltrials.gov/study/NCT06274749",
+      "decision": "no_results",
+      "reason": "Recruiting NIA urolithin A trial updated on 2026-06-05 with no posted results. It is a useful watch item for future urolithin A surveillance but cannot support a public stage, confidence, or blocker change."
+    },
+    {
+      "reference": "NCT06556706",
+      "title": "Impact of Urolithin A (Mitopure) on Mitochondrial Quality in Muscle of Frail Older Adults",
+      "url": "https://clinicaltrials.gov/study/NCT06556706",
+      "decision": "unchanged_registry",
+      "reason": "Completed frail older-adult urolithin A registry remains without posted results and was already noted in adjacent microbiome-metabolite surveillance."
+    },
+    {
+      "reference": "NCT07231783",
+      "title": "The Effect of Urolithin A (Mitopure) Supplementation on Muscle Strength in Healthy Middle-Aged Adults",
+      "url": "https://clinicaltrials.gov/study/NCT07231783",
+      "decision": "no_results",
+      "reason": "Recruiting no-results urolithin A muscle-function trial, last update posted 2026-03-31. It is pre-window activity context rather than a post-baseline evidence delta."
+    },
+    {
+      "reference": "NCT07060898",
+      "title": "Impact of a Novel Brain Longevity Supplement Containing the Postbiotic Urolithin A (Mitopure) on Cognitive Function and Related Health Outcomes",
+      "url": "https://clinicaltrials.gov/study/NCT07060898",
+      "decision": "no_results",
+      "reason": "Active-not-recruiting no-results urolithin A cognition and aging registry, last update posted 2026-03-06. It is relevant watchlist context but not a same-window result."
+    },
+    {
+      "reference": "medRxiv 10.1101/2025.07.10.25331277",
+      "title": "The effects of urolithin A supplementation on muscle strength, muscle mass and physical performance in humans - a systematic review",
+      "url": "https://www.medrxiv.org/content/10.1101/2025.07.10.25331277v1",
+      "decision": "context_only",
+      "reason": "July 2025 preprint systematic review found during web follow-up. It is historical pre-baseline and preprint context; it does not create a post-baseline surveillance delta, though it can be considered in a future coverage-assessment backfill."
+    },
+    {
+      "reference": "PMID 41786716",
+      "title": "Early mitophagy activation by Urolithin A prevents, but late activation does not reverse, age-related cognitive impairment.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41786716/",
+      "decision": "context_only",
+      "reason": "March 2026 mouse cognitive-aging urolithin A paper found during web follow-up. It is historical pre-baseline context and does not alter the current human-stage assignment."
+    }
+  ],
+  "source_ids": [
+    "pmid-27400265",
+    "pmid-32694802",
+    "pmid-35050355",
+    "pmid-35584623",
+    "pmid-41174221",
+    "pmid-33890401",
+    "pmid-41587019"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42240896/",
+    "https://pubmed.ncbi.nlm.nih.gov/42236747/",
+    "https://pubmed.ncbi.nlm.nih.gov/42243035/",
+    "https://pubmed.ncbi.nlm.nih.gov/42231423/",
+    "https://pubmed.ncbi.nlm.nih.gov/42229233/",
+    "https://pubmed.ncbi.nlm.nih.gov/42240235/",
+    "https://clinicaltrials.gov/study/NCT03283462",
+    "https://clinicaltrials.gov/study/NCT03464500",
+    "https://clinicaltrials.gov/study/NCT05735886",
+    "https://clinicaltrials.gov/study/NCT06556706",
+    "https://clinicaltrials.gov/study/NCT06274749",
+    "https://clinicaltrials.gov/study/NCT07231783",
+    "https://clinicaltrials.gov/study/NCT07060898",
+    "https://www.medrxiv.org/content/10.1101/2025.07.10.25331277v1",
+    "https://pubmed.ncbi.nlm.nih.gov/41786716/"
+  ],
+  "notes": [
+    "Triage selected this as the top ranked surveillance item after the caloric-restriction-mimetics coverage repair returned that track to ordinary surveillance.",
+    "The delta window was anchored to the public baseline publication event publish-selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02-2026-06-02t14-33-46-625z.",
+    "No coverage assessment exists yet for this track; this ordinary surveillance pass did not discover a material category-level change requiring immediate coverage repair.",
+    "The public boundary remains unchanged: urolithin A supplies the narrow human functional signal, immune evidence remains biomarker and ex vivo function weighted, and USP30 inhibition remains preclinical with an MF-094 mutant-mtDNA null boundary."
+  ],
+  "next_actions": [
+    "Continue ordinary surveillance for posted NCT06274749, NCT06556706, NCT07231783, NCT07060898, or other urolithin A results.",
+    "Backfill a coverage assessment as a separate maintenance task if internal source-landscape completeness is prioritized, especially for active urolithin A trial-watch records and pre-baseline review context.",
+    "Create a public bundle only if future evidence changes stage, confidence, momentum, blockers, safety, durability, human target engagement, functional outcomes, or USP30 translation boundaries."
+  ]
+}

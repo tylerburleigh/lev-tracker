@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-05T23:17:44.332Z",
+  "generated_at": "2026-06-05T23:31:29.852Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-05T23:17:44.241Z",
-    "research_priority_queue_updated_at": "2026-06-05T23:17:44.242Z",
+    "research_coverage_status_updated_at": "2026-06-05T23:31:29.758Z",
+    "research_priority_queue_updated_at": "2026-06-05T23:31:29.758Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 38,
@@ -32,7 +32,7 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "surveillance-selective-autophagy-and-organelle-quality-control",
+    "top_work_item_id": "surveillance-protein-aggregate-clearance",
     "top_mode": "surveillance",
     "active_editorial_count": 0,
     "ready_research_count": 38,
@@ -45,24 +45,24 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "surveillance-selective-autophagy-and-organelle-quality-control",
+      "item_id": "surveillance-protein-aggregate-clearance",
       "mode": "surveillance",
       "domain": "research",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Run surveillance for Selective Autophagy and Organelle Quality Control",
-      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 12; rank 1 was recently handled by a surveillance or coverage-repair session.",
+      "title": "Run surveillance for Protein Aggregate Clearance",
+      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 13; rank 1 was recently handled by a surveillance or coverage-repair session.",
       "default_action": "Run one track-level surveillance pass, record materiality, excluded sources, and a session; create a bundle only for a material public change.",
-      "track_id": "selective-autophagy-and-organelle-quality-control",
-      "hallmark_id": "disabled_macroautophagy",
+      "track_id": "protein-aggregate-clearance",
+      "hallmark_id": "loss_of_proteostasis",
       "references": [
         {
           "record_type": "track",
-          "record_id": "selective-autophagy-and-organelle-quality-control"
+          "record_id": "protein-aggregate-clearance"
         },
         {
           "record_type": "hallmark",
-          "record_id": "disabled_macroautophagy"
+          "record_id": "loss_of_proteostasis"
         }
       ],
       "runbook_path": "docs/surveillance-checklist.md",
@@ -74,7 +74,7 @@
       "signals": [
         {
           "name": "generated_queue_rank",
-          "value": 12
+          "value": 13
         },
         {
           "name": "last_session_mode",
@@ -88,24 +88,24 @@
     },
     {
       "rank": 2,
-      "item_id": "coverage-assessment-backfill-mitochondrial-biogenesis-and-dynamics",
+      "item_id": "coverage-assessment-backfill-selective-autophagy-and-organelle-quality-control",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for Mitochondrial Biogenesis and Dynamics",
+      "title": "Backfill coverage assessment for Selective Autophagy and Organelle Quality Control",
       "rationale": "30 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the surveillance queue.",
       "default_action": "Review the published outlook, session, bundle, evidence reviews, and publication event, then create a coverage assessment without changing public records.",
-      "track_id": "mitochondrial-biogenesis-and-dynamics",
-      "hallmark_id": "mitochondrial_dysfunction",
+      "track_id": "selective-autophagy-and-organelle-quality-control",
+      "hallmark_id": "disabled_macroautophagy",
       "references": [
         {
           "record_type": "track",
-          "record_id": "mitochondrial-biogenesis-and-dynamics"
+          "record_id": "selective-autophagy-and-organelle-quality-control"
         },
         {
           "record_type": "hallmark",
-          "record_id": "mitochondrial_dysfunction"
+          "record_id": "disabled_macroautophagy"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",
@@ -121,7 +121,7 @@
         },
         {
           "name": "generated_surveillance_queue_rank",
-          "value": 2
+          "value": 1
         },
         {
           "name": "track_next_mode",
