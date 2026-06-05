@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-05T13:01:26.801Z",
+  "generated_at": "2026-06-05T13:09:10.812Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-05T13:01:26.692Z",
-    "research_priority_queue_updated_at": "2026-06-05T13:01:26.693Z",
+    "research_coverage_status_updated_at": "2026-06-05T13:09:10.707Z",
+    "research_priority_queue_updated_at": "2026-06-05T13:09:10.707Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 38,
@@ -32,7 +32,7 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "surveillance-immune-clearance-of-senescent-cells",
+    "top_work_item_id": "surveillance-mitochondrial-biogenesis-and-dynamics",
     "top_mode": "surveillance",
     "active_editorial_count": 0,
     "ready_research_count": 38,
@@ -45,24 +45,24 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "surveillance-immune-clearance-of-senescent-cells",
+      "item_id": "surveillance-mitochondrial-biogenesis-and-dynamics",
       "mode": "surveillance",
       "domain": "research",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Run surveillance for Immune Clearance of Senescent Cells",
-      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 9; rank 1 was recently handled by a surveillance or coverage-repair session.",
+      "title": "Run surveillance for Mitochondrial Biogenesis and Dynamics",
+      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 10; rank 1 was recently handled by a surveillance or coverage-repair session.",
       "default_action": "Run one track-level surveillance pass, record materiality, excluded sources, and a session; create a bundle only for a material public change.",
-      "track_id": "immune-clearance-of-senescent-cells",
-      "hallmark_id": "cellular_senescence",
+      "track_id": "mitochondrial-biogenesis-and-dynamics",
+      "hallmark_id": "mitochondrial_dysfunction",
       "references": [
         {
           "record_type": "track",
-          "record_id": "immune-clearance-of-senescent-cells"
+          "record_id": "mitochondrial-biogenesis-and-dynamics"
         },
         {
           "record_type": "hallmark",
-          "record_id": "cellular_senescence"
+          "record_id": "mitochondrial_dysfunction"
         }
       ],
       "runbook_path": "docs/surveillance-checklist.md",
@@ -74,7 +74,7 @@
       "signals": [
         {
           "name": "generated_queue_rank",
-          "value": 9
+          "value": 10
         },
         {
           "name": "last_session_mode",
@@ -88,24 +88,24 @@
     },
     {
       "rank": 2,
-      "item_id": "coverage-assessment-backfill-niche-rejuvenation-and-support",
+      "item_id": "coverage-assessment-backfill-immune-clearance-of-senescent-cells",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for Niche Rejuvenation and Support",
+      "title": "Backfill coverage assessment for Immune Clearance of Senescent Cells",
       "rationale": "31 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the surveillance queue.",
       "default_action": "Review the published outlook, session, bundle, evidence reviews, and publication event, then create a coverage assessment without changing public records.",
-      "track_id": "niche-rejuvenation-and-support",
-      "hallmark_id": "stem_cell_exhaustion",
+      "track_id": "immune-clearance-of-senescent-cells",
+      "hallmark_id": "cellular_senescence",
       "references": [
         {
           "record_type": "track",
-          "record_id": "niche-rejuvenation-and-support"
+          "record_id": "immune-clearance-of-senescent-cells"
         },
         {
           "record_type": "hallmark",
-          "record_id": "stem_cell_exhaustion"
+          "record_id": "cellular_senescence"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",

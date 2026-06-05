@@ -1,0 +1,182 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-05-immune-clearance-of-senescent-cells-surveillance",
+  "name": "Immune clearance of senescent cells surveillance pass for June 5, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-05T13:04:47Z",
+  "completed_at": "2026-06-05T13:07:40Z",
+  "scope": {
+    "question": "What changed for Immune Clearance of Senescent Cells since the 2026-06-02 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "cellular_senescence"
+    ],
+    "track_ids": [
+      "immune-clearance-of-senescent-cells"
+    ],
+    "intervention_ids": [
+      "anti-upar-car-t-cells",
+      "nkg2d-car-t-cells",
+      "anti-gd3-senescence-immunotherapy",
+      "hla-e-nkg2a-senescence-checkpoint-blockade"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "no_op",
+  "summary": "Ran a delta surveillance pass from the 2026-06-02 immune-clearance bootstrap checkpoint through 2026-06-05. Targeted PubMed publication-date and Entrez-date searches for senescent-cell immune clearance, senolytic CAR T, uPAR, NKG2D, GD3, HLA-E/NKG2A, CMV, perforin, and immunosurveillance returned no direct post-baseline evidence that changes the public outlook. A broader same-window senescence/immunotherapy search found seven records, but they were wrong-scope or context-only reviews, cancer multi-omics, cardiac aging, ovarian cancer prognosis, or AML T-cell-engager resistance. The closest post-baseline primary source was PMID 42237538, which uses anti-uPAR CAR-directed fratricide to enrich engineered T-cell products during manufacturing; it is relevant to cell-therapy manufacturing context but does not test senescent-cell clearance, aging, human senescence target engagement, or a therapeutic senolytic intervention. ClinicalTrials.gov, bioRxiv, medRxiv, correction/retraction, and web checks did not identify a material public delta. No public outlook, source, study, finding, activity, bundle, or coverage assessment update is warranted.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "none",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The public baseline already frames immune clearance as low-confidence animal_signal with accelerating momentum but no treated-human aging evidence. The post-baseline anti-uPAR manufacturing paper is adjacent to CAR T production and manufacturing constraints, but it does not alter stage, confidence, momentum, blockers, safety boundaries, or support-map evidence for immune-mediated senescent-cell clearance."
+  },
+  "search_log": [
+    {
+      "source_name": "PubMed ESearch",
+      "query": "(senescent cell OR senescent cells OR senescence) AND (CAR T OR CAR-T OR NKG2D OR uPAR OR urokinase plasminogen activator receptor OR GD3 OR HLA-E OR NKG2A OR CMV OR perforin OR immunosurveillance OR immune clearance), publication and Entrez dates 2026-06-02 to 2026-06-05",
+      "checked_at": "2026-06-05T13:04:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22senescent%20cell%22%20OR%20%22senescent%20cells%22%20OR%20senescence%29%20AND%20%28%22CAR%20T%22%20OR%20%22CAR-T%22%20OR%20NKG2D%20OR%20uPAR%20OR%20%22urokinase%20plasminogen%20activator%20receptor%22%20OR%20GD3%20OR%20HLA-E%20OR%20NKG2A%20OR%20CMV%20OR%20perforin%20OR%20immunosurveillance%20OR%20%22immune%20clearance%22%29",
+      "summary": "Returned zero records in both same-window publication-date and Entrez-date checks."
+    },
+    {
+      "source_name": "PubMed ESearch and EFetch",
+      "query": "(senescent cell OR senescent cells OR senescence) AND (immunotherapy OR immune surveillance OR immunosurveillance OR CAR T OR CAR-T OR checkpoint), publication and Entrez dates 2026-06-02 to 2026-06-05",
+      "checked_at": "2026-06-05T13:06:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22senescent%20cell%22%20OR%20%22senescent%20cells%22%20OR%20senescence%29%20AND%20%28immunotherapy%20OR%20%22immune%20surveillance%22%20OR%20immunosurveillance%20OR%20%22CAR%20T%22%20OR%20%22CAR-T%22%20OR%20checkpoint%29",
+      "summary": "Returned seven Entrez-date records and three publication-date records. None supplied immune-mediated senescent-cell clearance evidence or treated-human aging target engagement; close records are documented in excluded_sources."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "(uPAR OR urokinase plasminogen activator receptor) AND (CAR T OR CAR-T), publication year 2026",
+      "checked_at": "2026-06-05T13:06:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28uPAR%20OR%20%22urokinase%20plasminogen%20activator%20receptor%22%29%20AND%20%28%22CAR%20T%22%20OR%20%22CAR-T%22%29%20AND%202026%5Bdp%5D",
+      "summary": "Returned six 2026 records. The already staged intestinal-aging source PMID 41291258 remains the direct aging-relevant source. PMID 42237538 is post-baseline but concerns T-cell product manufacturing; other uPAR CAR T hits are pre-window oncology or broad-review context."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "(senescent cell OR senescence) AND (CAR T OR CAR-T OR uPAR OR NKG2D OR GD3 OR NKG2A OR HLA-E OR immunotherapy)",
+      "checked_at": "2026-06-05T13:04:00Z",
+      "url": "https://clinicaltrials.gov/search?term=%28%22senescent%20cell%22%20OR%20senescence%29%20%28%22CAR%20T%22%20OR%20%22CAR-T%22%20OR%20uPAR%20OR%20NKG2D%20OR%20GD3%20OR%20NKG2A%20OR%20HLA-E%20OR%20immunotherapy%29",
+      "summary": "Returned allergy, oncology, autoimmune, and generic immunotherapy records, including one NSCLC epigenetic-immunotherapy trial updated on 2026-06-05. No record tested senescent-cell immune clearance in aging or posted relevant results."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "NKG2D CAR T and uPAR CAR T",
+      "checked_at": "2026-06-05T13:06:00Z",
+      "url": "https://clinicaltrials.gov/search?term=%22NKG2D%20CAR%20T%22",
+      "summary": "NKG2D CAR T searches returned oncology trials with no senescent-cell or aging indication and no posted aging-relevant results. uPAR CAR T and senolytic CAR T searches returned no direct trial records."
+    },
+    {
+      "source_name": "bioRxiv and medRxiv APIs",
+      "query": "Date window 2026-06-02 to 2026-06-05 with senescent, senescence, CAR T, uPAR, NKG2D, GD3, HLA-E, NKG2A, perforin, immunosurveillance, immune clearance, and senolytic screens",
+      "checked_at": "2026-06-05T13:05:00Z",
+      "url": "https://api.biorxiv.org/",
+      "summary": "bioRxiv returned no matching records. medRxiv returned one false-positive neurology record that did not involve senescent-cell immune clearance."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "query": "Baseline support PMIDs 32555459, 38267706, 41291258, 37585504, 30575733, 31160572, 39730825, and 37001502 with retraction, erratum, or expression-of-concern publication types",
+      "checked_at": "2026-06-05T13:05:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned zero correction, retraction, erratum, or expression-of-concern records for the eight supporting baseline PMIDs."
+    },
+    {
+      "source_name": "Web search",
+      "query": "senescent cells CAR T 2026 uPAR NKG2D; immune clearance senescent cells 2026; uPAR CAR T senescent cells clinical trial; Deciduous Therapeutics senescent cells 2026",
+      "checked_at": "2026-06-05T13:05:00Z",
+      "url": "https://www.google.com/search?q=%22senescent%20cells%22%20%22CAR%20T%22%202026%20uPAR%20NKG2D",
+      "summary": "Returned baseline sources, pre-window uPAR oncology/CAR T and review context, non-primary explainers, and no direct post-baseline primary source that changes public interpretation."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 42237538",
+      "title": "Directing fratricide within T cell products using an anti-uPAR chimeric antigen receptor to drive the production of potent therapeutic cells.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42237538/",
+      "decision": "context_only",
+      "reason": "Post-baseline primary source using anti-uPAR CAR-directed fratricide to enrich engineered T-cell products during manufacturing. It does not test senescent-cell clearance, aging biology, human senescence target engagement, or therapeutic senolytic efficacy."
+    },
+    {
+      "reference": "PMID 41916312",
+      "title": "A convergent uPAR-positive tumor ecosystem creates broad vulnerability to CAR T cell therapy.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41916312/",
+      "decision": "wrong_scope",
+      "reason": "Pre-window oncology source about uPAR-positive tumor and stromal targeting. It may inform target-selectivity context but is not a senescent-cell aging intervention or post-baseline delta."
+    },
+    {
+      "reference": "PMID 41807411",
+      "title": "Emerging strategies in senotherapeutics: from broad-spectrum senolysis to precision reprogramming.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41807411/",
+      "decision": "context_only",
+      "reason": "Pre-window broad review covering immune-based senolysis, CAR T, GD3, and other next-generation senotherapeutic strategies. It does not add post-baseline primary evidence."
+    },
+    {
+      "reference": "PMID 42237551",
+      "title": "Characteristic Changes in the Immune Landscape of Aging Liver: From Basic Mechanism to Clinical Transformation.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42237551/",
+      "decision": "context_only",
+      "reason": "Aging-liver immune-landscape review; relevant to immunosenescence background but not senescent-cell immune-clearance intervention evidence."
+    },
+    {
+      "reference": "PMID 42230256",
+      "title": "The impact of aging on antitumor immunity and cancer immunotherapy.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42230256/",
+      "decision": "context_only",
+      "reason": "Broad review of aging and antitumor immunity; does not report immune-mediated clearance of senescent cells or a treated-human aging result."
+    },
+    {
+      "reference": "PMID 42225967",
+      "title": "TP53 deficiency in AML induces resistance to T-cell engagers through an immunosuppressive secretome.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42225967/",
+      "decision": "wrong_scope",
+      "reason": "AML T-cell engager resistance and T-cell senescent transcriptional profile; not senescent-cell clearance or aging intervention evidence."
+    },
+    {
+      "reference": "NCT07021534",
+      "title": "Hepatic Artery Transfusion of NKG2D CAR-NK Cells Followed by Intravenous Infusion of NKG2D CAR-T Cells to Treat Patients With Advanced Solid Tumors With Liver Metastases Who Have Failed Standard Treatments",
+      "url": "https://clinicaltrials.gov/study/NCT07021534",
+      "decision": "wrong_scope",
+      "reason": "NKG2D CAR-NK/CAR-T oncology trial with no senescent-cell or aging indication and no posted results."
+    },
+    {
+      "reference": "NCT06694454",
+      "title": "Neoadjuvant Inhaled Azacytidine With Platinum-Based Chemotherapy and Durvalumab (MEDI4736) - a Combined Epigenetic-Immunotherapy (AZA-AEGEAN) Regimen for Operable Early-Stage Non-Small Cell Lung Cancer (NSCLC)",
+      "url": "https://clinicaltrials.gov/study/NCT06694454",
+      "decision": "wrong_scope",
+      "reason": "Registry updated on 2026-06-05 but is an NSCLC epigenetic-immunotherapy trial, not immune-mediated senescent-cell clearance."
+    }
+  ],
+  "source_ids": [
+    "pmid-32555459",
+    "pmid-38267706",
+    "pmid-41291258",
+    "pmid-37585504",
+    "pmid-30575733",
+    "pmid-31160572",
+    "pmid-39730825",
+    "pmid-37001502"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42237538/",
+    "https://pubmed.ncbi.nlm.nih.gov/41916312/",
+    "https://pubmed.ncbi.nlm.nih.gov/41807411/",
+    "https://pubmed.ncbi.nlm.nih.gov/42237551/",
+    "https://pubmed.ncbi.nlm.nih.gov/42230256/",
+    "https://pubmed.ncbi.nlm.nih.gov/42225967/",
+    "https://clinicaltrials.gov/study/NCT07021534",
+    "https://clinicaltrials.gov/study/NCT06694454"
+  ],
+  "notes": [
+    "Triage selected this track as the next distinct surveillance target after the niche rejuvenation and support no-op pass.",
+    "No coverage assessment exists yet for this track; this ordinary surveillance pass did not discover a material category-level change requiring immediate coverage repair.",
+    "The public boundary remains unchanged: uPAR CAR T, NKG2D-CAR T, and anti-GD3 intervention evidence is animal or nonhuman-primate level; human HLA-E/NKG2A and CMV-CD4 evidence remains mechanistic or ex vivo; no treated-human aging trial was found."
+  ],
+  "next_actions": [
+    "Continue ordinary surveillance for registered or published human senescent-cell immune-clearance studies.",
+    "Backfill a coverage assessment as a separate maintenance task if internal source-landscape completeness is prioritized.",
+    "Create a public bundle only if future evidence changes treated-human target engagement, functional benefit, safety, target-selectivity, manufacturing, persistence, or beneficial-senescence boundaries."
+  ]
+}
