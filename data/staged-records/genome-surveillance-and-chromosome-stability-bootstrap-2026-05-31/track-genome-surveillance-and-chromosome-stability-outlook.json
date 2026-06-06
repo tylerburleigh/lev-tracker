@@ -5,32 +5,32 @@
   "name": "Genome Surveillance and Chromosome Stability Track Outlook",
   "subject_type": "track",
   "subject_id": "genome-surveillance-and-chromosome-stability",
-  "current_stage": "human_biomarker_signal",
+  "evidence_stage": "human_biomarker_signal",
   "momentum": "mixed",
   "confidence": "low",
-  "main_blockers": [
+  "main_evidence_gaps": [
     "Human evidence is mainly observational mosaic-chromosomal-alteration biology and narrow micronucleus biomarker movement, not direct checkpoint or chromosome-segregation therapy.",
     "The strongest direct BubR1 intervention signals are transgenic or SIRT2/NAD-linked mouse experiments, with no mature human translation path.",
     "Blood mCAs are clinically relevant but may be markers, mediators, or selected clones rather than a validated treatment target.",
     "Checkpoint reinforcement could plausibly create cancer, fertility, tissue-renewal, or antiproliferative risks if translated without tight control.",
     "Simple folate supplementation has mixed human biomarker evidence and should not be treated as a general chromosome-stability aging intervention."
   ],
-  "best_current_signals": [
+  "strongest_current_evidence": [
     "Whole-genome sequencing now maps tens of thousands of blood mosaic chromosomal alterations in aging humans and shows predictable clonal evolution with age.",
     "Familial-longevity cohorts appear to carry fewer autosomal mCAs than controls, connecting lower mCA burden with extreme human aging phenotypes.",
     "Expanded mCAs predict infection risk, supporting clinical relevance of chromosome-level blood mosaicism.",
     "BubR1 overexpression in mice preserved genomic integrity, reduced tumorigenesis, delayed age-related deterioration, and extended lifespan.",
     "A small hemodialysis study showed reduced lymphocyte micronucleus frequency after folic acid and vitamin B12 supplementation."
   ],
-  "forecast_note": "This track earns a low-confidence human_biomarker_signal baseline because chromosome-instability markers are measurable and clinically relevant in humans, and at least one high-risk human supplementation study moved a micronucleus biomarker. The direct genome-surveillance intervention case is still mostly animal and genetic: BubR1/SIRT2 biology is compelling in mice, but no safe human checkpoint-reinforcement program has demonstrated functional or disease benefit.",
-  "rating_change_criteria": [
+  "interpretation_note": "This track earns a low-confidence human_biomarker_signal baseline because chromosome-instability markers are measurable and clinically relevant in humans, and at least one high-risk human supplementation study moved a micronucleus biomarker. The direct genome-surveillance intervention case is still mostly animal and genetic: BubR1/SIRT2 biology is compelling in mice, but no safe human checkpoint-reinforcement program has demonstrated functional or disease benefit.",
+  "what_would_change_the_rating": [
     "Confidence would increase if an intervention in older adults safely reduces validated chromosome-instability biomarkers such as mCAs or micronuclei while improving immune, cancer-risk, frailty, or other clinical endpoints.",
     "A stronger stage would require human functional or disease evidence from a chromosome-stability intervention, not just observational mCA risk or rare disease genetics.",
     "Direct BubR1 or spindle-checkpoint confidence would require a controllable modality with evidence of reduced aneuploidy or mCAs without proliferative, cancer, fertility, or tissue-renewal harms.",
     "The rating would weaken if mCAs prove mostly nonmodifiable markers, if biomarker-lowering interventions fail clinical endpoints, or if checkpoint modulation shows unacceptable safety tradeoffs."
   ],
   "earliest_plausible_window": "No credible LEV-relevant window can be assigned; blood mCA measurement may mature as a risk biomarker before chromosome-surveillance interventions become clinically actionable.",
-  "scenario_2036_status": "speculative",
+  "lev_2036_outlook": "speculative",
   "supporting_finding_ids": [
     "aging-blood-accrues-predictable-mcas",
     "lower-mca-burden-in-familial-longevity",
@@ -44,7 +44,7 @@
   "supporting_evidence": [
     {
       "label": "Stage assignment",
-      "outlook_field": "current_stage",
+      "outlook_field": "evidence_stage",
       "conclusion": "The track reaches human biomarker signal because chromosome-instability biomarkers are human-measurable, aging-linked, clinically relevant, and can be moved in at least one narrow high-risk supplementation study.",
       "support_role": "supports",
       "rationale": "Blood mCA studies provide current human relevance, while the hemodialysis supplementation study provides a direct micronucleus biomarker movement signal. The stage should remain biomarker-level because no intervention has shown broad human aging, functional, disease, or lifespan benefit by improving chromosome surveillance.",
@@ -66,7 +66,7 @@
     },
     {
       "label": "Direct genome-surveillance intervention signal",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "BubR1 and SIRT2/NAD biology provide the clearest direct intervention rationale, but the effect is still animal-stage.",
       "support_role": "supports",
       "rationale": "BubR1 overexpression and SIRT2-mediated BubR1 stabilization connect chromosome checkpoint biology to lifespan and age-related deterioration in mice, but the interventions are not yet clinically deployable.",
@@ -86,7 +86,7 @@
     },
     {
       "label": "Human clinical relevance boundary",
-      "outlook_field": "forecast_note",
+      "outlook_field": "interpretation_note",
       "conclusion": "Human genetics and mCA cohort studies make chromosome surveillance clinically relevant, but they do not establish an intervention.",
       "support_role": "supports",
       "rationale": "BUB1B mutations link spindle-checkpoint failure to human constitutional aneuploidy and cancer predisposition, and expanded mCAs predict infection risk in large cohorts.",
@@ -108,7 +108,7 @@
     },
     {
       "label": "Folate and one-carbon boundary",
-      "outlook_field": "main_blockers",
+      "outlook_field": "main_evidence_gaps",
       "conclusion": "Folate and B12-related chromosome-damage signals are mixed and context-dependent.",
       "support_role": "limits",
       "rationale": "The hemodialysis study supports biomarker movement in a high-risk disease context, while the older-men study found associations with B12 and homocysteine but no micronucleus-index reduction after folic acid supplementation.",

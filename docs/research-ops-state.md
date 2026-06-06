@@ -17,7 +17,7 @@ That is deliberate. A language model can usually do one bounded track pass well 
 - `research/coverage-assessments/*.json`
   Internal track-level assessments of source-landscape completeness, category coverage, known gaps, and the next coverage action.
 - `docs/surveillance-checklist.md`
-  The operating checklist for post-bootstrap surveillance passes.
+  The operating checklist for field change checks after baseline review.
 - `docs/coverage-assessment.md`
   The rubric for judging whether a track is thin, adequate, or strong from a coverage standpoint.
 - `docs/triage-workflow.md`
@@ -36,7 +36,7 @@ That is deliberate. A language model can usually do one bounded track pass well 
 
 - one bounded scope
 - one structured session record under `research/sessions/`
-- zero or one candidate bundle
+- zero or one staged update
 - staged JSON only for records that materially changed
 - a coverage assessment when the pass materially changes source-landscape confidence or creates a first track baseline
 
@@ -52,9 +52,9 @@ Coverage assessments are validated internal artifacts and are folded into genera
 
 Surveillance is a sorting pass. It has four valid outcomes:
 
-- `no_op`: the pass found no material public change. Write the session record, preserve the search log, and do not create a candidate bundle or staged JSON.
+- `no_op`: the pass found no material public change. Write the session record, preserve the search log, and do not create a staged update or staged JSON.
 - `activity_only`: a trial, company, regulatory, conference, or program event changed, but evidence interpretation does not. Write the session record; create a bundle only when the public activity or source layer should change.
-- `outlook_refresh`: evidence, safety, trial results, support maps, or forecast language changed enough to update public records. Create a minimal candidate bundle and staged JSON for the changed records only.
+- `outlook_refresh`: evidence, safety, trial results, evidence maps, or outlook language changed enough to update public records. Create a minimal staged update and staged JSON for the changed records only.
 - `coverage_repair`: the pass mainly checks source-completeness gaps identified by a coverage assessment. Update the assessment; create public staged JSON only if the repair changes public claims.
 
 No-op sessions are successful surveillance work. They keep the review clock visible without growing the candidate-bundle backlog.
@@ -69,7 +69,7 @@ A coverage-repair run should usually produce:
 
 - a `research_session` with `mode: "coverage_repair"`
 - a new or updated `coverage_assessment`
-- no public bundle unless the repair changes the public outlook, source layer, or support map
+- no public staged update unless the repair changes the public outlook, source layer, or evidence map
 
 `npm run sync:research-planning` emits `coverage_repair_queue` when a latest coverage assessment recommends that mode.
 

@@ -1,31 +1,31 @@
 # Evidence Review
 
-Evidence reviews are structured verification passes against a candidate bundle revision. They are separate from admin comments: comments drive editorial conversation, while evidence reviews decide whether staged changes are source-faithful, bounded, and publishable.
+Evidence reviews are structured verification passes against a staged update revision. They are separate from admin comments: comments drive editorial conversation, while evidence reviews decide whether staged changes are source-faithful, bounded, and publishable.
 
-When a bundle changes a track outlook, reviewers should also check the latest relevant `coverage_assessment` when one exists. The assessment does not replace source fidelity or support-map review, but it helps identify whether the bundle is making a public claim while a major evidence category remains knowingly thin.
+When a staged update changes a track outlook, reviewers should also check the latest relevant `coverage_assessment` when one exists. The assessment does not replace source fidelity or evidence-map review, but it helps identify whether the update is making a public claim while a major evidence category remains knowingly thin.
 
 ## Lanes
 
 Supported review lanes are:
 
 - `source_fidelity`: source identifiers, quoted facts, study metadata, and staged claims match the cited source or registry.
-- `interpretation_forecast`: findings support the proposed stage, momentum, confidence, blockers, signals, and forecast language.
+- `interpretation_forecast`: findings support the proposed evidence stage, momentum, confidence, evidence gaps, strongest evidence, and outlook language.
 - `safety_limitations`: safety caveats, population boundaries, disease-specific limits, durability limits, and adverse signals are represented.
 - `taxonomy_mapping`: hallmark, track, intervention, study, and finding links are mapped to the right taxonomy IDs.
-- `forecast_calibration`: scenario and forecast claims are qualitatively calibrated and do not imply false precision.
+- `forecast_calibration`: legacy lane name for scenario, timing, and outlook claims; checks that they are qualitatively calibrated and do not imply false precision.
 
 A bundle lists its required lanes in `required_review_lanes[]`. The evidence gate is ready when each required lane has the configured number of complete reviews, no complete review is blocking, no complete review has `needs_revision` or `reject`, and no configured blocking findings remain open.
 
-## Surveillance Scope
+## Field Change Scope
 
-Surveillance does not always need a candidate bundle or evidence review:
+Field change checks do not always need a staged update or evidence review:
 
 - `no_op`: no evidence review. The research session is the audit record.
 - `activity_only`: no evidence review when only a session record is written. If a bundle stages public source or activity records, normally require `source_fidelity` only.
 - `outlook_refresh`: require `source_fidelity` and `interpretation_forecast`.
 - Add `safety_limitations` when new safety, dosing, population, disease-specific, or durability boundaries could affect public interpretation.
 - Add `taxonomy_mapping` when track, hallmark, intervention, study, or finding links materially change.
-- Add `forecast_calibration` when timing, scenario, or forecast language materially changes.
+- Add `forecast_calibration` when timing, scenario, or outlook language materially changes.
 
 ## Workflow
 
@@ -56,14 +56,14 @@ Apply a completed review:
 npm run research:review-evidence -- apply --file <draft-path>
 ```
 
-Applying a review writes it to `data/evidence-reviews/`, adds the review ID to the candidate bundle, and supersedes older complete reviews for the same bundle, revision, and lane.
+Applying a review writes it to `data/evidence-reviews/`, adds the review ID to the staged update, and supersedes older complete reviews for the same update, revision, and lane.
 
 ## Findings
 
 Findings should be specific enough for an author or curator to act on. Each finding records:
 
 - `severity`: `critical`, `major`, `minor`, or `note`
-- `category`: `source_mismatch`, `endpoint_boundary`, `interpretation_overreach`, `missing_caveat`, `activity_vs_evidence`, `safety_limitation`, `taxonomy_mapping`, `forecast_overreach`, `uncertainty`, or `other`
+- `category`: `source_mismatch`, `endpoint_boundary`, `interpretation_overreach`, `missing_caveat`, `activity_vs_evidence`, `safety_limitation`, `taxonomy_mapping`, `forecast_overreach` for outlook or timing overreach, `uncertainty`, or `other`
 - `claim_or_issue`
 - `why_it_matters`
 - `recommended_action`

@@ -174,7 +174,7 @@ export default async function AdminReviewQueuePage() {
       <PageHero
         kicker="Admin review"
         title="Editorial queue"
-        summary="Candidate bundles from the research workflow land here for review, revision requests, approval, and publication."
+        summary="Staged updates from the research workflow land here for review, revision requests, approval, and publication."
       >
         <div className="page-hero__stats">
           <span>{summary.open} open</span>

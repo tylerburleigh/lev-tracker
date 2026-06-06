@@ -14,7 +14,7 @@
     "basis": "Coverage assessment created during ordinary surveillance after the published June 2 bootstrap baseline."
   },
   "coverage_verdict": "thin",
-  "summary": "Coverage is enough to support the current low-confidence human_biomarker_signal public claim, but the coverage map is still thin. The public baseline is anchored by FMD human biomarker/risk-factor studies, acarbose mouse lifespan and healthspan evidence, and CALERIE caloric-restriction context. The surveillance pass found no post-publication public-update delta, but it surfaced a pre-window Mimio fasting-mimetic supplement RCT and NCT06790407 registry record that are not represented in the current FMD/acarbose support map. Because this is a historical source-completeness issue and not a same-window evidence change, a bounded coverage-repair pass should review Mimio, acarbose human registry context, FMD/longevity-diet trial-watch records, and recent reviews before ordinary surveillance resumes.",
+  "summary": "Coverage is enough to support the current low-confidence human_biomarker_signal public claim, but the coverage map is still thin. The public baseline is anchored by FMD human biomarker/risk-factor studies, acarbose mouse lifespan and healthspan evidence, and CALERIE caloric-restriction context. The surveillance pass found no post-publication public-update delta, but it surfaced a pre-window Mimio fasting-mimetic supplement RCT and NCT06790407 registry record that are not represented in the current FMD/acarbose evidence map. Because this is a historical source-completeness issue and not a same-window evidence change, a bounded coverage-repair pass should review Mimio, acarbose human registry context, FMD/longevity-diet trial-watch records, and recent reviews before ordinary surveillance resumes.",
   "reviewed_artifacts": {
     "research_session_ids": [
       "2026-06-02-caloric-restriction-mimetics-bootstrap",
@@ -38,7 +38,7 @@
     {
       "category": "human_interventional",
       "coverage_level": "thin",
-      "rationale": "The current support map includes randomized and short-duration FMD biomarker/risk-factor studies and CALERIE caloric-restriction context, but it does not yet cover a pre-baseline defined fasting-mimetic supplement RCT (Mimio) or human acarbose aging registry limitations. No current source shows replicated functional, disease-incidence, disability, multimorbidity, or mortality benefit.",
+      "rationale": "The current evidence map includes randomized and short-duration FMD biomarker/risk-factor studies and CALERIE caloric-restriction context, but it does not yet cover a pre-baseline defined fasting-mimetic supplement RCT (Mimio) or human acarbose aging registry limitations. No current source shows replicated functional, disease-incidence, disability, multimorbidity, or mortality benefit.",
       "source_ids": [
         "pmid-28202779",
         "pmid-38378685",
@@ -206,7 +206,7 @@
       "gap_id": "mimio-human-biomarker-source-not-curated",
       "gap_type": "coverage_gap",
       "category": "human_interventional",
-      "description": "PMID 41720867 and NCT06790407 describe a defined fasting-mimetic supplement in humans, but they are not represented in the current support map, public source records, findings, or explicit exclusions.",
+      "description": "PMID 41720867 and NCT06790407 describe a defined fasting-mimetic supplement in humans, but they are not represented in the current evidence map, public source records, findings, or explicit exclusions.",
       "priority": "high",
       "suggested_action": "Run coverage repair to source-review the Mimio RCT, its registry, and related pilot sources such as the cited fasting-metabolite and dose-escalation studies before deciding whether to stage support, limitation, or exclusion records."
     },
@@ -214,7 +214,7 @@
       "gap_id": "registry-watch-and-acarbose-human-context-not-curated",
       "gap_type": "coverage_gap",
       "category": "active_trials_registries",
-      "description": "Acarbose human aging registry records and FMD/longevity-diet trial-watch records have been identified but are not represented in the caloric-restriction-mimetics support map or explicit exclusions.",
+      "description": "Acarbose human aging registry records and FMD/longevity-diet trial-watch records have been identified but are not represented in the caloric-restriction-mimetics evidence map or explicit exclusions.",
       "priority": "high",
       "suggested_action": "During coverage repair, decide whether NCT02953093, NCT02865499, NCT05698654, NCT07065955, NCT07255300, NCT06115551, and NCT06560996 should become public activity, limiting, trial-watch, or exclusion records."
     },

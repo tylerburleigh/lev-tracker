@@ -5,29 +5,29 @@
   "name": "Resolution Pathway and Tissue Repair Track Outlook",
   "subject_type": "track",
   "subject_id": "resolution-pathway-and-tissue-repair",
-  "current_stage": "human_biomarker_signal",
+  "evidence_stage": "human_biomarker_signal",
   "momentum": "steady",
   "confidence": "low",
-  "main_blockers": [
+  "main_evidence_gaps": [
     "Direct pro-resolving mediator repair efficacy is still mostly aged-animal evidence, especially for RvD1 and MaR1.",
     "Human evidence is strongest for target engagement, circulating or wound-microenvironment inflammatory biomarkers, and leukocyte phenotype shifts rather than definitive tissue-repair benefit.",
     "SPM-enriched marine oil, EPA+DHA precursor therapy, direct RvD1, and direct MaR1 are mechanistically related but not interchangeable intervention classes.",
     "The larger older-adult EPA+DHA chronic venous leg ulcer trial is completed, but results are not posted in the current June 2, 2026 ClinicalTrials.gov API view."
   ],
-  "best_current_signals": [
+  "strongest_current_evidence": [
     "Aged mouse models show that resolution biology is impaired with age and that RvD1 or MaR1 can improve inflammation-resolution, aged muscle functional recovery, or aged fracture repair.",
     "Human SPM-enriched marine oil studies show peripheral blood SPM or SPM-pathway metabolite increases and leukocyte phenotype or phagocytosis changes.",
     "EPA+DHA studies in chronic venous leg ulcer patients report lower inflammatory cytokines, reduced wound-fluid activated PMNs, and wound-area reduction trends, but the larger confirmatory older-adult trial has no posted results yet."
   ],
-  "forecast_note": "This track earns a low-confidence human_biomarker_signal baseline. Direct SPM biology is compelling in aged-animal tissue-repair models, while human translation currently rests on SPM target engagement and wound-inflammation biomarker signals rather than conclusive repair outcomes. The key watch item is whether the completed older-adult chronic venous leg ulcer EPA+DHA trial posts results showing wound healing tied to lipid mediator or PMN resolution biology.",
-  "rating_change_criteria": [
+  "interpretation_note": "This track earns a low-confidence human_biomarker_signal baseline. Direct SPM biology is compelling in aged-animal tissue-repair models, while human translation currently rests on SPM target engagement and wound-inflammation biomarker signals rather than conclusive repair outcomes. The key watch item is whether the completed older-adult chronic venous leg ulcer EPA+DHA trial posts results showing wound healing tied to lipid mediator or PMN resolution biology.",
+  "what_would_change_the_rating": [
     "A human_functional_benefit upgrade would need controlled older-adult or disease-adjacent repair data showing improved wound closure, fracture healing, muscle recovery, pain/function, or recurrence with prespecified inflammatory-resolution mediator support.",
     "Confidence would increase if human studies replicate SPM or EPA+DHA target engagement and link it prospectively to tissue-repair outcomes rather than only circulating biomarkers.",
     "Direct RvD1 or MaR1 translation would require human pharmacokinetic, safety, target-engagement, and repair endpoint studies rather than extrapolation from marine-oil precursor supplementation.",
     "The rating would weaken if the completed NCT03576989 results are null or if larger trials fail to connect pro-resolving mediator changes to wound healing, recurrence, pain, or quality-of-life outcomes."
   ],
   "earliest_plausible_window": "No credible LEV-relevant window can be assigned; the nearest translational window is disease-adjacent wound or repair trials if completed human data show biomarker-linked functional benefit.",
-  "scenario_2036_status": "speculative",
+  "lev_2036_outlook": "speculative",
   "supporting_finding_ids": [
     "aged-mice-resolution-deficit-rescued-by-nano-proresolving-medicines",
     "rvd1-improved-aged-muscle-functional-recovery",
@@ -42,7 +42,7 @@
   "supporting_evidence": [
     {
       "label": "Stage assignment",
-      "outlook_field": "current_stage",
+      "outlook_field": "evidence_stage",
       "conclusion": "The track reaches human biomarker signal because human SPM-enriched marine oil and EPA+DHA studies show target-engagement, cytokine, PMN activation, and leukocyte phenotype movement.",
       "support_role": "supports",
       "rationale": "The human studies include a double-blind crossover healthy-volunteer SPM trial, an obesity bioavailability study, an open-label PAD/healthy-volunteer SPM study, and chronic venous leg ulcer EPA+DHA studies measuring systemic and wound-microenvironment inflammatory endpoints.",
@@ -70,7 +70,7 @@
     },
     {
       "label": "Aged-animal repair support",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "Direct pro-resolving mediator interventions support aged-animal repair, especially in muscle and bone injury models.",
       "support_role": "supports",
       "rationale": "Aged mouse studies show age-related resolution deficits and direct RvD1 or MaR1 effects on inflammation, fibrosis, muscle force recovery, and fracture repair mechanics.",
@@ -136,7 +136,7 @@
     },
     {
       "label": "Intervention-class boundary",
-      "outlook_field": "main_blockers",
+      "outlook_field": "main_evidence_gaps",
       "conclusion": "The track contains related but distinct intervention classes that need separate translation claims.",
       "support_role": "limits",
       "rationale": "Direct RvD1 and MaR1 evidence is preclinical, SPM-enriched marine oil is human target-engagement evidence, and EPA+DHA is a precursor strategy with wound-inflammation data.",

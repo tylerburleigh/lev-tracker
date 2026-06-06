@@ -1,35 +1,37 @@
 # Reader Task Audit
 
-Generated: 2026-06-06T14:45:13.913Z
-Passed: 13
+Generated: 2026-06-06T18:22:52.967Z
+Passed: 14
 Issues: 0
 Warnings: 0
 
 ## Checks
 
-- PASS: Reader can tell where the LEV journey stands
-  Progress narrative needs title, summary, current state, and recent-change copy.
-- PASS: Reader gets a before-now-next temporal arc
-  Journey labels: before, now, next
+- PASS: Reader can tell where the field stands now
+  Current LEV story needs title, summary, current evidence picture, and what changed copy.
+- PASS: Reader gets a before-now-next field arc
+  Before/now/next labels: before, now, next
+- PASS: Public story describes the field, not tracker operations
+  No tracker/process framing found in visible story fields.
 - PASS: Reader can see progress over time
-  3 progress moment(s); 2 dated.
+  3 recent development(s); 2 dated.
 - PASS: Reader can see what would make the outlook more or less optimistic
-  3 change-mind item(s).
+  3 outlook-change item(s).
 - PASS: Reader can tell what to watch next
-  3 watchlist item(s).
+  3 item(s) to watch next.
 - PASS: Reader can tell where effort should focus next
-  3 focus item(s), 3 reason type(s).
+  3 better-evidence need(s), 3 reason type(s).
 - PASS: Reader gets concrete examples that resolve to track pages
-  3 spotlight example(s).
+  3 track example(s).
 - PASS: Homepage displays the reader story surfaces
-  Homepage source should render plain meaning, journey, change-mind criteria, and examples.
+  Homepage source should render plain meaning, before/now/next, outlook-change criteria, and examples.
 - PASS: Hallmark and track pages explain ratings locally
   Stage plain-meaning helper should be used on homepage, hallmark detail, and track detail pages.
 - PASS: Detail pages show what would change the interpretation
-  Hallmark and track detail pages should expose change criteria near forecast evidence.
+  Hallmark and track detail pages should expose change criteria near outlook evidence.
 - PASS: Tracks index uses reader-facing coverage labels
-  Homepage and tracks index should use research tracks / first-pass summaries language.
+  Homepage and tracks index should use research tracks / public outlook language.
 - PASS: Every hallmark has a readable top-level outlook
-  12 hallmark outlook(s) have blocker, signal, and note copy.
-- PASS: Narrative has a current review state
+  12 hallmark outlook(s) have evidence-gap, strongest-evidence, and interpretation copy.
+- PASS: Current LEV story has a current review state
   Last reviewed 2026-06-06; due 2026-07-06; 11 observed outlook snapshot(s).

@@ -10,7 +10,7 @@ The admin review workspace is the file-backed editorial layer between research o
 - Staged records: `data/staged-records/<bundle-id>/`
 - Review comments: `data/review-comments/`
 - Evidence reviews: `data/evidence-reviews/`
-- Publication events: `data/publication-events/`
+- Public updates: `data/publication-events/`
 
 The queue shows lifecycle status, scope, revision number, required review lanes, missing lanes, blocking findings, and promotion-readiness issues. The detail view shows proposed changes, staged paths, evidence reviews, comments, publication history, and the approve/publish controls.
 
@@ -36,7 +36,7 @@ Normal path:
 4. Curator adds comments or requests changes.
 5. Revised bundles return as `revised` or with a new revision number.
 6. Curator approves once gates are clean.
-7. Curator publishes, which promotes staged records and writes a publication event.
+7. Curator publishes, which promotes staged records and writes a public update.
 
 ## Promotion Readiness
 
@@ -74,9 +74,9 @@ Publishing:
 - writes a `publication_event`
 - records approving evidence review IDs when review gates exist
 - moves the bundle to `published`
-- appends the publication event ID to the bundle
+- appends the public update ID to the staged update
 
-Publication events should include the bundle ID, event type, timestamp, publisher, promoted target records, affected outlook IDs when available, approving evidence review IDs when available, and a concise change note.
+Public updates should include the staged update ID, event type, timestamp, publisher, promoted target records, affected outlook IDs when available, approving evidence review IDs when available, and a concise change note.
 
 After publishing, run:
 

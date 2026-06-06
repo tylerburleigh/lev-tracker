@@ -5,25 +5,25 @@
   "name": "Mitochondrial Delivery and Transplantation Track Outlook",
   "subject_type": "track",
   "subject_id": "mitochondrial-delivery-and-transplantation",
-  "current_stage": "animal_signal",
+  "evidence_stage": "animal_signal",
   "momentum": "mixed",
   "confidence": "low",
-  "main_blockers": [
+  "main_evidence_gaps": [
     "No treated-human healthy-aging or older-adult aging trial has shown mitochondrial delivery improves durable function, multimorbidity, disease risk, or survival.",
     "Human clinical evidence is concentrated in small acute ischemia-reperfusion settings or ex vivo cell work rather than broad aging intervention.",
     "Animal aging studies are small, short, and mostly CNS or immune-context experiments rather than replicated lifespan or durable healthspan programs.",
     "Dose, route, mitochondrial source, quality control, tissue targeting, mtDNA compatibility, immunogenicity, and manufacturing scalability remain unresolved.",
     "The track overlaps mitochondrial biogenesis, mitophagy, senescence, immune aging, acute injury repair, and cell therapy, so attribution needs careful curation."
   ],
-  "best_current_signals": [
+  "strongest_current_evidence": [
     "Young-donor mitochondrial delivery improved cognitive and motor performance in aged mice while shifting ATP and ROS biomarkers.",
     "Additional aged-animal studies report hippocampal mitochondrial-complex marker movement and reduced prefrontal-cortex oxidative-stress or apoptosis markers.",
     "Ex vivo mitochondrial transfer improved activation, cytokine, exhaustion, and senescence marker patterns in elderly human CD4+ T cells, but this is not a treated-human trial.",
     "Autologous mitochondrial transplantation has early human safety or efficacy-adjacent signals in severe acute ischemia settings, including pediatric postcardiotomy cardiogenic shock and acute ischemic stroke.",
     "Recruiting registry records show continued cardiac and cerebral ischemia translation work, but registry status should not be mistaken for aging efficacy."
   ],
-  "forecast_note": "Mitochondrial delivery and transplantation earns a low-confidence animal_signal baseline because direct aging evidence is currently strongest in aged animal mitotherapy experiments. The human evidence is useful for feasibility and safety, and one pediatric cardiac pilot is clinically provocative, but those data remain acute disease-specific and do not justify a human aging-benefit stage.",
-  "rating_change_criteria": [
+  "interpretation_note": "Mitochondrial delivery and transplantation earns a low-confidence animal_signal baseline because direct aging evidence is currently strongest in aged animal mitotherapy experiments. The human evidence is useful for feasibility and safety, and one pediatric cardiac pilot is clinically provocative, but those data remain acute disease-specific and do not justify a human aging-benefit stage.",
+  "what_would_change_the_rating": [
     "Move to human_biomarker_signal if a controlled treated-human study in older adults or an aging-relevant condition shows target-tissue mitochondrial uptake plus mitochondrial, senescence, inflammatory, or bioenergetic biomarker movement with acceptable safety.",
     "Move to human_functional_benefit only if controlled human data show prespecified functional benefit in older adults or aging-relevant disease populations beyond acute procedural salvage.",
     "Consider durable disease or mortality relevance only after larger controlled trials show durable clinical outcomes and clarify whether the mechanism is mitochondrial delivery rather than acute revascularization or procedural care.",
@@ -31,7 +31,7 @@
     "Lower momentum if replication fails, mitochondrial quality-control barriers persist, or immunogenicity, mtDNA compatibility, off-target biodistribution, or manufacturing issues become limiting."
   ],
   "earliest_plausible_window": "No LEV-relevant window can be assigned before controlled treated-human aging-relevant biomarker and functional data exist.",
-  "scenario_2036_status": "speculative",
+  "lev_2036_outlook": "speculative",
   "supporting_finding_ids": [
     "young-mitochondria-improved-aged-mouse-cognition-motor",
     "mitochondrial-transfusion-upregulated-sdhb-aged-mice",
@@ -47,7 +47,7 @@
   "supporting_evidence": [
     {
       "label": "Stage assignment",
-      "outlook_field": "current_stage",
+      "outlook_field": "evidence_stage",
       "conclusion": "The current public baseline should be animal_signal because direct aging-relevant functional evidence is in aged animals, not treated humans.",
       "support_role": "supports",
       "rationale": "Aged mice receiving young mitochondria showed cognitive and motor improvement with ATP and ROS movement, while aged-mouse hippocampal and aged-rat prefrontal-cortex studies add biomarker support.",
@@ -69,7 +69,7 @@
     },
     {
       "label": "Human-cell support",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "Elderly-human cell evidence supports mechanistic plausibility but does not upgrade the stage to human_biomarker_signal.",
       "support_role": "supports",
       "rationale": "Mito-transfer improved elderly human CD4+ T-cell activation/proliferation readouts and exhaustion/senescence marker patterns ex vivo, while aged-mouse infection models supported immune-cell function.",
@@ -87,7 +87,7 @@
     },
     {
       "label": "Human clinical translation boundary",
-      "outlook_field": "main_blockers",
+      "outlook_field": "main_evidence_gaps",
       "conclusion": "Human clinical records show acute disease feasibility and safety but do not establish aging efficacy.",
       "support_role": "limits",
       "rationale": "The pediatric cardiac pilot reported better ECMO separation and ventricular recovery after acute ischemia-reperfusion injury, and the acute-stroke phase 1 report found no significant adverse events in four treated subjects, but both are acute disease settings.",

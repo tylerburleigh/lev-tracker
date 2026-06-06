@@ -5,25 +5,25 @@
   "name": "Immune Clearance of Senescent Cells Track Outlook",
   "subject_type": "track",
   "subject_id": "immune-clearance-of-senescent-cells",
-  "current_stage": "animal_signal",
+  "evidence_stage": "animal_signal",
   "momentum": "accelerating",
   "confidence": "low",
-  "main_blockers": [
+  "main_evidence_gaps": [
     "No direct treated-human aging trial was identified for engineered or checkpoint-based immune clearance of senescent cells.",
     "The strongest intervention evidence is preclinical: uPAR CAR T, NKG2D-CAR T, and anti-GD3 immunotherapy have mouse or nonhuman-primate signals but not human efficacy.",
     "Target selectivity is unresolved because uPAR, NKG2D ligands, GD3, HLA-E, and CMV-antigen contexts may occur outside harmful senescent-cell states.",
     "Cell therapy translation faces manufacturing, persistence, cytokine, lymphodepletion, and dose-control questions that are especially important for preventive or broad aging use.",
     "Senescent cells can support wound repair, tumor suppression, and immune surveillance, so immune clearance needs tissue-, timing-, and indication-specific control."
   ],
-  "best_current_signals": [
+  "strongest_current_evidence": [
     "Anti-uPAR CAR T cells cleared senescent cells and restored tissue homeostasis in mouse pathology models, then improved exercise capacity, metabolic function, and intestinal regeneration phenotypes in aged mice.",
     "NKG2D-CAR T cells eliminated senescent cells in aged mice and nonhuman primates, with mouse physical-performance improvement and no observed adverse effects in the primate report.",
     "GD3 was identified as a senescent-cell immune checkpoint, and anti-GD3 immunotherapy attenuated mouse fibrosis and age-related bone-remodeling phenotypes.",
     "Human skin and cell studies support immune-evasion and immune-recognition mechanisms through HLA-E/NKG2A and CMV-antigen-directed cytotoxic CD4 T cells.",
     "Perforin-deficient mice accumulated higher senescent-cell burdens and showed accelerated aging phenotypes, supporting the premise that cytotoxic immune surveillance restrains senescent cells."
   ],
-  "forecast_note": "Immune clearance of senescent cells earns a low-confidence animal_signal baseline. The track is scientifically active and increasingly translational because independent engineered-cell and immune-checkpoint approaches now show senescent-cell clearance or aging-relevant phenotypes in mice, with NKG2D-CAR T data extending to aged nonhuman primates and 2026 anti-uPAR CAR T data extending into intestinal aging. The public interpretation should remain conservative: human evidence is mechanistic or tissue-observational, not treated-human efficacy, and immune-clearance therapies need unusually careful target, dose, persistence, safety, and beneficial-senescence boundaries.",
-  "rating_change_criteria": [
+  "interpretation_note": "Immune clearance of senescent cells earns a low-confidence animal_signal baseline. The track is scientifically active and increasingly translational because independent engineered-cell and immune-checkpoint approaches now show senescent-cell clearance or aging-relevant phenotypes in mice, with NKG2D-CAR T data extending to aged nonhuman primates and 2026 anti-uPAR CAR T data extending into intestinal aging. The public interpretation should remain conservative: human evidence is mechanistic or tissue-observational, not treated-human efficacy, and immune-clearance therapies need unusually careful target, dose, persistence, safety, and beneficial-senescence boundaries.",
+  "what_would_change_the_rating": [
     "A move to human_biomarker_signal would require a treated-human study showing senescent-cell target engagement or reduced senescence burden with acceptable acute immune safety.",
     "A move to human_functional_benefit would require controlled human evidence that immune-mediated senescent-cell clearance improves tissue function or resilience while moving prespecified senescence and immune-clearance biomarkers.",
     "Confidence would increase if independent groups replicate uPAR, NKG2D, GD3, or HLA-E/NKG2A target selectivity across aging tissues and define which senescent states should not be cleared.",
@@ -31,7 +31,7 @@
     "Trial-watch activity should stay separate from efficacy unless a registry or publication specifically tests immune-mediated senescent-cell clearance rather than generic oncology CAR T or small-molecule senolysis."
   ],
   "earliest_plausible_window": "No LEV-relevant window can be assigned before human trials demonstrate selective immune clearance of senescent cells with durable tissue benefit and safety appropriate for aging or age-related disease settings.",
-  "scenario_2036_status": "speculative",
+  "lev_2036_outlook": "speculative",
   "supporting_finding_ids": [
     "upar-car-t-cleared-senescent-cells-in-pathology-models",
     "upar-car-t-improved-aged-mouse-metabolic-fitness",
@@ -45,7 +45,7 @@
   "supporting_evidence": [
     {
       "label": "Stage assignment",
-      "outlook_field": "current_stage",
+      "outlook_field": "evidence_stage",
       "conclusion": "The track reaches animal_signal because multiple immune-mediated senescent-cell clearance strategies improve senescence-linked or aging-relevant outcomes in animals.",
       "support_role": "supports",
       "rationale": "Anti-uPAR CAR T cells have mouse pathology, metabolic aging, and intestinal aging signals; NKG2D-CAR T cells have aged mouse and aged nonhuman-primate senescent-cell clearance evidence; and anti-GD3 immunotherapy attenuates mouse fibrosis and bone-remodeling phenotypes.",
@@ -71,7 +71,7 @@
     },
     {
       "label": "Human mechanism without human efficacy",
-      "outlook_field": "current_stage",
+      "outlook_field": "evidence_stage",
       "conclusion": "Human tissue and ex vivo data support immune recognition and evasion mechanisms but do not justify a human_biomarker_signal intervention rating.",
       "support_role": "limits",
       "rationale": "HLA-E/NKG2A evidence shows senescent-cell immune evasion and in-vitro checkpoint-blockade response, while CMV-antigen work shows cytotoxic CD4 T-cell clearance of senescent human skin fibroblasts ex vivo. Neither is a treated-human trial.",
@@ -91,7 +91,7 @@
     },
     {
       "label": "Immune surveillance rationale",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "Loss-of-function immune surveillance evidence supports the biological premise that cytotoxic immune systems restrain senescent-cell accumulation during aging.",
       "support_role": "supports",
       "rationale": "Perforin-deficient mice accumulated more senescent cells, inflammation, age-related phenotypes, and lower survival, and the progeroid cross showed a stronger burden when cytotoxic surveillance was impaired.",

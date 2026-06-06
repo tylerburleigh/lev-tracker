@@ -5,30 +5,30 @@
   "name": "Stem Cell Replacement and Transplantation Track Outlook",
   "subject_type": "track",
   "subject_id": "stem-cell-replacement-and-transplantation",
-  "current_stage": "human_functional_benefit",
+  "evidence_stage": "human_functional_benefit",
   "momentum": "accelerating",
   "confidence": "low",
-  "main_blockers": [
+  "main_evidence_gaps": [
     "The strongest direct aging-relevant signal is laromestrocel in frailty, but allogeneic MSC benefit may reflect paracrine, immunovascular, or tissue-support effects rather than durable stem-cell replacement.",
     "True replacement-style evidence in retina and Parkinson disease is still small, invasive, disease-specific, and often open-label.",
     "Transplantation approaches carry major implementation and safety burdens: surgery, conditioning, immunosuppression, graft behavior, tumor risk, rejection, and dyskinesia or ectopic differentiation concerns.",
     "No staged source demonstrates broad restoration of aged tissue stem-cell reserves, healthy-lifespan extension, mortality benefit, or LEV-relevant benefit in humans."
   ],
-  "best_current_signals": [
+  "strongest_current_evidence": [
     "A 2026 randomized phase 2b frailty trial reported clinically meaningful 6-minute walk improvement after allogeneic MSC therapy, with a possible TIE2 biomarker response.",
     "hES or hESC-derived dopaminergic progenitor transplantation in Parkinson disease now has two small human graft-survival and exploratory motor-signal reports, and bemdaneprocel has moved into a recruiting sham-controlled phase 3 trial.",
     "hESC-derived retinal pigment epithelium transplantation provides early human safety, graft-survival, and possible visual-function evidence in retinal disease.",
     "Nonmyeloablative HSCT has randomized disease-progression benefit in relapsing-remitting multiple sclerosis, but as a high-intensity disease-specific transplant boundary."
   ],
-  "forecast_note": "Stem cell replacement and transplantation now merits a first public baseline at human_functional_benefit because an aging-frailty cell-therapy trial reports physical-function improvement and several replacement or transplant modalities show human disease-specific functional signals. The rating remains low confidence: the frailty signal may not be true engrafting replacement, and the clearest replacement approaches are invasive, disease-specific, and not yet broad geroscience interventions.",
-  "rating_change_criteria": [
+  "interpretation_note": "Stem cell replacement and transplantation now merits a first public baseline at human_functional_benefit because an aging-frailty cell-therapy trial reports physical-function improvement and several replacement or transplant modalities show human disease-specific functional signals. The rating remains low confidence: the frailty signal may not be true engrafting replacement, and the clearest replacement approaches are invasive, disease-specific, and not yet broad geroscience interventions.",
+  "what_would_change_the_rating": [
     "Confidence would improve if laromestrocel or another cell therapy replicates prespecified physical-function benefit in independent older-adult trials with longer follow-up, clear safety, and mechanism-linked biomarkers.",
     "True replacement confidence would improve if controlled Parkinson, retinal, muscle, immune, or other tissue programs show durable graft function tied to clinically meaningful outcomes without prohibitive surgery or immunosuppression burden.",
     "The stage should not be upgraded toward durable disease or mortality relevance unless a cell-replacement or transplant strategy produces replicated durable clinical outcomes in aging-relevant populations with acceptable long-term safety.",
     "The rating would weaken if phase 3 bemdaneprocel misses functional endpoints or has graft-related safety issues, if frailty MSC results fail replication, or if replacement programs show tumor, dyskinesia, immune, or ectopic-cell risks that outweigh benefit."
   ],
   "earliest_plausible_window": "No credible LEV-relevant window can be assigned before controlled human trials show durable functional benefit, mechanism clarity, and manageable safety for specific replacement strategies.",
-  "scenario_2036_status": "speculative",
+  "lev_2036_outlook": "speculative",
   "supporting_finding_ids": [
     "laromestrocel-improved-6mwt-aging-frailty",
     "bemdaneprocel-pd-graft-survival-motor-signal",
@@ -40,7 +40,7 @@
   "supporting_evidence": [
     {
       "label": "Stage assignment",
-      "outlook_field": "current_stage",
+      "outlook_field": "evidence_stage",
       "conclusion": "The track reaches human functional benefit because aging-frailty MSC therapy and disease-specific transplant programs report human functional or clinical-outcome signals.",
       "support_role": "supports",
       "rationale": "Laromestrocel is the most directly aging-relevant functional signal, while HSCT, retinal RPE transplantation, and dopaminergic progenitor transplantation show that cell or stem-cell-derived replacement strategies can alter human disease-relevant function in bounded contexts.",
@@ -64,7 +64,7 @@
     },
     {
       "label": "Replacement evidence",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "Human replacement-style evidence is strongest in Parkinson and retinal disease, but still early and disease-bound.",
       "support_role": "supports",
       "rationale": "Bemdaneprocel and A9-DPC trials report graft-survival imaging and exploratory motor improvements, while hESC-derived RPE studies report graft-pigmentation and possible visual-function signals.",
@@ -110,7 +110,7 @@
     },
     {
       "label": "Safety and translation boundary",
-      "outlook_field": "main_blockers",
+      "outlook_field": "main_evidence_gaps",
       "conclusion": "Transplantation and engrafting replacement remain safety- and procedure-limited for broad preventive aging use.",
       "support_role": "limits",
       "rationale": "HSCT requires conditioning and immune reconstitution, retinal and Parkinson grafts require surgery and immunosuppression, and pluripotent-cell derivatives carry graft-behavior and tumor-risk monitoring burdens.",

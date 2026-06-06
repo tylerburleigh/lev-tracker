@@ -5,25 +5,25 @@
   "name": "Senomorphics Track Outlook",
   "subject_type": "track",
   "subject_id": "senomorphics",
-  "current_stage": "human_biomarker_signal",
+  "evidence_stage": "human_biomarker_signal",
   "momentum": "steady",
   "confidence": "low",
-  "main_blockers": [
+  "main_evidence_gaps": [
     "Direct human evidence is small, local, or acute-stress focused: topical rapamycin skin p16 and metformin disuse-recovery muscle SASP markers are biomarker signals, not durable aging outcomes.",
     "Most strong mechanistic support comes from cell systems and aged-mouse studies rather than replicated human functional trials.",
     "Core candidate drugs are pleiotropic: rapamycin/sirolimus and metformin also belong to nutrient-sensing tracks, so senomorphic attribution needs careful endpoint mapping.",
     "SASP suppression is not universally beneficial because senescence secretory programs can support wound repair, immune surveillance, and tumor suppression in some contexts.",
     "Long-term preventive safety remains unresolved for systemic SASP modulation, especially for immunomodulatory paths such as mTOR and JAK inhibition."
   ],
-  "best_current_signals": [
+  "strongest_current_evidence": [
     "Topical rapamycin reduced p16INK4A and increased collagen VII in a small human skin-aging trial.",
     "Metformin pre-treatment lowered skeletal-muscle senescence/SASP markers and recovery fibrosis signals in a small older-adult bed-rest study.",
     "JAK inhibition suppresses SASP in senescent human cell systems and improved inflammation plus physical function in aged mice.",
     "mTOR-SASP mechanistic studies identify rapamycin-sensitive IL1A and MAPKAPK2/ZFP36L1 pathways as tractable SASP control points.",
     "A short-term oral rapamycin older-adult pilot supports feasibility but does not establish functional benefit or senescence-marker efficacy."
   ],
-  "forecast_note": "Senomorphics earn a low-confidence human_biomarker_signal baseline because there are now direct human senescence-marker signals for topical rapamycin in skin and metformin in an older-adult disuse/recovery model. The broader LEV interpretation should stay conservative: the field has strong mechanistic coherence around SASP suppression, but human evidence remains small, tissue- or stress-context specific, and confounded by pleiotropic nutrient-sensing and inflammatory pathways. A functional or durable-disease rating would require randomized human trials that pre-specify senescence/SASP biomarkers and connect them to sustained tissue resilience, function, or disease modification without unacceptable immune, cancer, wound-healing, or metabolic tradeoffs.",
-  "rating_change_criteria": [
+  "interpretation_note": "Senomorphics earn a low-confidence human_biomarker_signal baseline because there are now direct human senescence-marker signals for topical rapamycin in skin and metformin in an older-adult disuse/recovery model. The broader LEV interpretation should stay conservative: the field has strong mechanistic coherence around SASP suppression, but human evidence remains small, tissue- or stress-context specific, and confounded by pleiotropic nutrient-sensing and inflammatory pathways. A functional or durable-disease rating would require randomized human trials that pre-specify senescence/SASP biomarkers and connect them to sustained tissue resilience, function, or disease modification without unacceptable immune, cancer, wound-healing, or metabolic tradeoffs.",
+  "what_would_change_the_rating": [
     "A move to human_functional_benefit would require replicated randomized human trials showing that a senomorphic intervention improves function or resilience while also moving senescence/SASP biomarkers in the intended tissue.",
     "A durable disease or mortality rating would require disease-modifying or event-level outcomes plus a credible bridge from SASP modulation to broad aging biology.",
     "Higher confidence would require larger human studies, clearer dose-response, tissue-relevant biomarkers, and separation of senomorphic effects from general anti-inflammatory, metabolic, or mTOR effects.",
@@ -31,7 +31,7 @@
     "New mechanistic or animal studies should not upgrade the stage unless they directly support a feasible human intervention path and preserve the SASP context boundary."
   ],
   "earliest_plausible_window": "No credible LEV-relevant window can be assigned before senomorphic trials connect human senescence-marker movement to durable function, tissue resilience, disease modification, or safety-calibrated prevention.",
-  "scenario_2036_status": "speculative",
+  "lev_2036_outlook": "speculative",
   "supporting_finding_ids": [
     "topical-rapamycin-reduced-human-skin-p16",
     "metformin-reduced-older-adult-muscle-sasp-after-disuse",
@@ -44,7 +44,7 @@
   "supporting_evidence": [
     {
       "label": "Stage assignment",
-      "outlook_field": "current_stage",
+      "outlook_field": "evidence_stage",
       "conclusion": "The track reaches human_biomarker_signal because two small human studies directly measured senescence-linked biomarkers after candidate senomorphic interventions.",
       "support_role": "supports",
       "rationale": "Topical rapamycin reduced skin p16INK4A and increased collagen VII, while metformin pre-treatment in older adults undergoing bed rest and recovery was associated with reduced skeletal-muscle cellular senescence/SASP markers and fibrosis-related signals.",
@@ -64,7 +64,7 @@
     },
     {
       "label": "Mechanistic coherence",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "mTOR and NF-kB pathway studies support a coherent SASP-modulation thesis for rapamycin-class agents and metformin.",
       "support_role": "supports",
       "rationale": "Rapamycin-sensitive mTOR mechanisms regulate SASP through IL1A translation and MAPKAPK2/ZFP36L1 transcript control, while metformin suppresses inflammatory SASP genes through IKK/NF-kB-linked signaling in cell models.",
@@ -86,7 +86,7 @@
     },
     {
       "label": "Preclinical function",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "JAK inhibition provides preclinical functional support by reducing SASP-linked inflammation and improving aged-mouse physical function.",
       "support_role": "supports",
       "rationale": "The JAK study bridges senescent human cell SASP suppression with aged-mouse systemic inflammation and physical-function improvement after 10 weeks of treatment.",
@@ -104,7 +104,7 @@
     },
     {
       "label": "Functional benefit boundary",
-      "outlook_field": "current_stage",
+      "outlook_field": "evidence_stage",
       "conclusion": "The track should not be upgraded to human_functional_benefit because systemic human data do not yet show functional improvement tied to senescence/SASP modulation.",
       "support_role": "limits",
       "rationale": "The oral rapamycin older-adult pilot supports short-term feasibility but found no cognitive, physical-performance, self-perceived health, or broad immune improvement, and it was not a senescence-endpoint efficacy trial.",

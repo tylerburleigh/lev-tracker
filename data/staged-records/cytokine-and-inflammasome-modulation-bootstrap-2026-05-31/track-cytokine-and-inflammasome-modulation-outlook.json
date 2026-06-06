@@ -5,32 +5,32 @@
   "name": "Cytokine and Inflammasome Modulation Track Outlook",
   "subject_type": "track",
   "subject_id": "cytokine-and-inflammasome-modulation",
-  "current_stage": "durable_disease_or_mortality_relevance",
+  "evidence_stage": "durable_disease_or_mortality_relevance",
   "momentum": "steady",
   "confidence": "low",
-  "main_blockers": [
+  "main_evidence_gaps": [
     "The strongest human outcomes are cardiovascular secondary-prevention results in high-risk disease populations, not broad healthy-aging or LEV-relevant rejuvenation outcomes.",
     "Cytokine and inflammasome suppression can increase infection or other safety risks, which matters for long-term preventive use.",
     "Direct frailty evidence is not supportive: the CANTOS frailty post hoc analysis found no reduction in incident frailty.",
     "IL-6 programs have strong biomarker movement, but large clinical outcome confirmation is still pending.",
     "Colchicine, canakinumab, IL-6 antibodies, and NLRP3 inhibitors are mechanistically distinct and should not be merged into one efficacy claim."
   ],
-  "best_current_signals": [
+  "strongest_current_evidence": [
     "CANTOS showed that IL-1beta inhibition can reduce recurrent cardiovascular events without lipid lowering in post-MI patients with residual inflammatory risk.",
     "Low-dose colchicine reduced ischemic cardiovascular event composites in both recent-MI and chronic coronary disease trials.",
     "Ziltivekimab and clazakizumab robustly lowered hsCRP and related inflammatory or thrombotic biomarkers in high-risk CKD or dialysis populations.",
     "Dapansutrile provides an early human foothold for direct oral NLRP3 inhibition, though only as a small short safety study with exploratory functional signals.",
     "ZEUS is a large active phase 3 ziltivekimab outcomes trial that could clarify whether IL-6 biomarker movement translates into cardiovascular event reduction."
   ],
-  "forecast_note": "This track earns a disease-outcome baseline because targeted anti-inflammatory approaches have reduced cardiovascular events in large randomized trials. The confidence should stay low for aging interpretation: the results are disease-specific, safety-sensitive, and not supported by direct frailty benefit. The near-term watch item is whether IL-6 inhibition converts strong biomarker effects into phase 3 clinical outcomes without unacceptable infection or laboratory safety tradeoffs.",
-  "rating_change_criteria": [
+  "interpretation_note": "This track earns a disease-outcome baseline because targeted anti-inflammatory approaches have reduced cardiovascular events in large randomized trials. The confidence should stay low for aging interpretation: the results are disease-specific, safety-sensitive, and not supported by direct frailty benefit. The near-term watch item is whether IL-6 inhibition converts strong biomarker effects into phase 3 clinical outcomes without unacceptable infection or laboratory safety tradeoffs.",
+  "what_would_change_the_rating": [
     "Confidence would increase if ZEUS or another large IL-6 outcomes trial reduces cardiovascular events with acceptable infection, lipid, neutrophil, platelet, and kidney safety.",
     "The stage would become more aging-relevant if a targeted cytokine or inflammasome intervention improves frailty, physical function, immune resilience, or multimorbidity endpoints in older adults rather than only disease-specific cardiovascular endpoints.",
     "Direct NLRP3 confidence would require randomized phase 2 or phase 3 trials with prespecified functional or clinical outcomes rather than short safety and pharmacodynamic studies.",
     "The rating would weaken if larger IL-6 or NLRP3 trials miss outcomes, if cardiovascular benefit is offset by infection or noncardiovascular mortality, or if benefits require risk profiles too narrow for preventive geroscience use."
   ],
   "earliest_plausible_window": "No credible LEV-relevant window can be assigned; disease-specific cardiovascular prevention may mature sooner, but broad aging translation needs older-adult functional or multimorbidity trials.",
-  "scenario_2036_status": "speculative",
+  "lev_2036_outlook": "speculative",
   "supporting_finding_ids": [
     "canakinumab-reduced-recurrent-cardiovascular-events",
     "canakinumab-exploratory-lung-cancer-signal",
@@ -45,7 +45,7 @@
   "supporting_evidence": [
     {
       "label": "Stage assignment",
-      "outlook_field": "current_stage",
+      "outlook_field": "evidence_stage",
       "conclusion": "The track reaches durable disease or mortality relevance because large randomized trials show cardiovascular event reduction from IL-1beta inhibition or low-dose colchicine.",
       "support_role": "supports",
       "rationale": "CANTOS directly tested IL-1beta inhibition without lipid lowering, while LoDoCo2 and COLCOT show reproducible low-dose colchicine cardiovascular outcome benefit across chronic and recent post-MI disease settings.",
@@ -110,7 +110,7 @@
     },
     {
       "label": "Direct inflammasome signal",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "Direct oral NLRP3 inhibition has early human safety support but not mature outcome evidence.",
       "support_role": "supports",
       "rationale": "Dapansutrile was safe and well tolerated in a short phase 1B HFrEF study and showed exploratory within-cohort LVEF and exercise-time changes at the top dose.",
@@ -128,7 +128,7 @@
     },
     {
       "label": "Safety and prevention boundary",
-      "outlook_field": "main_blockers",
+      "outlook_field": "main_evidence_gaps",
       "conclusion": "Long-term preventive use is constrained by infection and noncardiovascular safety signals.",
       "support_role": "limits",
       "rationale": "CANTOS reported more fatal infections with canakinumab, COLCOT reported more serious pneumonia with colchicine, LoDoCo2 had a numerically higher noncardiovascular mortality signal, and higher-dose clazakizumab had numerically more serious infections.",

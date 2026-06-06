@@ -71,10 +71,10 @@ export default async function HallmarkDetailPage({ params }: HallmarkPageProps) 
         <div className="page-shell hallmark-outlook-grid">
           <article className="detail-panel">
             <div className="panel-header panel-header--stacked">
-              <span className="section-kicker">Forecast note</span>
+              <span className="section-kicker">Interpretation note</span>
               <h2>{getStageLabel(outlook.stage)}</h2>
             </div>
-            <p>{outlook.note}</p>
+            <p>{outlook.interpretation}</p>
             <div className="plain-meaning">
               <strong>Plain meaning</strong>
               <p>{getStagePlainMeaning(outlook.stage)}</p>
@@ -95,21 +95,21 @@ export default async function HallmarkDetailPage({ params }: HallmarkPageProps) 
 
           <article className="detail-panel detail-panel--muted">
             <div className="panel-header panel-header--stacked">
-              <span className="section-kicker">Blockers</span>
+              <span className="section-kicker">Evidence gaps</span>
               <h2>What still has to move</h2>
             </div>
             <div className="detail-list">
               <div>
-                <strong>Main blocker</strong>
-                <p>{outlook.blocker}</p>
+                <strong>Main evidence gap</strong>
+                <p>{outlook.evidenceGap}</p>
               </div>
               <div>
                 <strong>Open question</strong>
                 <p>{insight.key_question}</p>
               </div>
               <div>
-                <strong>Best current signal</strong>
-                <p>{outlook.bestSignal}</p>
+                <strong>Strongest current evidence</strong>
+                <p>{outlook.strongestEvidence}</p>
               </div>
             </div>
           </article>
@@ -270,8 +270,8 @@ export default async function HallmarkDetailPage({ params }: HallmarkPageProps) 
                 <TriangleAlert aria-hidden="true" size={18} />
               </div>
               <div>
-                <strong>No public activity items yet.</strong>
-                <p>Research coverage can still exist here through tracks and outlook records.</p>
+                <strong>No recent activity items yet.</strong>
+                <p>Track and outlook records may still describe the current evidence for this hallmark.</p>
               </div>
             </div>
           )}
@@ -305,7 +305,7 @@ export default async function HallmarkDetailPage({ params }: HallmarkPageProps) 
                   <span>{coverage.momentum ? getMomentumLabel(coverage.momentum) : "Thin public layer"}</span>
                 </div>
                 <div className="track-card__footer">
-                  <span>{coverage.blocker ?? coverage.note}</span>
+                  <span>{coverage.evidenceGap ?? coverage.interpretation}</span>
                   <time dateTime={coverage.lastUpdated}>{formatDate(coverage.lastUpdated)}</time>
                 </div>
               </Link>

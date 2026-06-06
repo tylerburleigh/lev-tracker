@@ -1,11 +1,18 @@
 #!/usr/bin/env node
 
 import { spawn } from "node:child_process";
+import { createHash } from "node:crypto";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
 const workspaceRoot = process.cwd();
 const reportPath = "extra/editorial-quality-report.md";
+const currentLevStoryPath = "data/content/current-lev-story/current.json";
+const outlookRoot = "data/outlooks";
+const publicationEventRoot = "data/publication-events";
+const stateOfFieldRoot = "data/content/state-of-the-field";
+const publicCopyReportPath = "extra/public-copy-report.md";
+const readerTaskReportPath = "extra/reader-task-audit.md";
 
 function usage() {
   return `Usage:
@@ -76,7 +83,7 @@ function commandLine(result) {
 }
 
 function parseNarrativeStatus(output) {
-  return output.match(/Progress narrative status:\s*([a-z]+)/)?.[1];
+  return output.match(/(?:Current LEV story|Progress narrative) status:\s*([a-z]+)/)?.[1];
 }
 
 function parseCopyWarnings(output) {
@@ -101,6 +108,143 @@ function parseReaderAudit(output) {
     issues: Number(match[3]),
     warnings: Number(match[4])
   };
+}
+
+function parseReaderAuditReport(output) {
+  const passed = output.match(/Passed:\s*(\d+)/);
+  const issues = output.match(/Issues:\s*(\d+)/);
+  const warnings = output.match(/Warnings:\s*(\d+)/);
+
+  if (!passed || !issues || !warnings) {
+    return undefined;
+  }
+
+  return {
+    status: Number(issues[1]) > 0 ? "failed" : "passed",
+    passed: Number(passed[1]),
+    issues: Number(issues[1]),
+    warnings: Number(warnings[1])
+  };
+}
+
+function parseCopyReport(output) {
+  const match = output.match(/Warnings:\s*(\d+)/);
+  return match ? Number(match[1]) : undefined;
+}
+
+async function readTextIfExists(relativePath) {
+  try {
+    return await fs.readFile(path.join(workspaceRoot, relativePath), "utf8");
+  } catch (error) {
+    if (error.code === "ENOENT") {
+      return undefined;
+    }
+
+    throw error;
+  }
+}
+
+async function readJson(relativePath) {
+  return JSON.parse(await fs.readFile(path.join(workspaceRoot, relativePath), "utf8"));
+}
+
+async function readJsonCollection(relativeDir) {
+  const directoryPath = path.join(workspaceRoot, relativeDir);
+  const fileNames = (await fs.readdir(directoryPath))
+    .filter((fileName) => fileName.endsWith(".json"))
+    .sort((left, right) => left.localeCompare(right));
+
+  return Promise.all(fileNames.map((fileName) => readJson(path.join(relativeDir, fileName))));
+}
+
+function datePart(value) {
+  return String(value ?? "").slice(0, 10);
+}
+
+function compact(value) {
+  return Object.fromEntries(
+    Object.entries(value).filter(([, entryValue]) => entryValue !== undefined && entryValue !== null)
+  );
+}
+
+function unique(values) {
+  return Array.from(new Set(values.filter(Boolean)));
+}
+
+function getOutlookSnapshotPayload(outlook) {
+  return compact({
+    evidence_stage: outlook.evidence_stage,
+    momentum: outlook.momentum,
+    confidence: outlook.confidence,
+    evidence_gap: outlook.main_evidence_gaps?.[0],
+    strongest_evidence: outlook.strongest_current_evidence?.[0],
+    lev_2036_outlook: outlook.lev_2036_outlook
+  });
+}
+
+function fingerprintOutlook(outlook) {
+  return createHash("sha256")
+    .update(JSON.stringify(getOutlookSnapshotPayload(outlook)))
+    .digest("hex")
+    .slice(0, 16);
+}
+
+function snapshotOutlook(outlook) {
+  return compact({
+    outlook_id: outlook.id,
+    subject_type: outlook.subject_type,
+    subject_id: outlook.subject_id,
+    ...getOutlookSnapshotPayload(outlook),
+    last_updated: outlook.last_updated,
+    fingerprint: fingerprintOutlook(outlook)
+  });
+}
+
+function collectNarrativeOutlookIds(narrative) {
+  return unique([
+    ...(narrative.related_outlook_ids ?? []),
+    ...(narrative.recent_developments ?? []).flatMap((item) => item.related_outlook_ids ?? []),
+    ...(narrative.what_to_watch_next ?? []).flatMap((item) => item.related_outlook_ids ?? []),
+    ...(narrative.where_better_evidence_is_needed ?? []).flatMap((item) => item.related_outlook_ids ?? []),
+    ...(narrative.what_would_change_the_outlook ?? []).flatMap((item) => item.related_outlook_ids ?? []),
+    ...(narrative.track_examples_to_inspect ?? []).flatMap((item) => item.related_outlook_ids ?? []),
+    ...(narrative.revision?.triggers ?? []).flatMap((item) => item.related_outlook_ids ?? [])
+  ]).sort((left, right) => left.localeCompare(right));
+}
+
+async function computeNarrativeStatus() {
+  const [narrative, outlooks, publicationEvents, stateOfFieldEditions] = await Promise.all([
+    readJson(currentLevStoryPath),
+    readJsonCollection(outlookRoot),
+    readJsonCollection(publicationEventRoot),
+    readJsonCollection(stateOfFieldRoot)
+  ]);
+  const outlookById = new Map(outlooks.map((outlook) => [outlook.id, outlook]));
+  const currentSnapshots = new Map(
+    collectNarrativeOutlookIds(narrative)
+      .map((outlookId) => outlookById.get(outlookId))
+      .filter(Boolean)
+      .map(snapshotOutlook)
+      .map((snapshot) => [snapshot.outlook_id, snapshot])
+  );
+  const storedSnapshots = new Map(
+    (narrative.revision?.observed_outlook_states ?? []).map((snapshot) => [snapshot.outlook_id, snapshot])
+  );
+  const snapshotChanged = collectNarrativeOutlookIds(narrative).some((outlookId) => {
+    const current = currentSnapshots.get(outlookId);
+    const stored = storedSnapshots.get(outlookId);
+
+    return !current || !stored || current.fingerprint !== stored.fingerprint;
+  });
+  const hasNewOutlookEvent = publicationEvents.some(
+    (event) => event.affected_outlook_ids?.length && datePart(event.published_at) > narrative.revision.last_reviewed
+  );
+  const latestStateOfField = stateOfFieldEditions.sort((left, right) => right.date.localeCompare(left.date))[0];
+  const stateOfFieldChanged =
+    latestStateOfField && latestStateOfField.slug !== narrative.revision.observed_state_of_field_slug;
+  const reviewDue = new Date().toISOString().slice(0, 10) > narrative.revision.review_due;
+
+  return snapshotChanged || hasNewOutlookEvent || stateOfFieldChanged || reviewDue ? "stale" : "current";
 }
 
 function formatCommandBlock(result) {
@@ -130,7 +274,7 @@ function formatReport({ results, checks, copyWarnings, topTerms, readerAudit, na
     "",
     "## Summary",
     "",
-    `- Narrative status: ${narrativeStatus ?? "unknown"}`,
+    `- Current LEV story status: ${narrativeStatus ?? "unknown"}`,
     `- Public copy warnings: ${copyWarnings ?? "unknown"}`,
     `- Reader-task audit: ${
       readerAudit
@@ -186,21 +330,23 @@ async function main() {
   }
 
   const results = await Promise.all([
-    runCommand("Narrative status", ["node", "scripts/progress-narrative.mjs", "status"]),
+    runCommand("Current LEV story status", ["node", "scripts/current-lev-story.mjs", "status"]),
     runCommand("Public copy lint", publicCopyArgs),
     runCommand("Reader task audit", readerTaskArgs)
   ]);
   const narrativeResult = results[0];
   const copyResult = results[1];
   const readerResult = results[2];
-  const narrativeStatus = parseNarrativeStatus(narrativeResult.stdout);
-  const copyWarnings = parseCopyWarnings(copyResult.stdout);
+  const publicCopyReport = options.write ? await readTextIfExists(publicCopyReportPath) : undefined;
+  const readerTaskReport = options.write ? await readTextIfExists(readerTaskReportPath) : undefined;
+  const narrativeStatus = parseNarrativeStatus(narrativeResult.stdout) ?? (await computeNarrativeStatus());
+  const copyWarnings = parseCopyWarnings(copyResult.stdout) ?? (publicCopyReport ? parseCopyReport(publicCopyReport) : undefined);
   const topTerms = parseTopTerms(copyResult.stdout);
-  const readerAudit = parseReaderAudit(readerResult.stdout);
+  const readerAudit = parseReaderAudit(readerResult.stdout) ?? (readerTaskReport ? parseReaderAuditReport(readerTaskReport) : undefined);
   const checks = [];
 
   checks.push({
-    label: "Narrative is current",
+    label: "Current LEV story is current",
     result: narrativeStatus === "current" && narrativeResult.exitCode === 0 ? "pass" : "fail",
     detail: `Status is ${narrativeStatus ?? "unknown"}.`
   });
@@ -233,9 +379,9 @@ async function main() {
   const failedChecks = checks.filter((check) => check.result === "fail");
 
   process.stdout.write(
-    `Editorial quality audit: ${failedChecks.length ? "needs attention" : "passed"}; narrative ${narrativeStatus ?? "unknown"}; copy warnings ${
-      copyWarnings ?? "unknown"
-    }; reader issues ${readerAudit?.issues ?? "unknown"}.\n`
+    `Editorial quality audit: ${failedChecks.length ? "needs attention" : "passed"}; current LEV story ${
+      narrativeStatus ?? "unknown"
+    }; copy warnings ${copyWarnings ?? "unknown"}; reader issues ${readerAudit?.issues ?? "unknown"}.\n`
   );
 
   if (options.write) {

@@ -5,25 +5,25 @@
   "name": "Insulin and IGF Axis Modulation Track Outlook",
   "subject_type": "track",
   "subject_id": "insulin-igf-axis-modulation",
-  "current_stage": "human_biomarker_signal",
+  "evidence_stage": "human_biomarker_signal",
   "momentum": "steady",
   "confidence": "low",
-  "main_blockers": [
+  "main_evidence_gaps": [
     "The strongest human-relevant support comes from rare genetic natural experiments, centenarian genetics, observational IGF-1 survival analyses, and FMD biomarker movement rather than intentional intervention trials about aging itself.",
     "Human GH/IGF and protein-intake signals are strongly age-, sex-, tissue-, disease-history-, and baseline-nutrition-dependent, making broad axis suppression unsafe to infer.",
     "Severe lifelong GH receptor deficiency, IGF1R mutations, and mouse genetic models are not directly translatable into adult-onset preventive therapies.",
     "Growth hormone and IGF biology supports muscle, bone, tissue repair, and glucose regulation in some contexts, so endocrine modulation has material frailty, repair, cancer, and diabetes tradeoffs.",
     "Acarbose and fasting-mimicking diet are important adjacent signals but overlap caloric-restriction-mimetic and autophagy tracks and should not be treated as proof of a specific insulin/IGF-axis therapy."
   ],
-  "best_current_signals": [
+  "strongest_current_evidence": [
     "The Ecuadorian GHRD cohort links severe GH receptor and IGF-1 deficiency to low insulin resistance, low diabetes prevalence, and low cancer prevalence in a rare human natural experiment.",
     "IGF1R variants in centenarians and lower IGF-1 survival associations in exceptional-longevity cohorts support human genetic and observational plausibility for reduced insulin/IGF signaling, with subgroup limits.",
     "Three monthly FMD cycles reduced IGF-1 and other risk markers in a randomized human biomarker trial, but without functional, disease-incidence, or mortality endpoints.",
     "Adult-onset and tissue-specific GHR disruption, IGF1R heterozygosity, FIRKO mice, IRS1 null mice, and acarbose all support animal lifespan or healthspan relevance for insulin/GH/IGF signaling.",
     "Protein-intake and GH-administration studies provide important negative or mixed human-use boundaries: protein restriction may be age-dependent, and GH administration in older adults caused frequent adverse effects."
   ],
-  "forecast_note": "Insulin and IGF axis modulation earns a low-confidence human_biomarker_signal baseline. The biology has unusually strong cross-species genetic support and human natural-experiment plausibility, but there is no human intervention about aging itself showing long-lasting functional, disease, or mortality benefit from intentionally lowering or reshaping insulin/GH/IGF signaling. The public framing should emphasize precise axis, tissue, sex, age, and nutrition context rather than broad endocrine suppression.",
-  "rating_change_criteria": [
+  "interpretation_note": "Insulin and IGF axis modulation earns a low-confidence human_biomarker_signal baseline. The biology has unusually strong cross-species genetic support and human natural-experiment plausibility, but there is no human intervention about aging itself showing long-lasting functional, disease, or mortality benefit from intentionally lowering or reshaping insulin/GH/IGF signaling. The public framing should emphasize precise axis, tissue, sex, age, and nutrition context rather than broad endocrine suppression.",
+  "what_would_change_the_rating": [
     "A move to evidence that people function better would require a randomized human intervention that intentionally modulates insulin, GH, IGF-1, IGF1R, or a defined downstream node and improves prespecified physical function, frailty, immune resilience, cognition, or another aging-relevant functional endpoint without unacceptable endocrine harms.",
     "A move toward long-lasting disease or mortality relevance would require long-term controlled evidence that a defined axis-modulating strategy reduces age-related disease incidence, multimorbidity, disability, or mortality-relevant outcomes in an appropriate risk group.",
     "Confidence would improve if adult-onset partial modulation, tissue-selective delivery, or responder selection reproduces target change and safety in humans while preserving muscle, bone, repair, and glucose control.",
@@ -31,7 +31,7 @@
     "The rating should weaken if larger human biomarker studies fail to reproduce IGF-1 or insulin-resistance improvements, or if endocrine adverse effects, frailty, sarcopenia, impaired repair, or glucose dysregulation dominate plausible preventive-use strategies."
   ],
   "earliest_plausible_window": "No credible LEV-relevant window can be assigned from current evidence. Near-term progress would most likely come from safer tissue-selective or responder-selected endocrine modulation and from human trials measuring function in addition to IGF-1 or insulin markers.",
-  "scenario_2036_status": "speculative",
+  "lev_2036_outlook": "speculative",
   "supporting_finding_ids": [
     "ghr-deficiency-reduced-human-cancer-diabetes-signaling",
     "igf1r-centenarian-mutations-reduced-signaling",
@@ -50,7 +50,7 @@
   "supporting_evidence": [
     {
       "label": "Stage assignment",
-      "outlook_field": "current_stage",
+      "outlook_field": "evidence_stage",
       "conclusion": "The track reaches human_biomarker_signal because direct human evidence shows pathway and risk-marker relevance, but it does not show that people function better or reach long-lasting disease relevance for an intentional aging intervention.",
       "support_role": "supports",
       "rationale": "The GHRD natural experiment links low GH/IGF signaling to low insulin resistance, cancer, and diabetes; centenarian IGF1R and nonagenarian IGF-1 studies add human longevity plausibility; and FMD provides randomized human IGF-1 biomarker movement.",
@@ -75,7 +75,7 @@
     },
     {
       "label": "Animal lifespan and healthspan biology",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "Animal studies provide strong biological plausibility that insulin/GH/IGF signaling can affect lifespan and healthspan, but they remain below a human intervention upgrade.",
       "support_role": "supports",
       "rationale": "Partial IGF1R deficiency, adult-onset GHR disruption, adipocyte-specific GHR disruption, fat-specific insulin receptor deletion, IRS1 deletion, and acarbose all point to insulin/GH/IGF-linked nutrient sensing as an aging-relevant pathway.",
@@ -106,7 +106,7 @@
     },
     {
       "label": "Human-use and safety boundary",
-      "outlook_field": "main_blockers",
+      "outlook_field": "main_evidence_gaps",
       "conclusion": "Moving this into people is constrained by age-dependent nutrition signals and endocrine adverse effects.",
       "support_role": "limits",
       "rationale": "The protein-intake study reported opposite mortality associations in middle-aged versus older adults, while the older-adult GH randomized trial showed body-composition changes accompanied by glucose intolerance, diabetes, edema, carpal tunnel syndrome, and arthralgia signals.",

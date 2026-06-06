@@ -5,31 +5,31 @@
   "name": "Telomere Protection and Capping Track Outlook",
   "subject_type": "track",
   "subject_id": "telomere-protection-and-capping",
-  "current_stage": "animal_signal",
+  "evidence_stage": "animal_signal",
   "momentum": "uncertain",
   "confidence": "low",
-  "main_blockers": [
+  "main_evidence_gaps": [
     "The most direct therapeutic signal is AAV9-TRF1 in mice; no capping- or shelterin-directed human intervention with telomere-capping endpoints is identified in this baseline.",
     "Human evidence mainly shows that telomere uncapping and dysfunctional telomeres are age- and disease-associated biomarkers, not that restoring capping improves human function or disease.",
     "Shelterin biology appears dose- and context-sensitive: TRF2 loss causes dysfunction, but TRF2 overexpression can also produce telomere loss, DNA damage, premature tissue deterioration, and cancer in mice.",
     "Adjacent senolytic results reduce endothelial telomere dysfunction markers in aged mice but may work by clearing senescent cells rather than directly preserving telomere caps.",
     "Translation would require durable, tissue-appropriate delivery or small molecules that improve capping without increasing clonal expansion, genomic instability, or cancer risk."
   ],
-  "best_current_signals": [
+  "strongest_current_evidence": [
     "AAV9-TRF1 treatment in adult and old mice improved multiple healthspan markers and reduced short-telomere or telomere-associated DNA-damage signals in some tissues without median telomere lengthening.",
     "Human artery studies link age and hypertension to greater telomere uncapping and p53/p21 senescence signaling independent of mean telomere length.",
     "Endothelial-specific telomere dysfunction in mice induced senescence plus vascular and metabolic impairment, making the target biology causal in animals.",
     "Dasatinib plus quercetin reduced endothelial telomere dysfunction-induced foci in old mice, but this is an adjacent senolytic signal rather than direct shelterin repair."
   ],
-  "forecast_note": "Telomere protection and capping merits a first public baseline at animal_signal. The track has coherent shelterin biology, human biomarker relevance, and one direct mouse AAV9-TRF1 healthspan intervention. It should not be upgraded to human_biomarker_signal because the human evidence is observational or cell-based and does not test a capping-directed therapy. Confidence stays low because the biology is bidirectional and safety-sensitive: both inadequate and excessive shelterin perturbation can be harmful.",
-  "rating_change_criteria": [
+  "interpretation_note": "Telomere protection and capping merits a first public baseline at animal_signal. The track has coherent shelterin biology, human biomarker relevance, and one direct mouse AAV9-TRF1 healthspan intervention. It should not be upgraded to human_biomarker_signal because the human evidence is observational or cell-based and does not test a capping-directed therapy. Confidence stays low because the biology is bidirectional and safety-sensitive: both inadequate and excessive shelterin perturbation can be harmful.",
+  "what_would_change_the_rating": [
     "A human_biomarker_signal upgrade would require a capping- or shelterin-directed intervention in humans that improves prespecified telomere-capping or telomere-dysfunction markers without concerning genomic-instability signals.",
     "A human_functional_benefit upgrade would require human function, tissue performance, or disease-relevant endpoint improvement tied to improved telomere-capping biology, not only leukocyte telomere length or generic senescence markers.",
     "Higher confidence would need independent replication of AAV9-TRF1-like benefit, clearer dose and tissue windows for shelterin modulation, and longer-term cancer and clonal-expansion surveillance.",
     "The rating would weaken if direct capping interventions fail replication, if shelterin upregulation consistently worsens telomere damage, or if observed benefits are better explained by unrelated senolytic or anti-inflammatory mechanisms."
   ],
   "earliest_plausible_window": "No credible LEV-relevant window can be assigned before human capping-directed biomarker and safety data exist.",
-  "scenario_2036_status": "speculative",
+  "lev_2036_outlook": "speculative",
   "supporting_finding_ids": [
     "aav9-trf1-improved-mouse-healthspan-without-lengthening",
     "human-arterial-uncapping-increases-with-age",
@@ -43,7 +43,7 @@
   "supporting_evidence": [
     {
       "label": "Stage assignment",
-      "outlook_field": "current_stage",
+      "outlook_field": "evidence_stage",
       "conclusion": "The track reaches animal_signal because AAV9-TRF1 improved mouse healthspan markers and reduced short-telomere or telomere-associated DNA-damage signals without median telomere lengthening.",
       "support_role": "supports",
       "rationale": "AAV9-TRF1 is a direct shelterin/capping intervention in adult and old mice, which is more track-specific than generic telomere-length modulation.",
@@ -61,7 +61,7 @@
     },
     {
       "label": "Human target relevance",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "Human artery and endothelial-cell data support telomere uncapping as an aging- and disease-relevant biomarker, but not a human intervention signal.",
       "support_role": "supports",
       "rationale": "Human artery studies show more uncapping with age and hypertension, and the endothelial-cell study reports more dysfunctional telomeres in older human donor cells.",
@@ -83,7 +83,7 @@
     },
     {
       "label": "Causal animal biology",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "TRF2 and endothelial telomere dysfunction models make the capping biology causal for vascular and metabolic aging phenotypes in mice.",
       "support_role": "supports",
       "rationale": "TRF2 deletion and endothelial-specific telomere dysfunction both induce senescence and functional impairment, showing that deprotected telomeres can drive aging-relevant phenotypes.",
@@ -103,7 +103,7 @@
     },
     {
       "label": "Adjacent intervention signal",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "D+Q senolytics reduced endothelial telomere dysfunction markers in old mice, but this should be treated as adjacent rather than direct capping therapy.",
       "support_role": "balances",
       "rationale": "The senolytic study indicates that aged endothelial-cell populations can show fewer telomere dysfunction-induced foci after intervention, but the mechanism is likely senescent-cell clearance rather than capping repair.",
@@ -121,7 +121,7 @@
     },
     {
       "label": "Safety and calibration boundary",
-      "outlook_field": "main_blockers",
+      "outlook_field": "main_evidence_gaps",
       "conclusion": "Shelterin modulation is not simply a more-is-better target: TRF2 overexpression produced harmful skin, DNA-damage, and cancer phenotypes in mice.",
       "support_role": "limits",
       "rationale": "This boundary matters because telomere capping therapies may need tissue-specific and dose-specific tuning rather than broad shelterin upregulation.",

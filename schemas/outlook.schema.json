@@ -11,10 +11,10 @@
     "name",
     "subject_type",
     "subject_id",
-    "current_stage",
+    "evidence_stage",
     "momentum",
     "confidence",
-    "forecast_note",
+    "interpretation_note",
     "last_updated"
   ],
   "properties": {
@@ -55,7 +55,7 @@
     "subject_id": {
       "$ref": "./common.schema.json#/$defs/identifier"
     },
-    "current_stage": {
+    "evidence_stage": {
       "$ref": "./common.schema.json#/$defs/progressStage"
     },
     "momentum": {
@@ -64,22 +64,22 @@
     "confidence": {
       "$ref": "./common.schema.json#/$defs/confidence"
     },
-    "main_blockers": {
+    "main_evidence_gaps": {
       "type": "array",
       "items": {
         "type": "string"
       }
     },
-    "best_current_signals": {
+    "strongest_current_evidence": {
       "type": "array",
       "items": {
         "type": "string"
       }
     },
-    "forecast_note": {
+    "interpretation_note": {
       "type": "string"
     },
-    "rating_change_criteria": {
+    "what_would_change_the_rating": {
       "type": "array",
       "items": {
         "type": "string"
@@ -88,8 +88,8 @@
     "earliest_plausible_window": {
       "type": "string"
     },
-    "scenario_2036_status": {
-      "$ref": "./common.schema.json#/$defs/scenario2036Status"
+    "lev_2036_outlook": {
+      "$ref": "./common.schema.json#/$defs/lev2036Outlook"
     },
     "supporting_finding_ids": {
       "type": "array",

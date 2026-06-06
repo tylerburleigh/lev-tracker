@@ -30,7 +30,7 @@ It has:
 - a scan-first homepage
 - inspectable detail pages for hallmarks, tracks, interventions, and evidence
 - a separate activity lane
-- a readable editorial layer for forecast and interpretation
+- a readable editorial layer for outlook and interpretation
 
 ## Navigation
 
@@ -47,7 +47,7 @@ Global utilities:
 
 - search
 - latest update timestamp
-- evidence / interpretation / forecast legend
+- evidence / interpretation / outlook legend
 
 The site should not lead with a conventional marketing nav. It should feel like an operational knowledge product.
 
@@ -102,12 +102,12 @@ The first viewport should not require scrolling to find the hallmark grid.
 Fields:
 
 - overall state
-- current stage
+- evidence stage
 - momentum
 - confidence
-- main blockers
-- best current signals
-- short forecast note
+- main evidence gaps
+- strongest current evidence
+- short interpretation note
 
 This is the main answer to "where are we overall?"
 
@@ -124,10 +124,10 @@ Reason:
 Each card should show:
 
 - hallmark name
-- current stage
+- evidence stage
 - momentum
 - confidence
-- top blocker
+- top evidence gap
 - number of active tracks
 - last meaningful update
 
@@ -154,7 +154,7 @@ This is a distinct panel, not the primary framing of the entire site.
 
 Fields:
 
-- scenario status
+- 2036 LEV outlook
 - short explanation
 - what would need to change to move the status
 
@@ -173,7 +173,7 @@ Must communicate:
 
 - human-reviewed
 - source-backed
-- evidence, interpretation, and forecast are distinct
+- evidence, interpretation, and outlook are distinct
 
 ## Hallmarks Index
 
@@ -205,12 +205,12 @@ Explain one hallmark in a way that combines structure, evidence, and judgment.
 ### Page Order
 
 1. Hallmark outlook
-2. Progress ladder and current stage
+2. Progress ladder and evidence stage
 3. Tracks in this hallmark
 4. Leading interventions
 5. Strongest findings
 6. Recent activity
-7. Forecast note and blockers
+7. Interpretation note and evidence gaps
 
 ### Hero Block
 
@@ -218,11 +218,11 @@ Fields:
 
 - hallmark name
 - one-sentence description
-- current stage
+- evidence stage
 - momentum
 - confidence
-- main blocker
-- best current signal
+- main evidence gap
+- strongest current evidence
 - last updated
 
 ### Progress Ladder Module
@@ -237,7 +237,7 @@ Show the shared five-stage ladder:
 
 The page should clearly mark:
 
-- current stage
+- evidence stage
 - what evidence supports that stage
 - what evidence is missing for the next stage
 
@@ -253,8 +253,8 @@ Each track row or card should show:
 - momentum
 - confidence
 - top interventions
-- strongest signal
-- main blocker
+- strongest evidence
+- main evidence gap
 
 Default sort:
 
@@ -322,7 +322,7 @@ Each row should show:
 
 - track
 - primary hallmark
-- current stage
+- evidence stage
 - momentum
 - confidence
 - number of interventions
@@ -343,8 +343,8 @@ If a user wants to understand what is actually happening in the field, they will
 2. Target rationale
 3. Interventions
 4. Evidence ladder
-5. Best signals
-6. Blockers and open questions
+5. Strongest evidence
+6. Evidence gaps and open questions
 7. Recent changes
 8. Related hallmarks
 
@@ -355,12 +355,12 @@ Fields:
 - track name
 - primary hallmark
 - summary
-- current stage
+- evidence stage
 - momentum
 - confidence
-- main blocker
-- best current signal
-- 2036 scenario status if relevant
+- main evidence gap
+- strongest current evidence
+- LEV 2036 outlook if relevant
 
 ### Evidence Ladder Module
 
@@ -487,7 +487,7 @@ Defend the product's credibility.
 - what the tracker is
 - what counts as evidence
 - how stages move
-- difference between evidence, interpretation, and forecast
+- difference between evidence, interpretation, and outlook
 - what activity items mean
 - review and publication workflow
 - known limitations
@@ -504,8 +504,8 @@ Fields:
 - stage
 - momentum
 - confidence
-- blocker
-- signal
+- evidence gap
+- strongest evidence
 - last updated
 
 ### Stage Ladder
@@ -554,7 +554,7 @@ Before the frontend is scaffolded, the data layer should support:
 - one outlook per hallmark
 - optional outlook per track
 - track records derived from the seeded taxonomy
-- publication events that drive recent changes
+- public updates that drive recent changes
 
 ## Next Build Step
 

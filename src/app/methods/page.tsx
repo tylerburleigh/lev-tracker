@@ -5,9 +5,9 @@ import { getOverallLastUpdated } from "@/lib/site-data";
 
 const sections = [
   {
-    title: "What the tracker is",
+    title: "What the map is",
     body:
-      "A public evidence map and progress tracker for longevity escape velocity, organized by the Hallmarks of Aging and translated into a curator-facing outlook layer."
+      "A public evidence map for longevity escape velocity, organized by the Hallmarks of Aging, with outlooks that summarize how strong each claim looks right now."
   },
   {
     title: "What counts as evidence",
@@ -22,7 +22,7 @@ const sections = [
   {
     title: "What gets published",
     body:
-      "Automation can search, draft, and revise. Public changes are still human-reviewed before publication."
+      "Search and drafting can be assisted by tooling. Public changes are still reviewed before publication."
   }
 ];
 
@@ -37,13 +37,13 @@ const legendSections = [
     id: "interpretation",
     title: "Interpretation",
     body:
-      "The curator judgment that turns evidence into a stage, confidence level, blocker, or reason not to upgrade a claim."
+      "The judgment layer that turns evidence into a stage, confidence level, evidence gap, or reason not to upgrade a claim."
   },
   {
-    id: "forecast",
-    title: "Forecast",
+    id: "outlook",
+    title: "Outlook",
     body:
-      "The forward-looking outlook layer: what the current record suggests, what would change it, and where uncertainty remains."
+      "The forward-looking judgment layer: what the current record suggests, what would change the outlook, and where uncertainty remains."
   }
 ];
 
@@ -55,13 +55,13 @@ export default async function MethodsPage() {
       <PageHero
         kicker="Methods"
         title="Trust model"
-        summary="The site separates evidence, interpretation, and forecast so field movement does not automatically become public belief."
+        summary="The site separates evidence, interpretation, and outlook so field movement does not automatically become evidence of progress."
       />
       <section className="band">
         <div className="page-shell section-header">
           <div>
             <span className="section-kicker">Legend</span>
-            <h2>Evidence, interpretation, forecast</h2>
+            <h2>Evidence, interpretation, outlook</h2>
           </div>
         </div>
         <div className="page-shell methods-grid method-anchor-grid">

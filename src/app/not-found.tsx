@@ -12,7 +12,7 @@ export default async function NotFound() {
       <section className="band">
         <div className="page-shell empty-state">
           <p className="section-kicker">Not found</p>
-          <h1>This page is not in the public map yet.</h1>
+          <h1>This page is not in the evidence map yet.</h1>
           <Link className="section-link section-link--block" href="/">
             Return to overview
           </Link>

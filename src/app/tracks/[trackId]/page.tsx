@@ -219,10 +219,10 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
         <div className="page-shell hallmark-outlook-grid">
           <article className="detail-panel">
             <div className="panel-header panel-header--stacked">
-              <span className="section-kicker">Forecast note</span>
+              <span className="section-kicker">Interpretation note</span>
               <h2>{coverage.stage ? getStageLabel(coverage.stage) : coverage.statusLabel}</h2>
             </div>
-            <p>{coverage.note}</p>
+            <p>{coverage.interpretation}</p>
             {coverage.stage ? (
               <div className="plain-meaning">
                 <strong>Plain meaning</strong>
@@ -244,23 +244,23 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
           </article>
           <article className="detail-panel detail-panel--muted">
             <div className="panel-header panel-header--stacked">
-              <span className="section-kicker">Blockers and questions</span>
+              <span className="section-kicker">Evidence gaps and questions</span>
               <h2>What would change this?</h2>
             </div>
             <div className="detail-list">
               <div>
-                <strong>Main blocker</strong>
-                <p>{coverage.blocker ?? "Coverage is still thin in the public layer."}</p>
+                <strong>Main evidence gap</strong>
+                <p>{coverage.evidenceGap ?? "Coverage is still thin in the public layer."}</p>
               </div>
               <div>
-                <strong>Best current signal</strong>
-                <p>{coverage.bestSignal ?? "The track is seeded, but still light on public evidence summaries."}</p>
+                <strong>Strongest current evidence</strong>
+                <p>{coverage.strongestEvidence ?? "The track is seeded, but still light on public evidence summaries."}</p>
               </div>
               <div>
                 <strong>Open rating questions</strong>
-                {coverage.ratingChangeCriteria?.length ? (
+                {coverage.whatWouldChangeTheRating?.length ? (
                   <ul className="bullet-list">
-                    {coverage.ratingChangeCriteria.slice(0, 3).map((criterion) => (
+                    {coverage.whatWouldChangeTheRating.slice(0, 3).map((criterion) => (
                       <li key={criterion}>{criterion}</li>
                     ))}
                   </ul>
@@ -357,14 +357,14 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
             </div>
           </div>
           <div className="page-shell evidence-bridge">
-            {coverage.ratingChangeCriteria?.length ? (
+            {coverage.whatWouldChangeTheRating?.length ? (
               <article className="evidence-next-card">
                 <div>
                   <span className="section-kicker">Evidence bar</span>
                   <h3>What would change this rating?</h3>
                 </div>
                 <ul>
-                  {coverage.ratingChangeCriteria.map((criterion) => (
+                  {coverage.whatWouldChangeTheRating.map((criterion) => (
                     <li key={criterion}>{criterion}</li>
                   ))}
                 </ul>

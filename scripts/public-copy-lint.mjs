@@ -86,44 +86,44 @@ function addTextArray(records, source, fieldPath, values) {
   }
 }
 
-function collectProgressNarrative(records, source, narrative) {
-  for (const field of ["title", "summary", "where_we_are_now", "what_changed_recently"]) {
+function collectCurrentLevStory(records, source, narrative) {
+  for (const field of ["title", "summary", "current_evidence_picture", "what_changed"]) {
     addText(records, source, `$.${field}`, narrative[field]);
   }
 
-  for (const [index, step] of (narrative.journey_steps ?? []).entries()) {
-    addText(records, source, `$.journey_steps[${index}].label`, step.label);
-    addText(records, source, `$.journey_steps[${index}].title`, step.title);
-    addText(records, source, `$.journey_steps[${index}].summary`, step.summary);
+  for (const [index, step] of (narrative.before_now_next ?? []).entries()) {
+    addText(records, source, `$.before_now_next[${index}].label`, step.label);
+    addText(records, source, `$.before_now_next[${index}].title`, step.title);
+    addText(records, source, `$.before_now_next[${index}].summary`, step.summary);
   }
 
-  for (const [index, moment] of (narrative.progress_moments ?? []).entries()) {
-    addText(records, source, `$.progress_moments[${index}].label`, moment.label);
-    addText(records, source, `$.progress_moments[${index}].summary`, moment.summary);
-    addText(records, source, `$.progress_moments[${index}].impact_on_outlook`, moment.impact_on_outlook);
+  for (const [index, moment] of (narrative.recent_developments ?? []).entries()) {
+    addText(records, source, `$.recent_developments[${index}].label`, moment.label);
+    addText(records, source, `$.recent_developments[${index}].summary`, moment.summary);
+    addText(records, source, `$.recent_developments[${index}].impact_on_outlook`, moment.impact_on_outlook);
   }
 
-  for (const [index, item] of (narrative.watchlist ?? []).entries()) {
-    addText(records, source, `$.watchlist[${index}].label`, item.label);
-    addText(records, source, `$.watchlist[${index}].summary`, item.summary);
-    addText(records, source, `$.watchlist[${index}].signal_to_watch`, item.signal_to_watch);
+  for (const [index, item] of (narrative.what_to_watch_next ?? []).entries()) {
+    addText(records, source, `$.what_to_watch_next[${index}].label`, item.label);
+    addText(records, source, `$.what_to_watch_next[${index}].summary`, item.summary);
+    addText(records, source, `$.what_to_watch_next[${index}].what_to_look_for`, item.what_to_look_for);
   }
 
-  for (const [index, priority] of (narrative.focus_priorities ?? []).entries()) {
-    addText(records, source, `$.focus_priorities[${index}].label`, priority.label);
-    addText(records, source, `$.focus_priorities[${index}].rationale`, priority.rationale);
-    addText(records, source, `$.focus_priorities[${index}].next_useful_work`, priority.next_useful_work);
+  for (const [index, priority] of (narrative.where_better_evidence_is_needed ?? []).entries()) {
+    addText(records, source, `$.where_better_evidence_is_needed[${index}].label`, priority.label);
+    addText(records, source, `$.where_better_evidence_is_needed[${index}].rationale`, priority.rationale);
+    addText(records, source, `$.where_better_evidence_is_needed[${index}].what_better_evidence_would_show`, priority.what_better_evidence_would_show);
   }
 
-  for (const [index, item] of (narrative.change_mind_items ?? []).entries()) {
-    addText(records, source, `$.change_mind_items[${index}].label`, item.label);
-    addText(records, source, `$.change_mind_items[${index}].summary`, item.summary);
+  for (const [index, item] of (narrative.what_would_change_the_outlook ?? []).entries()) {
+    addText(records, source, `$.what_would_change_the_outlook[${index}].label`, item.label);
+    addText(records, source, `$.what_would_change_the_outlook[${index}].summary`, item.summary);
   }
 
-  for (const [index, example] of (narrative.spotlight_examples ?? []).entries()) {
-    addText(records, source, `$.spotlight_examples[${index}].label`, example.label);
-    addText(records, source, `$.spotlight_examples[${index}].title`, example.title);
-    addText(records, source, `$.spotlight_examples[${index}].summary`, example.summary);
+  for (const [index, example] of (narrative.track_examples_to_inspect ?? []).entries()) {
+    addText(records, source, `$.track_examples_to_inspect[${index}].label`, example.label);
+    addText(records, source, `$.track_examples_to_inspect[${index}].title`, example.title);
+    addText(records, source, `$.track_examples_to_inspect[${index}].summary`, example.summary);
   }
 }
 
@@ -143,10 +143,10 @@ function collectHallmarkInsights(records, source, insights) {
 
 function collectOutlook(records, source, outlook) {
   addText(records, source, "$.name", outlook.name);
-  addTextArray(records, source, "$.main_blockers", outlook.main_blockers);
-  addTextArray(records, source, "$.best_current_signals", outlook.best_current_signals);
-  addText(records, source, "$.forecast_note", outlook.forecast_note);
-  addTextArray(records, source, "$.rating_change_criteria", outlook.rating_change_criteria);
+  addTextArray(records, source, "$.main_evidence_gaps", outlook.main_evidence_gaps);
+  addTextArray(records, source, "$.strongest_current_evidence", outlook.strongest_current_evidence);
+  addText(records, source, "$.interpretation_note", outlook.interpretation_note);
+  addTextArray(records, source, "$.what_would_change_the_rating", outlook.what_would_change_the_rating);
 
   for (const [index, evidence] of (outlook.supporting_evidence ?? []).entries()) {
     addText(records, source, `$.supporting_evidence[${index}].label`, evidence.label);
@@ -194,12 +194,12 @@ function collectTrackTaxonomy(records, source, taxonomy) {
 
 async function collectStructuredRecords() {
   const records = [];
-  const narrativePath = "data/content/progress-narrative/current.json";
+  const narrativePath = "data/content/current-lev-story/current.json";
   const hallmarkInsightsPath = "data/content/hallmark-insights.json";
   const hallmarkTaxonomyPath = "taxonomies/hallmarks-of-aging.v1.json";
   const trackTaxonomyPath = "taxonomies/track-taxonomy.v1.json";
 
-  collectProgressNarrative(records, narrativePath, await readJson(narrativePath));
+  collectCurrentLevStory(records, narrativePath, await readJson(narrativePath));
   collectHallmarkInsights(records, hallmarkInsightsPath, await readJson(hallmarkInsightsPath));
   collectHallmarkTaxonomy(records, hallmarkTaxonomyPath, await readJson(hallmarkTaxonomyPath));
   collectTrackTaxonomy(records, trackTaxonomyPath, await readJson(trackTaxonomyPath));

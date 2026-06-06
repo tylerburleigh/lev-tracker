@@ -106,10 +106,10 @@ export default async function TracksIndexPage({ searchParams }: TracksIndexPageP
       track.summary,
       ...(track.search_aliases ?? []),
       ...(track.exemplar_interventions ?? []),
-      coverage.note,
-      coverage.blocker,
-      coverage.bestSignal,
-      ...(coverage.ratingChangeCriteria ?? []),
+      coverage.interpretation,
+      coverage.evidenceGap,
+      coverage.strongestEvidence,
+      ...(coverage.whatWouldChangeTheRating ?? []),
       ...(coverage.supportingFindingIds ?? []),
       ...(coverage.supportingEvidence?.flatMap((item) => [
         item.label,
@@ -143,7 +143,7 @@ export default async function TracksIndexPage({ searchParams }: TracksIndexPageP
       >
         <div className="page-hero__stats">
           <span>{tracks.length} research tracks</span>
-          <span>{coveredCount} with first-pass public summaries</span>
+          <span>{coveredCount} with public outlooks</span>
           <span>{inProgressCount} in progress</span>
         </div>
       </PageHero>

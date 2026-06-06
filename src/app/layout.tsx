@@ -18,7 +18,7 @@ const displayFont = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Hallmarks of Aging LEV Tracker",
   description:
-    "A public evidence map and progress tracker for longevity escape velocity, organized by the Hallmarks of Aging."
+    "A public evidence map for longevity escape velocity, organized by the Hallmarks of Aging and focused on field evidence, evidence gaps, and results that would matter."
 };
 
 export default function RootLayout({

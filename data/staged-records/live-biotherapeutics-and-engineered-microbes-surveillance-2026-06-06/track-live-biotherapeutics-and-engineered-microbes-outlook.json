@@ -5,25 +5,25 @@
   "name": "Live Biotherapeutics and Engineered Microbes Track Outlook",
   "subject_type": "track",
   "subject_id": "live-biotherapeutics-and-engineered-microbes",
-  "current_stage": "human_functional_benefit",
+  "evidence_stage": "human_functional_benefit",
   "momentum": "accelerating",
   "confidence": "low",
-  "main_blockers": [
+  "main_evidence_gaps": [
     "The human functional signal is narrow and strain-specific, anchored mainly by one small TWK10 frailty trial and supplemented by a short PA53 older-adult well-being and gut-health trial rather than replicated aging-function studies across the modality.",
     "The strongest Akkermansia human evidence is metabolic and cardiometabolic biomarker evidence, and some of the clearest effects come from pasteurized rather than live products.",
     "Engineered-microbe evidence that is closest to aging is still preclinical, dominated by C. elegans lifespan or healthspan models and microbe-derived metabolites.",
     "Human engineered-live-biotherapeutic trials show feasibility and pharmacodynamics in rare metabolic disease, but not aging, frailty, intrinsic capacity, dysbiosis reversal, or chronic prevention.",
     "Translation depends on strain selection, baseline microbiome state, colonization, dosing durability, safety under chronic use, manufacturing quality, and avoiding broad probiotic generalization."
   ],
-  "best_current_signals": [
+  "strongest_current_evidence": [
     "Lactobacillus plantarum TWK10 improved muscle and functional measures in frail older adults over 18 weeks, providing the primary narrow human functional anchor.",
     "Pediococcus acidilactici PA53 improved older-adult happiness, gastrointestinal symptoms, stool form, sleep quality, inflammatory cytokines, and microbiota composition over 8 weeks, adding a second bounded older-adult human signal without changing confidence.",
     "Akkermansia muciniphila trials now include 2019, 2025, and 2026 human RCTs with safety and metabolic biomarker or weight-maintenance signals, including baseline-dependent response.",
     "JS-3 and engineered E. coli/colanic-acid studies show direct preclinical aging or healthspan signals in C. elegans and other models.",
     "SYNB1618 demonstrates that engineered E. coli Nissle can be dosed in humans with measurable pharmacodynamic activity, though in phenylketonuria rather than aging."
   ],
-  "forecast_note": "Live biotherapeutics and engineered microbes retain a low-confidence human_functional_benefit baseline only if the rating is read narrowly: TWK10 supplies the primary frail-older-adult functional signal, PA53 adds short-term older-adult well-being, gut-symptom, sleep, inflammatory-biomarker, and microbiota support, Akkermansia supplies stronger biomarker and metabolic translation, and engineered microbes supply platform feasibility plus preclinical aging biology. The track should not be interpreted as having broad or durable aging efficacy until replicated strain-defined trials show functional, intrinsic-capacity, disease-progression, or durability benefits in aging-relevant populations.",
-  "rating_change_criteria": [
+  "interpretation_note": "Live biotherapeutics and engineered microbes retain a low-confidence human_functional_benefit baseline only if the rating is read narrowly: TWK10 supplies the primary frail-older-adult functional signal, PA53 adds short-term older-adult well-being, gut-symptom, sleep, inflammatory-biomarker, and microbiota support, Akkermansia supplies stronger biomarker and metabolic translation, and engineered microbes supply platform feasibility plus preclinical aging biology. The track should not be interpreted as having broad or durable aging efficacy until replicated strain-defined trials show functional, intrinsic-capacity, disease-progression, or durability benefits in aging-relevant populations.",
+  "what_would_change_the_rating": [
     "Higher confidence at human_functional_benefit would require independent replication of TWK10-like, PA53-like, or other strain-defined live-biotherapeutic benefits on prespecified frailty, sarcopenia, cognition, immune resilience, intrinsic-capacity, gut-brain, disease-progression, or durability endpoints.",
     "A durable disease or mortality relevance upgrade would require longer controlled trials showing persistent clinical benefit, reduced age-related disease progression, or mortality-relevant outcomes without unacceptable safety or colonization risks.",
     "A biomarker-only downgrade would be warranted if the TWK10 functional signal fails replication and PA53-like well-being or gut-function signals do not replicate or are judged too subjective, short-term, or composition-overlap-dependent to support functional benefit.",
@@ -31,7 +31,7 @@
     "Akkermansia results should be treated as biomarker support unless live or pasteurized formulations produce replicated aging-relevant functional outcomes and clarify which baseline microbiome states respond."
   ],
   "earliest_plausible_window": "No credible LEV-relevant window can be assigned before replicated strain-defined human functional trials and chronic-safety packages exist.",
-  "scenario_2036_status": "speculative",
+  "lev_2036_outlook": "speculative",
   "supporting_finding_ids": [
     "twk10-improved-frailty-muscle-function",
     "pa53-improved-wellbeing-gut-health-older-adults",
@@ -46,7 +46,7 @@
   "supporting_evidence": [
     {
       "label": "Stage assignment",
-      "outlook_field": "current_stage",
+      "outlook_field": "evidence_stage",
       "conclusion": "The track reaches low-confidence human_functional_benefit because strain-defined live microbial interventions have now reported older-adult functional or well-being signals, with TWK10 remaining the strongest frailty-function anchor.",
       "support_role": "supports",
       "rationale": "TWK10 directly tested a live microbial strain against muscle and functional measures in frail older adults, while PA53 adds a shorter healthy-older-adult trial with well-being, gastrointestinal symptoms, sleep quality, inflammatory biomarkers, and microbiota composition. Together they support a narrow functional-stage baseline but not a durable or generalized aging-efficacy claim.",
@@ -67,7 +67,7 @@
     },
     {
       "label": "Older-adult gut-brain and symptom signal",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "PA53 adds a second older-adult human signal, but its endpoints keep it bounded below durable aging-function evidence.",
       "support_role": "supports",
       "rationale": "The PA53 RCT randomized 75 healthy older adults for 8 weeks and reported improvements in happiness, gastrointestinal symptoms, stool form, sleep quality, serum IL-6, TNF-alpha, IL-25, and microbiota composition.",
@@ -86,7 +86,7 @@
     },
     {
       "label": "Human biomarker and metabolic translation",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "Akkermansia provides the strongest current human biomarker and metabolic translation signal for the track.",
       "support_role": "supports",
       "rationale": "Across 2019, 2025, and 2026 human studies, Akkermansia interventions show safety and signals in insulin sensitivity, insulinemia, cholesterol, weight maintenance, HbA1c, fat mass, or baseline-dependent colonization response.",
@@ -108,7 +108,7 @@
     },
     {
       "label": "Direct aging biology and engineerable mechanisms",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "Preclinical aging and healthspan evidence supports biological plausibility for strain engineering and microbe-derived effector programs.",
       "support_role": "supports",
       "rationale": "JS-3 extends C. elegans lifespan, engineered E. coli genetic variants alter C. elegans longevity through pathways including colanic acid, and commensal indoles extend healthspan readouts across worms, flies, and mice.",
@@ -130,7 +130,7 @@
     },
     {
       "label": "Engineered human feasibility boundary",
-      "outlook_field": "main_blockers",
+      "outlook_field": "main_evidence_gaps",
       "conclusion": "Human engineered-microbe feasibility is real, but aging-directed evidence is absent.",
       "support_role": "balances",
       "rationale": "SYNB1618 shows engineered E. coli Nissle can be dosed in humans, clear after dosing, and generate strain-specific pharmacodynamic metabolites, but the indication was phenylketonuria and dosing was short.",

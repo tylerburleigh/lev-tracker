@@ -1,10 +1,10 @@
 # Publication Checklist
 
-This checklist covers the file-backed path from a reviewed candidate bundle to public records. It assumes a single human curator remains accountable for approval and publication.
+This checklist covers the file-backed path from a reviewed staged update to public records. It assumes a single human curator remains accountable for approval and publication.
 
 ## Inputs
 
-- Candidate bundle: `data/candidate-bundles/<bundle-id>.json`
+- Staged update: `data/candidate-bundles/<bundle-id>.json`
 - Staged records: `data/staged-records/<bundle-id>/`
 - Live target records referenced by each proposed change `file_path`
 - Evidence reviews in `data/evidence-reviews/`
@@ -26,7 +26,7 @@ This checklist covers the file-backed path from a reviewed candidate bundle to p
 6. Resolve or supersede any complete review with `blocking: true`, `needs_revision`, or `reject`.
 7. Close or supersede open major or critical findings when the bundle's `review_requirement` says they block approval.
 8. For track outlook changes, confirm any rating rationale is supported by concrete findings, sources, and limitations when `supporting_evidence[]` is present.
-9. Confirm the staged change does not imply a stage, confidence, scenario, or forecast upgrade unless that upgrade is explicitly proposed and reviewed.
+9. Confirm the staged change does not imply a stage, confidence, scenario, or outlook upgrade unless that upgrade is explicitly proposed and reviewed.
 
 ## Approval
 
@@ -55,7 +55,7 @@ The publish action:
 ## Post-Publish Checks
 
 1. Confirm the bundle status is `published`.
-2. Confirm a publication event exists and lists the promoted targets.
+2. Confirm a public update exists and lists the promoted targets.
 3. Confirm the live public record contains the staged change.
 4. Confirm the affected public route renders the promoted content.
 5. Regenerate research planning state:

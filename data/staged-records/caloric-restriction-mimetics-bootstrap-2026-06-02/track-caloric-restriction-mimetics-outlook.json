@@ -5,23 +5,23 @@
   "name": "Caloric Restriction Mimetics Track Outlook",
   "subject_type": "track",
   "subject_id": "caloric-restriction-mimetics",
-  "current_stage": "human_biomarker_signal",
+  "evidence_stage": "human_biomarker_signal",
   "momentum": "steady",
   "confidence": "low",
-  "main_blockers": [
+  "main_evidence_gaps": [
     "The strongest human evidence is still biomarker and risk-factor movement from fasting-mimicking diet studies, not durable human function, disease incidence, or mortality.",
     "FMD is a periodic dietary program, so its evidence should not be generalized to drug-like caloric-restriction mimetics without intervention-specific support.",
     "The most reproducible lifespan signal is acarbose in mice, with materially stronger male effects and no direct human aging trial.",
     "Sponsor, intellectual-property, secondary-analysis, and short-duration boundaries remain important for the FMD biological-age claims."
   ],
-  "best_current_signals": [
+  "strongest_current_evidence": [
     "Three monthly FMD cycles in generally healthy adults reduced aging- and disease-risk biomarkers including body fat, blood pressure, and IGF-1 without reported serious adverse effects in the main randomized trial.",
     "A 2024 FMD analysis reported movement in insulin resistance, hepatic fat, lymphoid-to-myeloid ratio, and a median biological-age estimate, with replication context from a second completed study.",
     "Short 2025 FMD studies already in the public record report autophagy and cardiometabolic marker movement in healthy adults.",
     "Acarbose repeatedly extends lifespan in genetically heterogeneous mice and improves aged-mouse physical-function and cardiac/lipid measures, but this remains animal evidence."
   ],
-  "forecast_note": "Caloric restriction mimetics merit a first public baseline at low-confidence human_biomarker_signal. FMD supplies the direct human biomarker anchor, while acarbose supplies stronger animal lifespan and healthspan evidence. The track should not be upgraded to human_functional_benefit until a mimetic intervention shows replicated, prespecified human functional or disease-relevant benefit under tolerable preventive-use conditions.",
-  "rating_change_criteria": [
+  "interpretation_note": "Caloric restriction mimetics merit a first public baseline at low-confidence human_biomarker_signal. FMD supplies the direct human biomarker anchor, while acarbose supplies stronger animal lifespan and healthspan evidence. The track should not be upgraded to human_functional_benefit until a mimetic intervention shows replicated, prespecified human functional or disease-relevant benefit under tolerable preventive-use conditions.",
+  "what_would_change_the_rating": [
     "A move to human_functional_benefit would require a randomized human trial of FMD, acarbose, or another defined mimetic showing prespecified improvement in physical function, immune resilience, frailty, cognition, or another aging-relevant functional endpoint.",
     "A move toward durable_disease_or_mortality_relevance would require long-term randomized evidence that a mimetic reduces age-related disease burden, disability, multimorbidity, or mortality rather than only changing cardiometabolic or biological-age biomarkers.",
     "Confidence would improve if FMD biological-age and immune-metabolic signals replicate independently with transparent conflict handling, prespecified endpoints, and clear separation from weight-loss effects.",
@@ -29,7 +29,7 @@
     "The rating should weaken if larger FMD studies fail to reproduce biomarker movement, if biological-age effects disappear after adjustment for weight or risk status, or if tolerability/adherence problems limit preventive use."
   ],
   "earliest_plausible_window": "No credible LEV-relevant window can be assigned from current evidence. By the late 2020s, larger FMD or glucose-spike modulation studies could clarify human biomarker reproducibility, but durable functional or disease evidence would still be needed.",
-  "scenario_2036_status": "speculative",
+  "lev_2036_outlook": "speculative",
   "supporting_finding_ids": [
     "fmd-reduced-aging-risk-markers-rct",
     "fmd-biological-age-immune-metabolic-marker-signal",
@@ -42,7 +42,7 @@
   "supporting_evidence": [
     {
       "label": "Stage assignment",
-      "outlook_field": "current_stage",
+      "outlook_field": "evidence_stage",
       "conclusion": "The track reaches human_biomarker_signal because FMD has repeated human biomarker and risk-factor signals, but it does not reach human_functional_benefit.",
       "support_role": "supports",
       "rationale": "The 2017 randomized FMD trial reported movement in body fat, blood pressure, IGF-1, and other risk markers, while the 2024 analysis reported metabolic, hepatic, immune-ratio, and biological-age marker movement. Existing 2025 FMD records add short-term autophagy and cardiometabolic marker support.",
@@ -66,7 +66,7 @@
     },
     {
       "label": "Animal lifespan and healthspan support",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "Acarbose provides robust animal lifespan and healthspan support for the track, but it remains below a human stage upgrade.",
       "support_role": "supports",
       "rationale": "The ITP acarbose study reported significant lifespan effects at multiple doses across three sites, with larger male effects, and a separate aged-mouse study reported improved physical function and cardiac/lipid aging measures.",
@@ -86,7 +86,7 @@
     },
     {
       "label": "Caloric restriction context",
-      "outlook_field": "main_blockers",
+      "outlook_field": "main_evidence_gaps",
       "conclusion": "Direct caloric restriction supports the nutrient-sensing premise but should not inflate a mimetic rating.",
       "support_role": "contextualizes",
       "rationale": "CALERIE provides controlled human caloric-restriction evidence with DunedinPACE slowing but null PhenoAge and GrimAge biological-age changes. That supports the broader nutrient-sensing rationale while remaining a full dietary-restriction intervention, not a mimetic.",

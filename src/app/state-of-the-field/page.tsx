@@ -12,8 +12,8 @@ export default async function StateOfTheFieldIndexPage() {
     <SiteShell lastUpdated={formatDate(lastUpdated)}>
       <PageHero
         kicker="State of the Field"
-        title="Editorial notes"
-        summary="Monthly notes that summarize what changed, what did not, and how the curator’s public outlook moved."
+        title="Monthly field notes"
+        summary="Monthly updates on what changed, what did not, and whether the evidence makes LEV look closer."
       />
       <section className="band">
         <div className="page-shell editorial-list">

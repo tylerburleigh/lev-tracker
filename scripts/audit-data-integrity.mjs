@@ -632,7 +632,7 @@ async function main() {
   for (const stagedDirectory of activeStagedDirectories) {
     const expectedBundle = path.join("data/candidate-bundles", `${stagedDirectory}.json`);
     if (!(await pathExists(expectedBundle))) {
-      warnings.push(`data/staged-records/${stagedDirectory}: no matching candidate bundle record found`);
+      warnings.push(`data/staged-records/${stagedDirectory}: no matching staged update record found`);
     }
   }
 

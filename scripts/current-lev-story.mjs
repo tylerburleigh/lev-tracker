@@ -5,12 +5,12 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 
 const workspaceRoot = process.cwd();
-const narrativePath = "data/content/progress-narrative/current.json";
+const currentLevStoryPath = "data/content/current-lev-story/current.json";
 const stateOfFieldRoot = "data/content/state-of-the-field";
 const outlookRoot = "data/outlooks";
 const publicationEventRoot = "data/publication-events";
-const draftJsonPath = "extra/progress-narrative-draft.json";
-const draftMarkdownPath = "extra/progress-narrative-draft.md";
+const draftJsonPath = "extra/current-lev-story-draft.json";
+const draftMarkdownPath = "extra/current-lev-story-draft.md";
 const publicCopyRulesPath = "config/public-copy-rules.json";
 
 const stageLabels = {
@@ -42,12 +42,12 @@ const jargonRules = publicCopyRules.jargon_rules;
 
 function usage() {
   return `Usage:
-  npm run narrative:progress -- status [--today YYYY-MM-DD]
-  npm run narrative:progress -- draft [--write] [--style plain|technical] [--today YYYY-MM-DD]
-  npm run narrative:progress -- snapshot [--write-current]
+  npm run story:current -- status [--today YYYY-MM-DD]
+  npm run story:current -- draft [--write] [--style plain|technical] [--today YYYY-MM-DD]
+  npm run story:current -- snapshot [--write-current]
 
 Commands:
-  status    Report whether the current public narrative needs review.
+  status    Report whether the current public LEV story needs review.
   draft     Generate a deterministic editorial draft from reviewed public records. Defaults to plain style.
   snapshot  Print or store current outlook fingerprints for future diffing.`;
 }
@@ -147,12 +147,12 @@ function readableOutlookName(outlook) {
 
 function getOutlookSnapshotPayload(outlook) {
   return compact({
-    current_stage: outlook.current_stage,
+    evidence_stage: outlook.evidence_stage,
     momentum: outlook.momentum,
     confidence: outlook.confidence,
-    blocker: outlook.main_blockers?.[0],
-    best_signal: outlook.best_current_signals?.[0],
-    scenario_2036_status: outlook.scenario_2036_status
+    evidence_gap: outlook.main_evidence_gaps?.[0],
+    strongest_evidence: outlook.strongest_current_evidence?.[0],
+    lev_2036_outlook: outlook.lev_2036_outlook
   });
 }
 
@@ -177,12 +177,12 @@ function snapshotOutlook(outlook) {
 function collectNarrativeOutlookIds(narrative) {
   return unique([
     ...(narrative.related_outlook_ids ?? []),
-    ...narrative.progress_moments.flatMap((item) => item.related_outlook_ids ?? []),
-    ...narrative.watchlist.flatMap((item) => item.related_outlook_ids ?? []),
-    ...narrative.focus_priorities.flatMap((item) => item.related_outlook_ids ?? []),
-    ...(narrative.change_mind_items ?? []).flatMap((item) => item.related_outlook_ids ?? []),
-    ...(narrative.spotlight_examples ?? []).flatMap((item) => item.related_outlook_ids ?? []),
-    ...narrative.revision.triggers.flatMap((item) => item.related_outlook_ids ?? [])
+    ...(narrative.recent_developments ?? []).flatMap((item) => item.related_outlook_ids ?? []),
+    ...(narrative.what_to_watch_next ?? []).flatMap((item) => item.related_outlook_ids ?? []),
+    ...(narrative.where_better_evidence_is_needed ?? []).flatMap((item) => item.related_outlook_ids ?? []),
+    ...(narrative.what_would_change_the_outlook ?? []).flatMap((item) => item.related_outlook_ids ?? []),
+    ...(narrative.track_examples_to_inspect ?? []).flatMap((item) => item.related_outlook_ids ?? []),
+    ...(narrative.revision?.triggers ?? []).flatMap((item) => item.related_outlook_ids ?? [])
   ]).sort((left, right) => left.localeCompare(right));
 }
 
@@ -195,12 +195,12 @@ function buildSnapshots(narrative, outlookById) {
 
 function fieldChanges(stored, current) {
   const fields = [
-    "current_stage",
+    "evidence_stage",
     "momentum",
     "confidence",
-    "blocker",
-    "best_signal",
-    "scenario_2036_status"
+    "evidence_gap",
+    "strongest_evidence",
+    "lev_2036_outlook"
   ];
 
   return fields
@@ -257,7 +257,7 @@ function scorePublicationEvent(event, outlookById) {
   }
 
   const keywordScores = [
-    { pattern: /stage|current_stage/, score: 45, reason: "stage change" },
+    { pattern: /stage|evidence_stage/, score: 45, reason: "stage change" },
     { pattern: /confidence/, score: 40, reason: "confidence change" },
     { pattern: /momentum/, score: 35, reason: "momentum change" },
     { pattern: /scenario|2036/, score: 45, reason: "scenario change" },
@@ -325,7 +325,7 @@ function lintPlainLanguage(value, pathName = "$") {
   return findings;
 }
 
-function plainProgressMoment(moment) {
+function plainRecentDevelopment(moment) {
   return {
     ...moment,
     label: applyPlainLanguage(moment.label),
@@ -334,25 +334,25 @@ function plainProgressMoment(moment) {
   };
 }
 
-function plainWatchItem(item) {
+function plainItemToWatchNext(item) {
   return {
     ...item,
     label: applyPlainLanguage(item.label),
     summary: applyPlainLanguage(item.summary),
-    signal_to_watch: applyPlainLanguage(item.signal_to_watch)
+    what_to_look_for: applyPlainLanguage(item.what_to_look_for)
   };
 }
 
-function plainFocusPriority(priority) {
+function plainBetterEvidenceNeed(priority) {
   return {
     ...priority,
     label: applyPlainLanguage(priority.label),
     rationale: applyPlainLanguage(priority.rationale),
-    next_useful_work: applyPlainLanguage(priority.next_useful_work)
+    what_better_evidence_would_show: applyPlainLanguage(priority.what_better_evidence_would_show)
   };
 }
 
-function plainJourneyStep(step) {
+function plainStoryStep(step) {
   return {
     ...step,
     label: applyPlainLanguage(step.label),
@@ -361,7 +361,7 @@ function plainJourneyStep(step) {
   };
 }
 
-function plainChangeMindItem(item) {
+function plainOutlookChangeItem(item) {
   return {
     ...item,
     label: applyPlainLanguage(item.label),
@@ -369,7 +369,7 @@ function plainChangeMindItem(item) {
   };
 }
 
-function plainSpotlightExample(example) {
+function plainTrackExampleToInspect(example) {
   return {
     ...example,
     label: applyPlainLanguage(example.label),
@@ -383,14 +383,14 @@ function plainDraft(draft) {
     ...draft,
     title: applyPlainLanguage(draft.title),
     summary: applyPlainLanguage(draft.summary),
-    where_we_are_now: applyPlainLanguage(draft.where_we_are_now),
-    what_changed_recently: applyPlainLanguage(draft.what_changed_recently),
-    journey_steps: draft.journey_steps.map(plainJourneyStep),
-    progress_moments: draft.progress_moments.map(plainProgressMoment),
-    watchlist: draft.watchlist.map(plainWatchItem),
-    focus_priorities: draft.focus_priorities.map(plainFocusPriority),
-    change_mind_items: draft.change_mind_items.map(plainChangeMindItem),
-    spotlight_examples: draft.spotlight_examples.map(plainSpotlightExample)
+    current_evidence_picture: applyPlainLanguage(draft.current_evidence_picture),
+    what_changed: applyPlainLanguage(draft.what_changed),
+    before_now_next: draft.before_now_next.map(plainStoryStep),
+    recent_developments: draft.recent_developments.map(plainRecentDevelopment),
+    what_to_watch_next: draft.what_to_watch_next.map(plainItemToWatchNext),
+    where_better_evidence_is_needed: draft.where_better_evidence_is_needed.map(plainBetterEvidenceNeed),
+    what_would_change_the_outlook: draft.what_would_change_the_outlook.map(plainOutlookChangeItem),
+    track_examples_to_inspect: draft.track_examples_to_inspect.map(plainTrackExampleToInspect)
   };
 }
 
@@ -451,7 +451,7 @@ function analyzeNarrative({ narrative, outlooks, publicationEvents, stateOfField
   const reasons = [];
 
   if (recentOutlookEvents.length > 0) {
-    reasons.push(`${recentOutlookEvents.length} outlook-affecting publication event(s) are newer than the narrative.`);
+    reasons.push(`${recentOutlookEvents.length} outlook-changing public update(s) are newer than the current story.`);
   }
 
   if (changedOutlooks.length > 0) {
@@ -491,9 +491,9 @@ function subjectFromEvent(event, outlookById) {
   };
 }
 
-function buildProgressMoments(narrative, analysis) {
+function buildRecentDevelopments(narrative, analysis) {
   if (analysis.rankedRecentOutlookEvents.length === 0) {
-    return narrative.progress_moments;
+    return narrative.recent_developments;
   }
 
   return analysis.rankedRecentOutlookEvents.slice(0, 3).map(({ event, score, reasons }) => {
@@ -502,10 +502,11 @@ function buildProgressMoments(narrative, analysis) {
     return {
       label: event.name.replace(/^Published /, ""),
       date: datePart(event.published_at),
-      summary: event.summary ?? event.change_note ?? "A reviewed public record changed.",
+      summary: event.summary ?? event.change_note ?? "A reviewed field update changed.",
       impact_on_outlook:
-        event.change_note ??
-        `This ranked ${score} for narrative review because it touched ${reasons.join(", ")}.`,
+        score >= 100
+          ? "This may affect the overall field read only if it changes human outcomes, safety, confidence, or the main evidence gap."
+          : "This matters only if it changes the strength or relevance of evidence; activity alone is not proof of LEV progress.",
       ...subject,
       related_publication_event_ids: [event.id]
     };
@@ -517,7 +518,7 @@ function buildDraft({ narrative, overallOutlook, analysis, today, style }) {
   const rankedEventNames = analysis.rankedRecentOutlookEvents
     .slice(0, 3)
     .map(({ event }) => event.name.replace(/^Published /, ""));
-  const overallStage = stageLabels[overallOutlook.current_stage] ?? overallOutlook.current_stage;
+  const overallStage = stageLabels[overallOutlook.evidence_stage] ?? overallOutlook.evidence_stage;
   const overallMomentum = momentumLabels[overallOutlook.momentum] ?? overallOutlook.momentum;
   const overallConfidence = confidenceLabels[overallOutlook.confidence] ?? overallOutlook.confidence;
   const draft = JSON.parse(JSON.stringify(narrative));
@@ -527,17 +528,17 @@ function buildDraft({ narrative, overallOutlook, analysis, today, style }) {
   if (analysis.status === "stale") {
     draft.title =
       analysis.changedOutlooks.some((item) => item.outlook_id === overallOutlook.id)
-        ? `Overall outlook reviewed at ${overallStage}`
-        : "Public activity changed; the LEV bottleneck needs review";
+        ? `The field now reads as ${overallStage}`
+        : "Field activity changed; the LEV proof gap needs checking";
     draft.summary = latestStateOfField
-      ? `${latestStateOfField.summary} Editorial review should decide whether this changes the public story or only updates the support map.`
-      : `The overall outlook is ${overallStage} with ${overallMomentum} momentum and ${overallConfidence}. Editorial review should decide whether recent public activity changes the story.`;
-    draft.where_we_are_now = `The overall public outlook is ${overallStage}, with ${overallMomentum} momentum and ${overallConfidence}. The main blocker remains: ${overallOutlook.main_blockers?.[0] ?? "review required."}`;
-    draft.what_changed_recently =
+      ? `${latestStateOfField.summary} The important question is whether the evidence makes LEV look closer, or only clarifies where evidence remains thin.`
+      : `The overall field read is ${overallStage}, with ${overallMomentum} momentum and ${overallConfidence}. The important question is whether recent evidence makes LEV look closer.`;
+    draft.current_evidence_picture = `The overall field read is ${overallStage}, with ${overallMomentum} momentum and ${overallConfidence}. The main evidence gap remains: ${overallOutlook.main_evidence_gaps?.[0] ?? "the field still needs stronger human evidence."}`;
+    draft.what_changed =
       rankedEventNames.length > 0
-        ? `Since the last narrative review, the most story-relevant public changes are: ${rankedEventNames.join("; ")}. Review these changes before treating them as forecast movement.`
-        : `No newer outlook-affecting publication events were found, but the narrative still needs review because ${analysis.reasons.join(" ")}`;
-    draft.progress_moments = buildProgressMoments(narrative, analysis);
+        ? `Recent field updates include: ${rankedEventNames.join("; ")}. Their importance depends on whether they change human outcomes, safety, confidence, or the main evidence gap; more activity by itself is not progress toward LEV.`
+        : `The field story needs a scheduled recheck because ${analysis.reasons.join(" ")}`;
+    draft.recent_developments = buildRecentDevelopments(narrative, analysis);
   }
 
   draft.revision = {
@@ -545,8 +546,8 @@ function buildDraft({ narrative, overallOutlook, analysis, today, style }) {
     last_reviewed: today,
     review_reason:
       analysis.status === "stale"
-        ? `Generated draft after narrative staleness check: ${analysis.reasons.join(" ")}`
-        : "Generated draft confirmed the current narrative against observed public outlook snapshots.",
+        ? `Generated draft after current LEV story staleness check: ${analysis.reasons.join(" ")}`
+        : "Generated draft confirmed the current LEV story against observed public outlook snapshots.",
     review_due: addDays(today, 30),
     observed_state_of_field_slug: latestStateOfField?.slug,
     observed_latest_publication_event_id: analysis.latestPublicationEvent?.id,
@@ -567,12 +568,12 @@ function buildDraft({ narrative, overallOutlook, analysis, today, style }) {
 
 function formatStatus({ narrative, analysis }) {
   const lines = [
-    `Progress narrative status: ${analysis.status}`,
+    `Current LEV story status: ${analysis.status}`,
     `Last reviewed: ${narrative.revision.last_reviewed}`,
     `Review due: ${narrative.revision.review_due}`,
     `Watched outlooks: ${analysis.watchedOutlookIds.length}`,
     `Changed or missing snapshots: ${analysis.changedOutlooks.length}`,
-    `New outlook-affecting publication events: ${analysis.recentOutlookEvents.length}`
+    `New outlook-changing public updates: ${analysis.recentOutlookEvents.length}`
   ];
 
   if (analysis.reasons.length > 0) {
@@ -591,7 +592,7 @@ function formatStatus({ narrative, analysis }) {
   }
 
   if (analysis.recentOutlookEvents.length > 0) {
-    lines.push("", "Ranked outlook-affecting events:");
+    lines.push("", "Ranked outlook-changing public updates:");
     for (const { event, score, reasons } of analysis.rankedRecentOutlookEvents.slice(0, 5)) {
       lines.push(`- ${datePart(event.published_at)} ${event.name} [score ${score}: ${reasons.join(", ")}]`);
     }
@@ -603,7 +604,7 @@ function formatStatus({ narrative, analysis }) {
 function formatDraftMarkdown(draft, analysis, style) {
   const jargonFindings = style === "plain" ? lintPlainLanguage(draft) : [];
   const lines = [
-    "# Progress Narrative Draft",
+    "# Current LEV Story Draft",
     "",
     `Status: ${analysis.status}`,
     `Style: ${style}`,
@@ -617,11 +618,11 @@ function formatDraftMarkdown(draft, analysis, style) {
     "",
     "## Where We Are Now",
     "",
-    draft.where_we_are_now,
+    draft.current_evidence_picture,
     "",
     "## What Changed Recently",
     "",
-    draft.what_changed_recently,
+    draft.what_changed,
     "",
     "## Review Reasons",
     ""
@@ -633,21 +634,21 @@ function formatDraftMarkdown(draft, analysis, style) {
     lines.push(...analysis.reasons.map((reason) => `- ${reason}`));
   }
 
-  lines.push("", "## Progress Moments", "");
-  lines.push(...draft.progress_moments.map((item) => `- ${item.label}: ${item.impact_on_outlook}`));
+  lines.push("", "## Recent Developments", "");
+  lines.push(...draft.recent_developments.map((item) => `- ${item.label}: ${item.impact_on_outlook}`));
 
-  lines.push("", "## Journey", "");
-  lines.push(...draft.journey_steps.map((item) => `- ${item.label} / ${item.title}: ${item.summary}`));
+  lines.push("", "## Before / Now / Next", "");
+  lines.push(...draft.before_now_next.map((item) => `- ${item.label} / ${item.title}: ${item.summary}`));
 
   lines.push("", "## What Would Change Our Mind", "");
-  lines.push(...draft.change_mind_items.map((item) => `- ${item.label}: ${item.summary}`));
+  lines.push(...draft.what_would_change_the_outlook.map((item) => `- ${item.label}: ${item.summary}`));
 
   lines.push("", "## Concrete Examples", "");
-  lines.push(...draft.spotlight_examples.map((item) => `- ${item.title}: ${item.summary} (${item.href})`));
+  lines.push(...draft.track_examples_to_inspect.map((item) => `- ${item.title}: ${item.summary} (${item.href})`));
 
   lines.push("", "## Ranked Changes", "");
   if (analysis.rankedRecentOutlookEvents.length === 0) {
-    lines.push("- No newer outlook-changing publication events.");
+    lines.push("- No newer outlook-changing public updates.");
   } else {
     lines.push(
       ...analysis.rankedRecentOutlookEvents
@@ -674,7 +675,7 @@ function formatDraftMarkdown(draft, analysis, style) {
 
 async function loadInputs(options) {
   const [narrative, outlooks, publicationEvents, stateOfFieldEditions] = await Promise.all([
-    readJson(narrativePath),
+    readJson(currentLevStoryPath),
     readCollection(outlookRoot),
     readCollection(publicationEventRoot),
     readCollection(stateOfFieldRoot)
@@ -720,8 +721,8 @@ async function main() {
         }
       };
 
-      await writeJson(narrativePath, updatedNarrative);
-      process.stdout.write(`Updated ${narrativePath} with ${analysis.currentSnapshots.length} outlook snapshot(s).\n`);
+      await writeJson(currentLevStoryPath, updatedNarrative);
+      process.stdout.write(`Updated ${currentLevStoryPath} with ${analysis.currentSnapshots.length} outlook snapshot(s).\n`);
       return;
     }
 

@@ -143,7 +143,7 @@ export default async function BundleDetailPage({ params }: BundleDetailPageProps
       <PageHero
         kicker="Admin review"
         title={bundle.name}
-        summary={bundle.summary ?? "Candidate bundle awaiting editorial handling."}
+        summary={bundle.summary ?? "Staged update awaiting editorial handling."}
       >
         <div className="page-hero__stats">
           <span>{getStatusLabel(bundle.lifecycle_status)}</span>
@@ -492,7 +492,7 @@ export default async function BundleDetailPage({ params }: BundleDetailPageProps
                   </article>
                     ))
                   ) : (
-                    <p>No publication events yet.</p>
+                    <p>No public updates yet.</p>
                   )}
                 </div>
               </div>

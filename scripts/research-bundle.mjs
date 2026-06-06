@@ -40,9 +40,9 @@ Usage:
   npm run research:bundle -- smoke --bundle <bundle-id> [--base-url <url>]
 
 Notes:
-  - validate checks staged files, record IDs/types, provenance links, support maps, and published-file drift.
+  - validate checks staged files, record IDs/types, provenance links, evidence maps, and published-file drift.
   - approve requires a structurally valid bundle and a clean evidence-review gate when one is configured.
-  - publish copies staged JSON into data/, writes a publication event, and marks the bundle published.
+  - publish copies staged JSON into data/, writes a public update, and marks the staged update published.
 `.trim();
 
   const stream = exitCode === 0 ? process.stdout : process.stderr;
@@ -319,19 +319,19 @@ async function evaluateEvidenceReviewGate(bundle) {
 
 function validateBundleShape(bundle, issues) {
   for (const field of ["schema_version", "record_type", "id", "name", "intake_mode", "lifecycle_status", "submitted_at"]) {
-    addIssueForMissingString(bundle, field, issues, "Candidate bundle");
+    addIssueForMissingString(bundle, field, issues, "Staged update");
   }
 
   if (bundle.schema_version !== "1.0.0") {
-    issues.push("Candidate bundle schema_version must be 1.0.0.");
+    issues.push("Staged update schema_version must be 1.0.0.");
   }
 
   if (bundle.record_type !== "candidate_bundle") {
-    issues.push("Candidate bundle record_type must be candidate_bundle.");
+    issues.push("Staged update record_type must be candidate_bundle.");
   }
 
   if (!Array.isArray(bundle.proposed_changes) || bundle.proposed_changes.length === 0) {
-    issues.push("Candidate bundle proposed_changes must contain at least one change.");
+    issues.push("Staged update proposed_changes must contain at least one change.");
     return;
   }
 
@@ -594,7 +594,7 @@ function addSupportMapMessage(message, issues, warnings, options) {
 }
 
 function validateOutlookRecord(record, recordMaps, issues, warnings, label, options = {}) {
-  for (const field of ["name", "subject_type", "subject_id", "current_stage", "momentum", "confidence", "forecast_note", "last_updated"]) {
+  for (const field of ["name", "subject_type", "subject_id", "evidence_stage", "momentum", "confidence", "interpretation_note", "last_updated"]) {
     addIssueForMissingString(record, field, issues, label);
   }
 
@@ -610,8 +610,8 @@ function validateOutlookRecord(record, recordMaps, issues, warnings, label, opti
       addSupportMapMessage(`${label} is a track outlook and must include supporting_finding_ids[].`, issues, warnings, options);
     }
 
-    if (!Array.isArray(record.rating_change_criteria) || record.rating_change_criteria.length === 0) {
-      addSupportMapMessage(`${label} is a track outlook and must include rating_change_criteria[].`, issues, warnings, options);
+    if (!Array.isArray(record.what_would_change_the_rating) || record.what_would_change_the_rating.length === 0) {
+      addSupportMapMessage(`${label} is a track outlook and must include what_would_change_the_rating[].`, issues, warnings, options);
     }
   }
 }
@@ -691,18 +691,18 @@ async function evaluatePublication(bundle, promotion) {
   for (const eventId of publicationEventIds) {
     const eventPath = path.join(publicationEventsRoot, `${eventId}.json`);
     if (!(await fileExists(eventPath))) {
-      issues.push(`Missing publication event: ${toPosixRelative(eventPath)}.`);
+      issues.push(`Missing public update: ${toPosixRelative(eventPath)}.`);
       continue;
     }
 
     const eventRecord = await readJson(eventPath);
     publicationEvents.push(eventRecord);
     if (eventRecord.record_type !== "publication_event") {
-      issues.push(`Publication event ${eventId} has record_type ${eventRecord.record_type}.`);
+      issues.push(`Public update ${eventId} has record_type ${eventRecord.record_type}.`);
     }
 
     if (eventRecord.candidate_bundle_id !== bundle.id) {
-      issues.push(`Publication event ${eventId} points at ${eventRecord.candidate_bundle_id}, not ${bundle.id}.`);
+      issues.push(`Public update ${eventId} points at ${eventRecord.candidate_bundle_id}, not ${bundle.id}.`);
     }
   }
 
@@ -838,16 +838,16 @@ async function commandApprove(options) {
     const report = await buildBundleReport(latestBundle);
 
     if (!canTransitionCandidateBundleStatus(latestBundle.lifecycle_status, "approved")) {
-      throw new Error(`Invalid candidate bundle status transition: ${latestBundle.lifecycle_status} -> approved.`);
+      throw new Error(`Invalid staged update status transition: ${latestBundle.lifecycle_status} -> approved.`);
     }
 
     if (!report.validation.ready) {
-      throw new Error(`Candidate bundle ${latestBundle.id} is not valid: ${report.validation.issues.join(" ")}`);
+      throw new Error(`Staged update ${latestBundle.id} is not valid: ${report.validation.issues.join(" ")}`);
     }
 
     if (report.evidence_review_gate.eligible && !report.evidence_review_gate.ready) {
       throw new Error(
-        `Candidate bundle ${latestBundle.id} is not ready for approval: ${report.evidence_review_gate.issues.join(" ")}`
+        `Staged update ${latestBundle.id} is not ready for approval: ${report.evidence_review_gate.issues.join(" ")}`
       );
     }
 
@@ -888,20 +888,20 @@ async function commandPublish(options) {
     const report = await buildBundleReport(bundle);
 
     if (bundle.lifecycle_status === "published") {
-      throw new Error(`Candidate bundle ${bundle.id} is already published.`);
+      throw new Error(`Staged update ${bundle.id} is already published.`);
     }
 
     if (bundle.lifecycle_status !== "approved") {
-      throw new Error(`Candidate bundle ${bundle.id} must be approved before publication.`);
+      throw new Error(`Staged update ${bundle.id} must be approved before publication.`);
     }
 
     if (!report.validation.ready) {
-      throw new Error(`Candidate bundle ${bundle.id} is not valid: ${report.validation.issues.join(" ")}`);
+      throw new Error(`Staged update ${bundle.id} is not valid: ${report.validation.issues.join(" ")}`);
     }
 
     if (report.evidence_review_gate.eligible && !report.evidence_review_gate.ready) {
       throw new Error(
-        `Candidate bundle ${bundle.id} is blocked by evidence review: ${report.evidence_review_gate.issues.join(" ")}`
+        `Staged update ${bundle.id} is blocked by evidence review: ${report.evidence_review_gate.issues.join(" ")}`
       );
     }
 
@@ -943,7 +943,7 @@ async function commandPublish(options) {
         : undefined,
       change_note:
         bundle.proposed_outlook_implications?.[0]?.note ??
-        "A reviewed candidate bundle was published to the public site."
+        "A reviewed staged update was published to the public site."
     };
 
     const publicationEventPath = path.join(publicationEventsRoot, `${publicationEventId}.json`);

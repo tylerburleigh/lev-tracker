@@ -1,4 +1,4 @@
-# Progress Narrative Draft
+# Current LEV Story Draft
 
 Status: current
 Style: plain
@@ -6,9 +6,9 @@ Generated for review: 2026-06-06
 
 ## Homepage Story
 
-Title: A clearer map, but not stronger evidence for LEV yet
+Title: Broader activity, same human proof gap
 
-We can now see the major longevity research tracks side by side. That is real progress. But it does not yet mean LEV is close. The main missing proof is still repeated human studies showing that people function better for longer.
+Longevity research now has early human signals in more places, but the center of gravity is still early testing. LEV does not look close until multiple approaches show that people function better for longer, with safety and lasting effects clear enough to matter.
 
 ## Where We Are Now
 
@@ -16,23 +16,23 @@ The field is in early human testing. Some tracks now have early biomarker result
 
 ## What Changed Recently
 
-In June, the tracker finished first-pass public summaries for all 38 research tracks and began adding missing context. The story changed from a partial map to a working map. It did not give us a new reason to be more optimistic about LEV.
+The recent picture is broader rather than stronger. More areas can be compared side by side, and the main pattern is still early or narrow evidence: biomarkers, animal results, trials to watch, or disease-specific signals rather than repeated aging-function results.
 
 ## Review Reasons
 
 - No staleness reasons detected.
 
-## Progress Moments
+## Recent Developments
 
-- The map is now complete enough to compare: That helps readers see where work is happening. It did not change the overall stage, confidence, or 2036 scenario.
+- A broader look exposes the same bottleneck: The field is easier to judge, but the evidence has not moved far enough to make LEV look closer.
 - Early signs in people are showing up in more places: The field is easier to track seriously, but many signs are still narrow, disease-specific, or mostly based on biomarkers.
-- Missing-context updates are keeping the forecast honest: The update made the evidence clearer without treating activity as proof.
+- More context is narrowing the claims: The update made the evidence easier to judge without treating activity as proof.
 
-## Journey
+## Before / Now / Next
 
-- Before / Scattered examples: Longevity research looked like a set of isolated intervention stories. It was hard to compare which areas were moving and which were mostly promise.
-- Now / A working map: All 38 research tracks now have public outlooks. Readers can compare stage, confidence, blockers, and recent movement across the hallmarks.
-- Next / The human proof gap: The next major step is repeated human evidence that people function better for longer, with safety and lasting benefit clear enough to matter.
+- Before / Isolated claims: A few prominent intervention stories could make the field look more advanced than it was. Many claims were hard to compare because they used different endpoints, populations, and standards of proof.
+- Now / Early signals, uneven strength: More areas now have human biomarkers, narrow functional signs, disease outcomes, or trials in motion. Most still stop short of showing broad, lasting aging benefit in people.
+- Next / Human proof that lasts: The next major step is repeated human evidence that older adults function better for longer, not just short-term biomarker movement or narrow disease response.
 
 ## What Would Change Our Mind
 
@@ -48,7 +48,7 @@ In June, the tracker finished first-pass public summaries for all 38 research tr
 
 ## Ranked Changes
 
-- No newer outlook-changing publication events.
+- No newer outlook-changing public updates.
 
 ## Plain-Language Warnings
 

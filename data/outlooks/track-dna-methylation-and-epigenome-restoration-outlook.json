@@ -5,17 +5,17 @@
   "name": "DNA Methylation and Epigenome Restoration Track Outlook",
   "subject_type": "track",
   "subject_id": "dna-methylation-and-epigenome-restoration",
-  "current_stage": "human_biomarker_signal",
+  "evidence_stage": "human_biomarker_signal",
   "momentum": "steady",
   "confidence": "low",
-  "main_blockers": [
+  "main_evidence_gaps": [
     "Human evidence is still DNA-methylation-clock heavy, with no durable functional, disease, or mortality outcome tied to methylation restoration.",
     "Signals are small or inconsistent in larger controlled analyses, and stronger reversal claims come from small, uncontrolled, retrospective, or multi-component studies.",
     "Many interventions may move methylation as a downstream readout rather than directly restoring causal epigenomic aging mechanisms.",
     "Clock choice, tissue source, blood-cell composition, commercial tests, and conflicts of interest remain major interpretation hazards.",
     "TRIIM-X is listed as recruiting with no posted results, so it cannot yet resolve the safety or efficacy boundary for hormone/metformin thymus-regeneration regimens."
   ],
-  "best_current_signals": [
+  "strongest_current_evidence": [
     "CALERIE randomized caloric restriction slowed DunedinPACE over two years, although PhenoAge and GrimAge did not significantly change.",
     "DO-HEALTH reported small omega-3-associated slowing across several DNA-methylation clocks over three years, with an additive PhenoAge signal for omega-3, vitamin D, and exercise.",
     "COSMOS reported modest multivitamin-multimineral slowing of PCGrimAge and PCPhenoAge over two years, while cocoa extract was null.",
@@ -23,15 +23,15 @@
     "TRIIM and Rejuvant provide larger apparent reversal signals, but they are uncontrolled or retrospective and should not drive a higher stage assignment.",
     "CASIN in aged mice links a short systemic intervention to younger blood DNA-methylation age plus lifespan and inflammatory-marker movement."
   ],
-  "forecast_note": "DNA methylation and epigenome restoration earns a first public baseline at human_biomarker_signal because multiple human intervention studies now report movement in DNA-methylation aging measures. The rating should stay conservative: larger randomized analyses show small and clock-specific effects, while the most dramatic reversal claims are not controlled enough to support functional or clinical benefit.",
-  "rating_change_criteria": [
+  "interpretation_note": "DNA methylation and epigenome restoration earns a first public baseline at human_biomarker_signal because multiple human intervention studies now report movement in DNA-methylation aging measures. The rating should stay conservative: larger randomized analyses show small and clock-specific effects, while the most dramatic reversal claims are not controlled enough to support functional or clinical benefit.",
+  "what_would_change_the_rating": [
     "A stage upgrade would require replicated randomized trials showing functional, disease, or mortality benefit with prespecified DNA-methylation endpoints that move in the expected direction.",
     "Higher confidence would require convergent effects across multiple validated clocks, tissues, and independent cohorts, with durability after intervention withdrawal.",
     "Mechanistic confidence would improve if studies showed that methylation changes mediate downstream health benefits rather than merely tracking diet, body composition, inflammation, or blood-cell shifts.",
     "The rating would weaken if larger preregistered trials fail to replicate clock movement, show no relationship between clock changes and clinical endpoints, or identify meaningful safety concerns for epigenome-targeting regimens."
   ],
   "earliest_plausible_window": "No credible LEV-relevant window can be assigned before methylation-clock changes are tied to replicated clinical or functional benefit.",
-  "scenario_2036_status": "speculative",
+  "lev_2036_outlook": "speculative",
   "supporting_finding_ids": [
     "triim-human-epigenetic-age-decrease",
     "methylation-diet-lifestyle-horvath-age-decrease",
@@ -45,7 +45,7 @@
   "supporting_evidence": [
     {
       "label": "Stage assignment",
-      "outlook_field": "current_stage",
+      "outlook_field": "evidence_stage",
       "conclusion": "The track reaches human biomarker signal because several human interventions report DNA-methylation aging-measure movement.",
       "support_role": "supports",
       "rationale": "CALERIE, DO-HEALTH, COSMOS, and the methylation-supportive diet/lifestyle RCT are human intervention studies with DNA-methylation clock endpoints. Their endpoints are biomarkers, not functional outcomes.",
@@ -91,7 +91,7 @@
     },
     {
       "label": "Reversal-claim boundary",
-      "outlook_field": "main_blockers",
+      "outlook_field": "main_evidence_gaps",
       "conclusion": "Large apparent reversal signals exist but are not strong enough to raise the stage above human biomarkers.",
       "support_role": "limits",
       "rationale": "TRIIM was a nine-person uncontrolled male pilot, and Rejuvant was a retrospective uncontrolled supplement analysis using a commercial product and test.",
@@ -111,7 +111,7 @@
     },
     {
       "label": "Animal plausibility",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "CASIN gives animal biomarker and lifespan plausibility for methylation-age movement after intervention.",
       "support_role": "supports",
       "rationale": "The aged-mouse CASIN study reported a younger blood DNA-methylation clock alongside lower inflammatory cytokines and extended lifespan.",

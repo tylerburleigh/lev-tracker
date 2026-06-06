@@ -5,11 +5,11 @@ import path from "node:path";
 
 const workspaceRoot = process.cwd();
 const reportPath = "extra/reader-task-audit.md";
-const validFocusReasons = new Set([
-  "low_hanging_fruit",
-  "neglected_area",
-  "promising_signal",
-  "blocking_dependency"
+const validEvidenceNeedReasons = new Set([
+  "clear_next_step",
+  "underbuilt_evidence",
+  "early_promise",
+  "blocking_gap"
 ]);
 
 function usage() {
@@ -70,6 +70,55 @@ function trackIdFromHref(href) {
 
 function hasPlainText(value) {
   return typeof value === "string" && value.trim().length >= 20;
+}
+
+function collectNarrativeSurfaceText(narrative) {
+  const records = [];
+  const addText = (fieldPath, value) => {
+    if (typeof value === "string" && value.trim()) {
+      records.push({ fieldPath, value });
+    }
+  };
+
+  for (const field of ["title", "summary", "current_evidence_picture", "what_changed"]) {
+    addText(`$.${field}`, narrative[field]);
+  }
+
+  for (const [index, step] of (narrative.before_now_next ?? []).entries()) {
+    addText(`$.before_now_next[${index}].title`, step.title);
+    addText(`$.before_now_next[${index}].summary`, step.summary);
+  }
+
+  for (const [index, moment] of (narrative.recent_developments ?? []).entries()) {
+    addText(`$.recent_developments[${index}].label`, moment.label);
+    addText(`$.recent_developments[${index}].summary`, moment.summary);
+    addText(`$.recent_developments[${index}].impact_on_outlook`, moment.impact_on_outlook);
+  }
+
+  for (const [index, item] of (narrative.what_to_watch_next ?? []).entries()) {
+    addText(`$.what_to_watch_next[${index}].label`, item.label);
+    addText(`$.what_to_watch_next[${index}].summary`, item.summary);
+    addText(`$.what_to_watch_next[${index}].what_to_look_for`, item.what_to_look_for);
+  }
+
+  for (const [index, priority] of (narrative.where_better_evidence_is_needed ?? []).entries()) {
+    addText(`$.where_better_evidence_is_needed[${index}].label`, priority.label);
+    addText(`$.where_better_evidence_is_needed[${index}].rationale`, priority.rationale);
+    addText(`$.where_better_evidence_is_needed[${index}].what_better_evidence_would_show`, priority.what_better_evidence_would_show);
+  }
+
+  for (const [index, item] of (narrative.what_would_change_the_outlook ?? []).entries()) {
+    addText(`$.what_would_change_the_outlook[${index}].label`, item.label);
+    addText(`$.what_would_change_the_outlook[${index}].summary`, item.summary);
+  }
+
+  for (const [index, example] of (narrative.track_examples_to_inspect ?? []).entries()) {
+    addText(`$.track_examples_to_inspect[${index}].label`, example.label);
+    addText(`$.track_examples_to_inspect[${index}].title`, example.title);
+    addText(`$.track_examples_to_inspect[${index}].summary`, example.summary);
+  }
+
+  return records;
 }
 
 function addCheck(checks, task, result, evidence, severity = "issue") {
@@ -133,7 +182,7 @@ async function main() {
     trackDetailSource,
     tracksIndexSource
   ] = await Promise.all([
-    readJson("data/content/progress-narrative/current.json"),
+    readJson("data/content/current-lev-story/current.json"),
     readJson("taxonomies/track-taxonomy.v1.json"),
     readJson("taxonomies/hallmarks-of-aging.v1.json"),
     readJsonCollection("data/outlooks"),
@@ -150,94 +199,111 @@ async function main() {
   const hallmarkIds = new Set(hallmarkTaxonomy.hallmarks.map((hallmark) => hallmark.id));
   const hallmarkOutlooks = outlooks.filter((outlook) => outlook.subject_type === "hallmark");
   const nowIsoDate = new Date().toISOString().slice(0, 10);
+  const trackerProcessPattern =
+    /\b(the tracker|readers? can|helps readers|public map|first-pass|coverage expanded|coverage now spans|public outlooks?|public summaries|working map|complete enough to compare|narrative review|editorial review|evidence map|forecast movement)\b/i;
 
   addCheck(
     checks,
-    "Reader can tell where the LEV journey stands",
-    [narrative.title, narrative.summary, narrative.where_we_are_now, narrative.what_changed_recently].every(hasPlainText)
+    "Reader can tell where the field stands now",
+    [narrative.title, narrative.summary, narrative.current_evidence_picture, narrative.what_changed].every(hasPlainText)
       ? "pass"
       : "fail",
-    "Progress narrative needs title, summary, current state, and recent-change copy."
+    "Current LEV story needs title, summary, current evidence picture, and what changed copy."
   );
 
-  const journeyLabels = new Set((narrative.journey_steps ?? []).map((step) => String(step.label).toLowerCase()));
+  const beforeNowNextLabels = new Set((narrative.before_now_next ?? []).map((step) => String(step.label).toLowerCase()));
   addCheck(
     checks,
-    "Reader gets a before-now-next temporal arc",
-    narrative.journey_steps?.length >= 3 &&
-      journeyLabels.has("before") &&
-      journeyLabels.has("now") &&
-      journeyLabels.has("next")
+    "Reader gets a before-now-next field arc",
+    narrative.before_now_next?.length >= 3 &&
+      beforeNowNextLabels.has("before") &&
+      beforeNowNextLabels.has("now") &&
+      beforeNowNextLabels.has("next")
       ? "pass"
       : "fail",
-    `Journey labels: ${Array.from(journeyLabels).join(", ") || "(missing)"}`
+    `Before/now/next labels: ${Array.from(beforeNowNextLabels).join(", ") || "(missing)"}`
+  );
+
+  const trackerFramedNarrative = collectNarrativeSurfaceText(narrative).filter((record) =>
+    trackerProcessPattern.test(record.value)
+  );
+  addCheck(
+    checks,
+    "Public story describes the field, not tracker operations",
+    trackerFramedNarrative.length === 0 ? "pass" : "fail",
+    trackerFramedNarrative.length
+      ? `Tracker/process framing found in ${trackerFramedNarrative
+          .slice(0, 5)
+          .map((record) => record.fieldPath)
+          .join(", ")}.`
+      : "No tracker/process framing found in visible story fields."
   );
 
   addCheck(
     checks,
     "Reader can see progress over time",
-    narrative.progress_moments?.length >= 3 && narrative.progress_moments.some((moment) => moment.date)
+    narrative.recent_developments?.length >= 3 && narrative.recent_developments.some((moment) => moment.date)
       ? "pass"
       : "fail",
-    `${narrative.progress_moments?.length ?? 0} progress moment(s); ${
-      narrative.progress_moments?.filter((moment) => moment.date).length ?? 0
+    `${narrative.recent_developments?.length ?? 0} recent development(s); ${
+      narrative.recent_developments?.filter((moment) => moment.date).length ?? 0
     } dated.`
   );
 
   addCheck(
     checks,
     "Reader can see what would make the outlook more or less optimistic",
-    narrative.change_mind_items?.some((item) => item.direction === "more_optimistic") &&
-      narrative.change_mind_items?.some((item) => item.direction === "less_optimistic")
+    narrative.what_would_change_the_outlook?.some((item) => item.direction === "more_optimistic") &&
+      narrative.what_would_change_the_outlook?.some((item) => item.direction === "less_optimistic")
       ? "pass"
       : "fail",
-    `${narrative.change_mind_items?.length ?? 0} change-mind item(s).`
+    `${narrative.what_would_change_the_outlook?.length ?? 0} outlook-change item(s).`
   );
 
   addCheck(
     checks,
     "Reader can tell what to watch next",
-    narrative.watchlist?.length >= 3 && narrative.watchlist.every((item) => hasPlainText(item.signal_to_watch))
+    narrative.what_to_watch_next?.length >= 3 && narrative.what_to_watch_next.every((item) => hasPlainText(item.what_to_look_for))
       ? "pass"
       : "fail",
-    `${narrative.watchlist?.length ?? 0} watchlist item(s).`
+    `${narrative.what_to_watch_next?.length ?? 0} item(s) to watch next.`
   );
 
-  const focusReasons = new Set((narrative.focus_priorities ?? []).map((priority) => priority.reason));
+  const evidenceNeedReasons = new Set((narrative.where_better_evidence_is_needed ?? []).map((priority) => priority.reason));
   addCheck(
     checks,
     "Reader can tell where effort should focus next",
-    narrative.focus_priorities?.length >= 3 &&
-      Array.from(focusReasons).every((reason) => validFocusReasons.has(reason)) &&
-      focusReasons.size >= 2
+    narrative.where_better_evidence_is_needed?.length >= 3 &&
+      Array.from(evidenceNeedReasons).every((reason) => validEvidenceNeedReasons.has(reason)) &&
+      evidenceNeedReasons.size >= 2
       ? "pass"
       : "fail",
-    `${narrative.focus_priorities?.length ?? 0} focus item(s), ${focusReasons.size} reason type(s).`
+    `${narrative.where_better_evidence_is_needed?.length ?? 0} better-evidence need(s), ${evidenceNeedReasons.size} reason type(s).`
   );
 
-  const unresolvedSpotlights = (narrative.spotlight_examples ?? [])
+  const unresolvedTrackExamples = (narrative.track_examples_to_inspect ?? [])
     .map((example) => ({ href: example.href, trackId: trackIdFromHref(example.href) }))
     .filter((example) => !example.trackId || !trackIds.has(example.trackId));
   addCheck(
     checks,
     "Reader gets concrete examples that resolve to track pages",
-    narrative.spotlight_examples?.length >= 3 && unresolvedSpotlights.length === 0
+    narrative.track_examples_to_inspect?.length >= 3 && unresolvedTrackExamples.length === 0
       ? "pass"
       : "fail",
-    unresolvedSpotlights.length
-      ? `Unresolved spotlight href(s): ${unresolvedSpotlights.map((item) => item.href).join(", ")}`
-      : `${narrative.spotlight_examples?.length ?? 0} spotlight example(s).`
+    unresolvedTrackExamples.length
+      ? `Unresolved track-example href(s): ${unresolvedTrackExamples.map((item) => item.href).join(", ")}`
+      : `${narrative.track_examples_to_inspect?.length ?? 0} track example(s).`
   );
 
   addCheck(
     checks,
     "Homepage displays the reader story surfaces",
-    ["Plain meaning", "What would change our mind?", "Concrete examples", "journey_steps"].every((marker) =>
+    ["Plain meaning", "What would change our mind?", "Concrete examples", "before_now_next"].every((marker) =>
       homepageSource.includes(marker)
     )
       ? "pass"
       : "fail",
-    "Homepage source should render plain meaning, journey, change-mind criteria, and examples."
+    "Homepage source should render plain meaning, before/now/next, outlook-change criteria, and examples."
   );
 
   addCheck(
@@ -257,7 +323,7 @@ async function main() {
       trackDetailSource.includes("What would change this rating?")
       ? "pass"
       : "fail",
-    "Hallmark and track detail pages should expose change criteria near forecast evidence."
+    "Hallmark and track detail pages should expose change criteria near outlook evidence."
   );
 
   addCheck(
@@ -266,7 +332,7 @@ async function main() {
     !/seeded tracks|baseline coverage/i.test(`${homepageSource}\n${tracksIndexSource}`)
       ? "pass"
       : "fail",
-    "Homepage and tracks index should use research tracks / first-pass summaries language."
+    "Homepage and tracks index should use research tracks / public outlook language."
   );
 
   const missingHallmarkOutlooks = Array.from(hallmarkIds).filter(
@@ -274,9 +340,9 @@ async function main() {
   );
   const weakHallmarkOutlooks = hallmarkOutlooks.filter(
     (outlook) =>
-      !hasPlainText(outlook.forecast_note) ||
-      !outlook.main_blockers?.some(hasPlainText) ||
-      !outlook.best_current_signals?.some(hasPlainText)
+      !hasPlainText(outlook.interpretation_note) ||
+      !outlook.main_evidence_gaps?.some(hasPlainText) ||
+      !outlook.strongest_current_evidence?.some(hasPlainText)
   );
   addCheck(
     checks,
@@ -288,12 +354,12 @@ async function main() {
       ? `Missing: ${missingHallmarkOutlooks.join(", ") || "none"}; weak: ${
           weakHallmarkOutlooks.map((outlook) => outlook.id).join(", ") || "none"
         }.`
-      : `${hallmarkOutlooks.length} hallmark outlook(s) have blocker, signal, and note copy.`
+      : `${hallmarkOutlooks.length} hallmark outlook(s) have evidence-gap, strongest-evidence, and interpretation copy.`
   );
 
   addCheck(
     checks,
-    "Narrative has a current review state",
+    "Current LEV story has a current review state",
     narrative.revision?.last_reviewed &&
       narrative.revision?.review_due >= nowIsoDate &&
       narrative.revision?.observed_outlook_states?.length > 0

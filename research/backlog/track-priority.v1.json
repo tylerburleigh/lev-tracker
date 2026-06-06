@@ -2,12 +2,12 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-06T14:57:21.279Z",
+  "updated_at": "2026-06-06T18:22:13.506Z",
   "notes": [
-    "Bootstrap priority is front-loaded toward one anchor track per uncovered hallmark.",
-    "Surveillance priority applies only to tracks that already have a public baseline and no active review bundle.",
-    "Coverage-repair priority applies when the latest coverage assessment recommends repairing source-completeness gaps before ordinary surveillance.",
-    "The queue is a curator planning tool, not a public forecast."
+    "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
+    "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
+    "Coverage-repair priority applies when the latest coverage assessment recommends repairing source-completeness gaps before an ordinary field change check.",
+    "The queue is a curator planning tool, not a public outlook."
   ],
   "selection_policy": {
     "default_unit": "track",
@@ -26,14 +26,14 @@
     "stop_after": [
       "The delta window has been checked and either nothing material changed or one bounded update is ready.",
       "The evidence stays in activity-only territory and does not justify outlook movement.",
-      "The pass begins to broaden into fresh baseline research and should be handed back to bootstrap instead."
+      "The pass begins to broaden into fresh baseline research and should be handed back to baseline review instead."
     ]
   },
   "coverage_repair_defaults": {
     "stop_after": [
       "The known source-completeness gaps named in the latest coverage assessment have been checked.",
       "The coverage verdict, known gaps, and next coverage action can be updated without changing public claims.",
-      "New evidence materially changes the outlook and should move into a bounded surveillance or outlook-refresh bundle."
+      "New evidence materially changes the outlook and should move into a bounded field change check or outlook-refresh staged update."
     ]
   },
   "phases": [
@@ -50,7 +50,7 @@
     {
       "phase_id": "expand-uncovered-hallmarks",
       "label": "Expand Uncovered Hallmarks",
-      "goal": "Broaden hallmarks that still need more than one track to avoid a one-track narrative."
+      "goal": "Broaden hallmarks that still need more than one track to avoid a one-track view."
     },
     {
       "phase_id": "expand-covered-hallmarks",
@@ -59,13 +59,13 @@
     },
     {
       "phase_id": "surveillance-rotation",
-      "label": "Surveillance Rotation",
-      "goal": "Revisit established tracks for meaningful deltas without redoing full baseline research."
+      "label": "Field Change Rotation",
+      "goal": "Revisit established tracks for meaningful changes without redoing full baseline research."
     },
     {
       "phase_id": "coverage-repair",
       "label": "Coverage Repair",
-      "goal": "Repair known source-completeness gaps without treating historical completeness work as ordinary surveillance."
+      "goal": "Repair known source-completeness gaps without treating historical completeness work as an ordinary field change check."
     }
   ],
   "bootstrap_queue": [],

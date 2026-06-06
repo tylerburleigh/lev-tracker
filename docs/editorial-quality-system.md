@@ -1,21 +1,23 @@
 # Editorial Quality System
 
-The editorial quality system keeps the public LEV story readable, current, and honest without introducing new evidence claims. It covers public narrative copy, homepage reader tasks, and generated review artifacts.
+The editorial quality system keeps the public LEV story readable, current, and honest without introducing new evidence claims. It covers public story copy, homepage reader tasks, and generated review artifacts.
 
 ## Reader Jobs
 
-Every public narrative pass should preserve these reader jobs:
+Every public story pass should preserve these reader jobs:
 
-- Understand where the field is in the LEV journey.
+- Understand where the field stands now and what would count as the next meaningful step.
 - See what changed recently and what did not change.
-- Tell evidence, interpretation, and forecast apart.
+- Tell evidence, interpretation, and outlook apart.
 - See what would make the outlook more or less optimistic.
 - Find concrete track examples worth inspecting.
 - Understand where effort should focus next and why.
 
+Public story copy should describe the state of the field, not the state of the tracker. Coverage milestones, review status, and source-map completeness can explain why the site is easier to use, but the homepage arc should be about evidence maturity: human results, safety, endpoint quality, whether the main evidence gap moved, and whether LEV looks closer.
+
 ## Operating Loop
 
-Run the combined audit before and after reader-facing narrative changes:
+Run the combined audit before and after reader-facing story changes:
 
 ```bash
 npm run audit:editorial -- --write
@@ -23,7 +25,7 @@ npm run audit:editorial -- --write
 
 This command runs:
 
-- `npm run narrative:progress -- status`
+- `npm run story:current -- status`
 - `npm run lint:public-copy -- --write`
 - `npm run audit:reader-tasks -- --write`
 
@@ -51,9 +53,9 @@ It enforces the current warning ceiling while still allowing planned cleanup pas
 
 Run the system when any of these happen:
 
-- a publication event changes a public outlook
+- a public update changes a public outlook
 - a state-of-the-field edition is added or revised
-- the progress narrative review date is due
+- the current LEV story review date is due
 - homepage, hallmark, track, methods, or state-of-field copy changes
 - the curator asks whether the story still works for readers
 
@@ -61,9 +63,11 @@ Run the system when any of these happen:
 
 The combined audit fails when:
 
-- the progress narrative is stale
+- the current LEV story is stale
 - the reader-task audit has an issue
 - optional warning thresholds are exceeded
+
+The reader-task audit also rejects public story fields that lean on tracker/process framing such as first-pass coverage, public-map completeness, reader-facing self-description, or editorial-review language.
 
 The public copy lint is advisory by default because detailed outlook records still contain useful technical phrasing. Treat the report as a prioritized cleanup queue rather than a blanket rewrite command.
 
@@ -75,8 +79,8 @@ Public copy terms and plain-language replacements live in:
 config/public-copy-rules.json
 ```
 
-Both the narrative generator and public-copy lint read from this file. Add or revise terms there first, then regenerate reports.
+Both the story generator and public-copy lint read from this file. Add or revise terms there first, then regenerate reports.
 
 ## Review Discipline
 
-Use this system to improve presentation, not to change evidence. If a proposed edit would alter a stage, confidence value, forecast status, study interpretation, or supporting evidence mapping, stop and use the evidence-review or surveillance workflow instead.
+Use this system to improve presentation, not to change evidence. If a proposed edit would alter a stage, confidence value, outlook status, study interpretation, or supporting evidence mapping, stop and use the evidence-review or field-change workflow instead.

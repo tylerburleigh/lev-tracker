@@ -162,10 +162,10 @@ function buildEditorialItems(activeBundles) {
     const isRevision = bundle.lifecycle_status === "needs_revision";
     const mode = isPublishReady ? "publish" : "editorial_review";
     const title = isPublishReady
-      ? `Publish approved bundle ${bundle.id}`
+      ? `Publish approved staged update ${bundle.id}`
       : isRevision
-        ? `Revise bundle ${bundle.id}`
-        : `Review active bundle ${bundle.id}`;
+        ? `Revise staged update ${bundle.id}`
+        : `Review active staged update ${bundle.id}`;
 
     return compactObject({
       item_id: `${mode}-${bundle.id}`,
@@ -174,7 +174,7 @@ function buildEditorialItems(activeBundles) {
       priority_tier: "now",
       status: "ready",
       title,
-      rationale: `Candidate bundle ${bundle.id} is ${bundle.lifecycle_status}, so editorial work takes precedence over new research.`,
+      rationale: `Staged update ${bundle.id} is ${bundle.lifecycle_status}, so editorial work takes precedence over new research.`,
       default_action: isPublishReady
         ? "Run the publication checklist and publish if promotion checks pass."
         : "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
@@ -249,7 +249,7 @@ function buildEditorialRollupItem({
   outlooks,
   statusByTrack,
   siteShellText,
-  hasForecastRoute
+  hasOutlookRoute
 }) {
   const meaningfulPublicationEvents = publicationEvents
     .filter((event) => (event.affected_outlook_ids?.length ?? 0) > 0)
@@ -286,11 +286,11 @@ function buildEditorialRollupItem({
     })
     .map(([hallmarkId]) => hallmarkId)
     .sort((left, right) => left.localeCompare(right));
-  const forecastSurfaceGap = siteShellText.includes('label: "Forecast"') && !hasForecastRoute;
+  const outlookMethodSurfaceGap = siteShellText.includes('label: "Forecast"') && !hasOutlookRoute;
   const triggerMessages = [
     latestAffectedPublicationEvent &&
     isAfterDate(latestAffectedPublicationEvent.published_at, latestStateOfFieldDate)
-      ? `Latest affected publication event ${latestAffectedPublicationEvent.id} is newer than the latest state-of-field edition.`
+      ? `Latest affected public update ${latestAffectedPublicationEvent.id} is newer than the latest state-of-field edition.`
       : undefined,
     overallOutlook &&
     latestNonOverallOutlook &&
@@ -303,8 +303,8 @@ function buildEditorialRollupItem({
     staleHallmarkInsightIds.length > 0
       ? `${staleHallmarkInsightIds.length} hallmark insight(s) are unreviewed or older than affected outlook changes.`
       : undefined,
-    forecastSurfaceGap
-      ? "The shell presents Forecast as a public surface, but no forecast route exists."
+    outlookMethodSurfaceGap
+      ? "The shell presents Forecast as a public surface instead of a clearer outlook method surface."
       : undefined
   ].filter(Boolean);
 
@@ -321,7 +321,7 @@ function buildEditorialRollupItem({
     title: "Review public editorial rollup surfaces",
     rationale: triggerMessages.join(" "),
     default_action:
-      "Review overall outlook, state-of-field edition, hallmark insight copy, and forecast-facing method links; update public content only when the reviewed record warrants it.",
+      "Review overall outlook, state-of-field edition, hallmark insight copy, and outlook method links; update public content only when the reviewed record warrants it.",
     runbook_path: "docs/editorial-rollup.md",
     source_paths: [
       "data/publication-events",
@@ -383,8 +383,8 @@ function buildEditorialRollupItem({
         value: hasCurrentMonthPublicationActivity && !hasCurrentMonthStateOfField
       },
       {
-        name: "forecast_surface_gap",
-        value: forecastSurfaceGap
+        name: "outlook_method_surface_gap",
+        value: outlookMethodSurfaceGap
       }
     ]
   });
@@ -398,9 +398,9 @@ function buildBootstrapItems(bootstrapQueue, statusByTrack) {
       domain: "research",
       priority_tier: entry.priority_tier,
       status: "ready",
-      title: `Bootstrap ${describeTrack(entry, statusByTrack)}`,
+      title: `Baseline review for ${describeTrack(entry, statusByTrack)}`,
       rationale: entry.rationale,
-      default_action: "Run one track-level bootstrap pass and stage a candidate bundle only if a public baseline can be supported.",
+      default_action: "Run one track-level baseline review and stage an update only if a public baseline can be supported.",
       ...buildQueueReference(entry),
       runbook_path: "docs/research-ops-state.md",
       source_paths: [
@@ -464,11 +464,11 @@ function buildSurveillanceItem(surveillanceQueue, statusByTrack) {
     domain: "research",
     priority_tier: "now",
     status: "ready",
-    title: `Run surveillance for ${describeTrack(entry, statusByTrack)}`,
+    title: `Run field change check for ${describeTrack(entry, statusByTrack)}`,
     rationale: skippedRecentlySurveilled
-      ? `Next distinct surveillance target. Generated surveillance queue rank ${entry.rank}; rank 1 was recently handled by a surveillance or coverage-repair session.`
+      ? `Next distinct field-change target. Generated field-change queue rank ${entry.rank}; rank 1 was recently handled by a field change check or coverage-repair session.`
       : entry.rationale,
-    default_action: "Run one track-level surveillance pass, record materiality, excluded sources, and a session; create a bundle only for a material public change.",
+    default_action: "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
     ...buildQueueReference(entry),
     runbook_path: "docs/surveillance-checklist.md",
     source_paths: [
@@ -515,8 +515,8 @@ function buildCoverageBackfillItem(surveillanceQueue, statusByTrack) {
     priority_tier: "soon",
     status: "ready",
     title: `Backfill coverage assessment for ${describeTrack(backfillCandidate, statusByTrack)}`,
-    rationale: `${backlogCount} published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the surveillance queue.`,
-    default_action: "Review the published outlook, session, bundle, evidence reviews, and publication event, then create a coverage assessment without changing public records.",
+    rationale: `${backlogCount} published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.`,
+    default_action: "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
     ...buildQueueReference(backfillCandidate),
     runbook_path: "docs/coverage-assessment.md",
     source_paths: [
@@ -651,7 +651,7 @@ async function main() {
     stateOfFieldEditions,
     hallmarkInsights,
     siteShellText,
-    hasForecastRoute
+    hasOutlookRoute
   ] = await Promise.all([
     readJson("research/state/coverage-status.v1.json"),
     readJson("research/backlog/track-priority.v1.json"),
@@ -665,7 +665,7 @@ async function main() {
     readCollection("data/content/state-of-the-field"),
     readJson("data/content/hallmark-insights.json"),
     readTextIfExists("src/components/site-shell.tsx"),
-    pathExists("src/app/forecast/page.tsx")
+    pathExists("src/app/outlook/page.tsx")
   ]);
 
   const statusByTrack = buildStatusByTrack(coverageStatus);
@@ -691,7 +691,7 @@ async function main() {
     outlooks,
     statusByTrack,
     siteShellText,
-    hasForecastRoute
+    hasOutlookRoute
   });
   const bootstrapItems = buildBootstrapItems(priorityQueue.bootstrap_queue, statusByTrack);
   const coverageRepairItems = buildCoverageRepairItems(priorityQueue.coverage_repair_queue, statusByTrack);

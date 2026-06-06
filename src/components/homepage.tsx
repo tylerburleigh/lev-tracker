@@ -20,7 +20,7 @@ import {
 import { StageBadge } from "@/components/stage-badge";
 import {
   getConfidenceLabel,
-  getFocusReasonLabel,
+  getEvidenceNeedReasonLabel,
   getHomepageData,
   getMomentumLabel,
   getStageLabel,
@@ -47,14 +47,14 @@ function statusTone(value: string) {
   }
 }
 
-function changeMindTone(direction: string) {
+function outlookChangeTone(direction: string) {
   switch (direction) {
     case "more_optimistic":
-      return "change-mind-item--up";
+      return "outlook-change-item--up";
     case "less_optimistic":
-      return "change-mind-item--down";
+      return "outlook-change-item--down";
     default:
-      return "change-mind-item--watch";
+      return "outlook-change-item--watch";
   }
 }
 
@@ -65,21 +65,21 @@ export async function Homepage() {
     hallmarks,
     recentChanges,
     snapshot,
-    progressNarrative,
-    progressNarrativeReviewState
+    currentLevStory,
+    currentLevStoryStatus
   } = await getHomepageData();
   const visibleRecentChanges = recentChanges.slice(0, 3);
-  const visibleJourneySteps = progressNarrative.journey_steps.slice(0, 3);
-  const visibleProgressMoments = progressNarrative.progress_moments.slice(0, 3);
-  const visibleWatchlist = progressNarrative.watchlist.slice(0, 3);
-  const visibleFocusPriorities = progressNarrative.focus_priorities.slice(0, 3);
-  const visibleChangeMindItems = progressNarrative.change_mind_items.slice(0, 3);
-  const visibleSpotlightExamples = progressNarrative.spotlight_examples.slice(0, 3);
-  const stateOfFieldHref = progressNarrative.related_state_of_field_slug
-    ? `/state-of-the-field/${progressNarrative.related_state_of_field_slug}`
+  const visibleBeforeNowNextSteps = currentLevStory.before_now_next.slice(0, 3);
+  const visibleRecentDevelopments = currentLevStory.recent_developments.slice(0, 3);
+  const visibleItemsToWatchNext = currentLevStory.what_to_watch_next.slice(0, 3);
+  const visibleBetterEvidenceNeeds = currentLevStory.where_better_evidence_is_needed.slice(0, 3);
+  const visibleOutlookChangeItems = currentLevStory.what_would_change_the_outlook.slice(0, 3);
+  const visibleTrackExamples = currentLevStory.track_examples_to_inspect.slice(0, 3);
+  const stateOfFieldHref = currentLevStory.related_state_of_field_slug
+    ? `/state-of-the-field/${currentLevStory.related_state_of_field_slug}`
     : "/state-of-the-field";
-  const narrativeReviewTone =
-    progressNarrativeReviewState.status === "current" ? "status-chip--mint" : "status-chip--gold";
+  const storyStatusTone =
+    currentLevStoryStatus.status === "current" ? "status-chip--mint" : "status-chip--gold";
 
   return (
     <>
@@ -88,8 +88,8 @@ export async function Homepage() {
           <article className="hero-card">
             <div className="hero-card__eyebrow">State of LEV</div>
             <div className="hero-card__heading">
-              <h1>{progressNarrative.title}</h1>
-              <p>{progressNarrative.summary}</p>
+              <h1>{currentLevStory.title}</h1>
+              <p>{currentLevStory.summary}</p>
             </div>
             <div className="status-chip-row">
               <span className="status-chip status-chip--outline">
@@ -116,11 +116,11 @@ export async function Homepage() {
             <div className="hero-card__columns">
               <div>
                 <h2>Where we are now</h2>
-                <p>{progressNarrative.where_we_are_now}</p>
+                <p>{currentLevStory.current_evidence_picture}</p>
               </div>
               <div>
                 <h2>What changed recently</h2>
-                <p>{progressNarrative.what_changed_recently}</p>
+                <p>{currentLevStory.what_changed}</p>
               </div>
             </div>
           </article>
@@ -151,23 +151,23 @@ export async function Homepage() {
                 <Sparkles aria-hidden="true" size={16} />
                 <div>
                   <span className="snapshot-item__label">Research tracks covered</span>
-                  <strong>{snapshot.seededTracks}</strong>
+                  <strong>{snapshot.researchTracks}</strong>
                 </div>
               </div>
               <div className="snapshot-item">
                 <CalendarCheck aria-hidden="true" size={16} />
                 <div>
-                  <span className="snapshot-item__label">Narrative review</span>
-                  <strong>{progressNarrativeReviewState.label}</strong>
+                  <span className="snapshot-item__label">Story status</span>
+                  <strong>{currentLevStoryStatus.label}</strong>
                   <span className="snapshot-item__note">
-                    Due {formatDate(progressNarrativeReviewState.reviewDue)}
+                    Next check {formatDate(currentLevStoryStatus.reviewDue)}
                   </span>
                 </div>
               </div>
               <div className="snapshot-item">
                 <ShieldCheck aria-hidden="true" size={16} />
                 <div>
-                  <span className="snapshot-item__label">Review mode</span>
+                  <span className="snapshot-item__label">Publication standard</span>
                   <strong>{snapshot.reviewStatus}</strong>
                 </div>
               </div>
@@ -176,26 +176,26 @@ export async function Homepage() {
         </div>
       </section>
 
-      <section className="band band--narrative">
+      <section className="band band--field-story">
         <div className="page-shell section-header">
           <div>
-            <span className="section-kicker">Progress narrative</span>
-            <h2>The story to track</h2>
+            <span className="section-kicker">Field story</span>
+            <h2>Where the picture is moving</h2>
           </div>
-          <span className={`status-chip ${narrativeReviewTone}`}>
-            Reviewed {formatDate(progressNarrativeReviewState.lastReviewed)}
+          <span className={`status-chip ${storyStatusTone}`}>
+            Updated {formatDate(currentLevStoryStatus.lastReviewed)}
           </span>
         </div>
-        <div className="page-shell journey-grid">
-          {visibleJourneySteps.map((step, index) => (
-            <article className="journey-step" key={step.label}>
-              <div className="journey-step__label">
+        <div className="page-shell before-now-next-grid">
+          {visibleBeforeNowNextSteps.map((step, index) => (
+            <article className="before-now-next-step" key={step.label}>
+              <div className="before-now-next-step__label">
                 <Milestone aria-hidden="true" size={16} />
                 <span>{step.label}</span>
               </div>
               <h3>{step.title}</h3>
               <p>{step.summary}</p>
-              {index < visibleJourneySteps.length - 1 ? <ArrowRight aria-hidden="true" className="journey-step__arrow" size={18} /> : null}
+              {index < visibleBeforeNowNextSteps.length - 1 ? <ArrowRight aria-hidden="true" className="before-now-next-step__arrow" size={18} /> : null}
             </article>
           ))}
         </div>
@@ -203,10 +203,10 @@ export async function Homepage() {
           <article className="story-panel">
             <div className="story-panel__header">
               <Flag aria-hidden="true" size={18} />
-              <h3>Progress made</h3>
+              <h3>What changed</h3>
             </div>
             <div className="story-list">
-              {visibleProgressMoments.map((moment) => (
+              {visibleRecentDevelopments.map((moment) => (
                 <div className="story-list-item" key={moment.label}>
                   <div className="story-list-item__top">
                     <strong>{moment.label}</strong>
@@ -221,14 +221,14 @@ export async function Homepage() {
           <article className="story-panel">
             <div className="story-panel__header">
               <Telescope aria-hidden="true" size={18} />
-              <h3>Watch next</h3>
+              <h3>What would matter next</h3>
             </div>
             <div className="story-list">
-              {visibleWatchlist.map((item) => (
+              {visibleItemsToWatchNext.map((item) => (
                 <div className="story-list-item" key={item.label}>
                   <strong>{item.label}</strong>
                   <p>{item.summary}</p>
-                  <span className="story-impact">{item.signal_to_watch}</span>
+                  <span className="story-impact">{item.what_to_look_for}</span>
                 </div>
               ))}
             </div>
@@ -236,19 +236,19 @@ export async function Homepage() {
           <article className="story-panel">
             <div className="story-panel__header">
               <Compass aria-hidden="true" size={18} />
-              <h3>Focus next</h3>
+              <h3>Where proof is thinnest</h3>
             </div>
             <div className="story-list">
-              {visibleFocusPriorities.map((priority) => (
+              {visibleBetterEvidenceNeeds.map((priority) => (
                 <div className="story-list-item" key={priority.label}>
                   <div className="story-list-item__top">
                     <strong>{priority.label}</strong>
                     <span className="micro-badge micro-badge--outline">
-                      {getFocusReasonLabel(priority.reason)}
+                      {getEvidenceNeedReasonLabel(priority.reason)}
                     </span>
                   </div>
                   <p>{priority.rationale}</p>
-                  <span className="story-impact">{priority.next_useful_work}</span>
+                  <span className="story-impact">{priority.what_better_evidence_would_show}</span>
                 </div>
               ))}
             </div>
@@ -263,9 +263,9 @@ export async function Homepage() {
               <Eye aria-hidden="true" size={18} />
               <h2>What would change our mind?</h2>
             </div>
-            <div className="change-mind-list">
-              {visibleChangeMindItems.map((item) => (
-                <div className={`change-mind-item ${changeMindTone(item.direction)}`} key={item.label}>
+            <div className="outlook-change-list">
+              {visibleOutlookChangeItems.map((item) => (
+                <div className={`outlook-change-item ${outlookChangeTone(item.direction)}`} key={item.label}>
                   <CheckCircle2 aria-hidden="true" size={18} />
                   <div>
                     <strong>{item.label}</strong>
@@ -280,9 +280,9 @@ export async function Homepage() {
               <Compass aria-hidden="true" size={18} />
               <h2>Concrete examples</h2>
             </div>
-            <div className="spotlight-list">
-              {visibleSpotlightExamples.map((example) => (
-                <Link className="spotlight-card" href={example.href} key={example.href}>
+            <div className="track-example-list">
+              {visibleTrackExamples.map((example) => (
+                <Link className="track-example-card" href={example.href} key={example.href}>
                   <div>
                     <span className="section-kicker">{example.label}</span>
                     <strong>{example.title}</strong>
@@ -329,7 +329,7 @@ export async function Homepage() {
                     {getConfidenceLabel(outlook.confidence)}
                   </span>
                 </div>
-                <p className="hallmark-card__blocker">{outlook.blocker}</p>
+                <p className="hallmark-card__evidence-gap">{outlook.evidenceGap}</p>
                 <div className="hallmark-card__footer">
                   <span>{getTrackCountForHallmark(outlook.subjectId)} tracks</span>
                   <time dateTime={outlook.lastUpdated}>{formatDate(outlook.lastUpdated)}</time>
@@ -384,7 +384,7 @@ export async function Homepage() {
           <div className="trust-band__item">
             <Radar aria-hidden="true" size={18} />
             <div>
-              <strong>Evidence, interpretation, forecast</strong>
+              <strong>Evidence, interpretation, outlook</strong>
               <p>The site keeps those layers separate so motion does not masquerade as proof.</p>
             </div>
           </div>

@@ -20,7 +20,7 @@ The private admin workspace supports evidence intake, review, revision, and publ
 The current alpha has the core public and editorial surfaces in place:
 
 - public routes for overview, hallmarks, tracks, interventions, studies, findings, activity, methods, state-of-the-field notes, and admin review
-- file-backed records for sources, studies, findings, outlooks, activity items, candidate bundles, review comments, evidence reviews, and publication events
+- file-backed records for sources, studies, findings, outlooks, activity items, staged updates, review comments, evidence reviews, and public updates
 - staged promotion artifacts under `data/staged-records/<bundle-id>/`
 - research planning state under `research/state/` and `research/backlog/`
 
@@ -58,7 +58,7 @@ Automation can search, draft, and revise candidate records, but it does not publ
 
 - Trust matters more than provocation.
 - The site can be interesting and provocative, but not through false precision.
-- Evidence, interpretation, and forecast must be visibly separated.
+- Evidence, interpretation, and outlook must be visibly separated.
 - Company activity, funding, and regulatory movement are worth tracking, but they should live in an activity lane rather than directly determining scientific progress.
 
 ## Non-Goals
@@ -76,28 +76,28 @@ The public site has three layers:
 1. Evidence
    Sources, studies, findings, and activity items
 2. Interpretation
-   Hallmark stages, track summaries, blockers, and milestone status
-3. Forecast
+   Hallmark stages, track summaries, evidence gaps, and milestone status
+3. Outlook
    The curator's current outlook on overall progress and direction
 
 Each public page should make it obvious which layer the user is looking at.
 
-## Forecast Framing
+## Outlook Framing
 
 The site is ultimately interested in the question:
 
 Can human lifespan be extended at a rate that exceeds aging?
 
-That is too abstract and uncertain to reduce to a precise public number at launch. The forecast layer should therefore begin as a structured qualitative judgment, not a probability table pretending to know more than it does.
+That is too abstract and uncertain to reduce to a precise public number at launch. The outlook layer should therefore begin as a structured qualitative judgment, not a probability table pretending to know more than it does.
 
-Recommended public forecast fields:
+Recommended public outlook fields:
 
 - `overall_state`
 - `momentum`
 - `confidence`
-- `main_blockers`
-- `best_current_signals`
-- `forecast_note`
+- `main_evidence_gaps`
+- `strongest_current_evidence`
+- `interpretation_note`
 
 The site may also include a clearly labeled `2036 scenario lens` as an editorial device:
 
@@ -106,7 +106,7 @@ The site may also include a clearly labeled `2036 scenario lens` as an editorial
 - plausible
 - on_track
 
-This should be framed as a scenario check, not as a precise forecast.
+This should be framed as a scenario check, not as a precise prediction.
 
 ## Progress Model
 
@@ -210,7 +210,7 @@ Sections:
 ### 2. Hallmarks Index
 
 Purpose:
-Show all 12 hallmarks together with current stage, momentum, and blockers.
+Show all 12 hallmarks together with evidence stage, momentum, and evidence gaps.
 
 ### 3. Hallmark Detail Page
 
@@ -220,12 +220,12 @@ Explain how one hallmark is progressing.
 Sections:
 
 - hallmark outlook
-- milestones and current stage
+- milestones and evidence stage
 - underlying tracks
 - leading interventions
 - strongest findings
 - recent activity
-- forecast note
+- interpretation note
 
 Tracks should appear before raw recent evidence because the page should help users understand the structure of the field, not just the latest paper stream.
 
@@ -240,8 +240,8 @@ Sections:
 - target rationale
 - interventions in the track
 - evidence ladder
-- best signals
-- blockers
+- strongest evidence
+- evidence gaps
 - recent changes
 
 ### 5. Intervention Detail Page
@@ -262,7 +262,7 @@ Show contextual movement in companies, trials, and regulation without overstatin
 ### 8. Methods Page
 
 Purpose:
-Explain the schema, sourcing rules, review process, and how forecast judgments are made.
+Explain the schema, sourcing rules, review process, and how outlook judgments are made.
 
 ## Public Outlook Object
 
@@ -276,13 +276,13 @@ Current schema fields include:
 
 - `subject_type`
 - `subject_id`
-- `current_stage`
+- `evidence_stage`
 - `momentum`
 - `confidence`
-- `main_blockers`
-- `best_current_signals`
-- `forecast_note`
-- `rating_change_criteria`
+- `main_evidence_gaps`
+- `strongest_current_evidence`
+- `interpretation_note`
+- `what_would_change_the_rating`
 - `supporting_finding_ids`
 - `supporting_source_ids`
 - `supporting_activity_item_ids`
@@ -330,7 +330,7 @@ This should feel closer to editorial peer review than to a CMS form.
 - proposed milestone or outlook implications
 - required evidence-review lanes and review requirements
 - revision comments and history
-- publication event references after publishing
+- public update references after publishing
 
 ## Research Ops Integration
 
@@ -348,7 +348,7 @@ Research automation supports the admin workflow in three modes:
 Each session should leave durable artifacts:
 
 - session journal
-- zero or one candidate bundle
+- zero or one staged update
 - staged records only for material changes
 - structured materiality decision and excluded-source trail when applicable
 - next actions
@@ -388,7 +388,7 @@ Version 1 alpha should continue to prioritize:
 - seeded track taxonomy
 - overall outlook and hallmark outlooks
 - track outlooks where baseline coverage exists
-- clear evidence versus interpretation versus forecast separation
+- clear evidence versus interpretation versus outlook separation
 - single-admin review queue with evidence-review gates
 - continuous record updates plus a recurring editorial summary
 

@@ -5,29 +5,29 @@
   "name": "Microbiome Composition Modulation Track Outlook",
   "subject_type": "track",
   "subject_id": "microbiome-composition-modulation",
-  "current_stage": "human_biomarker_signal",
+  "evidence_stage": "human_biomarker_signal",
   "momentum": "mixed",
   "confidence": "low",
-  "main_blockers": [
+  "main_evidence_gaps": [
     "Human interventions can move microbiome composition or target symptoms, but durable aging-function, resilience, disease-prevention, lifespan, or mortality relevance remains unproven.",
     "Recent positive human data are disease-specific or product-specific, including chronic constipation rather than broad aging endpoints.",
     "Microbiome readouts are sensitive to baseline diet, baseline microbiome state, health status, and sampling design; some recent trials lack baseline fecal sampling or show null composition effects.",
-    "The track overlaps live-biotherapeutic, metabolite-restoration, ecosystem-replacement, diet, and exercise evidence, so support maps need explicit attribution boundaries."
+    "The track overlaps live-biotherapeutic, metabolite-restoration, ecosystem-replacement, diet, and exercise evidence, so evidence maps need explicit attribution boundaries."
   ],
-  "best_current_signals": [
+  "strongest_current_evidence": [
     "A 2026 TBC169 synbiotic RCT in middle-aged and elderly adults with chronic constipation improved bowel movement, stool-form, symptom, and quality-of-life scores while showing exploratory post-intervention microbiome composition differences.",
     "DS-01 synbiotic and polyphenol-rich diet studies support human biomarker and metabolite target engagement that overlaps microbiome composition modulation, but not aging-functional efficacy.",
     "A 2026 healthy-older-adult online physical activity RCT reported no gut microbiome composition change, limiting broad lifestyle-to-microbiome claims."
   ],
-  "forecast_note": "Microbiome composition modulation remains at low-confidence human_biomarker_signal. Surveillance found a new human synbiotic RCT with constipation symptom benefit in middle-aged and elderly adults, but the result is disease-specific, combination-product-specific, and has exploratory microbiome profiling because baseline fecal samples were not collected. A new healthy-older-adult exercise RCT found no gut microbiome composition change. The public framing should therefore treat this track as clinically active and human-testable, but not yet as a demonstrated aging-functional or LEV-relevant intervention class.",
-  "rating_change_criteria": [
+  "interpretation_note": "Microbiome composition modulation remains at low-confidence human_biomarker_signal. Surveillance found a new human synbiotic RCT with constipation symptom benefit in middle-aged and elderly adults, but the result is disease-specific, combination-product-specific, and has exploratory microbiome profiling because baseline fecal samples were not collected. A new healthy-older-adult exercise RCT found no gut microbiome composition change. The public framing should therefore treat this track as clinically active and human-testable, but not yet as a demonstrated aging-functional or LEV-relevant intervention class.",
+  "what_would_change_the_rating": [
     "A human_functional_benefit upgrade would require controlled older-adult evidence that a composition-modulating intervention improves prespecified frailty, mobility, cognition, immune resilience, intrinsic capacity, infection resilience, metabolic health, or another aging-relevant functional endpoint with microbiome support.",
     "Higher confidence at human_biomarker_signal would require replicated trials with baseline and longitudinal microbiome sampling, predefined taxonomic or functional microbiome endpoints, and transparent diet, medication, and baseline-microbiome stratification.",
     "The rating would weaken if larger studies show composition shifts without host biomarker, symptom, or functional relevance, or if safety, infection, tolerability, or durability concerns emerge.",
     "Adjacent DS-01, live-biotherapeutic, diet, metabolite, and exercise records should not upgrade this track unless the public claim depends on microbiome composition modulation rather than a metabolite, organism, diet, or non-microbiome mechanism alone."
   ],
   "earliest_plausible_window": "No credible LEV-relevant window can be assigned before composition-modulating interventions show replicated aging-relevant functional benefit with durable microbiome and safety data.",
-  "scenario_2036_status": "speculative",
+  "lev_2036_outlook": "speculative",
   "supporting_finding_ids": [
     "tbc169-synbiotic-improved-constipation-middle-aged-elderly",
     "online-physical-activity-no-microbiome-change-older-adults",
@@ -40,7 +40,7 @@
   "supporting_evidence": [
     {
       "label": "Stage assignment",
-      "outlook_field": "current_stage",
+      "outlook_field": "evidence_stage",
       "conclusion": "The track remains at low-confidence human_biomarker_signal rather than human_functional_benefit.",
       "support_role": "supports",
       "rationale": "Human trials show microbiome composition, metabolite, inflammation, or symptom movement, but the most direct new functional result is chronic-constipation-specific and does not establish broad aging-relevant function.",
@@ -62,7 +62,7 @@
     },
     {
       "label": "New functional signal boundary",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "The TBC169 synbiotic RCT is a real human symptom signal, but it should not drive a broad stage upgrade.",
       "support_role": "supports",
       "rationale": "The trial improved constipation outcomes and had exploratory post-intervention microbiome composition differences in participants aged at least 45 years, but the endpoint is constipation symptom burden and the product combines probiotic and fiber components.",

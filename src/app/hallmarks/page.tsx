@@ -41,9 +41,9 @@ export default async function HallmarksIndexPage() {
                   <span>{getMomentumLabel(outlook.momentum)}</span>
                   <span>{getConfidenceLabel(outlook.confidence)}</span>
                 </div>
-                <p>{outlook.note}</p>
+                <p>{outlook.interpretation}</p>
                 <div className="hallmark-index-card__footer">
-                  <span>{outlook.blocker}</span>
+                  <span>{outlook.evidenceGap}</span>
                   <time dateTime={outlook.lastUpdated}>{formatDate(outlook.lastUpdated)}</time>
                 </div>
               </Link>

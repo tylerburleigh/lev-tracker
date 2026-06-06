@@ -27,7 +27,7 @@ Within 30 seconds, a first-time visitor should be able to understand:
 - This is a working knowledge surface, not a landing page.
 - The first viewport must carry the main answer.
 - The page should reward scanning before reading.
-- Evidence, interpretation, and forecast must remain visibly distinct.
+- Evidence, interpretation, and outlook must remain visibly distinct.
 - Activity and progress should never look interchangeable.
 
 ## Page Structure
@@ -52,7 +52,7 @@ DESKTOP
 | +--------------------------------------+ +-------------------------------------+ |
 | | Overall LEV outlook                  | | Snapshot rail                       | |
 | | state / stage / momentum / note      | | last change / human review / count | |
-| | blockers / best signals              | | of hallmarks / track coverage      | |
+| | evidence gaps / strongest evidence   | | of hallmarks / track coverage      | |
 | +--------------------------------------+ +-------------------------------------+ |
 +----------------------------------------------------------------------------------+
 | Hallmark outlook grid                                                            |
@@ -97,7 +97,7 @@ Orient the user and expose the site-level controls without taking over the page.
 - primary navigation
 - search trigger
 - last updated timestamp
-- legend trigger for `Evidence / Interpretation / Forecast`
+- legend trigger for `Evidence / Interpretation / Outlook`
 
 ### Desktop Layout
 
@@ -144,14 +144,14 @@ Source:
 Fields:
 
 - `name`
-- `current_stage`
+- `evidence_stage`
 - `momentum`
 - `confidence`
-- `main_blockers`
-- `best_current_signals`
-- `forecast_note`
+- `main_evidence_gaps`
+- `strongest_current_evidence`
+- `interpretation_note`
 - `last_updated`
-- optional `scenario_2036_status`
+- optional `lev_2036_outlook`
 
 #### Visual Priority
 
@@ -160,12 +160,12 @@ This is the most prominent component on the homepage.
 #### Content Blocks
 
 - label: `Overall LEV Outlook`
-- current stage badge
+- evidence stage badge
 - momentum badge
 - confidence badge
-- one-paragraph forecast note
-- 2-3 blockers
-- 2-3 best current signals
+- one-paragraph interpretation note
+- 2-3 evidence gaps
+- 2-3 strongest current evidence points
 
 #### Interaction
 
@@ -244,10 +244,10 @@ Fields:
 
 - hallmark name
 - hallmark id
-- `current_stage`
+- `evidence_stage`
 - `momentum`
 - `confidence`
-- `main_blockers[0]`
+- `main_evidence_gaps[0]`
 - active track count
 - `last_updated`
 
@@ -259,7 +259,7 @@ Each card should fit in a stable footprint and include:
 - stage label
 - momentum marker
 - confidence marker
-- one-line blocker
+- one-line evidence gap
 - track count
 - last updated
 
@@ -354,7 +354,7 @@ Fallback:
 
 #### Fields
 
-- scenario status
+- 2036 LEV outlook
 - short explanation
 - `what would need to change`
 
@@ -373,7 +373,7 @@ Close the page with a compact credibility anchor.
 
 - human-reviewed
 - source-backed
-- evidence / interpretation / forecast are distinct
+- evidence / interpretation / outlook are distinct
 - link to Methods
 - link to State of the Field
 
@@ -457,7 +457,7 @@ Show:
 
 - stage, momentum, and confidence cannot be color-only
 - every status needs text
-- long blocker text must clamp cleanly
+- long evidence-gap text must clamp cleanly
 - all 12 hallmark cards need equal visual weight
 - the first viewport must remain legible on laptop and mobile widths
 

@@ -5,21 +5,21 @@
   "name": "Stem Cell Rejuvenation Track Outlook",
   "subject_type": "track",
   "subject_id": "stem-cell-rejuvenation",
-  "current_stage": "human_biomarker_signal",
+  "evidence_stage": "human_biomarker_signal",
   "momentum": "steady",
   "confidence": "low",
-  "main_blockers": [
+  "main_evidence_gaps": [
     "Direct human evidence is ex vivo or biopsy-biomarker evidence, not a tested in vivo stem-cell rejuvenation therapy.",
     "The strongest functional and lifespan signals remain mouse studies across heterogeneous pathways, tissues, and intervention modes.",
     "Stem-cell activation, expansion, lineage skewing, tumor risk, and off-target pathway effects remain central safety boundaries."
   ],
-  "best_current_signals": [
+  "strongest_current_evidence": [
     "Older human HSCs show Cdc42-linked aging phenotypes, and ex vivo CASIN can repolarize aged human HSCs while shifting xenotransplant behavior toward young-donor patterns.",
     "Cdc42 inhibition, NAD+ repletion, and p38 MAPK inhibition can restore aged mouse stem-cell phenotypes or regenerative function in preclinical studies.",
     "Human exercise studies show that skeletal-muscle satellite-cell biomarkers remain responsive in people, although this is not a targeted drug or gene-therapy signal."
   ],
-  "forecast_note": "Stem cell rejuvenation now has enough direct human-cell and human-biomarker evidence for a first public baseline at human_biomarker_signal. The rating should remain low confidence because human clinical benefit has not been shown, and the strongest rejuvenation effects are still animal or ex vivo findings.",
-  "rating_change_criteria": [
+  "interpretation_note": "Stem cell rejuvenation now has enough direct human-cell and human-biomarker evidence for a first public baseline at human_biomarker_signal. The rating should remain low confidence because human clinical benefit has not been shown, and the strongest rejuvenation effects are still animal or ex vivo findings.",
+  "what_would_change_the_rating": [
     "A stronger stage assignment would need an in vivo human intervention that improves stem/progenitor-cell function and ties that change to a functional tissue outcome.",
     "Confidence would improve if independent groups replicated Cdc42, NAD, p38, or related interventions with durable effects and credible safety margins in aged animals and human cells.",
     "The rating would weaken if human ex vivo Cdc42 findings fail to replicate, if candidate interventions show unacceptable proliferative or lineage-skewing risk, or if mouse functional signals do not translate to human-cell assays."
@@ -35,7 +35,7 @@
   "supporting_evidence": [
     {
       "label": "Stage assignment",
-      "outlook_field": "current_stage",
+      "outlook_field": "evidence_stage",
       "conclusion": "The track reaches human biomarker signal because human HSCs and human skeletal-muscle satellite-cell endpoints show aging-relevant biomarker movement, but in vivo therapeutic benefit has not been demonstrated.",
       "support_role": "supports",
       "rationale": "The human HSC Cdc42 study gives direct human-cell support for a targetable aging axis, while the exercise meta-analysis shows human satellite-cell biomarkers can move in intervention contexts.",
@@ -55,7 +55,7 @@
     },
     {
       "label": "Preclinical functional support",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "Multiple mouse studies show aged stem-cell phenotypes or regenerative function can be improved by targeted pathway interventions.",
       "support_role": "supports",
       "rationale": "Cdc42 inhibition, NAD+ repletion, and p38 MAPK inhibition each provide animal functional evidence that aged stem-cell compartments can be made more youthful or regenerative.",
@@ -77,7 +77,7 @@
     },
     {
       "label": "Animal lifespan support boundary",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "Systemic CASIN treatment in aged female mice adds animal lifespan support, but it should not by itself upgrade the public stage beyond human biomarker signal.",
       "support_role": "balances",
       "rationale": "The lifespan result is notable because it follows a short Cdc42-inhibitor course in old mice, but it is still single-species, preclinical, and not proven to work through a stem-cell-only mechanism.",

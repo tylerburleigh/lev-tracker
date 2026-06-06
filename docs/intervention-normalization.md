@@ -7,7 +7,7 @@ Intervention records make the public evidence graph easier to inspect. They sit 
 Normalize an intervention when at least one of these is true:
 
 - a promoted `study` or `finding` links to the intervention ID
-- a published candidate bundle scopes work to the intervention ID
+- a published staged update scopes work to the intervention ID
 - the intervention is a track exemplar that appears repeatedly on public pages
 - the intervention is needed to disambiguate related IDs, such as a compound, procedure, vector, or combination
 

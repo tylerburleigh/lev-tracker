@@ -181,20 +181,20 @@ async function main() {
 
       let notes;
       if (activeReview) {
-        notes = `Candidate bundle ${latestBundle.id} is still ${latestBundle.lifecycle_status}.`;
+        notes = `Staged update ${latestBundle.id} is still ${latestBundle.lifecycle_status}.`;
       } else if (
         latestPublication &&
         (!latestSession || isMoreRecent(latestPublication.published_at, latestSession.completed_at))
       ) {
-        notes = `Latest publication event: ${latestPublication.id}.`;
+        notes = `Latest public update: ${latestPublication.id}.`;
       } else if (latestSession) {
         notes = `Latest ${latestSession.mode} session ${latestSession.id} ended as ${latestSession.outcome}.`;
       } else if (latestBundle?.lifecycle_status === "published") {
-        notes = `Latest published bundle: ${latestBundle.id}.`;
+        notes = `Latest published staged update: ${latestBundle.id}.`;
       } else if (hasTrackOutlook) {
-        notes = "Public track outlook exists without bundle history in the local queue.";
+        notes = "Public track outlook exists without staged-update history in the local queue.";
       } else {
-        notes = "No track-level public baseline has been bootstrapped yet.";
+        notes = "No track-level public baseline has been reviewed yet.";
       }
 
       return {
@@ -388,8 +388,8 @@ async function main() {
       rationale:
         row.next_coverage_action ??
         (row.last_coverage_assessment_id
-          ? "Latest coverage assessment recommends source-completeness repair before ordinary surveillance."
-          : "Latest research session recommends source-completeness repair before ordinary surveillance."),
+          ? "Latest coverage assessment recommends source-completeness repair before an ordinary field change check."
+          : "Latest research session recommends source-completeness repair before an ordinary field change check."),
       default_question: row.default_research_question,
       notes: row.last_coverage_assessment_id
         ? `Latest coverage assessment: ${row.last_coverage_assessment_id}.`
@@ -430,7 +430,7 @@ async function main() {
     updated_at: new Date().toISOString(),
     notes: [
       "The unit of research work is a track, not a hallmark.",
-      "One bootstrap, surveillance, or coverage-repair run should cover one track unless the user explicitly narrows further.",
+      "One baseline-review, field-change, or coverage-repair run should cover one track unless the user explicitly narrows further.",
       "Coverage status is planning state, not a claim about scientific maturity."
     ],
     selection_policy: {
@@ -476,10 +476,10 @@ async function main() {
     track_taxonomy_version: trackTaxonomy.taxonomy_version,
     updated_at: new Date().toISOString(),
     notes: [
-      "Bootstrap priority is front-loaded toward one anchor track per uncovered hallmark.",
-      "Surveillance priority applies only to tracks that already have a public baseline and no active review bundle.",
-      "Coverage-repair priority applies when the latest coverage assessment recommends repairing source-completeness gaps before ordinary surveillance.",
-      "The queue is a curator planning tool, not a public forecast."
+      "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
+      "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
+      "Coverage-repair priority applies when the latest coverage assessment recommends repairing source-completeness gaps before an ordinary field change check.",
+      "The queue is a curator planning tool, not a public outlook."
     ],
     selection_policy: {
       default_unit: "track",
@@ -498,14 +498,14 @@ async function main() {
       stop_after: [
         "The delta window has been checked and either nothing material changed or one bounded update is ready.",
         "The evidence stays in activity-only territory and does not justify outlook movement.",
-        "The pass begins to broaden into fresh baseline research and should be handed back to bootstrap instead."
+        "The pass begins to broaden into fresh baseline research and should be handed back to baseline review instead."
       ]
     },
     coverage_repair_defaults: {
       stop_after: [
         "The known source-completeness gaps named in the latest coverage assessment have been checked.",
         "The coverage verdict, known gaps, and next coverage action can be updated without changing public claims.",
-        "New evidence materially changes the outlook and should move into a bounded surveillance or outlook-refresh bundle."
+        "New evidence materially changes the outlook and should move into a bounded field change check or outlook-refresh staged update."
       ]
     },
     phases: [
@@ -522,7 +522,7 @@ async function main() {
       {
         phase_id: "expand-uncovered-hallmarks",
         label: "Expand Uncovered Hallmarks",
-        goal: "Broaden hallmarks that still need more than one track to avoid a one-track narrative."
+        goal: "Broaden hallmarks that still need more than one track to avoid a one-track view."
       },
       {
         phase_id: "expand-covered-hallmarks",
@@ -531,13 +531,13 @@ async function main() {
       },
       {
         phase_id: "surveillance-rotation",
-        label: "Surveillance Rotation",
-        goal: "Revisit established tracks for meaningful deltas without redoing full baseline research."
+        label: "Field Change Rotation",
+        goal: "Revisit established tracks for meaningful changes without redoing full baseline research."
       },
       {
         phase_id: "coverage-repair",
         label: "Coverage Repair",
-        goal: "Repair known source-completeness gaps without treating historical completeness work as ordinary surveillance."
+        goal: "Repair known source-completeness gaps without treating historical completeness work as an ordinary field change check."
       }
     ],
     bootstrap_queue: bootstrapCandidates,

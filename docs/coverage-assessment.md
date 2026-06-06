@@ -53,8 +53,8 @@ Use `known_gaps[]` to separate "we have not checked this enough" from "the liter
 Create or update a coverage assessment when:
 
 - a bootstrap pass creates a first public track baseline
-- a surveillance pass materially changes the outlook or support map
-- a surveillance pass finds no public delta but meaningfully improves confidence about coverage
+- a field change check materially changes the outlook or evidence map
+- a field change check finds no public delta but meaningfully improves confidence about coverage
 - a reviewer identifies a missing evidence category
 - a curator intentionally runs a `coverage_repair` pass
 
@@ -62,8 +62,8 @@ Do not update it for every small source or activity record. The artifact should 
 
 ## Workflow
 
-1. Review the current public outlook and support map.
-2. Review the latest relevant research session, bundle, evidence reviews, and publication event.
+1. Review the current public outlook and evidence map.
+2. Review the latest relevant research session, staged update, evidence reviews, and public update.
 3. Assign category-level coverage based on what the current public claim depends on.
 4. List `covered_source_ids[]` and `covered_finding_ids[]` that anchor the assessment.
 5. Record known coverage, evidence, or operational gaps.

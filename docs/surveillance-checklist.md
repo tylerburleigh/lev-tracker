@@ -1,18 +1,18 @@
-# Surveillance Checklist
+# Field Change Checklist
 
-Use this checklist for track-level surveillance after baseline bootstrap. Surveillance answers one bounded question: what changed since the last public review for this track?
+Use this checklist for track-level field change checks after baseline review. A change check answers one bounded question: what changed since the last public review for this track?
 
 ## Scope
 
 1. Pick exactly one track from `research/backlog/track-priority.v1.json`.
 2. Record the track ID, hallmark ID, and reason it is next in the queue.
-3. Identify the last relevant publication event, bundle, outlook `last_updated`, and research session.
+3. Identify the last relevant public update, staged update, outlook `last_updated`, and research session.
 4. Define the delta window from that prior checkpoint through the current review date.
 5. Check whether `research/coverage-assessments/` already has an assessment for the track and note any known gaps.
 
 ## Baseline Snapshot
 
-- Current public outlook stage, confidence, momentum, blockers, signals, and forecast note.
+- Current public outlook evidence stage, confidence, momentum, evidence gaps, strongest evidence, and interpretation note.
 - Current supporting finding IDs, source IDs, study IDs, intervention IDs, and activity item IDs.
 - Current trial or program records that were explicitly marked no-results, pending, active, recruiting, terminated, or activity-only.
 - Known caveats from the latest evidence reviews.
@@ -22,7 +22,7 @@ Use this checklist for track-level surveillance after baseline bootstrap. Survei
 
 Check only sources that can plausibly change the public state for the scoped track:
 
-- PubMed or NCBI E-utilities for new primary studies, reviews with material synthesis, corrections, or retractions. This is required for biomedical track surveillance.
+- PubMed or NCBI E-utilities for new primary studies, reviews with material synthesis, corrections, or retractions. This is required for biomedical track change checks.
 - ClinicalTrials.gov API or other primary registries for new trials, status changes, completion, posted results, termination, or unposted-results annotations. This is required when human studies, registries, or trial-watch records could affect the track.
 - DOI, publisher, preprint, conference, FDA, EMA, sponsor, company, grant, or broader web search when the track is fast-moving, commercial, preprint-heavy, or likely to have non-PubMed sources.
 - Existing public source URLs when the prior record was time-sensitive.
@@ -31,13 +31,13 @@ Treat non-primary web hits as leads unless they point to verifiable source data.
 
 ## Materiality Decision
 
-Treat surveillance as a sorting pass first. The job is to decide whether the delta belongs in `no_op`, `activity_only`, `outlook_refresh`, or `coverage_repair`, not to force a public update.
+Treat a field change check as a sorting pass first. The job is to decide whether the delta belongs in `no_op`, `activity_only`, `outlook_refresh`, or `coverage_repair`, not to force a public update.
 
 Choose one outcome:
 
-- `no_op`: nothing material changed. Write the session record only. Do not create a candidate bundle or staged JSON.
+- `no_op`: nothing material changed. Write the session record only. Do not create a staged update or staged JSON.
 - `activity_only`: a real-world activity changed, but public evidence interpretation does not move. Write the session record; create a bundle only if a public `activity_item` or `source` record is worth publishing.
-- `outlook_refresh`: evidence, safety, trial results, taxonomy mapping, or forecast support changed enough to update public records. Create the smallest candidate bundle that captures the change.
+- `outlook_refresh`: evidence, safety, trial results, taxonomy mapping, or outlook support changed enough to update public records. Create the smallest staged update that captures the change.
 - `coverage_repair`: the pass primarily addresses source-completeness gaps from a coverage assessment. Update or create a coverage assessment; only create a public bundle if the repair also changes public records.
 
 Avoid staging records for contextual noise, duplicate sources, unchanged registries, or speculative implications.
@@ -74,21 +74,21 @@ For `activity_only` or `outlook_refresh` bundles:
 1. Add or update only the records needed for the material change.
 2. Keep source summaries factual and non-interpretive.
 3. Keep each finding atomic and linked to source, study, track, hallmark, and intervention IDs when applicable.
-4. Update outlook support maps only when the public interpretation changes.
+4. Update outlook evidence maps only when the public interpretation changes.
 5. Keep `data/staged-records/<bundle-id>/` as the bundle's proposed public state; once published, that directory is immutable audit history, not active work.
 
 ## Coverage Assessment
 
-Create or update `research/coverage-assessments/<track-id>-coverage-<date>.json` when surveillance:
+Create or update `research/coverage-assessments/<track-id>-coverage-<date>.json` when a field change check:
 
-- changes the outlook or support map
+- changes the outlook or evidence map
 - resolves a known source-completeness gap
 - discovers a material missing evidence category
-- shows that a track needs `coverage_repair` rather than ordinary delta surveillance
+- shows that a track needs `coverage_repair` rather than an ordinary field change check
 
 Do not update coverage assessments just to mirror every source or activity item. The assessment is for category-level completeness and known gaps.
 
-Set `next_recommended_mode` in the coverage assessment. Use `surveillance` when normal delta monitoring should continue, and `coverage_repair` when known source-completeness gaps should be repaired before another ordinary surveillance pass.
+Set `next_recommended_mode` in the coverage assessment. Use `surveillance` when normal delta monitoring should continue, and `coverage_repair` when known source-completeness gaps should be repaired before another ordinary field change check.
 
 ## Review Lanes
 
@@ -98,7 +98,7 @@ Set `next_recommended_mode` in the coverage assessment. Use `surveillance` when 
 - `outlook_refresh`: require `source_fidelity` and `interpretation_forecast`.
 - Add `safety_limitations` when adverse events, population limits, disease-specific boundaries, dosing, durability, or risk/benefit framing materially change.
 - Add `taxonomy_mapping` when a track, hallmark, intervention, study, or finding link changes.
-- Add `forecast_calibration` when scenario or timing language materially changes.
+- Add `forecast_calibration` when scenario, timing, or outlook language materially changes.
 
 ## Verification
 

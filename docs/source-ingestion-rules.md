@@ -11,7 +11,7 @@ This document defines the default rules for adding `source` records during boots
   - Manual sources without a stable identifier: `<issuer-or-venue>-<short-topic>-<yyyy-mm-dd>`
 - Use the closest schema `source_type`: `journal_article`, `review`, `preprint`, `trial_registry`, `company_update`, `regulatory_filing`, `database`, `conference_abstract`, or `other`.
 - Keep `name` close to the source title. Use `short_name` for curator-friendly labels.
-- Keep `summary` factual and bounded to what the source is. Do not put outcome interpretation, rating movement, or forecast language in the source summary.
+- Keep `summary` factual and bounded to what the source is. Do not put outcome interpretation, rating movement, or outlook language in the source summary.
 - Use `authors` for paper authors, trial sponsors, database stewards, companies, or agencies.
 - Use `venue` for the journal, registry, agency page, company site, database, or meeting.
 - Use `year` for the publication, posting, registration, or announcement year.
@@ -60,7 +60,7 @@ Manual source records are acceptable for official or otherwise useful sources th
 - Make the source ID include the issuer and date when no durable external identifier exists.
 - Use the original source URL rather than a press aggregator or secondary summary.
 - Keep the source summary descriptive: what the document is, who issued it, and what record or announcement it anchors.
-- Put curator interpretation in linked `finding` records or in the candidate bundle rationale, not in the source record.
+- Put curator interpretation in linked `finding` records or in the staged update rationale, not in the source record.
 
 ## Candidate Bundle Checks
 

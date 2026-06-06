@@ -5,17 +5,17 @@
   "name": "Neuroendocrine and Systemic Signal Reset Track Outlook",
   "subject_type": "track",
   "subject_id": "neuroendocrine-and-systemic-signal-reset",
-  "current_stage": "human_biomarker_signal",
+  "evidence_stage": "human_biomarker_signal",
   "momentum": "mixed",
   "confidence": "low",
-  "main_blockers": [
+  "main_evidence_gaps": [
     "The strongest human intervention signal is TRIIM, a nine-participant uncontrolled male pilot with epigenetic-age and immunosenescence biomarkers rather than randomized functional, disease, or mortality endpoints.",
     "TRIIM-X and the klotho plasmid gene-therapy registries supply human trial-watch momentum, but they have no posted results and cannot support benefit or safety claims yet.",
     "Animal support is biologically coherent but translationally heterogeneous: hypothalamic NF-kappaB/GnRH, hypothalamic stem-cell exosomes, adipose-hypothalamic eNAMPT signaling, oxytocin, and klotho do not represent one deployable modality.",
     "Central hypothalamic manipulation, recombinant growth hormone combinations, reproductive-axis signaling, S1PC/eNAMPT modulation, oxytocin, klotho protein, and plasmid gene therapy each carry distinct dosing, safety, durability, and active-component questions.",
     "Several signals overlap neighboring tracks, especially DNA methylation, nutrient sensing, NAD/redox restoration, microbiome/metabolite restoration, niche support, circulating factors, gene therapy, and inflammation, so public claims need tight track-boundary language."
   ],
-  "best_current_signals": [
+  "strongest_current_evidence": [
     "TRIIM reported lower DNA-methylation epigenetic age and immunosenescence-marker movement after one year in nine healthy men.",
     "TRIIM-X is a randomized phase 2 registry entry for a related thymus-regeneration and endocrine combination regimen, but has no posted results in the current registry record.",
     "Mouse hypothalamic IKK-beta/NF-kappaB and GnRH studies support central immune-neuroendocrine control of aging phenotypes and lifespan in animals.",
@@ -24,8 +24,8 @@
     "Systemic oxytocin and low-dose klotho provide peripheral hormone/protein animal support, including aged-mouse muscle regeneration and aged-rhesus memory improvement.",
     "Klotho plasmid and klotho/follistatin plasmid gene-therapy registries are recruiting human trial-watch items, but neither has posted results."
   ],
-  "forecast_note": "Neuroendocrine and systemic signal reset has enough source-backed evidence for a public baseline at human_biomarker_signal, but the stage remains low confidence and narrowly anchored to TRIIM's small uncontrolled human biomarker signal. Coverage repair adds adipose-hypothalamic S1PC/eNAMPT support and human klotho gene-therapy trial-watch context, but the broader track is still preclinical or no-results for functional aging benefit: animal and nonhuman-primate results make neuroendocrine/systemic signaling plausible, while no reviewed source establishes durable human functional, disease, mortality, or LEV-relevant benefit.",
-  "rating_change_criteria": [
+  "interpretation_note": "Neuroendocrine and systemic signal reset has enough source-backed evidence for a public baseline at human_biomarker_signal, but the stage remains low confidence and narrowly anchored to TRIIM's small uncontrolled human biomarker signal. Coverage repair adds adipose-hypothalamic S1PC/eNAMPT support and human klotho gene-therapy trial-watch context, but the broader track is still preclinical or no-results for functional aging benefit: animal and nonhuman-primate results make neuroendocrine/systemic signaling plausible, while no reviewed source establishes durable human functional, disease, mortality, or LEV-relevant benefit.",
+  "what_would_change_the_rating": [
     "A human_functional_benefit upgrade would require randomized, controlled older-adult evidence with prespecified functional, intrinsic-capacity, disease, or durability endpoints and acceptable endocrine/metabolic safety.",
     "Higher confidence at the current stage would require independent replication of TRIIM-like biomarker effects and clear separation of growth hormone, DHEA, metformin, thymus, and epigenetic-clock contributions.",
     "S1PC/eNAMPT, klotho protein, klotho gene therapy, oxytocin, GnRH, or hypothalamic interventions should not upgrade the track unless paired with human target engagement and aging-relevant endpoints.",
@@ -33,7 +33,7 @@
     "Track claims should remain bounded unless a single modality shows reproducible dose, mechanism, durability, and safety across endocrine, autonomic, or systemic signaling endpoints."
   ],
   "earliest_plausible_window": "No credible LEV-relevant window can be assigned before randomized human evidence shows durable functional or disease-relevant benefit from a clearly defined neuroendocrine or systemic-signal intervention.",
-  "scenario_2036_status": "speculative",
+  "lev_2036_outlook": "speculative",
   "supporting_finding_ids": [
     "triim-human-epigenetic-age-decrease",
     "triim-x-registry-no-results",
@@ -48,7 +48,7 @@
   "supporting_evidence": [
     {
       "label": "Stage assignment",
-      "outlook_field": "current_stage",
+      "outlook_field": "evidence_stage",
       "conclusion": "The track reaches human_biomarker_signal because TRIIM is a human intervention study with epigenetic-age and immunosenescence-marker movement.",
       "support_role": "supports",
       "rationale": "TRIIM directly tested a systemic endocrine combination regimen in humans and measured aging-relevant biomarkers over one year.",
@@ -84,7 +84,7 @@
     },
     {
       "label": "Central neuroendocrine animal support",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "Mouse studies support hypothalamic immune-neuroendocrine and secretory control of aging phenotypes.",
       "support_role": "supports",
       "rationale": "Hypothalamic IKK-beta/NF-kappaB and GnRH experiments connect central inflammatory-neuroendocrine signaling to aging phenotypes and lifespan, while hypothalamic stem-cell exosome work supports a secretory miRNA mechanism.",
@@ -104,7 +104,7 @@
     },
     {
       "label": "Adipose-hypothalamic eNAMPT support",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "S1PC/eNAMPT adds a peripheral-to-hypothalamic systemic-signaling branch with aged-mouse functional support and human biomarker context.",
       "support_role": "supports",
       "rationale": "PMID 42102814 reports that S1PC promoted adipose eNAMPT secretion, hypothalamic targeting, aged-mouse skeletal-muscle force and frailty-index improvements, and increased circulating eNAMPT in human individuals with healthy adipose mass.",
@@ -123,7 +123,7 @@
     },
     {
       "label": "Peripheral hormone and protein support",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "Peripheral endocrine-style interventions add animal functional support, including aged mouse muscle repair and aged rhesus cognition.",
       "support_role": "supports",
       "rationale": "Oxytocin supplies systemic hormone evidence in aged mouse muscle regeneration, and klotho supplies a higher-order preclinical cognition signal in aged nonhuman primates.",
@@ -167,7 +167,7 @@
       "outlook_field": "confidence",
       "conclusion": "Confidence remains low because human evidence is biomarker-only or registry-only and the animal evidence spans distinct mechanisms and intervention forms.",
       "support_role": "balances",
-      "rationale": "The support map contains one small uncontrolled human biomarker study, three no-results human registries, and several animal or nonhuman-primate signals with different translational constraints.",
+      "rationale": "The evidence map contains one small uncontrolled human biomarker study, three no-results human registries, and several animal or nonhuman-primate signals with different translational constraints.",
       "finding_ids": [
         "triim-human-epigenetic-age-decrease",
         "triim-x-registry-no-results",

@@ -53,7 +53,7 @@
     {
       "category": "human_observational_or_natural_experiment",
       "coverage_level": "thin",
-      "rationale": "The current public support map is driven primarily by interventions and biomarker studies; observational aging-microbiome literature is not comprehensively mapped for this track.",
+      "rationale": "The current public evidence map is driven primarily by interventions and biomarker studies; observational aging-microbiome literature is not comprehensively mapped for this track.",
       "gap_note": "A future coverage repair pass should decide whether observational centenarian, frailty, infection-resilience, or diet-microbiome studies add decision-relevant boundaries."
     },
     {
@@ -65,7 +65,7 @@
     {
       "category": "mechanistic",
       "coverage_level": "adequate",
-      "rationale": "The support map captures microbiome diversity, composition, metabolite, and inflammation-adjacent signals while separating composition modulation from metabolite restoration and live-biotherapeutic mechanisms.",
+      "rationale": "The evidence map captures microbiome diversity, composition, metabolite, and inflammation-adjacent signals while separating composition modulation from metabolite restoration and live-biotherapeutic mechanisms.",
       "source_ids": [
         "pmid-42226670",
         "pmid-40944126",
@@ -102,7 +102,7 @@
       "category": "recent_reviews_meta_analyses",
       "coverage_level": "thin",
       "rationale": "The pass prioritized primary delta evidence and did not stage a recent review or meta-analysis as a synthesis anchor.",
-      "gap_note": "A coverage repair pass should triangulate current review articles against the public support map."
+      "gap_note": "A coverage repair pass should triangulate current review articles against the public evidence map."
     },
     {
       "category": "seminal_anchors",
@@ -148,7 +148,7 @@
       "category": "seminal_anchors",
       "description": "No explicit must-include or citation-network audit has been recorded for the track's historical seminal papers.",
       "priority": "medium",
-      "suggested_action": "Run a coverage_repair pass that triangulates review articles, highly cited primary papers, and existing support-map anchors."
+      "suggested_action": "Run a coverage_repair pass that triangulates review articles, highly cited primary papers, and existing evidence-map anchors."
     },
     {
       "gap_id": "aging-functional-upgrade-evidence-not-yet-established",
@@ -162,7 +162,7 @@
       "gap_id": "recent-review-triangulation-thin",
       "gap_type": "coverage_gap",
       "category": "recent_reviews_meta_analyses",
-      "description": "Recent review and meta-analysis coverage has not been explicitly reconciled with the public support map.",
+      "description": "Recent review and meta-analysis coverage has not been explicitly reconciled with the public evidence map.",
       "priority": "medium",
       "suggested_action": "During a coverage_repair pass, compare recent reviews against included source IDs and document any missing decision-relevant anchors."
     }

@@ -5,25 +5,25 @@
   "name": "Mitochondrial Biogenesis and Dynamics Track Outlook",
   "subject_type": "track",
   "subject_id": "mitochondrial-biogenesis-and-dynamics",
-  "current_stage": "human_functional_benefit",
+  "evidence_stage": "human_functional_benefit",
   "momentum": "mixed",
   "confidence": "low",
-  "main_blockers": [
+  "main_evidence_gaps": [
     "The highest-quality human signal is structured exercise, not a druglike mitochondrial-biogenesis or dynamics therapy.",
     "Mitochondrial target attribution is often coupled to broad exercise physiology, muscle mass, insulin sensitivity, and nutrient-sensing changes.",
     "Older-adult mitochondrial-marker studies are small, short, and concentrated in skeletal muscle rather than durable disability, multimorbidity, or mortality outcomes.",
     "Druglike PPAR/PGC-1alpha and mitochondrial-function programs remain disease-specific, animal-only, negative, or without posted healthy-aging results.",
     "The track overlaps NAD/redox restoration, mitophagy enhancers, AMPK modulators, and broader exercise physiology, so evidence attribution needs careful curation."
   ],
-  "best_current_signals": [
+  "strongest_current_evidence": [
     "Supervised HIIT and combined training improved older-adult aerobic capacity, while HIIT increased skeletal-muscle mitochondrial respiration, mitochondrial protein synthesis, and mitochondrial protein abundance.",
     "Supervised aerobic cycling increased PGC-1alpha, oxidative enzymes, MFN1, MFN2, and FIS1 in older men's skeletal muscle.",
     "Resistance training improved older-adult strength and shifted a mitochondrial-function-enriched skeletal-muscle aging transcriptome toward a younger profile.",
     "The metformin exercise trial and the mavodelpar STRIDE registry results provide useful boundaries against assuming that druglike mitochondrial modulation reproduces exercise benefits.",
     "The SHAPE elamipretide healthy-aging pilot is a useful watch item but has no posted efficacy results."
   ],
-  "forecast_note": "Mitochondrial biogenesis and dynamics has enough direct human evidence for a low-confidence human_functional_benefit baseline because structured exercise improves older-adult functional measures while moving mitochondrial respiration, protein synthesis, biogenesis, and fusion/fission markers. The rating stays conservative because the actionable human signal is exercise-specific, not a validated gerotherapeutic drug program, and disease-focused mitochondrial agents do not yet establish broad aging benefit.",
-  "rating_change_criteria": [
+  "interpretation_note": "Mitochondrial biogenesis and dynamics has enough direct human evidence for a low-confidence human_functional_benefit baseline because structured exercise improves older-adult functional measures while moving mitochondrial respiration, protein synthesis, biogenesis, and fusion/fission markers. The rating stays conservative because the actionable human signal is exercise-specific, not a validated gerotherapeutic drug program, and disease-focused mitochondrial agents do not yet establish broad aging benefit.",
+  "what_would_change_the_rating": [
     "Confidence would increase if larger older-adult trials replicate mitochondrial adaptation and prespecified physical-function benefit across frailty, sarcopenia, or mobility-risk populations.",
     "A stronger stage or momentum assignment would require evidence that mitochondrial biogenesis or dynamics endpoints prospectively predict durable disability, multimorbidity, disease, or mortality outcomes.",
     "Druglike intervention claims should strengthen only if PPAR/PGC-1alpha, cardiolipin, or dynamics-targeted agents show controlled human functional benefit with target engagement in aging-relevant populations.",
@@ -31,7 +31,7 @@
     "Track attribution should remain bounded when evidence is better classified under NAD/redox restoration, mitophagy enhancement, AMPK modulation, or general exercise physiology."
   ],
   "earliest_plausible_window": "No LEV-relevant window can be assigned before durable functional or clinical-outcome evidence links mitochondrial biogenesis/dynamics interventions to aging-relevant trajectories beyond exercise's established health benefits.",
-  "scenario_2036_status": "speculative",
+  "lev_2036_outlook": "speculative",
   "supporting_finding_ids": [
     "hiit-improved-older-adult-mitochondrial-respiration-proteome",
     "aerobic-training-increased-biogenesis-dynamics-older-men",
@@ -46,7 +46,7 @@
   "supporting_evidence": [
     {
       "label": "Stage assignment",
-      "outlook_field": "current_stage",
+      "outlook_field": "evidence_stage",
       "conclusion": "The track reaches human functional benefit through structured exercise studies that report older-adult functional gains alongside mitochondrial adaptation.",
       "support_role": "supports",
       "rationale": "HIIT and combined training improved aerobic capacity and mitochondrial respiration/protein-synthesis measures in older adults, while resistance training improved strength and reversed a mitochondrial-function-enriched skeletal-muscle aging signature.",
@@ -66,7 +66,7 @@
     },
     {
       "label": "Direct biogenesis and dynamics marker support",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "Human aerobic exercise data directly support movement in mitochondrial biogenesis and fusion/fission marker biology.",
       "support_role": "supports",
       "rationale": "The aerobic-training study measured PGC-1alpha, oxidative enzymes, mitofusion proteins, and FIS1 before and after supervised training in young and older men, and the HIIT study measured respiration, mitochondrial protein synthesis, and mitochondrial proteome changes.",
@@ -86,7 +86,7 @@
     },
     {
       "label": "Druglike translation boundary",
-      "outlook_field": "main_blockers",
+      "outlook_field": "main_evidence_gaps",
       "conclusion": "Existing druglike mitochondrial-modulation evidence does not yet reproduce exercise-like aging benefit.",
       "support_role": "limits",
       "rationale": "Mavodelpar did not outperform placebo on the posted 12-minute walk endpoint in primary mitochondrial myopathy, metformin blunted some exercise-driven mitochondrial adaptations, and berberine remains an animal PGC-1alpha-linked signal without staged human aging evidence.",

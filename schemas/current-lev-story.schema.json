@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "./progress-narrative.schema.json",
-  "title": "Progress narrative",
+  "$id": "./current-lev-story.schema.json",
+  "title": "Current LEV story",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -9,14 +9,14 @@
     "title",
     "summary",
     "date",
-    "where_we_are_now",
-    "what_changed_recently",
-    "journey_steps",
-    "progress_moments",
-    "watchlist",
-    "focus_priorities",
-    "change_mind_items",
-    "spotlight_examples",
+    "current_evidence_picture",
+    "what_changed",
+    "before_now_next",
+    "recent_developments",
+    "what_to_watch_next",
+    "where_better_evidence_is_needed",
+    "what_would_change_the_outlook",
+    "track_examples_to_inspect",
     "revision"
   ],
   "properties": {
@@ -34,54 +34,54 @@
     "date": {
       "$ref": "./common.schema.json#/$defs/isoDate"
     },
-    "where_we_are_now": {
+    "current_evidence_picture": {
       "type": "string",
       "minLength": 1
     },
-    "what_changed_recently": {
+    "what_changed": {
       "type": "string",
       "minLength": 1
     },
-    "journey_steps": {
+    "before_now_next": {
       "type": "array",
       "minItems": 3,
       "items": {
-        "$ref": "#/$defs/journeyStep"
+        "$ref": "#/$defs/storyStep"
       }
     },
-    "progress_moments": {
+    "recent_developments": {
       "type": "array",
       "minItems": 1,
       "items": {
-        "$ref": "#/$defs/progressMoment"
+        "$ref": "#/$defs/recentDevelopment"
       }
     },
-    "watchlist": {
+    "what_to_watch_next": {
       "type": "array",
       "minItems": 1,
       "items": {
-        "$ref": "#/$defs/watchItem"
+        "$ref": "#/$defs/itemToWatchNext"
       }
     },
-    "focus_priorities": {
+    "where_better_evidence_is_needed": {
       "type": "array",
       "minItems": 1,
       "items": {
-        "$ref": "#/$defs/focusPriority"
+        "$ref": "#/$defs/betterEvidenceNeed"
       }
     },
-    "change_mind_items": {
+    "what_would_change_the_outlook": {
       "type": "array",
       "minItems": 1,
       "items": {
-        "$ref": "#/$defs/changeMindItem"
+        "$ref": "#/$defs/outlookChangeItem"
       }
     },
-    "spotlight_examples": {
+    "track_examples_to_inspect": {
       "type": "array",
       "minItems": 1,
       "items": {
-        "$ref": "#/$defs/spotlightExample"
+        "$ref": "#/$defs/trackExampleToInspect"
       }
     },
     "revision": {
@@ -106,7 +106,7 @@
     }
   },
   "$defs": {
-    "journeyStep": {
+    "storyStep": {
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -129,7 +129,7 @@
         }
       }
     },
-    "progressMoment": {
+    "recentDevelopment": {
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -177,13 +177,13 @@
         }
       }
     },
-    "watchItem": {
+    "itemToWatchNext": {
       "type": "object",
       "additionalProperties": false,
       "required": [
         "label",
         "summary",
-        "signal_to_watch",
+        "what_to_look_for",
         "subject_type",
         "subject_id"
       ],
@@ -196,7 +196,7 @@
           "type": "string",
           "minLength": 1
         },
-        "signal_to_watch": {
+        "what_to_look_for": {
           "type": "string",
           "minLength": 1
         },
@@ -215,14 +215,14 @@
         }
       }
     },
-    "focusPriority": {
+    "betterEvidenceNeed": {
       "type": "object",
       "additionalProperties": false,
       "required": [
         "label",
         "reason",
         "rationale",
-        "next_useful_work",
+        "what_better_evidence_would_show",
         "subject_type",
         "subject_id"
       ],
@@ -234,17 +234,17 @@
         "reason": {
           "type": "string",
           "enum": [
-            "low_hanging_fruit",
-            "neglected_area",
-            "promising_signal",
-            "blocking_dependency"
+            "clear_next_step",
+            "underbuilt_evidence",
+            "early_promise",
+            "blocking_gap"
           ]
         },
         "rationale": {
           "type": "string",
           "minLength": 1
         },
-        "next_useful_work": {
+        "what_better_evidence_would_show": {
           "type": "string",
           "minLength": 1
         },
@@ -263,7 +263,7 @@
         }
       }
     },
-    "changeMindItem": {
+    "outlookChangeItem": {
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -297,7 +297,7 @@
         }
       }
     },
-    "spotlightExample": {
+    "trackExampleToInspect": {
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -413,7 +413,7 @@
         "outlook_id",
         "subject_type",
         "subject_id",
-        "current_stage",
+        "evidence_stage",
         "momentum",
         "confidence",
         "last_updated",
@@ -429,7 +429,7 @@
         "subject_id": {
           "$ref": "./common.schema.json#/$defs/identifier"
         },
-        "current_stage": {
+        "evidence_stage": {
           "$ref": "./common.schema.json#/$defs/progressStage"
         },
         "momentum": {
@@ -438,14 +438,14 @@
         "confidence": {
           "$ref": "./common.schema.json#/$defs/confidence"
         },
-        "blocker": {
+        "evidence_gap": {
           "type": "string"
         },
-        "best_signal": {
+        "strongest_evidence": {
           "type": "string"
         },
-        "scenario_2036_status": {
-          "$ref": "./common.schema.json#/$defs/scenario2036Status"
+        "lev_2036_outlook": {
+          "$ref": "./common.schema.json#/$defs/lev2036Outlook"
         },
         "last_updated": {
           "$ref": "./common.schema.json#/$defs/isoDate"

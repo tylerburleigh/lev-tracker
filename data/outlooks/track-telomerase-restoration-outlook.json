@@ -5,31 +5,31 @@
   "name": "Telomerase Restoration Track Outlook",
   "subject_type": "track",
   "subject_id": "telomerase-restoration",
-  "current_stage": "human_biomarker_signal",
+  "evidence_stage": "human_biomarker_signal",
   "momentum": "mixed",
   "confidence": "low",
-  "main_blockers": [
+  "main_evidence_gaps": [
     "Human evidence is still biomarker-heavy: telomere length, immune subsets, and inflammation markers, not durable functional, disease, or survival outcomes.",
     "Therapeutic telomerase activation has an intrinsic proliferation and cancer-risk concern that is not resolved by short or small human studies.",
     "Human gene-therapy evidence for aging remains registry-level only; the identified AAV-hTERT aging study has unknown status and no posted results.",
     "Commercial conflicts, small samples, and a non-monotonic TA-65 dose signal limit confidence in the strongest human telomere-length trial.",
     "A claimed CMV-vector TERT mouse lifespan result is now retracted and should not be used as positive support."
   ],
-  "best_current_signals": [
+  "strongest_current_evidence": [
     "AAV9-mTERT treatment in adult and old mice increased median lifespan and improved several health and fitness markers without an observed cancer increase in that study.",
     "A one-year randomized human TA-65 study reported increased leukocyte telomere length at the lower dose.",
     "A post-myocardial-infarction TA-65 pilot RCT reported higher lymphocyte counts and lower hsCRP, although its predefined CD8+ TEMRA endpoint was null.",
     "Inducible telomerase reactivation in telomerase-deficient mice reversed severe telomere-dysfunction phenotypes, supporting the biology but not direct human translation."
   ],
-  "forecast_note": "Telomerase restoration deserves a first public baseline at human_biomarker_signal. The animal case is unusually direct for a hallmark track, and human TA-65 trials reach telomere or immune biomarker endpoints. The rating should not move beyond biomarker signal because human benefit, durability, gene-therapy safety, and cancer-risk boundaries remain unresolved.",
-  "rating_change_criteria": [
+  "interpretation_note": "Telomerase restoration deserves a first public baseline at human_biomarker_signal. The animal case is unusually direct for a hallmark track, and human TA-65 trials reach telomere or immune biomarker endpoints. The rating should not move beyond biomarker signal because human benefit, durability, gene-therapy safety, and cancer-risk boundaries remain unresolved.",
+  "what_would_change_the_rating": [
     "A stronger stage assignment would need replicated human studies showing functional or clinical benefit tied to telomerase or telomere restoration, not only leukocyte telomere or immune-subset shifts.",
     "A gene-therapy upgrade would require transparent human safety data with telomerase activity, telomere-length, clonal expansion, and cancer-surveillance follow-up.",
     "Higher confidence would need independent TA-65 or other activator trials with prespecified telomere biology endpoints, clearer dose-response behavior, and limited commercial conflicts.",
     "The rating would weaken if follow-up TA-65 trials fail biomarker replication, if telomerase activation produces concerning clonal or cancer signals, or if additional gene-therapy evidence is withdrawn or not reproducible."
   ],
   "earliest_plausible_window": "No credible LEV-relevant window can be assigned before replicated human functional benefit and long-term safety evidence exist.",
-  "scenario_2036_status": "speculative",
+  "lev_2036_outlook": "speculative",
   "supporting_finding_ids": [
     "aav9-mtert-extended-lifespan-adult-old-mice",
     "tert-reactivation-reversed-degeneration-telomerase-deficient-mice",
@@ -44,7 +44,7 @@
   "supporting_evidence": [
     {
       "label": "Stage assignment",
-      "outlook_field": "current_stage",
+      "outlook_field": "evidence_stage",
       "conclusion": "The track reaches human biomarker signal because randomized human TA-65 studies report leukocyte telomere-length or immune/inflammation biomarker changes.",
       "support_role": "supports",
       "rationale": "The 2016 TA-65 RCT directly measured telomere length, and the 2023 post-MI trial measured immune-aging and inflammation biomarkers. These are human signals, but they do not establish functional benefit.",
@@ -64,7 +64,7 @@
     },
     {
       "label": "Animal plausibility",
-      "outlook_field": "best_current_signals",
+      "outlook_field": "strongest_current_evidence",
       "conclusion": "Animal data make telomerase restoration biologically coherent and include lifespan benefit in adult and old mice.",
       "support_role": "supports",
       "rationale": "AAV9-mTERT improved median lifespan in mice, while inducible TERT reactivation reversed severe telomere-dysfunction phenotypes in a genetic model.",
@@ -108,7 +108,7 @@
     },
     {
       "label": "Gene-therapy boundary",
-      "outlook_field": "main_blockers",
+      "outlook_field": "main_evidence_gaps",
       "conclusion": "Human telomerase gene-therapy activity remains too thin to support benefit or safety claims.",
       "support_role": "limits",
       "rationale": "The identified AAV-hTERT aging registry study is tiny, single-arm, listed with unknown status, and lacks posted results.",

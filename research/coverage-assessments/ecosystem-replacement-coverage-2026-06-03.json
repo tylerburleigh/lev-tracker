@@ -112,7 +112,7 @@
     {
       "category": "null_negative_or_limiting",
       "coverage_level": "adequate",
-      "rationale": "The support map explicitly preserves limiting evidence: human metabolic and engraftment evidence is indirect for aging, older-adult CDI experience is disease-context evidence, and direct older-adult FMT aging trials have no posted efficacy results.",
+      "rationale": "The evidence map explicitly preserves limiting evidence: human metabolic and engraftment evidence is indirect for aging, older-adult CDI experience is disease-context evidence, and direct older-adult FMT aging trials have no posted efficacy results.",
       "source_ids": [
         "pmid-22728514",
         "pmid-27134658",
@@ -164,7 +164,7 @@
     {
       "category": "recent_reviews_meta_analyses",
       "coverage_level": "adequate",
-      "rationale": "The support map includes a 2022 Nature Medicine shotgun-metagenomic systematic meta-analysis of FMT donor strain engraftment across disease cohorts, which is decision-relevant for human mechanism and implementation. It does not yet include a formal triangulation of recent ecosystem-replacement aging reviews.",
+      "rationale": "The evidence map includes a 2022 Nature Medicine shotgun-metagenomic systematic meta-analysis of FMT donor strain engraftment across disease cohorts, which is decision-relevant for human mechanism and implementation. It does not yet include a formal triangulation of recent ecosystem-replacement aging reviews.",
       "source_ids": [
         "pmid-36109637"
       ],
@@ -245,7 +245,7 @@
   "search_log_summary": "This backfill assessment reviewed the published bootstrap session, bundle, evidence reviews, publication event, and public outlook. The underlying bootstrap selected ecosystem replacement from the generated queue, scoped the pass to fecal microbiota transplantation, staged 12 sources, and verified NCT05598112 and NCT06649981 through ClinicalTrials.gov on June 3, 2026.",
   "source_selection_notes": [
     "PMID 28826469 and PMID 31332389 anchor the animal lifespan and healthspan case.",
-    "PMID 35501923, PMID 38739944, PMID 39812540, and PMID 40444969 broaden the aged-animal functional, gut-brain, gut-barrier, inflammatory, frailty, grip-strength, and metabolic support map.",
+    "PMID 35501923, PMID 38739944, PMID 39812540, and PMID 40444969 broaden the aged-animal functional, gut-brain, gut-barrier, inflammatory, frailty, grip-strength, and metabolic evidence map.",
     "PMID 22728514 is included as the narrow treated-human metabolic biomarker anchor, not as direct aging efficacy.",
     "PMID 27134658 is included as older-adult CDI disease-context safety and feasibility evidence, not healthy-aging benefit.",
     "PMID 36109637 is included because donor strain engraftment is a key human mechanistic and implementation boundary.",
@@ -272,7 +272,7 @@
       "gap_id": "recent-aging-fmt-review-triangulation-incomplete",
       "gap_type": "coverage_gap",
       "category": "recent_reviews_meta_analyses",
-      "description": "The support map includes an engraftment meta-analysis, but recent FMT-for-aging reviews have not been explicitly reconciled against included anchors and public boundaries.",
+      "description": "The evidence map includes an engraftment meta-analysis, but recent FMT-for-aging reviews have not been explicitly reconciled against included anchors and public boundaries.",
       "priority": "medium",
       "suggested_action": "Run a coverage_repair pass that compares recent aging-FMT reviews and meta-analyses with the current source list and records any missing decision-relevant anchors."
     },
@@ -282,7 +282,7 @@
       "category": "seminal_anchors",
       "description": "The baseline includes plausible anchor papers, but no formal must-include or citation-network audit has been recorded for ecosystem replacement.",
       "priority": "medium",
-      "suggested_action": "During coverage repair, triangulate highly cited primary papers, review-cited anchors, and current support-map sources."
+      "suggested_action": "During coverage repair, triangulate highly cited primary papers, review-cited anchors, and current evidence-map sources."
     },
     {
       "gap_id": "observational-healthy-aging-landscape-thin",

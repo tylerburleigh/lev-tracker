@@ -159,8 +159,8 @@ time {
 .review-card:hover,
 .review-summary-card:hover,
 .action-button:hover,
-.journey-step:hover,
-.spotlight-card:hover {
+.before-now-next-step:hover,
+.track-example-card:hover {
   border-color: rgba(45, 124, 108, 0.34);
   transform: translateY(-1px);
 }
@@ -226,7 +226,6 @@ time {
   background:
     linear-gradient(115deg, rgba(16, 22, 20, 0.78), rgba(21, 27, 24, 0.46)),
     url("/aging-field.jpg") center/cover no-repeat;
-  height: 460px;
 }
 
 .band--hero {
@@ -266,7 +265,7 @@ time {
 .method-card,
 .editorial-card,
 .story-panel,
-.journey-step,
+.before-now-next-step,
 .reader-panel,
 .empty-state {
   border-radius: var(--radius-card);
@@ -462,7 +461,7 @@ time {
 
 .hero-card__columns p,
 .snapshot-panel p,
-.hallmark-card__blocker,
+.hallmark-card__evidence-gap,
 .feed-item p,
 .detail-panel p,
 .activity-card p,
@@ -594,7 +593,7 @@ time {
 .review-summary-card,
 .detail-panel,
 .story-panel,
-.journey-step,
+.before-now-next-step,
 .reader-panel,
 .page-hero__aside {
   background: var(--surface);
@@ -640,7 +639,7 @@ time {
   font-size: 0.9rem;
 }
 
-.hallmark-card__blocker {
+.hallmark-card__evidence-gap {
   color: var(--text-soft);
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -669,7 +668,7 @@ time {
 .tracks-table,
 .page-hero__aside,
 .story-panel,
-.journey-step,
+.before-now-next-step,
 .reader-panel,
 .empty-state {
   padding: 20px;
@@ -685,7 +684,7 @@ time {
   font-weight: 600;
 }
 
-.band--narrative {
+.band--field-story {
   background: rgba(255, 255, 255, 0.24);
 }
 
@@ -751,14 +750,14 @@ time {
   color: rgba(244, 247, 241, 0.76);
 }
 
-.journey-grid {
+.before-now-next-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
   margin-bottom: 18px;
 }
 
-.journey-step {
+.before-now-next-step {
   position: relative;
   display: grid;
   gap: 10px;
@@ -766,7 +765,7 @@ time {
   background: rgba(255, 255, 255, 0.72);
 }
 
-.journey-step__label {
+.before-now-next-step__label {
   display: inline-flex;
   gap: 8px;
   align-items: center;
@@ -777,22 +776,22 @@ time {
   text-transform: uppercase;
 }
 
-.journey-step h3,
+.before-now-next-step h3,
 .reader-panel h2 {
   margin: 0;
   font-size: 1.2rem;
   line-height: 1.3;
 }
 
-.journey-step p,
+.before-now-next-step p,
 .reader-panel p,
-.spotlight-card p {
+.track-example-card p {
   margin: 0;
   color: var(--text-soft);
   line-height: 1.55;
 }
 
-.journey-step__arrow {
+.before-now-next-step__arrow {
   position: absolute;
   top: calc(50% - 9px);
   right: -16px;
@@ -891,13 +890,13 @@ time {
   gap: 16px;
 }
 
-.change-mind-list,
-.spotlight-list {
+.outlook-change-list,
+.track-example-list {
   display: grid;
   gap: 12px;
 }
 
-.change-mind-item {
+.outlook-change-item {
   display: grid;
   grid-template-columns: 18px minmax(0, 1fr);
   gap: 12px;
@@ -905,30 +904,30 @@ time {
   border-top: 1px solid var(--border);
 }
 
-.change-mind-item:first-child,
-.spotlight-card:first-child {
+.outlook-change-item:first-child,
+.track-example-card:first-child {
   border-top: 0;
   padding-top: 0;
 }
 
-.change-mind-item svg {
+.outlook-change-item svg {
   margin-top: 2px;
 }
 
-.change-mind-item--up svg {
+.outlook-change-item--up svg {
   color: var(--mint);
 }
 
-.change-mind-item--down svg {
+.outlook-change-item--down svg {
   color: var(--coral);
 }
 
-.change-mind-item--watch svg {
+.outlook-change-item--watch svg {
   color: var(--gold);
 }
 
-.change-mind-item strong,
-.spotlight-card strong {
+.outlook-change-item strong,
+.track-example-card strong {
   display: block;
   margin-bottom: 5px;
   font-family: var(--font-body);
@@ -936,7 +935,7 @@ time {
   line-height: 1.35;
 }
 
-.spotlight-card {
+.track-example-card {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 18px;
   gap: 14px;
@@ -944,7 +943,7 @@ time {
   border-top: 1px solid var(--border);
 }
 
-.spotlight-card svg {
+.track-example-card svg {
   color: var(--mint);
 }
 
@@ -2063,7 +2062,7 @@ time {
   .method-card,
   .editorial-card,
   .story-panel,
-  .journey-step,
+  .before-now-next-step,
   .reader-panel,
   .empty-state,
   .tracks-table {
@@ -2082,7 +2081,7 @@ time {
   .hallmark-module-grid,
   .hallmark-activity-grid,
   .story-grid,
-  .journey-grid,
+  .before-now-next-grid,
   .reader-grid,
   .evidence-ladder,
   .related-record-grid,
@@ -2091,7 +2090,7 @@ time {
     grid-template-columns: 1fr;
   }
 
-  .journey-step__arrow {
+  .before-now-next-step__arrow {
     display: none;
   }
 

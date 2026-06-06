@@ -30,7 +30,7 @@
     "activity_only": false,
     "coverage_assessment_needed": true,
     "recommended_next_mode": "surveillance",
-    "rationale": "The repair resolved the main source-completeness gap identified by surveillance and staged a bounded support-map update. The additions strengthen animal and platform coverage but do not justify a stage upgrade because treated-human aging evidence remains absent."
+    "rationale": "The repair resolved the main source-completeness gap identified by surveillance and staged a bounded evidence-map update. The additions strengthen animal and platform coverage but do not justify a stage upgrade because treated-human aging evidence remains absent."
   },
   "search_log": [
     {
@@ -51,7 +51,7 @@
       "source_name": "PubMed",
       "query": "PMID 42123597, PMID 41643906, PMID 42129850, PMID 42229862",
       "checked_at": "2026-06-03T21:00:00Z",
-      "summary": "Reviewed recent cardiovascular, kidney-aging, reproductive RCT, and aging-brain context records. They were recorded as coverage context or taxonomy boundaries rather than staged support-map changes."
+      "summary": "Reviewed recent cardiovascular, kidney-aging, reproductive RCT, and aging-brain context records. They were recorded as coverage context or taxonomy boundaries rather than staged evidence-map changes."
     }
   ],
   "excluded_sources": [
@@ -67,7 +67,7 @@
       "title": "Mitochondrial transfer: A novel mechanism and promising therapeutic strategy in ageing kidney",
       "url": "https://pubmed.ncbi.nlm.nih.gov/41643906/",
       "decision": "context_only",
-      "reason": "Kidney-aging review supports the general mitochondrial-transfer mechanism landscape but does not add a primary treated-intervention result for the public support map."
+      "reason": "Kidney-aging review supports the general mitochondrial-transfer mechanism landscape but does not add a primary treated-intervention result for the public evidence map."
     },
     {
       "reference": "pmid-42129850",
@@ -102,7 +102,7 @@
   ],
   "notes": [
     "Coverage repair was selected from research/backlog/track-priority.v1.json after the prior surveillance pass recommended source-completeness repair.",
-    "The repair stages PMID 42171348 because it is direct animal-aging evidence and materially improves the animal support map.",
+    "The repair stages PMID 42171348 because it is direct animal-aging evidence and materially improves the animal evidence map.",
     "The repair stages PMID 41986718 because delivery targeting is a named blocker in the current outlook and the source directly addresses that platform limitation.",
     "The staged outlook preserves animal_signal, low confidence, mixed momentum, and no LEV-relevant window because no treated-human aging evidence was found.",
     "Recent review and reproductive records were kept as context or taxonomy-boundary notes rather than staged evidence."

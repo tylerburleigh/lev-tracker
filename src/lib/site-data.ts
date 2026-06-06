@@ -17,7 +17,7 @@ export type Stage =
 
 export type Momentum = "accelerating" | "steady" | "mixed" | "stalled" | "uncertain";
 export type Confidence = "low" | "moderate" | "high";
-export type ScenarioStatus = "unsupported" | "speculative" | "plausible" | "on_track";
+export type Lev2036Outlook = "unsupported" | "speculative" | "plausible" | "on_track";
 export type SubjectType = "overall" | "hallmark" | "track" | "intervention";
 export type EvidenceReviewLane =
   | "source_fidelity"
@@ -59,18 +59,18 @@ export type OutlookFile = {
   name: string;
   subject_type: SubjectType;
   subject_id: string;
-  current_stage: Stage;
+  evidence_stage: Stage;
   momentum: Momentum;
   confidence: Confidence;
-  main_blockers?: string[];
-  best_current_signals?: string[];
-  forecast_note: string;
-  rating_change_criteria?: string[];
+  main_evidence_gaps?: string[];
+  strongest_current_evidence?: string[];
+  interpretation_note: string;
+  what_would_change_the_rating?: string[];
   supporting_finding_ids?: string[];
   supporting_evidence?: OutlookEvidenceLinkFile[];
   supporting_source_ids?: string[];
   last_updated: string;
-  scenario_2036_status?: ScenarioStatus;
+  lev_2036_outlook?: Lev2036Outlook;
   tags?: string[];
 };
 
@@ -173,22 +173,22 @@ export type OutlookRecord = {
   stage: Stage;
   momentum: Momentum;
   confidence: Confidence;
-  blocker: string;
-  bestSignal: string;
-  note: string;
+  evidenceGap: string;
+  strongestEvidence: string;
+  interpretation: string;
   lastUpdated: string;
   thinCoverage?: boolean;
-  scenario2036Status?: ScenarioStatus;
+  lev2036Outlook?: Lev2036Outlook;
 };
 
 export type TrackCoverage = {
   stage?: Stage;
   momentum?: Momentum;
   confidence?: Confidence;
-  blocker?: string;
-  bestSignal?: string;
-  ratingChangeCriteria?: string[];
-  note: string;
+  evidenceGap?: string;
+  strongestEvidence?: string;
+  whatWouldChangeTheRating?: string[];
+  interpretation: string;
   lastUpdated: string;
   thinCoverage?: boolean;
   statusLabel?: string;
@@ -413,13 +413,13 @@ export type StateOfFieldEdition = CuratedContentReviewMeta & {
   bullets: string[];
 };
 
-export type ProgressNarrativeFocusReason =
-  | "low_hanging_fruit"
-  | "neglected_area"
-  | "promising_signal"
-  | "blocking_dependency";
+export type EvidenceNeedReason =
+  | "clear_next_step"
+  | "underbuilt_evidence"
+  | "early_promise"
+  | "blocking_gap";
 
-export type ProgressNarrativeMoment = {
+export type RecentDevelopment = {
   label: string;
   date?: string;
   summary: string;
@@ -430,41 +430,41 @@ export type ProgressNarrativeMoment = {
   related_outlook_ids?: string[];
 };
 
-export type ProgressNarrativeWatchItem = {
+export type ItemToWatchNext = {
   label: string;
   summary: string;
-  signal_to_watch: string;
+  what_to_look_for: string;
   subject_type: SubjectType;
   subject_id: string;
   related_outlook_ids?: string[];
 };
 
-export type ProgressNarrativeFocusPriority = {
+export type BetterEvidenceNeed = {
   label: string;
-  reason: ProgressNarrativeFocusReason;
+  reason: EvidenceNeedReason;
   rationale: string;
-  next_useful_work: string;
+  what_better_evidence_would_show: string;
   subject_type: SubjectType;
   subject_id: string;
   related_outlook_ids?: string[];
 };
 
-export type ProgressNarrativeJourneyStep = {
+export type StoryStep = {
   label: string;
   title: string;
   summary: string;
 };
 
-export type ProgressNarrativeChangeMindDirection = "more_optimistic" | "less_optimistic" | "needs_attention";
+export type OutlookChangeDirection = "more_optimistic" | "less_optimistic" | "needs_attention";
 
-export type ProgressNarrativeChangeMindItem = {
-  direction: ProgressNarrativeChangeMindDirection;
+export type OutlookChangeItem = {
+  direction: OutlookChangeDirection;
   label: string;
   summary: string;
   related_outlook_ids?: string[];
 };
 
-export type ProgressNarrativeSpotlightExample = {
+export type TrackExampleToInspect = {
   label: string;
   title: string;
   summary: string;
@@ -472,7 +472,7 @@ export type ProgressNarrativeSpotlightExample = {
   related_outlook_ids?: string[];
 };
 
-export type ProgressNarrativeRevisionTrigger = {
+export type CurrentLevStoryRevisionTrigger = {
   trigger_type:
     | "new_publication_event"
     | "outlook_change"
@@ -485,31 +485,31 @@ export type ProgressNarrativeRevisionTrigger = {
   related_outlook_ids?: string[];
 };
 
-export type ProgressNarrative = {
+export type CurrentLevStory = {
   slug: string;
   title: string;
   summary: string;
   date: string;
-  where_we_are_now: string;
-  what_changed_recently: string;
-  journey_steps: ProgressNarrativeJourneyStep[];
-  progress_moments: ProgressNarrativeMoment[];
-  watchlist: ProgressNarrativeWatchItem[];
-  focus_priorities: ProgressNarrativeFocusPriority[];
-  change_mind_items: ProgressNarrativeChangeMindItem[];
-  spotlight_examples: ProgressNarrativeSpotlightExample[];
+  current_evidence_picture: string;
+  what_changed: string;
+  before_now_next: StoryStep[];
+  recent_developments: RecentDevelopment[];
+  what_to_watch_next: ItemToWatchNext[];
+  where_better_evidence_is_needed: BetterEvidenceNeed[];
+  what_would_change_the_outlook: OutlookChangeItem[];
+  track_examples_to_inspect: TrackExampleToInspect[];
   revision: {
     last_reviewed: string;
     review_reason: string;
     review_due: string;
-    triggers: ProgressNarrativeRevisionTrigger[];
+    triggers: CurrentLevStoryRevisionTrigger[];
   };
   related_state_of_field_slug?: string;
   related_publication_event_ids?: string[];
   related_outlook_ids?: string[];
 };
 
-export type ProgressNarrativeReviewState = {
+export type CurrentLevStoryStatus = {
   status: "current" | "stale";
   label: string;
   reasons: string[];
@@ -602,18 +602,18 @@ const confidencePlainMeanings: Record<Confidence, string> = {
   high: "The public evidence is consistent enough that the rating is less likely to move quickly."
 };
 
-const scenarioLabels: Record<ScenarioStatus, string> = {
+const lev2036OutlookLabels: Record<Lev2036Outlook, string> = {
   unsupported: "Unsupported",
   speculative: "Speculative",
   plausible: "Plausible",
   on_track: "On track"
 };
 
-const focusReasonLabels: Record<ProgressNarrativeFocusReason, string> = {
-  low_hanging_fruit: "Low-hanging fruit",
-  neglected_area: "Neglected area",
-  promising_signal: "Showing promise",
-  blocking_dependency: "Blocking dependency"
+const evidenceNeedReasonLabels: Record<EvidenceNeedReason, string> = {
+  clear_next_step: "Clear next step",
+  underbuilt_evidence: "Underbuilt evidence",
+  early_promise: "Showing promise",
+  blocking_gap: "Blocking gap"
 };
 
 const evidenceTierRank: Record<string, number> = {
@@ -649,7 +649,7 @@ const candidateStatusTransitions: Record<CandidateStatus, CandidateStatus[]> = {
 const dataRoot = path.join(process.cwd(), "data");
 const hallmarkInsightsPath = path.join(dataRoot, "content", "hallmark-insights.json");
 const editionsRoot = path.join(dataRoot, "content", "state-of-the-field");
-const progressNarrativePath = path.join(dataRoot, "content", "progress-narrative", "current.json");
+const currentLevStoryPath = path.join(dataRoot, "content", "current-lev-story", "current.json");
 
 async function readJsonFile<T>(filePath: string): Promise<T> {
   return JSON.parse(await fs.readFile(filePath, "utf8")) as T;
@@ -1020,15 +1020,15 @@ function normalizeOutlook(outlook: OutlookFile): OutlookRecord {
     subjectId: outlook.subject_id,
     subjectType: outlook.subject_type,
     name: outlook.name,
-    stage: outlook.current_stage,
+    stage: outlook.evidence_stage,
     momentum: outlook.momentum,
     confidence: outlook.confidence,
-    blocker: outlook.main_blockers?.[0] ?? "Coverage in progress.",
-    bestSignal: outlook.best_current_signals?.[0] ?? "Coverage in progress.",
-    note: outlook.forecast_note,
+    evidenceGap: outlook.main_evidence_gaps?.[0] ?? "Coverage in progress.",
+    strongestEvidence: outlook.strongest_current_evidence?.[0] ?? "Coverage in progress.",
+    interpretation: outlook.interpretation_note,
     lastUpdated: outlook.last_updated,
     thinCoverage: outlook.tags?.includes("thin_coverage"),
-    scenario2036Status: outlook.scenario_2036_status
+    lev2036Outlook: outlook.lev_2036_outlook
   };
 }
 
@@ -1094,26 +1094,26 @@ function normalizeActivityItem(item: ActivityItemRecord): ActivityFeedItem {
   };
 }
 
-function buildProgressNarrativeReviewState(
-  narrative: ProgressNarrative,
+function buildCurrentLevStoryStatus(
+  narrative: CurrentLevStory,
   publicationEvents: PublicationEventRecord[]
-): ProgressNarrativeReviewState {
+): CurrentLevStoryStatus {
   const latestOutlookEvent = publicationEvents.find((event) => event.affected_outlook_ids?.length);
   const latestPublicUpdate =
     latestOutlookEvent?.published_at.slice(0, 10) ?? publicationEvents[0]?.published_at.slice(0, 10);
   const reasons: string[] = [];
 
   if (latestOutlookEvent && latestOutlookEvent.published_at.slice(0, 10) > narrative.revision.last_reviewed) {
-    reasons.push("New outlook-affecting publication activity exists after the last narrative review.");
+    reasons.push("New outlook-changing publication activity exists after the last story review.");
   }
 
   if (getTodayIsoDate() > narrative.revision.review_due) {
-    reasons.push("The scheduled narrative review date has passed.");
+    reasons.push("The scheduled story review date has passed.");
   }
 
   return {
     status: reasons.length > 0 ? "stale" : "current",
-    label: reasons.length > 0 ? "Narrative review due" : "Narrative current",
+    label: reasons.length > 0 ? "Story update due" : "Story current",
     reasons,
     lastReviewed: narrative.revision.last_reviewed,
     reviewDue: narrative.revision.review_due,
@@ -1252,7 +1252,7 @@ const loadStateOfFieldEditions = cache(async () => {
   return entries.sort((left, right) => right.date.localeCompare(left.date));
 });
 
-const loadProgressNarrative = cache(async () => readJsonFile<ProgressNarrative>(progressNarrativePath));
+const loadCurrentLevStory = cache(async () => readJsonFile<CurrentLevStory>(currentLevStoryPath));
 
 export function getHallmarks(): Hallmark[] {
   return hallmarksTaxonomy.hallmarks;
@@ -1341,7 +1341,7 @@ export async function getTrackCoverage(trackId: string): Promise<TrackCoverage> 
 
   if (!trackOutlook) {
     return {
-      note: "Coverage in progress. This track is seeded in the taxonomy but still thin in the public evidence map.",
+      interpretation: "Coverage in progress. This track is seeded in the taxonomy but still thin in the public evidence map.",
       lastUpdated: "2026-05-01",
       thinCoverage: true,
       statusLabel: "Coverage in progress"
@@ -1350,13 +1350,13 @@ export async function getTrackCoverage(trackId: string): Promise<TrackCoverage> 
 
   return {
     outlookId: trackOutlook.id,
-    stage: trackOutlook.current_stage,
+    stage: trackOutlook.evidence_stage,
     momentum: trackOutlook.momentum,
     confidence: trackOutlook.confidence,
-    blocker: trackOutlook.main_blockers?.[0],
-    bestSignal: trackOutlook.best_current_signals?.[0],
-    ratingChangeCriteria: trackOutlook.rating_change_criteria,
-    note: trackOutlook.forecast_note,
+    evidenceGap: trackOutlook.main_evidence_gaps?.[0],
+    strongestEvidence: trackOutlook.strongest_current_evidence?.[0],
+    whatWouldChangeTheRating: trackOutlook.what_would_change_the_rating,
+    interpretation: trackOutlook.interpretation_note,
     lastUpdated: trackOutlook.last_updated,
     thinCoverage: trackOutlook.tags?.includes("thin_coverage"),
     supportingFindingIds: trackOutlook.supporting_finding_ids,
@@ -1668,15 +1668,15 @@ export async function getStateOfTheFieldEdition(slug: string): Promise<StateOfFi
   return (await loadStateOfFieldEditions()).find((edition) => edition.slug === slug);
 }
 
-export async function getProgressNarrative(): Promise<ProgressNarrative> {
+export async function getCurrentLevStory(): Promise<CurrentLevStory> {
   noStore();
-  return loadProgressNarrative();
+  return loadCurrentLevStory();
 }
 
-export async function getProgressNarrativeReviewState(): Promise<ProgressNarrativeReviewState> {
+export async function getCurrentLevStoryStatus(): Promise<CurrentLevStoryStatus> {
   noStore();
-  const [narrative, publicationEvents] = await Promise.all([loadProgressNarrative(), loadPublicationEvents()]);
-  return buildProgressNarrativeReviewState(narrative, publicationEvents);
+  const [narrative, publicationEvents] = await Promise.all([loadCurrentLevStory(), loadPublicationEvents()]);
+  return buildCurrentLevStoryStatus(narrative, publicationEvents);
 }
 
 export async function getHallmarkInsight(hallmarkId: string): Promise<HallmarkInsight | undefined> {
@@ -1712,12 +1712,12 @@ export function getConfidencePlainMeaning(confidence: Confidence) {
   return confidencePlainMeanings[confidence];
 }
 
-export function getScenarioLabel(status: ScenarioStatus) {
-  return scenarioLabels[status];
+export function getLev2036OutlookLabel(status: Lev2036Outlook) {
+  return lev2036OutlookLabels[status];
 }
 
-export function getFocusReasonLabel(reason: ProgressNarrativeFocusReason) {
-  return focusReasonLabels[reason];
+export function getEvidenceNeedReasonLabel(reason: EvidenceNeedReason) {
+  return evidenceNeedReasonLabels[reason];
 }
 
 export async function getOverallSnapshot() {
@@ -1727,22 +1727,22 @@ export async function getOverallSnapshot() {
   return {
     lastPublicUpdate: recentChanges[0]?.date ?? overallOutlook.lastUpdated,
     hallmarksTracked: hallmarksTaxonomy.hallmarks.length,
-    seededTracks: getTracks().length,
+    researchTracks: getTracks().length,
     recentOutlookChanges: recentChanges.filter((item) => item.changeType === "outlook").length,
-    reviewStatus: "Human-reviewed before publication"
+    reviewStatus: "Reviewed before publishing"
   };
 }
 
 export async function getHomepageData() {
   noStore();
-  const [overallOutlook, hallmarkOutlooks, hallmarks, recentChanges, snapshot, progressNarrative, publicationEvents] =
+  const [overallOutlook, hallmarkOutlooks, hallmarks, recentChanges, snapshot, currentLevStory, publicationEvents] =
     await Promise.all([
       getOverallOutlook(),
       getHallmarkOutlooks(),
       Promise.resolve(getHallmarks()),
       getRecentChanges(),
       getOverallSnapshot(),
-      loadProgressNarrative(),
+      loadCurrentLevStory(),
       loadPublicationEvents()
     ]);
 
@@ -1752,8 +1752,8 @@ export async function getHomepageData() {
     hallmarks,
     recentChanges,
     snapshot,
-    progressNarrative,
-    progressNarrativeReviewState: buildProgressNarrativeReviewState(progressNarrative, publicationEvents)
+    currentLevStory,
+    currentLevStoryStatus: buildCurrentLevStoryStatus(currentLevStory, publicationEvents)
   };
 }
 
@@ -1844,11 +1844,11 @@ export async function updateCandidateBundleStatus(bundleId: string, status: Cand
     const bundle = await readCandidateBundleFile(bundleId);
 
     if (!bundle) {
-      throw new Error(`Unknown candidate bundle: ${bundleId}`);
+      throw new Error(`Unknown staged update: ${bundleId}`);
     }
 
     if (!canTransitionCandidateBundleStatus(bundle.lifecycle_status, status)) {
-      throw new Error(`Invalid candidate bundle status transition: ${bundle.lifecycle_status} -> ${status}`);
+      throw new Error(`Invalid staged update status transition: ${bundle.lifecycle_status} -> ${status}`);
     }
 
     if (status === "approved") {
@@ -1856,7 +1856,7 @@ export async function updateCandidateBundleStatus(bundleId: string, status: Cand
 
       if (evidenceReviewGate.eligible && !evidenceReviewGate.ready) {
         throw new Error(
-          `Candidate bundle ${bundleId} is not ready for approval: ${evidenceReviewGate.issues.join(" ")}`
+          `Staged update ${bundleId} is not ready for approval: ${evidenceReviewGate.issues.join(" ")}`
         );
       }
     }
@@ -1880,7 +1880,7 @@ export async function appendReviewComment(input: {
     const bundle = await readCandidateBundleFile(input.bundleId);
 
     if (!bundle) {
-      throw new Error(`Unknown candidate bundle: ${input.bundleId}`);
+      throw new Error(`Unknown staged update: ${input.bundleId}`);
     }
 
     const timestamp = new Date().toISOString();
@@ -1918,28 +1918,28 @@ export async function publishCandidateBundle(bundleId: string) {
     const bundle = await readCandidateBundleFile(bundleId);
 
     if (!bundle) {
-      throw new Error(`Unknown candidate bundle: ${bundleId}`);
+      throw new Error(`Unknown staged update: ${bundleId}`);
     }
 
     if (bundle.lifecycle_status === "published") {
-      throw new Error(`Candidate bundle ${bundleId} is already published.`);
+      throw new Error(`Staged update ${bundleId} is already published.`);
     }
 
     const promotion = await evaluateBundlePromotion(bundle);
 
     if (!promotion.eligible) {
-      throw new Error(`Candidate bundle ${bundleId} must be approved before publication.`);
+      throw new Error(`Staged update ${bundleId} must be approved before publication.`);
     }
 
     if (!promotion.ready) {
-      throw new Error(`Candidate bundle ${bundleId} is not ready to publish: ${promotion.issues.join(" ")}`);
+      throw new Error(`Staged update ${bundleId} is not ready to publish: ${promotion.issues.join(" ")}`);
     }
 
     const evidenceReviewGate = await evaluateBundleEvidenceReviews(bundle);
 
     if (evidenceReviewGate.eligible && !evidenceReviewGate.ready) {
       throw new Error(
-        `Candidate bundle ${bundleId} is blocked by evidence review: ${evidenceReviewGate.issues.join(" ")}`
+        `Staged update ${bundleId} is blocked by evidence review: ${evidenceReviewGate.issues.join(" ")}`
       );
     }
 
@@ -1984,7 +1984,7 @@ export async function publishCandidateBundle(bundleId: string) {
         : undefined,
       change_note:
         bundle.proposed_outlook_implications?.[0]?.note ??
-        "A reviewed candidate bundle was published to the public site."
+        "A reviewed staged update was published to the public site."
     };
 
     await writeJsonFile(getPublicationEventPath(publicationEventId), {
