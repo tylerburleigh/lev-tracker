@@ -1,9 +1,21 @@
 import Link from "next/link";
-import { ArrowRight, BookMarked, Clock3, Radar, ShieldCheck, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  BookMarked,
+  CalendarCheck,
+  Clock3,
+  Compass,
+  Flag,
+  Radar,
+  ShieldCheck,
+  Sparkles,
+  Telescope
+} from "lucide-react";
 
 import { StageBadge } from "@/components/stage-badge";
 import {
   getConfidenceLabel,
+  getFocusReasonLabel,
   getHomepageData,
   getMomentumLabel,
   getStageLabel,
@@ -30,39 +42,58 @@ function statusTone(value: string) {
 }
 
 export async function Homepage() {
-  const { overallOutlook: overview, hallmarkOutlooks, hallmarks, recentChanges, snapshot } =
-    await getHomepageData();
+  const {
+    overallOutlook: overview,
+    hallmarkOutlooks,
+    hallmarks,
+    recentChanges,
+    snapshot,
+    progressNarrative,
+    progressNarrativeReviewState
+  } = await getHomepageData();
   const visibleRecentChanges = recentChanges.slice(0, 3);
+  const visibleProgressMoments = progressNarrative.progress_moments.slice(0, 3);
+  const visibleWatchlist = progressNarrative.watchlist.slice(0, 3);
+  const visibleFocusPriorities = progressNarrative.focus_priorities.slice(0, 3);
+  const stateOfFieldHref = progressNarrative.related_state_of_field_slug
+    ? `/state-of-the-field/${progressNarrative.related_state_of_field_slug}`
+    : "/state-of-the-field";
+  const narrativeReviewTone =
+    progressNarrativeReviewState.status === "current" ? "status-chip--mint" : "status-chip--gold";
 
   return (
     <>
       <section className="band band--hero">
         <div className="page-shell hero-grid">
           <article className="hero-card">
-            <div className="hero-card__eyebrow">Overall LEV outlook</div>
+            <div className="hero-card__eyebrow">State of LEV</div>
             <div className="hero-card__heading">
-              <h1>{getStageLabel(overview.stage)}</h1>
-              <p>{overview.note}</p>
+              <h1>{progressNarrative.title}</h1>
+              <p>{progressNarrative.summary}</p>
             </div>
             <div className="status-chip-row">
+              <span className="status-chip status-chip--outline">
+                Stage: {getStageLabel(overview.stage)}
+              </span>
               <span className={`status-chip ${statusTone(getMomentumLabel(overview.momentum))}`}>
                 {getMomentumLabel(overview.momentum)}
               </span>
               <span className={`status-chip ${statusTone(getConfidenceLabel(overview.confidence))}`}>
                 {getConfidenceLabel(overview.confidence)}
               </span>
-              <span className="status-chip status-chip--outline">
-                Updated {formatDate(overview.lastUpdated)}
-              </span>
+              <Link className="status-chip status-chip--outline" href={stateOfFieldHref}>
+                <span>Latest note</span>
+                <ArrowRight aria-hidden="true" size={14} />
+              </Link>
             </div>
             <div className="hero-card__columns">
               <div>
-                <h2>Main blocker</h2>
-                <p>{overview.blocker}</p>
+                <h2>Where we are now</h2>
+                <p>{progressNarrative.where_we_are_now}</p>
               </div>
               <div>
-                <h2>Best current signal</h2>
-                <p>{overview.bestSignal}</p>
+                <h2>What changed recently</h2>
+                <p>{progressNarrative.what_changed_recently}</p>
               </div>
             </div>
           </article>
@@ -97,6 +128,16 @@ export async function Homepage() {
                 </div>
               </div>
               <div className="snapshot-item">
+                <CalendarCheck aria-hidden="true" size={16} />
+                <div>
+                  <span className="snapshot-item__label">Narrative review</span>
+                  <strong>{progressNarrativeReviewState.label}</strong>
+                  <span className="snapshot-item__note">
+                    Due {formatDate(progressNarrativeReviewState.reviewDue)}
+                  </span>
+                </div>
+              </div>
+              <div className="snapshot-item">
                 <ShieldCheck aria-hidden="true" size={16} />
                 <div>
                   <span className="snapshot-item__label">Review mode</span>
@@ -105,6 +146,73 @@ export async function Homepage() {
               </div>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <section className="band band--narrative">
+        <div className="page-shell section-header">
+          <div>
+            <span className="section-kicker">Progress narrative</span>
+            <h2>The story to track</h2>
+          </div>
+          <span className={`status-chip ${narrativeReviewTone}`}>
+            Reviewed {formatDate(progressNarrativeReviewState.lastReviewed)}
+          </span>
+        </div>
+        <div className="page-shell story-grid">
+          <article className="story-panel">
+            <div className="story-panel__header">
+              <Flag aria-hidden="true" size={18} />
+              <h3>Progress made</h3>
+            </div>
+            <div className="story-list">
+              {visibleProgressMoments.map((moment) => (
+                <div className="story-list-item" key={moment.label}>
+                  <div className="story-list-item__top">
+                    <strong>{moment.label}</strong>
+                    {moment.date ? <time dateTime={moment.date}>{formatDate(moment.date)}</time> : null}
+                  </div>
+                  <p>{moment.summary}</p>
+                  <span className="story-impact">{moment.impact_on_outlook}</span>
+                </div>
+              ))}
+            </div>
+          </article>
+          <article className="story-panel">
+            <div className="story-panel__header">
+              <Telescope aria-hidden="true" size={18} />
+              <h3>Watch next</h3>
+            </div>
+            <div className="story-list">
+              {visibleWatchlist.map((item) => (
+                <div className="story-list-item" key={item.label}>
+                  <strong>{item.label}</strong>
+                  <p>{item.summary}</p>
+                  <span className="story-impact">{item.signal_to_watch}</span>
+                </div>
+              ))}
+            </div>
+          </article>
+          <article className="story-panel">
+            <div className="story-panel__header">
+              <Compass aria-hidden="true" size={18} />
+              <h3>Focus next</h3>
+            </div>
+            <div className="story-list">
+              {visibleFocusPriorities.map((priority) => (
+                <div className="story-list-item" key={priority.label}>
+                  <div className="story-list-item__top">
+                    <strong>{priority.label}</strong>
+                    <span className="micro-badge micro-badge--outline">
+                      {getFocusReasonLabel(priority.reason)}
+                    </span>
+                  </div>
+                  <p>{priority.rationale}</p>
+                  <span className="story-impact">{priority.next_useful_work}</span>
+                </div>
+              ))}
+            </div>
+          </article>
         </div>
       </section>
 

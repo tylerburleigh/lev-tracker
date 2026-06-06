@@ -263,6 +263,7 @@ time {
 .activity-card,
 .method-card,
 .editorial-card,
+.story-panel,
 .empty-state {
   border-radius: var(--radius-card);
   border: 1px solid var(--border);
@@ -318,6 +319,7 @@ time {
 .page-hero__stats span:not(.stage-badge) {
   display: inline-flex;
   align-items: center;
+  gap: 6px;
   min-height: 30px;
   padding: 0 10px;
   border-radius: 999px;
@@ -523,6 +525,13 @@ time {
   font-size: 1rem;
 }
 
+.snapshot-item__note {
+  display: block;
+  margin-top: 3px;
+  color: rgba(244, 247, 241, 0.68);
+  font-size: 0.86rem;
+}
+
 .section-header {
   margin-bottom: 18px;
 }
@@ -580,6 +589,7 @@ time {
 .review-card,
 .review-summary-card,
 .detail-panel,
+.story-panel,
 .page-hero__aside {
   background: var(--surface);
   backdrop-filter: blur(12px);
@@ -652,6 +662,7 @@ time {
 .track-card,
 .tracks-table,
 .page-hero__aside,
+.story-panel,
 .empty-state {
   padding: 20px;
 }
@@ -664,6 +675,85 @@ time {
 
 .feed-item__title {
   font-weight: 600;
+}
+
+.band--narrative {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+
+.story-panel {
+  display: grid;
+  gap: 16px;
+}
+
+.story-panel__header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.story-panel__header svg {
+  color: var(--mint);
+}
+
+.story-panel__header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.story-list {
+  display: grid;
+  gap: 12px;
+}
+
+.story-list-item {
+  display: grid;
+  gap: 9px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.story-list-item__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.story-list-item strong {
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
+.story-list-item time {
+  flex: 0 0 auto;
+  color: var(--text-soft);
+  font-size: 0.84rem;
+}
+
+.story-list-item p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+.story-impact {
+  display: block;
+  padding-top: 9px;
+  border-top: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .section-link--block {
@@ -1392,7 +1482,8 @@ time {
 
 .activity-list,
 .editorial-list,
-.methods-grid {
+.methods-grid,
+.story-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -1697,6 +1788,7 @@ time {
   .activity-list,
   .editorial-list,
   .methods-grid,
+  .story-grid,
   .review-summary-grid,
   .review-queue,
   .admin-comment-list {
@@ -1777,6 +1869,7 @@ time {
   .activity-card,
   .method-card,
   .editorial-card,
+  .story-panel,
   .empty-state,
   .tracks-table {
     padding: 16px;
@@ -1793,6 +1886,7 @@ time {
   .hallmark-index-grid,
   .hallmark-module-grid,
   .hallmark-activity-grid,
+  .story-grid,
   .evidence-ladder,
   .related-record-grid,
   .review-gate-grid,

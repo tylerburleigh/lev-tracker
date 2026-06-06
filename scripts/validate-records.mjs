@@ -37,6 +37,10 @@ const schemaByExactPath = {
 
 const schemaByPathPrefix = [
   {
+    prefix: "data/content/progress-narrative/",
+    schemaId: "./progress-narrative.schema.json"
+  },
+  {
     prefix: "data/content/state-of-the-field/",
     schemaId: "./state-of-the-field-edition.schema.json"
   }

@@ -413,6 +413,85 @@ export type StateOfFieldEdition = CuratedContentReviewMeta & {
   bullets: string[];
 };
 
+export type ProgressNarrativeFocusReason =
+  | "low_hanging_fruit"
+  | "neglected_area"
+  | "promising_signal"
+  | "blocking_dependency";
+
+export type ProgressNarrativeMoment = {
+  label: string;
+  date?: string;
+  summary: string;
+  impact_on_outlook: string;
+  subject_type: SubjectType;
+  subject_id: string;
+  related_publication_event_ids?: string[];
+  related_outlook_ids?: string[];
+};
+
+export type ProgressNarrativeWatchItem = {
+  label: string;
+  summary: string;
+  signal_to_watch: string;
+  subject_type: SubjectType;
+  subject_id: string;
+  related_outlook_ids?: string[];
+};
+
+export type ProgressNarrativeFocusPriority = {
+  label: string;
+  reason: ProgressNarrativeFocusReason;
+  rationale: string;
+  next_useful_work: string;
+  subject_type: SubjectType;
+  subject_id: string;
+  related_outlook_ids?: string[];
+};
+
+export type ProgressNarrativeRevisionTrigger = {
+  trigger_type:
+    | "new_publication_event"
+    | "outlook_change"
+    | "scenario_change"
+    | "state_of_field_rollup"
+    | "review_due"
+    | "human_editorial_request";
+  description: string;
+  threshold?: string;
+  related_outlook_ids?: string[];
+};
+
+export type ProgressNarrative = {
+  slug: string;
+  title: string;
+  summary: string;
+  date: string;
+  where_we_are_now: string;
+  what_changed_recently: string;
+  progress_moments: ProgressNarrativeMoment[];
+  watchlist: ProgressNarrativeWatchItem[];
+  focus_priorities: ProgressNarrativeFocusPriority[];
+  revision: {
+    last_reviewed: string;
+    review_reason: string;
+    review_due: string;
+    triggers: ProgressNarrativeRevisionTrigger[];
+  };
+  related_state_of_field_slug?: string;
+  related_publication_event_ids?: string[];
+  related_outlook_ids?: string[];
+};
+
+export type ProgressNarrativeReviewState = {
+  status: "current" | "stale";
+  label: string;
+  reasons: string[];
+  lastReviewed: string;
+  reviewDue: string;
+  latestPublicUpdate?: string;
+};
+
 export type BundlePromotionChange = {
   changeId: string;
   summary: string;
@@ -477,6 +556,13 @@ const scenarioLabels: Record<ScenarioStatus, string> = {
   on_track: "On track"
 };
 
+const focusReasonLabels: Record<ProgressNarrativeFocusReason, string> = {
+  low_hanging_fruit: "Low-hanging fruit",
+  neglected_area: "Neglected area",
+  promising_signal: "Showing promise",
+  blocking_dependency: "Blocking dependency"
+};
+
 const evidenceTierRank: Record<string, number> = {
   mortality_or_lifespan: 6,
   human_clinical_outcome: 5,
@@ -510,6 +596,7 @@ const candidateStatusTransitions: Record<CandidateStatus, CandidateStatus[]> = {
 const dataRoot = path.join(process.cwd(), "data");
 const hallmarkInsightsPath = path.join(dataRoot, "content", "hallmark-insights.json");
 const editionsRoot = path.join(dataRoot, "content", "state-of-the-field");
+const progressNarrativePath = path.join(dataRoot, "content", "progress-narrative", "current.json");
 
 async function readJsonFile<T>(filePath: string): Promise<T> {
   return JSON.parse(await fs.readFile(filePath, "utf8")) as T;
@@ -647,6 +734,10 @@ function normalizeDateTimeValue(value: string) {
 
 function compareDateTimesDescending(left: string, right: string) {
   return normalizeDateTimeValue(right).localeCompare(normalizeDateTimeValue(left));
+}
+
+function getTodayIsoDate() {
+  return new Date().toISOString().slice(0, 10);
 }
 
 function toWorkspaceRelativePath(filePath: string) {
@@ -950,6 +1041,33 @@ function normalizeActivityItem(item: ActivityItemRecord): ActivityFeedItem {
   };
 }
 
+function buildProgressNarrativeReviewState(
+  narrative: ProgressNarrative,
+  publicationEvents: PublicationEventRecord[]
+): ProgressNarrativeReviewState {
+  const latestOutlookEvent = publicationEvents.find((event) => event.affected_outlook_ids?.length);
+  const latestPublicUpdate =
+    latestOutlookEvent?.published_at.slice(0, 10) ?? publicationEvents[0]?.published_at.slice(0, 10);
+  const reasons: string[] = [];
+
+  if (latestOutlookEvent && latestOutlookEvent.published_at.slice(0, 10) > narrative.revision.last_reviewed) {
+    reasons.push("New outlook-affecting publication activity exists after the last narrative review.");
+  }
+
+  if (getTodayIsoDate() > narrative.revision.review_due) {
+    reasons.push("The scheduled narrative review date has passed.");
+  }
+
+  return {
+    status: reasons.length > 0 ? "stale" : "current",
+    label: reasons.length > 0 ? "Narrative review due" : "Narrative current",
+    reasons,
+    lastReviewed: narrative.revision.last_reviewed,
+    reviewDue: narrative.revision.review_due,
+    latestPublicUpdate
+  };
+}
+
 function getTrackGroupMap(): Map<string, TrackGroup> {
   return new Map<string, TrackGroup>(
     trackTaxonomy.hallmark_groups.map((group: TrackGroup) => [group.hallmark_id, group])
@@ -1080,6 +1198,8 @@ const loadStateOfFieldEditions = cache(async () => {
   const entries = await readCollection<StateOfFieldEdition>(editionsRoot);
   return entries.sort((left, right) => right.date.localeCompare(left.date));
 });
+
+const loadProgressNarrative = cache(async () => readJsonFile<ProgressNarrative>(progressNarrativePath));
 
 export function getHallmarks(): Hallmark[] {
   return hallmarksTaxonomy.hallmarks;
@@ -1495,6 +1615,17 @@ export async function getStateOfTheFieldEdition(slug: string): Promise<StateOfFi
   return (await loadStateOfFieldEditions()).find((edition) => edition.slug === slug);
 }
 
+export async function getProgressNarrative(): Promise<ProgressNarrative> {
+  noStore();
+  return loadProgressNarrative();
+}
+
+export async function getProgressNarrativeReviewState(): Promise<ProgressNarrativeReviewState> {
+  noStore();
+  const [narrative, publicationEvents] = await Promise.all([loadProgressNarrative(), loadPublicationEvents()]);
+  return buildProgressNarrativeReviewState(narrative, publicationEvents);
+}
+
 export async function getHallmarkInsight(hallmarkId: string): Promise<HallmarkInsight | undefined> {
   noStore();
   return (await loadHallmarkInsights()).find((item) => item.hallmark_id === hallmarkId);
@@ -1520,6 +1651,10 @@ export function getScenarioLabel(status: ScenarioStatus) {
   return scenarioLabels[status];
 }
 
+export function getFocusReasonLabel(reason: ProgressNarrativeFocusReason) {
+  return focusReasonLabels[reason];
+}
+
 export async function getOverallSnapshot() {
   noStore();
   const [recentChanges, overallOutlook] = await Promise.all([getRecentChanges(), getOverallOutlook()]);
@@ -1535,20 +1670,25 @@ export async function getOverallSnapshot() {
 
 export async function getHomepageData() {
   noStore();
-  const [overallOutlook, hallmarkOutlooks, hallmarks, recentChanges, snapshot] = await Promise.all([
-    getOverallOutlook(),
-    getHallmarkOutlooks(),
-    Promise.resolve(getHallmarks()),
-    getRecentChanges(),
-    getOverallSnapshot()
-  ]);
+  const [overallOutlook, hallmarkOutlooks, hallmarks, recentChanges, snapshot, progressNarrative, publicationEvents] =
+    await Promise.all([
+      getOverallOutlook(),
+      getHallmarkOutlooks(),
+      Promise.resolve(getHallmarks()),
+      getRecentChanges(),
+      getOverallSnapshot(),
+      loadProgressNarrative(),
+      loadPublicationEvents()
+    ]);
 
   return {
     overallOutlook,
     hallmarkOutlooks,
     hallmarks,
     recentChanges,
-    snapshot
+    snapshot,
+    progressNarrative,
+    progressNarrativeReviewState: buildProgressNarrativeReviewState(progressNarrative, publicationEvents)
   };
 }
 
