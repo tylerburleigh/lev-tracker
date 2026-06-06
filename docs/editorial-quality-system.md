@@ -39,6 +39,14 @@ Use stricter thresholds only when a pass is explicitly meant to reduce copy debt
 npm run audit:editorial -- --write --max-copy-warnings 300 --max-reader-warnings 0
 ```
 
+The current ratchet command is:
+
+```bash
+npm run audit:editorial:ratchet
+```
+
+It enforces the current warning ceiling while still allowing planned cleanup passes to lower that ceiling later.
+
 ## Cadence
 
 Run the system when any of these happen:

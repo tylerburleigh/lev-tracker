@@ -61,6 +61,8 @@ Use `npm run narrative:progress -- status` to check staleness, `npm run narrativ
 
 Use `npm run audit:editorial -- --write` during reader-facing copy reviews. It writes `extra/editorial-quality-report.md`, refreshes the public copy lint report, and checks whether readers can tell where the LEV journey stands, what changed, what would change the outlook, where effort should focus, and which concrete examples to inspect. Public copy rules live in `config/public-copy-rules.json`.
 
+Use `npm run audit:editorial:ratchet` when a pass should enforce the current public-copy debt ceiling.
+
 If the review changes evidence records, outlook ratings, stages, confidence, scenario status, or forecast windows, stop and use the evidence-review and candidate-bundle workflow instead.
 
 ## Expected Outputs

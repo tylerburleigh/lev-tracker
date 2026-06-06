@@ -14,6 +14,7 @@
     "lint:public-copy": "node scripts/public-copy-lint.mjs",
     "audit:reader-tasks": "node scripts/reader-task-audit.mjs",
     "audit:editorial": "node scripts/editorial-quality.mjs",
+    "audit:editorial:ratchet": "node scripts/editorial-quality.mjs --write --max-copy-warnings 280 --max-reader-warnings 0",
     "narrative:progress": "node scripts/progress-narrative.mjs",
     "research:bundle": "node scripts/research-bundle.mjs",
     "research:review-evidence": "node scripts/review-evidence.mjs"

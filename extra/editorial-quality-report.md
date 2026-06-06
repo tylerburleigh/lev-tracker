@@ -1,14 +1,14 @@
 # Editorial Quality Report
 
-Generated: 2026-06-06T14:39:12.382Z
+Generated: 2026-06-06T14:45:13.925Z
 Overall: passed
 
 ## Summary
 
 - Narrative status: current
-- Public copy warnings: 323
+- Public copy warnings: 277
 - Reader-task audit: passed (13 passed, 0 issues, 0 warnings)
-- Top public-copy terms: durable: 103, translation: 58, mechanistic: 47, functional benefit: 39, pathway engagement: 18, trial-watch: 18, support map: 9, translational: 9
+- Top public-copy terms: durable: 87, translation: 51, mechanistic: 46, functional benefit: 36, pathway engagement: 13, trial-watch: 12, support map: 8, biomarker-heavy: 7
 
 ## Gates
 
@@ -16,6 +16,10 @@ Overall: passed
   Status is current.
 - PASS: Reader-task audit has no issues
   0 issue(s), 0 warning(s).
+- PASS: Public copy warnings <= 280
+  Current public copy warning count is 277.
+- PASS: Reader-task warnings <= 0
+  Current reader-task warning count is 0.
 
 ## Command Output
 
@@ -39,8 +43,8 @@ Command: `node scripts/public-copy-lint.mjs --write`
 Exit code: 0
 
 ```text
-Public copy warnings: 323
-Top terms: durable: 103, translation: 58, mechanistic: 47, functional benefit: 39, pathway engagement: 18, trial-watch: 18, support map: 9, translational: 9
+Public copy warnings: 277
+Top terms: durable: 87, translation: 51, mechanistic: 46, functional benefit: 36, pathway engagement: 13, trial-watch: 12, support map: 8, biomarker-heavy: 7
 Wrote extra/public-copy-report.md.
 ```
 

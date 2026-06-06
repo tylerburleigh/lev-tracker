@@ -1,21 +1,21 @@
 # Public Copy Lint Report
 
-Generated: 2026-06-06T14:39:12.376Z
-Warnings: 323
+Generated: 2026-06-06T14:45:13.919Z
+Warnings: 277
 
 ## Highest-Volume Terms
 
-- durable: 103 warning(s); consider "long-lasting"
-- translation: 58 warning(s); consider "moving from lab work to useful human results"
-- mechanistic: 47 warning(s); consider "based on biology"
-- functional benefit: 39 warning(s); consider "people function better"
-- pathway engagement: 18 warning(s); consider "evidence that the intervention changed its intended biological target"
-- trial-watch: 18 warning(s); consider "trials to watch"
-- support map: 9 warning(s); consider "evidence map"
-- translational: 9 warning(s); consider "moving toward useful human results"
+- durable: 87 warning(s); consider "long-lasting"
+- translation: 51 warning(s); consider "moving from lab work to useful human results"
+- mechanistic: 46 warning(s); consider "based on biology"
+- functional benefit: 36 warning(s); consider "people function better"
+- pathway engagement: 13 warning(s); consider "evidence that the intervention changed its intended biological target"
+- trial-watch: 12 warning(s); consider "trials to watch"
+- support map: 8 warning(s); consider "evidence map"
 - biomarker-heavy: 7 warning(s); consider "mostly based on biomarkers"
-- aging-directed: 6 warning(s); consider "about aging itself"
-- coverage repair: 6 warning(s); consider "missing-context update"
+- translational: 6 warning(s); consider "moving toward useful human results"
+- coverage repair: 5 warning(s); consider "missing-context update"
+- aging-directed: 3 warning(s); consider "about aging itself"
 - branch boundaries: 1 warning(s); consider "which claims are in scope and which are not"
 - directness: 1 warning(s); consider "relevance to aging"
 - support maps: 1 warning(s); consider "evidence maps"
@@ -40,38 +40,6 @@ Warnings: 323
   Excerpt: The monkey study is male-only and biomarker-heavy rather than lifespan evidence.
 - data/outlooks/track-ampk-and-metabolic-modulators-outlook.json $.supporting_evidence[4].limitations[2]: "durable" -> consider "long-lasting"
   Excerpt: No staged trial has yet shown that biomarker movement produces durable clinical benefit.
-- data/outlooks/track-autophagy-induction-outlook.json $.forecast_note: "durable" -> consider "long-lasting"
-  Excerpt: ...urrent evidence remains mixed, short-term, and far from demonstrating durable healthy-lifespan benefit.
-- data/outlooks/track-autophagy-induction-outlook.json $.main_blockers[1]: "durable" -> consider "long-lasting"
-  Excerpt: ...uman signals are short-term biomarker or metabolic shifts rather than durable functional aging benefits.
-- data/outlooks/track-autophagy-induction-outlook.json $.rating_change_criteria[0]: "durable" -> consider "long-lasting"
-  Excerpt: ...licated human studies where measured autophagy engagement tracks with durable functional, disease, or mortality-relevant outcomes.
-- data/outlooks/track-autophagy-induction-outlook.json $.supporting_evidence[0].limitations[1]: "durable" -> consider "long-lasting"
-  Excerpt: The endpoints are pathway and metabolic markers, not durable healthy-lifespan outcomes.
-- data/outlooks/track-autophagy-induction-outlook.json $.supporting_evidence[0].rationale: "durable" -> consider "long-lasting"
-  Excerpt: ... beyond pure animal or mechanistic plausibility, but they do not show durable human function or disease/mortality relevance.
-- data/outlooks/track-autophagy-induction-outlook.json $.supporting_evidence[0].rationale: "mechanistic" -> consider "based on biology"
-  Excerpt: These findings move the track beyond pure animal or mechanistic plausibility, but they do not show durable human function or disease/...
-- data/outlooks/track-autophagy-induction-outlook.json $.supporting_evidence[1].conclusion: "functional benefit" -> consider "people function better"
-  Excerpt: ...r-term spermidine trial does not support upgrading the track to human functional benefit.
-- data/outlooks/track-autophagy-induction-outlook.json $.supporting_evidence[2].rationale: "durable" -> consider "long-lasting"
-  Excerpt: ...vity and pathway engagement, but it has not converted into replicated durable functional benefit.
-- data/outlooks/track-autophagy-induction-outlook.json $.supporting_evidence[2].rationale: "functional benefit" -> consider "people function better"
-  Excerpt: ... pathway engagement, but it has not converted into replicated durable functional benefit.
-- data/outlooks/track-autophagy-induction-outlook.json $.supporting_evidence[2].rationale: "pathway engagement" -> consider "evidence that the intervention changed its intended biological target"
-  Excerpt: The evidence set contains visible human activity and pathway engagement, but it has not converted into replicated durable functional benefit.
-- data/outlooks/track-autophagy-induction-outlook.json $.supporting_evidence[3].limitations[0]: "durable" -> consider "long-lasting"
-  Excerpt: No cited source demonstrates durable disease, mortality, or broad healthy-aging relevance.
-- data/outlooks/track-autophagy-induction-outlook.json $.supporting_evidence[3].limitations[1]: "pathway engagement" -> consider "evidence that the intervention changed its intended biological target"
-  Excerpt: Safety and pathway engagement do not establish efficacy.
-- data/outlooks/track-autophagy-induction-outlook.json $.supporting_evidence[3].rationale: "durable" -> consider "long-lasting"
-  Excerpt: ...ic baseline, but not strong enough to support a confident claim about durable healthy-lifespan benefit.
-- data/outlooks/track-autophagy-induction-outlook.json $.supporting_evidence[4].conclusion: "pathway engagement" -> consider "evidence that the intervention changed its intended biological target"
-  Excerpt: ...-mimicking diet studies provide the clearest current human signal for pathway engagement.
-- data/outlooks/track-autophagy-induction-outlook.json $.supporting_evidence[5].limitations[1]: "pathway engagement" -> consider "evidence that the intervention changed its intended biological target"
-  Excerpt: ...urity spermidine study saw minimal circulating polyamine movement, so pathway engagement is not settled.
-- data/outlooks/track-autophagy-induction-outlook.json $.supporting_evidence[5].rationale: "durable" -> consider "long-lasting"
-  Excerpt: ...ndings justify continued watchfulness without counting as evidence of durable benefit.
 - data/outlooks/track-caloric-restriction-mimetics-outlook.json $.main_blockers[0]: "durable" -> consider "long-lasting"
   Excerpt: ...ker and risk-factor movement from fasting-mimicking diet studies, not durable human function, disease incidence, or mortality.
 - data/outlooks/track-caloric-restriction-mimetics-outlook.json $.rating_change_criteria[1]: "durable" -> consider "long-lasting"
@@ -210,36 +178,6 @@ Warnings: 323
   Excerpt: Momentum is accelerating but confidence remains low because translational activity is preclinical and the safety boundary is unusually demand...
 - data/outlooks/track-immune-clearance-of-senescent-cells-outlook.json $.supporting_evidence[3].conclusion: "translational" -> consider "moving toward useful human results"
   Excerpt: Momentum is accelerating but confidence remains low because translational activity is preclinical and the safety boundary is unusually demandin...
-- data/outlooks/track-insulin-igf-axis-modulation-outlook.json $.best_current_signals[4]: "translation" -> consider "moving from lab work to useful human results"
-  Excerpt: ...ake and GH-administration studies provide important negative or mixed translation boundaries: protein restriction may be age-dependent, and GH administ...
-- data/outlooks/track-insulin-igf-axis-modulation-outlook.json $.forecast_note: "aging-directed" -> consider "about aging itself"
-  Excerpt: ...ic support and human natural-experiment plausibility, but there is no aging-directed human intervention showing durable functional, disease, or mortality ...
-- data/outlooks/track-insulin-igf-axis-modulation-outlook.json $.forecast_note: "durable" -> consider "long-lasting"
-  Excerpt: ...ausibility, but there is no aging-directed human intervention showing durable functional, disease, or mortality benefit from intentionally lowering...
-- data/outlooks/track-insulin-igf-axis-modulation-outlook.json $.main_blockers[0]: "aging-directed" -> consider "about aging itself"
-  Excerpt: ...survival analyses, and FMD biomarker movement rather than intentional aging-directed intervention trials.
-- data/outlooks/track-insulin-igf-axis-modulation-outlook.json $.rating_change_criteria[1]: "durable" -> consider "long-lasting"
-  Excerpt: A move toward durable_disease_or_mortality_relevance would require long-term controlled evi...
-- data/outlooks/track-insulin-igf-axis-modulation-outlook.json $.rating_change_criteria[2]: "pathway engagement" -> consider "evidence that the intervention changed its intended biological target"
-  Excerpt: ...ulation, tissue-selective delivery, or responder selection reproduces pathway engagement and safety in humans while preserving muscle, bone, repair, and gluco...
-- data/outlooks/track-insulin-igf-axis-modulation-outlook.json $.supporting_evidence[0].conclusion: "durable" -> consider "long-lasting"
-  Excerpt: ...k-marker relevance, but it does not reach human_functional_benefit or durable disease relevance for an intentional aging intervention.
-- data/outlooks/track-insulin-igf-axis-modulation-outlook.json $.supporting_evidence[0].limitations[2]: "durable" -> consider "long-lasting"
-  Excerpt: FMD shows biomarkers and risk factors, not durable functional, disease-incidence, or mortality benefit.
-- data/outlooks/track-insulin-igf-axis-modulation-outlook.json $.supporting_evidence[2].conclusion: "translation" -> consider "moving from lab work to useful human results"
-  Excerpt: Human translation is constrained by age-dependent nutrition signals and endocrine adver...
-- data/outlooks/track-insulin-igf-axis-modulation-outlook.json $.supporting_evidence[2].label: "translation" -> consider "moving from lab work to useful human results"
-  Excerpt: Translation and safety boundary
-- data/outlooks/track-insulin-igf-axis-modulation-outlook.json $.supporting_evidence[3].conclusion: "translation" -> consider "moving from lab work to useful human results"
-  Excerpt: ...y because recent adult-onset and tissue-specific mouse studies refine translation, while human evidence has not yet crossed beyond biomarker and natura...
-- data/outlooks/track-insulin-igf-axis-modulation-outlook.json $.supporting_evidence[3].limitations[0]: "translation" -> consider "moving from lab work to useful human results"
-  Excerpt: The newer translational refinements are animal studies.
-- data/outlooks/track-insulin-igf-axis-modulation-outlook.json $.supporting_evidence[3].limitations[0]: "translational" -> consider "moving toward useful human results"
-  Excerpt: The newer translational refinements are animal studies.
-- data/outlooks/track-insulin-igf-axis-modulation-outlook.json $.supporting_evidence[3].rationale: "aging-directed" -> consider "about aging itself"
-  Excerpt: ...nce plus durable classic genetic and acarbose signals, but no current aging-directed human functional trial anchor.
-- data/outlooks/track-insulin-igf-axis-modulation-outlook.json $.supporting_evidence[3].rationale: "durable" -> consider "long-lasting"
-  Excerpt: ...field has newer adult-onset GHR and adipocyte GHR mouse evidence plus durable classic genetic and acarbose signals, but no current aging-directed h...
 - data/outlooks/track-live-biotherapeutics-and-engineered-microbes-outlook.json $.forecast_note: "durable" -> consider "long-lasting"
   Excerpt: ...aging biology. The track should not be interpreted as having broad or durable aging efficacy until replicated strain-defined trials show functional...
 - data/outlooks/track-live-biotherapeutics-and-engineered-microbes-outlook.json $.forecast_note: "translation" -> consider "moving from lab work to useful human results"
@@ -370,40 +308,10 @@ Warnings: 323
   Excerpt: ... remains low because target engagement is easier to show than durable functional benefit.
 - data/outlooks/track-nad-and-redox-restoration-outlook.json $.supporting_evidence[4].limitations[0]: "durable" -> consider "long-lasting"
   Excerpt: No staged source shows durable clinical benefit after discontinuation.
-- data/outlooks/track-neuroendocrine-and-systemic-signal-reset-outlook.json $.best_current_signals[6]: "trial-watch" -> consider "trials to watch"
-  Excerpt: ...otho/follistatin plasmid gene-therapy registries are recruiting human trial-watch items, but neither has posted results.
-- data/outlooks/track-neuroendocrine-and-systemic-signal-reset-outlook.json $.forecast_note: "coverage repair" -> consider "missing-context update"
-  Excerpt: ...rrowly anchored to TRIIM's small uncontrolled human biomarker signal. Coverage repair adds adipose-hypothalamic S1PC/eNAMPT support and human klotho gene-t...
-- data/outlooks/track-neuroendocrine-and-systemic-signal-reset-outlook.json $.forecast_note: "durable" -> consider "long-lasting"
-  Excerpt: ...ne/systemic signaling plausible, while no reviewed source establishes durable human functional, disease, mortality, or LEV-relevant benefit.
-- data/outlooks/track-neuroendocrine-and-systemic-signal-reset-outlook.json $.forecast_note: "trial-watch" -> consider "trials to watch"
-  Excerpt: ...dipose-hypothalamic S1PC/eNAMPT support and human klotho gene-therapy trial-watch context, but the broader track is still preclinical or no-results for...
-- data/outlooks/track-neuroendocrine-and-systemic-signal-reset-outlook.json $.main_blockers[1]: "trial-watch" -> consider "trials to watch"
-  Excerpt: TRIIM-X and the klotho plasmid gene-therapy registries supply human trial-watch momentum, but they have no posted results and cannot support benefit ...
-- data/outlooks/track-neuroendocrine-and-systemic-signal-reset-outlook.json $.main_blockers[2]: "translation" -> consider "moving from lab work to useful human results"
-  Excerpt: Animal support is biologically coherent but translationally heterogeneous: hypothalamic NF-kappaB/GnRH, hypothalamic stem-cel...
-- data/outlooks/track-neuroendocrine-and-systemic-signal-reset-outlook.json $.main_blockers[2]: "translational" -> consider "moving toward useful human results"
-  Excerpt: Animal support is biologically coherent but translationally heterogeneous: hypothalamic NF-kappaB/GnRH, hypothalamic stem-cell ...
-- data/outlooks/track-neuroendocrine-and-systemic-signal-reset-outlook.json $.rating_change_criteria[3]: "trial-watch" -> consider "trials to watch"
-  Excerpt: ... or combination gene-therapy studies reveal safety constraints, or if trial-watch programs remain unpublished despite registry maturity.
 - data/outlooks/track-neuroendocrine-and-systemic-signal-reset-outlook.json $.supporting_evidence[4].limitations[1]: "mechanistic" -> consider "based on biology"
   Excerpt: Oxytocin and klotho are mechanistically distinct and do not define a single therapeutic class.
 - data/outlooks/track-neuroendocrine-and-systemic-signal-reset-outlook.json $.supporting_evidence[4].limitations[2]: "durable" -> consider "long-lasting"
   Excerpt: Short-term tissue repair or cognitive-task results do not establish durable aging modification.
-- data/outlooks/track-neuroendocrine-and-systemic-signal-reset-outlook.json $.supporting_evidence[5].conclusion: "trial-watch" -> consider "trials to watch"
-  Excerpt: ...smid and klotho/follistatin plasmid gene-therapy registries add human trial-watch activity but no efficacy or safety result.
-- data/outlooks/track-neuroendocrine-and-systemic-signal-reset-outlook.json $.supporting_evidence[5].label: "trial-watch" -> consider "trials to watch"
-  Excerpt: Klotho trial-watch boundary
-- data/outlooks/track-neuroendocrine-and-systemic-signal-reset-outlook.json $.supporting_evidence[6].limitations[0]: "durable" -> consider "long-lasting"
-  Excerpt: No staged source demonstrates durable human functional benefit or mortality relevance.
-- data/outlooks/track-neuroendocrine-and-systemic-signal-reset-outlook.json $.supporting_evidence[6].limitations[0]: "functional benefit" -> consider "people function better"
-  Excerpt: No staged source demonstrates durable human functional benefit or mortality relevance.
-- data/outlooks/track-neuroendocrine-and-systemic-signal-reset-outlook.json $.supporting_evidence[6].rationale: "support map" -> consider "evidence map"
-  Excerpt: The support map contains one small uncontrolled human biomarker study, three no-resul...
-- data/outlooks/track-neuroendocrine-and-systemic-signal-reset-outlook.json $.supporting_evidence[6].rationale: "translation" -> consider "moving from lab work to useful human results"
-  Excerpt: ...stries, and several animal or nonhuman-primate signals with different translational constraints.
-- data/outlooks/track-neuroendocrine-and-systemic-signal-reset-outlook.json $.supporting_evidence[6].rationale: "translational" -> consider "moving toward useful human results"
-  Excerpt: ...stries, and several animal or nonhuman-primate signals with different translational constraints.
 - data/outlooks/track-niche-rejuvenation-and-support-outlook.json $.forecast_note: "durable" -> consider "long-lasting"
   Excerpt: ...ut human evidence is still indirect and no staged source demonstrates durable human functional benefit from a targeted niche-support intervention.
 - data/outlooks/track-niche-rejuvenation-and-support-outlook.json $.forecast_note: "functional benefit" -> consider "people function better"
