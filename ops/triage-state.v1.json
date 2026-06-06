@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-06T12:58:30.427Z",
+  "generated_at": "2026-06-06T13:25:24.033Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-06T12:58:30.333Z",
-    "research_priority_queue_updated_at": "2026-06-06T12:58:30.333Z",
-    "active_candidate_bundle_count": 1,
+    "research_coverage_status_updated_at": "2026-06-06T13:25:23.938Z",
+    "research_priority_queue_updated_at": "2026-06-06T13:25:23.939Z",
+    "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
-    "surveillance_queue_count": 37,
+    "surveillance_queue_count": 38,
     "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 28,
     "unnormalized_intervention_id_count": 70,
@@ -32,10 +32,10 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "editorial_review-live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06",
-    "top_mode": "editorial_review",
-    "active_editorial_count": 1,
-    "ready_research_count": 37,
+    "top_work_item_id": "surveillance-extracellular-vesicle-and-secretome-therapies",
+    "top_mode": "surveillance",
+    "active_editorial_count": 0,
+    "ready_research_count": 38,
     "data_hardening_count": 1,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
@@ -45,47 +45,13 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "editorial_review-live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06",
-      "mode": "editorial_review",
-      "domain": "editorial",
-      "priority_tier": "now",
-      "status": "ready",
-      "title": "Review active bundle live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06",
-      "rationale": "Candidate bundle live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06 is submitted, so editorial work takes precedence over new research.",
-      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
-      "candidate_bundle_id": "live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06",
-      "runbook_path": "docs/admin-review.md",
-      "command": "npm run research:bundle -- validate --bundle live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06",
-      "source_paths": [
-        "data/candidate-bundles",
-        "docs/admin-review.md"
-      ],
-      "references": [
-        {
-          "record_type": "candidate_bundle",
-          "record_id": "live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06"
-        }
-      ],
-      "signals": [
-        {
-          "name": "lifecycle_status",
-          "value": "submitted"
-        },
-        {
-          "name": "proposed_change_count",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "rank": 2,
       "item_id": "surveillance-extracellular-vesicle-and-secretome-therapies",
       "mode": "surveillance",
       "domain": "research",
       "priority_tier": "now",
       "status": "ready",
       "title": "Run surveillance for Extracellular Vesicle and Secretome Therapies",
-      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 16; rank 1 was recently handled by a surveillance or coverage-repair session.",
+      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 17; rank 1 was recently handled by a surveillance or coverage-repair session.",
       "default_action": "Run one track-level surveillance pass, record materiality, excluded sources, and a session; create a bundle only for a material public change.",
       "track_id": "extracellular-vesicle-and-secretome-therapies",
       "hallmark_id": "altered_intercellular_communication",
@@ -108,7 +74,7 @@
       "signals": [
         {
           "name": "generated_queue_rank",
-          "value": 16
+          "value": 17
         },
         {
           "name": "last_session_mode",
@@ -121,7 +87,7 @@
       ]
     },
     {
-      "rank": 3,
+      "rank": 2,
       "item_id": "coverage-assessment-backfill-chromatin-and-histone-modulation",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
@@ -155,7 +121,7 @@
         },
         {
           "name": "generated_surveillance_queue_rank",
-          "value": 2
+          "value": 3
         },
         {
           "name": "track_next_mode",
@@ -164,7 +130,7 @@
       ]
     },
     {
-      "rank": 4,
+      "rank": 3,
       "item_id": "data-normalization-intervention-refs",
       "mode": "data_normalization",
       "domain": "data",

@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06-source-fidelity-r1",
+  "name": "Source Fidelity review for Live Biotherapeutics And Engineered Microbes bundle",
+  "candidate_bundle_id": "live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The PA53 source, intervention, study, finding, and outlook-refresh records are faithful to PubMed PMID 42235825. The staged records preserve the article title, DOI, publication date, authors, 8-week randomized double-blind placebo-controlled design, n = 75 healthy adults aged 55 to 70 years, PA53 dose of 30 billion CFU/day, maltodextrin placebo, measured well-being, gastrointestinal, sleep, cytokine, and microbiota endpoints, key quantitative results, and the no-conflict statement. The wording is appropriately bounded because it does not convert the short trial into a frailty, disease-progression, mortality, durability, or LEV-relevant result.",
+  "reviewed_change_ids": [
+    "create-source-pmid-42235825",
+    "create-intervention-pediococcus-acidilactici-pa53",
+    "create-study-pa53-older-adults-wellbeing-gut-health-rct",
+    "create-finding-pa53-improved-wellbeing-gut-health-older-adults",
+    "update-outlook-track-live-biotherapeutics-and-engineered-microbes"
+  ],
+  "findings": [
+    {
+      "finding_id": "pa53-source-metadata-and-design-preserved",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-source-pmid-42235825",
+      "applies_to_record": {
+        "record_type": "source",
+        "record_id": "pmid-42235825"
+      },
+      "claim_or_issue": "The staged source and study records match PubMed PMID 42235825 for title, journal, DOI, electronic publication date, author list, randomized double-blind placebo-controlled design, n = 75, 55 to 70 year age range, PA53 dose, placebo, and endpoint classes.",
+      "why_it_matters": "The surveillance bundle depends on PA53 being a real post-baseline older-adult human trial rather than generic probiotic activity or review context.",
+      "recommended_action": "No revision needed; keep the staged source and study facts as written.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "pa53-effect-attribution-boundary-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-pa53-improved-wellbeing-gut-health-older-adults",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "pa53-improved-wellbeing-gut-health-older-adults"
+      },
+      "claim_or_issue": "The PubMed abstract reports PA53-group pre/post values for MUNSH, GSRS, BSS, PSQI, IL-6, TNF-alpha, IL-25, and microbiota changes, while noting that PSS had a significant between-group advantage despite a non-significant within-group change.",
+      "why_it_matters": "The finding should not be read as every endpoint having the same placebo-adjusted statistical interpretation.",
+      "recommended_action": "No revision needed; retain the current wording that refers to baseline or placebo-relevant comparisons and keep the low-confidence caveats.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "pa53-registration-and-conflict-facts-preserved",
+      "severity": "note",
+      "category": "missing_caveat",
+      "applies_to_change_id": "create-finding-pa53-improved-wellbeing-gut-health-older-adults",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "pa53-improved-wellbeing-gut-health-older-adults"
+      },
+      "claim_or_issue": "The staged finding states that the abstract does not list a ClinicalTrials.gov registration ID and that the source reports no author conflicts.",
+      "why_it_matters": "Registration and conflict details are part of source fidelity and should stay close to the interpretation of a small short-duration trial.",
+      "recommended_action": "No revision needed; preserve both caveats in the staged finding.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-06T13:24:05.193Z",
+  "updated_at": "2026-06-06T13:24:05.193Z"
+}

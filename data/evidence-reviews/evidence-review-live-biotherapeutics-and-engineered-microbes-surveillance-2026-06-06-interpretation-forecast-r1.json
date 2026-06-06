@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Live Biotherapeutics And Engineered Microbes bundle",
+  "candidate_bundle_id": "live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "needs_human_judgment",
+  "blocking": false,
+  "summary": "The staged interpretation is acceptable but still curator-judgment-dependent because PA53 is a short strain-defined older-adult well-being, gut-symptom, sleep, cytokine, and microbiota trial that overlaps with broader probiotic/composition framing. The bundle correctly treats PA53 as a second bounded older-adult human signal, keeps TWK10 as the stronger frailty-function anchor, leaves current_stage at low-confidence human_functional_benefit, and does not upgrade confidence, momentum, scenario_2036_status, or LEV timing. No unresolved forecast overreach should block editorial review.",
+  "reviewed_change_ids": [
+    "create-source-pmid-42235825",
+    "create-intervention-pediococcus-acidilactici-pa53",
+    "create-study-pa53-older-adults-wellbeing-gut-health-rct",
+    "create-finding-pa53-improved-wellbeing-gut-health-older-adults",
+    "update-outlook-track-live-biotherapeutics-and-engineered-microbes"
+  ],
+  "findings": [
+    {
+      "finding_id": "pa53-does-not-upgrade-stage-or-confidence",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "update-outlook-track-live-biotherapeutics-and-engineered-microbes",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-live-biotherapeutics-and-engineered-microbes-outlook"
+      },
+      "claim_or_issue": "The staged outlook adds PA53 without changing current_stage, confidence, momentum, scenario_2036_status, or earliest_plausible_window.",
+      "why_it_matters": "A short healthy-older-adult trial with subjective well-being, gut-symptom, sleep, cytokine, and microbiota endpoints can refresh the support map but cannot establish durable aging efficacy or LEV-relevant timing.",
+      "recommended_action": "No revision needed; keep PA53 as bounded support and preserve the low-confidence forecast.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "pa53-functional-label-remains-bounded",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-pa53-improved-wellbeing-gut-health-older-adults",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "pa53-improved-wellbeing-gut-health-older-adults"
+      },
+      "claim_or_issue": "The staged finding uses the human_function tier for well-being, gastrointestinal symptoms, stool form, and sleep quality, while caveating that these are not frailty, sarcopenia, intrinsic-capacity, disease-progression, mortality, or durability endpoints.",
+      "why_it_matters": "The functional label is defensible only if readers see the endpoint boundary near the claim.",
+      "recommended_action": "No revision needed; keep the endpoint caveats and avoid expanding PA53 into a generalized aging-function claim.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "rating-change-criteria-remain-conservative",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "update-outlook-track-live-biotherapeutics-and-engineered-microbes",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-live-biotherapeutics-and-engineered-microbes-outlook"
+      },
+      "claim_or_issue": "The staged rating_change_criteria require independent replication, prespecified functional or clinical endpoints, durability, chronic safety, and aging-relevant engineered-microbe human results before confidence or stage can strengthen.",
+      "why_it_matters": "Those criteria prevent recent activity and biomarker movement from being interpreted as a time-bound geroscience or LEV-relevant advance.",
+      "recommended_action": "No revision needed; retain the replication and durability thresholds.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-06T13:24:08.867Z",
+  "updated_at": "2026-06-06T13:24:08.867Z"
+}

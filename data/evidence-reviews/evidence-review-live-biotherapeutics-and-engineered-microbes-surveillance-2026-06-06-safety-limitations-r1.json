@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06-safety-limitations-r1",
+  "name": "Safety Limitations review for Live Biotherapeutics And Engineered Microbes bundle",
+  "candidate_bundle_id": "live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "safety_limitations",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged records adequately preserve the safety and limitation boundaries for revision 1. PA53 is represented as an 8-week older-adult trial with no durability, chronic-use, frailty, disease-progression, mortality, or post-discontinuation evidence; the outlook keeps broader class risks around colonization, manufacturing quality, baseline microbiome dependence, and chronic use. No unresolved safety omission should block editorial review.",
+  "reviewed_change_ids": [
+    "create-source-pmid-42235825",
+    "create-intervention-pediococcus-acidilactici-pa53",
+    "create-study-pa53-older-adults-wellbeing-gut-health-rct",
+    "create-finding-pa53-improved-wellbeing-gut-health-older-adults",
+    "update-outlook-track-live-biotherapeutics-and-engineered-microbes"
+  ],
+  "findings": [
+    {
+      "finding_id": "pa53-short-duration-safety-durability-gap",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-finding-pa53-improved-wellbeing-gut-health-older-adults",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "pa53-improved-wellbeing-gut-health-older-adults"
+      },
+      "claim_or_issue": "The PA53 trial lasted 8 weeks and does not establish durability after discontinuation, long-term tolerability, chronic colonization behavior, or risk-benefit in frail or diseased older adults.",
+      "why_it_matters": "Short probiotic trials can support bounded tolerability and symptom signals but cannot carry preventive geroscience safety claims.",
+      "recommended_action": "Keep the staged short-duration, healthy-population, and no-durability caveats near the PA53 finding.",
+      "resolution_status": "open"
+    },
+    {
+      "finding_id": "live-biotherapeutic-class-safety-boundary-preserved",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "update-outlook-track-live-biotherapeutics-and-engineered-microbes",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-live-biotherapeutics-and-engineered-microbes-outlook"
+      },
+      "claim_or_issue": "The staged outlook keeps safety interpretation limited by strain selection, baseline microbiome state, colonization, dosing durability, chronic-use safety, manufacturing quality, and broad probiotic generalization risk.",
+      "why_it_matters": "These modality-specific issues remain unresolved across PA53, TWK10, Akkermansia, and engineered microbes.",
+      "recommended_action": "No revision needed; preserve the staged blocker language and do not treat PA53 as a class-wide safety repair.",
+      "resolution_status": "open"
+    },
+    {
+      "finding_id": "pa53-conflict-note-not-safety-upgrade",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-finding-pa53-improved-wellbeing-gut-health-older-adults",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "pa53-improved-wellbeing-gut-health-older-adults"
+      },
+      "claim_or_issue": "The PA53 source reports no author conflicts, but that does not resolve independent replication, chronic safety, or endpoint durability questions.",
+      "why_it_matters": "Conflict status is useful source context, not a substitute for a long-term safety package.",
+      "recommended_action": "Keep the no-conflict statement as source context while preserving the independent-replication and durability caveats.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-06T13:24:13.259Z",
+  "updated_at": "2026-06-06T13:24:13.259Z"
+}
