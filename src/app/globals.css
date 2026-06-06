@@ -158,7 +158,9 @@ time {
 .editorial-card:hover,
 .review-card:hover,
 .review-summary-card:hover,
-.action-button:hover {
+.action-button:hover,
+.journey-step:hover,
+.spotlight-card:hover {
   border-color: rgba(45, 124, 108, 0.34);
   transform: translateY(-1px);
 }
@@ -263,6 +265,9 @@ time {
 .activity-card,
 .method-card,
 .editorial-card,
+.story-panel,
+.journey-step,
+.reader-panel,
 .empty-state {
   border-radius: var(--radius-card);
   border: 1px solid var(--border);
@@ -318,6 +323,7 @@ time {
 .page-hero__stats span:not(.stage-badge) {
   display: inline-flex;
   align-items: center;
+  gap: 6px;
   min-height: 30px;
   padding: 0 10px;
   border-radius: 999px;
@@ -523,6 +529,13 @@ time {
   font-size: 1rem;
 }
 
+.snapshot-item__note {
+  display: block;
+  margin-top: 3px;
+  color: rgba(244, 247, 241, 0.68);
+  font-size: 0.86rem;
+}
+
 .section-header {
   margin-bottom: 18px;
 }
@@ -580,6 +593,9 @@ time {
 .review-card,
 .review-summary-card,
 .detail-panel,
+.story-panel,
+.journey-step,
+.reader-panel,
 .page-hero__aside {
   background: var(--surface);
   backdrop-filter: blur(12px);
@@ -652,6 +668,9 @@ time {
 .track-card,
 .tracks-table,
 .page-hero__aside,
+.story-panel,
+.journey-step,
+.reader-panel,
 .empty-state {
   padding: 20px;
 }
@@ -664,6 +683,269 @@ time {
 
 .feed-item__title {
   font-weight: 600;
+}
+
+.band--narrative {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.plain-meaning {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px solid rgba(45, 124, 108, 0.18);
+  border-radius: 8px;
+  background: rgba(45, 124, 108, 0.08);
+}
+
+.plain-meaning::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  margin-top: 7px;
+  border-radius: 999px;
+  background: var(--mint);
+}
+
+.plain-meaning svg {
+  color: var(--mint);
+}
+
+.plain-meaning strong {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  color: var(--mint);
+}
+
+.plain-meaning p,
+.detail-list span {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+.plain-meaning > p {
+  grid-column: 2;
+}
+
+.plain-meaning--hero {
+  margin-top: 0;
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.plain-meaning--hero::before {
+  display: none;
+}
+
+.plain-meaning--hero strong {
+  color: rgba(244, 247, 241, 0.9);
+}
+
+.plain-meaning--hero p {
+  color: rgba(244, 247, 241, 0.76);
+}
+
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.journey-step {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  min-height: 172px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.journey-step__label {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  width: fit-content;
+  color: var(--mint);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.journey-step h3,
+.reader-panel h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+.journey-step p,
+.reader-panel p,
+.spotlight-card p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+.journey-step__arrow {
+  position: absolute;
+  top: calc(50% - 9px);
+  right: -16px;
+  z-index: 1;
+  color: var(--mint);
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+
+.story-panel {
+  display: grid;
+  gap: 16px;
+}
+
+.story-panel__header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.story-panel__header svg {
+  color: var(--mint);
+}
+
+.story-panel__header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.story-list {
+  display: grid;
+  gap: 12px;
+}
+
+.story-list-item {
+  display: grid;
+  gap: 9px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.story-list-item__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.story-list-item strong {
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
+.story-list-item time {
+  flex: 0 0 auto;
+  color: var(--text-soft);
+  font-size: 0.84rem;
+}
+
+.story-list-item p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+.story-impact {
+  display: block;
+  padding-top: 9px;
+  border-top: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.band--reader {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(229, 235, 227, 0.68));
+}
+
+.reader-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.reader-panel {
+  display: grid;
+  gap: 16px;
+}
+
+.change-mind-list,
+.spotlight-list {
+  display: grid;
+  gap: 12px;
+}
+
+.change-mind-item {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 12px;
+  padding: 13px 0;
+  border-top: 1px solid var(--border);
+}
+
+.change-mind-item:first-child,
+.spotlight-card:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.change-mind-item svg {
+  margin-top: 2px;
+}
+
+.change-mind-item--up svg {
+  color: var(--mint);
+}
+
+.change-mind-item--down svg {
+  color: var(--coral);
+}
+
+.change-mind-item--watch svg {
+  color: var(--gold);
+}
+
+.change-mind-item strong,
+.spotlight-card strong {
+  display: block;
+  margin-bottom: 5px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.spotlight-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 18px;
+  gap: 14px;
+  padding: 13px 0;
+  border-top: 1px solid var(--border);
+}
+
+.spotlight-card svg {
+  color: var(--mint);
 }
 
 .section-link--block {
@@ -1392,7 +1674,8 @@ time {
 
 .activity-list,
 .editorial-list,
-.methods-grid {
+.methods-grid,
+.story-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -1697,6 +1980,8 @@ time {
   .activity-list,
   .editorial-list,
   .methods-grid,
+  .story-grid,
+  .reader-grid,
   .review-summary-grid,
   .review-queue,
   .admin-comment-list {
@@ -1777,6 +2062,9 @@ time {
   .activity-card,
   .method-card,
   .editorial-card,
+  .story-panel,
+  .journey-step,
+  .reader-panel,
   .empty-state,
   .tracks-table {
     padding: 16px;
@@ -1793,11 +2081,18 @@ time {
   .hallmark-index-grid,
   .hallmark-module-grid,
   .hallmark-activity-grid,
+  .story-grid,
+  .journey-grid,
+  .reader-grid,
   .evidence-ladder,
   .related-record-grid,
   .review-gate-grid,
   .admin-button-row {
     grid-template-columns: 1fr;
+  }
+
+  .journey-step__arrow {
+    display: none;
   }
 
   .track-search__form {

@@ -8,13 +8,16 @@ import { formatDate } from "@/lib/date";
 import {
   getActivityForTrack,
   getConfidenceLabel,
+  getConfidencePlainMeaning,
   getFindingsForTrack,
   getHallmarkById,
   getInterventionsByIds,
   getMomentumLabel,
+  getMomentumPlainMeaning,
   getOverallLastUpdated,
   getRecentChangesForSubject,
   getStageLabel,
+  getStagePlainMeaning,
   getStudiesForTrack,
   getTrackEvidenceSupport,
   getTrackById,
@@ -169,13 +172,13 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
   const taxonomyTrack = getTrackById(trackId);
   const [coverage, evidenceSupport, trackFindings, trackStudies, recentChanges, trackActivity, lastUpdated] =
     await Promise.all([
-    getTrackCoverage(trackId),
-    getTrackEvidenceSupport(trackId),
+      getTrackCoverage(trackId),
+      getTrackEvidenceSupport(trackId),
       getFindingsForTrack(trackId),
       getStudiesForTrack(trackId),
       getRecentChangesForSubject("track", trackId),
       getActivityForTrack(trackId),
-    getOverallLastUpdated()
+      getOverallLastUpdated()
     ]);
 
   if (!trackWithGroup || !taxonomyTrack) {
@@ -220,14 +223,22 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
               <h2>{coverage.stage ? getStageLabel(coverage.stage) : coverage.statusLabel}</h2>
             </div>
             <p>{coverage.note}</p>
+            {coverage.stage ? (
+              <div className="plain-meaning">
+                <strong>Plain meaning</strong>
+                <p>{getStagePlainMeaning(coverage.stage)}</p>
+              </div>
+            ) : null}
             <div className="detail-list">
               <div>
                 <strong>Momentum</strong>
                 <p>{coverage.momentum ? getMomentumLabel(coverage.momentum) : "Uncertain"}</p>
+                {coverage.momentum ? <span>{getMomentumPlainMeaning(coverage.momentum)}</span> : null}
               </div>
               <div>
                 <strong>Confidence</strong>
                 <p>{coverage.confidence ? getConfidenceLabel(coverage.confidence) : "Not rated yet"}</p>
+                {coverage.confidence ? <span>{getConfidencePlainMeaning(coverage.confidence)}</span> : null}
               </div>
             </div>
           </article>

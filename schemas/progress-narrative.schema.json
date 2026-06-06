@@ -1,0 +1,460 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./progress-narrative.schema.json",
+  "title": "Progress narrative",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "slug",
+    "title",
+    "summary",
+    "date",
+    "where_we_are_now",
+    "what_changed_recently",
+    "journey_steps",
+    "progress_moments",
+    "watchlist",
+    "focus_priorities",
+    "change_mind_items",
+    "spotlight_examples",
+    "revision"
+  ],
+  "properties": {
+    "slug": {
+      "$ref": "./common.schema.json#/$defs/identifier"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "date": {
+      "$ref": "./common.schema.json#/$defs/isoDate"
+    },
+    "where_we_are_now": {
+      "type": "string",
+      "minLength": 1
+    },
+    "what_changed_recently": {
+      "type": "string",
+      "minLength": 1
+    },
+    "journey_steps": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "$ref": "#/$defs/journeyStep"
+      }
+    },
+    "progress_moments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/progressMoment"
+      }
+    },
+    "watchlist": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/watchItem"
+      }
+    },
+    "focus_priorities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/focusPriority"
+      }
+    },
+    "change_mind_items": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/changeMindItem"
+      }
+    },
+    "spotlight_examples": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/spotlightExample"
+      }
+    },
+    "revision": {
+      "$ref": "#/$defs/revisionMeta"
+    },
+    "related_state_of_field_slug": {
+      "$ref": "./common.schema.json#/$defs/identifier"
+    },
+    "related_publication_event_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/publicationEventRef"
+      },
+      "uniqueItems": true
+    },
+    "related_outlook_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/outlookRef"
+      },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "journeyStep": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "title",
+        "summary"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "progressMoment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "summary",
+        "impact_on_outlook",
+        "subject_type",
+        "subject_id"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "date": {
+          "$ref": "./common.schema.json#/$defs/isoDate"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "impact_on_outlook": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject_type": {
+          "$ref": "./common.schema.json#/$defs/subjectType"
+        },
+        "subject_id": {
+          "$ref": "./common.schema.json#/$defs/identifier"
+        },
+        "related_publication_event_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "./common.schema.json#/$defs/publicationEventRef"
+          },
+          "uniqueItems": true
+        },
+        "related_outlook_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "./common.schema.json#/$defs/outlookRef"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "watchItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "summary",
+        "signal_to_watch",
+        "subject_type",
+        "subject_id"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "signal_to_watch": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject_type": {
+          "$ref": "./common.schema.json#/$defs/subjectType"
+        },
+        "subject_id": {
+          "$ref": "./common.schema.json#/$defs/identifier"
+        },
+        "related_outlook_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "./common.schema.json#/$defs/outlookRef"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "focusPriority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "reason",
+        "rationale",
+        "next_useful_work",
+        "subject_type",
+        "subject_id"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "enum": [
+            "low_hanging_fruit",
+            "neglected_area",
+            "promising_signal",
+            "blocking_dependency"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "next_useful_work": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject_type": {
+          "$ref": "./common.schema.json#/$defs/subjectType"
+        },
+        "subject_id": {
+          "$ref": "./common.schema.json#/$defs/identifier"
+        },
+        "related_outlook_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "./common.schema.json#/$defs/outlookRef"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "changeMindItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "direction",
+        "label",
+        "summary"
+      ],
+      "properties": {
+        "direction": {
+          "type": "string",
+          "enum": [
+            "more_optimistic",
+            "less_optimistic",
+            "needs_attention"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "related_outlook_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "./common.schema.json#/$defs/outlookRef"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "spotlightExample": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "title",
+        "summary",
+        "href"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "href": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "related_outlook_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "./common.schema.json#/$defs/outlookRef"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "revisionMeta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "last_reviewed",
+        "review_reason",
+        "review_due",
+        "triggers"
+      ],
+      "properties": {
+        "last_reviewed": {
+          "$ref": "./common.schema.json#/$defs/isoDate"
+        },
+        "review_reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "review_due": {
+          "$ref": "./common.schema.json#/$defs/isoDate"
+        },
+        "triggers": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "trigger_type",
+              "description"
+            ],
+            "properties": {
+              "trigger_type": {
+                "type": "string",
+                "enum": [
+                  "new_publication_event",
+                  "outlook_change",
+                  "scenario_change",
+                  "state_of_field_rollup",
+                  "review_due",
+                  "human_editorial_request"
+                ]
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1
+              },
+              "threshold": {
+                "type": "string"
+              },
+              "related_outlook_ids": {
+                "type": "array",
+                "items": {
+                  "$ref": "./common.schema.json#/$defs/outlookRef"
+                },
+                "uniqueItems": true
+              }
+            }
+          }
+        },
+        "observed_state_of_field_slug": {
+          "$ref": "./common.schema.json#/$defs/identifier"
+        },
+        "observed_latest_publication_event_id": {
+          "$ref": "./common.schema.json#/$defs/publicationEventRef"
+        },
+        "observed_outlook_states": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/observedOutlookState"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "observedOutlookState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "outlook_id",
+        "subject_type",
+        "subject_id",
+        "current_stage",
+        "momentum",
+        "confidence",
+        "last_updated",
+        "fingerprint"
+      ],
+      "properties": {
+        "outlook_id": {
+          "$ref": "./common.schema.json#/$defs/outlookRef"
+        },
+        "subject_type": {
+          "$ref": "./common.schema.json#/$defs/subjectType"
+        },
+        "subject_id": {
+          "$ref": "./common.schema.json#/$defs/identifier"
+        },
+        "current_stage": {
+          "$ref": "./common.schema.json#/$defs/progressStage"
+        },
+        "momentum": {
+          "$ref": "./common.schema.json#/$defs/momentum"
+        },
+        "confidence": {
+          "$ref": "./common.schema.json#/$defs/confidence"
+        },
+        "blocker": {
+          "type": "string"
+        },
+        "best_signal": {
+          "type": "string"
+        },
+        "scenario_2036_status": {
+          "$ref": "./common.schema.json#/$defs/scenario2036Status"
+        },
+        "last_updated": {
+          "$ref": "./common.schema.json#/$defs/isoDate"
+        },
+        "fingerprint": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{16}$"
+        }
+      }
+    }
+  }
+}
