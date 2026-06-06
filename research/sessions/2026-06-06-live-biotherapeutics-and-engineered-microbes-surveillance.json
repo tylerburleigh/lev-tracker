@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-06-live-biotherapeutics-and-engineered-microbes-surveillance",
+  "name": "Live biotherapeutics and engineered microbes surveillance pass for June 6, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-06T12:36:00Z",
+  "completed_at": "2026-06-06T12:52:12Z",
+  "scope": {
+    "question": "What changed for Live Biotherapeutics and Engineered Microbes since the 2026-06-01 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "dysbiosis"
+    ],
+    "track_ids": [
+      "live-biotherapeutics-and-engineered-microbes"
+    ],
+    "intervention_ids": [
+      "pediococcus-acidilactici-pa53",
+      "lactiplantibacillus-plantarum-twk10",
+      "akkermansia-muciniphila",
+      "pasteurized-akkermansia-muct",
+      "akk-wst01",
+      "synb1618",
+      "heyndrickxia-coagulans-tbc169-synbiotic"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06",
+  "summary": "Ran a delta surveillance pass from the 2026-06-01T22:40:10Z public baseline publication through 2026-06-06. PubMed date-window searches found one material post-baseline source for this track: PMID 42235825, an 8-week randomized, double-blind, placebo-controlled trial of Pediococcus acidilactici PA53 in 75 healthy older adults aged 55 to 70 years. PA53 improved reported happiness, gastrointestinal symptoms, stool form, sleep quality, serum IL-6, TNF-alpha, IL-25, and microbiota composition. This is relevant enough to refresh the public support map because the baseline described TWK10 as the main older-adult functional anchor. It does not justify a stage, confidence, momentum, scenario, or LEV-window upgrade because the PA53 trial is short, uses subjective well-being/gut-symptom/sleep endpoints plus biomarkers, and does not test frailty, intrinsic capacity, disease progression, durability, mortality, or engineered-microbe aging efficacy. ClinicalTrials.gov checks found no posted results or same-window status changes for the baseline Akkermansia, TWK10, or SYNB1618 registries. Other close PubMed hits, including MTC01 recurrent C. difficile LBP, engineered LBP reviews, Akkermansia reviews, TBC169 constipation, and postbiotic anti-aging assays, were disease-specific, review-level, postbiotic, wrong-track, or context-only. A surveillance bundle and first coverage assessment were staged.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "outlook_refresh",
+    "public_update_needed": true,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "surveillance",
+    "rationale": "PA53 is a post-baseline strain-defined older-adult randomized trial that changes the current public wording that the human functional signal is mainly TWK10. The change strengthens support-map completeness but remains bounded and does not move stage, confidence, momentum, or LEV-relevant timing."
+  },
+  "search_log": [
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "(Akkermansia OR Akkermansia muciniphila OR AKK-WST01 OR MucT) AND (aging OR elderly OR older OR frailty OR obesity OR diabetes OR metabolic OR trial), Entrez-date and publication-date window 2026-06-01 to 2026-06-06",
+      "checked_at": "2026-06-06T12:40:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28Akkermansia%20OR%20Akkermansia%20muciniphila%20OR%20AKK-WST01%20OR%20MucT%29%20AND%20%28aging%20OR%20elderly%20OR%20older%20OR%20frailty%20OR%20obesity%20OR%20diabetes%20OR%20metabolic%20OR%20trial%29",
+      "summary": "Returned same-window records dominated by microbiome, obesity, colitis, metabolic, review, or wrong-scope sources. No new Akkermansia human aging-function or metabolic result changed the baseline support map."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "(Lactiplantibacillus plantarum TWK10 OR Lactobacillus plantarum TWK10 OR TWK10 OR Lacticaseibacillus paracasei JS-3 OR Lactobacillus paracasei JS-3 OR JS-3) AND (aging OR elderly OR frailty OR muscle OR lifespan OR probiotic), Entrez-date and publication-date window 2026-06-01 to 2026-06-06",
+      "checked_at": "2026-06-06T12:40:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28TWK10%20OR%20JS-3%29%20AND%20%28aging%20OR%20elderly%20OR%20frailty%20OR%20muscle%20OR%20lifespan%20OR%20probiotic%29",
+      "summary": "Returned zero direct same-window TWK10 or JS-3 records. The baseline TWK10 and JS-3 evidence remains unchanged."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "(live biotherapeutic OR engineered bacteria OR engineered E. coli OR engineered microbe OR SYNB1618 OR SYNB1934 OR E. coli Nissle OR colanic acid) AND (aging OR frailty OR dysbiosis OR microbiome OR healthspan OR clinical), Entrez-date and publication-date window 2026-06-01 to 2026-06-06",
+      "checked_at": "2026-06-06T12:41:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28live%20biotherapeutic%20OR%20engineered%20bacteria%20OR%20engineered%20E.%20coli%20OR%20engineered%20microbe%20OR%20SYNB1618%20OR%20E.%20coli%20Nissle%20OR%20colanic%20acid%29%20AND%20%28aging%20OR%20frailty%20OR%20dysbiosis%20OR%20microbiome%20OR%20healthspan%20OR%20clinical%29",
+      "summary": "Returned MTC01 recurrent-C. difficile phase 1b LBP, engineered LBP metabolic-disease review context, and preclinical engineered-bacterium disease sources. None tested aging, frailty, intrinsic capacity, or engineered-microbe aging efficacy."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "(probiotic OR probiotics OR live biotherapeutic OR engineered microbe) AND (aging OR ageing OR frailty OR sarcopenia OR healthspan OR longevity OR older adults), Entrez-date and publication-date window 2026-06-01 to 2026-06-06",
+      "checked_at": "2026-06-06T12:42:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28probiotic%20OR%20probiotics%20OR%20live%20biotherapeutic%20OR%20engineered%20microbe%29%20AND%20%28aging%20OR%20frailty%20OR%20sarcopenia%20OR%20healthspan%20OR%20older%20adults%29",
+      "summary": "Returned PA53 older-adult RCT as the material hit, plus TBC169 constipation, postbiotic anti-aging assays, reviews, and unrelated records. PA53 was selected for a public surveillance bundle because it is a strain-defined older-adult human RCT."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "query": "Supporting PMIDs 42120725, 39879980, 31263284, 34361902, 42034299, 28622510, 28827345, and 34294923 with retraction, erratum, expression-of-concern, or corrected-and-republished publication types",
+      "checked_at": "2026-06-06T12:43:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned zero correction, retraction, erratum, or expression-of-concern records for the eight supporting baseline PMIDs."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "Direct checks for NCT05417360, NCT04797442, NCT02637115, NCT04893746, NCT03516487, and NCT05911997",
+      "checked_at": "2026-06-06T12:44:00Z",
+      "url": "https://clinicaltrials.gov/",
+      "summary": "Baseline Akkermansia, TWK10, and SYNB1618 registries remained completed, unknown, or historical with no posted results sections and no same-window status changes. NCT05911997 for MTC01 remained recruiting with no posted ClinicalTrials.gov results despite the PubMed phase 1b publication."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "(live biotherapeutic OR probiotic OR Akkermansia OR TWK10 OR Pediococcus OR SYNB1618 OR engineered bacteria OR engineered microbe) AND (aging OR older adults OR elderly OR frailty OR dysbiosis OR microbiome)",
+      "checked_at": "2026-06-06T12:45:00Z",
+      "url": "https://clinicaltrials.gov/search?term=%28live%20biotherapeutic%20OR%20probiotic%20OR%20Akkermansia%20OR%20TWK10%20OR%20Pediococcus%20OR%20SYNB1618%20OR%20engineered%20bacteria%20OR%20engineered%20microbe%29%20AND%20%28aging%20OR%20older%20adults%20OR%20elderly%20OR%20frailty%20OR%20dysbiosis%20OR%20microbiome%29",
+      "summary": "Returned updated adjacent probiotic, infant microbiome, cholesterol, gastrointestinal, oncology, and other records. No same-window aging-relevant posted results or trial status changes required public staging."
+    },
+    {
+      "source_name": "Web search and primary-source follow-up",
+      "query": "Pediococcus acidilactici PA53 older adults randomized trial; live biotherapeutic engineered microbes aging 2026; SYNB1618 aging; Akkermansia muciniphila aging trial 2026; MTC01 live biotherapeutic phase 1b",
+      "checked_at": "2026-06-06T12:46:00Z",
+      "url": "https://www.google.com/search?q=Pediococcus%20acidilactici%20PA53%20older%20adults%20randomized%20trial",
+      "summary": "Web follow-up confirmed PA53 as the relevant post-baseline older-adult RCT lead and MTC01 as disease-specific LBP platform context. Non-primary web hits did not add a separate source requiring public staging."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 42230754",
+      "title": "15-strain live biotherapeutic product or same donor fecal microbiota transplant for recurrent Clostridioides difficile infection: a randomized phase 1b trial.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42230754/",
+      "decision": "context_only",
+      "reason": "A post-baseline defined-strain LBP phase 1b trial with safety and engraftment data, but the indication is recurrent Clostridioides difficile infection and it does not test aging, frailty, intrinsic capacity, engineered-microbe aging efficacy, or chronic prevention."
+    },
+    {
+      "reference": "NCT05911997",
+      "title": "MTC Versus FMT in for RCDI",
+      "url": "https://clinicaltrials.gov/study/NCT05911997",
+      "decision": "no_results",
+      "reason": "ClinicalTrials.gov still lists the MTC01 recurrent-C. difficile trial as recruiting with no posted registry results; PubMed source PMID 42230754 is sufficient context for this surveillance pass."
+    },
+    {
+      "reference": "PMID 42246268",
+      "title": "Development strategies for engineered live biotherapeutic products for metabolic diseases.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42246268/",
+      "decision": "context_only",
+      "reason": "Review article on engineered LBP development for metabolic disease. It reinforces platform challenges but does not supply primary aging, frailty, or functional evidence."
+    },
+    {
+      "reference": "PMID 42237734",
+      "title": "Unveiling the Molecular Repertoire of Akkermansia muciniphila: From Mechanistic Insights to Precision Biotherapeutics.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42237734/",
+      "decision": "context_only",
+      "reason": "Review article about Akkermansia mechanisms and precision biotherapeutics. It does not add a new primary human aging-relevant result beyond the already staged Akkermansia trials."
+    },
+    {
+      "reference": "PMID 42226670",
+      "title": "Synbiotic Supplementation With Heyndrickxia coagulans TBC169 Improves Chronic Constipation in Middle-Aged and Elderly.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42226670/",
+      "decision": "context_only",
+      "reason": "Already belongs better to microbiome-composition modulation as a combined synbiotic constipation intervention; disease-specific constipation outcomes should not be double-counted as live-biotherapeutic aging-function evidence here."
+    },
+    {
+      "reference": "PMID 42243157",
+      "title": "Isoflavonoids from Iris albicans as a carbon source to enhance the anti-aging potential of lactic acid bacteria-derived postbiotics.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42243157/",
+      "decision": "wrong_scope",
+      "reason": "Postbiotic in vitro antioxidant and antiglycation assay context, not a live-biotherapeutic or engineered-microbe human intervention."
+    }
+  ],
+  "source_ids": [
+    "pmid-42235825"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42235825/",
+    "https://doi.org/10.1016/j.tjnut.2026.101626",
+    "https://pubmed.ncbi.nlm.nih.gov/42230754/",
+    "https://clinicaltrials.gov/study/NCT05911997",
+    "https://pubmed.ncbi.nlm.nih.gov/42226670/"
+  ],
+  "notes": [
+    "PA53 is material because it is a post-baseline strain-defined older-adult RCT, but it is not a durable aging-function result.",
+    "MTC01 is platform-relevant but disease-specific recurrent-C. difficile context; it was not staged to avoid broadening the track support map.",
+    "TBC169 was already staged under microbiome-composition modulation and remains excluded here to avoid double-counting constipation symptom evidence.",
+    "The support map should keep TWK10 as the primary frailty-function anchor and treat PA53 as a bounded well-being/gut-health signal."
+  ],
+  "next_actions": [
+    "Run source-fidelity, interpretation/forecast, safety-limitations, and taxonomy-mapping evidence reviews for the PA53 surveillance bundle.",
+    "If approved and published, return the track to ordinary surveillance with special watch on replication of TWK10-like and PA53-like older-adult endpoints and engineered-microbe aging trials."
+  ]
+}

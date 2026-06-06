@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06",
+  "name": "Live Biotherapeutics and Engineered Microbes Surveillance for June 6, 2026",
+  "summary": "Surveillance bundle adding a new Pediococcus acidilactici PA53 older-adult well-being and gut-health RCT while keeping the track at low-confidence human_functional_benefit with no LEV-relevant timing upgrade.",
+  "intake_mode": "surveillance",
+  "lifecycle_status": "submitted",
+  "submitted_at": "2026-06-06T12:52:12Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What changed for Live Biotherapeutics and Engineered Microbes since the June 1, 2026 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "dysbiosis"
+    ],
+    "track_ids": [
+      "live-biotherapeutics-and-engineered-microbes"
+    ],
+    "intervention_ids": [
+      "pediococcus-acidilactici-pa53"
+    ]
+  },
+  "source_ids": [
+    "pmid-42235825"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42235825/",
+    "https://doi.org/10.1016/j.tjnut.2026.101626"
+  ],
+  "related_records": [
+    {
+      "record_type": "track",
+      "record_id": "live-biotherapeutics-and-engineered-microbes"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-live-biotherapeutics-and-engineered-microbes-outlook"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "twk10-improved-frailty-muscle-function"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-42235825",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-42235825",
+      "file_path": "data/sources/pmid-42235825.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06/pmid-42235825.json",
+      "summary": "Add PA53 older-adult well-being RCT source.",
+      "rationale": "This is a post-baseline randomized older-adult human trial directly relevant to the live-biotherapeutic functional evidence boundary."
+    },
+    {
+      "change_id": "create-intervention-pediococcus-acidilactici-pa53",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "pediococcus-acidilactici-pa53",
+      "file_path": "data/interventions/pediococcus-acidilactici-pa53.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06/pediococcus-acidilactici-pa53.json",
+      "summary": "Normalize PA53 as a strain-defined live microbial intervention.",
+      "rationale": "The new source uses a product-specific Pediococcus strain that should not be collapsed into generic probiotics."
+    },
+    {
+      "change_id": "create-study-pa53-older-adults-wellbeing-gut-health-rct",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "pa53-older-adults-wellbeing-gut-health-rct",
+      "file_path": "data/studies/pa53-older-adults-wellbeing-gut-health-rct.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06/pa53-older-adults-wellbeing-gut-health-rct.json",
+      "summary": "Add PA53 older-adult RCT study record.",
+      "rationale": "The study record captures the population, design, endpoint classes, intervention, and source links needed for the new finding."
+    },
+    {
+      "change_id": "create-finding-pa53-improved-wellbeing-gut-health-older-adults",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "pa53-improved-wellbeing-gut-health-older-adults",
+      "file_path": "data/findings/pa53-improved-wellbeing-gut-health-older-adults.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06/pa53-improved-wellbeing-gut-health-older-adults.json",
+      "summary": "Add bounded older-adult PA53 well-being, gut-health, sleep, cytokine, and microbiota finding.",
+      "rationale": "The finding updates the support map while preserving short-duration, subjective-endpoint, no-durability, and taxonomy-overlap caveats."
+    },
+    {
+      "change_id": "update-outlook-track-live-biotherapeutics-and-engineered-microbes",
+      "change_type": "update_outlook",
+      "target_record_type": "outlook",
+      "target_record_id": "track-live-biotherapeutics-and-engineered-microbes-outlook",
+      "file_path": "data/outlooks/track-live-biotherapeutics-and-engineered-microbes-outlook.json",
+      "staged_file_path": "data/staged-records/live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06/track-live-biotherapeutics-and-engineered-microbes-outlook.json",
+      "summary": "Refresh outlook support map for the PA53 surveillance delta.",
+      "rationale": "The existing outlook says the human functional signal is mainly TWK10; the new PA53 RCT should be reflected without increasing confidence, stage, momentum, or LEV-relevant timing."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "live-biotherapeutics-and-engineered-microbes",
+      "note": "Add PA53 as a second bounded older-adult human signal while keeping current_stage human_functional_benefit, momentum accelerating, confidence low, and 2036 status speculative.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast",
+    "safety_limitations",
+    "taxonomy_mapping"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-06-live-biotherapeutics-and-engineered-microbes-surveillance.json",
+  "next_actions": [
+    "Run source-fidelity, interpretation/forecast, safety-limitations, and taxonomy-mapping evidence reviews before publication.",
+    "If approved, publish the PA53 source, intervention, study, finding, and refreshed outlook records.",
+    "Keep MTC01 recurrent-C. difficile and TBC169 constipation records excluded from this track unless future review broadens the disease-specific platform context."
+  ],
+  "tags": [
+    "surveillance",
+    "dysbiosis",
+    "live-biotherapeutics-and-engineered-microbes",
+    "pa53"
+  ]
+}

@@ -1,0 +1,303 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06",
+  "name": "Live Biotherapeutics and Engineered Microbes Surveillance Coverage Assessment for June 6, 2026",
+  "short_name": "Live biotherapeutics surveillance coverage",
+  "track_id": "live-biotherapeutics-and-engineered-microbes",
+  "hallmark_id": "dysbiosis",
+  "assessment_type": "surveillance",
+  "assessed_at": "2026-06-06T12:52:12Z",
+  "assessment_window": {
+    "from": "2026-06-01T22:40:10.852Z",
+    "to": "2026-06-06T12:52:12Z",
+    "basis": "Delta surveillance from the June 1 public baseline publication through the current PA53 surveillance pass."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is adequate for the current low-confidence human_functional_benefit public claim, pending review and publication of the PA53 surveillance bundle. The current public map already has TWK10 frail-older-adult functional evidence, Akkermansia metabolic biomarker and weight-maintenance evidence, JS-3 and engineered E. coli preclinical aging mechanisms, commensal-indole healthspan biology, and SYNB1618 engineered-microbe human feasibility. Surveillance adds PMID 42235825 as a new post-baseline older-adult PA53 well-being, gut-health, sleep, inflammatory-biomarker, and microbiota RCT. Coverage is not strong because functional evidence remains strain-specific, short, partly subjective, not replicated across aging endpoints, and engineered-microbe aging evidence remains preclinical or non-aging human feasibility.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-06-01-live-biotherapeutics-and-engineered-microbes-bootstrap",
+      "2026-06-06-live-biotherapeutics-and-engineered-microbes-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01",
+      "live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-live-biotherapeutics-and-engineered-microbes-source-fidelity-r1",
+      "evidence-review-live-biotherapeutics-and-engineered-microbes-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01-2026-06-01t22-40-10-852z"
+    ],
+    "outlook_ids": [
+      "track-live-biotherapeutics-and-engineered-microbes-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "The support map includes TWK10 frail-older-adult functional evidence, PA53 older-adult well-being/gut-health evidence pending publication, Akkermansia human metabolic biomarker and weight-maintenance trials, and SYNB1618 human engineered-microbe feasibility. This is adequate for a low-confidence functional-stage claim but not for higher confidence.",
+      "source_ids": [
+        "pmid-34361902",
+        "pmid-42235825",
+        "pmid-42120725",
+        "pmid-39879980",
+        "pmid-31263284",
+        "pmid-34294923"
+      ],
+      "finding_ids": [
+        "twk10-improved-frailty-muscle-function",
+        "pa53-improved-wellbeing-gut-health-older-adults",
+        "pasteurized-akkermansia-muct-reduced-weight-regain",
+        "akk-wst01-baseline-dependent-metabolic-response",
+        "akkermansia-pilot-safe-metabolic-biomarkers",
+        "synb1618-engineered-ecoli-human-phe-pharmacodynamics"
+      ],
+      "gap_note": "Replication with prespecified aging-relevant functional endpoints is still missing."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes JS-3 C. elegans lifespan and stress-resilience evidence, engineered E. coli longevity-screen evidence, and commensal-indole healthspan evidence across model systems.",
+      "source_ids": [
+        "pmid-42034299",
+        "pmid-28622510",
+        "pmid-28827345"
+      ],
+      "finding_ids": [
+        "l-paracasei-js3-lifespan-antioxidant-elderly-microbiota",
+        "engineered-ecoli-mutants-extended-c-elegans-lifespan",
+        "commensal-indoles-extended-healthspan-models"
+      ],
+      "gap_note": "Direct mammalian lifespan or durable human aging evidence remains absent."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "Coverage includes strain-defined probiotic human signals, microbiota composition changes, cytokine and gut-brain markers from PA53, Akkermansia metabolic and barrier-linked context, microbial indoles, colanic-acid-linked engineered E. coli mechanisms, and engineered E. coli pharmacodynamics.",
+      "source_ids": [
+        "pmid-42235825",
+        "pmid-42120725",
+        "pmid-39879980",
+        "pmid-31263284",
+        "pmid-42034299",
+        "pmid-28622510",
+        "pmid-28827345",
+        "pmid-34294923"
+      ],
+      "finding_ids": [
+        "pa53-improved-wellbeing-gut-health-older-adults",
+        "pasteurized-akkermansia-muct-reduced-weight-regain",
+        "akk-wst01-baseline-dependent-metabolic-response",
+        "akkermansia-pilot-safe-metabolic-biomarkers",
+        "l-paracasei-js3-lifespan-antioxidant-elderly-microbiota",
+        "engineered-ecoli-mutants-extended-c-elegans-lifespan",
+        "commensal-indoles-extended-healthspan-models",
+        "synb1618-engineered-ecoli-human-phe-pharmacodynamics"
+      ]
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The support map and reviews explicitly record TWK10 attrition and strain specificity, PA53 short-duration and subjective endpoint boundaries, Akkermansia pasteurized and baseline-dependent limits, SYNB1618 non-aging indication limits, and preclinical-only engineered aging evidence.",
+      "source_ids": [
+        "pmid-34361902",
+        "pmid-42235825",
+        "pmid-42120725",
+        "pmid-39879980",
+        "pmid-31263284",
+        "pmid-34294923"
+      ],
+      "finding_ids": [
+        "twk10-improved-frailty-muscle-function",
+        "pa53-improved-wellbeing-gut-health-older-adults",
+        "pasteurized-akkermansia-muct-reduced-weight-regain",
+        "akk-wst01-baseline-dependent-metabolic-response",
+        "akkermansia-pilot-safe-metabolic-biomarkers",
+        "synb1618-engineered-ecoli-human-phe-pharmacodynamics"
+      ],
+      "gap_note": "No definitive negative replication has been found, but lack of replication remains a key confidence limiter."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "Safety and durability coverage remains thin because the human trials are short or indication-specific, PA53 lacks durability after discontinuation, TWK10 has limited trial size and attrition, and chronic colonization/manufacturing risks remain modality-specific.",
+      "source_ids": [
+        "pmid-34361902",
+        "pmid-42235825",
+        "pmid-42120725",
+        "pmid-31263284",
+        "pmid-34294923"
+      ],
+      "finding_ids": [
+        "twk10-improved-frailty-muscle-function",
+        "pa53-improved-wellbeing-gut-health-older-adults",
+        "pasteurized-akkermansia-muct-reduced-weight-regain",
+        "akkermansia-pilot-safe-metabolic-biomarkers",
+        "synb1618-engineered-ecoli-human-phe-pharmacodynamics"
+      ],
+      "gap_note": "Longer chronic-use safety, colonization, durability, and post-discontinuation evidence is needed."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "thin",
+      "rationale": "ClinicalTrials.gov checks confirmed no posted results or same-window material status changes for baseline Akkermansia, TWK10, SYNB1618, or MTC01 registries. PA53 has no ClinicalTrials.gov ID in the PubMed abstract.",
+      "source_ids": [
+        "pmid-42235825",
+        "pmid-42120725",
+        "pmid-39879980",
+        "pmid-31263284",
+        "pmid-34361902",
+        "pmid-34294923"
+      ],
+      "finding_ids": [
+        "pa53-improved-wellbeing-gut-health-older-adults",
+        "pasteurized-akkermansia-muct-reduced-weight-regain",
+        "akk-wst01-baseline-dependent-metabolic-response",
+        "akkermansia-pilot-safe-metabolic-biomarkers",
+        "twk10-improved-frailty-muscle-function",
+        "synb1618-engineered-ecoli-human-phe-pharmacodynamics"
+      ],
+      "gap_note": "Future surveillance should keep checking for PA53 registration, TWK10 replication, Akkermansia results, and engineered-microbe aging trials."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "Surveillance found recent LBP and Akkermansia reviews, but no review-level source was needed to change the public claim. They were recorded as context-only exclusions rather than public anchors.",
+      "source_ids": [
+        "pmid-42246268",
+        "pmid-42237734"
+      ],
+      "gap_note": "A future coverage-repair pass can decide whether focused LBP review triangulation should be curated."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The current baseline plus PA53 bundle covers the key track anchors for TWK10, PA53, Akkermansia, JS-3, engineered E. coli longevity screens, commensal indoles, and SYNB1618 human feasibility.",
+      "source_ids": [
+        "pmid-34361902",
+        "pmid-42235825",
+        "pmid-42120725",
+        "pmid-39879980",
+        "pmid-31263284",
+        "pmid-42034299",
+        "pmid-28622510",
+        "pmid-28827345",
+        "pmid-34294923"
+      ],
+      "finding_ids": [
+        "twk10-improved-frailty-muscle-function",
+        "pa53-improved-wellbeing-gut-health-older-adults",
+        "pasteurized-akkermansia-muct-reduced-weight-regain",
+        "akk-wst01-baseline-dependent-metabolic-response",
+        "akkermansia-pilot-safe-metabolic-biomarkers",
+        "l-paracasei-js3-lifespan-antioxidant-elderly-microbiota",
+        "engineered-ecoli-mutants-extended-c-elegans-lifespan",
+        "commensal-indoles-extended-healthspan-models",
+        "synb1618-engineered-ecoli-human-phe-pharmacodynamics"
+      ]
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The outlook separates TWK10 and PA53 strain-defined older-adult functional signals, Akkermansia metabolic biomarker evidence, pasteurized-product boundaries, engineered-microbe feasibility, preclinical engineered-aging biology, microbiome-metabolite overlap, and composition-modulation overlap.",
+      "source_ids": [
+        "pmid-34361902",
+        "pmid-42235825",
+        "pmid-42120725",
+        "pmid-34294923"
+      ],
+      "finding_ids": [
+        "twk10-improved-frailty-muscle-function",
+        "pa53-improved-wellbeing-gut-health-older-adults",
+        "pasteurized-akkermansia-muct-reduced-weight-regain",
+        "synb1618-engineered-ecoli-human-phe-pharmacodynamics"
+      ],
+      "gap_note": "TBC169 constipation and generic probiotic composition effects should remain assigned to microbiome-composition modulation unless future review deliberately cross-links them."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-34361902",
+    "pmid-42235825",
+    "pmid-42120725",
+    "pmid-39879980",
+    "pmid-31263284",
+    "pmid-42034299",
+    "pmid-28622510",
+    "pmid-28827345",
+    "pmid-34294923"
+  ],
+  "covered_finding_ids": [
+    "twk10-improved-frailty-muscle-function",
+    "pa53-improved-wellbeing-gut-health-older-adults",
+    "pasteurized-akkermansia-muct-reduced-weight-regain",
+    "akk-wst01-baseline-dependent-metabolic-response",
+    "akkermansia-pilot-safe-metabolic-biomarkers",
+    "l-paracasei-js3-lifespan-antioxidant-elderly-microbiota",
+    "engineered-ecoli-mutants-extended-c-elegans-lifespan",
+    "commensal-indoles-extended-healthspan-models",
+    "synb1618-engineered-ecoli-human-phe-pharmacodynamics"
+  ],
+  "search_log_summary": "Delta surveillance checked PubMed date-window searches for Akkermansia, TWK10, JS-3, live biotherapeutics, engineered microbes, SYNB1618, probiotics, aging, frailty, healthspan, sarcopenia, older adults, and corrections to baseline PMIDs. It also checked ClinicalTrials.gov direct records for NCT05417360, NCT04797442, NCT02637115, NCT04893746, NCT03516487, and NCT05911997 plus broad updated registry searches. PA53 was selected as the only material post-baseline public update; MTC01, TBC169, engineered LBP reviews, Akkermansia reviews, and postbiotic assays were excluded or assigned to adjacent tracks.",
+  "source_selection_notes": [
+    "PMID 42235825 was staged because it is a post-baseline older-adult randomized PA53 trial with functional, biomarker, and microbiota outcomes.",
+    "PMID 42230754 was excluded from public staging because recurrent C. difficile disease-specific LBP safety and engraftment did not change aging-relevant public interpretation.",
+    "PMID 42226670 remains better assigned to microbiome-composition modulation because it is a combined synbiotic constipation intervention.",
+    "PMID 42246268 and PMID 42237734 are review context and do not supply primary aging-relevant efficacy evidence.",
+    "PMID 42243157 was excluded because it is postbiotic assay context rather than a live-biotherapeutic human intervention."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "functional-replication-gap",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "TWK10 and PA53 provide strain-specific older-adult signals, but there is no independent replication across prespecified frailty, intrinsic-capacity, cognition, immune-resilience, or durable clinical endpoints.",
+      "priority": "high",
+      "suggested_action": "Require replicated strain-defined human functional trials before increasing confidence."
+    },
+    {
+      "gap_id": "engineered-aging-human-evidence-gap",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "Engineered-microbe evidence remains non-aging human feasibility or preclinical aging biology; no engineered live biotherapeutic has shown aging-relevant human functional benefit.",
+      "priority": "high",
+      "suggested_action": "Watch engineered-microbe aging, frailty, dysbiosis, or intrinsic-capacity trials and keep SYNB1618 as feasibility context until such results appear."
+    },
+    {
+      "gap_id": "safety-durability-colonization-gap",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "The track lacks long-duration chronic-use safety, colonization, durability, and post-discontinuation evidence across strain-defined probiotics, next-generation microbes, and engineered bacteria.",
+      "priority": "high",
+      "suggested_action": "Keep safety and durability caveats in public outlook wording and require chronic-use packages before confidence increases."
+    },
+    {
+      "gap_id": "taxonomy-overlap-gap",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "PA53, TWK10, TBC169, DS-01, Akkermansia, indoles, and engineered microbes overlap composition modulation, metabolite restoration, gut-brain signaling, inflammation, and live-biotherapeutic framing.",
+      "priority": "medium",
+      "suggested_action": "Use taxonomy-mapping review for public changes and avoid double-counting broad probiotic or synbiotic composition effects."
+    },
+    {
+      "gap_id": "recent-review-triangulation-gap",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "Recent engineered LBP and Akkermansia reviews were checked as context only; a focused review triangulation pass has not been done.",
+      "priority": "low",
+      "suggested_action": "Consider review triangulation during a later coverage-repair pass if future surveillance finds contradictory or rapidly expanding platform evidence."
+    }
+  ],
+  "next_coverage_action": "Review the PA53 surveillance bundle through source-fidelity, interpretation/forecast, safety-limitations, and taxonomy-mapping lanes. If approved and published, return the track to ordinary surveillance with special watch on TWK10 or PA53 replication, engineered-microbe aging trials, and chronic-use safety or durability evidence.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-assessment",
+    "surveillance",
+    "dysbiosis",
+    "live-biotherapeutics-and-engineered-microbes",
+    "adequate-coverage"
+  ]
+}
