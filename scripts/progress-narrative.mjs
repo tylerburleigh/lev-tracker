@@ -11,6 +11,7 @@ const outlookRoot = "data/outlooks";
 const publicationEventRoot = "data/publication-events";
 const draftJsonPath = "extra/progress-narrative-draft.json";
 const draftMarkdownPath = "extra/progress-narrative-draft.md";
+const publicCopyRulesPath = "config/public-copy-rules.json";
 
 const stageLabels = {
   mechanistic_plausibility: "mechanistic plausibility",
@@ -35,65 +36,9 @@ const confidenceLabels = {
 };
 
 const draftStyles = new Set(["plain", "technical"]);
-
-const plainLanguageReplacements = [
-  ["mechanistic plausibility", "biological plausibility"],
-  ["replicated aging-directed human functional benefit", "repeated human studies showing that people function better for longer"],
-  ["aging-directed human functional benefit", "human evidence that people function better for longer"],
-  ["human functional benefit", "signs that people function better"],
-  ["human-facing signals", "early signs in people"],
-  ["human-facing entries", "human evidence entries"],
-  ["disease-outcome", "disease-result"],
-  ["trial-watch", "trials to watch"],
-  ["target-engagement", "evidence that the intervention changed its intended target"],
-  ["pathway engagement", "evidence that the intervention changed its intended biological target"],
-  ["support map", "evidence map"],
-  ["support maps", "evidence maps"],
-  ["branch boundaries", "which claims are in scope and which are not"],
-  ["forecast upgrade", "reason to be more optimistic"],
-  ["forecast movement", "reason to be more or less optimistic"],
-  ["outlook-affecting", "outlook-changing"],
-  ["source completeness", "missing source context"],
-  ["coverage repair", "missing-context update"],
-  ["coverage repairs", "missing-context updates"],
-  ["coverage-repair", "missing-context"],
-  ["baseline coverage", "first-pass public summaries"],
-  ["baseline outlooks", "first-pass outlooks"],
-  ["seeded tracks", "research tracks"],
-  ["inspectable map", "clearer map"],
-  ["durable", "long-lasting"],
-  ["biomarker-heavy", "mostly based on biomarkers"],
-  ["low-confidence", "still uncertain"],
-  ["low confidence", "low confidence"],
-  ["directness", "relevance to aging"],
-  ["human-adjacent", "near human evidence, but not direct proof in people"],
-  ["translational", "moving toward useful human results"],
-  ["translation gaps", "gaps between lab work and useful human results"],
-  ["translation", "moving from lab work to useful human results"],
-  ["mechanistic", "based on biology"]
-];
-
-const jargonRules = [
-  { term: "human-facing", suggestion: "early signs in people" },
-  { term: "coverage repair", suggestion: "missing-context update" },
-  { term: "support map", suggestion: "evidence map" },
-  { term: "branch boundaries", suggestion: "which claims are in scope and which are not" },
-  { term: "forecast upgrade", suggestion: "reason to be more optimistic" },
-  { term: "forecast movement", suggestion: "reason to be more or less optimistic" },
-  { term: "aging-directed", suggestion: "about aging itself" },
-  { term: "functional benefit", suggestion: "people function better" },
-  { term: "trial-watch", suggestion: "trials to watch" },
-  { term: "biomarker-heavy", suggestion: "mostly based on biomarkers" },
-  { term: "directness", suggestion: "relevance to aging" },
-  { term: "baseline coverage", suggestion: "first-pass public summary" },
-  { term: "seeded tracks", suggestion: "research tracks" },
-  { term: "durable", suggestion: "long-lasting" },
-  { term: "human-adjacent", suggestion: "near human evidence, but not direct proof in people" },
-  { term: "translational", suggestion: "moving toward useful human results" },
-  { term: "translation", suggestion: "moving from lab work to useful human results" },
-  { term: "pathway engagement", suggestion: "evidence that the intervention changed its intended biological target" },
-  { term: "mechanistic", suggestion: "based on biology" }
-];
+const publicCopyRules = JSON.parse(await fs.readFile(path.join(workspaceRoot, publicCopyRulesPath), "utf8"));
+const plainLanguageReplacements = publicCopyRules.plain_language_replacements.map((rule) => [rule.from, rule.to]);
+const jargonRules = publicCopyRules.jargon_rules;
 
 function usage() {
   return `Usage:

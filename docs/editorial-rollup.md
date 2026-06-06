@@ -11,6 +11,8 @@ This runbook reconciles public summary surfaces after reviewed publication activ
 - `data/content/state-of-the-field/`
 - `data/content/hallmark-insights.json`
 - forecast-facing navigation and method surfaces in `src/components/site-shell.tsx` and `src/app/methods/page.tsx`
+- `config/public-copy-rules.json`
+- `docs/editorial-quality-system.md`
 
 ## Triggers
 
@@ -57,7 +59,7 @@ When updating the progress narrative, set:
 
 Use `npm run narrative:progress -- status` to check staleness, `npm run narrative:progress -- draft --write --style plain` to generate a plain-language review draft under `extra/`, and `npm run narrative:progress -- snapshot --write-current` after accepting a reviewed narrative state.
 
-Use `npm run lint:public-copy -- --write` during reader-facing copy reviews. It writes `extra/public-copy-report.md` with tracked jargon, internal phrases, and suggested plainer alternatives across public content records and static UI strings. The lint is advisory by default; use `--max-warnings N` only when a review wants an enforcement threshold.
+Use `npm run audit:editorial -- --write` during reader-facing copy reviews. It writes `extra/editorial-quality-report.md`, refreshes the public copy lint report, and checks whether readers can tell where the LEV journey stands, what changed, what would change the outlook, where effort should focus, and which concrete examples to inspect. Public copy rules live in `config/public-copy-rules.json`.
 
 If the review changes evidence records, outlook ratings, stages, confidence, scenario status, or forecast windows, stop and use the evidence-review and candidate-bundle workflow instead.
 
@@ -76,7 +78,7 @@ After any rollup decision or edit, regenerate triage state and run the standard 
 
 ```bash
 npm run sync:work-triage
-npm run lint:public-copy -- --write
+npm run audit:editorial -- --write
 npm run validate:records
 npm run audit:data
 npm run typecheck

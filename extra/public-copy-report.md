@@ -1,18 +1,18 @@
 # Public Copy Lint Report
 
-Generated: 2026-06-06T13:41:16.692Z
-Warnings: 340
+Generated: 2026-06-06T14:39:12.376Z
+Warnings: 323
 
 ## Highest-Volume Terms
 
-- durable: 108 warning(s); consider "long-lasting"
-- translation: 64 warning(s); consider "moving from lab work to useful human results"
+- durable: 103 warning(s); consider "long-lasting"
+- translation: 58 warning(s); consider "moving from lab work to useful human results"
 - mechanistic: 47 warning(s); consider "based on biology"
-- functional benefit: 41 warning(s); consider "people function better"
-- pathway engagement: 19 warning(s); consider "evidence that the intervention changed its intended biological target"
+- functional benefit: 39 warning(s); consider "people function better"
+- pathway engagement: 18 warning(s); consider "evidence that the intervention changed its intended biological target"
 - trial-watch: 18 warning(s); consider "trials to watch"
-- translational: 12 warning(s); consider "moving toward useful human results"
 - support map: 9 warning(s); consider "evidence map"
+- translational: 9 warning(s); consider "moving toward useful human results"
 - biomarker-heavy: 7 warning(s); consider "mostly based on biomarkers"
 - aging-directed: 6 warning(s); consider "about aging itself"
 - coverage repair: 6 warning(s); consider "missing-context update"
@@ -22,40 +22,6 @@ Warnings: 340
 
 ## Findings
 
-- data/activity-items/autologous-mt-cardiac-ecmo-trial-recruiting.json $.significance_note: "translation" -> consider "moving from lab work to useful human results"
-  Excerpt: Useful clinical-translation context, but the registry has no posted results and remains an acute ...
-- data/activity-items/autologous-mt-cerebral-ischemia-trial-recruiting.json $.significance_note: "translation" -> consider "moving from lab work to useful human results"
-  Excerpt: ... the registry has no posted efficacy results and remains acute-stroke translation rather than aging efficacy evidence.
-- data/activity-items/senescence-trial-watch-expansion.json $.significance_note: "functional benefit" -> consider "people function better"
-  Excerpt: ...ontextual movement that sharpens interpretation without proving human functional benefit.
-- data/activity-items/tpn101-arpa-h-aging-program-award.json $.significance_note: "translation" -> consider "moving from lab work to useful human results"
-  Excerpt: The award is meaningful translational momentum for a direct LINE1/reverse-transcriptase aging program, bu...
-- data/activity-items/tpn101-arpa-h-aging-program-award.json $.significance_note: "translational" -> consider "moving toward useful human results"
-  Excerpt: The award is meaningful translational momentum for a direct LINE1/reverse-transcriptase aging program, but ...
-- data/outlooks/hallmark-deregulated-nutrient-sensing-outlook.json $.main_blockers[0]: "functional benefit" -> consider "people function better"
-  Excerpt: Replicated functional benefit in older adults remains the missing step.
-- data/outlooks/hallmark-disabled-macroautophagy-outlook.json $.forecast_note: "durable" -> consider "long-lasting"
-  Excerpt: ...ient sensing and mitochondrial maintenance, but clear public proof of durable benefit is still limited.
-- data/outlooks/hallmark-disabled-macroautophagy-outlook.json $.main_blockers[0]: "pathway engagement" -> consider "evidence that the intervention changed its intended biological target"
-  Excerpt: The field still needs stronger functional endpoints rather than pathway engagement alone.
-- data/outlooks/hallmark-dysbiosis-outlook.json $.best_current_signals[0]: "translation" -> consider "moving from lab work to useful human results"
-  Excerpt: ...e modulation is unusually understandable to the public and has a real translational pipeline.
-- data/outlooks/hallmark-dysbiosis-outlook.json $.best_current_signals[0]: "translational" -> consider "moving toward useful human results"
-  Excerpt: ...e modulation is unusually understandable to the public and has a real translational pipeline.
-- data/outlooks/hallmark-dysbiosis-outlook.json $.main_blockers[0]: "durable" -> consider "long-lasting"
-  Excerpt: Human biomarker movement is easier to show than durable aging-relevant outcomes.
-- data/outlooks/hallmark-epigenetic-alterations-outlook.json $.main_blockers[0]: "translation" -> consider "moving from lab work to useful human results"
-  Excerpt: Most of the field still needs safe human translation rather than better narrative energy.
-- data/outlooks/hallmark-genomic-instability-outlook.json $.main_blockers[0]: "durable" -> consider "long-lasting"
-  Excerpt: No human interventions have shown durable aging-relevant outcomes here.
-- data/outlooks/hallmark-loss-of-proteostasis-outlook.json $.best_current_signals[0]: "durable" -> consider "long-lasting"
-  Excerpt: Proteostasis remains a durable organizing idea across neurodegeneration and aging biology.
-- data/outlooks/hallmark-mitochondrial-dysfunction-outlook.json $.forecast_note: "translation" -> consider "moving from lab work to useful human results"
-  Excerpt: This area has plenty of activity and decent translational stories, but it still needs more decisive outcome evidence.
-- data/outlooks/hallmark-mitochondrial-dysfunction-outlook.json $.forecast_note: "translational" -> consider "moving toward useful human results"
-  Excerpt: This area has plenty of activity and decent translational stories, but it still needs more decisive outcome evidence.
-- data/outlooks/hallmark-mitochondrial-dysfunction-outlook.json $.main_blockers[0]: "durable" -> consider "long-lasting"
-  Excerpt: Human signal exists, but durable functional impact remains inconsistent and easy to oversell.
 - data/outlooks/track-ampk-and-metabolic-modulators-outlook.json $.best_current_signals[1]: "translation" -> consider "moving from lab work to useful human results"
   Excerpt: ...multi-omics aging indicators, and brain-aging measures, with dose and translation limits.
 - data/outlooks/track-ampk-and-metabolic-modulators-outlook.json $.forecast_note: "pathway engagement" -> consider "evidence that the intervention changed its intended biological target"

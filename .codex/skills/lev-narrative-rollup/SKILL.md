@@ -16,6 +16,7 @@ Use this after reviewed public records have changed, or when the curator asks wh
 - public outlooks named in the narrative `related_outlook_ids`
 - `data/publication-events/` newer than `revision.last_reviewed`
 - `docs/editorial-rollup.md`
+- `docs/editorial-quality-system.md`
 - homepage rendering in `src/components/homepage.tsx`
 - `scripts/progress-narrative.mjs`
 
@@ -62,7 +63,7 @@ The narrative needs review when any of these are true:
 Run after edits:
 
 ```bash
-npm run lint:public-copy -- --write
+npm run audit:editorial -- --write
 npm run validate:records
 npm run audit:data
 npm run typecheck

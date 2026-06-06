@@ -5,32 +5,12 @@ import path from "node:path";
 
 const workspaceRoot = process.cwd();
 const reportPath = "extra/public-copy-report.md";
+const publicCopyRulesPath = "config/public-copy-rules.json";
 const textFileRoots = ["src/app", "src/components"];
 const textFileExtensions = new Set([".tsx", ".ts"]);
 
-const jargonRules = [
-  { term: "human-facing", suggestion: "early signs in people" },
-  { term: "human-adjacent", suggestion: "near human evidence, but not direct proof in people" },
-  { term: "coverage repair", suggestion: "missing-context update" },
-  { term: "coverage repairs", suggestion: "missing-context updates" },
-  { term: "support map", suggestion: "evidence map" },
-  { term: "support maps", suggestion: "evidence maps" },
-  { term: "branch boundaries", suggestion: "which claims are in scope and which are not" },
-  { term: "forecast upgrade", suggestion: "reason to be more optimistic" },
-  { term: "forecast movement", suggestion: "reason to be more or less optimistic" },
-  { term: "aging-directed", suggestion: "about aging itself" },
-  { term: "functional benefit", suggestion: "people function better" },
-  { term: "trial-watch", suggestion: "trials to watch" },
-  { term: "biomarker-heavy", suggestion: "mostly based on biomarkers" },
-  { term: "directness", suggestion: "relevance to aging" },
-  { term: "baseline coverage", suggestion: "first-pass public summary" },
-  { term: "seeded tracks", suggestion: "research tracks" },
-  { term: "durable", suggestion: "long-lasting" },
-  { term: "translational", suggestion: "moving toward useful human results" },
-  { term: "translation", suggestion: "moving from lab work to useful human results" },
-  { term: "pathway engagement", suggestion: "evidence that the intervention changed its intended biological target" },
-  { term: "mechanistic", suggestion: "based on biology" }
-];
+const publicCopyRules = JSON.parse(await fs.readFile(path.join(workspaceRoot, publicCopyRulesPath), "utf8"));
+const jargonRules = publicCopyRules.jargon_rules;
 
 function usage() {
   return `Usage:
