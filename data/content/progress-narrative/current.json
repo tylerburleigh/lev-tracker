@@ -5,6 +5,23 @@
   "date": "2026-06-06",
   "where_we_are_now": "The field is in early human testing. Some tracks now have early biomarker results, functional results, disease results, or trials worth watching. Most are still uncertain, narrow, or only indirectly about aging itself.",
   "what_changed_recently": "In June, the tracker finished first-pass public summaries for all 38 research tracks and began adding missing context. The story changed from a partial map to a working map. It did not give us a new reason to be more optimistic about LEV.",
+  "journey_steps": [
+    {
+      "label": "Before",
+      "title": "Scattered examples",
+      "summary": "Longevity research looked like a set of isolated intervention stories. It was hard to compare which areas were moving and which were mostly promise."
+    },
+    {
+      "label": "Now",
+      "title": "A working map",
+      "summary": "All 38 research tracks now have public outlooks. Readers can compare stage, confidence, blockers, and recent movement across the hallmarks."
+    },
+    {
+      "label": "Next",
+      "title": "The human proof gap",
+      "summary": "The next major step is repeated human evidence that people function better for longer, with safety and lasting benefit clear enough to matter."
+    }
+  ],
   "progress_moments": [
     {
       "label": "The map is now complete enough to compare",
@@ -110,7 +127,7 @@
     {
       "label": "Look for gaps between lab work and useful human results",
       "reason": "neglected_area",
-      "rationale": "Some hallmarks have many mechanistic ideas but fewer clean intervention programs that can be tested against aging-relevant human outcomes.",
+      "rationale": "Some hallmarks have many biology ideas but fewer clean intervention programs that can be tested against aging-relevant human outcomes.",
       "next_useful_work": "Use the track taxonomy to identify areas with thin coverage, missing human endpoints, or unclear milestone criteria.",
       "subject_type": "overall",
       "subject_id": "overall",
@@ -119,9 +136,66 @@
       ]
     }
   ],
+  "change_mind_items": [
+    {
+      "direction": "more_optimistic",
+      "label": "Repeated human functional results",
+      "summary": "Several independent studies show that older adults function better for longer, not just that biomarkers move.",
+      "related_outlook_ids": [
+        "overall-lev-outlook"
+      ]
+    },
+    {
+      "direction": "more_optimistic",
+      "label": "Safer delivery and lasting effects",
+      "summary": "Fast-moving tracks show controlled delivery, acceptable safety, and benefits that last beyond short-term signals.",
+      "related_outlook_ids": [
+        "track-partial-reprogramming-outlook",
+        "track-immune-clearance-of-senescent-cells-outlook",
+        "track-extracellular-vesicle-and-secretome-therapies-outlook"
+      ]
+    },
+    {
+      "direction": "less_optimistic",
+      "label": "Null, unsafe, or narrow human results",
+      "summary": "Human studies fail to show useful outcomes, reveal safety problems, or show effects that are too narrow to change the aging story.",
+      "related_outlook_ids": [
+        "overall-lev-outlook"
+      ]
+    }
+  ],
+  "spotlight_examples": [
+    {
+      "label": "Promising but uncertain",
+      "title": "Microbiome metabolite restoration",
+      "summary": "There are human functional signals, but the evidence is still narrow and not yet proof of broad aging benefit.",
+      "href": "/tracks/microbiome-metabolite-restoration",
+      "related_outlook_ids": [
+        "track-microbiome-metabolite-restoration-outlook"
+      ]
+    },
+    {
+      "label": "Fast-moving frontier",
+      "title": "Partial reprogramming",
+      "summary": "The biological idea could be broad, but moving it into people, controlling delivery, and proving safety remain the key questions.",
+      "href": "/tracks/partial-reprogramming",
+      "related_outlook_ids": [
+        "track-partial-reprogramming-outlook"
+      ]
+    },
+    {
+      "label": "Clear bottleneck",
+      "title": "Stem-cell replacement",
+      "summary": "Some human functional signal exists, but the field still has to separate general aging benefit from narrow repair stories.",
+      "href": "/tracks/stem-cell-replacement-and-transplantation",
+      "related_outlook_ids": [
+        "track-stem-cell-replacement-and-transplantation-outlook"
+      ]
+    }
+  ],
   "revision": {
     "last_reviewed": "2026-06-06",
-    "review_reason": "Plain-language revision of the initial narrative layer after the June 2026 baseline coverage milestone and transposon/somatic-mutation coverage repair.",
+    "review_reason": "Plain-language revision of the narrative layer after the June 2026 first-pass summary milestone and missing-context updates.",
     "review_due": "2026-07-06",
     "triggers": [
       {
@@ -164,11 +238,11 @@
         "current_stage": "human_biomarker_signal",
         "momentum": "mixed",
         "confidence": "moderate",
-        "blocker": "The field still lacks replicated human functional gains that clearly stack toward long-run LEV.",
-        "best_signal": "All 38 seeded tracks now have public baseline outlooks, and early coverage repairs are tightening support maps without requiring a forecast upgrade.",
+        "blocker": "The field still lacks repeated human studies showing that people function better for longer in ways that clearly add up toward LEV.",
+        "best_signal": "All 38 research tracks now have public first-pass outlooks, and early missing-context updates are making the evidence map clearer without giving a new reason to be more optimistic.",
         "scenario_2036_status": "speculative",
         "last_updated": "2026-06-06",
-        "fingerprint": "e2211337568218fa"
+        "fingerprint": "676bcfe7d40c3349"
       },
       {
         "outlook_id": "track-ampk-and-metabolic-modulators-outlook",

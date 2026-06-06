@@ -45,9 +45,9 @@ const momentumOptions: Momentum[] = ["accelerating", "steady", "mixed", "stalled
 const confidenceOptions: Confidence[] = ["low", "moderate", "high"];
 
 const coverageOptions: Array<{ value: CoverageStatus; label: string }> = [
-  { value: "covered", label: "Baseline coverage" },
+  { value: "covered", label: "First-pass summary" },
   { value: "thin", label: "Thin coverage" },
-  { value: "in_progress", label: "Coverage in progress" }
+  { value: "in_progress", label: "Summary in progress" }
 ];
 
 function getSingleSearchParam(value: string | string[] | undefined) {
@@ -142,8 +142,8 @@ export default async function TracksIndexPage({ searchParams }: TracksIndexPageP
         summary="Tracks are the stable layer between hallmark theory and specific intervention records."
       >
         <div className="page-hero__stats">
-          <span>{tracks.length} seeded tracks</span>
-          <span>{coveredCount} with baseline coverage</span>
+          <span>{tracks.length} research tracks</span>
+          <span>{coveredCount} with first-pass public summaries</span>
           <span>{inProgressCount} in progress</span>
         </div>
       </PageHero>

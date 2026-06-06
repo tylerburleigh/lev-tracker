@@ -449,6 +449,29 @@ export type ProgressNarrativeFocusPriority = {
   related_outlook_ids?: string[];
 };
 
+export type ProgressNarrativeJourneyStep = {
+  label: string;
+  title: string;
+  summary: string;
+};
+
+export type ProgressNarrativeChangeMindDirection = "more_optimistic" | "less_optimistic" | "needs_attention";
+
+export type ProgressNarrativeChangeMindItem = {
+  direction: ProgressNarrativeChangeMindDirection;
+  label: string;
+  summary: string;
+  related_outlook_ids?: string[];
+};
+
+export type ProgressNarrativeSpotlightExample = {
+  label: string;
+  title: string;
+  summary: string;
+  href: string;
+  related_outlook_ids?: string[];
+};
+
 export type ProgressNarrativeRevisionTrigger = {
   trigger_type:
     | "new_publication_event"
@@ -469,9 +492,12 @@ export type ProgressNarrative = {
   date: string;
   where_we_are_now: string;
   what_changed_recently: string;
+  journey_steps: ProgressNarrativeJourneyStep[];
   progress_moments: ProgressNarrativeMoment[];
   watchlist: ProgressNarrativeWatchItem[];
   focus_priorities: ProgressNarrativeFocusPriority[];
+  change_mind_items: ProgressNarrativeChangeMindItem[];
+  spotlight_examples: ProgressNarrativeSpotlightExample[];
   revision: {
     last_reviewed: string;
     review_reason: string;
@@ -535,6 +561,19 @@ const stageLabels: Record<Stage, string> = {
   durable_disease_or_mortality_relevance: "Durable disease or mortality relevance"
 };
 
+const stagePlainMeanings: Record<Stage, string> = {
+  mechanistic_plausibility:
+    "The idea makes biological sense, but it has not yet shown strong animal or human results.",
+  animal_signal:
+    "There is evidence in animals, but not yet enough evidence in people.",
+  human_biomarker_signal:
+    "There are early signs in people, usually biomarkers, but not proof that people function better for longer.",
+  human_functional_benefit:
+    "There is some evidence that people function better, but not enough repeated, long-lasting evidence to prove broad aging benefit.",
+  durable_disease_or_mortality_relevance:
+    "There are meaningful human outcome signals, but they still need to connect clearly to broad aging benefit."
+};
+
 const momentumLabels: Record<Momentum, string> = {
   accelerating: "Accelerating",
   steady: "Steady",
@@ -543,10 +582,24 @@ const momentumLabels: Record<Momentum, string> = {
   uncertain: "Uncertain"
 };
 
+const momentumPlainMeanings: Record<Momentum, string> = {
+  accelerating: "New useful evidence or programs are appearing quickly.",
+  steady: "The area is moving, but not fast enough to change the big picture by itself.",
+  mixed: "Some signals are encouraging and others still limit the outlook.",
+  stalled: "There is little recent public progress that changes interpretation.",
+  uncertain: "The public evidence is too thin or uneven to judge momentum clearly."
+};
+
 const confidenceLabels: Record<Confidence, string> = {
   low: "Low confidence",
   moderate: "Moderate confidence",
   high: "High confidence"
+};
+
+const confidencePlainMeanings: Record<Confidence, string> = {
+  low: "The rating could change substantially as better evidence arrives.",
+  moderate: "The current read is supported enough to use, but important gaps remain.",
+  high: "The public evidence is consistent enough that the rating is less likely to move quickly."
 };
 
 const scenarioLabels: Record<ScenarioStatus, string> = {
@@ -1639,12 +1692,24 @@ export function getStageLabel(stage: Stage) {
   return stageLabels[stage];
 }
 
+export function getStagePlainMeaning(stage: Stage) {
+  return stagePlainMeanings[stage];
+}
+
 export function getMomentumLabel(momentum: Momentum) {
   return momentumLabels[momentum];
 }
 
+export function getMomentumPlainMeaning(momentum: Momentum) {
+  return momentumPlainMeanings[momentum];
+}
+
 export function getConfidenceLabel(confidence: Confidence) {
   return confidenceLabels[confidence];
+}
+
+export function getConfidencePlainMeaning(confidence: Confidence) {
+  return confidencePlainMeanings[confidence];
 }
 
 export function getScenarioLabel(status: ScenarioStatus) {

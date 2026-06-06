@@ -57,6 +57,8 @@ When updating the progress narrative, set:
 
 Use `npm run narrative:progress -- status` to check staleness, `npm run narrative:progress -- draft --write --style plain` to generate a plain-language review draft under `extra/`, and `npm run narrative:progress -- snapshot --write-current` after accepting a reviewed narrative state.
 
+Use `npm run lint:public-copy -- --write` during reader-facing copy reviews. It writes `extra/public-copy-report.md` with tracked jargon, internal phrases, and suggested plainer alternatives across public content records and static UI strings. The lint is advisory by default; use `--max-warnings N` only when a review wants an enforcement threshold.
+
 If the review changes evidence records, outlook ratings, stages, confidence, scenario status, or forecast windows, stop and use the evidence-review and candidate-bundle workflow instead.
 
 ## Expected Outputs
@@ -74,6 +76,7 @@ After any rollup decision or edit, regenerate triage state and run the standard 
 
 ```bash
 npm run sync:work-triage
+npm run lint:public-copy -- --write
 npm run validate:records
 npm run audit:data
 npm run typecheck

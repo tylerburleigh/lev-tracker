@@ -41,6 +41,7 @@ The narrative needs review when any of these are true:
    - `progress_moments` for temporal progress that affected public interpretation
    - `watchlist` for signals that could change the outlook next
    - `focus_priorities` for low-hanging fruit, neglected areas, promising signals, or blocking dependencies
+   - `journey_steps`, `change_mind_items`, and `spotlight_examples` when the homepage needs a clearer reader path
    - `revision` metadata and triggers
 4. Keep evidence, interpretation, and forecast distinct. Do not turn activity, funding, recruiting status, or source coverage into proof of LEV progress.
 5. If the revision would require new sources, findings, stages, confidence changes, or forecast upgrades, stop and use the surveillance/evidence-review/candidate-bundle workflow instead.
@@ -61,6 +62,7 @@ The narrative needs review when any of these are true:
 Run after edits:
 
 ```bash
+npm run lint:public-copy -- --write
 npm run validate:records
 npm run audit:data
 npm run typecheck

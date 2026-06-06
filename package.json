@@ -11,6 +11,7 @@
     "audit:data": "node scripts/audit-data-integrity.mjs",
     "sync:research-planning": "node scripts/seed-research-planning.mjs && node scripts/seed-work-triage.mjs",
     "sync:work-triage": "node scripts/seed-work-triage.mjs",
+    "lint:public-copy": "node scripts/public-copy-lint.mjs",
     "narrative:progress": "node scripts/progress-narrative.mjs",
     "research:bundle": "node scripts/research-bundle.mjs",
     "research:review-evidence": "node scripts/review-evidence.mjs"

@@ -37,6 +37,7 @@ const confidenceLabels = {
 const draftStyles = new Set(["plain", "technical"]);
 
 const plainLanguageReplacements = [
+  ["mechanistic plausibility", "biological plausibility"],
   ["replicated aging-directed human functional benefit", "repeated human studies showing that people function better for longer"],
   ["aging-directed human functional benefit", "human evidence that people function better for longer"],
   ["human functional benefit", "signs that people function better"],
@@ -44,6 +45,8 @@ const plainLanguageReplacements = [
   ["human-facing entries", "human evidence entries"],
   ["disease-outcome", "disease-result"],
   ["trial-watch", "trials to watch"],
+  ["target-engagement", "evidence that the intervention changed its intended target"],
+  ["pathway engagement", "evidence that the intervention changed its intended biological target"],
   ["support map", "evidence map"],
   ["support maps", "evidence maps"],
   ["branch boundaries", "which claims are in scope and which are not"],
@@ -53,6 +56,9 @@ const plainLanguageReplacements = [
   ["source completeness", "missing source context"],
   ["coverage repair", "missing-context update"],
   ["coverage repairs", "missing-context updates"],
+  ["coverage-repair", "missing-context"],
+  ["baseline coverage", "first-pass public summaries"],
+  ["baseline outlooks", "first-pass outlooks"],
   ["seeded tracks", "research tracks"],
   ["inspectable map", "clearer map"],
   ["durable", "long-lasting"],
@@ -60,7 +66,11 @@ const plainLanguageReplacements = [
   ["low-confidence", "still uncertain"],
   ["low confidence", "low confidence"],
   ["directness", "relevance to aging"],
-  ["translation gaps", "gaps between lab work and useful human results"]
+  ["human-adjacent", "near human evidence, but not direct proof in people"],
+  ["translational", "moving toward useful human results"],
+  ["translation gaps", "gaps between lab work and useful human results"],
+  ["translation", "moving from lab work to useful human results"],
+  ["mechanistic", "based on biology"]
 ];
 
 const jargonRules = [
@@ -75,7 +85,14 @@ const jargonRules = [
   { term: "trial-watch", suggestion: "trials to watch" },
   { term: "biomarker-heavy", suggestion: "mostly based on biomarkers" },
   { term: "directness", suggestion: "relevance to aging" },
-  { term: "translation", suggestion: "moving from lab work to useful human results" }
+  { term: "baseline coverage", suggestion: "first-pass public summary" },
+  { term: "seeded tracks", suggestion: "research tracks" },
+  { term: "durable", suggestion: "long-lasting" },
+  { term: "human-adjacent", suggestion: "near human evidence, but not direct proof in people" },
+  { term: "translational", suggestion: "moving toward useful human results" },
+  { term: "translation", suggestion: "moving from lab work to useful human results" },
+  { term: "pathway engagement", suggestion: "evidence that the intervention changed its intended biological target" },
+  { term: "mechanistic", suggestion: "based on biology" }
 ];
 
 function usage() {
@@ -218,6 +235,8 @@ function collectNarrativeOutlookIds(narrative) {
     ...narrative.progress_moments.flatMap((item) => item.related_outlook_ids ?? []),
     ...narrative.watchlist.flatMap((item) => item.related_outlook_ids ?? []),
     ...narrative.focus_priorities.flatMap((item) => item.related_outlook_ids ?? []),
+    ...(narrative.change_mind_items ?? []).flatMap((item) => item.related_outlook_ids ?? []),
+    ...(narrative.spotlight_examples ?? []).flatMap((item) => item.related_outlook_ids ?? []),
     ...narrative.revision.triggers.flatMap((item) => item.related_outlook_ids ?? [])
   ]).sort((left, right) => left.localeCompare(right));
 }
@@ -388,6 +407,32 @@ function plainFocusPriority(priority) {
   };
 }
 
+function plainJourneyStep(step) {
+  return {
+    ...step,
+    label: applyPlainLanguage(step.label),
+    title: applyPlainLanguage(step.title),
+    summary: applyPlainLanguage(step.summary)
+  };
+}
+
+function plainChangeMindItem(item) {
+  return {
+    ...item,
+    label: applyPlainLanguage(item.label),
+    summary: applyPlainLanguage(item.summary)
+  };
+}
+
+function plainSpotlightExample(example) {
+  return {
+    ...example,
+    label: applyPlainLanguage(example.label),
+    title: applyPlainLanguage(example.title),
+    summary: applyPlainLanguage(example.summary)
+  };
+}
+
 function plainDraft(draft) {
   return {
     ...draft,
@@ -395,9 +440,12 @@ function plainDraft(draft) {
     summary: applyPlainLanguage(draft.summary),
     where_we_are_now: applyPlainLanguage(draft.where_we_are_now),
     what_changed_recently: applyPlainLanguage(draft.what_changed_recently),
+    journey_steps: draft.journey_steps.map(plainJourneyStep),
     progress_moments: draft.progress_moments.map(plainProgressMoment),
     watchlist: draft.watchlist.map(plainWatchItem),
-    focus_priorities: draft.focus_priorities.map(plainFocusPriority)
+    focus_priorities: draft.focus_priorities.map(plainFocusPriority),
+    change_mind_items: draft.change_mind_items.map(plainChangeMindItem),
+    spotlight_examples: draft.spotlight_examples.map(plainSpotlightExample)
   };
 }
 
@@ -642,6 +690,15 @@ function formatDraftMarkdown(draft, analysis, style) {
 
   lines.push("", "## Progress Moments", "");
   lines.push(...draft.progress_moments.map((item) => `- ${item.label}: ${item.impact_on_outlook}`));
+
+  lines.push("", "## Journey", "");
+  lines.push(...draft.journey_steps.map((item) => `- ${item.label} / ${item.title}: ${item.summary}`));
+
+  lines.push("", "## What Would Change Our Mind", "");
+  lines.push(...draft.change_mind_items.map((item) => `- ${item.label}: ${item.summary}`));
+
+  lines.push("", "## Concrete Examples", "");
+  lines.push(...draft.spotlight_examples.map((item) => `- ${item.title}: ${item.summary} (${item.href})`));
 
   lines.push("", "## Ranked Changes", "");
   if (analysis.rankedRecentOutlookEvents.length === 0) {

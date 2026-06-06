@@ -16,8 +16,11 @@ import {
   getHallmarkTrackGroup,
   getLeadingInterventionsForHallmark,
   getOverallLastUpdated,
+  getConfidencePlainMeaning,
   getMomentumLabel,
+  getMomentumPlainMeaning,
   getStageLabel,
+  getStagePlainMeaning,
   getStrongestFindingsForHallmark,
   getTrackById,
   getTrackCoverage
@@ -35,9 +38,9 @@ export default async function HallmarkDetailPage({ params }: HallmarkPageProps) 
   const trackGroup = getHallmarkTrackGroup(hallmarkId);
   const [outlook, insight, lastUpdated, trackCoverage, leadingInterventions, strongestFindings, recentActivity] =
     await Promise.all([
-    getHallmarkOutlook(hallmarkId),
-    getHallmarkInsight(hallmarkId),
-    getOverallLastUpdated(),
+      getHallmarkOutlook(hallmarkId),
+      getHallmarkInsight(hallmarkId),
+      getOverallLastUpdated(),
       Promise.all((trackGroup?.tracks ?? []).map(async (track) => [track.id, await getTrackCoverage(track.id)] as const)),
       getLeadingInterventionsForHallmark(hallmarkId),
       getStrongestFindingsForHallmark(hallmarkId),
@@ -72,14 +75,20 @@ export default async function HallmarkDetailPage({ params }: HallmarkPageProps) 
               <h2>{getStageLabel(outlook.stage)}</h2>
             </div>
             <p>{outlook.note}</p>
+            <div className="plain-meaning">
+              <strong>Plain meaning</strong>
+              <p>{getStagePlainMeaning(outlook.stage)}</p>
+            </div>
             <div className="detail-list">
               <div>
                 <strong>Momentum</strong>
                 <p>{getMomentumLabel(outlook.momentum)}</p>
+                <span>{getMomentumPlainMeaning(outlook.momentum)}</span>
               </div>
               <div>
                 <strong>Confidence</strong>
                 <p>{getConfidenceLabel(outlook.confidence)}</p>
+                <span>{getConfidencePlainMeaning(outlook.confidence)}</span>
               </div>
             </div>
           </article>
@@ -127,7 +136,7 @@ export default async function HallmarkDetailPage({ params }: HallmarkPageProps) 
               ))}
             </ol>
             <div className="evidence-scope-note">
-              <strong>What the next stage needs</strong>
+              <strong>What would change our mind?</strong>
               <p>{insight.next_stage_requirement}</p>
             </div>
           </aside>
@@ -275,7 +284,7 @@ export default async function HallmarkDetailPage({ params }: HallmarkPageProps) 
             <span className="section-kicker">Tracks</span>
             <h2>Underlying research approaches</h2>
           </div>
-          <span className="section-link section-link--static">{trackGroup.tracks.length} seeded tracks</span>
+          <span className="section-link section-link--static">{trackGroup.tracks.length} research tracks</span>
         </div>
         <div className="page-shell track-card-grid">
           {trackGroup.tracks.map((track) => {

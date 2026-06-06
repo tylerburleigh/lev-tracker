@@ -1,11 +1,16 @@
 import Link from "next/link";
 import {
+  ArrowUpRight,
   ArrowRight,
   BookMarked,
   CalendarCheck,
+  CheckCircle2,
+  CircleHelp,
   Clock3,
   Compass,
+  Eye,
   Flag,
+  Milestone,
   Radar,
   ShieldCheck,
   Sparkles,
@@ -19,6 +24,7 @@ import {
   getHomepageData,
   getMomentumLabel,
   getStageLabel,
+  getStagePlainMeaning,
   getTrackCountForHallmark
 } from "@/lib/site-data";
 import { formatDate } from "@/lib/date";
@@ -41,6 +47,17 @@ function statusTone(value: string) {
   }
 }
 
+function changeMindTone(direction: string) {
+  switch (direction) {
+    case "more_optimistic":
+      return "change-mind-item--up";
+    case "less_optimistic":
+      return "change-mind-item--down";
+    default:
+      return "change-mind-item--watch";
+  }
+}
+
 export async function Homepage() {
   const {
     overallOutlook: overview,
@@ -52,9 +69,12 @@ export async function Homepage() {
     progressNarrativeReviewState
   } = await getHomepageData();
   const visibleRecentChanges = recentChanges.slice(0, 3);
+  const visibleJourneySteps = progressNarrative.journey_steps.slice(0, 3);
   const visibleProgressMoments = progressNarrative.progress_moments.slice(0, 3);
   const visibleWatchlist = progressNarrative.watchlist.slice(0, 3);
   const visibleFocusPriorities = progressNarrative.focus_priorities.slice(0, 3);
+  const visibleChangeMindItems = progressNarrative.change_mind_items.slice(0, 3);
+  const visibleSpotlightExamples = progressNarrative.spotlight_examples.slice(0, 3);
   const stateOfFieldHref = progressNarrative.related_state_of_field_slug
     ? `/state-of-the-field/${progressNarrative.related_state_of_field_slug}`
     : "/state-of-the-field";
@@ -85,6 +105,13 @@ export async function Homepage() {
                 <span>Latest note</span>
                 <ArrowRight aria-hidden="true" size={14} />
               </Link>
+            </div>
+            <div className="plain-meaning plain-meaning--hero">
+              <CircleHelp aria-hidden="true" size={18} />
+              <div>
+                <strong>Plain meaning</strong>
+                <p>{getStagePlainMeaning(overview.stage)}</p>
+              </div>
             </div>
             <div className="hero-card__columns">
               <div>
@@ -123,7 +150,7 @@ export async function Homepage() {
               <div className="snapshot-item">
                 <Sparkles aria-hidden="true" size={16} />
                 <div>
-                  <span className="snapshot-item__label">Seeded tracks covered</span>
+                  <span className="snapshot-item__label">Research tracks covered</span>
                   <strong>{snapshot.seededTracks}</strong>
                 </div>
               </div>
@@ -158,6 +185,19 @@ export async function Homepage() {
           <span className={`status-chip ${narrativeReviewTone}`}>
             Reviewed {formatDate(progressNarrativeReviewState.lastReviewed)}
           </span>
+        </div>
+        <div className="page-shell journey-grid">
+          {visibleJourneySteps.map((step, index) => (
+            <article className="journey-step" key={step.label}>
+              <div className="journey-step__label">
+                <Milestone aria-hidden="true" size={16} />
+                <span>{step.label}</span>
+              </div>
+              <h3>{step.title}</h3>
+              <p>{step.summary}</p>
+              {index < visibleJourneySteps.length - 1 ? <ArrowRight aria-hidden="true" className="journey-step__arrow" size={18} /> : null}
+            </article>
+          ))}
         </div>
         <div className="page-shell story-grid">
           <article className="story-panel">
@@ -210,6 +250,46 @@ export async function Homepage() {
                   <p>{priority.rationale}</p>
                   <span className="story-impact">{priority.next_useful_work}</span>
                 </div>
+              ))}
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section className="band band--reader">
+        <div className="page-shell reader-grid">
+          <article className="reader-panel">
+            <div className="story-panel__header">
+              <Eye aria-hidden="true" size={18} />
+              <h2>What would change our mind?</h2>
+            </div>
+            <div className="change-mind-list">
+              {visibleChangeMindItems.map((item) => (
+                <div className={`change-mind-item ${changeMindTone(item.direction)}`} key={item.label}>
+                  <CheckCircle2 aria-hidden="true" size={18} />
+                  <div>
+                    <strong>{item.label}</strong>
+                    <p>{item.summary}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </article>
+          <article className="reader-panel">
+            <div className="story-panel__header">
+              <Compass aria-hidden="true" size={18} />
+              <h2>Concrete examples</h2>
+            </div>
+            <div className="spotlight-list">
+              {visibleSpotlightExamples.map((example) => (
+                <Link className="spotlight-card" href={example.href} key={example.href}>
+                  <div>
+                    <span className="section-kicker">{example.label}</span>
+                    <strong>{example.title}</strong>
+                    <p>{example.summary}</p>
+                  </div>
+                  <ArrowUpRight aria-hidden="true" size={18} />
+                </Link>
               ))}
             </div>
           </article>
