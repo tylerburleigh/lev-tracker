@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-taxonomy-mapping-r1",
+  "name": "Taxonomy Mapping review for Transposon And Somatic Mutation Control bundle",
+  "candidate_bundle_id": "transposon-and-somatic-mutation-control-coverage-repair-2026-06-06",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "taxonomy_mapping",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged taxonomy mappings are coherent for revision 1. The bundle separates lamivudine/3TC, emtricitabine, FTC/TAF, FTC/TDF, and TPN-101 within the reverse-transcriptase branch; keeps DREAM as a somatic-mutation and DNA-repair mechanism branch rather than an RTI intervention; keeps TET2 CHIP canakinumab as downstream IL-1beta inflammatory-risk modulation rather than direct clone or mutation control; and uses the TE review as taxonomy/context rather than primary efficacy support. The source, study, finding, intervention, activity, and outlook IDs map consistently and do not collapse adjacent branches.",
+  "reviewed_change_ids": [
+    "create-source-pmid-41929344",
+    "create-source-pmid-42230995",
+    "create-source-pmid-42219647",
+    "create-source-nct-04500847",
+    "create-source-nct-07210528",
+    "create-source-nct-06691217",
+    "create-source-arpa-h-award-4201",
+    "create-source-brown-arpa-h-tpn101-aging-award",
+    "create-intervention-emtricitabine",
+    "create-intervention-emtricitabine-tenofovir-alafenamide",
+    "create-intervention-emtricitabine-tenofovir-disoproxil-fumarate",
+    "create-intervention-tpn-101",
+    "create-study-ftc-taf-biological-age-healthy-adults-posthoc",
+    "create-study-line-ad-emtricitabine-alzheimers-registry",
+    "create-study-santa-nrti-mci-registry",
+    "create-study-tet2-chip-canakinumab-vascular-inflammation-registry",
+    "create-study-dream-somatic-mutation-lifespan-disease",
+    "create-study-transposable-elements-aging-review",
+    "create-finding-ftc-taf-reduced-dnam-age-healthy-adults-preprint",
+    "create-finding-line-ad-emtricitabine-recruiting-no-results",
+    "create-finding-santa-nrti-mci-recruiting-no-results",
+    "create-finding-tet2-chip-canakinumab-vascular-inflammation-recruiting-no-results",
+    "create-finding-dream-repression-linked-lower-somatic-mutations",
+    "create-finding-transposable-elements-aging-review-supports-te-boundary",
+    "create-activity-tpn101-arpa-h-aging-program-award",
+    "update-outlook-track-transposon-and-somatic-mutation-control"
+  ],
+  "findings": [
+    {
+      "finding_id": "rti-intervention-class-boundary",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-intervention-emtricitabine-tenofovir-alafenamide",
+      "applies_to_record": {
+        "record_type": "intervention",
+        "record_id": "emtricitabine-tenofovir-alafenamide"
+      },
+      "claim_or_issue": "The bundle normalizes 3TC, emtricitabine, FTC/TAF, FTC/TDF, and TPN-101 as related but distinct reverse-transcriptase inhibitor contexts.",
+      "why_it_matters": "These agents differ in pharmacology, evidence source, population, and endpoint; collapsing them would overgeneralize one biomarker or trial-watch record to the whole RTI class.",
+      "recommended_action": "Preserve the staged intervention separation and keep FTC/TDF as limiting comparator context rather than positive support.",
+      "resolution_status": "open"
+    },
+    {
+      "finding_id": "dream-not-rti-or-deployable-intervention",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-finding-dream-repression-linked-lower-somatic-mutations",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "dream-repression-linked-lower-somatic-mutations"
+      },
+      "claim_or_issue": "DREAM is mapped as somatic-mutation and DNA-repair biology, not as reverse transcriptase inhibition, CHIP modulation, or a deployable human intervention.",
+      "why_it_matters": "The DREAM source repairs the somatic-mutation mechanism branch but should not be read as support for RTIs, canakinumab, or clinical transposon-control efficacy.",
+      "recommended_action": "Keep the staged branch-specific limitations in the finding and outlook support map.",
+      "resolution_status": "open"
+    },
+    {
+      "finding_id": "chip-cytokine-boundary",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-finding-tet2-chip-canakinumab-vascular-inflammation-recruiting-no-results",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "tet2-chip-canakinumab-vascular-inflammation-recruiting-no-results"
+      },
+      "claim_or_issue": "The CANTOS/TET2 and NCT06691217 records sit at the boundary between transposon/somatic-mutation control and cytokine/inflammasome modulation.",
+      "why_it_matters": "Canakinumab targets IL-1beta downstream of TET2 CHIP biology and should not be classified as direct mutation-burden or clone-size control unless future clone-dynamics data show that effect.",
+      "recommended_action": "Preserve the staged language that treats canakinumab as CHIP-relevant downstream inflammatory modulation with a prospective VAF endpoint still pending.",
+      "resolution_status": "open"
+    },
+    {
+      "finding_id": "te-review-secondary-context-boundary",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-finding-transposable-elements-aging-review-supports-te-boundary",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "transposable-elements-aging-review-supports-te-boundary"
+      },
+      "claim_or_issue": "PMID 42219647 is mapped as recent review triangulation and taxonomy support rather than primary intervention evidence.",
+      "why_it_matters": "Review context helps define the TE biomarker-effector frame but cannot independently upgrade the track or validate a specific intervention.",
+      "recommended_action": "Keep the review finding in a review_or_meta_analysis tier with mixed direction and explicit secondary-synthesis caveats.",
+      "resolution_status": "open"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-06T11:28:54.217Z",
+  "updated_at": "2026-06-06T11:28:54.217Z"
+}

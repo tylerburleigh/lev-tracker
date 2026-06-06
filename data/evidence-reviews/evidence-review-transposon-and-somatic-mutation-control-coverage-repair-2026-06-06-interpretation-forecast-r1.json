@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Transposon And Somatic Mutation Control bundle",
+  "candidate_bundle_id": "transposon-and-somatic-mutation-control-coverage-repair-2026-06-06",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "needs_human_judgment",
+  "blocking": false,
+  "summary": "The staged interpretation is bounded and publishable with curator judgment. The repair improves source completeness for RTI human biomarker and trial-watch context, TPN-101/ARPA-H activity, DREAM/somatic-mutation biology, TET2 CHIP canakinumab trial-watch context, and TE review triangulation, while keeping current_stage at human_biomarker_signal, confidence low, momentum steady, scenario status speculative, and no credible LEV-relevant window assigned. The support map explicitly treats preprint DNAm movement, no-results registries, program activity, review context, and mechanistic DREAM evidence as limited support rather than functional or durable clinical proof.",
+  "reviewed_change_ids": [
+    "create-source-pmid-41929344",
+    "create-source-pmid-42230995",
+    "create-source-pmid-42219647",
+    "create-source-nct-04500847",
+    "create-source-nct-07210528",
+    "create-source-nct-06691217",
+    "create-source-arpa-h-award-4201",
+    "create-source-brown-arpa-h-tpn101-aging-award",
+    "create-intervention-emtricitabine",
+    "create-intervention-emtricitabine-tenofovir-alafenamide",
+    "create-intervention-emtricitabine-tenofovir-disoproxil-fumarate",
+    "create-intervention-tpn-101",
+    "create-study-ftc-taf-biological-age-healthy-adults-posthoc",
+    "create-study-line-ad-emtricitabine-alzheimers-registry",
+    "create-study-santa-nrti-mci-registry",
+    "create-study-tet2-chip-canakinumab-vascular-inflammation-registry",
+    "create-study-dream-somatic-mutation-lifespan-disease",
+    "create-study-transposable-elements-aging-review",
+    "create-finding-ftc-taf-reduced-dnam-age-healthy-adults-preprint",
+    "create-finding-line-ad-emtricitabine-recruiting-no-results",
+    "create-finding-santa-nrti-mci-recruiting-no-results",
+    "create-finding-tet2-chip-canakinumab-vascular-inflammation-recruiting-no-results",
+    "create-finding-dream-repression-linked-lower-somatic-mutations",
+    "create-finding-transposable-elements-aging-review-supports-te-boundary",
+    "create-activity-tpn101-arpa-h-aging-program-award",
+    "update-outlook-track-transposon-and-somatic-mutation-control"
+  ],
+  "findings": [
+    {
+      "finding_id": "stage-remains-biomarker-not-functional",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "update-outlook-track-transposon-and-somatic-mutation-control",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-transposon-and-somatic-mutation-control-outlook"
+      },
+      "claim_or_issue": "The staged outlook keeps human_biomarker_signal rather than upgrading to human_functional_benefit despite adding FTC/TAF DNAm and multiple trial-watch records.",
+      "why_it_matters": "The added sources do not report controlled human aging function, disease-event, mortality, direct TE target-engagement, clone-size, or mutation-burden outcomes.",
+      "recommended_action": "Preserve the current stage, low confidence, and rating criteria requiring controlled target engagement plus functional or durable clinical evidence for any upgrade.",
+      "resolution_status": "open"
+    },
+    {
+      "finding_id": "trial-watch-and-program-activity-not-evidence",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "update-outlook-track-transposon-and-somatic-mutation-control",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-transposon-and-somatic-mutation-control-outlook"
+      },
+      "claim_or_issue": "LINE-AD, SANTA, NCT06691217, and the TPN-101/ARPA-H program are included as active translation signals, not as efficacy evidence.",
+      "why_it_matters": "Program activity can affect momentum and surveillance priority, but it should not inflate evidence strength or forecast timing before results are posted.",
+      "recommended_action": "Keep the staged wording that treats these records as no-results or program-update context and maintain ordinary surveillance as the next mode after review/publish.",
+      "resolution_status": "open"
+    },
+    {
+      "finding_id": "lev-window-remains-unassigned",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "update-outlook-track-transposon-and-somatic-mutation-control",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-transposon-and-somatic-mutation-control-outlook"
+      },
+      "claim_or_issue": "The staged outlook keeps the 2036 scenario speculative and assigns no credible LEV-relevant window.",
+      "why_it_matters": "The repair strengthens completeness but still lacks the controlled human target-engagement, function, durability, disease, clone-control, or mortality evidence needed for timing claims.",
+      "recommended_action": "Preserve the current forecast language unless future surveillance finds controlled human functional or durable clinical outcome evidence.",
+      "resolution_status": "open"
+    },
+    {
+      "finding_id": "adequate-coverage-does-not-mean-strong-evidence",
+      "severity": "note",
+      "category": "uncertainty",
+      "applies_to_change_id": "update-outlook-track-transposon-and-somatic-mutation-control",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-transposon-and-somatic-mutation-control-outlook"
+      },
+      "claim_or_issue": "The coverage assessment moves from thin to adequate for the current public claim, but not to strong coverage or higher evidence maturity.",
+      "why_it_matters": "Adequate coverage means the source landscape is now mapped well enough for the low-confidence claim, not that the intervention evidence is mature.",
+      "recommended_action": "Keep adequate-coverage wording separate from the low-confidence evidence-stage language in editorial review.",
+      "resolution_status": "open"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-06T11:28:41.974Z",
+  "updated_at": "2026-06-06T11:28:41.974Z"
+}

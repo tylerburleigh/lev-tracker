@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-safety-limitations-r1",
+  "name": "Safety Limitations review for Transposon And Somatic Mutation Control bundle",
+  "candidate_bundle_id": "transposon-and-somatic-mutation-control-coverage-repair-2026-06-06",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "safety_limitations",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged records adequately represent the safety and durability boundaries for revision 1. ART-AD remains small and short, the FTC/TAF signal is a preprint post hoc 12-week biomarker analysis, LINE-AD and SANTA are safety-oriented no-results RTI registries, the TPN-101 healthy-aging program is activity without results, and NCT06691217 is a no-results canakinumab registry with known downstream cytokine-blockade interpretation limits. The staged outlook preserves chronic preventive-use, resistance-context, tissue-specific target-engagement, immunosuppression, clone-control, and durability caveats. No unresolved safety omission requires revision before editorial review.",
+  "reviewed_change_ids": [
+    "create-source-pmid-41929344",
+    "create-source-pmid-42230995",
+    "create-source-pmid-42219647",
+    "create-source-nct-04500847",
+    "create-source-nct-07210528",
+    "create-source-nct-06691217",
+    "create-source-arpa-h-award-4201",
+    "create-source-brown-arpa-h-tpn101-aging-award",
+    "create-intervention-emtricitabine",
+    "create-intervention-emtricitabine-tenofovir-alafenamide",
+    "create-intervention-emtricitabine-tenofovir-disoproxil-fumarate",
+    "create-intervention-tpn-101",
+    "create-study-ftc-taf-biological-age-healthy-adults-posthoc",
+    "create-study-line-ad-emtricitabine-alzheimers-registry",
+    "create-study-santa-nrti-mci-registry",
+    "create-study-tet2-chip-canakinumab-vascular-inflammation-registry",
+    "create-study-dream-somatic-mutation-lifespan-disease",
+    "create-study-transposable-elements-aging-review",
+    "create-finding-ftc-taf-reduced-dnam-age-healthy-adults-preprint",
+    "create-finding-line-ad-emtricitabine-recruiting-no-results",
+    "create-finding-santa-nrti-mci-recruiting-no-results",
+    "create-finding-tet2-chip-canakinumab-vascular-inflammation-recruiting-no-results",
+    "create-finding-dream-repression-linked-lower-somatic-mutations",
+    "create-finding-transposable-elements-aging-review-supports-te-boundary",
+    "create-activity-tpn101-arpa-h-aging-program-award",
+    "update-outlook-track-transposon-and-somatic-mutation-control"
+  ],
+  "findings": [
+    {
+      "finding_id": "rti-preventive-safety-unresolved",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "update-outlook-track-transposon-and-somatic-mutation-control",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-transposon-and-somatic-mutation-control-outlook"
+      },
+      "claim_or_issue": "The staged RTI evidence includes approved antivirals, but aging-prevention safety is not established by short biomarker analyses or no-results Alzheimer/MCI registries.",
+      "why_it_matters": "Long-term use in older non-HIV populations raises different safety, resistance-context, renal/bone/metabolic, adherence, drug-interaction, and risk-benefit questions than approved antiviral use.",
+      "recommended_action": "Keep the staged preventive-use safety and durability caveats for lamivudine, emtricitabine, FTC/TAF, FTC/TDF, and TPN-101.",
+      "resolution_status": "open"
+    },
+    {
+      "finding_id": "ftc-taf-dnam-not-safety-or-durability",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-finding-ftc-taf-reduced-dnam-age-healthy-adults-preprint",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "ftc-taf-reduced-dnam-age-healthy-adults-preprint"
+      },
+      "claim_or_issue": "The FTC/TAF source reports 12-week DNAm biomarker movement in healthy adults, not long-term preventive-use tolerability, target-engagement durability, or clinical benefit.",
+      "why_it_matters": "Biomarker movement over 12 weeks cannot support aging-prevention safety or durable risk-benefit claims.",
+      "recommended_action": "Preserve the staged caveats that prospective placebo-controlled studies with direct TE readouts and prespecified geroscience endpoints are required.",
+      "resolution_status": "open"
+    },
+    {
+      "finding_id": "canakinumab-immunomodulation-and-clone-control-boundary",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-finding-tet2-chip-canakinumab-vascular-inflammation-recruiting-no-results",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "tet2-chip-canakinumab-vascular-inflammation-recruiting-no-results"
+      },
+      "claim_or_issue": "NCT06691217 tests canakinumab, a downstream IL-1beta inhibitor, and includes TET2 variant-allele-fraction endpoints but no posted results.",
+      "why_it_matters": "Without results, the trial cannot establish vascular-inflammation benefit, clone dynamics, infection/immunosuppression tradeoffs, or direct somatic-mutation control.",
+      "recommended_action": "Keep the staged wording that canakinumab is downstream inflammatory modulation and not direct clone or mutation control unless future VAF results support that interpretation.",
+      "resolution_status": "open"
+    },
+    {
+      "finding_id": "tpn101-healthy-aging-safety-pending",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-activity-tpn101-arpa-h-aging-program-award",
+      "applies_to_record": {
+        "record_type": "activity_item",
+        "record_id": "tpn101-arpa-h-aging-program-award"
+      },
+      "claim_or_issue": "The TPN-101/Censavudine healthy-aging program is planned activity and does not yet provide safety, tolerability, target-engagement, or intrinsic-capacity results in healthy older adults.",
+      "why_it_matters": "Program launch should not be used to infer preventive-use acceptability or long-term benefit.",
+      "recommended_action": "Keep TPN-101 as clinical-stage program momentum and require published or registry-posted healthy-aging results before safety or benefit claims increase.",
+      "resolution_status": "open"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-06T11:28:41.979Z",
+  "updated_at": "2026-06-06T11:28:41.979Z"
+}

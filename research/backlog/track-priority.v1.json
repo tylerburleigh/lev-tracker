@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-06T10:55:58.742Z",
+  "updated_at": "2026-06-06T11:29:19.797Z",
   "notes": [
     "Bootstrap priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Surveillance priority applies only to tracks that already have a public baseline and no active review bundle.",
@@ -441,17 +441,5 @@
       "default_question": "What changed for Mitophagy Enhancers since the last meaningful review or publication, and does any change justify a public update?"
     }
   ],
-  "coverage_repair_queue": [
-    {
-      "rank": 1,
-      "phase_id": "coverage-repair",
-      "track_id": "transposon-and-somatic-mutation-control",
-      "hallmark_id": "genomic_instability",
-      "priority_tier": "now",
-      "default_mode": "coverage_repair",
-      "rationale": "Run a bounded coverage-repair pass focused on reverse-transcriptase-inhibitor human biomarker and trial-watch context, TPN-101/ARPA-H healthy-aging activity, DREAM/somatic-mutation biology, TET2 CHIP canakinumab trial-watch records, and recent review triangulation before ordinary surveillance resumes.",
-      "default_question": "Which known source-completeness gaps for Transposon and Somatic Mutation Control need repair, and does resolving them change the coverage verdict or public boundaries?",
-      "notes": "Latest coverage assessment: transposon-and-somatic-mutation-control-coverage-2026-06-06."
-    }
-  ]
+  "coverage_repair_queue": []
 }

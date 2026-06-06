@@ -1,0 +1,391 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "transposon-and-somatic-mutation-control-coverage-repair-2026-06-06",
+  "name": "Transposon and Somatic Mutation Control Coverage Repair for June 6, 2026",
+  "summary": "Coverage-repair bundle that stages missing reverse-transcriptase-inhibitor biomarker and trial-watch records, TPN-101/ARPA-H activity, DREAM/somatic-mutation biology, TET2 CHIP canakinumab trial-watch context, and recent TE review triangulation while keeping the track at low-confidence human_biomarker_signal.",
+  "intake_mode": "manual",
+  "lifecycle_status": "submitted",
+  "submitted_at": "2026-06-06T11:11:31Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "Which source-completeness gaps for Transposon and Somatic Mutation Control need repair, and do FTC/TAF biological-age data, RTI Alzheimer registries, TPN-101/ARPA-H activity, DREAM biology, or TET2 CHIP canakinumab trial-watch context change public boundaries?",
+    "hallmark_ids": [
+      "genomic_instability"
+    ],
+    "track_ids": [
+      "transposon-and-somatic-mutation-control"
+    ],
+    "intervention_ids": [
+      "lamivudine",
+      "emtricitabine",
+      "emtricitabine-tenofovir-alafenamide",
+      "emtricitabine-tenofovir-disoproxil-fumarate",
+      "tpn-101",
+      "canakinumab"
+    ]
+  },
+  "source_ids": [
+    "pmid-41929344",
+    "pmid-42230995",
+    "pmid-42219647",
+    "nct-04500847",
+    "nct-07210528",
+    "nct-06691217",
+    "arpa-h-award-4201",
+    "brown-arpa-h-tpn101-aging-award"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/41929344/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC13042090/",
+    "https://pubmed.ncbi.nlm.nih.gov/42230995/",
+    "https://pubmed.ncbi.nlm.nih.gov/42219647/",
+    "https://clinicaltrials.gov/study/NCT04500847",
+    "https://clinicaltrials.gov/study/NCT07210528",
+    "https://clinicaltrials.gov/study/NCT06691217",
+    "https://arpa-h.gov/explore-funding/awards/4201",
+    "https://www.brown.edu/news/2026-02-24/aging-research-arpa",
+    "https://www.globenewswire.com/news-release/2026/03/04/3249213/0/en/transposon-therapeutics-tpn-101-to-be-studied-for-extending-healthy-aging-under-arpa-h-award-for-up-to-22m.html"
+  ],
+  "related_records": [
+    {
+      "record_type": "track",
+      "record_id": "transposon-and-somatic-mutation-control"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-transposon-and-somatic-mutation-control-outlook"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "lamivudine"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "emtricitabine"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "emtricitabine-tenofovir-alafenamide"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "emtricitabine-tenofovir-disoproxil-fumarate"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "tpn-101"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "canakinumab"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-41929344",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-41929344",
+      "file_path": "data/sources/pmid-41929344.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/pmid-41929344.json",
+      "summary": "Add FTC/TAF biological-age preprint source.",
+      "rationale": "The source repairs the missing RTI human biomarker context while preserving preprint and post hoc limitations."
+    },
+    {
+      "change_id": "create-source-pmid-42230995",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-42230995",
+      "file_path": "data/sources/pmid-42230995.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/pmid-42230995.json",
+      "summary": "Add DREAM somatic-mutation mechanism source.",
+      "rationale": "The source repairs the missing somatic-mutation mechanism anchor without treating DREAM as a deployed human intervention."
+    },
+    {
+      "change_id": "create-source-pmid-42219647",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-42219647",
+      "file_path": "data/sources/pmid-42219647.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/pmid-42219647.json",
+      "summary": "Add recent TE aging review source.",
+      "rationale": "The review repairs recent-review triangulation and helps bound the TE biomarker-effector framing."
+    },
+    {
+      "change_id": "create-source-nct-04500847",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-04500847",
+      "file_path": "data/sources/nct-04500847.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/nct-04500847.json",
+      "summary": "Add LINE-AD emtricitabine registry source.",
+      "rationale": "The registry repairs missing Alzheimer RTI trial-watch context while remaining no-results."
+    },
+    {
+      "change_id": "create-source-nct-07210528",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-07210528",
+      "file_path": "data/sources/nct-07210528.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/nct-07210528.json",
+      "summary": "Add SANTA NRTI MCI registry source.",
+      "rationale": "The registry repairs missing emtricitabine and FTC/TAF Alzheimer/MCI trial-watch context while remaining no-results."
+    },
+    {
+      "change_id": "create-source-nct-06691217",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-06691217",
+      "file_path": "data/sources/nct-06691217.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/nct-06691217.json",
+      "summary": "Add TET2 CHIP canakinumab registry source.",
+      "rationale": "The registry repairs missing prospective CHIP-targeted trial-watch context while preserving the no-results and downstream-cytokine boundary."
+    },
+    {
+      "change_id": "create-source-arpa-h-award-4201",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "arpa-h-award-4201",
+      "file_path": "data/sources/arpa-h-award-4201.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/arpa-h-award-4201.json",
+      "summary": "Add ARPA-H TPN-101 program source.",
+      "rationale": "The official award source repairs missing healthy-aging program activity context."
+    },
+    {
+      "change_id": "create-source-brown-arpa-h-tpn101-aging-award",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "brown-arpa-h-tpn101-aging-award",
+      "file_path": "data/sources/brown-arpa-h-tpn101-aging-award.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/brown-arpa-h-tpn101-aging-award.json",
+      "summary": "Add Brown TPN-101 aging-program announcement source.",
+      "rationale": "The university source provides planned cohort, duration, and endpoint context for the ARPA-H program."
+    },
+    {
+      "change_id": "create-intervention-emtricitabine",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "emtricitabine",
+      "file_path": "data/interventions/emtricitabine.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/emtricitabine.json",
+      "summary": "Normalize emtricitabine for RTI trial-watch records.",
+      "rationale": "LINE-AD and SANTA reference emtricitabine distinctly from lamivudine and FTC/TAF."
+    },
+    {
+      "change_id": "create-intervention-emtricitabine-tenofovir-alafenamide",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "emtricitabine-tenofovir-alafenamide",
+      "file_path": "data/interventions/emtricitabine-tenofovir-alafenamide.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/emtricitabine-tenofovir-alafenamide.json",
+      "summary": "Normalize FTC/TAF for biomarker and SANTA records.",
+      "rationale": "FTC/TAF is a separate antiretroviral combination with different pharmacology and evidence boundaries than 3TC or FTC/TDF."
+    },
+    {
+      "change_id": "create-intervention-emtricitabine-tenofovir-disoproxil-fumarate",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "emtricitabine-tenofovir-disoproxil-fumarate",
+      "file_path": "data/interventions/emtricitabine-tenofovir-disoproxil-fumarate.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/emtricitabine-tenofovir-disoproxil-fumarate.json",
+      "summary": "Normalize FTC/TDF as limiting comparator context.",
+      "rationale": "The FTC/TAF preprint contrasts biomarker movement against a separate FTC/TDF study with no significant epigenetic-clock changes."
+    },
+    {
+      "change_id": "create-intervention-tpn-101",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "tpn-101",
+      "file_path": "data/interventions/tpn-101.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/tpn-101.json",
+      "summary": "Normalize TPN-101/Censavudine program context.",
+      "rationale": "The ARPA-H healthy-aging program is specific to TPN-101 and should not be collapsed into generic NRTI evidence."
+    },
+    {
+      "change_id": "create-study-ftc-taf-biological-age-healthy-adults-posthoc",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "ftc-taf-biological-age-healthy-adults-posthoc-study",
+      "file_path": "data/studies/ftc-taf-biological-age-healthy-adults-posthoc-study.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/ftc-taf-biological-age-healthy-adults-posthoc-study.json",
+      "summary": "Add FTC/TAF DNAm post hoc study record.",
+      "rationale": "The study record captures population, intervention, endpoint, and post hoc boundaries for the preprint."
+    },
+    {
+      "change_id": "create-study-line-ad-emtricitabine-alzheimers-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "line-ad-emtricitabine-alzheimers-registry",
+      "file_path": "data/studies/line-ad-emtricitabine-alzheimers-registry.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/line-ad-emtricitabine-alzheimers-registry.json",
+      "summary": "Add LINE-AD no-results registry study.",
+      "rationale": "The study record makes direct Alzheimer RTI trial-watch context explicit without implying efficacy."
+    },
+    {
+      "change_id": "create-study-santa-nrti-mci-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "santa-nrti-mci-registry",
+      "file_path": "data/studies/santa-nrti-mci-registry.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/santa-nrti-mci-registry.json",
+      "summary": "Add SANTA no-results registry study.",
+      "rationale": "The study record captures emtricitabine and FTC/TAF MCI/Alzheimer trial-watch context and endpoint boundaries."
+    },
+    {
+      "change_id": "create-study-tet2-chip-canakinumab-vascular-inflammation-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "tet2-chip-canakinumab-vascular-inflammation-registry",
+      "file_path": "data/studies/tet2-chip-canakinumab-vascular-inflammation-registry.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/tet2-chip-canakinumab-vascular-inflammation-registry.json",
+      "summary": "Add TET2 CHIP canakinumab no-results registry study.",
+      "rationale": "The study record captures the prospective TET2 CHIP and variant-allele-fraction trial-watch design without implying results."
+    },
+    {
+      "change_id": "create-study-dream-somatic-mutation-lifespan-disease",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "dream-somatic-mutation-lifespan-disease-study",
+      "file_path": "data/studies/dream-somatic-mutation-lifespan-disease-study.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/dream-somatic-mutation-lifespan-disease-study.json",
+      "summary": "Add DREAM mixed mechanism study.",
+      "rationale": "The study record makes the somatic-mutation mechanism branch explicit while preserving non-intervention limits."
+    },
+    {
+      "change_id": "create-study-transposable-elements-aging-review",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "transposable-elements-aging-review-study",
+      "file_path": "data/studies/transposable-elements-aging-review-study.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/transposable-elements-aging-review-study.json",
+      "summary": "Add recent TE aging review study.",
+      "rationale": "The review study repairs recent-review triangulation and taxonomy-boundary coverage."
+    },
+    {
+      "change_id": "create-finding-ftc-taf-reduced-dnam-age-healthy-adults-preprint",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ftc-taf-reduced-dnam-age-healthy-adults-preprint",
+      "file_path": "data/findings/ftc-taf-reduced-dnam-age-healthy-adults-preprint.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/ftc-taf-reduced-dnam-age-healthy-adults-preprint.json",
+      "summary": "Add FTC/TAF DNAm biomarker finding.",
+      "rationale": "The finding adds the missing human biomarker signal while foregrounding preprint, post hoc, endpoint, and conflict boundaries."
+    },
+    {
+      "change_id": "create-finding-line-ad-emtricitabine-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "line-ad-emtricitabine-recruiting-no-results",
+      "file_path": "data/findings/line-ad-emtricitabine-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/line-ad-emtricitabine-recruiting-no-results.json",
+      "summary": "Add LINE-AD trial-watch finding.",
+      "rationale": "The finding keeps direct RTI Alzheimer trial activity visible without treating it as evidence of benefit."
+    },
+    {
+      "change_id": "create-finding-santa-nrti-mci-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "santa-nrti-mci-recruiting-no-results",
+      "file_path": "data/findings/santa-nrti-mci-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/santa-nrti-mci-recruiting-no-results.json",
+      "summary": "Add SANTA trial-watch finding.",
+      "rationale": "The finding keeps emtricitabine and FTC/TAF MCI/Alzheimer trial activity visible without treating it as evidence of benefit."
+    },
+    {
+      "change_id": "create-finding-tet2-chip-canakinumab-vascular-inflammation-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "tet2-chip-canakinumab-vascular-inflammation-recruiting-no-results",
+      "file_path": "data/findings/tet2-chip-canakinumab-vascular-inflammation-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/tet2-chip-canakinumab-vascular-inflammation-recruiting-no-results.json",
+      "summary": "Add TET2 CHIP canakinumab trial-watch finding.",
+      "rationale": "The finding captures the prospective VAF and vascular-inflammation design while preserving no-results and downstream-mechanism limits."
+    },
+    {
+      "change_id": "create-finding-dream-repression-linked-lower-somatic-mutations",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "dream-repression-linked-lower-somatic-mutations",
+      "file_path": "data/findings/dream-repression-linked-lower-somatic-mutations.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/dream-repression-linked-lower-somatic-mutations.json",
+      "summary": "Add DREAM somatic-mutation mechanism finding.",
+      "rationale": "The finding strengthens somatic-mutation mechanism coverage without changing intervention stage."
+    },
+    {
+      "change_id": "create-finding-transposable-elements-aging-review-supports-te-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "transposable-elements-aging-review-supports-te-boundary",
+      "file_path": "data/findings/transposable-elements-aging-review-supports-te-boundary.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/transposable-elements-aging-review-supports-te-boundary.json",
+      "summary": "Add recent review boundary finding.",
+      "rationale": "The finding documents review triangulation and reinforces that TE control strategies remain heterogeneous."
+    },
+    {
+      "change_id": "create-activity-tpn101-arpa-h-aging-program-award",
+      "change_type": "create_record",
+      "target_record_type": "activity_item",
+      "target_record_id": "tpn101-arpa-h-aging-program-award",
+      "file_path": "data/activity-items/tpn101-arpa-h-aging-program-award.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/tpn101-arpa-h-aging-program-award.json",
+      "summary": "Add TPN-101 ARPA-H funding activity.",
+      "rationale": "The activity item captures healthy-aging program momentum without implying result evidence."
+    },
+    {
+      "change_id": "update-outlook-track-transposon-and-somatic-mutation-control",
+      "change_type": "update_outlook",
+      "target_record_type": "outlook",
+      "target_record_id": "track-transposon-and-somatic-mutation-control-outlook",
+      "file_path": "data/outlooks/track-transposon-and-somatic-mutation-control-outlook.json",
+      "staged_file_path": "data/staged-records/transposon-and-somatic-mutation-control-coverage-repair-2026-06-06/track-transposon-and-somatic-mutation-control-outlook.json",
+      "summary": "Update public support map for repaired RTI, TPN-101, DREAM, CHIP trial-watch, and review coverage.",
+      "rationale": "The repair resolves internal source-completeness gaps while preserving stage, confidence, momentum, and conservative LEV timing.",
+      "uncertainty_flags": [
+        "PMID 41929344 is a medRxiv post hoc biomarker preprint, not a prespecified controlled geroscience trial.",
+        "NCT04500847, NCT07210528, and NCT06691217 are no-results registry records.",
+        "ARPA-H/TPN-101 sources are program and funding updates, not clinical results.",
+        "PMID 42230995 is mechanistic and animal/observational context, not a drug-like human intervention.",
+        "The current stage remains human_biomarker_signal and confidence remains low."
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "transposon-and-somatic-mutation-control",
+      "note": "Repair improves source completeness and public branch boundaries for RTI biomarkers, trial-watch activity, TPN-101 program momentum, DREAM biology, and CHIP trial-watch context, but does not change stage, confidence, momentum, or LEV-relevant timing because controlled human target-engagement and functional evidence remain absent.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast",
+    "safety_limitations",
+    "taxonomy_mapping"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-06-transposon-and-somatic-mutation-control-coverage-repair.json",
+  "next_actions": [
+    "Run source-fidelity, interpretation/forecast, safety-limitations, and taxonomy-mapping evidence reviews before publication.",
+    "If reviews approve, publish the staged records and then return the track to ordinary surveillance."
+  ],
+  "tags": [
+    "coverage-repair",
+    "genomic-instability",
+    "transposon-and-somatic-mutation-control",
+    "human-biomarker",
+    "trial-watch"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-source-fidelity-r1",
+    "evidence-review-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-interpretation-forecast-r1",
+    "evidence-review-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-safety-limitations-r1",
+    "evidence-review-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-taxonomy-mapping-r1"
+  ]
+}

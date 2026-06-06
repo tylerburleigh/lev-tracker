@@ -1,0 +1,347 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "transposon-and-somatic-mutation-control-coverage-repair-2026-06-06",
+  "name": "Transposon and Somatic Mutation Control Coverage Repair Assessment for June 6, 2026",
+  "short_name": "Transposon coverage repair",
+  "track_id": "transposon-and-somatic-mutation-control",
+  "hallmark_id": "genomic_instability",
+  "assessment_type": "coverage_repair",
+  "assessed_at": "2026-06-06T11:11:31Z",
+  "assessment_window": {
+    "from": "2026-06-06T10:49:58Z",
+    "to": "2026-06-06T11:11:31Z",
+    "basis": "Coverage repair created after the June 6 surveillance assessment requested RTI human biomarker/trial-watch context, TPN-101/ARPA-H healthy-aging activity, DREAM biology, TET2 CHIP canakinumab trial-watch context, and recent-review triangulation before ordinary surveillance resumed."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is now adequate for the current low-confidence human_biomarker_signal public claim, pending review and publication of the staged repair bundle. The repair stages missing source-completeness records for PMID 41929344 FTC/TAF DNA methylation biomarker preprint context, NCT04500847 and NCT07210528 RTI Alzheimer/MCI trial-watch registries, ARPA-H/Brown TPN-101 healthy-aging program activity, NCT06691217 TET2 CHIP canakinumab trial-watch context, PMID 42230995 DREAM somatic-mutation biology, and PMID 42219647 recent TE review triangulation. Coverage is not strong because the staged additions are preprint, no-results registry, program-update, review, or mechanistic sources; no source establishes controlled human retrotransposon target engagement tied to function, durable disease outcomes, clone-size control, mutation-burden reduction, or mortality.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-06-01-transposon-and-somatic-mutation-control-bootstrap",
+      "2026-06-06-transposon-and-somatic-mutation-control-surveillance",
+      "2026-06-06-transposon-and-somatic-mutation-control-coverage-repair"
+    ],
+    "candidate_bundle_ids": [
+      "transposon-and-somatic-mutation-control-bootstrap-2026-06-01",
+      "transposon-and-somatic-mutation-control-coverage-repair-2026-06-06"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-transposon-and-somatic-mutation-control-source-fidelity-r1",
+      "evidence-review-transposon-and-somatic-mutation-control-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-transposon-and-somatic-mutation-control-bootstrap-2026-06-01-2026-06-02t00-31-27-696z"
+    ],
+    "outlook_ids": [
+      "track-transposon-and-somatic-mutation-control-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "The current public support map includes ART-AD open-label 3TC biomarker evidence. Repair stages the FTC/TAF medRxiv post hoc DNA methylation biomarker signal and the LINE-AD/SANTA no-results randomized RTI Alzheimer/MCI registries. This is adequate for the current low-confidence biomarker-stage claim but remains far from functional or durable clinical evidence.",
+      "source_ids": [
+        "pmid-40104524",
+        "pmid-41929344",
+        "nct-04500847",
+        "nct-07210528"
+      ],
+      "finding_ids": [
+        "art-ad-lamivudine-safe-biomarker-signal",
+        "ftc-taf-reduced-dnam-age-healthy-adults-preprint",
+        "line-ad-emtricitabine-recruiting-no-results",
+        "santa-nrti-mci-recruiting-no-results"
+      ],
+      "gap_note": "The remaining issue is an evidence gap: no controlled aging-relevant human trial has reported direct TE target engagement tied to functional or clinical benefit."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "The baseline covers LINE1/lamivudine aged-mouse inflammatory activation, old-mouse 3TC cognition/neuroinflammation, and lamivudine tauopathy mouse disease-model evidence. Repair adds DREAM mouse brain mutation-burden mechanism context but not a drug-like lifespan intervention.",
+      "source_ids": [
+        "pmid-30728521",
+        "pmid-36949552",
+        "pmid-37446327",
+        "pmid-42230995"
+      ],
+      "finding_ids": [
+        "l1-cdna-drove-ifn-aging-lamivudine-reduced-inflammation",
+        "3tc-improved-old-mouse-cognition-neuroinflammation",
+        "lamivudine-reduced-tauopathy-pathology-mouse-function",
+        "dream-repression-linked-lower-somatic-mutations"
+      ],
+      "gap_note": "No direct TE-control intervention has shown robust lifespan extension in mammals within the staged public map."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "The repaired map now covers SIRT6 LINE1 repression, senescence LINE1 cDNA/type I interferon activation, NRTI/lamivudine animal evidence, FTC/TAF biomarker and pharmacology contrast, DREAM/DNA-repair mutation-burden biology, and recent TE review triangulation.",
+      "source_ids": [
+        "pmid-25247314",
+        "pmid-30728521",
+        "pmid-36949552",
+        "pmid-37446327",
+        "pmid-41929344",
+        "pmid-42230995",
+        "pmid-42219647"
+      ],
+      "finding_ids": [
+        "sirt6-line1-repression-failed-with-age-stress",
+        "l1-cdna-drove-ifn-aging-lamivudine-reduced-inflammation",
+        "3tc-improved-old-mouse-cognition-neuroinflammation",
+        "lamivudine-reduced-tauopathy-pathology-mouse-function",
+        "ftc-taf-reduced-dnam-age-healthy-adults-preprint",
+        "dream-repression-linked-lower-somatic-mutations",
+        "transposable-elements-aging-review-supports-te-boundary"
+      ]
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The staged records explicitly account for ART-AD size/open-label limits, FTC/TAF preprint and post hoc limits, FTC/TDF null contrast, LINE-AD and SANTA no-results status, TPN-101 program-update-only status, no-results NCT06691217 CHIP trial status, and the distinction between downstream cytokine modulation and direct mutation or clone control.",
+      "source_ids": [
+        "pmid-40104524",
+        "pmid-41929344",
+        "nct-04500847",
+        "nct-07210528",
+        "arpa-h-award-4201",
+        "brown-arpa-h-tpn101-aging-award",
+        "pmid-35385050",
+        "pmid-38701435",
+        "nct-06691217",
+        "pmid-39107561"
+      ],
+      "finding_ids": [
+        "art-ad-lamivudine-safe-biomarker-signal",
+        "ftc-taf-reduced-dnam-age-healthy-adults-preprint",
+        "line-ad-emtricitabine-recruiting-no-results",
+        "santa-nrti-mci-recruiting-no-results",
+        "tet2-chip-canakinumab-mace-exploratory-benefit",
+        "tet2-chip-canakinumab-lower-solid-tumor-incidence",
+        "tet2-chip-canakinumab-vascular-inflammation-recruiting-no-results",
+        "timi-chip-no-greater-standard-cv-treatment-benefit"
+      ]
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "Safety and durability remain thin as field-level evidence gaps. ART-AD is small and 24 weeks; FTC/TAF is 12-week post hoc biomarker context; LINE-AD, SANTA, NCT06691217, and the TPN-101 healthy-aging program have no posted results; and no source establishes long-term preventive-use safety, resistance-context, direct target engagement, tissue specificity, functional benefit, or durability.",
+      "source_ids": [
+        "pmid-40104524",
+        "pmid-41929344",
+        "nct-04500847",
+        "nct-07210528",
+        "nct-06691217",
+        "arpa-h-award-4201",
+        "brown-arpa-h-tpn101-aging-award"
+      ],
+      "finding_ids": [
+        "art-ad-lamivudine-safe-biomarker-signal",
+        "ftc-taf-reduced-dnam-age-healthy-adults-preprint",
+        "line-ad-emtricitabine-recruiting-no-results",
+        "santa-nrti-mci-recruiting-no-results",
+        "tet2-chip-canakinumab-vascular-inflammation-recruiting-no-results"
+      ],
+      "gap_note": "This remains an evidence gap requiring future results, not another immediate coverage-repair pass."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "The repair stages LINE-AD NCT04500847, SANTA NCT07210528, and TET2 CHIP canakinumab NCT06691217 as no-results trial-watch records. It also checked TPN-101/censavudine registry searches and found no ClinicalTrials.gov aging-program record during this pass.",
+      "source_ids": [
+        "nct-04500847",
+        "nct-07210528",
+        "nct-06691217",
+        "arpa-h-award-4201",
+        "brown-arpa-h-tpn101-aging-award"
+      ],
+      "finding_ids": [
+        "line-ad-emtricitabine-recruiting-no-results",
+        "santa-nrti-mci-recruiting-no-results",
+        "tet2-chip-canakinumab-vascular-inflammation-recruiting-no-results"
+      ],
+      "gap_note": "Watch for LINE-AD, SANTA, TET2 CHIP canakinumab, and TPN-101 healthy-aging registry/results updates during ordinary surveillance."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "adequate",
+      "rationale": "Repair stages PMID 42219647 as recent TE aging review triangulation and uses it to clarify TE biomarker-effector framing and intervention-class heterogeneity.",
+      "source_ids": [
+        "pmid-42219647"
+      ],
+      "finding_ids": [
+        "transposable-elements-aging-review-supports-te-boundary"
+      ],
+      "gap_note": "A deeper citation-network audit could improve strong coverage but is not required before ordinary surveillance."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The current public baseline includes key LINE1/SIRT6, LINE1/senescence, 3TC mouse, ART-AD, CANTOS/TET2, and TIMI CHIP anchors. Repair stages the missing translational anchors around FTC/TAF, RTI Alzheimer trial-watch records, TPN-101 healthy-aging activity, DREAM, and a recent TE review.",
+      "source_ids": [
+        "pmid-25247314",
+        "pmid-30728521",
+        "pmid-36949552",
+        "pmid-37446327",
+        "pmid-40104524",
+        "pmid-41929344",
+        "nct-04500847",
+        "nct-07210528",
+        "arpa-h-award-4201",
+        "brown-arpa-h-tpn101-aging-award",
+        "pmid-35385050",
+        "pmid-38701435",
+        "nct-06691217",
+        "pmid-39107561",
+        "pmid-42230995",
+        "pmid-42219647"
+      ],
+      "finding_ids": [
+        "sirt6-line1-repression-failed-with-age-stress",
+        "l1-cdna-drove-ifn-aging-lamivudine-reduced-inflammation",
+        "3tc-improved-old-mouse-cognition-neuroinflammation",
+        "lamivudine-reduced-tauopathy-pathology-mouse-function",
+        "art-ad-lamivudine-safe-biomarker-signal",
+        "ftc-taf-reduced-dnam-age-healthy-adults-preprint",
+        "line-ad-emtricitabine-recruiting-no-results",
+        "santa-nrti-mci-recruiting-no-results",
+        "tet2-chip-canakinumab-mace-exploratory-benefit",
+        "tet2-chip-canakinumab-lower-solid-tumor-incidence",
+        "tet2-chip-canakinumab-vascular-inflammation-recruiting-no-results",
+        "timi-chip-no-greater-standard-cv-treatment-benefit",
+        "dream-repression-linked-lower-somatic-mutations",
+        "transposable-elements-aging-review-supports-te-boundary"
+      ]
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The staged outlook separates ART-AD 3TC, FTC/TAF biological-age biomarker evidence, emtricitabine and FTC/TAF Alzheimer/MCI registries, TPN-101 healthy-aging program activity, DREAM/DNA-repair somatic-mutation biology, TET2 CHIP canakinumab downstream inflammatory modulation, and broad TE review context.",
+      "source_ids": [
+        "pmid-40104524",
+        "pmid-41929344",
+        "nct-04500847",
+        "nct-07210528",
+        "arpa-h-award-4201",
+        "brown-arpa-h-tpn101-aging-award",
+        "pmid-35385050",
+        "nct-06691217",
+        "pmid-42230995",
+        "pmid-42219647"
+      ],
+      "finding_ids": [
+        "art-ad-lamivudine-safe-biomarker-signal",
+        "ftc-taf-reduced-dnam-age-healthy-adults-preprint",
+        "line-ad-emtricitabine-recruiting-no-results",
+        "santa-nrti-mci-recruiting-no-results",
+        "tet2-chip-canakinumab-mace-exploratory-benefit",
+        "tet2-chip-canakinumab-vascular-inflammation-recruiting-no-results",
+        "dream-repression-linked-lower-somatic-mutations",
+        "transposable-elements-aging-review-supports-te-boundary"
+      ]
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-25247314",
+    "pmid-30728521",
+    "pmid-36949552",
+    "pmid-37446327",
+    "pmid-40104524",
+    "pmid-41929344",
+    "nct-04500847",
+    "nct-07210528",
+    "arpa-h-award-4201",
+    "brown-arpa-h-tpn101-aging-award",
+    "pmid-35385050",
+    "pmid-38701435",
+    "nct-06691217",
+    "pmid-39107561",
+    "pmid-42230995",
+    "pmid-42219647"
+  ],
+  "covered_finding_ids": [
+    "sirt6-line1-repression-failed-with-age-stress",
+    "l1-cdna-drove-ifn-aging-lamivudine-reduced-inflammation",
+    "3tc-improved-old-mouse-cognition-neuroinflammation",
+    "lamivudine-reduced-tauopathy-pathology-mouse-function",
+    "art-ad-lamivudine-safe-biomarker-signal",
+    "ftc-taf-reduced-dnam-age-healthy-adults-preprint",
+    "line-ad-emtricitabine-recruiting-no-results",
+    "santa-nrti-mci-recruiting-no-results",
+    "tet2-chip-canakinumab-mace-exploratory-benefit",
+    "tet2-chip-canakinumab-lower-solid-tumor-incidence",
+    "tet2-chip-canakinumab-vascular-inflammation-recruiting-no-results",
+    "timi-chip-no-greater-standard-cv-treatment-benefit",
+    "dream-repression-linked-lower-somatic-mutations",
+    "transposable-elements-aging-review-supports-te-boundary"
+  ],
+  "search_log_summary": "Coverage repair reviewed the June 1 public outlook and bootstrap artifacts, June 6 surveillance and coverage assessment, PubMed metadata and abstracts for PMID 41929344, PMID 42230995, and PMID 42219647, ClinicalTrials.gov API records for NCT04500847, NCT07210528, and NCT06691217, TPN-101/censavudine ClinicalTrials.gov searches, ARPA-H award 4201, Brown University TPN-101/aging program material, and Transposon Therapeutics sponsor release context.",
+  "source_selection_notes": [
+    "PMID 41929344 was staged as bounded preprint human biomarker context, not as definitive proof of gerotherapeutic effect.",
+    "NCT04500847 and NCT07210528 were staged as no-results trial-watch records for the RTI Alzheimer/MCI branch.",
+    "ARPA-H award 4201 and Brown program material were staged as activity sources for TPN-101 healthy-aging momentum; the Transposon Therapeutics release was logged as context only.",
+    "NCT06691217 was staged as a no-results prospective TET2 CHIP/canakinumab trial-watch record with VAF and vascular-inflammation endpoints.",
+    "PMID 42230995 was staged as somatic-mutation mechanism support, not as a human intervention source.",
+    "PMID 42219647 was staged as recent TE review triangulation, not as primary efficacy evidence."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "controlled-human-target-engagement-and-function-absent",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "No staged human source shows controlled RTI or TPN-101 reduction of direct LINE1, retrotransposon cDNA, cGAS-STING, interferon, tissue-inflammatory, or somatic-mutation biomarkers tied to cognition, physical function, frailty, disease outcomes, or mortality.",
+      "priority": "high",
+      "suggested_action": "Keep the public stage at low-confidence human_biomarker_signal until controlled target-engagement and functional or disease-outcome evidence appears."
+    },
+    {
+      "gap_id": "trial-watch-results-pending",
+      "gap_type": "evidence_gap",
+      "category": "active_trials_registries",
+      "description": "LINE-AD, SANTA, the TET2 CHIP canakinumab vascular-inflammation trial, and the TPN-101 healthy-aging program lack posted results or a complete healthy-aging registry record.",
+      "priority": "high",
+      "suggested_action": "Watch NCT04500847, NCT07210528, NCT06691217, and TPN-101/ARPA-H registry/publication activity during ordinary surveillance."
+    },
+    {
+      "gap_id": "preventive-use-safety-and-durability-unresolved",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Short ART-AD and FTC/TAF biomarker evidence plus no-results trial-watch records do not establish long-term preventive-use safety, resistance-context boundaries, tissue specificity, durability, or risk-benefit for RTIs or cytokine blockade in aging populations.",
+      "priority": "high",
+      "suggested_action": "Require longer-duration safety, tolerability, tissue target-engagement, and durability data before increasing confidence."
+    },
+    {
+      "gap_id": "direct-clone-or-mutation-control-human-evidence-absent",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "No staged human source shows direct reduction of somatic mutation burden, CHIP clone size, TET2 variant allele fraction, LINE1 cDNA, or retrotransposon activity under intervention.",
+      "priority": "high",
+      "suggested_action": "Do not interpret canakinumab, NRTIs, or DREAM context as direct mutation or clone control unless future studies report clone-dynamics or mutation-burden results."
+    },
+    {
+      "gap_id": "preprint-and-dnam-endpoint-boundary",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "PMID 41929344 is a preprint post hoc DNA methylation analysis in young healthy adults, with no direct TE readouts and reported manufacturer-related conflicts for some authors.",
+      "priority": "medium",
+      "suggested_action": "Monitor peer review, correction, replication, and prospective placebo-controlled geroscience studies before treating FTC/TAF as more than low-confidence biomarker support."
+    },
+    {
+      "gap_id": "branch-specific-taxonomy-boundary",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "The track combines LINE1/reverse-transcriptase biology, FTC/TAF pharmacology, TPN-101 development, DREAM/DNA-repair somatic-mutation biology, CHIP clone biology, and downstream cytokine modulation.",
+      "priority": "medium",
+      "suggested_action": "Keep future public changes explicit about which branch is being supported and avoid generalizing evidence across NRTIs, TPN-101, DREAM, CHIP, or cytokine blockade."
+    }
+  ],
+  "next_coverage_action": "Review the staged coverage-repair bundle through source-fidelity, interpretation/forecast, safety-limitations, and taxonomy-mapping lanes. If approved and published, return transposon and somatic mutation control to ordinary surveillance with special watch on LINE-AD, SANTA, TPN-101/ARPA-H registry activity, FTC/TAF peer review, and NCT06691217 results.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-assessment",
+    "coverage-repair",
+    "genomic_instability",
+    "transposon-and-somatic-mutation-control",
+    "adequate-coverage"
+  ]
+}

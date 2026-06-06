@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-06T10:55:58.836Z",
+  "generated_at": "2026-06-06T11:29:19.890Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-06T10:55:58.742Z",
-    "research_priority_queue_updated_at": "2026-06-06T10:55:58.742Z",
-    "active_candidate_bundle_count": 0,
+    "research_coverage_status_updated_at": "2026-06-06T11:29:19.796Z",
+    "research_priority_queue_updated_at": "2026-06-06T11:29:19.797Z",
+    "active_candidate_bundle_count": 1,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 37,
-    "coverage_repair_queue_count": 1,
+    "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 29,
     "unnormalized_intervention_id_count": 70,
     "unnormalized_intervention_reference_count": 138
@@ -32,10 +32,10 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-repair-transposon-and-somatic-mutation-control",
-    "top_mode": "coverage_repair",
-    "active_editorial_count": 0,
-    "ready_research_count": 38,
+    "top_work_item_id": "editorial_review-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06",
+    "top_mode": "editorial_review",
+    "active_editorial_count": 1,
+    "ready_research_count": 37,
     "data_hardening_count": 1,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
@@ -45,37 +45,35 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "coverage-repair-transposon-and-somatic-mutation-control",
-      "mode": "coverage_repair",
-      "domain": "research",
+      "item_id": "editorial_review-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06",
+      "mode": "editorial_review",
+      "domain": "editorial",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Repair coverage for Transposon and Somatic Mutation Control",
-      "rationale": "Run a bounded coverage-repair pass focused on reverse-transcriptase-inhibitor human biomarker and trial-watch context, TPN-101/ARPA-H healthy-aging activity, DREAM/somatic-mutation biology, TET2 CHIP canakinumab trial-watch records, and recent review triangulation before ordinary surveillance resumes.",
-      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
-      "track_id": "transposon-and-somatic-mutation-control",
-      "hallmark_id": "genomic_instability",
+      "title": "Review active bundle transposon-and-somatic-mutation-control-coverage-repair-2026-06-06",
+      "rationale": "Candidate bundle transposon-and-somatic-mutation-control-coverage-repair-2026-06-06 is submitted, so editorial work takes precedence over new research.",
+      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
+      "candidate_bundle_id": "transposon-and-somatic-mutation-control-coverage-repair-2026-06-06",
+      "runbook_path": "docs/admin-review.md",
+      "command": "npm run research:bundle -- validate --bundle transposon-and-somatic-mutation-control-coverage-repair-2026-06-06",
+      "source_paths": [
+        "data/candidate-bundles",
+        "docs/admin-review.md"
+      ],
       "references": [
         {
-          "record_type": "track",
-          "record_id": "transposon-and-somatic-mutation-control"
-        },
-        {
-          "record_type": "hallmark",
-          "record_id": "genomic_instability"
+          "record_type": "candidate_bundle",
+          "record_id": "transposon-and-somatic-mutation-control-coverage-repair-2026-06-06"
         }
-      ],
-      "runbook_path": "docs/coverage-assessment.md",
-      "source_paths": [
-        "research/backlog/track-priority.v1.json",
-        "research/state/coverage-status.v1.json",
-        "research/coverage-assessments",
-        "docs/coverage-assessment.md"
       ],
       "signals": [
         {
-          "name": "generated_queue_rank",
-          "value": 1
+          "name": "lifecycle_status",
+          "value": "submitted"
+        },
+        {
+          "name": "proposed_change_count",
+          "value": 26
         }
       ]
     },

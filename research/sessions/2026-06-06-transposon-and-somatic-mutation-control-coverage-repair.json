@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-06-transposon-and-somatic-mutation-control-coverage-repair",
+  "name": "Transposon and Somatic Mutation Control Coverage Repair",
+  "mode": "coverage_repair",
+  "started_at": "2026-06-06T10:58:00Z",
+  "completed_at": "2026-06-06T11:11:31Z",
+  "scope": {
+    "question": "Which source-completeness gaps for Transposon and Somatic Mutation Control need repair, and do FTC/TAF biological-age data, RTI Alzheimer registries, TPN-101/ARPA-H activity, DREAM biology, or TET2 CHIP canakinumab trial-watch context change public boundaries?",
+    "hallmark_ids": [
+      "genomic_instability"
+    ],
+    "track_ids": [
+      "transposon-and-somatic-mutation-control"
+    ],
+    "intervention_ids": [
+      "lamivudine",
+      "emtricitabine",
+      "emtricitabine-tenofovir-alafenamide",
+      "emtricitabine-tenofovir-disoproxil-fumarate",
+      "tpn-101",
+      "canakinumab"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "transposon-and-somatic-mutation-control-coverage-repair-2026-06-06",
+  "summary": "Coverage repair resolved the named source-completeness gaps by source-reviewing and staging FTC/TAF DNA methylation biological-age preprint context, LINE-AD and SANTA no-results Alzheimer/MCI RTI registries, ARPA-H and Brown TPN-101/Censavudine healthy-aging program activity, NCT06691217 TET2 CHIP canakinumab trial-watch context, the DREAM somatic-mutation mechanism paper, and a recent transposable-elements-in-aging review. The staged public update keeps the track at low-confidence human_biomarker_signal with steady momentum: the new sources improve completeness and branch boundaries, but do not supply controlled human target-engagement, functional, durable disease, clone-size, mutation-burden, or mortality evidence.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "outlook_refresh",
+    "public_update_needed": true,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The repair changes the public support map and source list but not the public stage, confidence, momentum, blockers, or rating-change criteria direction. Public staging is warranted because the missing sources materially clarify RTI human biomarker context, active RTI and CHIP trial-watch records, TPN-101 aging-program activity, DREAM somatic-mutation mechanism, and recent review triangulation."
+  },
+  "search_log": [
+    {
+      "source_name": "PubMed ESummary and EFetch",
+      "query": "PMID 41929344, PMID 42230995, and PMID 42219647",
+      "checked_at": "2026-06-06T11:02:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Confirmed PMID 41929344 as a medRxiv preprint on FTC/TAF and DNA methylation aging in healthy adults, PMID 42230995 as a Nature Aging DREAM/somatic-mutation paper, and PMID 42219647 as a 2026 Advances in Genetics review chapter on transposable elements in aging."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "NCT04500847 and NCT07210528",
+      "checked_at": "2026-06-06T11:04:00Z",
+      "url": "https://clinicaltrials.gov/study/NCT04500847",
+      "summary": "Confirmed LINE-AD and SANTA as recruiting no-results placebo-controlled emtricitabine or FTC/TAF Alzheimer/MCI trial-watch records. LINE-AD lists estimated enrollment 35 and safety, inflammatory, cognitive, functional, and CSF biomarker endpoints; SANTA lists estimated enrollment 48 and safety, Alzheimer biomarker, inflammatory, cognitive, and ADL endpoints."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "NCT06691217",
+      "checked_at": "2026-06-06T11:05:00Z",
+      "url": "https://clinicaltrials.gov/study/NCT06691217",
+      "summary": "Confirmed NCT06691217 as a recruiting no-results phase 2 randomized canakinumab trial in coronary artery disease with and without TET2 CHIP, including vascular inflammation, cytokine, and TET2 variant-allele-fraction endpoints."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "TPN-101 OR censavudine and Transposon Therapeutics aging censavudine",
+      "checked_at": "2026-06-06T11:06:00Z",
+      "url": "https://clinicaltrials.gov/",
+      "summary": "Found TPN-101 disease-context registries in AGS, ALS/FTD, and PSP, but no ClinicalTrials.gov registry for the ARPA-H healthy-aging program during this pass."
+    },
+    {
+      "source_name": "ARPA-H, Brown University, and Transposon Therapeutics web sources",
+      "query": "ARPA-H award 4201, Brown aging research ARPA, and Transposon Therapeutics TPN-101 healthy aging release",
+      "checked_at": "2026-06-06T11:07:00Z",
+      "url": "https://arpa-h.gov/explore-funding/awards/4201",
+      "summary": "Confirmed official ARPA-H award context and Brown program details for a TPN-101/Censavudine healthy-aging program, including planned healthy older adult clinical testing; treated the Transposon Therapeutics press release as corroborating sponsor context rather than a primary scientific source."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "Transposon Therapeutics GlobeNewswire release, 2026-03-04",
+      "title": "Transposon Therapeutics' TPN-101 to be Studied for Extending Healthy Aging under ARPA-H Award for up to $22M",
+      "url": "https://www.globenewswire.com/news-release/2026/03/04/3249213/0/en/transposon-therapeutics-tpn-101-to-be-studied-for-extending-healthy-aging-under-arpa-h-award-for-up-to-22m.html",
+      "decision": "context_only",
+      "reason": "Sponsor release corroborates TPN-101 program intent and LINE1 positioning but is lower-independence program context than ARPA-H and Brown sources; it is logged but not staged as a separate evidence source."
+    },
+    {
+      "reference": "NCT04993768",
+      "title": "A Phase 2a Study of TPN-101 in Patients With Progressive Supranuclear Palsy (PSP)",
+      "url": "https://clinicaltrials.gov/study/NCT04993768",
+      "decision": "context_only",
+      "reason": "TPN-101 disease-context registry is completed without posted results and is not the healthy-aging ARPA-H program named in the coverage gap."
+    },
+    {
+      "reference": "NCT04993755",
+      "title": "A Phase 2a Study of TPN-101 in Patients With C9ORF72 ALS/FTD",
+      "url": "https://clinicaltrials.gov/study/NCT04993755",
+      "decision": "context_only",
+      "reason": "TPN-101 disease-context registry is completed without posted results and is not the healthy-aging ARPA-H program named in the coverage gap."
+    },
+    {
+      "reference": "NCT05613868",
+      "title": "TPN-101 in Aicardi-Goutieres Syndrome",
+      "url": "https://clinicaltrials.gov/study/NCT05613868",
+      "decision": "wrong_scope",
+      "reason": "TPN-101 AGS registry is disease-context and terminated, not healthy-aging evidence for this repair."
+    }
+  ],
+  "source_ids": [
+    "pmid-41929344",
+    "pmid-42230995",
+    "pmid-42219647",
+    "nct-04500847",
+    "nct-07210528",
+    "nct-06691217",
+    "arpa-h-award-4201",
+    "brown-arpa-h-tpn101-aging-award"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/41929344/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC13042090/",
+    "https://pubmed.ncbi.nlm.nih.gov/42230995/",
+    "https://pubmed.ncbi.nlm.nih.gov/42219647/",
+    "https://clinicaltrials.gov/study/NCT04500847",
+    "https://clinicaltrials.gov/study/NCT07210528",
+    "https://clinicaltrials.gov/study/NCT06691217",
+    "https://arpa-h.gov/explore-funding/awards/4201",
+    "https://www.brown.edu/news/2026-02-24/aging-research-arpa",
+    "https://www.globenewswire.com/news-release/2026/03/04/3249213/0/en/transposon-therapeutics-tpn-101-to-be-studied-for-extending-healthy-aging-under-arpa-h-award-for-up-to-22m.html",
+    "https://clinicaltrials.gov/study/NCT04993768",
+    "https://clinicaltrials.gov/study/NCT04993755",
+    "https://clinicaltrials.gov/study/NCT05613868"
+  ],
+  "notes": [
+    "The repair treats PMID 41929344 as a bounded human biomarker signal because it is a preprint post hoc DNAm analysis without direct retrotransposon readouts.",
+    "The repair treats LINE-AD, SANTA, and NCT06691217 as trial-watch context only until results are posted.",
+    "The repair treats TPN-101/ARPA-H as program momentum, not clinical evidence.",
+    "The repair keeps DREAM, LINE1/NRTI, CHIP/canakinumab, and TE-review branches separate in the staged outlook."
+  ],
+  "next_actions": [
+    "Run evidence reviews for source fidelity, interpretation/forecast, safety limitations, and taxonomy mapping.",
+    "If reviews approve, publish the staged repair bundle and then resume ordinary surveillance."
+  ]
+}

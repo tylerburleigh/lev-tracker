@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-source-fidelity-r1",
+  "name": "Source Fidelity review for Transposon And Somatic Mutation Control bundle",
+  "candidate_bundle_id": "transposon-and-somatic-mutation-control-coverage-repair-2026-06-06",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The revision 1 staged source, study, finding, activity, intervention, and outlook records are source-faithful. PubMed metadata and abstracts support PMID 41929344 as a medRxiv FTC/TAF post hoc DNA methylation biomarker preprint, PMID 42230995 as a Nature Aging DREAM/somatic-mutation mechanism paper, and PMID 42219647 as a recent TE aging review. Current ClinicalTrials.gov API records support NCT04500847, NCT07210528, and NCT06691217 as recruiting no-results registry records with the staged enrollment, phase, endpoint, and intervention boundaries. ARPA-H and Brown primary pages support the TPN-101/Censavudine program activity. No source-fidelity issue blocks editorial review.",
+  "reviewed_change_ids": [
+    "create-source-pmid-41929344",
+    "create-source-pmid-42230995",
+    "create-source-pmid-42219647",
+    "create-source-nct-04500847",
+    "create-source-nct-07210528",
+    "create-source-nct-06691217",
+    "create-source-arpa-h-award-4201",
+    "create-source-brown-arpa-h-tpn101-aging-award",
+    "create-intervention-emtricitabine",
+    "create-intervention-emtricitabine-tenofovir-alafenamide",
+    "create-intervention-emtricitabine-tenofovir-disoproxil-fumarate",
+    "create-intervention-tpn-101",
+    "create-study-ftc-taf-biological-age-healthy-adults-posthoc",
+    "create-study-line-ad-emtricitabine-alzheimers-registry",
+    "create-study-santa-nrti-mci-registry",
+    "create-study-tet2-chip-canakinumab-vascular-inflammation-registry",
+    "create-study-dream-somatic-mutation-lifespan-disease",
+    "create-study-transposable-elements-aging-review",
+    "create-finding-ftc-taf-reduced-dnam-age-healthy-adults-preprint",
+    "create-finding-line-ad-emtricitabine-recruiting-no-results",
+    "create-finding-santa-nrti-mci-recruiting-no-results",
+    "create-finding-tet2-chip-canakinumab-vascular-inflammation-recruiting-no-results",
+    "create-finding-dream-repression-linked-lower-somatic-mutations",
+    "create-finding-transposable-elements-aging-review-supports-te-boundary",
+    "create-activity-tpn101-arpa-h-aging-program-award",
+    "update-outlook-track-transposon-and-somatic-mutation-control"
+  ],
+  "findings": [
+    {
+      "finding_id": "ftc-taf-preprint-source-boundary",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-ftc-taf-reduced-dnam-age-healthy-adults-preprint",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "ftc-taf-reduced-dnam-age-healthy-adults-preprint"
+      },
+      "claim_or_issue": "PMID 41929344 supports the staged FTC/TAF DNA methylation and epigenetic inflammatory-proxy values, but it is a medRxiv preprint and post hoc analysis of pharmacokinetic-study samples rather than a prespecified geroscience efficacy trial.",
+      "why_it_matters": "The source can support low-confidence human biomarker context, but not direct retrotransposon target engagement, functional benefit, disease modification, or durable aging claims.",
+      "recommended_action": "Keep the staged preprint, post hoc, young-adult, DNAm-endpoint, no-direct-TE-readout, and conflict caveats through editorial review.",
+      "resolution_status": "open"
+    },
+    {
+      "finding_id": "registry-status-time-sensitive",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "update-outlook-track-transposon-and-somatic-mutation-control",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-transposon-and-somatic-mutation-control-outlook"
+      },
+      "claim_or_issue": "NCT04500847, NCT07210528, and NCT06691217 were checked against the current ClinicalTrials.gov API during review and still had no results section, but registry status is time-sensitive.",
+      "why_it_matters": "The staged no-results wording is source-faithful only while these records remain trial-watch activity rather than outcome evidence.",
+      "recommended_action": "Recheck all three registries before publication if the bundle is delayed materially, and preserve the no-results wording unless results are posted.",
+      "resolution_status": "open"
+    },
+    {
+      "finding_id": "tpa101-program-primary-source-boundary",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "create-activity-tpn101-arpa-h-aging-program-award",
+      "applies_to_record": {
+        "record_type": "activity_item",
+        "record_id": "tpn101-arpa-h-aging-program-award"
+      },
+      "claim_or_issue": "ARPA-H supports the award amount, awardee, and aging-outcomes framing; Brown supports the Censavudine/TPN-101 healthy-aging trial plan and endpoint categories. Neither source supplies clinical results.",
+      "why_it_matters": "The activity item is valid program momentum but should not be interpreted as evidence of efficacy, target engagement, or safety in healthy older adults.",
+      "recommended_action": "Keep the staged activity wording and avoid converting the ARPA-H/Brown program description into a benefit-supporting finding.",
+      "resolution_status": "open"
+    },
+    {
+      "finding_id": "dream-review-mechanistic-source-boundary",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-dream-repression-linked-lower-somatic-mutations",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "dream-repression-linked-lower-somatic-mutations"
+      },
+      "claim_or_issue": "PMID 42230995 supports the DREAM mutation-burden, cross-species lifespan, Alzheimer pathology, and mouse knockout mutation-count claims, but the staged evidence is mechanistic and animal/observational rather than a drug-like human intervention.",
+      "why_it_matters": "DREAM belongs in the source-completeness repair as somatic-mutation mechanism context, not as clinical support for a deployable therapy.",
+      "recommended_action": "Preserve the staged wording that keeps DREAM separate from RTI and CHIP/canakinumab intervention evidence.",
+      "resolution_status": "open"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-06T11:28:41.969Z",
+  "updated_at": "2026-06-06T11:28:41.969Z"
+}
