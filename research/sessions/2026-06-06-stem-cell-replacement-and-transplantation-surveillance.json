@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-06-stem-cell-replacement-and-transplantation-surveillance",
+  "name": "Stem cell replacement and transplantation surveillance pass for June 6, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-06T14:35:00Z",
+  "completed_at": "2026-06-06T14:54:48Z",
+  "scope": {
+    "question": "What changed for Stem Cell Replacement and Transplantation since the 2026-06-01 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "stem_cell_exhaustion"
+    ],
+    "track_ids": [
+      "stem-cell-replacement-and-transplantation"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "stem-cell-replacement-and-transplantation-surveillance-2026-06-06",
+  "summary": "Ran a delta surveillance pass from the 2026-06-01T20:13:00Z public baseline publication through 2026-06-06. PubMed date-window searches found no new laromestrocel, bemdaneprocel, A9-DPC, retinal graft, HSCT/MS, or correction/retraction publication that changes the public interpretation. ClinicalTrials.gov direct checks found one activity-only delta: exPDite-2 NCT06944522 remains recruiting with estimated enrollment of 102, primary completion estimated for March 2027, completion estimated for March 2032, and no posted results, but its Last Update Posted date changed to 2026-06-05. Because the public source and finding currently cite the May 1, 2026 posted update, a minimal activity-only surveillance bundle was staged for the source and finding. No outlook, stage, momentum, confidence, scenario, or LEV-window change is warranted. Close PubMed, preprint, sponsor, and web leads were review-level, preclinical, wrong-scope, or context-only.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "activity_only",
+    "public_update_needed": true,
+    "activity_only": true,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The only same-window material delta is a registry-date refresh for an already captured phase 3 Parkinson disease activity signal. It keeps the source layer current but does not add efficacy, safety outcome, durability, mortality, broad aging, or LEV-relevant evidence."
+  },
+  "search_log": [
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "((laromestrocel OR Lomecel-B OR aging frailty OR frailty) AND (stem cell OR mesenchymal OR MSC OR cell therapy)), Entrez-date or publication-date window 2026-06-01 to 2026-06-06",
+      "checked_at": "2026-06-06T14:39:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%28laromestrocel%20OR%20Lomecel-B%20OR%20aging%20frailty%20OR%20frailty%29%20AND%20%28stem%20cell%20OR%20mesenchymal%20OR%20MSC%20OR%20cell%20therapy%29%29",
+      "summary": "Returned PMID 42240775, a genome-integrity and N-of-1 aging review. No new laromestrocel or Lomecel-B outcome publication was found."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "(bemdaneprocel OR exPDite OR dopaminergic progenitor OR dopamine progenitor OR A9-DPC OR cell replacement OR stem cell-derived) AND (Parkinson OR retina OR retinal OR macular OR Stargardt OR transplantation OR graft), Entrez-date or publication-date window 2026-06-01 to 2026-06-06",
+      "checked_at": "2026-06-06T14:40:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28bemdaneprocel%20OR%20exPDite%20OR%20dopaminergic%20progenitor%20OR%20dopamine%20progenitor%20OR%20A9-DPC%20OR%20cell%20replacement%20OR%20stem%20cell-derived%29%20AND%20%28Parkinson%20OR%20retina%20OR%20retinal%20OR%20macular%20OR%20Stargardt%20OR%20transplantation%20OR%20graft%29",
+      "summary": "Returned adjacent preclinical retina, spinal-cord, organoid, exosome, and review records. No post-baseline bemdaneprocel, A9-DPC, human retinal graft, or direct replacement outcome record changed the support map."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "(hematopoietic stem cell transplantation OR HSCT OR stem cell transplantation) AND (multiple sclerosis OR aging OR frailty OR rejuvenation), Entrez-date or publication-date window 2026-06-01 to 2026-06-06",
+      "checked_at": "2026-06-06T14:41:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28hematopoietic%20stem%20cell%20transplantation%20OR%20HSCT%20OR%20stem%20cell%20transplantation%29%20AND%20%28multiple%20sclerosis%20OR%20aging%20OR%20frailty%20OR%20rejuvenation%29",
+      "summary": "Returned one close hit, PMID 42214360, an oncology critical-care article that is not MS, aging, or stem-cell-exhaustion replacement evidence."
+    },
+    {
+      "source_name": "PubMed ESearch and ESummary",
+      "query": "Baseline PMIDs 41747733, 40240592, 41086804, 25458728, and 30644983 with retraction, erratum, expression-of-concern, or corrected publication filters",
+      "checked_at": "2026-06-06T14:42:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned zero correction, retraction, erratum, or expression-of-concern records for the five supporting baseline PMIDs."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "Direct checks for NCT03169231, NCT04802733, NCT05887466, NCT06944522, NCT01344993, NCT01345006, and NCT00273364",
+      "checked_at": "2026-06-06T14:45:00Z",
+      "url": "https://clinicaltrials.gov/",
+      "summary": "Baseline laromestrocel, bemdaneprocel phase 1, A9-DPC, retinal RPE, and HSCT/MS registries remained completed or recruiting according to their existing interpretations. NCT06944522 was the only same-window activity delta: recruiting, no results, Last Update Posted 2026-06-05."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "(laromestrocel OR Lomecel-B OR mesenchymal stem cells) AND (frailty OR aging); (bemdaneprocel OR dopamine progenitor OR dopaminergic progenitor OR A9-DPC OR stem cell-derived) AND Parkinson; (hESC-derived RPE OR retinal pigment epithelium OR Stargardt OR macular degeneration) AND stem cell; (hematopoietic stem cell transplantation OR HSCT) AND multiple sclerosis",
+      "checked_at": "2026-06-06T14:48:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "Broader registry searches found older or pre-baseline active/no-results Parkinson, retinal, MSC/frailty, and HSCT/MS records. None added a same-window result-bearing delta beyond the NCT06944522 posted-update date."
+    },
+    {
+      "source_name": "bioRxiv and medRxiv APIs",
+      "query": "Date window 2026-06-01 to 2026-06-06 filtered for laromestrocel, Lomecel-B, bemdaneprocel, exPDite, A9-DPC, cell replacement, retinal pigment epithelium, mesenchymal stem, HSCT, multiple sclerosis, Parkinson, aging frailty",
+      "checked_at": "2026-06-06T14:50:00Z",
+      "url": "https://api.biorxiv.org/details/biorxiv/2026-06-01/2026-06-06/0",
+      "summary": "Checked 30 bioRxiv and 30 medRxiv records in the date window; no matching stem-cell replacement or transplantation preprint was found."
+    },
+    {
+      "source_name": "Web search and primary-source follow-up",
+      "query": "laromestrocel frailty June 2026; bemdaneprocel exPDite-2 June 2026; A9-DPC Parkinson June 2026; stem cell replacement transplantation aging frailty June 2026",
+      "checked_at": "2026-06-06T14:52:00Z",
+      "url": "https://www.google.com/search?q=laromestrocel%20frailty%20June%202026",
+      "summary": "Found the already captured laromestrocel phase 2b PubMed record, ClinicalTrials.gov exPDite-2 registry leads, a June 4 Longeveron BIO/partnering announcement about already published laromestrocel data, and a broad Frontiers review. No separate primary outcome source changed the outlook."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 42240775",
+      "title": "Genome integrity, somatic mutation, and the N-of-1 imperative in aging research.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42240775/",
+      "decision": "context_only",
+      "reason": "Review-level genome-integrity and somatic-mutation aging framework; it does not test stem-cell replacement, laromestrocel, transplantation, or a track intervention."
+    },
+    {
+      "reference": "PMID 42231481",
+      "title": "L-DOPA enhances iRPE differentiation via Wnt signaling and improves cytotherapy for retinal degradation.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42231481/",
+      "decision": "context_only",
+      "reason": "Preclinical iPSC-derived RPE differentiation and rat transplantation study. It may inform retinal replacement methods but does not add human graft or aging-functional evidence."
+    },
+    {
+      "reference": "PMID 42247338",
+      "title": "From Preservation to Regeneration: Stem Cell-Derived Therapies in Machine-Perfused Kidney Transplants - A systematic Review and Meta-analysis.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42247338/",
+      "decision": "context_only",
+      "reason": "Systematic review of stem-cell or EV interventions during machine-perfused kidney transplant preservation; no consistent functional benefit and not a direct aging or stem-cell-exhaustion replacement intervention."
+    },
+    {
+      "reference": "PMID 42079751",
+      "title": "Accelerated Intrinsic Beating Rate in Heterogeneously Coupled Human Pluripotent Stem Cell-Derived Cardiomyocytes Can Underlie Focal Ventricular Tachycardia in Regenerative Therapy.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42079751/",
+      "decision": "context_only",
+      "reason": "Computational safety-mechanism paper for hPSC-derived cardiomyocyte graft arrhythmia risk; useful for safety boundaries but not a new human outcome or aging-relevant benefit."
+    },
+    {
+      "reference": "PMID 42051236",
+      "title": "Investigational approaches to multiple sclerosis therapy.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42051236/",
+      "decision": "context_only",
+      "reason": "Review article on emerging MS therapies. It mentions cell-based approaches as early biological signals but does not change the HSCT boundary finding or add new primary evidence."
+    },
+    {
+      "reference": "PMID 42100001",
+      "title": "Injectable alginate hydrogels improve the effects of subretinal hiPSC-derived RPE cell therapy on retinal degeneration in rats.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42100001/",
+      "decision": "context_only",
+      "reason": "Preclinical rat retinal-degeneration study of hydrogel-mediated RPE delivery; not a new human retinal replacement result."
+    },
+    {
+      "reference": "Longeveron BIO International Convention 2026 announcement",
+      "title": "Longeveron to Present at BIO International Convention 2026",
+      "url": "https://www.globenewswire.com/news-release/2026/06/04/3306852/0/en/longeveron-to-present-at-bio-international-convention-2026.html",
+      "decision": "context_only",
+      "reason": "Company partnering and conference-participation update that says Longeveron will highlight new and recently published laromestrocel data; it does not provide new aging-frailty outcome data."
+    },
+    {
+      "reference": "Frontiers regenerative medicine review",
+      "title": "Stem cell dysfunction and rejuvenation strategies in ageing: emerging advances in regenerative medicine",
+      "url": "https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2026.1830358/full",
+      "decision": "context_only",
+      "reason": "Broad review of stem-cell aging and regenerative medicine trials. It reinforces existing caveats about variable efficacy, endpoints, durability, and paracrine mechanisms but does not supply new primary support."
+    }
+  ],
+  "source_ids": [
+    "pmid-41747733",
+    "pmid-40240592",
+    "pmid-41086804",
+    "nct-06944522",
+    "pmid-25458728",
+    "pmid-30644983"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/41747733/",
+    "https://pubmed.ncbi.nlm.nih.gov/40240592/",
+    "https://pubmed.ncbi.nlm.nih.gov/41086804/",
+    "https://clinicaltrials.gov/study/NCT06944522",
+    "https://clinicaltrials.gov/api/v2/studies/NCT06944522",
+    "https://pubmed.ncbi.nlm.nih.gov/25458728/",
+    "https://pubmed.ncbi.nlm.nih.gov/30644983/",
+    "https://pubmed.ncbi.nlm.nih.gov/42231481/",
+    "https://pubmed.ncbi.nlm.nih.gov/42079751/",
+    "https://www.globenewswire.com/news-release/2026/06/04/3306852/0/en/longeveron-to-present-at-bio-international-convention-2026.html",
+    "https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2026.1830358/full"
+  ],
+  "notes": [
+    "The activity-only bundle exists because the public source and finding used an explicit May 1, 2026 registry-date phrase.",
+    "No PubMed, preprint, sponsor, or registry result changes the low-confidence human_functional_benefit baseline.",
+    "Older active/no-results Parkinson and retinal registries found during broad ClinicalTrials.gov search were not staged because they predate this delta window and ordinary surveillance should not become historical coverage repair."
+  ],
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast evidence reviews for the activity-only exPDite-2 registry refresh.",
+    "If approved and published, return the track to ordinary surveillance.",
+    "Continue watching exPDite-2 results or status changes, laromestrocel frailty replication, and longer-term graft safety or durability signals."
+  ]
+}

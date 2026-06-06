@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "stem-cell-replacement-and-transplantation-surveillance-2026-06-06",
+  "name": "Stem Cell Replacement and Transplantation Surveillance for June 6, 2026",
+  "summary": "Activity-only surveillance bundle refreshing the exPDite-2 bemdaneprocel phase 3 registry date while keeping the public outlook, stage, momentum, confidence, and LEV-relevant interpretation unchanged.",
+  "intake_mode": "surveillance",
+  "lifecycle_status": "submitted",
+  "submitted_at": "2026-06-06T14:54:48Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What changed for Stem Cell Replacement and Transplantation since the June 1, 2026 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "stem_cell_exhaustion"
+    ],
+    "track_ids": [
+      "stem-cell-replacement-and-transplantation"
+    ]
+  },
+  "source_ids": [
+    "nct-06944522"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT06944522",
+    "https://clinicaltrials.gov/api/v2/studies/NCT06944522"
+  ],
+  "related_records": [
+    {
+      "record_type": "track",
+      "record_id": "stem-cell-replacement-and-transplantation"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-stem-cell-replacement-and-transplantation-outlook"
+    },
+    {
+      "record_type": "source",
+      "record_id": "nct-06944522"
+    },
+    {
+      "record_type": "study",
+      "record_id": "expdite2-bemdaneprocel-parkinson-phase3"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "expdite2-bemdaneprocel-phase3-recruiting"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "update-source-nct-06944522",
+      "change_type": "update_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-06944522",
+      "file_path": "data/sources/nct-06944522.json",
+      "staged_file_path": "data/staged-records/stem-cell-replacement-and-transplantation-surveillance-2026-06-06/nct-06944522.json",
+      "summary": "Refresh exPDite-2 registry source summary to the June 5, 2026 posted update.",
+      "rationale": "The registry remains recruiting with no posted results, but the public source currently cites the older May 1, 2026 posted update."
+    },
+    {
+      "change_id": "update-finding-expdite2-bemdaneprocel-phase3-recruiting",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "expdite2-bemdaneprocel-phase3-recruiting",
+      "file_path": "data/findings/expdite2-bemdaneprocel-phase3-recruiting.json",
+      "staged_file_path": "data/staged-records/stem-cell-replacement-and-transplantation-surveillance-2026-06-06/expdite2-bemdaneprocel-phase3-recruiting.json",
+      "summary": "Refresh the exPDite-2 recruiting finding to the June 5, 2026 posted update while preserving the no-results caveat.",
+      "rationale": "The finding is a momentum/activity statement only. Updating the as-of date keeps the source layer current without implying efficacy evidence."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "stem-cell-replacement-and-transplantation",
+      "note": "No outlook change is proposed. The registry update is activity-only: exPDite-2 remains recruiting, has no posted results, and continues to support momentum only.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-06-stem-cell-replacement-and-transplantation-surveillance.json",
+  "next_actions": [
+    "Run source-fidelity and interpretation/forecast evidence reviews for the activity-only registry refresh.",
+    "If approved and published, return the track to ordinary surveillance with special watch on exPDite-2 results, laromestrocel replication, and long-term graft safety signals."
+  ],
+  "tags": [
+    "surveillance",
+    "activity-only",
+    "stem-cell-exhaustion",
+    "stem-cell-replacement-and-transplantation",
+    "bemdaneprocel",
+    "trial-registry"
+  ]
+}
