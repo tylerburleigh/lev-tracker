@@ -1,0 +1,219 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-06-transposon-and-somatic-mutation-control-surveillance",
+  "name": "Transposon and somatic mutation control surveillance pass for June 6, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-06T10:41:00Z",
+  "completed_at": "2026-06-06T10:49:58Z",
+  "scope": {
+    "question": "What changed for Transposon and Somatic Mutation Control since the 2026-06-02 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "genomic_instability"
+    ],
+    "track_ids": [
+      "transposon-and-somatic-mutation-control"
+    ],
+    "intervention_ids": [
+      "lamivudine",
+      "canakinumab",
+      "ziltivekimab"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "coverage_assessment_updated",
+  "summary": "Ran a delta surveillance pass from the 2026-06-02T00:31:27.696Z public baseline publication through 2026-06-06. PubMed, ClinicalTrials.gov, preprint, and web checks did not find a post-baseline controlled human reverse-transcriptase-inhibition result, LINE1 target-engagement result, clone-size or somatic-mutation-burden control result, CHIP-targeted clinical outcome result, safety reversal, or correction that warrants an immediate public bundle. The most relevant post-baseline PubMed source was PMID 42230995, a Nat Aging DREAM/somatic-mutation paper linking lower DREAM-associated activity to lower mutation rates, mammalian lifespan, later Alzheimer disease onset, and lower mouse brain mutation accumulation after DREAM knockout; it strengthens somatic-mutation mechanism context but is not a drug-like or controlled human intervention result. Web and registry follow-up surfaced a more important operational issue: the current baseline does not represent pre-baseline human reverse-transcriptase-inhibitor and trial-watch context, including PMID 41929344 for FTC/TAF biological-age signals, LINE-AD NCT04500847, SANTA NCT07210528, the ARPA-H/TPN-101 healthy-aging program, and TET2 CHIP canakinumab NCT06691217. Because those are source-completeness gaps rather than same-window public-update deltas, this pass adds a thin coverage assessment and recommends bounded coverage repair before ordinary surveillance resumes.",
+  "next_recommended_mode": "coverage_repair",
+  "materiality_decision": {
+    "material_delta": "coverage_repair_needed",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "coverage_repair",
+    "rationale": "No checked post-publication result changes the current low-confidence human_biomarker_signal stage or public wording immediately. However, the pass identified missing pre-baseline and active-program context that could affect the support map and confidence boundaries: FTC/TAF biological-age biomarker data, controlled emtricitabine or FTC/TAF Alzheimer registries, a direct TPN-101 healthy-aging program, TET2 CHIP canakinumab trial-watch evidence, and a same-window DREAM somatic-mutation mechanism source. These require source-fidelity and taxonomy-boundary review together rather than an ad hoc surveillance update."
+  },
+  "search_log": [
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "((LINE1 OR LINE-1 OR long interspersed nuclear element OR retrotransposon OR transposable element OR endogenous retrovirus OR HERV OR SIRT6 OR lamivudine OR 3TC OR reverse transcriptase inhibitor OR NRTI OR cGAS OR STING) AND (aging OR ageing OR senescence OR Alzheimer OR cognition OR neuroinflammation OR inflammation OR longevity OR lifespan OR healthspan OR older)), Entrez dates and publication dates 2026-06-02 to 2026-06-06",
+      "checked_at": "2026-06-06T10:44:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28LINE1%20OR%20LINE-1%20OR%20retrotransposon%20OR%20transposable%20element%20OR%20lamivudine%20OR%203TC%20OR%20reverse%20transcriptase%20inhibitor%20OR%20cGAS%20OR%20STING%29%20AND%20%28aging%20OR%20senescence%20OR%20Alzheimer%20OR%20inflammation%29",
+      "summary": "Returned 22 Entrez-date records and 14 publication-date records. Close hits were cGAS-STING inhibitors or reviews, senescence/neurodegeneration review context, and disease-model innate-immunity papers. No new ART-AD/3TC, LINE1, retrotransposon, or reverse-transcriptase-inhibitor aging result was found."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "((clonal hematopoiesis OR clonal haematopoiesis OR CHIP OR TET2 OR DNMT3A OR ASXL1 OR JAK2 OR somatic mutation OR clone size OR variant allele fraction) AND (aging OR ageing OR cardiovascular OR canakinumab OR IL-1beta OR NLRP3 OR ziltivekimab OR colchicine OR cancer OR mortality OR trial OR intervention)), Entrez dates and publication dates 2026-06-02 to 2026-06-06",
+      "checked_at": "2026-06-06T10:44:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28clonal%20hematopoiesis%20OR%20CHIP%20OR%20TET2%20OR%20DNMT3A%20OR%20ASXL1%20OR%20somatic%20mutation%29%20AND%20%28aging%20OR%20cardiovascular%20OR%20canakinumab%20OR%20NLRP3%20OR%20trial%29",
+      "summary": "Returned 82 Entrez-date records and 50 publication-date records. The closest source was PMID 42230995 on DREAM repressive activity, mutation burden, lifespan, Alzheimer pathology, and mouse DREAM knockout. Other close records included CHIP cardiovascular risk in CKD, CAR-T manufacturing, somatic-mutation aging reviews, and preprints. No source showed direct human clone-size or mutation-burden control."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "query": "(lamivudine OR 3TC OR emtricitabine OR reverse transcriptase inhibitor OR NRTI) AND (Alzheimer OR aging OR ageing OR LINE1 OR LINE-1 OR retrotransposon OR senescence OR neuroinflammation), Entrez dates 2026-06-02 to 2026-06-06",
+      "checked_at": "2026-06-06T10:45:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned zero same-window reverse-transcriptase-inhibitor aging, Alzheimer, LINE1, or retrotransposon intervention records."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "query": "Supporting PMIDs 25247314, 30728521, 36949552, 37446327, 40104524, 35385050, 38701435, and 39107561 with correction, erratum, retraction, or concern title terms",
+      "checked_at": "2026-06-06T10:45:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned zero title-level correction, erratum, retraction, or expression-of-concern hits for the eight supporting PubMed sources."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "NCT04552795 ART-AD baseline registry; NCT04500847 LINE-AD; NCT07210528 SANTA; NCT06691217 TET2 canakinumab; NCT05021835 ZEUS; NCT05485961 POSIBIL6ESKD; broad LINE1, retrotransposon, reverse transcriptase inhibitor, clonal hematopoiesis, TET2, canakinumab, ziltivekimab, and NLRP3 terms",
+      "checked_at": "2026-06-06T10:46:00Z",
+      "url": "https://clinicaltrials.gov/search?term=lamivudine%20OR%203TC%20OR%20emtricitabine%20OR%20retrotransposon%20OR%20clonal%20hematopoiesis%20OR%20TET2%20OR%20canakinumab%20OR%20ziltivekimab",
+      "summary": "ART-AD NCT04552795 remains completed with posted results already captured by the baseline publication and no same-window update. LINE-AD NCT04500847 and SANTA NCT07210528 are recruiting no-results emtricitabine or FTC/TAF Alzheimer trials. TET2 CHIP canakinumab NCT06691217 is recruiting without results. ZEUS ziltivekimab and POSIBIL6ESKD clazakizumab remain no-results inflammatory cardiovascular or ESKD programs rather than CHIP clone-control evidence. Same-window broad-query updates were mostly oncology, HIV, device, and false-positive records."
+    },
+    {
+      "source_name": "bioRxiv and medRxiv APIs",
+      "query": "Date window 2026-06-02 to 2026-06-06 with LINE1, LINE-1, retrotransposon, transposable element, endogenous retrovirus, HERV, lamivudine, 3TC, reverse transcriptase, clonal hematopoiesis, clonal haematopoiesis, TET2, DNMT3A, ASXL1, somatic mutation, variant allele fraction, DREAM, cGAS, and STING screens",
+      "checked_at": "2026-06-06T10:47:00Z",
+      "url": "https://api.biorxiv.org/",
+      "summary": "Full paginated screening found many false positives from organ-on-chip and STING terms. Close records included a medRxiv MSA brain clonal-haematopoiesis-gene mutation preprint, somatic-mutation detection method preprints, dapansutrile NLRP3 mechanism context, and aging-genome/somatic-mutation preprints already visible through PubMed. No preprint reported controlled human reverse-transcriptase target engagement, functional aging benefit, or clone-control results."
+    },
+    {
+      "source_name": "Web search and primary-source follow-up",
+      "query": "lamivudine 3TC ART-AD Alzheimer's trial results June 2026 LINE1 retrotransposon; DREAM repressive activity links somatic mutation lifespan disease Nat Aging 2026; clonal hematopoiesis CHIP canakinumab TET2 trial 2026 results; reverse transcriptase inhibitor LINE1 aging trial 2026; TPN-101 ARPA-H healthy aging trial; tenofovir alafenamide biological age retrotransposon healthy adults 2026",
+      "checked_at": "2026-06-06T10:48:00Z",
+      "url": "https://www.google.com/search?q=lamivudine%203TC%20ART-AD%20Alzheimer%27s%20trial%20results%20June%202026%20LINE1%20retrotransposon",
+      "summary": "Web follow-up surfaced pre-baseline source-completeness leads: ARPA-H award 4201 for repurposing reverse transcriptase inhibitors to treat aging, Brown/University of Rochester descriptions of a planned 200-person TPN-101 healthy-aging trial, Transposon Therapeutics' TPN-101 ARPA-H release, LINE-AD/SANTA registries, and PMID 41929344 for FTC/TAF biological-age signals. These require coverage repair rather than a surveillance-window public bundle."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 42230995",
+      "title": "DREAM repressive activity links somatic mutation, lifespan and disease.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42230995/",
+      "decision": "context_only",
+      "reason": "Post-baseline Nat Aging source directly relevant to somatic-mutation biology and mouse mutation accumulation. It is not a controlled human intervention or drug-like clone-control result, so it does not move the stage immediately; it should be source-reviewed during coverage repair."
+    },
+    {
+      "reference": "PMID 41929344",
+      "title": "An FDA-Approved Tenofovir Alafenamide-Based Antiretroviral Therapy Reduces Biological Age in Healthy Adults: First Human Proof-of-Concept for Retrotransposon-Targeted Gerotherapeutics.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41929344/",
+      "decision": "context_only",
+      "reason": "Pre-baseline medRxiv source in healthy adults reporting FTC/TAF DNA-methylation biological-age and inflammatory-proxy changes. It may affect the support map, but it predates the surveillance window and needs source-fidelity review, direct-transposable-element-readout scrutiny, and conflict/sponsor boundary review."
+    },
+    {
+      "reference": "PMID 42219647",
+      "title": "Transposable elements in aging: From biomarkers to effectors.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42219647/",
+      "decision": "context_only",
+      "reason": "Recent review chapter that may be useful for coverage repair and taxonomy boundaries, but it is not new primary intervention evidence."
+    },
+    {
+      "reference": "NCT04500847",
+      "title": "Repurposing Nucleoside Reverse Transcriptase Inhibitors for Treatment of AD",
+      "url": "https://clinicaltrials.gov/study/NCT04500847",
+      "decision": "no_results",
+      "reason": "Recruiting LINE-AD emtricitabine registry with no posted results and no same-window update. It is important trial-watch context for coverage repair."
+    },
+    {
+      "reference": "NCT07210528",
+      "title": "Safety Of Nrtis for Alzheimer's Therapeutic Advancement in Singapore Study",
+      "url": "https://clinicaltrials.gov/study/NCT07210528",
+      "decision": "no_results",
+      "reason": "Recruiting SANTA registry for emtricitabine or FTC/TAF in MCI or Alzheimer dementia with no posted results. It is pre-window trial-watch context."
+    },
+    {
+      "reference": "ARPA-H award 4201",
+      "title": "Repurposing Reverse Transcriptase Inhibitors to Treat Aging",
+      "url": "https://arpa-h.gov/explore-funding/awards/4201",
+      "decision": "context_only",
+      "reason": "Pre-baseline PROSPR award to evaluate whether a reverse-transcriptase inhibitor can improve aging-related outcomes. It is activity and trial-planning context, not a posted clinical result."
+    },
+    {
+      "reference": "Transposon Therapeutics TPN-101 ARPA-H release",
+      "title": "Transposon Therapeutics' TPN-101 to be Studied for Extending Healthy Aging under ARPA-H Award for up to $22M",
+      "url": "https://www.globenewswire.com/news-release/2026/03/04/3249213/0/en/transposon-therapeutics-tpn-101-to-be-studied-for-extending-healthy-aging-under-arpa-h-award-for-up-to-22m.html",
+      "decision": "context_only",
+      "reason": "Sponsor release describing TPN-101 and planned healthy-aging development. It should be treated as a lead to primary award or registry data, not efficacy evidence."
+    },
+    {
+      "reference": "NCT06691217",
+      "title": "Effects of IL-1 Beta Inhibition on Vascular Inflammation in TET2 Clonal Hematopoiesis",
+      "url": "https://clinicaltrials.gov/study/NCT06691217",
+      "decision": "no_results",
+      "reason": "Recruiting canakinumab/TET2 CHIP vascular-inflammation registry without posted results. It may become important CHIP-targeted evidence but does not yet show clone dynamics or clinical outcomes."
+    },
+    {
+      "reference": "NCT05021835",
+      "title": "ZEUS - A Research Study to Look at How Ziltivekimab Works Compared to Placebo in People With Cardiovascular Disease, Chronic Kidney Disease and Inflammation",
+      "url": "https://clinicaltrials.gov/study/NCT05021835",
+      "decision": "no_results",
+      "reason": "Active-not-recruiting IL-6 inflammatory cardiovascular outcomes trial without posted results. It is adjacent inflammatory-risk context, not CHIP-specific clone-control evidence."
+    },
+    {
+      "reference": "NCT05485961",
+      "title": "Combined Dose-Finding and CV Outcomes Study With CSL300 (Clazakizumab) in Adult Subjects With ESKD Undergoing Dialysis",
+      "url": "https://clinicaltrials.gov/study/NCT05485961",
+      "decision": "no_results",
+      "reason": "Recruiting IL-6/ESKD cardiovascular outcomes registry updated on 2026-06-02 with no posted results. It is adjacent inflammatory cardiovascular context, not direct transposon or CHIP mutation-control evidence."
+    },
+    {
+      "reference": "PMID 42232585",
+      "title": "Clonal hematopoiesis of indeterminate potential is associated with increased cardiovascular risk in chronic kidney disease.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42232585/",
+      "decision": "context_only",
+      "reason": "Prospective CKD observational association of CHIP with coronary lesions and adverse events. It reinforces disease relevance but does not test an intervention or clone-control strategy."
+    },
+    {
+      "reference": "medRxiv 10.64898/2026.03.17.26346081",
+      "title": "Multiple system atrophy is associated with brain somatic mutations in clonal haematopoiesis genes",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.03.17.26346081v1",
+      "decision": "context_only",
+      "reason": "Preprint linking MSA brain samples to clonal-haematopoiesis-gene mutations. It is human observational disease context without intervention evidence."
+    },
+    {
+      "reference": "PMID 42230579",
+      "title": "Rational design of carbazole-based STING inhibitors for treating cGAS-STING pathway-driven inflammatory disorders.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42230579/",
+      "decision": "context_only",
+      "reason": "Preclinical STING inhibitor source in inflammatory-disease models. It is downstream innate-immunity context rather than retrotransposon suppression or aging target-engagement evidence."
+    }
+  ],
+  "source_ids": [
+    "pmid-25247314",
+    "pmid-30728521",
+    "pmid-36949552",
+    "pmid-37446327",
+    "pmid-40104524",
+    "pmid-35385050",
+    "pmid-38701435",
+    "pmid-39107561"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42230995/",
+    "https://pubmed.ncbi.nlm.nih.gov/41929344/",
+    "https://pubmed.ncbi.nlm.nih.gov/42219647/",
+    "https://clinicaltrials.gov/study/NCT04552795",
+    "https://clinicaltrials.gov/study/NCT04500847",
+    "https://clinicaltrials.gov/study/NCT07210528",
+    "https://clinicaltrials.gov/study/NCT06691217",
+    "https://clinicaltrials.gov/study/NCT05021835",
+    "https://clinicaltrials.gov/study/NCT05485961",
+    "https://arpa-h.gov/explore-funding/awards/4201",
+    "https://www.brown.edu/news/2026-02-24/aging-research-arpa",
+    "https://www.globenewswire.com/news-release/2026/03/04/3249213/0/en/transposon-therapeutics-tpn-101-to-be-studied-for-extending-healthy-aging-under-arpa-h-award-for-up-to-22m.html",
+    "https://www.medrxiv.org/content/10.64898/2026.03.17.26346081v1",
+    "https://pubmed.ncbi.nlm.nih.gov/42232585/",
+    "https://pubmed.ncbi.nlm.nih.gov/42230579/"
+  ],
+  "notes": [
+    "Triage selected this as the rank-1 ready surveillance item after chromatin-and-histone-modulation surveillance was committed and pushed.",
+    "The delta window was anchored to publication event publish-transposon-and-somatic-mutation-control-bootstrap-2026-06-01-2026-06-02t00-31-27-696z.",
+    "This track had no prior coverage assessment. The new assessment remains thin and recommends coverage repair before ordinary surveillance resumes.",
+    "PMID 42230995 is a same-window source worth reviewing, but it strengthens somatic-mutation mechanism rather than providing drug-like or controlled-human target-engagement evidence.",
+    "The public boundary remains unchanged for now: ART-AD remains the small open-label human biomarker anchor; LINE1/3TC evidence remains animal or early translational; CANTOS/TET2 remains downstream IL-1beta modulation; no source shows direct human clone-size or somatic-mutation-burden reduction."
+  ],
+  "next_actions": [
+    "Run bounded coverage repair for reverse-transcriptase inhibitor human biomarker and trial-watch context, including PMID 41929344, NCT04500847, NCT07210528, ARPA-H award 4201, and TPN-101 program sources.",
+    "During repair, decide whether PMID 42230995 should become a public support-map source for somatic-mutation mechanism and animal mutation-burden reduction.",
+    "Review CHIP-targeted canakinumab/TET2 and inflammatory cardiovascular trial-watch records, especially NCT06691217, while keeping clone-control boundaries separate from cytokine modulation.",
+    "Create a public bundle only after source-fidelity review shows that one or more missing sources should alter support-map wording, confidence, blockers, activity/trial-watch context, or taxonomy boundaries."
+  ]
+}

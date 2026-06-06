@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-06T00:58:03.310Z",
+  "generated_at": "2026-06-06T10:55:58.836Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-06T00:58:03.222Z",
-    "research_priority_queue_updated_at": "2026-06-06T00:58:03.222Z",
+    "research_coverage_status_updated_at": "2026-06-06T10:55:58.742Z",
+    "research_priority_queue_updated_at": "2026-06-06T10:55:58.742Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
-    "surveillance_queue_count": 38,
-    "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 30,
+    "surveillance_queue_count": 37,
+    "coverage_repair_queue_count": 1,
+    "coverage_assessment_backlog_count": 29,
     "unnormalized_intervention_id_count": 70,
     "unnormalized_intervention_reference_count": 138
   },
@@ -32,8 +32,8 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "surveillance-transposon-and-somatic-mutation-control",
-    "top_mode": "surveillance",
+    "top_work_item_id": "coverage-repair-transposon-and-somatic-mutation-control",
+    "top_mode": "coverage_repair",
     "active_editorial_count": 0,
     "ready_research_count": 38,
     "data_hardening_count": 1,
@@ -45,14 +45,14 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "surveillance-transposon-and-somatic-mutation-control",
-      "mode": "surveillance",
+      "item_id": "coverage-repair-transposon-and-somatic-mutation-control",
+      "mode": "coverage_repair",
       "domain": "research",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Run surveillance for Transposon and Somatic Mutation Control",
-      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 15; rank 1 was recently handled by a surveillance or coverage-repair session.",
-      "default_action": "Run one track-level surveillance pass, record materiality, excluded sources, and a session; create a bundle only for a material public change.",
+      "title": "Repair coverage for Transposon and Somatic Mutation Control",
+      "rationale": "Run a bounded coverage-repair pass focused on reverse-transcriptase-inhibitor human biomarker and trial-watch context, TPN-101/ARPA-H healthy-aging activity, DREAM/somatic-mutation biology, TET2 CHIP canakinumab trial-watch records, and recent review triangulation before ordinary surveillance resumes.",
+      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
       "track_id": "transposon-and-somatic-mutation-control",
       "hallmark_id": "genomic_instability",
       "references": [
@@ -63,6 +63,42 @@
         {
           "record_type": "hallmark",
           "record_id": "genomic_instability"
+        }
+      ],
+      "runbook_path": "docs/coverage-assessment.md",
+      "source_paths": [
+        "research/backlog/track-priority.v1.json",
+        "research/state/coverage-status.v1.json",
+        "research/coverage-assessments",
+        "docs/coverage-assessment.md"
+      ],
+      "signals": [
+        {
+          "name": "generated_queue_rank",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "item_id": "surveillance-live-biotherapeutics-and-engineered-microbes",
+      "mode": "surveillance",
+      "domain": "research",
+      "priority_tier": "now",
+      "status": "ready",
+      "title": "Run surveillance for Live Biotherapeutics and Engineered Microbes",
+      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 15; rank 1 was recently handled by a surveillance or coverage-repair session.",
+      "default_action": "Run one track-level surveillance pass, record materiality, excluded sources, and a session; create a bundle only for a material public change.",
+      "track_id": "live-biotherapeutics-and-engineered-microbes",
+      "hallmark_id": "dysbiosis",
+      "references": [
+        {
+          "record_type": "track",
+          "record_id": "live-biotherapeutics-and-engineered-microbes"
+        },
+        {
+          "record_type": "hallmark",
+          "record_id": "dysbiosis"
         }
       ],
       "runbook_path": "docs/surveillance-checklist.md",
@@ -87,14 +123,14 @@
       ]
     },
     {
-      "rank": 2,
+      "rank": 3,
       "item_id": "coverage-assessment-backfill-chromatin-and-histone-modulation",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
       "title": "Backfill coverage assessment for Chromatin and Histone Modulation",
-      "rationale": "30 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the surveillance queue.",
+      "rationale": "29 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the surveillance queue.",
       "default_action": "Review the published outlook, session, bundle, evidence reviews, and publication event, then create a coverage assessment without changing public records.",
       "track_id": "chromatin-and-histone-modulation",
       "hallmark_id": "epigenetic_alterations",
@@ -117,7 +153,7 @@
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 30
+          "value": 29
         },
         {
           "name": "generated_surveillance_queue_rank",
@@ -130,7 +166,7 @@
       ]
     },
     {
-      "rank": 3,
+      "rank": 4,
       "item_id": "data-normalization-intervention-refs",
       "mode": "data_normalization",
       "domain": "data",
