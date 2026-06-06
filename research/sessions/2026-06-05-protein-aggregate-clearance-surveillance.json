@@ -1,0 +1,227 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-05-protein-aggregate-clearance-surveillance",
+  "name": "Protein aggregate clearance surveillance pass for June 5, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-05T23:31:30Z",
+  "completed_at": "2026-06-05T23:37:10Z",
+  "scope": {
+    "question": "What changed for Protein Aggregate Clearance since the 2026-06-02 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "loss_of_proteostasis"
+    ],
+    "track_ids": [
+      "protein-aggregate-clearance"
+    ],
+    "intervention_ids": [
+      "lecanemab",
+      "donanemab",
+      "ni006",
+      "coramitug",
+      "patisiran",
+      "tafamidis",
+      "acoramidis",
+      "vutrisiran"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "no_op",
+  "summary": "Ran a delta surveillance pass from the 2026-06-02T12:29:42.280Z public baseline publication through 2026-06-05. PubMed searches found same-window Alzheimer, ATTR, amyloid, proteostasis, and aggregate-remodeling records, but none supplied a new pivotal treatment result, direct aggregate-depleter functional or outcome evidence, broad aging proteostasis benefit, regulatory reversal, or correction that changes the current low-confidence durable_disease_or_mortality_relevance outlook. The closest post-baseline safety item was a severe lecanemab ARIA case report, which reinforces the already explicit ARIA and monitoring blocker without changing stage, confidence, or support-map wording. ATTR-specific hits were commentary, diagnostics, hereditary ATTR real-world diflunisal context, or non-interventional clinical features. ClinicalTrials.gov checks found the eight baseline registries unchanged in material terms; same-window Alzheimer registry updates such as TRAILBLAZER-ALZ 5 and AHEAD 3-45 had no posted results. Preprint and web checks returned safety, biomarker, and basic proteostasis context only. No public outlook, source, study, finding, activity, bundle, or coverage assessment update is warranted.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "none",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The public baseline already assigns low-confidence durable_disease_or_mortality_relevance through narrow ATTR-CM outcome trials, while explicitly limiting broad aging claims and naming Alzheimer's antibody ARIA, infusion burden, substrate heterogeneity, and direct-clearance versus precursor-suppression boundaries. Current PubMed, ClinicalTrials.gov, preprint, regulator, sponsor, and web checks did not identify a post-baseline change to stage, confidence, momentum, blockers, safety interpretation, support-map evidence, or forecast criteria."
+  },
+  "search_log": [
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "(lecanemab OR donanemab OR aducanumab OR anti-amyloid OR amyloid beta OR amyloid-beta OR Alzheimer OR transthyretin OR ATTR OR ATTR-CM OR tafamidis OR acoramidis OR patisiran OR vutrisiran OR eplontersen OR NI006 OR coramitug OR PRX004 OR amyloid clearance OR aggregate clearance OR protein aggregate OR proteostasis) AND (trial OR randomized OR phase OR treatment OR antibody OR clearance OR depletion OR cardiomyopathy OR amyloid OR aging OR older OR dementia), Entrez dates and publication dates 2026-06-02 to 2026-06-05",
+      "checked_at": "2026-06-05T23:33:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28lecanemab%20OR%20donanemab%20OR%20aducanumab%20OR%20%22anti-amyloid%22%20OR%20%22amyloid%20beta%22%20OR%20amyloid-beta%20OR%20Alzheimer%20OR%20transthyretin%20OR%20ATTR%20OR%20ATTR-CM%20OR%20tafamidis%20OR%20acoramidis%20OR%20patisiran%20OR%20vutrisiran%20OR%20eplontersen%20OR%20NI006%20OR%20coramitug%20OR%20PRX004%20OR%20%22amyloid%20clearance%22%20OR%20%22aggregate%20clearance%22%20OR%20%22protein%20aggregate%22%20OR%20proteostasis%29%20AND%20%28trial%20OR%20randomized%20OR%20phase%20OR%20treatment%20OR%20antibody%20OR%20clearance%20OR%20depletion%20OR%20cardiomyopathy%20OR%20amyloid%20OR%20aging%20OR%20older%20OR%20dementia%29",
+      "summary": "Returned 258 Entrez-date records and 159 publication-date records in the broad screen. Close records included severe lecanemab ARIA case context, acoramidis access commentary, diflunisal real-world hereditary ATTR context, ATTR diagnostic imaging, reticulophagy APP clearance, tau PROTAC nanoparticles, amyloid fibril remodeling, 40 Hz flicker in AD mice, and photobiomodulation in MCI. None changed the public protein-aggregate-clearance interpretation."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "(transthyretin OR ATTR OR ATTR-CM OR cardiac amyloidosis OR tafamidis OR acoramidis OR patisiran OR vutrisiran OR eplontersen OR NI006 OR coramitug OR PRX004) AND (trial OR phase OR cardiomyopathy OR amyloid OR antibody OR silencer OR stabilizer OR outcome OR mortality), Entrez dates 2026-06-02 to 2026-06-05",
+      "checked_at": "2026-06-05T23:33:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28transthyretin%20OR%20ATTR%20OR%20ATTR-CM%20OR%20%22cardiac%20amyloidosis%22%20OR%20tafamidis%20OR%20acoramidis%20OR%20patisiran%20OR%20vutrisiran%20OR%20eplontersen%20OR%20NI006%20OR%20coramitug%20OR%20PRX004%29%20AND%20%28trial%20OR%20phase%20OR%20cardiomyopathy%20OR%20amyloid%20OR%20antibody%20OR%20silencer%20OR%20stabilizer%20OR%20outcome%20OR%20mortality%29",
+      "summary": "Returned 21 records. The closest treatment-context items were PMID 42247580, an acoramidis value/access editorial, and PMID 42233236, a hereditary ATTR diflunisal real-world analysis. Other hits were diagnostic, hereditary clinical-feature, AL amyloidosis, or non-intervention context. No new ATTR-CM outcome or direct-depleter functional result was found."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "(lecanemab OR donanemab OR aducanumab OR remternetug OR gantenerumab OR anti-amyloid OR amyloid beta OR amyloid-beta OR Alzheimer) AND (trial OR phase OR antibody OR ARIA OR safety OR cognitive OR dementia OR amyloid), Entrez dates 2026-06-02 to 2026-06-05",
+      "checked_at": "2026-06-05T23:34:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28lecanemab%20OR%20donanemab%20OR%20aducanumab%20OR%20remternetug%20OR%20gantenerumab%20OR%20%22anti-amyloid%22%20OR%20%22amyloid%20beta%22%20OR%20amyloid-beta%20OR%20Alzheimer%29%20AND%20%28trial%20OR%20phase%20OR%20antibody%20OR%20ARIA%20OR%20safety%20OR%20cognitive%20OR%20dementia%20OR%20amyloid%29",
+      "summary": "Returned 219 Entrez-date records, mostly observational, diagnostic, pathology, survey, or preclinical Alzheimer's records. The closest safety item was PMID 42237657, a severe lecanemab ARIA case report; it reinforces an existing public safety blocker but does not change the outlook."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "query": "Supporting PMIDs 36449413, 37459141, 37212440, 41212997, 37888916, 30145929, 38197816, and 39213194 with correction, erratum, retraction, or concern title terms",
+      "checked_at": "2026-06-05T23:34:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned zero title-level correction, erratum, retraction, or expression-of-concern hits for the eight supporting PubMed sources."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "Baseline registries NCT03887455, NCT04437511, NCT04360434, NCT05442047, NCT03997383, NCT01994889, NCT03860935, and NCT04153149",
+      "checked_at": "2026-06-05T23:35:00Z",
+      "url": "https://clinicaltrials.gov/search?term=NCT03887455%20OR%20NCT04437511%20OR%20NCT04360434%20OR%20NCT05442047%20OR%20NCT03997383%20OR%20NCT01994889%20OR%20NCT03860935%20OR%20NCT04153149",
+      "summary": "Baseline trial records were unchanged in material terms. Clarity AD remains active-not-recruiting with no posted registry results; TRAILBLAZER-ALZ 2, APOLLO-B, ATTR-ACT, ATTRibute-CM, and HELIOS-B retain posted results; NI006 and coramitug remain completed without posted registry results. No same-window result or status change altered the public support map."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "Alzheimer antibody terms lecanemab, donanemab, aducanumab, remternetug, and gantenerumab",
+      "checked_at": "2026-06-05T23:35:00Z",
+      "url": "https://clinicaltrials.gov/search?term=%28lecanemab%20OR%20donanemab%20OR%20aducanumab%20OR%20remternetug%20OR%20gantenerumab%29%20AND%20%28Alzheimer%20OR%20amyloid%29",
+      "summary": "Returned active, completed, terminated, and recruiting Alzheimer antibody studies. Same-window updates included NCT05508789 on 2026-06-03 and NCT04468659 on 2026-06-04, both without posted results. No new anti-amyloid efficacy or safety result was found."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "ATTR and transthyretin terms including tafamidis, acoramidis, patisiran, vutrisiran, eplontersen, NI006, coramitug, and PRX004",
+      "checked_at": "2026-06-05T23:35:00Z",
+      "url": "https://clinicaltrials.gov/search?term=%28transthyretin%20OR%20ATTR%20OR%20ATTR-CM%20OR%20tafamidis%20OR%20acoramidis%20OR%20patisiran%20OR%20vutrisiran%20OR%20eplontersen%20OR%20NI006%20OR%20coramitug%20OR%20PRX004%29",
+      "summary": "Returned ATTR-CM, ATTRv, amyloidosis, biomarker, diagnostic, screening, extension, and treatment studies. Same-window updated records were diagnostic, registry, or surveillance contexts without new result-bearing evidence for aggregate clearance."
+    },
+    {
+      "source_name": "bioRxiv and medRxiv APIs",
+      "query": "Date window 2026-06-02 to 2026-06-05 with lecanemab, donanemab, aducanumab, remternetug, gantenerumab, anti-amyloid, amyloid beta, transthyretin, ATTR-CM, tafamidis, acoramidis, patisiran, vutrisiran, eplontersen, NI006, coramitug, PRX004, amyloid clearance, aggregate clearance, protein aggregate, and proteostasis screens",
+      "checked_at": "2026-06-05T23:36:00Z",
+      "url": "https://api.biorxiv.org/",
+      "summary": "Returned one medRxiv ARIA-H risk preprint, one Lewy body dementia CSF proteomics preprint, and one basic proteasome-balance preprint. These are safety, biomarker, or mechanistic context only and do not change public evidence claims."
+    },
+    {
+      "source_name": "Web search and primary-source follow-up",
+      "query": "June 2026 lecanemab ARIA case report; June 2026 acoramidis ATTR cardiomyopathy access value; June 2026 donanemab lecanemab Alzheimer's trial update FDA EMA; June 2026 coramitug ATTR-CM phase 2 NNC6019 update",
+      "checked_at": "2026-06-05T23:36:00Z",
+      "url": "https://www.google.com/search?q=June%202026%20lecanemab%20ARIA%20case%20report",
+      "summary": "Returned FDA, EMA, publisher, registry mirror, and sponsor or discussion leads. Current regulator pages and search results did not identify a same-window label, approval, safety, or efficacy change that supersedes the public baseline."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 42237657",
+      "title": "Severe amyloid-related imaging abnormalities associated with lecanemab in Hong Kong: a case report.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42237657/",
+      "decision": "context_only",
+      "reason": "Post-baseline severe ARIA case report. The public outlook already names ARIA, infusion burden, and treatment monitoring as major blockers; a single case report reinforces but does not change stage, confidence, or support-map wording."
+    },
+    {
+      "reference": "PMID 42233236",
+      "title": "Efficacy of diflunisal for hereditary transthyretin amyloidosis: the Swedish real-world experience.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42233236/",
+      "decision": "context_only",
+      "reason": "Real-world hereditary ATTR diflunisal evidence, not direct aggregate clearance and not the ATTR-CM outcome or direct-depleter evidence that drives the current stage. It may be relevant to future coverage assessment but is not a same-window public outlook delta."
+    },
+    {
+      "reference": "PMID 42247580",
+      "title": "Acoramidis for ATTR cardiomyopathy: value, access, and the duty to treat.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42247580/",
+      "decision": "context_only",
+      "reason": "Editorial or commentary on acoramidis value and access. It does not add new efficacy, safety, aggregate-load, hospitalization, or mortality evidence beyond the existing ATTRibute-CM source."
+    },
+    {
+      "reference": "PMID 42237481",
+      "title": "Reticulophagy limits Alzheimer's disease pathology through FAM134B-dependent APP clearance.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42237481/",
+      "decision": "context_only",
+      "reason": "Mechanistic and mouse Alzheimer's reticulophagy source. It is relevant biology for APP clearance but does not test a clinically staged intervention or treated-human aggregate-clearance outcome."
+    },
+    {
+      "reference": "PMID 42241608",
+      "title": "Glycoengineered Host-Guest Nanoparticles Potentiate Alzheimer's Disease Therapy via Lesion-Specific Modulation of Tau Pathology.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42241608/",
+      "decision": "context_only",
+      "reason": "Preclinical tau PROTAC nanoparticle work in cellular and mouse models. It is promising mechanism context but does not alter the disease-specific human outcome baseline."
+    },
+    {
+      "reference": "PMID 42243086",
+      "title": "ATP binding to lysozyme and superfolder GFP amyloid fibrils induces aggregate remodeling and attenuates their cytotoxicity.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42243086/",
+      "decision": "context_only",
+      "reason": "In vitro amyloid-fibril remodeling and toxicity context. It does not provide an intervention result in aging, Alzheimer's disease, or ATTR disease populations."
+    },
+    {
+      "reference": "PMID 42239728",
+      "title": "High intensity 40 Hz flicker improves amyloid pathology and cognition with autophagy in 3xTg mice.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42239728/",
+      "decision": "context_only",
+      "reason": "Preclinical Alzheimer's mouse stimulation study with amyloid and cognition effects. It does not change the human antibody- and ATTR-driven public baseline."
+    },
+    {
+      "reference": "PMID 42234006",
+      "title": "Quantitative 99mTc-PYP SPECT/CT at 90 minutes improves diagnostic stratification in transthyretin cardiac amyloidosis.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42234006/",
+      "decision": "wrong_scope",
+      "reason": "ATTR-CM diagnostic imaging paper, not a protein aggregate clearance intervention or outcome result."
+    },
+    {
+      "reference": "NCT05508789",
+      "title": "A Study of Donanemab in Participants With Early Symptomatic Alzheimer's Disease (TRAILBLAZER-ALZ 5)",
+      "url": "https://clinicaltrials.gov/study/NCT05508789",
+      "decision": "no_results",
+      "reason": "Active-not-recruiting Alzheimer antibody registry updated on 2026-06-03 with no posted results. This is trial-watch context only."
+    },
+    {
+      "reference": "NCT04468659",
+      "title": "AHEAD 3-45 Study: A Study to Evaluate Efficacy and Safety of Treatment With Lecanemab in Participants With Preclinical Alzheimer's Disease",
+      "url": "https://clinicaltrials.gov/study/NCT04468659",
+      "decision": "no_results",
+      "reason": "Active-not-recruiting lecanemab prevention registry updated on 2026-06-04 with no posted results. No public evidence change is warranted."
+    },
+    {
+      "reference": "medRxiv 10.64898/2026.05.30.26354521",
+      "title": "Dynamic Imaging Markers of ARIA-H Risk in the A4 Study: A Person-Interval Analysis of Current Lesion Burden and Recent Microhaemorrhage Activity",
+      "url": "https://www.medrxiv.org/content/10.1101/2026.05.30.26354521v1",
+      "decision": "context_only",
+      "reason": "Preprint safety-risk context around ARIA-H. It does not report a new treatment efficacy result or change the already explicit anti-amyloid safety boundary."
+    }
+  ],
+  "source_ids": [
+    "pmid-36449413",
+    "pmid-37459141",
+    "pmid-37212440",
+    "pmid-41212997",
+    "pmid-37888916",
+    "pmid-30145929",
+    "pmid-38197816",
+    "pmid-39213194"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42237657/",
+    "https://pubmed.ncbi.nlm.nih.gov/42233236/",
+    "https://pubmed.ncbi.nlm.nih.gov/42247580/",
+    "https://pubmed.ncbi.nlm.nih.gov/42237481/",
+    "https://pubmed.ncbi.nlm.nih.gov/42241608/",
+    "https://pubmed.ncbi.nlm.nih.gov/42243086/",
+    "https://pubmed.ncbi.nlm.nih.gov/42239728/",
+    "https://pubmed.ncbi.nlm.nih.gov/42234006/",
+    "https://clinicaltrials.gov/study/NCT03887455",
+    "https://clinicaltrials.gov/study/NCT04437511",
+    "https://clinicaltrials.gov/study/NCT04360434",
+    "https://clinicaltrials.gov/study/NCT05442047",
+    "https://clinicaltrials.gov/study/NCT03997383",
+    "https://clinicaltrials.gov/study/NCT01994889",
+    "https://clinicaltrials.gov/study/NCT03860935",
+    "https://clinicaltrials.gov/study/NCT04153149",
+    "https://clinicaltrials.gov/study/NCT05508789",
+    "https://clinicaltrials.gov/study/NCT04468659",
+    "https://www.medrxiv.org/content/10.1101/2026.05.30.26354521v1"
+  ],
+  "notes": [
+    "Triage selected this as the rank-1 next distinct surveillance target after the selective-autophagy no-op pass.",
+    "The delta window was anchored to publication event publish-protein-aggregate-clearance-bootstrap-2026-06-02-2026-06-02t12-29-42-280z.",
+    "No coverage assessment exists yet for this track; this ordinary surveillance pass did not discover a material category-level change requiring immediate coverage repair.",
+    "The public boundary remains unchanged: disease-specific ATTR-CM outcomes justify the stage, Alzheimer's antibodies support direct pathology lowering with modest clinical slowing, direct ATTR depleter antibodies remain biomarker or functional-boundary evidence, and no generalized aging proteostasis benefit is established."
+  ],
+  "next_actions": [
+    "Continue ordinary surveillance for direct aggregate-depleter outcome results, especially NI006, coramitug, and related ATTR amyloid-depletion programs.",
+    "Watch Alzheimer antibody registries and regulator communications for new ARIA, label, prevention, dosing, or real-world effectiveness evidence that changes net-benefit interpretation.",
+    "Backfill a coverage assessment as a separate maintenance task if internal source-landscape completeness is prioritized.",
+    "Create a public bundle only if future evidence changes stage, confidence, momentum, blockers, safety, direct-clearance boundaries, or support-map wording."
+  ]
+}
