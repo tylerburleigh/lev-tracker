@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-06T11:29:19.890Z",
+  "generated_at": "2026-06-06T12:22:48.654Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-06T11:29:19.796Z",
-    "research_priority_queue_updated_at": "2026-06-06T11:29:19.797Z",
-    "active_candidate_bundle_count": 1,
+    "research_coverage_status_updated_at": "2026-06-06T12:22:48.540Z",
+    "research_priority_queue_updated_at": "2026-06-06T12:22:48.540Z",
+    "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
-    "surveillance_queue_count": 37,
+    "surveillance_queue_count": 38,
     "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 29,
     "unnormalized_intervention_id_count": 70,
@@ -32,10 +32,10 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "editorial_review-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06",
-    "top_mode": "editorial_review",
-    "active_editorial_count": 1,
-    "ready_research_count": 37,
+    "top_work_item_id": "editorial-rollup-public-summary-surfaces",
+    "top_mode": "editorial_rollup",
+    "active_editorial_count": 0,
+    "ready_research_count": 38,
     "data_hardening_count": 1,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
@@ -45,35 +45,73 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "editorial_review-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06",
-      "mode": "editorial_review",
+      "item_id": "editorial-rollup-public-summary-surfaces",
+      "mode": "editorial_rollup",
       "domain": "editorial",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Review active bundle transposon-and-somatic-mutation-control-coverage-repair-2026-06-06",
-      "rationale": "Candidate bundle transposon-and-somatic-mutation-control-coverage-repair-2026-06-06 is submitted, so editorial work takes precedence over new research.",
-      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
-      "candidate_bundle_id": "transposon-and-somatic-mutation-control-coverage-repair-2026-06-06",
-      "runbook_path": "docs/admin-review.md",
-      "command": "npm run research:bundle -- validate --bundle transposon-and-somatic-mutation-control-coverage-repair-2026-06-06",
+      "title": "Review public editorial rollup surfaces",
+      "rationale": "Latest affected publication event publish-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-2026-06-06t12-22-33-769z is newer than the latest state-of-field edition. Overall outlook last_updated 2026-06-04 is older than the latest hallmark or track outlook change 2026-06-06. 1 hallmark insight(s) are unreviewed or older than affected outlook changes.",
+      "default_action": "Review overall outlook, state-of-field edition, hallmark insight copy, and forecast-facing method links; update public content only when the reviewed record warrants it.",
+      "runbook_path": "docs/editorial-rollup.md",
       "source_paths": [
-        "data/candidate-bundles",
-        "docs/admin-review.md"
+        "data/publication-events",
+        "data/outlooks",
+        "data/content/state-of-the-field",
+        "data/content/hallmark-insights.json",
+        "src/components/site-shell.tsx",
+        "docs/editorial-rollup.md"
       ],
       "references": [
         {
-          "record_type": "candidate_bundle",
-          "record_id": "transposon-and-somatic-mutation-control-coverage-repair-2026-06-06"
+          "record_type": "publication_event",
+          "record_id": "publish-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-2026-06-06t12-22-33-769z"
+        },
+        {
+          "record_type": "outlook",
+          "record_id": "overall-lev-outlook"
         }
       ],
       "signals": [
         {
-          "name": "lifecycle_status",
-          "value": "submitted"
+          "name": "trigger_count",
+          "value": 3
         },
         {
-          "name": "proposed_change_count",
-          "value": 26
+          "name": "latest_affected_publication_event_id",
+          "value": "publish-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-2026-06-06t12-22-33-769z"
+        },
+        {
+          "name": "latest_affected_publication_event_date",
+          "value": "2026-06-06"
+        },
+        {
+          "name": "latest_state_of_field_date",
+          "value": "2026-06-05"
+        },
+        {
+          "name": "overall_outlook_last_updated",
+          "value": "2026-06-04"
+        },
+        {
+          "name": "latest_non_overall_outlook_updated",
+          "value": "2026-06-06"
+        },
+        {
+          "name": "stale_hallmark_insight_count",
+          "value": 1
+        },
+        {
+          "name": "first_stale_hallmark_insight_id",
+          "value": "genomic_instability"
+        },
+        {
+          "name": "no_current_month_state_of_field",
+          "value": false
+        },
+        {
+          "name": "forecast_surface_gap",
+          "value": false
         }
       ]
     },
@@ -85,7 +123,7 @@
       "priority_tier": "now",
       "status": "ready",
       "title": "Run surveillance for Live Biotherapeutics and Engineered Microbes",
-      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 15; rank 1 was recently handled by a surveillance or coverage-repair session.",
+      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 16; rank 1 was recently handled by a surveillance or coverage-repair session.",
       "default_action": "Run one track-level surveillance pass, record materiality, excluded sources, and a session; create a bundle only for a material public change.",
       "track_id": "live-biotherapeutics-and-engineered-microbes",
       "hallmark_id": "dysbiosis",
@@ -108,7 +146,7 @@
       "signals": [
         {
           "name": "generated_queue_rank",
-          "value": 15
+          "value": 16
         },
         {
           "name": "last_session_mode",
@@ -155,7 +193,7 @@
         },
         {
           "name": "generated_surveillance_queue_rank",
-          "value": 1
+          "value": 2
         },
         {
           "name": "track_next_mode",

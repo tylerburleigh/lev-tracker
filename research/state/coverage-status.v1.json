@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-06T11:29:19.796Z",
+  "updated_at": "2026-06-06T12:22:48.540Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One bootstrap, surveillance, or coverage-repair run should cover one track unless the user explicitly narrows further.",
@@ -23,7 +23,7 @@
       "canonical_order": 1,
       "hallmark_bootstrap_status": "baseline",
       "tracked_public_outlook_count": 3,
-      "next_priority_track_id": "genome-surveillance-and-chromosome-stability",
+      "next_priority_track_id": "transposon-and-somatic-mutation-control",
       "notes": "At least one track-level public baseline exists."
     },
     {
@@ -161,15 +161,15 @@
       "name": "Transposon and Somatic Mutation Control",
       "coverage_status": "baseline",
       "next_mode": "surveillance",
-      "queue_state": "active_review",
+      "queue_state": "ready",
       "last_session_id": "2026-06-06-transposon-and-somatic-mutation-control-coverage-repair",
       "last_session_at": "2026-06-06T11:11:31Z",
       "last_session_mode": "coverage_repair",
       "last_session_outcome": "candidate_bundle_submitted",
       "last_candidate_bundle_id": "transposon-and-somatic-mutation-control-coverage-repair-2026-06-06",
-      "last_candidate_bundle_status": "submitted",
-      "last_publication_event_id": "publish-transposon-and-somatic-mutation-control-bootstrap-2026-06-01-2026-06-02t00-31-27-696z",
-      "last_published_at": "2026-06-02T00:31:27.696Z",
+      "last_candidate_bundle_status": "published",
+      "last_publication_event_id": "publish-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-2026-06-06t12-22-33-769z",
+      "last_published_at": "2026-06-06T12:22:33.769Z",
       "last_coverage_assessment_id": "transposon-and-somatic-mutation-control-coverage-repair-2026-06-06",
       "last_coverage_assessed_at": "2026-06-06T11:11:31Z",
       "coverage_verdict": "adequate",
@@ -178,7 +178,7 @@
       "next_coverage_action": "Review the staged coverage-repair bundle through source-fidelity, interpretation/forecast, safety-limitations, and taxonomy-mapping lanes. If approved and published, return transposon and somatic mutation control to ordinary surveillance with special watch on LINE-AD, SANTA, TPN-101/ARPA-H registry activity, FTC/TAF peer review, and NCT06691217 results.",
       "last_coverage_recommended_mode": "surveillance",
       "default_research_question": "What changed for Transposon and Somatic Mutation Control since the last meaningful review or publication, and does any change justify a public update?",
-      "notes": "Candidate bundle transposon-and-somatic-mutation-control-coverage-repair-2026-06-06 is still submitted."
+      "notes": "Latest publication event: publish-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-2026-06-06t12-22-33-769z."
     },
     {
       "track_id": "telomerase-restoration",

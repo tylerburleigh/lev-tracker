@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "emtricitabine-tenofovir-disoproxil-fumarate",
+  "name": "Emtricitabine / Tenofovir Disoproxil Fumarate",
+  "short_name": "FTC/TDF",
+  "summary": "Approved antiretroviral combination used as a contrast arm in the staged biological-age preprint, where no significant DNA methylation clock changes were reported.",
+  "aliases": [
+    "FTC/TDF",
+    "Truvada"
+  ],
+  "modalities": [
+    "small_molecule",
+    "combination"
+  ],
+  "target_hallmark_ids": [
+    "genomic_instability"
+  ],
+  "secondary_hallmark_ids": [
+    "chronic_inflammation"
+  ],
+  "track_ids": [
+    "transposon-and-somatic-mutation-control"
+  ],
+  "mechanism_summary": "Combines emtricitabine with the tenofovir disoproxil fumarate prodrug. In the staged post hoc geroscience source, FTC/TDF is a pharmacologic contrast to FTC/TAF rather than a positive aging-support signal.",
+  "development_stage": "approved_for_other_indication",
+  "linked_study_ids": [
+    "ftc-taf-biological-age-healthy-adults-posthoc-study"
+  ],
+  "linked_finding_ids": [
+    "ftc-taf-reduced-dnam-age-healthy-adults-preprint"
+  ],
+  "risk_flags": [
+    "repurposed-antiretroviral-combination",
+    "null-biomarker-contrast",
+    "not-positive-aging-support"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether tenofovir prodrug pharmacology explains the divergent FTC/TAF and FTC/TDF post hoc biomarker results",
+      "Whether FTC/TDF has any aging-relevant target-engagement signal in prospective studies"
+    ]
+  },
+  "tags": [
+    "transposon-and-somatic-mutation-control",
+    "ftc-tdf",
+    "tenofovir-disoproxil-fumarate",
+    "reverse-transcriptase-inhibitor",
+    "limiting-context"
+  ]
+}

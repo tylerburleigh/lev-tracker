@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "emtricitabine-tenofovir-alafenamide",
+  "name": "Emtricitabine / Tenofovir Alafenamide",
+  "short_name": "FTC/TAF",
+  "summary": "Approved antiretroviral combination being evaluated as a reverse-transcriptase-inhibitor geroscience strategy through post hoc biological-age biomarker analysis and MCI/Alzheimer disease trial-watch records.",
+  "aliases": [
+    "FTC/TAF",
+    "Descovy"
+  ],
+  "modalities": [
+    "small_molecule",
+    "combination"
+  ],
+  "target_hallmark_ids": [
+    "genomic_instability"
+  ],
+  "secondary_hallmark_ids": [
+    "chronic_inflammation"
+  ],
+  "track_ids": [
+    "transposon-and-somatic-mutation-control"
+  ],
+  "mechanism_summary": "Combines emtricitabine with the tenofovir alafenamide prodrug, producing intracellular nucleotide analog exposure that may inhibit reverse-transcription biology relevant to retroelements while retaining approved antiviral indications outside aging.",
+  "development_stage": "approved_for_other_indication",
+  "linked_study_ids": [
+    "ftc-taf-biological-age-healthy-adults-posthoc-study",
+    "santa-nrti-mci-registry"
+  ],
+  "linked_finding_ids": [
+    "ftc-taf-reduced-dnam-age-healthy-adults-preprint",
+    "santa-nrti-mci-recruiting-no-results"
+  ],
+  "risk_flags": [
+    "repurposed-antiretroviral-combination",
+    "preprint-human-biomarker-signal",
+    "post-hoc-dnam-endpoints",
+    "direct-transposable-element-readouts-missing",
+    "long-term-preventive-safety-unresolved"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether the DNA methylation aging signal replicates in prospective placebo-controlled geroscience trials",
+      "Whether FTC/TAF reduces direct LINE1, retrotransposon cDNA, or interferon target-engagement biomarkers in aging-relevant tissues",
+      "Whether effects generalize from young healthy adults to older adults or neurodegeneration populations"
+    ]
+  },
+  "tags": [
+    "transposon-and-somatic-mutation-control",
+    "ftc-taf",
+    "tenofovir-alafenamide",
+    "emtricitabine",
+    "reverse-transcriptase-inhibitor"
+  ]
+}
