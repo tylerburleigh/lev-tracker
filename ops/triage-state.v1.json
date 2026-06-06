@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-05T23:39:19.869Z",
+  "generated_at": "2026-06-06T00:58:03.310Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-05T23:39:19.770Z",
-    "research_priority_queue_updated_at": "2026-06-05T23:39:19.770Z",
+    "research_coverage_status_updated_at": "2026-06-06T00:58:03.222Z",
+    "research_priority_queue_updated_at": "2026-06-06T00:58:03.222Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 38,
@@ -32,7 +32,7 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "surveillance-chromatin-and-histone-modulation",
+    "top_work_item_id": "surveillance-transposon-and-somatic-mutation-control",
     "top_mode": "surveillance",
     "active_editorial_count": 0,
     "ready_research_count": 38,
@@ -45,24 +45,24 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "surveillance-chromatin-and-histone-modulation",
+      "item_id": "surveillance-transposon-and-somatic-mutation-control",
       "mode": "surveillance",
       "domain": "research",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Run surveillance for Chromatin and Histone Modulation",
-      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 14; rank 1 was recently handled by a surveillance or coverage-repair session.",
+      "title": "Run surveillance for Transposon and Somatic Mutation Control",
+      "rationale": "Next distinct surveillance target. Generated surveillance queue rank 15; rank 1 was recently handled by a surveillance or coverage-repair session.",
       "default_action": "Run one track-level surveillance pass, record materiality, excluded sources, and a session; create a bundle only for a material public change.",
-      "track_id": "chromatin-and-histone-modulation",
-      "hallmark_id": "epigenetic_alterations",
+      "track_id": "transposon-and-somatic-mutation-control",
+      "hallmark_id": "genomic_instability",
       "references": [
         {
           "record_type": "track",
-          "record_id": "chromatin-and-histone-modulation"
+          "record_id": "transposon-and-somatic-mutation-control"
         },
         {
           "record_type": "hallmark",
-          "record_id": "epigenetic_alterations"
+          "record_id": "genomic_instability"
         }
       ],
       "runbook_path": "docs/surveillance-checklist.md",
@@ -74,7 +74,7 @@
       "signals": [
         {
           "name": "generated_queue_rank",
-          "value": 14
+          "value": 15
         },
         {
           "name": "last_session_mode",
@@ -88,24 +88,24 @@
     },
     {
       "rank": 2,
-      "item_id": "coverage-assessment-backfill-protein-aggregate-clearance",
+      "item_id": "coverage-assessment-backfill-chromatin-and-histone-modulation",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for Protein Aggregate Clearance",
+      "title": "Backfill coverage assessment for Chromatin and Histone Modulation",
       "rationale": "30 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the surveillance queue.",
       "default_action": "Review the published outlook, session, bundle, evidence reviews, and publication event, then create a coverage assessment without changing public records.",
-      "track_id": "protein-aggregate-clearance",
-      "hallmark_id": "loss_of_proteostasis",
+      "track_id": "chromatin-and-histone-modulation",
+      "hallmark_id": "epigenetic_alterations",
       "references": [
         {
           "record_type": "track",
-          "record_id": "protein-aggregate-clearance"
+          "record_id": "chromatin-and-histone-modulation"
         },
         {
           "record_type": "hallmark",
-          "record_id": "loss_of_proteostasis"
+          "record_id": "epigenetic_alterations"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",

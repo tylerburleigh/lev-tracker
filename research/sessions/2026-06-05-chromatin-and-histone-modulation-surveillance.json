@@ -1,0 +1,245 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-05-chromatin-and-histone-modulation-surveillance",
+  "name": "Chromatin and histone modulation surveillance pass for June 5, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-06T00:48:52Z",
+  "completed_at": "2026-06-06T00:55:46Z",
+  "scope": {
+    "question": "What changed for Chromatin and Histone Modulation since the 2026-06-02 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "epigenetic_alterations"
+    ],
+    "track_ids": [
+      "chromatin-and-histone-modulation"
+    ],
+    "intervention_ids": [
+      "sirt6-overexpression",
+      "tributyrin"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "no_op",
+  "summary": "Ran a delta surveillance pass from the 2026-06-02T11:35:30.622Z public baseline publication through 2026-06-05 local time. PubMed date-window searches found same-window SIRT1/autophagy, HDAC, epigenetic-age, spermidine, butyrate, chromatin, and epigenetic-regulation records, but none supplied new human chromatin or histone target-engagement evidence, an aging-relevant functional human result, a stronger mammalian lifespan or healthspan result, a safety reversal, or a correction that changes the current low-confidence animal_signal outlook. Registry checks found same-window no-results updates around epigenetic signatures, biological-aging endpoints, cancer epigenetic therapy, ketone studies, and a withdrawn ketogenic-diet cognition trial, none of which are direct result-bearing chromatin/histone aging evidence. A full bioRxiv and medRxiv window sweep returned chromatin biology, HSC aging, HDAC3 disease-cell, and spermidine Parkinson disease-model context only. Web follow-up surfaced a pre-baseline May 2026 SIRT6 murine liver chromatin source and pre-window human trial protocols for spermidine or geroprotector studies; these are useful future coverage-assessment context but are not same-window surveillance deltas. No public outlook, source, study, finding, activity, bundle, or coverage assessment update is warranted.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "none",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The public baseline already assigns low-confidence animal_signal because KAT7 and SIRT6 mouse evidence, SRT1720, spermidine, beta-hydroxybutyrate, H3K4/H3K27 modifier genetics, and tributyrin/butyrate disease-model evidence remain preclinical, model-organism, disease-model, or boundary-track support. Current PubMed, ClinicalTrials.gov, preprint, and web checks did not identify a post-baseline result that changes stage, confidence, momentum, blockers, support-map wording, safety interpretation, or coverage priority. The strongest newly noticed item, PMID 42135312, predates the baseline and strengthens SIRT6 mouse chromatin target-engagement context without changing the category-level claim."
+  },
+  "search_log": [
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "(chromatin OR histone OR epigenetic OR epigenome OR HDAC OR histone deacetylase OR histone acetyltransferase OR sirtuin OR SIRT6 OR SIRT1 OR KAT7 OR H3K4 OR H3K27 OR UTX OR spermidine OR beta-hydroxybutyrate OR butyrate OR tributyrin) AND (aging OR ageing OR longevity OR lifespan OR healthspan OR senescence OR frailty OR older OR age-related), Entrez dates and publication dates 2026-06-02 to 2026-06-06",
+      "checked_at": "2026-06-06T00:49:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28chromatin%20OR%20histone%20OR%20epigenetic%20OR%20epigenome%20OR%20HDAC%20OR%20sirtuin%20OR%20SIRT6%20OR%20SIRT1%20OR%20KAT7%20OR%20spermidine%20OR%20beta-hydroxybutyrate%20OR%20butyrate%20OR%20tributyrin%29%20AND%20%28aging%20OR%20longevity%20OR%20lifespan%20OR%20healthspan%20OR%20senescence%20OR%20frailty%29",
+      "summary": "Returned 42 Entrez-date records and 29 publication-date records. Close abstracts included Tbx20/Sirt1 cardiac-aging autophagy, HDAC6 cardiovascular review context, epigenetic-age neurological disease review, epigenetic regulation of autophagy review, HDAC therapeutic review, citrus SIRT1 activator screening, spermidine food and health review, SIRT6 lumbar-disc cell disease context, and DNA repair or inflammation epigenetic mechanisms. None changed the public chromatin/histone aging interpretation."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "(SIRT6 OR SIRT1 OR SRT1720 OR KAT7 OR histone acetyltransferase OR histone deacetylase OR HDAC OR H3K4me3 OR H3K27me3 OR UTX-1 OR UTX1 OR spermidine OR D-beta-hydroxybutyrate OR beta-hydroxybutyrate OR tributyrin OR butyrate) AND (mouse OR mice OR C elegans OR human OR trial OR lifespan OR healthspan OR senescence), Entrez dates 2026-06-02 to 2026-06-06",
+      "checked_at": "2026-06-06T00:49:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28SIRT6%20OR%20SIRT1%20OR%20SRT1720%20OR%20KAT7%20OR%20HDAC%20OR%20H3K4me3%20OR%20H3K27me3%20OR%20spermidine%20OR%20beta-hydroxybutyrate%20OR%20tributyrin%20OR%20butyrate%29%20AND%20%28mouse%20OR%20mice%20OR%20human%20OR%20trial%20OR%20lifespan%20OR%20healthspan%20OR%20senescence%29",
+      "summary": "Returned 51 records. The closest named-program hits were reviews, compound-discovery assays, disease-cell studies, preclinical disease mechanisms, and broad HDAC or autophagy context. No new KAT7, SIRT6, SRT1720, spermidine, beta-hydroxybutyrate, or tributyrin result supplied direct aging efficacy beyond the published baseline."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "query": "Supporting PMIDs 19801973, 20555324, 21834846, 22367546, 24582957, 25127866, 33408182, 34050173, and 41826362 with correction, erratum, retraction, or concern title terms",
+      "checked_at": "2026-06-06T00:49:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned zero title-level correction, erratum, retraction, or expression-of-concern hits for the nine supporting PubMed sources."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "SIRT6 OR KAT7 OR SIRT1 OR SRT1720 OR spermidine OR beta-hydroxybutyrate OR butyrate OR tributyrin OR HDAC OR histone deacetylase OR chromatin OR epigenetic age OR epigenetic aging, plus same-window LastUpdatePostDate filter 2026-06-02 to 2026-06-06",
+      "checked_at": "2026-06-06T00:51:00Z",
+      "url": "https://clinicaltrials.gov/search?term=SIRT6%20OR%20KAT7%20OR%20SIRT1%20OR%20SRT1720%20OR%20spermidine%20OR%20beta-hydroxybutyrate%20OR%20butyrate%20OR%20tributyrin%20OR%20HDAC%20OR%20chromatin%20OR%20epigenetic%20age",
+      "summary": "Same-window hits included a withdrawn ketogenic-diet postoperative cognitive-decline study, recruiting azacitidine lung-cancer epigenetic therapy, recruiting GESTALT observational aging lab testing, a recruiting tirzepatide obesity and biological-aging study, not-yet-recruiting ketone heart-failure and ICU-delirium studies, and a result-bearing child-development trial unrelated to chromatin aging. None provided direct result-bearing chromatin/histone intervention evidence."
+    },
+    {
+      "source_name": "bioRxiv and medRxiv APIs",
+      "query": "Date window 2026-06-02 to 2026-06-06 with SIRT6, KAT7, SRT1720, spermidine, beta-hydroxybutyrate, tributyrin, butyrate, HDAC, histone, chromatin, epigenetic age, H3K4, H3K27, and sirtuin screens",
+      "checked_at": "2026-06-06T00:52:00Z",
+      "url": "https://api.biorxiv.org/",
+      "summary": "Full paginated screening returned chromatin accessibility, H1 histone, H3K27me3, chromatin-loop, hematopoietic-stem-cell aging, HDAC3 disease-cell, and spermidine Parkinson disease-model preprints. The hits were basic biology, disease-specific, model-system, or no-results context rather than stage-changing chromatin/histone aging intervention evidence."
+    },
+    {
+      "source_name": "Web search and primary-source follow-up",
+      "query": "SIRT6 KAT7 chromatin aging trial 2026; spermidine older adults trial epigenetic age 2026; HDAC inhibitor aging chromatin human trial 2026; tributyrin butyrate histone acylation aging 2026",
+      "checked_at": "2026-06-06T00:54:00Z",
+      "url": "https://www.google.com/search?q=SIRT6%20KAT7%20chromatin%20aging%20trial%202026",
+      "summary": "Returned current reviews, pre-window SIRT6 mouse chromatin paper PMID 42135312, REPROGRAM geroprotector protocol with spermidine and epigenetic-age endpoints, POLYCAD spermidine CAD protocol, and non-primary discussion pages. Primary-source follow-up did not identify a post-baseline public-update delta."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 42235376",
+      "title": "Tbx20 and Sirt1 synergize to ameliorate cardiac aging through enhanced autophagy.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42235376/",
+      "decision": "context_only",
+      "reason": "Post-baseline rat cardiomyoblast and aged-mouse cardiac-aging mechanism source. It highlights Tbx20/Sirt1/autophagy biology but does not test a chromatin or histone intervention with aging-relevant human or lifespan endpoints."
+    },
+    {
+      "reference": "PMID 42235828",
+      "title": "Targeting HDAC6 and Its Novel E3 Ligase Activity: A Dual-Strategy for Cardiovascular Therapy.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42235828/",
+      "decision": "context_only",
+      "reason": "Review-level HDAC6 cardiovascular therapy context. It does not add new aging intervention evidence, target-engagement data, or safety results that change the current outlook."
+    },
+    {
+      "reference": "PMID 42242554",
+      "title": "The Evidence for Epigenetic Age Acceleration in Neurological Disease: A Systematic Review.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42242554/",
+      "decision": "context_only",
+      "reason": "Systematic review of observational epigenetic age acceleration in neurological disease. It is DNA methylation and disease-association context, not histone/chromatin intervention evidence."
+    },
+    {
+      "reference": "PMID 42236674",
+      "title": "Transcriptional and epigenetic regulation of autophagy: mechanisms, disease relevance and therapeutic opportunities.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42236674/",
+      "decision": "context_only",
+      "reason": "Review connecting autophagy to epigenetic regulators and therapeutic strategies. It reinforces boundary-track overlap but does not change the chromatin/histone public claim."
+    },
+    {
+      "reference": "PMID 42247509",
+      "title": "The impactful role of the HDACs in the regulation of gene expression and as targets for disease therapy.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42247509/",
+      "decision": "context_only",
+      "reason": "Broad HDAC gene-regulation and disease-therapy review. It does not provide an aging intervention result or direct evidence for stage movement."
+    },
+    {
+      "reference": "PMID 42225042",
+      "title": "Identification and evaluation of citrus peel-derived polymethoxyflavonoids as natural SIRT1 activators.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42225042/",
+      "decision": "context_only",
+      "reason": "Compound-discovery and in vitro SIRT1 activation source. It does not test aging, older humans, lifespan, healthspan, or chromatin/histone target engagement in vivo."
+    },
+    {
+      "reference": "PMID 42235230",
+      "title": "Spermidine in food and health: biosynthesis, dietary sources, production, and biological functions.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42235230/",
+      "decision": "context_only",
+      "reason": "Review-level spermidine food and biology context. It reinforces existing spermidine/autophagy overlap but does not add new direct chromatin/histone aging evidence."
+    },
+    {
+      "reference": "PMID 42135312",
+      "title": "SIRT6 overexpression counteracts chromatin aging in the male murine liver.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42135312/",
+      "decision": "context_only",
+      "reason": "Pre-baseline May 2026 source showing AAV-mediated SIRT6 overexpression reverses aged male mouse liver chromatin-accessibility changes. It is a useful future coverage-assessment lead but is not a post-baseline surveillance delta and does not move the public stage beyond animal_signal."
+    },
+    {
+      "reference": "medRxiv 10.64898/2026.03.19.26348863",
+      "title": "REPROGRAM: REsilience PROmotion with GeRoprotectors: AssessMent of biological effect. Rationale and protocol for a trial of biological effect.",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.03.19.26348863v1",
+      "decision": "no_results",
+      "reason": "Pre-window protocol for metformin, fisetin, or spermidine in healthy older adults with epigenetic-age and hallmark endpoints. It is trial-watch context without results and does not justify a surveillance public update."
+    },
+    {
+      "reference": "PMC12574056",
+      "title": "POLYamine treatment in elderly patients with Coronary Artery Disease (POLYCAD): study protocol for a Danish randomised, double-blind, placebo-controlled trial of spermidine treatment versus placebo.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12574056/",
+      "decision": "no_results",
+      "reason": "Pre-window spermidine protocol in elderly coronary artery disease participants. Completion is expected later and no posted result was found in this surveillance pass."
+    },
+    {
+      "reference": "NCT02339012",
+      "title": "Genetic and Epigenetic Signatures of Translational Aging Laboratory Testing (GESTALT)",
+      "url": "https://clinicaltrials.gov/study/NCT02339012",
+      "decision": "no_results",
+      "reason": "Same-window recruiting observational aging lab record with expression, methylation, and protein atlas endpoints. It is not an interventional chromatin/histone result."
+    },
+    {
+      "reference": "NCT07218445",
+      "title": "The Effect of Tirzepatide on Menopausal Vasomotor Symptoms and Biological Aging in Post-menopausal Women With Obesity",
+      "url": "https://clinicaltrials.gov/study/NCT07218445",
+      "decision": "no_results",
+      "reason": "Same-window recruiting obesity and biological-aging registry with no results. It does not target chromatin or histone modulation and cannot change this track."
+    },
+    {
+      "reference": "NCT06694454",
+      "title": "Neoadjuvant Inhaled Azacytidine With Platinum-Based Chemotherapy and Durvalumab - a Combined Epigenetic-Immunotherapy Regimen for Operable Early-Stage NSCLC",
+      "url": "https://clinicaltrials.gov/study/NCT06694454",
+      "decision": "wrong_scope",
+      "reason": "Same-window recruiting cancer epigenetic-therapy registry with no results. It is oncology treatment context, not aging or LEV-relevant chromatin/histone modulation evidence."
+    },
+    {
+      "reference": "NCT06480708",
+      "title": "Evaluation of the Ketogenic Diet to Improve Post Operative Cognitive Decline in Cardiac Surgery",
+      "url": "https://clinicaltrials.gov/study/NCT06480708",
+      "decision": "no_results",
+      "reason": "Same-window withdrawn ketogenic-diet cognition registry with no results. It does not supply beta-hydroxybutyrate or histone-modulation aging evidence."
+    },
+    {
+      "reference": "bioRxiv 10.64898/2026.06.03.729976",
+      "title": "Architectural fragility of gene regulatory networks underlies hematopoietic stem cell aging",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.06.03.729976v1",
+      "decision": "context_only",
+      "reason": "Same-window preprint on hematopoietic-stem-cell aging gene-regulatory architecture. It is mechanistic context, not an intervention result."
+    },
+    {
+      "reference": "medRxiv 10.64898/2026.05.23.26353575",
+      "title": "Spermidine suppresses glial inflammation and parkinsonian abnormalities in ATP13A2 deficiency",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.05.23.26353575v1",
+      "decision": "context_only",
+      "reason": "Same-window preprint hit involving spermidine in Parkinson disease-model context. It does not provide direct chromatin/histone target engagement or broad aging efficacy."
+    },
+    {
+      "reference": "bioRxiv 10.64898/2026.06.02.729465",
+      "title": "HDAC3 inhibition stabilizes the IL-37 receptor module to enhance anti-inflammatory signaling in cystic fibrosis airway epithelium",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.06.02.729465v1",
+      "decision": "wrong_scope",
+      "reason": "Same-window HDAC3 disease-cell preprint. It is cystic fibrosis airway biology, not aging intervention evidence."
+    }
+  ],
+  "source_ids": [
+    "pmid-33408182",
+    "pmid-34050173",
+    "pmid-22367546",
+    "pmid-24582957",
+    "pmid-19801973",
+    "pmid-25127866",
+    "pmid-20555324",
+    "pmid-21834846",
+    "pmid-41826362"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42235376/",
+    "https://pubmed.ncbi.nlm.nih.gov/42235828/",
+    "https://pubmed.ncbi.nlm.nih.gov/42242554/",
+    "https://pubmed.ncbi.nlm.nih.gov/42236674/",
+    "https://pubmed.ncbi.nlm.nih.gov/42247509/",
+    "https://pubmed.ncbi.nlm.nih.gov/42225042/",
+    "https://pubmed.ncbi.nlm.nih.gov/42235230/",
+    "https://pubmed.ncbi.nlm.nih.gov/42135312/",
+    "https://www.nature.com/articles/s41467-026-73115-y",
+    "https://www.medrxiv.org/content/10.64898/2026.03.19.26348863v1",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12574056/",
+    "https://clinicaltrials.gov/study/NCT02339012",
+    "https://clinicaltrials.gov/study/NCT07218445",
+    "https://clinicaltrials.gov/study/NCT06694454",
+    "https://clinicaltrials.gov/study/NCT06480708",
+    "https://www.biorxiv.org/content/10.64898/2026.06.03.729976v1",
+    "https://www.medrxiv.org/content/10.64898/2026.05.23.26353575v1",
+    "https://www.biorxiv.org/content/10.64898/2026.06.02.729465v1",
+    "https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2026.1836446/full"
+  ],
+  "notes": [
+    "Triage selected this as the rank-1 ready surveillance item after the protein-aggregate-clearance no-op pass.",
+    "The delta window was anchored to publication event publish-chromatin-and-histone-modulation-bootstrap-2026-06-02-2026-06-02t11-35-30-622z.",
+    "No coverage assessment exists yet for this track. This ordinary surveillance pass did not discover a post-baseline category-level change requiring immediate coverage assessment or repair.",
+    "PMID 42135312 is a pre-baseline source-completeness lead for future coverage assessment because it directly tests SIRT6 overexpression against aged male mouse liver chromatin changes, but it does not alter the current low-confidence animal_signal public boundary.",
+    "The public boundary remains unchanged: KAT7 and SIRT6 provide the strongest mammalian support but remain genetic or gene-overexpression contexts; small-molecule and metabolite signals remain SIRT1/NAD, autophagy, nutrient-sensing, mitochondrial-disease, or boundary-track context; no direct human chromatin/histone aging intervention result was found."
+  ],
+  "next_actions": [
+    "Continue ordinary surveillance for human chromatin or histone target-engagement studies tied to aging biomarkers, function, disease modification, or survival.",
+    "Watch KAT7 and SIRT6 intervention programs for drug-like or gene-therapy evidence that includes safety, tissue specificity, functional outcomes, or mammalian lifespan and healthspan endpoints.",
+    "Watch spermidine, butyrate or tributyrin, beta-hydroxybutyrate, HDAC, and SIRT1 programs for result-bearing older-adult studies rather than protocols or mechanistic reviews.",
+    "Backfill a coverage assessment as a separate maintenance task if internal source-landscape completeness is prioritized, especially for PMID 42135312, REPROGRAM, POLYCAD, and trial-watch records.",
+    "Create a public bundle only if future evidence changes stage, confidence, momentum, blockers, safety, attribution boundaries, or support-map wording."
+  ]
+}
