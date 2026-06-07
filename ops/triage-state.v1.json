@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-07T21:25:07.941Z",
+  "generated_at": "2026-06-07T21:53:53.004Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-07T21:25:07.843Z",
-    "research_priority_queue_updated_at": "2026-06-07T21:25:07.843Z",
+    "research_coverage_status_updated_at": "2026-06-07T21:53:52.905Z",
+    "research_priority_queue_updated_at": "2026-06-07T21:53:52.905Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 38,
@@ -32,7 +32,7 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "surveillance-telomere-protection-and-capping",
+    "top_work_item_id": "surveillance-genome-surveillance-and-chromosome-stability",
     "top_mode": "surveillance",
     "active_editorial_count": 0,
     "ready_research_count": 38,
@@ -45,24 +45,24 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "surveillance-telomere-protection-and-capping",
+      "item_id": "surveillance-genome-surveillance-and-chromosome-stability",
       "mode": "surveillance",
       "domain": "research",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Run field change check for Telomere Protection and Capping",
-      "rationale": "Next distinct field-change target. Generated field-change queue rank 24; rank 1 was recently handled by a field change check or coverage-repair session.",
+      "title": "Run field change check for Genome Surveillance and Chromosome Stability",
+      "rationale": "Next distinct field-change target. Generated field-change queue rank 25; rank 1 was recently handled by a field change check or coverage-repair session.",
       "default_action": "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
-      "track_id": "telomere-protection-and-capping",
-      "hallmark_id": "telomere_attrition",
+      "track_id": "genome-surveillance-and-chromosome-stability",
+      "hallmark_id": "genomic_instability",
       "references": [
         {
           "record_type": "track",
-          "record_id": "telomere-protection-and-capping"
+          "record_id": "genome-surveillance-and-chromosome-stability"
         },
         {
           "record_type": "hallmark",
-          "record_id": "telomere_attrition"
+          "record_id": "genomic_instability"
         }
       ],
       "runbook_path": "docs/surveillance-checklist.md",
@@ -74,7 +74,7 @@
       "signals": [
         {
           "name": "generated_queue_rank",
-          "value": 24
+          "value": 25
         },
         {
           "name": "last_session_mode",
@@ -88,24 +88,24 @@
     },
     {
       "rank": 2,
-      "item_id": "coverage-assessment-backfill-dna-methylation-and-epigenome-restoration",
+      "item_id": "coverage-assessment-backfill-telomere-protection-and-capping",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for DNA Methylation and Epigenome Restoration",
+      "title": "Backfill coverage assessment for Telomere Protection and Capping",
       "rationale": "28 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
       "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
-      "track_id": "dna-methylation-and-epigenome-restoration",
-      "hallmark_id": "epigenetic_alterations",
+      "track_id": "telomere-protection-and-capping",
+      "hallmark_id": "telomere_attrition",
       "references": [
         {
           "record_type": "track",
-          "record_id": "dna-methylation-and-epigenome-restoration"
+          "record_id": "telomere-protection-and-capping"
         },
         {
           "record_type": "hallmark",
-          "record_id": "epigenetic_alterations"
+          "record_id": "telomere_attrition"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",
