@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-07T20:58:51.028Z",
+  "generated_at": "2026-06-07T21:09:11.538Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-07T20:58:50.920Z",
-    "research_priority_queue_updated_at": "2026-06-07T20:58:50.920Z",
+    "research_coverage_status_updated_at": "2026-06-07T21:09:11.424Z",
+    "research_priority_queue_updated_at": "2026-06-07T21:09:11.425Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 38,
@@ -32,7 +32,7 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "surveillance-lysosomal-restoration",
+    "top_work_item_id": "surveillance-proteasome-enhancement",
     "top_mode": "surveillance",
     "active_editorial_count": 0,
     "ready_research_count": 38,
@@ -45,24 +45,24 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "surveillance-lysosomal-restoration",
+      "item_id": "surveillance-proteasome-enhancement",
       "mode": "surveillance",
       "domain": "research",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Run field change check for Lysosomal Restoration",
-      "rationale": "Next distinct field-change target. Generated field-change queue rank 21; rank 1 was recently handled by a field change check or coverage-repair session.",
+      "title": "Run field change check for Proteasome Enhancement",
+      "rationale": "Next distinct field-change target. Generated field-change queue rank 22; rank 1 was recently handled by a field change check or coverage-repair session.",
       "default_action": "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
-      "track_id": "lysosomal-restoration",
-      "hallmark_id": "disabled_macroautophagy",
+      "track_id": "proteasome-enhancement",
+      "hallmark_id": "loss_of_proteostasis",
       "references": [
         {
           "record_type": "track",
-          "record_id": "lysosomal-restoration"
+          "record_id": "proteasome-enhancement"
         },
         {
           "record_type": "hallmark",
-          "record_id": "disabled_macroautophagy"
+          "record_id": "loss_of_proteostasis"
         }
       ],
       "runbook_path": "docs/surveillance-checklist.md",
@@ -74,7 +74,7 @@
       "signals": [
         {
           "name": "generated_queue_rank",
-          "value": 21
+          "value": 22
         },
         {
           "name": "last_session_mode",
@@ -88,24 +88,24 @@
     },
     {
       "rank": 2,
-      "item_id": "coverage-assessment-backfill-ampk-and-metabolic-modulators",
+      "item_id": "coverage-assessment-backfill-lysosomal-restoration",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for AMPK and Metabolic Modulators",
+      "title": "Backfill coverage assessment for Lysosomal Restoration",
       "rationale": "28 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
       "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
-      "track_id": "ampk-and-metabolic-modulators",
-      "hallmark_id": "deregulated_nutrient_sensing",
+      "track_id": "lysosomal-restoration",
+      "hallmark_id": "disabled_macroautophagy",
       "references": [
         {
           "record_type": "track",
-          "record_id": "ampk-and-metabolic-modulators"
+          "record_id": "lysosomal-restoration"
         },
         {
           "record_type": "hallmark",
-          "record_id": "deregulated_nutrient_sensing"
+          "record_id": "disabled_macroautophagy"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",
