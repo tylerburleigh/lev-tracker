@@ -166,6 +166,7 @@ time {
 .feed-item:hover,
 .editorial-card:hover,
 .state-example-card:hover,
+.scenario-track-row:hover,
 .review-card:hover,
 .review-summary-card:hover,
 .action-button:hover,
@@ -730,14 +731,15 @@ time {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 10px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .hallmark-index-tier {
   display: grid;
-  align-content: space-between;
+  grid-template-rows: minmax(2.5em, auto) auto;
+  align-content: stretch;
   gap: 10px;
-  min-height: 92px;
+  min-height: 104px;
   padding: 13px;
   border: 1px solid rgba(24, 37, 30, 0.13);
   border-top: 3px solid var(--stage-accent, var(--slate));
@@ -747,6 +749,7 @@ time {
 }
 
 .hallmark-index-tier span {
+  align-self: start;
   color: var(--text-soft);
   font-size: 0.8rem;
   font-weight: 800;
@@ -755,6 +758,7 @@ time {
 }
 
 .hallmark-index-tier strong {
+  align-self: end;
   font-size: 1.65rem;
   line-height: 1;
 }
@@ -1724,6 +1728,224 @@ time {
   text-transform: uppercase;
 }
 
+.scenario-section {
+  display: grid;
+  gap: 18px;
+}
+
+.scenario-section__header {
+  display: grid;
+  gap: 5px;
+  max-width: 72rem;
+}
+
+.scenario-section__header h2 {
+  margin: 0;
+  font-size: clamp(1.55rem, 2.2vw, 2.15rem);
+  line-height: 1.16;
+}
+
+.scenario-section__header p {
+  max-width: 60rem;
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.scenario-timeline {
+  display: grid;
+  gap: 12px;
+}
+
+.scenario-chapter {
+  display: grid;
+  grid-template-columns: minmax(92px, 0.18fr) minmax(190px, 0.34fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--mint);
+  border-radius: var(--radius-card);
+  background: rgba(255, 253, 246, 0.72);
+  box-shadow: 0 12px 32px rgba(31, 42, 33, 0.06);
+}
+
+.scenario-chapter span {
+  color: var(--mint);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.scenario-chapter h3 {
+  margin: 0;
+  font-size: 1.13rem;
+  line-height: 1.3;
+}
+
+.scenario-chapter p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.scenario-domino-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.scenario-domino {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  min-height: 220px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--gold);
+  border-radius: var(--radius-card);
+  background: rgba(255, 253, 246, 0.78);
+  box-shadow: var(--shadow);
+}
+
+.scenario-domino span {
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.scenario-domino h3 {
+  margin: 0;
+  font-size: 1.12rem;
+  line-height: 1.3;
+}
+
+.scenario-domino p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.58;
+}
+
+.scenario-track-table {
+  display: grid;
+  gap: 8px;
+}
+
+.scenario-track-table__head,
+.scenario-track-row {
+  display: grid;
+  grid-template-columns:
+    minmax(105px, 0.52fr)
+    minmax(190px, 0.95fr)
+    minmax(165px, 0.82fr)
+    minmax(260px, 1.35fr)
+    minmax(240px, 1.2fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.scenario-track-table__head {
+  padding: 0 16px;
+  color: var(--text-soft);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.scenario-track-row {
+  min-height: 132px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: rgba(255, 253, 246, 0.78);
+  box-shadow: 0 12px 30px rgba(31, 42, 33, 0.06);
+  transition:
+    border-color 160ms ease,
+    transform 160ms ease,
+    background 160ms ease;
+}
+
+.scenario-track-row__window,
+.scenario-track-row__track,
+.scenario-track-row__read {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.scenario-track-row__window {
+  grid-template-columns: auto minmax(0, 1fr);
+  color: var(--text);
+  font-weight: 800;
+}
+
+.scenario-track-row__window svg {
+  margin-top: 2px;
+  color: var(--blue);
+}
+
+.scenario-track-row__track strong {
+  font-size: 1.02rem;
+  line-height: 1.28;
+}
+
+.scenario-track-row__track span {
+  color: var(--text-soft);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.scenario-track-row__read {
+  justify-items: start;
+}
+
+.scenario-track-row p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+.scenario-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.scenario-panel {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: rgba(255, 253, 246, 0.78);
+  box-shadow: var(--shadow);
+}
+
+.scenario-panel--lead {
+  border-left: 3px solid var(--mint);
+}
+
+.scenario-panel svg {
+  color: var(--mint);
+}
+
+.scenario-panel h2 {
+  margin: 0;
+  font-size: clamp(1.35rem, 1.8vw, 1.85rem);
+  line-height: 1.2;
+}
+
+.scenario-panel p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.62;
+}
+
+
 .detail-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -2355,7 +2577,7 @@ time {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  align-items: end;
+  align-items: flex-end;
   padding: 0 2px 6px;
   color: var(--text-soft);
 }
@@ -3299,5 +3521,45 @@ time {
   .tracks-table__empty {
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 1180px) {
+  .scenario-domino-grid,
+  .scenario-split {
+    grid-template-columns: 1fr;
+  }
+
+  .scenario-track-table__head {
+    display: none;
+  }
+
+  .scenario-track-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 780px) {
+  .scenario-chapter {
+    grid-template-columns: 1fr;
+  }
+
+  .scenario-domino,
+  .scenario-track-row,
+  .scenario-panel {
+    padding: 16px;
+  }
+
+  .scenario-chapter {
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .scenario-domino {
+    min-height: auto;
+  }
+
+  .scenario-track-row {
+    min-height: auto;
   }
 }

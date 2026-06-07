@@ -99,14 +99,7 @@ Recommended public outlook fields:
 - `strongest_current_evidence`
 - `interpretation_note`
 
-The site may also include a clearly labeled `2036 scenario lens` as an editorial device:
-
-- unsupported
-- speculative
-- plausible
-- on_track
-
-This should be framed as a scenario check, not as a precise prediction.
+The site may also include a clearly labeled standalone scenario page, such as a speculative `LEV by 2036` path. This should be framed as an opt-in scenario essay and milestone stress test, not as a precise prediction or as a status field repeated across normal outlook records.
 
 ## Progress Model
 
@@ -204,7 +197,7 @@ Sections:
 - overall LEV outlook
 - 12 hallmark outlook grid
 - recent changes
-- 2036 scenario lens
+- optional speculative scenario link
 - methodology and trust notes
 
 ### 2. Hallmarks Index

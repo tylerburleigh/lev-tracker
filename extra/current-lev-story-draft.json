@@ -211,8 +211,8 @@
         ]
       },
       {
-        "trigger_type": "scenario_change",
-        "description": "Review immediately if the LEV 2036 outlook changes."
+        "trigger_type": "timing_window_change",
+        "description": "Review immediately if the overall LEV timing-window interpretation changes."
       },
       {
         "trigger_type": "state_of_field_rollup",
@@ -240,7 +240,6 @@
         "confidence": "moderate",
         "evidence_gap": "The field still lacks repeated human studies showing long-lasting improvements in health or function in ways that clearly add up toward LEV.",
         "strongest_evidence": "The recent picture is broader rather than stronger: early missing-context updates are making the evidence easier to judge without making LEV look closer.",
-        "lev_2036_outlook": "speculative",
         "last_updated": "2026-06-06",
         "fingerprint": "761998816a229c5e"
       },
@@ -253,7 +252,6 @@
         "confidence": "low",
         "evidence_gap": "Metformin is clinically familiar and mechanistically broad, but direct human geroscience evidence is still mostly biomarker, transcriptomic, and short-term pathway engagement rather than durable function or multimorbidity outcomes.",
         "strongest_evidence": "MILES provides the main direct human biomarker anchor: short-term metformin changed glucose handling and skeletal-muscle and adipose transcriptomic pathways in older adults with impaired glucose tolerance.",
-        "lev_2036_outlook": "speculative",
         "last_updated": "2026-06-01",
         "fingerprint": "fed12e40fa30966d"
       },
@@ -266,7 +264,6 @@
         "confidence": "low",
         "evidence_gap": "The strongest human outcomes are cardiovascular secondary-prevention results in high-risk disease populations, not broad healthy-aging or LEV-relevant rejuvenation outcomes.",
         "strongest_evidence": "CANTOS showed that IL-1beta inhibition can reduce recurrent cardiovascular events without lipid lowering in post-MI patients with residual inflammatory risk.",
-        "lev_2036_outlook": "speculative",
         "last_updated": "2026-05-31",
         "fingerprint": "0c1c6f692364f591"
       },
@@ -279,7 +276,6 @@
         "confidence": "low",
         "evidence_gap": "The most direct aging and healthspan evidence remains animal evidence from MSC-derived EV and conditioned-medium studies.",
         "strongest_evidence": "Human split-face and meta-analytic dermatology evidence suggests stem-cell conditioned media or exosome-containing solutions can move skin-aging appearance and instrumented biomarker endpoints.",
-        "lev_2036_outlook": "speculative",
         "last_updated": "2026-06-01",
         "fingerprint": "78e398c476a9fd42"
       },
@@ -292,7 +288,6 @@
         "confidence": "low",
         "evidence_gap": "No direct treated-human aging trial was identified for engineered or checkpoint-based immune clearance of senescent cells.",
         "strongest_evidence": "Anti-uPAR CAR T cells cleared senescent cells and restored tissue homeostasis in mouse pathology models, then improved exercise capacity, metabolic function, and intestinal regeneration phenotypes in aged mice.",
-        "lev_2036_outlook": "speculative",
         "last_updated": "2026-06-02",
         "fingerprint": "708365ddc6998108"
       },
@@ -305,7 +300,6 @@
         "confidence": "low",
         "evidence_gap": "The human functional rating is narrow and rests mainly on urolithin A muscle endurance or strength signals, not replicated durable frailty, mobility, disease, or mortality outcomes.",
         "strongest_evidence": "Urolithin A has randomized human trials with muscle endurance or strength signals, mitochondrial or inflammatory biomarker movement, and a 2024 systematic review summarizing both the signal and the lack of broader physical-function benefit.",
-        "lev_2036_outlook": "plausible",
         "last_updated": "2026-06-02",
         "fingerprint": "fb90861b8fb0edfd"
       },
@@ -318,7 +312,6 @@
         "confidence": "low",
         "evidence_gap": "The highest-quality human signal is structured exercise, not a druglike mitochondrial-biogenesis or dynamics therapy.",
         "strongest_evidence": "Supervised HIIT and combined training improved older-adult aerobic capacity, while HIIT increased skeletal-muscle mitochondrial respiration, mitochondrial protein synthesis, and mitochondrial protein abundance.",
-        "lev_2036_outlook": "speculative",
         "last_updated": "2026-06-02",
         "fingerprint": "78b822fe245f6e05"
       },
@@ -331,7 +324,6 @@
         "confidence": "low",
         "evidence_gap": "The strongest human intervention signal is TRIIM, a nine-participant uncontrolled male pilot with epigenetic-age and immunosenescence biomarkers rather than randomized functional, disease, or mortality endpoints.",
         "strongest_evidence": "TRIIM reported lower DNA-methylation epigenetic age and immunosenescence-marker movement after one year in nine healthy men.",
-        "lev_2036_outlook": "speculative",
         "last_updated": "2026-06-04",
         "fingerprint": "28ed4ae3e120c33e"
       },
@@ -344,7 +336,6 @@
         "confidence": "low",
         "evidence_gap": "Human evidence is still far behind the attention around this approach.",
         "strongest_evidence": "The mechanism could be unusually broad if it survives translation.",
-        "lev_2036_outlook": "speculative",
         "last_updated": "2026-05-30",
         "fingerprint": "95155052a9a521b3"
       },
@@ -357,7 +348,6 @@
         "confidence": "low",
         "evidence_gap": "The strongest direct aging-relevant signal is laromestrocel in frailty, but allogeneic MSC benefit may reflect paracrine, immunovascular, or tissue-support effects rather than durable stem-cell replacement.",
         "strongest_evidence": "A 2026 randomized phase 2b frailty trial reported clinically meaningful 6-minute walk improvement after allogeneic MSC therapy, with a possible TIE2 biomarker response.",
-        "lev_2036_outlook": "speculative",
         "last_updated": "2026-06-01",
         "fingerprint": "8c3b78ca4ca12fb6"
       },
@@ -370,7 +360,6 @@
         "confidence": "low",
         "evidence_gap": "The direct transposon-control intervention evidence is still mostly animal, preprint, open-label human biomarker, or no-results trial-watch evidence; no controlled human aging-function trial has shown benefit from reverse transcriptase inhibition.",
         "strongest_evidence": "SIRT6 and senescence studies give coherent LINE1 suppression biology, including evidence that SIRT6 repression fails with stress or age and that LINE1 cDNA can drive type I interferon activation.",
-        "lev_2036_outlook": "speculative",
         "last_updated": "2026-06-06",
         "fingerprint": "3523145135353831"
       }

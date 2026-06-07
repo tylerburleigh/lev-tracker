@@ -64,7 +64,7 @@ When updating the current LEV story, set:
 - `revision.review_reason` to the public records or editorial request that prompted the review
 - `revision.review_due` to the next scheduled review date
 - `revision.triggers` to the conditions that should make the story stale
-- `revision.observed_outlook_states` to the reviewed evidence stage, momentum, confidence, evidence-gap, strongest-evidence, and LEV 2036 outlook fingerprints
+- `revision.observed_outlook_states` to the reviewed evidence stage, momentum, confidence, evidence-gap, strongest-evidence, and timing-window fingerprints
 - `related_outlook_ids` and `related_publication_event_ids` to the reviewed records that anchor the story
 
 Use `npm run story:current -- status` to check staleness, `npm run story:current -- draft --write --style plain` to generate a plain-language review draft under `extra/`, and `npm run story:current -- snapshot --write-current` after accepting a reviewed story state.
@@ -73,7 +73,7 @@ Use `npm run audit:editorial -- --write` during reader-facing copy reviews. It w
 
 Use `npm run audit:editorial:ratchet` when a pass should enforce the current public-copy debt ceiling.
 
-If the review changes evidence records, outlook ratings, evidence stages, confidence, LEV 2036 outlook, or timing windows, stop and use the evidence-review and candidate-bundle workflow instead.
+If the review changes evidence records, outlook ratings, evidence stages, confidence, or timing windows, stop and use the evidence-review and candidate-bundle workflow instead.
 
 ## Expected Outputs
 

@@ -5,6 +5,7 @@ import {
   ClipboardCheck,
   ClipboardList,
   Compass,
+  Radar,
   Search,
   Sigma,
   Waypoints
@@ -16,7 +17,8 @@ const navItems = [
   { href: "/tracks", label: "Tracks", icon: Waypoints },
   { href: "/trials", label: "Trials", icon: ClipboardList },
   { href: "/activity", label: "Activity", icon: Activity },
-  { href: "/state-of-the-field", label: "Field Reviews", icon: BookOpenText }
+  { href: "/state-of-the-field", label: "Field Reviews", icon: BookOpenText },
+  { href: "/scenarios/lev-by-2036", label: "Scenario", icon: Radar }
 ] as const;
 
 type SiteShellProps = {

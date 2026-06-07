@@ -1,8 +1,8 @@
 # Reader Task Audit
 
-Generated: 2026-06-06T22:05:16.038Z
-Passed: 13
-Issues: 1
+Generated: 2026-06-07T01:07:10.882Z
+Passed: 14
+Issues: 0
 Warnings: 0
 
 ## Checks
@@ -23,7 +23,7 @@ Warnings: 0
   3 better-evidence need(s), 3 reason type(s).
 - PASS: Reader gets concrete examples that resolve to track pages
   3 track example(s).
-- FAIL: Homepage displays the reader story surfaces
+- PASS: Homepage displays the reader story surfaces
   Homepage source should render plain meaning, before/now/next, outlook-change criteria, and examples.
 - PASS: Hallmark and track pages explain ratings locally
   Stage plain-meaning helper should be used on homepage, hallmark detail, and track detail pages.

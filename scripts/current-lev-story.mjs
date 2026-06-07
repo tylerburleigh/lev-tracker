@@ -151,8 +151,7 @@ function getOutlookSnapshotPayload(outlook) {
     momentum: outlook.momentum,
     confidence: outlook.confidence,
     evidence_gap: outlook.main_evidence_gaps?.[0],
-    strongest_evidence: outlook.strongest_current_evidence?.[0],
-    lev_2036_outlook: outlook.lev_2036_outlook
+    strongest_evidence: outlook.strongest_current_evidence?.[0]
   });
 }
 
@@ -199,8 +198,7 @@ function fieldChanges(stored, current) {
     "momentum",
     "confidence",
     "evidence_gap",
-    "strongest_evidence",
-    "lev_2036_outlook"
+    "strongest_evidence"
   ];
 
   return fields
@@ -260,7 +258,7 @@ function scorePublicationEvent(event, outlookById) {
     { pattern: /stage|evidence_stage/, score: 45, reason: "stage change" },
     { pattern: /confidence/, score: 40, reason: "read firmness change" },
     { pattern: /momentum/, score: 35, reason: "momentum change" },
-    { pattern: /scenario|2036/, score: 45, reason: "scenario change" },
+    { pattern: /scenario|timing window|LEV-relevant window/, score: 45, reason: "timing-window change" },
     { pattern: /human.*functional|functional.*human|6-minute|6mwt|mobility|frailty|exercise capacity/, score: 35, reason: "human function" },
     { pattern: /human/, score: 20, reason: "human evidence" },
     { pattern: /result|reported|posted|completed/, score: 25, reason: "result" },

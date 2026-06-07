@@ -177,8 +177,7 @@ function getOutlookSnapshotPayload(outlook) {
     momentum: outlook.momentum,
     confidence: outlook.confidence,
     evidence_gap: outlook.main_evidence_gaps?.[0],
-    strongest_evidence: outlook.strongest_current_evidence?.[0],
-    lev_2036_outlook: outlook.lev_2036_outlook
+    strongest_evidence: outlook.strongest_current_evidence?.[0]
   });
 }
 

@@ -37,7 +37,7 @@ The homepage should render in this order:
 1. Global app header
 2. Overview band
 3. Hallmark outlook grid
-4. Recent changes and 2036 scenario band
+4. Recent changes and field-review band
 5. Reader paths into concrete evidence
 
 ## Wireframe Overview
@@ -60,8 +60,8 @@ DESKTOP
 | [5] [6] [7] [8]                                                                  |
 | [9] [10] [11] [12]                                                               |
 +----------------------------------------------------------------------------------+
-| Recent changes                                  | 2036 scenario lens             |
-| timeline/list                                   | status / explanation / moves   |
+| Latest field review                             | evidence signals / proof gaps  |
+| recent changes                                  | optional scenario link         |
 +----------------------------------------------------------------------------------+
 | Trust and methods band                                                        -> |
 +----------------------------------------------------------------------------------+
@@ -79,7 +79,7 @@ MOBILE
 +----------------------------------+
 | Recent changes                   |
 +----------------------------------+
-| 2036 scenario lens               |
+| latest field review              |
 +----------------------------------+
 | Trust and methods                |
 +----------------------------------+
@@ -151,7 +151,7 @@ Fields:
 - `strongest_current_evidence`
 - `interpretation_note`
 - `last_updated`
-- optional `lev_2036_outlook`
+- optional timing-window caveat
 
 #### Visual Priority
 
@@ -274,21 +274,21 @@ Each card should fit in a stable footprint and include:
 
 Thin coverage means the hallmark is public but evidence depth is low. This should be explicit rather than hidden.
 
-## Section 4: Recent Changes and 2036 Scenario Band
+## Section 4: Recent Changes and Field-Review Band
 
 ### Layout
 
 Desktop:
 
 - 2-column band
-- wider left column for `Recent Changes`
-- narrower right column for `2036 Scenario Lens`
+- wider left column for `Latest Field Review`
+- narrower right column for evidence signals, proof gaps, or an optional scenario link
 
 Mobile:
 
 - stacked
-- `Recent Changes` first
-- `2036 Scenario Lens` second
+- latest field review first
+- evidence signals or scenario link second
 
 ### Component A: Recent Changes Feed
 
@@ -335,32 +335,32 @@ Each item should show:
 - default 5 items on desktop
 - default 4 items on mobile
 
-### Component B: 2036 Scenario Lens
+### Component B: Optional Scenario Link
 
 #### Job
 
-Provide the provocative frame without letting it dominate the page.
+Provide a doorway to speculative scenario content without letting it dominate the evidence map.
 
 #### Required Data
 
 Preferred:
 
-- field on overall outlook
+- standalone scenario route
 
 Fallback:
 
-- app-level configuration with a linked explanation
+- no scenario module
 
 #### Fields
 
-- 2036 LEV outlook
-- short explanation
-- `what would need to change`
+- scenario title
+- one-sentence premise
+- link target
 
 #### Tone
 
-- explicit that this is a scenario lens
-- no pseudo-precision
+- explicit that this is speculative
+- no pseudo-precision or status label repeated across outlook records
 
 ## Section 5: Reader Paths
 
@@ -464,7 +464,7 @@ Show:
 - Do not put the whole homepage inside floating cards.
 - Use full-width bands with constrained inner content.
 - Keep the hallmark grid dense and stable.
-- The strongest visual emphasis belongs to the overall outlook and hallmark grid, not the 2036 lens.
+- The strongest visual emphasis belongs to the overall outlook and hallmark grid, not speculative scenario content.
 
 ## Open Implementation Questions
 

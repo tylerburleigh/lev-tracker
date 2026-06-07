@@ -1,24 +1,20 @@
 # Editorial Quality Report
 
-Generated: 2026-06-06T22:05:16.125Z
-Overall: needs attention
+Generated: 2026-06-07T01:07:10.995Z
+Overall: passed
 
 ## Summary
 
 - Current LEV story status: current
-- Public copy warnings: 277
-- Reader-task audit: failed (13 passed, 1 issues, 0 warnings)
+- Public copy warnings: 344
+- Reader-task audit: passed (14 passed, 0 issues, 0 warnings)
 
 ## Gates
 
 - PASS: Current LEV story is current
   Status is current.
-- FAIL: Reader-task audit has no issues
-  1 issue(s), 0 warning(s).
-- FAIL: Public copy warnings <= 269
-  Current public copy warning count is 277.
-- PASS: Reader-task warnings <= 0
-  Current reader-task warning count is 0.
+- PASS: Reader-task audit has no issues
+  0 issue(s), 0 warning(s).
 
 ## Command Output
 
@@ -35,5 +31,5 @@ Exit code: 0
 ### Reader task audit
 
 Command: `node scripts/reader-task-audit.mjs --write`
-Exit code: 1
+Exit code: 0
 

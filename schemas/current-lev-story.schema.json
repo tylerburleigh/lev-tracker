@@ -368,7 +368,7 @@
                 "enum": [
                   "new_publication_event",
                   "outlook_change",
-                  "scenario_change",
+                  "timing_window_change",
                   "state_of_field_rollup",
                   "review_due",
                   "human_editorial_request"
@@ -443,9 +443,6 @@
         },
         "strongest_evidence": {
           "type": "string"
-        },
-        "lev_2036_outlook": {
-          "$ref": "./common.schema.json#/$defs/lev2036Outlook"
         },
         "last_updated": {
           "$ref": "./common.schema.json#/$defs/isoDate"

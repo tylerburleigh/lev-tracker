@@ -77,6 +77,8 @@ export async function Homepage() {
   const visibleRecentChanges = recentChanges.slice(0, 3);
   const primaryWatchItem = currentLevStory.what_to_watch_next[0];
   const primaryEvidenceNeed = currentLevStory.where_better_evidence_is_needed[0];
+  const beforeNowNextSteps = currentLevStory.before_now_next;
+  const outlookChangeItems = currentLevStory.what_would_change_the_outlook;
   const primaryFieldReviewGap = linkedStateOfFieldEdition?.evidence_gaps[0];
   const primaryFieldReviewSignal = linkedStateOfFieldEdition?.signals_to_watch[0];
   const fieldReviewHeadline =
@@ -231,36 +233,80 @@ export async function Homepage() {
       </section>
 
       <section className="band band--reader">
-        <div className="page-shell evidence-path">
-          <div className="evidence-path__header">
-            <div className="evidence-path__title">
-              <Compass aria-hidden="true" size={18} />
-              <div>
-                <span className="section-kicker">Research tracks</span>
-                <h2>Three patterns in the evidence</h2>
-                <p>
-                  These examples show recurring patterns across the map: early human signal, broad but unproven
-                  biology, and human repair evidence that may not yet generalize to aging.
-                </p>
-              </div>
+        <div className="page-shell before-now-next-grid">
+          {beforeNowNextSteps.map((step, index) => (
+            <article className="before-now-next-step" key={step.label}>
+              <span className="before-now-next-step__label">{step.label}</span>
+              <h3>{step.title}</h3>
+              <p>{step.summary}</p>
+              {index < beforeNowNextSteps.length - 1 ? (
+                <ArrowRight className="before-now-next-step__arrow" aria-hidden="true" size={18} />
+              ) : null}
+            </article>
+          ))}
+        </div>
+        <div className="page-shell reader-grid">
+          <article className="reader-panel">
+            <span className="section-kicker">Outlook criteria</span>
+            <h2>What would change our mind?</h2>
+            <div className="outlook-change-list">
+              {outlookChangeItems.map((item) => {
+                const changeTone =
+                  item.direction === "more_optimistic"
+                    ? "outlook-change-item--up"
+                    : item.direction === "less_optimistic"
+                      ? "outlook-change-item--down"
+                      : "outlook-change-item--watch";
+                const Icon =
+                  item.direction === "more_optimistic"
+                    ? Sparkles
+                    : item.direction === "less_optimistic"
+                      ? ShieldCheck
+                      : Radar;
+
+                return (
+                  <div className={`outlook-change-item ${changeTone}`} key={item.label}>
+                    <Icon aria-hidden="true" size={17} />
+                    <div>
+                      <strong>{item.label}</strong>
+                      <p>{item.summary}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-            <Link className="section-link" href="/tracks">
-              <span>Browse all tracks</span>
-              <ArrowRight aria-hidden="true" size={16} />
-            </Link>
-          </div>
-          <div className="track-example-list track-example-list--compact">
-            {visibleTrackExamples.map((example) => (
-              <Link className="track-example-card" href={example.href} key={example.href}>
+          </article>
+          <article className="reader-panel">
+            <div className="evidence-path__header">
+              <div className="evidence-path__title">
+                <Compass aria-hidden="true" size={18} />
                 <div>
-                  <span className="section-kicker">{example.label}</span>
-                  <strong>{example.title}</strong>
-                  <p>{example.summary}</p>
+                  <span className="section-kicker">Concrete examples</span>
+                  <h2>Three patterns in the evidence</h2>
+                  <p>
+                    These examples show recurring patterns across the map: early human signal, broad but unproven
+                    biology, and human repair evidence that may not yet generalize to aging.
+                  </p>
                 </div>
-                <ArrowUpRight aria-hidden="true" size={18} />
+              </div>
+              <Link className="section-link" href="/tracks">
+                <span>Browse all tracks</span>
+                <ArrowRight aria-hidden="true" size={16} />
               </Link>
-            ))}
-          </div>
+            </div>
+            <div className="track-example-list">
+              {visibleTrackExamples.map((example) => (
+                <Link className="track-example-card" href={example.href} key={example.href}>
+                  <div>
+                    <span className="section-kicker">{example.label}</span>
+                    <strong>{example.title}</strong>
+                    <p>{example.summary}</p>
+                  </div>
+                  <ArrowUpRight aria-hidden="true" size={18} />
+                </Link>
+              ))}
+            </div>
+          </article>
         </div>
       </section>
 

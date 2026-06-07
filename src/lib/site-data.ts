@@ -17,7 +17,6 @@ export type Stage =
 
 export type Momentum = "accelerating" | "steady" | "mixed" | "stalled" | "uncertain";
 export type Confidence = "low" | "moderate" | "high";
-export type Lev2036Outlook = "unsupported" | "speculative" | "plausible" | "on_track";
 export type SubjectType = "overall" | "hallmark" | "track" | "intervention";
 export type EvidenceReviewLane =
   | "source_fidelity"
@@ -70,7 +69,6 @@ export type OutlookFile = {
   supporting_evidence?: OutlookEvidenceLinkFile[];
   supporting_source_ids?: string[];
   last_updated: string;
-  lev_2036_outlook?: Lev2036Outlook;
   tags?: string[];
 };
 
@@ -227,7 +225,6 @@ export type OutlookRecord = {
   interpretation: string;
   lastUpdated: string;
   thinCoverage?: boolean;
-  lev2036Outlook?: Lev2036Outlook;
 };
 
 export type TrackCoverage = {
@@ -598,7 +595,7 @@ export type CurrentLevStoryRevisionTrigger = {
   trigger_type:
     | "new_publication_event"
     | "outlook_change"
-    | "scenario_change"
+    | "timing_window_change"
     | "state_of_field_rollup"
     | "review_due"
     | "human_editorial_request";
@@ -728,13 +725,6 @@ const findingWeightLabels: Record<Confidence, string> = {
   low: "Limited weight",
   moderate: "Moderate weight",
   high: "Strong weight"
-};
-
-const lev2036OutlookLabels: Record<Lev2036Outlook, string> = {
-  unsupported: "Unsupported",
-  speculative: "Speculative",
-  plausible: "Plausible",
-  on_track: "On track"
 };
 
 const evidenceNeedReasonLabels: Record<EvidenceNeedReason, string> = {
@@ -1176,8 +1166,7 @@ function normalizeOutlook(outlook: OutlookFile): OutlookRecord {
     strongestEvidence: outlook.strongest_current_evidence?.[0] ?? "No strongest-evidence summary has been published yet.",
     interpretation: outlook.interpretation_note,
     lastUpdated: outlook.last_updated,
-    thinCoverage: outlook.tags?.includes("thin_coverage"),
-    lev2036Outlook: outlook.lev_2036_outlook
+    thinCoverage: outlook.tags?.includes("thin_coverage")
   };
 }
 
@@ -1970,10 +1959,6 @@ export function getReadFirmnessPlainMeaning(confidence: Confidence) {
 
 export function getFindingWeightLabel(confidence: Confidence) {
   return findingWeightLabels[confidence];
-}
-
-export function getLev2036OutlookLabel(status: Lev2036Outlook) {
-  return lev2036OutlookLabels[status];
 }
 
 export function getEvidenceNeedReasonLabel(reason: EvidenceNeedReason) {

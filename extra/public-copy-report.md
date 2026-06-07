@@ -1,14 +1,14 @@
 # Public Copy Lint Report
 
-Generated: 2026-06-07T00:09:16.406Z
-Warnings: 333
+Generated: 2026-06-07T01:07:10.964Z
+Warnings: 344
 
 ## Highest-Volume Terms
 
-- durable: 104 warning(s); consider "long-lasting"
-- functional benefit: 80 warning(s); consider "long-lasting improvement in human function"
+- durable: 110 warning(s); consider "long-lasting"
+- functional benefit: 84 warning(s); consider "long-lasting improvement in human function"
+- mechanistic: 49 warning(s); consider "based on biology"
 - translation: 49 warning(s); consider "moving from lab work to useful human results"
-- mechanistic: 48 warning(s); consider "based on biology"
 - trial-watch: 16 warning(s); consider "trials to watch"
 - pathway engagement: 13 warning(s); consider "evidence that the intervention changed its intended biological target"
 - biomarker-heavy: 7 warning(s); consider "mostly based on biomarkers"
@@ -565,7 +565,7 @@ Warnings: 333
 - data/publication-events/publish-live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01-2026-06-01t22-40-10-852z.json $.change_note: "functional benefit" -> consider "long-lasting improvement in human function"
   Excerpt: Create the first public track outlook at a tentative human functional benefit, anchored narrowly by TWK10 frailty-function evidence and bounded by ...
 - data/publication-events/publish-live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06-2026-06-06t13-25-18-048z.json $.change_note: "functional benefit" -> consider "long-lasting improvement in human function"
-  Excerpt: ...ed older-adult human signal while keeping the evidence stage at human functional benefit, momentum accelerating, the read tentative, and 2036 status speculati...
+  Excerpt: ...ed older-adult human signal while keeping the evidence stage at human functional benefit, momentum accelerating, the read tentative, and no LEV timing upgrade...
 - data/publication-events/publish-live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06-2026-06-06t13-25-18-048z.json $.summary: "functional benefit" -> consider "long-lasting improvement in human function"
   Excerpt: ...being and gut-health RCT while keeping the track at a tentative human functional benefit with no LEV-relevant timing upgrade.
 - data/publication-events/publish-lysosomal-restoration-bootstrap-2026-06-01-2026-06-01t11-24-31-086z.json $.change_note: "functional benefit" -> consider "long-lasting improvement in human function"
@@ -642,6 +642,28 @@ Warnings: 333
   Excerpt: ? "None has reached durable disease or mortality relevance."
 - src/app/hallmarks/page.tsx line 83: "durable" -> consider "long-lasting"
   Excerpt: : `${durableOutcomeCount} have reached durable disease or mortality relevance.`}
+- src/app/scenarios/lev-by-2036/page.tsx line 102: "durable" -> consider "long-lasting"
+  Excerpt: "Mitochondrial and autophagy biomarkers keep moving without durable functional meaning."
+- src/app/scenarios/lev-by-2036/page.tsx line 124: "durable" -> consider "long-lasting"
+  Excerpt: ...epair, Parkinson, retinal, immune, or other replacement programs show durable functional benefit with mechanism-linked biomarkers and manageable lo...
+- src/app/scenarios/lev-by-2036/page.tsx line 124: "functional benefit" -> consider "long-lasting improvement in human function"
+  Excerpt: ...arkinson, retinal, immune, or other replacement programs show durable functional benefit with mechanism-linked biomarkers and manageable long-term risk.",
+- src/app/scenarios/lev-by-2036/page.tsx line 142: "functional benefit" -> consider "long-lasting improvement in human function"
+  Excerpt: ...nt, too local, too unsafe, or unable to connect senescence markers to functional benefit."
+- src/app/scenarios/lev-by-2036/page.tsx line 163: "durable" -> consider "long-lasting"
+  Excerpt: ...Most positive results are short biomarker movements that never become durable function.",
+- src/app/scenarios/lev-by-2036/page.tsx line 168: "durable" -> consider "long-lasting"
+  Excerpt: "The first durable benefits are real but too narrow or too small to plausibly outrun agi...
+- src/app/scenarios/lev-by-2036/page.tsx line 213: "durable" -> consider "long-lasting"
+  Excerpt: results turn into durable older-adult benefit, then into compatible maintenance cycles.
+- src/app/scenarios/lev-by-2036/page.tsx line 306: "durable" -> consider "long-lasting"
+  Excerpt: from “where is the human evidence?” to “are the combined gains broad, durable, and repeatable enough to
+- src/app/scenarios/lev-by-2036/page.tsx line 48: "mechanistic" -> consider "based on biology"
+  Excerpt: ..., immune risk, cancer risk, and durability become more important than mechanistic excitement."
+- src/app/scenarios/lev-by-2036/page.tsx line 54: "functional benefit" -> consider "long-lasting improvement in human function"
+  Excerpt: ...r target engagement, no major safety surprise, and a credible path to functional benefit."
+- src/app/scenarios/lev-by-2036/page.tsx line 92: "functional benefit" -> consider "long-lasting improvement in human function"
+  Excerpt: ...g or adjacent nutrient-sensing program reports replicated older-adult functional benefit with dosing that looks compatible with preventive geroscience.",
 - src/app/tracks/[trackId]/page.tsx line 146: "mechanistic" -> consider "based on biology"
   Excerpt: "mechanistic_plausibility",
 - src/app/tracks/[trackId]/page.tsx line 150: "durable" -> consider "long-lasting"
@@ -664,20 +686,20 @@ Warnings: 333
   Excerpt: <div className="trial-watch-card__top">
 - src/app/trials/page.tsx line 169: "trial-watch" -> consider "trials to watch"
   Excerpt: <span className="trial-watch-card__timing">{getTrialTimingSummary(trial)}</span>
-- src/components/homepage.tsx line 102: "durable" -> consider "long-lasting"
+- src/components/homepage.tsx line 104: "durable" -> consider "long-lasting"
   Excerpt: const durableOutcomeHallmarkCount = hallmarkRows.filter(
-- src/components/homepage.tsx line 103: "durable" -> consider "long-lasting"
+- src/components/homepage.tsx line 105: "durable" -> consider "long-lasting"
   Excerpt: ({ outlook }) => outlook.stage === "durable_disease_or_mortality_relevance"
 - src/components/homepage.tsx line 25: "mechanistic" -> consider "based on biology"
   Excerpt: { stage: "mechanistic_plausibility", label: "Mechanistic" },
-- src/components/homepage.tsx line 285: "durable" -> consider "long-lasting"
-  Excerpt: {durableOutcomeHallmarkCount === 0
-- src/components/homepage.tsx line 286: "durable" -> consider "long-lasting"
-  Excerpt: ? "none of the hallmarks is at durable human outcome evidence."
-- src/components/homepage.tsx line 287: "durable" -> consider "long-lasting"
-  Excerpt: : `${durableOutcomeHallmarkCount} hallmark(s) currently sit at durable human outco...
 - src/components/homepage.tsx line 29: "durable" -> consider "long-lasting"
   Excerpt: { stage: "durable_disease_or_mortality_relevance", label: "Durable outcomes" }
+- src/components/homepage.tsx line 331: "durable" -> consider "long-lasting"
+  Excerpt: {durableOutcomeHallmarkCount === 0
+- src/components/homepage.tsx line 332: "durable" -> consider "long-lasting"
+  Excerpt: ? "none of the hallmarks is at durable human outcome evidence."
+- src/components/homepage.tsx line 333: "durable" -> consider "long-lasting"
+  Excerpt: : `${durableOutcomeHallmarkCount} hallmark(s) currently sit at durable human outco...
 - src/components/homepage.tsx line 35: "durable" -> consider "long-lasting"
   Excerpt: "durable_disease_or_mortality_relevance"
 - src/components/stage-badge.tsx line 4: "mechanistic" -> consider "based on biology"

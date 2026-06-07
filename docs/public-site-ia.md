@@ -88,7 +88,7 @@ The first viewport should contain four things, in this order:
 1. `Overall LEV outlook`
 2. `12 hallmark outlook grid`
 3. `Last updated / recent movement`
-4. `2036 scenario lens`
+4. `Latest field review or optional scenario link`
 
 The first viewport should not require scrolling to find the hallmark grid.
 
@@ -145,22 +145,18 @@ Include:
 
 Do not show raw ingestion noise.
 
-#### 4. 2036 Scenario Lens
+#### 4. Speculative Scenario Page
 
-This is a distinct panel, not the primary framing of the entire site.
+This is a distinct opt-in page, not the primary framing of the entire site.
 
 Fields:
 
-- 2036 LEV outlook
-- short explanation
-- what would need to change to move the status
+- scenario premise
+- dated milestone sequence
+- track or hallmark progress that would need to happen
+- failure modes and evidence thresholds
 
-Allowed statuses:
-
-- unsupported
-- speculative
-- plausible
-- on_track
+The homepage may link to this page, but routine outlook records should not carry a date-specific status.
 
 #### 5. Evidence Paths
 
@@ -353,7 +349,7 @@ Fields:
 - confidence
 - main evidence gap
 - strongest current evidence
-- LEV 2036 outlook if relevant
+- earliest plausible window or timing caveat if relevant
 
 ### Evidence Ladder Module
 
