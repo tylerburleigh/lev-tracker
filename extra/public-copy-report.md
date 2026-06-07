@@ -1,7 +1,7 @@
 # Public Copy Lint Report
 
-Generated: 2026-06-07T12:51:12.079Z
-Warnings: 344
+Generated: 2026-06-07T13:57:29.131Z
+Warnings: 347
 
 ## Highest-Volume Terms
 
@@ -17,6 +17,9 @@ Warnings: 344
 - aging-directed: 3 warning(s); consider "about aging itself"
 - branch boundaries: 1 warning(s); consider "which claims are in scope and which are not"
 - directness: 1 warning(s); consider "relevance to aging"
+- publication event: 1 warning(s); consider "public update"
+- publication events: 1 warning(s); consider "public updates"
+- surveillance bundle: 1 warning(s); consider "field-change update"
 
 ## Findings
 
@@ -608,6 +611,8 @@ Warnings: 344
   Excerpt: ...er cellular senescence, centered on small human biomarker signals and mechanistic SASP-modulation evidence.
 - data/publication-events/publish-stem-cell-replacement-and-transplantation-bootstrap-2026-06-01-2026-06-01t20-13-00-339z.json $.change_note: "functional benefit" -> consider "long-lasting improvement in human function"
   Excerpt: Create the first public track outlook at human functional benefit with accelerating momentum and a tentative read because functional hu...
+- data/publication-events/publish-stem-cell-replacement-and-transplantation-surveillance-2026-06-06-2026-06-07t13-49-41-422z.json $.summary: "surveillance bundle" -> consider "field-change update"
+  Excerpt: Activity-only surveillance bundle refreshing the exPDite-2 bemdaneprocel phase 3 registry date while ke...
 - data/publication-events/publish-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-2026-06-06t12-22-33-769z.json $.change_note: "branch boundaries" -> consider "which claims are in scope and which are not"
   Excerpt: Repair improves source completeness and public branch boundaries for RTI biomarkers, trial-watch activity, TPN-101 program momentum, D...
 - data/publication-events/publish-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-2026-06-06t12-22-33-769z.json $.change_note: "trial-watch" -> consider "trials to watch"
@@ -616,6 +621,10 @@ Warnings: 344
   Excerpt: Published Transposon and Somatic Mutation Control Coverage Repair for June 6, 2026
 - data/publication-events/publish-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-2026-06-06t12-22-33-769z.json $.summary: "trial-watch" -> consider "trials to watch"
   Excerpt: ...dle that stages missing reverse-transcriptase-inhibitor biomarker and trial-watch records, TPN-101/ARPA-H activity, DREAM/somatic-mutation biology, TET...
+- src/app/activity/page.tsx line 22: "publication event" -> consider "public update"
+  Excerpt: summary="Curated trial, funding, company, regulatory, and publication events shown apart from evidence of benefit."
+- src/app/activity/page.tsx line 22: "publication events" -> consider "public updates"
+  Excerpt: summary="Curated trial, funding, company, regulatory, and publication events shown apart from evidence of benefit."
 - src/app/hallmarks/[hallmarkId]/page.tsx line 139: "mechanistic" -> consider "based on biology"
   Excerpt: "mechanistic_plausibility",
 - src/app/hallmarks/[hallmarkId]/page.tsx line 143: "durable" -> consider "long-lasting"

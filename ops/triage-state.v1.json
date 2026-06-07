@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-06T18:22:13.600Z",
+  "generated_at": "2026-06-07T13:56:01.458Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-06T18:22:13.506Z",
-    "research_priority_queue_updated_at": "2026-06-06T18:22:13.506Z",
-    "active_candidate_bundle_count": 1,
+    "research_coverage_status_updated_at": "2026-06-07T13:49:50.828Z",
+    "research_priority_queue_updated_at": "2026-06-07T13:49:50.829Z",
+    "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
-    "surveillance_queue_count": 37,
+    "surveillance_queue_count": 38,
     "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 28,
     "unnormalized_intervention_id_count": 70,
@@ -32,10 +32,10 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "editorial_review-stem-cell-replacement-and-transplantation-surveillance-2026-06-06",
-    "top_mode": "editorial_review",
-    "active_editorial_count": 1,
-    "ready_research_count": 37,
+    "top_work_item_id": "surveillance-senomorphics",
+    "top_mode": "surveillance",
+    "active_editorial_count": 0,
+    "ready_research_count": 38,
     "data_hardening_count": 1,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
@@ -45,47 +45,13 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "editorial_review-stem-cell-replacement-and-transplantation-surveillance-2026-06-06",
-      "mode": "editorial_review",
-      "domain": "editorial",
-      "priority_tier": "now",
-      "status": "ready",
-      "title": "Review active staged update stem-cell-replacement-and-transplantation-surveillance-2026-06-06",
-      "rationale": "Staged update stem-cell-replacement-and-transplantation-surveillance-2026-06-06 is submitted, so editorial work takes precedence over new research.",
-      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
-      "candidate_bundle_id": "stem-cell-replacement-and-transplantation-surveillance-2026-06-06",
-      "runbook_path": "docs/admin-review.md",
-      "command": "npm run research:bundle -- validate --bundle stem-cell-replacement-and-transplantation-surveillance-2026-06-06",
-      "source_paths": [
-        "data/candidate-bundles",
-        "docs/admin-review.md"
-      ],
-      "references": [
-        {
-          "record_type": "candidate_bundle",
-          "record_id": "stem-cell-replacement-and-transplantation-surveillance-2026-06-06"
-        }
-      ],
-      "signals": [
-        {
-          "name": "lifecycle_status",
-          "value": "submitted"
-        },
-        {
-          "name": "proposed_change_count",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "rank": 2,
       "item_id": "surveillance-senomorphics",
       "mode": "surveillance",
       "domain": "research",
       "priority_tier": "now",
       "status": "ready",
       "title": "Run field change check for Senomorphics",
-      "rationale": "Next distinct field-change target. Generated field-change queue rank 18; rank 1 was recently handled by a field change check or coverage-repair session.",
+      "rationale": "Next distinct field-change target. Generated field-change queue rank 19; rank 1 was recently handled by a field change check or coverage-repair session.",
       "default_action": "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
       "track_id": "senomorphics",
       "hallmark_id": "cellular_senescence",
@@ -108,7 +74,7 @@
       "signals": [
         {
           "name": "generated_queue_rank",
-          "value": 18
+          "value": 19
         },
         {
           "name": "last_session_mode",
@@ -121,25 +87,25 @@
       ]
     },
     {
-      "rank": 3,
-      "item_id": "coverage-assessment-backfill-extracellular-vesicle-and-secretome-therapies",
+      "rank": 2,
+      "item_id": "coverage-assessment-backfill-stem-cell-replacement-and-transplantation",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for Extracellular Vesicle and Secretome Therapies",
+      "title": "Backfill coverage assessment for Stem Cell Replacement and Transplantation",
       "rationale": "28 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
       "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
-      "track_id": "extracellular-vesicle-and-secretome-therapies",
-      "hallmark_id": "altered_intercellular_communication",
+      "track_id": "stem-cell-replacement-and-transplantation",
+      "hallmark_id": "stem_cell_exhaustion",
       "references": [
         {
           "record_type": "track",
-          "record_id": "extracellular-vesicle-and-secretome-therapies"
+          "record_id": "stem-cell-replacement-and-transplantation"
         },
         {
           "record_type": "hallmark",
-          "record_id": "altered_intercellular_communication"
+          "record_id": "stem_cell_exhaustion"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",
@@ -164,7 +130,7 @@
       ]
     },
     {
-      "rank": 4,
+      "rank": 3,
       "item_id": "data-normalization-intervention-refs",
       "mode": "data_normalization",
       "domain": "data",

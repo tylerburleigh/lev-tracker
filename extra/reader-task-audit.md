@@ -1,6 +1,6 @@
 # Reader Task Audit
 
-Generated: 2026-06-07T12:51:12.003Z
+Generated: 2026-06-07T13:57:29.054Z
 Passed: 14
 Issues: 0
 Warnings: 0
@@ -34,4 +34,4 @@ Warnings: 0
 - PASS: Every hallmark has a readable top-level outlook
   12 hallmark outlook(s) have evidence-gap, strongest-evidence, and interpretation copy.
 - PASS: Current LEV story has a current review state
-  Last reviewed 2026-06-06; due 2026-07-06; 11 observed outlook snapshot(s).
+  Last reviewed 2026-06-07; due 2026-07-07; 11 observed outlook snapshot(s).
