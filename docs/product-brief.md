@@ -59,7 +59,7 @@ Automation can search, draft, and revise candidate records, but it does not publ
 - Trust matters more than provocation.
 - The site can be interesting and provocative, but not through false precision.
 - Evidence, interpretation, and outlook must be visibly separated.
-- Company activity, funding, and regulatory movement are worth tracking, but they should live in an activity lane rather than directly determining scientific progress.
+- Company activity, funding, and regulatory events are worth tracking, but they should live in a field-activity lane rather than directly determining scientific progress.
 
 ## Non-Goals
 
@@ -173,13 +173,17 @@ One atomic claim or observation linked to a source and usually a study.
 
 ### Activity Item
 
-A non-efficacy update that may matter for context:
+A concrete external field event that may matter for context but is not itself evidence of benefit:
 
 - trial launch
 - trial completion
+- trial status change
 - company update
 - funding event
 - regulatory event
+- correction or retraction
+
+Do not use activity items for tracker/editorial meta-events such as adding something to a watchlist, changing site wording, expanding coverage, or completing a review. Those belong in publication events, outlook text, research sessions, or editorial notes. Activity item dates should be actual event dates when known.
 
 ### Milestone
 
@@ -250,7 +254,7 @@ Allow inspection of individual evidence records and their links.
 ### 7. Activity Feed
 
 Purpose:
-Show contextual movement in companies, trials, and regulation without overstating its scientific significance.
+Show curated field events in companies, trials, publications, and regulation without overstating their scientific significance.
 
 ## Public Outlook Object
 

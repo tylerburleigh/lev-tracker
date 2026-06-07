@@ -274,20 +274,36 @@ export type ActivityItemRecord = {
   activity_type: string;
   activity_lane: string;
   occurred_on: string;
+  source_ids?: string[];
+  external_urls?: string[];
   hallmark_ids?: string[];
   track_ids?: string[];
+  study_ids?: string[];
   affects_outlook?: boolean;
   significance_note?: string;
+};
+
+export type ActivityLink = {
+  id: string;
+  label: string;
+  href: string;
+  kind: "source" | "study" | "external";
 };
 
 export type ActivityFeedItem = {
   id: string;
   date: string;
   lane: string;
+  activityType: string;
+  activityTypeLabel: string;
   title: string;
   summary: string;
+  significanceNote?: string;
   affectsOutlook: boolean;
   hallmarkId: string;
+  trackIds: string[];
+  trackNames: string[];
+  links: ActivityLink[];
   href: string;
 };
 
@@ -1319,17 +1335,92 @@ function compareFindingsByStrength(left: FindingRecord, right: FindingRecord) {
   return left.name.localeCompare(right.name);
 }
 
+function getExternalLinkLabel(url: string) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return "External link";
+  }
+}
+
+function getClinicalTrialsUrl(sourceId: string) {
+  if (!/^nct-?\d+$/i.test(sourceId)) {
+    return undefined;
+  }
+
+  return `https://clinicaltrials.gov/study/NCT${sourceId.replace(/\D/g, "")}`;
+}
+
+function buildActivityLinks(item: ActivityItemRecord): ActivityLink[] {
+  const links: ActivityLink[] = [];
+  const seenHrefs = new Set<string>();
+
+  for (const studyId of item.study_ids ?? []) {
+    const href = `/studies/${studyId}`;
+    links.push({
+      id: studyId,
+      label: titleizeIdentifier(studyId),
+      href,
+      kind: "study"
+    });
+    seenHrefs.add(href);
+  }
+
+  for (const url of item.external_urls ?? []) {
+    if (seenHrefs.has(url)) {
+      continue;
+    }
+
+    links.push({
+      id: url,
+      label: getExternalLinkLabel(url),
+      href: url,
+      kind: "external"
+    });
+    seenHrefs.add(url);
+  }
+
+  for (const sourceId of item.source_ids ?? []) {
+    const href = getClinicalTrialsUrl(sourceId);
+    if (!href || seenHrefs.has(href)) {
+      continue;
+    }
+
+    links.push({
+      id: sourceId,
+      label: sourceId.replace(/^nct-?/i, "NCT").toUpperCase(),
+      href,
+      kind: "source"
+    });
+    seenHrefs.add(href);
+  }
+
+  return links;
+}
+
 function normalizeActivityItem(item: ActivityItemRecord): ActivityFeedItem {
+  const trackIds = item.track_ids ?? [];
+
   return {
     id: item.id,
     date: item.occurred_on,
     lane: item.activity_lane[0].toUpperCase() + item.activity_lane.slice(1),
+    activityType: item.activity_type,
+    activityTypeLabel: getReadableDataLabel(item.activity_type),
     title: item.name,
     summary: item.summary ?? item.significance_note ?? "",
+    significanceNote: item.significance_note,
     affectsOutlook: Boolean(item.affects_outlook),
     hallmarkId: item.hallmark_ids?.[0] ?? "genomic_instability",
+    trackIds,
+    trackNames: trackIds.map((trackId) => getTrackById(trackId)?.name ?? titleizeIdentifier(trackId)),
+    links: buildActivityLinks(item),
     href: "/activity"
   };
+}
+
+function buildActivityFeed(items: ActivityItemRecord[]): ActivityFeedItem[] {
+  return items.map(normalizeActivityItem);
 }
 
 function buildCurrentLevStoryStatus(
@@ -1838,23 +1929,23 @@ export async function getLeadingInterventionsForHallmark(
 
 export async function getActivityForHallmark(hallmarkId: string, limit = 4): Promise<ActivityFeedItem[]> {
   noStore();
-  return (await loadActivityItems())
+  const items = (await loadActivityItems())
     .filter((item) => item.hallmark_ids?.includes(hallmarkId))
-    .slice(0, limit)
-    .map(normalizeActivityItem);
+    .slice(0, limit);
+  return buildActivityFeed(items);
 }
 
 export async function getActivityForTrack(trackId: string, limit = 4): Promise<ActivityFeedItem[]> {
   noStore();
-  return (await loadActivityItems())
+  const items = (await loadActivityItems())
     .filter((item) => item.track_ids?.includes(trackId))
-    .slice(0, limit)
-    .map(normalizeActivityItem);
+    .slice(0, limit);
+  return buildActivityFeed(items);
 }
 
 export async function getActivityFeed(): Promise<ActivityFeedItem[]> {
   noStore();
-  return (await loadActivityItems()).map(normalizeActivityItem);
+  return buildActivityFeed(await loadActivityItems());
 }
 
 export async function getRecentChanges(): Promise<RecentChange[]> {

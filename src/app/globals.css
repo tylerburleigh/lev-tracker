@@ -903,6 +903,66 @@ time {
   padding: 16px;
 }
 
+.activity-card {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.activity-card__badges,
+.activity-card__meta,
+.activity-card__links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.activity-card__top time {
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.activity-card__meta {
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
+.activity-card__note {
+  display: grid;
+  gap: 5px;
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 253, 246, 0.66);
+  color: var(--text-soft);
+}
+
+.activity-card__note strong {
+  color: var(--text);
+  font-size: 0.78rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.activity-card__links {
+  justify-content: flex-end;
+}
+
+.activity-card__links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 253, 246, 0.7);
+  color: var(--text);
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
 .feed-item__title {
   font-weight: 600;
 }

@@ -108,6 +108,38 @@ function formatError(error) {
   return `${location} ${error.message}${property}`;
 }
 
+const publicActivityMetaPattern =
+  /\b(tracker|activity lane|watch lane|public watchlist|watchlist expanded|added to watchlist|tracked separately|contextual movement|contextual activity|field signal|evidence-weighted)\b/i;
+
+function getActivityText(value) {
+  return [value.name, value.summary, value.significance_note].filter((item) => typeof item === "string").join(" ");
+}
+
+function validatePublicActivityItem(relativePath, value, issues) {
+  if (!relativePath.startsWith("data/activity-items/") || value?.record_type !== "activity_item") {
+    return;
+  }
+
+  const hasConcreteAnchor = [
+    value.source_ids,
+    value.external_urls,
+    value.study_ids,
+    value.finding_ids
+  ].some((items) => Array.isArray(items) && items.length > 0);
+
+  if (!hasConcreteAnchor) {
+    issues.push(
+      `${relativePath}: public activity items must link to a concrete source, study, finding, or external URL. Tracker/editorial-only updates do not belong on /activity.`
+    );
+  }
+
+  if (publicActivityMetaPattern.test(getActivityText(value))) {
+    issues.push(
+      `${relativePath}: public activity copy appears to describe tracker/editorial process rather than an external field event. Use /activity only for field events with actual event dates.`
+    );
+  }
+}
+
 async function main() {
   const ajv = new Ajv2020({
     allErrors: true,
@@ -161,6 +193,8 @@ async function main() {
         issues.push(`${relativePath}: ${formatError(error)}`);
       }
     }
+
+    validatePublicActivityItem(relativePath, value, issues);
   }
 
   if (issues.length > 0) {

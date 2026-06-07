@@ -287,7 +287,7 @@ Only contextual items:
 - funding events
 - regulatory events
 
-This section should be visually distinct from findings so users do not confuse motion with proof.
+This section should be visually distinct from findings so users do not confuse field activity with evidence of benefit.
 
 ## Track Index
 
@@ -431,7 +431,17 @@ Fields:
 
 ### Job
 
-Track movement without implying efficacy.
+Track curated field events without implying efficacy.
+
+### Boundary With Trials
+
+`/trials` is the standing registry-linked human-study index. It should retain original registry dates, study design, population, endpoints, result status, and timing.
+
+`/activity` is the dated external field-event feed. It should include material field events such as trial launches, trial completions, registry status changes, newly posted results, funding, company or program updates, regulatory actions, corrections, retractions, and publication or conference events. Activity dates should be the actual event dates when known, not the date the tracker noticed or published the record.
+
+Do not use `/activity` for tracker/editorial meta-events: adding something to a watchlist, changing our wording, expanding coverage, completing a review, deciding that commercial activity should be tracked, or otherwise describing how the site changed. Those belong in `publication_event`, the relevant `outlook`, research sessions, or editorial notes.
+
+Historical backfill is allowed, but it should be deliberate. If the site includes older activity, the relevant scope should be scoured enough that the feed is not a misleading handful of old events. Routine old no-results registries can stay on `/trials`; activity backfill should focus on external field events that are decision-relevant or explain why a track is on watch.
 
 ### Controls
 

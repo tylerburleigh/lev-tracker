@@ -616,6 +616,38 @@ function validateOutlookRecord(record, recordMaps, issues, warnings, label, opti
   }
 }
 
+const publicActivityMetaPattern =
+  /\b(tracker|activity lane|watch lane|public watchlist|watchlist expanded|added to watchlist|tracked separately|contextual movement|contextual activity|field signal|evidence-weighted)\b/i;
+
+function getActivityText(record) {
+  return [record.name, record.summary, record.significance_note].filter((item) => typeof item === "string").join(" ");
+}
+
+function validateActivityItemRecord(record, issues, label) {
+  for (const field of ["summary", "activity_type", "activity_lane", "occurred_on"]) {
+    addIssueForMissingString(record, field, issues, label);
+  }
+
+  const hasConcreteAnchor = [
+    record.source_ids,
+    record.external_urls,
+    record.study_ids,
+    record.finding_ids
+  ].some((items) => Array.isArray(items) && items.length > 0);
+
+  if (!hasConcreteAnchor) {
+    issues.push(
+      `${label} must link to a concrete source, study, finding, or external URL. Tracker/editorial-only updates do not belong on /activity.`
+    );
+  }
+
+  if (publicActivityMetaPattern.test(getActivityText(record))) {
+    issues.push(
+      `${label} appears to describe tracker/editorial process rather than an external field event. Use /activity only for field events with actual event dates.`
+    );
+  }
+}
+
 function validateStagedRecordSemantics(promotionChanges, recordMaps, bundleStatus) {
   const issues = [];
   const warnings = [];
@@ -652,9 +684,7 @@ function validateStagedRecordSemantics(promotionChanges, recordMaps, bundleStatu
         validateOutlookRecord(record, recordMaps, issues, warnings, label, semanticOptions);
         break;
       case "activity_item":
-        for (const field of ["summary", "activity_type", "activity_lane", "occurred_on"]) {
-          addIssueForMissingString(record, field, issues, label);
-        }
+        validateActivityItemRecord(record, issues, label);
         break;
       default:
         break;
