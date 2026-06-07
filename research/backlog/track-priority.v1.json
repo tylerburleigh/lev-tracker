@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-07T16:41:40.397Z",
+  "updated_at": "2026-06-07T19:22:40.727Z",
   "notes": [
     "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
@@ -73,6 +73,16 @@
     {
       "rank": 1,
       "phase_id": "surveillance-rotation",
+      "track_id": "ampk-and-metabolic-modulators",
+      "hallmark_id": "deregulated_nutrient_sensing",
+      "priority_tier": "now",
+      "default_mode": "surveillance",
+      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
+      "default_question": "What changed for AMPK and Metabolic Modulators since the last meaningful review or publication, and does any change justify a public update?"
+    },
+    {
+      "rank": 2,
+      "phase_id": "surveillance-rotation",
       "track_id": "senomorphics",
       "hallmark_id": "cellular_senescence",
       "priority_tier": "now",
@@ -81,7 +91,7 @@
       "default_question": "What changed for Senomorphics since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 2,
+      "rank": 3,
       "phase_id": "surveillance-rotation",
       "track_id": "stem-cell-replacement-and-transplantation",
       "hallmark_id": "stem_cell_exhaustion",
@@ -91,17 +101,17 @@
       "default_question": "What changed for Stem Cell Replacement and Transplantation since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 3,
+      "rank": 4,
       "phase_id": "surveillance-rotation",
       "track_id": "extracellular-vesicle-and-secretome-therapies",
       "hallmark_id": "altered_intercellular_communication",
-      "priority_tier": "now",
+      "priority_tier": "soon",
       "default_mode": "surveillance",
       "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
       "default_question": "What changed for Extracellular Vesicle and Secretome Therapies since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 4,
+      "rank": 5,
       "phase_id": "surveillance-rotation",
       "track_id": "live-biotherapeutics-and-engineered-microbes",
       "hallmark_id": "dysbiosis",
@@ -111,17 +121,17 @@
       "default_question": "What changed for Live Biotherapeutics and Engineered Microbes since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 5,
+      "rank": 6,
       "phase_id": "surveillance-rotation",
       "track_id": "transposon-and-somatic-mutation-control",
       "hallmark_id": "genomic_instability",
-      "priority_tier": "soon",
+      "priority_tier": "later",
       "default_mode": "surveillance",
       "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
       "default_question": "What changed for Transposon and Somatic Mutation Control since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 6,
+      "rank": 7,
       "phase_id": "surveillance-rotation",
       "track_id": "chromatin-and-histone-modulation",
       "hallmark_id": "epigenetic_alterations",
@@ -131,7 +141,7 @@
       "default_question": "What changed for Chromatin and Histone Modulation since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 7,
+      "rank": 8,
       "phase_id": "surveillance-rotation",
       "track_id": "protein-aggregate-clearance",
       "hallmark_id": "loss_of_proteostasis",
@@ -141,7 +151,7 @@
       "default_question": "What changed for Protein Aggregate Clearance since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 8,
+      "rank": 9,
       "phase_id": "surveillance-rotation",
       "track_id": "selective-autophagy-and-organelle-quality-control",
       "hallmark_id": "disabled_macroautophagy",
@@ -151,7 +161,7 @@
       "default_question": "What changed for Selective Autophagy and Organelle Quality Control since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 9,
+      "rank": 10,
       "phase_id": "surveillance-rotation",
       "track_id": "caloric-restriction-mimetics",
       "hallmark_id": "deregulated_nutrient_sensing",
@@ -161,7 +171,7 @@
       "default_question": "What changed for Caloric Restriction Mimetics since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 10,
+      "rank": 11,
       "phase_id": "surveillance-rotation",
       "track_id": "mitochondrial-biogenesis-and-dynamics",
       "hallmark_id": "mitochondrial_dysfunction",
@@ -171,7 +181,7 @@
       "default_question": "What changed for Mitochondrial Biogenesis and Dynamics since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 11,
+      "rank": 12,
       "phase_id": "surveillance-rotation",
       "track_id": "immune-clearance-of-senescent-cells",
       "hallmark_id": "cellular_senescence",
@@ -181,7 +191,7 @@
       "default_question": "What changed for Immune Clearance of Senescent Cells since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 12,
+      "rank": 13,
       "phase_id": "surveillance-rotation",
       "track_id": "niche-rejuvenation-and-support",
       "hallmark_id": "stem_cell_exhaustion",
@@ -191,7 +201,7 @@
       "default_question": "What changed for Niche Rejuvenation and Support since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 13,
+      "rank": 14,
       "phase_id": "surveillance-rotation",
       "track_id": "neuroendocrine-and-systemic-signal-reset",
       "hallmark_id": "altered_intercellular_communication",
@@ -201,7 +211,7 @@
       "default_question": "What changed for Neuroendocrine and Systemic Signal Reset since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 14,
+      "rank": 15,
       "phase_id": "surveillance-rotation",
       "track_id": "resolution-pathway-and-tissue-repair",
       "hallmark_id": "chronic_inflammation",
@@ -211,7 +221,7 @@
       "default_question": "What changed for Resolution Pathway and Tissue Repair since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 15,
+      "rank": 16,
       "phase_id": "surveillance-rotation",
       "track_id": "microbiome-metabolite-restoration",
       "hallmark_id": "dysbiosis",
@@ -221,7 +231,7 @@
       "default_question": "What changed for Microbiome Metabolite Restoration since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 16,
+      "rank": 17,
       "phase_id": "surveillance-rotation",
       "track_id": "insulin-igf-axis-modulation",
       "hallmark_id": "deregulated_nutrient_sensing",
@@ -231,7 +241,7 @@
       "default_question": "What changed for Insulin and IGF Axis Modulation since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 17,
+      "rank": 18,
       "phase_id": "surveillance-rotation",
       "track_id": "mitochondrial-delivery-and-transplantation",
       "hallmark_id": "mitochondrial_dysfunction",
@@ -241,7 +251,7 @@
       "default_question": "What changed for Mitochondrial Delivery and Transplantation since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 18,
+      "rank": 19,
       "phase_id": "surveillance-rotation",
       "track_id": "ecosystem-replacement",
       "hallmark_id": "dysbiosis",
@@ -251,7 +261,7 @@
       "default_question": "What changed for Ecosystem Replacement since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 19,
+      "rank": 20,
       "phase_id": "surveillance-rotation",
       "track_id": "microbiome-composition-modulation",
       "hallmark_id": "dysbiosis",
@@ -259,16 +269,6 @@
       "default_mode": "surveillance",
       "rationale": "This area changes quickly and needs regular sorting of activity versus evidence.",
       "default_question": "What changed for Microbiome Composition Modulation since the last meaningful review or publication, and does any change justify a public update?"
-    },
-    {
-      "rank": 20,
-      "phase_id": "surveillance-rotation",
-      "track_id": "ampk-and-metabolic-modulators",
-      "hallmark_id": "deregulated_nutrient_sensing",
-      "priority_tier": "later",
-      "default_mode": "surveillance",
-      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
-      "default_question": "What changed for AMPK and Metabolic Modulators since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
       "rank": 21,
