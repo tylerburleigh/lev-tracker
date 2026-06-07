@@ -62,6 +62,20 @@
       "related_outlook_ids": [
         "track-transposon-and-somatic-mutation-control-outlook"
       ]
+    },
+    {
+      "label": "A senomorphics update added a preclinical signal",
+      "date": "2026-06-07",
+      "summary": "The senomorphics update added mianserin/Ca2+ as an animal lifespan and human-cell senescence signal, while keeping the track at an early human biomarker stage.",
+      "impact_on_outlook": "It adds a concrete signal to watch, but it does not make the overall LEV outlook more optimistic because treated-human evidence did not change.",
+      "subject_type": "track",
+      "subject_id": "senomorphics",
+      "related_publication_event_ids": [
+        "publish-senomorphics-surveillance-2026-06-07-2026-06-07t16-41-34-635z"
+      ],
+      "related_outlook_ids": [
+        "track-senomorphics-outlook"
+      ]
     }
   ],
   "what_to_watch_next": [
@@ -195,7 +209,7 @@
   ],
   "revision": {
     "last_reviewed": "2026-06-07",
-    "review_reason": "Editorial rollup after the activity-only exPDite-2 registry refresh confirmed the current story remains accurate: no outlook, stage, momentum, read-firmness, or LEV-relevant interpretation changed.",
+    "review_reason": "Editorial rollup after the June 7 senomorphics update confirmed the current story remains accurate: mianserin adds animal lifespan and human-cell senescence context, but no overall stage, momentum, read-firmness, or LEV-relevant interpretation changed.",
     "review_due": "2026-07-07",
     "triggers": [
       {
@@ -229,7 +243,7 @@
       }
     ],
     "observed_state_of_field_slug": "2026-06",
-    "observed_latest_publication_event_id": "publish-stem-cell-replacement-and-transplantation-surveillance-2026-06-06-2026-06-07t13-49-41-422z",
+    "observed_latest_publication_event_id": "publish-senomorphics-surveillance-2026-06-07-2026-06-07t16-41-34-635z",
     "observed_outlook_states": [
       {
         "outlook_id": "overall-lev-outlook",
@@ -240,7 +254,7 @@
         "confidence": "moderate",
         "evidence_gap": "The field still lacks repeated human studies showing long-lasting improvements in health or function in ways that clearly add up toward LEV.",
         "strongest_evidence": "The recent picture is broader rather than stronger: early missing-context updates are making the evidence easier to judge without making LEV look closer.",
-        "last_updated": "2026-06-06",
+        "last_updated": "2026-06-07",
         "fingerprint": "5055a4cd22a06a47"
       },
       {
@@ -340,6 +354,18 @@
         "fingerprint": "c89bad83d78cbf09"
       },
       {
+        "outlook_id": "track-senomorphics-outlook",
+        "subject_type": "track",
+        "subject_id": "senomorphics",
+        "evidence_stage": "human_biomarker_signal",
+        "momentum": "steady",
+        "confidence": "low",
+        "evidence_gap": "Direct human evidence is small, local, or acute-stress focused: topical rapamycin skin p16 and metformin disuse-recovery muscle SASP markers are biomarker signals, not long-lasting aging outcomes.",
+        "strongest_evidence": "Topical rapamycin reduced p16INK4A and increased collagen VII in a small human skin-aging trial.",
+        "last_updated": "2026-06-07",
+        "fingerprint": "016fadf201f665b4"
+      },
+      {
         "outlook_id": "track-stem-cell-replacement-and-transplantation-outlook",
         "subject_type": "track",
         "subject_id": "stem-cell-replacement-and-transplantation",
@@ -368,7 +394,8 @@
   "related_state_of_field_slug": "2026-06",
   "related_publication_event_ids": [
     "publish-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-2026-06-06t12-22-33-769z",
-    "publish-stem-cell-replacement-and-transplantation-surveillance-2026-06-06-2026-06-07t13-49-41-422z"
+    "publish-stem-cell-replacement-and-transplantation-surveillance-2026-06-06-2026-06-07t13-49-41-422z",
+    "publish-senomorphics-surveillance-2026-06-07-2026-06-07t16-41-34-635z"
   ],
   "related_outlook_ids": [
     "overall-lev-outlook",
@@ -377,6 +404,7 @@
     "track-mitochondrial-biogenesis-and-dynamics-outlook",
     "track-microbiome-metabolite-restoration-outlook",
     "track-partial-reprogramming-outlook",
-    "track-immune-clearance-of-senescent-cells-outlook"
+    "track-immune-clearance-of-senescent-cells-outlook",
+    "track-senomorphics-outlook"
   ]
 }
