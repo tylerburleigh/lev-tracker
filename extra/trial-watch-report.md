@@ -1,4 +1,4 @@
-# Trial Watch Report for Telomere Protection and Capping
+# Trial Watch Report for Genome Surveillance and Chromosome Stability
 
 Generated from reviewed local records on 2026-06-07.
 Stale registry threshold: 90 days. This report does not fetch current registry data.
