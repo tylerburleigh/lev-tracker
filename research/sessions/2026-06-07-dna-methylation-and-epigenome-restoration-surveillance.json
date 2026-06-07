@@ -1,0 +1,282 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-07-dna-methylation-and-epigenome-restoration-surveillance",
+  "name": "DNA Methylation and Epigenome Restoration field change check for June 7, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-07T21:18:00Z",
+  "completed_at": "2026-06-07T21:22:48Z",
+  "scope": {
+    "question": "What changed for DNA Methylation and Epigenome Restoration since the 2026-06-01 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "epigenetic_alterations"
+    ],
+    "track_ids": [
+      "dna-methylation-and-epigenome-restoration"
+    ],
+    "intervention_ids": [
+      "triim-regimen",
+      "methylation-supportive-diet-lifestyle",
+      "rejuvant-alpha-ketoglutarate",
+      "caloric-restriction",
+      "omega-3",
+      "vitamin-d",
+      "home-exercise-program",
+      "multivitamin-multimineral",
+      "casin"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "activity_only",
+  "summary": "Ran a field change check from the 2026-06-01T00:02:21.706Z DNA Methylation and Epigenome Restoration baseline publication through June 7, 2026. The local trial audit found one registry-linked study, TRIIM-X, and the current ClinicalTrials.gov record remains recruiting with estimated enrollment 85, a December 2025 estimated completion month, and no posted results. Broad ClinicalTrials.gov searches found several no-results biological-age or DNA-methylation endpoint registries, including Ca-AKG, taurine, multivitamin/mineral, fasting/smoking-cessation, and personalized healthspan protocols; these were posted or last updated before the baseline and add no same-window results. PubMed searches found no correction or retraction to the baseline support set. Same-window close PubMed items were activity or context only: a 60-person uncontrolled topical DHM skin-serum study reporting reduced epidermal methylation age after 8 weeks with commercial conflicts, a 4260-person cross-sectional supplement/customer-clock analysis associating delayed-release Ca-AKG plus vitamins with lower proprietary saliva-clock residuals, and an ST36 acupuncture aging trial protocol with DNA-methylation biomarkers but no results. Reviews, observational studies, a mouse time-restricted-feeding paper, and preprint screens did not change the public evidence map. No public outlook, source, study, finding, activity item, bundle, or coverage assessment update is warranted.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "activity_only",
+    "public_update_needed": false,
+    "activity_only": true,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The same-window changes are protocol, registry, single-cohort, cross-sectional, review, observational, or local-skin/cosmetic context. They do not add replicated systemic functional, disease, mortality, durability, safety, or mechanistic-mediation evidence beyond the current low-firmness human_biomarker_signal baseline, and they do not justify refreshing public wording or support maps."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial audit",
+      "query": "npm run audit:trials -- --track dna-methylation-and-epigenome-restoration --write",
+      "checked_at": "2026-06-07T21:22:48Z",
+      "url": "https://clinicaltrials.gov/study/NCT04375657",
+      "summary": "The audit found one registry-linked interventional study, one study with trial_details, zero missing trial detail records, zero stale registry checks, and zero open stale watch items for the scoped track."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "Direct check for known watchlist registry NCT04375657",
+      "checked_at": "2026-06-07T21:22:48Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT04375657",
+      "summary": "TRIIM-X remains recruiting with 85 estimated participants, phase 2 design, primary outcomes for epigenetic age, thymus regeneration, and safety/tolerability, secondary immunosenescence outcome, last update posted 2025-05-07, and no posted results."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "DNA methylation epigenetic age aging intervention; epigenetic clock biological age intervention older adults; DunedinPACE Horvath GrimAge PhenoAge methylation",
+      "checked_at": "2026-06-07T21:22:48Z",
+      "url": "https://clinicaltrials.gov/search?term=DNA%20methylation%20epigenetic%20age%20aging%20intervention",
+      "summary": "Broad registry searches found no new result-bearing post-baseline trial. Close no-results or pre-baseline records included Ca-AKG NCT05706389, taurine NCT06613542, multivitamin/mineral NCT06666660, TirolGESUND NCT05678426, SHARP NCT07596576, and PROMETHEUS NCT07451496."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "TRIIM thymus regeneration epigenetic age; alpha-ketoglutarate biological age DNA methylation aging; acupuncture aging DNA methylation biological age; dihydromyricetin skin epigenetic age DNA methylation",
+      "checked_at": "2026-06-07T21:22:48Z",
+      "url": "https://clinicaltrials.gov/search?term=alpha-ketoglutarate%20biological%20age%20DNA%20methylation%20aging",
+      "summary": "TRIIM-specific search returned only NCT04375657. Alpha-ketoglutarate search returned AEGIS CABG context and Ca-AKG NCT05706389 with no results. Acupuncture and topical-dihydromyricetin searches did not find a ClinicalTrials.gov result-bearing aging/methylation record."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "DNA methylation, DNAm, epigenetic age, epigenetic clock, DunedinPACE, GrimAge, PhenoAge, or Horvath terms with aging, biological age, older adults, intervention, or trial; publication dates 2026-06-01 to 2026-06-07",
+      "checked_at": "2026-06-07T21:22:48Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=DNA%20methylation%20epigenetic%20age%20aging%20intervention",
+      "summary": "Returned 33 records. Close records included PMID 42034839, PMID 42166733, PMID 42005520, PMID 42218923, PMID 42242554, PMID 42234964, PMID 40957604, PMID 41826182, PMID 42237231, and PMID 42228876. None changed the systemic human-biomarker-only public interpretation."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "TRIIM, thymus regeneration, alpha-ketoglutarate, Ca-AKG, Rejuvant, taurine, multivitamin, COSMOS, DO-HEALTH, CALERIE, or caloric restriction terms with DNA methylation, epigenetic age, epigenetic clock, biological age, aging, or ageing; publication dates 2026-06-01 to 2026-06-07",
+      "checked_at": "2026-06-07T21:22:48Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=alpha-ketoglutarate%20epigenetic%20age%20aging",
+      "summary": "Returned eight records. The closest were PMID 42166733, a cross-sectional supplement/customer-clock analysis, and PMID 42230994, a mouse time-restricted-feeding paper without a DNA-methylation endpoint in the abstract. No new controlled human methylation-clock result was found."
+    },
+    {
+      "source_name": "PubMed correction and retraction screen",
+      "query": "Baseline PMIDs 31496122, 33844651, 34847066, 37118425, 39900648, 41803341, and 32755011 with retraction, erratum, corrected-and-republished, or expression-of-concern publication types; publication dates 2026-06-01 to 2026-06-07",
+      "checked_at": "2026-06-07T21:22:48Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned zero correction, retraction, erratum, corrected-and-republished, or expression-of-concern records for the seven PubMed baseline supporting sources."
+    },
+    {
+      "source_name": "bioRxiv and medRxiv APIs",
+      "query": "Date window 2026-06-01 to 2026-06-07 with DNA methylation, DNAm, epigenetic age, epigenetic clock, biological age, DunedinPACE, GrimAge, PhenoAge, Horvath, TRIIM, alpha-ketoglutarate, taurine, multivitamin, and caloric restriction title/abstract screens",
+      "checked_at": "2026-06-07T21:22:48Z",
+      "url": "https://api.biorxiv.org/",
+      "summary": "Returned zero matching bioRxiv or medRxiv title/abstract records in the date window."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT04375657",
+      "study_id": "triim-x-extension-registry",
+      "source_id": "nct-04375657",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04375657",
+      "checked_at": "2026-06-07T21:22:48Z",
+      "previous_local_status": "recruiting",
+      "current_registry_status": "recruiting",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "TRIIM-X remains recruiting with no posted ClinicalTrials.gov results after the 2025-05-07 last update. The partial registry completion month remains December 2025, so no exact ISO completion date was recorded in this session."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 42034839",
+      "title": "Epigenetic Skin Aging and Its Reversal to Improve Skin Longevity across Ethnicities and Phototypes Using a Dihydromyricetin-Containing Serum: Results from a Prospective, Single-Cohort Study.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42034839/",
+      "decision": "context_only",
+      "reason": "Human intervention context: 60 participants used a topical DHM-containing serum for eight weeks and the paper reports reduced epidermal DNA-methylation age plus skin-appearance and structural measures. It is uncontrolled, local to skin/cosmetic biology, and has Beiersdorf employment or consulting conflicts, so it does not change the systemic LEV-relevant outlook."
+    },
+    {
+      "reference": "PMID 42166733",
+      "title": "Supplements and Drugs Are Associated With Biological Age in a Cohort of Exceptionally Healthy Individuals.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42166733/",
+      "decision": "method_limit",
+      "reason": "Cross-sectional analysis of 4260 health-enthusiast saliva-clock customers found delayed-release Ca-AKG plus vitamins associated with a lower proprietary age residual. The design is observational, commercially adjacent to the supplement context, and does not establish intervention causality or health benefit."
+    },
+    {
+      "reference": "PMID 42005520",
+      "title": "Activating the vagus nerve-adrenal anti-inflammatory axis to delay aging: A randomized controlled trial protocol.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42005520/",
+      "decision": "no_results",
+      "reason": "Protocol for a 120-person ST36 acupuncture trial with DNA-methylation and inflammatory aging biomarkers. It is relevant future watch context but has no outcome data."
+    },
+    {
+      "reference": "PMID 42230994",
+      "title": "Time-restricted feeding extends healthspan in both sexes and lifespan in male C57BL/6 J mice.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42230994/",
+      "decision": "wrong_scope",
+      "reason": "Mouse time-restricted-feeding healthspan and male-lifespan result. The abstract does not report DNA-methylation or epigenome-restoration endpoints, so it belongs outside this scoped track."
+    },
+    {
+      "reference": "PMID 42218923",
+      "title": "The epigenetic control of inflammaging in skeletal muscle and adipose tissue.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42218923/",
+      "decision": "context_only",
+      "reason": "Review-level muscle and adipose inflammaging context. It discusses epigenetic plasticity under lifestyle interventions but does not add a new primary intervention result."
+    },
+    {
+      "reference": "PMID 42242554",
+      "title": "The Evidence for Epigenetic Age Acceleration in Neurological Disease: A Systematic Review.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42242554/",
+      "decision": "context_only",
+      "reason": "Systematic review of epigenetic age acceleration in neurological disease. It supports caution about clock, tissue, and disease-context interpretation but adds no restoration intervention result."
+    },
+    {
+      "reference": "PMID 42234964",
+      "title": "Aging Biomarkers in Osteoporosis: A Systematic Review of Molecular Mechanisms, Biological Aging, and Population Evidence.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42234964/",
+      "decision": "context_only",
+      "reason": "Systematic review of DNA-methylation/telomere aging biomarkers and bone outcomes. It reinforces clock heterogeneity and limited clinical relevance rather than changing this intervention track."
+    },
+    {
+      "reference": "PMID 40957604",
+      "title": "Exercise-Induced Epigenetic Modifications: Implications for Healthy Aging.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40957604/",
+      "decision": "context_only",
+      "reason": "Exercise and epigenetic-modification review. It is mechanistic synthesis without new track-specific outcome evidence."
+    },
+    {
+      "reference": "PMID 41826182",
+      "title": "Biological aging across regular meat, low meat, pescatarian and vegetarian dietary patterns: A population-based cohort study.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41826182/",
+      "decision": "method_limit",
+      "reason": "Large observational diet-pattern and biological-age analysis using KDM-BA and PhenoAge rather than a DNA-methylation intervention trial. It does not establish epigenome restoration."
+    },
+    {
+      "reference": "PMID 42237231",
+      "title": "G protein-coupled receptor autoantibody expression patterns in adults with decelerated biological aging mirror pediatric profiles.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42237231/",
+      "decision": "wrong_scope",
+      "reason": "Descriptive autoantibody and PhenoAge-clock association study. It is biological-age context, not DNA-methylation or epigenome-restoration intervention evidence."
+    },
+    {
+      "reference": "PMID 42228876",
+      "title": "Triangulating Evidence from Observational and Mendelian Randomization Studies of Leisure Screen Time for Epigenetic Age Acceleration.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42228876/",
+      "decision": "method_limit",
+      "reason": "Observational and Mendelian-randomization screen-time study with epigenetic-age acceleration endpoints. It informs lifestyle risk context but is not a tested restoration intervention."
+    },
+    {
+      "reference": "NCT05706389",
+      "title": "Does Alpha-ketoglutarate Supplementation Lower BiologicaL agE in Middle- Aged Adults?",
+      "url": "https://clinicaltrials.gov/study/NCT05706389",
+      "decision": "no_results",
+      "reason": "Active-not-recruiting randomized Ca-AKG phase 2 trial with blood and saliva DNA-methylation age endpoints, last update posted 2026-05-26, and no posted results. It predates the baseline publication and is future watch context."
+    },
+    {
+      "reference": "NCT06613542",
+      "title": "Effects Of Daily Taurine Intake For 6 Months On Biological Age and Body Metabolism Indicators As Well As Physical Fitness In 55-75-year-old Women And Men",
+      "url": "https://clinicaltrials.gov/study/NCT06613542",
+      "decision": "no_results",
+      "reason": "Completed taurine trial with DNA-methylation biological-age endpoint, 90 actual participants, last update posted 2025-11-21, and no posted results."
+    },
+    {
+      "reference": "NCT06666660",
+      "title": "Daily Intake of Multivitamin & Mineral Supplementation Effects on Biological Age of Relatively Healthy Middle-aged Individuals",
+      "url": "https://clinicaltrials.gov/study/NCT06666660",
+      "decision": "no_results",
+      "reason": "Recruiting multivitamin/mineral trial with blood DNA-methylation status endpoint and no posted results; registry activity predates the surveillance window."
+    },
+    {
+      "reference": "NCT05678426",
+      "title": "TirolGESUND: Baseline-controlled Comparison of the Effects of Fasting Dietary Intervention or Smoking Cessation Combined With Exercise in Healthy Female Tyrolean Volunteers Aged 30-60 on Epigenetic and Multi-omic Biomarkers of Health, Ageing, and Disease",
+      "url": "https://clinicaltrials.gov/study/NCT05678426",
+      "decision": "no_results",
+      "reason": "Completed nonrandomized fasting/smoking-cessation/exercise study with DNA-methylation biomarker endpoints, last update posted 2026-05-07, and no posted results."
+    },
+    {
+      "reference": "NCT07596576",
+      "title": "Sheba Healthspan Research Population (SHARP) Trial - Sheba Longevity Center Diagnostic and Intervention Protocol to Lower Biological Age in Older Adults",
+      "url": "https://clinicaltrials.gov/study/NCT07596576",
+      "decision": "no_results",
+      "reason": "Recruiting large personalized healthspan protocol with biological-age endpoints and no posted results. It is broad longevity-program context rather than result-bearing DNA-methylation restoration evidence."
+    },
+    {
+      "reference": "NCT07451496",
+      "title": "PRecision gerOMedicinE: Tailored Healthy agEing With Lifestyle, sUpplements and drugS (PROMETHEUS)",
+      "url": "https://clinicaltrials.gov/study/NCT07451496",
+      "decision": "no_results",
+      "reason": "Recruiting small multimodal precision-geromedicine protocol with methylation as a secondary endpoint and no posted results. It is broad multimodal activity, not a public evidence-map change."
+    }
+  ],
+  "source_ids": [
+    "pmid-31496122",
+    "pmid-33844651",
+    "pmid-34847066",
+    "pmid-37118425",
+    "pmid-39900648",
+    "pmid-41803341",
+    "nct-04375657",
+    "pmid-32755011"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT04375657",
+    "https://clinicaltrials.gov/study/NCT05706389",
+    "https://clinicaltrials.gov/study/NCT06613542",
+    "https://clinicaltrials.gov/study/NCT06666660",
+    "https://clinicaltrials.gov/study/NCT05678426",
+    "https://clinicaltrials.gov/study/NCT07596576",
+    "https://clinicaltrials.gov/study/NCT07451496",
+    "https://pubmed.ncbi.nlm.nih.gov/42034839/",
+    "https://pubmed.ncbi.nlm.nih.gov/42166733/",
+    "https://pubmed.ncbi.nlm.nih.gov/42005520/",
+    "https://pubmed.ncbi.nlm.nih.gov/42230994/",
+    "https://pubmed.ncbi.nlm.nih.gov/42218923/",
+    "https://pubmed.ncbi.nlm.nih.gov/42242554/",
+    "https://pubmed.ncbi.nlm.nih.gov/42234964/",
+    "https://pubmed.ncbi.nlm.nih.gov/40957604/",
+    "https://pubmed.ncbi.nlm.nih.gov/41826182/",
+    "https://pubmed.ncbi.nlm.nih.gov/42237231/",
+    "https://pubmed.ncbi.nlm.nih.gov/42228876/"
+  ],
+  "notes": [
+    "Triage selected this as the rank-1 next distinct surveillance target after Proteasome Enhancement surveillance.",
+    "The delta window is anchored to publication event publish-dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31-2026-06-01t00-02-21-706z.",
+    "No coverage assessment exists yet for this track; this ordinary surveillance pass found watch-worthy registry completeness context but no material category-level change requiring immediate coverage repair.",
+    "NCT05706389 is a relevant Ca-AKG no-results trial to consider in future coverage assessment or trial-layer maintenance, but its latest registry update predates the baseline and does not by itself justify a surveillance public update.",
+    "The public boundary remains unchanged: human evidence is still DNA-methylation-clock heavy, larger controlled signals are small or clock-specific, and no intervention has tied methylation restoration to replicated systemic functional, disease, mortality, or durable healthspan benefit."
+  ],
+  "next_actions": [
+    "Continue ordinary surveillance for posted TRIIM-X results, Ca-AKG NCT05706389 results, taurine NCT06613542 results, and other result-bearing DNA-methylation-clock intervention updates.",
+    "Consider a separate coverage assessment if trial-watch completeness becomes a priority, especially for whether no-results Ca-AKG, taurine, multivitamin/mineral, TirolGESUND, SHARP, or PROMETHEUS registries should be represented before results are posted.",
+    "Create a public bundle only if future evidence changes stage, evidence weight, momentum, blockers, safety, durability, tissue/systemic directness, human functional outcomes, or the causal interpretation of DNA-methylation clock movement."
+  ]
+}

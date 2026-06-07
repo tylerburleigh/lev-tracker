@@ -1,12 +1,12 @@
-# Trial Watch Report for Proteasome Enhancement
+# Trial Watch Report for DNA Methylation and Epigenome Restoration
 
 Generated from reviewed local records on 2026-06-07.
 Stale registry threshold: 90 days. This report does not fetch current registry data.
 
 ## Summary
 
-- Registry-linked interventional studies: 0
-- With `trial_details`: 0
+- Registry-linked interventional studies: 1
+- With `trial_details`: 1
 - Missing `trial_details`: 0
 - Completed or past-completion records with no posted results: 0
 - Registry checks missing or stale: 0
@@ -15,11 +15,15 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 
 ### Result Status
 
+- no posted results: 1
+
 ### Trial Status
+
+- recruiting: 1
 
 ## Field-Review Watchlist
 
-No current local trial watch candidates.
+- [TRIIM-X extension registry study](https://clinicaltrials.gov/study/NCT04375657) (NCT04375657): recruiting; no posted results; completion not recorded; registry 2026-06-02 (5 days old).
 
 ## Completed Or Past-Completion With No Posted Results
 
@@ -44,4 +48,8 @@ All scoped registry-linked interventional studies have trial details.
 - Treat unchanged no-result registries as surveillance facts, not field progress.
 - Treat status-only changes as activity unless they alter the public interpretation.
 - Send posted trial results through staged evidence review before changing an outlook.
+
+## Source Context Example
+
+A ClinicalTrials.gov phase 2 registry entry for TRIIM-X. The registry record available on June 2, 2026 lists recruiting status, status verified May 2025, last update posted May 7, 2025, estimated enrollment of 85, and no posted results.
 
