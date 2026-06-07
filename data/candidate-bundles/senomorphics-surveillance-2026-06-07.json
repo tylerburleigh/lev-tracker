@@ -5,7 +5,7 @@
   "name": "Senomorphics Field-Change Update for June 7, 2026",
   "summary": "Staged update adding the June 2026 mianserin/calcium-homeostasis mouse lifespan source, refreshing two registry-linked human study records, and keeping the public stage unchanged.",
   "intake_mode": "surveillance",
-  "lifecycle_status": "submitted",
+  "lifecycle_status": "published",
   "submitted_at": "2026-06-07T15:01:26Z",
   "submitted_by": "codex-agent",
   "revision_number": 1,
@@ -159,9 +159,7 @@
   },
   "session_reference": "research/sessions/2026-06-07-senomorphics-surveillance.json",
   "next_actions": [
-    "Run source-fidelity review for PMID 42251040 and the two registry refreshes.",
-    "Run interpretation review focused on keeping the human stage unchanged despite the new mouse lifespan signal.",
-    "Publish only after required review lanes are complete and blocking findings are closed."
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
   ],
   "tags": [
     "surveillance",
@@ -171,5 +169,12 @@
     "calcium-homeostasis",
     "sasp",
     "staged-update"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-senomorphics-surveillance-2026-06-07-source-fidelity-r1",
+    "evidence-review-senomorphics-surveillance-2026-06-07-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-senomorphics-surveillance-2026-06-07-2026-06-07t16-41-34-635z"
   ]
 }
