@@ -185,6 +185,111 @@
         }
       }
     },
+    "trial_watch_checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "registry_id",
+          "checked_at",
+          "current_results_status",
+          "materiality",
+          "public_action",
+          "summary"
+        ],
+        "properties": {
+          "registry_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z]+[A-Za-z0-9._-]*$"
+          },
+          "study_id": {
+            "$ref": "./common.schema.json#/$defs/studyRef"
+          },
+          "source_id": {
+            "$ref": "./common.schema.json#/$defs/sourceRef"
+          },
+          "registry_url": {
+            "$ref": "./common.schema.json#/$defs/url"
+          },
+          "checked_at": {
+            "$ref": "./common.schema.json#/$defs/dateTime"
+          },
+          "previous_local_status": {
+            "$ref": "./common.schema.json#/$defs/studyStatus"
+          },
+          "current_registry_status": {
+            "$ref": "./common.schema.json#/$defs/studyStatus"
+          },
+          "previous_results_status": {
+            "enum": [
+              "posted",
+              "not_posted",
+              "pending",
+              "unknown"
+            ]
+          },
+          "current_results_status": {
+            "enum": [
+              "posted",
+              "not_posted",
+              "pending",
+              "unknown"
+            ]
+          },
+          "primary_completion_date": {
+            "$ref": "./common.schema.json#/$defs/isoDate"
+          },
+          "study_completion_date": {
+            "$ref": "./common.schema.json#/$defs/isoDate"
+          },
+          "completion_date_kind": {
+            "enum": [
+              "actual",
+              "estimated",
+              "unknown"
+            ]
+          },
+          "results_first_posted_date": {
+            "$ref": "./common.schema.json#/$defs/isoDate"
+          },
+          "status_changed": {
+            "type": "boolean"
+          },
+          "results_changed": {
+            "type": "boolean"
+          },
+          "completion_date_changed": {
+            "type": "boolean"
+          },
+          "materiality": {
+            "enum": [
+              "unchanged",
+              "new_trial",
+              "status_change",
+              "completion_change",
+              "results_posted",
+              "termination",
+              "not_retrieved",
+              "wrong_scope"
+            ]
+          },
+          "public_action": {
+            "enum": [
+              "none",
+              "record_no_op",
+              "stage_activity",
+              "stage_source_or_study",
+              "stage_finding_and_outlook_review",
+              "coverage_repair"
+            ]
+          },
+          "summary": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "excluded_sources": {
       "type": "array",
       "items": {

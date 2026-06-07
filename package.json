@@ -12,6 +12,7 @@
     "sync:research-planning": "node scripts/seed-research-planning.mjs && node scripts/seed-work-triage.mjs",
     "sync:work-triage": "node scripts/seed-work-triage.mjs",
     "lint:public-copy": "node scripts/public-copy-lint.mjs",
+    "audit:trials": "node scripts/trial-watch-report.mjs",
     "audit:reader-tasks": "node scripts/reader-task-audit.mjs",
     "audit:editorial": "node scripts/editorial-quality.mjs",
     "audit:editorial:ratchet": "node scripts/editorial-quality.mjs --write --max-copy-warnings 269 --max-reader-warnings 0",

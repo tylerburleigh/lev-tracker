@@ -8,7 +8,7 @@ Generated for review: 2026-06-06
 
 Title: Broader activity, same human proof gap
 
-Longevity research now has early human signals in more places, but the center of gravity is still early testing. LEV does not look close until multiple approaches show that people function better for longer, with safety and lasting effects clear enough to matter.
+Longevity research now has early human signals in more places, but the center of gravity is still early testing. LEV does not look close until multiple approaches show long-lasting improvements in human health or function, with safety and lasting effects clear enough to matter.
 
 ## Where We Are Now
 
@@ -25,18 +25,18 @@ The recent picture is broader rather than stronger. More areas can be compared s
 ## Recent Developments
 
 - A broader look exposes the same bottleneck: The field is easier to judge, but the evidence has not moved far enough to make LEV look closer.
-- Early signs in people are showing up in more places: The field is easier to track seriously, but many signs are still narrow, disease-specific, or mostly based on biomarkers.
+- Early human signals are showing up in more places: The field is easier to track seriously, but many signs are still narrow, disease-specific, or mostly based on biomarkers.
 - More context is narrowing the claims: The update made the evidence easier to judge without treating activity as proof.
 
 ## Before / Now / Next
 
 - Before / Isolated claims: A few prominent intervention stories could make the field look more advanced than it was. Many claims were hard to compare because they used different endpoints, populations, and standards of proof.
-- Now / Early signals, uneven strength: More areas now have human biomarkers, narrow functional signs, disease outcomes, or trials in motion. Most still stop short of showing broad, lasting aging benefit in people.
-- Next / Human proof that lasts: The next major step is repeated human evidence that older adults function better for longer, not just short-term biomarker movement or narrow disease response.
+- Now / Early signals, uneven strength: More areas now have human biomarkers, narrow functional signs, disease outcomes, or trials in motion. Most still stop short of showing broad, lasting human aging benefit.
+- Next / Human proof that lasts: The next major step is repeated human evidence that older adults maintain better function for longer, not just short-term biomarker movement or narrow disease response.
 
 ## What Would Change Our Mind
 
-- Repeated human functional results: Several independent studies show that older adults function better for longer, not just that biomarkers move.
+- Repeated human functional results: Several independent studies show that older adults maintain better function for longer, not just that biomarkers move.
 - Safer delivery and lasting effects: Fast-moving tracks show controlled delivery, acceptable safety, and benefits that last beyond short-term signals.
 - Null, unsafe, or narrow human results: Human studies fail to show useful outcomes, reveal safety problems, or show effects that are too narrow to change the aging story.
 

@@ -39,15 +39,14 @@ Top-level navigation:
 - `Overview`
 - `Hallmarks`
 - `Tracks`
+- `Trials`
 - `Activity`
-- `State of the Field`
-- `Methods`
+- `Field Reviews`
 
 Global utilities:
 
 - search
 - latest update timestamp
-- evidence / interpretation / outlook legend
 
 The site should not lead with a conventional marketing nav. It should feel like an operational knowledge product.
 
@@ -71,8 +70,6 @@ The site should not lead with a conventional marketing nav. It should feel like 
   Finding detail page
 - `/activity`
   Activity feed
-- `/methods`
-  Methods and trust model
 - `/state-of-the-field`
   Editorial archive index
 - `/state-of-the-field/{edition_slug}`
@@ -165,15 +162,11 @@ Allowed statuses:
 - plausible
 - on_track
 
-#### 5. Methodology and Trust Notes
+#### 5. Evidence Paths
 
-Very compact block linking to Methods.
+Compact links to concrete track pages that illustrate the current field picture.
 
-Must communicate:
-
-- human-reviewed
-- source-backed
-- evidence, interpretation, and outlook are distinct
+Must communicate why those examples are shown, without turning the homepage into a methods explainer.
 
 ## Hallmarks Index
 
@@ -476,20 +469,7 @@ Monthly editions with:
 
 This is where the site can be more narrative without weakening the trust model.
 
-## Methods Page
-
-### Job
-
-Defend the product's credibility.
-
-### Sections
-
-- what the tracker is
-- what counts as evidence
-- how stages move
-- difference between evidence, interpretation, and outlook
-- what activity items mean
-- review and publication workflow
+The public app intentionally does not include a standalone methodology page. Credibility should come from clear claims, source-backed detail pages, field reviews, and inspectable evidence paths rather than a separate trust explainer.
 - known limitations
 
 ## Shared UI Objects

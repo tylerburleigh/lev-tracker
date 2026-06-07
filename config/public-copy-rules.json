@@ -6,19 +6,19 @@
     },
     {
       "from": "replicated aging-directed human functional benefit",
-      "to": "repeated human studies showing that people function better for longer"
+      "to": "repeated human studies showing long-lasting improvements in health or function"
     },
     {
       "from": "aging-directed human functional benefit",
-      "to": "human evidence that people function better for longer"
+      "to": "human evidence of long-lasting health or function gains"
     },
     {
       "from": "human functional benefit",
-      "to": "signs that people function better"
+      "to": "evidence that human function improves"
     },
     {
       "from": "human-facing signals",
-      "to": "early signs in people"
+      "to": "early human signals"
     },
     {
       "from": "human-facing entries",
@@ -186,11 +186,19 @@
     },
     {
       "from": "low-confidence",
-      "to": "still uncertain"
+      "to": "tentative"
     },
     {
       "from": "low confidence",
-      "to": "low confidence"
+      "to": "tentative"
+    },
+    {
+      "from": "confidence level",
+      "to": "firmness of the read"
+    },
+    {
+      "from": "rating confidence",
+      "to": "read firmness"
     },
     {
       "from": "directness",
@@ -198,7 +206,7 @@
     },
     {
       "from": "human-adjacent",
-      "to": "near human evidence, but not direct proof in people"
+      "to": "human-relevant evidence, but not direct human proof"
     },
     {
       "from": "translational",
@@ -220,11 +228,11 @@
   "jargon_rules": [
     {
       "term": "human-facing",
-      "suggestion": "early signs in people"
+      "suggestion": "early human signals"
     },
     {
       "term": "human-adjacent",
-      "suggestion": "near human evidence, but not direct proof in people"
+      "suggestion": "human-relevant evidence, but not direct human proof"
     },
     {
       "term": "coverage repair",
@@ -300,7 +308,7 @@
     },
     {
       "term": "functional benefit",
-      "suggestion": "people function better"
+      "suggestion": "long-lasting improvement in human function"
     },
     {
       "term": "trial-watch",
@@ -309,6 +317,18 @@
     {
       "term": "biomarker-heavy",
       "suggestion": "mostly based on biomarkers"
+    },
+    {
+      "term": "low confidence",
+      "suggestion": "tentative"
+    },
+    {
+      "term": "confidence level",
+      "suggestion": "firmness of the read"
+    },
+    {
+      "term": "rating confidence",
+      "suggestion": "read firmness"
     },
     {
       "term": "directness",

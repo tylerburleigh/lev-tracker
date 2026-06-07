@@ -130,7 +130,50 @@ function collectCurrentLevStory(records, source, narrative) {
 function collectStateOfField(records, source, edition) {
   addText(records, source, "$.title", edition.title);
   addText(records, source, "$.summary", edition.summary);
+  addText(records, source, "$.lede", edition.lede);
+  addText(records, source, "$.bottom_line", edition.bottom_line);
+  addText(records, source, "$.field_change_note", edition.field_change_note);
+  addText(records, source, "$.period_label", edition.period_label);
   addTextArray(records, source, "$.bullets", edition.bullets);
+  addText(records, source, "$.why_it_matters", edition.why_it_matters);
+  addTextArray(records, source, "$.what_did_not_change", edition.what_did_not_change);
+  addTextArray(records, source, "$.reader_takeaways", edition.reader_takeaways);
+
+  for (const [index, change] of (edition.what_changed ?? []).entries()) {
+    addText(records, source, `$.what_changed[${index}].title`, change.title);
+    addText(records, source, `$.what_changed[${index}].summary`, change.summary);
+    addText(records, source, `$.what_changed[${index}].interpretation`, change.interpretation);
+  }
+
+  for (const [index, context] of (edition.current_context ?? []).entries()) {
+    addText(records, source, `$.current_context[${index}].label`, context.label);
+    addText(records, source, `$.current_context[${index}].summary`, context.summary);
+  }
+
+  for (const [index, signal] of (edition.signals_to_watch ?? []).entries()) {
+    addText(records, source, `$.signals_to_watch[${index}].label`, signal.label);
+    addText(records, source, `$.signals_to_watch[${index}].summary`, signal.summary);
+  }
+
+  for (const [index, item] of (edition.trial_horizon ?? []).entries()) {
+    addText(records, source, `$.trial_horizon[${index}].label`, item.label);
+    addText(records, source, `$.trial_horizon[${index}].summary`, item.summary);
+  }
+
+  for (const [index, gap] of (edition.evidence_gaps ?? []).entries()) {
+    addText(records, source, `$.evidence_gaps[${index}].label`, gap.label);
+    addText(records, source, `$.evidence_gaps[${index}].summary`, gap.summary);
+  }
+
+  for (const [index, example] of (edition.track_examples ?? []).entries()) {
+    addText(records, source, `$.track_examples[${index}].label`, example.label);
+    addText(records, source, `$.track_examples[${index}].title`, example.title);
+    addText(records, source, `$.track_examples[${index}].summary`, example.summary);
+  }
+
+  for (const [index, revision] of (edition.revision_history ?? []).entries()) {
+    addText(records, source, `$.revision_history[${index}].summary`, revision.summary);
+  }
 }
 
 function collectHallmarkInsights(records, source, insights) {

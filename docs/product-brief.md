@@ -259,11 +259,6 @@ Allow inspection of individual evidence records and their links.
 Purpose:
 Show contextual movement in companies, trials, and regulation without overstating its scientific significance.
 
-### 8. Methods Page
-
-Purpose:
-Explain the schema, sourcing rules, review process, and how outlook judgments are made.
-
 ## Public Outlook Object
 
 An `outlook` is the curator's current judgment about a thing. The current public data set includes:

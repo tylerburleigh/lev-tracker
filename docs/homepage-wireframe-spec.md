@@ -38,7 +38,7 @@ The homepage should render in this order:
 2. Overview band
 3. Hallmark outlook grid
 4. Recent changes and 2036 scenario band
-5. Trust and methods band
+5. Reader paths into concrete evidence
 
 ## Wireframe Overview
 
@@ -169,7 +169,6 @@ This is the most prominent component on the homepage.
 
 #### Interaction
 
-- optional link to Methods
 - optional link to latest editorial note
 
 ### Component B: Snapshot Rail
@@ -363,19 +362,17 @@ Fallback:
 - explicit that this is a scenario lens
 - no pseudo-precision
 
-## Section 5: Trust and Methods Band
+## Section 5: Reader Paths
 
 ### Job
 
-Close the page with a compact credibility anchor.
+Offer concrete paths into the evidence without adding another interpretive summary block.
 
 ### Content
 
-- human-reviewed
-- source-backed
-- evidence / interpretation / outlook are distinct
-- link to Methods
-- link to State of the Field
+- track examples that illustrate recurring evidence patterns
+- short rationale for why those examples are shown
+- link to browse all tracks
 
 ### Layout
 
@@ -451,7 +448,7 @@ If one hallmark lacks an outlook:
 Show:
 
 - `No recent public changes`
-- link to Methods or State of the Field
+- link to State of the Field
 
 ## Accessibility and Readability Constraints
 

@@ -22,11 +22,11 @@
     "Cold-induced PA28gamma/PSME-3 links proteasome activation to C. elegans longevity and reduces aggregation in worm and human-cell models.",
     "A 2026 C. elegans study supports coordinated proteasome subunit expression as a requirement for stress resistance, proteostasis, and longevity programs."
   ],
-  "interpretation_note": "Proteasome enhancement has enough direct animal lifespan and proteotoxic-stress evidence for a low-confidence animal_signal baseline. The strongest signals are still worm-heavy and mechanism-diverse, while human evidence remains cell-based and no clinical program yet demonstrates that selective proteasome enhancement improves aging-relevant function, disease progression, or survival.",
+  "interpretation_note": "Proteasome enhancement has enough direct animal lifespan and proteotoxic-stress evidence for a tentative animal signal baseline. The strongest signals are still worm-heavy and mechanism-diverse, while human evidence remains cell-based and no clinical program yet demonstrates that selective proteasome enhancement improves aging-relevant function, disease progression, or survival.",
   "what_would_change_the_rating": [
-    "A move to human_biomarker_signal would require an intervention study in humans showing reproducible proteasome pathway engagement in aging-relevant tissue, with prespecified proteostasis or damage-clearance biomarkers.",
-    "A move to human_functional_benefit would require a human trial linking proteasome enhancement to functional benefit in an age-relevant or proteotoxic-disease population, while separating proteasome effects from broad Nrf2, cAMP, or stress-response activation.",
-    "Higher confidence would need mammalian aging or disease-prevention studies with durable benefit, dose-response, tissue specificity, and safety readouts for chronic pathway activation.",
+    "A move to human biomarker signal would require an intervention study in humans showing reproducible proteasome pathway engagement in aging-relevant tissue, with prespecified proteostasis or damage-clearance biomarkers.",
+    "A move to human functional benefit would require a human trial linking proteasome enhancement to functional benefit in an age-relevant or proteotoxic-disease population, while separating proteasome effects from broad Nrf2, cAMP, or stress-response activation.",
+    "A firmer read would need mammalian aging or disease-prevention studies with durable benefit, dose-response, tissue specificity, and safety readouts for chronic pathway activation.",
     "The rating would weaken if mammalian studies show proteasome activation causes unacceptable tissue, fertility, cancer, immune, or degradation-specific tradeoffs.",
     "Compound or exposure claims should not upgrade the rating unless they measure proteasome activation directly and show that blocking the proteasome pathway removes the benefit."
   ],
@@ -46,7 +46,7 @@
     {
       "label": "Stage assignment",
       "outlook_field": "evidence_stage",
-      "conclusion": "The track reaches animal_signal because multiple C. elegans studies directly connect proteasome enhancement or coordinated proteasome regulation with lifespan, stress resistance, and aggregation phenotypes.",
+      "conclusion": "The track reaches animal signal because multiple C. elegans studies directly connect proteasome enhancement or coordinated proteasome regulation with lifespan, stress resistance, and aggregation phenotypes.",
       "support_role": "supports",
       "rationale": "RPN-6 expression, compound-mediated 18alpha-GA activation, open-gate proteasome engineering, cold-induced PA28gamma/PSME-3 activity, and SKN-1A-linked subunit regulation all support the biological tractability of proteasome enhancement in animal aging models.",
       "finding_ids": [
@@ -72,7 +72,7 @@
     {
       "label": "Human translation boundary",
       "outlook_field": "evidence_stage",
-      "conclusion": "The track should not be upgraded to human_biomarker_signal because human evidence is currently cell-based rather than organismal.",
+      "conclusion": "The track should not be upgraded to human biomarker signal because human evidence is currently cell-based rather than organismal.",
       "support_role": "limits",
       "rationale": "Human fibroblast Nrf2 activation, mammalian cAMP-PKA/Rpn6 proteasome activation, and cold-induced proteasome changes in human cells support pathway plausibility, but none show clinical pathway engagement or human functional benefit.",
       "finding_ids": [
@@ -112,9 +112,9 @@
       ]
     },
     {
-      "label": "Confidence and safety",
+      "label": "Read firmness and safety",
       "outlook_field": "confidence",
-      "conclusion": "Confidence remains low because mechanisms, models, and interventions are diverse and chronic safety is unresolved.",
+      "conclusion": "The read remains tentative because mechanisms, models, and interventions are diverse and chronic safety is unresolved.",
       "support_role": "limits",
       "rationale": "The evidence map spans genetic proteasome subunit expression, Nrf2-linked compound effects, cAMP-PKA phosphorylation, temperature-induced PA28gamma biology, and an engineered open-gate proteasome. These signals cohere biologically but do not yet define a safe, selective, human-ready intervention class.",
       "finding_ids": [

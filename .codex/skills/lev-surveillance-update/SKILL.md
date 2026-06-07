@@ -22,6 +22,8 @@ Use this for ongoing monitoring after a scope already has baseline coverage.
 - related `review-comments` and `publication-events`
 - if present, the latest session note in `research/sessions/`
 - if present, the latest track coverage assessment in `research/coverage-assessments/`
+- `docs/surveillance-checklist.md`
+- the trial watch report from `npm run audit:trials -- --track <track-id> --write` when the scoped track has registry-linked human studies
 
 ## Workflow
 
@@ -35,6 +37,8 @@ Use this for ongoing monitoring after a scope already has baseline coverage.
 4. Run current external source discovery before deciding materiality:
    - PubMed or NCBI E-utilities is required for biomedical track surveillance.
    - ClinicalTrials.gov API is required when human studies, registries, or trial-watch records could affect the track.
+   - Re-check known watchlist trials first: every registry ID on scoped public study records, especially records with `trial_details`, no posted results, completion dates, or stale `registry_last_checked` dates.
+   - Then search registries broadly for new trials using track terms, intervention names, sponsor/program names, aging terms, older-adult terms, and disease-boundary terms.
    - Use other official registries, regulator pages, DOI/publisher pages, preprint servers, conference pages, sponsor pages, or broader web search when the track is fast-moving, commercial, preprint-heavy, or likely to have non-PubMed sources.
    - Treat non-primary web hits as leads unless they point to verifiable source data.
    - Record search terms, dates, URLs, and close excluded hits in the session.
@@ -51,13 +55,17 @@ Use this for ongoing monitoring after a scope already has baseline coverage.
    - population or model, sample size, duration, intervention or exposure, endpoint, quantitative result, safety signal, funding/conflicts, and directness boundary
    - whether the change alters mechanism, biomarker movement, functional benefit, disease-specific benefit, lifespan/mortality, or only context
 8. Write one structured session record under `research/sessions/` using `schemas/research-session.schema.json`.
+   - Put every known-trial registry re-check in `trial_watch_checks[]`.
+   - Use `search_log[]` for broad registry searches and other source discovery.
+   - Use `excluded_sources[]` for wrong-scope, duplicate, unchanged, or no-results-only registry hits that future reviewers might otherwise re-check.
 9. Create or update a coverage assessment when surveillance changes category-level confidence, resolves a known gap, discovers a material missing category, or shows the next pass should be `coverage_repair`.
 10. For `no_op`, record `outcome: "no_op"` in the session and do not touch public JSON.
 11. For a material change, stage only the affected records under `data/staged-records/<bundle-id>/`.
    - If the change affects a rating rationale, update or add the relevant source, study, finding, and outlook support-map records together.
    - If only context changed, do not add rating support that the sources do not justify.
    - Assign a higher stage only when new support-map evidence reaches that stage; increased activity alone affects momentum/context, not evidence stage.
-   - For narrow disease benefit in a broad aging track, hold the broader rating lower unless the limitation is explicit and confidence remains conservative.
+   - For narrow disease benefit in a broad aging track, hold the broader rating lower unless the limitation is explicit and public prose says the read remains tentative.
+   - Do not use "confidence" as reader-facing outlook prose. Use "read firmness", "tentative", "provisional", or "firm" for outlook stability, and "evidence weight" for finding strength.
 12. Create or update `data/candidate-bundles/<bundle-id>.json` with:
    - `intake_mode: "surveillance"`
    - the delta question
@@ -75,6 +83,9 @@ Use this for ongoing monitoring after a scope already has baseline coverage.
 - Do not move a stage just because activity increased.
 - Do not silently overwrite public JSON; all proposed changes go through staged files and a bundle.
 - Keep negative, null, stalled, or mixed updates visible when they matter.
+- Treat unchanged registry records and no posted results as surveillance facts, not evidence progress.
+- Treat status-only trial changes as activity unless they change public interpretation.
+- Treat newly posted registry results or linked trial publications as evidence that needs the normal staged source/finding/outlook review path before it changes public conclusions.
 - Do not refresh track outlook wording while leaving `supporting_evidence`, `supporting_finding_ids`, `supporting_source_ids`, or `rating_change_criteria` stale.
 - Do not turn a surveillance pass into fresh baseline research. Hand it back to bootstrap instead.
 - Do not use ordinary surveillance to fill historical source-completeness gaps; record `next_coverage_action` as coverage repair when that is the real need.

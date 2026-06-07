@@ -214,8 +214,8 @@ Planned work:
    - Keep schemas strict enough that generated planning can determine whether rollup is needed.
 
 6. Resolve the outlook surface gap.
-   - Current state: the shell legend links `Outlook Method` to `/methods#outlook`, which explains the term without implying a standalone outlook dashboard.
-   - Decide whether the methods explanation is enough, or build a real outlook page/panel backed by outlook records.
+   - Current state: the public methods route and shell legend were removed to reduce inward-facing navigation.
+   - Decide whether to build a real outlook page/panel backed by outlook records.
    - If an outlook surface is built, define the data contract before adding UI: evidence stage, interpretation note, what would change the rating, evidence gaps, evidence boundaries, and last reviewed date.
 
 7. Integrate with publication workflow.
@@ -269,10 +269,9 @@ These are the main gaps between the implemented app and `docs/public-site-ia.md`
    - Note: track pages now derive related findings, studies, activity, and public changes from promoted records.
 
 5. Make the evidence / interpretation / outlook legend actionable.
-   - Current state: static legend in the shell
-   - Desired state: short explainer or methods-linked popover/sheet
-   - Current status: implemented.
-   - Note: the shell legend links to anchored definitions on `/methods`.
+   - Current state: the static shell legend was removed.
+   - Desired state: only reintroduce an explainer if it is tied to a concrete reader task or a real outlook surface.
+   - Current status: removed from public navigation.
 
 ## Priority 3: Research Coverage
 

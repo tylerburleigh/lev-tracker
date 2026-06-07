@@ -29,10 +29,10 @@ const momentumLabels = {
   uncertain: "uncertain"
 };
 
-const confidenceLabels = {
-  low: "low confidence",
-  moderate: "moderate confidence",
-  high: "high confidence"
+const readFirmnessLabels = {
+  low: "tentative",
+  moderate: "provisional",
+  high: "firm"
 };
 
 const draftStyles = new Set(["plain", "technical"]);
@@ -258,7 +258,7 @@ function scorePublicationEvent(event, outlookById) {
 
   const keywordScores = [
     { pattern: /stage|evidence_stage/, score: 45, reason: "stage change" },
-    { pattern: /confidence/, score: 40, reason: "confidence change" },
+    { pattern: /confidence/, score: 40, reason: "read firmness change" },
     { pattern: /momentum/, score: 35, reason: "momentum change" },
     { pattern: /scenario|2036/, score: 45, reason: "scenario change" },
     { pattern: /human.*functional|functional.*human|6-minute|6mwt|mobility|frailty|exercise capacity/, score: 35, reason: "human function" },
@@ -505,7 +505,7 @@ function buildRecentDevelopments(narrative, analysis) {
       summary: event.summary ?? event.change_note ?? "A reviewed field update changed.",
       impact_on_outlook:
         score >= 100
-          ? "This may affect the overall field read only if it changes human outcomes, safety, confidence, or the main evidence gap."
+          ? "This may affect the overall field read only if it changes human outcomes, safety, read firmness, or the main evidence gap."
           : "This matters only if it changes the strength or relevance of evidence; activity alone is not proof of LEV progress.",
       ...subject,
       related_publication_event_ids: [event.id]
@@ -520,7 +520,7 @@ function buildDraft({ narrative, overallOutlook, analysis, today, style }) {
     .map(({ event }) => event.name.replace(/^Published /, ""));
   const overallStage = stageLabels[overallOutlook.evidence_stage] ?? overallOutlook.evidence_stage;
   const overallMomentum = momentumLabels[overallOutlook.momentum] ?? overallOutlook.momentum;
-  const overallConfidence = confidenceLabels[overallOutlook.confidence] ?? overallOutlook.confidence;
+  const overallReadFirmness = readFirmnessLabels[overallOutlook.confidence] ?? overallOutlook.confidence;
   const draft = JSON.parse(JSON.stringify(narrative));
 
   draft.date = today;
@@ -532,11 +532,11 @@ function buildDraft({ narrative, overallOutlook, analysis, today, style }) {
         : "Field activity changed; the LEV proof gap needs checking";
     draft.summary = latestStateOfField
       ? `${latestStateOfField.summary} The important question is whether the evidence makes LEV look closer, or only clarifies where evidence remains thin.`
-      : `The overall field read is ${overallStage}, with ${overallMomentum} momentum and ${overallConfidence}. The important question is whether recent evidence makes LEV look closer.`;
-    draft.current_evidence_picture = `The overall field read is ${overallStage}, with ${overallMomentum} momentum and ${overallConfidence}. The main evidence gap remains: ${overallOutlook.main_evidence_gaps?.[0] ?? "the field still needs stronger human evidence."}`;
+      : `The overall field read is ${overallStage}, with ${overallMomentum} momentum and a ${overallReadFirmness} read. The important question is whether recent evidence makes LEV look closer.`;
+    draft.current_evidence_picture = `The overall field read is ${overallStage}, with ${overallMomentum} momentum and a ${overallReadFirmness} read. The main evidence gap remains: ${overallOutlook.main_evidence_gaps?.[0] ?? "the field still needs stronger human evidence."}`;
     draft.what_changed =
       rankedEventNames.length > 0
-        ? `Recent field updates include: ${rankedEventNames.join("; ")}. Their importance depends on whether they change human outcomes, safety, confidence, or the main evidence gap; more activity by itself is not progress toward LEV.`
+        ? `Recent field updates include: ${rankedEventNames.join("; ")}. Their importance depends on whether they change human outcomes, safety, read firmness, or the main evidence gap; more activity by itself is not progress toward LEV.`
         : `The field story needs a scheduled recheck because ${analysis.reasons.join(" ")}`;
     draft.recent_developments = buildRecentDevelopments(narrative, analysis);
   }

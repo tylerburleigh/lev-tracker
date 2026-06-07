@@ -21,11 +21,11 @@
     "Endothelial-specific telomere dysfunction in mice induced senescence plus vascular and metabolic impairment, making the target biology causal in animals.",
     "Dasatinib plus quercetin reduced endothelial telomere dysfunction-induced foci in old mice, but this is an adjacent senolytic signal rather than direct shelterin repair."
   ],
-  "interpretation_note": "Telomere protection and capping merits a first public baseline at animal_signal. The track has coherent shelterin biology, human biomarker relevance, and one direct mouse AAV9-TRF1 healthspan intervention. It should not be upgraded to human_biomarker_signal because the human evidence is observational or cell-based and does not test a capping-directed therapy. Confidence stays low because the biology is bidirectional and safety-sensitive: both inadequate and excessive shelterin perturbation can be harmful.",
+  "interpretation_note": "Telomere protection and capping merits a first public baseline at animal signal. The track has coherent shelterin biology, human biomarker relevance, and one direct mouse AAV9-TRF1 healthspan intervention. It should not be upgraded to human biomarker signal because the human evidence is observational or cell-based and does not test a capping-directed therapy. The read stays tentative because the biology is bidirectional and safety-sensitive: both inadequate and excessive shelterin perturbation can be harmful.",
   "what_would_change_the_rating": [
-    "A human_biomarker_signal upgrade would require a capping- or shelterin-directed intervention in humans that improves prespecified telomere-capping or telomere-dysfunction markers without concerning genomic-instability signals.",
-    "A human_functional_benefit upgrade would require human function, tissue performance, or disease-relevant endpoint improvement tied to improved telomere-capping biology, not only leukocyte telomere length or generic senescence markers.",
-    "Higher confidence would need independent replication of AAV9-TRF1-like benefit, clearer dose and tissue windows for shelterin modulation, and longer-term cancer and clonal-expansion surveillance.",
+    "A human biomarker signal upgrade would require a capping- or shelterin-directed intervention in humans that improves prespecified telomere-capping or telomere-dysfunction markers without concerning genomic-instability signals.",
+    "A human functional benefit upgrade would require human function, tissue performance, or disease-relevant endpoint improvement tied to improved telomere-capping biology, not only leukocyte telomere length or generic senescence markers.",
+    "A firmer read would need independent replication of AAV9-TRF1-like benefit, clearer dose and tissue windows for shelterin modulation, and longer-term cancer and clonal-expansion surveillance.",
     "The rating would weaken if direct capping interventions fail replication, if shelterin upregulation consistently worsens telomere damage, or if observed benefits are better explained by unrelated senolytic or anti-inflammatory mechanisms."
   ],
   "earliest_plausible_window": "No credible LEV-relevant window can be assigned before human capping-directed biomarker and safety data exist.",
@@ -44,7 +44,7 @@
     {
       "label": "Stage assignment",
       "outlook_field": "evidence_stage",
-      "conclusion": "The track reaches animal_signal because AAV9-TRF1 improved mouse healthspan markers and reduced short-telomere or telomere-associated DNA-damage signals without median telomere lengthening.",
+      "conclusion": "The track reaches animal signal because AAV9-TRF1 improved mouse healthspan markers and reduced short-telomere or telomere-associated DNA-damage signals without median telomere lengthening.",
       "support_role": "supports",
       "rationale": "AAV9-TRF1 is a direct shelterin/capping intervention in adult and old mice, which is more track-specific than generic telomere-length modulation.",
       "finding_ids": [
@@ -134,13 +134,13 @@
       "limitations": [
         "The model is a transgenic skin overexpression model.",
         "It does not prove that all TRF2 or shelterin modulation is unsafe.",
-        "It does justify conservative confidence and explicit safety requirements."
+        "It does justify a tentative read and explicit safety requirements."
       ]
     },
     {
-      "label": "Confidence",
+      "label": "Read firmness",
       "outlook_field": "confidence",
-      "conclusion": "Confidence remains low because the track has strong biology but very little direct translational intervention evidence.",
+      "conclusion": "The read remains tentative because the track has strong biology but very little direct translational intervention evidence.",
       "support_role": "balances",
       "rationale": "The evidence set combines animal intervention, human biomarker association, causal mouse dysfunction models, and a safety boundary, but lacks human capping-directed treatment data.",
       "finding_ids": [

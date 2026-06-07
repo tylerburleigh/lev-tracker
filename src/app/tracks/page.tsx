@@ -3,14 +3,13 @@ import { Search, X } from "lucide-react";
 
 import { PageHero } from "@/components/page-hero";
 import { SiteShell } from "@/components/site-shell";
+import { StageBadge } from "@/components/stage-badge";
 import { formatDate } from "@/lib/date";
 import {
-  type Confidence,
   type Momentum,
   type Stage,
   getHallmarkById,
   getHallmarks,
-  getConfidenceLabel,
   getMomentumLabel,
   getOverallLastUpdated,
   getStageLabel,
@@ -23,15 +22,11 @@ type TrackSearchParams = {
   hallmark?: string | string[];
   stage?: string | string[];
   momentum?: string | string[];
-  confidence?: string | string[];
-  coverage?: string | string[];
 };
 
 type TracksIndexPageProps = {
   searchParams?: Promise<TrackSearchParams>;
 };
-
-type CoverageStatus = "covered" | "thin" | "in_progress";
 
 const stageOptions: Stage[] = [
   "mechanistic_plausibility",
@@ -42,13 +37,6 @@ const stageOptions: Stage[] = [
 ];
 
 const momentumOptions: Momentum[] = ["accelerating", "steady", "mixed", "stalled", "uncertain"];
-const confidenceOptions: Confidence[] = ["low", "moderate", "high"];
-
-const coverageOptions: Array<{ value: CoverageStatus; label: string }> = [
-  { value: "covered", label: "First-pass summary" },
-  { value: "thin", label: "Thin coverage" },
-  { value: "in_progress", label: "Summary in progress" }
-];
 
 function getSingleSearchParam(value: string | string[] | undefined) {
   return Array.isArray(value) ? value[0] ?? "" : value ?? "";
@@ -58,20 +46,18 @@ function normalizeNeedle(value: string) {
   return value.trim().toLocaleLowerCase();
 }
 
-function getCoverageStatus(coverage: Awaited<ReturnType<typeof getTrackCoverage>>): CoverageStatus {
-  if (!coverage.stage) {
-    return "in_progress";
+function getMomentumTone(momentum?: Momentum) {
+  switch (momentum) {
+    case "accelerating":
+    case "steady":
+      return "micro-badge--mint";
+    case "mixed":
+      return "micro-badge--gold";
+    case "stalled":
+      return "micro-badge--red";
+    default:
+      return "micro-badge--muted";
   }
-
-  if (coverage.thinCoverage) {
-    return "thin";
-  }
-
-  return "covered";
-}
-
-function getCoverageStatusLabel(status: CoverageStatus) {
-  return coverageOptions.find((option) => option.value === status)?.label ?? status;
 }
 
 export default async function TracksIndexPage({ searchParams }: TracksIndexPageProps) {
@@ -80,9 +66,7 @@ export default async function TracksIndexPage({ searchParams }: TracksIndexPageP
     query: getSingleSearchParam(resolvedSearchParams.q).trim(),
     hallmark: getSingleSearchParam(resolvedSearchParams.hallmark),
     stage: getSingleSearchParam(resolvedSearchParams.stage) as Stage | "",
-    momentum: getSingleSearchParam(resolvedSearchParams.momentum) as Momentum | "",
-    confidence: getSingleSearchParam(resolvedSearchParams.confidence) as Confidence | "",
-    coverage: getSingleSearchParam(resolvedSearchParams.coverage) as CoverageStatus | ""
+    momentum: getSingleSearchParam(resolvedSearchParams.momentum) as Momentum | ""
   };
   const queryNeedle = normalizeNeedle(selected.query);
   const tracks = getTracks();
@@ -92,14 +76,11 @@ export default async function TracksIndexPage({ searchParams }: TracksIndexPageP
     Promise.all(tracks.map(async (track) => [track.id, await getTrackCoverage(track.id)] as const))
   ]);
   const coverageByTrackId = new Map(coverageEntries);
-  const coveredCount = coverageEntries.filter(([, coverage]) => Boolean(coverage.stage)).length;
-  const inProgressCount = tracks.length - coveredCount;
   const filteredTracks = tracks.filter((track) => {
     const coverage = coverageByTrackId.get(track.id);
     if (!coverage) return false;
 
     const trackHallmarkIds = [track.primaryHallmarkId, ...(track.secondary_hallmark_ids ?? [])];
-    const coverageStatus = getCoverageStatus(coverage);
     const searchableText = [
       track.name,
       track.id,
@@ -128,9 +109,7 @@ export default async function TracksIndexPage({ searchParams }: TracksIndexPageP
       (!queryNeedle || searchableText.includes(queryNeedle)) &&
       (!selected.hallmark || trackHallmarkIds.includes(selected.hallmark)) &&
       (!selected.stage || coverage.stage === selected.stage) &&
-      (!selected.momentum || coverage.momentum === selected.momentum) &&
-      (!selected.confidence || coverage.confidence === selected.confidence) &&
-      (!selected.coverage || coverageStatus === selected.coverage)
+      (!selected.momentum || coverage.momentum === selected.momentum)
     );
   });
 
@@ -140,13 +119,7 @@ export default async function TracksIndexPage({ searchParams }: TracksIndexPageP
         kicker="Tracks"
         title="Research approaches across the hallmarks"
         summary="Tracks are the stable layer between hallmark theory and specific intervention records."
-      >
-        <div className="page-hero__stats">
-          <span>{tracks.length} research tracks</span>
-          <span>{coveredCount} with public outlooks</span>
-          <span>{inProgressCount} in progress</span>
-        </div>
-      </PageHero>
+      />
       <section className="band">
         <div className="page-shell track-search">
           <form className="track-search__form" action="/tracks">
@@ -195,28 +168,6 @@ export default async function TracksIndexPage({ searchParams }: TracksIndexPageP
                 ))}
               </select>
             </label>
-            <label className="track-search__field">
-              <span>Confidence</span>
-              <select name="confidence" defaultValue={selected.confidence}>
-                <option value="">All confidence</option>
-                {confidenceOptions.map((confidence) => (
-                  <option value={confidence} key={confidence}>
-                    {getConfidenceLabel(confidence)}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label className="track-search__field">
-              <span>Coverage</span>
-              <select name="coverage" defaultValue={selected.coverage}>
-                <option value="">All coverage</option>
-                {coverageOptions.map((option) => (
-                  <option value={option.value} key={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
-            </label>
             <div className="track-search__actions">
               <button className="action-button" type="submit">
                 <Search aria-hidden="true" size={16} />
@@ -228,45 +179,52 @@ export default async function TracksIndexPage({ searchParams }: TracksIndexPageP
               </Link>
             </div>
           </form>
-          <div className="track-search__summary" aria-live="polite">
-            <strong>{filteredTracks.length}</strong>
-            <span>of {tracks.length} tracks</span>
-          </div>
         </div>
 
         <div className="page-shell tracks-table">
           <div className="tracks-table__head">
-            <span>Track</span>
-            <span>Primary hallmark</span>
-            <span>Current stage</span>
-            <span>Momentum</span>
-            <span>Confidence</span>
-            <span>Coverage</span>
-            <span>Last updated</span>
+            <div>
+              <span className="section-kicker">Track list</span>
+              <h2>{filteredTracks.length} matching tracks</h2>
+            </div>
+            <span>Ordered by hallmark taxonomy</span>
           </div>
           {filteredTracks.map((track) => {
             const hallmark = getHallmarkById(track.primaryHallmarkId);
             const coverage = coverageByTrackId.get(track.id);
             if (!coverage) return null;
-            const coverageStatus = getCoverageStatus(coverage);
 
             return (
               <Link className="tracks-table__row" href={`/tracks/${track.id}`} key={track.id}>
-                <div>
+                <div className="tracks-table__main">
+                  <div className="tracks-table__topline">
+                    <span className="micro-badge micro-badge--outline">
+                      {hallmark?.name ?? track.primaryHallmarkId}
+                    </span>
+                  </div>
                   <strong>{track.name}</strong>
                   <p>{track.summary}</p>
                   {track.search_aliases?.length ? (
-                    <span className="tracks-table__aliases">
-                      {track.search_aliases.slice(0, 3).join(" | ")}
-                    </span>
+                    <div className="tracks-table__aliases" aria-label="Search aliases">
+                      {track.search_aliases.slice(0, 3).map((alias) => (
+                        <span key={alias}>{alias}</span>
+                      ))}
+                    </div>
                   ) : null}
                 </div>
-                <span>{hallmark?.name ?? track.primaryHallmarkId}</span>
-                <span>{coverage.stage ? getStageLabel(coverage.stage) : coverage.statusLabel}</span>
-                <span>{coverage.momentum ? getMomentumLabel(coverage.momentum) : "Not rated"}</span>
-                <span>{coverage.confidence ? getConfidenceLabel(coverage.confidence) : "Not rated"}</span>
-                <span>{getCoverageStatusLabel(coverageStatus)}</span>
-                <time dateTime={coverage.lastUpdated}>{formatDate(coverage.lastUpdated)}</time>
+                <div className="tracks-table__signals" aria-label="Track status">
+                  <time dateTime={coverage.lastUpdated}>Updated {formatDate(coverage.lastUpdated)}</time>
+                  <div className="tracks-table__badges">
+                    {coverage.stage ? (
+                      <StageBadge stage={coverage.stage} />
+                    ) : (
+                      <span className="micro-badge micro-badge--muted">Not rated yet</span>
+                    )}
+                    <span className={`micro-badge ${getMomentumTone(coverage.momentum)}`}>
+                      {coverage.momentum ? getMomentumLabel(coverage.momentum) : "Not rated"}
+                    </span>
+                  </div>
+                </div>
               </Link>
             );
           })}

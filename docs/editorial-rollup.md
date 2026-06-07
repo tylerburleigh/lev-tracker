@@ -10,8 +10,9 @@ This runbook reconciles public summary surfaces after reviewed publication activ
 - `data/content/current-lev-story/current.json`
 - `data/content/state-of-the-field/`
 - `data/content/hallmark-insights.json`
-- outlook-method navigation and method surfaces in `src/components/site-shell.tsx` and `src/app/methods/page.tsx`
+- public navigation and summary surfaces in `src/components/site-shell.tsx` and `src/components/homepage.tsx`
 - `config/public-copy-rules.json`
+- `extra/trial-watch-report.md` from `npm run audit:trials -- --write`
 - `docs/editorial-quality-system.md`
 
 ## Triggers
@@ -24,7 +25,7 @@ Run the rollup before routine research when any of these are true:
 - the current month has material publication activity but no current-month state-of-field edition
 - a hallmark or a track within a hallmark changed and the corresponding hallmark insight copy has not been reviewed
 - the current LEV story `revision.review_due` has passed
-- navigation or method copy implies an outlook surface that the app does not actually provide
+- navigation or public explanatory copy implies an outlook surface that the app does not actually provide
 
 ## Review Rules
 
@@ -33,8 +34,10 @@ Run the rollup before routine research when any of these are true:
 3. Add or update a state-of-field edition only when public changes are material enough to summarize for the month.
 4. Review `data/content/current-lev-story/current.json` when the current LEV story, what to watch next, or where better evidence is needed no longer matches the latest reviewed outlooks.
 5. Review `data/content/hallmark-insights.json` when a hallmark outlook or one of its tracks changed materially. Keep the copy aligned with existing reviewed records.
-6. Keep outlook-method UI honest: either link to a methods explanation or provide a real outlook route with a documented data contract.
+6. Keep outlook UI honest: only add public explanatory links when they point to a real reader-facing route or in-page surface with a documented data contract.
 7. Keep the public story field-facing: the before/now/next arc should describe evidence maturity in longevity research, not tracker coverage, publication workflow, or source-map completeness.
+
+Use the `lev-state-of-field-update` skill for State of the Field editions. Each edition is retrospective: the June edition covers May, the July edition covers June, and so on. Separate actual field changes during the covered period from evidence context that the tracker reviewed or published later.
 
 ## Content Publish Path
 
@@ -47,7 +50,13 @@ When updating hallmark insight copy, set:
 - `related_outlook_ids` to the hallmark or track outlook records reviewed
 - `related_publication_event_ids` when public update records directly prompted the review
 
-When updating a state-of-field edition, set `last_reviewed`, `review_reason`, and any directly related publication or outlook IDs.
+When updating a state-of-field edition, set `last_reviewed`, `review_reason`, and any directly related publication or outlook IDs. Fill the reader brief fields (`period_start`, `period_end`, `period_label`, `lede`, `bottom_line`, `field_change_status`, `field_change_note`, `what_changed`, `current_context`, `what_did_not_change`, `why_it_matters`, `trial_horizon`, `signals_to_watch`, `evidence_gaps`, `track_examples`, and `reader_takeaways`) rather than relying on summary bullets alone. Leave `what_changed` empty when the covered period had no material field-changing result.
+
+Before drafting `trial_horizon`, run `npm run audit:trials -- --write`. Use `trial_horizon` for registry-linked studies that could plausibly produce meaningful results. Include whether the covered month had a real result expectation, whether results were posted, and why a result would matter. Do not count a trial listing, a recruiting status, or a no-result registry check as field progress. If the report shows stale registry checks, run surveillance before making current claims about those trials.
+
+Keep `signals_to_watch` distinct from `trial_horizon`. `trial_horizon` names concrete registry-linked trials and their result timing. `signals_to_watch` should describe the evidence thresholds that would change interpretation, such as functional outcomes, durability, replication, safety, or generality across settings. Do not repeat a named trial in both sections unless the signal card explains the broader threshold rather than the trial status.
+
+When later-reviewed evidence belongs to a prior covered period, do not automatically rewrite the old monthly edition. First publish or verify the evidence through the normal evidence-review path, then decide whether the old period's public conclusion would have changed. If yes, revise that edition and add a `revision_history` entry with `post_hoc_material_correction`. If no, leave the conclusion stable or add only `post_hoc_context_note` when the context prevents a misleading read. Newly reviewed old evidence can appear in the current edition as context, but not as current field movement.
 
 When updating the current LEV story, set:
 
@@ -73,7 +82,7 @@ If the review changes evidence records, outlook ratings, evidence stages, confid
 - updated `data/content/state-of-the-field/<YYYY-MM>.json` when a monthly summary is warranted
 - updated `data/content/hallmark-insights.json` when hallmark copy is stale
 - updated `data/outlooks/overall-lev-outlook.json` only for aggregate public meaning changes
-- navigation or methods copy that accurately describes outlook-method surfaces
+- navigation or public summary copy that accurately describes available outlook surfaces
 
 ## Checks
 

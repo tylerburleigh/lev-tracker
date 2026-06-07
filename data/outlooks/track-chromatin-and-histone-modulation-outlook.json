@@ -23,11 +23,11 @@
     "H3K4me3 and H3K27me3 modifier studies in C. elegans show that histone methylation state can regulate organismal lifespan.",
     "A 2026 butyrate/tributyrin study adds mammalian disease-model support by linking restored intestinal histone acylation marks to delayed multimorbidity and lifespan extension in mitochondrial-deficiency mice."
   ],
-  "interpretation_note": "Chromatin and histone modulation has enough direct animal lifespan and healthspan evidence for a low-confidence animal_signal baseline. The best support comes from KAT7 and SIRT6 mouse work plus repeated C. elegans histone-modifier signals. The track should not be upgraded to human_biomarker_signal because human evidence is currently cell-based, indirect, or adjacent to other tracks, and no human program has shown controlled chromatin pathway engagement tied to aging-relevant outcomes.",
+  "interpretation_note": "Chromatin and histone modulation has enough direct animal lifespan and healthspan evidence for a tentative animal signal baseline. The best support comes from KAT7 and SIRT6 mouse work plus repeated C. elegans histone-modifier signals. The track should not be upgraded to human biomarker signal because human evidence is currently cell-based, indirect, or adjacent to other tracks, and no human program has shown controlled chromatin pathway engagement tied to aging-relevant outcomes.",
   "what_would_change_the_rating": [
-    "A move to human_biomarker_signal would require a human intervention study showing reproducible chromatin or histone pathway engagement in aging-relevant tissue, with prespecified aging-relevant biomarkers and acceptable short-term safety.",
-    "A move to human_functional_benefit would require a human trial linking a defined chromatin/histone intervention to functional benefit in older adults or a clearly aging-relevant disease population.",
-    "Confidence would improve if mammalian studies replicate KAT7, SIRT6, or selective histone-modifier benefits with durable tissue-specific safety, dose-response, and mechanistic rescue experiments.",
+    "A move to human biomarker signal would require a human intervention study showing reproducible chromatin or histone pathway engagement in aging-relevant tissue, with prespecified aging-relevant biomarkers and acceptable short-term safety.",
+    "A move to human functional benefit would require a human trial linking a defined chromatin/histone intervention to functional benefit in older adults or a clearly aging-relevant disease population.",
+    "The read would become firmer if mammalian studies replicate KAT7, SIRT6, or selective histone-modifier benefits with durable tissue-specific safety, dose-response, and mechanistic rescue experiments.",
     "The rating would weaken if mammalian studies show unacceptable cancer, developmental, fertility, immune, neurocognitive, or tissue-repair tradeoffs from chronic chromatin modulation.",
     "Boundary-track interventions should not upgrade this track unless they measure chromatin or histone engagement directly and show that the benefit depends on that mechanism rather than broader autophagy, NAD, nutrient-sensing, microbiome, or mitochondrial effects."
   ],
@@ -48,7 +48,7 @@
     {
       "label": "Stage assignment",
       "outlook_field": "evidence_stage",
-      "conclusion": "The track reaches animal_signal because multiple animal studies connect chromatin or histone modulation to lifespan, healthspan, senescence, or multimorbidity outcomes.",
+      "conclusion": "The track reaches animal signal because multiple animal studies connect chromatin or histone modulation to lifespan, healthspan, senescence, or multimorbidity outcomes.",
       "support_role": "supports",
       "rationale": "KAT7 inactivation, SIRT6 overexpression, SRT1720 supplementation, spermidine-linked acetylation/autophagy biology, beta-hydroxybutyrate HDAC biology, H3K4/H3K27 modifier genetics, and recent butyrate histone-acylation work all support organismal aging relevance outside cell culture.",
       "finding_ids": [
@@ -82,7 +82,7 @@
     {
       "label": "Human translation boundary",
       "outlook_field": "evidence_stage",
-      "conclusion": "The track should not be upgraded to human_biomarker_signal because no cited human intervention study directly tests chromatin or histone modulation against aging-relevant outcomes.",
+      "conclusion": "The track should not be upgraded to human biomarker signal because no cited human intervention study directly tests chromatin or histone modulation against aging-relevant outcomes.",
       "support_role": "limits",
       "rationale": "The human material in this baseline is cell-level or adjacent: KAT7 was identified in progeroid human mesenchymal precursor cells and spermidine improved survival of human immune cells, but the outcome-driving lifespan and healthspan evidence remains animal or model-organism evidence.",
       "finding_ids": [
@@ -130,9 +130,9 @@
       ]
     },
     {
-      "label": "Mechanistic breadth and confidence",
+      "label": "Mechanistic breadth and read firmness",
       "outlook_field": "confidence",
-      "conclusion": "Confidence remains low because the evidence is broad enough to justify a baseline but not coherent enough to define a safe, selective, human-ready intervention class.",
+      "conclusion": "The read remains tentative because the evidence is broad enough to justify a baseline but not coherent enough to define a safe, selective, human-ready intervention class.",
       "support_role": "limits",
       "rationale": "The support spans histone acetyltransferase suppression, sirtuin deacetylation, small-molecule SIRT1 activation, histone deacetylase inhibition, H3K4 and H3K27 methylation genetics, autophagy induction, microbiome-derived butyrate, and mitochondrial disease rescue.",
       "finding_ids": [

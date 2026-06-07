@@ -12,8 +12,8 @@ export default async function StateOfTheFieldIndexPage() {
     <SiteShell lastUpdated={formatDate(lastUpdated)}>
       <PageHero
         kicker="State of the Field"
-        title="Monthly field notes"
-        summary="Monthly updates on what changed, what did not, and whether the evidence makes LEV look closer."
+        title="Monthly field reviews"
+        summary="Retrospective updates on what actually changed during the covered month, what did not, and whether the evidence made LEV look closer."
       />
       <section className="band">
         <div className="page-shell editorial-list">
@@ -21,9 +21,11 @@ export default async function StateOfTheFieldIndexPage() {
             <Link className="editorial-card" href={`/state-of-the-field/${edition.slug}`} key={edition.slug}>
               <div className="editorial-card__top">
                 <h2>{edition.title}</h2>
-                <time dateTime={edition.date}>{formatDate(edition.date)}</time>
+                <time dateTime={edition.date}>Published {formatDate(edition.date)}</time>
               </div>
-              <p>{edition.summary}</p>
+              <span className="editorial-card__period">Covers {edition.period_label}</span>
+              <p>{edition.lede}</p>
+              <span className="editorial-card__bottom-line">{edition.bottom_line}</span>
             </Link>
           ))}
         </div>

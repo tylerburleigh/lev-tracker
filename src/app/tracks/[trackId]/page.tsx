@@ -7,8 +7,7 @@ import { SiteShell } from "@/components/site-shell";
 import { formatDate } from "@/lib/date";
 import {
   getActivityForTrack,
-  getConfidenceLabel,
-  getConfidencePlainMeaning,
+  getFindingWeightLabel,
   getFindingsForTrack,
   getHallmarkById,
   getInterventionsByIds,
@@ -16,6 +15,8 @@ import {
   getMomentumPlainMeaning,
   getOverallLastUpdated,
   getRecentChangesForSubject,
+  getReadFirmnessLabel,
+  getReadFirmnessPlainMeaning,
   getStageLabel,
   getStagePlainMeaning,
   getStudiesForTrack,
@@ -210,8 +211,7 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
       >
         <div className="page-hero__stats">
           <span>{hallmark?.name ?? trackWithGroup.primaryHallmarkId}</span>
-          <span>{coverage.stage ? getStageLabel(coverage.stage) : coverage.statusLabel}</span>
-          {coverage.confidence ? <span>{getConfidenceLabel(coverage.confidence)}</span> : null}
+          <span>{coverage.stage ? getStageLabel(coverage.stage) : "Not rated yet"}</span>
         </div>
       </PageHero>
 
@@ -220,7 +220,7 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
           <article className="detail-panel">
             <div className="panel-header panel-header--stacked">
               <span className="section-kicker">Interpretation note</span>
-              <h2>{coverage.stage ? getStageLabel(coverage.stage) : coverage.statusLabel}</h2>
+              <h2>{coverage.stage ? getStageLabel(coverage.stage) : "Not rated yet"}</h2>
             </div>
             <p>{coverage.interpretation}</p>
             {coverage.stage ? (
@@ -236,9 +236,9 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
                 {coverage.momentum ? <span>{getMomentumPlainMeaning(coverage.momentum)}</span> : null}
               </div>
               <div>
-                <strong>Confidence</strong>
-                <p>{coverage.confidence ? getConfidenceLabel(coverage.confidence) : "Not rated yet"}</p>
-                {coverage.confidence ? <span>{getConfidencePlainMeaning(coverage.confidence)}</span> : null}
+                <strong>How firm is this read?</strong>
+                <p>{coverage.confidence ? getReadFirmnessLabel(coverage.confidence) : "Not rated yet"}</p>
+                {coverage.confidence ? <span>{getReadFirmnessPlainMeaning(coverage.confidence)}</span> : null}
               </div>
             </div>
           </article>
@@ -250,11 +250,11 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
             <div className="detail-list">
               <div>
                 <strong>Main evidence gap</strong>
-                <p>{coverage.evidenceGap ?? "Coverage is still thin in the public layer."}</p>
+                <p>{coverage.evidenceGap ?? "Not enough promoted evidence has been summarized for this track yet."}</p>
               </div>
               <div>
                 <strong>Strongest current evidence</strong>
-                <p>{coverage.strongestEvidence ?? "The track is seeded, but still light on public evidence summaries."}</p>
+                <p>{coverage.strongestEvidence ?? "No strongest evidence summary has been promoted yet."}</p>
               </div>
               <div>
                 <strong>Open rating questions</strong>
@@ -305,7 +305,7 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
           <div className="evidence-summary-strip">
             <span>{trackFindings.length} findings</span>
             <span>{trackStudies.length} studies</span>
-            <span>{coverage.stage ? getStageLabel(coverage.stage) : coverage.statusLabel}</span>
+            <span>{coverage.stage ? getStageLabel(coverage.stage) : "Not rated yet"}</span>
           </div>
         </div>
         <div className="page-shell evidence-ladder">
@@ -349,8 +349,8 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
               <h2>Why these ratings?</h2>
             </div>
             <div className="evidence-summary-strip">
-              <span>{coverage.stage ? getStageLabel(coverage.stage) : coverage.statusLabel}</span>
-              {coverage.confidence ? <span>{getConfidenceLabel(coverage.confidence)}</span> : null}
+              <span>{coverage.stage ? getStageLabel(coverage.stage) : "Not rated yet"}</span>
+              {coverage.confidence ? <span>Read: {getReadFirmnessLabel(coverage.confidence)}</span> : null}
               <span>{evidenceSupport.length} rating rationales</span>
               <span>{uniqueFindings.length} unique findings</span>
               <span>{uniqueSources.length} sources</span>
@@ -449,7 +449,7 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
                     <span className={`evidence-chip ${getDirectionTone(finding.direction)}`}>
                       {getEvidenceLabel(finding.direction)}
                     </span>
-                    <span className="evidence-chip">{getConfidenceLabel(finding.confidence)}</span>
+                    <span className="evidence-chip">{getFindingWeightLabel(finding.confidence)}</span>
                   </div>
                   <div className="evidence-inventory-item__body">
                     <div>
@@ -578,7 +578,7 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
               </div>
               <div>
                 <strong>No recent public movement.</strong>
-                <p>This track is still visible through taxonomy and coverage state, but no activity item has been promoted.</p>
+                <p>This track is listed in the taxonomy, but no recent activity item has been promoted.</p>
               </div>
             </div>
           )}

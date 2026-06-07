@@ -1,18 +1,22 @@
 import Link from "next/link";
-import { Activity, BookOpenText, ClipboardCheck, Compass, Microscope, Search, Sigma, Waypoints } from "lucide-react";
+import {
+  Activity,
+  BookOpenText,
+  ClipboardCheck,
+  ClipboardList,
+  Compass,
+  Search,
+  Sigma,
+  Waypoints
+} from "lucide-react";
 
 const navItems = [
   { href: "/", label: "Overview", icon: Compass },
   { href: "/hallmarks", label: "Hallmarks", icon: Sigma },
   { href: "/tracks", label: "Tracks", icon: Waypoints },
+  { href: "/trials", label: "Trials", icon: ClipboardList },
   { href: "/activity", label: "Activity", icon: Activity },
-  { href: "/state-of-the-field", label: "State of the Field", icon: BookOpenText }
-] as const;
-
-const legendItems = [
-  { href: "/methods#evidence", label: "Evidence", icon: Microscope },
-  { href: "/methods#interpretation", label: "Interpretation", icon: Compass },
-  { href: "/methods#outlook", label: "Outlook Method", icon: Waypoints }
+  { href: "/state-of-the-field", label: "Field Reviews", icon: BookOpenText }
 ] as const;
 
 type SiteShellProps = {
@@ -51,14 +55,6 @@ export function SiteShell({ children, lastUpdated }: SiteShellProps) {
               <span className="site-status__value">{lastUpdated}</span>
             </div>
           </div>
-        </div>
-        <div className="legend-bar">
-          {legendItems.map(({ href, label, icon: Icon }) => (
-            <Link className="legend-item" href={href} key={href}>
-              <Icon aria-hidden="true" size={15} />
-              <span>{label}</span>
-            </Link>
-          ))}
         </div>
       </header>
       <main>{children}</main>

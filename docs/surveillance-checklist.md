@@ -15,8 +15,11 @@ Use this checklist for track-level field change checks after baseline review. A 
 - Current public outlook evidence stage, confidence, momentum, evidence gaps, strongest evidence, and interpretation note.
 - Current supporting finding IDs, source IDs, study IDs, intervention IDs, and activity item IDs.
 - Current trial or program records that were explicitly marked no-results, pending, active, recruiting, terminated, or activity-only.
+- Current `/trials` watchlist rows for the scoped track, including `trial_details`, completion timing, last registry check, and no-result status.
 - Known caveats from the latest evidence reviews.
 - Current coverage verdict, category-level gaps, and next coverage action when a coverage assessment exists.
+
+Run `npm run audit:trials -- --track <track-id> --write` before source discovery when the scoped track has human interventional records. Use the report to seed known-trial registry checks and to identify stale registry checks.
 
 ## Watch Sources
 
@@ -24,10 +27,14 @@ Check only sources that can plausibly change the public state for the scoped tra
 
 - PubMed or NCBI E-utilities for new primary studies, reviews with material synthesis, corrections, or retractions. This is required for biomedical track change checks.
 - ClinicalTrials.gov API or other primary registries for new trials, status changes, completion, posted results, termination, or unposted-results annotations. This is required when human studies, registries, or trial-watch records could affect the track.
+- Known watchlist trials first: re-check every NCT or registry ID already attached to scoped public study records before deciding whether nothing changed.
+- New registry search second: run broader registry searches for the intervention family, track terms, aging terms, older-adult terms, disease boundary terms, and sponsor/program names to catch new or newly relevant trials.
 - DOI, publisher, preprint, conference, FDA, EMA, sponsor, company, grant, or broader web search when the track is fast-moving, commercial, preprint-heavy, or likely to have non-PubMed sources.
 - Existing public source URLs when the prior record was time-sensitive.
 
 Treat non-primary web hits as leads unless they point to verifiable source data. Record the search log in `research/sessions/`, including query/source names, date checked, search terms, and relevant URLs even when nothing material changed.
+
+Record every known-trial registry check in `trial_watch_checks[]`. Use `search_log[]` for broader registry queries and source discovery. Use `excluded_sources[]` for close registry records that were wrong-scope, unchanged, duplicate, or no-results-only.
 
 ## Materiality Decision
 
@@ -42,6 +49,13 @@ Choose one outcome:
 
 Avoid staging records for contextual noise, duplicate sources, unchanged registries, or speculative implications.
 
+Treat trial changes conservatively:
+
+- unchanged registry or no posted result: `no_op`, unless the public source/study record needs a factual refresh
+- recruiting, active, completed, terminated, suspended, or withdrawn status change without results: usually `activity_only`
+- newly posted registry results or linked publication results: usually `outlook_refresh` and evidence review
+- discovery of relevant missing active-trial context: usually `coverage_repair` or a staged source/study update, depending on whether it changes the public layer
+
 If the pass primarily improves confidence about source completeness rather than changing public records, update or create a `coverage_assessment` and keep the public layer unchanged.
 
 Functional endpoints are important for stage upgrades, but they are not the only decision-relevant signal. Safety, durability, null results, registry results, corrections, retractions, mechanism, taxonomy boundaries, and biomarker evidence can be material when they affect the current public claim.
@@ -54,6 +68,13 @@ Record a `materiality_decision` in the research session with:
 - `coverage_assessment_needed`
 - `recommended_next_mode`
 - `rationale`
+
+Record `trial_watch_checks[]` entries with:
+
+- `registry_id`, plus local `study_id` and `source_id` when known
+- `checked_at`, current registry status, current result status, completion dates, and first posted results date when present
+- booleans for status, result, and completion-date changes
+- `materiality`, `public_action`, and a plain-language `summary`
 
 ## Excluded Sources
 
@@ -105,6 +126,7 @@ Set `next_recommended_mode` in the coverage assessment. Use `surveillance` when 
 After writing a session or bundle:
 
 ```bash
+npm run audit:trials -- --track <track-id> --write
 npm run sync:research-planning
 npm run validate:records
 npm run audit:data

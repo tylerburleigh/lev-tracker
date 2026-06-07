@@ -6,7 +6,7 @@ import { SiteShell } from "@/components/site-shell";
 import { getDirectionTone, getReadableLabel, getTitleFromIdentifier } from "@/lib/evidence-format";
 import { formatDate } from "@/lib/date";
 import {
-  getConfidenceLabel,
+  getFindingWeightLabel,
   getFindingsByIds,
   getFindingsForIntervention,
   getHallmarkById,
@@ -177,7 +177,7 @@ export default async function InterventionDetailPage({ params }: InterventionDet
                     <span className={`evidence-chip ${getDirectionTone(finding.direction)}`}>
                       {getReadableLabel(finding.direction)}
                     </span>
-                    <span className="evidence-chip">{getConfidenceLabel(finding.confidence)}</span>
+                    <span className="evidence-chip">{getFindingWeightLabel(finding.confidence)}</span>
                   </div>
                   <div className="evidence-inventory-item__body">
                     <div>

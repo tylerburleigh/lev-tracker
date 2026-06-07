@@ -25,7 +25,7 @@ Use this after reviewed public records have changed, or when the curator asks wh
 The narrative needs review when any of these are true:
 
 1. A newer public update record has `affected_outlook_ids`.
-2. Overall, hallmark, or track evidence stage, momentum, confidence, evidence gap, strongest evidence, or LEV 2036 outlook changed.
+2. Overall, hallmark, or track evidence stage, momentum, read firmness, evidence gap, strongest evidence, or LEV 2036 outlook changed.
 3. A new or revised state-of-the-field edition changes the monthly public interpretation.
 4. `revision.review_due` has passed.
 5. The curator asks for a story, watchlist, focus-priority, or homepage framing review.
@@ -45,18 +45,19 @@ The narrative needs review when any of these are true:
    - `before_now_next`, `what_would_change_the_outlook`, and `track_examples_to_inspect` when the homepage needs a clearer reader path
    - `revision` metadata and triggers
 4. Keep evidence, interpretation, and outlook distinct. Do not turn activity, funding, recruiting status, or source coverage into proof of LEV progress.
-5. If the revision would require new sources, findings, stages, confidence changes, or outlook upgrades, stop and use the field-change-check/evidence-review/staged-update workflow instead.
+5. If the revision would require new sources, findings, stages, read-firmness/confidence changes, or outlook upgrades, stop and use the field-change-check/evidence-review/staged-update workflow instead.
 
 ## Writing Rules
 
 - Lead with the aggregate field story, not isolated data points.
 - Say what changed and what did not change.
 - Use conservative language for speculative areas.
-- Prefer plain reader language over internal research language: "early signs in people" instead of "human-facing signals"; "missing-context update" instead of "coverage repair"; "reason to be more optimistic" instead of "forecast upgrade".
+- Prefer plain reader language over internal research language: "early human signals" instead of "human-facing signals"; "missing-context update" instead of "coverage repair"; "reason to be more optimistic" instead of "forecast upgrade".
+- Do not use "confidence" as public prose. For outlook stability use "read firmness", "tentative", "provisional", or "firm"; for individual findings use "evidence weight".
 - Tie what-to-watch-next items to concrete signals that would change interpretation.
 - Tie better-evidence needs to a reason: `clear_next_step`, `underbuilt_evidence`, `early_promise`, or `blocking_gap`.
 - Update `revision.last_reviewed`, `revision.review_reason`, `revision.review_due`, and relevant `related_*_ids`.
-- After accepting a reviewed story state, run `npm run story:current -- snapshot --write-current` so future checks can diff outlook evidence stages, field momentum, rating confidence, evidence gaps, strongest evidence, and LEV 2036 outlook.
+- After accepting a reviewed story state, run `npm run story:current -- snapshot --write-current` so future checks can diff outlook evidence stages, field momentum, read firmness, evidence gaps, strongest evidence, and LEV 2036 outlook.
 
 ## Checks
 

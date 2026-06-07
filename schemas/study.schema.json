@@ -118,6 +118,59 @@
           "$ref": "./common.schema.json#/$defs/isoDate"
         }
       }
+    },
+    "trial_details": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "registry_last_updated": {
+          "$ref": "./common.schema.json#/$defs/isoDate"
+        },
+        "registry_last_checked": {
+          "$ref": "./common.schema.json#/$defs/isoDate"
+        },
+        "primary_completion_date": {
+          "$ref": "./common.schema.json#/$defs/isoDate"
+        },
+        "study_completion_date": {
+          "$ref": "./common.schema.json#/$defs/isoDate"
+        },
+        "completion_date_kind": {
+          "type": "string",
+          "enum": [
+            "actual",
+            "estimated",
+            "unknown"
+          ]
+        },
+        "results_status": {
+          "type": "string",
+          "enum": [
+            "posted",
+            "not_posted",
+            "pending",
+            "unknown"
+          ]
+        },
+        "results_first_posted_date": {
+          "$ref": "./common.schema.json#/$defs/isoDate"
+        },
+        "results_due_date": {
+          "$ref": "./common.schema.json#/$defs/isoDate"
+        },
+        "expected_results_window": {
+          "type": "string",
+          "minLength": 1
+        },
+        "horizon_note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "why_it_matters": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
     }
   }
 }

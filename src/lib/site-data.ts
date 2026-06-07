@@ -101,10 +101,29 @@ export type SourceRecord = {
   urls?: string[];
 };
 
+export type TrialCompletionDateKind = "actual" | "estimated" | "unknown";
+export type TrialResultsStatus = "posted" | "not_posted" | "pending" | "unknown";
+export type TrialResultsTone = "mint" | "gold" | "blue" | "slate";
+
+export type TrialDetails = {
+  registry_last_updated?: string;
+  registry_last_checked?: string;
+  primary_completion_date?: string;
+  study_completion_date?: string;
+  completion_date_kind?: TrialCompletionDateKind;
+  results_status?: TrialResultsStatus;
+  results_first_posted_date?: string;
+  results_due_date?: string;
+  expected_results_window?: string;
+  horizon_note?: string;
+  why_it_matters?: string;
+};
+
 export type StudyRecord = {
   id: string;
   name: string;
   summary?: string;
+  tags?: string[];
   study_type: string;
   status: string;
   phase?: string;
@@ -121,6 +140,36 @@ export type StudyRecord = {
     start_date?: string;
     end_date?: string;
   };
+  trial_details?: TrialDetails;
+};
+
+export type TrialSummary = {
+  id: string;
+  name: string;
+  summary?: string;
+  href: string;
+  status: string;
+  statusLabel: string;
+  phase?: string;
+  phaseLabel?: string;
+  population?: string;
+  sampleSize?: number;
+  registryIds: string[];
+  endpointCategories: string[];
+  endpointLabels: string[];
+  trackIds: string[];
+  trackNames: string[];
+  primaryTrackName: string;
+  resultsStatus: TrialResultsStatus;
+  resultsStatusLabel: string;
+  resultsStatusTone: TrialResultsTone;
+  completionDate?: string;
+  completionDateKind?: TrialCompletionDateKind;
+  registryLastUpdated?: string;
+  registryLastChecked?: string;
+  expectedResultsWindow?: string;
+  horizonNote?: string;
+  whyItMatters?: string;
 };
 
 export type InterventionRecord = {
@@ -191,7 +240,6 @@ export type TrackCoverage = {
   interpretation: string;
   lastUpdated: string;
   thinCoverage?: boolean;
-  statusLabel?: string;
   outlookId?: string;
   supportingFindingIds?: string[];
   supportingEvidence?: OutlookEvidenceLinkFile[];
@@ -409,8 +457,82 @@ export type StateOfFieldEdition = CuratedContentReviewMeta & {
   slug: string;
   title: string;
   summary: string;
+  lede: string;
+  bottom_line: string;
+  field_change_status: StateOfFieldChangeStatus;
+  field_change_note: string;
   date: string;
+  period_start: string;
+  period_end: string;
+  period_label: string;
   bullets: string[];
+  what_changed: StateOfFieldChangeItem[];
+  current_context: StateOfFieldLabeledTextItem[];
+  what_did_not_change: string[];
+  why_it_matters: string;
+  trial_horizon: StateOfFieldTrialHorizonItem[];
+  signals_to_watch: StateOfFieldLabeledTextItem[];
+  evidence_gaps: StateOfFieldLabeledTextItem[];
+  track_examples: StateOfFieldTrackExample[];
+  reader_takeaways: string[];
+  revision_history: StateOfFieldRevisionHistoryItem[];
+};
+
+export type StateOfFieldChangeKind =
+  | "outlook_changed"
+  | "field_signal"
+  | "context_only"
+  | "activity_without_results";
+
+export type StateOfFieldChangeStatus = "material_change" | "mixed" | "no_material_change";
+
+export type StateOfFieldChangeItem = {
+  change_kind: StateOfFieldChangeKind;
+  happened_on: string;
+  title: string;
+  summary: string;
+  interpretation?: string;
+  related_publication_event_ids?: string[];
+  related_outlook_ids?: string[];
+};
+
+export type StateOfFieldLabeledTextItem = {
+  label: string;
+  summary: string;
+  related_publication_event_ids?: string[];
+  related_outlook_ids?: string[];
+};
+
+export type StateOfFieldTrackExample = {
+  label: string;
+  title: string;
+  summary: string;
+  href: string;
+  related_outlook_ids?: string[];
+};
+
+export type StateOfFieldTrialHorizonItem = {
+  label: string;
+  summary: string;
+  href?: string;
+  study_id?: string;
+  related_outlook_ids?: string[];
+  related_publication_event_ids?: string[];
+};
+
+export type StateOfFieldRevisionKind =
+  | "initial_publication"
+  | "post_hoc_material_correction"
+  | "post_hoc_context_note"
+  | "copy_or_structure_revision";
+
+export type StateOfFieldRevisionHistoryItem = {
+  reviewed_on: string;
+  revision_kind: StateOfFieldRevisionKind;
+  period_interpretation_changed: boolean;
+  summary: string;
+  related_publication_event_ids?: string[];
+  related_outlook_ids?: string[];
 };
 
 export type EvidenceNeedReason =
@@ -565,11 +687,11 @@ const stagePlainMeanings: Record<Stage, string> = {
   mechanistic_plausibility:
     "The idea makes biological sense, but it has not yet shown strong animal or human results.",
   animal_signal:
-    "There is evidence in animals, but not yet enough evidence in people.",
+    "There is animal evidence, but not enough human evidence yet.",
   human_biomarker_signal:
-    "There are early signs in people, usually biomarkers, but not proof that people function better for longer.",
+    "There are early human signals, usually biomarkers, but not proof of long-lasting improvements in human health or function.",
   human_functional_benefit:
-    "There is some evidence that people function better, but not enough repeated, long-lasting evidence to prove broad aging benefit.",
+    "Some human studies show functional improvement, but not enough repeated, long-lasting evidence to prove broad aging benefit.",
   durable_disease_or_mortality_relevance:
     "There are meaningful human outcome signals, but they still need to connect clearly to broad aging benefit."
 };
@@ -590,16 +712,22 @@ const momentumPlainMeanings: Record<Momentum, string> = {
   uncertain: "The public evidence is too thin or uneven to judge momentum clearly."
 };
 
-const confidenceLabels: Record<Confidence, string> = {
-  low: "Low confidence",
-  moderate: "Moderate confidence",
-  high: "High confidence"
+const readFirmnessLabels: Record<Confidence, string> = {
+  low: "Tentative",
+  moderate: "Provisional",
+  high: "Firm"
 };
 
-const confidencePlainMeanings: Record<Confidence, string> = {
-  low: "The rating could change substantially as better evidence arrives.",
-  moderate: "The current read is supported enough to use, but important gaps remain.",
-  high: "The public evidence is consistent enough that the rating is less likely to move quickly."
+const readFirmnessPlainMeanings: Record<Confidence, string> = {
+  low: "This read could change substantially as better evidence arrives.",
+  moderate: "The current read has enough support to use, but important gaps remain.",
+  high: "The public evidence is consistent enough that this read is less likely to move quickly."
+};
+
+const findingWeightLabels: Record<Confidence, string> = {
+  low: "Limited weight",
+  moderate: "Moderate weight",
+  high: "Strong weight"
 };
 
 const lev2036OutlookLabels: Record<Lev2036Outlook, string> = {
@@ -614,6 +742,27 @@ const evidenceNeedReasonLabels: Record<EvidenceNeedReason, string> = {
   underbuilt_evidence: "Underbuilt evidence",
   early_promise: "Showing promise",
   blocking_gap: "Blocking gap"
+};
+
+const trialResultsStatusLabels: Record<TrialResultsStatus, string> = {
+  posted: "Results posted",
+  not_posted: "No posted results",
+  pending: "Not expected yet",
+  unknown: "Timing unclear"
+};
+
+const trialResultsStatusTones: Record<TrialResultsStatus, TrialResultsTone> = {
+  posted: "mint",
+  not_posted: "gold",
+  pending: "blue",
+  unknown: "slate"
+};
+
+const trialResultsStatusRank: Record<TrialResultsStatus, number> = {
+  not_posted: 0,
+  pending: 1,
+  unknown: 2,
+  posted: 3
 };
 
 const evidenceTierRank: Record<string, number> = {
@@ -1023,8 +1172,8 @@ function normalizeOutlook(outlook: OutlookFile): OutlookRecord {
     stage: outlook.evidence_stage,
     momentum: outlook.momentum,
     confidence: outlook.confidence,
-    evidenceGap: outlook.main_evidence_gaps?.[0] ?? "Coverage in progress.",
-    strongestEvidence: outlook.strongest_current_evidence?.[0] ?? "Coverage in progress.",
+    evidenceGap: outlook.main_evidence_gaps?.[0] ?? "No main evidence gap has been published yet.",
+    strongestEvidence: outlook.strongest_current_evidence?.[0] ?? "No strongest-evidence summary has been published yet.",
     interpretation: outlook.interpretation_note,
     lastUpdated: outlook.last_updated,
     thinCoverage: outlook.tags?.includes("thin_coverage"),
@@ -1066,6 +1215,106 @@ function titleizeIdentifier(identifier: string) {
     .map((word) => (["fmd", "igf", "nad", "osk"].includes(word) ? word.toUpperCase() : word))
     .map((word, index) => (index === 0 ? word.charAt(0).toUpperCase() + word.slice(1) : word))
     .join(" ");
+}
+
+function getReadableDataLabel(value: string) {
+  if (value === "na") {
+    return "N/A";
+  }
+
+  const phaseMatch = /^phase([1-4])$/.exec(value);
+  if (phaseMatch) {
+    return `Phase ${phaseMatch[1]}`;
+  }
+
+  return value
+    .split("_")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+function getTrialCompletionDate(study: StudyRecord) {
+  return (
+    study.trial_details?.primary_completion_date ??
+    study.trial_details?.study_completion_date ??
+    study.dates?.end_date
+  );
+}
+
+function getTrialResultsStatus(study: StudyRecord): TrialResultsStatus {
+  if (study.trial_details?.results_status) {
+    return study.trial_details.results_status;
+  }
+
+  const tags = study.tags ?? [];
+  if (tags.includes("posted-results")) {
+    return "posted";
+  }
+
+  if (
+    tags.includes("no-posted-results") ||
+    tags.includes("completed-no-results") ||
+    tags.includes("no-results")
+  ) {
+    return "not_posted";
+  }
+
+  if (["planned", "recruiting", "active"].includes(study.status)) {
+    return "pending";
+  }
+
+  return "unknown";
+}
+
+function normalizeTrial(study: StudyRecord): TrialSummary {
+  const resultsStatus = getTrialResultsStatus(study);
+  const trackNames = (study.track_ids ?? []).map((trackId) => getTrackById(trackId)?.name ?? titleizeIdentifier(trackId));
+  const endpointCategories = study.endpoint_categories ?? [];
+
+  return {
+    id: study.id,
+    name: study.name,
+    summary: study.summary,
+    href: `/studies/${study.id}`,
+    status: study.status,
+    statusLabel: getReadableDataLabel(study.status),
+    phase: study.phase,
+    phaseLabel: study.phase ? getReadableDataLabel(study.phase) : undefined,
+    population: study.population ?? study.model_system,
+    sampleSize: study.sample_size,
+    registryIds: study.registry_ids ?? [],
+    endpointCategories,
+    endpointLabels: endpointCategories.map(getReadableDataLabel),
+    trackIds: study.track_ids ?? [],
+    trackNames,
+    primaryTrackName: trackNames[0] ?? "Unmapped track",
+    resultsStatus,
+    resultsStatusLabel: trialResultsStatusLabels[resultsStatus],
+    resultsStatusTone: trialResultsStatusTones[resultsStatus],
+    completionDate: getTrialCompletionDate(study),
+    completionDateKind: study.trial_details?.completion_date_kind,
+    registryLastUpdated: study.trial_details?.registry_last_updated,
+    registryLastChecked: study.trial_details?.registry_last_checked,
+    expectedResultsWindow: study.trial_details?.expected_results_window,
+    horizonNote: study.trial_details?.horizon_note,
+    whyItMatters: study.trial_details?.why_it_matters
+  };
+}
+
+function compareTrials(left: TrialSummary, right: TrialSummary) {
+  const statusOrder = trialResultsStatusRank[left.resultsStatus] - trialResultsStatusRank[right.resultsStatus];
+  if (statusOrder !== 0) {
+    return statusOrder;
+  }
+
+  const leftDate = left.completionDate ?? "9999-12-31";
+  const rightDate = right.completionDate ?? "9999-12-31";
+  const dateOrder = leftDate.localeCompare(rightDate);
+  if (dateOrder !== 0) {
+    return dateOrder;
+  }
+
+  return left.name.localeCompare(right.name);
 }
 
 function getFindingStrength(finding: Pick<FindingRecord, "evidence_tier" | "confidence">) {
@@ -1341,10 +1590,9 @@ export async function getTrackCoverage(trackId: string): Promise<TrackCoverage> 
 
   if (!trackOutlook) {
     return {
-      interpretation: "Coverage in progress. This track is seeded in the taxonomy but still thin in the public evidence map.",
+      interpretation: "This track is listed because it is part of the aging biology map, but the site has not yet published a track-level evidence summary for it.",
       lastUpdated: "2026-05-01",
-      thinCoverage: true,
-      statusLabel: "Coverage in progress"
+      thinCoverage: true
     };
   }
 
@@ -1445,6 +1693,14 @@ export async function getStudiesByIds(studyIds: string[]): Promise<StudyRecord[]
   return Array.from(new Set(studyIds))
     .map((studyId) => studyById.get(studyId))
     .filter((study): study is StudyRecord => Boolean(study));
+}
+
+export async function getTrials(): Promise<TrialSummary[]> {
+  noStore();
+  return (await loadStudies())
+    .filter((study) => study.study_type === "interventional" && (study.registry_ids?.length ?? 0) > 0)
+    .map(normalizeTrial)
+    .sort(compareTrials);
 }
 
 export async function getStudiesForIntervention(interventionId: string): Promise<StudyRecord[]> {
@@ -1704,12 +1960,16 @@ export function getMomentumPlainMeaning(momentum: Momentum) {
   return momentumPlainMeanings[momentum];
 }
 
-export function getConfidenceLabel(confidence: Confidence) {
-  return confidenceLabels[confidence];
+export function getReadFirmnessLabel(confidence: Confidence) {
+  return readFirmnessLabels[confidence];
 }
 
-export function getConfidencePlainMeaning(confidence: Confidence) {
-  return confidencePlainMeanings[confidence];
+export function getReadFirmnessPlainMeaning(confidence: Confidence) {
+  return readFirmnessPlainMeanings[confidence];
+}
+
+export function getFindingWeightLabel(confidence: Confidence) {
+  return findingWeightLabels[confidence];
 }
 
 export function getLev2036OutlookLabel(status: Lev2036Outlook) {
@@ -1735,7 +1995,16 @@ export async function getOverallSnapshot() {
 
 export async function getHomepageData() {
   noStore();
-  const [overallOutlook, hallmarkOutlooks, hallmarks, recentChanges, snapshot, currentLevStory, publicationEvents] =
+  const [
+    overallOutlook,
+    hallmarkOutlooks,
+    hallmarks,
+    recentChanges,
+    snapshot,
+    currentLevStory,
+    publicationEvents,
+    stateOfFieldEditions
+  ] =
     await Promise.all([
       getOverallOutlook(),
       getHallmarkOutlooks(),
@@ -1743,8 +2012,12 @@ export async function getHomepageData() {
       getRecentChanges(),
       getOverallSnapshot(),
       loadCurrentLevStory(),
-      loadPublicationEvents()
+      loadPublicationEvents(),
+      loadStateOfFieldEditions()
     ]);
+  const linkedStateOfFieldEdition =
+    stateOfFieldEditions.find((edition) => edition.slug === currentLevStory.related_state_of_field_slug) ??
+    stateOfFieldEditions[0];
 
   return {
     overallOutlook,
@@ -1753,6 +2026,7 @@ export async function getHomepageData() {
     recentChanges,
     snapshot,
     currentLevStory,
+    linkedStateOfFieldEdition,
     currentLevStoryStatus: buildCurrentLevStoryStatus(currentLevStory, publicationEvents)
   };
 }

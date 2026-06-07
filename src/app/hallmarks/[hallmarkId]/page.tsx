@@ -9,16 +9,17 @@ import { formatDate } from "@/lib/date";
 import { getDirectionTone, getReadableLabel } from "@/lib/evidence-format";
 import {
   getActivityForHallmark,
-  getConfidenceLabel,
+  getFindingWeightLabel,
   getHallmarkById,
   getHallmarkInsight,
   getHallmarkOutlook,
   getHallmarkTrackGroup,
   getLeadingInterventionsForHallmark,
   getOverallLastUpdated,
-  getConfidencePlainMeaning,
   getMomentumLabel,
   getMomentumPlainMeaning,
+  getReadFirmnessLabel,
+  getReadFirmnessPlainMeaning,
   getStageLabel,
   getStagePlainMeaning,
   getStrongestFindingsForHallmark,
@@ -63,7 +64,6 @@ export default async function HallmarkDetailPage({ params }: HallmarkPageProps) 
         <div className="page-hero__stats">
           <StageBadge stage={outlook.stage} />
           <span>{getMomentumLabel(outlook.momentum)}</span>
-          <span>{getConfidenceLabel(outlook.confidence)}</span>
         </div>
       </PageHero>
 
@@ -86,9 +86,9 @@ export default async function HallmarkDetailPage({ params }: HallmarkPageProps) 
                 <span>{getMomentumPlainMeaning(outlook.momentum)}</span>
               </div>
               <div>
-                <strong>Confidence</strong>
-                <p>{getConfidenceLabel(outlook.confidence)}</p>
-                <span>{getConfidencePlainMeaning(outlook.confidence)}</span>
+                <strong>How firm is this read?</strong>
+                <p>{getReadFirmnessLabel(outlook.confidence)}</p>
+                <span>{getReadFirmnessPlainMeaning(outlook.confidence)}</span>
               </div>
             </div>
           </article>
@@ -166,7 +166,7 @@ export default async function HallmarkDetailPage({ params }: HallmarkPageProps) 
                   <p>{intervention.summary}</p>
                   <div className="evidence-finding__meta">
                     <span className="evidence-chip">{getReadableLabel(intervention.strongestEvidenceTier)}</span>
-                    <span className="evidence-chip">{getConfidenceLabel(intervention.strongestConfidence)}</span>
+                    <span className="evidence-chip">{getFindingWeightLabel(intervention.strongestConfidence)}</span>
                     {intervention.directions.slice(0, 2).map((direction) => (
                       <span className={`evidence-chip ${getDirectionTone(direction)}`} key={direction}>
                         {getReadableLabel(direction)}
@@ -212,7 +212,7 @@ export default async function HallmarkDetailPage({ params }: HallmarkPageProps) 
                     <span className={`evidence-chip ${getDirectionTone(finding.direction)}`}>
                       {getReadableLabel(finding.direction)}
                     </span>
-                    <span className="evidence-chip">{getConfidenceLabel(finding.confidence)}</span>
+                    <span className="evidence-chip">{getFindingWeightLabel(finding.confidence)}</span>
                   </div>
                   <div className="evidence-inventory-item__body">
                     <div>
@@ -295,14 +295,11 @@ export default async function HallmarkDetailPage({ params }: HallmarkPageProps) 
               <Link className="track-card" href={`/tracks/${track.id}`} key={track.id}>
                 <div className="track-card__top">
                   <strong>{track.name}</strong>
-                  {coverage.thinCoverage ? (
-                    <span className="micro-badge micro-badge--muted">Thin coverage</span>
-                  ) : null}
                 </div>
                 <p>{track.summary}</p>
                 <div className="track-card__meta">
-                  <span>{coverage.stage ? getStageLabel(coverage.stage) : coverage.statusLabel}</span>
-                  <span>{coverage.momentum ? getMomentumLabel(coverage.momentum) : "Thin public layer"}</span>
+                  <span>{coverage.stage ? getStageLabel(coverage.stage) : "Not rated"}</span>
+                  <span>{coverage.momentum ? getMomentumLabel(coverage.momentum) : "Not rated"}</span>
                 </div>
                 <div className="track-card__footer">
                   <span>{coverage.evidenceGap ?? coverage.interpretation}</span>

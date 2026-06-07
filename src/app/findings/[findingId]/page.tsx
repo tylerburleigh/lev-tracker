@@ -13,7 +13,7 @@ import {
 } from "@/lib/evidence-format";
 import { formatDate } from "@/lib/date";
 import {
-  getConfidenceLabel,
+  getFindingWeightLabel,
   getFindingById,
   getHallmarkById,
   getInterventionsByIds,
@@ -52,7 +52,7 @@ export default async function FindingDetailPage({ params }: FindingDetailPagePro
         <div className="page-hero__stats">
           <span>{getReadableLabel(finding.evidence_tier)}</span>
           <span>{getReadableLabel(finding.direction)}</span>
-          <span>{getConfidenceLabel(finding.confidence)}</span>
+          <span>{getFindingWeightLabel(finding.confidence)}</span>
         </div>
       </PageHero>
 
@@ -73,6 +73,10 @@ export default async function FindingDetailPage({ params }: FindingDetailPagePro
                     {getReadableLabel(finding.direction)}
                   </span>
                 </p>
+              </div>
+              <div>
+                <strong>Evidence weight</strong>
+                <p>{getFindingWeightLabel(finding.confidence)}</p>
               </div>
               <div>
                 <strong>Population or model</strong>

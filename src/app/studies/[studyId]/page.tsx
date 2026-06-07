@@ -13,21 +13,45 @@ import {
 } from "@/lib/evidence-format";
 import { formatDate } from "@/lib/date";
 import {
-  getConfidenceLabel,
+  getFindingWeightLabel,
   getFindingsForStudy,
   getHallmarkById,
   getInterventionsByIds,
   getOverallLastUpdated,
   getSourcesByIds,
   getStudyById,
+  getTrials,
   getTrackById
 } from "@/lib/site-data";
+import type { TrialSummary } from "@/lib/site-data";
 
 type StudyDetailPageProps = {
   params: Promise<{
     studyId: string;
   }>;
 };
+
+function getTrialTimingSummary(trial: TrialSummary) {
+  if (trial.expectedResultsWindow) {
+    return trial.expectedResultsWindow;
+  }
+
+  if (trial.completionDate) {
+    return `${trial.completionDateKind === "estimated" ? "Estimated completion" : "Completed"} ${formatDate(
+      trial.completionDate
+    )}.`;
+  }
+
+  if (trial.registryLastUpdated) {
+    return `Registry last updated ${formatDate(trial.registryLastUpdated)}.`;
+  }
+
+  if (trial.registryLastChecked) {
+    return `Registry last checked ${formatDate(trial.registryLastChecked)}.`;
+  }
+
+  return "Result timing is not recorded here.";
+}
 
 export default async function StudyDetailPage({ params }: StudyDetailPageProps) {
   const { studyId } = await params;
@@ -43,6 +67,7 @@ export default async function StudyDetailPage({ params }: StudyDetailPageProps) 
     getInterventionsByIds(study.intervention_ids ?? []),
     getOverallLastUpdated()
   ]);
+  const trial = study.registry_ids?.length ? (await getTrials()).find((item) => item.id === study.id) : undefined;
   const interventionNameById = new Map(interventions.map((intervention) => [intervention.id, intervention.name]));
 
   return (
@@ -83,6 +108,24 @@ export default async function StudyDetailPage({ params }: StudyDetailPageProps) 
                     : "Not specified"}
                 </p>
               </div>
+              {trial ? (
+                <>
+                  <div>
+                    <strong>Result status</strong>
+                    <p>{trial.resultsStatusLabel}</p>
+                  </div>
+                  <div>
+                    <strong>Result timing</strong>
+                    <p>{getTrialTimingSummary(trial)}</p>
+                  </div>
+                  {trial.horizonNote ? (
+                    <div>
+                      <strong>Why it is on watch</strong>
+                      <p>{trial.horizonNote}</p>
+                    </div>
+                  ) : null}
+                </>
+              ) : null}
             </div>
           </article>
 
@@ -163,7 +206,7 @@ export default async function StudyDetailPage({ params }: StudyDetailPageProps) 
                     <span className={`evidence-chip ${getDirectionTone(finding.direction)}`}>
                       {getReadableLabel(finding.direction)}
                     </span>
-                    <span className="evidence-chip">{getConfidenceLabel(finding.confidence)}</span>
+                    <span className="evidence-chip">{getFindingWeightLabel(finding.confidence)}</span>
                   </div>
                   <div className="evidence-inventory-item__body">
                     <div>
