@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "mianserin",
+  "name": "Mianserin",
+  "summary": "Tetracyclic antidepressant highlighted in a 2026 calcium-homeostasis paper as a candidate senomorphic small molecule, with aging evidence currently limited to human cell systems and mouse healthspan/lifespan.",
+  "aliases": [
+    "MIA"
+  ],
+  "modalities": [
+    "small_molecule"
+  ],
+  "target_hallmark_ids": [
+    "cellular_senescence"
+  ],
+  "track_ids": [
+    "senomorphics"
+  ],
+  "mechanism_summary": "In the staged source, mianserin antagonized serotonin receptors HTR2B/2C, lowered cellular Ca2+, reduced S100A6/PARP1/CCF/cGAS-STING-NF-kB/SASP signaling, and improved aging phenotypes in mouse models.",
+  "development_stage": "approved_for_other_indication",
+  "linked_study_ids": [
+    "mianserin-calcium-homeostasis-aged-mice"
+  ],
+  "linked_finding_ids": [
+    "mianserin-calcium-homeostasis-improved-aged-mouse-healthspan-lifespan"
+  ],
+  "risk_flags": [
+    "aging-use-preclinical",
+    "central-nervous-system-drug",
+    "human-aging-dose-and-safety-unresolved",
+    "senomorphic-attribution-unresolved"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether mianserin can move senescence/SASP biomarkers in treated humans at tolerable doses",
+      "Whether Ca2+ lowering through HTR2B/2C antagonism improves long-lasting tissue resilience or function in older adults",
+      "How to separate a senomorphic effect from broader central nervous system or serotonin-receptor effects"
+    ]
+  },
+  "tags": [
+    "senomorphics",
+    "mianserin",
+    "calcium-homeostasis",
+    "sasp",
+    "preclinical-aging-use"
+  ]
+}
