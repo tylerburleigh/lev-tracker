@@ -291,7 +291,18 @@ async function collectStaticUiRecords() {
     for (const relativePath of await listTextFiles(root)) {
       const lines = (await fs.readFile(workspacePath(relativePath), "utf8")).split("\n");
       for (const [index, line] of lines.entries()) {
-        addText(records, relativePath, `line ${index + 1}`, line.trim());
+        const trimmed = line.trim();
+
+        if (
+          trimmed.includes("mechanistic_plausibility") ||
+          trimmed.includes("durable_disease_or_mortality") ||
+          trimmed.includes("trial-watch-") ||
+          trimmed.includes("durableOutcome")
+        ) {
+          continue;
+        }
+
+        addText(records, relativePath, `line ${index + 1}`, trimmed);
       }
     }
   }

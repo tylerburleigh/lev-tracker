@@ -1,14 +1,13 @@
 # Editorial Quality Report
 
-Generated: 2026-06-07T13:57:29.139Z
+Generated: 2026-06-07T14:46:19.340Z
 Overall: passed
 
 ## Summary
 
 - Current LEV story status: current
-- Public copy warnings: 347
+- Public copy warnings: 0
 - Reader-task audit: passed (14 passed, 0 issues, 0 warnings)
-- Top public-copy terms: durable: 110, functional benefit: 84, mechanistic: 49, translation: 49, trial-watch: 16, pathway engagement: 13, biomarker-heavy: 7, translational: 6
 
 ## Gates
 
@@ -16,6 +15,10 @@ Overall: passed
   Status is current.
 - PASS: Reader-task audit has no issues
   0 issue(s), 0 warning(s).
+- PASS: Public copy warnings <= 269
+  Current public copy warning count is 0.
+- PASS: Reader-task warnings <= 0
+  Current reader-task warning count is 0.
 
 ## Command Output
 
@@ -39,8 +42,8 @@ Command: `node scripts/public-copy-lint.mjs --write`
 Exit code: 0
 
 ```text
-Public copy warnings: 347
-Top terms: durable: 110, functional benefit: 84, mechanistic: 49, translation: 49, trial-watch: 16, pathway engagement: 13, biomarker-heavy: 7, translational: 6
+Public copy warnings: 0
+No tracked jargon terms found.
 Wrote extra/public-copy-report.md.
 ```
 

@@ -85,12 +85,12 @@ export default async function HallmarksIndexPage() {
         <div className="page-shell hallmark-index-overview">
           <div className="hallmark-index-overview__copy">
             <span className="section-kicker">Evidence tiers</span>
-            <h2>Human evidence is visible, durable outcomes are not</h2>
+            <h2>Human evidence is visible, long-lasting outcomes are not</h2>
             <p>
               {humanEvidenceCount} of {outlooks.length} hallmark areas currently sit at a human evidence tier.{" "}
               {durableOutcomeCount === 0
-                ? "None has reached durable disease or mortality relevance."
-                : `${durableOutcomeCount} have reached durable disease or mortality relevance.`}
+                ? "None has reached long-lasting disease or mortality relevance."
+                : `${durableOutcomeCount} have reached long-lasting disease or mortality relevance.`}
             </p>
           </div>
           <div className="hallmark-index-tier-list" aria-label="Hallmarks by current evidence tier">

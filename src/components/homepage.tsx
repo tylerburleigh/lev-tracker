@@ -22,11 +22,11 @@ import type { Stage } from "@/lib/site-data";
 import { formatDate } from "@/lib/date";
 
 const hallmarkStageColumns: Array<{ stage: Stage; label: string }> = [
-  { stage: "mechanistic_plausibility", label: "Mechanistic" },
+  { stage: "mechanistic_plausibility", label: "Biology" },
   { stage: "animal_signal", label: "Animal" },
   { stage: "human_biomarker_signal", label: "Human biomarkers" },
   { stage: "human_functional_benefit", label: "Human function" },
-  { stage: "durable_disease_or_mortality_relevance", label: "Durable outcomes" }
+  { stage: "durable_disease_or_mortality_relevance", label: "Long-lasting outcomes" }
 ];
 
 const humanStageSet = new Set<Stage>([
@@ -333,8 +333,8 @@ export async function Homepage() {
             <p>
               The map has moved beyond pure biology in many places, but{" "}
               {durableOutcomeHallmarkCount === 0
-                ? "none of the hallmarks is at durable human outcome evidence."
-                : `${durableOutcomeHallmarkCount} hallmark(s) currently sit at durable human outcome evidence.`}
+                ? "none of the hallmarks is at long-lasting human outcome evidence."
+                : `${durableOutcomeHallmarkCount} hallmark(s) currently sit at long-lasting human outcome evidence.`}
             </p>
           </div>
           <div className="hallmark-stage-ladder" aria-label="Hallmark evidence tiers">
