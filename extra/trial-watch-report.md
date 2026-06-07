@@ -1,31 +1,25 @@
-# Trial Watch Report for Lysosomal Restoration
+# Trial Watch Report for Proteasome Enhancement
 
 Generated from reviewed local records on 2026-06-07.
 Stale registry threshold: 90 days. This report does not fetch current registry data.
 
 ## Summary
 
-- Registry-linked interventional studies: 3
-- With `trial_details`: 3
+- Registry-linked interventional studies: 0
+- With `trial_details`: 0
 - Missing `trial_details`: 0
 - Completed or past-completion records with no posted results: 0
-- Registry checks missing or stale: 3
-- Open watchlist records with missing or stale registry checks: 1
-- Posted results recorded locally: 2
+- Registry checks missing or stale: 0
+- Open watchlist records with missing or stale registry checks: 0
+- Posted results recorded locally: 0
 
 ### Result Status
 
-- not expected yet: 1
-- posted results: 2
-
 ### Trial Status
-
-- active: 1
-- completed: 2
 
 ## Field-Review Watchlist
 
-- ASPro-PD phase 3 ambroxol trial (NCT05778617): active; not expected yet; completion not recorded; registry no local check date.
+No current local trial watch candidates.
 
 ## Completed Or Past-Completion With No Posted Results
 
@@ -33,9 +27,7 @@ No completed or past-completion local trial records are marked as no posted resu
 
 ## Stale Or Missing Registry Checks
 
-- ASPro-PD phase 3 ambroxol trial (NCT05778617): active; not expected yet; completion not recorded; registry no local check date.
-- Open-label ambroxol target-engagement trial in Parkinson disease (NCT02941822): completed; posted results; completion not recorded; registry no local check date.
-- Randomized phase 2 ambroxol trial in Parkinson disease dementia (NCT02914366): completed; posted results; completion not recorded; registry no local check date.
+No local registry checks are stale under the configured threshold.
 
 ## Missing Trial Details
 

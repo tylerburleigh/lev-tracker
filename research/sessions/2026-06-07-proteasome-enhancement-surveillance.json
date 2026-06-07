@@ -1,0 +1,212 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-07-proteasome-enhancement-surveillance",
+  "name": "Proteasome Enhancement field change check for June 7, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-07T21:10:00Z",
+  "completed_at": "2026-06-07T21:14:26Z",
+  "scope": {
+    "question": "What changed for Proteasome Enhancement since the 2026-06-01 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "loss_of_proteostasis"
+    ],
+    "track_ids": [
+      "proteasome-enhancement"
+    ],
+    "intervention_ids": [
+      "18alpha-ga",
+      "rpn6-overexpression",
+      "rolipram",
+      "open-gate-proteasome",
+      "cold-induced-pa28gamma",
+      "skn1a-proteasome-subunit-coordination"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "no_op",
+  "summary": "Ran a field change check from the 2026-06-01T10:27:12.753Z Proteasome Enhancement baseline publication through June 7, 2026. The local trial audit found no scoped registry-linked human studies. Broad ClinicalTrials.gov searches found no proteasome-enhancing human aging program; close hits were unrelated aging/exercise records, amyloidosis or cancer proteasome-inhibitor studies, supplement or exercise programs, and proteostasis-adjacent disease records without a proteasome-enhancement intervention. PubMed searches found no correction or retraction to the baseline support set and no same-window human organismal or clinical proteasome-enhancement result. The closest source, PMID 41956660, reports fucoxanthin proteostasis and proteasome-activity effects in human senescent fibroblasts, hiPSC-derived neurons, and C. elegans Abeta-GFP models, but it was electronically published before the baseline and is not a human intervention result. Other close sources were skeletal-muscle UPS review context, Drosophila aggregation genetics, osteoarthritis chondrocyte mechanism, neurodegeneration reviews, or non-proteasome mitochondrial/parkin context. No public outlook, source, study, finding, activity, bundle, or coverage assessment update is warranted.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "none",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The public baseline already frames this track as a low-firmness animal signal dominated by C. elegans lifespan/proteostasis results and cell-based human relevance. Current registry, PubMed, and preprint checks did not identify new human target engagement, clinical evidence, mammalian aging safety/benefit evidence, a correction/retraction, or a materially stronger post-baseline animal result. Pre-baseline fucoxanthin and review context can be considered in a future coverage assessment but should not be backfilled through ordinary surveillance."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial audit",
+      "query": "npm run audit:trials -- --track proteasome-enhancement --write",
+      "checked_at": "2026-06-07T21:14:26Z",
+      "url": "https://clinicaltrials.gov/search?term=proteasome%20enhancement%20aging",
+      "summary": "The audit found zero registry-linked interventional studies, zero missing detail records, zero stale registry checks, and zero open trial-watch items for the scoped track."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "proteasome enhancement aging OR proteasome activator aging OR proteasome activation aging",
+      "checked_at": "2026-06-07T21:14:26Z",
+      "url": "https://clinicaltrials.gov/search?term=proteasome%20enhancement%20aging%20OR%20proteasome%20activator%20aging%20OR%20proteasome%20activation%20aging",
+      "summary": "Returned three non-material records: whey-protein inflammaging and muscle metabolism, a Pythagorean self-awareness aging-biomarker intervention, and exercise in chronic heart failure and aging. None was a proteasome-enhancing intervention program."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "(proteasome OR proteostasis) AND (aging OR older adult OR frailty OR Alzheimer OR Parkinson); and rolipram/cAMP-PKA/PSMD11/RPN6/PSME3/PA28gamma/18alpha-glycyrrhetinic acid terms with aging, Alzheimer, or neurodegeneration",
+      "checked_at": "2026-06-07T21:14:26Z",
+      "url": "https://clinicaltrials.gov/search?term=proteasome%20proteostasis%20aging",
+      "summary": "The broad registry screen returned mostly amyloidosis, oncology proteasome-inhibitor, ALS supplement, echo-analysis, nutrition, and observational records. The baseline-specific term screen returned zero records. No trial result or active proteasome-enhancement aging program was identified."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "Proteasome, proteasomal, proteostasis, protein degradation, protein homeostasis, or proteotoxicity with enhancement, activation, activator, activity terms and aging, lifespan, longevity, healthspan, older-adult, senescence, or neurodegeneration terms; publication dates 2026-06-01 to 2026-06-07",
+      "checked_at": "2026-06-07T21:14:26Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=proteasome%20activation%20aging",
+      "summary": "Returned 15 records. Close records included PMID 42119273, PMID 41956660, PMID 42249710, PMID 42249421, PMID 42243035, PMID 42031321, and PMID 41825655. They were review, pre-window electronic-publication, Drosophila aggregation, disease-cell, neurodegeneration, or non-proteasome mechanism context and did not change the public outlook."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "query": "RPN6, PSMD11, PA28gamma, PSME3, 18alpha-glycyrrhetinic acid, glycyrrhetinic acid, rolipram, cAMP-PKA, SKN-1A, NRF1, and open-gate proteasome terms with aging, lifespan, longevity, healthspan, proteostasis, aggregation, or neurodegeneration terms; publication dates 2026-06-01 to 2026-06-07",
+      "checked_at": "2026-06-07T21:14:26Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=RPN6%20PSMD11%20PA28gamma%20proteasome%20aging",
+      "summary": "Returned two same-window records, PMID 41833117 and PMID 41690071. Both were wrong-scope relative to proteasome enhancement: aging rooster Leydig-cell astaxanthin/mitochondrial function and an adenosine A2A receptor neuroinflammation review."
+    },
+    {
+      "source_name": "PubMed correction and retraction screen",
+      "query": "Baseline support PMIDs 20068043, 22922647, 26669444, 26692334, 26886723, 36007615, 37118550, and 41703241 with retraction, erratum, corrected-and-republished, or expression-of-concern publication types; publication dates 2026-06-01 to 2026-06-07",
+      "checked_at": "2026-06-07T21:14:26Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned zero correction, retraction, erratum, corrected-and-republished, or expression-of-concern records for the eight baseline supporting PubMed sources."
+    },
+    {
+      "source_name": "bioRxiv and medRxiv APIs",
+      "query": "Date window 2026-06-01 to 2026-06-07 with proteasome, proteostasis, RPN6, PSMD11, PSME3, PA28, glycyrrhetinic, rolipram, and SKN-1A title/abstract screens",
+      "checked_at": "2026-06-07T21:14:26Z",
+      "url": "https://api.biorxiv.org/",
+      "summary": "Returned zero matching bioRxiv or medRxiv title/abstract records in the date window."
+    }
+  ],
+  "trial_watch_checks": [],
+  "excluded_sources": [
+    {
+      "reference": "PMID 41956660",
+      "title": "Fucoxanthin, a bioactive compound derived from edible seaweed, supports proteostasis and protects against stress and senescence.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41956660/",
+      "decision": "context_only",
+      "reason": "Relevant proteostasis/proteasome activity source in human senescent fibroblasts, hiPSC-derived neurons, and C. elegans Abeta-GFP models, but electronically published on 2026-03-23 before the baseline and not a human intervention result. It is better handled as future coverage-assessment context."
+    },
+    {
+      "reference": "PMID 42119273",
+      "title": "Dysregulation of the ubiquitin-proteasome system in aging skeletal muscle.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42119273/",
+      "decision": "context_only",
+      "reason": "Same-window review of UPS regulation in aging skeletal muscle. It reinforces the need to avoid single-marker proteasome interpretations but adds no primary intervention evidence."
+    },
+    {
+      "reference": "PMID 42249710",
+      "title": "Regulation of Huntingtin-polyQ Aggregation by Glucose Transporters and Saccharide-binding Receptors during Aging in Drosophila.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42249710/",
+      "decision": "wrong_scope",
+      "reason": "Drosophila huntingtin-polyQ aggregation genetics and saccharide-signaling source. It is proteostasis-adjacent but not a proteasome-enhancement intervention result."
+    },
+    {
+      "reference": "PMID 42249421",
+      "title": "Multi-omics and experimental evidence in human chondrocytes identify caspase-8 as a non-apoptotic regulator of inflammatory, senescent, and fibrotic signaling in osteoarthritis.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42249421/",
+      "decision": "wrong_scope",
+      "reason": "Human osteoarthritis chondrocyte caspase-8 mechanism paper. Proteostasis-chromatin network language appears in proteomics, but the intervention and claim are not proteasome enhancement."
+    },
+    {
+      "reference": "PMID 42243035",
+      "title": "Deubiquitinases at organelle quality control bottlenecks in neurodegeneration.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42243035/",
+      "decision": "context_only",
+      "reason": "Review-level deubiquitinase and organelle-quality-control context. It may inform related UPS surveillance but does not add a proteasome-enhancement result."
+    },
+    {
+      "reference": "PMID 42031321",
+      "title": "Co-aggregation of amyloidogenic proteins in age-related neurodegenerative diseases.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42031321/",
+      "decision": "context_only",
+      "reason": "Review of protein co-aggregation and proteostasis modulators in age-related neurodegenerative disease. It is synthesis context without a direct proteasome-enhancement intervention result."
+    },
+    {
+      "reference": "PMID 41825655",
+      "title": "Nuclear factor erythroid 2-related factor 2 induction abrogates mitochondrial stress through parkin regulation.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41825655/",
+      "decision": "wrong_scope",
+      "reason": "NRF2-parkin mitochondrial-stress source returned by proteostasis terms. It is Parkinson/mitochondrial-proteostasis biology rather than proteasome-enhancement evidence."
+    },
+    {
+      "reference": "PMID 41833117",
+      "title": "Natural astaxanthin enhances testosterone synthesis by improving mitochondrial function and reducing oxidative stress in Leydig cells.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41833117/",
+      "decision": "wrong_scope",
+      "reason": "Aging rooster Leydig-cell mitochondrial/oxidative-stress source returned by NRF1 search terms. It is not proteasome enhancement."
+    },
+    {
+      "reference": "PMID 41690071",
+      "title": "Adenosine A2A receptor as a dual-acting molecular switch: Glial morphological changes and neurovascular tissue remodeling in neuroinflammation and neurodegeneration.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41690071/",
+      "decision": "wrong_scope",
+      "reason": "A2A receptor neuroinflammation review returned by cAMP/PKA search terms. It is not a proteasome-enhancement intervention or aging result."
+    },
+    {
+      "reference": "NCT03308747",
+      "title": "Inflammaging and Muscle Protein Metabolism",
+      "url": "https://clinicaltrials.gov/study/NCT03308747",
+      "decision": "wrong_scope",
+      "reason": "Completed whey-protein older-adult muscle metabolism record returned by proteasome-aging registry terms. It is nutrition/protein metabolism context, not proteasome enhancement."
+    },
+    {
+      "reference": "NCT04847453",
+      "title": "Venetoclax, MLN9708 and dexamethasone for relapsed or refractory light chain amyloidosis",
+      "url": "https://clinicaltrials.gov/study/NCT04847453",
+      "decision": "wrong_scope",
+      "reason": "Active-not-recruiting amyloidosis regimen includes ixazomib, a proteasome inhibitor. It is the opposite direction and disease-specific oncology/amyloidosis context."
+    },
+    {
+      "reference": "NCT04562831",
+      "title": "The NO-ALS Study: Nicotinamide/Pterostilbene Supplement in ALS",
+      "url": "https://clinicaltrials.gov/study/NCT04562831",
+      "decision": "wrong_scope",
+      "reason": "ALS supplement trial returned by proteostasis/neurodegeneration terms. It does not test proteasome enhancement."
+    }
+  ],
+  "source_ids": [
+    "pmid-20068043",
+    "pmid-22922647",
+    "pmid-26669444",
+    "pmid-26692334",
+    "pmid-26886723",
+    "pmid-36007615",
+    "pmid-37118550",
+    "pmid-41703241"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT03308747",
+    "https://clinicaltrials.gov/study/NCT04847453",
+    "https://clinicaltrials.gov/study/NCT04562831",
+    "https://pubmed.ncbi.nlm.nih.gov/41956660/",
+    "https://pubmed.ncbi.nlm.nih.gov/42119273/",
+    "https://pubmed.ncbi.nlm.nih.gov/42249710/",
+    "https://pubmed.ncbi.nlm.nih.gov/42249421/",
+    "https://pubmed.ncbi.nlm.nih.gov/42243035/",
+    "https://pubmed.ncbi.nlm.nih.gov/42031321/",
+    "https://pubmed.ncbi.nlm.nih.gov/41825655/",
+    "https://pubmed.ncbi.nlm.nih.gov/41833117/",
+    "https://pubmed.ncbi.nlm.nih.gov/41690071/"
+  ],
+  "notes": [
+    "Triage selected this as the rank-1 next distinct surveillance target after Lysosomal Restoration surveillance.",
+    "The delta window is anchored to publication event publish-proteasome-enhancement-bootstrap-2026-06-01-2026-06-01t10-27-12-753z.",
+    "No coverage assessment exists yet for Proteasome Enhancement; this ordinary surveillance pass did not discover a material category-level change requiring immediate coverage repair.",
+    "PMID 41956660 is the most relevant missed-context source found in this pass, but it was electronically available before the baseline and should be assessed in a future coverage backfill rather than staged through no-op surveillance.",
+    "The public boundary remains unchanged: direct organismal evidence is animal/worm-heavy, human relevance remains cell-based, and no clinical proteasome-enhancement program is visible."
+  ],
+  "next_actions": [
+    "Continue ordinary surveillance for human proteasome target-engagement studies, mammalian aging studies with safety and function, or selective proteasome-enhancement clinical programs.",
+    "Consider a separate Proteasome Enhancement coverage assessment later to decide whether fucoxanthin and newer UPS aging-muscle review context should be represented in the public evidence layer.",
+    "Create a public bundle only if future evidence changes stage, evidence weight, momentum, blockers, safety, durability, human target engagement, functional outcomes, or proteasome-enhancement translation boundaries."
+  ]
+}
