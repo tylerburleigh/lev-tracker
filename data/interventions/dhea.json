@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "dhea",
+  "name": "DHEA",
+  "summary": "DHEA is normalized as a TRIIM combination component in the uncontrolled human epigenetic-age pilot.",
+  "modalities": [
+    "small_molecule"
+  ],
+  "target_hallmark_ids": [
+    "altered_intercellular_communication",
+    "epigenetic_alterations"
+  ],
+  "track_ids": [
+    "dna-methylation-and-epigenome-restoration",
+    "neuroendocrine-and-systemic-signal-reset"
+  ],
+  "mechanism_summary": "Represents dehydroepiandrosterone hormone supplementation within a multi-component thymic and metabolic intervention, so attribution is confounded.",
+  "development_stage": "approved_for_other_indication",
+  "linked_study_ids": [
+    "triim-human-epigenetic-aging-pilot"
+  ],
+  "linked_finding_ids": [
+    "triim-human-epigenetic-age-decrease"
+  ],
+  "risk_flags": [
+    "combination-attribution",
+    "uncontrolled-human-pilot",
+    "hormonal-risk"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: TRIIM human epigenetic aging pilot; TRIIM reported lower epigenetic age in an uncontrolled human pilot.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "altered_intercellular_communication",
+    "dhea",
+    "dna-methylation-and-epigenome-restoration",
+    "epigenetic_alterations",
+    "neuroendocrine-and-systemic-signal-reset",
+    "small_molecule"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

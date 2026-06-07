@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "vitamin-b12",
+  "name": "Vitamin B12",
+  "summary": "Vitamin B12 is normalized for hemodialysis micronucleus-frequency evidence as a genome-stability adjunct with folate.",
+  "modalities": [
+    "dietary_supplement"
+  ],
+  "target_hallmark_ids": [
+    "genomic_instability"
+  ],
+  "track_ids": [
+    "genome-surveillance-and-chromosome-stability"
+  ],
+  "mechanism_summary": "Supports one-carbon metabolism and DNA synthesis/repair context, with linked public evidence in a disease-specific supplementation study.",
+  "development_stage": "approved_for_other_indication",
+  "linked_study_ids": [
+    "hemodialysis-folate-b12-micronucleus"
+  ],
+  "linked_finding_ids": [
+    "folate-b12-reduced-micronuclei-dialysis"
+  ],
+  "risk_flags": [
+    "combination-attribution",
+    "disease-specific-evidence",
+    "biomarker-only"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: Folic acid and vitamin B12 micronucleus study in hemodialysis patients; Folic acid and vitamin B12 reduced micronucleus frequency in hemodialysis patients.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "dietary_supplement",
+    "genome-surveillance-and-chromosome-stability",
+    "genomic_instability",
+    "vitamin-b12"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

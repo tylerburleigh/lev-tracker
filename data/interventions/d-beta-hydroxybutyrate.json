@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "d-beta-hydroxybutyrate",
+  "name": "D-beta-hydroxybutyrate",
+  "summary": "D-beta-hydroxybutyrate is a ketone-body intervention normalized for C. elegans lifespan and HDAC-linked chromatin evidence.",
+  "modalities": [
+    "small_molecule",
+    "dietary_supplement"
+  ],
+  "target_hallmark_ids": [
+    "deregulated_nutrient_sensing",
+    "epigenetic_alterations"
+  ],
+  "track_ids": [
+    "chromatin-and-histone-modulation"
+  ],
+  "mechanism_summary": "Uses beta-hydroxybutyrate exposure to probe ketone, nutrient-sensing, and HDAC-linked aging mechanisms in preclinical models.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "beta-hydroxybutyrate-hdac-c-elegans-lifespan"
+  ],
+  "linked_finding_ids": [
+    "beta-hydroxybutyrate-hdac-extended-c-elegans-lifespan"
+  ],
+  "risk_flags": [
+    "animal-only",
+    "worm-model-boundary",
+    "dose-translation-unclear"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: Beta-hydroxybutyrate extended C. elegans lifespan through HDAC-linked biology; D-beta-hydroxybutyrate HDAC C. elegans lifespan study.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "chromatin-and-histone-modulation",
+    "d-beta-hydroxybutyrate",
+    "deregulated_nutrient_sensing",
+    "dietary_supplement",
+    "epigenetic_alterations",
+    "small_molecule"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

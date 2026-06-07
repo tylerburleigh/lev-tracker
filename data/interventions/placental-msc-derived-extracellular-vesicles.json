@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "placental-msc-derived-extracellular-vesicles",
+  "name": "Placental MSC-derived extracellular vesicles",
+  "summary": "Placental MSC-derived extracellular vesicles are normalized for a knee osteoarthritis randomized trial in extracellular-vesicle therapy.",
+  "modalities": [
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "altered_intercellular_communication",
+    "chronic_inflammation"
+  ],
+  "track_ids": [
+    "extracellular-vesicle-and-secretome-therapies"
+  ],
+  "mechanism_summary": "Delivers extracellular vesicles from placental mesenchymal stromal cells for local joint disease endpoints.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "placental-msc-ev-knee-osteoarthritis-rct"
+  ],
+  "linked_finding_ids": [
+    "placental-msc-evs-null-knee-oa-rct"
+  ],
+  "risk_flags": [
+    "disease-specific-evidence",
+    "null-trial-boundary",
+    "product-composition-uncertainty"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_function",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: Placental MSC EVs did not beat placebo in knee osteoarthritis; Placental MSC extracellular vesicle knee osteoarthritis randomized trial.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "altered_intercellular_communication",
+    "biologic",
+    "chronic_inflammation",
+    "extracellular-vesicle-and-secretome-therapies",
+    "placental-msc-derived-extracellular-vesicles"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

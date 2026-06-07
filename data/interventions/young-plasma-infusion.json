@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "young-plasma-infusion",
+  "name": "Young plasma infusion",
+  "summary": "Young plasma infusion is normalized for the PLASMA Alzheimer disease safety and feasibility pilot.",
+  "modalities": [
+    "biologic",
+    "procedure"
+  ],
+  "target_hallmark_ids": [
+    "altered_intercellular_communication"
+  ],
+  "track_ids": [
+    "circulating-factor-modulation"
+  ],
+  "mechanism_summary": "Infuses plasma from young donors to alter circulating-factor exposure, with linked evidence bounded to feasibility and limited disease-specific efficacy signals.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "plasma-for-alzheimer-young-plasma-trial"
+  ],
+  "linked_finding_ids": [
+    "young-plasma-ad-safety-feasibility-limited-efficacy"
+  ],
+  "risk_flags": [
+    "disease-specific-evidence",
+    "complex-mixture-attribution",
+    "transfusion-risk"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_clinical_outcome",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: PLASMA young plasma Alzheimer disease trial; Young plasma AD pilot was feasible with limited efficacy signal.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "altered_intercellular_communication",
+    "biologic",
+    "circulating-factor-modulation",
+    "procedure",
+    "young-plasma-infusion"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

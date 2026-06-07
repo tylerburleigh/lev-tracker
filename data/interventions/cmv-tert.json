@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "cmv-tert",
+  "name": "CMV-TERT",
+  "summary": "CMV-TERT is normalized for the publication-integrity record noting retraction of a mouse telomerase gene-therapy lifespan paper.",
+  "modalities": [
+    "gene_therapy"
+  ],
+  "target_hallmark_ids": [
+    "telomere_attrition"
+  ],
+  "track_ids": [
+    "telomerase-restoration"
+  ],
+  "mechanism_summary": "Represents cytomegalovirus-vector telomerase reverse transcriptase delivery; the active public record is a retraction boundary rather than positive evidence.",
+  "development_stage": "preclinical",
+  "linked_finding_ids": [
+    "cmv-tert-lifespan-paper-retracted"
+  ],
+  "risk_flags": [
+    "retracted-evidence-boundary",
+    "gene-therapy-risk",
+    "telomerase-oncogenicity-risk"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "regulatory_or_program_update",
+    "human_data": false,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: A CMV-vector TERT lifespan paper was retracted.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "cmv-tert",
+    "gene_therapy",
+    "telomerase-restoration",
+    "telomere_attrition"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

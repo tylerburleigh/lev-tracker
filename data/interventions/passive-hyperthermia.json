@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "passive-hyperthermia",
+  "name": "Passive hyperthermia",
+  "summary": "Passive hyperthermia is heat exposure without exercise, normalized for human heat-shock and chaperone biomarker response.",
+  "modalities": [
+    "device",
+    "procedure"
+  ],
+  "target_hallmark_ids": [
+    "loss_of_proteostasis"
+  ],
+  "track_ids": [
+    "chaperone-and-heat-shock-support"
+  ],
+  "mechanism_summary": "Raises body temperature through passive heat exposure to test HSP70-linked proteostasis markers in circulating immune cells.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "active-passive-hyperthermia-hsp70-pbmcs"
+  ],
+  "linked_finding_ids": [
+    "hyperthermia-hsp70-pbmcs-no-significant-increase"
+  ],
+  "risk_flags": [
+    "very-small-human-study",
+    "biomarker-only",
+    "protocol-dependent-response"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: Active and passive hyperthermia HSP70 PBMC study; Active and passive hyperthermia did not significantly increase PBMC HSP70.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "chaperone-and-heat-shock-support",
+    "device",
+    "loss_of_proteostasis",
+    "passive-hyperthermia",
+    "procedure"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

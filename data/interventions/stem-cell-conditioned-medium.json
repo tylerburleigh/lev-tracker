@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "stem-cell-conditioned-medium",
+  "name": "Stem-cell conditioned medium",
+  "summary": "Stem-cell conditioned medium is normalized for meta-analyzed human skin-aging RCT evidence around topical secretome preparations.",
+  "modalities": [
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "altered_intercellular_communication"
+  ],
+  "track_ids": [
+    "extracellular-vesicle-and-secretome-therapies"
+  ],
+  "mechanism_summary": "Uses stem-cell secretome mixtures as topical adjuncts to nonsurgical resurfacing, with evidence bounded to local skin appearance and biomarker endpoints.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "conditioned-medium-skin-aging-rct-meta-analysis"
+  ],
+  "linked_finding_ids": [
+    "conditioned-medium-meta-analysis-supported-skin-aging"
+  ],
+  "risk_flags": [
+    "local-skin-endpoints",
+    "secretome-composition-uncertainty",
+    "heterogeneous-products"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "review_or_meta_analysis",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: Conditioned medium meta-analysis supported skin antiaging endpoints.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "altered_intercellular_communication",
+    "biologic",
+    "extracellular-vesicle-and-secretome-therapies",
+    "stem-cell-conditioned-medium"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

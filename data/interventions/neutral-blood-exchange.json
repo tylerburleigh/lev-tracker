@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "neutral-blood-exchange",
+  "name": "Neutral blood exchange",
+  "summary": "Neutral blood exchange is normalized for plasma-dilution and circulating-factor mouse rejuvenation evidence.",
+  "modalities": [
+    "procedure"
+  ],
+  "target_hallmark_ids": [
+    "altered_intercellular_communication",
+    "chronic_inflammation",
+    "stem_cell_exhaustion"
+  ],
+  "track_ids": [
+    "circulating-factor-modulation",
+    "niche-rejuvenation-and-support"
+  ],
+  "mechanism_summary": "Dilutes or exchanges plasma components to test whether reducing age-associated circulating factors improves tissue readouts.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "neutral-blood-exchange-plasma-dilution-mice-human-tpe"
+  ],
+  "linked_finding_ids": [
+    "plasma-dilution-rejuvenated-aged-mouse-tissues"
+  ],
+  "risk_flags": [
+    "animal-aging-evidence",
+    "procedure-burden",
+    "mechanism-not-isolated"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: Neutral blood exchange and plasma dilution rejuvenation study; Plasma dilution improved aged mouse tissue readouts.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "altered_intercellular_communication",
+    "chronic_inflammation",
+    "circulating-factor-modulation",
+    "neutral-blood-exchange",
+    "niche-rejuvenation-and-support",
+    "procedure",
+    "stem_cell_exhaustion"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

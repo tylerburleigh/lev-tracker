@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "tert-reactivation",
+  "name": "TERT reactivation",
+  "summary": "TERT reactivation is normalized for telomerase-deficient mouse reversal evidence.",
+  "modalities": [
+    "gene_therapy"
+  ],
+  "target_hallmark_ids": [
+    "telomere_attrition"
+  ],
+  "track_ids": [
+    "telomerase-restoration"
+  ],
+  "mechanism_summary": "Restores telomerase reverse transcriptase activity to test whether degenerative phenotypes from telomere dysfunction can be reversed.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "tert-er-reactivation-telomerase-deficient-mice"
+  ],
+  "linked_finding_ids": [
+    "tert-reactivation-reversed-degeneration-telomerase-deficient-mice"
+  ],
+  "risk_flags": [
+    "animal-only",
+    "telomerase-oncogenicity-risk",
+    "model-specific-boundary"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: TERT-ER reactivation in telomerase-deficient mice; Telomerase reactivation reversed degenerative phenotypes in telomerase-deficient mice.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "gene_therapy",
+    "telomerase-restoration",
+    "telomere_attrition",
+    "tert-reactivation"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

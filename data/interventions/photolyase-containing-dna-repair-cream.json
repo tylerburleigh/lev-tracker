@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "photolyase-containing-dna-repair-cream",
+  "name": "Photolyase-containing DNA repair cream",
+  "summary": "Photolyase-containing DNA repair cream is normalized for human UV DNA-damage biomarker evidence in skin.",
+  "modalities": [
+    "biologic",
+    "combination"
+  ],
+  "target_hallmark_ids": [
+    "genomic_instability"
+  ],
+  "track_ids": [
+    "dna-repair-enhancement"
+  ],
+  "mechanism_summary": "Uses topical photolyase-containing enzyme preparations to reduce UV-induced cyclobutane pyrimidine dimers and related skin DNA-damage markers.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "photolyase-uv-dna-damage-human-skin"
+  ],
+  "linked_finding_ids": [
+    "photolyase-sunscreen-lower-uv-cpds-apoptosis"
+  ],
+  "risk_flags": [
+    "local-skin-endpoints",
+    "biomarker-only",
+    "not-systemic-aging-evidence"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: Photolyase-containing cream human UV DNA-damage study; Photolyase-containing cream lowered UV-induced CPDs and apoptosis in human skin.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "biologic",
+    "combination",
+    "dna-repair-enhancement",
+    "genomic_instability",
+    "photolyase-containing-dna-repair-cream"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

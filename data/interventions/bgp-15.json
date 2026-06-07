@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "bgp-15",
+  "name": "BGP-15",
+  "summary": "BGP-15 is a small-molecule chaperone or heat-shock-support candidate tracked for short human insulin-sensitivity proof-of-concept evidence.",
+  "modalities": [
+    "small_molecule"
+  ],
+  "target_hallmark_ids": [
+    "loss_of_proteostasis"
+  ],
+  "track_ids": [
+    "chaperone-and-heat-shock-support"
+  ],
+  "mechanism_summary": "Intended to modulate proteostasis and stress-response biology, with the linked human record limited to metabolic biomarker response.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "bgp15-insulin-resistance-proof-of-concept"
+  ],
+  "linked_finding_ids": [
+    "bgp15-improved-insulin-sensitivity-proof-of-concept"
+  ],
+  "risk_flags": [
+    "short-duration",
+    "biomarker-only",
+    "indication-boundary"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: BGP-15 improved insulin sensitivity in a short proof-of-concept trial; BGP-15 insulin resistance proof-of-concept trial.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "bgp-15",
+    "chaperone-and-heat-shock-support",
+    "loss_of_proteostasis",
+    "small_molecule"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

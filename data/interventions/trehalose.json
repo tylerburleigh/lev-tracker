@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "trehalose",
+  "name": "Trehalose",
+  "summary": "Trehalose is normalized for lysosomal and TFEB-linked preclinical evidence in Batten disease models.",
+  "modalities": [
+    "small_molecule",
+    "dietary_supplement"
+  ],
+  "target_hallmark_ids": [
+    "disabled_macroautophagy"
+  ],
+  "track_ids": [
+    "lysosomal-restoration"
+  ],
+  "mechanism_summary": "Uses trehalose exposure to activate lysosomal/autophagy programs and test storage-burden and survival outcomes in disease models.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "trehalose-tfeb-batten-mouse"
+  ],
+  "linked_finding_ids": [
+    "trehalose-tfeb-cleared-storage-burden-and-prolonged-batten-mouse-survival"
+  ],
+  "risk_flags": [
+    "animal-only",
+    "disease-model-boundary",
+    "dose-translation-unclear"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: Trehalose TFEB activation in Batten disease models; Trehalose activated TFEB and improved lysosomal storage-disease model outcomes.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "dietary_supplement",
+    "disabled_macroautophagy",
+    "lysosomal-restoration",
+    "small_molecule",
+    "trehalose"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

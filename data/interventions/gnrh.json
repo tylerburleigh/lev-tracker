@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "gnrh",
+  "name": "GnRH",
+  "summary": "GnRH is normalized for hypothalamic signaling evidence where gonadotropin-releasing hormone was linked to mouse aging phenotypes.",
+  "modalities": [
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "altered_intercellular_communication",
+    "chronic_inflammation"
+  ],
+  "track_ids": [
+    "neuroendocrine-and-systemic-signal-reset"
+  ],
+  "mechanism_summary": "Represents neuroendocrine hormone signaling downstream of hypothalamic inflammatory control, with linked aging evidence in mice.",
+  "development_stage": "approved_for_other_indication",
+  "linked_study_ids": [
+    "hypothalamic-nfkb-gnrh-aging-mice"
+  ],
+  "linked_finding_ids": [
+    "hypothalamic-nfkb-inhibition-gnrh-decelerated-mouse-aging"
+  ],
+  "risk_flags": [
+    "animal-aging-evidence",
+    "neuroendocrine-systemic-effects",
+    "combination-mechanism-boundary"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: Hypothalamic NF-kappaB and GnRH mouse aging study; Hypothalamic NF-kappaB inhibition and GnRH slowed mouse aging phenotypes.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "altered_intercellular_communication",
+    "biologic",
+    "chronic_inflammation",
+    "gnrh",
+    "neuroendocrine-and-systemic-signal-reset"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

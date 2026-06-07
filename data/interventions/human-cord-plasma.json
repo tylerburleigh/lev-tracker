@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "human-cord-plasma",
+  "name": "Human cord plasma",
+  "summary": "Human cord plasma is normalized for aged-mouse hippocampal rejuvenation evidence in circulating-factor modulation.",
+  "modalities": [
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "altered_intercellular_communication"
+  ],
+  "track_ids": [
+    "circulating-factor-modulation"
+  ],
+  "mechanism_summary": "Uses plasma from human umbilical cord blood as a complex circulating-factor mixture to test aged brain functional readouts in mice.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "human-cord-plasma-timp2-aged-mouse-hippocampus"
+  ],
+  "linked_finding_ids": [
+    "human-cord-plasma-revitalized-aged-mouse-hippocampus"
+  ],
+  "risk_flags": [
+    "animal-only",
+    "complex-mixture-attribution",
+    "translation-risk"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: Human cord plasma TIMP2 aged mouse hippocampus study; Human cord plasma revitalized hippocampal function in aged mice.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "altered_intercellular_communication",
+    "biologic",
+    "circulating-factor-modulation",
+    "human-cord-plasma"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

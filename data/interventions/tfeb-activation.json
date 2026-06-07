@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "tfeb-activation",
+  "name": "TFEB activation",
+  "summary": "TFEB activation is normalized for lysosomal-restoration evidence where trehalose activated TFEB-linked programs in disease models.",
+  "modalities": [
+    "other"
+  ],
+  "target_hallmark_ids": [
+    "disabled_macroautophagy"
+  ],
+  "track_ids": [
+    "lysosomal-restoration"
+  ],
+  "mechanism_summary": "Activates TFEB lysosomal biogenesis and autophagy programs to test clearance and survival effects in lysosomal disease models.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "trehalose-tfeb-batten-mouse"
+  ],
+  "linked_finding_ids": [
+    "trehalose-tfeb-cleared-storage-burden-and-prolonged-batten-mouse-survival"
+  ],
+  "risk_flags": [
+    "animal-only",
+    "disease-model-boundary",
+    "target-wide-effects"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: Trehalose TFEB activation in Batten disease models; Trehalose activated TFEB and improved lysosomal storage-disease model outcomes.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "disabled_macroautophagy",
+    "lysosomal-restoration",
+    "other",
+    "tfeb-activation"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

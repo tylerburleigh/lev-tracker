@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "nfkb-inhibition",
+  "name": "NF-kappaB inhibition",
+  "summary": "NF-kappaB inhibition is normalized for aged muscle niche and inflammatory signaling evidence in mice.",
+  "modalities": [
+    "small_molecule",
+    "other"
+  ],
+  "target_hallmark_ids": [
+    "chronic_inflammation",
+    "stem_cell_exhaustion"
+  ],
+  "track_ids": [
+    "niche-rejuvenation-and-support"
+  ],
+  "mechanism_summary": "Suppresses NF-kappaB inflammatory signaling to test whether aged muscle repair and stem-cell niche function can improve.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "nfkb-myofiber-aged-satellite-cell-niche"
+  ],
+  "linked_finding_ids": [
+    "nfkb-inhibition-improved-aged-muscle-repair"
+  ],
+  "risk_flags": [
+    "animal-only",
+    "target-wide-effects",
+    "immunomodulation-risk"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: NF-kB inhibition improved aged muscle repair in mice; NF-kB myofiber aged satellite-cell niche study.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "chronic_inflammation",
+    "nfkb-inhibition",
+    "niche-rejuvenation-and-support",
+    "other",
+    "small_molecule",
+    "stem_cell_exhaustion"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

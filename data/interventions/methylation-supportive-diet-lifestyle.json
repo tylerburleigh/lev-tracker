@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "methylation-supportive-diet-lifestyle",
+  "name": "Methylation-supportive diet and lifestyle",
+  "summary": "Methylation-supportive diet and lifestyle is a multi-component program normalized for a pilot DNA-methylation age trial.",
+  "modalities": [
+    "combination",
+    "lifestyle",
+    "dietary_supplement"
+  ],
+  "target_hallmark_ids": [
+    "epigenetic_alterations"
+  ],
+  "track_ids": [
+    "dna-methylation-and-epigenome-restoration"
+  ],
+  "mechanism_summary": "Combines diet, supplements, lifestyle, and behavior changes intended to influence methylation metabolism and epigenetic-clock biomarkers.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "methylation-diet-lifestyle-pilot-rct"
+  ],
+  "linked_finding_ids": [
+    "methylation-diet-lifestyle-horvath-age-decrease"
+  ],
+  "risk_flags": [
+    "multi-component-attribution",
+    "pilot-sample",
+    "biomarker-only"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: Methylation-supportive diet and lifestyle pilot RCT; Methylation-supportive diet and lifestyle pilot lowered Horvath DNAmAge.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "combination",
+    "dietary_supplement",
+    "dna-methylation-and-epigenome-restoration",
+    "epigenetic_alterations",
+    "lifestyle",
+    "methylation-supportive-diet-lifestyle"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

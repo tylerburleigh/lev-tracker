@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "platelet-derived-extracellular-vesicles",
+  "name": "Platelet-derived extracellular vesicles",
+  "summary": "Platelet-derived extracellular vesicles are normalized for a healthy-volunteer wound-healing phase I trial.",
+  "modalities": [
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "altered_intercellular_communication"
+  ],
+  "track_ids": [
+    "extracellular-vesicle-and-secretome-therapies"
+  ],
+  "mechanism_summary": "Uses platelet-derived vesicle material to test local wound-repair signaling and safety in humans.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "platelet-ev-wound-healing-phase1"
+  ],
+  "linked_finding_ids": [
+    "platelet-evs-safe-no-wound-closure-advantage"
+  ],
+  "risk_flags": [
+    "local-wound-endpoint",
+    "early-phase",
+    "no-wound-closure-advantage"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_clinical_outcome",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: Platelet EVs were safe but did not improve healthy-volunteer wound closure; Plexoval II platelet extracellular vesicle wound-healing phase I trial.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "altered_intercellular_communication",
+    "biologic",
+    "extracellular-vesicle-and-secretome-therapies",
+    "platelet-derived-extracellular-vesicles"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

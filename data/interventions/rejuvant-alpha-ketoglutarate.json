@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "rejuvant-alpha-ketoglutarate",
+  "name": "Rejuvant alpha-ketoglutarate",
+  "summary": "Rejuvant alpha-ketoglutarate is normalized for a retrospective DNA-methylation age cohort report.",
+  "modalities": [
+    "dietary_supplement",
+    "small_molecule"
+  ],
+  "target_hallmark_ids": [
+    "epigenetic_alterations"
+  ],
+  "track_ids": [
+    "dna-methylation-and-epigenome-restoration"
+  ],
+  "mechanism_summary": "Represents a branded alpha-ketoglutarate supplement exposure intended to modulate metabolism and methylation-age biomarkers.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "rejuvant-dnam-age-retrospective-cohort"
+  ],
+  "linked_finding_ids": [
+    "rejuvant-retrospective-dnam-age-decrease"
+  ],
+  "risk_flags": [
+    "retrospective-cohort",
+    "commercial-product-context",
+    "biomarker-only"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: Rejuvant DNA-methylation age retrospective cohort; Rejuvant retrospective cohort reported lower DNA-methylation age.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "dietary_supplement",
+    "dna-methylation-and-epigenome-restoration",
+    "epigenetic_alterations",
+    "rejuvant-alpha-ketoglutarate",
+    "small_molecule"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

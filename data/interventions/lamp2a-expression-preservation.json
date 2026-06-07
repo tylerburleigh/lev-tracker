@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "lamp2a-expression-preservation",
+  "name": "LAMP-2A expression preservation",
+  "summary": "LAMP-2A expression preservation is normalized for mouse chaperone-mediated autophagy and aged-liver function evidence.",
+  "modalities": [
+    "gene_therapy",
+    "other"
+  ],
+  "target_hallmark_ids": [
+    "disabled_macroautophagy"
+  ],
+  "track_ids": [
+    "lysosomal-restoration"
+  ],
+  "mechanism_summary": "Maintains LAMP-2A expression to preserve chaperone-mediated autophagy and test tissue maintenance in aged liver models.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "lamp2a-cma-aging-liver"
+  ],
+  "linked_finding_ids": [
+    "lamp2a-restoration-improved-aged-mouse-liver-function"
+  ],
+  "risk_flags": [
+    "animal-only",
+    "liver-specific-boundary",
+    "delivery-translation-risk"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: LAMP-2A preservation improved aged mouse liver maintenance and function; LAMP-2A preservation in aged mouse liver.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "disabled_macroautophagy",
+    "gene_therapy",
+    "lamp2a-expression-preservation",
+    "lysosomal-restoration",
+    "other"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

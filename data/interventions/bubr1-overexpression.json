@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "bubr1-overexpression",
+  "name": "BubR1 overexpression",
+  "summary": "BubR1 overexpression is a preclinical chromosome-stability intervention linked to mouse healthy-lifespan evidence.",
+  "modalities": [
+    "gene_therapy"
+  ],
+  "target_hallmark_ids": [
+    "genomic_instability"
+  ],
+  "track_ids": [
+    "genome-surveillance-and-chromosome-stability"
+  ],
+  "mechanism_summary": "Increases BubR1 chromosome-segregation checkpoint activity to test whether improved genome surveillance changes aging phenotypes.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "bubr1-overexpression-lifespan-mice"
+  ],
+  "linked_finding_ids": [
+    "bubr1-overexpression-extends-healthy-lifespan-mice"
+  ],
+  "risk_flags": [
+    "animal-only",
+    "genetic-overexpression-boundary",
+    "translation-risk"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "mortality_or_lifespan",
+    "human_data": false,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: BubR1 overexpression chromosome-stability lifespan mouse study; BubR1 overexpression extended healthy lifespan in mice.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "bubr1-overexpression",
+    "gene_therapy",
+    "genome-surveillance-and-chromosome-stability",
+    "genomic_instability"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

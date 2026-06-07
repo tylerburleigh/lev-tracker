@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "kat7-inactivation",
+  "name": "KAT7 inactivation",
+  "summary": "KAT7 inactivation is normalized for CRISPR/senescence mouse evidence in chromatin and histone modulation.",
+  "modalities": [
+    "gene_therapy"
+  ],
+  "target_hallmark_ids": [
+    "cellular_senescence",
+    "epigenetic_alterations"
+  ],
+  "track_ids": [
+    "chromatin-and-histone-modulation"
+  ],
+  "mechanism_summary": "Reduces KAT7 histone acetyltransferase activity to test whether senescence programs and aged-mouse phenotypes can be improved.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "kat7-crispr-senescence-aged-mice"
+  ],
+  "linked_finding_ids": [
+    "kat7-inactivation-extended-aged-mouse-lifespan"
+  ],
+  "risk_flags": [
+    "animal-only",
+    "gene-editing-delivery-risk",
+    "target-wide-effects"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: KAT7 CRISPR senescence and aged-mouse experiments; KAT7 inactivation alleviated senescence and extended aged mouse lifespan.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "cellular_senescence",
+    "chromatin-and-histone-modulation",
+    "epigenetic_alterations",
+    "gene_therapy",
+    "kat7-inactivation"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

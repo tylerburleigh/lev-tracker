@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "hesc-derived-rpe",
+  "name": "hESC-derived RPE",
+  "summary": "hESC-derived RPE is a retinal pigment epithelial cell replacement product normalized for early dry AMD and Stargardt disease graft evidence.",
+  "modalities": [
+    "cell_therapy"
+  ],
+  "target_hallmark_ids": [
+    "stem_cell_exhaustion"
+  ],
+  "track_ids": [
+    "stem-cell-replacement-and-transplantation"
+  ],
+  "mechanism_summary": "Uses human embryonic stem-cell-derived RPE transplantation to replace diseased retinal support cells, with evidence bounded to ocular disease outcomes.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "hesc-rpe-advanced-dry-amd-stargardt-phase1-2"
+  ],
+  "linked_finding_ids": [
+    "hesc-rpe-graft-survival-visual-signal"
+  ],
+  "risk_flags": [
+    "disease-specific-evidence",
+    "surgical-delivery",
+    "graft-survival-boundary"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_function",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: hESC-derived RPE advanced dry AMD and Stargardt phase 1/2 studies; hESC-derived RPE showed graft survival and visual signals in retinal disease.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "cell_therapy",
+    "hesc-derived-rpe",
+    "stem-cell-replacement-and-transplantation",
+    "stem_cell_exhaustion"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

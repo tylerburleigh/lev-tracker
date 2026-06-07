@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-07T19:22:40.818Z",
+  "generated_at": "2026-06-07T20:58:51.028Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-07T19:22:40.727Z",
-    "research_priority_queue_updated_at": "2026-06-07T19:22:40.727Z",
+    "research_coverage_status_updated_at": "2026-06-07T20:58:50.920Z",
+    "research_priority_queue_updated_at": "2026-06-07T20:58:50.920Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 38,
     "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 28,
-    "unnormalized_intervention_id_count": 70,
-    "unnormalized_intervention_reference_count": 138
+    "unnormalized_intervention_id_count": 0,
+    "unnormalized_intervention_reference_count": 0
   },
   "selection_policy": {
     "default_instruction": "When the user asks what to work on, consult rank 1 first and state the assumption before acting.",
@@ -36,7 +36,7 @@
     "top_mode": "surveillance",
     "active_editorial_count": 0,
     "ready_research_count": 38,
-    "data_hardening_count": 1,
+    "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
       "The top surveillance item intentionally prefers the next distinct target when the generated queue starts with a recently handled track."
@@ -126,65 +126,6 @@
         {
           "name": "track_next_mode",
           "value": "surveillance"
-        }
-      ]
-    },
-    {
-      "rank": 3,
-      "item_id": "data-normalization-intervention-refs",
-      "mode": "data_normalization",
-      "domain": "data",
-      "priority_tier": "soon",
-      "status": "ready",
-      "title": "Normalize 70 intervention ID(s)",
-      "rationale": "138 live reference(s) point to non-normalized intervention IDs. The data audit treats this as non-blocking, but it remains the main known data-hardening backlog.",
-      "default_action": "Continue the intervention-normalization backlog in small reviewed batches, then rerun audit and planning sync.",
-      "runbook_path": "docs/intervention-normalization.md",
-      "command": "npm run audit:data",
-      "source_paths": [
-        "docs/intervention-normalization.md",
-        "scripts/audit-data-integrity.mjs"
-      ],
-      "signals": [
-        {
-          "name": "missing_intervention_id_count",
-          "value": 70
-        },
-        {
-          "name": "missing_intervention_reference_count",
-          "value": 138
-        },
-        {
-          "name": "missing_intervention:a9-dpc",
-          "value": 2
-        },
-        {
-          "name": "missing_intervention:active-hyperthermia",
-          "value": 2
-        },
-        {
-          "name": "missing_intervention:adipose-msc-derived-exosomes",
-          "value": 2
-        },
-        {
-          "name": "missing_intervention:adipose-stem-cell-exosome-solution",
-          "value": 2
-        },
-        {
-          "name": "missing_intervention:akk-wst01",
-          "value": 2
-        },
-        {
-          "name": "missing_intervention:akkermansia-muciniphila",
-          "value": 2
-        },
-        {
-          "name": "missing_intervention:albumin-replacement-plasma-exchange",
-          "value": 2
-        },
-        {
-          "name": "missing_intervention:bgp-15",
-          "value": 2
         }
       ]
     }

@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "hsf-1-modulation",
+  "name": "HSF-1 modulation",
+  "summary": "HSF-1 modulation is normalized for C. elegans proteostasis and lifespan evidence around heat-shock transcription-factor activity.",
+  "modalities": [
+    "other"
+  ],
+  "target_hallmark_ids": [
+    "loss_of_proteostasis"
+  ],
+  "track_ids": [
+    "chaperone-and-heat-shock-support"
+  ],
+  "mechanism_summary": "Alters HSF-1 heat-shock transcriptional activity to test aggregation, proteostasis, and lifespan phenotypes in worms.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "hsf1-c-elegans-aging-proteostasis"
+  ],
+  "linked_finding_ids": [
+    "hsf1-overexpression-extended-c-elegans-lifespan"
+  ],
+  "risk_flags": [
+    "animal-only",
+    "worm-model-boundary",
+    "target-wide-effects"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: HSF-1 activity regulated lifespan and aggregation phenotypes in C. elegans; HSF-1 regulation of C. elegans aging and proteostasis.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "chaperone-and-heat-shock-support",
+    "hsf-1-modulation",
+    "loss_of_proteostasis",
+    "other"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

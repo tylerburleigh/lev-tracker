@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "lysosomal-surveillance-response-activation",
+  "name": "Lysosomal surveillance response activation",
+  "summary": "Lysosomal surveillance response activation is normalized for C. elegans healthspan evidence from partial v-ATPase perturbation.",
+  "modalities": [
+    "other"
+  ],
+  "target_hallmark_ids": [
+    "disabled_macroautophagy"
+  ],
+  "track_ids": [
+    "lysosomal-restoration"
+  ],
+  "mechanism_summary": "Activates a lysosomal stress or surveillance response to test whether lysosome-mediated adaptation can improve organismal healthspan.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "lysr-vha6-c-elegans-healthspan"
+  ],
+  "linked_finding_ids": [
+    "lysr-vha6-rnai-extended-worm-healthspan"
+  ],
+  "risk_flags": [
+    "animal-only",
+    "worm-model-boundary",
+    "target-perturbation-risk"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: C. elegans lysosomal surveillance response and healthspan study; Partial v-ATPase perturbation activated a lysosomal surveillance response and extended worm healthspan.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "disabled_macroautophagy",
+    "lysosomal-restoration",
+    "lysosomal-surveillance-response-activation",
+    "other"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

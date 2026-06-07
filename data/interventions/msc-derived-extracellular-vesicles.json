@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "msc-derived-extracellular-vesicles",
+  "name": "MSC-derived extracellular vesicles",
+  "summary": "MSC-derived extracellular vesicles are normalized for mouse aging evidence in extracellular-vesicle and secretome therapy.",
+  "modalities": [
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "altered_intercellular_communication",
+    "chronic_inflammation",
+    "stem_cell_exhaustion"
+  ],
+  "track_ids": [
+    "extracellular-vesicle-and-secretome-therapies"
+  ],
+  "mechanism_summary": "Delivers extracellular vesicles from mesenchymal stromal cells to test paracrine repair, inflammation, and tissue-maintenance signals in aging models.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "msc-evs-aging-mouse-models"
+  ],
+  "linked_finding_ids": [
+    "msc-evs-extended-healthspan-mouse-aging"
+  ],
+  "risk_flags": [
+    "animal-only",
+    "vesicle-product-heterogeneity",
+    "translation-risk"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: MSC extracellular vesicles extended healthspan in mouse aging models; MSC extracellular vesicles in mouse aging models.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "altered_intercellular_communication",
+    "biologic",
+    "chronic_inflammation",
+    "extracellular-vesicle-and-secretome-therapies",
+    "msc-derived-extracellular-vesicles",
+    "stem_cell_exhaustion"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}
