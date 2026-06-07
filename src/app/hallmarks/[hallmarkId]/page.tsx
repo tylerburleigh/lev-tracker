@@ -24,7 +24,8 @@ import {
   getStagePlainMeaning,
   getStrongestFindingsForHallmark,
   getTrackById,
-  getTrackCoverage
+  getTrackCoverage,
+  type Momentum
 } from "@/lib/site-data";
 
 type HallmarkPageProps = {
@@ -32,6 +33,20 @@ type HallmarkPageProps = {
     hallmarkId: string;
   }>;
 };
+
+function getMomentumTone(momentum?: Momentum) {
+  switch (momentum) {
+    case "accelerating":
+    case "steady":
+      return "micro-badge--mint";
+    case "mixed":
+      return "micro-badge--gold";
+    case "stalled":
+      return "micro-badge--red";
+    default:
+      return "micro-badge--muted";
+  }
+}
 
 export default async function HallmarkDetailPage({ params }: HallmarkPageProps) {
   const { hallmarkId } = await params;
@@ -146,8 +161,50 @@ export default async function HallmarkDetailPage({ params }: HallmarkPageProps) 
       <section className="band band--alt">
         <div className="page-shell section-header">
           <div>
+            <span className="section-kicker">Tracks</span>
+            <h2>Underlying research approaches</h2>
+            <p className="section-header__summary">
+              Tracks are the working sub-areas this tracker uses to inspect evidence inside this hallmark.
+            </p>
+          </div>
+          <span className="section-link section-link--static">{trackGroup.tracks.length} research tracks</span>
+        </div>
+        <div className="page-shell track-card-grid">
+          {trackGroup.tracks.map((track) => {
+            const coverage = coverageByTrackId.get(track.id);
+            if (!coverage) return null;
+
+            return (
+              <Link className="track-card" href={`/tracks/${track.id}`} key={track.id}>
+                <div className="track-card__top">
+                  <strong>{track.name}</strong>
+                </div>
+                <p>{track.summary}</p>
+                <div className="track-card__meta">
+                  {coverage.stage ? (
+                    <StageBadge stage={coverage.stage} />
+                  ) : (
+                    <span className="micro-badge micro-badge--muted">Not rated yet</span>
+                  )}
+                  <span className={`micro-badge ${getMomentumTone(coverage.momentum)}`}>
+                    {coverage.momentum ? getMomentumLabel(coverage.momentum) : "Momentum unclear"}
+                  </span>
+                </div>
+                <div className="track-card__footer">
+                  <span>{coverage.evidenceGap ?? coverage.interpretation}</span>
+                  <time dateTime={coverage.lastUpdated}>{formatDate(coverage.lastUpdated)}</time>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="band">
+        <div className="page-shell section-header">
+          <div>
             <span className="section-kicker">Leading interventions</span>
-            <h2>Promoted signals in this hallmark</h2>
+            <h2>Interventions with public evidence</h2>
           </div>
           <span className="section-link section-link--static">{leadingInterventions.length} intervention IDs</span>
         </div>
@@ -187,54 +244,74 @@ export default async function HallmarkDetailPage({ params }: HallmarkPageProps) 
             ))
           ) : (
             <div className="hallmark-empty-module">
-              <strong>No promoted intervention findings yet.</strong>
-              <p>This hallmark is seeded, but its intervention evidence has not been promoted into the public finding layer.</p>
+              <strong>No public intervention evidence yet.</strong>
+              <p>This hallmark is seeded, but no reviewed intervention findings are ready to show here yet.</p>
             </div>
           )}
         </div>
       </section>
 
-      <section className="band">
+      <section className="band band--alt">
         <div className="page-shell evidence-inventory">
           <div className="panel-header">
             <div>
-              <span className="section-kicker">Strongest findings</span>
-              <h2>Evidence anchors</h2>
+              <span className="section-kicker">Reviewed findings</span>
+              <h2>Top evidence records</h2>
+              <p className="section-header__summary">
+                Sorted by evidence tier first, then evidence weight. These are the highest-ranked reviewed findings
+                currently mapped to this hallmark.
+              </p>
             </div>
             <span className="section-link section-link--static">{strongestFindings.length} records</span>
           </div>
           <div className="evidence-inventory-list">
             {strongestFindings.length ? (
-              strongestFindings.map((finding) => (
+              strongestFindings.map((finding, index) => (
                 <Link className="evidence-inventory-item" href={`/findings/${finding.id}`} key={finding.id}>
-                  <div className="evidence-finding__meta">
-                    <span className="evidence-chip">{getReadableLabel(finding.evidence_tier)}</span>
-                    <span className={`evidence-chip ${getDirectionTone(finding.direction)}`}>
-                      {getReadableLabel(finding.direction)}
-                    </span>
-                    <span className="evidence-chip">{getFindingWeightLabel(finding.confidence)}</span>
+                  <div className="evidence-inventory-item__top">
+                    <span className="evidence-rank">#{index + 1}</span>
+                    <div className="evidence-finding__meta">
+                      <span className="evidence-chip">{getReadableLabel(finding.evidence_tier)}</span>
+                      <span className={`evidence-chip ${getDirectionTone(finding.direction)}`}>
+                        {getReadableLabel(finding.direction)}
+                      </span>
+                      <span className="evidence-chip">{getFindingWeightLabel(finding.confidence)}</span>
+                    </div>
                   </div>
                   <div className="evidence-inventory-item__body">
                     <div>
                       <strong>{finding.name}</strong>
                       <p>{finding.statement}</p>
                     </div>
-                    <div className="evidence-inventory-item__meta">
-                      <span>{getReadableLabel(finding.endpoint_category)}</span>
-                      {finding.population_or_model ? <span>{finding.population_or_model}</span> : null}
-                      {finding.quantitative_note ? <span>{finding.quantitative_note}</span> : null}
+                    <div className="evidence-inventory-item__meta evidence-inventory-item__meta--labeled">
+                      <span>
+                        <strong>Endpoint</strong>
+                        {getReadableLabel(finding.endpoint_category)}
+                      </span>
+                      {finding.population_or_model ? (
+                        <span>
+                          <strong>Population/model</strong>
+                          {finding.population_or_model}
+                        </span>
+                      ) : null}
+                      {finding.quantitative_note ? (
+                        <span>
+                          <strong>Result detail</strong>
+                          {finding.quantitative_note}
+                        </span>
+                      ) : null}
                     </div>
                   </div>
                 </Link>
               ))
             ) : (
-              <p>No promoted findings currently map to this hallmark.</p>
+              <p>No reviewed findings currently map to this hallmark.</p>
             )}
           </div>
         </div>
       </section>
 
-      <section className="band band--alt">
+      <section className="band">
         <div className="page-shell section-header">
           <div>
             <span className="section-kicker">Recent activity</span>
@@ -275,39 +352,6 @@ export default async function HallmarkDetailPage({ params }: HallmarkPageProps) 
               </div>
             </div>
           )}
-        </div>
-      </section>
-
-      <section className="band band--alt">
-        <div className="page-shell section-header">
-          <div>
-            <span className="section-kicker">Tracks</span>
-            <h2>Underlying research approaches</h2>
-          </div>
-          <span className="section-link section-link--static">{trackGroup.tracks.length} research tracks</span>
-        </div>
-        <div className="page-shell track-card-grid">
-          {trackGroup.tracks.map((track) => {
-            const coverage = coverageByTrackId.get(track.id);
-            if (!coverage) return null;
-
-            return (
-              <Link className="track-card" href={`/tracks/${track.id}`} key={track.id}>
-                <div className="track-card__top">
-                  <strong>{track.name}</strong>
-                </div>
-                <p>{track.summary}</p>
-                <div className="track-card__meta">
-                  <span>{coverage.stage ? getStageLabel(coverage.stage) : "Not rated"}</span>
-                  <span>{coverage.momentum ? getMomentumLabel(coverage.momentum) : "Not rated"}</span>
-                </div>
-                <div className="track-card__footer">
-                  <span>{coverage.evidenceGap ?? coverage.interpretation}</span>
-                  <time dateTime={coverage.lastUpdated}>{formatDate(coverage.lastUpdated)}</time>
-                </div>
-              </Link>
-            );
-          })}
         </div>
       </section>
     </SiteShell>

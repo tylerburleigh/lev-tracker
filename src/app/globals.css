@@ -1945,6 +1945,182 @@ time {
   line-height: 1.62;
 }
 
+.explainer-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.explainer-grid,
+.paper-group-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.explainer-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.explainer-grid--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.paper-group-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.explainer-panel,
+.explainer-card,
+.paper-group,
+.expanded-hallmark-card {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: rgba(255, 253, 246, 0.78);
+  box-shadow: var(--shadow);
+}
+
+.explainer-panel,
+.explainer-card,
+.paper-group {
+  min-height: 0;
+}
+
+.explainer-panel--lead {
+  border-left: 3px solid var(--mint);
+}
+
+.explainer-panel svg,
+.explainer-card svg,
+.paper-group svg {
+  color: var(--mint);
+}
+
+.explainer-panel h2,
+.explainer-card h3,
+.paper-group h3 {
+  margin: 0;
+  line-height: 1.22;
+}
+
+.explainer-panel h2 {
+  font-size: clamp(1.35rem, 1.8vw, 1.85rem);
+}
+
+.explainer-card h3,
+.paper-group h3 {
+  font-size: 1.12rem;
+}
+
+.explainer-panel p,
+.explainer-card p,
+.paper-group p,
+.expanded-hallmark-card p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.explainer-mini-list,
+.source-link-list,
+.paper-hallmark-list {
+  display: grid;
+  gap: 10px;
+}
+
+.explainer-mini-item {
+  display: grid;
+  gap: 5px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.explainer-mini-item:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.explainer-mini-item strong {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.source-link,
+.expanded-hallmark-card {
+  transition:
+    border-color 160ms ease,
+    transform 160ms ease,
+    background 160ms ease;
+}
+
+.source-link {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid rgba(24, 37, 30, 0.13);
+  border-radius: 8px;
+  background: rgba(255, 253, 246, 0.72);
+  font-weight: 700;
+}
+
+.source-link:hover,
+.expanded-hallmark-card:hover {
+  border-color: rgba(45, 128, 99, 0.34);
+  background: rgba(255, 253, 246, 0.9);
+  transform: translateY(-1px);
+}
+
+.source-link svg {
+  flex: 0 0 auto;
+}
+
+.paper-hallmark-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.paper-hallmark-list li {
+  padding: 9px 10px;
+  border: 1px solid rgba(24, 37, 30, 0.1);
+  border-radius: 8px;
+  background: rgba(237, 242, 234, 0.58);
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.expanded-hallmark-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.expanded-hallmark-card {
+  min-height: 172px;
+  padding: 15px;
+}
+
+.expanded-hallmark-card span {
+  color: var(--mint);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.expanded-hallmark-card strong {
+  font-size: 1.02rem;
+  line-height: 1.28;
+}
+
 
 .detail-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2429,6 +2605,29 @@ time {
   background: rgba(255, 255, 255, 0.72);
 }
 
+.evidence-inventory-item__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.evidence-rank {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  min-height: 28px;
+  padding: 0 8px;
+  border: 1px solid rgba(45, 128, 99, 0.22);
+  border-radius: 999px;
+  background: rgba(45, 128, 99, 0.1);
+  color: var(--mint);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
 .evidence-inventory-item__body {
   display: grid;
   grid-template-columns: minmax(0, 1.6fr) minmax(240px, 0.7fr);
@@ -2447,6 +2646,27 @@ time {
   align-content: start;
   color: var(--text-soft);
   font-size: 0.92rem;
+}
+
+.evidence-inventory-item__meta--labeled span {
+  display: grid;
+  gap: 3px;
+  padding-top: 9px;
+  border-top: 1px solid var(--border);
+  line-height: 1.35;
+}
+
+.evidence-inventory-item__meta--labeled span:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.evidence-inventory-item__meta--labeled strong {
+  font-family: var(--font-body);
+  color: var(--text);
+  font-size: 0.74rem;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .evidence-source-index {
@@ -3526,8 +3746,15 @@ time {
 
 @media (max-width: 1180px) {
   .scenario-domino-grid,
-  .scenario-split {
+  .scenario-split,
+  .explainer-split,
+  .paper-group-grid {
     grid-template-columns: 1fr;
+  }
+
+  .explainer-grid,
+  .expanded-hallmark-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .scenario-track-table__head {
@@ -3546,7 +3773,11 @@ time {
 
   .scenario-domino,
   .scenario-track-row,
-  .scenario-panel {
+  .scenario-panel,
+  .explainer-panel,
+  .explainer-card,
+  .paper-group,
+  .expanded-hallmark-card {
     padding: 16px;
   }
 
@@ -3560,6 +3791,15 @@ time {
   }
 
   .scenario-track-row {
+    min-height: auto;
+  }
+
+  .explainer-grid,
+  .expanded-hallmark-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .expanded-hallmark-card {
     min-height: auto;
   }
 }

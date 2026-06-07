@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 import { PageHero } from "@/components/page-hero";
 import { SiteShell } from "@/components/site-shell";
@@ -69,7 +70,16 @@ export default async function HallmarksIndexPage() {
         kicker="Hallmarks"
         title="The field by hallmark"
         summary="A comparative view of all 12 hallmark areas, kept in canonical order so movement is easy to read over time."
-      />
+      >
+        <div className="state-hero-aside">
+          <span className="section-kicker">Framework source</span>
+          <p>The tracker follows the 2023 expanded Hallmarks of Aging framework.</p>
+          <Link className="mini-link" href="/hallmarks/paper">
+            <span>Read the paper guide</span>
+            <ArrowRight aria-hidden="true" size={15} />
+          </Link>
+        </div>
+      </PageHero>
 
       <section className="band band--hallmark-index-overview">
         <div className="page-shell hallmark-index-overview">

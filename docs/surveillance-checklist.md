@@ -60,6 +60,12 @@ If the pass primarily improves confidence about source completeness rather than 
 
 Functional endpoints are important for stage upgrades, but they are not the only decision-relevant signal. Safety, durability, null results, registry results, corrections, retractions, mechanism, taxonomy boundaries, and biomarker evidence can be material when they affect the current public claim.
 
+## Taxonomy Boundary Flags
+
+Flag a track-taxonomy review when source discovery finds a recurring approach that does not fit the scoped track, when close excluded sources keep exposing the same boundary problem, or when a broad track appears to contain separable evidence streams.
+
+Do not create or move tracks inside an ordinary surveillance pass unless the user explicitly asked for taxonomy work. Record the boundary issue in the research session or coverage assessment, recommend `coverage_repair` when the boundary needs more source review, and require `taxonomy_mapping` review if public records later move between tracks.
+
 Record a `materiality_decision` in the research session with:
 
 - `material_delta`

@@ -1,5 +1,14 @@
 import Link from "next/link";
-import { Search, X } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpenText,
+  GitBranch,
+  ListChecks,
+  Search,
+  ShieldCheck,
+  Waypoints,
+  X
+} from "lucide-react";
 
 import { PageHero } from "@/components/page-hero";
 import { SiteShell } from "@/components/site-shell";
@@ -37,6 +46,34 @@ const stageOptions: Stage[] = [
 ];
 
 const momentumOptions: Momentum[] = ["accelerating", "steady", "mixed", "stalled", "uncertain"];
+
+const taxonomyRationaleCards = [
+  {
+    title: "Why tracks exist",
+    summary:
+      "A hallmark is too broad to review as one stream, while a single intervention is too narrow to organize the field.",
+    icon: Waypoints
+  },
+  {
+    title: "How we draw boundaries",
+    summary:
+      "A track should recur across sources, have one primary hallmark, and be searchable enough for repeated review.",
+    icon: GitBranch
+  },
+  {
+    title: "How tracks can change",
+    summary:
+      "The taxonomy can add, split, merge, rename, or retire tracks when evidence shows that the current boundary is not useful.",
+    icon: ShieldCheck
+  }
+] as const;
+
+const taxonomyChangeSteps = [
+  "A research pass, source-completeness check, registry search, or review cluster exposes a boundary problem.",
+  "The candidate passes a boundary test: broader than one intervention, narrower than a hallmark, and useful for repeated review.",
+  "A taxonomy proposal records the rationale, affected records, hallmark mapping, aliases, and migration notes.",
+  "Public record moves require taxonomy-mapping review before the change is published."
+] as const;
 
 function getSingleSearchParam(value: string | string[] | undefined) {
   return Array.isArray(value) ? value[0] ?? "" : value ?? "";
@@ -118,8 +155,23 @@ export default async function TracksIndexPage({ searchParams }: TracksIndexPageP
       <PageHero
         kicker="Tracks"
         title="Research approaches across the hallmarks"
-        summary="Tracks are the stable layer between hallmark theory and specific intervention records."
-      />
+        summary="Tracks are our site-specific layer between hallmark theory and specific intervention records: broader than one intervention, narrower than a whole hallmark."
+      >
+        <div className="state-hero-aside">
+          <span className="section-kicker">Editorial taxonomy</span>
+          <p>
+            Tracks are not a formal layer from the Hallmarks papers. They are a practical scaffold for evidence review.
+          </p>
+          <Link className="mini-link" href="/hallmarks/paper">
+            <span>Read framework guide</span>
+            <ArrowRight aria-hidden="true" size={15} />
+          </Link>
+          <Link className="mini-link" href="/tracks#taxonomy-rationale">
+            <span>How tracks change</span>
+            <ArrowRight aria-hidden="true" size={15} />
+          </Link>
+        </div>
+      </PageHero>
       <section className="band">
         <div className="page-shell track-search">
           <form className="track-search__form" action="/tracks">
@@ -236,6 +288,55 @@ export default async function TracksIndexPage({ searchParams }: TracksIndexPageP
               </Link>
             </div>
           ) : null}
+        </div>
+      </section>
+
+      <section className="band band--alt" id="taxonomy-rationale">
+        <div className="page-shell scenario-section">
+          <div className="scenario-section__header">
+            <span className="section-kicker">Taxonomy rationale</span>
+            <h2>Tracks are stable, but not frozen</h2>
+            <p>
+              Tracks are a practical evidence-map layer, not a formal claim from the Hallmarks papers. The goal is to
+              keep each review small enough to inspect while preserving the broader hallmark context.
+            </p>
+          </div>
+
+          <div className="explainer-grid explainer-grid--three">
+            {taxonomyRationaleCards.map(({ title, summary, icon: Icon }) => (
+              <article className="explainer-card" key={title}>
+                <Icon aria-hidden="true" size={19} />
+                <h3>{title}</h3>
+                <p>{summary}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="explainer-split">
+            <article className="explainer-panel explainer-panel--lead">
+              <ListChecks aria-hidden="true" size={21} />
+              <span className="section-kicker">Governance</span>
+              <h2>How a track change would happen</h2>
+              <ul className="state-plain-list">
+                {taxonomyChangeSteps.map((step) => (
+                  <li key={step}>{step}</li>
+                ))}
+              </ul>
+            </article>
+            <article className="explainer-panel">
+              <BookOpenText aria-hidden="true" size={21} />
+              <span className="section-kicker">Framework boundary</span>
+              <h2>Hallmarks are the source framework</h2>
+              <p>
+                The Hallmarks papers define the biological organizing frame. Tracks are our provisional scaffold for
+                following intervention families, studies, findings, and outlook changes inside that frame.
+              </p>
+              <Link className="section-link section-link--block" href="/hallmarks/paper">
+                <span>Read the Hallmarks guide</span>
+                <ArrowRight aria-hidden="true" size={16} />
+              </Link>
+            </article>
+          </div>
         </div>
       </section>
     </SiteShell>

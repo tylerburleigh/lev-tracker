@@ -1,6 +1,6 @@
 # Public Copy Lint Report
 
-Generated: 2026-06-07T01:07:10.964Z
+Generated: 2026-06-07T12:51:12.079Z
 Warnings: 344
 
 ## Highest-Volume Terms
@@ -616,31 +616,31 @@ Warnings: 344
   Excerpt: Published Transposon and Somatic Mutation Control Coverage Repair for June 6, 2026
 - data/publication-events/publish-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-2026-06-06t12-22-33-769z.json $.summary: "trial-watch" -> consider "trials to watch"
   Excerpt: ...dle that stages missing reverse-transcriptase-inhibitor biomarker and trial-watch records, TPN-101/ARPA-H activity, DREAM/somatic-mutation biology, TET...
-- src/app/hallmarks/[hallmarkId]/page.tsx line 124: "mechanistic" -> consider "based on biology"
+- src/app/hallmarks/[hallmarkId]/page.tsx line 139: "mechanistic" -> consider "based on biology"
   Excerpt: "mechanistic_plausibility",
-- src/app/hallmarks/[hallmarkId]/page.tsx line 128: "durable" -> consider "long-lasting"
+- src/app/hallmarks/[hallmarkId]/page.tsx line 143: "durable" -> consider "long-lasting"
   Excerpt: "durable_disease_or_mortality_relevance"
-- src/app/hallmarks/page.tsx line 19: "mechanistic" -> consider "based on biology"
+- src/app/hallmarks/page.tsx line 20: "mechanistic" -> consider "based on biology"
   Excerpt: "mechanistic_plausibility",
-- src/app/hallmarks/page.tsx line 23: "durable" -> consider "long-lasting"
+- src/app/hallmarks/page.tsx line 24: "durable" -> consider "long-lasting"
   Excerpt: "durable_disease_or_mortality_relevance"
-- src/app/hallmarks/page.tsx line 29: "durable" -> consider "long-lasting"
+- src/app/hallmarks/page.tsx line 30: "durable" -> consider "long-lasting"
   Excerpt: "durable_disease_or_mortality_relevance"
-- src/app/hallmarks/page.tsx line 33: "mechanistic" -> consider "based on biology"
+- src/app/hallmarks/page.tsx line 34: "mechanistic" -> consider "based on biology"
   Excerpt: mechanistic_plausibility: "hallmark-index-card--mechanistic",
-- src/app/hallmarks/page.tsx line 37: "durable" -> consider "long-lasting"
+- src/app/hallmarks/page.tsx line 38: "durable" -> consider "long-lasting"
   Excerpt: durable_disease_or_mortality_relevance: "hallmark-index-card--durable"
-- src/app/hallmarks/page.tsx line 62: "durable" -> consider "long-lasting"
-  Excerpt: const durableOutcomeCount = outlooks.filter(
 - src/app/hallmarks/page.tsx line 63: "durable" -> consider "long-lasting"
+  Excerpt: const durableOutcomeCount = outlooks.filter(
+- src/app/hallmarks/page.tsx line 64: "durable" -> consider "long-lasting"
   Excerpt: (outlook) => outlook.stage === "durable_disease_or_mortality_relevance"
-- src/app/hallmarks/page.tsx line 78: "durable" -> consider "long-lasting"
+- src/app/hallmarks/page.tsx line 88: "durable" -> consider "long-lasting"
   Excerpt: <h2>Human evidence is visible, durable outcomes are not</h2>
-- src/app/hallmarks/page.tsx line 81: "durable" -> consider "long-lasting"
+- src/app/hallmarks/page.tsx line 91: "durable" -> consider "long-lasting"
   Excerpt: {durableOutcomeCount === 0
-- src/app/hallmarks/page.tsx line 82: "durable" -> consider "long-lasting"
+- src/app/hallmarks/page.tsx line 92: "durable" -> consider "long-lasting"
   Excerpt: ? "None has reached durable disease or mortality relevance."
-- src/app/hallmarks/page.tsx line 83: "durable" -> consider "long-lasting"
+- src/app/hallmarks/page.tsx line 93: "durable" -> consider "long-lasting"
   Excerpt: : `${durableOutcomeCount} have reached durable disease or mortality relevance.`}
 - src/app/scenarios/lev-by-2036/page.tsx line 102: "durable" -> consider "long-lasting"
   Excerpt: "Mitochondrial and autophagy biomarkers keep moving without durable functional meaning."
@@ -674,9 +674,9 @@ Warnings: 344
   Excerpt: return "durable_disease_or_mortality_relevance";
 - src/app/tracks/[trackId]/page.tsx line 166: "mechanistic" -> consider "based on biology"
   Excerpt: return "mechanistic_plausibility";
-- src/app/tracks/page.tsx line 32: "mechanistic" -> consider "based on biology"
+- src/app/tracks/page.tsx line 41: "mechanistic" -> consider "based on biology"
   Excerpt: "mechanistic_plausibility",
-- src/app/tracks/page.tsx line 36: "durable" -> consider "long-lasting"
+- src/app/tracks/page.tsx line 45: "durable" -> consider "long-lasting"
   Excerpt: "durable_disease_or_mortality_relevance"
 - src/app/trials/page.tsx line 158: "trial-watch" -> consider "trials to watch"
   Excerpt: <div className="page-shell trial-watch-grid">
@@ -694,11 +694,11 @@ Warnings: 344
   Excerpt: { stage: "mechanistic_plausibility", label: "Mechanistic" },
 - src/components/homepage.tsx line 29: "durable" -> consider "long-lasting"
   Excerpt: { stage: "durable_disease_or_mortality_relevance", label: "Durable outcomes" }
-- src/components/homepage.tsx line 331: "durable" -> consider "long-lasting"
+- src/components/homepage.tsx line 335: "durable" -> consider "long-lasting"
   Excerpt: {durableOutcomeHallmarkCount === 0
-- src/components/homepage.tsx line 332: "durable" -> consider "long-lasting"
+- src/components/homepage.tsx line 336: "durable" -> consider "long-lasting"
   Excerpt: ? "none of the hallmarks is at durable human outcome evidence."
-- src/components/homepage.tsx line 333: "durable" -> consider "long-lasting"
+- src/components/homepage.tsx line 337: "durable" -> consider "long-lasting"
   Excerpt: : `${durableOutcomeHallmarkCount} hallmark(s) currently sit at durable human outco...
 - src/components/homepage.tsx line 35: "durable" -> consider "long-lasting"
   Excerpt: "durable_disease_or_mortality_relevance"
