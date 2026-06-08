@@ -1,0 +1,253 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "nad-and-redox-restoration-coverage-2026-06-08",
+  "name": "NAD and Redox Restoration Coverage Assessment for June 8, 2026",
+  "short_name": "NAD and redox restoration coverage",
+  "track_id": "nad-and-redox-restoration",
+  "hallmark_id": "mitochondrial_dysfunction",
+  "assessment_type": "surveillance",
+  "assessed_at": "2026-06-08T10:40:34Z",
+  "assessment_window": {
+    "from": "2026-05-31T19:16:08.034Z",
+    "to": "2026-06-08T10:40:34Z",
+    "basis": "Coverage assessment created during ordinary surveillance after the published May 31 bootstrap baseline."
+  },
+  "coverage_verdict": "thin",
+  "summary": "Coverage is sufficient to support the current low-confidence human_functional_benefit public baseline, but it is thin and needs repair before ordinary surveillance resumes. The public evidence map includes small GlyNAC, NMN, NR, and MitoQ human trials and correctly keeps NAD-precursor target engagement separate from redox and vascular-function claims. The June 8 surveillance pass found no same-window result, correction, retraction, or registry result requiring a public update, but it surfaced missing source-completeness context: MIB-626 human NAD augmentation records, multiple active or completed-no-results NR/NMN/MitoQ older-adult registries, recent review and safety-boundary literature, and taxonomy-boundary issues around nicotinamide, exercise or creatine co-interventions, and disease-specific NAD uses.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-05-31-nad-and-redox-restoration-bootstrap",
+      "2026-06-08-nad-and-redox-restoration-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "nad-and-redox-restoration-bootstrap-2026-05-31"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-nad-and-redox-restoration-source-fidelity-r1",
+      "evidence-review-nad-and-redox-restoration-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-nad-and-redox-restoration-bootstrap-2026-05-31-2026-05-31t19-16-08-034z"
+    ],
+    "outlook_ids": [
+      "track-nad-and-redox-restoration-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "thin",
+      "rationale": "The public evidence map covers core small human RCTs for NR, NMN, GlyNAC, and MitoQ, including positive functional or vascular signals and NR null/boundary data. It does not yet represent MIB-626 human NAD augmentation publications or several active or completed-no-results older-adult NR, NMN, and MitoQ registries found during surveillance.",
+      "source_ids": [
+        "pmid-29599478",
+        "pmid-35927255",
+        "pmid-31412242",
+        "pmid-31710095",
+        "pmid-33888596",
+        "pmid-35975308",
+        "pmid-35821844",
+        "pmid-29661838"
+      ],
+      "finding_ids": [
+        "glynac-older-adults-improved-redox-mitochondrial-physical-function",
+        "nmn-prediabetic-women-muscle-insulin-sensitivity",
+        "mitoq-older-adults-improved-vascular-endothelial-function",
+        "nr-older-adults-raised-nad-metabolome-biomarker",
+        "nmn-older-men-raised-nad-muscle-function-exploratory",
+        "nr-aged-men-muscle-nad-anti-inflammatory-no-bioenergetics",
+        "nr-obese-insulin-resistant-men-mitochondrial-null",
+        "glynac-dose-rct-redox-status-boundary"
+      ],
+      "gap_note": "Review PMIDs 35182418, 36740954, and 40746868 plus NCT05878119, NCT05759468, NCT06208527, NCT04691986, NCT05245903, NCT03821623, NCT06425042, NCT06592859, NCT07144527, NCT04851288, NCT06027554, and NCT05561556 during coverage repair."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The baseline already includes NR null or mixed skeletal-muscle mitochondrial evidence and GlyNAC dose-ranging boundary evidence, which prevents overgeneralizing NAD target engagement or redox biomarkers into broad rejuvenation claims. Repair should still add explicit no-results trial-watch context and disease-boundary exclusions where needed.",
+      "source_ids": [
+        "pmid-31412242",
+        "pmid-31710095",
+        "pmid-35821844"
+      ],
+      "finding_ids": [
+        "nr-aged-men-muscle-nad-anti-inflammatory-no-bioenergetics",
+        "nr-obese-insulin-resistant-men-mitochondrial-null",
+        "glynac-dose-rct-redox-status-boundary"
+      ],
+      "gap_note": "Active or completed-no-results registries should be represented explicitly enough that future readers do not mistake absence of public records for source completeness."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "The outlook names long-term safety, dose durability, supplement framing, and lack of durable post-treatment benefit as limitations, but the source map is mostly short-duration and small. Same-window reviews and disease-boundary NAD literature reinforce the need for safety and context review without adding a result-bearing public update.",
+      "source_ids": [
+        "pmid-29599478",
+        "pmid-35927255",
+        "pmid-31412242",
+        "pmid-31710095",
+        "pmid-33888596",
+        "pmid-35975308",
+        "pmid-35821844",
+        "pmid-29661838"
+      ],
+      "gap_note": "Review recent NAD homeostasis, anti-aging-framework, glutathione-precursor, vascular-aging, and nicotinamide or NAD disease-boundary records for safety, oncology, arrhythmia, and chronic preventive-use boundaries."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "thin",
+      "rationale": "The public baseline attaches registry IDs to represented studies, but there is not yet a complete curated watchlist for active or recently completed no-results NR, NMN, MIB-626, and MitoQ programs. Surveillance found no posted results, but the registry layer is incomplete enough that the next pass should repair it.",
+      "gap_note": "Add, stage, or explicitly exclude NADage NCT06208527, older-veteran NR NCT04691986, passive-sensor NR NCT05245903, arterial-stiffness NR NCT03821623, NR plus exercise NCT06425042, NMN NCT06592859 and NCT07144527, MIB-626 NCT05878119 and NCT05759468, MitoQ NCT04851288 and NCT06027554, oxidative-stress vascular NCT05561556, and boundary records NCT07328100 and NCT06465602."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "The bootstrap was built from targeted primary human and mechanistic sources. Same-window searches found relevant review context, including integrated NAD/redox anti-aging framing, targeted supplementation, glutathione precursors, NAD homeostasis, and vascular-aging reviews, but no formal recent-review triangulation is recorded.",
+      "gap_note": "Use PMID 42068909, PMID 42234350, PMID 42186383, PMID 41812700, PMID 41933553, DOI 10.1146/annurev-nutr-112525-013335, and related citation chasing to check whether any missing primary human anchors or safety constraints should be curated."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "The baseline captures NAD metabolite movement, skeletal-muscle NAD-metabolome and bioenergetic endpoints, redox biomarkers, endothelial function, and mitochondrial-linked measures in humans. Same-window preclinical NMN, NR, and MitoQ records do not require public staging now, but repair should keep mechanistic claims tied to intervention-specific human endpoints.",
+      "source_ids": [
+        "pmid-29599478",
+        "pmid-35927255",
+        "pmid-31412242",
+        "pmid-31710095",
+        "pmid-33888596",
+        "pmid-35975308",
+        "pmid-35821844",
+        "pmid-29661838"
+      ],
+      "finding_ids": [
+        "nr-older-adults-raised-nad-metabolome-biomarker",
+        "nmn-older-men-raised-nad-muscle-function-exploratory",
+        "nr-aged-men-muscle-nad-anti-inflammatory-no-bioenergetics",
+        "nr-obese-insulin-resistant-men-mitochondrial-null",
+        "glynac-older-adults-improved-redox-mitochondrial-physical-function",
+        "glynac-dose-rct-redox-status-boundary",
+        "mitoq-older-adults-improved-vascular-endothelial-function"
+      ]
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "thin",
+      "rationale": "The baseline includes the main published human anchors used for the first public rating. The MIB-626 program and multiple no-results active registries show that the translational anchor set has not been systematically checked across NAD precursor classes, redox restorers, and mitochondrial-targeted antioxidants.",
+      "source_ids": [
+        "pmid-29599478",
+        "pmid-35927255",
+        "pmid-31412242",
+        "pmid-31710095",
+        "pmid-33888596",
+        "pmid-35975308",
+        "pmid-35821844",
+        "pmid-29661838"
+      ],
+      "finding_ids": [
+        "glynac-older-adults-improved-redox-mitochondrial-physical-function",
+        "nmn-prediabetic-women-muscle-insulin-sensitivity",
+        "mitoq-older-adults-improved-vascular-endothelial-function",
+        "nr-older-adults-raised-nad-metabolome-biomarker",
+        "nmn-older-men-raised-nad-muscle-function-exploratory",
+        "nr-aged-men-muscle-nad-anti-inflammatory-no-bioenergetics",
+        "nr-obese-insulin-resistant-men-mitochondrial-null",
+        "glynac-dose-rct-redox-status-boundary"
+      ],
+      "gap_note": "Coverage repair should decide whether MIB-626 records become public sources, activity/watch records, or explicit exclusions."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "thin",
+      "rationale": "The public outlook correctly avoids collapsing NAD precursors, GlyNAC, and MitoQ into one efficacy claim. Repair is still needed because surveillance found recurring adjacent evidence streams: nicotinamide in other tracks, MIB-626 as a distinct NAD precursor program, exercise or creatine co-interventions, oncology or liver-disease NAD use, and no-results disease-context registries.",
+      "source_ids": [
+        "pmid-29599478",
+        "pmid-35927255",
+        "pmid-31412242",
+        "pmid-31710095",
+        "pmid-33888596",
+        "pmid-35975308",
+        "pmid-35821844",
+        "pmid-29661838"
+      ],
+      "gap_note": "Future public changes should identify whether evidence supports NR, NMN, MIB-626, GlyNAC, MitoQ, nicotinamide, exercise co-interventions, or disease-specific NAD modulation rather than treating them as interchangeable longevity interventions."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-29599478",
+    "pmid-35927255",
+    "pmid-31412242",
+    "pmid-31710095",
+    "pmid-33888596",
+    "pmid-35975308",
+    "pmid-35821844",
+    "pmid-29661838"
+  ],
+  "covered_finding_ids": [
+    "glynac-older-adults-improved-redox-mitochondrial-physical-function",
+    "nmn-prediabetic-women-muscle-insulin-sensitivity",
+    "mitoq-older-adults-improved-vascular-endothelial-function",
+    "nr-older-adults-raised-nad-metabolome-biomarker",
+    "nmn-older-men-raised-nad-muscle-function-exploratory",
+    "nr-aged-men-muscle-nad-anti-inflammatory-no-bioenergetics",
+    "nr-obese-insulin-resistant-men-mitochondrial-null",
+    "glynac-dose-rct-redox-status-boundary"
+  ],
+  "search_log_summary": "The surveillance pass reviewed the published outlook, bootstrap session, candidate bundle, evidence reviews, publication event, local trial audit, direct registry checks for all represented registry IDs, broad ClinicalTrials.gov searches across NR, NMN, MIB-626, GlyNAC, MitoQ, NAD, glutathione, redox, aging, and older-adult terms, PubMed date-window and correction searches, linked PubMed searches for active registries, bioRxiv/medRxiv date-window screens, Crossref searches, and targeted web searches for close no-results programs.",
+  "source_selection_notes": [
+    "No public bundle was staged because the same-window findings were reviews, preclinical records, wrong-scope intervention records, no-results registries, or coverage-completeness leads.",
+    "MIB-626 publications and registries were not staged in surveillance because the key records predate the baseline or remain no-results; they should be reviewed in a bounded coverage-repair pass.",
+    "NCT06208527, NCT04691986, NCT05245903, NCT03821623, NCT06425042, NCT06592859, NCT07144527, NCT05878119, NCT05759468, NCT04851288, NCT06027554, and NCT05561556 were not staged because no posted results or linked result publications were found.",
+    "Same-window review records were not staged because they did not change the baseline interpretation; use them for repair-oriented citation chasing and safety-boundary checks."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "mib-626-human-evidence-not-curated",
+      "gap_type": "coverage_gap",
+      "category": "human_interventional",
+      "description": "MIB-626 human NAD augmentation sources and registries, including PMIDs 35182418, 36740954, and 40746868 and NCT05878119 or NCT05759468, are not represented in the current public source map or explicit exclusions.",
+      "priority": "high",
+      "suggested_action": "Run source-level coverage repair for MIB-626 before deciding whether to stage source, study, finding, activity, trial-watch, or exclusion records."
+    },
+    {
+      "gap_id": "active-nad-redox-trials-not-curated",
+      "gap_type": "coverage_gap",
+      "category": "active_trials_registries",
+      "description": "Multiple active, recruiting, or recently completed no-results NR, NMN, MIB-626, and MitoQ registries were found but are not represented as public watchlist, study, activity, or explicit exclusion records.",
+      "priority": "high",
+      "suggested_action": "Review NCT06208527, NCT04691986, NCT05245903, NCT03821623, NCT06425042, NCT06592859, NCT07144527, NCT05878119, NCT05759468, NCT04851288, NCT06027554, and NCT05561556 during coverage repair."
+    },
+    {
+      "gap_id": "long-term-safety-durability-gap",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "The current public evidence is short-duration and does not establish chronic preventive-use safety, durable post-treatment benefit, dose durability, or long-term clinical outcomes for specific NAD/redox interventions.",
+      "priority": "high",
+      "suggested_action": "Keep the public read tentative and use repair to identify safety, tolerability, oncology, arrhythmia, liver-disease, and long-term-dosing constraints."
+    },
+    {
+      "gap_id": "recent-review-triangulation-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "Same-window searches found relevant NAD/redox, supplementation, glutathione-precursor, vascular-aging, and NAD-homeostasis reviews, but the track has no recorded recent-review triangulation pass.",
+      "priority": "medium",
+      "suggested_action": "Use recent reviews and citation chasing during repair to check for missing human primary anchors, null trials, and safety-boundary records."
+    },
+    {
+      "gap_id": "taxonomy-boundary-nad-redox-intervention-families",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "The track mixes NR, NMN, MIB-626, GlyNAC, MitoQ, glutathione precursors, nicotinamide-adjacent records, exercise co-interventions, and disease-specific NAD modulation, so benefits from one stream can be overgeneralized to another.",
+      "priority": "medium",
+      "suggested_action": "During repair, decide branch-specific support and exclusion roles so future public wording remains intervention-specific."
+    }
+  ],
+  "next_coverage_action": "Run a bounded coverage-repair pass focused on MIB-626 human NAD augmentation records, active and completed-no-results NR/NMN/MitoQ/GlyNAC registries, recent review triangulation, safety and durability boundaries, and taxonomy separation across NAD precursor, GlyNAC redox, MitoQ vascular, nicotinamide-adjacent, and exercise or disease-context evidence streams before ordinary surveillance resumes.",
+  "next_recommended_mode": "coverage_repair",
+  "tags": [
+    "coverage-assessment",
+    "surveillance",
+    "mitochondrial_dysfunction",
+    "nad-and-redox-restoration",
+    "coverage-repair-needed"
+  ]
+}

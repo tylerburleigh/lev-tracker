@@ -1,0 +1,458 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-08-nad-and-redox-restoration-surveillance",
+  "name": "NAD and Redox Restoration field change check for June 8, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-08T10:24:00Z",
+  "completed_at": "2026-06-08T10:40:34Z",
+  "scope": {
+    "question": "What changed for NAD and Redox Restoration since the 2026-05-31 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "mitochondrial_dysfunction"
+    ],
+    "track_ids": [
+      "nad-and-redox-restoration"
+    ],
+    "intervention_ids": [
+      "nicotinamide-riboside",
+      "nicotinamide-mononucleotide",
+      "glynac",
+      "mitoq"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "coverage_assessment_updated",
+  "summary": "Ran a field change check from the 2026-05-31T19:16:08.034Z NAD and Redox Restoration baseline publication through June 8, 2026. The local trial audit found eight registry-linked completed public-study records and no open stale watch item, but every registry check was stale or missing. Direct ClinicalTrials.gov checks found the represented NCT records remain completed or, for NCT02950441, registry status unknown, with no newly posted registry results. UMIN000036321 could not be machine-checked in this pass, but its public PubMed result is already represented. Same-window PubMed, preprint, Crossref, and web checks found review, preclinical, oncology, and wrong-intervention context rather than a new aging-relevant human NAD/redox result, correction, retraction, or posted registry result. Broader registry checks did expose missing source-completeness context: MIB-626 human NAD augmentation work, multiple no-results active or recently completed NR/NMN/MitoQ older-adult registries, and recent review/safety-boundary literature are not represented in the public source map. No public outlook, source, study, finding, activity item, or bundle update is warranted now; a coverage assessment was created to route the next pass to coverage repair.",
+  "next_recommended_mode": "coverage_repair",
+  "materiality_decision": {
+    "material_delta": "coverage_repair_needed",
+    "public_update_needed": false,
+    "activity_only": true,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "coverage_repair",
+    "rationale": "The same-window delta does not move the public evidence stage, momentum, or outlook wording: it adds no new human functional result, durable clinical outcome, safety signal, correction, retraction, or posted registry result. The meaningful finding is source-completeness risk. Several active, completed-no-results, or pre-baseline MIB-626/NR/NMN/MitoQ program records should be reviewed before ordinary surveillance resumes."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial audit",
+      "query": "npm run audit:trials -- --track nad-and-redox-restoration --write",
+      "checked_at": "2026-06-08T10:40:34Z",
+      "url": "https://clinicaltrials.gov/",
+      "summary": "The audit found eight registry-linked studies, zero missing trial-detail records, eight stale or missing registry checks, and zero open stale watch items."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "Direct checks for NCT02921659, NCT02950441, NCT02303483, NCT03151239, NCT01870193, NCT05041179, and NCT02597023",
+      "checked_at": "2026-06-08T10:40:34Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "The represented NR, NMN, GlyNAC, and MitoQ NCT records remain completed or registry-unknown with no newly posted registry results. The public PubMed sources remain the result-bearing records for the current evidence map."
+    },
+    {
+      "source_name": "UMIN registry and web search",
+      "query": "UMIN000036321 nicotinamide mononucleotide older men NAD muscle trial",
+      "checked_at": "2026-06-08T10:40:34Z",
+      "url": "https://center6.umin.ac.jp/cgi-open-bin/ctr_e/index.cgi",
+      "summary": "The UMIN record attached to the older-men NMN trial was searched but not machine-parsed in this pass. The published PubMed result is already represented, so this is a registry-check gap rather than a public evidence delta."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "nicotinamide riboside aging older adults; nicotinamide mononucleotide NMN aging older adults; MIB-626 NAD aging older adults; GlyNAC glycine N-acetylcysteine older adults; MitoQ mitoquinone older adults vascular mitochondrial; NAD precursor mitochondrial aging trial; glutathione precursor aging older adults trial",
+      "checked_at": "2026-06-08T10:40:34Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "Broad searches found no posted result-bearing same-window public update. Close no-results or coverage-repair records included NADage NCT06208527, older-veteran NR NCT04691986, passive-sensor NR NCT05245903, arterial-stiffness NR NCT03821623, NR plus exercise NCT06425042, NMN NCT06592859 and NCT07144527, MIB-626 NCT05878119 and NCT05759468, MitoQ NCT04851288 and NCT06027554, and completed-no-results vascular oxidative-stress NCT05561556."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "Exact and broad NAD precursor, nicotinamide riboside, nicotinamide mononucleotide, NMN, MIB-626, GlyNAC, glutathione precursor, MitoQ, mitoquinone, NAD, redox, aging, older-adult, mitochondrial, and trial searches; publication dates 2026-05-31 to 2026-06-08",
+      "checked_at": "2026-06-08T10:40:34Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Same-window close hits were reviews, preclinical records, or wrong-scope intervention records. Notable context included PMID 42068909, PMID 42234350, PMID 42186383, PMID 41941966, PMID 41812700, PMID 42231576, PMID 42225972, PMID 42238815, and PMID 41933553; none justifies a public evidence update."
+    },
+    {
+      "source_name": "PubMed correction and retraction screen",
+      "query": "Baseline PMIDs 29599478, 35927255, 31412242, 31710095, 33888596, 35975308, 35821844, and 29661838 with retraction, erratum, corrected-and-republished, or expression-of-concern publication types; publication dates 2026-05-31 to 2026-06-08",
+      "checked_at": "2026-06-08T10:40:34Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned zero correction, retraction, erratum, corrected-and-republished, or expression-of-concern records for the eight PubMed baseline supporting sources."
+    },
+    {
+      "source_name": "PubMed linked-record lookup",
+      "query": "NCT05878119 OR MIB-626; NCT04691986; NCT05245903; NCT03821623; NCT06027554; NCT06592859",
+      "checked_at": "2026-06-08T10:40:34Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "The MIB-626 lookup found older human NAD augmentation records, including PMIDs 35182418 and 36740954, plus disease-context PMID 40746868. These are pre-baseline or disease-boundary coverage issues rather than a same-window public update. Other registry-linked searches did not find posted result publications requiring public changes."
+    },
+    {
+      "source_name": "bioRxiv and medRxiv APIs",
+      "query": "Date window 2026-05-31 to 2026-06-08 filtered for nicotinamide riboside, nicotinamide mononucleotide, NMN, NR, MIB-626, GlyNAC, glycine, N-acetylcysteine, glutathione, MitoQ, mitoquinone, NAD, and redox",
+      "checked_at": "2026-06-08T10:40:34Z",
+      "url": "https://api.biorxiv.org/",
+      "summary": "Found no scoped result-bearing preprint. Title or abstract matches were wrong-scope, including multi-omics alcohol-associated liver disease context and unrelated modeling or clinical-protocol preprints."
+    },
+    {
+      "source_name": "Crossref API and web search",
+      "query": "nicotinamide riboside aging; nicotinamide mononucleotide aging; NAD redox restoration aging; NADage NCT06208527; NCT04691986; NCT05245903; Mito-Frail NCT06027554",
+      "checked_at": "2026-06-08T10:40:34Z",
+      "url": "https://api.crossref.org/works",
+      "summary": "Crossref and web checks confirmed same-window review, mechanistic, correction, and wrong-scope leads rather than a new result-bearing human aging intervention record. ClinicalTrials.gov records remain the primary source for active/no-results trial context."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT02921659",
+      "study_id": "nicotinamide-riboside-older-adults-nad",
+      "source_id": "pmid-29599478",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02921659",
+      "checked_at": "2026-06-08T10:40:34Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "not_posted",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The healthy middle-aged and older-adult NR registry remains completed with no ClinicalTrials.gov results posted. The result-bearing PubMed source is already in the public evidence layer."
+    },
+    {
+      "registry_id": "UMIN000036321",
+      "study_id": "nicotinamide-mononucleotide-older-men-nad-muscle",
+      "source_id": "pmid-35927255",
+      "checked_at": "2026-06-08T10:40:34Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "unknown",
+      "previous_results_status": "posted",
+      "current_results_status": "unknown",
+      "completion_date_kind": "unknown",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "not_retrieved",
+      "public_action": "record_no_op",
+      "summary": "The UMIN registry record could not be machine-checked during this pass. The published older-men NMN trial result remains represented by PMID 35927255, so this is a registry-check limitation rather than a public evidence update."
+    },
+    {
+      "registry_id": "NCT02950441",
+      "study_id": "nicotinamide-riboside-aged-men-skeletal-muscle",
+      "source_id": "pmid-31412242",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02950441",
+      "checked_at": "2026-06-08T10:40:34Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "unknown",
+      "previous_results_status": "posted",
+      "current_results_status": "not_posted",
+      "completion_date_kind": "estimated",
+      "status_changed": true,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "status_change",
+      "public_action": "record_no_op",
+      "summary": "The ClinicalTrials.gov record for the aged-men NR skeletal-muscle trial is registry-status unknown with no posted results. The public evidence layer already uses the result-bearing PubMed source, and no new public interpretation change follows from the stale registry status."
+    },
+    {
+      "registry_id": "NCT02303483",
+      "study_id": "nicotinamide-riboside-obese-men-mitochondria",
+      "source_id": "pmid-31710095",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02303483",
+      "checked_at": "2026-06-08T10:40:34Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2017-04-04",
+      "study_completion_date": "2017-04-04",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The obese insulin-resistant men's NR trial remains completed with no posted ClinicalTrials.gov results. The published null mitochondrial source remains the public boundary record."
+    },
+    {
+      "registry_id": "NCT03151239",
+      "study_id": "nicotinamide-mononucleotide-prediabetic-women-insulin",
+      "source_id": "pmid-33888596",
+      "registry_url": "https://clinicaltrials.gov/study/NCT03151239",
+      "checked_at": "2026-06-08T10:40:34Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2019-05-30",
+      "study_completion_date": "2021-06-30",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The prediabetic postmenopausal-women NMN registry remains completed with no posted ClinicalTrials.gov results. The published insulin-sensitivity result remains represented in the public evidence layer."
+    },
+    {
+      "registry_id": "NCT01870193",
+      "study_id": "glynac-older-adults-aging-hallmarks-rct",
+      "source_id": "pmid-35975308",
+      "registry_url": "https://clinicaltrials.gov/study/NCT01870193",
+      "checked_at": "2026-06-08T10:40:34Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "not_posted",
+      "study_completion_date": "2022-08-22",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The GlyNAC aging-hallmarks registry remains completed with no posted ClinicalTrials.gov results. The small older-adult RCT publication remains the public functional-signal source."
+    },
+    {
+      "registry_id": "NCT05041179",
+      "study_id": "glynac-healthy-older-adults-redox-dose-rct",
+      "source_id": "pmid-35821844",
+      "registry_url": "https://clinicaltrials.gov/study/NCT05041179",
+      "checked_at": "2026-06-08T10:40:34Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2020-04-01",
+      "study_completion_date": "2020-05-01",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The GlyNAC/PRUVIN dose-ranging registry remains completed with no posted ClinicalTrials.gov results. The published short redox dose-ranging paper remains the represented evidence source."
+    },
+    {
+      "registry_id": "NCT02597023",
+      "study_id": "mitoq-older-adults-vascular-function",
+      "source_id": "pmid-29661838",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02597023",
+      "checked_at": "2026-06-08T10:40:34Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "not_posted",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The older-adult MitoQ vascular-function registry remains completed with no posted ClinicalTrials.gov results. The published crossover trial remains the public vascular-physiology source."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "NCT06208527",
+      "title": "NADage nicotinamide riboside against functional decline in aging",
+      "url": "https://clinicaltrials.gov/study/NCT06208527",
+      "decision": "no_results",
+      "reason": "Recruiting phase 2 NR aging trial with no posted results. It is important watchlist and coverage-repair context, but it is not a current evidence update."
+    },
+    {
+      "reference": "NCT04691986",
+      "title": "Nicotinamide riboside in older Veterans functional capacity and muscle physiology",
+      "url": "https://clinicaltrials.gov/study/NCT04691986",
+      "decision": "no_results",
+      "reason": "Active-not-recruiting older-adult NR registry with no posted results. It should be reviewed during coverage repair but does not change public conclusions now."
+    },
+    {
+      "reference": "NCT05245903",
+      "title": "Passive sensor and digital biomarkers in nicotinamide riboside treatment",
+      "url": "https://clinicaltrials.gov/study/NCT05245903",
+      "decision": "no_results",
+      "reason": "Recruiting NR digital-biomarker registry with no posted results and estimated 2026 completion; watchlist context only."
+    },
+    {
+      "reference": "NCT03821623",
+      "title": "Nicotinamide riboside for elevated systolic blood pressure and arterial stiffness",
+      "url": "https://clinicaltrials.gov/study/NCT03821623",
+      "decision": "no_results",
+      "reason": "Recruiting no-results middle-aged and older-adult NR registry. It may matter for coverage repair but has no posted result."
+    },
+    {
+      "reference": "NCT06425042",
+      "title": "Nicotinamide riboside and exercise in healthy longevity",
+      "url": "https://clinicaltrials.gov/study/NCT06425042",
+      "decision": "no_results",
+      "reason": "Recruiting no-results NR plus exercise trial. It is not result-bearing and requires taxonomy care because exercise co-intervention effects should not be attributed to NR alone."
+    },
+    {
+      "reference": "NCT06592859 and NCT07144527",
+      "title": "Nicotinamide mononucleotide trials in middle-aged or older adults",
+      "url": "https://clinicaltrials.gov/search?term=nicotinamide%20mononucleotide%20older%20adults",
+      "decision": "no_results",
+      "reason": "Recruiting no-results NMN registries found in broad searches. They are watchlist and coverage-repair context, not public evidence movement."
+    },
+    {
+      "reference": "NCT05878119",
+      "title": "MIB-626 with and without exercise training in middle-aged and older adults",
+      "url": "https://clinicaltrials.gov/study/NCT05878119",
+      "decision": "no_results",
+      "reason": "Completed MIB-626 registry with no posted ClinicalTrials.gov results. It exposed a missing source-completeness category because older MIB-626 human NAD augmentation publications are not yet curated."
+    },
+    {
+      "reference": "NCT05759468",
+      "title": "MIB-626 NAD augmentation in diabetic kidney disease",
+      "url": "https://clinicaltrials.gov/study/NCT05759468",
+      "decision": "no_results",
+      "reason": "Recruiting no-results MIB-626 disease-context registry. It should be considered during repair as boundary context, not aging-functional evidence."
+    },
+    {
+      "reference": "NCT04851288 and NCT06027554",
+      "title": "MitoQ age-related vascular dysfunction and Mito-Frail frailty trials",
+      "url": "https://clinicaltrials.gov/search?term=MitoQ%20older%20adults",
+      "decision": "no_results",
+      "reason": "Active or recruiting no-results MitoQ registries. They are potentially material future watch items but do not alter the current public MitoQ vascular-function signal."
+    },
+    {
+      "reference": "NCT05561556",
+      "title": "Mitochondria, oxidative stress, and vascular health study",
+      "url": "https://clinicaltrials.gov/study/NCT05561556",
+      "decision": "no_results",
+      "reason": "Completed no-results registry in a vascular oxidative-stress context. It should be reviewed during coverage repair only if intervention and endpoint details fit the track."
+    },
+    {
+      "reference": "NCT07328100 and NCT06465602",
+      "title": "Coenzyme I injection and nicotinamide physical-performance registries",
+      "url": "https://clinicaltrials.gov/search?term=nicotinamide%20aging%20older%20adults",
+      "decision": "no_results",
+      "reason": "No-results registries with taxonomy-boundary issues around intervention identity, geography, and outcome directness. They are not public evidence updates."
+    },
+    {
+      "reference": "PMID 42068909",
+      "title": "An integrated anti-aging framework targeting NAD+ homeostasis, mitochondrial quality control, and redox stability: Roles of NMN/NR, PQQ, and EGT.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42068909/",
+      "decision": "context_only",
+      "reason": "Same-window conceptual review. It can inform coverage repair and taxonomy boundaries but does not add a primary human intervention result."
+    },
+    {
+      "reference": "PMID 42234350",
+      "title": "Targeted Supplementation and Nutritional Strategies for Healthy Aging.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42234350/",
+      "decision": "context_only",
+      "reason": "Same-window review of targeted supplementation, including antioxidants, glycine/NAC, and NAD precursors. It is synthesis context rather than new primary evidence."
+    },
+    {
+      "reference": "PMID 42186383",
+      "title": "Glutathione precursors: a new opportunity for dietary interventions in obesity and metabolic health?",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42186383/",
+      "decision": "context_only",
+      "reason": "Review of NAC/glycine and metabolic health that reinforces the need for larger RCTs but does not change the GlyNAC public evidence stage."
+    },
+    {
+      "reference": "PMID 41941966",
+      "title": "Older-adult high-load resistance training plus creatine trial with oxidative and inflammatory endpoints",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41941966/",
+      "decision": "wrong_scope",
+      "reason": "Human RCT but the intervention is creatine plus resistance training, not NAD precursor, GlyNAC, or mitochondrial-targeted redox restoration."
+    },
+    {
+      "reference": "PMID 41812700",
+      "title": "NAD+ as a central metabolic hub in aging and disease",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41812700/",
+      "decision": "context_only",
+      "reason": "Review context that may help safety and oncology-boundary framing during repair but does not provide new result evidence."
+    },
+    {
+      "reference": "PMID 42231576",
+      "title": "Nicotinamide Riboside Enhances Adoptive T Cell Therapy by Promoting Memory Differentiation and Metabolic Fitness.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42231576/",
+      "decision": "wrong_scope",
+      "reason": "Preclinical or oncology immunotherapy context, not an aging-relevant NAD/redox intervention outcome."
+    },
+    {
+      "reference": "PMID 42225972",
+      "title": "Nicotinamide mononucleotide alleviated hepatic steatosis in a chronic alcohol-fed mouse model",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42225972/",
+      "decision": "wrong_scope",
+      "reason": "Preclinical disease-model record, not a human aging-relevant result."
+    },
+    {
+      "reference": "PMID 42238815",
+      "title": "MitoQ plus swimming exercise in spinal cord injury rats",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42238815/",
+      "decision": "wrong_scope",
+      "reason": "Preclinical spinal-cord-injury exercise co-intervention, not human NAD/redox aging evidence."
+    },
+    {
+      "reference": "PMID 41933553",
+      "title": "Vascular aging: A central driver of multimorbidity.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41933553/",
+      "decision": "context_only",
+      "reason": "Review context mentioning translational bottlenecks and therapeutic candidates, including MitoQ, but no new primary result."
+    },
+    {
+      "reference": "bioRxiv/medRxiv date-window screen",
+      "title": "NAD, redox, GlyNAC, MitoQ, NR, NMN, and MIB-626 preprint screen",
+      "url": "https://api.biorxiv.org/",
+      "decision": "wrong_scope",
+      "reason": "Same-window title/abstract matches were unrelated, mechanistic-only, protocol-only, or wrong-intervention preprints rather than result-bearing scoped evidence."
+    },
+    {
+      "reference": "DOI 10.1016/j.freeradbiomed.2026.05.053",
+      "title": "Sex-dependent effects of aging on NAD+ metabolism and redox homeostasis in visceral adipose tissue",
+      "url": "https://doi.org/10.1016/j.freeradbiomed.2026.05.053",
+      "decision": "context_only",
+      "reason": "Crossref lead appears mechanistic or observational around NAD/redox biology, not a scoped human intervention result."
+    },
+    {
+      "reference": "DOI 10.1146/annurev-nutr-112525-013335",
+      "title": "Mechanisms of NAD+ Homeostasis in Aging and Disease",
+      "url": "https://doi.org/10.1146/annurev-nutr-112525-013335",
+      "decision": "context_only",
+      "reason": "Review lead for coverage repair and taxonomy boundary checks, not a same-window public result."
+    }
+  ],
+  "source_ids": [
+    "pmid-29599478",
+    "pmid-35927255",
+    "pmid-31412242",
+    "pmid-31710095",
+    "pmid-33888596",
+    "pmid-35975308",
+    "pmid-35821844",
+    "pmid-29661838"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/29599478/",
+    "https://pubmed.ncbi.nlm.nih.gov/35927255/",
+    "https://pubmed.ncbi.nlm.nih.gov/31412242/",
+    "https://pubmed.ncbi.nlm.nih.gov/31710095/",
+    "https://pubmed.ncbi.nlm.nih.gov/33888596/",
+    "https://pubmed.ncbi.nlm.nih.gov/35975308/",
+    "https://pubmed.ncbi.nlm.nih.gov/35821844/",
+    "https://pubmed.ncbi.nlm.nih.gov/29661838/",
+    "https://clinicaltrials.gov/study/NCT02921659",
+    "https://clinicaltrials.gov/study/NCT02950441",
+    "https://clinicaltrials.gov/study/NCT02303483",
+    "https://clinicaltrials.gov/study/NCT03151239",
+    "https://clinicaltrials.gov/study/NCT01870193",
+    "https://clinicaltrials.gov/study/NCT05041179",
+    "https://clinicaltrials.gov/study/NCT02597023",
+    "https://clinicaltrials.gov/study/NCT05878119",
+    "https://clinicaltrials.gov/study/NCT06208527",
+    "https://clinicaltrials.gov/study/NCT04691986",
+    "https://clinicaltrials.gov/study/NCT04851288",
+    "https://clinicaltrials.gov/study/NCT06027554"
+  ],
+  "notes": [
+    "No same-window source justifies changing the current human_functional_benefit, mixed-momentum, low-confidence public outlook.",
+    "MIB-626 is not represented in the current public source map; its existing human NAD augmentation records should be reviewed in coverage-repair mode before ordinary surveillance resumes.",
+    "Broad registry discovery found active or recently completed no-results NR, NMN, MIB-626, and MitoQ trials that should be triaged into public studies, activity records, exclusions, or watchlist notes during repair.",
+    "Keep NR/NMN NAD-metabolite target engagement separate from GlyNAC redox/functional claims and MitoQ vascular redox claims."
+  ],
+  "next_actions": [
+    "Run coverage repair focused on MIB-626 human NAD augmentation publications, active and completed-no-results NR/NMN/MitoQ/GlyNAC registries, recent reviews, and safety or disease-boundary records.",
+    "Do not stage a public outlook refresh unless repair finds result-bearing evidence or safety/durability information that changes the support map."
+  ]
+}

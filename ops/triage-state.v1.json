@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-08T10:28:17.889Z",
+  "generated_at": "2026-06-08T10:44:59.264Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-08T10:28:17.789Z",
-    "research_priority_queue_updated_at": "2026-06-08T10:28:17.790Z",
+    "research_coverage_status_updated_at": "2026-06-08T10:44:59.153Z",
+    "research_priority_queue_updated_at": "2026-06-08T10:44:59.153Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
-    "surveillance_queue_count": 38,
-    "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 28,
+    "surveillance_queue_count": 37,
+    "coverage_repair_queue_count": 1,
+    "coverage_assessment_backlog_count": 27,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
   },
@@ -32,8 +32,8 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "surveillance-nad-and-redox-restoration",
-    "top_mode": "surveillance",
+    "top_work_item_id": "coverage-repair-nad-and-redox-restoration",
+    "top_mode": "coverage_repair",
     "active_editorial_count": 0,
     "ready_research_count": 38,
     "data_hardening_count": 0,
@@ -45,14 +45,14 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "surveillance-nad-and-redox-restoration",
-      "mode": "surveillance",
+      "item_id": "coverage-repair-nad-and-redox-restoration",
+      "mode": "coverage_repair",
       "domain": "research",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Run field change check for NAD and Redox Restoration",
-      "rationale": "Next distinct field-change target. Generated field-change queue rank 27; rank 1 was recently handled by a field change check or coverage-repair session.",
-      "default_action": "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
+      "title": "Repair coverage for NAD and Redox Restoration",
+      "rationale": "Run a bounded coverage-repair pass focused on MIB-626 human NAD augmentation records, active and completed-no-results NR/NMN/MitoQ/GlyNAC registries, recent review triangulation, safety and durability boundaries, and taxonomy separation across NAD precursor, GlyNAC redox, MitoQ vascular, nicotinamide-adjacent, and exercise or disease-context evidence streams before ordinary surveillance resumes.",
+      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
       "track_id": "nad-and-redox-restoration",
       "hallmark_id": "mitochondrial_dysfunction",
       "references": [
@@ -63,6 +63,42 @@
         {
           "record_type": "hallmark",
           "record_id": "mitochondrial_dysfunction"
+        }
+      ],
+      "runbook_path": "docs/coverage-assessment.md",
+      "source_paths": [
+        "research/backlog/track-priority.v1.json",
+        "research/state/coverage-status.v1.json",
+        "research/coverage-assessments",
+        "docs/coverage-assessment.md"
+      ],
+      "signals": [
+        {
+          "name": "generated_queue_rank",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "item_id": "surveillance-circulating-factor-modulation",
+      "mode": "surveillance",
+      "domain": "research",
+      "priority_tier": "now",
+      "status": "ready",
+      "title": "Run field change check for Circulating Factor Modulation",
+      "rationale": "Next distinct field-change target. Generated field-change queue rank 27; rank 1 was recently handled by a field change check or coverage-repair session.",
+      "default_action": "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
+      "track_id": "circulating-factor-modulation",
+      "hallmark_id": "altered_intercellular_communication",
+      "references": [
+        {
+          "record_type": "track",
+          "record_id": "circulating-factor-modulation"
+        },
+        {
+          "record_type": "hallmark",
+          "record_id": "altered_intercellular_communication"
         }
       ],
       "runbook_path": "docs/surveillance-checklist.md",
@@ -87,14 +123,14 @@
       ]
     },
     {
-      "rank": 2,
+      "rank": 3,
       "item_id": "coverage-assessment-backfill-cytokine-and-inflammasome-modulation",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
       "title": "Backfill coverage assessment for Cytokine and Inflammasome Modulation",
-      "rationale": "28 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
+      "rationale": "27 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
       "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
       "track_id": "cytokine-and-inflammasome-modulation",
       "hallmark_id": "chronic_inflammation",
@@ -117,7 +153,7 @@
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 28
+          "value": 27
         },
         {
           "name": "generated_surveillance_queue_rank",
