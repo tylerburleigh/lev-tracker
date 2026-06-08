@@ -1,0 +1,302 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-nad-and-redox-restoration-outlook",
+  "name": "NAD and Redox Restoration Track Outlook",
+  "subject_type": "track",
+  "subject_id": "nad-and-redox-restoration",
+  "evidence_stage": "human_functional_benefit",
+  "momentum": "mixed",
+  "confidence": "low",
+  "main_evidence_gaps": [
+    "Human evidence is heterogeneous: NR, NMN, MIB-626, GlyNAC, MitoQ, nicotinamide-adjacent records, exercise co-interventions, and disease-context NAD uses should not be collapsed into one efficacy claim.",
+    "The strongest functional signals are still small, short-duration, and not tied to long-lasting disease prevention, mortality, or LEV-relevant healthy-lifespan outcomes.",
+    "NAD precursor trials now include MIB-626 as well as NR and NMN: they show credible circulating NAD-metabolite target engagement, but downstream physical-function, tissue-specific mitochondrial, and clinical-outcome follow-through remain inconsistent or unproven.",
+    "Multiple active or completed no-results NR, NMN, MIB-626, and MitoQ registries could change the read later, but they are watchlist context until results are posted or published.",
+    "Sponsor involvement, supplement or formulation framing, long-term safety, chronic dosing, oncology or disease-context boundaries, and durability after treatment remain important limitations for preventive use in broadly healthy adults."
+  ],
+  "strongest_current_evidence": [
+    "GlyNAC produced the strongest older-adult functional signal, improving redox, mitochondrial, inflammatory, endothelial, physical-function, strength, and exercise-capacity measures in a small 16-week RCT.",
+    "NR, NMN, and MIB-626 repeatedly show human NAD-metabolite movement; MIB-626 adds a short cardiometabolic physiology signal but not replicated physical-function benefit, while NMN has a narrow muscle insulin-sensitivity signal in prediabetic postmenopausal women.",
+    "MitoQ improved vascular endothelial function and oxidized LDL in a small randomized crossover trial of healthy older adults with impaired flow-mediated dilation, with larger no-results registries now on watch."
+  ],
+  "interpretation_note": "NAD and redox restoration remains a low-confidence human_functional_benefit track. Coverage repair adds MIB-626 human target-engagement and physiologic records, active or completed no-results NR/NMN/MIB-626/MitoQ registries, and recent review context. These improve source completeness and clarify branch boundaries, but they do not upgrade the track: functional support still comes mainly from small GlyNAC, NMN, and MitoQ studies, while NAD precursor evidence remains short, heterogeneous, sponsor- or supplement-adjacent in places, and not yet tied to durable LEV-relevant outcomes.",
+  "what_would_change_the_rating": [
+    "A stronger stage assignment or a firmer read would require independent, larger RCTs with prespecified functional endpoints, clear target engagement, and follow-up after stopping treatment.",
+    "NAD-precursor claims should strengthen only if NR, NMN, or related agents reproducibly improve tissue-specific NAD status and functional outcomes beyond blood-metabolite movement.",
+    "Redox-restoration claims should strengthen only if GlyNAC, MitoQ, or related interventions replicate long-lasting improvement in human function while showing acceptable long-term safety and no loss of beneficial redox signaling.",
+    "The rating would weaken if larger trials fail functional endpoints, if biomarker gains decouple from physical or clinical outcomes, or if chronic dosing produces material safety or tolerability concerns."
+  ],
+  "earliest_plausible_window": "No credible LEV-relevant window can be assigned before replicated long-lasting improvement in human function and long-term safety exist for specific interventions in aging-relevant populations.",
+  "supporting_finding_ids": [
+    "glynac-older-adults-improved-redox-mitochondrial-physical-function",
+    "nmn-prediabetic-women-muscle-insulin-sensitivity",
+    "mitoq-older-adults-improved-vascular-endothelial-function",
+    "nr-older-adults-raised-nad-metabolome-biomarker",
+    "nmn-older-men-raised-nad-muscle-function-exploratory",
+    "nr-aged-men-muscle-nad-anti-inflammatory-no-bioenergetics",
+    "nr-obese-insulin-resistant-men-mitochondrial-null",
+    "glynac-dose-rct-redox-status-boundary",
+    "mib-626-raised-nad-metabolome-older-adults",
+    "mib-626-metabolic-signal-no-physical-function",
+    "mib-626-covid-aki-target-engagement-no-clinical-benefit",
+    "mib-626-exercise-phase2-completed-no-results",
+    "mib-626-diabetic-kidney-disease-recruiting-no-results",
+    "nadage-nr-frailty-recruiting-no-results",
+    "nr-older-veterans-active-no-results",
+    "nr-alzheimer-bioenergetics-active-no-results",
+    "nr-arterial-stiffness-recruiting-no-results",
+    "nr-exercise-longevity-recruiting-no-results",
+    "nmn-middle-aged-older-adults-recruiting-no-results",
+    "nmn-exercise-tolerance-recruiting-no-results",
+    "mitoq-vascular-aging-active-no-results",
+    "mitoq-frail-older-adults-recruiting-no-results",
+    "mitoq-vascular-oxidative-stress-completed-no-results",
+    "nad-redox-review-supports-combination-boundary",
+    "targeted-supplementation-review-heterogeneity-boundary",
+    "glutathione-precursor-review-replication-gap",
+    "nad-homeostasis-review-precision-safety-boundary",
+    "vascular-aging-review-mitoq-translational-boundary"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "evidence_stage",
+      "conclusion": "The track reaches evidence that human function improves because small human RCTs report physical-function, metabolic-function, or vascular-function improvements.",
+      "support_role": "supports",
+      "rationale": "GlyNAC provides the broadest older-adult functional signal, NMN provides a narrow muscle insulin-sensitivity signal in prediabetic women, and MitoQ provides vascular endothelial-function support in older adults.",
+      "finding_ids": [
+        "glynac-older-adults-improved-redox-mitochondrial-physical-function",
+        "nmn-prediabetic-women-muscle-insulin-sensitivity",
+        "mitoq-older-adults-improved-vascular-endothelial-function"
+      ],
+      "source_ids": [
+        "pmid-35975308",
+        "pmid-33888596",
+        "pmid-29661838"
+      ],
+      "limitations": [
+        "The functional studies are small and short.",
+        "The endpoints are heterogeneous and do not establish one shared mechanism.",
+        "No staged source demonstrates long-lasting disease prevention, mortality benefit, or LEV-relevant benefit."
+      ]
+    },
+    {
+      "label": "NAD precursor target engagement",
+      "outlook_field": "strongest_current_evidence",
+      "conclusion": "NR and NMN have credible human NAD-metabolite target engagement, but downstream functional follow-through is inconsistent.",
+      "support_role": "balances",
+      "rationale": "NR and NMN trials show blood or skeletal-muscle NAD-metabolome movement, while effects on mitochondrial bioenergetics, muscle function, and insulin sensitivity vary by compound, tissue, population, and endpoint.",
+      "finding_ids": [
+        "nr-older-adults-raised-nad-metabolome-biomarker",
+        "nmn-older-men-raised-nad-muscle-function-exploratory",
+        "nr-aged-men-muscle-nad-anti-inflammatory-no-bioenergetics",
+        "nmn-prediabetic-women-muscle-insulin-sensitivity"
+      ],
+      "source_ids": [
+        "pmid-29599478",
+        "pmid-35927255",
+        "pmid-31412242",
+        "pmid-33888596"
+      ],
+      "limitations": [
+        "Blood NAD-metabolite movement is not the same as tissue rejuvenation.",
+        "Several functional outcomes are exploratory or disease-risk-specific.",
+        "NR and NMN are not interchangeable interventions."
+      ]
+    },
+    {
+      "label": "Boundary condition",
+      "outlook_field": "main_evidence_gaps",
+      "conclusion": "NR does not consistently improve skeletal-muscle mitochondrial function in humans.",
+      "support_role": "limits",
+      "rationale": "The obese insulin-resistant men's trial directly measured skeletal-muscle mitochondrial respiration, content, morphology, and NAD endpoints after 12 weeks of high-dose NR and found no supportive mitochondrial signal.",
+      "finding_ids": [
+        "nr-obese-insulin-resistant-men-mitochondrial-null",
+        "nr-aged-men-muscle-nad-anti-inflammatory-no-bioenergetics"
+      ],
+      "source_ids": [
+        "pmid-31710095",
+        "pmid-31412242"
+      ],
+      "limitations": [
+        "The null trial tested obese insulin-resistant men, not every aging-relevant population.",
+        "The results constrain NR skeletal-muscle claims but do not negate GlyNAC or MitoQ redox evidence.",
+        "Longer or different dosing strategies remain open questions."
+      ]
+    },
+    {
+      "label": "Redox restoration support",
+      "outlook_field": "strongest_current_evidence",
+      "conclusion": "GlyNAC and MitoQ provide human redox-restoration signals, but both remain early and intervention-specific.",
+      "support_role": "supports",
+      "rationale": "GlyNAC improved redox and mitochondrial-linked endpoints in a small older-adult RCT and has a larger short-term redox dose-ranging study; MitoQ improved vascular endothelial function and oxidized LDL in older adults.",
+      "finding_ids": [
+        "glynac-older-adults-improved-redox-mitochondrial-physical-function",
+        "glynac-dose-rct-redox-status-boundary",
+        "mitoq-older-adults-improved-vascular-endothelial-function"
+      ],
+      "source_ids": [
+        "pmid-35975308",
+        "pmid-35821844",
+        "pmid-29661838"
+      ],
+      "limitations": [
+        "The GlyNAC functional RCT was small.",
+        "The larger GlyNAC redox study was only two weeks and biomarker-focused.",
+        "MitoQ's vascular physiology signal is not a hard clinical outcome."
+      ]
+    },
+    {
+      "label": "Momentum and read firmness",
+      "outlook_field": "confidence",
+      "conclusion": "Momentum is mixed and the read remains tentative because target engagement is easier to show than sustained improvement in human function.",
+      "support_role": "balances",
+      "rationale": "The evidence base contains multiple human RCTs and plausible biological signals, but the trials are small, short, sponsor-influenced in places, and split between positive surrogate or functional endpoints and null mitochondrial endpoints.",
+      "finding_ids": [
+        "glynac-older-adults-improved-redox-mitochondrial-physical-function",
+        "nmn-prediabetic-women-muscle-insulin-sensitivity",
+        "mitoq-older-adults-improved-vascular-endothelial-function",
+        "nr-obese-insulin-resistant-men-mitochondrial-null",
+        "nr-aged-men-muscle-nad-anti-inflammatory-no-bioenergetics"
+      ],
+      "source_ids": [
+        "pmid-35975308",
+        "pmid-33888596",
+        "pmid-29661838",
+        "pmid-31710095",
+        "pmid-31412242"
+      ],
+      "limitations": [
+        "No staged source shows long-lasting clinical benefit after discontinuation.",
+        "No source establishes an aging-indication regulatory path.",
+        "The baseline should not imply that commercially available NAD or antioxidant supplements are proven longevity interventions."
+      ]
+    },
+    {
+      "label": "MIB-626 target engagement and boundary",
+      "outlook_field": "strongest_current_evidence",
+      "conclusion": "MIB-626 strengthens the NAD-precursor target-engagement map and adds limited cardiometabolic physiology, but it does not establish broad physical-function, disease, or durability benefit.",
+      "support_role": "balances",
+      "rationale": "Short randomized MIB-626 studies raised circulating NAD and NAD metabolites. The 28-day physiologic study also reported weight, lipid, and diastolic blood-pressure changes, while physical performance, insulin sensitivity, and abdominal or hepatic fat did not improve significantly; the COVID/AKI trial raised NAD without AKI, inflammatory, or disease-severity benefit.",
+      "finding_ids": [
+        "mib-626-raised-nad-metabolome-older-adults",
+        "mib-626-metabolic-signal-no-physical-function",
+        "mib-626-covid-aki-target-engagement-no-clinical-benefit"
+      ],
+      "source_ids": [
+        "pmid-35182418",
+        "pmid-36740954",
+        "pmid-40746868"
+      ],
+      "limitations": [
+        "MIB-626 records are short and small or disease-context studies.",
+        "Circulating NAD movement is not the same as tissue rejuvenation or durable functional benefit.",
+        "Disease-context target engagement should not be generalized to healthy-aging efficacy."
+      ]
+    },
+    {
+      "label": "Active trial watch",
+      "outlook_field": "main_evidence_gaps",
+      "conclusion": "The repaired map includes active or completed no-results NR, NMN, MIB-626, and MitoQ registries that could later clarify function, frailty, vascular physiology, exercise tolerance, cognition, or disease-boundary outcomes.",
+      "support_role": "balances",
+      "rationale": "NADage, older-veteran NR, NR arterial-stiffness, NR Alzheimer/MCI, NR plus exercise, NMN aging/exercise, MIB-626 exercise/DKD, and MitoQ vascular/frailty registries have no posted results yet. Their presence increases program momentum and watchlist completeness but not present evidence strength.",
+      "finding_ids": [
+        "mib-626-exercise-phase2-completed-no-results",
+        "mib-626-diabetic-kidney-disease-recruiting-no-results",
+        "nadage-nr-frailty-recruiting-no-results",
+        "nr-older-veterans-active-no-results",
+        "nr-alzheimer-bioenergetics-active-no-results",
+        "nr-arterial-stiffness-recruiting-no-results",
+        "nr-exercise-longevity-recruiting-no-results",
+        "nmn-middle-aged-older-adults-recruiting-no-results",
+        "nmn-exercise-tolerance-recruiting-no-results",
+        "mitoq-vascular-aging-active-no-results",
+        "mitoq-frail-older-adults-recruiting-no-results",
+        "mitoq-vascular-oxidative-stress-completed-no-results"
+      ],
+      "source_ids": [
+        "nct-05878119",
+        "nct-05759468",
+        "nct-06208527",
+        "nct-04691986",
+        "nct-04430517",
+        "nct-03821623",
+        "nct-06425042",
+        "nct-06592859",
+        "nct-07144527",
+        "nct-04851288",
+        "nct-06027554",
+        "nct-05561556"
+      ],
+      "limitations": [
+        "No-results registry records are not evidence of benefit.",
+        "Exercise, disease-context, and combination-arm designs will require careful attribution if results appear.",
+        "Status and results should be monitored through ordinary surveillance."
+      ]
+    },
+    {
+      "label": "Recent review and taxonomy boundary",
+      "outlook_field": "main_evidence_gaps",
+      "conclusion": "Recent reviews support a multi-axis NAD, mitochondrial, and redox framework while reinforcing that supplementation studies are heterogeneous and safety or precision-use boundaries remain unresolved.",
+      "support_role": "limits",
+      "rationale": "Review context links NAD homeostasis, mitochondrial quality control, redox stability, glutathione precursors, and vascular aging, but it mostly supports framing, citation completeness, and boundary discipline rather than a new primary efficacy signal.",
+      "finding_ids": [
+        "nad-redox-review-supports-combination-boundary",
+        "targeted-supplementation-review-heterogeneity-boundary",
+        "glutathione-precursor-review-replication-gap",
+        "nad-homeostasis-review-precision-safety-boundary",
+        "vascular-aging-review-mitoq-translational-boundary"
+      ],
+      "source_ids": [
+        "pmid-42068909",
+        "pmid-42234350",
+        "pmid-42186383",
+        "pmid-41812700",
+        "pmid-41933553"
+      ],
+      "limitations": [
+        "Review synthesis does not substitute for larger controlled human outcome trials.",
+        "NAD precursor, GlyNAC, MitoQ, nicotinamide, exercise, and disease-context evidence streams remain non-interchangeable.",
+        "Precision NAD modulation and chronic preventive-use safety remain unresolved."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-35975308",
+    "pmid-33888596",
+    "pmid-29661838",
+    "pmid-29599478",
+    "pmid-35927255",
+    "pmid-31412242",
+    "pmid-31710095",
+    "pmid-35821844",
+    "pmid-35182418",
+    "pmid-36740954",
+    "pmid-40746868",
+    "nct-05878119",
+    "nct-05759468",
+    "nct-06208527",
+    "nct-04691986",
+    "nct-04430517",
+    "nct-03821623",
+    "nct-06425042",
+    "nct-06592859",
+    "nct-07144527",
+    "nct-04851288",
+    "nct-06027554",
+    "nct-05561556",
+    "pmid-42068909",
+    "pmid-42234350",
+    "pmid-42186383",
+    "pmid-41812700",
+    "pmid-41933553"
+  ],
+  "last_updated": "2026-06-08",
+  "tags": [
+    "public",
+    "track",
+    "coverage-repair",
+    "adequate-coverage"
+  ]
+}

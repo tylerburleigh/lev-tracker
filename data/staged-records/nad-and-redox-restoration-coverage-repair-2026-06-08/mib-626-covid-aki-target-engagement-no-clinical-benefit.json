@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "mib-626-covid-aki-target-engagement-no-clinical-benefit",
+  "name": "MIB-626 raised NAD in COVID-19 acute kidney injury without clinical biomarker benefit",
+  "summary": "The disease-context MIB-626 trial supports target engagement and short-term safety but is a boundary condition against assuming NAD increases improve inflammation or disease severity.",
+  "source_id": "pmid-40746868",
+  "hallmark_ids": [
+    "mitochondrial_dysfunction"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "mixed",
+  "evidence_tier": "human_biomarker",
+  "confidence": "low",
+  "statement": "In hospitalized adults with COVID-19 and acute kidney injury, MIB-626 safely raised blood NAD and NAD metabolites, but serum creatinine, cystatin-C, AKI markers, CRP, IL-6, TNF-alpha, and disease-severity indices did not differ significantly from placebo.",
+  "tags": [
+    "human",
+    "randomized",
+    "mib-626",
+    "disease-boundary",
+    "null-clinical"
+  ],
+  "study_id": "mib-626-covid-aki-rct",
+  "intervention_ids": [
+    "mib-626",
+    "nicotinamide-mononucleotide"
+  ],
+  "track_ids": [
+    "nad-and-redox-restoration"
+  ],
+  "population_or_model": "Hospitalized adults with COVID-19 and acute kidney injury",
+  "time_horizon": "14 days",
+  "quantitative_note": "The trial randomized 42 adults in a 3:2 ratio to MIB-626 1 g twice daily or placebo.",
+  "caveats": [
+    "COVID-19 and acute kidney injury are disease-context evidence, not a healthy-aging or older-adult prevention setting.",
+    "The trial does not support AKI, inflammation, or disease-severity benefit.",
+    "The authors attributed the lack of efficacy signal partly to slow NAD rise and suggested future parenteral studies."
+  ]
+}

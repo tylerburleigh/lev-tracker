@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-08T10:44:59.153Z",
+  "updated_at": "2026-06-08T12:12:00.019Z",
   "notes": [
     "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
@@ -441,17 +441,5 @@
       "default_question": "What changed for Mitophagy Enhancers since the last meaningful review or publication, and does any change justify a public update?"
     }
   ],
-  "coverage_repair_queue": [
-    {
-      "rank": 1,
-      "phase_id": "coverage-repair",
-      "track_id": "nad-and-redox-restoration",
-      "hallmark_id": "mitochondrial_dysfunction",
-      "priority_tier": "now",
-      "default_mode": "coverage_repair",
-      "rationale": "Run a bounded coverage-repair pass focused on MIB-626 human NAD augmentation records, active and completed-no-results NR/NMN/MitoQ/GlyNAC registries, recent review triangulation, safety and durability boundaries, and taxonomy separation across NAD precursor, GlyNAC redox, MitoQ vascular, nicotinamide-adjacent, and exercise or disease-context evidence streams before ordinary surveillance resumes.",
-      "default_question": "Which known source-completeness gaps for NAD and Redox Restoration need repair, and does resolving them change the coverage verdict or public boundaries?",
-      "notes": "Latest coverage assessment: nad-and-redox-restoration-coverage-2026-06-08."
-    }
-  ]
+  "coverage_repair_queue": []
 }
