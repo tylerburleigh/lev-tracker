@@ -1,0 +1,419 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-08-cytokine-and-inflammasome-modulation-surveillance",
+  "name": "Cytokine and Inflammasome Modulation field change check for June 8, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-08T10:05:00Z",
+  "completed_at": "2026-06-08T10:23:46Z",
+  "scope": {
+    "question": "What changed for Cytokine and Inflammasome Modulation since the 2026-05-31 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "chronic_inflammation"
+    ],
+    "track_ids": [
+      "cytokine-and-inflammasome-modulation"
+    ],
+    "intervention_ids": [
+      "canakinumab",
+      "colchicine",
+      "ziltivekimab",
+      "clazakizumab",
+      "dapansutrile"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "activity_only",
+  "summary": "Ran a field change check from the 2026-05-31T19:43:59.521Z Cytokine and Inflammasome Modulation baseline publication through June 8, 2026. The local trial audit found seven registry-linked interventional studies, with ZEUS as the only open watch item and six stale or missing registry checks. Direct ClinicalTrials.gov checks found ZEUS NCT05021835 remains active not recruiting with no posted results and an estimated June 9, 2026 completion date. The only post-baseline registry activity signal was POSIBIL6ESKD NCT05485961: the clazakizumab registry is recruiting as a combined phase 2b/3 cardiovascular outcomes study in dialysis, with last update posted June 2, 2026 and no registry results. Broad registry searches also found multiple no-results ziltivekimab phase 3 trials that predate this surveillance window. PubMed exact-name searches found close same-window context, including colchicine cardiovascular review/meta-analysis records, an underpowered null CAD/LVH colchicine RCT, a COHERENT hypertension protocol, canakinumab pharmacovigilance, CANTOS lung-cancer biomarker stratification, and clazakizumab transplant context. These items reinforce existing cardiovascular, biomarker, and safety boundaries but do not add a posted ZEUS result, broad aging-functional outcome, direct NLRP3 outcome result, correction, retraction, or public outlook change. No public outlook, source, study, finding, activity item, bundle, or coverage assessment update is warranted.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "activity_only",
+    "public_update_needed": false,
+    "activity_only": true,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The same-window delta is registry activity and contextual publication activity. It does not change the baseline stage, which already rests on cardiovascular secondary-prevention outcomes, and it does not resolve the key gaps around aging-relevant function, frailty, multimorbidity, durable preventive safety, or IL-6 outcome confirmation."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial audit",
+      "query": "npm run audit:trials -- --track cytokine-and-inflammasome-modulation --write",
+      "checked_at": "2026-06-08T10:23:46Z",
+      "url": "https://clinicaltrials.gov/",
+      "summary": "The audit found seven registry-linked interventional studies, seven with trial_details, one open watchlist record, zero missing detail records, six stale or missing registry checks, and zero open stale watch items."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "Direct checks for NCT01327846, NCT02551094, NCT03926117, NCT05485961, NCT03534297, and NCT05021835",
+      "checked_at": "2026-06-08T10:23:46Z",
+      "url": "https://clinicaltrials.gov/",
+      "summary": "CANTOS, COLCOT, RESCUE, and dapansutrile HFrEF registry statuses remain compatible with the published evidence layer. ZEUS remains active not recruiting with no posted results. POSIBIL6ESKD NCT05485961 is recruiting as a phase 2b/3 clazakizumab cardiovascular outcomes study in dialysis, last update posted 2026-06-02, with no registry results."
+    },
+    {
+      "source_name": "ANZCTR registry and web search",
+      "query": "ACTRN12614000093684 LoDoCo2 trial registry",
+      "checked_at": "2026-06-08T10:23:46Z",
+      "url": "https://anzctr.org.au/Trial/Registration/TrialReview.aspx?ACTRN=12614000093684",
+      "summary": "LoDoCo2 ACTRN12614000093684 remains a completed low-dose colchicine secondary-prevention trial with published results already represented in the public evidence layer."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "ziltivekimab; clazakizumab; dapansutrile OR NLRP3 inflammasome inhibitor; canakinumab colchicine cardiovascular inflammation aging frailty older adults; IL-6 inhibition cardiovascular chronic kidney inflammation phase 3; inflammasome inhibitor aging frailty older adults",
+      "checked_at": "2026-06-08T10:23:46Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "Broad searches found no posted result-bearing aging-relevant registry delta. Close no-results or pre-baseline records included ziltivekimab ZEUS, ARTEMIS, HERMES, acute-MI plaque trials, clazakizumab POSIBIL6ESKD, COHERENT colchicine hypertension, and disease-boundary dapansutrile or clazakizumab records."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "Exact intervention-name searches for ziltivekimab, clazakizumab, dapansutrile/OLT1177, canakinumab, colchicine, and NLRP3 inhibitor terms with aging, frailty, cardiovascular, chronic kidney disease, heart failure, inflammation, or trial terms; publication dates 2026-05-31 to 2026-06-08",
+      "checked_at": "2026-06-08T10:23:46Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Close records included PMID 42250736, PMID 42243199, PMID 42210033, PMID 41760558, PMID 41605493, PMID 41998856, PMID 42242224, PMID 42245384, PMID 42252027, PMID 42228338, PMID 42248502, PMID 42240911, and PMID 42237213. None changes the current public interpretation."
+    },
+    {
+      "source_name": "PubMed correction and retraction screen",
+      "query": "Baseline PMIDs 28845751, 28855077, 37927208, 32865380, 31733140, 34015342, 38796655, 33235030, and 41369941 with retraction, erratum, corrected-and-republished, or expression-of-concern publication types; publication dates 2026-05-31 to 2026-06-08",
+      "checked_at": "2026-06-08T10:23:46Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned zero correction, retraction, erratum, corrected-and-republished, or expression-of-concern records for the nine PubMed baseline supporting sources."
+    },
+    {
+      "source_name": "bioRxiv and medRxiv APIs",
+      "query": "Date window 2026-05-31 to 2026-06-08 filtered for ziltivekimab, clazakizumab, dapansutrile, canakinumab, colchicine, NLRP3, inflammasome, IL-6, IL-1, cytokine, and inflammaging title/abstract terms",
+      "checked_at": "2026-06-08T10:23:46Z",
+      "url": "https://api.biorxiv.org/",
+      "summary": "Found no result-bearing preprint for the scoped intervention family. Title matches were mast-cell IL-33 biology, unrelated thermal proteomics, and CAR-T cytokine-release-risk context."
+    },
+    {
+      "source_name": "Crossref API and web search",
+      "query": "ziltivekimab, clazakizumab, dapansutrile, canakinumab aging safety, and colchicine cardiovascular aging frailty; publication dates 2026-05-31 to 2026-06-08",
+      "checked_at": "2026-06-08T10:23:46Z",
+      "url": "https://api.crossref.org/works",
+      "summary": "Crossref and web checks confirmed the same close leads: clazakizumab transplant comment, a dapansutrile sepsis-induced cardiac-injury preclinical paper, canakinumab safety and disease-boundary records, the colchicine cardiovascular review, COHERENT protocol, POSIBIL6 recruiting information, and the pre-baseline ziltivekimab free-IL-6 method paper."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT01327846",
+      "study_id": "cantos-canakinumab-atherosclerosis-trial",
+      "source_id": "pmid-28845751",
+      "registry_url": "https://clinicaltrials.gov/study/NCT01327846",
+      "checked_at": "2026-06-08T10:23:46Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2017-03-28",
+      "study_completion_date": "2019-04-14",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "CANTOS remains completed with ClinicalTrials.gov results first posted on 2020-01-22 and no current public interpretation change."
+    },
+    {
+      "registry_id": "ACTRN12614000093684",
+      "study_id": "lodoco2-colchicine-chronic-coronary-disease",
+      "source_id": "pmid-32865380",
+      "registry_url": "https://anzctr.org.au/Trial/Registration/TrialReview.aspx?ACTRN=12614000093684",
+      "checked_at": "2026-06-08T10:23:46Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "study_completion_date": "2020-02-17",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "LoDoCo2 remains a completed low-dose colchicine chronic coronary disease trial with public trial results already represented by the NEJM source."
+    },
+    {
+      "registry_id": "NCT02551094",
+      "study_id": "colcot-colchicine-post-mi",
+      "source_id": "pmid-31733140",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02551094",
+      "checked_at": "2026-06-08T10:23:46Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2019-07-17",
+      "study_completion_date": "2019-07-17",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "COLCOT remains completed with ClinicalTrials.gov results first posted on 2020-10-19 and no new registry outcome delta."
+    },
+    {
+      "registry_id": "NCT03926117",
+      "study_id": "rescue-ziltivekimab-ckd-inflammation",
+      "source_id": "pmid-34015342",
+      "registry_url": "https://clinicaltrials.gov/study/NCT03926117",
+      "checked_at": "2026-06-08T10:23:46Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2020-06-26",
+      "study_completion_date": "2020-06-26",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "RESCUE remains completed with registry results posted and no new ziltivekimab outcome delta."
+    },
+    {
+      "registry_id": "NCT05485961",
+      "study_id": "clazakizumab-dialysis-il6-phase2b",
+      "source_id": "pmid-38796655",
+      "registry_url": "https://clinicaltrials.gov/study/NCT05485961",
+      "checked_at": "2026-06-08T10:23:46Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "recruiting",
+      "previous_results_status": "posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2029-05-22",
+      "study_completion_date": "2029-05-22",
+      "completion_date_kind": "estimated",
+      "status_changed": true,
+      "results_changed": false,
+      "completion_date_changed": true,
+      "materiality": "status_change",
+      "public_action": "record_no_op",
+      "summary": "The public paper still supports the completed phase 2b biomarker finding, but the ClinicalTrials.gov record is now recruiting as the combined POSIBIL6ESKD phase 2b/3 cardiovascular outcomes study, with no registry results and last update posted 2026-06-02. This is a watchlist/activity delta, not an evidence-stage change."
+    },
+    {
+      "registry_id": "NCT03534297",
+      "study_id": "dapansutrile-hfref-nlrp3-phase1b",
+      "source_id": "pmid-33235030",
+      "registry_url": "https://clinicaltrials.gov/study/NCT03534297",
+      "checked_at": "2026-06-08T10:23:46Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2019-11-21",
+      "study_completion_date": "2019-11-21",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The dapansutrile HFrEF registry remains completed with no posted ClinicalTrials.gov results; the published phase 1B paper remains the public evidence source."
+    },
+    {
+      "registry_id": "NCT05021835",
+      "study_id": "zeus-ziltivekimab-cardiovascular-outcomes",
+      "source_id": "nct-05021835",
+      "registry_url": "https://clinicaltrials.gov/study/NCT05021835",
+      "checked_at": "2026-06-08T10:23:46Z",
+      "previous_local_status": "active",
+      "current_registry_status": "active",
+      "previous_results_status": "pending",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2026-06-09",
+      "study_completion_date": "2026-06-09",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "ZEUS remains active not recruiting with no posted results. The registry lists estimated primary and study completion on 2026-06-09, so it remains the main near-term IL-6 outcome watch item."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "NCT05485961",
+      "title": "Combined Dose-Finding and CV Outcomes Study With CSL300 (Clazakizumab) in Adult Subjects With ESKD Undergoing Dialysis (POSIBIL6ESKD)",
+      "url": "https://clinicaltrials.gov/study/NCT05485961",
+      "decision": "not_material",
+      "reason": "Same-window registry activity: the record is recruiting as a phase 2b/3 cardiovascular outcomes study, last update posted 2026-06-02, with no registry results. This should remain a watch item until outcome results are posted or published."
+    },
+    {
+      "reference": "Additional ziltivekimab registries",
+      "title": "ARTEMIS, HERMES, acute-MI plaque, and mechanistic ziltivekimab trials",
+      "url": "https://clinicaltrials.gov/search?term=ziltivekimab",
+      "decision": "no_results",
+      "reason": "NCT06118281, NCT05636176, NCT06200207, NCT07276282, NCT07301034, and NCT06263244 are active or recruiting ziltivekimab trials without posted results. Their first-posted and latest-update dates predate this surveillance window, so they are future watch or coverage-assessment context rather than a same-window public update."
+    },
+    {
+      "reference": "PMID 41760558",
+      "title": "Safety and Efficacy of Colchicine across the Spectrum of Coronary Artery Disease: A Systematic Review and Meta-Analysis of 20 Randomized Trials.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41760558/",
+      "decision": "context_only",
+      "reason": "Same-window meta-analysis supports the existing view that colchicine reduces coronary MACE while increasing gastrointestinal adverse events and preserving safety caveats. It does not add an aging-functional endpoint or require a public stage change."
+    },
+    {
+      "reference": "PMID 41605493",
+      "title": "Efficacy of low dose colchicine on left ventricular hypertrophy in patients with coronary artery disease: A randomized controlled trial.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41605493/",
+      "decision": "context_only",
+      "reason": "Small CAD/LVH randomized trial found no significant colchicine benefit on LV mass index and was underpowered after early termination. It reinforces caution around surrogate outcomes but does not change the cardiovascular secondary-prevention baseline."
+    },
+    {
+      "reference": "PMID 42210033",
+      "title": "A Randomized Trial to Investigate the Effects of Low-Dose Colchicine in Patients with Hypertension: Rationale and Design of the COlchicine and HypERtENsion Trial (COHERENT).",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42210033/",
+      "decision": "no_results",
+      "reason": "Protocol and baseline paper for NCT04916522, a 150-person colchicine hypertension trial with vascular, echo, and inflammatory biomarker endpoints. The registry remains active not recruiting with no posted results."
+    },
+    {
+      "reference": "PMID 42243199",
+      "title": "Colchicine use after acute myocardial infarction is associated with reduced dialysis dependence in advanced chronic kidney disease.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42243199/",
+      "decision": "method_limit",
+      "reason": "Retrospective TriNetX propensity-matched association study in advanced CKD after AMI. It reports lower dialysis dependence with colchicine use but no MACE or all-cause mortality difference, and prospective confirmation is explicitly needed."
+    },
+    {
+      "reference": "PMID 42250736",
+      "title": "Colchicine in cardiovascular medicine: Current perspectives on mechanisms and clinical therapeutics.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42250736/",
+      "decision": "context_only",
+      "reason": "Review-level synthesis that supports the current cardiovascular and safety boundary without adding primary aging-relevant outcome evidence."
+    },
+    {
+      "reference": "PMID 41998856",
+      "title": "Age-Dependent Differences in Canakinumab Safety: A Comprehensive Pharmacovigilance Analysis Using the FAERS Database.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41998856/",
+      "decision": "context_only",
+      "reason": "FAERS pharmacovigilance analysis reports infection and older-adult safety signals for canakinumab. It reinforces the existing safety boundary but cannot quantify causal risk or change the public outlook on its own."
+    },
+    {
+      "reference": "PMID 42242224",
+      "title": "Plasma signals of lung tumor promotion for molecular cancer prevention.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42242224/",
+      "decision": "context_only",
+      "reason": "Uses CANTOS and multi-cohort biomarker modeling to stratify possible lung-cancer prevention benefit from IL-1beta inhibition. It refines disease-boundary biology but does not establish broad aging benefit or change the current exploratory lung-cancer caveat."
+    },
+    {
+      "reference": "PMID 42035994",
+      "title": "Clazakizumab in the treatment of chronic active antibody-mediated kidney transplant rejection: Results from the IMAGINE phase 3, randomized, double-blind, placebo-controlled study.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42035994/",
+      "decision": "wrong_scope",
+      "reason": "Pre-baseline kidney-transplant rejection trial, early-terminated for futility and negative on eGFR/allograft outcomes despite CRP lowering. It reinforces biomarker-to-outcome caution for IL-6 blockade but is outside the dialysis/CVD aging-relevance frame."
+    },
+    {
+      "reference": "PMID 42252027",
+      "title": "Comment on clazakizumab in chronic active antibody-mediated kidney transplant rejection.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42252027/",
+      "decision": "duplicate",
+      "reason": "Letter/comment on the IMAGINE transplant trial rather than a new result-bearing record for this track."
+    },
+    {
+      "reference": "PMID 42245384",
+      "title": "CTLA4-Ig + Anti-IL-6/IL-6R Treatment Results in Long-term Allograft Survival and Function in Highly HLA-sensitized Patients.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42245384/",
+      "decision": "wrong_scope",
+      "reason": "Four-patient transplant immunosuppression case series using anti-IL-6/IL-6R combinations. It is not aging, cardiovascular prevention, frailty, or inflammasome-modulation evidence for the scoped public claim."
+    },
+    {
+      "reference": "PMID 42228338",
+      "title": "Decoding neuroinflammation: the critical role of NLRP3 inflammasome in Alzheimer's disease.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42228338/",
+      "decision": "context_only",
+      "reason": "Review-level NLRP3 and Alzheimer disease context. It does not add a primary dapansutrile, MCC950, or NLRP3 inhibitor outcome result."
+    },
+    {
+      "reference": "PMID 42248502",
+      "title": "In situ perfusion with MCC950 modulates the pyroptosis-related axis and DAMP-TLR4 signaling in kidneys from brain-dead donor.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42248502/",
+      "decision": "wrong_scope",
+      "reason": "Preclinical rat donor-kidney preservation study using MCC950 during perfusion and cold storage. It is NLRP3 mechanism context, not a human aging or cardiovascular-inflammation intervention result."
+    },
+    {
+      "reference": "PMID 42240911",
+      "title": "Skin Application of Inflammasome Inhibitor MCC950 Prevents Psoriasis-like Cutaneous Manifestations and Associated Systemic Inflammation.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42240911/",
+      "decision": "wrong_scope",
+      "reason": "Topical MCC950 in an imiquimod psoriasis-like model. It is preclinical inflammatory-disease context and not aging-functional evidence."
+    },
+    {
+      "reference": "PMID 42237213",
+      "title": "Colchicine attenuates kidney injury by modulating the NLRP3 inflammasome pathway.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42237213/",
+      "decision": "wrong_scope",
+      "reason": "Adenine-diet mouse CKD and cell-model study. It is mechanistic support for colchicine and NLRP3 biology, but it is not human outcome evidence."
+    },
+    {
+      "reference": "DOI 10.1016/j.tice.2026.103675",
+      "title": "Dapansutrile Alleviates Sepsis-Induced Cardiac Injury by Modulating NF-kB-induced Inflammatory Response and TXNIP/NLRP3/GSDMD-Mediated Pyroptosis",
+      "url": "https://doi.org/10.1016/j.tice.2026.103675",
+      "decision": "wrong_scope",
+      "reason": "Crossref same-window dapansutrile lead appears to be sepsis-induced cardiac-injury mechanism context, not a human aging, frailty, cardiovascular prevention, or HFrEF outcome update."
+    },
+    {
+      "reference": "bioRxiv/medRxiv same-window title matches",
+      "title": "IL-33 mast-cell biology, thermal proteomics, and CAR-T cytokine-release-risk preprints",
+      "url": "https://api.biorxiv.org/",
+      "decision": "wrong_scope",
+      "reason": "The preprint title/abstract matches involved basic immunology, unrelated target discovery, or oncology CAR-T toxicity context rather than cytokine or inflammasome modulation as a geroscience intervention."
+    }
+  ],
+  "source_ids": [
+    "pmid-28845751",
+    "pmid-28855077",
+    "pmid-37927208",
+    "pmid-32865380",
+    "pmid-31733140",
+    "pmid-34015342",
+    "pmid-38796655",
+    "pmid-33235030",
+    "pmid-41369941",
+    "nct-05021835"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/28845751/",
+    "https://pubmed.ncbi.nlm.nih.gov/28855077/",
+    "https://pubmed.ncbi.nlm.nih.gov/37927208/",
+    "https://pubmed.ncbi.nlm.nih.gov/32865380/",
+    "https://pubmed.ncbi.nlm.nih.gov/31733140/",
+    "https://pubmed.ncbi.nlm.nih.gov/34015342/",
+    "https://pubmed.ncbi.nlm.nih.gov/38796655/",
+    "https://pubmed.ncbi.nlm.nih.gov/33235030/",
+    "https://pubmed.ncbi.nlm.nih.gov/41369941/",
+    "https://clinicaltrials.gov/study/NCT05021835",
+    "https://clinicaltrials.gov/study/NCT05485961",
+    "https://dcri.org/posibil6",
+    "https://anzctr.org.au/Trial/Registration/TrialReview.aspx?ACTRN=12614000093684",
+    "https://pubmed.ncbi.nlm.nih.gov/41760558/",
+    "https://pubmed.ncbi.nlm.nih.gov/41605493/",
+    "https://pubmed.ncbi.nlm.nih.gov/42210033/",
+    "https://pubmed.ncbi.nlm.nih.gov/42243199/",
+    "https://pubmed.ncbi.nlm.nih.gov/42250736/",
+    "https://pubmed.ncbi.nlm.nih.gov/41998856/",
+    "https://pubmed.ncbi.nlm.nih.gov/42242224/",
+    "https://pubmed.ncbi.nlm.nih.gov/42035994/",
+    "https://pubmed.ncbi.nlm.nih.gov/42252027/",
+    "https://pubmed.ncbi.nlm.nih.gov/42245384/",
+    "https://pubmed.ncbi.nlm.nih.gov/42228338/",
+    "https://pubmed.ncbi.nlm.nih.gov/42248502/",
+    "https://pubmed.ncbi.nlm.nih.gov/42240911/",
+    "https://pubmed.ncbi.nlm.nih.gov/42237213/",
+    "https://doi.org/10.1016/j.tice.2026.103675"
+  ],
+  "notes": [
+    "Triage selected this as the rank-1 next distinct surveillance target after Genome Surveillance and Chromosome Stability surveillance.",
+    "The delta window is anchored to publication event publish-cytokine-and-inflammasome-modulation-bootstrap-2026-05-31-2026-05-31t19-43-59-521z.",
+    "No coverage assessment exists yet for this track. This pass found active-trial completeness context for ziltivekimab and clazakizumab, but no result-bearing missing evidence category requiring immediate coverage repair.",
+    "POSIBIL6ESKD should be watched alongside ZEUS, but its 2029 estimated completion makes it less near-term than ZEUS and the 2026 registry update does not change public evidence stage.",
+    "The public boundary remains unchanged: cardiovascular secondary-prevention outcome evidence supports the disease-result stage, but aging relevance remains tentative because frailty evidence is null, IL-6 outcome confirmation is pending, and safety is central for long-term preventive use."
+  ],
+  "next_actions": [
+    "Continue ordinary surveillance for ZEUS NCT05021835 completion or posted results after the estimated 2026-06-09 completion date.",
+    "Watch POSIBIL6ESKD NCT05485961 as a clazakizumab phase 2b/3 dialysis cardiovascular outcomes program, but do not treat recruiting status as outcome evidence.",
+    "Consider a separate coverage assessment if trial-watch completeness becomes a priority, especially for whether ARTEMIS, HERMES, POSIBIL6ESKD, COHERENT, and other no-results cytokine or colchicine registries should be represented before results are posted.",
+    "Create a public bundle only if future evidence changes stage, evidence weight, momentum, blockers, safety, durability, human functional outcomes, disease outcomes, frailty, multimorbidity, or the causal interpretation of biomarker movement."
+  ]
+}

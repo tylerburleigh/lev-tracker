@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-07T22:32:55.970Z",
+  "generated_at": "2026-06-08T10:28:17.889Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-07T22:32:55.871Z",
-    "research_priority_queue_updated_at": "2026-06-07T22:32:55.871Z",
+    "research_coverage_status_updated_at": "2026-06-08T10:28:17.789Z",
+    "research_priority_queue_updated_at": "2026-06-08T10:28:17.790Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 38,
@@ -32,7 +32,7 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "surveillance-cytokine-and-inflammasome-modulation",
+    "top_work_item_id": "surveillance-nad-and-redox-restoration",
     "top_mode": "surveillance",
     "active_editorial_count": 0,
     "ready_research_count": 38,
@@ -45,24 +45,24 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "surveillance-cytokine-and-inflammasome-modulation",
+      "item_id": "surveillance-nad-and-redox-restoration",
       "mode": "surveillance",
       "domain": "research",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Run field change check for Cytokine and Inflammasome Modulation",
-      "rationale": "Next distinct field-change target. Generated field-change queue rank 26; rank 1 was recently handled by a field change check or coverage-repair session.",
+      "title": "Run field change check for NAD and Redox Restoration",
+      "rationale": "Next distinct field-change target. Generated field-change queue rank 27; rank 1 was recently handled by a field change check or coverage-repair session.",
       "default_action": "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
-      "track_id": "cytokine-and-inflammasome-modulation",
-      "hallmark_id": "chronic_inflammation",
+      "track_id": "nad-and-redox-restoration",
+      "hallmark_id": "mitochondrial_dysfunction",
       "references": [
         {
           "record_type": "track",
-          "record_id": "cytokine-and-inflammasome-modulation"
+          "record_id": "nad-and-redox-restoration"
         },
         {
           "record_type": "hallmark",
-          "record_id": "chronic_inflammation"
+          "record_id": "mitochondrial_dysfunction"
         }
       ],
       "runbook_path": "docs/surveillance-checklist.md",
@@ -74,7 +74,7 @@
       "signals": [
         {
           "name": "generated_queue_rank",
-          "value": 26
+          "value": 27
         },
         {
           "name": "last_session_mode",
@@ -88,24 +88,24 @@
     },
     {
       "rank": 2,
-      "item_id": "coverage-assessment-backfill-genome-surveillance-and-chromosome-stability",
+      "item_id": "coverage-assessment-backfill-cytokine-and-inflammasome-modulation",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for Genome Surveillance and Chromosome Stability",
+      "title": "Backfill coverage assessment for Cytokine and Inflammasome Modulation",
       "rationale": "28 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
       "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
-      "track_id": "genome-surveillance-and-chromosome-stability",
-      "hallmark_id": "genomic_instability",
+      "track_id": "cytokine-and-inflammasome-modulation",
+      "hallmark_id": "chronic_inflammation",
       "references": [
         {
           "record_type": "track",
-          "record_id": "genome-surveillance-and-chromosome-stability"
+          "record_id": "cytokine-and-inflammasome-modulation"
         },
         {
           "record_type": "hallmark",
-          "record_id": "genomic_instability"
+          "record_id": "chronic_inflammation"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",
