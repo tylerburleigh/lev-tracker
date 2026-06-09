@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-09T12:30:21.361Z",
+  "generated_at": "2026-06-09T22:09:09.524Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-09T12:30:21.255Z",
-    "research_priority_queue_updated_at": "2026-06-09T12:30:21.255Z",
+    "research_coverage_status_updated_at": "2026-06-09T22:09:09.424Z",
+    "research_priority_queue_updated_at": "2026-06-09T22:09:09.424Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
-    "surveillance_queue_count": 38,
-    "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 26,
+    "surveillance_queue_count": 37,
+    "coverage_repair_queue_count": 1,
+    "coverage_assessment_backlog_count": 25,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
   },
@@ -32,8 +32,8 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "surveillance-stem-cell-rejuvenation",
-    "top_mode": "surveillance",
+    "top_work_item_id": "coverage-repair-stem-cell-rejuvenation",
+    "top_mode": "coverage_repair",
     "active_editorial_count": 0,
     "ready_research_count": 38,
     "data_hardening_count": 0,
@@ -45,14 +45,14 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "surveillance-stem-cell-rejuvenation",
-      "mode": "surveillance",
+      "item_id": "coverage-repair-stem-cell-rejuvenation",
+      "mode": "coverage_repair",
       "domain": "research",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Run field change check for Stem Cell Rejuvenation",
-      "rationale": "Next distinct field-change target. Generated field-change queue rank 29; rank 1 was recently handled by a field change check or coverage-repair session.",
-      "default_action": "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
+      "title": "Repair coverage for Stem Cell Rejuvenation",
+      "rationale": "Run coverage_repair for Stem Cell Rejuvenation before ordinary surveillance resumes. Focus on NCT06877377, older withdrawn or no-results human registries, recent review triangulation, formal seminal-anchor auditing, and taxonomy boundaries for adjacent 15-PGDH/MMP9 tissue-repair sources.",
+      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
       "track_id": "stem-cell-rejuvenation",
       "hallmark_id": "stem_cell_exhaustion",
       "references": [
@@ -63,6 +63,42 @@
         {
           "record_type": "hallmark",
           "record_id": "stem_cell_exhaustion"
+        }
+      ],
+      "runbook_path": "docs/coverage-assessment.md",
+      "source_paths": [
+        "research/backlog/track-priority.v1.json",
+        "research/state/coverage-status.v1.json",
+        "research/coverage-assessments",
+        "docs/coverage-assessment.md"
+      ],
+      "signals": [
+        {
+          "name": "generated_queue_rank",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "item_id": "surveillance-chaperone-and-heat-shock-support",
+      "mode": "surveillance",
+      "domain": "research",
+      "priority_tier": "now",
+      "status": "ready",
+      "title": "Run field change check for Chaperone and Heat-Shock Support",
+      "rationale": "Next distinct field-change target. Generated field-change queue rank 29; rank 1 was recently handled by a field change check or coverage-repair session.",
+      "default_action": "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
+      "track_id": "chaperone-and-heat-shock-support",
+      "hallmark_id": "loss_of_proteostasis",
+      "references": [
+        {
+          "record_type": "track",
+          "record_id": "chaperone-and-heat-shock-support"
+        },
+        {
+          "record_type": "hallmark",
+          "record_id": "loss_of_proteostasis"
         }
       ],
       "runbook_path": "docs/surveillance-checklist.md",
@@ -87,14 +123,14 @@
       ]
     },
     {
-      "rank": 2,
+      "rank": 3,
       "item_id": "coverage-assessment-backfill-cytokine-and-inflammasome-modulation",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
       "title": "Backfill coverage assessment for Cytokine and Inflammasome Modulation",
-      "rationale": "26 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
+      "rationale": "25 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
       "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
       "track_id": "cytokine-and-inflammasome-modulation",
       "hallmark_id": "chronic_inflammation",
@@ -117,7 +153,7 @@
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 26
+          "value": 25
         },
         {
           "name": "generated_surveillance_queue_rank",
