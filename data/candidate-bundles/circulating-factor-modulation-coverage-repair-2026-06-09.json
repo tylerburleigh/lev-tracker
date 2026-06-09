@@ -14,7 +14,7 @@
     "safety-boundary"
   ],
   "intake_mode": "manual",
-  "lifecycle_status": "submitted",
+  "lifecycle_status": "published",
   "submitted_at": "2026-06-09T12:20:00Z",
   "submitted_by": "codex",
   "revision_number": 1,
@@ -424,8 +424,15 @@
   },
   "session_reference": "research/sessions/2026-06-09-circulating-factor-modulation-coverage-repair.json",
   "next_actions": [
-    "Run source-fidelity, interpretation/forecast, safety/limitations, and taxonomy-mapping reviews.",
-    "If reviews pass, publish the staged repair bundle and rerun planning state.",
-    "After publication, return Circulating Factor Modulation to ordinary surveillance."
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "evidence_review_ids": [
+    "evidence-review-circulating-factor-modulation-coverage-repair-2026-06-09-source-fidelity-r1",
+    "evidence-review-circulating-factor-modulation-coverage-repair-2026-06-09-taxonomy-mapping-r1",
+    "evidence-review-circulating-factor-modulation-coverage-repair-2026-06-09-interpretation-forecast-r1",
+    "evidence-review-circulating-factor-modulation-coverage-repair-2026-06-09-safety-limitations-r1"
+  ],
+  "publication_event_ids": [
+    "publish-circulating-factor-modulation-coverage-repair-2026-06-09-2026-06-09t12-30-09-589z"
   ]
 }

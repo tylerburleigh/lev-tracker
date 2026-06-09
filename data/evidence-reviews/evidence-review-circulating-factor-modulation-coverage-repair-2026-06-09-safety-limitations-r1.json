@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-circulating-factor-modulation-coverage-repair-2026-06-09-safety-limitations-r1",
+  "name": "Safety Limitations review for Circulating Factor Modulation bundle",
+  "candidate_bundle_id": "circulating-factor-modulation-coverage-repair-2026-06-09",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "safety_limitations",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged bundle gives safety and durability limits enough prominence for publication. Young-donor plasma is paired with FDA cautions; repeated TPE and plasmapheresis remain bounded by procedural burden, donor-product variability, protein depletion, registry gaps, and lack of chronic preventive-use durability; and the microplastics source is framed as short-term biomarker context with tubing-leaching limitations.",
+  "reviewed_change_ids": [
+    "create-plasmapheresis-without-replacement",
+    "create-young-donor-plasma-exchange",
+    "create-pmid-40592961",
+    "create-nct-05004220",
+    "create-pmid-40928812",
+    "create-doi-10.64898-2026.04.29.26351809",
+    "create-nct-06234436",
+    "create-doi-10.1002-jca.70135",
+    "create-nct-04897113",
+    "create-nct-05054894",
+    "create-nct-06534450",
+    "create-pmid-41721191",
+    "create-pmid-41494381",
+    "create-fda-young-donor-plasma-warning-2019-02-19",
+    "create-plasmapheresis-healthy-adult-aging-biomarkers",
+    "create-real-world-tpe-alzheimers-cohort",
+    "create-young-donor-plasma-exchange-mci-preprint",
+    "create-tpe-microplastics-human-procedure-series",
+    "create-plasmapheresis-aging-biomarker-registry",
+    "create-tpe-age-related-frailty-registry",
+    "update-randomized-tpe-multiomics-healthy-adults",
+    "create-plasmapheresis-no-epigenetic-rejuvenation-possible-acceleration",
+    "create-real-world-tpe-ad-slowed-cognitive-decline",
+    "create-young-donor-plasma-exchange-mci-feasible-preprint",
+    "create-tpe-microplastics-mixed-biomarker-signal",
+    "create-plasmapheresis-aging-biomarker-registry-unknown-no-results",
+    "create-tpe-frailty-registry-unknown-no-results",
+    "create-randomized-tpe-registry-active-no-registry-results",
+    "create-plasma-rejuvenation-review-translation-boundary",
+    "create-tpe-immune-modulation-review-procedure-boundary",
+    "create-young-plasma-fda-warning-safety-boundary",
+    "update-track-circulating-factor-modulation-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "cfm-repair-fda-young-plasma-safety-boundary-present",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-young-plasma-fda-warning-safety-boundary",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "young-plasma-fda-warning-safety-boundary"
+      },
+      "claim_or_issue": "The staged FDA warning finding captures no proven clinical benefit for promoted young-donor plasma uses and lists plasma-product risk classes.",
+      "why_it_matters": "Young-plasma and young-donor plasma exchange records are high risk for public overinterpretation.",
+      "recommended_action": "Retain the FDA warning finding and keep it linked in the outlook safety-boundary support.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "cfm-repair-repeated-procedure-durability-limits-present",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "update-track-circulating-factor-modulation-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-circulating-factor-modulation-outlook"
+      },
+      "claim_or_issue": "The staged outlook and coverage assessment preserve unresolved long-term safety, durability, donor-product variability, protein depletion, replacement-fluid effects, and feasibility limitations.",
+      "why_it_matters": "The staged evidence involves repeated invasive procedures, not a low-burden preventive intervention.",
+      "recommended_action": "Keep the staged safety and durability limitations in main gaps, support-map limitations, and coverage gaps.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "cfm-repair-microplastic-result-safety-context-only",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-tpe-microplastics-mixed-biomarker-signal",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "tpe-microplastics-mixed-biomarker-signal"
+      },
+      "claim_or_issue": "The microplastics TPE finding is framed as a mixed short-term circulating-burden biomarker signal, not as detoxification, tissue clearance, or clinical benefit.",
+      "why_it_matters": "Commercial or toxin-removal framing could otherwise overstate the safety and efficacy implications of the result.",
+      "recommended_action": "Retain the staged caveats about tubing leaching, no aging-function endpoint, and no durability or tissue-clearance evidence.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-09T12:29:45.954Z",
+  "updated_at": "2026-06-09T12:29:45.954Z"
+}

@@ -8,7 +8,7 @@
   "status": "completed",
   "phase": "pilot",
   "population": "Adults older than 50 years",
-  "sample_size": 42,
+  "sample_size": 40,
   "intervention_ids": [
     "therapeutic-plasma-exchange",
     "therapeutic-plasma-exchange-ivig"
@@ -25,21 +25,28 @@
     "safety"
   ],
   "source_ids": [
-    "pmid-40424097"
+    "pmid-40424097",
+    "nct-06534450"
   ],
   "registry_ids": [
     "NCT06534450"
   ],
   "trial_details": {
+    "registry_last_updated": "2024-08-02",
+    "registry_last_checked": "2026-06-09",
+    "primary_completion_date": "2023-11-30",
+    "completion_date_kind": "estimated",
     "results_status": "posted",
-    "horizon_note": "Results are already in the public evidence layer, so this is not an open no-result watch item.",
-    "why_it_matters": "Results matter for Circulating Factor Modulation because they can show whether the intervention changes biomarkers and safety in Adults older than 50 years. That is still narrower than proof of broad aging reversal."
+    "horizon_note": "Publication results are already in the public evidence layer. ClinicalTrials.gov still listed the registry as active not recruiting with no registry-posted results and estimated study completion in August 2025 in the June 9, 2026 API view.",
+    "why_it_matters": "The registry reconciliation keeps the favorable biomarker result tied to its no-registry-results trial-status boundary."
   },
   "tags": [
     "human",
     "randomized",
     "tpe",
     "biological-age",
-    "multiomics"
+    "multiomics",
+    "registry-reconciliation",
+    "coverage-repair"
   ]
 }
