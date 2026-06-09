@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-09T11:47:38.047Z",
+  "generated_at": "2026-06-09T12:20:32.843Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-09T11:47:37.958Z",
-    "research_priority_queue_updated_at": "2026-06-09T11:47:37.959Z",
-    "active_candidate_bundle_count": 0,
+    "research_coverage_status_updated_at": "2026-06-09T12:20:32.737Z",
+    "research_priority_queue_updated_at": "2026-06-09T12:20:32.737Z",
+    "active_candidate_bundle_count": 1,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 37,
-    "coverage_repair_queue_count": 1,
+    "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 26,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
@@ -32,10 +32,10 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-repair-circulating-factor-modulation",
-    "top_mode": "coverage_repair",
-    "active_editorial_count": 0,
-    "ready_research_count": 38,
+    "top_work_item_id": "editorial_review-circulating-factor-modulation-coverage-repair-2026-06-09",
+    "top_mode": "editorial_review",
+    "active_editorial_count": 1,
+    "ready_research_count": 37,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
@@ -45,37 +45,35 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "coverage-repair-circulating-factor-modulation",
-      "mode": "coverage_repair",
-      "domain": "research",
+      "item_id": "editorial_review-circulating-factor-modulation-coverage-repair-2026-06-09",
+      "mode": "editorial_review",
+      "domain": "editorial",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Repair coverage for Circulating Factor Modulation",
-      "rationale": "Run a bounded coverage-repair pass focused on human plasmapheresis and TPE biomarker evidence, young-donor plasma-exchange MCI evidence, unknown-status aging or frailty TPE registries, microplastics/toxin-removal TPE context, procedure safety and durability, recent review triangulation, and taxonomy separation across plasma dilution, young plasma, TPE with albumin or IVIG, plasmapheresis without replacement, phlebotomy, and single-factor candidate streams before ordinary surveillance resumes.",
-      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
-      "track_id": "circulating-factor-modulation",
-      "hallmark_id": "altered_intercellular_communication",
+      "title": "Review active staged update circulating-factor-modulation-coverage-repair-2026-06-09",
+      "rationale": "Staged update circulating-factor-modulation-coverage-repair-2026-06-09 is submitted, so editorial work takes precedence over new research.",
+      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
+      "candidate_bundle_id": "circulating-factor-modulation-coverage-repair-2026-06-09",
+      "runbook_path": "docs/admin-review.md",
+      "command": "npm run research:bundle -- validate --bundle circulating-factor-modulation-coverage-repair-2026-06-09",
+      "source_paths": [
+        "data/candidate-bundles",
+        "docs/admin-review.md"
+      ],
       "references": [
         {
-          "record_type": "track",
-          "record_id": "circulating-factor-modulation"
-        },
-        {
-          "record_type": "hallmark",
-          "record_id": "altered_intercellular_communication"
+          "record_type": "candidate_bundle",
+          "record_id": "circulating-factor-modulation-coverage-repair-2026-06-09"
         }
-      ],
-      "runbook_path": "docs/coverage-assessment.md",
-      "source_paths": [
-        "research/backlog/track-priority.v1.json",
-        "research/state/coverage-status.v1.json",
-        "research/coverage-assessments",
-        "docs/coverage-assessment.md"
       ],
       "signals": [
         {
-          "name": "generated_queue_rank",
-          "value": 1
+          "name": "lifecycle_status",
+          "value": "submitted"
+        },
+        {
+          "name": "proposed_change_count",
+          "value": 32
         }
       ]
     },

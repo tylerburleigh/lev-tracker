@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-09T11:47:37.959Z",
+  "updated_at": "2026-06-09T12:20:32.737Z",
   "notes": [
     "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
@@ -441,17 +441,5 @@
       "default_question": "What changed for Mitophagy Enhancers since the last meaningful review or publication, and does any change justify a public update?"
     }
   ],
-  "coverage_repair_queue": [
-    {
-      "rank": 1,
-      "phase_id": "coverage-repair",
-      "track_id": "circulating-factor-modulation",
-      "hallmark_id": "altered_intercellular_communication",
-      "priority_tier": "now",
-      "default_mode": "coverage_repair",
-      "rationale": "Run a bounded coverage-repair pass focused on human plasmapheresis and TPE biomarker evidence, young-donor plasma-exchange MCI evidence, unknown-status aging or frailty TPE registries, microplastics/toxin-removal TPE context, procedure safety and durability, recent review triangulation, and taxonomy separation across plasma dilution, young plasma, TPE with albumin or IVIG, plasmapheresis without replacement, phlebotomy, and single-factor candidate streams before ordinary surveillance resumes.",
-      "default_question": "Which known source-completeness gaps for Circulating Factor Modulation need repair, and does resolving them change the coverage verdict or public boundaries?",
-      "notes": "Latest coverage assessment: circulating-factor-modulation-coverage-2026-06-09."
-    }
-  ]
+  "coverage_repair_queue": []
 }
