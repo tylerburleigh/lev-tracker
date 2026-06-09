@@ -1,0 +1,258 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "stem-cell-rejuvenation-coverage-repair-2026-06-09",
+  "name": "Stem Cell Rejuvenation Coverage Repair Assessment for June 9, 2026",
+  "short_name": "Stem cell rejuvenation coverage repair",
+  "track_id": "stem-cell-rejuvenation",
+  "hallmark_id": "stem_cell_exhaustion",
+  "assessment_type": "coverage_repair",
+  "assessed_at": "2026-06-09T23:02:41Z",
+  "assessment_window": {
+    "from": "2026-06-09T22:06:43Z",
+    "to": "2026-06-09T23:02:41Z",
+    "basis": "Coverage repair created after the June 9 surveillance assessment requested active registry, review triangulation, formal anchor, and taxonomy-boundary repair before ordinary surveillance resumed."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is now adequate for the current low-confidence human_biomarker_signal public claim, pending review and publication of the staged repair bundle. The repair stages hDNAgr therapy, NCT06877377 no-results registry context, and a recent HSC aging review while explicitly excluding older withdrawn/no-results registries and adjacent 15-PGDH, MMP9, mitochondrial, and bone-marrow stromal sources from the public track. Coverage is not strong because the human intervention layer remains no-results or biomarker-level, safety and durability are unresolved, and formal citation-network auditing remains incomplete.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-05-31-stem-cell-rejuvenation-bootstrap",
+      "2026-06-09-stem-cell-rejuvenation-surveillance",
+      "2026-06-09-stem-cell-rejuvenation-coverage-repair"
+    ],
+    "candidate_bundle_ids": [
+      "stem-cell-rejuvenation-bootstrap-2026-05-31",
+      "stem-cell-rejuvenation-coverage-repair-2026-06-09"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-stem-cell-rejuvenation-source-fidelity-r1",
+      "evidence-review-stem-cell-rejuvenation-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-stem-cell-rejuvenation-bootstrap-2026-05-31-2026-05-31t16-42-37-038z"
+    ],
+    "outlook_ids": [
+      "track-stem-cell-rejuvenation-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "The repair stages NCT06877377 as no-results targeted HSC-aging registry context and keeps the existing exercise satellite-cell biomarker anchor. This is adequate for a low-confidence human_biomarker_signal claim, but not for human functional benefit.",
+      "source_ids": [
+        "pmid-36266373",
+        "nct-06877377"
+      ],
+      "finding_ids": [
+        "exercise-increased-human-pax7-satellite-cells",
+        "hdnagr-hsc-aging-registry-not-yet-recruiting-no-results"
+      ],
+      "gap_note": "The remaining problem is an evidence gap: there are still no posted targeted human HSC-rejuvenation results."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "thin",
+      "rationale": "The direct human HSC Cdc42/CASIN record is ex vivo and supports target biology, while PMID 42183054 was excluded as adjacent bone-marrow stromal context. Observational human HSC aging and clonality coverage remains incomplete but is not required for the current public claim.",
+      "source_ids": [
+        "pmid-33440922"
+      ],
+      "finding_ids": [
+        "human-hsc-cdc42-casin-repolarization"
+      ],
+      "gap_note": "A future stronger coverage pass could map human HSC aging, clonality, and biopsy-based stem-cell aging studies."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes systemic CASIN aged-mouse lifespan support plus animal Cdc42, NAD, and p38 functional support. The repair explicitly excluded adjacent same-window MMP9 and 15-PGDH animal tissue-repair sources from public staging to preserve taxonomy clarity.",
+      "source_ids": [
+        "pmid-32755011",
+        "pmid-22560076",
+        "pmid-27127236",
+        "pmid-24531378"
+      ],
+      "finding_ids": [
+        "systemic-casin-extended-aged-mouse-lifespan",
+        "cdc42-inhibition-rejuvenated-aged-mouse-hsc",
+        "nr-rejuvenated-aged-mouse-stem-cells",
+        "p38-inhibition-restored-aged-musc-regeneration"
+      ],
+      "gap_note": "A stronger verdict would require broader formal animal-source triangulation across tissue classes."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "Cdc42 polarity, NAD-linked mitochondrial function, p38 MAPK signaling, exercise-linked Pax7 satellite-cell movement, systemic CASIN effects, hDNAgr registry endpoints, and the HSC review provide enough mechanistic coverage for the current public claim.",
+      "source_ids": [
+        "pmid-33440922",
+        "pmid-22560076",
+        "pmid-32755011",
+        "pmid-27127236",
+        "pmid-24531378",
+        "pmid-36266373",
+        "nct-06877377",
+        "pmid-42216078"
+      ],
+      "finding_ids": [
+        "human-hsc-cdc42-casin-repolarization",
+        "cdc42-inhibition-rejuvenated-aged-mouse-hsc",
+        "systemic-casin-extended-aged-mouse-lifespan",
+        "nr-rejuvenated-aged-mouse-stem-cells",
+        "p38-inhibition-restored-aged-musc-regeneration",
+        "exercise-increased-human-pax7-satellite-cells",
+        "hdnagr-hsc-aging-registry-not-yet-recruiting-no-results",
+        "hsc-aging-review-rejuvenation-strategy-boundary"
+      ]
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The repair stages no-results hDNAgr registry context and records older withdrawn or no-results registry leads as exclusions, while the outlook preserves no treated-human benefit and safety-boundary language.",
+      "source_ids": [
+        "nct-06877377",
+        "pmid-42216078"
+      ],
+      "finding_ids": [
+        "hdnagr-hsc-aging-registry-not-yet-recruiting-no-results",
+        "hsc-aging-review-rejuvenation-strategy-boundary"
+      ]
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "The staged hDNAgr registry has safety as the primary endpoint and the outlook names proliferative, genomic, telomere, and lineage-skewing risks, but no posted chronic safety or durability data exist.",
+      "source_ids": [
+        "nct-06877377"
+      ],
+      "finding_ids": [
+        "hdnagr-hsc-aging-registry-not-yet-recruiting-no-results"
+      ],
+      "gap_note": "This remains an evidence gap requiring future results, not another immediate coverage-repair pass."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "The high-priority active-registry gap is repaired by staging NCT06877377. Older NCT03473288 and NCT03754842 were rechecked and explicitly excluded or deferred as withdrawn/no-results or NAD-overlap context.",
+      "source_ids": [
+        "nct-06877377"
+      ],
+      "finding_ids": [
+        "hdnagr-hsc-aging-registry-not-yet-recruiting-no-results"
+      ],
+      "gap_note": "Watch NCT06877377 during ordinary surveillance for recruitment, status changes, posted results, or linked publications."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "adequate",
+      "rationale": "The repair stages PMID 42216078 as a direct HSC aging and rejuvenation strategy review, and records adjacent mitochondrial, neural-crest, and bone-marrow stromal records as boundary context.",
+      "source_ids": [
+        "pmid-42216078"
+      ],
+      "finding_ids": [
+        "hsc-aging-review-rejuvenation-strategy-boundary"
+      ],
+      "gap_note": "A deeper citation-network audit could improve strong coverage, but it is not required before ordinary surveillance."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The baseline already includes obvious Cdc42/CASIN, systemic CASIN, NAD, p38, and human exercise/Pax7 anchors; the repair adds a direct HSC review to triangulate those anchors without finding a missing must-stage primary anchor.",
+      "source_ids": [
+        "pmid-33440922",
+        "pmid-22560076",
+        "pmid-32755011",
+        "pmid-27127236",
+        "pmid-24531378",
+        "pmid-36266373",
+        "pmid-42216078"
+      ],
+      "finding_ids": [
+        "human-hsc-cdc42-casin-repolarization",
+        "cdc42-inhibition-rejuvenated-aged-mouse-hsc",
+        "systemic-casin-extended-aged-mouse-lifespan",
+        "nr-rejuvenated-aged-mouse-stem-cells",
+        "p38-inhibition-restored-aged-musc-regeneration",
+        "exercise-increased-human-pax7-satellite-cells",
+        "hsc-aging-review-rejuvenation-strategy-boundary"
+      ],
+      "gap_note": "Citation-network auditing remains optional future work rather than an immediate blocker."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The repair keeps hDNAgr inside Stem Cell Rejuvenation because it explicitly targets HSC aging, while excluding 15-PGDH muscle repair, MMP9 aged-bone repair, mitochondrial stem-cell aging, and bone-marrow stromal mobilization sources from public staging to avoid collapsing adjacent tissue-repair, immune, mitochondrial, and niche-support claims.",
+      "source_ids": [
+        "nct-06877377",
+        "pmid-42216078"
+      ],
+      "finding_ids": [
+        "hdnagr-hsc-aging-registry-not-yet-recruiting-no-results",
+        "hsc-aging-review-rejuvenation-strategy-boundary"
+      ]
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-33440922",
+    "pmid-22560076",
+    "pmid-32755011",
+    "pmid-27127236",
+    "pmid-24531378",
+    "pmid-36266373",
+    "nct-06877377",
+    "pmid-42216078"
+  ],
+  "covered_finding_ids": [
+    "human-hsc-cdc42-casin-repolarization",
+    "cdc42-inhibition-rejuvenated-aged-mouse-hsc",
+    "systemic-casin-extended-aged-mouse-lifespan",
+    "nr-rejuvenated-aged-mouse-stem-cells",
+    "p38-inhibition-restored-aged-musc-regeneration",
+    "exercise-increased-human-pax7-satellite-cells",
+    "hdnagr-hsc-aging-registry-not-yet-recruiting-no-results",
+    "hsc-aging-review-rejuvenation-strategy-boundary"
+  ],
+  "search_log_summary": "The coverage repair directly rechecked NCT06877377, NCT03473288, and NCT03754842 through ClinicalTrials.gov API v2; sampled recent PubMed reviews from 2024 through June 9, 2026; selected PMID 42216078 as direct HSC review context; and excluded adjacent 15-PGDH, MMP9, mitochondrial, neural-crest, and bone-marrow stromal records from the public track.",
+  "source_selection_notes": [
+    "NCT06877377 was staged because it directly targets HSC aging and repaired the high-priority active-registry gap.",
+    "PMID 42216078 was staged because it directly reviews HSC aging mechanisms and rejuvenation strategies.",
+    "NCT03473288 was excluded because it was withdrawn with zero enrollment.",
+    "NCT03754842 was excluded from public staging because it is NR/pterostilbene muscle-regeneration context and belongs closer to NAD overlap unless results appear.",
+    "PMID 42228536 and PMID 42220642 were not staged because their main decision value is taxonomy-boundary context."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "targeted-human-results-not-posted",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "The repaired map includes targeted hDNAgr registry context, but no result-bearing targeted human HSC rejuvenation study is available.",
+      "priority": "high",
+      "suggested_action": "During ordinary surveillance, recheck NCT06877377 for recruitment, posted results, or linked publications before changing the public stage."
+    },
+    {
+      "gap_id": "targeted-human-safety-durability-evidence-missing",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "No staged source establishes safety, durability, proliferation risk, lineage-skewing risk, tumor risk, genomic risk, or telomere-risk boundaries for targeted human stem-cell rejuvenation interventions.",
+      "priority": "high",
+      "suggested_action": "Keep the public read low-confidence until result-bearing targeted human studies report safety and efficacy-relevant endpoints."
+    },
+    {
+      "gap_id": "formal-citation-network-audit-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "seminal_anchors",
+      "description": "The current anchors are plausible and review-triangulated, but no formal citation-network audit has been recorded.",
+      "priority": "low",
+      "suggested_action": "Run a deeper citation-network or must-include audit only if a future public stage change is contemplated."
+    }
+  ],
+  "next_coverage_action": "Resume ordinary surveillance after review and publication of the staged coverage-repair bundle. Watch NCT06877377 for recruitment, status changes, posted results, or linked publications, and keep adjacent 15-PGDH/MMP9 tissue-repair sources out of this track unless taxonomy review says otherwise.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-assessment",
+    "coverage-repair",
+    "stem-cell-rejuvenation",
+    "stem_cell_exhaustion"
+  ]
+}

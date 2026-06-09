@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-09T22:09:09.424Z",
+  "updated_at": "2026-06-09T23:07:26.452Z",
   "notes": [
     "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
@@ -441,17 +441,5 @@
       "default_question": "What changed for Mitophagy Enhancers since the last meaningful review or publication, and does any change justify a public update?"
     }
   ],
-  "coverage_repair_queue": [
-    {
-      "rank": 1,
-      "phase_id": "coverage-repair",
-      "track_id": "stem-cell-rejuvenation",
-      "hallmark_id": "stem_cell_exhaustion",
-      "priority_tier": "now",
-      "default_mode": "coverage_repair",
-      "rationale": "Run coverage_repair for Stem Cell Rejuvenation before ordinary surveillance resumes. Focus on NCT06877377, older withdrawn or no-results human registries, recent review triangulation, formal seminal-anchor auditing, and taxonomy boundaries for adjacent 15-PGDH/MMP9 tissue-repair sources.",
-      "default_question": "Which known source-completeness gaps for Stem Cell Rejuvenation need repair, and does resolving them change the coverage verdict or public boundaries?",
-      "notes": "Latest coverage assessment: stem-cell-rejuvenation-coverage-2026-06-09."
-    }
-  ]
+  "coverage_repair_queue": []
 }
