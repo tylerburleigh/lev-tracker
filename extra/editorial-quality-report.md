@@ -1,6 +1,6 @@
 # Editorial Quality Report
 
-Generated: 2026-06-09T10:45:20.190Z
+Generated: 2026-06-09T11:00:12.225Z
 Overall: passed
 
 ## Summary
@@ -15,6 +15,10 @@ Overall: passed
   Status is current.
 - PASS: Reader-task audit has no issues
   0 issue(s), 0 warning(s).
+- PASS: Public copy warnings <= 269
+  Current public copy warning count is 0.
+- PASS: Reader-task warnings <= 0
+  Current reader-task warning count is 0.
 
 ## Command Output
 
