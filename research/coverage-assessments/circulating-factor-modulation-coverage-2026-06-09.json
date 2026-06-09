@@ -1,0 +1,276 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "circulating-factor-modulation-coverage-2026-06-09",
+  "name": "Circulating Factor Modulation Coverage Assessment for June 9, 2026",
+  "short_name": "Circulating factor modulation coverage",
+  "track_id": "circulating-factor-modulation",
+  "hallmark_id": "altered_intercellular_communication",
+  "assessment_type": "surveillance",
+  "assessed_at": "2026-06-09T11:43:07Z",
+  "assessment_window": {
+    "from": "2026-05-31T17:57:33.932Z",
+    "to": "2026-06-09T11:43:07Z",
+    "basis": "Coverage assessment created during ordinary surveillance after the published May 31 bootstrap baseline."
+  },
+  "coverage_verdict": "thin",
+  "summary": "Coverage is sufficient to explain the current tentative human_functional_benefit baseline, but it is thin and needs repair before ordinary surveillance resumes. The public evidence map captures AMBAR disease-specific functional evidence, PLASMA safety/feasibility context, a randomized healthy-adult TPE multi-omics biomarker trial, a small earlier TPE proteomic study, and key animal parabiosis, cord-plasma, plasma-dilution, and HSC-boundary anchors. The June 9 surveillance pass found no same-window result, correction, retraction, or registry-posted result requiring a public update, but it surfaced missing source-completeness context: a May 2026 TPE microplastics paper, an April 2026 young-donor plasma-exchange MCI preprint and registry, a 2025 repeated-plasmapheresis aging-biomarker trial with limiting epigenetic-clock signals, unknown-status aging or frailty TPE registries, AMBAR-adjacent historical registry context, recent TPE and plasma-rejuvenation reviews, and recent preclinical circulating-factor records.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-05-31-circulating-factor-modulation-bootstrap",
+      "2026-06-09-circulating-factor-modulation-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "circulating-factor-modulation-bootstrap-2026-05-31"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-circulating-factor-modulation-source-fidelity-r1",
+      "evidence-review-circulating-factor-modulation-interpretation-forecast-r1",
+      "evidence-review-circulating-factor-modulation-source-fidelity-r2",
+      "evidence-review-circulating-factor-modulation-interpretation-forecast-r2"
+    ],
+    "publication_event_ids": [
+      "publish-circulating-factor-modulation-bootstrap-2026-05-31-2026-05-31t17-57-33-932z"
+    ],
+    "outlook_ids": [
+      "track-circulating-factor-modulation-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "thin",
+      "rationale": "The baseline includes the main represented public human studies: AMBAR for Alzheimer disease functional endpoints, PLASMA for young-plasma Alzheimer feasibility, a randomized healthy-adult TPE multi-omics biomarker trial, and an earlier repeated-TPE proteomic study. Surveillance found several uncurated human intervention leads that matter for source completeness, including repeated plasmapheresis in healthy adults, real-world Alzheimer TPE, young-donor plasma exchange in MCI, microplastic burden reduction after TPE, and unknown-status aging or frailty TPE registries.",
+      "source_ids": [
+        "pmid-32715623",
+        "pmid-30383097",
+        "pmid-40424097",
+        "pmid-35999337"
+      ],
+      "finding_ids": [
+        "ambar-plasma-exchange-slowed-ad-functional-decline",
+        "young-plasma-ad-safety-feasibility-limited-efficacy",
+        "randomized-tpe-improved-biological-age-markers",
+        "tpe-shifted-human-proteome-and-immune-markers-younger"
+      ],
+      "gap_note": "Review PMID 40592961, PMID 40928812, DOI 10.1002/jca.70135, DOI 10.64898/2026.04.29.26351809, NCT04897113, NCT05054894, NCT06234436, and NCT00742417 during coverage repair."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "thin",
+      "rationale": "The current public layer is focused on interventional and animal anchors rather than observational circulating-factor biology. Recent boundary leads, including GDF11 and circulating immune-cell factor records, may help interpret biomarkers but do not yet support a public intervention claim.",
+      "gap_note": "Use repair to decide whether observational GDF11, circulating CD8-factor, or disease-biomarker records are useful boundary context or should remain excluded."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "The public source map includes core animal and tissue-function anchors for heterochronic parabiosis, human cord plasma/TIMP2, plasma dilution, and the aged-HSC refractory boundary. It does not include animal lifespan evidence and should avoid implying tissue-general or lifespan effects.",
+      "source_ids": [
+        "pmid-15716955",
+        "pmid-28424512",
+        "pmid-32474458",
+        "pmid-34032859"
+      ],
+      "finding_ids": [
+        "young-systemic-environment-rejuvenated-aged-progenitors",
+        "human-cord-plasma-revitalized-aged-mouse-hippocampus",
+        "plasma-dilution-rejuvenated-aged-mouse-tissues",
+        "aged-hsc-refractory-to-bloodborne-rejuvenation"
+      ],
+      "gap_note": "Recent old-mouse plasma-dilution and young-blood neurovascular-coupling records should be checked during repair for whether they strengthen or merely duplicate preclinical mechanism coverage."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "The baseline captures systemic-milieu, plasma-dilution, TIMP2, proteomic, immune-marker, and tissue-specific boundaries well enough to support the current cautious interpretation. Mechanistic claims remain intervention-specific and should not collapse donor plasma, plasma dilution, albumin replacement, IVIG, TPE procedure effects, and single-factor biology.",
+      "source_ids": [
+        "pmid-35999337",
+        "pmid-40424097",
+        "pmid-15716955",
+        "pmid-28424512",
+        "pmid-32474458",
+        "pmid-34032859"
+      ],
+      "finding_ids": [
+        "tpe-shifted-human-proteome-and-immune-markers-younger",
+        "randomized-tpe-improved-biological-age-markers",
+        "young-systemic-environment-rejuvenated-aged-progenitors",
+        "human-cord-plasma-revitalized-aged-mouse-hippocampus",
+        "plasma-dilution-rejuvenated-aged-mouse-tissues",
+        "aged-hsc-refractory-to-bloodborne-rejuvenation"
+      ],
+      "gap_note": "Repair should use recent TPE immune-modulation, plasma-rejuvenation, and circulating-factor reviews to keep mechanism wording current without overgeneralizing."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "thin",
+      "rationale": "The public map includes important limitations from PLASMA and aged-HSC refractory animal evidence, but it does not yet represent the 2025 healthy-adult plasmapheresis biomarker trial reporting no epigenetic rejuvenation and possible acceleration on several clock measures, nor the microplastics paper's low-baseline tubing-leaching concern.",
+      "source_ids": [
+        "pmid-30383097",
+        "pmid-34032859"
+      ],
+      "finding_ids": [
+        "young-plasma-ad-safety-feasibility-limited-efficacy",
+        "aged-hsc-refractory-to-bloodborne-rejuvenation"
+      ],
+      "gap_note": "Review PMID 40592961 and DOI 10.1002/jca.70135 as limiting or safety-boundary evidence before any future positive TPE framing is strengthened."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "The outlook correctly names safety, durability, donor-product variability, and procedural burden as central limits, but the public source map does not yet have a repair-level synthesis of procedure risks, repeated plasma removal, albumin/protein depletion, young-donor plasma warnings, registry status, or commercial TPE claims.",
+      "source_ids": [
+        "pmid-32715623",
+        "pmid-30383097",
+        "pmid-40424097",
+        "pmid-35999337"
+      ],
+      "finding_ids": [
+        "ambar-plasma-exchange-slowed-ad-functional-decline",
+        "young-plasma-ad-safety-feasibility-limited-efficacy",
+        "randomized-tpe-improved-biological-age-markers",
+        "tpe-shifted-human-proteome-and-immune-markers-younger"
+      ],
+      "gap_note": "Review FDA young-plasma warnings, TPE mechanism/safety reviews, donor-product risks, albumin/protein depletion, IVIG contribution, and durability limitations during repair."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "thin",
+      "rationale": "The represented public studies attach registry IDs, but the registry layer is incomplete. Direct checks found NCT06534450 is still active not recruiting with no registry-posted results despite a represented publication. Broad searches found unknown-status aging-biomarker, frailty, and young-donor plasma-exchange registries that need explicit review.",
+      "gap_note": "Repair should reconcile NCT01561053, NCT02256306, and NCT06534450 trial-detail dates and review NCT04897113, NCT05054894, NCT06234436, and NCT00742417 as staged records, watchlist context, or explicit exclusions."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "The bootstrap was built from targeted primary anchors and does not yet record recent review triangulation. Surveillance found relevant 2026 reviews on plasma-based systemic rejuvenation, TPE immune modulation, blood therapy for anti-aging, apheresis for senescence, and broad aging therapeutic strategies.",
+      "gap_note": "Use PMID 41721191, PMID 41494381, PMID 40738475, PMID 40651559, DOI 10.1038/s41392-026-02662-z, and related citation chasing to check for missing primary anchors and safety constraints."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "thin",
+      "rationale": "The public baseline includes several seminal mouse and human anchors, but the track has not had a systematic repair pass across AMBAR lineage, young-donor plasma, plasma dilution, TPE plus albumin or IVIG, neutral blood exchange, single-factor candidates such as TIMP2/GDF11, and commercial TPE biomarker claims.",
+      "source_ids": [
+        "pmid-32715623",
+        "pmid-40424097",
+        "pmid-35999337",
+        "pmid-30383097",
+        "pmid-15716955",
+        "pmid-28424512",
+        "pmid-32474458",
+        "pmid-34032859"
+      ],
+      "finding_ids": [
+        "ambar-plasma-exchange-slowed-ad-functional-decline",
+        "randomized-tpe-improved-biological-age-markers",
+        "tpe-shifted-human-proteome-and-immune-markers-younger",
+        "young-plasma-ad-safety-feasibility-limited-efficacy",
+        "young-systemic-environment-rejuvenated-aged-progenitors",
+        "human-cord-plasma-revitalized-aged-mouse-hippocampus",
+        "plasma-dilution-rejuvenated-aged-mouse-tissues",
+        "aged-hsc-refractory-to-bloodborne-rejuvenation"
+      ],
+      "gap_note": "Repair should decide whether missing leads become public sources, findings, activity records, trial-watch rows, or exclusions."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "thin",
+      "rationale": "The outlook correctly warns that parabiosis, plasma dilution, young plasma, TPE, albumin replacement, IVIG, and candidate proteins should not be collapsed into one efficacy claim. Surveillance found additional boundary pressure from plasmapheresis without replacement, young-donor plasma exchange, microplastic/toxin removal, phlebotomy, GDF11/TIMP2 biology, and commercial TPE framing.",
+      "gap_note": "Coverage repair should keep evidence streams separated by intervention, replacement fluid, donor product, procedure burden, endpoint type, disease context, and whether the claim is removal of circulating burden, biomarker change, tissue function, or human clinical function."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-32715623",
+    "pmid-40424097",
+    "pmid-35999337",
+    "pmid-30383097",
+    "pmid-15716955",
+    "pmid-28424512",
+    "pmid-32474458",
+    "pmid-34032859"
+  ],
+  "covered_finding_ids": [
+    "ambar-plasma-exchange-slowed-ad-functional-decline",
+    "randomized-tpe-improved-biological-age-markers",
+    "tpe-shifted-human-proteome-and-immune-markers-younger",
+    "young-plasma-ad-safety-feasibility-limited-efficacy",
+    "young-systemic-environment-rejuvenated-aged-progenitors",
+    "human-cord-plasma-revitalized-aged-mouse-hippocampus",
+    "plasma-dilution-rejuvenated-aged-mouse-tissues",
+    "aged-hsc-refractory-to-bloodborne-rejuvenation"
+  ],
+  "search_log_summary": "The surveillance pass reviewed the published outlook, bootstrap session, candidate bundle, evidence reviews, publication event, local trial audit, direct ClinicalTrials.gov checks for all represented NCT records, broad ClinicalTrials.gov searches across TPE, plasmapheresis, young plasma, plasma dilution, aging, frailty, Alzheimer disease, GDF11, and TIMP2 terms, PubMed date-window and correction searches, broader source-completeness PubMed searches, medRxiv and bioRxiv date-window screens, Crossref searches, and targeted web, Wiley, sponsor, and news searches for TPE microplastics and commercial TPE activity.",
+  "source_selection_notes": [
+    "No public bundle was staged because the same-window findings did not add a new controlled functional result, durable clinical outcome, registry-posted result, correction, retraction, or public rating change.",
+    "The May 2026 microplastics paper was not staged in surveillance because it is short-term circulating-burden biomarker context and commercially entangled; it should be reviewed in coverage repair before public use.",
+    "The April 2026 young-donor plasma-exchange MCI preprint was not staged because it is preprint-only safety and feasibility context tied to an unknown-status registry; it should be reviewed in repair with FDA young-plasma cautions and PLASMA/AMBAR context.",
+    "NCT04897113, NCT05054894, and NCT06234436 were not staged because no registry results were posted; they are active-trial or no-results coverage leads.",
+    "PMID 40592961 and PMID 40928812 were not staged because they predate the public baseline and need source-fidelity review before any public interpretation changes."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "human-plasmapheresis-biomarker-limiting-evidence-not-curated",
+      "gap_type": "coverage_gap",
+      "category": "human_interventional",
+      "description": "PMID 40592961 reports repeated plasmapheresis in healthy adults with biomarker changes, no epigenetic rejuvenation, and possible clock acceleration, but it is not represented in the public source map or explicit exclusions.",
+      "priority": "high",
+      "suggested_action": "Run source-fidelity and interpretation review during coverage repair before deciding whether to stage source, study, finding, or limiting-evidence support."
+    },
+    {
+      "gap_id": "young-donor-plasma-mci-preprint-not-curated",
+      "gap_type": "coverage_gap",
+      "category": "human_interventional",
+      "description": "The April 2026 medRxiv young-donor plasma-exchange MCI safety and feasibility preprint and NCT06234436 are directly relevant but are not represented as public evidence, watchlist context, or explicit exclusions.",
+      "priority": "high",
+      "suggested_action": "Review DOI 10.64898/2026.04.29.26351809 and NCT06234436 with FDA young-plasma cautions, PLASMA, and AMBAR before deciding whether public records should change."
+    },
+    {
+      "gap_id": "active-aging-and-frailty-tpe-registries-not-curated",
+      "gap_type": "coverage_gap",
+      "category": "active_trials_registries",
+      "description": "Unknown-status or no-results aging and frailty TPE registries, including NCT04897113 and NCT05054894, were found during surveillance but are not represented in the public watchlist or exclusions.",
+      "priority": "high",
+      "suggested_action": "Review NCT04897113 and NCT05054894 during coverage repair and decide whether to stage trial-watch study records, activity context, or explicit exclusions."
+    },
+    {
+      "gap_id": "microplastics-tpe-context-not-curated",
+      "gap_type": "coverage_gap",
+      "category": "human_interventional",
+      "description": "DOI 10.1002/jca.70135 and related Circulate activity add human TPE microplastic-burden context, including a possible low-baseline tubing-leaching limitation, but are not represented or excluded.",
+      "priority": "medium",
+      "suggested_action": "Review the source as toxin-removal and commercial TPE context, not as aging-function evidence, and decide whether it belongs in public source, finding, activity, or exclusion records."
+    },
+    {
+      "gap_id": "procedure-safety-durability-boundary-undercovered",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Repeated TPE, plasmapheresis, young-donor plasma, albumin replacement, IVIG, and plasma-product variability have safety, feasibility, durability, and regulatory limits that are named in the outlook but not deeply curated.",
+      "priority": "high",
+      "suggested_action": "Use repair to check FDA warnings, TPE safety and immune-modulation reviews, albumin and protein depletion, donor-product risks, and registry status before strengthening any preventive-use claim."
+    },
+    {
+      "gap_id": "recent-review-and-seminal-anchor-triangulation-missing",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "Recent plasma-rejuvenation, TPE immune-modulation, blood-therapy, apheresis-for-senescence, and broad aging-strategy reviews have not been used for citation chasing or explicit source-selection notes.",
+      "priority": "medium",
+      "suggested_action": "Use recent reviews and citation chasing during repair to identify missing primary anchors, no-results registries, safety constraints, and taxonomy boundaries."
+    },
+    {
+      "gap_id": "intervention-taxonomy-boundaries-need-repair",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "The track combines or borders multiple distinct intervention streams: heterochronic parabiosis, young plasma, young-donor plasma exchange, plasma dilution, neutral blood exchange, plasmapheresis without replacement, TPE with albumin or IVIG, phlebotomy, microplastic/toxin removal, and candidate factors such as TIMP2 or GDF11.",
+      "priority": "medium",
+      "suggested_action": "During repair, keep source, study, finding, and outlook support separated by intervention stream and endpoint so one positive biomarker result cannot imply broad circulating-factor rejuvenation."
+    }
+  ],
+  "next_coverage_action": "Run a bounded coverage-repair pass focused on human plasmapheresis and TPE biomarker evidence, young-donor plasma-exchange MCI evidence, unknown-status aging or frailty TPE registries, microplastics/toxin-removal TPE context, procedure safety and durability, recent review triangulation, and taxonomy separation across plasma dilution, young plasma, TPE with albumin or IVIG, plasmapheresis without replacement, phlebotomy, and single-factor candidate streams before ordinary surveillance resumes.",
+  "next_recommended_mode": "coverage_repair",
+  "tags": [
+    "coverage-assessment",
+    "surveillance",
+    "altered_intercellular_communication",
+    "circulating-factor-modulation",
+    "coverage-repair-needed"
+  ]
+}

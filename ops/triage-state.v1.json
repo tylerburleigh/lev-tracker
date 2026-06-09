@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-09T11:00:03.884Z",
+  "generated_at": "2026-06-09T11:47:38.047Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-09T10:39:56.529Z",
-    "research_priority_queue_updated_at": "2026-06-09T10:39:56.529Z",
+    "research_coverage_status_updated_at": "2026-06-09T11:47:37.958Z",
+    "research_priority_queue_updated_at": "2026-06-09T11:47:37.959Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
-    "surveillance_queue_count": 38,
-    "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 27,
+    "surveillance_queue_count": 37,
+    "coverage_repair_queue_count": 1,
+    "coverage_assessment_backlog_count": 26,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
   },
@@ -32,8 +32,8 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "surveillance-circulating-factor-modulation",
-    "top_mode": "surveillance",
+    "top_work_item_id": "coverage-repair-circulating-factor-modulation",
+    "top_mode": "coverage_repair",
     "active_editorial_count": 0,
     "ready_research_count": 38,
     "data_hardening_count": 0,
@@ -45,14 +45,14 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "surveillance-circulating-factor-modulation",
-      "mode": "surveillance",
+      "item_id": "coverage-repair-circulating-factor-modulation",
+      "mode": "coverage_repair",
       "domain": "research",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Run field change check for Circulating Factor Modulation",
-      "rationale": "Next distinct field-change target. Generated field-change queue rank 28; rank 1 was recently handled by a field change check or coverage-repair session.",
-      "default_action": "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
+      "title": "Repair coverage for Circulating Factor Modulation",
+      "rationale": "Run a bounded coverage-repair pass focused on human plasmapheresis and TPE biomarker evidence, young-donor plasma-exchange MCI evidence, unknown-status aging or frailty TPE registries, microplastics/toxin-removal TPE context, procedure safety and durability, recent review triangulation, and taxonomy separation across plasma dilution, young plasma, TPE with albumin or IVIG, plasmapheresis without replacement, phlebotomy, and single-factor candidate streams before ordinary surveillance resumes.",
+      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
       "track_id": "circulating-factor-modulation",
       "hallmark_id": "altered_intercellular_communication",
       "references": [
@@ -63,6 +63,42 @@
         {
           "record_type": "hallmark",
           "record_id": "altered_intercellular_communication"
+        }
+      ],
+      "runbook_path": "docs/coverage-assessment.md",
+      "source_paths": [
+        "research/backlog/track-priority.v1.json",
+        "research/state/coverage-status.v1.json",
+        "research/coverage-assessments",
+        "docs/coverage-assessment.md"
+      ],
+      "signals": [
+        {
+          "name": "generated_queue_rank",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "item_id": "surveillance-stem-cell-rejuvenation",
+      "mode": "surveillance",
+      "domain": "research",
+      "priority_tier": "now",
+      "status": "ready",
+      "title": "Run field change check for Stem Cell Rejuvenation",
+      "rationale": "Next distinct field-change target. Generated field-change queue rank 28; rank 1 was recently handled by a field change check or coverage-repair session.",
+      "default_action": "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
+      "track_id": "stem-cell-rejuvenation",
+      "hallmark_id": "stem_cell_exhaustion",
+      "references": [
+        {
+          "record_type": "track",
+          "record_id": "stem-cell-rejuvenation"
+        },
+        {
+          "record_type": "hallmark",
+          "record_id": "stem_cell_exhaustion"
         }
       ],
       "runbook_path": "docs/surveillance-checklist.md",
@@ -87,14 +123,14 @@
       ]
     },
     {
-      "rank": 2,
+      "rank": 3,
       "item_id": "coverage-assessment-backfill-cytokine-and-inflammasome-modulation",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
       "title": "Backfill coverage assessment for Cytokine and Inflammasome Modulation",
-      "rationale": "27 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
+      "rationale": "26 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
       "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
       "track_id": "cytokine-and-inflammasome-modulation",
       "hallmark_id": "chronic_inflammation",
@@ -117,7 +153,7 @@
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 27
+          "value": 26
         },
         {
           "name": "generated_surveillance_queue_rank",

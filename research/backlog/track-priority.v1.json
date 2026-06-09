@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-09T10:39:56.529Z",
+  "updated_at": "2026-06-09T11:47:37.959Z",
   "notes": [
     "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
@@ -343,16 +343,6 @@
     {
       "rank": 28,
       "phase_id": "surveillance-rotation",
-      "track_id": "circulating-factor-modulation",
-      "hallmark_id": "altered_intercellular_communication",
-      "priority_tier": "later",
-      "default_mode": "surveillance",
-      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
-      "default_question": "What changed for Circulating Factor Modulation since the last meaningful review or publication, and does any change justify a public update?"
-    },
-    {
-      "rank": 29,
-      "phase_id": "surveillance-rotation",
       "track_id": "stem-cell-rejuvenation",
       "hallmark_id": "stem_cell_exhaustion",
       "priority_tier": "later",
@@ -361,7 +351,7 @@
       "default_question": "What changed for Stem Cell Rejuvenation since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 30,
+      "rank": 29,
       "phase_id": "surveillance-rotation",
       "track_id": "chaperone-and-heat-shock-support",
       "hallmark_id": "loss_of_proteostasis",
@@ -371,7 +361,7 @@
       "default_question": "What changed for Chaperone and Heat-Shock Support since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 31,
+      "rank": 30,
       "phase_id": "surveillance-rotation",
       "track_id": "telomerase-restoration",
       "hallmark_id": "telomere_attrition",
@@ -381,7 +371,7 @@
       "default_question": "What changed for Telomerase Restoration since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 32,
+      "rank": 31,
       "phase_id": "surveillance-rotation",
       "track_id": "dna-repair-enhancement",
       "hallmark_id": "genomic_instability",
@@ -391,7 +381,7 @@
       "default_question": "What changed for DNA Repair Enhancement since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 33,
+      "rank": 32,
       "phase_id": "surveillance-rotation",
       "track_id": "autophagy-induction",
       "hallmark_id": "disabled_macroautophagy",
@@ -401,7 +391,7 @@
       "default_question": "What changed for Autophagy Induction since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 34,
+      "rank": 33,
       "phase_id": "surveillance-rotation",
       "track_id": "partial-reprogramming",
       "hallmark_id": "epigenetic_alterations",
@@ -411,7 +401,7 @@
       "default_question": "What changed for Partial Reprogramming since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 35,
+      "rank": 34,
       "phase_id": "surveillance-rotation",
       "track_id": "immune-rejuvenation",
       "hallmark_id": "chronic_inflammation",
@@ -421,7 +411,7 @@
       "default_question": "What changed for Immune Rejuvenation since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 36,
+      "rank": 35,
       "phase_id": "surveillance-rotation",
       "track_id": "rapalogs",
       "hallmark_id": "deregulated_nutrient_sensing",
@@ -431,7 +421,7 @@
       "default_question": "What changed for Rapalogs since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 37,
+      "rank": 36,
       "phase_id": "surveillance-rotation",
       "track_id": "senolytics",
       "hallmark_id": "cellular_senescence",
@@ -441,7 +431,7 @@
       "default_question": "What changed for Senolytics since the last meaningful review or publication, and does any change justify a public update?"
     },
     {
-      "rank": 38,
+      "rank": 37,
       "phase_id": "surveillance-rotation",
       "track_id": "mitophagy-enhancers",
       "hallmark_id": "mitochondrial_dysfunction",
@@ -451,5 +441,17 @@
       "default_question": "What changed for Mitophagy Enhancers since the last meaningful review or publication, and does any change justify a public update?"
     }
   ],
-  "coverage_repair_queue": []
+  "coverage_repair_queue": [
+    {
+      "rank": 1,
+      "phase_id": "coverage-repair",
+      "track_id": "circulating-factor-modulation",
+      "hallmark_id": "altered_intercellular_communication",
+      "priority_tier": "now",
+      "default_mode": "coverage_repair",
+      "rationale": "Run a bounded coverage-repair pass focused on human plasmapheresis and TPE biomarker evidence, young-donor plasma-exchange MCI evidence, unknown-status aging or frailty TPE registries, microplastics/toxin-removal TPE context, procedure safety and durability, recent review triangulation, and taxonomy separation across plasma dilution, young plasma, TPE with albumin or IVIG, plasmapheresis without replacement, phlebotomy, and single-factor candidate streams before ordinary surveillance resumes.",
+      "default_question": "Which known source-completeness gaps for Circulating Factor Modulation need repair, and does resolving them change the coverage verdict or public boundaries?",
+      "notes": "Latest coverage assessment: circulating-factor-modulation-coverage-2026-06-09."
+    }
+  ]
 }
