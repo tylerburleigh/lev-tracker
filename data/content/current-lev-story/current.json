@@ -2,9 +2,9 @@
   "slug": "current",
   "title": "Broader activity, same human proof gap",
   "summary": "Longevity research now has early human signals in more places, but the center of gravity is still early testing. LEV does not look close until multiple approaches show long-lasting improvements in human health or function, with safety and lasting effects clear enough to matter.",
-  "date": "2026-06-07",
+  "date": "2026-06-09",
   "current_evidence_picture": "The field is in early human testing. Some tracks now have early biomarker results, functional results, disease results, or trials worth watching. Most are still uncertain, narrow, or only indirectly about aging itself.",
-  "what_changed": "The May field review did not find a result that changed the LEV outlook. The useful read was mostly absence of results: several watched trials still lacked posted outcomes, and the main proof gap remained repeated human evidence that health or function improves for longer.",
+  "what_changed": "The May field review did not find a result that changed the LEV outlook. The June 9 NAD/redox update made one track easier to judge by adding MIB-626 records, no-results registries, and review context, but it did not change the larger proof gap: repeated human evidence that health or function improves for longer.",
   "before_now_next": [
     {
       "label": "Before",
@@ -75,6 +75,20 @@
       ],
       "related_outlook_ids": [
         "track-senomorphics-outlook"
+      ]
+    },
+    {
+      "label": "NAD/redox context widened without changing the read",
+      "date": "2026-06-09",
+      "summary": "The NAD/redox update added MIB-626 human target-engagement and physiology records, NR/NMN/MIB-626/MitoQ no-results trials to watch, and recent review context while keeping the track tentative and mixed.",
+      "impact_on_outlook": "It makes the track easier to judge, but it does not make LEV look closer because the new records do not show repeated, long-lasting human function or clinical benefit.",
+      "subject_type": "track",
+      "subject_id": "nad-and-redox-restoration",
+      "related_publication_event_ids": [
+        "publish-nad-and-redox-restoration-coverage-repair-2026-06-08-2026-06-09t10-39-49-637z"
+      ],
+      "related_outlook_ids": [
+        "track-nad-and-redox-restoration-outlook"
       ]
     }
   ],
@@ -208,9 +222,9 @@
     }
   ],
   "revision": {
-    "last_reviewed": "2026-06-07",
-    "review_reason": "Editorial rollup after the June 7 senomorphics update confirmed the current story remains accurate: mianserin adds animal lifespan and human-cell senescence context, but no overall stage, momentum, read-firmness, or LEV-relevant interpretation changed.",
-    "review_due": "2026-07-07",
+    "last_reviewed": "2026-06-09",
+    "review_reason": "Editorial rollup after the June 9 NAD/redox update confirmed the current story remains accurate: the update adds MIB-626, trial-status, and review context, but no overall stage, momentum, read-firmness, or LEV-relevant interpretation changed.",
+    "review_due": "2026-07-09",
     "triggers": [
       {
         "trigger_type": "new_publication_event",
@@ -235,7 +249,7 @@
       {
         "trigger_type": "review_due",
         "description": "Review on the scheduled due date even if no material public event has occurred.",
-        "threshold": "2026-07-06"
+        "threshold": "2026-07-09"
       },
       {
         "trigger_type": "human_editorial_request",
@@ -243,7 +257,7 @@
       }
     ],
     "observed_state_of_field_slug": "2026-06",
-    "observed_latest_publication_event_id": "publish-senomorphics-surveillance-2026-06-07-2026-06-07t16-41-34-635z",
+    "observed_latest_publication_event_id": "publish-nad-and-redox-restoration-coverage-repair-2026-06-08-2026-06-09t10-39-49-637z",
     "observed_outlook_states": [
       {
         "outlook_id": "overall-lev-outlook",
@@ -330,6 +344,18 @@
         "fingerprint": "3157ae6548db9bf8"
       },
       {
+        "outlook_id": "track-nad-and-redox-restoration-outlook",
+        "subject_type": "track",
+        "subject_id": "nad-and-redox-restoration",
+        "evidence_stage": "human_functional_benefit",
+        "momentum": "mixed",
+        "confidence": "low",
+        "evidence_gap": "Human evidence is heterogeneous: NR, NMN, MIB-626, GlyNAC, MitoQ, nicotinamide-adjacent records, exercise co-interventions, and disease-context NAD uses should not be collapsed into one efficacy claim.",
+        "strongest_evidence": "GlyNAC produced the strongest older-adult functional signal, improving redox, mitochondrial, inflammatory, endothelial, physical-function, strength, and exercise-capacity measures in a small 16-week RCT.",
+        "last_updated": "2026-06-08",
+        "fingerprint": "94c8e7e2017c976d"
+      },
+      {
         "outlook_id": "track-neuroendocrine-and-systemic-signal-reset-outlook",
         "subject_type": "track",
         "subject_id": "neuroendocrine-and-systemic-signal-reset",
@@ -395,7 +421,8 @@
   "related_publication_event_ids": [
     "publish-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-2026-06-06t12-22-33-769z",
     "publish-stem-cell-replacement-and-transplantation-surveillance-2026-06-06-2026-06-07t13-49-41-422z",
-    "publish-senomorphics-surveillance-2026-06-07-2026-06-07t16-41-34-635z"
+    "publish-senomorphics-surveillance-2026-06-07-2026-06-07t16-41-34-635z",
+    "publish-nad-and-redox-restoration-coverage-repair-2026-06-08-2026-06-09t10-39-49-637z"
   ],
   "related_outlook_ids": [
     "overall-lev-outlook",
@@ -405,6 +432,7 @@
     "track-microbiome-metabolite-restoration-outlook",
     "track-partial-reprogramming-outlook",
     "track-immune-clearance-of-senescent-cells-outlook",
-    "track-senomorphics-outlook"
+    "track-senomorphics-outlook",
+    "track-nad-and-redox-restoration-outlook"
   ]
 }

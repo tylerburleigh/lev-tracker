@@ -1,6 +1,6 @@
 # Reader Task Audit
 
-Generated: 2026-06-07T16:55:18.084Z
+Generated: 2026-06-09T10:45:20.100Z
 Passed: 14
 Issues: 0
 Warnings: 0
@@ -14,7 +14,7 @@ Warnings: 0
 - PASS: Public story describes the field, not tracker operations
   No tracker/process framing found in visible story fields.
 - PASS: Reader can see progress over time
-  4 recent development(s); 3 dated.
+  5 recent development(s); 4 dated.
 - PASS: Reader can see what would make the outlook more or less optimistic
   3 outlook-change item(s).
 - PASS: Reader can tell what to watch next
@@ -34,4 +34,4 @@ Warnings: 0
 - PASS: Every hallmark has a readable top-level outlook
   12 hallmark outlook(s) have evidence-gap, strongest-evidence, and interpretation copy.
 - PASS: Current LEV story has a current review state
-  Last reviewed 2026-06-07; due 2026-07-07; 12 observed outlook snapshot(s).
+  Last reviewed 2026-06-09; due 2026-07-09; 13 observed outlook snapshot(s).

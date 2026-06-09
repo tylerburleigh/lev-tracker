@@ -1,6 +1,6 @@
 # Editorial Quality Report
 
-Generated: 2026-06-07T16:55:18.168Z
+Generated: 2026-06-09T10:45:20.190Z
 Overall: passed
 
 ## Summary
@@ -25,9 +25,9 @@ Exit code: 0
 
 ```text
 Current LEV story status: current
-Last reviewed: 2026-06-07
-Review due: 2026-07-07
-Watched outlooks: 12
+Last reviewed: 2026-06-09
+Review due: 2026-07-09
+Watched outlooks: 13
 Changed or missing snapshots: 0
 New outlook-changing public updates: 0
 ```

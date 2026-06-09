@@ -2,9 +2,9 @@
   "slug": "current",
   "title": "Broader activity, same human proof gap",
   "summary": "Longevity research now has early human signals in more places, but the center of gravity is still early testing. LEV does not look close until multiple approaches show long-lasting improvements in human health or function, with safety and lasting effects clear enough to matter.",
-  "date": "2026-06-07",
+  "date": "2026-06-09",
   "current_evidence_picture": "The field is in early human testing. Some tracks now have early biomarker results, functional results, disease results, or trials worth watching. Most are still uncertain, narrow, or only indirectly about aging itself.",
-  "what_changed": "The May field review did not find a result that changed the LEV outlook. The useful read was mostly absence of results: several watched trials still lacked posted outcomes, and the main proof gap remained repeated human evidence that health or function improves for longer.",
+  "what_changed": "The May field review did not find a result that changed the LEV outlook. The June 9 NAD/redox update made one track easier to judge by adding MIB-626 records, no-results registries, and review context, but it did not change the larger proof gap: repeated human evidence that health or function improves for longer.",
   "before_now_next": [
     {
       "label": "Before",
@@ -61,6 +61,34 @@
       ],
       "related_outlook_ids": [
         "track-transposon-and-somatic-mutation-control-outlook"
+      ]
+    },
+    {
+      "label": "A senomorphics update added a preclinical signal",
+      "date": "2026-06-07",
+      "summary": "The senomorphics update added mianserin/Ca2+ as an animal lifespan and human-cell senescence signal, while keeping the track at an early human biomarker stage.",
+      "impact_on_outlook": "It adds a concrete signal to watch, but it does not make the overall LEV outlook more optimistic because treated-human evidence did not change.",
+      "subject_type": "track",
+      "subject_id": "senomorphics",
+      "related_publication_event_ids": [
+        "publish-senomorphics-surveillance-2026-06-07-2026-06-07t16-41-34-635z"
+      ],
+      "related_outlook_ids": [
+        "track-senomorphics-outlook"
+      ]
+    },
+    {
+      "label": "NAD/redox context widened without changing the read",
+      "date": "2026-06-09",
+      "summary": "The NAD/redox update added MIB-626 human evidence that the intervention changed its intended target and physiology records, NR/NMN/MIB-626/MitoQ no-results trials to watch, and recent review context while keeping the track tentative and mixed.",
+      "impact_on_outlook": "It makes the track easier to judge, but it does not make LEV look closer because the new records do not show repeated, long-lasting human function or clinical benefit.",
+      "subject_type": "track",
+      "subject_id": "nad-and-redox-restoration",
+      "related_publication_event_ids": [
+        "publish-nad-and-redox-restoration-coverage-repair-2026-06-08-2026-06-09t10-39-49-637z"
+      ],
+      "related_outlook_ids": [
+        "track-nad-and-redox-restoration-outlook"
       ]
     }
   ],
@@ -194,9 +222,9 @@
     }
   ],
   "revision": {
-    "last_reviewed": "2026-06-07",
+    "last_reviewed": "2026-06-09",
     "review_reason": "Generated draft confirmed the current LEV story against observed public outlook snapshots.",
-    "review_due": "2026-07-07",
+    "review_due": "2026-07-09",
     "triggers": [
       {
         "trigger_type": "new_publication_event",
@@ -221,7 +249,7 @@
       {
         "trigger_type": "review_due",
         "description": "Review on the scheduled due date even if no material public event has occurred.",
-        "threshold": "2026-07-06"
+        "threshold": "2026-07-09"
       },
       {
         "trigger_type": "human_editorial_request",
@@ -229,7 +257,7 @@
       }
     ],
     "observed_state_of_field_slug": "2026-06",
-    "observed_latest_publication_event_id": "publish-stem-cell-replacement-and-transplantation-surveillance-2026-06-06-2026-06-07t13-49-41-422z",
+    "observed_latest_publication_event_id": "publish-nad-and-redox-restoration-coverage-repair-2026-06-08-2026-06-09t10-39-49-637z",
     "observed_outlook_states": [
       {
         "outlook_id": "overall-lev-outlook",
@@ -240,7 +268,7 @@
         "confidence": "moderate",
         "evidence_gap": "The field still lacks repeated human studies showing long-lasting improvements in health or function in ways that clearly add up toward LEV.",
         "strongest_evidence": "The recent picture is broader rather than stronger: early missing-context updates are making the evidence easier to judge without making LEV look closer.",
-        "last_updated": "2026-06-06",
+        "last_updated": "2026-06-07",
         "fingerprint": "5055a4cd22a06a47"
       },
       {
@@ -250,10 +278,10 @@
         "evidence_stage": "human_biomarker_signal",
         "momentum": "mixed",
         "confidence": "low",
-        "evidence_gap": "Metformin is clinically familiar and mechanistically broad, but direct human geroscience evidence is still mostly biomarker, transcriptomic, and short-term pathway engagement rather than durable function or multimorbidity outcomes.",
+        "evidence_gap": "Metformin is clinically familiar and biologically broad, but direct human geroscience evidence is still mostly biomarker, transcriptomic, and short-term evidence that the intervention changed its intended biological target rather than long-lasting function or multimorbidity outcomes.",
         "strongest_evidence": "MILES provides the main direct human biomarker anchor: short-term metformin changed glucose handling and skeletal-muscle and adipose transcriptomic pathways in older adults with impaired glucose tolerance.",
         "last_updated": "2026-06-01",
-        "fingerprint": "2e4a9d2e5abd9a0e"
+        "fingerprint": "d9f2903ca6cabb5c"
       },
       {
         "outlook_id": "track-cytokine-and-inflammasome-modulation-outlook",
@@ -298,10 +326,10 @@
         "evidence_stage": "human_functional_benefit",
         "momentum": "accelerating",
         "confidence": "low",
-        "evidence_gap": "The human functional rating is narrow and rests mainly on urolithin A muscle endurance or strength signals, not replicated durable frailty, mobility, disease, or mortality outcomes.",
+        "evidence_gap": "The human functional rating is narrow and rests mainly on urolithin A muscle endurance or strength signals, not replicated long-lasting frailty, mobility, disease, or mortality outcomes.",
         "strongest_evidence": "Urolithin A has randomized human trials with muscle endurance or strength signals, mitochondrial or inflammatory biomarker movement, and a 2024 systematic review summarizing both the signal and the lack of broader physical-function benefit.",
         "last_updated": "2026-06-02",
-        "fingerprint": "a2a74d30f9ffa3e8"
+        "fingerprint": "1fd172b4b520dffc"
       },
       {
         "outlook_id": "track-mitochondrial-biogenesis-and-dynamics-outlook",
@@ -314,6 +342,18 @@
         "strongest_evidence": "Supervised HIIT and combined training improved older-adult aerobic capacity, while HIIT increased skeletal-muscle mitochondrial respiration, mitochondrial protein synthesis, and mitochondrial protein abundance.",
         "last_updated": "2026-06-02",
         "fingerprint": "3157ae6548db9bf8"
+      },
+      {
+        "outlook_id": "track-nad-and-redox-restoration-outlook",
+        "subject_type": "track",
+        "subject_id": "nad-and-redox-restoration",
+        "evidence_stage": "human_functional_benefit",
+        "momentum": "mixed",
+        "confidence": "low",
+        "evidence_gap": "Human evidence is heterogeneous: NR, NMN, MIB-626, GlyNAC, MitoQ, nicotinamide-adjacent records, exercise co-interventions, and disease-context NAD uses should not be collapsed into one efficacy claim.",
+        "strongest_evidence": "GlyNAC produced the strongest older-adult functional signal, improving redox, mitochondrial, inflammatory, endothelial, physical-function, strength, and exercise-capacity measures in a small 16-week RCT.",
+        "last_updated": "2026-06-08",
+        "fingerprint": "94c8e7e2017c976d"
       },
       {
         "outlook_id": "track-neuroendocrine-and-systemic-signal-reset-outlook",
@@ -335,9 +375,21 @@
         "momentum": "accelerating",
         "confidence": "low",
         "evidence_gap": "Human evidence is still far behind the attention around this approach.",
-        "strongest_evidence": "The mechanism could be unusually broad if it survives translation.",
+        "strongest_evidence": "The mechanism could be unusually broad if it survives human testing.",
         "last_updated": "2026-05-30",
-        "fingerprint": "8d294a4b135e73c4"
+        "fingerprint": "c89bad83d78cbf09"
+      },
+      {
+        "outlook_id": "track-senomorphics-outlook",
+        "subject_type": "track",
+        "subject_id": "senomorphics",
+        "evidence_stage": "human_biomarker_signal",
+        "momentum": "steady",
+        "confidence": "low",
+        "evidence_gap": "Direct human evidence is small, local, or acute-stress focused: topical rapamycin skin p16 and metformin disuse-recovery muscle SASP markers are biomarker signals, not long-lasting aging outcomes.",
+        "strongest_evidence": "Topical rapamycin reduced p16INK4A and increased collagen VII in a small human skin-aging trial.",
+        "last_updated": "2026-06-07",
+        "fingerprint": "016fadf201f665b4"
       },
       {
         "outlook_id": "track-stem-cell-replacement-and-transplantation-outlook",
@@ -346,10 +398,10 @@
         "evidence_stage": "human_functional_benefit",
         "momentum": "accelerating",
         "confidence": "low",
-        "evidence_gap": "The strongest direct aging-relevant signal is laromestrocel in frailty, but allogeneic MSC benefit may reflect paracrine, immunovascular, or tissue-support effects rather than durable stem-cell replacement.",
+        "evidence_gap": "The strongest direct aging-relevant signal is laromestrocel in frailty, but allogeneic MSC benefit may reflect paracrine, immunovascular, or tissue-support effects rather than long-lasting stem-cell replacement.",
         "strongest_evidence": "A 2026 randomized phase 2b frailty trial reported clinically meaningful 6-minute walk improvement after allogeneic MSC therapy, with a possible TIE2 biomarker response.",
         "last_updated": "2026-06-01",
-        "fingerprint": "ff569f735801aa31"
+        "fingerprint": "4d94ea98da6fca48"
       },
       {
         "outlook_id": "track-transposon-and-somatic-mutation-control-outlook",
@@ -358,17 +410,19 @@
         "evidence_stage": "human_biomarker_signal",
         "momentum": "steady",
         "confidence": "low",
-        "evidence_gap": "The direct transposon-control intervention evidence is still mostly animal, preprint, open-label human biomarker, or no-results trial-watch evidence; no controlled human aging-function trial has shown benefit from reverse transcriptase inhibition.",
+        "evidence_gap": "The direct transposon-control intervention evidence is still mostly animal, preprint, open-label human biomarker, or no-results trial records to watch; no controlled human aging-function trial has shown benefit from reverse transcriptase inhibition.",
         "strongest_evidence": "SIRT6 and senescence studies give coherent LINE1 suppression biology, including evidence that SIRT6 repression fails with stress or age and that LINE1 cDNA can drive type I interferon activation.",
         "last_updated": "2026-06-06",
-        "fingerprint": "23d98c1ce094ac1f"
+        "fingerprint": "e5c41213e9899980"
       }
     ]
   },
   "related_state_of_field_slug": "2026-06",
   "related_publication_event_ids": [
     "publish-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-2026-06-06t12-22-33-769z",
-    "publish-stem-cell-replacement-and-transplantation-surveillance-2026-06-06-2026-06-07t13-49-41-422z"
+    "publish-stem-cell-replacement-and-transplantation-surveillance-2026-06-06-2026-06-07t13-49-41-422z",
+    "publish-senomorphics-surveillance-2026-06-07-2026-06-07t16-41-34-635z",
+    "publish-nad-and-redox-restoration-coverage-repair-2026-06-08-2026-06-09t10-39-49-637z"
   ],
   "related_outlook_ids": [
     "overall-lev-outlook",
@@ -377,6 +431,8 @@
     "track-mitochondrial-biogenesis-and-dynamics-outlook",
     "track-microbiome-metabolite-restoration-outlook",
     "track-partial-reprogramming-outlook",
-    "track-immune-clearance-of-senescent-cells-outlook"
+    "track-immune-clearance-of-senescent-cells-outlook",
+    "track-senomorphics-outlook",
+    "track-nad-and-redox-restoration-outlook"
   ]
 }
