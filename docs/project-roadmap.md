@@ -277,7 +277,7 @@ These are the main gaps between the implemented app and `docs/public-site-ia.md`
 
 Bootstrap coverage is complete for all 38 seeded tracks. The first field change check is also complete: `microbiome-composition-modulation-surveillance-2026-06-03` was reviewed, published, and promoted to public records.
 
-The current goal is to continue field-change rotation one track-level check at a time, with `no_op`, `activity_only`, and coverage-assessment-only outcomes treated as successful results when the public evidence state does not materially change. The generated queue can immediately re-list recently published high-priority tracks because it does not enforce a cooldown; unless deliberately doing a rapid follow-up, the next distinct field-change target is `ecosystem-replacement`.
+The current goal is to continue field-change rotation one track-level check at a time, with `no_op`, `activity_only`, and coverage-assessment-only outcomes treated as successful results when the public evidence state does not materially change. The generated queue now suppresses tracks with a successful surveillance or coverage-repair pass inside the cooldown window, while keeping them visible in the recent queue for deliberate rapid follow-up.
 
 Most recent published field-change updates:
 
@@ -447,7 +447,7 @@ Top coverage-repair queue items:
 
 Top triage item:
 
-- `ops/triage-state.v1.json` currently selects the next distinct field-change target rather than looping on the just-reviewed microbiome-composition track.
+- `ops/triage-state.v1.json` now selects the highest-priority due field-change target from `surveillance_queue`; recently handled tracks are retained in `surveillance_recent_queue` until their cooldown expires.
 
 Research runs should continue to follow `docs/research-ops-state.md`: one track per run, one session record, zero or one staged update, staged JSON only for material changes, and structured materiality/excluded-source notes for field change checks or coverage repair.
 

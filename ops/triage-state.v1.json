@@ -1,13 +1,14 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-10T10:20:38.294Z",
+  "generated_at": "2026-06-10T11:49:17.798Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-10T10:20:38.202Z",
-    "research_priority_queue_updated_at": "2026-06-10T10:20:38.202Z",
+    "research_coverage_status_updated_at": "2026-06-10T11:49:17.687Z",
+    "research_priority_queue_updated_at": "2026-06-10T11:49:17.687Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
-    "surveillance_queue_count": 38,
+    "surveillance_queue_count": 5,
+    "surveillance_recent_queue_count": 33,
     "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 25,
     "unnormalized_intervention_id_count": 0,
@@ -35,11 +36,11 @@
     "top_work_item_id": "editorial-rollup-public-summary-surfaces",
     "top_mode": "editorial_rollup",
     "active_editorial_count": 0,
-    "ready_research_count": 38,
+    "ready_research_count": 5,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
-      "The top surveillance item intentionally prefers the next distinct target when the generated queue starts with a recently handled track."
+      "33 surveillance track(s) are hidden from ordinary rotation until their cooldown expires."
     ]
   },
   "work_items": [
@@ -117,24 +118,24 @@
     },
     {
       "rank": 2,
-      "item_id": "surveillance-chaperone-and-heat-shock-support",
+      "item_id": "surveillance-mitophagy-enhancers",
       "mode": "surveillance",
       "domain": "research",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Run field change check for Chaperone and Heat-Shock Support",
-      "rationale": "Next distinct field-change target. Generated field-change queue rank 30; rank 1 was recently handled by a field change check or coverage-repair session.",
+      "title": "Run field change check for Mitophagy Enhancers",
+      "rationale": "The track is thin and likely to move through contextual updates before stronger human evidence.",
       "default_action": "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
-      "track_id": "chaperone-and-heat-shock-support",
-      "hallmark_id": "loss_of_proteostasis",
+      "track_id": "mitophagy-enhancers",
+      "hallmark_id": "mitochondrial_dysfunction",
       "references": [
         {
           "record_type": "track",
-          "record_id": "chaperone-and-heat-shock-support"
+          "record_id": "mitophagy-enhancers"
         },
         {
           "record_type": "hallmark",
-          "record_id": "loss_of_proteostasis"
+          "record_id": "mitochondrial_dysfunction"
         }
       ],
       "runbook_path": "docs/surveillance-checklist.md",
@@ -146,11 +147,23 @@
       "signals": [
         {
           "name": "generated_queue_rank",
-          "value": 30
+          "value": 1
         },
         {
-          "name": "last_session_mode",
-          "value": "bootstrap"
+          "name": "surveillance_freshness_status",
+          "value": "never_checked"
+        },
+        {
+          "name": "last_surveillance_mode",
+          "value": "none"
+        },
+        {
+          "name": "last_surveillance_at",
+          "value": "never"
+        },
+        {
+          "name": "surveillance_due_at",
+          "value": "now"
         },
         {
           "name": "has_coverage_assessment",
@@ -160,24 +173,24 @@
     },
     {
       "rank": 3,
-      "item_id": "coverage-assessment-backfill-cytokine-and-inflammasome-modulation",
+      "item_id": "coverage-assessment-backfill-mitophagy-enhancers",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for Cytokine and Inflammasome Modulation",
+      "title": "Backfill coverage assessment for Mitophagy Enhancers",
       "rationale": "25 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
       "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
-      "track_id": "cytokine-and-inflammasome-modulation",
-      "hallmark_id": "chronic_inflammation",
+      "track_id": "mitophagy-enhancers",
+      "hallmark_id": "mitochondrial_dysfunction",
       "references": [
         {
           "record_type": "track",
-          "record_id": "cytokine-and-inflammasome-modulation"
+          "record_id": "mitophagy-enhancers"
         },
         {
           "record_type": "hallmark",
-          "record_id": "chronic_inflammation"
+          "record_id": "mitochondrial_dysfunction"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",
@@ -193,7 +206,7 @@
         },
         {
           "name": "generated_surveillance_queue_rank",
-          "value": 4
+          "value": 1
         },
         {
           "name": "track_next_mode",

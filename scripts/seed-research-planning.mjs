@@ -4,6 +4,8 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
+const surveillanceCooldownDays = 14;
+const millisecondsPerDay = 24 * 60 * 60 * 1000;
 
 async function readJson(relativePath) {
   const filePath = path.join(repoRoot, relativePath);
@@ -90,6 +92,45 @@ function isMoreRecent(left, right) {
   return normalizeDateTimeValue(left).localeCompare(normalizeDateTimeValue(right)) > 0;
 }
 
+function timestampValue(value) {
+  const parsed = Date.parse(normalizeDateTimeValue(value ?? ""));
+  return Number.isNaN(parsed) ? undefined : parsed;
+}
+
+function addDaysIso(value, days) {
+  const timestamp = timestampValue(value);
+  if (timestamp === undefined) {
+    return undefined;
+  }
+
+  return new Date(timestamp + days * millisecondsPerDay).toISOString();
+}
+
+function ageInDays(value, now) {
+  const timestamp = timestampValue(value);
+  if (timestamp === undefined) {
+    return undefined;
+  }
+
+  return Math.max(0, Math.floor((now.getTime() - timestamp) / millisecondsPerDay));
+}
+
+function buildSurveillanceFreshness(latestSurveillanceSession, now) {
+  if (!latestSurveillanceSession?.completed_at) {
+    return {
+      status: "never_checked"
+    };
+  }
+
+  const dueAt = addDaysIso(latestSurveillanceSession.completed_at, surveillanceCooldownDays);
+  const dueTimestamp = timestampValue(dueAt);
+  return {
+    status: dueTimestamp !== undefined && dueTimestamp <= now.getTime() ? "due" : "recent",
+    dueAt,
+    ageDays: ageInDays(latestSurveillanceSession.completed_at, now)
+  };
+}
+
 function chooseNextMode(latestSession, latestCoverageAssessment, hasPublishedBaseline) {
   const fallbackMode = hasPublishedBaseline ? "surveillance" : "bootstrap";
   const sessionMode = latestSession?.next_recommended_mode;
@@ -105,6 +146,7 @@ function chooseNextMode(latestSession, latestCoverageAssessment, hasPublishedBas
 }
 
 async function main() {
+  const now = new Date();
   const hallmarksTaxonomy = await readJson("taxonomies/hallmarks-of-aging.v1.json");
   const trackTaxonomy = await readJson("taxonomies/track-taxonomy.v1.json");
   const [outlooks, bundles, publicationEvents, sessions, coverageAssessments] = await Promise.all([
@@ -139,6 +181,17 @@ async function main() {
     }
   }
 
+  const latestSurveillanceSessionByTrackId = new Map();
+  for (const session of sessions
+    .filter((session) => ["surveillance", "coverage_repair"].includes(session.mode) && session.outcome !== "blocked")
+    .sort((left, right) => compareDateTimesDescending(left.completed_at, right.completed_at))) {
+    for (const trackId of session.scope?.track_ids ?? []) {
+      if (!latestSurveillanceSessionByTrackId.has(trackId)) {
+        latestSurveillanceSessionByTrackId.set(trackId, session);
+      }
+    }
+  }
+
   const latestCoverageAssessmentByTrackId = new Map();
   for (const assessment of coverageAssessments.sort((left, right) =>
     compareDateTimesDescending(left.assessed_at, right.assessed_at)
@@ -167,6 +220,7 @@ async function main() {
     group.tracks.map((track) => {
       const latestBundle = latestBundleByTrackId.get(track.id);
       const latestSession = latestSessionByTrackId.get(track.id);
+      const latestSurveillanceSession = latestSurveillanceSessionByTrackId.get(track.id);
       const latestCoverageAssessment = latestCoverageAssessmentByTrackId.get(track.id);
       const latestPublication = latestPublicationByTrackId.get(track.id);
       const hasTrackOutlook = trackOutlookByTrackId.has(track.id);
@@ -178,6 +232,7 @@ async function main() {
       const nextMode = chooseNextMode(latestSession, latestCoverageAssessment, hasPublishedBaseline);
       const queueState =
         activeReview ? "active_review" : latestSession?.outcome === "blocked" ? "deferred" : "ready";
+      const surveillanceFreshness = buildSurveillanceFreshness(latestSurveillanceSession, now);
 
       let notes;
       if (activeReview) {
@@ -209,6 +264,13 @@ async function main() {
         last_session_at: latestSession?.completed_at,
         last_session_mode: latestSession?.mode,
         last_session_outcome: latestSession?.outcome,
+        last_surveillance_session_id: latestSurveillanceSession?.id,
+        last_surveillance_at: latestSurveillanceSession?.completed_at,
+        last_surveillance_mode: latestSurveillanceSession?.mode,
+        last_surveillance_outcome: latestSurveillanceSession?.outcome,
+        surveillance_freshness_status: hasPublishedBaseline ? surveillanceFreshness.status : undefined,
+        surveillance_due_at: surveillanceFreshness.dueAt,
+        surveillance_age_days: surveillanceFreshness.ageDays,
         last_candidate_bundle_id: latestBundle?.id,
         last_candidate_bundle_status: latestBundle?.lifecycle_status,
         last_publication_event_id: latestPublication?.id,
@@ -313,15 +375,15 @@ async function main() {
   const surveillanceCandidates = [...trackRows]
     .filter((row) => row.next_mode === "surveillance" && row.queue_state === "ready")
     .sort((left, right) => {
-      if (Boolean(left.last_session_at || left.last_published_at) !== Boolean(right.last_session_at || right.last_published_at)) {
-        return left.last_session_at || left.last_published_at ? 1 : -1;
-      }
-
-      const leftRecency = left.last_session_at ?? left.last_published_at;
-      const rightRecency = right.last_session_at ?? right.last_published_at;
-
-      if (leftRecency && rightRecency && leftRecency !== rightRecency) {
-        return compareDateTimesDescending(leftRecency, rightRecency);
+      const freshnessRank = {
+        never_checked: 0,
+        due: 1,
+        recent: 2
+      };
+      const leftFreshnessRank = freshnessRank[left.surveillance_freshness_status] ?? 3;
+      const rightFreshnessRank = freshnessRank[right.surveillance_freshness_status] ?? 3;
+      if (leftFreshnessRank !== rightFreshnessRank) {
+        return leftFreshnessRank - rightFreshnessRank;
       }
 
       const leftIndex = surveillancePriority.indexOf(left.track_id);
@@ -337,21 +399,49 @@ async function main() {
         return leftIndex - rightIndex;
       }
 
+      if (left.surveillance_due_at && right.surveillance_due_at && left.surveillance_due_at !== right.surveillance_due_at) {
+        return left.surveillance_due_at.localeCompare(right.surveillance_due_at);
+      }
+
       const leftHallmarkOrder = hallmarkMetaById.get(left.hallmark_id).canonical_order;
       const rightHallmarkOrder = hallmarkMetaById.get(right.hallmark_id).canonical_order;
       return leftHallmarkOrder - rightHallmarkOrder || left.canonical_order - right.canonical_order;
     })
-    .map((row, index) => ({
+    .map((row) => ({
+      row,
+      entry: {
+        phase_id: "surveillance-rotation",
+        track_id: row.track_id,
+        hallmark_id: row.hallmark_id,
+        default_mode: "surveillance",
+        freshness_status: row.surveillance_freshness_status,
+        last_reviewed_at: row.last_surveillance_at,
+        next_due_at: row.surveillance_due_at,
+        cooldown_days: surveillanceCooldownDays,
+        rationale:
+          surveillanceRationale[row.track_id] ??
+          "Established public baseline exists, so this track should be monitored for meaningful deltas.",
+        default_question: row.default_research_question
+      }
+    }));
+
+  const dueSurveillanceCandidates = surveillanceCandidates
+    .filter(({ row }) => row.surveillance_freshness_status !== "recent")
+    .map(({ entry }, index) => ({
       rank: index + 1,
-      phase_id: "surveillance-rotation",
-      track_id: row.track_id,
-      hallmark_id: row.hallmark_id,
-      priority_tier: index < 3 ? "now" : index < 5 ? "soon" : "later",
-      default_mode: "surveillance",
-      rationale:
-        surveillanceRationale[row.track_id] ??
-        "Established public baseline exists, so this track should be monitored for meaningful deltas.",
-      default_question: row.default_research_question
+      ...entry,
+      priority_tier: index < 3 ? "now" : index < 5 ? "soon" : "later"
+    }));
+
+  const recentSurveillanceCandidates = surveillanceCandidates
+    .filter(({ row }) => row.surveillance_freshness_status === "recent")
+    .map(({ entry }, index) => ({
+      rank: index + 1,
+      ...entry,
+      priority_tier: "later",
+      notes: entry.next_due_at
+        ? `Recently handled; ordinary rotation is due after ${entry.next_due_at.slice(0, 10)}.`
+        : "Recently handled; ordinary rotation is not due yet."
     }));
 
   const coverageRepairCandidates = [...trackRows]
@@ -399,7 +489,7 @@ async function main() {
     }));
 
   const nextPriorityTrackIdByHallmark = new Map();
-  for (const entry of [...bootstrapCandidates, ...coverageRepairCandidates, ...surveillanceCandidates]) {
+  for (const entry of [...bootstrapCandidates, ...coverageRepairCandidates, ...dueSurveillanceCandidates]) {
     if (!nextPriorityTrackIdByHallmark.has(entry.hallmark_id)) {
       nextPriorityTrackIdByHallmark.set(entry.hallmark_id, entry.track_id);
     }
@@ -438,6 +528,7 @@ async function main() {
       max_tracks_per_bootstrap_run: 1,
       max_tracks_per_surveillance_run: 1,
       max_tracks_per_coverage_repair_run: 1,
+      surveillance_cooldown_days: surveillanceCooldownDays,
       when_request_is_vague: "Choose the highest-priority ready track from the matching queue and state the assumption.",
       when_request_is_too_broad: "Push back and decompose the request to one track-level pass.",
       when_only_hallmark_is_named: "Choose the highest-priority track within that hallmark, or ask the user to pick one if there is no clear anchor."
@@ -450,6 +541,13 @@ async function main() {
         "last_session_at",
         "last_session_mode",
         "last_session_outcome",
+        "last_surveillance_session_id",
+        "last_surveillance_at",
+        "last_surveillance_mode",
+        "last_surveillance_outcome",
+        "surveillance_freshness_status",
+        "surveillance_due_at",
+        "surveillance_age_days",
         "last_candidate_bundle_id",
         "last_candidate_bundle_status",
         "last_publication_event_id",
@@ -478,6 +576,7 @@ async function main() {
     notes: [
       "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
       "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
+      "Ordinary field-change rotation suppresses tracks with a successful surveillance or coverage-repair pass inside the cooldown window.",
       "Coverage-repair priority applies when the latest coverage assessment recommends repairing source-completeness gaps before an ordinary field change check.",
       "The queue is a curator planning tool, not a public outlook."
     ],
@@ -485,7 +584,8 @@ async function main() {
       default_unit: "track",
       when_request_is_vague: "Choose the highest-priority ready track from the queue matching the requested mode.",
       when_request_is_too_broad: "Refuse field-wide scope and decompose to one track.",
-      when_only_hallmark_is_named: "Choose the highest-ranked track in that hallmark from the requested mode queue."
+      when_only_hallmark_is_named: "Choose the highest-ranked track in that hallmark from the requested mode queue.",
+      surveillance_cooldown_days: surveillanceCooldownDays
     },
     bootstrap_defaults: {
       stop_after: [
@@ -541,7 +641,8 @@ async function main() {
       }
     ],
     bootstrap_queue: bootstrapCandidates,
-    surveillance_queue: surveillanceCandidates,
+    surveillance_queue: dueSurveillanceCandidates,
+    surveillance_recent_queue: recentSurveillanceCandidates,
     coverage_repair_queue: coverageRepairCandidates.map((entry) => {
       const output = { ...entry };
       if (output.notes === undefined || output.notes === null) {

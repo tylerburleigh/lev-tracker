@@ -55,7 +55,7 @@ The dispatcher ranks modes in this order:
 9. `docs_sync`
 10. `app_surface_check`
 
-The generated research queue can rank a recently surveilled track first. Triage may skip that track to choose the next distinct surveillance target so "go" does not loop on the same area unless the user explicitly asks for a rapid follow-up.
+The generated surveillance queue contains tracks due for ordinary rotation. Tracks with a successful surveillance or coverage-repair pass inside the current cooldown window stay visible in `surveillance_recent_queue`, but they are not selected by default unless the user explicitly asks for a rapid follow-up.
 
 ## Work Item Fields
 

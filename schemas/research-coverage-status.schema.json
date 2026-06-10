@@ -56,6 +56,10 @@
         "max_tracks_per_coverage_repair_run": {
           "const": 1
         },
+        "surveillance_cooldown_days": {
+          "type": "integer",
+          "minimum": 1
+        },
         "when_request_is_vague": {
           "type": "string"
         },
@@ -181,6 +185,43 @@
               "handoff_to_editorial",
               "blocked"
             ]
+          },
+          "last_surveillance_session_id": {
+            "$ref": "./common.schema.json#/$defs/identifier"
+          },
+          "last_surveillance_at": {
+            "$ref": "./common.schema.json#/$defs/dateTime"
+          },
+          "last_surveillance_mode": {
+            "enum": [
+              "surveillance",
+              "coverage_repair"
+            ]
+          },
+          "last_surveillance_outcome": {
+            "enum": [
+              "no_op",
+              "activity_only",
+              "coverage_assessment_updated",
+              "candidate_bundle_submitted",
+              "candidate_bundle_revised",
+              "handoff_to_editorial",
+              "blocked"
+            ]
+          },
+          "surveillance_freshness_status": {
+            "enum": [
+              "never_checked",
+              "due",
+              "recent"
+            ]
+          },
+          "surveillance_due_at": {
+            "$ref": "./common.schema.json#/$defs/dateTime"
+          },
+          "surveillance_age_days": {
+            "type": "integer",
+            "minimum": 0
           },
           "last_candidate_bundle_id": {
             "$ref": "./common.schema.json#/$defs/candidateBundleRef"

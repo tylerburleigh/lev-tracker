@@ -123,17 +123,6 @@ function buildStatusByTrack(coverageStatus) {
   return new Map(coverageStatus.tracks.map((track) => [track.track_id, track]));
 }
 
-function hasRecentTrackHandling(row) {
-  return ["surveillance", "coverage_repair"].includes(row?.last_session_mode) && row?.last_session_outcome !== "blocked";
-}
-
-function selectNextDistinctSurveillanceEntry(surveillanceQueue, statusByTrack) {
-  return (
-    surveillanceQueue.find((entry) => !hasRecentTrackHandling(statusByTrack.get(entry.track_id))) ??
-    surveillanceQueue[0]
-  );
-}
-
 function describeTrack(entry, statusByTrack) {
   const row = statusByTrack.get(entry.track_id);
   return row?.name ?? entry.track_id;
@@ -448,14 +437,11 @@ function buildCoverageRepairItems(coverageRepairQueue, statusByTrack) {
 }
 
 function buildSurveillanceItem(surveillanceQueue, statusByTrack) {
-  const entry = selectNextDistinctSurveillanceEntry(surveillanceQueue, statusByTrack);
+  const entry = surveillanceQueue[0];
   if (!entry) {
     return undefined;
   }
 
-  const topGeneratedEntry = surveillanceQueue[0];
-  const skippedRecentlySurveilled =
-    topGeneratedEntry?.track_id !== entry.track_id && hasRecentTrackHandling(statusByTrack.get(topGeneratedEntry?.track_id));
   const row = statusByTrack.get(entry.track_id);
 
   return compactObject({
@@ -465,9 +451,7 @@ function buildSurveillanceItem(surveillanceQueue, statusByTrack) {
     priority_tier: "now",
     status: "ready",
     title: `Run field change check for ${describeTrack(entry, statusByTrack)}`,
-    rationale: skippedRecentlySurveilled
-      ? `Next distinct field-change target. Generated field-change queue rank ${entry.rank}; rank 1 was recently handled by a field change check or coverage-repair session.`
-      : entry.rationale,
+    rationale: entry.rationale,
     default_action: "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
     ...buildQueueReference(entry),
     runbook_path: "docs/surveillance-checklist.md",
@@ -482,8 +466,20 @@ function buildSurveillanceItem(surveillanceQueue, statusByTrack) {
         value: entry.rank
       },
       {
-        name: "last_session_mode",
-        value: row?.last_session_mode ?? "none"
+        name: "surveillance_freshness_status",
+        value: row?.surveillance_freshness_status ?? "unknown"
+      },
+      {
+        name: "last_surveillance_mode",
+        value: row?.last_surveillance_mode ?? "none"
+      },
+      {
+        name: "last_surveillance_at",
+        value: row?.last_surveillance_at ?? "never"
+      },
+      {
+        name: "surveillance_due_at",
+        value: row?.surveillance_due_at ?? "now"
       },
       {
         name: "has_coverage_assessment",
@@ -696,7 +692,10 @@ async function main() {
   const bootstrapItems = buildBootstrapItems(priorityQueue.bootstrap_queue, statusByTrack);
   const coverageRepairItems = buildCoverageRepairItems(priorityQueue.coverage_repair_queue, statusByTrack);
   const surveillanceItem = buildSurveillanceItem(priorityQueue.surveillance_queue, statusByTrack);
-  const coverageBackfillItem = buildCoverageBackfillItem(priorityQueue.surveillance_queue, statusByTrack);
+  const coverageBackfillItem = buildCoverageBackfillItem(
+    [...priorityQueue.surveillance_queue, ...(priorityQueue.surveillance_recent_queue ?? [])],
+    statusByTrack
+  );
   const dataNormalizationItem = buildDataNormalizationItem(missingInterventions);
 
   const workItems = rankWorkItems([
@@ -720,6 +719,7 @@ async function main() {
       active_candidate_bundle_count: activeBundles.length,
       bootstrap_queue_count: priorityQueue.bootstrap_queue.length,
       surveillance_queue_count: priorityQueue.surveillance_queue.length,
+      surveillance_recent_queue_count: priorityQueue.surveillance_recent_queue?.length ?? 0,
       coverage_repair_queue_count: priorityQueue.coverage_repair_queue.length,
       coverage_assessment_backlog_count: coverageAssessmentBacklogCount,
       unnormalized_intervention_id_count: missingInterventions.missingIdCount,
@@ -754,7 +754,7 @@ async function main() {
       data_hardening_count: missingInterventions.missingIdCount > 0 ? 1 : 0,
       notes: [
         "Roadmap remains narrative context; this file is the operational dispatcher.",
-        "The top surveillance item intentionally prefers the next distinct target when the generated queue starts with a recently handled track."
+        `${priorityQueue.surveillance_recent_queue?.length ?? 0} surveillance track(s) are hidden from ordinary rotation until their cooldown expires.`
       ]
     },
     work_items: workItems
