@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "chaperone-and-heat-shock-support-coverage-repair-2026-06-10",
+  "name": "Chaperone and Heat-Shock Support Coverage Repair for June 10, 2026",
+  "summary": "Coverage-repair bundle adding arimoclomol NPC open-label extension and current Miplyffa label safety context while keeping Chaperone and Heat-Shock Support at low-confidence, NPC-specific human_functional_benefit with mixed momentum.",
+  "intake_mode": "manual",
+  "lifecycle_status": "submitted",
+  "submitted_at": "2026-06-10T23:05:04Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "Which known source-completeness gaps for Chaperone and Heat-Shock Support need repair, and does resolving them change the coverage verdict or public boundaries?",
+    "hallmark_ids": [
+      "loss_of_proteostasis"
+    ],
+    "track_ids": [
+      "chaperone-and-heat-shock-support"
+    ],
+    "intervention_ids": [
+      "arimoclomol",
+      "bgp-15",
+      "hsf-1-modulation",
+      "active-hyperthermia",
+      "passive-hyperthermia"
+    ]
+  },
+  "source_ids": [
+    "pmid-40663813",
+    "dailymed-miplyffa-label-2026-03-18"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/40663813/",
+    "https://doi.org/10.1016/j.ymgme.2025.109189",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5feffc0e-453d-47fa-91dd-38d4952309bc",
+    "https://clinicaltrials.gov/study/NCT02612129"
+  ],
+  "related_records": [
+    {
+      "record_type": "track",
+      "record_id": "chaperone-and-heat-shock-support"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-chaperone-and-heat-shock-support-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-loss-of-proteostasis-outlook"
+    },
+    {
+      "record_type": "study",
+      "record_id": "arimoclomol-npc-phase-2-3"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-40663813",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-40663813",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-coverage-repair-2026-06-10/pmid-40663813.json",
+      "summary": "Add the arimoclomol NPC 48-month open-label extension source.",
+      "rationale": "The latest coverage assessment named this source as the highest-priority durability and safety gap for the track."
+    },
+    {
+      "change_id": "create-source-dailymed-miplyffa-label-2026-03-18",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "dailymed-miplyffa-label-2026-03-18",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-coverage-repair-2026-06-10/dailymed-miplyffa-label-2026-03-18.json",
+      "summary": "Add the current Miplyffa label source.",
+      "rationale": "The label provides primary regulatory safety, warning, adverse-reaction, indication, and drug-interaction boundaries."
+    },
+    {
+      "change_id": "update-study-arimoclomol-npc-phase-2-3",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "arimoclomol-npc-phase-2-3",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-coverage-repair-2026-06-10/arimoclomol-npc-phase-2-3.json",
+      "summary": "Update the NPC-002 study with open-label extension and registry detail coverage.",
+      "rationale": "The existing study represented the 12-month randomized phase but not the 48-month extension or registry completion/check metadata."
+    },
+    {
+      "change_id": "create-finding-arimoclomol-npc-ole-sustained-disease-safety",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "arimoclomol-npc-ole-sustained-disease-safety",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-coverage-repair-2026-06-10/arimoclomol-npc-ole-sustained-disease-safety.json",
+      "summary": "Add the NPC open-label extension durability and safety finding.",
+      "rationale": "This finding repairs the missing long-term NPC context while preserving open-label and disease-specific limitations.",
+      "uncertainty_flags": [
+        "open-label-extension",
+        "npc-specific",
+        "not-independent-randomized-replication"
+      ]
+    },
+    {
+      "change_id": "create-finding-miplyffa-label-safety-interaction-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "miplyffa-label-safety-interaction-boundary",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-coverage-repair-2026-06-10/miplyffa-label-safety-interaction-boundary.json",
+      "summary": "Add the Miplyffa label safety and interaction boundary finding.",
+      "rationale": "This finding keeps label-level hypersensitivity, embryofetal, creatinine, OCT2, and common adverse-reaction limits attached to the public evidence map.",
+      "uncertainty_flags": [
+        "label-context",
+        "safety-limitations",
+        "npc-with-miglustat-indication"
+      ]
+    },
+    {
+      "change_id": "update-outlook-track-chaperone-and-heat-shock-support",
+      "change_type": "update_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-chaperone-and-heat-shock-support-outlook",
+      "staged_file_path": "data/staged-records/chaperone-and-heat-shock-support-coverage-repair-2026-06-10/track-chaperone-and-heat-shock-support-outlook.json",
+      "summary": "Refresh the Chaperone and Heat-Shock Support outlook with repaired NPC durability and label safety context.",
+      "rationale": "The public outlook should represent the OLE and label evidence while keeping stage, momentum, and read firmness unchanged.",
+      "uncertainty_flags": [
+        "stage-unchanged",
+        "npc-specific",
+        "broad-aging-claim-not-supported"
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "chaperone-and-heat-shock-support",
+      "note": "Repair NPC durability and safety context, add current label boundaries, and preserve human_functional_benefit, mixed momentum, and low read firmness because the evidence remains NPC-specific.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast",
+    "safety_limitations"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-10-chaperone-and-heat-shock-support-coverage-repair.json",
+  "next_actions": [
+    "Run source-fidelity, interpretation/forecast, and safety-limitations review before approval.",
+    "If approved and published, return Chaperone and Heat-Shock Support to ordinary surveillance with special watch on new arimoclomol post-approval safety, real-world NPC data, and non-NPC HSP co-inducer results."
+  ],
+  "tags": [
+    "admin",
+    "coverage-repair",
+    "chaperone-and-heat-shock-support"
+  ]
+}

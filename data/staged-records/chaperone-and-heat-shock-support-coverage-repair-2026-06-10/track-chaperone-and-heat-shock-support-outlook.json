@@ -1,0 +1,179 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-chaperone-and-heat-shock-support-outlook",
+  "name": "Chaperone and Heat-Shock Support Track Outlook",
+  "subject_type": "track",
+  "subject_id": "chaperone-and-heat-shock-support",
+  "evidence_stage": "human_functional_benefit",
+  "momentum": "mixed",
+  "confidence": "low",
+  "main_evidence_gaps": [
+    "The strongest human functional and durability signal is concentrated in Niemann-Pick disease type C, a rare neurovisceral disease, not broad aging or LEV-relevant proteostasis restoration.",
+    "The 48-month open-label extension supports NPC-specific durability context but lacks a concurrent control after the randomized phase and is not independent replication outside NPC.",
+    "The same arimoclomol heat-shock-response strategy failed to improve primary functional or survival outcomes in phase 3 ALS and randomized inclusion body myositis trials.",
+    "Human biomarker support for generic heat-shock or chaperone induction is thin, protocol-dependent, and not clearly tied to long-lasting tissue proteostasis.",
+    "Intervention mechanisms are heterogeneous: arimoclomol co-induction, BGP-15 metabolic effects, heat exposure, and genetic HSF-1 biology should not be collapsed into one efficacy claim.",
+    "Safety and tolerability remain material for drug programs, including hypersensitivity, embryofetal risk, creatinine and OCT2 interaction language, and higher discontinuation or adverse-event burdens in some arimoclomol trials."
+  ],
+  "strongest_current_evidence": [
+    "Arimoclomol slowed NPC disease progression in a randomized phase 2/3 trial, an open-label extension reported longer-term NPC disease and safety context, and FDA approved Miplyffa with miglustat for NPC neurological symptoms.",
+    "HSF-1 and small heat-shock-protein biology connects proteostasis to lifespan and aggregation phenotypes in C. elegans.",
+    "BGP-15 supplies limited human proof-of-concept biomarker context for an HSP co-inducer, though the measured endpoint was insulin sensitivity rather than proteostasis."
+  ],
+  "interpretation_note": "Chaperone and heat-shock support remains at evidence that human function improves because arimoclomol has randomized functional evidence, longer-term open-label NPC durability context, and regulatory approval in NPC. The read stays tentative with mixed momentum: the signal is NPC-specific, the durability evidence is not a new randomized trial, arimoclomol failed in ALS and inclusion body myositis, label safety and interaction constraints matter, and generic heat-shock biomarker evidence remains too thin for a broad aging claim.",
+  "what_would_change_the_rating": [
+    "A stronger stage assignment would need replicated evidence that human function improves in age-relevant or proteostasis-relevant populations with explicit chaperone or heat-shock evidence that the intervention changed its intended biological target.",
+    "A firmer read would need independent studies separating disease-specific arimoclomol benefit from general proteostasis support and showing tolerable long-term use.",
+    "The rating would weaken if additional human arimoclomol or HSP co-inducer programs fail functional endpoints, if open-label durability does not hold in independent follow-up, or if safety and tolerability signals outweigh narrow benefits.",
+    "Generic heat-exposure claims should not influence the rating unless repeated protocols show reproducible evidence that the intervention changed its intended biological target and functional or disease-relevant outcomes in humans."
+  ],
+  "earliest_plausible_window": "No credible LEV-relevant window can be assigned before replicated evidence that human function improves exists outside rare NPC and before evidence that the intervention changed its intended biological target is measured in aging-relevant tissues.",
+  "supporting_finding_ids": [
+    "arimoclomol-slowed-npc-disease-progression",
+    "arimoclomol-npc-r4dnpccss-posthoc-support",
+    "arimoclomol-npc-ole-sustained-disease-safety",
+    "miplyffa-approved-npc-neurological-symptoms",
+    "miplyffa-label-safety-interaction-boundary",
+    "arimoclomol-als-phase3-null",
+    "arimoclomol-ibm-trial-null",
+    "bgp15-improved-insulin-sensitivity-proof-of-concept",
+    "hsf1-overexpression-extended-c-elegans-lifespan",
+    "hyperthermia-hsp70-pbmcs-no-significant-increase"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "evidence_stage",
+      "conclusion": "The track reaches evidence that human function improves because arimoclomol has randomized NPC functional evidence and FDA approval in a disease-specific neurological indication.",
+      "support_role": "supports",
+      "rationale": "The NPC trial measured clinical severity progression, the post-hoc 4-domain analysis supports the approval-era readout, and FDA approval confirms a regulatory conclusion for NPC neurological symptoms with miglustat.",
+      "finding_ids": [
+        "arimoclomol-slowed-npc-disease-progression",
+        "arimoclomol-npc-r4dnpccss-posthoc-support",
+        "miplyffa-approved-npc-neurological-symptoms"
+      ],
+      "source_ids": [
+        "pmid-34418116",
+        "pmid-40520915",
+        "fda-miplyffa-approval-2024-09-20"
+      ],
+      "limitations": [
+        "The evidence is rare-disease-specific and mostly pediatric.",
+        "The approval is for NPC neurological symptoms with miglustat, not aging or broad proteostasis restoration.",
+        "The post-hoc rescored analysis is not an independent trial."
+      ]
+    },
+    {
+      "label": "NPC durability and safety context",
+      "outlook_field": "strongest_current_evidence",
+      "conclusion": "Open-label extension and label evidence strengthen NPC-specific durability and safety context without broadening the aging claim.",
+      "support_role": "supports",
+      "rationale": "The NPC-002 open-label extension reported longer-term clinical severity follow-up and no new safety concerns, while the current label preserves the NPC-with-miglustat indication and safety or interaction warnings.",
+      "finding_ids": [
+        "arimoclomol-npc-ole-sustained-disease-safety",
+        "miplyffa-label-safety-interaction-boundary"
+      ],
+      "source_ids": [
+        "pmid-40663813",
+        "dailymed-miplyffa-label-2026-03-18"
+      ],
+      "limitations": [
+        "The extension is open-label after the randomized phase.",
+        "The source remains NPC-specific and does not test broad aging.",
+        "No new safety concerns in NPC do not resolve chronic preventive-use safety for aging populations."
+      ]
+    },
+    {
+      "label": "Disease-general boundary",
+      "outlook_field": "momentum",
+      "conclusion": "Momentum is mixed because arimoclomol failed major non-NPC disease programs despite plausible proteostasis rationale.",
+      "support_role": "limits",
+      "rationale": "The ALS phase 3 trial was null for function and survival, and the inclusion body myositis trial was null for IBMFRS function. These results prevent extrapolation from NPC to broad neurodegenerative or protein-aggregation indications.",
+      "finding_ids": [
+        "arimoclomol-als-phase3-null",
+        "arimoclomol-ibm-trial-null"
+      ],
+      "source_ids": [
+        "pmid-38782015",
+        "pmid-37739573"
+      ],
+      "limitations": [
+        "ALS and inclusion body myositis are disease-specific contexts and do not test every chaperone-support intervention.",
+        "They are still large enough boundary conditions to constrain broad claims about arimoclomol."
+      ]
+    },
+    {
+      "label": "based on biology and biomarker context",
+      "outlook_field": "strongest_current_evidence",
+      "conclusion": "The track has long-lasting biological plausibility, but human biomarker evidence outside NPC remains indirect or inconsistent.",
+      "support_role": "balances",
+      "rationale": "HSF-1 regulates lifespan and aggregation phenotypes in C. elegans, BGP-15 improved insulin-sensitivity biomarkers in a short human trial, and a small hyperthermia study did not show significant PBMC HSP70 induction.",
+      "finding_ids": [
+        "hsf1-overexpression-extended-c-elegans-lifespan",
+        "bgp15-improved-insulin-sensitivity-proof-of-concept",
+        "hyperthermia-hsp70-pbmcs-no-significant-increase"
+      ],
+      "source_ids": [
+        "pmid-12750521",
+        "pmid-19214941",
+        "pmid-17928942"
+      ],
+      "limitations": [
+        "Worm lifespan biology is not a human intervention result.",
+        "BGP-15 measured metabolic biomarkers rather than direct proteostasis outcomes.",
+        "The hyperthermia biomarker study was small but cautions against assuming easy HSP70 induction in humans."
+      ]
+    },
+    {
+      "label": "Read firmness",
+      "outlook_field": "confidence",
+      "conclusion": "The read remains tentative because the evidence base is heterogeneous and not yet aligned with broad aging-relevant endpoints.",
+      "support_role": "limits",
+      "rationale": "A rare-disease approval and open-label durability context raise the NPC-specific evidence map, but null disease programs, indirect biomarkers, label safety constraints, and limited pathway-change data prevent a confident claim that chaperone or heat-shock support can alter aging trajectories.",
+      "finding_ids": [
+        "arimoclomol-slowed-npc-disease-progression",
+        "arimoclomol-npc-ole-sustained-disease-safety",
+        "miplyffa-approved-npc-neurological-symptoms",
+        "miplyffa-label-safety-interaction-boundary",
+        "arimoclomol-als-phase3-null",
+        "arimoclomol-ibm-trial-null",
+        "bgp15-improved-insulin-sensitivity-proof-of-concept",
+        "hyperthermia-hsp70-pbmcs-no-significant-increase"
+      ],
+      "source_ids": [
+        "pmid-34418116",
+        "pmid-40663813",
+        "fda-miplyffa-approval-2024-09-20",
+        "dailymed-miplyffa-label-2026-03-18",
+        "pmid-38782015",
+        "pmid-37739573",
+        "pmid-19214941",
+        "pmid-17928942"
+      ],
+      "limitations": [
+        "No cited human study demonstrates LEV-relevant disease prevention, lifespan, or broad healthy-aging benefit.",
+        "Interventions and mechanisms in the evidence set are not interchangeable.",
+        "Long-term safety for chronic chaperone or heat-shock modulation in aging populations is unresolved."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-34418116",
+    "pmid-40520915",
+    "pmid-40663813",
+    "fda-miplyffa-approval-2024-09-20",
+    "dailymed-miplyffa-label-2026-03-18",
+    "pmid-38782015",
+    "pmid-37739573",
+    "pmid-19214941",
+    "pmid-12750521",
+    "pmid-17928942"
+  ],
+  "last_updated": "2026-06-10",
+  "tags": [
+    "public",
+    "track",
+    "thin_coverage"
+  ]
+}

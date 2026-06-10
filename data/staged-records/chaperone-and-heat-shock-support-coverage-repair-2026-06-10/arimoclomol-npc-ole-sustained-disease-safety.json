@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "arimoclomol-npc-ole-sustained-disease-safety",
+  "name": "Arimoclomol NPC open-label extension supported longer-term disease and safety context",
+  "summary": "The NPC-002 open-label extension adds longer-term disease-progression and safety context for arimoclomol, but remains NPC-specific and open-label.",
+  "source_id": "pmid-40663813",
+  "study_id": "arimoclomol-npc-phase-2-3",
+  "intervention_ids": [
+    "arimoclomol"
+  ],
+  "track_ids": [
+    "chaperone-and-heat-shock-support"
+  ],
+  "hallmark_ids": [
+    "loss_of_proteostasis"
+  ],
+  "endpoint_category": "functional",
+  "direction": "positive",
+  "evidence_tier": "human_function",
+  "confidence": "low",
+  "statement": "In the NPC-002 open-label extension, arimoclomol-treated Niemann-Pick disease type C participants had longer-term clinical severity follow-up consistent with sustained slowing of disease progression, with no new safety concerns reported.",
+  "population_or_model": "Participants with Niemann-Pick disease type C who completed the double-blind NPC-002 trial and entered the open-label extension",
+  "time_horizon": "Open-label follow-up through 48 months after the double-blind phase",
+  "quantitative_note": "Of 50 participants who started the double-blind phase, 41 entered the open-label extension and 29 completed 48 months; mean 5DNPCCSS and R4DNPCCSS scores increased by 3.2 and 2.7 over 48 months, respectively, and switchers from placebo showed lower annual score changes after starting arimoclomol.",
+  "caveats": [
+    "The extension was open-label after the randomized phase and does not provide an independent randomized durability trial.",
+    "The evidence is concentrated in NPC and should not be generalized to broad aging or LEV-relevant proteostasis restoration.",
+    "Several authors were affiliated with the product sponsor.",
+    "No new safety concerns in the extension does not resolve chronic preventive-use safety in aging populations."
+  ]
+}

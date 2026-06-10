@@ -1,0 +1,296 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-10-chaperone-and-heat-shock-support-coverage-repair",
+  "name": "Chaperone and Heat-Shock Support Coverage Repair",
+  "mode": "coverage_repair",
+  "started_at": "2026-06-10T22:50:00Z",
+  "completed_at": "2026-06-10T23:10:18Z",
+  "scope": {
+    "question": "Which Chaperone and Heat-Shock Support source-completeness gaps from the June 10 surveillance assessment should be repaired publicly, and does repair change the public evidence stage or boundary?",
+    "hallmark_ids": [
+      "loss_of_proteostasis"
+    ],
+    "track_ids": [
+      "chaperone-and-heat-shock-support"
+    ],
+    "intervention_ids": [
+      "arimoclomol",
+      "miplyffa",
+      "bgp-15",
+      "heat-shock-response-support",
+      "passive-heating"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "chaperone-and-heat-shock-support-coverage-repair-2026-06-10",
+  "summary": "Coverage repair staged the two high-priority public gaps that materially improve the current evidence map: PMID 40663813 for the NPC-002 48-month open-label extension and the March 2026 DailyMed Miplyffa label for indication, safety, and OCT2 interaction context. The staged bundle creates two sources, updates the arimoclomol NPC study, creates one durability/safety finding and one label-safety boundary finding, and refreshes the track outlook. The proposed public read keeps evidence_stage human_functional_benefit, momentum mixed, and confidence low because the added evidence remains NPC-specific and does not establish broad aging or LEV-relevant proteostasis restoration.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "outlook_refresh",
+    "public_update_needed": true,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The open-label extension and current label materially improve source completeness, durability context, and safety language for the existing NPC-specific public claim. They do not change the stage, momentum, or confidence because the repair does not add independent broad-aging, mammalian aging, or generalized chaperone-support evidence."
+  },
+  "search_log": [
+    {
+      "source_name": "NCBI PubMed ESummary and EFetch",
+      "query": "PMID 40663813, PMID 41567854, PMID 39715913, and PMID 42007957",
+      "checked_at": "2026-06-10T23:10:18Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Confirmed PMID 40663813 as the 2025 Molecular Genetics and Metabolism report of NPC-002 48-month open-label extension efficacy and safety. Screened PMID 41567854 as drug-interaction review context, PMID 39715913 as arimoclomol first-approval review context, and PMID 42007957 as NPC therapeutics review context; none of those reviews added a new primary efficacy result."
+    },
+    {
+      "source_name": "DailyMed API and label XML",
+      "query": "MIPLYFFA / arimoclomol citrate label setid 5feffc0e-453d-47fa-91dd-38d4952309bc",
+      "checked_at": "2026-06-10T23:10:18Z",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5feffc0e-453d-47fa-91dd-38d4952309bc",
+      "summary": "Confirmed label version 5, effective March 18, 2026 and published March 20, 2026. The label indicates Miplyffa in combination with miglustat for neurological manifestations of NPC in patients age 2 years and older, warns about hypersensitivity, embryofetal toxicity, and creatinine increases, and identifies OCT2 substrate interaction management."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "NCT02612129, NCT03491462, NCT02753530, NCT03836716, NCT04049097, NCT03746587, NCT04316637, and NCT01069965",
+      "checked_at": "2026-06-10T23:10:18Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "Re-checked the main arimoclomol trials, the ALS and IBM open-label extensions, Gaucher arimoclomol boundary context, NPC early-access context, and the BGP-15 dose-ranging registry. The NPC parent trial remains completed with posted results and actual study completion on 2024-10-31; ALS and IBM parent trials and extensions remain result-bearing null or terminated disease-program context; Gaucher, early-access NPC, and BGP-15 records do not create a public update."
+    },
+    {
+      "source_name": "Local public records and prior coverage assessment",
+      "query": "Chaperone and Heat-Shock Support outlook, source, study, finding, evidence-review, publication-event, and June 10 surveillance coverage assessment",
+      "checked_at": "2026-06-10T23:10:18Z",
+      "summary": "Compared staged repair candidates against the latest public outlook and the chaperone-and-heat-shock-support-surveillance-2026-06-10 coverage gaps. Only the NPC open-label extension and current label were selected for public staging in this bounded repair."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT02612129",
+      "study_id": "arimoclomol-npc-phase-2-3",
+      "source_id": "pmid-40663813",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02612129",
+      "checked_at": "2026-06-10T23:10:18Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2018-06-25",
+      "study_completion_date": "2024-10-31",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": true,
+      "materiality": "completion_change",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "NPC-002 remains completed with posted results. The repair stages the registry completion dates, the 48-month open-label extension source, a durability/safety finding, and the corresponding outlook support-map refresh."
+    },
+    {
+      "registry_id": "NCT03491462",
+      "study_id": "arimoclomol-als-orarials-phase3",
+      "source_id": "pmid-38782015",
+      "registry_url": "https://clinicaltrials.gov/study/NCT03491462",
+      "checked_at": "2026-06-10T23:10:18Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2020-12-18",
+      "study_completion_date": "2020-12-18",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": true,
+      "materiality": "completion_change",
+      "public_action": "record_no_op",
+      "summary": "The ALS phase 3 registry remains completed with posted results and no interpretation change. The existing public finding already captures the null disease-program boundary."
+    },
+    {
+      "registry_id": "NCT02753530",
+      "study_id": "arimoclomol-inclusion-body-myositis-trial",
+      "source_id": "pmid-37739573",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02753530",
+      "checked_at": "2026-06-10T23:10:18Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2021-01-11",
+      "study_completion_date": "2021-01-11",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": true,
+      "materiality": "completion_change",
+      "public_action": "record_no_op",
+      "summary": "The inclusion body myositis registry remains completed with posted results and no interpretation change. The existing public finding already captures the null disease-program boundary."
+    },
+    {
+      "registry_id": "NCT03836716",
+      "study_id": "arimoclomol-als-open-label-extension-registry",
+      "source_id": "nct-03836716",
+      "registry_url": "https://clinicaltrials.gov/study/NCT03836716",
+      "checked_at": "2026-06-10T23:10:18Z",
+      "current_registry_status": "terminated",
+      "current_results_status": "posted",
+      "primary_completion_date": "2021-07-02",
+      "study_completion_date": "2021-07-02",
+      "completion_date_kind": "actual",
+      "results_changed": false,
+      "materiality": "wrong_scope",
+      "public_action": "none",
+      "summary": "Terminated ALS open-label extension with posted results. It remains disease-program boundary context and was not staged because the parent ALS null trial already carries the public limitation."
+    },
+    {
+      "registry_id": "NCT04049097",
+      "study_id": "arimoclomol-ibm-open-label-extension-registry",
+      "source_id": "nct-04049097",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04049097",
+      "checked_at": "2026-06-10T23:10:18Z",
+      "current_registry_status": "terminated",
+      "current_results_status": "posted",
+      "primary_completion_date": "2021-11-15",
+      "study_completion_date": "2021-11-15",
+      "completion_date_kind": "actual",
+      "results_changed": false,
+      "materiality": "wrong_scope",
+      "public_action": "none",
+      "summary": "Terminated inclusion-body-myositis open-label extension with posted results. It remains non-NPC disease-program boundary context and was not staged in this NPC-focused repair."
+    },
+    {
+      "registry_id": "NCT03746587",
+      "study_id": "arimoclomol-gaucher-disease-registry",
+      "source_id": "nct-03746587",
+      "registry_url": "https://clinicaltrials.gov/study/NCT03746587",
+      "checked_at": "2026-06-10T23:10:18Z",
+      "current_registry_status": "terminated",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2020-04-01",
+      "study_completion_date": "2021-10-15",
+      "completion_date_kind": "actual",
+      "results_changed": false,
+      "materiality": "wrong_scope",
+      "public_action": "none",
+      "summary": "Terminated Gaucher disease arimoclomol registry with no posted results. It is lysosomal disease boundary context and was not staged as chaperone-support evidence."
+    },
+    {
+      "registry_id": "NCT04316637",
+      "study_id": "arimoclomol-npc-early-access-registry",
+      "source_id": "nct-04316637",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04316637",
+      "checked_at": "2026-06-10T23:10:18Z",
+      "current_registry_status": "active",
+      "current_results_status": "not_posted",
+      "completion_date_kind": "unknown",
+      "results_changed": false,
+      "materiality": "unchanged",
+      "public_action": "none",
+      "summary": "Available NPC early-access program with no posted results or completion dates. It was kept as post-approval context rather than staged public evidence."
+    },
+    {
+      "registry_id": "NCT01069965",
+      "study_id": "bgp15-type-2-diabetes-dose-ranging-registry",
+      "source_id": "nct-01069965",
+      "registry_url": "https://clinicaltrials.gov/study/NCT01069965",
+      "checked_at": "2026-06-10T23:10:18Z",
+      "current_registry_status": "terminated",
+      "current_results_status": "not_posted",
+      "completion_date_kind": "actual",
+      "results_changed": false,
+      "materiality": "wrong_scope",
+      "public_action": "none",
+      "summary": "Terminated BGP-15 type 2 diabetes dose-ranging registry with no posted results and month-level actual completion dates in 2011. The existing public map already includes the published BGP-15 metabolic proof-of-concept paper, so this no-results registry was not staged."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 41567854",
+      "title": "Understanding Pharmacokinetic-Drug Interactions With Drugs Approved by the US Food and Drug Administration in 2024 to Better Manage the Risk of Drug Interactions With Concomitant Medications",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41567854/",
+      "decision": "context_only",
+      "reason": "Review-level drug-interaction context was screened, but the DailyMed label is the primary source for the OCT2 interaction language selected for public staging."
+    },
+    {
+      "reference": "PMID 39715913",
+      "title": "Arimoclomol: First Approval",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39715913/",
+      "decision": "context_only",
+      "reason": "Approval review context overlaps with the existing FDA approval source and the staged DailyMed label without adding a new primary efficacy or safety result."
+    },
+    {
+      "reference": "PMID 42007957",
+      "title": "Current and emerging therapeutic advancements for Niemann-Pick disease type C: where are we now and what does the future hold?",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42007957/",
+      "decision": "context_only",
+      "reason": "NPC therapeutics review context was screened but not staged because the primary OLE paper and label directly repair the public source gaps."
+    },
+    {
+      "reference": "Zevra sponsor real-world, conference, and patent-listing leads",
+      "decision": "context_only",
+      "reason": "Sponsor and conference materials remain useful leads for later post-approval surveillance, but this repair did not find primary, independently citable real-world data that should change the public evidence map."
+    },
+    {
+      "reference": "NCT03836716 and NCT04049097",
+      "title": "Arimoclomol ALS and inclusion-body-myositis open-label extension registries",
+      "url": "https://clinicaltrials.gov/search?term=NCT03836716%20OR%20NCT04049097",
+      "decision": "context_only",
+      "reason": "Both records are non-NPC disease-program extensions. They support boundary awareness but were not needed for the bounded NPC durability and label repair."
+    },
+    {
+      "reference": "NCT03746587 and NCT04316637",
+      "title": "Arimoclomol Gaucher and NPC early-access registries",
+      "url": "https://clinicaltrials.gov/search?term=NCT03746587%20OR%20NCT04316637",
+      "decision": "context_only",
+      "reason": "Gaucher is wrong-scope disease context and the NPC early-access program has no posted results. Neither record changes the public outlook now."
+    },
+    {
+      "reference": "NCT01069965",
+      "title": "Safety and Efficacy of BGP-15 in Patients With Type 2 Diabetes Mellitus",
+      "url": "https://clinicaltrials.gov/study/NCT01069965",
+      "decision": "no_results",
+      "reason": "Terminated BGP-15 metabolic registry with no posted results. The published BGP-15 proof-of-concept paper remains the public source for this boundary."
+    },
+    {
+      "reference": "Passive-heating, HSP90 imaging, HSP90 oncology, and generic heat-shock physiology registries",
+      "decision": "wrong_scope",
+      "reason": "The same-day surveillance pass found no result-bearing chaperone-support intervention record in these searches. They remain taxonomy-boundary context rather than public evidence for the current track claim."
+    }
+  ],
+  "source_ids": [
+    "pmid-34418116",
+    "pmid-40520915",
+    "pmid-40663813",
+    "fda-miplyffa-approval-2024-09-20",
+    "dailymed-miplyffa-label-2026-03-18",
+    "pmid-38782015",
+    "pmid-37739573",
+    "pmid-19214941",
+    "pmid-12750521",
+    "pmid-17928942"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/40663813/",
+    "https://doi.org/10.1016/j.ymgme.2025.109189",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5feffc0e-453d-47fa-91dd-38d4952309bc",
+    "https://pubmed.ncbi.nlm.nih.gov/41567854/",
+    "https://pubmed.ncbi.nlm.nih.gov/39715913/",
+    "https://pubmed.ncbi.nlm.nih.gov/42007957/",
+    "https://clinicaltrials.gov/study/NCT02612129",
+    "https://clinicaltrials.gov/study/NCT03491462",
+    "https://clinicaltrials.gov/study/NCT02753530",
+    "https://clinicaltrials.gov/study/NCT03836716",
+    "https://clinicaltrials.gov/study/NCT04049097",
+    "https://clinicaltrials.gov/study/NCT03746587",
+    "https://clinicaltrials.gov/study/NCT04316637",
+    "https://clinicaltrials.gov/study/NCT01069965"
+  ],
+  "notes": [
+    "The staged repair intentionally keeps the public evidence stage at human_functional_benefit and keeps confidence low.",
+    "The strongest added evidence is still disease-specific NPC evidence; it is not evidence that chaperone or heat-shock support broadly modifies aging biology.",
+    "Review and sponsor sources were screened for triangulation but not staged because primary sources directly repaired the high-priority gaps."
+  ],
+  "next_actions": [
+    "Run source-fidelity, interpretation, and safety review before publishing the staged coverage-repair bundle.",
+    "If approved and published, return Chaperone and Heat-Shock Support to ordinary surveillance with special watch on post-approval Miplyffa safety, real-world NPC data, and non-NPC chaperone-support boundary evidence."
+  ]
+}

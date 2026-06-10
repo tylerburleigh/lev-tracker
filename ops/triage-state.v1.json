@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-10T22:48:15.861Z",
+  "generated_at": "2026-06-10T23:15:25.042Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-10T22:48:15.748Z",
-    "research_priority_queue_updated_at": "2026-06-10T22:48:15.748Z",
-    "active_candidate_bundle_count": 0,
+    "research_coverage_status_updated_at": "2026-06-10T23:15:24.924Z",
+    "research_priority_queue_updated_at": "2026-06-10T23:15:24.924Z",
+    "active_candidate_bundle_count": 1,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 1,
     "surveillance_recent_queue_count": 36,
-    "coverage_repair_queue_count": 1,
+    "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 21,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
@@ -33,10 +33,10 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-repair-chaperone-and-heat-shock-support",
-    "top_mode": "coverage_repair",
-    "active_editorial_count": 0,
-    "ready_research_count": 2,
+    "top_work_item_id": "editorial_review-chaperone-and-heat-shock-support-coverage-repair-2026-06-10",
+    "top_mode": "editorial_review",
+    "active_editorial_count": 1,
+    "ready_research_count": 1,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
@@ -46,37 +46,35 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "coverage-repair-chaperone-and-heat-shock-support",
-      "mode": "coverage_repair",
-      "domain": "research",
+      "item_id": "editorial_review-chaperone-and-heat-shock-support-coverage-repair-2026-06-10",
+      "mode": "editorial_review",
+      "domain": "editorial",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Repair coverage for Chaperone and Heat-Shock Support",
-      "rationale": "Run a Chaperone and Heat-Shock Support coverage-repair pass focused on PMID 40663813, current Miplyffa label and drug-interaction context, arimoclomol extension and early-access registries, BGP-15 registry boundaries, passive-heating/HSP boundary records, and recent review or real-world triangulation. Create a public bundle only for staged records that materially improve the evidence map while preserving the current low-confidence, NPC-specific, broad-aging-tentative interpretation.",
-      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
-      "track_id": "chaperone-and-heat-shock-support",
-      "hallmark_id": "loss_of_proteostasis",
+      "title": "Review active staged update chaperone-and-heat-shock-support-coverage-repair-2026-06-10",
+      "rationale": "Staged update chaperone-and-heat-shock-support-coverage-repair-2026-06-10 is submitted, so editorial work takes precedence over new research.",
+      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
+      "candidate_bundle_id": "chaperone-and-heat-shock-support-coverage-repair-2026-06-10",
+      "runbook_path": "docs/admin-review.md",
+      "command": "npm run research:bundle -- validate --bundle chaperone-and-heat-shock-support-coverage-repair-2026-06-10",
+      "source_paths": [
+        "data/candidate-bundles",
+        "docs/admin-review.md"
+      ],
       "references": [
         {
-          "record_type": "track",
-          "record_id": "chaperone-and-heat-shock-support"
-        },
-        {
-          "record_type": "hallmark",
-          "record_id": "loss_of_proteostasis"
+          "record_type": "candidate_bundle",
+          "record_id": "chaperone-and-heat-shock-support-coverage-repair-2026-06-10"
         }
-      ],
-      "runbook_path": "docs/coverage-assessment.md",
-      "source_paths": [
-        "research/backlog/track-priority.v1.json",
-        "research/state/coverage-status.v1.json",
-        "research/coverage-assessments",
-        "docs/coverage-assessment.md"
       ],
       "signals": [
         {
-          "name": "generated_queue_rank",
-          "value": 1
+          "name": "lifecycle_status",
+          "value": "submitted"
+        },
+        {
+          "name": "proposed_change_count",
+          "value": 6
         }
       ]
     },
