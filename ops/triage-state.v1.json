@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-10T20:56:36.894Z",
+  "generated_at": "2026-06-10T21:55:59.864Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-10T20:56:36.792Z",
-    "research_priority_queue_updated_at": "2026-06-10T20:56:36.792Z",
-    "active_candidate_bundle_count": 0,
+    "research_coverage_status_updated_at": "2026-06-10T21:55:59.768Z",
+    "research_priority_queue_updated_at": "2026-06-10T21:55:59.768Z",
+    "active_candidate_bundle_count": 1,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 2,
     "surveillance_recent_queue_count": 35,
-    "coverage_repair_queue_count": 1,
+    "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 22,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
@@ -33,10 +33,10 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-repair-telomerase-restoration",
-    "top_mode": "coverage_repair",
-    "active_editorial_count": 0,
-    "ready_research_count": 3,
+    "top_work_item_id": "editorial_review-telomerase-restoration-coverage-repair-2026-06-10",
+    "top_mode": "editorial_review",
+    "active_editorial_count": 1,
+    "ready_research_count": 2,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
@@ -46,37 +46,35 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "coverage-repair-telomerase-restoration",
-      "mode": "coverage_repair",
-      "domain": "research",
+      "item_id": "editorial_review-telomerase-restoration-coverage-repair-2026-06-10",
+      "mode": "editorial_review",
+      "domain": "editorial",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Repair coverage for Telomerase Restoration",
-      "rationale": "Run a Telomerase Restoration coverage-repair pass focused on PMID 41286474, TA-65 registry watchlist completeness, telomerase mRNA boundary context, disease-specific Libella AAV-hTERT registries, and long-term safety/durability framing. Create a public bundle only for staged records that materially improve the evidence map and preserve the current biomarker-stage, tentative-read boundary.",
-      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
-      "track_id": "telomerase-restoration",
-      "hallmark_id": "telomere_attrition",
+      "title": "Review active staged update telomerase-restoration-coverage-repair-2026-06-10",
+      "rationale": "Staged update telomerase-restoration-coverage-repair-2026-06-10 is submitted, so editorial work takes precedence over new research.",
+      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
+      "candidate_bundle_id": "telomerase-restoration-coverage-repair-2026-06-10",
+      "runbook_path": "docs/admin-review.md",
+      "command": "npm run research:bundle -- validate --bundle telomerase-restoration-coverage-repair-2026-06-10",
+      "source_paths": [
+        "data/candidate-bundles",
+        "docs/admin-review.md"
+      ],
       "references": [
         {
-          "record_type": "track",
-          "record_id": "telomerase-restoration"
-        },
-        {
-          "record_type": "hallmark",
-          "record_id": "telomere_attrition"
+          "record_type": "candidate_bundle",
+          "record_id": "telomerase-restoration-coverage-repair-2026-06-10"
         }
-      ],
-      "runbook_path": "docs/coverage-assessment.md",
-      "source_paths": [
-        "research/backlog/track-priority.v1.json",
-        "research/state/coverage-status.v1.json",
-        "research/coverage-assessments",
-        "docs/coverage-assessment.md"
       ],
       "signals": [
         {
-          "name": "generated_queue_rank",
-          "value": 1
+          "name": "lifecycle_status",
+          "value": "submitted"
+        },
+        {
+          "name": "proposed_change_count",
+          "value": 28
         }
       ]
     },

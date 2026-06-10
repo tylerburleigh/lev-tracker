@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-10T20:56:36.792Z",
+  "updated_at": "2026-06-10T21:55:59.768Z",
   "notes": [
     "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
@@ -624,17 +624,5 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-24."
     }
   ],
-  "coverage_repair_queue": [
-    {
-      "rank": 1,
-      "phase_id": "coverage-repair",
-      "track_id": "telomerase-restoration",
-      "hallmark_id": "telomere_attrition",
-      "priority_tier": "now",
-      "default_mode": "coverage_repair",
-      "rationale": "Run a Telomerase Restoration coverage-repair pass focused on PMID 41286474, TA-65 registry watchlist completeness, telomerase mRNA boundary context, disease-specific Libella AAV-hTERT registries, and long-term safety/durability framing. Create a public bundle only for staged records that materially improve the evidence map and preserve the current biomarker-stage, tentative-read boundary.",
-      "default_question": "Which known source-completeness gaps for Telomerase Restoration need repair, and does resolving them change the coverage verdict or public boundaries?",
-      "notes": "Latest coverage assessment: telomerase-restoration-surveillance-2026-06-10."
-    }
-  ]
+  "coverage_repair_queue": []
 }

@@ -1,0 +1,263 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-telomerase-restoration-outlook",
+  "name": "Telomerase Restoration Track Outlook",
+  "subject_type": "track",
+  "subject_id": "telomerase-restoration",
+  "evidence_stage": "human_biomarker_signal",
+  "momentum": "mixed",
+  "confidence": "low",
+  "main_evidence_gaps": [
+    "Human evidence is still mostly based on biomarkers: telomere length, immune subsets, inflammation markers, and vascular-function plans, not long-lasting functional, disease, or survival outcomes.",
+    "A 2025 TA-65 systematic review and meta-analysis reported telomere-length movement but no significant frailty or inflammation improvement, so the biomarker-to-health gap remains open.",
+    "Therapeutic telomerase activation has an intrinsic proliferation and cancer-risk concern that is not resolved by short or small human studies.",
+    "Human gene-therapy evidence for aging remains registry-level only; the identified AAV-hTERT aging study and disease-context Libella registries have unknown status and no posted results.",
+    "Commercial conflicts, small samples, and a non-monotonic TA-65 dose signal limit how much weight to put on the strongest human telomere-length trial.",
+    "A claimed CMV-vector TERT mouse lifespan result is now retracted and should not be used as positive support."
+  ],
+  "strongest_current_evidence": [
+    "AAV9-mTERT treatment in adult and old mice increased median lifespan and improved several health and fitness markers without an observed cancer increase in that study.",
+    "A one-year randomized human TA-65 study reported increased leukocyte telomere length at the lower dose.",
+    "A 2025 TA-65 systematic review and meta-analysis reported telomere-length improvement across randomized trials, while also finding no significant frailty or inflammation improvement.",
+    "A post-myocardial-infarction TA-65 pilot RCT reported higher lymphocyte counts and lower hsCRP, although its predefined CD8+ TEMRA endpoint was null.",
+    "Inducible telomerase reactivation in telomerase-deficient mice reversed severe telomere-dysfunction phenotypes, supporting the biology but not direct evidence of useful human results."
+  ],
+  "interpretation_note": "Telomerase restoration remains at human biomarker signal. The animal case is unusually direct for a hallmark track, and human TA-65 trials reach telomere or immune biomarker endpoints. The 2025 TA-65 synthesis strengthens the biomarker anchor but also makes the limiting read clearer: human health/function gains, long-term safety, gene-therapy results, and cancer-risk boundaries remain unresolved.",
+  "what_would_change_the_rating": [
+    "A stronger stage assignment would need repeated human studies showing long-lasting improvement in function or clinical outcomes tied to telomerase or telomere restoration, not only leukocyte telomere or immune-subset shifts.",
+    "A gene-therapy upgrade would require transparent human safety data with telomerase activity, telomere-length, clonal expansion, and cancer-surveillance follow-up.",
+    "A firmer read would need independent TA-65 or other activator trials with prespecified telomere biology endpoints, clearer dose-response behavior, and limited commercial conflicts.",
+    "The rating would weaken if follow-up TA-65 trials fail biomarker replication, if telomerase activation produces concerning clonal or cancer signals, or if additional gene-therapy evidence is withdrawn or not reproducible."
+  ],
+  "earliest_plausible_window": "No credible LEV-relevant window can be assigned before replicated evidence that human function improves and long-term safety evidence exist.",
+  "supporting_finding_ids": [
+    "aav9-mtert-extended-lifespan-adult-old-mice",
+    "tert-reactivation-reversed-degeneration-telomerase-deficient-mice",
+    "ta65-mouse-short-telomere-healthspan-signal",
+    "ta65-low-dose-increased-human-telomere-length",
+    "ta65-health-maintenance-short-telomere-immune-signal",
+    "ta65-post-mi-immune-biomarkers-mixed",
+    "tat2-ex-vivo-cd8-antiviral-function-positive",
+    "libella-aav-htert-registry-no-results",
+    "cmv-tert-lifespan-paper-retracted",
+    "ta65-meta-analysis-telomere-function-disconnect",
+    "tert-mrna-radiation-dna-damage-boundary",
+    "ta65md-healthy-volunteers-registry-unknown-no-results",
+    "ta65-metabolic-syndrome-terminated-no-results",
+    "ta65-metabolic-syndrome-completed-no-results",
+    "cycloastragenol-retinal-amyloid-completed-no-results",
+    "ta65-microvascular-planned-no-results",
+    "libella-aav-htert-critical-limb-registry-no-results",
+    "libella-aav-htert-alzheimer-registry-no-results"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "evidence_stage",
+      "conclusion": "The track reaches human biomarker signal because randomized human TA-65 studies and the later review synthesis report leukocyte telomere-length or immune/inflammation biomarker changes.",
+      "support_role": "supports",
+      "rationale": "The 2016 TA-65 RCT directly measured telomere length, the 2023 post-MI trial measured immune-aging and inflammation biomarkers, and the 2025 synthesis reports telomere-length movement across randomized trials. These are human signals, but they do not establish long-lasting improvement in human function.",
+      "finding_ids": [
+        "ta65-low-dose-increased-human-telomere-length",
+        "ta65-post-mi-immune-biomarkers-mixed",
+        "ta65-meta-analysis-telomere-function-disconnect"
+      ],
+      "source_ids": [
+        "pmid-26950204",
+        "pmid-37086366",
+        "pmid-41286474"
+      ],
+      "limitations": [
+        "The strongest direct telomere endpoint is a biomarker endpoint.",
+        "The post-MI trial missed its predefined primary CD8+ TEMRA endpoint.",
+        "The 2025 synthesis did not find significant frailty or inflammation improvement."
+      ]
+    },
+    {
+      "label": "Animal plausibility",
+      "outlook_field": "strongest_current_evidence",
+      "conclusion": "Animal data make telomerase restoration biologically coherent and include lifespan benefit in adult and old mice.",
+      "support_role": "supports",
+      "rationale": "AAV9-mTERT improved median lifespan in mice, while inducible TERT reactivation reversed severe telomere-dysfunction phenotypes in a genetic model.",
+      "finding_ids": [
+        "aav9-mtert-extended-lifespan-adult-old-mice",
+        "tert-reactivation-reversed-degeneration-telomerase-deficient-mice",
+        "ta65-mouse-short-telomere-healthspan-signal"
+      ],
+      "source_ids": [
+        "pmid-22585399",
+        "pmid-21113150",
+        "pmid-21426483"
+      ],
+      "limitations": [
+        "Mouse lifespan and rescue models do not settle human efficacy or safety.",
+        "Severe telomerase-deficient mouse models overstate the degree of telomere dysfunction typical of normal human aging.",
+        "Gene-delivery and cancer-risk barriers to human use remain open."
+      ]
+    },
+    {
+      "label": "Human activator boundary",
+      "outlook_field": "confidence",
+      "conclusion": "TA-65 human evidence is enough for a biomarker baseline but not enough for a firm clinical claim.",
+      "support_role": "limits",
+      "rationale": "The controlled telomere-length result has commercial conflicts and a non-monotonic dose pattern; the uncontrolled health-maintenance program is confounded; the post-MI study is mixed; and the review-level synthesis found telomere movement without clear frailty or inflammation improvement.",
+      "finding_ids": [
+        "ta65-low-dose-increased-human-telomere-length",
+        "ta65-health-maintenance-short-telomere-immune-signal",
+        "ta65-post-mi-immune-biomarkers-mixed",
+        "ta65-meta-analysis-telomere-function-disconnect"
+      ],
+      "source_ids": [
+        "pmid-26950204",
+        "pmid-20822369",
+        "pmid-37086366",
+        "pmid-41286474"
+      ],
+      "limitations": [
+        "Some authors in the telomere-length trial were employees or consultants of T.A. Sciences.",
+        "The uncontrolled program cannot isolate TA-65 from supplements, counseling, and monitoring.",
+        "Review-level safety remained short term and did not resolve longer-term cancer risk."
+      ]
+    },
+    {
+      "label": "TA-65 trial watchlist",
+      "outlook_field": "main_evidence_gaps",
+      "conclusion": "Additional TA-65 or telomerase-activator registries are visible, but they do not currently add results.",
+      "support_role": "limits",
+      "rationale": "The repaired watchlist includes unknown-status, terminated, completed-no-results, and planned TA-65 or cycloastragenol registry records. The most current TA-65 vascular registry is not yet recruiting.",
+      "finding_ids": [
+        "ta65md-healthy-volunteers-registry-unknown-no-results",
+        "ta65-metabolic-syndrome-terminated-no-results",
+        "ta65-metabolic-syndrome-completed-no-results",
+        "cycloastragenol-retinal-amyloid-completed-no-results",
+        "ta65-microvascular-planned-no-results"
+      ],
+      "source_ids": [
+        "nct-02766790",
+        "nct-01753674",
+        "nct-02531334",
+        "nct-02530255",
+        "nct-05598359"
+      ],
+      "limitations": [
+        "No posted registry results are available from these records.",
+        "Several records are stale, terminated, disease-specific, or not yet recruiting.",
+        "Registry existence does not show efficacy."
+      ]
+    },
+    {
+      "label": "Gene-therapy boundary",
+      "outlook_field": "main_evidence_gaps",
+      "conclusion": "Human telomerase gene-therapy activity remains too thin to support benefit or safety claims.",
+      "support_role": "limits",
+      "rationale": "The aging AAV-hTERT registry and two disease-context Libella AAV-hTERT registries are tiny, single-arm, listed with unknown status, and lack posted results.",
+      "finding_ids": [
+        "libella-aav-htert-registry-no-results",
+        "libella-aav-htert-critical-limb-registry-no-results",
+        "libella-aav-htert-alzheimer-registry-no-results"
+      ],
+      "source_ids": [
+        "nct-04133649",
+        "nct-04110964",
+        "nct-04133454"
+      ],
+      "limitations": [
+        "No human results are posted.",
+        "Estimated enrollment was only five participants in each registry.",
+        "Single-arm safety studies would not establish efficacy even if completed."
+      ]
+    },
+    {
+      "label": "TERT mRNA boundary",
+      "outlook_field": "main_evidence_gaps",
+      "conclusion": "TERT mRNA adds telomerase-therapy boundary context, not aging efficacy evidence.",
+      "support_role": "limits",
+      "rationale": "The human skin study reported radiation-injury DNA-damage protection without telomere-length extension during the experiment. That makes it relevant to telomerase biology and DNA repair, but not evidence that telomerase restoration improves aging outcomes.",
+      "finding_ids": [
+        "tert-mrna-radiation-dna-damage-boundary"
+      ],
+      "source_ids": [
+        "pmid-40958415"
+      ],
+      "limitations": [
+        "The model is radiation injury, not broad aging.",
+        "The finding did not extend telomere length during the experiment.",
+        "The source has patent and company conflict context."
+      ]
+    },
+    {
+      "label": "Publication-integrity boundary",
+      "outlook_field": "momentum",
+      "conclusion": "Momentum is mixed partly because a prominent CMV-vector TERT mouse life-extension paper has been retracted.",
+      "support_role": "limits",
+      "rationale": "The retraction prevents use of that paper as positive gene-therapy evidence and reinforces the need for reproducibility.",
+      "finding_ids": [
+        "cmv-tert-lifespan-paper-retracted"
+      ],
+      "source_ids": [
+        "pmid-40789040"
+      ],
+      "limitations": [
+        "The retraction notice is a publication-status event, not a biological experiment.",
+        "Other animal TERT evidence remains in the baseline but should not be conflated with the retracted CMV-vector report."
+      ]
+    },
+    {
+      "label": "Read firmness",
+      "outlook_field": "confidence",
+      "conclusion": "The read remains tentative because evidence is heterogeneous and human data do not yet show long-lasting function, disease, or survival benefit.",
+      "support_role": "balances",
+      "rationale": "The track has direct hallmark biology and human biomarkers, but the same evidence set has meaningful safety, conflict-of-interest, dose-response, publication-integrity, registry, and human-use limitations.",
+      "finding_ids": [
+        "aav9-mtert-extended-lifespan-adult-old-mice",
+        "ta65-low-dose-increased-human-telomere-length",
+        "ta65-post-mi-immune-biomarkers-mixed",
+        "ta65-meta-analysis-telomere-function-disconnect",
+        "libella-aav-htert-registry-no-results",
+        "ta65-microvascular-planned-no-results",
+        "cmv-tert-lifespan-paper-retracted"
+      ],
+      "source_ids": [
+        "pmid-22585399",
+        "pmid-26950204",
+        "pmid-37086366",
+        "pmid-41286474",
+        "nct-04133649",
+        "nct-05598359",
+        "pmid-40789040"
+      ],
+      "limitations": [
+        "No cited human study demonstrates LEV-relevant clinical benefit.",
+        "Long-term telomerase activation safety is not resolved.",
+        "The most ambitious human gene-therapy claim remains unsupported by posted clinical results."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-21113150",
+    "pmid-22585399",
+    "pmid-21426483",
+    "pmid-26950204",
+    "pmid-20822369",
+    "pmid-37086366",
+    "pmid-18981163",
+    "nct-04133649",
+    "pmid-40789040",
+    "pmid-41286474",
+    "pmid-40958415",
+    "nct-02766790",
+    "nct-01753674",
+    "nct-02531334",
+    "nct-02530255",
+    "nct-05598359",
+    "nct-04110964",
+    "nct-04133454"
+  ],
+  "last_updated": "2026-06-10",
+  "tags": [
+    "public",
+    "track",
+    "thin_coverage"
+  ]
+}

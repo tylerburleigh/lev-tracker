@@ -1,0 +1,370 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "telomerase-restoration-coverage-repair-2026-06-10",
+  "name": "Telomerase Restoration Coverage Repair for June 10, 2026",
+  "summary": "Coverage-repair bundle adding TA-65 review synthesis, registry watchlist completeness, disease-context AAV-hTERT boundaries, and TERT mRNA boundary context while keeping Telomerase Restoration at human_biomarker_signal with mixed momentum and a tentative read.",
+  "intake_mode": "manual",
+  "lifecycle_status": "submitted",
+  "submitted_at": "2026-06-10T21:44:30Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "Which known source-completeness gaps for Telomerase Restoration need repair, and does resolving them change the coverage verdict or public boundaries?",
+    "hallmark_ids": [
+      "telomere_attrition"
+    ],
+    "track_ids": [
+      "telomerase-restoration"
+    ],
+    "intervention_ids": [
+      "ta-65",
+      "aav-htert",
+      "tat2",
+      "tert-reactivation"
+    ]
+  },
+  "source_ids": [
+    "pmid-41286474",
+    "pmid-40958415",
+    "nct-02766790",
+    "nct-01753674",
+    "nct-02531334",
+    "nct-02530255",
+    "nct-05598359",
+    "nct-04110964",
+    "nct-04133454"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/41286474/",
+    "https://doi.org/10.1007/s10565-025-10115-6",
+    "https://pubmed.ncbi.nlm.nih.gov/40958415/",
+    "https://doi.org/10.1016/j.ymthe.2025.09.029",
+    "https://clinicaltrials.gov/study/NCT02766790",
+    "https://clinicaltrials.gov/study/NCT01753674",
+    "https://clinicaltrials.gov/study/NCT02531334",
+    "https://clinicaltrials.gov/study/NCT02530255",
+    "https://clinicaltrials.gov/study/NCT05598359",
+    "https://clinicaltrials.gov/study/NCT04110964",
+    "https://clinicaltrials.gov/study/NCT04133454"
+  ],
+  "related_records": [
+    {
+      "record_type": "track",
+      "record_id": "telomerase-restoration"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-telomerase-restoration-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-telomere-attrition-outlook"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-41286474",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-41286474",
+      "summary": "Add the 2025 TA-65 systematic review and meta-analysis source.",
+      "rationale": "The prior coverage assessment named this review as the highest-priority recent-review gap."
+    },
+    {
+      "change_id": "create-study-ta65-systematic-review-meta-analysis",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "ta65-systematic-review-meta-analysis-study",
+      "summary": "Add the TA-65 systematic review and meta-analysis study record.",
+      "rationale": "The study record captures the review scope, trial count, participant count, endpoints, and TA-65 intervention mapping."
+    },
+    {
+      "change_id": "create-finding-ta65-meta-analysis-telomere-function-disconnect",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ta65-meta-analysis-telomere-function-disconnect",
+      "summary": "Add the TA-65 review-level limiting finding.",
+      "rationale": "The finding preserves the key interpretation: telomere-length movement does not yet translate into frailty or inflammation improvement.",
+      "uncertainty_flags": [
+        "review-level",
+        "biomarker-outcome-disconnect",
+        "long-term-safety-unresolved"
+      ]
+    },
+    {
+      "change_id": "create-source-pmid-40958415",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-40958415",
+      "summary": "Add the TERT mRNA radiation-injury source.",
+      "rationale": "The prior coverage assessment named telomerase mRNA as boundary context that should be represented rather than silently omitted."
+    },
+    {
+      "change_id": "create-study-tert-mrna-radiation-skin-damage",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "tert-mrna-radiation-skin-damage-study",
+      "summary": "Add the TERT mRNA human skin experimental study record.",
+      "rationale": "The study belongs as telomerase-therapy and DNA-damage boundary context, not as broad aging evidence."
+    },
+    {
+      "change_id": "create-finding-tert-mrna-radiation-dna-damage-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "tert-mrna-radiation-dna-damage-boundary",
+      "summary": "Add the TERT mRNA boundary finding.",
+      "rationale": "The finding captures the positive radiation-injury biology while preserving the no-telomere-extension and non-aging limitations.",
+      "uncertainty_flags": [
+        "boundary-context",
+        "not-aging-outcome",
+        "no-telomere-extension"
+      ]
+    },
+    {
+      "change_id": "create-source-nct-02766790",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-02766790",
+      "summary": "Add the TA-65MD healthy-volunteer registry source.",
+      "rationale": "The registry is part of the missing TA-65 watchlist and had no posted results in the current API view."
+    },
+    {
+      "change_id": "create-study-ta65md-healthy-volunteers-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "ta65md-healthy-volunteers-registry",
+      "summary": "Add the TA-65MD healthy-volunteer registry study.",
+      "rationale": "The study record gives future surveillance concrete status, population, endpoint, and no-results metadata."
+    },
+    {
+      "change_id": "create-finding-ta65md-healthy-volunteers-registry-unknown-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ta65md-healthy-volunteers-registry-unknown-no-results",
+      "summary": "Add the no-results finding for the TA-65MD healthy-volunteer registry.",
+      "rationale": "The finding keeps a large but stale registry visible without treating it as efficacy evidence.",
+      "uncertainty_flags": [
+        "registry-no-results",
+        "unknown-status",
+        "watchlist-context"
+      ]
+    },
+    {
+      "change_id": "create-source-nct-01753674",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-01753674",
+      "summary": "Add the terminated TA-65 metabolic syndrome registry source.",
+      "rationale": "The registry is part of the missing TA-65 watchlist and is limiting clinical context."
+    },
+    {
+      "change_id": "create-study-ta65-metabolic-syndrome-terminated-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "ta65-metabolic-syndrome-terminated-registry",
+      "summary": "Add the terminated TA-65 metabolic syndrome registry study.",
+      "rationale": "The study record captures termination, enrollment, endpoint, and no-results metadata."
+    },
+    {
+      "change_id": "create-finding-ta65-metabolic-syndrome-terminated-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ta65-metabolic-syndrome-terminated-no-results",
+      "summary": "Add the no-results finding for the terminated TA-65 metabolic syndrome registry.",
+      "rationale": "The finding preserves termination as limiting context without overstating what the registry shows.",
+      "uncertainty_flags": [
+        "registry-no-results",
+        "terminated",
+        "small-sample"
+      ]
+    },
+    {
+      "change_id": "create-source-nct-02531334",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-02531334",
+      "summary": "Add the completed TA-65 metabolic syndrome registry source.",
+      "rationale": "The registry is part of the missing TA-65 watchlist and had no posted results in the current API view."
+    },
+    {
+      "change_id": "create-study-ta65-metabolic-syndrome-completed-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "ta65-metabolic-syndrome-completed-registry",
+      "summary": "Add the completed TA-65 metabolic syndrome registry study.",
+      "rationale": "The study record preserves completed status and no-results metadata for future surveillance."
+    },
+    {
+      "change_id": "create-finding-ta65-metabolic-syndrome-completed-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ta65-metabolic-syndrome-completed-no-results",
+      "summary": "Add the no-results finding for the completed TA-65 metabolic syndrome registry.",
+      "rationale": "The finding distinguishes completed registry status from available outcome evidence.",
+      "uncertainty_flags": [
+        "registry-no-results",
+        "completed-without-results",
+        "disease-boundary"
+      ]
+    },
+    {
+      "change_id": "create-source-nct-02530255",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-02530255",
+      "summary": "Add the cycloastragenol retinal amyloid registry source.",
+      "rationale": "The registry appeared in the watchlist gap and should be represented as telomerase-activator disease-boundary context."
+    },
+    {
+      "change_id": "create-study-cycloastragenol-retinal-amyloid-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "cycloastragenol-retinal-amyloid-registry",
+      "summary": "Add the cycloastragenol retinal amyloid registry study.",
+      "rationale": "The study record keeps the cycloastragenol and Alzheimer disease scope explicit."
+    },
+    {
+      "change_id": "create-finding-cycloastragenol-retinal-amyloid-completed-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "cycloastragenol-retinal-amyloid-completed-no-results",
+      "summary": "Add the no-results finding for the cycloastragenol retinal amyloid registry.",
+      "rationale": "The finding prevents this completed disease-boundary registry from being mistaken for TA-65 or broad aging evidence.",
+      "uncertainty_flags": [
+        "registry-no-results",
+        "cycloastragenol-not-ta65",
+        "disease-boundary"
+      ]
+    },
+    {
+      "change_id": "create-source-nct-05598359",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-05598359",
+      "summary": "Add the planned TA-65 microvascular dysfunction registry source.",
+      "rationale": "The registry is the most current TA-65 watchlist item and had no posted results in the current API view."
+    },
+    {
+      "change_id": "create-study-ta65-microvascular-dysfunction-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "ta65-microvascular-dysfunction-registry",
+      "summary": "Add the TA-65 microvascular dysfunction registry study.",
+      "rationale": "The study record captures planned status, estimated timing, vascular-function endpoint, and no-results metadata."
+    },
+    {
+      "change_id": "create-finding-ta65-microvascular-planned-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ta65-microvascular-planned-no-results",
+      "summary": "Add the no-results finding for the planned TA-65 microvascular registry.",
+      "rationale": "The finding keeps future vascular-function evidence on watch without treating planned status as current evidence.",
+      "uncertainty_flags": [
+        "registry-no-results",
+        "planned",
+        "watchlist-context"
+      ]
+    },
+    {
+      "change_id": "create-source-nct-04110964",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-04110964",
+      "summary": "Add the Libella AAV-hTERT critical limb ischemia registry source.",
+      "rationale": "The disease-context AAV-hTERT registry repairs the gene-therapy boundary map."
+    },
+    {
+      "change_id": "create-study-libella-aav-htert-critical-limb-ischemia-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "libella-aav-htert-critical-limb-ischemia-registry",
+      "summary": "Add the Libella AAV-hTERT critical limb ischemia registry study.",
+      "rationale": "The study record preserves disease scope, tiny enrollment, unknown status, and no-results metadata."
+    },
+    {
+      "change_id": "create-finding-libella-aav-htert-critical-limb-registry-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "libella-aav-htert-critical-limb-registry-no-results",
+      "summary": "Add the no-results finding for the Libella critical limb ischemia registry.",
+      "rationale": "The finding keeps disease-context AAV-hTERT activity visible while preventing it from supporting broad aging claims.",
+      "uncertainty_flags": [
+        "registry-no-results",
+        "single-arm",
+        "disease-boundary"
+      ]
+    },
+    {
+      "change_id": "create-source-nct-04133454",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-04133454",
+      "summary": "Add the Libella AAV-hTERT Alzheimer disease registry source.",
+      "rationale": "The disease-context AAV-hTERT registry repairs the gene-therapy boundary map."
+    },
+    {
+      "change_id": "create-study-libella-aav-htert-alzheimer-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "libella-aav-htert-alzheimer-registry",
+      "summary": "Add the Libella AAV-hTERT Alzheimer disease registry study.",
+      "rationale": "The study record preserves disease scope, tiny enrollment, unknown status, and no-results metadata."
+    },
+    {
+      "change_id": "create-finding-libella-aav-htert-alzheimer-registry-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "libella-aav-htert-alzheimer-registry-no-results",
+      "summary": "Add the no-results finding for the Libella Alzheimer disease registry.",
+      "rationale": "The finding keeps disease-context AAV-hTERT activity visible while preventing it from supporting broad aging claims.",
+      "uncertainty_flags": [
+        "registry-no-results",
+        "single-arm",
+        "disease-boundary"
+      ]
+    },
+    {
+      "change_id": "update-outlook-track-telomerase-restoration",
+      "change_type": "update_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-telomerase-restoration-outlook",
+      "summary": "Refresh the Telomerase Restoration outlook with repaired review, registry, and boundary context.",
+      "rationale": "The outlook should reflect the new TA-65 synthesis and concrete no-results registry watchlist while keeping stage, momentum, and read firmness unchanged.",
+      "uncertainty_flags": [
+        "stage-unchanged",
+        "registry-no-results",
+        "long-term-safety-unresolved"
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "telomerase-restoration",
+      "note": "Repair TA-65 review and registry coverage, add AAV-hTERT and TERT mRNA boundaries, and preserve human_biomarker_signal, mixed momentum, and a tentative read.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast",
+    "safety_limitations",
+    "taxonomy_mapping"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-10-telomerase-restoration-coverage-repair.json",
+  "next_actions": [
+    "Run source-fidelity, interpretation, safety, and taxonomy review before approval.",
+    "If approved and published, return Telomerase Restoration to ordinary surveillance with the repaired registry watchlist."
+  ],
+  "tags": [
+    "admin",
+    "coverage-repair",
+    "telomerase-restoration"
+  ]
+}

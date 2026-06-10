@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "tert-mrna-radiation-dna-damage-boundary",
+  "name": "TERT mRNA protected human skin systems from radiation DNA damage without telomere extension",
+  "summary": "TERT mRNA is relevant telomerase-therapy boundary context, but it is radiation-injury biology rather than aging efficacy.",
+  "source_id": "pmid-40958415",
+  "study_id": "tert-mrna-radiation-skin-damage-study",
+  "track_ids": [
+    "telomerase-restoration",
+    "dna-repair-enhancement"
+  ],
+  "hallmark_ids": [
+    "telomere_attrition",
+    "genomic_instability"
+  ],
+  "endpoint_category": "mechanistic",
+  "direction": "positive",
+  "evidence_tier": "in_vitro",
+  "confidence": "moderate",
+  "statement": "TERT mRNA pretreatment reduced radiation-induced DNA damage, mitochondrial ROS, and apoptosis in human primary skin cells and tissues, but did not extend telomere length during the experiment.",
+  "population_or_model": "Human primary skin cells and human skin-tissue experimental systems exposed to ionizing radiation",
+  "time_horizon": "Short experimental radiation-injury model",
+  "quantitative_note": "The abstract reports reduced DNA damage and no telomere-length extension during the experimental period, but does not provide an aging or clinical-outcome result.",
+  "caveats": [
+    "Radiation-injury protection is not direct evidence for broad aging or telomere restoration.",
+    "The no-telomere-extension result makes this boundary context rather than support for telomere-length rescue.",
+    "The PubMed conflict statement reports patents and a company relationship around mRNA telomerase technology."
+  ],
+  "tags": [
+    "human-cells",
+    "tert-mrna",
+    "radiation-injury",
+    "boundary",
+    "coverage-repair"
+  ]
+}
