@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-telomerase-restoration-coverage-repair-2026-06-10-safety-limitations-r1",
+  "name": "Safety Limitations review for Telomerase Restoration bundle",
+  "candidate_bundle_id": "telomerase-restoration-coverage-repair-2026-06-10",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "safety_limitations",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged repair keeps safety limitations visible and does not overstate safety reassurance. The TA-65 meta-analysis finding records short-term mild gastrointestinal adverse events and unresolved longer-term cancer risk; the AAV-hTERT registry findings remain no-results safety watch items; and the outlook keeps clonal expansion, cancer surveillance, and long-term human safety as rating-limiting gaps.",
+  "reviewed_change_ids": [
+    "create-source-pmid-41286474",
+    "create-study-ta65-systematic-review-meta-analysis",
+    "create-finding-ta65-meta-analysis-telomere-function-disconnect",
+    "create-source-pmid-40958415",
+    "create-study-tert-mrna-radiation-skin-damage",
+    "create-finding-tert-mrna-radiation-dna-damage-boundary",
+    "create-source-nct-02766790",
+    "create-study-ta65md-healthy-volunteers-registry",
+    "create-finding-ta65md-healthy-volunteers-registry-unknown-no-results",
+    "create-source-nct-01753674",
+    "create-study-ta65-metabolic-syndrome-terminated-registry",
+    "create-finding-ta65-metabolic-syndrome-terminated-no-results",
+    "create-source-nct-02531334",
+    "create-study-ta65-metabolic-syndrome-completed-registry",
+    "create-finding-ta65-metabolic-syndrome-completed-no-results",
+    "create-source-nct-02530255",
+    "create-study-cycloastragenol-retinal-amyloid-registry",
+    "create-finding-cycloastragenol-retinal-amyloid-completed-no-results",
+    "create-source-nct-05598359",
+    "create-study-ta65-microvascular-dysfunction-registry",
+    "create-finding-ta65-microvascular-planned-no-results",
+    "create-source-nct-04110964",
+    "create-study-libella-aav-htert-critical-limb-ischemia-registry",
+    "create-finding-libella-aav-htert-critical-limb-registry-no-results",
+    "create-source-nct-04133454",
+    "create-study-libella-aav-htert-alzheimer-registry",
+    "create-finding-libella-aav-htert-alzheimer-registry-no-results",
+    "update-outlook-track-telomerase-restoration"
+  ],
+  "findings": [
+    {
+      "finding_id": "safety-ta65-short-window-not-overstated",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-finding-ta65-meta-analysis-telomere-function-disconnect",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "ta65-meta-analysis-telomere-function-disconnect"
+      },
+      "claim_or_issue": "The TA-65 meta-analysis finding reports no severe adverse events or oncogenesis only within the short reviewed window and explicitly keeps long-term carcinogenic potential unresolved.",
+      "why_it_matters": "Telomerase activation has a proliferation/cancer-risk boundary that short supplement trials cannot settle.",
+      "recommended_action": "No revision needed; preserve the short-term-safety and long-term-risk caveats.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "safety-gene-therapy-results-absent",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "update-outlook-track-telomerase-restoration",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-telomerase-restoration-outlook"
+      },
+      "claim_or_issue": "The aging and disease-context AAV-hTERT registries have no posted human safety, telomerase, telomere-length, clonal, cancer-surveillance, biomarker, or functional results.",
+      "why_it_matters": "Gene-therapy safety cannot be inferred from registry existence or planned adverse-event endpoints.",
+      "recommended_action": "No revision needed; keep AAV-hTERT registries as no-results safety watch items.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "safety-tert-mrna-conflict-and-scope-caveat-present",
+      "severity": "note",
+      "category": "missing_caveat",
+      "applies_to_change_id": "create-finding-tert-mrna-radiation-dna-damage-boundary",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "tert-mrna-radiation-dna-damage-boundary"
+      },
+      "claim_or_issue": "The TERT mRNA finding includes the patent/company conflict context and avoids broad safety claims outside the radiation-injury experiment.",
+      "why_it_matters": "Commercial and scope caveats are material for a telomerase-technology record adjacent to human use.",
+      "recommended_action": "No revision needed.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "safety-rating-change-criteria-require-long-term-follow-up",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "update-outlook-track-telomerase-restoration",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-telomerase-restoration-outlook"
+      },
+      "claim_or_issue": "The outlook says a gene-therapy upgrade would require transparent human safety data with telomerase activity, telomere length, clonal expansion, and cancer-surveillance follow-up.",
+      "why_it_matters": "The rating-change criteria do not imply that current short-term or no-results records have already met the safety threshold.",
+      "recommended_action": "No revision needed.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-10T22:17:54.607Z",
+  "updated_at": "2026-06-10T22:17:54.607Z"
+}

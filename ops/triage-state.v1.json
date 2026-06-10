@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-10T21:55:59.864Z",
+  "generated_at": "2026-06-10T22:20:10.234Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-10T21:55:59.768Z",
-    "research_priority_queue_updated_at": "2026-06-10T21:55:59.768Z",
-    "active_candidate_bundle_count": 1,
+    "research_coverage_status_updated_at": "2026-06-10T22:20:10.121Z",
+    "research_priority_queue_updated_at": "2026-06-10T22:20:10.121Z",
+    "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 2,
-    "surveillance_recent_queue_count": 35,
+    "surveillance_recent_queue_count": 36,
     "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 22,
     "unnormalized_intervention_id_count": 0,
@@ -33,53 +33,19 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "editorial_review-telomerase-restoration-coverage-repair-2026-06-10",
-    "top_mode": "editorial_review",
-    "active_editorial_count": 1,
+    "top_work_item_id": "surveillance-chaperone-and-heat-shock-support",
+    "top_mode": "surveillance",
+    "active_editorial_count": 0,
     "ready_research_count": 2,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
-      "35 surveillance track(s) are hidden from ordinary rotation until their cooldown expires."
+      "36 surveillance track(s) are hidden from ordinary rotation until their cooldown expires."
     ]
   },
   "work_items": [
     {
       "rank": 1,
-      "item_id": "editorial_review-telomerase-restoration-coverage-repair-2026-06-10",
-      "mode": "editorial_review",
-      "domain": "editorial",
-      "priority_tier": "now",
-      "status": "ready",
-      "title": "Review active staged update telomerase-restoration-coverage-repair-2026-06-10",
-      "rationale": "Staged update telomerase-restoration-coverage-repair-2026-06-10 is submitted, so editorial work takes precedence over new research.",
-      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
-      "candidate_bundle_id": "telomerase-restoration-coverage-repair-2026-06-10",
-      "runbook_path": "docs/admin-review.md",
-      "command": "npm run research:bundle -- validate --bundle telomerase-restoration-coverage-repair-2026-06-10",
-      "source_paths": [
-        "data/candidate-bundles",
-        "docs/admin-review.md"
-      ],
-      "references": [
-        {
-          "record_type": "candidate_bundle",
-          "record_id": "telomerase-restoration-coverage-repair-2026-06-10"
-        }
-      ],
-      "signals": [
-        {
-          "name": "lifecycle_status",
-          "value": "submitted"
-        },
-        {
-          "name": "proposed_change_count",
-          "value": 28
-        }
-      ]
-    },
-    {
-      "rank": 2,
       "item_id": "surveillance-chaperone-and-heat-shock-support",
       "mode": "surveillance",
       "domain": "research",
@@ -134,7 +100,7 @@
       ]
     },
     {
-      "rank": 3,
+      "rank": 2,
       "item_id": "coverage-assessment-backfill-chaperone-and-heat-shock-support",
       "mode": "coverage_assessment_backfill",
       "domain": "research",

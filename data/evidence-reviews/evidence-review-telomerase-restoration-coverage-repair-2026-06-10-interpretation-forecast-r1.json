@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-telomerase-restoration-coverage-repair-2026-06-10-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Telomerase Restoration bundle",
+  "candidate_bundle_id": "telomerase-restoration-coverage-repair-2026-06-10",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The refreshed Telomerase Restoration outlook uses the repair as missing context rather than promotional evidence. The staged support map keeps evidence_stage at human_biomarker_signal, momentum mixed, and confidence low; it treats the 2025 TA-65 synthesis as biomarker-strengthening but function-limiting review evidence; and it keeps no-results registries, disease-context AAV-hTERT records, and TERT mRNA radiation-injury biology out of any stage-upgrading role.",
+  "reviewed_change_ids": [
+    "create-source-pmid-41286474",
+    "create-study-ta65-systematic-review-meta-analysis",
+    "create-finding-ta65-meta-analysis-telomere-function-disconnect",
+    "create-source-pmid-40958415",
+    "create-study-tert-mrna-radiation-skin-damage",
+    "create-finding-tert-mrna-radiation-dna-damage-boundary",
+    "create-source-nct-02766790",
+    "create-study-ta65md-healthy-volunteers-registry",
+    "create-finding-ta65md-healthy-volunteers-registry-unknown-no-results",
+    "create-source-nct-01753674",
+    "create-study-ta65-metabolic-syndrome-terminated-registry",
+    "create-finding-ta65-metabolic-syndrome-terminated-no-results",
+    "create-source-nct-02531334",
+    "create-study-ta65-metabolic-syndrome-completed-registry",
+    "create-finding-ta65-metabolic-syndrome-completed-no-results",
+    "create-source-nct-02530255",
+    "create-study-cycloastragenol-retinal-amyloid-registry",
+    "create-finding-cycloastragenol-retinal-amyloid-completed-no-results",
+    "create-source-nct-05598359",
+    "create-study-ta65-microvascular-dysfunction-registry",
+    "create-finding-ta65-microvascular-planned-no-results",
+    "create-source-nct-04110964",
+    "create-study-libella-aav-htert-critical-limb-ischemia-registry",
+    "create-finding-libella-aav-htert-critical-limb-registry-no-results",
+    "create-source-nct-04133454",
+    "create-study-libella-aav-htert-alzheimer-registry",
+    "create-finding-libella-aav-htert-alzheimer-registry-no-results",
+    "update-outlook-track-telomerase-restoration"
+  ],
+  "findings": [
+    {
+      "finding_id": "interpretation-stage-boundary-retained",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "update-outlook-track-telomerase-restoration",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-telomerase-restoration-outlook"
+      },
+      "claim_or_issue": "The updated outlook preserves human_biomarker_signal and explicitly says human health/function gains, long-term safety, gene-therapy results, and cancer-risk boundaries remain unresolved.",
+      "why_it_matters": "Adding review and registry coverage should not imply a human-function or clinical-outcome upgrade.",
+      "recommended_action": "No revision needed; keep the stage unchanged and rating-change criteria focused on repeated human functional or clinical outcomes.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "interpretation-ta65-review-used-as-limiting-synthesis",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "applies_to_change_id": "create-finding-ta65-meta-analysis-telomere-function-disconnect",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "ta65-meta-analysis-telomere-function-disconnect"
+      },
+      "claim_or_issue": "The TA-65 meta-analysis is used to support telomere-length movement while emphasizing no significant frailty or inflammation improvement.",
+      "why_it_matters": "This is the central interpretation boundary for TA-65: target-related biomarker movement has not become a health-outcome claim.",
+      "recommended_action": "No revision needed; retain the biomarker-to-health gap language in the outlook.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "interpretation-registries-not-treated-as-evidence-progress",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "update-outlook-track-telomerase-restoration",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-telomerase-restoration-outlook"
+      },
+      "claim_or_issue": "Unknown, terminated, completed-without-results, and planned registries are represented as watchlist context rather than outcome evidence.",
+      "why_it_matters": "Trial activity and registry metadata can improve coverage but should not move stage, momentum, or read firmness by themselves.",
+      "recommended_action": "No revision needed; keep the registry support role as limiting context.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "interpretation-tert-mrna-non-aging-boundary-retained",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-tert-mrna-radiation-dna-damage-boundary",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "tert-mrna-radiation-dna-damage-boundary"
+      },
+      "claim_or_issue": "TERT mRNA is staged as radiation-injury and DNA-damage boundary context, not as evidence that telomerase restoration improves aging outcomes.",
+      "why_it_matters": "The source is biologically relevant but does not establish telomere restoration, human function, or aging efficacy.",
+      "recommended_action": "No revision needed.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-10T22:17:50.770Z",
+  "updated_at": "2026-06-10T22:17:50.770Z"
+}
