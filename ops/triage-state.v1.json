@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-10T19:38:57.448Z",
+  "generated_at": "2026-06-10T20:56:36.894Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-10T19:38:57.353Z",
-    "research_priority_queue_updated_at": "2026-06-10T19:38:57.353Z",
+    "research_coverage_status_updated_at": "2026-06-10T20:56:36.792Z",
+    "research_priority_queue_updated_at": "2026-06-10T20:56:36.792Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
-    "surveillance_queue_count": 3,
+    "surveillance_queue_count": 2,
     "surveillance_recent_queue_count": 35,
-    "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 23,
+    "coverage_repair_queue_count": 1,
+    "coverage_assessment_backlog_count": 22,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
   },
@@ -33,8 +33,8 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "surveillance-telomerase-restoration",
-    "top_mode": "surveillance",
+    "top_work_item_id": "coverage-repair-telomerase-restoration",
+    "top_mode": "coverage_repair",
     "active_editorial_count": 0,
     "ready_research_count": 3,
     "data_hardening_count": 0,
@@ -46,14 +46,14 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "surveillance-telomerase-restoration",
-      "mode": "surveillance",
+      "item_id": "coverage-repair-telomerase-restoration",
+      "mode": "coverage_repair",
       "domain": "research",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Run field change check for Telomerase Restoration",
-      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
-      "default_action": "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
+      "title": "Repair coverage for Telomerase Restoration",
+      "rationale": "Run a Telomerase Restoration coverage-repair pass focused on PMID 41286474, TA-65 registry watchlist completeness, telomerase mRNA boundary context, disease-specific Libella AAV-hTERT registries, and long-term safety/durability framing. Create a public bundle only for staged records that materially improve the evidence map and preserve the current biomarker-stage, tentative-read boundary.",
+      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
       "track_id": "telomerase-restoration",
       "hallmark_id": "telomere_attrition",
       "references": [
@@ -64,6 +64,42 @@
         {
           "record_type": "hallmark",
           "record_id": "telomere_attrition"
+        }
+      ],
+      "runbook_path": "docs/coverage-assessment.md",
+      "source_paths": [
+        "research/backlog/track-priority.v1.json",
+        "research/state/coverage-status.v1.json",
+        "research/coverage-assessments",
+        "docs/coverage-assessment.md"
+      ],
+      "signals": [
+        {
+          "name": "generated_queue_rank",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "item_id": "surveillance-chaperone-and-heat-shock-support",
+      "mode": "surveillance",
+      "domain": "research",
+      "priority_tier": "now",
+      "status": "ready",
+      "title": "Run field change check for Chaperone and Heat-Shock Support",
+      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
+      "default_action": "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
+      "track_id": "chaperone-and-heat-shock-support",
+      "hallmark_id": "loss_of_proteostasis",
+      "references": [
+        {
+          "record_type": "track",
+          "record_id": "chaperone-and-heat-shock-support"
+        },
+        {
+          "record_type": "hallmark",
+          "record_id": "loss_of_proteostasis"
         }
       ],
       "runbook_path": "docs/surveillance-checklist.md",
@@ -100,25 +136,25 @@
       ]
     },
     {
-      "rank": 2,
-      "item_id": "coverage-assessment-backfill-telomerase-restoration",
+      "rank": 3,
+      "item_id": "coverage-assessment-backfill-chaperone-and-heat-shock-support",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for Telomerase Restoration",
-      "rationale": "23 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
+      "title": "Backfill coverage assessment for Chaperone and Heat-Shock Support",
+      "rationale": "22 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
       "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
-      "track_id": "telomerase-restoration",
-      "hallmark_id": "telomere_attrition",
+      "track_id": "chaperone-and-heat-shock-support",
+      "hallmark_id": "loss_of_proteostasis",
       "references": [
         {
           "record_type": "track",
-          "record_id": "telomerase-restoration"
+          "record_id": "chaperone-and-heat-shock-support"
         },
         {
           "record_type": "hallmark",
-          "record_id": "telomere_attrition"
+          "record_id": "loss_of_proteostasis"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",
@@ -130,7 +166,7 @@
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 23
+          "value": 22
         },
         {
           "name": "generated_surveillance_queue_rank",

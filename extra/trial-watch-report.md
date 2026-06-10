@@ -1,29 +1,29 @@
-# Trial Watch Report for DNA Repair Enhancement
+# Trial Watch Report for Telomerase Restoration
 
 Generated from reviewed local records on 2026-06-10.
 Stale registry threshold: 90 days. This report does not fetch current registry data.
 
 ## Summary
 
-- Registry-linked interventional studies: 4
-- With `trial_details`: 4
+- Registry-linked interventional studies: 1
+- With `trial_details`: 1
 - Missing `trial_details`: 0
 - Completed or past-completion records with no posted results: 0
-- Registry checks missing or stale: 4
-- Open watchlist records with missing or stale registry checks: 0
-- Posted results recorded locally: 4
+- Registry checks missing or stale: 1
+- Open watchlist records with missing or stale registry checks: 1
+- Posted results recorded locally: 0
 
 ### Result Status
 
-- posted results: 4
+- no posted results: 1
 
 ### Trial Status
 
-- completed: 4
+- unknown: 1
 
 ## Field-Review Watchlist
 
-No current local trial watch candidates.
+- [Libella AAV-hTERT aging phase 1 registry study](https://clinicaltrials.gov/study/NCT04133649) (NCT04133649): unknown; no posted results; completion not recorded; registry no local check date.
 
 ## Completed Or Past-Completion With No Posted Results
 
@@ -31,10 +31,7 @@ No completed or past-completion local trial records are marked as no posted resu
 
 ## Stale Or Missing Registry Checks
 
-- [Nicotinamide mononucleotide in healthy older men](https://pubmed.ncbi.nlm.nih.gov/35927255/) (UMIN000036321): completed; posted results; completion not recorded; registry no local check date.
-- [Nicotinamide riboside in healthy middle-aged and older adults](https://pubmed.ncbi.nlm.nih.gov/29599478/) (NCT02921659): completed; posted results; completion not recorded; registry no local check date.
-- [ONTRAC nicotinamide skin-cancer chemoprevention trial](https://pubmed.ncbi.nlm.nih.gov/26488693/) (ACTRN12612000625875): completed; posted results; completion not recorded; registry no local check date.
-- [ONTRANS nicotinamide transplant-recipient skin-cancer trial](https://pubmed.ncbi.nlm.nih.gov/36856616/) (ACTRN12617000599370): completed; posted results; completion not recorded; registry no local check date.
+- [Libella AAV-hTERT aging phase 1 registry study](https://clinicaltrials.gov/study/NCT04133649) (NCT04133649): unknown; no posted results; completion not recorded; registry no local check date.
 
 ## Missing Trial Details
 
@@ -51,4 +48,8 @@ All scoped registry-linked interventional studies have trial details.
 - Treat unchanged no-result registries as surveillance facts, not field progress.
 - Treat status-only changes as activity unless they alter the public interpretation.
 - Send posted trial results through staged evidence review before changing an outlook.
+
+## Source Context Example
+
+A ClinicalTrials.gov phase 1 registry entry for a single-arm AAV-hTERT gene-therapy study in aging, listed with unknown overall status and no posted results.
 
