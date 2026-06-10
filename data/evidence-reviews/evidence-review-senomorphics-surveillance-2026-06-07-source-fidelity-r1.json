@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-senomorphics-surveillance-2026-06-07-source-fidelity-r1",
+  "name": "Source Fidelity review for Senomorphics bundle",
+  "candidate_bundle_id": "senomorphics-surveillance-2026-06-07",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, intervention, study, finding, registry refreshes, and outlook wording stay within the checked primary-source boundaries. PMID 42251040 supports the mianserin/Ca2+/SASP claim as human aging/progeria-derived cell evidence plus progeroid and naturally aged mouse healthspan/lifespan evidence, not treated-human efficacy. ClinicalTrials.gov confirms NCT03103893 remains completed with actual 2017-11-30 completion, 36 actual enrollment, rapamycin intervention, and no registry results section; NCT03107884 remains active, not recruiting, with estimated 2026-11-01 completion, 64 actual enrollment, metformin/placebo arms, and no registry results section. The staged trial notes correctly separate peer-reviewed result sources from registry-result status.",
+  "reviewed_change_ids": [
+    "create-source-pmid-42251040",
+    "create-intervention-mianserin",
+    "create-study-mianserin-calcium-homeostasis-aged-mice",
+    "create-finding-mianserin-calcium-homeostasis-improved-aged-mouse-healthspan-lifespan",
+    "update-study-topical-rapamycin-human-skin-aging",
+    "update-study-metformin-disuse-reambulation-older-adults",
+    "update-outlook-track-senomorphics-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "mianserin-source-boundary-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-mianserin-calcium-homeostasis-improved-aged-mouse-healthspan-lifespan",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "mianserin-calcium-homeostasis-improved-aged-mouse-healthspan-lifespan"
+      },
+      "claim_or_issue": "PMID 42251040 supports the staged claim that mianserin attenuated senescence in cells derived from HGPS patients and naturally aging humans, improved aging phenotypes, and significantly extended lifespan in LmnaG609G/G609G progeroid and naturally aged mice.",
+      "why_it_matters": "This is a material senomorphics source, but its direct efficacy evidence is animal and cell-system evidence rather than a treated-human aging trial.",
+      "recommended_action": "No revision needed; retain the animal evidence tier, human-derived cell boundary, low confidence, and no-treated-human caveat.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "mianserin-intervention-boundary-preserved",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-intervention-mianserin",
+      "applies_to_record": {
+        "record_type": "intervention",
+        "record_id": "mianserin"
+      },
+      "claim_or_issue": "The source identifies mianserin as a tetracyclic antidepressant and describes HTR2B/2C antagonism lowering Ca2+ concentrations; the staged record does not claim an approved aging indication and flags aging-use-preclinical status.",
+      "why_it_matters": "The intervention can be tracked as a repurposing candidate only if public wording keeps the aging claim separate from non-aging drug use.",
+      "recommended_action": "No revision needed; keep the aging-use-preclinical, human-aging-dose-and-safety-unresolved, and senomorphic-attribution-unresolved risk flags.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "topical-rapamycin-registry-refresh-accurate",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "update-study-topical-rapamycin-human-skin-aging",
+      "applies_to_record": {
+        "record_type": "study",
+        "record_id": "topical-rapamycin-human-skin-aging"
+      },
+      "claim_or_issue": "ClinicalTrials.gov lists NCT03103893 as completed, last updated 2021-09-22, with actual start 2017-09-25, actual primary and study completion 2017-11-30, 36 actual participants, phase 1/2, rapamycin intervention, and no registry results section.",
+      "why_it_matters": "The local study can keep posted peer-reviewed results through PMID 31761958, but the registry itself should not be described as having posted ClinicalTrials.gov results.",
+      "recommended_action": "No revision needed; the staged horizon note already says the peer-reviewed result is in the evidence layer while ClinicalTrials.gov has no results section.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "metformin-parent-registry-refresh-accurate",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "update-study-metformin-disuse-reambulation-older-adults",
+      "applies_to_record": {
+        "record_type": "study",
+        "record_id": "metformin-disuse-reambulation-older-adults"
+      },
+      "claim_or_issue": "ClinicalTrials.gov lists NCT03107884 as active, not recruiting, last updated 2025-12-05, with actual start 2019-08-01, estimated primary and study completion 2026-11-01, 64 actual participants, early phase 1 status, metformin/placebo arms, and no registry results section.",
+      "why_it_matters": "The published older-adult bed-rest substudy remains valid public evidence, but the parent registry remains open and should not be treated as a fully completed registry result.",
+      "recommended_action": "No revision needed; keep the staged parent-registry horizon note and recheck after the estimated 2026-11-01 completion date.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-07T16:39:56Z",
+  "updated_at": "2026-06-07T16:41:06.437Z"
+}

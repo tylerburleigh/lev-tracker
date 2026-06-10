@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "multivitamin-multimineral",
+  "name": "Multivitamin-multimineral",
+  "summary": "Multivitamin-multimineral is normalized for COSMOS DNA-methylation clock evidence in older adults.",
+  "modalities": [
+    "dietary_supplement"
+  ],
+  "target_hallmark_ids": [
+    "epigenetic_alterations"
+  ],
+  "track_ids": [
+    "dna-methylation-and-epigenome-restoration"
+  ],
+  "mechanism_summary": "Represents broad micronutrient supplementation tested against epigenetic-clock biomarkers, with linked evidence not isolating a single nutrient mechanism.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "cosmos-mvm-cocoa-epigenetic-clocks"
+  ],
+  "linked_finding_ids": [
+    "cosmos-mvm-small-epigenetic-clock-slowing"
+  ],
+  "risk_flags": [
+    "biomarker-only",
+    "broad-mixture-attribution",
+    "small-effect-size"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: COSMOS multivitamin cocoa epigenetic-clock trial; COSMOS multivitamin modestly slowed selected epigenetic clocks while cocoa was null.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "dietary_supplement",
+    "dna-methylation-and-epigenome-restoration",
+    "epigenetic_alterations",
+    "multivitamin-multimineral"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

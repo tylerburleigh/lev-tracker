@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "timp2",
+  "name": "TIMP2",
+  "summary": "TIMP2 is normalized for human cord-plasma aged-mouse hippocampal function evidence.",
+  "modalities": [
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "altered_intercellular_communication"
+  ],
+  "track_ids": [
+    "circulating-factor-modulation"
+  ],
+  "mechanism_summary": "Represents tissue inhibitor of metalloproteinases 2 as a candidate circulating factor mediating cord-plasma effects on aged brain readouts.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "human-cord-plasma-timp2-aged-mouse-hippocampus"
+  ],
+  "linked_finding_ids": [
+    "human-cord-plasma-revitalized-aged-mouse-hippocampus"
+  ],
+  "risk_flags": [
+    "animal-only",
+    "single-factor-attribution-uncertain",
+    "translation-risk"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: Human cord plasma TIMP2 aged mouse hippocampus study; Human cord plasma revitalized hippocampal function in aged mice.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "altered_intercellular_communication",
+    "biologic",
+    "circulating-factor-modulation",
+    "timp2"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

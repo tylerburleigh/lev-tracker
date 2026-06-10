@@ -1,0 +1,207 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "dna-repair-enhancement-coverage-repair-2026-06-10",
+  "name": "DNA Repair Enhancement Coverage Repair for June 10, 2026",
+  "summary": "Coverage-repair bundle adding SIRT6, OGG1, and 2026 DNA repair targeting review anchors to DNA Repair Enhancement while keeping the track at low-confidence human_biomarker_signal with mixed momentum.",
+  "intake_mode": "manual",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-10T17:51:39Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "Which known source-completeness gaps for DNA Repair Enhancement need repair, and does resolving them change the coverage verdict or public boundaries?",
+    "hallmark_ids": [
+      "genomic_instability"
+    ],
+    "track_ids": [
+      "dna-repair-enhancement"
+    ]
+  },
+  "source_ids": [
+    "pmid-31002797",
+    "pmid-35737787",
+    "pmid-42227145"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/31002797/",
+    "https://doi.org/10.1016/j.cell.2019.03.043",
+    "https://pubmed.ncbi.nlm.nih.gov/35737787/",
+    "https://doi.org/10.1126/science.abf8980",
+    "https://pubmed.ncbi.nlm.nih.gov/42227145/",
+    "https://doi.org/10.1080/14728222.2026.2683686"
+  ],
+  "related_records": [
+    {
+      "record_type": "track",
+      "record_id": "dna-repair-enhancement"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-dna-repair-enhancement-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-genomic-instability-outlook"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-31002797",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-31002797",
+      "file_path": "data/sources/pmid-31002797.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-coverage-repair-2026-06-10/pmid-31002797.json",
+      "summary": "Add the SIRT6 double-strand break repair cross-species source.",
+      "rationale": "SIRT6 was a named preclinical repair-regulator gap and this source is a direct DNA repair longevity anchor."
+    },
+    {
+      "change_id": "create-study-sirt6-dsb-repair-long-lived-species",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "sirt6-dsb-repair-long-lived-species-study",
+      "file_path": "data/studies/sirt6-dsb-repair-long-lived-species-study.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-coverage-repair-2026-06-10/sirt6-dsb-repair-long-lived-species-study.json",
+      "summary": "Add the SIRT6 comparative repair study.",
+      "rationale": "The study fills the systemic repair-regulator preclinical coverage gap without creating a human intervention claim."
+    },
+    {
+      "change_id": "create-finding-sirt6-dsb-repair-linked-to-longevity",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "sirt6-dsb-repair-linked-to-longevity",
+      "file_path": "data/findings/sirt6-dsb-repair-linked-to-longevity.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-coverage-repair-2026-06-10/sirt6-dsb-repair-linked-to-longevity.json",
+      "summary": "Add the SIRT6 repair-regulator finding.",
+      "rationale": "The finding captures cross-species repair-regulator support while preserving non-human-intervention caveats.",
+      "uncertainty_flags": [
+        "comparative-biology",
+        "preclinical",
+        "not-human-intervention"
+      ]
+    },
+    {
+      "change_id": "create-source-pmid-35737787",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-35737787",
+      "file_path": "data/sources/pmid-35737787.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-coverage-repair-2026-06-10/pmid-35737787.json",
+      "summary": "Add the OGG1 small-molecule activation source.",
+      "rationale": "OGG1 was a named repair-regulator/glycosylase coverage gap and this source provides direct small-molecule repair activation biology."
+    },
+    {
+      "change_id": "create-study-ogg1-small-molecule-repair-activation",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "ogg1-small-molecule-repair-activation-study",
+      "file_path": "data/studies/ogg1-small-molecule-repair-activation-study.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-coverage-repair-2026-06-10/ogg1-small-molecule-repair-activation-study.json",
+      "summary": "Add the OGG1 cellular repair activation study.",
+      "rationale": "The study fills a direct mechanistic repair-enhancement branch while keeping it below animal or human evidence."
+    },
+    {
+      "change_id": "create-finding-ogg1-small-molecule-increased-oxidative-dna-repair",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ogg1-small-molecule-increased-oxidative-dna-repair",
+      "file_path": "data/findings/ogg1-small-molecule-increased-oxidative-dna-repair.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-coverage-repair-2026-06-10/ogg1-small-molecule-increased-oxidative-dna-repair.json",
+      "summary": "Add the OGG1 repair activation finding.",
+      "rationale": "The finding documents direct oxidative DNA repair activation while preserving in vitro and safety limitations.",
+      "uncertainty_flags": [
+        "in-vitro",
+        "not-human-intervention",
+        "safety-not-established"
+      ]
+    },
+    {
+      "change_id": "create-source-pmid-42227145",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-42227145",
+      "file_path": "data/sources/pmid-42227145.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-coverage-repair-2026-06-10/pmid-42227145.json",
+      "summary": "Add the 2026 DNA repair targeting review source.",
+      "rationale": "The recent-review gap called for review triangulation and safety/taxonomy boundary context."
+    },
+    {
+      "change_id": "create-study-dna-repair-targeting-aging-review",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "dna-repair-targeting-aging-review-study",
+      "file_path": "data/studies/dna-repair-targeting-aging-review-study.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-coverage-repair-2026-06-10/dna-repair-targeting-aging-review-study.json",
+      "summary": "Add the DNA repair targeting review study record.",
+      "rationale": "Review-level synthesis helps repair source completeness without adding primary efficacy evidence."
+    },
+    {
+      "change_id": "create-finding-dna-repair-targeting-review-context-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "dna-repair-targeting-review-context-boundary",
+      "file_path": "data/findings/dna-repair-targeting-review-context-boundary.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-coverage-repair-2026-06-10/dna-repair-targeting-review-context-boundary.json",
+      "summary": "Add the review boundary finding.",
+      "rationale": "The finding records pathway, biomarker, safety, and taxonomy constraints rather than efficacy.",
+      "uncertainty_flags": [
+        "review-level",
+        "context-dependent-targeting",
+        "not-efficacy-evidence"
+      ]
+    },
+    {
+      "change_id": "update-outlook-track-dna-repair-enhancement",
+      "change_type": "update_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-dna-repair-enhancement-outlook",
+      "file_path": "data/outlooks/track-dna-repair-enhancement-outlook.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-coverage-repair-2026-06-10/track-dna-repair-enhancement-outlook.json",
+      "summary": "Refresh the DNA Repair Enhancement outlook with repaired preclinical and review coverage.",
+      "rationale": "The outlook should represent SIRT6, OGG1, and review-level repair-regulator context while keeping stage, momentum, and confidence unchanged.",
+      "uncertainty_flags": [
+        "stage-unchanged",
+        "preclinical-and-review-context",
+        "human-benefit-not-shown"
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "dna-repair-enhancement",
+      "note": "Repair preclinical and review coverage by adding SIRT6, OGG1, and DNA repair targeting review support, while preserving human_biomarker_signal, mixed momentum, and low confidence.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast",
+    "safety_limitations",
+    "taxonomy_mapping"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-10-dna-repair-enhancement-coverage-repair.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin",
+    "coverage-repair",
+    "dna-repair-enhancement"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-dna-repair-enhancement-coverage-repair-2026-06-10-safety-limitations-r1",
+    "evidence-review-dna-repair-enhancement-coverage-repair-2026-06-10-source-fidelity-r1",
+    "evidence-review-dna-repair-enhancement-coverage-repair-2026-06-10-taxonomy-mapping-r1",
+    "evidence-review-dna-repair-enhancement-coverage-repair-2026-06-10-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-dna-repair-enhancement-coverage-repair-2026-06-10-2026-06-10t19-38-52-918z"
+  ]
+}

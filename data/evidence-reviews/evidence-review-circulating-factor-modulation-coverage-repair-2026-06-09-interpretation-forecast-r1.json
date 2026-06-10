@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-circulating-factor-modulation-coverage-repair-2026-06-09-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Circulating Factor Modulation bundle",
+  "candidate_bundle_id": "circulating-factor-modulation-coverage-repair-2026-06-09",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged interpretation is conservative and forecast-safe. The outlook keeps evidence_stage, momentum, and confidence unchanged; confines human functional support to Alzheimer disease plasma exchange; describes healthy-adult plasma-exchange evidence as mixed and biomarker-level; and requires replicated functional, intrinsic-capacity, durability, disease, or mortality endpoints before confidence or broad-aging interpretation can increase.",
+  "reviewed_change_ids": [
+    "create-plasmapheresis-without-replacement",
+    "create-young-donor-plasma-exchange",
+    "create-pmid-40592961",
+    "create-nct-05004220",
+    "create-pmid-40928812",
+    "create-doi-10.64898-2026.04.29.26351809",
+    "create-nct-06234436",
+    "create-doi-10.1002-jca.70135",
+    "create-nct-04897113",
+    "create-nct-05054894",
+    "create-nct-06534450",
+    "create-pmid-41721191",
+    "create-pmid-41494381",
+    "create-fda-young-donor-plasma-warning-2019-02-19",
+    "create-plasmapheresis-healthy-adult-aging-biomarkers",
+    "create-real-world-tpe-alzheimers-cohort",
+    "create-young-donor-plasma-exchange-mci-preprint",
+    "create-tpe-microplastics-human-procedure-series",
+    "create-plasmapheresis-aging-biomarker-registry",
+    "create-tpe-age-related-frailty-registry",
+    "update-randomized-tpe-multiomics-healthy-adults",
+    "create-plasmapheresis-no-epigenetic-rejuvenation-possible-acceleration",
+    "create-real-world-tpe-ad-slowed-cognitive-decline",
+    "create-young-donor-plasma-exchange-mci-feasible-preprint",
+    "create-tpe-microplastics-mixed-biomarker-signal",
+    "create-plasmapheresis-aging-biomarker-registry-unknown-no-results",
+    "create-tpe-frailty-registry-unknown-no-results",
+    "create-randomized-tpe-registry-active-no-registry-results",
+    "create-plasma-rejuvenation-review-translation-boundary",
+    "create-tpe-immune-modulation-review-procedure-boundary",
+    "create-young-plasma-fda-warning-safety-boundary",
+    "update-track-circulating-factor-modulation-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "cfm-repair-stage-boundary-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "update-track-circulating-factor-modulation-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-circulating-factor-modulation-outlook"
+      },
+      "claim_or_issue": "The staged outlook preserves human_functional_benefit only as a narrow Alzheimer disease-specific plasma-exchange boundary.",
+      "why_it_matters": "Without that wording, readers could infer that the track has broad healthy-aging functional evidence in humans.",
+      "recommended_action": "Retain the staged interpretation note and stage-assignment support evidence tying functional benefit to AMBAR and the historical-control Alzheimer cohort only.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "cfm-repair-biomarker-mix-does-not-upgrade",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "applies_to_change_id": "update-track-circulating-factor-modulation-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-circulating-factor-modulation-outlook"
+      },
+      "claim_or_issue": "The staged outlook describes healthy-adult TPE and plasmapheresis evidence as mixed biomarker evidence instead of upgrading the track based on the favorable randomized multi-omics paper.",
+      "why_it_matters": "The repaired map includes both positive biomarker movement and a limiting plasmapheresis epigenetic-clock result.",
+      "recommended_action": "Keep the mixed-biomarker framing and low confidence rating.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "cfm-repair-forecast-criteria-conservative",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "update-track-circulating-factor-modulation-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-circulating-factor-modulation-outlook"
+      },
+      "claim_or_issue": "The rating-change criteria require replicated functional or intrinsic-capacity endpoints and clearer mechanism attribution before any stronger broad-aging read.",
+      "why_it_matters": "This prevents no-results registries, preprint feasibility signals, review-level sources, and short-term biomarker movement from being interpreted as forecast progress.",
+      "recommended_action": "Retain the staged rating-change criteria and ordinary-surveillance next mode.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-09T12:29:45.850Z",
+  "updated_at": "2026-06-09T12:29:45.850Z"
+}

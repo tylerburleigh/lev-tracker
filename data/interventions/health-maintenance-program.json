@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "health-maintenance-program",
+  "name": "Health-maintenance program",
+  "summary": "Health-maintenance program is normalized for the uncontrolled commercial TA-65 program record that combined supplements, counseling, and monitoring.",
+  "modalities": [
+    "combination",
+    "lifestyle",
+    "dietary_supplement"
+  ],
+  "target_hallmark_ids": [
+    "telomere_attrition"
+  ],
+  "track_ids": [
+    "telomerase-restoration"
+  ],
+  "mechanism_summary": "Represents the non-TA-65 program components surrounding a commercial telomere and immune-biomarker report; it is a confounded combination exposure.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "ta65-health-maintenance-human-cohort"
+  ],
+  "linked_finding_ids": [
+    "ta65-health-maintenance-short-telomere-immune-signal"
+  ],
+  "risk_flags": [
+    "uncontrolled-human-cohort",
+    "commercial-context",
+    "combination-attribution"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: TA-65 health maintenance human cohort; TA-65 health-maintenance program reported immune and short-telomere changes but was uncontrolled.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "combination",
+    "dietary_supplement",
+    "health-maintenance-program",
+    "lifestyle",
+    "telomerase-restoration",
+    "telomere_attrition"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

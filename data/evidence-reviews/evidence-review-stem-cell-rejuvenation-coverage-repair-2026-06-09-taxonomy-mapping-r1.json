@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-stem-cell-rejuvenation-coverage-repair-2026-06-09-taxonomy-mapping-r1",
+  "name": "Taxonomy Mapping review for Stem Cell Rejuvenation bundle",
+  "candidate_bundle_id": "stem-cell-rejuvenation-coverage-repair-2026-06-09",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "taxonomy_mapping",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The taxonomy mapping is coherent. hDNAgr is included because the registry explicitly targets hematopoietic stem-cell aging, while withdrawn exercise, NR/pterostilbene muscle-regeneration, 15-PGDH muscle repair, MMP9 aged-bone repair, mitochondrial, and stromal/HSPC mobilization records remain excluded or boundary context so the public track does not absorb adjacent tissue-repair or niche-support claims.",
+  "reviewed_change_ids": [
+    "create-intervention-hdnagr-therapy",
+    "create-source-nct-06877377",
+    "create-source-pmid-42216078",
+    "create-study-hdnagr-hsc-aging-registry",
+    "create-finding-hdnagr-hsc-aging-registry-not-yet-recruiting-no-results",
+    "create-finding-hsc-aging-review-rejuvenation-strategy-boundary",
+    "update-outlook-track-stem-cell-rejuvenation"
+  ],
+  "findings": [
+    {
+      "finding_id": "hdnagr-belongs-in-stem-cell-rejuvenation-watchlist",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-intervention-hdnagr-therapy",
+      "applies_to_record": {
+        "record_type": "intervention",
+        "record_id": "hdnagr-therapy"
+      },
+      "claim_or_issue": "The hDNAgr registry is mapped to Stem Cell Rejuvenation because it explicitly targets HSC aging endpoints.",
+      "why_it_matters": "The intervention is relevant to the track even though it currently contributes watchlist context rather than efficacy evidence.",
+      "recommended_action": "No revision needed; keep the no-results and safety caveats attached.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "adjacent-sources-kept-out-of-public-support",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "update-outlook-track-stem-cell-rejuvenation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-stem-cell-rejuvenation-outlook"
+      },
+      "claim_or_issue": "Adjacent trial and PubMed records are used as exclusions or boundary context rather than public support for the track.",
+      "why_it_matters": "This avoids blending stem-cell rejuvenation with NAD overlap, muscle repair, immune modulation, mitochondrial aging, or marrow-niche support without a specific mapping decision.",
+      "recommended_action": "No revision needed; revisit only if future results create a direct intervention claim for this track.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-10T10:16:50.901Z",
+  "updated_at": "2026-06-10T10:16:50.901Z"
+}

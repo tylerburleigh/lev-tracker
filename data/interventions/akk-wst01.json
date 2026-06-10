@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "akk-wst01",
+  "name": "AKK-WST01",
+  "summary": "AKK-WST01 is an Akkermansia-based live-biotherapeutic product tracked for baseline-dependent metabolic biomarker response in overweight or obese adults with type 2 diabetes.",
+  "modalities": [
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "chronic_inflammation",
+    "dysbiosis"
+  ],
+  "track_ids": [
+    "live-biotherapeutics-and-engineered-microbes"
+  ],
+  "mechanism_summary": "Targets gut microbial composition and host metabolic signaling through an Akkermansia product, with evidence bounded to metabolic biomarkers and baseline microbiome dependence.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "akk-wst01-type2-diabetes-rct"
+  ],
+  "linked_finding_ids": [
+    "akk-wst01-baseline-dependent-metabolic-response"
+  ],
+  "risk_flags": [
+    "disease-specific-evidence",
+    "biomarker-only",
+    "baseline-microbiome-dependence"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: AKK-WST01 metabolic response depended on baseline Akkermansia abundance; AKK-WST01 overweight or obese type 2 diabetes randomized trial.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "akk-wst01",
+    "biologic",
+    "chronic_inflammation",
+    "dysbiosis",
+    "live-biotherapeutics-and-engineered-microbes"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

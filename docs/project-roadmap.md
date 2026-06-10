@@ -277,7 +277,7 @@ These are the main gaps between the implemented app and `docs/public-site-ia.md`
 
 Bootstrap coverage is complete for all 38 seeded tracks. The first field change check is also complete: `microbiome-composition-modulation-surveillance-2026-06-03` was reviewed, published, and promoted to public records.
 
-The current goal is to continue field-change rotation one track-level check at a time, with `no_op`, `activity_only`, and coverage-assessment-only outcomes treated as successful results when the public evidence state does not materially change. The generated queue can immediately re-list recently published high-priority tracks because it does not enforce a cooldown; unless deliberately doing a rapid follow-up, the next distinct field-change target is `ecosystem-replacement`.
+The current goal is to continue field-change rotation one track-level check at a time, with `no_op`, `activity_only`, and coverage-assessment-only outcomes treated as successful results when the public evidence state does not materially change. The generated queue now suppresses tracks with a successful surveillance or coverage-repair pass inside the cooldown window, while keeping them visible in the recent queue for deliberate rapid follow-up.
 
 Most recent published field-change updates:
 
@@ -447,7 +447,7 @@ Top coverage-repair queue items:
 
 Top triage item:
 
-- `ops/triage-state.v1.json` currently selects the next distinct field-change target rather than looping on the just-reviewed microbiome-composition track.
+- `ops/triage-state.v1.json` now selects the highest-priority due field-change target from `surveillance_queue`; recently handled tracks are retained in `surveillance_recent_queue` until their cooldown expires.
 
 Research runs should continue to follow `docs/research-ops-state.md`: one track per run, one session record, zero or one staged update, staged JSON only for material changes, and structured materiality/excluded-source notes for field change checks or coverage repair.
 
@@ -487,9 +487,9 @@ Research runs should continue to follow `docs/research-ops-state.md`: one track 
 5. Normalize intervention records.
    - The schema exists, but the public app currently relies mostly on IDs and track exemplars.
    - Intervention records are needed before intervention detail pages can be useful.
-   - Current status: partially implemented.
-   - Note: `docs/intervention-normalization.md` defines normalization rules, `data/interventions/` now has 63 records with cross-track updates through reviewed public batches, and evidence pages prefer normalized intervention names where records exist.
-   - Remaining: continue filling long-tail intervention IDs from the `npm run audit:data` warning output; the current known backlog is 140 references across 71 non-normalized intervention IDs.
+   - Current status: implemented for all currently referenced intervention IDs.
+   - Note: `docs/intervention-normalization.md` defines normalization rules, `data/interventions/` now has records for every intervention ID referenced by live study, finding, activity, and intervention-outlook records, and evidence pages prefer normalized intervention names where records exist.
+   - Remaining: keep normalization current as new promoted studies, findings, activity items, or intervention outlooks introduce new intervention IDs.
 
 ## Priority 5: Documentation Cleanup
 
@@ -521,6 +521,6 @@ npm run build
 npm run research:bundle -- smoke --bundle <bundle-id> --base-url <local-url>
 ```
 
-Last known result on 2026-06-03 after publishing `microbiome-composition-modulation-surveillance-2026-06-03`: staged-update validation passes structural, provenance, evidence-map, promotion-file, evidence-gate, and public-update checks with no issues or warnings. Required `source_fidelity` and `interpretation_forecast` reviews are complete with no blocking reviews or open blocking findings, and the staged-update lifecycle is now `published`. `npm run sync:research-planning`, `npm run validate:records`, `npm run audit:data`, `npm run typecheck`, and `npm run build` pass; the data audit reports a known non-blocking intervention-normalization warning for 140 references across 71 non-normalized intervention IDs. The generated baseline-review queue is empty, all 38 seeded tracks now have public baseline outlooks, and the top field-change queue starts with `microbiome-composition-modulation`.
+Last known result on 2026-06-07 after intervention normalization: `npm run sync:research-planning`, `npm run validate:records`, and `npm run audit:data` pass, with no intervention-normalization warning remaining. The generated baseline-review queue is empty, all 38 seeded tracks now have public baseline outlooks, and operational triage has no data-hardening warning item.
 
 Coverage-assessment update on 2026-06-03: `microbiome-composition-modulation-coverage-2026-06-03` validates as the first internal coverage assessment and is surfaced in generated planning state. It marks the track `adequate` for the current public claim, with meaningful biomarker, metabolite, microbiome-composition, and symptom evidence, plus known gaps around formal seminal-anchor auditing, recent review triangulation, and aging-functional upgrade evidence that is not yet established. `ecosystem-replacement-coverage-2026-06-03` now backfills the next field-change-queue track as `adequate`; it records strong animal aging and trial-watch coverage while keeping direct older-adult aging results and preventive-aging safety/durability as high-priority gaps.

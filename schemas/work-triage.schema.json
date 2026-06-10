@@ -32,6 +32,7 @@
         "active_candidate_bundle_count",
         "bootstrap_queue_count",
         "surveillance_queue_count",
+        "surveillance_recent_queue_count",
         "coverage_repair_queue_count",
         "coverage_assessment_backlog_count",
         "unnormalized_intervention_id_count",
@@ -53,6 +54,10 @@
           "minimum": 0
         },
         "surveillance_queue_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "surveillance_recent_queue_count": {
           "type": "integer",
           "minimum": 0
         },

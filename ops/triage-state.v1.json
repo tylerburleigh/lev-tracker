@@ -1,17 +1,18 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-06T18:22:13.600Z",
+  "generated_at": "2026-06-10T22:20:10.234Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-06T18:22:13.506Z",
-    "research_priority_queue_updated_at": "2026-06-06T18:22:13.506Z",
-    "active_candidate_bundle_count": 1,
+    "research_coverage_status_updated_at": "2026-06-10T22:20:10.121Z",
+    "research_priority_queue_updated_at": "2026-06-10T22:20:10.121Z",
+    "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
-    "surveillance_queue_count": 37,
+    "surveillance_queue_count": 2,
+    "surveillance_recent_queue_count": 36,
     "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 28,
-    "unnormalized_intervention_id_count": 70,
-    "unnormalized_intervention_reference_count": 138
+    "coverage_assessment_backlog_count": 22,
+    "unnormalized_intervention_id_count": 0,
+    "unnormalized_intervention_reference_count": 0
   },
   "selection_policy": {
     "default_instruction": "When the user asks what to work on, consult rank 1 first and state the assumption before acting.",
@@ -32,71 +33,37 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "editorial_review-stem-cell-replacement-and-transplantation-surveillance-2026-06-06",
-    "top_mode": "editorial_review",
-    "active_editorial_count": 1,
-    "ready_research_count": 37,
-    "data_hardening_count": 1,
+    "top_work_item_id": "surveillance-chaperone-and-heat-shock-support",
+    "top_mode": "surveillance",
+    "active_editorial_count": 0,
+    "ready_research_count": 2,
+    "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
-      "The top surveillance item intentionally prefers the next distinct target when the generated queue starts with a recently handled track."
+      "36 surveillance track(s) are hidden from ordinary rotation until their cooldown expires."
     ]
   },
   "work_items": [
     {
       "rank": 1,
-      "item_id": "editorial_review-stem-cell-replacement-and-transplantation-surveillance-2026-06-06",
-      "mode": "editorial_review",
-      "domain": "editorial",
-      "priority_tier": "now",
-      "status": "ready",
-      "title": "Review active staged update stem-cell-replacement-and-transplantation-surveillance-2026-06-06",
-      "rationale": "Staged update stem-cell-replacement-and-transplantation-surveillance-2026-06-06 is submitted, so editorial work takes precedence over new research.",
-      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
-      "candidate_bundle_id": "stem-cell-replacement-and-transplantation-surveillance-2026-06-06",
-      "runbook_path": "docs/admin-review.md",
-      "command": "npm run research:bundle -- validate --bundle stem-cell-replacement-and-transplantation-surveillance-2026-06-06",
-      "source_paths": [
-        "data/candidate-bundles",
-        "docs/admin-review.md"
-      ],
-      "references": [
-        {
-          "record_type": "candidate_bundle",
-          "record_id": "stem-cell-replacement-and-transplantation-surveillance-2026-06-06"
-        }
-      ],
-      "signals": [
-        {
-          "name": "lifecycle_status",
-          "value": "submitted"
-        },
-        {
-          "name": "proposed_change_count",
-          "value": 2
-        }
-      ]
-    },
-    {
-      "rank": 2,
-      "item_id": "surveillance-senomorphics",
+      "item_id": "surveillance-chaperone-and-heat-shock-support",
       "mode": "surveillance",
       "domain": "research",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Run field change check for Senomorphics",
-      "rationale": "Next distinct field-change target. Generated field-change queue rank 18; rank 1 was recently handled by a field change check or coverage-repair session.",
+      "title": "Run field change check for Chaperone and Heat-Shock Support",
+      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
       "default_action": "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
-      "track_id": "senomorphics",
-      "hallmark_id": "cellular_senescence",
+      "track_id": "chaperone-and-heat-shock-support",
+      "hallmark_id": "loss_of_proteostasis",
       "references": [
         {
           "record_type": "track",
-          "record_id": "senomorphics"
+          "record_id": "chaperone-and-heat-shock-support"
         },
         {
           "record_type": "hallmark",
-          "record_id": "cellular_senescence"
+          "record_id": "loss_of_proteostasis"
         }
       ],
       "runbook_path": "docs/surveillance-checklist.md",
@@ -108,11 +75,23 @@
       "signals": [
         {
           "name": "generated_queue_rank",
-          "value": 18
+          "value": 1
         },
         {
-          "name": "last_session_mode",
-          "value": "bootstrap"
+          "name": "surveillance_freshness_status",
+          "value": "never_checked"
+        },
+        {
+          "name": "last_surveillance_mode",
+          "value": "none"
+        },
+        {
+          "name": "last_surveillance_at",
+          "value": "never"
+        },
+        {
+          "name": "surveillance_due_at",
+          "value": "now"
         },
         {
           "name": "has_coverage_assessment",
@@ -121,25 +100,25 @@
       ]
     },
     {
-      "rank": 3,
-      "item_id": "coverage-assessment-backfill-extracellular-vesicle-and-secretome-therapies",
+      "rank": 2,
+      "item_id": "coverage-assessment-backfill-chaperone-and-heat-shock-support",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for Extracellular Vesicle and Secretome Therapies",
-      "rationale": "28 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
+      "title": "Backfill coverage assessment for Chaperone and Heat-Shock Support",
+      "rationale": "22 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
       "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
-      "track_id": "extracellular-vesicle-and-secretome-therapies",
-      "hallmark_id": "altered_intercellular_communication",
+      "track_id": "chaperone-and-heat-shock-support",
+      "hallmark_id": "loss_of_proteostasis",
       "references": [
         {
           "record_type": "track",
-          "record_id": "extracellular-vesicle-and-secretome-therapies"
+          "record_id": "chaperone-and-heat-shock-support"
         },
         {
           "record_type": "hallmark",
-          "record_id": "altered_intercellular_communication"
+          "record_id": "loss_of_proteostasis"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",
@@ -151,7 +130,7 @@
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 28
+          "value": 22
         },
         {
           "name": "generated_surveillance_queue_rank",
@@ -160,65 +139,6 @@
         {
           "name": "track_next_mode",
           "value": "surveillance"
-        }
-      ]
-    },
-    {
-      "rank": 4,
-      "item_id": "data-normalization-intervention-refs",
-      "mode": "data_normalization",
-      "domain": "data",
-      "priority_tier": "soon",
-      "status": "ready",
-      "title": "Normalize 70 intervention ID(s)",
-      "rationale": "138 live reference(s) point to non-normalized intervention IDs. The data audit treats this as non-blocking, but it remains the main known data-hardening backlog.",
-      "default_action": "Continue the intervention-normalization backlog in small reviewed batches, then rerun audit and planning sync.",
-      "runbook_path": "docs/intervention-normalization.md",
-      "command": "npm run audit:data",
-      "source_paths": [
-        "docs/intervention-normalization.md",
-        "scripts/audit-data-integrity.mjs"
-      ],
-      "signals": [
-        {
-          "name": "missing_intervention_id_count",
-          "value": 70
-        },
-        {
-          "name": "missing_intervention_reference_count",
-          "value": 138
-        },
-        {
-          "name": "missing_intervention:a9-dpc",
-          "value": 2
-        },
-        {
-          "name": "missing_intervention:active-hyperthermia",
-          "value": 2
-        },
-        {
-          "name": "missing_intervention:adipose-msc-derived-exosomes",
-          "value": 2
-        },
-        {
-          "name": "missing_intervention:adipose-stem-cell-exosome-solution",
-          "value": 2
-        },
-        {
-          "name": "missing_intervention:akk-wst01",
-          "value": 2
-        },
-        {
-          "name": "missing_intervention:akkermansia-muciniphila",
-          "value": 2
-        },
-        {
-          "name": "missing_intervention:albumin-replacement-plasma-exchange",
-          "value": 2
-        },
-        {
-          "name": "missing_intervention:bgp-15",
-          "value": 2
         }
       ]
     }

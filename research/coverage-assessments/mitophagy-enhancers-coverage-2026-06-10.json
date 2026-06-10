@@ -1,0 +1,273 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "mitophagy-enhancers-coverage-2026-06-10",
+  "name": "Mitophagy Enhancers Coverage Assessment for June 10, 2026",
+  "short_name": "Mitophagy enhancers coverage",
+  "track_id": "mitophagy-enhancers",
+  "hallmark_id": "mitochondrial_dysfunction",
+  "assessment_type": "surveillance",
+  "assessed_at": "2026-06-10T12:10:29Z",
+  "assessment_window": {
+    "from": "2026-05-24T13:20:00Z",
+    "to": "2026-06-10T12:10:29Z",
+    "basis": "Delta surveillance from the published mitophagy baseline through the June 10, 2026 field-change check, with a coverage assessment added because the pass found source-completeness and safety/registry gaps."
+  },
+  "coverage_verdict": "thin",
+  "summary": "Coverage is thin for mitophagy-specific source completeness even though the current low-confidence human_biomarker_signal read remains directionally sound. The local record includes major urolithin A human biomarker and mixed functional trials, a completed no-results frail older-adult registry, preclinical urolithin A lifespan or muscle-function anchors, and USP30 mechanistic anchors. Coverage is not adequate yet because the public outlook is still a compact pre-support-map record, active and completed-no-results urolithin A registries are not reconciled for this track, published-trial registry metadata needs repair, a renal-calculi safety source is unmapped, and taxonomy boundaries with microbiome-metabolite restoration, selective autophagy, exercise performance, and supplement safety need explicit handling.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-05-24-mitophagy-bootstrap",
+      "2026-06-10-mitophagy-enhancers-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "mitophagy-track-scan-2026-05-24"
+    ],
+    "publication_event_ids": [
+      "publish-mitophagy-track-scan-2026-05-24"
+    ],
+    "outlook_ids": [
+      "track-mitophagy-enhancers-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "The local evidence map already contains the core urolithin A human studies for the current biomarker-stage read: first-in-human mitochondrial signatures, ENERGIZE older-adult endurance and biomarkers, ATLAS middle-aged strength and biomarkers, and MitoImmune immune-aging biomarker or ex vivo function movement.",
+      "source_ids": [
+        "pmid-32694802",
+        "pmid-35050355",
+        "pmid-35584623",
+        "pmid-41174221"
+      ],
+      "finding_ids": [
+        "urolithin-a-safe-mitochondrial-signature-older-adults",
+        "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+        "urolithin-a-improved-middle-aged-muscle-strength-performance",
+        "urolithin-a-shifted-immune-aging-biomarkers-function"
+      ],
+      "gap_note": "Adequacy is limited to the current biomarker-heavy read; coverage repair should decide whether the young-athlete NCT04783207/PMID 40839339 result belongs in the public layer or as an explicit exclusion."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "thin",
+      "rationale": "Human urolithin A biology is strongly influenced by diet and microbiome conversion capacity, but the mitophagy track does not have a mapped observational layer connecting urolithin production, mitochondrial quality, and aging outcomes.",
+      "gap_note": "Coverage repair should avoid treating diet or microbiome-conversion associations as intervention evidence unless they directly support the mitophagy claim."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "The Ryu urolithin A anchor covers mitophagy induction, C. elegans lifespan extension, and rodent muscle-function evidence. This is enough for the current mechanistic bridge but not strong enough to infer broad healthy-lifespan extension in mammals.",
+      "source_ids": [
+        "pmid-27400265"
+      ],
+      "finding_ids": [
+        "urolithin-a-extended-worm-lifespan-improved-rodent-muscle"
+      ],
+      "gap_note": "A future deeper repair could check whether newer preclinical cognitive, muscle, or disease-model papers alter boundary language, but they are not needed for the current public stage."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "The record includes urolithin A mitophagy and mitochondrial-health studies plus USP30/ST-539 reporter-mouse and MF-094 cybrid work, giving a coherent mitophagy-enhancement mechanism map across supplement and targeted-deubiquitinase approaches.",
+      "source_ids": [
+        "pmid-27400265",
+        "pmid-32694802",
+        "pmid-33890401",
+        "pmid-41587019"
+      ],
+      "finding_ids": [
+        "urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+        "urolithin-a-safe-mitochondrial-signature-older-adults",
+        "usp30-inhibition-induced-tissue-specific-mouse-mitophagy",
+        "mf094-induced-mitophagy-without-mtdna-load-reduction"
+      ],
+      "gap_note": "Mechanistic adequacy does not imply clinical adequacy; USP30 remains preclinical and urolithin A remains biomarker-heavy."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "thin",
+      "rationale": "The systematic review and existing findings capture mixed primary endpoints, lack of physical-function benefit, the MF-094 mutant-mtDNA boundary, and the completed frail older-adult no-results registry. Coverage is still thin because the young-athlete NCT04783207 result and broader no-results registry landscape are not explicitly mapped for this track.",
+      "source_ids": [
+        "pmid-39002645",
+        "pmid-41587019",
+        "nct-06556706"
+      ],
+      "finding_ids": [
+        "urolithin-a-review-human-muscle-biomarker-boundary",
+        "mf094-induced-mitophagy-without-mtdna-load-reduction",
+        "completed-frail-urolithin-a-trial-no-results"
+      ],
+      "gap_note": "Coverage repair should separate endpoint-mixed and no-results context from positive biomarker framing."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "Short-term urolithin A trial safety is represented, but chronic durability, frailty-specific safety, kidney or urinary-stone risk, and supplement-versus-diet exposure boundaries are not adequately mapped.",
+      "source_ids": [
+        "pmid-32694802",
+        "pmid-35050355",
+        "nct-06556706"
+      ],
+      "finding_ids": [
+        "urolithin-a-safe-mitochondrial-signature-older-adults",
+        "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+        "completed-frail-urolithin-a-trial-no-results"
+      ],
+      "gap_note": "PMID 42058113 should be reviewed in coverage repair as a human renal-calculi safety source before public safety wording is changed."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "thin",
+      "rationale": "The completed frail older-adult registry is represented, and the surveillance pass rechecked the known urolithin A registries. However, multiple active, recruiting, active-not-recruiting, or completed-no-results urolithin A registries are not staged or explicitly excluded for the mitophagy track.",
+      "source_ids": [
+        "nct-06556706"
+      ],
+      "finding_ids": [
+        "completed-frail-urolithin-a-trial-no-results"
+      ],
+      "gap_note": "Coverage repair should reconcile NCT06274749, NCT07231783, NCT05814705, NCT04783207, NCT05921266, NCT06990256, NCT07060898, NCT07377136, and NCT04985630."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "A 2024 human urolithin A systematic review is represented, but recent broad mitophagy, sarcopenia/gut-muscle-axis, and urolithin A context reviews have not been systematically reconciled against the mitophagy-specific evidence map.",
+      "source_ids": [
+        "pmid-39002645"
+      ],
+      "finding_ids": [
+        "urolithin-a-review-human-muscle-biomarker-boundary"
+      ],
+      "gap_note": "Coverage repair should compare recent reviews such as PMID 42261160 and PMID 41722622 without upgrading the track from review-level context alone."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "Major urolithin A and USP30 anchors are present: Ryu 2016, first-in-human urolithin A, ENERGIZE, ATLAS, MitoImmune, ST-539, MF-094, and the human systematic review.",
+      "source_ids": [
+        "pmid-27400265",
+        "pmid-32694802",
+        "pmid-35050355",
+        "pmid-35584623",
+        "pmid-41174221",
+        "pmid-33890401",
+        "pmid-41587019",
+        "pmid-39002645"
+      ],
+      "finding_ids": [
+        "urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+        "urolithin-a-safe-mitochondrial-signature-older-adults",
+        "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+        "urolithin-a-improved-middle-aged-muscle-strength-performance",
+        "urolithin-a-shifted-immune-aging-biomarkers-function",
+        "usp30-inhibition-induced-tissue-specific-mouse-mitophagy",
+        "mf094-induced-mitophagy-without-mtdna-load-reduction",
+        "urolithin-a-review-human-muscle-biomarker-boundary"
+      ],
+      "gap_note": "Seminal-anchor coverage is adequate, but the public mitophagy outlook has not yet been converted into a support-map outlook that exposes those anchors."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "thin",
+      "rationale": "The mitophagy track overlaps microbiome-metabolite restoration, selective autophagy and organelle quality control, mitochondrial biogenesis and dynamics, exercise performance, immune aging, obesity/metabolic trials, cognition supplements, and supplement safety. The current compact outlook does not make these boundaries explicit.",
+      "gap_note": "Coverage repair should decide which urolithin A records belong in mitophagy versus neighboring tracks and require taxonomy_mapping review for any public link changes."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-27400265",
+    "pmid-32694802",
+    "pmid-35050355",
+    "pmid-35584623",
+    "pmid-39002645",
+    "pmid-41174221",
+    "pmid-33890401",
+    "pmid-41587019",
+    "nct-06556706"
+  ],
+  "covered_finding_ids": [
+    "urolithin-a-safe-mitochondrial-signature-older-adults",
+    "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+    "urolithin-a-improved-middle-aged-muscle-strength-performance",
+    "urolithin-a-shifted-immune-aging-biomarkers-function",
+    "urolithin-a-review-human-muscle-biomarker-boundary",
+    "urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+    "usp30-inhibition-induced-tissue-specific-mouse-mitophagy",
+    "mf094-induced-mitophagy-without-mtdna-load-reduction",
+    "completed-frail-urolithin-a-trial-no-results"
+  ],
+  "search_log_summary": "Reviewed the mitophagy bootstrap session, public outlook, publication event, local urolithin A and USP30 sources, studies, and findings; ran a scoped local trial audit; rechecked known NCT records via ClinicalTrials.gov; searched broader urolithin A/Mitopure and USP30/mitophagy registries; searched PubMed date windows for urolithin A, USP30, mitophagy, mitochondrial quality control, aging, muscle, immune, and clinical terms; fetched the renal-calculi PMC article; and checked NCT-linked PubMed results for newly surfaced urolithin A registries.",
+  "source_selection_notes": [
+    "PMID 27400265, PMID 32694802, PMID 35050355, PMID 35584623, PMID 39002645, PMID 41174221, PMID 33890401, PMID 41587019, and NCT06556706 remain the covered source set for the current public read.",
+    "PMID 42058113 is not in covered_source_ids because no local public source record exists yet; it is a high-priority safety/durability coverage-repair lead.",
+    "PMID 40839339 is not in covered_source_ids because the young-athlete result needs taxonomy and relevance review before staging or explicit exclusion.",
+    "The June 5 selective-autophagy surveillance pass already checked many urolithin A leads, but this mitophagy-specific assessment still recommends repair because this track's public outlook is older and lacks a support map."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "mitophagy-outlook-support-map-gap",
+      "gap_type": "operational_gap",
+      "category": "seminal_anchors",
+      "description": "The public mitophagy outlook remains a compact pre-support-map record despite having local source and finding coverage for major urolithin A and USP30 anchors.",
+      "priority": "high",
+      "suggested_action": "During coverage repair, convert or refresh the public outlook to the richer support-map structure only if source and finding mappings pass review."
+    },
+    {
+      "gap_id": "urolithin-active-trial-landscape-unrepaired",
+      "gap_type": "coverage_gap",
+      "category": "active_trials_registries",
+      "description": "Multiple urolithin A registries found in the surveillance pass are not staged or explicitly excluded for mitophagy, including NCT06274749, NCT07231783, NCT05814705, NCT04783207, NCT05921266, NCT06990256, NCT07060898, NCT07377136, and NCT04985630.",
+      "priority": "high",
+      "suggested_action": "Run coverage_repair to stage, update, or explicitly exclude relevant registry records and refresh local trial_details where appropriate."
+    },
+    {
+      "gap_id": "urolithin-renal-calculi-safety-unmapped",
+      "gap_type": "coverage_gap",
+      "category": "safety_durability",
+      "description": "PMID 42058113 reports chemically confirmed urolithin A in urinary stones from older adults, but the track has no mapped source, finding, or explicit exclusion for this safety context.",
+      "priority": "high",
+      "suggested_action": "Review the renal-calculi paper under source_fidelity and safety_limitations before deciding whether public safety wording or source records should change."
+    },
+    {
+      "gap_id": "young-athlete-urolithin-trial-unmapped",
+      "gap_type": "coverage_gap",
+      "category": "null_negative_or_limiting",
+      "description": "PMID 40839339/NCT04783207 is a result-bearing urolithin A RCT in young trained male runners with recovery and biomarker signals but no significant performance improvement; it is absent from the mitophagy map.",
+      "priority": "medium",
+      "suggested_action": "During coverage repair, stage the source only if it materially improves limiting-context coverage; otherwise add an explicit exclusion note."
+    },
+    {
+      "gap_id": "published-trial-registry-metadata-incomplete",
+      "gap_type": "operational_gap",
+      "category": "active_trials_registries",
+      "description": "ENERGIZE, ATLAS, and MitoImmune have published PubMed results but lack local registry check dates and complete current ClinicalTrials.gov completion metadata.",
+      "priority": "medium",
+      "suggested_action": "Refresh trial_details and registry-check metadata during coverage repair without changing public evidence interpretation unless source facts require it."
+    },
+    {
+      "gap_id": "mitophagy-taxonomy-boundary-unmapped",
+      "gap_type": "coverage_gap",
+      "category": "taxonomy_boundary",
+      "description": "Urolithin A evidence is shared across mitophagy, microbiome-metabolite restoration, selective autophagy, immune aging, exercise, metabolic, cognition, and supplement-safety contexts.",
+      "priority": "medium",
+      "suggested_action": "Require taxonomy-aware review before adding or moving public links for urolithin A records."
+    },
+    {
+      "gap_id": "usp30-human-translation-gap",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "USP30 inhibition remains represented only by preclinical and in vitro mitophagy evidence, with no human aging-relevant intervention trial found in the registry search.",
+      "priority": "medium",
+      "suggested_action": "Keep USP30 as preclinical mechanistic support and monitor for human target-engagement or safety data before upgrading confidence."
+    }
+  ],
+  "next_coverage_action": "Run coverage_repair for Mitophagy Enhancers before ordinary surveillance resumes. Focus on active and completed-no-results urolithin A registries, registry metadata refresh for published trials, renal-calculi safety context, the young-athlete NCT04783207 result, support-map modernization for the public outlook, and taxonomy boundaries with microbiome-metabolite restoration and selective autophagy.",
+  "next_recommended_mode": "coverage_repair",
+  "tags": [
+    "coverage-assessment",
+    "surveillance",
+    "mitophagy-enhancers",
+    "mitochondrial_dysfunction",
+    "coverage-repair-needed"
+  ]
+}

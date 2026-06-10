@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "albumin-replacement-plasma-exchange",
+  "name": "Albumin-replacement plasma exchange",
+  "summary": "Albumin-replacement plasma exchange is normalized for AMBAR-style therapeutic plasma exchange evidence in Alzheimer disease functional outcomes.",
+  "modalities": [
+    "procedure"
+  ],
+  "target_hallmark_ids": [
+    "altered_intercellular_communication"
+  ],
+  "track_ids": [
+    "circulating-factor-modulation"
+  ],
+  "mechanism_summary": "Uses plasma exchange with albumin replacement to alter circulating factors, with evidence bounded to disease-specific Alzheimer clinical endpoints.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "ambar-plasma-exchange-alzheimers-trial"
+  ],
+  "linked_finding_ids": [
+    "ambar-plasma-exchange-slowed-ad-functional-decline"
+  ],
+  "risk_flags": [
+    "procedure-burden",
+    "disease-specific-evidence",
+    "not-general-aging-evidence"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_function",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: AMBAR plasma exchange Alzheimer disease trial; AMBAR plasma exchange slowed Alzheimer functional decline.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "albumin-replacement-plasma-exchange",
+    "altered_intercellular_communication",
+    "circulating-factor-modulation",
+    "procedure"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

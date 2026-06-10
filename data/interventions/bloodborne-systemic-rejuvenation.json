@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "bloodborne-systemic-rejuvenation",
+  "name": "Bloodborne systemic rejuvenation",
+  "summary": "Bloodborne systemic rejuvenation is normalized for animal parabiosis and systemic-environment evidence testing whether circulating factors restore aged tissue function.",
+  "modalities": [
+    "procedure",
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "altered_intercellular_communication",
+    "stem_cell_exhaustion"
+  ],
+  "track_ids": [
+    "circulating-factor-modulation",
+    "niche-rejuvenation-and-support"
+  ],
+  "mechanism_summary": "Alters the systemic blood environment to expose aged tissues or stem cells to younger circulating signals, with current linked evidence remaining preclinical.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "hsc-refractory-bloodborne-rejuvenation"
+  ],
+  "linked_finding_ids": [
+    "aged-hsc-refractory-to-bloodborne-rejuvenation"
+  ],
+  "risk_flags": [
+    "animal-only",
+    "mechanism-not-isolated",
+    "translation-risk"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: Aged HSC refractory bloodborne rejuvenation study; Aged HSCs were refractory to bloodborne rejuvenation.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "altered_intercellular_communication",
+    "biologic",
+    "bloodborne-systemic-rejuvenation",
+    "circulating-factor-modulation",
+    "niche-rejuvenation-and-support",
+    "procedure",
+    "stem_cell_exhaustion"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

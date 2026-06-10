@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "engineered-ecoli-colanic-acid",
+  "name": "Engineered E. coli colanic-acid variants",
+  "summary": "Engineered E. coli colanic-acid variants are normalized for C. elegans lifespan screens of live microbial genetic composition.",
+  "modalities": [
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "dysbiosis"
+  ],
+  "track_ids": [
+    "live-biotherapeutics-and-engineered-microbes"
+  ],
+  "mechanism_summary": "Uses engineered bacterial strains and bacterial polysaccharide biology to probe microbiome-derived effects on host longevity in worms.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "engineered-ecoli-longevity-screen"
+  ],
+  "linked_finding_ids": [
+    "engineered-ecoli-mutants-extended-c-elegans-lifespan"
+  ],
+  "risk_flags": [
+    "animal-only",
+    "engineered-microbe-translation-risk",
+    "worm-model-boundary"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: Engineered E. coli genetic variants extended C. elegans lifespan; Engineered E. coli genetic-composition C. elegans longevity screen.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "biologic",
+    "dysbiosis",
+    "engineered-ecoli-colanic-acid",
+    "live-biotherapeutics-and-engineered-microbes"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

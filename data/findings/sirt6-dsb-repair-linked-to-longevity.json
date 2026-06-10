@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "sirt6-dsb-repair-linked-to-longevity",
+  "name": "SIRT6-linked double-strand break repair tracked species longevity",
+  "summary": "SIRT6 supplies a cross-species repair-regulator anchor for DNA Repair Enhancement, but not a tested human intervention.",
+  "source_id": "pmid-31002797",
+  "study_id": "sirt6-dsb-repair-long-lived-species-study",
+  "intervention_ids": [
+    "sirt6-overexpression"
+  ],
+  "track_ids": [
+    "dna-repair-enhancement"
+  ],
+  "hallmark_ids": [
+    "genomic_instability"
+  ],
+  "endpoint_category": "mechanistic",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "moderate",
+  "statement": "A comparative Cell study reported that stronger DNA double-strand break repair, but not nucleotide excision repair, coevolved with longevity across 18 rodent species and that SIRT6 repair-promoting activity explained a major part of cross-species repair variation.",
+  "population_or_model": "Eighteen rodent species with diverse lifespans plus cellular and biochemical SIRT6 assays",
+  "time_horizon": "Cross-species lifespan comparison and repair-capacity assays",
+  "quantitative_note": "The abstract reports a panel of 18 rodent species and identifies five SIRT6 amino acid residues responsible for differential weak-versus-strong repair activity.",
+  "caveats": [
+    "This is comparative and mechanistic evidence, not a human intervention trial.",
+    "The record supports SIRT6 as a repair-regulator target but does not show a safe deployable SIRT6 therapy.",
+    "The species-level association does not by itself prove that boosting SIRT6 in humans would improve healthspan or lifespan."
+  ],
+  "tags": [
+    "sirt6",
+    "double-strand-break-repair",
+    "comparative-biology",
+    "mechanistic",
+    "dna-repair-enhancement"
+  ]
+}

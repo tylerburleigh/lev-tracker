@@ -1,0 +1,180 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "senomorphics-surveillance-2026-06-07",
+  "name": "Senomorphics Field-Change Update for June 7, 2026",
+  "summary": "Staged update adding the June 2026 mianserin/calcium-homeostasis mouse lifespan source, refreshing two registry-linked human study records, and keeping the public stage unchanged.",
+  "intake_mode": "surveillance",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-07T15:01:26Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What changed for Senomorphics since the June 1, 2026 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "cellular_senescence"
+    ],
+    "track_ids": [
+      "senomorphics"
+    ],
+    "intervention_ids": [
+      "mianserin",
+      "sirolimus",
+      "metformin"
+    ]
+  },
+  "source_ids": [
+    "pmid-42251040"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42251040/",
+    "https://doi.org/10.1038/s41467-026-74021-z",
+    "https://clinicaltrials.gov/study/NCT03103893",
+    "https://clinicaltrials.gov/api/v2/studies/NCT03103893",
+    "https://clinicaltrials.gov/study/NCT03107884",
+    "https://clinicaltrials.gov/api/v2/studies/NCT03107884"
+  ],
+  "related_records": [
+    {
+      "record_type": "track",
+      "record_id": "senomorphics"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-senomorphics-outlook"
+    },
+    {
+      "record_type": "source",
+      "record_id": "pmid-42251040"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "mianserin"
+    },
+    {
+      "record_type": "study",
+      "record_id": "mianserin-calcium-homeostasis-aged-mice"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "mianserin-calcium-homeostasis-improved-aged-mouse-healthspan-lifespan"
+    },
+    {
+      "record_type": "study",
+      "record_id": "topical-rapamycin-human-skin-aging"
+    },
+    {
+      "record_type": "study",
+      "record_id": "metformin-disuse-reambulation-older-adults"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-42251040",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-42251040",
+      "file_path": "data/sources/pmid-42251040.json",
+      "staged_file_path": "data/staged-records/senomorphics-surveillance-2026-06-07/pmid-42251040.json",
+      "summary": "Add the mianserin calcium-homeostasis source.",
+      "rationale": "This post-baseline paper adds a senomorphic animal lifespan and human-cell senescence signal that should be visible in the evidence map."
+    },
+    {
+      "change_id": "create-intervention-mianserin",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "mianserin",
+      "file_path": "data/interventions/mianserin.json",
+      "staged_file_path": "data/staged-records/senomorphics-surveillance-2026-06-07/mianserin.json",
+      "summary": "Add mianserin as a bounded senomorphic intervention record.",
+      "rationale": "The source identifies mianserin as the tested Ca2+-lowering small molecule, but the aging-use claim remains preclinical."
+    },
+    {
+      "change_id": "create-study-mianserin-calcium-homeostasis-aged-mice",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "mianserin-calcium-homeostasis-aged-mice",
+      "file_path": "data/studies/mianserin-calcium-homeostasis-aged-mice.json",
+      "staged_file_path": "data/staged-records/senomorphics-surveillance-2026-06-07/mianserin-calcium-homeostasis-aged-mice.json",
+      "summary": "Add the mianserin Ca2+ homeostasis animal and human-cell study.",
+      "rationale": "A study record is needed to separate the animal/human-cell evidence from treated-human efficacy claims."
+    },
+    {
+      "change_id": "create-finding-mianserin-calcium-homeostasis-improved-aged-mouse-healthspan-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "mianserin-calcium-homeostasis-improved-aged-mouse-healthspan-lifespan",
+      "file_path": "data/findings/mianserin-calcium-homeostasis-improved-aged-mouse-healthspan-lifespan.json",
+      "staged_file_path": "data/staged-records/senomorphics-surveillance-2026-06-07/mianserin-calcium-homeostasis-improved-aged-mouse-healthspan-lifespan.json",
+      "summary": "Add the mianserin mouse healthspan and lifespan finding.",
+      "rationale": "The finding captures the positive animal signal while preserving the no-treated-human boundary."
+    },
+    {
+      "change_id": "update-study-topical-rapamycin-human-skin-aging",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "topical-rapamycin-human-skin-aging",
+      "file_path": "data/studies/topical-rapamycin-human-skin-aging.json",
+      "staged_file_path": "data/staged-records/senomorphics-surveillance-2026-06-07/topical-rapamycin-human-skin-aging.json",
+      "summary": "Refresh registry metadata for the completed topical rapamycin skin trial.",
+      "rationale": "The public study has peer-reviewed results but lacked registry last-check, last-updated, and completion-date fields."
+    },
+    {
+      "change_id": "update-study-metformin-disuse-reambulation-older-adults",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "metformin-disuse-reambulation-older-adults",
+      "file_path": "data/studies/metformin-disuse-reambulation-older-adults.json",
+      "staged_file_path": "data/staged-records/senomorphics-surveillance-2026-06-07/metformin-disuse-reambulation-older-adults.json",
+      "summary": "Refresh registry metadata for the metformin disuse/recovery evidence study.",
+      "rationale": "The public evidence record is completed through its peer-reviewed result, while the parent registry remains active with no posted registry results and an estimated November 2026 completion."
+    },
+    {
+      "change_id": "update-outlook-track-senomorphics-outlook",
+      "change_type": "update_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-senomorphics-outlook",
+      "file_path": "data/outlooks/track-senomorphics-outlook.json",
+      "staged_file_path": "data/staged-records/senomorphics-surveillance-2026-06-07/track-senomorphics-outlook.json",
+      "summary": "Add mianserin to the senomorphics outlook as a preclinical signal without changing stage, momentum, or read firmness.",
+      "rationale": "The new paper is material for the evidence map but does not provide treated-human evidence."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "senomorphics",
+      "note": "The staged outlook keeps evidence_stage human_biomarker_signal, momentum steady, and confidence low. The new mianserin source adds animal lifespan and human-cell senescence support but does not replace the need for treated-human trials.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-07-senomorphics-surveillance.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "surveillance",
+    "senomorphics",
+    "cellular-senescence",
+    "mianserin",
+    "calcium-homeostasis",
+    "sasp",
+    "staged-update"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-senomorphics-surveillance-2026-06-07-source-fidelity-r1",
+    "evidence-review-senomorphics-surveillance-2026-06-07-interpretation-forecast-r1"
+  ],
+  "publication_event_ids": [
+    "publish-senomorphics-surveillance-2026-06-07-2026-06-07t16-41-34-635z"
+  ]
+}

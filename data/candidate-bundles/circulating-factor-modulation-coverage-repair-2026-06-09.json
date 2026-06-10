@@ -1,0 +1,438 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "circulating-factor-modulation-coverage-repair-2026-06-09",
+  "name": "Circulating Factor Modulation Coverage Repair",
+  "short_name": "Circulating Factor repair",
+  "summary": "Coverage repair stages healthy-adult plasmapheresis limiting evidence, real-world Alzheimer TPE disease-boundary evidence, young-donor plasma exchange preprint context, microplastics TPE biomarker context, no-results registries, FDA young-plasma safety context, review-level taxonomy boundaries, and a staged outlook refresh that keeps stage, momentum, and confidence unchanged.",
+  "created_at": "2026-06-09T12:20:00Z",
+  "updated_at": "2026-06-09T12:20:00Z",
+  "tags": [
+    "circulating-factor-modulation",
+    "coverage-repair",
+    "human-plasma-exchange",
+    "safety-boundary"
+  ],
+  "intake_mode": "manual",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-09T12:20:00Z",
+  "submitted_by": "codex",
+  "revision_number": 1,
+  "scope": {
+    "question": "Which June 9 source-completeness gaps for circulating factor modulation should become public records, and do they change the public evidence stage or boundaries?",
+    "hallmark_ids": [
+      "altered_intercellular_communication"
+    ],
+    "track_ids": [
+      "circulating-factor-modulation"
+    ],
+    "intervention_ids": [
+      "therapeutic-plasma-exchange",
+      "therapeutic-plasma-exchange-ivig",
+      "albumin-replacement-plasma-exchange",
+      "young-plasma-infusion",
+      "young-donor-plasma-exchange",
+      "plasmapheresis-without-replacement",
+      "neutral-blood-exchange"
+    ]
+  },
+  "source_ids": [
+    "pmid-40592961",
+    "nct-05004220",
+    "pmid-40928812",
+    "doi-10.64898-2026.04.29.26351809",
+    "nct-06234436",
+    "doi-10.1002-jca.70135",
+    "nct-04897113",
+    "nct-05054894",
+    "nct-06534450",
+    "pmid-41721191",
+    "pmid-41494381",
+    "fda-young-donor-plasma-warning-2019-02-19"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/40592961/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12218284/",
+    "https://doi.org/10.1038/s41598-025-05396-0",
+    "https://clinicaltrials.gov/study/NCT05004220",
+    "https://pubmed.ncbi.nlm.nih.gov/40928812/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12541112/",
+    "https://doi.org/10.1177/13872877251375430",
+    "https://www.medrxiv.org/content/10.1101/2026.04.29.26351809v1",
+    "https://doi.org/10.64898/2026.04.29.26351809",
+    "https://clinicaltrials.gov/study/NCT06234436",
+    "https://doi.org/10.1002/jca.70135",
+    "https://clinicaltrials.gov/study/NCT04897113",
+    "https://clinicaltrials.gov/study/NCT05054894",
+    "https://clinicaltrials.gov/study/NCT06534450",
+    "https://pubmed.ncbi.nlm.nih.gov/41721191/",
+    "https://doi.org/10.1007/s11357-026-02136-8",
+    "https://pubmed.ncbi.nlm.nih.gov/41494381/",
+    "https://doi.org/10.1016/j.transci.2026.104371",
+    "https://www.fda.gov/vaccines-blood-biologics/safety-availability-biologics/important-information-about-young-donor-plasma-infusions-profit"
+  ],
+  "related_records": [
+    {
+      "record_type": "track",
+      "record_id": "circulating-factor-modulation"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-circulating-factor-modulation-outlook"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-plasmapheresis-without-replacement",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "plasmapheresis-without-replacement",
+      "file_path": "data/interventions/plasmapheresis-without-replacement.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/plasmapheresis-without-replacement.json",
+      "summary": "Stage an intervention boundary record for circulating-factor taxonomy repair.",
+      "rationale": "Plasma-removal or plasma-donation procedure tracked separately from albumin-replacement TPE, young plasma, IVIG-combination TPE, and neutral blood exchange."
+    },
+    {
+      "change_id": "create-young-donor-plasma-exchange",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "young-donor-plasma-exchange",
+      "file_path": "data/interventions/young-donor-plasma-exchange.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/young-donor-plasma-exchange.json",
+      "summary": "Stage an intervention boundary record for circulating-factor taxonomy repair.",
+      "rationale": "Plasma exchange or dilution followed by replacement with young or healthy donor plasma, tracked separately from simple young-plasma infusion and from TPE with albumin or IVIG."
+    },
+    {
+      "change_id": "create-pmid-40592961",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-40592961",
+      "file_path": "data/sources/pmid-40592961.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/pmid-40592961.json",
+      "summary": "Stage a source needed to repair circulating-factor coverage.",
+      "rationale": "Scientific Reports healthy blood-donor study of repeated plasmapheresis without young plasma or albumin replacement, reporting lipid and protein shifts but no epigenetic rejuvenation and possible acceleration on several clock measures."
+    },
+    {
+      "change_id": "create-nct-05004220",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-05004220",
+      "file_path": "data/sources/nct-05004220.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/nct-05004220.json",
+      "summary": "Stage a source needed to repair circulating-factor coverage.",
+      "rationale": "ClinicalTrials.gov registry for the completed prospective case-crossover plasma-donation study linked to PMID 40592961, with no registry-posted results in the June 9, 2026 API view."
+    },
+    {
+      "change_id": "create-pmid-40928812",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-40928812",
+      "file_path": "data/sources/pmid-40928812.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/pmid-40928812.json",
+      "summary": "Stage a source needed to repair circulating-factor coverage.",
+      "rationale": "Journal of Alzheimer's Disease real-world Argentina cohort comparing 32 treated mild-to-moderate Alzheimer disease patients with historical controls after repeated therapeutic plasma exchange."
+    },
+    {
+      "change_id": "create-doi-10.64898-2026.04.29.26351809",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "doi-10.64898-2026.04.29.26351809",
+      "file_path": "data/sources/doi-10.64898-2026.04.29.26351809.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/doi-10.64898-2026.04.29.26351809.json",
+      "summary": "Stage a source needed to repair circulating-factor coverage.",
+      "rationale": "medRxiv preprint reporting a 12-patient pilot of young-donor plasma exchange in mild cognitive impairment with biomarker evidence of Alzheimer disease, focused on safety, feasibility, treatment burden, and short-term clinical trajectories."
+    },
+    {
+      "change_id": "create-nct-06234436",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-06234436",
+      "file_path": "data/sources/nct-06234436.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/nct-06234436.json",
+      "summary": "Stage a source needed to repair circulating-factor coverage.",
+      "rationale": "ClinicalTrials.gov early phase 1 single-group registry for plasma dilution and young or healthy donor plasma infusion in mild cognitive impairment, unknown status with no registry-posted results in the June 9, 2026 API view."
+    },
+    {
+      "change_id": "create-doi-10.1002-jca.70135",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "doi-10.1002-jca.70135",
+      "file_path": "data/sources/doi-10.1002-jca.70135.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/doi-10.1002-jca.70135.json",
+      "summary": "Stage a source needed to repair circulating-factor coverage.",
+      "rationale": "Journal of Clinical Apheresis paper measuring circulating microplastics before and after 174 therapeutic plasma exchange procedures in 114 patients, with reductions at high baseline levels and a low-baseline tubing-leaching limitation."
+    },
+    {
+      "change_id": "create-nct-04897113",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-04897113",
+      "file_path": "data/sources/nct-04897113.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/nct-04897113.json",
+      "summary": "Stage a source needed to repair circulating-factor coverage.",
+      "rationale": "ClinicalTrials.gov randomized open-label aging-biomarker plasmapheresis registry comparing albumin compensation with no albumin compensation, unknown status with no posted results in the June 9, 2026 API view."
+    },
+    {
+      "change_id": "create-nct-05054894",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-05054894",
+      "file_path": "data/sources/nct-05054894.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/nct-05054894.json",
+      "summary": "Stage a source needed to repair circulating-factor coverage.",
+      "rationale": "ClinicalTrials.gov early phase 1 single-group age-related frailty plasmapheresis registry, unknown status with estimated 2025 completion and no posted results in the June 9, 2026 API view."
+    },
+    {
+      "change_id": "create-nct-06534450",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-06534450",
+      "file_path": "data/sources/nct-06534450.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/nct-06534450.json",
+      "summary": "Stage a source needed to repair circulating-factor coverage.",
+      "rationale": "ClinicalTrials.gov registry for the published randomized TPE and TPE plus IVIG biomarker trial; the registry remains active not recruiting and has no registry-posted results in the June 9, 2026 API view."
+    },
+    {
+      "change_id": "create-pmid-41721191",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-41721191",
+      "file_path": "data/sources/pmid-41721191.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/pmid-41721191.json",
+      "summary": "Stage a source needed to repair circulating-factor coverage.",
+      "rationale": "GeroScience review of plasma-based systemic rejuvenation strategies and translational limits, used as review-level context for separating plasma dilution, donor plasma, TPE, and factor-specific claims."
+    },
+    {
+      "change_id": "create-pmid-41494381",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-41494381",
+      "file_path": "data/sources/pmid-41494381.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/pmid-41494381.json",
+      "summary": "Stage a source needed to repair circulating-factor coverage.",
+      "rationale": "Transfusion and Apheresis Science review of immune-modulation mechanisms of therapeutic plasma exchange, used for procedure-boundary and safety-limit context rather than primary aging efficacy."
+    },
+    {
+      "change_id": "create-fda-young-donor-plasma-warning-2019-02-19",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "fda-young-donor-plasma-warning-2019-02-19",
+      "file_path": "data/sources/fda-young-donor-plasma-warning-2019-02-19.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/fda-young-donor-plasma-warning-2019-02-19.json",
+      "summary": "Stage a source needed to repair circulating-factor coverage.",
+      "rationale": "FDA safety communication cautioning against for-profit young-donor plasma infusions promoted for aging, memory loss, dementia, Alzheimer disease, and other conditions, citing no proven clinical benefit and plasma-product risks."
+    },
+    {
+      "change_id": "create-plasmapheresis-healthy-adult-aging-biomarkers",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "plasmapheresis-healthy-adult-aging-biomarkers",
+      "file_path": "data/studies/plasmapheresis-healthy-adult-aging-biomarkers.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/plasmapheresis-healthy-adult-aging-biomarkers.json",
+      "summary": "Stage a study or registry record needed to repair circulating-factor coverage.",
+      "rationale": "Prospective case-crossover study of healthy plasma donors aged 40 to 60, testing repeated plasmapheresis without young plasma or albumin replacement against biochemical and epigenetic aging readouts."
+    },
+    {
+      "change_id": "create-real-world-tpe-alzheimers-cohort",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "real-world-tpe-alzheimers-cohort",
+      "file_path": "data/studies/real-world-tpe-alzheimers-cohort.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/real-world-tpe-alzheimers-cohort.json",
+      "summary": "Stage a study or registry record needed to repair circulating-factor coverage.",
+      "rationale": "Real-world treated cohort of mild-to-moderate Alzheimer disease patients receiving repeated TPE compared with historical controls."
+    },
+    {
+      "change_id": "create-young-donor-plasma-exchange-mci-preprint",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "young-donor-plasma-exchange-mci-preprint",
+      "file_path": "data/studies/young-donor-plasma-exchange-mci-preprint.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/young-donor-plasma-exchange-mci-preprint.json",
+      "summary": "Stage a study or registry record needed to repair circulating-factor coverage.",
+      "rationale": "Pilot safety and feasibility study using plasma dilution and young-donor plasma replacement in 12 patients with mild cognitive impairment and Alzheimer disease biomarker evidence."
+    },
+    {
+      "change_id": "create-tpe-microplastics-human-procedure-series",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "tpe-microplastics-human-procedure-series",
+      "file_path": "data/studies/tpe-microplastics-human-procedure-series.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/tpe-microplastics-human-procedure-series.json",
+      "summary": "Stage a study or registry record needed to repair circulating-factor coverage.",
+      "rationale": "Procedure series measuring blood microplastics before and after therapeutic plasma exchange in 114 patients and 174 procedures."
+    },
+    {
+      "change_id": "create-plasmapheresis-aging-biomarker-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "plasmapheresis-aging-biomarker-registry",
+      "file_path": "data/studies/plasmapheresis-aging-biomarker-registry.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/plasmapheresis-aging-biomarker-registry.json",
+      "summary": "Stage a study or registry record needed to repair circulating-factor coverage.",
+      "rationale": "Unknown-status randomized registry comparing plasmapheresis with albumin compensation versus plasmapheresis without albumin compensation for aging-biomarker correction."
+    },
+    {
+      "change_id": "create-tpe-age-related-frailty-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "tpe-age-related-frailty-registry",
+      "file_path": "data/studies/tpe-age-related-frailty-registry.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/tpe-age-related-frailty-registry.json",
+      "summary": "Stage a study or registry record needed to repair circulating-factor coverage.",
+      "rationale": "Unknown-status early phase 1 registry testing repeated plasmapheresis for age-related frailty with Canadian Study of Health and Aging Clinical Frailty Scale outcome."
+    },
+    {
+      "change_id": "update-randomized-tpe-multiomics-healthy-adults",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "randomized-tpe-multiomics-healthy-adults",
+      "file_path": "data/studies/randomized-tpe-multiomics-healthy-adults.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/randomized-tpe-multiomics-healthy-adults.json",
+      "summary": "Stage a study or registry record needed to repair circulating-factor coverage.",
+      "rationale": "A randomized placebo-controlled trial comparing TPE, TPE plus IVIG, and sham in adults over 50 with multi-omic aging-marker readouts."
+    },
+    {
+      "change_id": "create-plasmapheresis-no-epigenetic-rejuvenation-possible-acceleration",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "plasmapheresis-no-epigenetic-rejuvenation-possible-acceleration",
+      "file_path": "data/findings/plasmapheresis-no-epigenetic-rejuvenation-possible-acceleration.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/plasmapheresis-no-epigenetic-rejuvenation-possible-acceleration.json",
+      "summary": "Stage a finding needed to repair circulating-factor interpretation.",
+      "rationale": "Healthy-adult repeated plasmapheresis shifted several biochemical markers but did not produce epigenetic rejuvenation and showed possible acceleration on several epigenetic clock or pace measures."
+    },
+    {
+      "change_id": "create-real-world-tpe-ad-slowed-cognitive-decline",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "real-world-tpe-ad-slowed-cognitive-decline",
+      "file_path": "data/findings/real-world-tpe-ad-slowed-cognitive-decline.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/real-world-tpe-ad-slowed-cognitive-decline.json",
+      "summary": "Stage a finding needed to repair circulating-factor interpretation.",
+      "rationale": "A real-world Alzheimer disease cohort reported slower MMSE and memory decline after repeated TPE compared with matched historical controls, with no severe adverse events reported."
+    },
+    {
+      "change_id": "create-young-donor-plasma-exchange-mci-feasible-preprint",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "young-donor-plasma-exchange-mci-feasible-preprint",
+      "file_path": "data/findings/young-donor-plasma-exchange-mci-feasible-preprint.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/young-donor-plasma-exchange-mci-feasible-preprint.json",
+      "summary": "Stage a finding needed to repair circulating-factor interpretation.",
+      "rationale": "Preprint-only pilot data report feasible young-donor plasma exchange in twelve MCI patients, but uncontrolled design and preprint status keep it from changing efficacy claims."
+    },
+    {
+      "change_id": "create-tpe-microplastics-mixed-biomarker-signal",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "tpe-microplastics-mixed-biomarker-signal",
+      "file_path": "data/findings/tpe-microplastics-mixed-biomarker-signal.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/tpe-microplastics-mixed-biomarker-signal.json",
+      "summary": "Stage a finding needed to repair circulating-factor interpretation.",
+      "rationale": "Therapeutic plasma exchange reduced circulating microplastic counts in high-baseline patients but showed a low-baseline tubing-leaching limitation, making it toxin-removal context rather than aging evidence."
+    },
+    {
+      "change_id": "create-plasmapheresis-aging-biomarker-registry-unknown-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "plasmapheresis-aging-biomarker-registry-unknown-no-results",
+      "file_path": "data/findings/plasmapheresis-aging-biomarker-registry-unknown-no-results.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/plasmapheresis-aging-biomarker-registry-unknown-no-results.json",
+      "summary": "Stage a finding needed to repair circulating-factor interpretation.",
+      "rationale": "NCT04897113 remains unknown status with estimated 2022 completion and no posted results in the June 9, 2026 API view."
+    },
+    {
+      "change_id": "create-tpe-frailty-registry-unknown-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "tpe-frailty-registry-unknown-no-results",
+      "file_path": "data/findings/tpe-frailty-registry-unknown-no-results.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/tpe-frailty-registry-unknown-no-results.json",
+      "summary": "Stage a finding needed to repair circulating-factor interpretation.",
+      "rationale": "NCT05054894 remains unknown status with estimated 2025 completion and no posted results in the June 9, 2026 API view."
+    },
+    {
+      "change_id": "create-randomized-tpe-registry-active-no-registry-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "randomized-tpe-registry-active-no-registry-results",
+      "file_path": "data/findings/randomized-tpe-registry-active-no-registry-results.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/randomized-tpe-registry-active-no-registry-results.json",
+      "summary": "Stage a finding needed to repair circulating-factor interpretation.",
+      "rationale": "NCT06534450 is tied to the public randomized TPE biomarker source but remains active not recruiting with no ClinicalTrials.gov results in the June 9, 2026 API view."
+    },
+    {
+      "change_id": "create-plasma-rejuvenation-review-translation-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "plasma-rejuvenation-review-translation-boundary",
+      "file_path": "data/findings/plasma-rejuvenation-review-translation-boundary.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/plasma-rejuvenation-review-translation-boundary.json",
+      "summary": "Stage a finding needed to repair circulating-factor interpretation.",
+      "rationale": "Review-level context supports separating plasma-based rejuvenation strategies by modality, endpoint, and translational maturity rather than treating them as one intervention class."
+    },
+    {
+      "change_id": "create-tpe-immune-modulation-review-procedure-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "tpe-immune-modulation-review-procedure-boundary",
+      "file_path": "data/findings/tpe-immune-modulation-review-procedure-boundary.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/tpe-immune-modulation-review-procedure-boundary.json",
+      "summary": "Stage a finding needed to repair circulating-factor interpretation.",
+      "rationale": "Review-level context supports treating TPE as a broad immune-modulating procedure with protocol-specific effects rather than a simple circulating-factor rejuvenation mechanism."
+    },
+    {
+      "change_id": "create-young-plasma-fda-warning-safety-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "young-plasma-fda-warning-safety-boundary",
+      "file_path": "data/findings/young-plasma-fda-warning-safety-boundary.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/young-plasma-fda-warning-safety-boundary.json",
+      "summary": "Stage a finding needed to repair circulating-factor interpretation.",
+      "rationale": "FDA cautioned consumers that young-donor plasma infusions promoted for aging, memory loss, Alzheimer disease, and other conditions lack proven clinical benefit and carry plasma-product risks."
+    },
+    {
+      "change_id": "update-track-circulating-factor-modulation-outlook",
+      "change_type": "update_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-circulating-factor-modulation-outlook",
+      "file_path": "data/outlooks/track-circulating-factor-modulation-outlook.json",
+      "staged_file_path": "data/staged-records/circulating-factor-modulation-coverage-repair-2026-06-09/track-circulating-factor-modulation-outlook.json",
+      "summary": "Stage a cautious outlook refresh that keeps the public rating unchanged.",
+      "rationale": "The repaired evidence map changes public boundaries and support links but does not justify changing evidence_stage, momentum, or confidence."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "circulating-factor-modulation",
+      "confidence": "low",
+      "note": "Coverage repair improves source completeness and public boundary wording, but keeps Circulating Factor Modulation at low-confidence human_functional_benefit with mixed momentum because new evidence is disease-specific, biomarker-level, preprint-only, no-results registry context, regulatory safety context, or review-level boundary support."
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast",
+    "safety_limitations",
+    "taxonomy_mapping"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-09-circulating-factor-modulation-coverage-repair.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "evidence_review_ids": [
+    "evidence-review-circulating-factor-modulation-coverage-repair-2026-06-09-source-fidelity-r1",
+    "evidence-review-circulating-factor-modulation-coverage-repair-2026-06-09-taxonomy-mapping-r1",
+    "evidence-review-circulating-factor-modulation-coverage-repair-2026-06-09-interpretation-forecast-r1",
+    "evidence-review-circulating-factor-modulation-coverage-repair-2026-06-09-safety-limitations-r1"
+  ],
+  "publication_event_ids": [
+    "publish-circulating-factor-modulation-coverage-repair-2026-06-09-2026-06-09t12-30-09-589z"
+  ]
+}

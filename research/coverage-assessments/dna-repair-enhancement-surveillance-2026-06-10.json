@@ -1,0 +1,187 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "dna-repair-enhancement-surveillance-2026-06-10",
+  "name": "DNA Repair Enhancement surveillance coverage assessment for June 10, 2026",
+  "track_id": "dna-repair-enhancement",
+  "hallmark_id": "genomic_instability",
+  "assessment_type": "surveillance",
+  "assessed_at": "2026-06-10T16:30:00Z",
+  "assessment_window": {
+    "from": "2026-05-31T14:32:18Z",
+    "to": "2026-06-10T16:30:00Z",
+    "basis": "Surveillance window from the published DNA Repair Enhancement baseline through the June 10 field-change check."
+  },
+  "coverage_verdict": "thin",
+  "summary": "The baseline is publishable but still thin. The June 10 surveillance pass found a material DREAM repair-regulator source that merits review, while also showing that systemic DNA repair regulators, nucleotide/NAD boundary records, disease-specific DNA repair syndrome trials, safety, and recent review context need a dedicated coverage-repair pass.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-05-31-dna-repair-enhancement-bootstrap",
+      "2026-06-10-dna-repair-enhancement-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "dna-repair-enhancement-bootstrap-2026-05-31",
+      "dna-repair-enhancement-surveillance-2026-06-10"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-dna-repair-enhancement-source-fidelity-r1",
+      "evidence-review-dna-repair-enhancement-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-dna-repair-enhancement-bootstrap-2026-05-31-2026-05-31t14-32-18-294z"
+    ],
+    "outlook_ids": [
+      "track-dna-repair-enhancement-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "The baseline covers oral nicotinamide skin-cancer chemoprevention, topical DNA repair enzyme or photolyase skin studies, and indirect NR/NMN human trials.",
+      "source_ids": [
+        "pmid-26488693",
+        "pmid-36856616",
+        "pmid-26355618",
+        "pmid-22086236",
+        "pmid-23349012",
+        "pmid-29036257",
+        "pmid-29599478",
+        "pmid-35927255"
+      ],
+      "gap_note": "Human evidence remains tissue-specific or indirect; systemic aging-relevant DNA repair endpoints are still sparse."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "thin",
+      "rationale": "The staged DREAM study/finding update adds animal mutation-burden biology and cross-mammal lifespan association to this track, but there is not yet a druglike animal healthspan intervention record in the public map.",
+      "source_ids": [
+        "pmid-42230995"
+      ],
+      "finding_ids": [
+        "dream-repression-linked-lower-somatic-mutations"
+      ],
+      "gap_note": "Coverage repair should decide whether additional animal DNA repair enhancement studies belong in this track."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "Current records cover skin UV DNA damage, nicotinamide repair-proximal mechanisms, indirect NAD biology, and staged DREAM repression biology.",
+      "source_ids": [
+        "pmid-26355618",
+        "pmid-22086236",
+        "pmid-23349012",
+        "pmid-42230995"
+      ]
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The ONTRANS null trial and the NR/NMN no-DNA-repair-endpoint findings are already represented as limiting context.",
+      "source_ids": [
+        "pmid-36856616",
+        "pmid-29599478",
+        "pmid-35927255"
+      ],
+      "finding_ids": [
+        "ontrans-nicotinamide-null-transplant-keratinocyte-cancers",
+        "nicotinamide-riboside-raises-nad-no-dna-repair-endpoint",
+        "nicotinamide-mononucleotide-raises-nad-no-dna-repair-endpoint"
+      ]
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "Available human safety context is short, skin-local, disease-specific, or indirect; systemic repair manipulation and off-target genome-response risks remain underbuilt.",
+      "gap_note": "Coverage repair should make safety and off-target genome-response limitations explicit if additional systemic repair-regulator evidence is added."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "thin",
+      "rationale": "Known result-bearing registries were re-checked, but close NAD/nucleotide and DNA repair disease-boundary registries are not fully mapped for this track.",
+      "gap_note": "Review NCT06465602, NCT06592859, NCT07144527, NCT06324877, NCT04870866, NCT06208527, and other NAD or DNA repair syndrome boundary trials during coverage repair."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "The surveillance pass identified a recent DNA repair targeting review, but it was not staged because the public update is anchored to a same-window primary source.",
+      "gap_note": "Review PMID 42227145 and related 2026 reviews during coverage repair to improve source-completeness and boundary mapping."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "thin",
+      "rationale": "The pass exposed recurring boundary issues around NAD precursors, exogenous nucleotides, DNA repair syndromes, oncology DDR inhibitors, telomere biology, and skin photoprotection.",
+      "gap_note": "Coverage repair should state which boundary sources belong in DNA Repair Enhancement versus NAD and Redox Restoration, Telomere Restoration, disease-specific oncology, or ordinary photoprotection."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-26488693",
+    "pmid-36856616",
+    "pmid-26355618",
+    "pmid-22086236",
+    "pmid-23349012",
+    "pmid-29036257",
+    "pmid-29599478",
+    "pmid-35927255",
+    "pmid-42230995"
+  ],
+  "covered_finding_ids": [
+    "ontrac-nicotinamide-lower-nmsc-rate",
+    "ontrans-nicotinamide-null-transplant-keratinocyte-cancers",
+    "dna-repair-enzyme-sunscreen-lower-cpds-field-cancerization",
+    "photolyase-sunscreen-lower-uv-cpds-apoptosis",
+    "nicotinamide-enhanced-uv-dna-repair-human-skin",
+    "topical-dna-repair-enzyme-lower-actinic-keratoses",
+    "nicotinamide-riboside-raises-nad-no-dna-repair-endpoint",
+    "nicotinamide-mononucleotide-raises-nad-no-dna-repair-endpoint",
+    "dream-repression-linked-lower-somatic-mutations"
+  ],
+  "search_log_summary": "PubMed, ClinicalTrials.gov, UMIN, and ANZCTR discovery found one material same-window primary source for public update and multiple close-but-unstaged boundary records.",
+  "source_selection_notes": [
+    "PMID 42230995 was selected because it is a same-window primary source directly tied to DNA repair repression and somatic mutation burden.",
+    "PMID 42265534 was excluded from the staged update because exogenous nucleotide supplementation moved DNAmAge and telomere endpoints but did not directly measure DNA repair enhancement.",
+    "NCT07144527 and related NMN/NR registries are already better represented in NAD and Redox Restoration unless future results directly measure DNA repair endpoints."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "systemic-human-dna-repair-endpoints",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "Human evidence remains concentrated in UV-exposed skin and indirect NAD biology rather than systemic aging-relevant DNA repair endpoints.",
+      "priority": "high",
+      "suggested_action": "During coverage repair, search for direct human DNA repair endpoint studies outside skin and explicitly exclude wrong-scope disease or oncology sources."
+    },
+    {
+      "gap_id": "repair-regulator-preclinical-coverage",
+      "gap_type": "coverage_gap",
+      "category": "animal_lifespan_or_healthspan",
+      "description": "DREAM introduces broader repair-regulator biology, but the public map does not yet cover the surrounding preclinical DNA repair enhancement literature.",
+      "priority": "high",
+      "suggested_action": "Review DREAM, SIRT6, DNA glycosylase, ATM/ATR, and related repair-regulator sources for track fit."
+    },
+    {
+      "gap_id": "nad-nucleotide-taxonomy-boundary",
+      "gap_type": "coverage_gap",
+      "category": "taxonomy_boundary",
+      "description": "NAD precursors, exogenous nucleotides, NMN/NR registries, and telomere endpoints overlap with DNA repair language but often lack direct repair endpoints.",
+      "priority": "high",
+      "suggested_action": "Map NAD/nucleotide sources to DNA Repair Enhancement only when direct DNA repair endpoints or repair-regulator claims justify it."
+    },
+    {
+      "gap_id": "safety-off-target-genome-response",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Systemic repair enhancement could carry off-target genome-response or cancer-biology risks that are not yet well represented in the public outlook.",
+      "priority": "medium",
+      "suggested_action": "Add safety and durability boundaries if coverage repair stages systemic repair-regulator records."
+    }
+  ],
+  "next_coverage_action": "After evidence review and publication of the DREAM surveillance bundle, run coverage repair for DNA Repair Enhancement with emphasis on systemic repair-regulator biology, NAD/nucleotide boundary records, active registries, recent reviews, and safety/off-target genome-response limits.",
+  "next_recommended_mode": "coverage_repair",
+  "tags": [
+    "surveillance",
+    "coverage-assessment",
+    "dna-repair-enhancement",
+    "thin-coverage"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "nonmyeloablative-hsct",
+  "name": "Nonmyeloablative HSCT",
+  "summary": "Nonmyeloablative HSCT is normalized for relapsing multiple sclerosis progression evidence used as a high-risk stem-cell replacement boundary.",
+  "modalities": [
+    "procedure",
+    "cell_therapy"
+  ],
+  "target_hallmark_ids": [
+    "stem_cell_exhaustion"
+  ],
+  "track_ids": [
+    "stem-cell-replacement-and-transplantation"
+  ],
+  "mechanism_summary": "Uses reduced-intensity hematopoietic stem-cell transplantation to reset or replace immune-cell populations in disease-specific contexts.",
+  "development_stage": "approved_for_other_indication",
+  "linked_study_ids": [
+    "nonmyeloablative-hsct-relapsing-ms-rct"
+  ],
+  "linked_finding_ids": [
+    "nonmyeloablative-hsct-ms-progression-benefit-boundary"
+  ],
+  "risk_flags": [
+    "high-procedure-risk",
+    "disease-specific-evidence",
+    "not-general-aging-evidence"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_clinical_outcome",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: Nonmyeloablative HSCT delayed MS progression but remains a high-risk boundary; Nonmyeloablative HSCT relapsing-remitting multiple sclerosis RCT.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "cell_therapy",
+    "nonmyeloablative-hsct",
+    "procedure",
+    "stem-cell-replacement-and-transplantation",
+    "stem_cell_exhaustion"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

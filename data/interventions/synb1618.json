@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "synb1618",
+  "name": "SYNB1618",
+  "summary": "SYNB1618 is an engineered E. coli live biotherapeutic normalized for human phenylalanine pharmacodynamic evidence.",
+  "modalities": [
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "dysbiosis"
+  ],
+  "track_ids": [
+    "live-biotherapeutics-and-engineered-microbes"
+  ],
+  "mechanism_summary": "Uses engineered bacterial metabolism to consume or transform phenylalanine, with linked evidence bounded to PKU pharmacodynamics and tolerability.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "synb1618-pku-phase1-2a"
+  ],
+  "linked_finding_ids": [
+    "synb1618-engineered-ecoli-human-phe-pharmacodynamics"
+  ],
+  "risk_flags": [
+    "disease-specific-evidence",
+    "engineered-microbe-risk",
+    "biomarker-only"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: SYNB1618 phenylketonuria first-in-human phase 1/2a study; SYNB1618 showed human tolerability and phenylalanine-metabolite pharmacodynamics.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "biologic",
+    "dysbiosis",
+    "live-biotherapeutics-and-engineered-microbes",
+    "synb1618"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

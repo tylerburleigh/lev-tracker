@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "clazakizumab",
+  "name": "Clazakizumab",
+  "summary": "Clazakizumab is an anti-IL-6 biologic normalized for dialysis inflammation biomarker evidence.",
+  "modalities": [
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "chronic_inflammation"
+  ],
+  "track_ids": [
+    "cytokine-and-inflammasome-modulation"
+  ],
+  "mechanism_summary": "Blocks IL-6 signaling to test whether inflammatory biomarkers can be reduced in a high-inflammation clinical population.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "clazakizumab-dialysis-il6-phase2b"
+  ],
+  "linked_finding_ids": [
+    "clazakizumab-reduced-il6-biomarkers-dialysis"
+  ],
+  "risk_flags": [
+    "disease-specific-evidence",
+    "immunosuppression-risk",
+    "biomarker-only"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: Clazakizumab dialysis IL-6 phase 2b trial; Clazakizumab reduced IL-6-linked biomarkers in dialysis patients.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "biologic",
+    "chronic_inflammation",
+    "clazakizumab",
+    "cytokine-and-inflammasome-modulation"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

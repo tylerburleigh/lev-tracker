@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "mib-626-raised-nad-metabolome-older-adults",
+  "name": "MIB-626 raised circulating NAD metabolites in older overweight adults",
+  "summary": "MIB-626 adds a pharmaceutical-grade NMN target-engagement signal, but the trial was short and did not test durable function or clinical outcomes.",
+  "source_id": "pmid-35182418",
+  "hallmark_ids": [
+    "mitochondrial_dysfunction"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "positive",
+  "evidence_tier": "human_biomarker",
+  "confidence": "low",
+  "statement": "In a 32-participant randomized 14-day study of overweight or obese adults aged 55 to 80 years, 1000 mg MIB-626 once or twice daily was well tolerated and produced dose-related increases in blood NMN, NAD, and NAD-metabolome measures versus placebo.",
+  "tags": [
+    "human",
+    "randomized",
+    "mib-626",
+    "nad-metabolome"
+  ],
+  "study_id": "mib-626-pkpd-overweight-older-adults",
+  "intervention_ids": [
+    "mib-626",
+    "nicotinamide-mononucleotide"
+  ],
+  "track_ids": [
+    "nad-and-redox-restoration"
+  ],
+  "population_or_model": "Overweight or obese adults aged 55 to 80 years",
+  "time_horizon": "14 days",
+  "quantitative_note": "Blood NMN AUClast rose 1.7-fold with 1000 mg once daily and 3.7-fold with 1000 mg twice daily; blood NAD and downstream metabolites increased in a dose-related pattern.",
+  "caveats": [
+    "Circulating NAD movement is target engagement, not proof of tissue rejuvenation.",
+    "The trial was short, small, and biomarker-focused.",
+    "Functional, disease, durability, and mortality endpoints were not tested."
+  ]
+}

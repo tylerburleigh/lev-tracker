@@ -59,6 +59,8 @@ Surveillance is a sorting pass. It has four valid outcomes:
 
 No-op sessions are successful surveillance work. They keep the review clock visible without growing the candidate-bundle backlog.
 
+The rotation queue has a recency gate. `surveillance_queue` contains tracks that are due for ordinary field-change review, while `surveillance_recent_queue` preserves recently handled tracks with their last review date and next due date. The default cooldown is generated into `research/backlog/track-priority.v1.json`.
+
 Research session records should make the sorting decision explicit with `materiality_decision`, `search_log`, and `excluded_sources` when relevant. Reviewed-but-excluded sources are part of the audit trail, not clutter.
 
 ## Coverage Repair

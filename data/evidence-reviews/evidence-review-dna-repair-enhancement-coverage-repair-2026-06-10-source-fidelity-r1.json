@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-dna-repair-enhancement-coverage-repair-2026-06-10-source-fidelity-r1",
+  "name": "Source Fidelity review for Dna Repair Enhancement bundle",
+  "candidate_bundle_id": "dna-repair-enhancement-coverage-repair-2026-06-10",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, finding, and outlook claims match the checked source records. PMID 31002797 supports comparative rodent SIRT6/DSB-repair biology, PMID 35737787 supports TH10785 activation of OGG1 and increased oxidative-DNA-damage repair in biochemical and cellular systems, and PMID 42227145 is used only as 2026 review-level context for DNA repair dysregulation and therapeutic targeting. The bundle does not treat any of these anchors as human efficacy evidence.",
+  "reviewed_change_ids": [
+    "create-source-pmid-31002797",
+    "create-study-sirt6-dsb-repair-long-lived-species",
+    "create-finding-sirt6-dsb-repair-linked-to-longevity",
+    "create-source-pmid-35737787",
+    "create-study-ogg1-small-molecule-repair-activation",
+    "create-finding-ogg1-small-molecule-increased-oxidative-dna-repair",
+    "create-source-pmid-42227145",
+    "create-study-dna-repair-targeting-aging-review",
+    "create-finding-dna-repair-targeting-review-context-boundary",
+    "update-outlook-track-dna-repair-enhancement"
+  ],
+  "findings": [
+    {
+      "finding_id": "sirt6-comparative-source-boundary-confirmed",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-sirt6-dsb-repair-linked-to-longevity",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "sirt6-dsb-repair-linked-to-longevity"
+      },
+      "claim_or_issue": "The SIRT6 finding reflects comparative and animal/cell DSB-repair biology across rodent species rather than a tested human intervention.",
+      "why_it_matters": "It can strengthen mechanistic coverage for DNA repair enhancement but should not raise the public track beyond human biomarker signal.",
+      "recommended_action": "No revision needed; preserve the non-human and non-therapeutic caveats in the finding and outlook.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ogg1-cellular-source-boundary-confirmed",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-ogg1-small-molecule-increased-oxidative-dna-repair",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "ogg1-small-molecule-increased-oxidative-dna-repair"
+      },
+      "claim_or_issue": "The OGG1 finding is bounded to small-molecule repair activation in biochemical and cellular systems, with no animal, human, durability, or clinical outcome claim.",
+      "why_it_matters": "This keeps OGG1 as early repair-regulator biology rather than translational efficacy evidence.",
+      "recommended_action": "No revision needed; continue surveillance for in vivo validation or safety data.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "dna-repair-targeting-review-level-use-confirmed",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "create-finding-dna-repair-targeting-review-context-boundary",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "dna-repair-targeting-review-context-boundary"
+      },
+      "claim_or_issue": "The 2026 DNA repair targeting article is staged as review-level context and boundary support, not as direct intervention evidence.",
+      "why_it_matters": "Review context is useful for coverage repair but cannot independently support a stronger forecast.",
+      "recommended_action": "No revision needed.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-10T19:38:27.087Z",
+  "updated_at": "2026-06-10T19:38:27.087Z"
+}

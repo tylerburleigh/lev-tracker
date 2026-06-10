@@ -1,0 +1,187 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "stem-cell-rejuvenation-coverage-repair-2026-06-09",
+  "name": "Stem Cell Rejuvenation Coverage Repair for June 9, 2026",
+  "summary": "Coverage-repair bundle that stages hDNAgr no-results registry context, direct HSC aging review context, and a staged outlook refresh while keeping Stem Cell Rejuvenation at low-confidence human_biomarker_signal.",
+  "intake_mode": "manual",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-09T23:02:41Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "Which known source-completeness gaps for Stem Cell Rejuvenation need repair, and does resolving them change the coverage verdict or public boundaries?",
+    "hallmark_ids": [
+      "stem_cell_exhaustion"
+    ],
+    "track_ids": [
+      "stem-cell-rejuvenation"
+    ],
+    "intervention_ids": [
+      "hdnagr-therapy",
+      "casin",
+      "nicotinamide-riboside",
+      "p38-mapk-inhibition",
+      "structured-exercise-training"
+    ]
+  },
+  "source_ids": [
+    "nct-06877377",
+    "pmid-42216078"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT06877377",
+    "https://pubmed.ncbi.nlm.nih.gov/42216078/",
+    "https://doi.org/10.1186/s13059-026-04119-6",
+    "https://clinicaltrials.gov/study/NCT03473288",
+    "https://clinicaltrials.gov/study/NCT03754842",
+    "https://pubmed.ncbi.nlm.nih.gov/42228536/",
+    "https://pubmed.ncbi.nlm.nih.gov/42220642/",
+    "https://pubmed.ncbi.nlm.nih.gov/42209503/",
+    "https://pubmed.ncbi.nlm.nih.gov/42183054/"
+  ],
+  "related_records": [
+    {
+      "record_type": "track",
+      "record_id": "stem-cell-rejuvenation"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-stem-cell-rejuvenation-outlook"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "hdnagr-therapy"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "casin"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "nicotinamide-riboside"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "p38-mapk-inhibition"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "structured-exercise-training"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-intervention-hdnagr-therapy",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "hdnagr-therapy",
+      "file_path": "data/interventions/hdnagr-therapy.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-coverage-repair-2026-06-09/hdnagr-therapy.json",
+      "summary": "Add hDNAgr therapy.",
+      "rationale": "Repair the Stem Cell Rejuvenation source map by representing the targeted HSC-aging registry without implying efficacy."
+    },
+    {
+      "change_id": "create-source-nct-06877377",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-06877377",
+      "file_path": "data/sources/nct-06877377.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-coverage-repair-2026-06-09/nct-06877377.json",
+      "summary": "Add hDNAgr HSC aging registry source.",
+      "rationale": "Repair the active-registry gap identified in the June 9 coverage assessment."
+    },
+    {
+      "change_id": "create-source-pmid-42216078",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-42216078",
+      "file_path": "data/sources/pmid-42216078.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-coverage-repair-2026-06-09/pmid-42216078.json",
+      "summary": "Add HSC aging rejuvenation review source.",
+      "rationale": "Repair recent-review triangulation while preserving that review context is not efficacy evidence."
+    },
+    {
+      "change_id": "create-study-hdnagr-hsc-aging-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "hdnagr-hsc-aging-registry",
+      "file_path": "data/studies/hdnagr-hsc-aging-registry.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-coverage-repair-2026-06-09/hdnagr-hsc-aging-registry.json",
+      "summary": "Add hDNAgr HSC aging registry study record.",
+      "rationale": "Repair active-registry coverage and trial-watch metadata for targeted human HSC-aging intervention context."
+    },
+    {
+      "change_id": "create-finding-hdnagr-hsc-aging-registry-not-yet-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "hdnagr-hsc-aging-registry-not-yet-recruiting-no-results",
+      "file_path": "data/findings/hdnagr-hsc-aging-registry-not-yet-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-coverage-repair-2026-06-09/hdnagr-hsc-aging-registry-not-yet-recruiting-no-results.json",
+      "summary": "Add hDNAgr registry no-results finding.",
+      "rationale": "Keep no-results registry context visible without treating it as evidence progress.",
+      "uncertainty_flags": [
+        "not-yet-recruiting",
+        "no-posted-results",
+        "past-estimated-completion-dates"
+      ]
+    },
+    {
+      "change_id": "create-finding-hsc-aging-review-rejuvenation-strategy-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "hsc-aging-review-rejuvenation-strategy-boundary",
+      "file_path": "data/findings/hsc-aging-review-rejuvenation-strategy-boundary.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-coverage-repair-2026-06-09/hsc-aging-review-rejuvenation-strategy-boundary.json",
+      "summary": "Add HSC aging review boundary finding.",
+      "rationale": "Repair recent-review triangulation and mechanism-boundary coverage without upgrading the stage."
+    },
+    {
+      "change_id": "update-outlook-track-stem-cell-rejuvenation",
+      "change_type": "update_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-stem-cell-rejuvenation-outlook",
+      "file_path": "data/outlooks/track-stem-cell-rejuvenation-outlook.json",
+      "staged_file_path": "data/staged-records/stem-cell-rejuvenation-coverage-repair-2026-06-09/track-stem-cell-rejuvenation-outlook.json",
+      "summary": "Refresh the Stem Cell Rejuvenation outlook with registry and review boundary context.",
+      "rationale": "Keep the public support map aligned with the repaired active-registry and recent-review coverage while preserving stage, momentum, and confidence."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "stem-cell-rejuvenation",
+      "note": "Keep human_biomarker_signal, steady momentum, and low confidence. The staged repair improves active-registry and review coverage but adds no posted human efficacy or safety results.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast",
+    "safety_limitations",
+    "taxonomy_mapping"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-09-stem-cell-rejuvenation-coverage-repair.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin",
+    "coverage-repair",
+    "stem-cell-rejuvenation"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-stem-cell-rejuvenation-coverage-repair-2026-06-09-source-fidelity-r1",
+    "evidence-review-stem-cell-rejuvenation-coverage-repair-2026-06-09-interpretation-forecast-r1",
+    "evidence-review-stem-cell-rejuvenation-coverage-repair-2026-06-09-safety-limitations-r1",
+    "evidence-review-stem-cell-rejuvenation-coverage-repair-2026-06-09-taxonomy-mapping-r1"
+  ],
+  "publication_event_ids": [
+    "publish-stem-cell-rejuvenation-coverage-repair-2026-06-09-2026-06-10t10-17-06-414z"
+  ]
+}

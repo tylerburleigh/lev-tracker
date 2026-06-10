@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-stem-cell-rejuvenation-coverage-repair-2026-06-09-safety-limitations-r1",
+  "name": "Safety Limitations review for Stem Cell Rejuvenation bundle",
+  "candidate_bundle_id": "stem-cell-rejuvenation-coverage-repair-2026-06-09",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "safety_limitations",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged safety framing is adequate for publication. It identifies hDNAgr as no-results registry context with safety as the primary endpoint and preserves unresolved proliferative, genomic, telomere, lineage-skewing, tumor, and durability concerns in the outlook rather than presenting safety reassurance.",
+  "reviewed_change_ids": [
+    "create-intervention-hdnagr-therapy",
+    "create-source-nct-06877377",
+    "create-source-pmid-42216078",
+    "create-study-hdnagr-hsc-aging-registry",
+    "create-finding-hdnagr-hsc-aging-registry-not-yet-recruiting-no-results",
+    "create-finding-hsc-aging-review-rejuvenation-strategy-boundary",
+    "update-outlook-track-stem-cell-rejuvenation"
+  ],
+  "findings": [
+    {
+      "finding_id": "hdnagr-safety-endpoint-not-overclaimed",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-study-hdnagr-hsc-aging-registry",
+      "applies_to_record": {
+        "record_type": "study",
+        "record_id": "hdnagr-hsc-aging-registry"
+      },
+      "claim_or_issue": "The hDNAgr study record names safety as an endpoint but does not claim safety has been demonstrated.",
+      "why_it_matters": "A not-yet-recruiting registry cannot resolve risks from genome-targeting or telomere-directed claims.",
+      "recommended_action": "No revision needed; re-review if registry results or adverse-event data appear.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "public-outlook-retains-safety-boundaries",
+      "severity": "note",
+      "category": "missing_caveat",
+      "applies_to_change_id": "update-outlook-track-stem-cell-rejuvenation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-stem-cell-rejuvenation-outlook"
+      },
+      "claim_or_issue": "The outlook explicitly keeps stem-cell activation, lineage skewing, tumor risk, genomic risk, telomere effects, and durability in the limitations frame.",
+      "why_it_matters": "Those caveats prevent registry activity from reading as clinical readiness.",
+      "recommended_action": "No revision needed.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-10T10:16:45.093Z",
+  "updated_at": "2026-06-10T10:16:45.093Z"
+}

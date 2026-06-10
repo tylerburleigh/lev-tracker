@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "tat2",
+  "name": "TAT2",
+  "summary": "TAT2 is a telomerase-activating small molecule normalized for ex vivo human CD8+ T-cell antiviral-function evidence.",
+  "modalities": [
+    "small_molecule"
+  ],
+  "target_hallmark_ids": [
+    "telomere_attrition"
+  ],
+  "track_ids": [
+    "telomerase-restoration"
+  ],
+  "mechanism_summary": "Activates telomerase in immune cells to test whether telomere biology can improve T-cell function ex vivo.",
+  "development_stage": "discovery",
+  "linked_study_ids": [
+    "tat2-human-cd8-ex-vivo"
+  ],
+  "linked_finding_ids": [
+    "tat2-ex-vivo-cd8-antiviral-function-positive"
+  ],
+  "risk_flags": [
+    "ex-vivo-only",
+    "telomerase-risk",
+    "translation-risk"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "in_vitro",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: TAT2 enhanced antiviral function in human CD8+ T cells ex vivo; TAT2 treatment of human CD8+ T cells ex vivo.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "small_molecule",
+    "tat2",
+    "telomerase-restoration",
+    "telomere_attrition"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

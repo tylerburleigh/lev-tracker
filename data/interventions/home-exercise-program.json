@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "home-exercise-program",
+  "name": "Home exercise program",
+  "summary": "Home exercise program is normalized as a DO-HEALTH combination component in DNA-methylation clock analyses.",
+  "modalities": [
+    "lifestyle"
+  ],
+  "target_hallmark_ids": [
+    "epigenetic_alterations"
+  ],
+  "track_ids": [
+    "dna-methylation-and-epigenome-restoration"
+  ],
+  "mechanism_summary": "Represents structured home exercise exposure combined with omega-3 and vitamin D arms, with evidence bounded to epigenetic-clock biomarker analysis.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "do-health-omega3-vitd-exercise-dnam-clocks"
+  ],
+  "linked_finding_ids": [
+    "do-health-omega3-small-dnam-clock-slowing"
+  ],
+  "risk_flags": [
+    "combination-attribution",
+    "biomarker-only",
+    "adherence-variability"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: DO-HEALTH omega-3 showed small DNA-methylation clock slowing; DO-HEALTH omega-3 vitamin D exercise DNA-methylation clock analysis.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "dna-methylation-and-epigenome-restoration",
+    "epigenetic_alterations",
+    "home-exercise-program",
+    "lifestyle"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

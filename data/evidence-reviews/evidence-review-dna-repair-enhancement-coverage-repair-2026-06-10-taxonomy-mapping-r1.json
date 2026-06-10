@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-dna-repair-enhancement-coverage-repair-2026-06-10-taxonomy-mapping-r1",
+  "name": "Taxonomy Mapping review for Dna Repair Enhancement bundle",
+  "candidate_bundle_id": "dna-repair-enhancement-coverage-repair-2026-06-10",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "taxonomy_mapping",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The taxonomy mapping is coherent. SIRT6-mediated DSB-repair efficiency, OGG1 oxidative-base-damage repair activation, and broad repair-pathway targeting context belong in DNA Repair Enhancement, while NAD/NMN/NR searches, ataxia registries, and adjacent disease-context records remain boundary or no-result material rather than public support for this track.",
+  "reviewed_change_ids": [
+    "create-source-pmid-31002797",
+    "create-study-sirt6-dsb-repair-long-lived-species",
+    "create-finding-sirt6-dsb-repair-linked-to-longevity",
+    "create-source-pmid-35737787",
+    "create-study-ogg1-small-molecule-repair-activation",
+    "create-finding-ogg1-small-molecule-increased-oxidative-dna-repair",
+    "create-source-pmid-42227145",
+    "create-study-dna-repair-targeting-aging-review",
+    "create-finding-dna-repair-targeting-review-context-boundary",
+    "update-outlook-track-dna-repair-enhancement"
+  ],
+  "findings": [
+    {
+      "finding_id": "sirt6-and-ogg1-map-to-dna-repair-enhancement",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "update-outlook-track-dna-repair-enhancement",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-dna-repair-enhancement-outlook"
+      },
+      "claim_or_issue": "The added SIRT6 and OGG1 anchors directly concern DNA double-strand break repair or oxidative DNA damage repair and are appropriately mapped to DNA Repair Enhancement.",
+      "why_it_matters": "They repair mechanistic coverage gaps without requiring a new intervention family or adjacent-track reassignment.",
+      "recommended_action": "No revision needed.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "adjacent-boundaries-remain-out-of-public-support",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "update-outlook-track-dna-repair-enhancement",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-dna-repair-enhancement-outlook"
+      },
+      "claim_or_issue": "NAD/NMN/NR material, ataxia registry checks, and broader oncology or neurodegeneration DNA repair targeting context remain excluded or boundary context rather than public evidence support.",
+      "why_it_matters": "This prevents the track from absorbing generic redox, disease-registry, or cancer-sensitization claims that do not test aging-directed DNA repair enhancement.",
+      "recommended_action": "No revision needed; revisit only if future sources produce direct aging-relevant repair-enhancement evidence.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-10T19:38:27.160Z",
+  "updated_at": "2026-06-10T19:38:27.160Z"
+}

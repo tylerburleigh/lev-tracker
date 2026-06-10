@@ -1,0 +1,309 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-07-lysosomal-restoration-surveillance",
+  "name": "Lysosomal Restoration field change check for June 7, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-07T20:59:00Z",
+  "completed_at": "2026-06-07T21:06:47Z",
+  "scope": {
+    "question": "What changed for Lysosomal Restoration since the 2026-06-01 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "disabled_macroautophagy"
+    ],
+    "track_ids": [
+      "lysosomal-restoration"
+    ],
+    "intervention_ids": [
+      "ambroxol",
+      "lamp2a-expression-preservation",
+      "lysosomal-surveillance-response-activation",
+      "trehalose",
+      "tfeb-activation",
+      "vha6-rnai"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "no_op",
+  "summary": "Ran a field change check from the 2026-06-01T11:24:31.086Z Lysosomal Restoration baseline publication through June 7, 2026. The local trial audit found three ambroxol registry-linked studies and stale or missing local registry checks. ClinicalTrials.gov re-checks found ASPro-PD NCT05778617 still recruiting with no posted results and estimated 2029 completion; NCT02941822 still completed with no registry results section while the peer-reviewed open-label result remains the public evidence source; and NCT02914366 still has unknown registry status with no registry results section while the peer-reviewed Parkinson disease dementia result remains the public evidence source. Broad registry searches surfaced additional ambroxol and trehalose disease-program context, including completed or terminated no-results studies, but no new posted outcome results. PubMed searches found no same-window ambroxol result and no correction or retraction to the baseline support set. Close PubMed hits were preclinical disease-model, genetic, mechanism, or review context, including a post-baseline ginsenoside Rg1 Parkinson disease model and pre-window electronic publications on ganoderic acid D vascular aging, caffeine worm lifespan, mitochondria-lysosome contacts, and lysosomal aging reviews. No public outlook, source, study, finding, activity, bundle, or coverage assessment update is warranted.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "none",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The current public baseline already frames Lysosomal Restoration as a tentative human biomarker signal anchored to ambroxol target engagement, with disease-specific human limits and mixed clinical benefit. The new searches did not find result-bearing human data, newly posted registry results, a public safety signal, a correction/retraction, or an animal finding strong enough to revise the public support map. Several additional no-results ambroxol registries are useful coverage-assessment context but are pre-window and do not alter the public claim."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial audit",
+      "query": "npm run audit:trials -- --track lysosomal-restoration --write",
+      "checked_at": "2026-06-07T21:06:47Z",
+      "url": "https://clinicaltrials.gov/search?term=ambroxol%20Parkinson",
+      "summary": "The audit found three registry-linked interventional studies, all with trial_details. ASPro-PD NCT05778617 was the open watch item and all three ambroxol registry records had stale or missing local registry-check dates."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "Known registry checks for NCT05778617, NCT02941822, and NCT02914366",
+      "checked_at": "2026-06-07T21:06:47Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT05778617",
+      "summary": "NCT05778617 remains recruiting, last update posted 2025-05-01, with 330 estimated enrollment, February 2029 estimated primary completion, September 2029 estimated study completion, and no registry results. NCT02941822 remains completed with 2018 completion and no registry results section. NCT02914366 remains in unknown registry status with 2025-12 estimated completion and no registry results section."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "ambroxol AND (aging OR Parkinson OR dementia OR GBA OR GCase OR lysosomal); lysosomal/lysosome/TFEB/trehalose/LAMP2A/CMA terms with aging, older-adult, frailty, or Parkinson terms",
+      "checked_at": "2026-06-07T21:06:47Z",
+      "url": "https://clinicaltrials.gov/search?term=ambroxol%20Parkinson%20GBA",
+      "summary": "Broad registry screens found pre-window no-results or disease-program context such as NCT05287503, NCT04588285, NCT04388969, NCT06614894, NCT07285369, NCT05332678, and NCT05490563. No new same-window posted outcome result or status change altered the public outlook."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "Lysosomal, lysosome, autolysosome, autophagy-lysosome, TFEB, TFE3, LAMP2A, chaperone-mediated autophagy, trehalose, ambroxol, v-ATPase, and lysosomal surveillance response terms with aging, lifespan, longevity, healthspan, older-adult, Parkinson, or neurodegeneration terms; publication dates 2026-06-01 to 2026-06-07",
+      "checked_at": "2026-06-07T21:06:47Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=lysosomal%20aging%20TFEB%20ambroxol",
+      "summary": "The broad search returned 35 records. Close records included PMID 42248811, PMID 42243117, PMID 42236937, PMID 42231395, PMID 42106006, PMID 41999921, PMID 41967234, and PMID 41962592. They were preclinical disease-model, mechanism, C. elegans, pre-window electronic-publication, or review context and did not change the public human biomarker-stage read."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "query": "ambroxol with Parkinson, GBA, GCase, glucocerebrosidase, dementia, or Gaucher terms; LAMP2A/CMA aging terms; TFEB/trehalose aging terms; publication dates 2026-06-01 to 2026-06-07",
+      "checked_at": "2026-06-07T21:06:47Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=ambroxol%20Parkinson%20GBA",
+      "summary": "The ambroxol-specific same-window search returned zero records. LAMP2A/CMA and TFEB/trehalose focused searches returned only wrong-scope genetic case reports, reviews, or preclinical/context records already captured in the broad search."
+    },
+    {
+      "source_name": "PubMed correction and retraction screen",
+      "query": "Baseline support PMIDs 18690243, 32482227, 40571723, 28165011, 31930374, 40587145, and 41708985 with retraction, erratum, corrected-and-republished, or expression-of-concern publication types; publication dates 2026-06-01 to 2026-06-07",
+      "checked_at": "2026-06-07T21:06:47Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned zero correction, retraction, erratum, corrected-and-republished, or expression-of-concern records for the seven baseline supporting PubMed sources."
+    },
+    {
+      "source_name": "bioRxiv and medRxiv APIs",
+      "query": "Date window 2026-06-01 to 2026-06-07 with ambroxol, lysosome, lysosomal, TFEB, LAMP2A, trehalose, chaperone-mediated autophagy, and lysosomal restoration title/abstract screens",
+      "checked_at": "2026-06-07T21:06:47Z",
+      "url": "https://api.biorxiv.org/",
+      "summary": "Returned zero matching bioRxiv or medRxiv records in the date window."
+    },
+    {
+      "source_name": "Web and sponsor-program search",
+      "query": "ASPro-PD ambroxol Parkinson results 2026; ambroxol GBA Parkinson NCT05287503 results; SLS-005 trehalose Alzheimer NCT05332678 results",
+      "checked_at": "2026-06-07T21:06:47Z",
+      "url": "https://cureparkinsons.org.uk/2026/06/landmark-clinical-trial-results-expected-in-2026-as-disease-modifying-parkinsons-pipeline-reaches-critical-phase/",
+      "summary": "A June 2026 Cure Parkinson's pipeline press release mentions ASPro-PD among late-stage Parkinson programs and says disease-modifying trial results are expected in 2026, while the UCL ASPro-PD page confirms the trial is open to recruitment. No posted ASPro-PD, AMBITIOUS, or SLS-005 outcome result was found."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT05778617",
+      "study_id": "aspro-pd-ambroxol-phase3",
+      "source_id": "pmid-41708985",
+      "registry_url": "https://clinicaltrials.gov/study/NCT05778617",
+      "checked_at": "2026-06-07T21:06:47Z",
+      "previous_local_status": "active",
+      "current_registry_status": "recruiting",
+      "previous_results_status": "pending",
+      "current_results_status": "not_posted",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "ASPro-PD remains recruiting with no ClinicalTrials.gov results section. The registry lists 330 estimated participants, February 2029 estimated primary completion, and September 2029 estimated study completion."
+    },
+    {
+      "registry_id": "NCT02941822",
+      "study_id": "ambroxol-parkinson-gcase-open-label",
+      "source_id": "pmid-31930374",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02941822",
+      "checked_at": "2026-06-07T21:06:47Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "not_posted",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The open-label ambroxol registry remains completed with no ClinicalTrials.gov results section and no update since 2020-04-15. The peer-reviewed PMID 31930374 result remains the public evidence source."
+    },
+    {
+      "registry_id": "NCT02914366",
+      "study_id": "ambroxol-pdd-randomized-phase2",
+      "source_id": "pmid-40587145",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02914366",
+      "checked_at": "2026-06-07T21:06:47Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "unknown",
+      "previous_results_status": "posted",
+      "current_results_status": "not_posted",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The randomized Parkinson disease dementia registry still has unknown status, a stale 2024-02-28 last update, estimated December 2025 completion, and no ClinicalTrials.gov results section. The peer-reviewed PMID 40587145 result remains the public evidence source."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 42248811",
+      "title": "Ginsenoside Rg1, a Natural Lysosomal Enhancer, Alleviates Parkinson's Disease Pathology via Cathepsin D-Dependent Regulation of alpha-Synuclein Homeostasis.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42248811/",
+      "decision": "context_only",
+      "reason": "Post-baseline zebrafish, mouse, and SH-SY5Y Parkinson disease model study. It supports lysosomal enhancer tractability through CTSD and alpha-synuclein clearance but does not add human aging, healthy-aging, or durable functional evidence."
+    },
+    {
+      "reference": "PMID 42243117",
+      "title": "CYLD-mediated lysine63 deubiquitination regulates synaptic transmission and autophagy to mitigate age-related sequelae.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42243117/",
+      "decision": "context_only",
+      "reason": "C. elegans genetic/mechanism paper linking CYLD-1, autolysosomal organization, neural activity, and lifespan. It is relevant biology but not a deployable lysosomal-restoration intervention or human result."
+    },
+    {
+      "reference": "PMID 42236937",
+      "title": "LASER couples damage sensing to ESCRT assembly for lysosome repair.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42236937/",
+      "decision": "context_only",
+      "reason": "Basic lysosome repair mechanism source focused on LASER and ESCRT assembly. It may inform future target biology but does not change the current evidence stage or public ambroxol boundary."
+    },
+    {
+      "reference": "PMID 42231395",
+      "title": "Polymeric lysosome-targeting chimeras for extracellular alpha-synuclein degradation in Parkinson's disease.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42231395/",
+      "decision": "context_only",
+      "reason": "Conceptual Parkinson disease lysosome-targeting chimera proposal without validated aging or human outcome data."
+    },
+    {
+      "reference": "PMID 41967234",
+      "title": "Ganoderic acid D alleviates vascular aging by restoring lysosomal function via stabilization of the VAPB-SNX25 tethering complex.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41967234/",
+      "decision": "context_only",
+      "reason": "Mammalian vascular-aging small-molecule source, but electronically published on 2026-04-02 before the public baseline. It is useful historical coverage-assessment context and does not create a same-window public delta."
+    },
+    {
+      "reference": "PMID 41999921",
+      "title": "Caffeine extends lifespan by enhancing lysosomal lipolysis in Caenorhabditis elegans.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41999921/",
+      "decision": "context_only",
+      "reason": "C. elegans caffeine lifespan and lysosomal lipolysis paper, electronically published on 2026-04-16 before the public baseline. It does not add human or mammalian aging evidence."
+    },
+    {
+      "reference": "PMID 41962592",
+      "title": "Lysosomal control of aging through transcriptional and epigenetic regulation.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41962592/",
+      "decision": "context_only",
+      "reason": "Review of lysosomal aging control, LySR, transgenerational lysosomal signaling, and TFEB. It adds synthesis context but no primary result."
+    },
+    {
+      "reference": "PMID 42106006",
+      "title": "Mitochondria-lysosome contacts in aging: A mechanistic interface linking organelle homeostasis and cellular decline.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42106006/",
+      "decision": "context_only",
+      "reason": "Review of mitochondria-lysosome contacts in aging. It is mechanistic synthesis and not a result-bearing intervention source."
+    },
+    {
+      "reference": "NCT05287503",
+      "title": "Ambroxol as a Disease-modifying Treatment in GBA-PD",
+      "url": "https://clinicaltrials.gov/study/NCT05287503",
+      "decision": "no_results",
+      "reason": "Completed 65-participant phase 2 GBA-PD ambroxol trial with 2024-12-20 actual completion and no posted registry results as of a 2025-08-14 registry update. This is pre-window no-results watch context rather than a same-window evidence delta."
+    },
+    {
+      "reference": "NCT04588285",
+      "title": "Ambroxol in New and Early DLB, A Phase IIa Multicentre Randomized Controlled Double Blind Clinical Trial",
+      "url": "https://clinicaltrials.gov/study/NCT04588285",
+      "decision": "no_results",
+      "reason": "Recruiting dementia with Lewy bodies ambroxol trial, last updated 2026-05-05 with estimated 2027 completion and no results. It predates the baseline and does not change the current public claim."
+    },
+    {
+      "reference": "NCT04388969",
+      "title": "World Data on Ambroxol for Patients With GD and GBA Related PD",
+      "url": "https://clinicaltrials.gov/study/NCT04388969",
+      "decision": "context_only",
+      "reason": "Recruiting world-data ambroxol registry for Gaucher disease and GBA-related Parkinson disease. It is observational/no-results program context and not outcome evidence."
+    },
+    {
+      "reference": "NCT06614894",
+      "title": "High dose ambroxol hydrochloride in adults with MPS III",
+      "url": "https://clinicaltrials.gov/study/NCT06614894",
+      "decision": "no_results",
+      "reason": "Recruiting small MPS III ambroxol dose-escalation trial with no posted results. Disease-specific lysosomal-disorder context, not aging evidence."
+    },
+    {
+      "reference": "NCT07285369",
+      "title": "High-Dose Ambroxol in Pediatric Type III Gaucher Disease",
+      "url": "https://clinicaltrials.gov/study/NCT07285369",
+      "decision": "no_results",
+      "reason": "Terminated pediatric Gaucher disease type 3 ambroxol registry, last updated 2026-04-03 with no posted results. It is disease-specific and pre-window."
+    },
+    {
+      "reference": "NCT05332678",
+      "title": "SLS-005 (Trehalose Injection) in the Treatment of Alzheimer's Disease",
+      "url": "https://clinicaltrials.gov/study/NCT05332678",
+      "decision": "no_results",
+      "reason": "Withdrawn trehalose Alzheimer's disease registry with zero enrollment and no results. It does not affect the lysosomal-restoration evidence read."
+    },
+    {
+      "reference": "NCT05490563",
+      "title": "STRIDES - SLS-005 in spinocerebellar ataxia type 3",
+      "url": "https://clinicaltrials.gov/study/NCT05490563",
+      "decision": "no_results",
+      "reason": "Terminated trehalose/SLS-005 spinocerebellar ataxia registry with 23 actual participants and no posted results. It is disease-specific and pre-window."
+    },
+    {
+      "reference": "Cure Parkinson's press release 2026-06",
+      "title": "Landmark clinical trial results expected in 2026 as disease-modifying Parkinson's pipeline reaches critical phase",
+      "url": "https://cureparkinsons.org.uk/2026/06/landmark-clinical-trial-results-expected-in-2026-as-disease-modifying-parkinsons-pipeline-reaches-critical-phase/",
+      "decision": "context_only",
+      "reason": "Same-window sponsor/funder pipeline context mentions ASPro-PD among late-stage Parkinson programs but does not report ASPro-PD outcomes or a lysosomal-restoration result."
+    }
+  ],
+  "source_ids": [
+    "pmid-18690243",
+    "pmid-32482227",
+    "pmid-40571723",
+    "pmid-28165011",
+    "pmid-31930374",
+    "pmid-40587145",
+    "pmid-41708985"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT05778617",
+    "https://clinicaltrials.gov/study/NCT02941822",
+    "https://clinicaltrials.gov/study/NCT02914366",
+    "https://clinicaltrials.gov/study/NCT05287503",
+    "https://clinicaltrials.gov/study/NCT04588285",
+    "https://clinicaltrials.gov/study/NCT04388969",
+    "https://clinicaltrials.gov/study/NCT06614894",
+    "https://clinicaltrials.gov/study/NCT07285369",
+    "https://clinicaltrials.gov/study/NCT05332678",
+    "https://clinicaltrials.gov/study/NCT05490563",
+    "https://pubmed.ncbi.nlm.nih.gov/42248811/",
+    "https://pubmed.ncbi.nlm.nih.gov/42243117/",
+    "https://pubmed.ncbi.nlm.nih.gov/42236937/",
+    "https://pubmed.ncbi.nlm.nih.gov/42231395/",
+    "https://pubmed.ncbi.nlm.nih.gov/41967234/",
+    "https://pubmed.ncbi.nlm.nih.gov/41999921/",
+    "https://pubmed.ncbi.nlm.nih.gov/41962592/",
+    "https://pubmed.ncbi.nlm.nih.gov/42106006/",
+    "https://www.ucl.ac.uk/comprehensive-clinical-trials-unit/research-projects/2026/mar/aspro-pd",
+    "https://cureparkinsons.org.uk/2026/06/landmark-clinical-trial-results-expected-in-2026-as-disease-modifying-parkinsons-pipeline-reaches-critical-phase/"
+  ],
+  "notes": [
+    "Triage selected this as the rank-1 next distinct surveillance target after AMPK surveillance and intervention-normalization warning cleanup.",
+    "The delta window is anchored to publication event publish-lysosomal-restoration-bootstrap-2026-06-01-2026-06-01t11-24-31-086z.",
+    "No coverage assessment exists yet for Lysosomal Restoration; this ordinary surveillance pass did not discover a material category-level change requiring immediate coverage repair.",
+    "Several broader ambroxol disease-program registries are not represented in the current public trial layer. They are pre-window no-results context and should be considered when a separate coverage assessment backfill reaches this track.",
+    "The public boundary remains unchanged: ambroxol supplies disease-specific human target engagement, the randomized Parkinson disease dementia trial constrains functional interpretation, and non-ambroxol lysosomal-restoration evidence remains preclinical or mechanistic."
+  ],
+  "next_actions": [
+    "Continue ordinary surveillance for posted ASPro-PD, AMBITIOUS/GBA-PD, Lewy body dementia ambroxol, or SLS-005/trehalose results.",
+    "Consider a separate Lysosomal Restoration coverage assessment backfill later to decide whether additional ambroxol no-results registries should be represented in the public trial layer.",
+    "Create a public bundle only if future evidence changes stage, evidence weight, momentum, blockers, safety, durability, human target engagement, functional outcomes, or the lysosomal-restoration translation boundary."
+  ]
+}

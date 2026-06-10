@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-stem-cell-replacement-and-transplantation-surveillance-2026-06-06-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Stem Cell Replacement And Transplantation bundle",
+  "candidate_bundle_id": "stem-cell-replacement-and-transplantation-surveillance-2026-06-06",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged registry refresh is calibrated as activity-only. It updates the exPDite-2 as-of date and no-results caveat without changing the stem-cell replacement and transplantation outlook, evidence stage, momentum, confidence, or LEV-relevant forecast. The existing outlook already treats exPDite-2 as Parkinson-specific phase 3 momentum rather than efficacy evidence.",
+  "reviewed_change_ids": [
+    "update-source-nct-06944522",
+    "update-finding-expdite2-bemdaneprocel-phase3-recruiting"
+  ],
+  "findings": [
+    {
+      "finding_id": "activity-only-registry-refresh-boundary",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "update-finding-expdite2-bemdaneprocel-phase3-recruiting",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "expdite2-bemdaneprocel-phase3-recruiting"
+      },
+      "claim_or_issue": "The registry update documents continued recruiting status and a newer posted-update date, not efficacy, safety outcome, durability, or aging-benefit evidence.",
+      "why_it_matters": "The track outlook's accelerating momentum can cite a recruiting phase 3 program, but the evidence stage should continue to rest on existing human functional and disease-specific records rather than this registry refresh.",
+      "recommended_action": "Publish the staged finding as written and keep the public outlook unchanged unless future exPDite-2 results or safety updates appear.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-07T13:49:22.694Z",
+  "updated_at": "2026-06-07T13:49:22.694Z"
+}

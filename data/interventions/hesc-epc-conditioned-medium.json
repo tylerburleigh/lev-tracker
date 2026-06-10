@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "hesc-epc-conditioned-medium",
+  "name": "hESC-EPC conditioned medium",
+  "summary": "hESC-EPC conditioned medium is normalized for human split-face skin-aging studies of stem-cell secretome preparations.",
+  "modalities": [
+    "biologic"
+  ],
+  "target_hallmark_ids": [
+    "altered_intercellular_communication"
+  ],
+  "track_ids": [
+    "extracellular-vesicle-and-secretome-therapies"
+  ],
+  "mechanism_summary": "Uses conditioned medium from hESC-derived endothelial progenitor cells to deliver secreted factors for local skin-repair endpoints.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "hesc-epc-conditioned-medium-skin-aging-split-face"
+  ],
+  "linked_finding_ids": [
+    "hesc-conditioned-medium-improved-human-skin-aging"
+  ],
+  "risk_flags": [
+    "local-skin-endpoints",
+    "secretome-composition-uncertainty",
+    "not-systemic-aging-evidence"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: hESC-EPC conditioned medium improved human skin-aging measures; hESC-EPC conditioned medium skin-aging split-face study.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "altered_intercellular_communication",
+    "biologic",
+    "extracellular-vesicle-and-secretome-therapies",
+    "hesc-epc-conditioned-medium"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

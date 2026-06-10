@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "young-donor-plasma-exchange",
+  "name": "Young-donor plasma exchange",
+  "short_name": "Young-donor plasma exchange",
+  "summary": "Plasma exchange or dilution followed by replacement with young or healthy donor plasma, tracked separately from simple young-plasma infusion and from TPE with albumin or IVIG.",
+  "modalities": [
+    "biologic",
+    "procedure"
+  ],
+  "target_hallmark_ids": [
+    "altered_intercellular_communication"
+  ],
+  "development_stage": "clinical",
+  "track_ids": [
+    "circulating-factor-modulation"
+  ],
+  "mechanism_summary": "Combines removal or dilution of recipient plasma with exposure to donor plasma from young or healthy donors, creating attribution uncertainty between factor removal, donor-product content, and procedure effects.",
+  "linked_study_ids": [
+    "young-donor-plasma-exchange-mci-preprint"
+  ],
+  "linked_finding_ids": [
+    "young-donor-plasma-exchange-mci-feasible-preprint",
+    "young-plasma-fda-warning-safety-boundary"
+  ],
+  "risk_flags": [
+    "transfusion-risk",
+    "donor-product-variability",
+    "preprint-evidence",
+    "disease-specific-evidence"
+  ],
+  "tags": [
+    "circulating-factor-modulation",
+    "young-donor-plasma",
+    "coverage-repair"
+  ]
+}

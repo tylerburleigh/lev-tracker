@@ -1,12 +1,12 @@
 # Editorial Quality Report
 
-Generated: 2026-06-07T12:51:12.110Z
+Generated: 2026-06-10T19:43:32.946Z
 Overall: passed
 
 ## Summary
 
 - Current LEV story status: current
-- Public copy warnings: 344
+- Public copy warnings: 0
 - Reader-task audit: passed (14 passed, 0 issues, 0 warnings)
 
 ## Gates
@@ -23,13 +23,33 @@ Overall: passed
 Command: `node scripts/current-lev-story.mjs status`
 Exit code: 0
 
+```text
+Current LEV story status: current
+Last reviewed: 2026-06-10
+Review due: 2026-07-10
+Watched outlooks: 15
+Changed or missing snapshots: 0
+New outlook-changing public updates: 0
+```
+
 ### Public copy lint
 
 Command: `node scripts/public-copy-lint.mjs --write`
 Exit code: 0
 
+```text
+Public copy warnings: 0
+No tracked jargon terms found.
+Wrote extra/public-copy-report.md.
+```
+
 ### Reader task audit
 
 Command: `node scripts/reader-task-audit.mjs --write`
 Exit code: 0
+
+```text
+Reader task audit: passed (14 passed, 0 issue(s), 0 warning(s))
+Wrote extra/reader-task-audit.md.
+```
 

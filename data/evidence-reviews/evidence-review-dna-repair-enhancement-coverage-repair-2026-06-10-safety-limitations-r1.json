@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-dna-repair-enhancement-coverage-repair-2026-06-10-safety-limitations-r1",
+  "name": "Safety Limitations review for Dna Repair Enhancement bundle",
+  "candidate_bundle_id": "dna-repair-enhancement-coverage-repair-2026-06-10",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "safety_limitations",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged safety framing is adequate for publication. It keeps SIRT6 and OGG1 in the non-human or cellular mechanism lane, identifies repair-regulator safety and durability as unresolved gaps, and uses the 2026 DNA repair targeting review to emphasize context-specific repair states rather than broad repair enhancement safety.",
+  "reviewed_change_ids": [
+    "create-source-pmid-31002797",
+    "create-study-sirt6-dsb-repair-long-lived-species",
+    "create-finding-sirt6-dsb-repair-linked-to-longevity",
+    "create-source-pmid-35737787",
+    "create-study-ogg1-small-molecule-repair-activation",
+    "create-finding-ogg1-small-molecule-increased-oxidative-dna-repair",
+    "create-source-pmid-42227145",
+    "create-study-dna-repair-targeting-aging-review",
+    "create-finding-dna-repair-targeting-review-context-boundary",
+    "update-outlook-track-dna-repair-enhancement"
+  ],
+  "findings": [
+    {
+      "finding_id": "systemic-repair-safety-gap-visible",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "update-outlook-track-dna-repair-enhancement",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-dna-repair-enhancement-outlook"
+      },
+      "claim_or_issue": "The outlook explicitly keeps chronic systemic repair upregulation, off-target biology, cancer risk, and durability unresolved for the new SIRT6 and OGG1 anchors.",
+      "why_it_matters": "Mechanistic repair gains can have different risk implications by tissue, damage state, and cancer context.",
+      "recommended_action": "No revision needed; re-review only if in vivo or human safety data are added.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "repair-targeting-context-dependence-preserved",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-finding-dna-repair-targeting-review-context-boundary",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "dna-repair-targeting-review-context-boundary"
+      },
+      "claim_or_issue": "The review-level finding preserves the need for context-specific repair-state and pathway-dependency assessment instead of presenting DNA repair targeting as uniformly beneficial.",
+      "why_it_matters": "This prevents therapeutic-targeting context from being read as a general endorsement of repair enhancement for aging.",
+      "recommended_action": "No revision needed.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-10T19:38:27.080Z",
+  "updated_at": "2026-06-10T19:38:27.080Z"
+}

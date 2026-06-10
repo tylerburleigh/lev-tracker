@@ -1,0 +1,230 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-07-senomorphics-surveillance",
+  "name": "Senomorphics field change check for June 7, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-07T14:30:00Z",
+  "completed_at": "2026-06-07T15:01:26Z",
+  "scope": {
+    "question": "What changed for Senomorphics since the 2026-06-01 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "cellular_senescence"
+    ],
+    "track_ids": [
+      "senomorphics"
+    ],
+    "intervention_ids": [
+      "sirolimus",
+      "metformin",
+      "mianserin"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "senomorphics-surveillance-2026-06-07",
+  "summary": "Ran a field change check from the June 1, 2026 senomorphics baseline publication through June 7, 2026. PubMed searches found one material post-baseline primary source: PMID 42251040, a Nature Communications mianserin/Ca2+ homeostasis study reporting lower senescence in human aging/progeria-derived cells plus improved healthspan and lifespan in progeroid and naturally aged mice. That source supports a staged public update but does not change the human_biomarker_signal stage. ClinicalTrials.gov checks refreshed the two existing human registry-linked records: NCT03103893 remains completed with no ClinicalTrials.gov results section while the peer-reviewed topical rapamycin result is already in the evidence layer, and NCT03107884 remains active, not recruiting, with no posted registry results while the published metformin bed-rest substudy remains in the evidence layer. Close GLP-1, dasatinib/quercetin delivery, rapalog, JAK, and metformin hits were recorded as context, no-results, or wrong-scope items.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "outlook_refresh",
+    "public_update_needed": true,
+    "activity_only": false,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "PMID 42251040 is a post-baseline primary senomorphics source with animal lifespan/healthspan and human-cell senescence claims, so it should be reviewed for the public evidence map. It does not supply treated-human evidence, so the stage, momentum, confidence, and LEV-relevant boundary stay unchanged. The registry checks are factual study-record refreshes, not evidence upgrades."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial audit",
+      "query": "npm run audit:trials -- --track senomorphics --write",
+      "checked_at": "2026-06-07T14:57:40Z",
+      "url": "https://clinicaltrials.gov/search?term=senomorphics",
+      "summary": "The audit found two registry-linked senomorphics interventional studies and two stale registry checks: NCT03103893 for topical rapamycin human skin aging and NCT03107884 for metformin disuse/re-ambulation in older adults. Both local records already linked peer-reviewed result sources."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "NCT03103893 and NCT03107884 registry checks",
+      "checked_at": "2026-06-07T14:57:40Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT03103893",
+      "summary": "NCT03103893 remains completed, last update posted 2021-09-22, with 2017-11-30 actual primary and study completion, 36 actual enrollment, and no registry results section. NCT03107884 remains active, not recruiting, last update posted 2025-12-05, with 2026-11-01 estimated primary and study completion, 64 actual enrollment, and no registry results section."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "senescence OR SASP OR senescence-associated secretory phenotype OR senomorphic",
+      "checked_at": "2026-06-07T14:57:40Z",
+      "url": "https://clinicaltrials.gov/search?term=senescence%20OR%20SASP%20OR%20senomorphic",
+      "summary": "Returned mostly disease or wrong-scope registries. NCT07395960 is a recruiting metformin MCI/overweight older-adult study with no results and no inspected senescence/SASP endpoint, so it was not staged."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "(rapamycin OR sirolimus OR everolimus) AND aging",
+      "checked_at": "2026-06-07T14:57:40Z",
+      "url": "https://clinicaltrials.gov/search?term=rapamycin%20OR%20sirolimus%20OR%20everolimus%20aging",
+      "summary": "Relevant no-results registries included NCT06727305, NCT07191353, and NCT05237687. NCT06727305 has SASP secondary endpoints but was posted before the delta window and remains recruiting with no results; the others are rapalog or functional-aging watch context without posted results."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "((senomorphic[Title/Abstract] OR senomorphics[Title/Abstract] OR \"senescence-associated secretory phenotype\"[Title/Abstract] OR SASP[Title/Abstract]) AND (aging[Title/Abstract] OR ageing[Title/Abstract] OR older[Title/Abstract] OR senescence[Title/Abstract])), publication dates 2026-06-01 to 2026-06-07",
+      "checked_at": "2026-06-07T14:57:40Z",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmode=json&retmax=20&sort=pub+date&mindate=2026%2F06%2F01&maxdate=2026%2F06%2F07&datetype=pdat&term=%28%28senomorphic%5BTitle%2FAbstract%5D+OR+senomorphics%5BTitle%2FAbstract%5D+OR+%22senescence-associated+secretory+phenotype%22%5BTitle%2FAbstract%5D+OR+SASP%5BTitle%2FAbstract%5D%29+AND+%28aging%5BTitle%2FAbstract%5D+OR+ageing%5BTitle%2FAbstract%5D+OR+older%5BTitle%2FAbstract%5D+OR+senescence%5BTitle%2FAbstract%5D%29%29",
+      "summary": "Returned 41 records. The material primary result was PMID 42251040. Close non-staged records included PMID 42210884, PMID 42231423, PMID 42225652, PMID 41671944, and PMID 42224998."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "query": "mianserin[Title/Abstract] AND (senescence[Title/Abstract] OR aging[Title/Abstract] OR ageing[Title/Abstract] OR lifespan[Title/Abstract]), publication dates 2026-06-01 to 2026-06-07",
+      "checked_at": "2026-06-07T14:57:40Z",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmode=json&retmax=20&sort=pub+date&mindate=2026%2F06%2F01&maxdate=2026%2F06%2F07&datetype=pdat&term=%28mianserin%5BTitle%2FAbstract%5D+AND+%28senescence%5BTitle%2FAbstract%5D+OR+aging%5BTitle%2FAbstract%5D+OR+ageing%5BTitle%2FAbstract%5D+OR+lifespan%5BTitle%2FAbstract%5D%29%29",
+      "summary": "Returned one record, PMID 42251040, which was staged for review."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "query": "rapamycin/sirolimus/everolimus/mTOR with SASP and aging terms; metformin with SASP/senescence and aging terms; JAK/ruxolitinib/baricitinib with SASP/senescence and aging terms; publication dates 2026-06-01 to 2026-06-07",
+      "checked_at": "2026-06-07T14:57:40Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Rapalog-specific search returned one review record, PMID 42225652. Metformin-specific search returned PMID 41671944, a computational phytochemical paper rather than metformin evidence. JAK-specific search returned PMID 42224998, an ABT-263/senescent-fibroblast cell paper rather than aging-directed JAK evidence. None changed the public outlook."
+    },
+    {
+      "source_name": "PubMed ESearch and ESummary",
+      "query": "GLP-1/semaglutide/tirzepatide with senescence, skin, aging, or ageing terms; publication dates 2026-06-01 to 2026-06-07",
+      "checked_at": "2026-06-07T14:57:40Z",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmode=json&retmax=20&sort=pub+date&mindate=2026%2F06%2F01&maxdate=2026%2F06%2F07&datetype=pdat&term=%28%28GLP-1%5BTitle%2FAbstract%5D+OR+semaglutide%5BTitle%2FAbstract%5D+OR+tirzepatide%5BTitle%2FAbstract%5D%29+AND+%28senescence%5BTitle%2FAbstract%5D+OR+skin%5BTitle%2FAbstract%5D+OR+aging%5BTitle%2FAbstract%5D+OR+ageing%5BTitle%2FAbstract%5D%29%29",
+      "summary": "Returned 18 records, largely Dermatologic Surgery GLP-1 aesthetic or skin-context papers. PMID 42210884 was the closest senescence-marker item but was only a 3-person observational pilot, so it was not staged as an outlook-changing source."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT03103893",
+      "study_id": "topical-rapamycin-human-skin-aging",
+      "source_id": "pmid-31761958",
+      "registry_url": "https://clinicaltrials.gov/study/NCT03103893",
+      "checked_at": "2026-06-07T14:57:40Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2017-11-30",
+      "study_completion_date": "2017-11-30",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "stage_source_or_study",
+      "summary": "The registry remains completed with no ClinicalTrials.gov results section; the peer-reviewed PMID 31761958 result remains the public evidence source. Staged study metadata adds checked and completion dates."
+    },
+    {
+      "registry_id": "NCT03107884",
+      "study_id": "metformin-disuse-reambulation-older-adults",
+      "source_id": "pmid-37486024",
+      "registry_url": "https://clinicaltrials.gov/study/NCT03107884",
+      "checked_at": "2026-06-07T14:57:40Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "active",
+      "previous_results_status": "posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2026-11-01",
+      "study_completion_date": "2026-11-01",
+      "completion_date_kind": "estimated",
+      "status_changed": true,
+      "results_changed": false,
+      "completion_date_changed": true,
+      "materiality": "status_change",
+      "public_action": "stage_source_or_study",
+      "summary": "The parent registry is active, not recruiting, with no ClinicalTrials.gov results section and estimated November 2026 completion. The published older-adult bed-rest substudy remains a completed evidence item, so the staged update refreshes registry context without changing the evidence claim."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 42210884",
+      "title": "Reduced Epidermal p21 Expression Is Identified in Some Subjects on Systemic GLP-1 Receptor Agonists: A Hypothesis-Generating Pilot Study of Metabolic Modulation in Human Skin Senescence.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42210884/",
+      "decision": "method_limit",
+      "reason": "Post-baseline human skin p21 pilot, but only three male adults were studied, exposure was observational rather than randomized, and no functional or clinical outcome was shown."
+    },
+    {
+      "reference": "PMID 42231423",
+      "title": "Suppression of senescent metabolism of adipose tissue by rebalancing mitochondrial homeostasis via a selective drug delivery system.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42231423/",
+      "decision": "wrong_scope",
+      "reason": "Aged-mouse adipose delivery platform for dasatinib plus quercetin. It is closer to senolytics or delivery-platform surveillance than a clean senomorphics update."
+    },
+    {
+      "reference": "PMID 42225652",
+      "title": "Insights into the therapeutic strategies for aging and aging-associated diseases.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42225652/",
+      "decision": "context_only",
+      "reason": "Review-level aging therapy context. It does not add a new primary senomorphic result."
+    },
+    {
+      "reference": "PMID 41671944",
+      "title": "Computational exploration of squalene analog 4,4'diapophytofluene as a potential anti-aging phytotherapeutic.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41671944/",
+      "decision": "wrong_scope",
+      "reason": "Computational phytochemical paper returned by the metformin/SASP search terms but not a metformin, older-adult, or senomorphics intervention result."
+    },
+    {
+      "reference": "PMID 42224998",
+      "title": "IL-4/IL-13 signaling suppresses ABT-263-induced apoptosis in senescent human fibroblasts.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42224998/",
+      "decision": "wrong_scope",
+      "reason": "Senescent-fibroblast and ABT-263 cell-biology result, not an aging-directed JAK/senomorphics update."
+    },
+    {
+      "reference": "NCT06727305",
+      "title": "MTOR Inhibitors in Older Adults",
+      "url": "https://clinicaltrials.gov/study/NCT06727305",
+      "decision": "no_results",
+      "reason": "Recruiting mTOR inhibitor older-adult registry with SASP secondary endpoints and no posted results. The registry activity predates the June 1 baseline and did not produce a same-window evidence result."
+    },
+    {
+      "reference": "NCT07191353",
+      "title": "Resistance Training and Rapamycin to Enhance Bone Formation in Postmenopausal Women",
+      "url": "https://clinicaltrials.gov/study/NCT07191353",
+      "decision": "no_results",
+      "reason": "Recruiting everolimus plus resistance-training trial with no posted results and bone/muscle outcomes; useful watch context but not a same-window senomorphics result."
+    },
+    {
+      "reference": "NCT05237687",
+      "title": "The Role of Sirolimus in Preventing Functional Decline in Older Adults",
+      "url": "https://clinicaltrials.gov/study/NCT05237687",
+      "decision": "no_results",
+      "reason": "Recruiting sirolimus older-adult registry with no posted results, already better assigned to rapalogs/nutrient-sensing surveillance unless senescence/SASP results are posted."
+    },
+    {
+      "reference": "NCT07395960",
+      "title": "The Efficacy and Safety of Metformin Intervention in Elderly Overweight or Obesity With Mild Cognitive Impairment",
+      "url": "https://clinicaltrials.gov/study/NCT07395960",
+      "decision": "no_results",
+      "reason": "Recruiting metformin MCI/overweight older-adult registry with no results and no inspected senescence/SASP endpoint."
+    }
+  ],
+  "source_ids": [
+    "pmid-42251040"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42251040/",
+    "https://doi.org/10.1038/s41467-026-74021-z",
+    "https://pubmed.ncbi.nlm.nih.gov/42210884/",
+    "https://pubmed.ncbi.nlm.nih.gov/42231423/",
+    "https://pubmed.ncbi.nlm.nih.gov/42225652/",
+    "https://pubmed.ncbi.nlm.nih.gov/41671944/",
+    "https://pubmed.ncbi.nlm.nih.gov/42224998/",
+    "https://clinicaltrials.gov/study/NCT03103893",
+    "https://clinicaltrials.gov/study/NCT03107884",
+    "https://clinicaltrials.gov/study/NCT06727305",
+    "https://clinicaltrials.gov/study/NCT07191353",
+    "https://clinicaltrials.gov/study/NCT05237687",
+    "https://clinicaltrials.gov/study/NCT07395960"
+  ],
+  "notes": [
+    "The delta window is anchored to publication event publish-senomorphics-bootstrap-2026-06-01-2026-06-01t16-26-47-676z.",
+    "The staged outlook intentionally keeps evidence_stage, momentum, and confidence unchanged.",
+    "NCT03107884 is represented as a completed public evidence study because PMID 37486024 is already in the evidence layer; the parent registry status is kept in trial_details and should be rechecked after the estimated 2026-11-01 completion.",
+    "PubMed returned one future-dated GLP-1 muscle-repair record in the GLP-1 broad screen; it was outside the June 7 review date and was not considered."
+  ],
+  "next_actions": [
+    "Review PMID 42251040 for source fidelity, especially the exact lifespan, healthspan, SASP, and human-cell claims.",
+    "Review the interpretation boundary that the new mianserin signal should not upgrade the human stage.",
+    "After review, publish the staged update if no blocking source or interpretation findings remain."
+  ]
+}

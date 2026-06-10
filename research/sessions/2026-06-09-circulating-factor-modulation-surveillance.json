@@ -1,0 +1,302 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-09-circulating-factor-modulation-surveillance",
+  "name": "Circulating Factor Modulation field change check for June 9, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-09T11:08:00Z",
+  "completed_at": "2026-06-09T11:43:07Z",
+  "scope": {
+    "question": "What changed for Circulating Factor Modulation since the 2026-05-31 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "altered_intercellular_communication"
+    ],
+    "track_ids": [
+      "circulating-factor-modulation"
+    ],
+    "intervention_ids": [
+      "therapeutic-plasma-exchange",
+      "therapeutic-plasma-exchange-ivig",
+      "albumin-replacement-plasma-exchange",
+      "young-plasma-infusion",
+      "neutral-blood-exchange",
+      "heterochronic-parabiosis",
+      "human-cord-plasma",
+      "timp2"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "coverage_assessment_updated",
+  "summary": "Ran a field change check from the 2026-05-31T17:57:33.932Z Circulating Factor Modulation baseline publication through June 9, 2026. The local trial audit found three registry-linked public studies, all with posted-result public source records and all missing registry check dates. Direct ClinicalTrials.gov checks found AMBAR remains completed with registry results, PLASMA remains completed with no registry-posted results but a represented publication, and the healthy-adult TPE registry remains active not recruiting with no registry-posted results despite the represented PMID. Same-window PubMed, preprint, Crossref, and web checks found no new result-bearing aging-relevant TPE or young-plasma evidence after the public baseline and no correction or retraction to the baseline support set. The surveillance pass did surface source-completeness risk: a May 2026 peer-reviewed TPE microplastics paper, an April 2026 young-donor plasma-exchange MCI preprint tied to NCT06234436, a 2025 plasmapheresis aging-biomarker trial with negative epigenetic-clock direction, unknown-status aging or frailty TPE registries, recent TPE reviews, and several animal or mechanistic circulating-factor records are not represented or explicitly excluded. No public outlook, source, study, finding, activity item, or bundle update is warranted now; a coverage assessment was created to route the next pass to coverage repair.",
+  "next_recommended_mode": "coverage_repair",
+  "materiality_decision": {
+    "material_delta": "coverage_repair_needed",
+    "public_update_needed": false,
+    "activity_only": true,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "coverage_repair",
+    "rationale": "The same-window delta does not change the current public stage, momentum, or read firmness because it adds no new controlled functional result, durable healthy-aging outcome, registry-posted result, correction, retraction, or safety signal that changes the existing boundary. The important finding is source-completeness risk across human plasmapheresis/TPE biomarker evidence, young-donor plasma exchange, no-results or unknown-status aging registries, microplastics/toxin-removal context, and recent review or safety-boundary literature."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial audit",
+      "query": "npm run audit:trials -- --track circulating-factor-modulation --write",
+      "checked_at": "2026-06-09T11:43:07Z",
+      "url": "https://clinicaltrials.gov/",
+      "summary": "The audit found three registry-linked interventional studies, zero missing trial-detail records, three stale or missing registry checks, zero open stale watch items, and three public study records marked as having posted results."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "Direct checks for NCT01561053, NCT02256306, and NCT06534450",
+      "checked_at": "2026-06-09T11:43:07Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "AMBAR NCT01561053 remains completed with ClinicalTrials.gov results. PLASMA NCT02256306 remains completed with no registry-posted results, but the result-bearing PMID is already represented. NCT06534450 remains active not recruiting with no registry-posted results and an estimated August 2025 completion date, while the represented PMID remains the public result-bearing source."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "therapeutic plasma exchange aging older adults; plasma exchange biological age IVIG; young plasma Alzheimer aging; plasma dilution aging; GDF11 TIMP2 aging rejuvenation",
+      "checked_at": "2026-06-09T11:43:07Z",
+      "url": "https://clinicaltrials.gov/search?term=therapeutic%20plasma%20exchange%20aging%20older%20adults",
+      "summary": "Broad registry searches found no newly posted aging-relevant result. Close uncurated records included unknown-status plasmapheresis aging-biomarker trial NCT04897113, unknown-status age-related frailty TPE trial NCT05054894, completed AMBAR-adjacent beta-amyloid plasma-exchange registry NCT00742417 with results, and NCT06234436 tied to an April 2026 young-donor plasma-exchange MCI preprint."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "Therapeutic plasma exchange, plasmapheresis, plasma dilution, young plasma, blood therapy, aging, ageing, biological age, Alzheimer, and frailty terms; publication dates 2026-05-31 to 2026-06-09",
+      "checked_at": "2026-06-09T11:43:07Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned no same-window direct TPE, plasmapheresis, plasma-dilution, or young-plasma aging result that changes the public evidence map. GDF11, TIMP2, heterochronic parabiosis, circulating-factor, and young-blood same-window searches returned broad aging or wrong-scope context rather than a new scoped intervention result."
+    },
+    {
+      "source_name": "PubMed broader source-completeness search",
+      "query": "Therapeutic plasma exchange, plasmapheresis, plasma dilution, young plasma, TIMP2, GDF11, heterochronic parabiosis, circulating factor, young blood, aging, biological age, Alzheimer, sarcopenia, cognition, and rejuvenation terms; publication dates 2025-05-31 to 2026-06-09",
+      "checked_at": "2026-06-09T11:43:07Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Found pre-baseline or boundary records not represented in the current source map, including PMID 40592961 on repeated plasmapheresis in healthy adults with no epigenetic rejuvenation and possible acceleration signals, PMID 40928812 real-world Alzheimer TPE, PMID 42059412 old-mouse plasma dilution after myocardial ischemia-reperfusion injury, PMID 41721191 review of plasma-based systemic rejuvenation, PMID 41714560 young-blood neurovascular coupling in mice, PMID 41622984 phlebotomy boundary evidence, PMID 41494381 TPE immune-modulation review, and PMID 41822302 GDF11 sarcopenia boundary context."
+    },
+    {
+      "source_name": "PubMed correction and retraction screen",
+      "query": "Baseline support PMIDs 32715623, 40424097, 35999337, 30383097, 15716955, 28424512, 32474458, and 34032859 with retraction, erratum, corrected-and-republished, or expression-of-concern publication types; publication dates 2025-05-31 to 2026-06-09",
+      "checked_at": "2026-06-09T11:43:07Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned zero correction, retraction, erratum, corrected-and-republished, or expression-of-concern records for the eight PubMed baseline supporting sources."
+    },
+    {
+      "source_name": "medRxiv and bioRxiv APIs",
+      "query": "Date window 2026-05-31 to 2026-06-09 filtered for plasma, blood, parabiosis, TPE, young, GDF11, and TIMP2 title or abstract terms",
+      "checked_at": "2026-06-09T11:43:07Z",
+      "url": "https://api.biorxiv.org/",
+      "summary": "No post-baseline result-bearing preprint was found. A separate targeted medRxiv search identified the April 30, 2026 preprint on young-donor plasma exchange in mild cognitive impairment, DOI 10.64898/2026.04.29.26351809, which predates the baseline and should be handled as coverage repair."
+    },
+    {
+      "source_name": "Crossref API",
+      "query": "therapeutic plasma exchange aging, filtered to journal articles from 2026-05-31 through 2026-06-09",
+      "checked_at": "2026-06-09T11:43:07Z",
+      "url": "https://api.crossref.org/works?query.title=therapeutic%20plasma%20exchange%20aging",
+      "summary": "Returned same-window TPE case reports, procedural papers, and broad aging reviews rather than a result-bearing aging-relevant plasma-exchange source. The closest same-window review-level lead was a broad therapeutic-strategies-for-aging paper; none changes the track outlook."
+    },
+    {
+      "source_name": "Web, Wiley, and sponsor/news checks",
+      "query": "Circulate Health therapeutic plasma exchange microplastics 2026; Can Plasma Exchange Be Used to Lower the Circulating Burden of Microplastics in Human Patients; TPE microplastics Axios PRNewswire Circulate",
+      "checked_at": "2026-06-09T11:43:07Z",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/jca.70135",
+      "summary": "Found the May 21, 2026 Journal of Clinical Apheresis paper DOI 10.1002/jca.70135 and May 28 Circulate/PRNewswire activity about microplastic reduction after TPE. The source is relevant to toxin-removal and commercial TPE context, but it reports a short-term circulating microplastic biomarker without healthy-aging function, durability, or LEV-relevant outcome."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT01561053",
+      "study_id": "ambar-plasma-exchange-alzheimers-trial",
+      "source_id": "pmid-32715623",
+      "registry_url": "https://clinicaltrials.gov/study/NCT01561053",
+      "checked_at": "2026-06-09T11:43:07Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2018-03-06",
+      "study_completion_date": "2018-03-06",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "AMBAR remains completed with ClinicalTrials.gov results and the result-bearing Alzheimer plasma-exchange source is already represented in the public evidence layer."
+    },
+    {
+      "registry_id": "NCT02256306",
+      "study_id": "plasma-for-alzheimer-young-plasma-trial",
+      "source_id": "pmid-30383097",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02256306",
+      "checked_at": "2026-06-09T11:43:07Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "not_posted",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "PLASMA remains completed with no ClinicalTrials.gov results posted. The small published young-plasma Alzheimer safety and feasibility source remains represented, so this registry state does not change the public interpretation."
+    },
+    {
+      "registry_id": "NCT06534450",
+      "study_id": "randomized-tpe-multiomics-healthy-adults",
+      "source_id": "pmid-40424097",
+      "registry_url": "https://clinicaltrials.gov/study/NCT06534450",
+      "checked_at": "2026-06-09T11:43:07Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "active",
+      "previous_results_status": "posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2023-11-30",
+      "completion_date_kind": "estimated",
+      "status_changed": true,
+      "results_changed": false,
+      "completion_date_changed": true,
+      "materiality": "status_change",
+      "public_action": "record_no_op",
+      "summary": "The healthy-adult TPE multi-omics registry remains active not recruiting with no ClinicalTrials.gov results and an estimated August 2025 study completion date. The public evidence layer already uses the result-bearing PMID, and this registry discrepancy is a coverage-repair/watchlist issue rather than an immediate outlook change."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "DOI 10.1002/jca.70135",
+      "title": "Can Plasma Exchange Be Used to Lower the Circulating Burden of Microplastics in Human Patients?",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/jca.70135",
+      "decision": "context_only",
+      "reason": "Same-window coverage lead for human TPE and circulating contaminant removal. It reports short-term microplastic biomarker movement in 174 procedures on 114 patients and potential low-baseline leaching from tubing, but not aging function, durability, clinical outcomes, or LEV-relevant benefit."
+    },
+    {
+      "reference": "DOI 10.64898/2026.04.29.26351809",
+      "title": "Interstitial fluid rejuvenation through young-donor plasma exchange in cognitively impaired patients: a pilot safety and feasibility study",
+      "url": "https://www.medrxiv.org/content/10.64898/2026.04.29.26351809v1",
+      "decision": "context_only",
+      "reason": "Pre-baseline medRxiv safety and feasibility preprint in twelve mild-cognitive-impairment patients using young-donor plasma exchange. It is directly relevant but not peer-reviewed, not controlled for efficacy, and should be handled in coverage repair with NCT06234436."
+    },
+    {
+      "reference": "PMID 40592961",
+      "title": "Human clinical trial of plasmapheresis effects on biomarkers of aging (efficacy and safety trial).",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40592961/",
+      "decision": "context_only",
+      "reason": "Pre-baseline healthy-adult plasmapheresis biomarker source reporting lipid and protein changes but no epigenetic rejuvenation and possible acceleration on several clock measures. It is important limiting evidence for repair, but it does not create a same-window public delta."
+    },
+    {
+      "reference": "PMID 40928812",
+      "title": "A real-world study on the safety and efficacy of therapeutic plasma exchange in patients with Alzheimer's disease.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40928812/",
+      "decision": "context_only",
+      "reason": "Pre-baseline Alzheimer TPE human evidence that may affect disease-boundary context. It needs source-fidelity review before any public use and does not by itself change the current AMBAR-bounded interpretation."
+    },
+    {
+      "reference": "NCT04897113",
+      "title": "Study of Efficacy and Safety of the Plasmapheresis Method With Albumin Compensation Compared With the Plasmapheresis Method Without Albumin Compensation for Aging Biomarkers Correction in Men and Women Aged 40 to 55 Years Old",
+      "url": "https://clinicaltrials.gov/study/NCT04897113",
+      "decision": "no_results",
+      "reason": "Unknown-status aging-biomarker plasmapheresis registry with estimated 2022 completion and no posted results. It is a coverage-repair/watchlist lead, not evidence progress."
+    },
+    {
+      "reference": "NCT05054894",
+      "title": "Plasmapheresis for Treatment of Age-Related Frailty",
+      "url": "https://clinicaltrials.gov/study/NCT05054894",
+      "decision": "no_results",
+      "reason": "Unknown-status age-related frailty TPE registry with estimated 2025 completion and no posted results. It is potentially important but needs coverage repair before public staging."
+    },
+    {
+      "reference": "NCT06234436",
+      "title": "Plasma Dilution and Infusion to Improve Cognition in Mild Cognitive Impairment (MCI)",
+      "url": "https://clinicaltrials.gov/study/NCT06234436",
+      "decision": "no_results",
+      "reason": "Registry for the young-donor plasma-exchange MCI preprint remains unknown status with no registry-posted results. The preprint should be reviewed in coverage repair."
+    },
+    {
+      "reference": "NCT00742417",
+      "title": "Efficacy and Safety of Plasma Exchange With 5% Albumin in Beta-amyloid Peptide Clearance in Cerebral Spinal Fluid",
+      "url": "https://clinicaltrials.gov/study/NCT00742417",
+      "decision": "context_only",
+      "reason": "Completed AMBAR-adjacent Alzheimer plasma-exchange registry with posted results. It is historical disease-boundary context, not a same-window delta, and should be checked during repair if it is part of the AMBAR evidence lineage."
+    },
+    {
+      "reference": "PMID 42059412",
+      "title": "Plasma Dilution After Myocardial Ischemia-Reperfusion Injury Promotes Cardiac Repair, Heart Performance, and Recovery of Motor Function and Endurance in Old Mice.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42059412/",
+      "decision": "context_only",
+      "reason": "Recent animal old-mouse plasma-dilution study with functional recovery context. It predates the baseline and may strengthen preclinical repair coverage but does not add human evidence."
+    },
+    {
+      "reference": "PMID 41721191",
+      "title": "Plasma-based strategies for systemic rejuvenation: critical perspectives on clinical translation.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41721191/",
+      "decision": "context_only",
+      "reason": "Recent review and translation-boundary source. It should support coverage repair and citation chasing but does not provide primary result evidence."
+    },
+    {
+      "reference": "PMID 41714560",
+      "title": "Young blood-induced rejuvenation of neurovascular coupling involves endothelial IGF-1/IGF-1R signaling: evidence from heterochronic parabiosis using endothelial IGF-1R deficient and systemic IGF-1 knockdown mice.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41714560/",
+      "decision": "context_only",
+      "reason": "Recent animal heterochronic-parabiosis mechanism source. It is not human evidence and predates the baseline, but it is a repair lead for preclinical mechanism coverage."
+    },
+    {
+      "reference": "PMID 41494381",
+      "title": "Mechanisms of immune modulation by therapeutic plasma exchange.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41494381/",
+      "decision": "context_only",
+      "reason": "Recent TPE mechanism review. It may help repair safety and procedure-boundary context, but it does not change the public aging-efficacy claim."
+    },
+    {
+      "reference": "DOI 10.1038/s41392-026-02662-z",
+      "title": "Insights into the therapeutic strategies for aging and aging-associated diseases",
+      "url": "https://doi.org/10.1038/s41392-026-02662-z",
+      "decision": "context_only",
+      "reason": "Same-window broad aging therapeutic-strategy review from Crossref. It is not specific enough to stage as a Circulating Factor Modulation source in this surveillance pass."
+    }
+  ],
+  "source_ids": [
+    "pmid-32715623",
+    "pmid-40424097",
+    "pmid-35999337",
+    "pmid-30383097",
+    "pmid-15716955",
+    "pmid-28424512",
+    "pmid-32474458",
+    "pmid-34032859"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/32715623/",
+    "https://pubmed.ncbi.nlm.nih.gov/40424097/",
+    "https://pubmed.ncbi.nlm.nih.gov/35999337/",
+    "https://pubmed.ncbi.nlm.nih.gov/30383097/",
+    "https://pubmed.ncbi.nlm.nih.gov/15716955/",
+    "https://pubmed.ncbi.nlm.nih.gov/28424512/",
+    "https://pubmed.ncbi.nlm.nih.gov/32474458/",
+    "https://pubmed.ncbi.nlm.nih.gov/34032859/",
+    "https://pubmed.ncbi.nlm.nih.gov/40592961/",
+    "https://pubmed.ncbi.nlm.nih.gov/40928812/",
+    "https://pubmed.ncbi.nlm.nih.gov/42059412/",
+    "https://pubmed.ncbi.nlm.nih.gov/41721191/",
+    "https://pubmed.ncbi.nlm.nih.gov/41714560/",
+    "https://pubmed.ncbi.nlm.nih.gov/41494381/",
+    "https://onlinelibrary.wiley.com/doi/10.1002/jca.70135",
+    "https://www.medrxiv.org/content/10.64898/2026.04.29.26351809v1",
+    "https://clinicaltrials.gov/study/NCT04897113",
+    "https://clinicaltrials.gov/study/NCT05054894",
+    "https://clinicaltrials.gov/study/NCT06234436",
+    "https://clinicaltrials.gov/study/NCT00742417"
+  ],
+  "notes": [
+    "Triage selected this as the rank-1 next distinct field-change target after the editorial rollup.",
+    "The delta window is anchored to publication event publish-circulating-factor-modulation-bootstrap-2026-05-31-2026-05-31t17-57-33-932z.",
+    "No coverage assessment existed for this track before the pass; this session creates one because source-completeness gaps are now concrete.",
+    "The public outlook already carries a thin_coverage tag, and this pass confirms that thin coverage is operationally important rather than merely cosmetic.",
+    "NCT06534450's registry status differs from the local completed status, but the result-bearing PMID is already public; this should be reconciled during repair without changing the outlook from surveillance alone.",
+    "The microplastics paper and related press are commercially relevant TPE activity, but they do not establish healthy-aging function, durability, or LEV-relevant benefit."
+  ],
+  "next_actions": [
+    "Run coverage repair for human plasmapheresis and TPE biomarker, safety, disease-boundary, and registry records before returning this track to ordinary surveillance.",
+    "During repair, decide whether DOI 10.1002/jca.70135, DOI 10.64898/2026.04.29.26351809, PMID 40592961, PMID 40928812, NCT04897113, NCT05054894, NCT06234436, and NCT00742417 become public sources, studies, findings, activity/watch records, or explicit exclusions.",
+    "Keep the public read tentative unless reviewed evidence changes human functional benefit outside Alzheimer disease, durability, safety, or the biological-aging biomarker interpretation."
+  ]
+}

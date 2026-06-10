@@ -1,0 +1,179 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-08-nad-and-redox-restoration-coverage-repair",
+  "name": "NAD and Redox Restoration Coverage Repair",
+  "mode": "coverage_repair",
+  "started_at": "2026-06-08T11:03:00Z",
+  "completed_at": "2026-06-08T12:00:46Z",
+  "scope": {
+    "question": "Which known source-completeness gaps for NAD and Redox Restoration need repair, and does resolving them change the coverage verdict or public boundaries?",
+    "hallmark_ids": [
+      "mitochondrial_dysfunction"
+    ],
+    "track_ids": [
+      "nad-and-redox-restoration"
+    ],
+    "intervention_ids": [
+      "mib-626",
+      "nicotinamide-riboside",
+      "nicotinamide-mononucleotide",
+      "glynac",
+      "mitoq"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "nad-and-redox-restoration-coverage-repair-2026-06-08",
+  "summary": "Coverage repair resolved the named source-completeness gaps by source-reviewing and staging MIB-626 human NAD augmentation sources, MIB-626 disease-boundary evidence, active or completed no-results NR/NMN/MIB-626/MitoQ registries, and recent NAD/redox, supplementation, glutathione-precursor, NAD-homeostasis, and vascular-aging review context. The staged public update keeps NAD and Redox Restoration at low-confidence human_functional_benefit with mixed momentum: the new records improve completeness and branch boundaries, but do not add replicated durable physical function, disease prevention, mortality, or LEV-relevant outcome evidence.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "outlook_refresh",
+    "public_update_needed": true,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The repair changes the public source map, no-results watchlist, and outlook support map without changing stage, momentum, confidence, or rating-change criteria. Public staging is warranted because MIB-626 and active NR/NMN/MitoQ registries materially clarify NAD-precursor target engagement, functional-boundary, safety, and trial-watch coverage."
+  },
+  "search_log": [
+    {
+      "source_name": "PubMed ESummary and EFetch",
+      "query": "PMIDs 35182418, 36740954, 40746868, 42068909, 42234350, 42186383, 41812700, and 41933553",
+      "checked_at": "2026-06-08T12:00:46Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Confirmed MIB-626 human target-engagement and physiologic records, a disease-boundary COVID/AKI RCT, and recent NAD/redox, supplementation, glutathione-precursor, NAD-homeostasis, and vascular-aging reviews."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "NCT05878119, NCT05759468, NCT06208527, NCT04691986, NCT04430517, NCT03821623, NCT06425042, NCT06592859, NCT07144527, NCT04851288, NCT06027554, and NCT05561556",
+      "checked_at": "2026-06-08T12:00:46Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "Confirmed active, recruiting, or completed no-results registry records for MIB-626, NR, NMN, and MitoQ programs. These were staged as trial-watch records because they repair source completeness but do not provide efficacy evidence."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "NCT05245903, NCT07328100, and NCT06465602",
+      "checked_at": "2026-06-08T12:00:46Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "Triaged a passive-sensor ancillary registry, a not-yet-recruiting Coenzyme I injection registry, and a nicotinamide falls/frailty registry as excluded or boundary context rather than staged NAD/redox public support."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "NCT05245903",
+      "title": "Passive sensor digital biomarkers during orally administered nicotinamide riboside",
+      "url": "https://clinicaltrials.gov/study/NCT05245903",
+      "decision": "context_only",
+      "reason": "This is an observational passive-sensor add-on to the parent NR Alzheimer/MCI study. The parent interventional registry NCT04430517 was staged instead."
+    },
+    {
+      "reference": "NCT07328100",
+      "title": "Coenzyme I for injection on vascular aging",
+      "url": "https://clinicaltrials.gov/study/NCT07328100",
+      "decision": "no_results",
+      "reason": "Not-yet-recruiting no-results registry using Coenzyme I injection. It remains taxonomy-boundary context and was not staged because the intervention identity and clinical relevance need future review after recruitment or results."
+    },
+    {
+      "reference": "NCT06465602",
+      "title": "Nicotinamide supplementation improves physical performance in older adults at risk of falls",
+      "url": "https://clinicaltrials.gov/study/NCT06465602",
+      "decision": "wrong_scope",
+      "reason": "Nicotinamide falls/frailty registry is adjacent to NAD biology but belongs closer to nicotinamide/DNA-repair or separate taxonomy review; it has unknown status and no posted results."
+    },
+    {
+      "reference": "PMID 41941966",
+      "title": "Older-adult resistance training plus creatine trial with oxidative and inflammatory endpoints",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41941966/",
+      "decision": "wrong_scope",
+      "reason": "Human trial is exercise plus creatine, not a NAD precursor, GlyNAC, or MitoQ intervention."
+    },
+    {
+      "reference": "PMID 42231576",
+      "title": "Nicotinamide riboside enhanced adoptive T cell therapy in oncology context",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42231576/",
+      "decision": "wrong_scope",
+      "reason": "Oncology immunotherapy and preclinical context, not aging-relevant NAD/redox restoration evidence."
+    },
+    {
+      "reference": "PMID 42225972",
+      "title": "NMN alleviated hepatic steatosis in chronic alcohol-fed mice",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42225972/",
+      "decision": "wrong_scope",
+      "reason": "Preclinical liver-disease model, not human aging evidence."
+    },
+    {
+      "reference": "PMID 42238815",
+      "title": "MitoQ plus swimming exercise in spinal cord injury rats",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42238815/",
+      "decision": "wrong_scope",
+      "reason": "Preclinical spinal-cord-injury exercise model, not human NAD/redox aging evidence."
+    }
+  ],
+  "source_ids": [
+    "pmid-35182418",
+    "pmid-36740954",
+    "pmid-40746868",
+    "nct-05878119",
+    "nct-05759468",
+    "nct-06208527",
+    "nct-04691986",
+    "nct-04430517",
+    "nct-03821623",
+    "nct-06425042",
+    "nct-06592859",
+    "nct-07144527",
+    "nct-04851288",
+    "nct-06027554",
+    "nct-05561556",
+    "pmid-42068909",
+    "pmid-42234350",
+    "pmid-42186383",
+    "pmid-41812700",
+    "pmid-41933553"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/35182418/",
+    "https://doi.org/10.1093/gerona/glac049",
+    "https://pubmed.ncbi.nlm.nih.gov/36740954/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC11491622/",
+    "https://doi.org/10.1210/clinem/dgad027",
+    "https://pubmed.ncbi.nlm.nih.gov/40746868/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12312518/",
+    "https://clinicaltrials.gov/study/NCT05038488",
+    "https://doi.org/10.1096/fba.2025-00014",
+    "https://clinicaltrials.gov/study/NCT05878119",
+    "https://clinicaltrials.gov/study/NCT05759468",
+    "https://clinicaltrials.gov/study/NCT06208527",
+    "https://clinicaltrials.gov/study/NCT04691986",
+    "https://clinicaltrials.gov/study/NCT04430517",
+    "https://clinicaltrials.gov/study/NCT03821623",
+    "https://clinicaltrials.gov/study/NCT06425042",
+    "https://clinicaltrials.gov/study/NCT06592859",
+    "https://clinicaltrials.gov/study/NCT07144527",
+    "https://clinicaltrials.gov/study/NCT04851288",
+    "https://clinicaltrials.gov/study/NCT06027554",
+    "https://clinicaltrials.gov/study/NCT05561556",
+    "https://pubmed.ncbi.nlm.nih.gov/42068909/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC13144588/",
+    "https://doi.org/10.1016/j.redox.2026.104191",
+    "https://pubmed.ncbi.nlm.nih.gov/42234350/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC13233893/",
+    "https://doi.org/10.1007/s13668-026-00776-y",
+    "https://pubmed.ncbi.nlm.nih.gov/42186383/",
+    "https://doi.org/10.1097/MCO.0000000000001240",
+    "https://pubmed.ncbi.nlm.nih.gov/41812700/",
+    "https://doi.org/10.1016/j.mad.2026.112174",
+    "https://pubmed.ncbi.nlm.nih.gov/41933553/",
+    "https://doi.org/10.1016/j.arr.2026.103117"
+  ],
+  "notes": [
+    "MIB-626 was staged as a distinct clinical NMN formulation/program while retaining nicotinamide-mononucleotide links in study and finding records.",
+    "No-results registries were staged as trial-watch and regulatory/program-update findings, not efficacy findings.",
+    "Review records were staged for coverage and taxonomy context, not as primary evidence for a stage upgrade.",
+    "The staged outlook preserves human_functional_benefit, mixed momentum, and low confidence."
+  ],
+  "next_actions": [
+    "Run source-fidelity, interpretation/forecast, safety-limitations, and taxonomy-mapping reviews.",
+    "If approved, publish the staged repair bundle and resume ordinary surveillance for posted NR, NMN, MIB-626, and MitoQ results."
+  ]
+}

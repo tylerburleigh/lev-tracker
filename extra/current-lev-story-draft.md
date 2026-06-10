@@ -2,7 +2,7 @@
 
 Status: current
 Style: plain
-Generated for review: 2026-06-06
+Generated for review: 2026-06-10
 
 ## Homepage Story
 
@@ -16,7 +16,7 @@ The field is in early human testing. Some tracks now have early biomarker result
 
 ## What Changed Recently
 
-The recent picture is broader rather than stronger. More areas can be compared side by side, and the main pattern is still early or narrow evidence: biomarkers, animal results, trials to watch, or disease-specific signals rather than repeated aging-function results.
+The May field review did not find a result that changed the LEV outlook. The June 9 NAD/redox update and June 10 stem-cell rejuvenation and mitophagy updates made individual tracks easier to judge by adding no-results registries, safety context, review context, and clearer evidence boundaries, but none changed the larger proof gap: repeated human evidence that health or function improves for longer.
 
 ## Review Reasons
 
@@ -27,6 +27,10 @@ The recent picture is broader rather than stronger. More areas can be compared s
 - A broader look exposes the same bottleneck: The field is easier to judge, but the evidence has not moved far enough to make LEV look closer.
 - Early human signals are showing up in more places: The field is easier to track seriously, but many signs are still narrow, disease-specific, or mostly based on biomarkers.
 - More context is narrowing the claims: The update made the evidence easier to judge without treating activity as proof.
+- A senomorphics update added a preclinical signal: It adds a concrete signal to watch, but it does not make the overall LEV outlook more optimistic because treated-human evidence did not change.
+- NAD/redox context widened without changing the read: It makes the track easier to judge, but it does not make LEV look closer because the new records do not show repeated, long-lasting human function or clinical benefit.
+- Stem-cell rejuvenation gained clearer boundaries: It improves the map of what to watch, but it does not make LEV look closer because the new records do not show treated-human benefit or resolved safety.
+- Mitophagy gained safety and registry context: It makes the mitophagy story easier to judge, but it does not make LEV look closer because long-lasting older-adult function, frailty benefit, and long-term safety remain unresolved.
 
 ## Before / Now / Next
 

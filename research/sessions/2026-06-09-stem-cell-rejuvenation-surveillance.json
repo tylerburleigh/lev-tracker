@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-09-stem-cell-rejuvenation-surveillance",
+  "name": "Stem cell rejuvenation surveillance pass for June 9, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-09T21:56:00Z",
+  "completed_at": "2026-06-09T22:06:43Z",
+  "scope": {
+    "question": "What changed for Stem Cell Rejuvenation since the 2026-05-31 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "stem_cell_exhaustion"
+    ],
+    "track_ids": [
+      "stem-cell-rejuvenation"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "coverage_assessment_updated",
+  "summary": "Ran a delta surveillance pass from the 2026-05-31T16:42:37Z public baseline publication through 2026-06-09. The local scoped trial audit found zero existing trial-watch records for this track. PubMed Entrez-date searches found no same-window Cdc42/CASIN, p38/MuSC, or NAD/stem-cell result that changes the public interpretation; the broad stem-cell-rejuvenation search returned same-window context records including a mouse 15-PGDH muscle-repair paper, an aged-bone MMP9 neutralization paper, and a neural-crest review, but these do not add in vivo human stem-cell rejuvenation evidence or alter the human_biomarker_signal stage. ClinicalTrials.gov broad search surfaced NCT06877377, a not-yet-recruiting hDNAgr hematopoietic-stem-cell aging registry with no posted results and a 2025-07-20 last update. Because that registry predates the baseline and is a source-completeness issue rather than a new field delta, no public source, study, finding, outlook, activity item, or candidate bundle is warranted in this ordinary surveillance pass. A first internal coverage assessment was added and recommends a coverage_repair pass before the next ordinary surveillance rotation.",
+  "next_recommended_mode": "coverage_repair",
+  "materiality_decision": {
+    "material_delta": "coverage_repair_needed",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "coverage_repair",
+    "rationale": "The post-publication delta did not produce a result-bearing source that changes stage, momentum, read firmness, safety framing, or outlook wording. However, discovering a pre-baseline not-yet-recruiting aging HSC registry means the active-trials category is incomplete and should be repaired through a scoped coverage pass rather than treated as ordinary same-window field progress."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial watch audit",
+      "query": "npm run audit:trials -- --track stem-cell-rejuvenation --write",
+      "checked_at": "2026-06-09T21:58:00Z",
+      "summary": "The local scoped report contained zero registry-linked interventional studies and no current local trial-watch candidates."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "stem cell rejuvenation, Entrez-date window 2026-05-31 to 2026-06-09",
+      "checked_at": "2026-06-09T22:02:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=stem%20cell%20rejuvenation",
+      "summary": "Returned PMIDs 42256061, 42249716, 42231151, 42230256, 42228536, 42224774, and 42220642. The close records were review-level, animal/context, adjacent tissue-repair, wrong-scope, or not result-bearing for in vivo human stem-cell rejuvenation."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "query": "Cdc42 CASIN hematopoietic stem cell aging; p38 MAPK muscle stem cell aging regeneration; NAD stem cell aging, Entrez-date window 2026-05-31 to 2026-06-09",
+      "checked_at": "2026-06-09T22:03:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Targeted Cdc42/CASIN, p38/MuSC, and NAD/stem-cell searches returned no same-window PubMed records that change the public baseline."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "stem cell rejuvenation aging; CASIN Cdc42 hematopoietic stem cell aging; muscle stem cell satellite cell aging exercise older adult; NAD stem cell aging older adult; hDNAgr hematopoietic stem cell aging",
+      "checked_at": "2026-06-09T22:04:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "Found one relevant missing registry, NCT06877377, for hDNAgr hematopoietic-stem-cell aging therapy; it is not yet recruiting, has no posted results, and was last updated before the public baseline. Other close records were old withdrawn exercise/satellite-cell, NAD-overlap, sarcopenia, or cosmetic/skin-aging records."
+    },
+    {
+      "source_name": "bioRxiv and medRxiv APIs",
+      "query": "Date window 2026-05-31 to 2026-06-09 filtered for stem cell, satellite cell, hematopoietic, Cdc42, CASIN, p38, MMP9, 15-PGDH, NAD, and rejuvenation terms",
+      "checked_at": "2026-06-09T22:05:00Z",
+      "url": "https://api.biorxiv.org/",
+      "summary": "Returned only false-positive or wrong-scope preprint records in the same-window screen; no direct stem-cell-rejuvenation preprint changed materiality."
+    },
+    {
+      "source_name": "Web search and primary-source follow-up",
+      "query": "NCT06877377 hDNAgr Therapy S.LAB Soloways aging hematopoietic stem cells; Study of the Safety and Efficacy of Natural Genome Reconstruction Technology; hDNAgr therapy aging hematopoietic stem cells",
+      "checked_at": "2026-06-09T22:05:00Z",
+      "url": "https://clinicaltrials.gov/study/NCT06877377",
+      "summary": "Search results led back to the ClinicalTrials.gov registry, Cochrane CENTRAL mirroring, and older hDNAgr background articles; no posted result or independent primary clinical outcome source was found."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT06877377",
+      "registry_url": "https://clinicaltrials.gov/study/NCT06877377",
+      "checked_at": "2026-06-09T22:04:00Z",
+      "current_registry_status": "planned",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2026-02-01",
+      "study_completion_date": "2026-03-01",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "new_trial",
+      "public_action": "coverage_repair",
+      "summary": "Not-yet-recruiting randomized blinded placebo-controlled hDNAgr hematopoietic-stem-cell aging registry in adults 45 to 65, with safety, telomere, blood-count, CD34-positive progenitor, biological-age, SF-36, and inflammatory endpoints; no posted results and last registry update predates the public baseline."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "NCT06877377",
+      "title": "Study of the Safety and Efficacy of Natural Genome Reconstruction Technology of Hematopoietic Stem Cells in Adult Patients",
+      "url": "https://clinicaltrials.gov/study/NCT06877377",
+      "decision": "no_results",
+      "reason": "Relevant missing active-registry context, but it is not yet recruiting, has no posted results, and predates the 2026-05-31 baseline; handle through coverage repair rather than ordinary same-window surveillance."
+    },
+    {
+      "reference": "PMID 42228536",
+      "title": "15-PGDH inhibition promotes muscle repair and strength recovery during GLP-1 receptor agonist-induced weight loss.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42228536/",
+      "decision": "context_only",
+      "reason": "Mouse obesity, semaglutide, and injury-repair context with muscle stem-cell function and strength endpoints; adjacent to muscle repair but not an aged-human or direct stem-cell rejuvenation therapy result."
+    },
+    {
+      "reference": "PMID 42220642",
+      "title": "In vivo circRNA-engineered macrophages mediate localized MMP9 neutralization to rejuvenate aged bone.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42220642/",
+      "decision": "context_only",
+      "reason": "Aged-mouse skeletal-aging and macrophage/MMP9 immunotherapy context with stem-cell senescence readouts; decision-relevant for future taxonomy or niche/immune repair review, but not enough to change the current human biomarker stage."
+    },
+    {
+      "reference": "PMID 42249716",
+      "title": "The neural crest across the lifespan: Implications for aging, degeneration, and regeneration.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42249716/",
+      "decision": "context_only",
+      "reason": "Review-level neural-crest aging and regenerative-medicine context; it does not add primary in vivo human evidence or alter the public support map."
+    },
+    {
+      "reference": "NCT03473288",
+      "title": "Rejuvenation of Aged Muscle Stem Cells Through Exercise",
+      "url": "https://clinicaltrials.gov/study/NCT03473288",
+      "decision": "not_material",
+      "reason": "Withdrawn older registry with no posted results; relevant to source completeness but not a current field delta."
+    },
+    {
+      "reference": "NCT03754842",
+      "title": "Effect of Nicotinamide Riboside and Pterostilbene Supplementation on Muscle Regeneration in Elderly Humans",
+      "url": "https://clinicaltrials.gov/study/NCT03754842",
+      "decision": "context_only",
+      "reason": "Completed no-results registry that overlaps NAD and muscle-regeneration questions; it predates this delta window and does not provide a stem-cell-specific public update."
+    }
+  ],
+  "source_ids": [
+    "pmid-33440922",
+    "pmid-22560076",
+    "pmid-32755011",
+    "pmid-27127236",
+    "pmid-24531378",
+    "pmid-36266373"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/33440922/",
+    "https://pubmed.ncbi.nlm.nih.gov/22560076/",
+    "https://pubmed.ncbi.nlm.nih.gov/32755011/",
+    "https://pubmed.ncbi.nlm.nih.gov/27127236/",
+    "https://pubmed.ncbi.nlm.nih.gov/24531378/",
+    "https://pubmed.ncbi.nlm.nih.gov/36266373/",
+    "https://pubmed.ncbi.nlm.nih.gov/42228536/",
+    "https://pubmed.ncbi.nlm.nih.gov/42220642/",
+    "https://pubmed.ncbi.nlm.nih.gov/42249716/",
+    "https://clinicaltrials.gov/study/NCT06877377",
+    "https://clinicaltrials.gov/study/NCT03473288",
+    "https://clinicaltrials.gov/study/NCT03754842"
+  ],
+  "notes": [
+    "Triage selected this as rank 1 because it was the next distinct ready surveillance target after recently handled tracks.",
+    "The public outlook remains accurate enough for readers: human support is still ex vivo or biomarker-level, functional evidence remains preclinical, and no posted in vivo human stem-cell rejuvenation results were found.",
+    "NCT06877377 is important because it contradicts a zero-trial local watchlist, but it does not by itself support a stage, momentum, or confidence change.",
+    "PMID 42220642 and PMID 42228536 should be considered during a later taxonomy or coverage pass because they sit near the border between stem-cell rejuvenation, niche support, immune modulation, and tissue repair."
+  ],
+  "next_actions": [
+    "Run coverage_repair for Stem Cell Rejuvenation before another ordinary surveillance pass, focused on NCT06877377, older withdrawn/no-results registries, recent reviews, seminal anchors, and taxonomy boundaries.",
+    "If coverage repair stages NCT06877377, treat it as no-results active-registry context unless posted results or a linked publication appears.",
+    "Continue ordinary surveillance only after the active-registry and review/source-completeness gaps are resolved or explicitly excluded."
+  ]
+}

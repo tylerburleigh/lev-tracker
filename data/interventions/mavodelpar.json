@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "mavodelpar",
+  "name": "Mavodelpar",
+  "summary": "Mavodelpar is a PPAR-delta agonist normalized for STRIDE primary mitochondrial myopathy clinical-outcome evidence.",
+  "modalities": [
+    "small_molecule"
+  ],
+  "target_hallmark_ids": [
+    "mitochondrial_dysfunction"
+  ],
+  "track_ids": [
+    "mitochondrial-biogenesis-and-dynamics"
+  ],
+  "mechanism_summary": "Activates PPAR-delta to alter mitochondrial and metabolic programs, with linked evidence bounded to mitochondrial-disease functional endpoints.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "mavodelpar-stride-primary-mitochondrial-myopathy"
+  ],
+  "linked_finding_ids": [
+    "mavodelpar-stride-no-12mwt-advantage"
+  ],
+  "risk_flags": [
+    "disease-specific-evidence",
+    "primary-endpoint-null",
+    "indication-boundary"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_clinical_outcome",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: Mavodelpar STRIDE did not show a 12-minute walk advantage over placebo; STRIDE mavodelpar primary mitochondrial myopathy trial.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "mavodelpar",
+    "mitochondrial-biogenesis-and-dynamics",
+    "mitochondrial_dysfunction",
+    "small_molecule"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

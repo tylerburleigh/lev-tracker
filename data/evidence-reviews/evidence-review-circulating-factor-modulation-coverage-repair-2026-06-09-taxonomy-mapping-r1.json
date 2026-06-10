@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-circulating-factor-modulation-coverage-repair-2026-06-09-taxonomy-mapping-r1",
+  "name": "Taxonomy Mapping review for Circulating Factor Modulation bundle",
+  "candidate_bundle_id": "circulating-factor-modulation-coverage-repair-2026-06-09",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "taxonomy_mapping",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged taxonomy mapping is acceptable. The bundle adds separate intervention records for plasmapheresis without replacement and young-donor plasma exchange, keeps them distinct from therapeutic plasma exchange, TPE plus IVIG, albumin-replacement plasma exchange, young-plasma infusion, neutral blood exchange, microplastics/toxin-removal context, and single-factor candidates, and uses the outlook support map to prevent one procedure stream from inheriting another stream's evidence.",
+  "reviewed_change_ids": [
+    "create-plasmapheresis-without-replacement",
+    "create-young-donor-plasma-exchange",
+    "create-pmid-40592961",
+    "create-nct-05004220",
+    "create-pmid-40928812",
+    "create-doi-10.64898-2026.04.29.26351809",
+    "create-nct-06234436",
+    "create-doi-10.1002-jca.70135",
+    "create-nct-04897113",
+    "create-nct-05054894",
+    "create-nct-06534450",
+    "create-pmid-41721191",
+    "create-pmid-41494381",
+    "create-fda-young-donor-plasma-warning-2019-02-19",
+    "create-plasmapheresis-healthy-adult-aging-biomarkers",
+    "create-real-world-tpe-alzheimers-cohort",
+    "create-young-donor-plasma-exchange-mci-preprint",
+    "create-tpe-microplastics-human-procedure-series",
+    "create-plasmapheresis-aging-biomarker-registry",
+    "create-tpe-age-related-frailty-registry",
+    "update-randomized-tpe-multiomics-healthy-adults",
+    "create-plasmapheresis-no-epigenetic-rejuvenation-possible-acceleration",
+    "create-real-world-tpe-ad-slowed-cognitive-decline",
+    "create-young-donor-plasma-exchange-mci-feasible-preprint",
+    "create-tpe-microplastics-mixed-biomarker-signal",
+    "create-plasmapheresis-aging-biomarker-registry-unknown-no-results",
+    "create-tpe-frailty-registry-unknown-no-results",
+    "create-randomized-tpe-registry-active-no-registry-results",
+    "create-plasma-rejuvenation-review-translation-boundary",
+    "create-tpe-immune-modulation-review-procedure-boundary",
+    "create-young-plasma-fda-warning-safety-boundary",
+    "update-track-circulating-factor-modulation-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "cfm-repair-new-intervention-boundaries-correct",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-plasmapheresis-without-replacement",
+      "applies_to_record": {
+        "record_type": "intervention",
+        "record_id": "plasmapheresis-without-replacement"
+      },
+      "claim_or_issue": "The new plasmapheresis-without-replacement intervention is correctly separated from albumin-replacement TPE, TPE plus IVIG, young plasma, and neutral blood exchange.",
+      "why_it_matters": "The limiting epigenetic-clock result should not be treated as the same intervention as AMBAR or the randomized TPE plus IVIG biomarker trial.",
+      "recommended_action": "Retain the new intervention record and its protocol-specific risk flags.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "cfm-repair-young-donor-exchange-boundary-correct",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-young-donor-plasma-exchange",
+      "applies_to_record": {
+        "record_type": "intervention",
+        "record_id": "young-donor-plasma-exchange"
+      },
+      "claim_or_issue": "The new young-donor plasma exchange intervention is correctly separated from simple young-plasma infusion and from albumin or IVIG replacement protocols.",
+      "why_it_matters": "Exchange, dilution, and donor-product exposure create different attribution and safety boundaries than PLASMA-style infusion.",
+      "recommended_action": "Retain the young-donor plasma exchange record and keep FDA safety context linked to it.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "cfm-repair-outlook-support-map-separates-streams",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "update-track-circulating-factor-modulation-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-circulating-factor-modulation-outlook"
+      },
+      "claim_or_issue": "The staged outlook support map separates disease-specific function, healthy-adult biomarkers, preclinical plausibility, safety boundaries, toxin-removal context, and review-level taxonomy boundaries.",
+      "why_it_matters": "This prevents AMBAR, randomized TPE plus IVIG, plasmapheresis without replacement, young-donor plasma exchange, and microplastic-removal context from being collapsed into one circulating-factor efficacy claim.",
+      "recommended_action": "Retain the staged support-map structure and taxonomy boundary coverage assessment.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-09T12:29:37.129Z",
+  "updated_at": "2026-06-09T12:29:37.129Z"
+}

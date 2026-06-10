@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "dna-repair-enhancement-surveillance-2026-06-10",
+  "name": "DNA Repair Enhancement Surveillance for June 10, 2026",
+  "summary": "Surveillance bundle attaching the existing June 2026 Nat Aging DREAM repression evidence to DNA Repair Enhancement and refreshing the track outlook while keeping the track at low-confidence human_biomarker_signal with mixed momentum.",
+  "intake_mode": "surveillance",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-10T16:27:41Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What changed for DNA Repair Enhancement since the May 31, 2026 baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "genomic_instability"
+    ],
+    "track_ids": [
+      "dna-repair-enhancement"
+    ]
+  },
+  "source_ids": [
+    "pmid-42230995"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42230995/",
+    "https://doi.org/10.1038/s43587-026-01132-z"
+  ],
+  "related_records": [
+    {
+      "record_type": "track",
+      "record_id": "dna-repair-enhancement"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-dna-repair-enhancement-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-genomic-instability-outlook"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "update-study-dream-somatic-mutation-lifespan-disease",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "dream-somatic-mutation-lifespan-disease-study",
+      "file_path": "data/studies/dream-somatic-mutation-lifespan-disease-study.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-surveillance-2026-06-10/dream-somatic-mutation-lifespan-disease-study.json",
+      "summary": "Attach the existing DREAM mixed mouse, comparative, and human-association study to DNA Repair Enhancement.",
+      "rationale": "The study already exists for somatic-mutation control and also directly informs the DNA Repair Enhancement repair-regulator boundary."
+    },
+    {
+      "change_id": "update-finding-dream-repression-linked-lower-somatic-mutations",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "dream-repression-linked-lower-somatic-mutations",
+      "file_path": "data/findings/dream-repression-linked-lower-somatic-mutations.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-surveillance-2026-06-10/dream-repression-linked-lower-somatic-mutations.json",
+      "summary": "Attach the existing DREAM mutation-burden finding to DNA Repair Enhancement.",
+      "rationale": "The finding captures repair-regulator biology while preserving that it is not treated-human evidence.",
+      "uncertainty_flags": [
+        "preclinical",
+        "comparative-biology",
+        "not-human-intervention"
+      ]
+    },
+    {
+      "change_id": "update-outlook-track-dna-repair-enhancement",
+      "change_type": "update_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-dna-repair-enhancement-outlook",
+      "file_path": "data/outlooks/track-dna-repair-enhancement-outlook.json",
+      "staged_file_path": "data/staged-records/dna-repair-enhancement-surveillance-2026-06-10/track-dna-repair-enhancement-outlook.json",
+      "summary": "Refresh the DNA Repair Enhancement outlook with the DREAM preclinical signal.",
+      "rationale": "The outlook should mention the broader repair-regulator signal without upgrading stage, momentum, or confidence.",
+      "uncertainty_flags": [
+        "stage-unchanged",
+        "preclinical-signal-only",
+        "human-benefit-not-shown"
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "dna-repair-enhancement",
+      "note": "Add a broader DREAM repair-regulator signal while keeping the track at human_biomarker_signal, mixed momentum, and low confidence because the new result is preclinical/comparative rather than treated-human evidence.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast",
+    "taxonomy_mapping"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-10-dna-repair-enhancement-surveillance.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin",
+    "surveillance",
+    "dna-repair-enhancement"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-dna-repair-enhancement-surveillance-2026-06-10-source-fidelity-r1",
+    "evidence-review-dna-repair-enhancement-surveillance-2026-06-10-interpretation-forecast-r1",
+    "evidence-review-dna-repair-enhancement-surveillance-2026-06-10-taxonomy-mapping-r1"
+  ],
+  "publication_event_ids": [
+    "publish-dna-repair-enhancement-surveillance-2026-06-10-2026-06-10t17-34-21-637z"
+  ]
+}

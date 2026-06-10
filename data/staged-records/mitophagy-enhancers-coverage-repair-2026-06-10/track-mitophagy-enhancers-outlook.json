@@ -1,0 +1,211 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-mitophagy-enhancers-outlook",
+  "name": "Mitophagy Enhancers Track Outlook",
+  "subject_type": "track",
+  "subject_id": "mitophagy-enhancers",
+  "evidence_stage": "human_biomarker_signal",
+  "momentum": "steady",
+  "confidence": "low",
+  "main_evidence_gaps": [
+    "Human evidence is concentrated in short urolithin A studies with mitochondrial, muscle, immune, or recovery biomarkers; durable clinical or healthy-lifespan benefit has not been shown.",
+    "Functional signals are mixed and endpoint-specific: muscle endurance or strength tests move in some trials, but broader physical-function or performance endpoints are not consistently positive.",
+    "The completed frail older-adult trial, older-adult glucose-metabolism trial, middle-aged strength trial, and middle-aged obesity biomarker trial remain no-results or active registry context.",
+    "Long-term safety, durability, supplement-versus-diet exposure, kidney or urinary-stone risk, and non-urolithin targeted mitophagy translation remain unresolved."
+  ],
+  "strongest_current_evidence": [
+    "Urolithin A has human target-engagement and biomarker support, including first-in-human mitochondrial signatures, ENERGIZE older-adult muscle-endurance and biomarker signals, ATLAS middle-aged strength and mitochondrial biomarkers, and MitoImmune immune-cell metabolism or function movement.",
+    "A 2024 systematic review supports that human urolithin A studies show muscle and mitochondrial or autophagy biomarker signals while emphasizing that physical-function benefit remains unproven.",
+    "Preclinical urolithin A evidence links mitophagy induction to C. elegans lifespan extension and rodent muscle-function improvement.",
+    "USP30 inhibition supports targeted-mitophagy tractability in animal or in vitro systems, but it has not yet produced human aging-relevant evidence."
+  ],
+  "interpretation_note": "Mitophagy enhancers have credible human biomarker and target-engagement evidence, mainly through urolithin A, plus some narrow muscle-test signals. The track stays at low-confidence human biomarker signal because clinical attribution to mitophagy, durability, frailty benefit, broader function, and long-term safety remain open.",
+  "what_would_change_the_rating": [
+    "A stronger stage would need longer independent trials in older or frail adults showing prespecified mobility, frailty, immune resilience, or other aging-relevant functional benefit alongside credible mitophagy or mitochondrial-quality target engagement.",
+    "The frail older-adult Mitopure registry would strengthen or weaken confidence if it posts interpretable mitochondrial-structure, function, and safety results.",
+    "Momentum would accelerate if a non-urolithin targeted mitophagy program, such as USP30 inhibition, showed safe human target engagement with meaningful functional outcomes.",
+    "The read would weaken if larger urolithin A trials miss functional endpoints, if mitochondrial biomarkers decouple from outcomes, or if renal, urinary-stone, metabolic, or other chronic safety issues become more common."
+  ],
+  "earliest_plausible_window": "Supplement-level urolithin A biomarker and narrow muscle-test signals already exist, but no credible LEV-relevant window can be assigned before longer replicated older-adult or frailty trials show durable functional benefit and acceptable safety.",
+  "supporting_finding_ids": [
+    "urolithin-a-safe-mitochondrial-signature-older-adults",
+    "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+    "urolithin-a-improved-middle-aged-muscle-strength-performance",
+    "urolithin-a-shifted-immune-aging-biomarkers-function",
+    "urolithin-a-review-human-muscle-biomarker-boundary",
+    "urolithin-a-trained-runners-recovery-no-performance-benefit",
+    "completed-frail-urolithin-a-trial-no-results",
+    "urolithin-a-older-adult-glucose-metabolism-registry-recruiting-no-results",
+    "urolithin-a-middle-aged-strength-registry-recruiting-no-results",
+    "urolithin-a-obesity-vascular-registry-completed-no-results",
+    "urolithin-a-renal-calculi-safety-signal",
+    "urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+    "usp30-inhibition-induced-tissue-specific-mouse-mitophagy",
+    "mf094-induced-mitophagy-without-mtdna-load-reduction"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "evidence_stage",
+      "conclusion": "The track reaches human biomarker signal because urolithin A has repeated human mitochondrial, muscle, immune, or recovery biomarker movement, but clinical benefit attributable to mitophagy remains unproven.",
+      "support_role": "supports",
+      "rationale": "First-in-human urolithin A shifted mitochondrial signatures, ENERGIZE and ATLAS reported muscle-test and mitochondrial biomarker signals, and MitoImmune reported immune-cell composition, metabolism, and ex vivo function changes. These are human signals, but most are short-term, biomarker-heavy, commercially concentrated, and endpoint-mixed.",
+      "finding_ids": [
+        "urolithin-a-safe-mitochondrial-signature-older-adults",
+        "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+        "urolithin-a-improved-middle-aged-muscle-strength-performance",
+        "urolithin-a-shifted-immune-aging-biomarkers-function"
+      ],
+      "source_ids": [
+        "pmid-32694802",
+        "pmid-35050355",
+        "pmid-35584623",
+        "pmid-41174221"
+      ],
+      "limitations": [
+        "Trials are short and mostly urolithin A-specific.",
+        "Functional outcomes are mixed and do not establish broad physical-function benefit.",
+        "The causal path from mitophagy biomarkers to healthy-lifespan benefit remains unsettled."
+      ]
+    },
+    {
+      "label": "Human functional boundary",
+      "outlook_field": "confidence",
+      "conclusion": "Human muscle or performance signals remain encouraging but bounded, so they should not upgrade the track beyond biomarker signal.",
+      "support_role": "balances",
+      "rationale": "The systematic review found muscle and biomarker signals but no physical-function benefit; ENERGIZE missed primary 6-minute-walk and hand ATP endpoints; ATLAS missed its primary peak-power endpoint; and the young runner trial found recovery and pathway signals without significant 3000 m performance improvement.",
+      "finding_ids": [
+        "urolithin-a-review-human-muscle-biomarker-boundary",
+        "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+        "urolithin-a-improved-middle-aged-muscle-strength-performance",
+        "urolithin-a-trained-runners-recovery-no-performance-benefit"
+      ],
+      "source_ids": [
+        "pmid-39002645",
+        "pmid-35050355",
+        "pmid-35584623",
+        "pmid-40839339"
+      ],
+      "limitations": [
+        "Young-athlete performance data are not aging evidence.",
+        "Positive secondary endpoints can coexist with missed primary endpoints.",
+        "Muscle-test changes are not the same as durable frailty, mobility, or mortality benefit."
+      ]
+    },
+    {
+      "label": "Trial watch context",
+      "outlook_field": "momentum",
+      "conclusion": "Momentum is steady because several relevant urolithin A studies are active or completed, but no new posted results are available.",
+      "support_role": "supports",
+      "rationale": "The frail older-adult registry is complete without posted results, the older-adult glucose and mitochondrial-metabolism registry is recruiting, the middle-aged strength registry is recruiting, and the middle-aged obesity vascular/mitochondrial biomarker registry is complete without posted results.",
+      "finding_ids": [
+        "completed-frail-urolithin-a-trial-no-results",
+        "urolithin-a-older-adult-glucose-metabolism-registry-recruiting-no-results",
+        "urolithin-a-middle-aged-strength-registry-recruiting-no-results",
+        "urolithin-a-obesity-vascular-registry-completed-no-results"
+      ],
+      "source_ids": [
+        "nct-06556706",
+        "nct-06274749",
+        "nct-07231783",
+        "nct-05921266"
+      ],
+      "limitations": [
+        "No-results registry context is not evidence of benefit.",
+        "Several endpoints are biomarker, metabolic, or mechanistic rather than aging-functional.",
+        "Registry completion without results can become a negative signal if results remain unavailable."
+      ]
+    },
+    {
+      "label": "Safety and durability boundary",
+      "outlook_field": "main_evidence_gaps",
+      "conclusion": "Short-term urolithin A safety is represented, but long-term safety and urinary-stone risk require caution.",
+      "support_role": "limits",
+      "rationale": "Early urolithin A trials were short and reported tolerability, while the renal-calculi case series identified urolithin A in urinary stones from older adults. That case series does not prove supplement causality, but it is enough to keep chronic urinary-safety assumptions uncertain.",
+      "finding_ids": [
+        "urolithin-a-safe-mitochondrial-signature-older-adults",
+        "urolithin-a-renal-calculi-safety-signal",
+        "completed-frail-urolithin-a-trial-no-results"
+      ],
+      "source_ids": [
+        "pmid-32694802",
+        "pmid-42058113",
+        "nct-06556706"
+      ],
+      "limitations": [
+        "The renal-calculi source is a case series and cannot estimate incidence.",
+        "Most reported stone-former exposures were dietary rather than direct supplement use.",
+        "Frail-population safety remains pending until NCT06556706 results are available."
+      ]
+    },
+    {
+      "label": "Preclinical and USP30 support",
+      "outlook_field": "strongest_current_evidence",
+      "conclusion": "Mitophagy-enhancement biology is plausible and tractable in model systems, but non-urolithin targeted approaches remain preclinical or in vitro.",
+      "support_role": "supports",
+      "rationale": "Urolithin A induced mitophagy, extended C. elegans lifespan, and improved rodent muscle measures. USP30 inhibition induced tissue-specific mitophagy in reporter mice, while MF-094 induced mitophagy in cybrids without significantly reducing mutant mtDNA load.",
+      "finding_ids": [
+        "urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+        "usp30-inhibition-induced-tissue-specific-mouse-mitophagy",
+        "mf094-induced-mitophagy-without-mtdna-load-reduction"
+      ],
+      "source_ids": [
+        "pmid-27400265",
+        "pmid-33890401",
+        "pmid-41587019"
+      ],
+      "limitations": [
+        "Animal lifespan and muscle effects do not establish human benefit.",
+        "USP30 evidence has not reached human aging-relevant trials.",
+        "The MF-094 cybrid boundary shows that mitophagy induction alone may not produce the hoped-for downstream mitochondrial-genome effect."
+      ]
+    },
+    {
+      "label": "Read firmness",
+      "outlook_field": "confidence",
+      "conclusion": "The read remains low-confidence because the public map combines promising biomarkers, mixed functional tests, no-results registries, a safety signal, and preclinical targeted-mitophagy biology.",
+      "support_role": "limits",
+      "rationale": "The current record is enough to move beyond pure mechanistic plausibility but not enough to claim evidence that mitophagy enhancement improves durable human aging outcomes.",
+      "finding_ids": [
+        "urolithin-a-review-human-muscle-biomarker-boundary",
+        "completed-frail-urolithin-a-trial-no-results",
+        "urolithin-a-renal-calculi-safety-signal",
+        "mf094-induced-mitophagy-without-mtdna-load-reduction"
+      ],
+      "source_ids": [
+        "pmid-39002645",
+        "nct-06556706",
+        "pmid-42058113",
+        "pmid-41587019"
+      ],
+      "limitations": [
+        "The evidence base is dominated by one commercial urolithin A program.",
+        "Functional and biomarker endpoints do not always move together.",
+        "Long-term risk-benefit in older or frail adults is unresolved."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-32694802",
+    "pmid-35050355",
+    "pmid-35584623",
+    "pmid-39002645",
+    "pmid-41174221",
+    "pmid-40839339",
+    "nct-06556706",
+    "nct-06274749",
+    "nct-07231783",
+    "nct-05921266",
+    "pmid-42058113",
+    "pmid-27400265",
+    "pmid-33890401",
+    "pmid-41587019"
+  ],
+  "last_updated": "2026-06-10",
+  "tags": [
+    "public",
+    "track",
+    "coverage-repair"
+  ]
+}

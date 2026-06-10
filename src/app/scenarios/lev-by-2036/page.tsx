@@ -45,13 +45,13 @@ const scenarioChapters = [
     period: "2030-2032",
     title: "Repair and clearance have to replicate",
     summary:
-      "Stem-cell replacement, senescence clearance or suppression, tissue-repair biology, extracellular-vesicle approaches, and microbiome restoration need to show repeatable benefit in older adults or disease-adjacent aging settings. This is where delivery, manufacturing, immune risk, cancer risk, and durability become more important than mechanistic excitement."
+      "Stem-cell replacement, senescence clearance or suppression, tissue-repair biology, extracellular-vesicle approaches, and microbiome restoration need to show repeatable benefit in older adults or disease-adjacent aging settings. This is where delivery, manufacturing, immune risk, cancer risk, and long-lasting effects become more important than biological excitement."
   },
   {
     period: "2032-2034",
     title: "The frontier tracks need safe human footholds",
     summary:
-      "Partial reprogramming, epigenome restoration, telomere biology, genome-stability work, and systemic-signal reset do not need to solve aging outright. For the 2036 scenario, they need bounded human evidence: localized delivery, clear target engagement, no major safety surprise, and a credible path to functional benefit."
+      "Partial reprogramming, epigenome restoration, telomere biology, genome-stability work, and systemic-signal reset do not need to solve aging outright. For the 2036 scenario, they need bounded human evidence: localized delivery, clear target engagement, no major safety surprise, and a credible path to long-lasting improvement in human function."
   },
   {
     period: "2034-2036",
@@ -89,7 +89,7 @@ const trackMilestones = [
     trackId: "rapalogs",
     window: "2027-2028",
     scenarioMilestone:
-      "A rapalog or adjacent nutrient-sensing program reports replicated older-adult functional benefit with dosing that looks compatible with preventive geroscience.",
+      "A rapalog or adjacent nutrient-sensing program reports repeated older-adult improvement in human function with dosing that looks compatible with preventive geroscience.",
     breakCondition:
       "The field gets only pathway markers, tolerability problems, or effects too small to matter outside carefully selected groups."
   },
@@ -99,7 +99,7 @@ const trackMilestones = [
     scenarioMilestone:
       "Mitophagy or selective-organelle quality-control signals tie cleanly to mobility, endurance, frailty, immune resilience, or disease-relevant function.",
     breakCondition:
-      "Mitochondrial and autophagy biomarkers keep moving without durable functional meaning."
+      "Mitochondrial and autophagy biomarkers keep moving without long-lasting functional meaning."
   },
   {
     trackId: "cytokine-and-inflammasome-modulation",
@@ -121,7 +121,7 @@ const trackMilestones = [
     trackId: "stem-cell-replacement-and-transplantation",
     window: "2029-2031",
     scenarioMilestone:
-      "Frailty, repair, Parkinson, retinal, immune, or other replacement programs show durable functional benefit with mechanism-linked biomarkers and manageable long-term risk.",
+      "Frailty, repair, Parkinson, retinal, immune, or other replacement programs show long-lasting improvement in human function with mechanism-linked biomarkers and manageable long-term risk.",
     breakCondition:
       "Signals fail replication, graft function is weak, or surgery, immune control, tumor risk, or ectopic-cell risk limits use."
   },
@@ -139,7 +139,7 @@ const trackMilestones = [
     scenarioMilestone:
       "Senescent-cell clearance becomes selective enough to improve tissue function or disease progression over months without disrupting repair, immunity, or cancer surveillance.",
     breakCondition:
-      "Clearance is too blunt, too local, too unsafe, or unable to connect senescence markers to functional benefit."
+      "Clearance is too blunt, too local, too unsafe, or unable to connect senescence markers to long-lasting improvement in human function."
   },
   {
     trackId: "partial-reprogramming",
@@ -160,12 +160,12 @@ const trackMilestones = [
 ] as const;
 
 const failureModes = [
-  "Most positive results are short biomarker movements that never become durable function.",
+  "Most positive results are short biomarker movements that never become long-lasting function.",
   "Disease-specific wins do not generalize to aging-relevant populations.",
   "Delivery and manufacturing make the strongest biological ideas too hard to use repeatedly.",
   "Safety limits appear when interventions move from severe disease into prevention or maintenance.",
   "Combination trials show that useful interventions interfere with each other or compound risk.",
-  "The first durable benefits are real but too narrow or too small to plausibly outrun aging by 2036."
+  "The first long-lasting benefits are real but too narrow or too small to plausibly outrun aging by 2036."
 ] as const;
 
 function getMomentumTone(momentum?: string) {
@@ -210,7 +210,7 @@ export default async function LevBy2036ScenarioPage() {
             <h2>The short version</h2>
             <p>
               The 2036 path is not one miracle intervention. It is a sequence where several narrow but real human
-              results turn into durable older-adult benefit, then into compatible maintenance cycles.
+              results turn into long-lasting older-adult benefit, then into compatible maintenance cycles.
             </p>
           </div>
           <div className="scenario-timeline">
@@ -303,7 +303,7 @@ export default async function LevBy2036ScenarioPage() {
             </p>
             <p>
               LEV would still be a live question, not a settled fact. The difference is that the debate would move
-              from “where is the human evidence?” to “are the combined gains broad, durable, and repeatable enough to
+              from “where is the human evidence?” to “are the combined gains broad, long-lasting, and repeatable enough to
               outrun the next year of aging?”
             </p>
           </article>

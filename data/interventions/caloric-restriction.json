@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "caloric-restriction",
+  "name": "Caloric restriction",
+  "summary": "Caloric restriction is normalized here for CALERIE human DNA-methylation aging analyses and nutrient-sensing-adjacent evidence.",
+  "modalities": [
+    "lifestyle"
+  ],
+  "target_hallmark_ids": [
+    "deregulated_nutrient_sensing",
+    "epigenetic_alterations"
+  ],
+  "track_ids": [
+    "dna-methylation-and-epigenome-restoration"
+  ],
+  "mechanism_summary": "Reduces energy intake to alter nutrient-sensing, metabolic, and epigenetic aging biomarkers, with linked public evidence focused on methylation pace rather than direct LEV endpoints.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "calerie-caloric-restriction-dnam-aging"
+  ],
+  "linked_finding_ids": [
+    "calerie-cr-slowed-dunedinpace"
+  ],
+  "risk_flags": [
+    "adherence-burden",
+    "biomarker-not-function",
+    "population-selection"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: CALERIE caloric restriction DNA-methylation aging analysis; CALERIE caloric restriction slowed DunedinPACE but not clock age estimates.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "caloric-restriction",
+    "deregulated_nutrient_sensing",
+    "dna-methylation-and-epigenome-restoration",
+    "epigenetic_alterations",
+    "lifestyle"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-senomorphics-surveillance-2026-06-07-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Senomorphics bundle",
+  "candidate_bundle_id": "senomorphics-surveillance-2026-06-07",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged interpretation is calibrated. It adds PMID 42251040 as a preclinical mianserin/Ca2+/SASP signal with animal lifespan and human-derived cell support, while keeping Senomorphics at human_biomarker_signal, momentum steady, and confidence low. The outlook continues to require treated-human trials linking senescence/SASP biomarker movement to sustained function, tissue resilience, disease outcomes, and acceptable safety before any stage or LEV-relevant forecast upgrade. The two registry refreshes are handled as factual study metadata, not evidence upgrades.",
+  "reviewed_change_ids": [
+    "create-source-pmid-42251040",
+    "create-intervention-mianserin",
+    "create-study-mianserin-calcium-homeostasis-aged-mice",
+    "create-finding-mianserin-calcium-homeostasis-improved-aged-mouse-healthspan-lifespan",
+    "update-study-topical-rapamycin-human-skin-aging",
+    "update-study-metformin-disuse-reambulation-older-adults",
+    "update-outlook-track-senomorphics-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "mianserin-animal-signal-does-not-upgrade-stage",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "update-outlook-track-senomorphics-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-senomorphics-outlook"
+      },
+      "claim_or_issue": "The staged outlook adds mianserin to strongest current evidence as a human-cell and mouse healthspan/lifespan signal but keeps the public evidence stage at human_biomarker_signal.",
+      "why_it_matters": "Animal lifespan and human-derived cell senescence data are important for plausibility, but they do not establish treated-human function, disease modification, or prevention benefit.",
+      "recommended_action": "No revision needed; publish as written if editorial approves, preserving the no-treated-human and preclinical limitations.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "support-map-links-new-source-cleanly",
+      "severity": "note",
+      "category": "other",
+      "applies_to_change_id": "update-outlook-track-senomorphics-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-senomorphics-outlook"
+      },
+      "claim_or_issue": "The staged outlook adds the new finding and source to supporting_finding_ids, supporting_source_ids, strongest_current_evidence, and a dedicated supporting_evidence entry with limitations.",
+      "why_it_matters": "A track-outlook change should not rely on a loose source citation; the public rationale needs concrete source-to-study-to-finding mapping.",
+      "recommended_action": "No revision needed; the evidence map is explicit enough for the proposed unchanged-stage outlook refresh.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "registry-refreshes-treated-as-metadata-not-evidence",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "update-study-metformin-disuse-reambulation-older-adults",
+      "applies_to_record": {
+        "record_type": "study",
+        "record_id": "metformin-disuse-reambulation-older-adults"
+      },
+      "claim_or_issue": "The staged registry updates clarify ClinicalTrials.gov status and completion horizons but do not alter the human biomarker evidence basis or outlook rating.",
+      "why_it_matters": "No-results registry status, even with an active parent metformin registry, should not be treated as new efficacy or safety evidence.",
+      "recommended_action": "No revision needed; keep registry metadata out of stage, momentum, and confidence changes.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "safety-and-attribution-boundaries-adequate",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "update-outlook-track-senomorphics-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-senomorphics-outlook"
+      },
+      "claim_or_issue": "The staged outlook adds calcium-homeostasis, serotonin-receptor, and central-nervous-system tradeoffs to the existing immune, wound-healing, cancer, metabolic, and pleiotropy cautions.",
+      "why_it_matters": "Mianserin should not be presented as a simple SASP-modulating aging intervention without acknowledging pathway attribution and preventive-use safety uncertainty.",
+      "recommended_action": "No revision needed; retain the staged safety and attribution caveats through publication.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-07T16:39:56Z",
+  "updated_at": "2026-06-07T16:41:06.474Z"
+}

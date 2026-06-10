@@ -1,0 +1,277 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-07-telomere-protection-and-capping-surveillance",
+  "name": "Telomere Protection and Capping field change check for June 7, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-07T21:28:00Z",
+  "completed_at": "2026-06-07T21:51:48Z",
+  "scope": {
+    "question": "What changed for Telomere Protection and Capping since the 2026-05-31 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "telomere_attrition"
+    ],
+    "track_ids": [
+      "telomere-protection-and-capping"
+    ],
+    "intervention_ids": [
+      "aav9-trf1",
+      "dasatinib-quercetin"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "no_op",
+  "summary": "Ran a field change check from the 2026-05-31T21:55:18.580Z Telomere Protection and Capping baseline publication through June 7, 2026. The local trial audit found no scoped registry-linked human studies. Broad ClinicalTrials.gov searches did not find a capping- or shelterin-directed aging trial; close hits were telomerase-lengthening or telomere-length endpoint records, oncology telomere-targeting trials, observational cohorts, or no-results broad lifestyle/nutraceutical records. PubMed searches found no correction or retraction to the baseline support set and no new human capping-directed intervention result. Same-window close PubMed records included a silica pulmonary-fibrosis TERF1/telomere-dysfunction mechanism paper, an in vitro blueberry-polyphenol metabolite telomere-shortening model, an hTERT-derived GV1001 Alzheimer mouse paper, a short-telomere syndrome diagnostic framework, endocrine-tumor telomerase/shelterin dysregulation, and reviews or observational telomere-length papers. These do not alter the current animal_signal stage, uncertain momentum, low read firmness, safety boundary, or human-intervention gap. No public outlook, source, study, finding, activity item, bundle, or coverage assessment update is warranted.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "none",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The delta search did not identify human capping-directed target-engagement data, clinical results, a direct shelterin-protection intervention result, replicated AAV9-TRF1-like animal evidence, a safety signal that changes the TRF2 calibration boundary, or a correction/retraction. Close sources were disease-mechanism, diagnostic, telomerase/telomere-length, oncology, observational, in vitro, review, or no-results context."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial audit",
+      "query": "npm run audit:trials -- --track telomere-protection-and-capping --write",
+      "checked_at": "2026-06-07T21:51:48Z",
+      "url": "https://clinicaltrials.gov/search?term=telomere%20capping",
+      "summary": "The audit found zero registry-linked interventional studies, zero missing detail records, zero stale registry checks, and zero open trial-watch items for the scoped track."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "telomere capping OR telomere uncapping OR shelterin OR TRF1 OR TRF2 OR telomere dysfunction; telomere protection aging OR telomere DNA damage aging OR telomere-associated foci aging; AAV9 TRF1 OR TERF1 OR TERF2 OR POT1 OR TINF2 OR ACD shelterin aging",
+      "checked_at": "2026-06-07T21:51:48Z",
+      "url": "https://clinicaltrials.gov/search?term=telomere%20capping%20OR%20telomere%20uncapping%20OR%20shelterin",
+      "summary": "No capping- or shelterin-directed aging intervention trial was identified. Close records included TA-65 microvascular dysfunction NCT05598359, collagen-peptide telomere-length/telomerase NCT07456449, lifestyle/cognitive stimulation NCT06376656, GENE-FORECAST NCT02055209, integrative infertility NCT07404969, and THIO oncology trials NCT05208944 and NCT06908304."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "Telomere capping, telomere uncapping, shelterin, TRF1/TERF1, TRF2/TERF2, POT1, TINF2, TPP1, ACD, telomere dysfunction-induced foci, TIFs, telomere-associated DNA damage, or telomere dysfunction terms with aging, ageing, senescence, lifespan, healthspan, vascular, endothelial, older, or rejuvenation terms; publication dates 2026-05-31 to 2026-06-07",
+      "checked_at": "2026-06-07T21:51:48Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=telomere%20capping%20shelterin%20aging",
+      "summary": "Returned eight records. Close records were PMID 41864539, PMID 42232023, PMID 42227145, PMID 42234964, and PMID 41985564. They were disease-mechanism, review, biomarker, progeria-bibliometric, or wrong-scope context, not capping-directed aging intervention evidence."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "AAV9, gene therapy, dasatinib, quercetin, senolytic, telomere protection, or shelterin modulation terms with TRF1, TERF1, TRF2, TERF2, shelterin, telomere dysfunction, or telomere and aging/senescence/healthspan/lifespan/endothelial terms; publication dates 2026-05-31 to 2026-06-07",
+      "checked_at": "2026-06-07T21:51:48Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=AAV9%20TRF1%20telomere%20aging",
+      "summary": "Returned two records: PMID 42232023, a cardiac senescence review, and PMID 41985564, a Hutchinson-Gilford progeria bibliometric analysis. Neither changes the AAV9-TRF1 or D+Q support-map interpretation."
+    },
+    {
+      "source_name": "PubMed broader telomere boundary searches",
+      "query": "Telomere, telomerase, TERT, or telomere length terms with intervention, trial, therapy, treatment, aging, lifespan, healthspan, senescence, or older terms; plus TA-65, cycloastragenol, danazol, TAT2, telomerase activator terms; publication dates 2026-05-31 to 2026-06-07",
+      "checked_at": "2026-06-07T21:51:48Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=telomere%20length%20aging%20intervention",
+      "summary": "Returned 42 broad telomere/telomerase records and zero TA-65/cycloastragenol/danazol/TAT2 same-window records. Close boundary records included PMID 42249975, PMID 42236894, PMID 42219160, PMID 42116249, PMID 41861895, PMID 40253647, and PMID 41887450; none was a capping-directed aging intervention result."
+    },
+    {
+      "source_name": "PubMed correction and retraction screen",
+      "query": "Baseline support PMIDs 28944611, 23666675, 24686009, 30502348, 37259606, 40109908, and 16142233 with retraction, erratum, corrected-and-republished, or expression-of-concern publication types; publication dates 2026-05-31 to 2026-06-07",
+      "checked_at": "2026-06-07T21:51:48Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned zero correction, retraction, erratum, corrected-and-republished, or expression-of-concern records for the seven baseline supporting PubMed sources."
+    },
+    {
+      "source_name": "bioRxiv and medRxiv APIs",
+      "query": "Date window 2026-05-31 to 2026-06-07 with telomere, shelterin, TRF1, TERF1, TRF2, TERF2, POT1, TINF2, TPP1, telomerase, telomere dysfunction, and telomere uncapping title/abstract screens",
+      "checked_at": "2026-06-07T21:51:48Z",
+      "url": "https://api.biorxiv.org/",
+      "summary": "Returned zero matching bioRxiv or medRxiv title/abstract records in the date window."
+    },
+    {
+      "source_name": "Crossref API",
+      "query": "title queries for telomere capping shelterin aging and TRF1 TRF2 telomere dysfunction aging, filtered to journal articles from 2026-05-31 through 2026-06-07",
+      "checked_at": "2026-06-07T21:51:48Z",
+      "url": "https://api.crossref.org/works?query.title=telomere%20capping%20shelterin%20aging",
+      "summary": "Returned mostly already captured PubMed/Crossref boundary hits plus non-aging telomere-to-telomere assemblies, cancer ALT/telomere-integrity biology, and review-level context. No primary capping-directed aging intervention source was found outside PubMed."
+    }
+  ],
+  "trial_watch_checks": [],
+  "excluded_sources": [
+    {
+      "reference": "PMID 41864539",
+      "title": "Silica-induced telomere dysfunction promotes pulmonary fibrosis through the activation of the cGAS-STING pathway.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41864539/",
+      "decision": "context_only",
+      "reason": "Primary silica-induced pulmonary fibrosis model with TERF1 loss/overexpression and cGAS-STING biology. It is close shelterin/telomere-dysfunction mechanism context, but it is toxic-injury disease biology rather than aging healthspan or capping-directed therapeutic evidence."
+    },
+    {
+      "reference": "PMID 42249975",
+      "title": "Wild blueberry-derived polyphenol metabolites attenuate telomere shortening in an in vitro model of metabolic syndrome.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42249975/",
+      "decision": "method_limit",
+      "reason": "In vitro THP-1 metabolic-stress model reporting telomere-length preservation by selected blueberry-derived metabolites. It is not a capping or shelterin intervention and does not supply organismal aging or human evidence."
+    },
+    {
+      "reference": "PMID 42236894",
+      "title": "A human telomerase reverse transcriptase-derived peptide GV1001 rescues neurodegeneration in a mouse model of Alzheimer disease.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42236894/",
+      "decision": "wrong_scope",
+      "reason": "Mouse Alzheimer disease paper for an hTERT-derived peptide, with reported microglial and amyloid effects. It belongs closer to telomerase/restoration or neurodegeneration boundary context and is not a telomere-capping intervention."
+    },
+    {
+      "reference": "PMID 42219160",
+      "title": "A Proposed Clinical Diagnostic Framework for Short Telomere Syndrome.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42219160/",
+      "decision": "context_only",
+      "reason": "Clinical diagnostic framework for short telomere syndrome and telomere biology disorders. It may inform disease-boundary interpretation but adds no intervention or capping-restoration result."
+    },
+    {
+      "reference": "PMID 42116249",
+      "title": "The telomerase/shelterin system is impaired in acromegaly and Cushing's disease: Potential pathophysiological relevance.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42116249/",
+      "decision": "wrong_scope",
+      "reason": "Pituitary tumor and endocrine disease paper reporting telomerase/shelterin dysregulation and in vitro telomerase-inhibition effects. It is disease oncology/endocrine context, not aging capping restoration."
+    },
+    {
+      "reference": "PMID 42232023",
+      "title": "Multicellular senescence programs in the aged heart.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42232023/",
+      "decision": "context_only",
+      "reason": "Review-level cardiac aging and senescence synthesis mentioning telomere dysfunction among several damage mechanisms. It adds no primary capping-directed intervention evidence."
+    },
+    {
+      "reference": "PMID 42227145",
+      "title": "Therapeutic targeting of DNA repair pathway dysregulation in aging, cancer, and neurodegeneration.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42227145/",
+      "decision": "context_only",
+      "reason": "Review of DNA repair dysregulation across aging, cancer, and neurodegeneration. Telomere dysfunction appears as broad DNA-damage context rather than track-specific evidence."
+    },
+    {
+      "reference": "PMID 42234964",
+      "title": "Aging Biomarkers in Osteoporosis: A Systematic Review of Molecular Mechanisms, Biological Aging, and Population Evidence.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42234964/",
+      "decision": "context_only",
+      "reason": "Review of DNA-methylation and leukocyte-telomere-length biomarker associations with osteoporosis. It does not test telomere capping, shelterin modulation, or a track intervention."
+    },
+    {
+      "reference": "PMID 41985564",
+      "title": "Mapping the landscape of Hutchinson-Gilford Progeria Syndrome research: A bibliometric analysis (1995-2025).",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41985564/",
+      "decision": "context_only",
+      "reason": "Bibliometric progeria research analysis. It is aging-adjacent but not a primary telomere-capping intervention or safety result."
+    },
+    {
+      "reference": "PMID 41861895",
+      "title": "Bone phenotype of patients with telomere biology disorders.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41861895/",
+      "decision": "context_only",
+      "reason": "Human telomere biology disorder bone phenotype cohort. It is disease natural-history context, not a capping-directed therapeutic result."
+    },
+    {
+      "reference": "PMID 40253647",
+      "title": "Telomere Length and Cognitive Function Among Middle-Aged and Older Participants From Communities Underrepresented in Aging Research: A Preliminary Study.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40253647/",
+      "decision": "method_limit",
+      "reason": "Observational telomere-length and cognitive-function study in middle-aged and older adults. It is not capping or intervention evidence."
+    },
+    {
+      "reference": "PMID 41887450",
+      "title": "The antineoplastic agent streptozotocin induces short-term telomere instability in Epstein-Barr virus-transformed human lymphoblastoid cells.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41887450/",
+      "decision": "wrong_scope",
+      "reason": "Human lymphoblastoid-cell toxicology/cancer-drug model of telomere instability. It is not aging or capping restoration."
+    },
+    {
+      "reference": "NCT05598359",
+      "title": "TA-65 and Aging Associated Microvascular Dysfunction",
+      "url": "https://clinicaltrials.gov/study/NCT05598359",
+      "decision": "no_results",
+      "reason": "Not-yet-recruiting TA-65 microvascular study with no posted results and a 2026-05-01 last update. It is telomerase/telomere-length context, not a same-window capping-directed result."
+    },
+    {
+      "reference": "NCT07456449",
+      "title": "Collagen Peptides and Cellular Aging",
+      "url": "https://clinicaltrials.gov/study/NCT07456449",
+      "decision": "no_results",
+      "reason": "Recruiting collagen peptide study with telomere length and telomerase activity endpoints, no posted results, and a 2026-05-05 last update. It is not capping-directed and predates the delta window."
+    },
+    {
+      "reference": "NCT06376656",
+      "title": "Successful Aging and Age-related Decline",
+      "url": "https://clinicaltrials.gov/study/NCT06376656",
+      "decision": "no_results",
+      "reason": "Active-not-recruiting cognitive stimulation/physical activity study with salivary telomere length as one endpoint and no posted results. It is broad lifestyle context rather than shelterin or capping evidence."
+    },
+    {
+      "reference": "NCT02055209",
+      "title": "Genomics, Environmental Factors and Social Determinants of Cardiovascular Disease in African-Americans Study (GENE-FORECAST)",
+      "url": "https://clinicaltrials.gov/study/NCT02055209",
+      "decision": "wrong_scope",
+      "reason": "Completed observational hypertension/genomics cohort with a same-window registry update but no intervention and no posted results. It does not change the track."
+    },
+    {
+      "reference": "NCT07404969",
+      "title": "Biological Aging Hallmarks-Guided Integrative TCM and Conventional Medicine in Post-Treatment Unexplained Female Infertility",
+      "url": "https://clinicaltrials.gov/study/NCT07404969",
+      "decision": "no_results",
+      "reason": "Recruiting single-group infertility protocol with telomere-length distribution secondary endpoints and no posted results. It is not a capping-directed aging intervention."
+    },
+    {
+      "reference": "NCT05208944",
+      "title": "THIO Sequenced With Cemiplimab in Advanced NSCLC",
+      "url": "https://clinicaltrials.gov/study/NCT05208944",
+      "decision": "wrong_scope",
+      "reason": "Active-not-recruiting oncology trial of 6-thio-2'-deoxyguanosine with cemiplimab and no posted results. Cancer telomere-targeting does not support telomere capping/protection for aging."
+    },
+    {
+      "reference": "NCT06908304",
+      "title": "A Phase III Study With THIO + Cemiplimab vs Chemotherapy as 3rd Line Treatment in Advanced/Metastatic NSCLC",
+      "url": "https://clinicaltrials.gov/study/NCT06908304",
+      "decision": "wrong_scope",
+      "reason": "Recruiting oncology phase 3 trial of 6-thio-2'-deoxyguanosine with cemiplimab and no posted results. It is cancer telomere targeting, not aging capping restoration."
+    }
+  ],
+  "source_ids": [
+    "pmid-28944611",
+    "pmid-23666675",
+    "pmid-24686009",
+    "pmid-30502348",
+    "pmid-37259606",
+    "pmid-40109908",
+    "pmid-16142233"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/28944611/",
+    "https://pubmed.ncbi.nlm.nih.gov/23666675/",
+    "https://pubmed.ncbi.nlm.nih.gov/24686009/",
+    "https://pubmed.ncbi.nlm.nih.gov/30502348/",
+    "https://pubmed.ncbi.nlm.nih.gov/37259606/",
+    "https://pubmed.ncbi.nlm.nih.gov/40109908/",
+    "https://pubmed.ncbi.nlm.nih.gov/16142233/",
+    "https://pubmed.ncbi.nlm.nih.gov/41864539/",
+    "https://pubmed.ncbi.nlm.nih.gov/42249975/",
+    "https://pubmed.ncbi.nlm.nih.gov/42236894/",
+    "https://pubmed.ncbi.nlm.nih.gov/42219160/",
+    "https://pubmed.ncbi.nlm.nih.gov/42116249/",
+    "https://pubmed.ncbi.nlm.nih.gov/42232023/",
+    "https://pubmed.ncbi.nlm.nih.gov/42227145/",
+    "https://pubmed.ncbi.nlm.nih.gov/42234964/",
+    "https://pubmed.ncbi.nlm.nih.gov/41985564/",
+    "https://pubmed.ncbi.nlm.nih.gov/41861895/",
+    "https://pubmed.ncbi.nlm.nih.gov/40253647/",
+    "https://pubmed.ncbi.nlm.nih.gov/41887450/",
+    "https://clinicaltrials.gov/study/NCT05598359",
+    "https://clinicaltrials.gov/study/NCT07456449",
+    "https://clinicaltrials.gov/study/NCT06376656",
+    "https://clinicaltrials.gov/study/NCT02055209",
+    "https://clinicaltrials.gov/study/NCT07404969",
+    "https://clinicaltrials.gov/study/NCT05208944",
+    "https://clinicaltrials.gov/study/NCT06908304"
+  ],
+  "notes": [
+    "Triage selected this as the rank-1 next distinct surveillance target after DNA Methylation and Epigenome Restoration surveillance.",
+    "The delta window is anchored to publication event publish-telomere-protection-and-capping-bootstrap-2026-05-31-2026-05-31t21-55-18-580z.",
+    "No coverage assessment exists yet for Telomere Protection and Capping; this ordinary surveillance pass did not discover a material category-level change requiring immediate coverage repair.",
+    "The search surfaced several telomere-length and telomerase records that are better considered under Telomerase Restoration or broad biomarker surveillance, not under capping/protection.",
+    "The public boundary remains unchanged: direct therapeutic support is AAV9-TRF1 mouse evidence, human relevance is observational/cell-based biomarker evidence, and shelterin modulation remains dose- and cancer-sensitive."
+  ],
+  "next_actions": [
+    "Continue ordinary surveillance for capping- or shelterin-directed human target-engagement studies, AAV9-TRF1 replication, small-molecule shelterin modulation, or safety signals involving cancer, clonal expansion, or genomic instability.",
+    "Consider a separate coverage assessment later to decide whether no-results telomere-length/telomerase trials and short-telomere syndrome diagnostic context should be represented as boundary material.",
+    "Create a public bundle only if future evidence changes stage, evidence weight, momentum, blockers, safety, delivery feasibility, tissue specificity, human capping biomarkers, or functional outcomes."
+  ]
+}

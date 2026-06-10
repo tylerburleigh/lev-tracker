@@ -9,7 +9,7 @@
   "momentum": "mixed",
   "confidence": "low",
   "main_evidence_gaps": [
-    "Metformin is clinically familiar and mechanistically broad, but direct human geroscience evidence is still mostly biomarker, transcriptomic, and short-term pathway engagement rather than durable function or multimorbidity outcomes.",
+    "Metformin is clinically familiar and biologically broad, but direct human geroscience evidence is still mostly biomarker, transcriptomic, and short-term evidence that the intervention changed its intended biological target rather than long-lasting function or multimorbidity outcomes.",
     "Human functional evidence is not yet favorable: MET-PREVENT did not improve 4-meter walk speed in vulnerable older adults, a posted frailty-prevention registry record is mixed, and metformin blunted some exercise-induced improvements in an older-adult trial.",
     "Baseline metabolic status appears likely to matter, especially insulin sensitivity versus insulin resistance, so a single preventive recommendation would overgeneralize the evidence.",
     "Animal and non-human-primate support is real but heterogeneous across worms, mice, monkeys, and berberine-treated rats, with dose, microbiome, sex, tissue, and pathway-specific boundaries.",
@@ -17,20 +17,20 @@
   ],
   "strongest_current_evidence": [
     "MILES provides the main direct human biomarker anchor: short-term metformin changed glucose handling and skeletal-muscle and adipose transcriptomic pathways in older adults with impaired glucose tolerance.",
-    "Mouse and male monkey studies provide animal and non-human-primate support for metformin effects on healthspan, lifespan, multi-omics aging indicators, and brain-aging measures, with dose and translation limits.",
+    "Mouse and male monkey studies provide animal and non-human-primate support for metformin effects on healthspan, lifespan, multi-omics aging indicators, and brain-aging measures, with dose and human-use limits.",
     "METFORAGING is a current 96-week human epigenetic-aging pilot in older people with HIV; it was feasible and did not attribute serious adverse events to metformin, but the primary PhenoAge result was not significant.",
     "Berberine has a staged animal AMPK/SIRT1/PGC-1alpha signal in naturally aging rats, but no human aging-biomarker or functional finding is staged here.",
     "ANTHEM is completed and should be watched closely because it stratifies non-diabetic adults by antecedent metabolic health, but the registry has no posted results in the current record."
   ],
-  "interpretation_note": "AMPK and metabolic modulators deserve a tentative human biomarker signal baseline, driven mainly by metformin. The strongest human support is pathway and biomarker movement in small or specialized trials, while direct older-adult function and frailty results are null, mixed, or tolerability-limited. The track could become more actionable if phenotype-stratified trials such as ANTHEM show reproducible human pathway engagement with favorable functional or safety direction, but current evidence does not support a human functional benefit rating.",
+  "interpretation_note": "AMPK and metabolic modulators deserve a tentative human biomarker signal baseline, driven mainly by metformin. The strongest human support is pathway and biomarker movement in small or specialized trials, while direct older-adult function and frailty results are null, mixed, or tolerability-limited. The track could become more actionable if phenotype-stratified trials such as ANTHEM show reproducible human evidence that the intervention changed its intended biological target with favorable functional or safety direction, but current evidence does not support a human-function rating.",
   "what_would_change_the_rating": [
-    "A move to human functional benefit would require a randomized human trial showing prespecified improvement in physical function, frailty, resilience, cognition, or another aging-relevant functional endpoint, with tolerability acceptable for preventive use.",
-    "A move toward durable disease or mortality relevance would require long-term randomized evidence that a metabolic modulator delays multimorbidity, major age-related disease burden, disability, or mortality rather than only improving glucose or molecular biomarkers.",
+    "A move to evidence that human function improves would require a randomized human trial showing prespecified improvement in physical function, frailty, resilience, cognition, or another aging-relevant functional endpoint, with tolerability acceptable for preventive use.",
+    "A move toward long-lasting disease or mortality relevance would require long-term randomized evidence that a metabolic modulator delays multimorbidity, major age-related disease burden, disability, or mortality rather than only improving glucose or molecular biomarkers.",
     "The read would become firmer if ANTHEM or similarly designed studies show that baseline insulin resistance or another measurable phenotype predicts benefit and avoids the exercise-adaptation and frailty tolerability boundaries.",
-    "The rating should weaken if completed human biomarker trials fail to reproduce pathway engagement, or if larger studies confirm functional harm, poor tolerability, B12 or renal safety issues, or negative interactions with exercise training.",
+    "The rating should weaken if completed human biomarker trials fail to reproduce evidence that the intervention changed its intended biological target, or if larger studies confirm functional harm, poor tolerability, B12 or renal safety issues, or negative interactions with exercise training.",
     "Berberine or other non-metformin modulators should not inherit the metformin rating without their own human aging-relevant biomarker or functional evidence."
   ],
-  "earliest_plausible_window": "No credible LEV-relevant window can be assigned from current evidence. By the late 2020s, completed biomarker trials may clarify whether metformin has a phenotype-stratified geroscience niche, but durable function or multimorbidity evidence would still be needed.",
+  "earliest_plausible_window": "No credible LEV-relevant window can be assigned from current evidence. By the late 2020s, completed biomarker trials may clarify whether metformin has a phenotype-stratified geroscience niche, but long-lasting function or multimorbidity evidence would still be needed.",
   "supporting_finding_ids": [
     "metformin-c-elegans-lifespan-context-dependent",
     "metformin-low-dose-improved-mouse-healthspan-lifespan",
@@ -47,7 +47,7 @@
     {
       "label": "Stage assignment",
       "outlook_field": "evidence_stage",
-      "conclusion": "The track reaches human biomarker signal because metformin has direct older-adult human pathway and metabolic biomarker evidence, but it does not reach human functional benefit.",
+      "conclusion": "The track reaches human biomarker signal because metformin has direct older-adult human pathway and metabolic biomarker evidence, but it does not reach evidence that human function improves.",
       "support_role": "supports",
       "rationale": "MILES showed glucose-handling and tissue-transcriptomic changes in older adults, while METFORAGING directly tested epigenetic-age biomarkers over 96 weeks but did not meet its primary PhenoAge endpoint. Together these justify a biomarker-level baseline with tentative rather than a functional rating.",
       "finding_ids": [
@@ -85,14 +85,14 @@
       "limitations": [
         "The worm effect is microbiome and glucose-context dependent.",
         "The mouse metformin result is dose-sensitive, with high-dose toxicity.",
-        "The monkey study is male-only and biomarker-heavy rather than lifespan evidence.",
+        "The monkey study is male-only and mostly based on biomarkers rather than lifespan evidence.",
         "Berberine aging evidence staged here is animal-only."
       ]
     },
     {
       "label": "Functional boundary",
       "outlook_field": "evidence_stage",
-      "conclusion": "The track should not be upgraded to human functional benefit because direct older-adult functional evidence is null, mixed, or tolerability-limited.",
+      "conclusion": "The track should not be upgraded to evidence that human function improves because direct older-adult functional evidence is null, mixed, or tolerability-limited.",
       "support_role": "limits",
       "rationale": "Metformin attenuated some exercise-induced improvements in older adults, MET-PREVENT did not improve 4-meter walk speed and reported poor tolerability, and NCT02570672 registry results do not establish clear frailty-prevention benefit.",
       "finding_ids": [
@@ -158,7 +158,7 @@
       "limitations": [
         "Preventive geroscience use requires a higher tolerability bar than disease treatment.",
         "Response may differ in insulin-sensitive versus insulin-resistant people.",
-        "No staged trial has yet shown that biomarker movement produces durable clinical benefit."
+        "No staged trial has yet shown that biomarker movement produces long-lasting clinical benefit."
       ]
     }
   ],

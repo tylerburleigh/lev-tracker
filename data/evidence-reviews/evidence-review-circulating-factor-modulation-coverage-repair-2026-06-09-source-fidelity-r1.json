@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-circulating-factor-modulation-coverage-repair-2026-06-09-source-fidelity-r1",
+  "name": "Source Fidelity review for Circulating Factor Modulation bundle",
+  "candidate_bundle_id": "circulating-factor-modulation-coverage-repair-2026-06-09",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, registry, and finding records match the checked source boundaries. PMID 40592961 is represented as healthy-adult plasmapheresis biomarker limiting evidence; PMID 40928812 is represented as Alzheimer disease real-world cohort context; the young-donor plasma exchange item stays preprint safety and feasibility context; the microplastics paper stays short-term circulating-burden biomarker context; and the registry records are no-results or no-registry-results status records.",
+  "reviewed_change_ids": [
+    "create-plasmapheresis-without-replacement",
+    "create-young-donor-plasma-exchange",
+    "create-pmid-40592961",
+    "create-nct-05004220",
+    "create-pmid-40928812",
+    "create-doi-10.64898-2026.04.29.26351809",
+    "create-nct-06234436",
+    "create-doi-10.1002-jca.70135",
+    "create-nct-04897113",
+    "create-nct-05054894",
+    "create-nct-06534450",
+    "create-pmid-41721191",
+    "create-pmid-41494381",
+    "create-fda-young-donor-plasma-warning-2019-02-19",
+    "create-plasmapheresis-healthy-adult-aging-biomarkers",
+    "create-real-world-tpe-alzheimers-cohort",
+    "create-young-donor-plasma-exchange-mci-preprint",
+    "create-tpe-microplastics-human-procedure-series",
+    "create-plasmapheresis-aging-biomarker-registry",
+    "create-tpe-age-related-frailty-registry",
+    "update-randomized-tpe-multiomics-healthy-adults",
+    "create-plasmapheresis-no-epigenetic-rejuvenation-possible-acceleration",
+    "create-real-world-tpe-ad-slowed-cognitive-decline",
+    "create-young-donor-plasma-exchange-mci-feasible-preprint",
+    "create-tpe-microplastics-mixed-biomarker-signal",
+    "create-plasmapheresis-aging-biomarker-registry-unknown-no-results",
+    "create-tpe-frailty-registry-unknown-no-results",
+    "create-randomized-tpe-registry-active-no-registry-results",
+    "create-plasma-rejuvenation-review-translation-boundary",
+    "create-tpe-immune-modulation-review-procedure-boundary",
+    "create-young-plasma-fda-warning-safety-boundary",
+    "update-track-circulating-factor-modulation-outlook"
+  ],
+  "findings": [
+    {
+      "finding_id": "cfm-repair-primary-source-facts-match",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-plasmapheresis-no-epigenetic-rejuvenation-possible-acceleration",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "plasmapheresis-no-epigenetic-rejuvenation-possible-acceleration"
+      },
+      "claim_or_issue": "The staged plasmapheresis finding extracts the correct population, protocol boundary, biomarker endpoint, and limiting result from PMID 40592961.",
+      "why_it_matters": "The repair depends on treating this source as a counterweight to favorable healthy-adult TPE biomarker evidence rather than as another positive rejuvenation signal.",
+      "recommended_action": "Retain the staged wording that says repeated plasmapheresis changed biomarkers but did not show epigenetic rejuvenation and may have moved several clock measures unfavorably.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "cfm-repair-real-world-ad-boundary-match",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-real-world-tpe-ad-slowed-cognitive-decline",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "real-world-tpe-ad-slowed-cognitive-decline"
+      },
+      "claim_or_issue": "The staged Alzheimer TPE finding correctly records the treated cohort size, historical-control comparator, MMSE and memory signal, nonsignificant FAQ boundary, and no severe adverse events.",
+      "why_it_matters": "This can support disease-specific human functional context, but it cannot broaden the track to general healthy-aging functional benefit.",
+      "recommended_action": "Keep the historical-control and Alzheimer disease caveats attached to the finding and outlook support map.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "cfm-repair-registry-and-preprint-status-match",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "update-track-circulating-factor-modulation-outlook",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-circulating-factor-modulation-outlook"
+      },
+      "claim_or_issue": "The staged NCT records are handled as trial-status context, while the young-donor plasma MCI preprint is handled as preprint safety and feasibility evidence only.",
+      "why_it_matters": "No-results registries and preprints should not be counted as efficacy progress.",
+      "recommended_action": "Retain the staged outlook language that says registry status and preprint evidence need controlled results before affecting the public read.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-09T12:29:37.092Z",
+  "updated_at": "2026-06-09T12:29:37.092Z"
+}

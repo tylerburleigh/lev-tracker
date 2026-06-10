@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "real-world-tpe-ad-slowed-cognitive-decline",
+  "name": "Real-world TPE Alzheimer cohort reported slower cognitive decline against historical controls",
+  "summary": "A real-world Alzheimer disease cohort reported slower MMSE and memory decline after repeated TPE compared with matched historical controls, with no severe adverse events reported.",
+  "source_id": "pmid-40928812",
+  "study_id": "real-world-tpe-alzheimers-cohort",
+  "intervention_ids": [
+    "therapeutic-plasma-exchange"
+  ],
+  "track_ids": [
+    "circulating-factor-modulation"
+  ],
+  "hallmark_ids": [
+    "altered_intercellular_communication"
+  ],
+  "endpoint_category": "functional",
+  "direction": "positive",
+  "evidence_tier": "human_function",
+  "confidence": "low",
+  "statement": "In 32 treated mild-to-moderate Alzheimer disease patients compared with 194 historical controls, repeated TPE was associated with slower decline in MMSE and memory measures, while functional FAQ differences were not statistically significant.",
+  "population_or_model": "People with mild-to-moderate Alzheimer disease",
+  "time_horizon": "Six weekly intensive sessions followed by at least ten monthly maintenance sessions",
+  "quantitative_note": "The paper reports 514 procedures, no severe adverse events, about 45% less MMSE decline versus historical controls, and nonsignificant FAQ functional difference.",
+  "caveats": [
+    "The comparator was historical rather than randomized contemporaneous control.",
+    "Selection bias, treatment cost, medication differences, education differences, and disease context limit generalization.",
+    "This supports disease-boundary context for Alzheimer disease, not broad healthy-aging benefit."
+  ],
+  "tags": [
+    "human",
+    "alzheimer-disease",
+    "therapeutic-plasma-exchange",
+    "observational",
+    "coverage-repair"
+  ]
+}

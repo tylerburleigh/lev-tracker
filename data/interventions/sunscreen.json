@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "sunscreen",
+  "name": "Sunscreen",
+  "summary": "Sunscreen is normalized as the comparator and combination component in topical DNA-repair enzyme skin studies.",
+  "modalities": [
+    "other"
+  ],
+  "target_hallmark_ids": [
+    "genomic_instability"
+  ],
+  "track_ids": [
+    "dna-repair-enhancement"
+  ],
+  "mechanism_summary": "Reduces UV exposure to prevent DNA damage in skin, with linked records focused on local CPD and field-cancerization endpoints.",
+  "development_stage": "approved_for_other_indication",
+  "linked_study_ids": [
+    "sunscreen-dna-repair-enzymes-actinic-keratosis"
+  ],
+  "linked_finding_ids": [
+    "dna-repair-enzyme-sunscreen-lower-cpds-field-cancerization"
+  ],
+  "risk_flags": [
+    "local-skin-endpoints",
+    "preventive-comparator",
+    "not-systemic-aging-evidence"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: Sunscreen plus DNA repair enzymes in actinic keratosis; Sunscreen plus DNA repair enzymes lowered CPDs and field cancerization more than sunscreen alone.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "dna-repair-enhancement",
+    "genomic_instability",
+    "other",
+    "sunscreen"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

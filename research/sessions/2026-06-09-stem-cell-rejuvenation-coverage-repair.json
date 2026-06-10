@@ -1,0 +1,176 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-09-stem-cell-rejuvenation-coverage-repair",
+  "name": "Stem Cell Rejuvenation Coverage Repair",
+  "mode": "coverage_repair",
+  "started_at": "2026-06-09T22:12:00Z",
+  "completed_at": "2026-06-09T23:02:41Z",
+  "scope": {
+    "question": "Which known source-completeness gaps for Stem Cell Rejuvenation need repair, and does resolving them change the coverage verdict or public boundaries?",
+    "hallmark_ids": [
+      "stem_cell_exhaustion"
+    ],
+    "track_ids": [
+      "stem-cell-rejuvenation"
+    ],
+    "intervention_ids": [
+      "hdnagr-therapy",
+      "casin",
+      "nicotinamide-riboside",
+      "p38-mapk-inhibition",
+      "structured-exercise-training"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "stem-cell-rejuvenation-coverage-repair-2026-06-09",
+  "summary": "Coverage repair resolved the high-priority active-registry gap by staging hDNAgr therapy, NCT06877377, and no-results trial-watch records for the Stem Cell Rejuvenation track. It also repaired recent-review triangulation with PMID 42216078 and recorded older withdrawn/no-results registries plus adjacent 15-PGDH/MMP9 animal sources as excluded or taxonomy-boundary context. The staged outlook keeps the track at low-confidence human_biomarker_signal with steady momentum: the additions improve registry, review, safety, and boundary coverage, but no result-bearing targeted human stem-cell rejuvenation evidence is available.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "outlook_refresh",
+    "public_update_needed": true,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The repair changes the public source map and outlook support map by adding hDNAgr no-results registry context and a current HSC aging review, but it does not change stage, momentum, read firmness, or rating-change criteria. Public staging is warranted because the active-registry and review gaps were the reason the latest coverage assessment remained thin."
+  },
+  "search_log": [
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "NCT06877377, NCT03473288, and NCT03754842 direct registry checks",
+      "checked_at": "2026-06-09T23:02:41Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "Confirmed that NCT06877377 is a 60-participant not-yet-recruiting randomized blinded placebo-controlled hDNAgr aging registry with no posted results; NCT03473288 is a withdrawn zero-enrollment exercise/satellite-cell registry; NCT03754842 is a completed 32-participant NR/pterostilbene muscle-regeneration registry with no posted results and stronger NAD-overlap than stem-cell-rejuvenation specificity."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "Recent review triangulation for stem cell aging rejuvenation, hematopoietic stem cell aging review, and muscle stem cell aging rejuvenation review from 2024-01-01 through 2026-06-09",
+      "checked_at": "2026-06-09T23:02:41Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "The broad review query returned direct HSC and adjacent stem-cell aging reviews. PMID 42216078 was selected because it directly reviews HSC aging mechanisms and rejuvenation strategies; PMID 42209503 and PMID 42183054 were kept as adjacent mitochondrial/stromal context rather than staged public support."
+    },
+    {
+      "source_name": "PubMed EFetch",
+      "query": "PMIDs 42228536, 42220642, 42249716, 42216078, 42209503, and 42183054",
+      "checked_at": "2026-06-09T23:02:41Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Confirmed that PMID 42228536 and PMID 42220642 are adjacent animal tissue-repair sources, PMID 42249716 is neural-crest review context, PMID 42216078 is directly relevant HSC review context, and PMID 42209503/42183054 are adjacent mitochondrial and bone-marrow stromal context."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT06877377",
+      "study_id": "hdnagr-hsc-aging-registry",
+      "source_id": "nct-06877377",
+      "registry_url": "https://clinicaltrials.gov/study/NCT06877377",
+      "checked_at": "2026-06-09T23:02:41Z",
+      "current_registry_status": "planned",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2026-02-01",
+      "study_completion_date": "2026-03-01",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "new_trial",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Staged as no-results trial-watch context for hDNAgr therapy because it is relevant to targeted human HSC-aging intervention coverage but has no posted results."
+    },
+    {
+      "registry_id": "NCT03473288",
+      "registry_url": "https://clinicaltrials.gov/study/NCT03473288",
+      "checked_at": "2026-06-09T23:02:41Z",
+      "current_registry_status": "withdrawn",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2021-06-06",
+      "study_completion_date": "2021-06-06",
+      "completion_date_kind": "actual",
+      "results_changed": false,
+      "materiality": "termination",
+      "public_action": "none",
+      "summary": "Withdrawn zero-enrollment exercise/satellite-cell registry; recorded as excluded context rather than staged public evidence."
+    },
+    {
+      "registry_id": "NCT03754842",
+      "registry_url": "https://clinicaltrials.gov/study/NCT03754842",
+      "checked_at": "2026-06-09T23:02:41Z",
+      "current_registry_status": "completed",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2020-09-01",
+      "study_completion_date": "2020-09-01",
+      "completion_date_kind": "actual",
+      "results_changed": false,
+      "materiality": "unchanged",
+      "public_action": "none",
+      "summary": "Completed no-results NR/pterostilbene muscle-regeneration registry; kept as NAD-overlap and satellite-cell context rather than staged under Stem Cell Rejuvenation in this repair."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "NCT03473288",
+      "title": "Rejuvenation of Aged Muscle Stem Cells Through Exercise",
+      "url": "https://clinicaltrials.gov/study/NCT03473288",
+      "decision": "no_results",
+      "reason": "Withdrawn registry with zero actual enrollment. It confirms failed or non-started human satellite-cell exercise context but does not merit a public finding beyond the staged hDNAgr registry and existing exercise meta-analysis."
+    },
+    {
+      "reference": "NCT03754842",
+      "title": "Effect of Nicotinamide Riboside and Pterostilbene Supplementation on Muscle Regeneration in Elderly Humans",
+      "url": "https://clinicaltrials.gov/study/NCT03754842",
+      "decision": "context_only",
+      "reason": "Completed no-results registry with satellite-cell endpoints, but the intervention is NR/pterostilbene and belongs closer to NAD/redox overlap unless posted results appear."
+    },
+    {
+      "reference": "PMID 42228536",
+      "title": "15-PGDH inhibition promotes muscle repair and strength recovery during GLP-1 receptor agonist-induced weight loss.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42228536/",
+      "decision": "context_only",
+      "reason": "Mouse obesity and injury-repair context with muscle stem-cell function and strength endpoints; adjacent to tissue repair and niche biology but not a direct aged-human stem-cell rejuvenation result."
+    },
+    {
+      "reference": "PMID 42220642",
+      "title": "In vivo circRNA-engineered macrophages mediate localized MMP9 neutralization to rejuvenate aged bone.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42220642/",
+      "decision": "context_only",
+      "reason": "Aged-mouse skeletal repair and macrophage/MMP9 immunotherapy context with stem-cell senescence readouts; useful for taxonomy review but closer to immune modulation, niche support, or tissue repair than the current stem-cell-rejuvenation public claim."
+    },
+    {
+      "reference": "PMID 42209503",
+      "title": "Mitochondrial drivers of stem cell aging and inflammaging.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42209503/",
+      "decision": "context_only",
+      "reason": "Review-level mitochondrial and NAD-linked stem-cell aging context; useful for cross-track boundaries but not selected over the more direct HSC aging review."
+    },
+    {
+      "reference": "PMID 42183054",
+      "title": "Impact of aging on CD146+ mesenchymal stromal cells-mediated regulation of bone marrow CD34+ hematopoietic stem/progenitor cell mobilization.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42183054/",
+      "decision": "context_only",
+      "reason": "Human in vitro bone-marrow stromal/HSPC mobilization model; decision-relevant to niche support and observational human-cell context but not a targeted in vivo rejuvenation therapy."
+    }
+  ],
+  "source_ids": [
+    "nct-06877377",
+    "pmid-42216078"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT06877377",
+    "https://pubmed.ncbi.nlm.nih.gov/42216078/",
+    "https://doi.org/10.1186/s13059-026-04119-6",
+    "https://clinicaltrials.gov/study/NCT03473288",
+    "https://clinicaltrials.gov/study/NCT03754842",
+    "https://pubmed.ncbi.nlm.nih.gov/42228536/",
+    "https://pubmed.ncbi.nlm.nih.gov/42220642/",
+    "https://pubmed.ncbi.nlm.nih.gov/42209503/",
+    "https://pubmed.ncbi.nlm.nih.gov/42183054/"
+  ],
+  "notes": [
+    "The staged public change repairs source completeness and taxonomy boundaries; it does not claim hDNAgr efficacy.",
+    "NCT06877377 was staged because it is the only targeted aging HSC registry found in the repair pass and was the high-priority coverage gap.",
+    "PMID 42216078 was staged because it directly reviews HSC aging and rejuvenation strategies, filling the recent-review triangulation gap.",
+    "Adjacent animal sources were not staged because they would blur the boundary with niche support, immune modulation, and tissue repair."
+  ],
+  "next_actions": [
+    "Run source-fidelity, interpretation/forecast, safety-limitations, and taxonomy-mapping reviews for the staged repair bundle.",
+    "If approved and published, return Stem Cell Rejuvenation to ordinary surveillance with special watch on NCT06877377 recruitment or posted results."
+  ]
+}

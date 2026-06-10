@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-dna-repair-enhancement-surveillance-2026-06-10-taxonomy-mapping-r1",
+  "name": "Taxonomy Mapping review for Dna Repair Enhancement bundle",
+  "candidate_bundle_id": "dna-repair-enhancement-surveillance-2026-06-10",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "taxonomy_mapping",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The taxonomy mapping is appropriate for this revision. DREAM remains mapped to transposon-and-somatic-mutation-control and is additionally mapped to dna-repair-enhancement because the source describes DREAM as a DNA repair repressor tied to mutation burden; the staged outlook also keeps NAD, nucleotide, telomere, oncology, and disease-boundary sources outside the support map unless they have direct repair endpoints or repair-regulator claims.",
+  "reviewed_change_ids": [
+    "update-study-dream-somatic-mutation-lifespan-disease",
+    "update-finding-dream-repression-linked-lower-somatic-mutations",
+    "update-outlook-track-dna-repair-enhancement"
+  ],
+  "findings": [
+    {
+      "finding_id": "dream-dual-track-mapping-supported",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "update-study-dream-somatic-mutation-lifespan-disease",
+      "applies_to_record": {
+        "record_type": "study",
+        "record_id": "dream-somatic-mutation-lifespan-disease-study"
+      },
+      "claim_or_issue": "The staged study/finding adds dna-repair-enhancement while retaining transposon-and-somatic-mutation-control.",
+      "why_it_matters": "The source fits both a somatic-mutation-control lens and a DNA repair regulation lens; dropping either mapping would make discovery and support-map reuse less accurate.",
+      "recommended_action": "No revision needed; keep the dual track mapping and the DNA repair enhancement tag.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "boundary-sources-not-overmapped",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "update-outlook-track-dna-repair-enhancement",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-dna-repair-enhancement-outlook"
+      },
+      "claim_or_issue": "NAD precursor, nucleotide, telomere, oncology DDR, and DNA repair syndrome boundary records are mentioned as gaps or future coverage-repair scope rather than added as current support for DNA Repair Enhancement.",
+      "why_it_matters": "This prevents adjacent biology from inflating the DNA Repair Enhancement evidence base without direct repair endpoints or repair-regulator evidence.",
+      "recommended_action": "No revision needed; keep the boundary language and defer source-completeness work to the recommended coverage-repair pass.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-10T17:33:52.793Z",
+  "updated_at": "2026-06-10T17:33:52.793Z"
+}

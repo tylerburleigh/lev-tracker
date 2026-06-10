@@ -1,0 +1,724 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "nad-and-redox-restoration-coverage-repair-2026-06-08",
+  "name": "NAD and Redox Restoration Coverage Repair for June 8, 2026",
+  "summary": "Coverage-repair bundle that stages MIB-626 human NAD augmentation records, NR/NMN/MIB-626/MitoQ no-results trial-watch records, and recent review-boundary context while keeping the track at low-confidence human_functional_benefit.",
+  "intake_mode": "manual",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-08T12:00:46Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "Which known source-completeness gaps for NAD and Redox Restoration need repair, and does resolving them change the coverage verdict or public boundaries?",
+    "hallmark_ids": [
+      "mitochondrial_dysfunction"
+    ],
+    "track_ids": [
+      "nad-and-redox-restoration"
+    ],
+    "intervention_ids": [
+      "mib-626",
+      "nicotinamide-riboside",
+      "nicotinamide-mononucleotide",
+      "glynac",
+      "mitoq"
+    ]
+  },
+  "source_ids": [
+    "pmid-35182418",
+    "pmid-36740954",
+    "pmid-40746868",
+    "nct-05878119",
+    "nct-05759468",
+    "nct-06208527",
+    "nct-04691986",
+    "nct-04430517",
+    "nct-03821623",
+    "nct-06425042",
+    "nct-06592859",
+    "nct-07144527",
+    "nct-04851288",
+    "nct-06027554",
+    "nct-05561556",
+    "pmid-42068909",
+    "pmid-42234350",
+    "pmid-42186383",
+    "pmid-41812700",
+    "pmid-41933553"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/35182418/",
+    "https://doi.org/10.1093/gerona/glac049",
+    "https://pubmed.ncbi.nlm.nih.gov/36740954/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC11491622/",
+    "https://doi.org/10.1210/clinem/dgad027",
+    "https://pubmed.ncbi.nlm.nih.gov/40746868/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12312518/",
+    "https://clinicaltrials.gov/study/NCT05038488",
+    "https://doi.org/10.1096/fba.2025-00014",
+    "https://clinicaltrials.gov/study/NCT05878119",
+    "https://clinicaltrials.gov/study/NCT05759468",
+    "https://clinicaltrials.gov/study/NCT06208527",
+    "https://clinicaltrials.gov/study/NCT04691986",
+    "https://clinicaltrials.gov/study/NCT04430517",
+    "https://clinicaltrials.gov/study/NCT03821623",
+    "https://clinicaltrials.gov/study/NCT06425042",
+    "https://clinicaltrials.gov/study/NCT06592859",
+    "https://clinicaltrials.gov/study/NCT07144527",
+    "https://clinicaltrials.gov/study/NCT04851288",
+    "https://clinicaltrials.gov/study/NCT06027554",
+    "https://clinicaltrials.gov/study/NCT05561556",
+    "https://pubmed.ncbi.nlm.nih.gov/42068909/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC13144588/",
+    "https://doi.org/10.1016/j.redox.2026.104191",
+    "https://pubmed.ncbi.nlm.nih.gov/42234350/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC13233893/",
+    "https://doi.org/10.1007/s13668-026-00776-y",
+    "https://pubmed.ncbi.nlm.nih.gov/42186383/",
+    "https://doi.org/10.1097/MCO.0000000000001240",
+    "https://pubmed.ncbi.nlm.nih.gov/41812700/",
+    "https://doi.org/10.1016/j.mad.2026.112174",
+    "https://pubmed.ncbi.nlm.nih.gov/41933553/",
+    "https://doi.org/10.1016/j.arr.2026.103117"
+  ],
+  "related_records": [
+    {
+      "record_type": "track",
+      "record_id": "nad-and-redox-restoration"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-nad-and-redox-restoration-outlook"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "mib-626"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "nicotinamide-riboside"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "nicotinamide-mononucleotide"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "glynac"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "mitoq"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-intervention-mib-626",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "mib-626",
+      "file_path": "data/interventions/mib-626.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/mib-626.json",
+      "summary": "Add MIB-626.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-source-pmid-35182418",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-35182418",
+      "file_path": "data/sources/pmid-35182418.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/pmid-35182418.json",
+      "summary": "Add MIB-626 increases circulating NAD and its metabolome in middle-aged and older adults.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-source-pmid-36740954",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-36740954",
+      "file_path": "data/sources/pmid-36740954.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/pmid-36740954.json",
+      "summary": "Add NAD augmentation in overweight or obese middle-aged and older adults.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-source-pmid-40746868",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-40746868",
+      "file_path": "data/sources/pmid-40746868.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/pmid-40746868.json",
+      "summary": "Add MIB-626 safely raises blood NAD levels in hospitalized patients with COVID-19 and acute kidney injury.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-study-mib-626-pkpd-overweight-older-adults",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "mib-626-pkpd-overweight-older-adults",
+      "file_path": "data/studies/mib-626-pkpd-overweight-older-adults.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/mib-626-pkpd-overweight-older-adults.json",
+      "summary": "Add MIB-626 pharmacokinetic and pharmacodynamic trial in older adults.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-study-mib-626-physiology-overweight-older-adults",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "mib-626-physiology-overweight-older-adults",
+      "file_path": "data/studies/mib-626-physiology-overweight-older-adults.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/mib-626-physiology-overweight-older-adults.json",
+      "summary": "Add MIB-626 physiologic study in overweight or obese adults.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-study-mib-626-covid-aki-rct",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "mib-626-covid-aki-rct",
+      "file_path": "data/studies/mib-626-covid-aki-rct.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/mib-626-covid-aki-rct.json",
+      "summary": "Add MIB-626 COVID-19 acute kidney injury randomized trial.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-finding-mib-626-raised-nad-metabolome-older-adults",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "mib-626-raised-nad-metabolome-older-adults",
+      "file_path": "data/findings/mib-626-raised-nad-metabolome-older-adults.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/mib-626-raised-nad-metabolome-older-adults.json",
+      "summary": "Add MIB-626 raised circulating NAD metabolites in older overweight adults.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-finding-mib-626-metabolic-signal-no-physical-function",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "mib-626-metabolic-signal-no-physical-function",
+      "file_path": "data/findings/mib-626-metabolic-signal-no-physical-function.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/mib-626-metabolic-signal-no-physical-function.json",
+      "summary": "Add MIB-626 raised NAD and moved cardiometabolic measures but not physical function.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-finding-mib-626-covid-aki-target-engagement-no-clinical-benefit",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "mib-626-covid-aki-target-engagement-no-clinical-benefit",
+      "file_path": "data/findings/mib-626-covid-aki-target-engagement-no-clinical-benefit.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/mib-626-covid-aki-target-engagement-no-clinical-benefit.json",
+      "summary": "Add MIB-626 raised NAD in COVID-19 acute kidney injury without clinical biomarker benefit.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-source-nct-05878119",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-05878119",
+      "file_path": "data/sources/nct-05878119.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nct-05878119.json",
+      "summary": "Add Effects of MIB-626 with and without high-intensity multidimensional exercise training.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-source-nct-05759468",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-05759468",
+      "file_path": "data/sources/nct-05759468.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nct-05759468.json",
+      "summary": "Add NAD augmentation in diabetes kidney disease.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-source-nct-06208527",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-06208527",
+      "file_path": "data/sources/nct-06208527.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nct-06208527.json",
+      "summary": "Add The NADage Study: nicotinamide riboside replenishment therapy against functional decline in aging.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-source-nct-04691986",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-04691986",
+      "file_path": "data/sources/nct-04691986.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nct-04691986.json",
+      "summary": "Add Impacts of nicotinamide riboside on functional capacity and muscle physiology in older Veterans.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-source-nct-04430517",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-04430517",
+      "file_path": "data/sources/nct-04430517.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nct-04430517.json",
+      "summary": "Add Effects of nicotinamide riboside on bioenergetics and oxidative stress in mild cognitive impairment/Alzheimer disease.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-source-nct-03821623",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-03821623",
+      "file_path": "data/sources/nct-03821623.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nct-03821623.json",
+      "summary": "Add Nicotinamide riboside for elevated systolic blood pressure and arterial stiffness in middle-aged and older adults.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-source-nct-06425042",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-06425042",
+      "file_path": "data/sources/nct-06425042.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nct-06425042.json",
+      "summary": "Add Nicotinamide riboside supplementation and exercise training to promote healthy longevity.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-source-nct-06592859",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-06592859",
+      "file_path": "data/sources/nct-06592859.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nct-06592859.json",
+      "summary": "Add Intervention of nicotinamide mononucleotide in middle-aged and elderly people.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-source-nct-07144527",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-07144527",
+      "file_path": "data/sources/nct-07144527.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nct-07144527.json",
+      "summary": "Add Nicotinamide mononucleotide supplementation for exercise tolerance improvement in healthy older adults.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-source-nct-04851288",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-04851288",
+      "file_path": "data/sources/nct-04851288.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nct-04851288.json",
+      "summary": "Add Mitochondrial-targeted antioxidant supplementation for age-related vascular dysfunction.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-source-nct-06027554",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-06027554",
+      "file_path": "data/sources/nct-06027554.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nct-06027554.json",
+      "summary": "Add Mito-Frail trial of MitoQ in frail older adults.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-source-nct-05561556",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-05561556",
+      "file_path": "data/sources/nct-05561556.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nct-05561556.json",
+      "summary": "Add Mitochondria oxidative stress and vascular health study.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-study-mib-626-exercise-training-phase2-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "mib-626-exercise-training-phase2-registry",
+      "file_path": "data/studies/mib-626-exercise-training-phase2-registry.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/mib-626-exercise-training-phase2-registry.json",
+      "summary": "Add MIB-626 plus exercise phase 2 registry.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-finding-mib-626-exercise-phase2-completed-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "mib-626-exercise-phase2-completed-no-results",
+      "file_path": "data/findings/mib-626-exercise-phase2-completed-no-results.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/mib-626-exercise-phase2-completed-no-results.json",
+      "summary": "Add MIB-626 plus exercise phase 2 trial is completed without posted results.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-study-mib-626-diabetic-kidney-disease-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "mib-626-diabetic-kidney-disease-registry",
+      "file_path": "data/studies/mib-626-diabetic-kidney-disease-registry.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/mib-626-diabetic-kidney-disease-registry.json",
+      "summary": "Add MIB-626 diabetic kidney disease registry.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-finding-mib-626-diabetic-kidney-disease-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "mib-626-diabetic-kidney-disease-recruiting-no-results",
+      "file_path": "data/findings/mib-626-diabetic-kidney-disease-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/mib-626-diabetic-kidney-disease-recruiting-no-results.json",
+      "summary": "Add MIB-626 diabetic kidney disease trial is recruiting without posted results.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-study-nadage-nicotinamide-riboside-frailty-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "nadage-nicotinamide-riboside-frailty-registry",
+      "file_path": "data/studies/nadage-nicotinamide-riboside-frailty-registry.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nadage-nicotinamide-riboside-frailty-registry.json",
+      "summary": "Add NADage nicotinamide riboside frailty registry.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-finding-nadage-nr-frailty-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nadage-nr-frailty-recruiting-no-results",
+      "file_path": "data/findings/nadage-nr-frailty-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nadage-nr-frailty-recruiting-no-results.json",
+      "summary": "Add NADage NR frailty trial is recruiting without posted results.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-study-nicotinamide-riboside-older-veterans-muscle-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "nicotinamide-riboside-older-veterans-muscle-registry",
+      "file_path": "data/studies/nicotinamide-riboside-older-veterans-muscle-registry.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nicotinamide-riboside-older-veterans-muscle-registry.json",
+      "summary": "Add Nicotinamide riboside older Veterans muscle registry.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-finding-nr-older-veterans-active-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nr-older-veterans-active-no-results",
+      "file_path": "data/findings/nr-older-veterans-active-no-results.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nr-older-veterans-active-no-results.json",
+      "summary": "Add Older-veteran NR muscle trial is active without posted results.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-study-nicotinamide-riboside-mci-alzheimers-bioenergetics-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "nicotinamide-riboside-mci-alzheimers-bioenergetics-registry",
+      "file_path": "data/studies/nicotinamide-riboside-mci-alzheimers-bioenergetics-registry.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nicotinamide-riboside-mci-alzheimers-bioenergetics-registry.json",
+      "summary": "Add Nicotinamide riboside MCI/Alzheimer bioenergetics registry.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-finding-nr-alzheimer-bioenergetics-active-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nr-alzheimer-bioenergetics-active-no-results",
+      "file_path": "data/findings/nr-alzheimer-bioenergetics-active-no-results.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nr-alzheimer-bioenergetics-active-no-results.json",
+      "summary": "Add NR Alzheimer/MCI bioenergetics trial is active without posted results.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-study-nicotinamide-riboside-arterial-stiffness-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "nicotinamide-riboside-arterial-stiffness-registry",
+      "file_path": "data/studies/nicotinamide-riboside-arterial-stiffness-registry.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nicotinamide-riboside-arterial-stiffness-registry.json",
+      "summary": "Add Nicotinamide riboside arterial stiffness registry.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-finding-nr-arterial-stiffness-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nr-arterial-stiffness-recruiting-no-results",
+      "file_path": "data/findings/nr-arterial-stiffness-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nr-arterial-stiffness-recruiting-no-results.json",
+      "summary": "Add NR arterial-stiffness trial is recruiting without posted results.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-study-nicotinamide-riboside-exercise-longevity-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "nicotinamide-riboside-exercise-longevity-registry",
+      "file_path": "data/studies/nicotinamide-riboside-exercise-longevity-registry.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nicotinamide-riboside-exercise-longevity-registry.json",
+      "summary": "Add Nicotinamide riboside and exercise healthy-longevity registry.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-finding-nr-exercise-longevity-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nr-exercise-longevity-recruiting-no-results",
+      "file_path": "data/findings/nr-exercise-longevity-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nr-exercise-longevity-recruiting-no-results.json",
+      "summary": "Add NR plus exercise healthy-longevity trial is recruiting without posted results.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-study-nmn-middle-aged-older-adults-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "nmn-middle-aged-older-adults-registry",
+      "file_path": "data/studies/nmn-middle-aged-older-adults-registry.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nmn-middle-aged-older-adults-registry.json",
+      "summary": "Add NMN middle-aged and elderly registry.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-finding-nmn-middle-aged-older-adults-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nmn-middle-aged-older-adults-recruiting-no-results",
+      "file_path": "data/findings/nmn-middle-aged-older-adults-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nmn-middle-aged-older-adults-recruiting-no-results.json",
+      "summary": "Add NMN middle-aged and elderly trial is recruiting without posted results.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-study-nmn-exercise-tolerance-older-adults-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "nmn-exercise-tolerance-older-adults-registry",
+      "file_path": "data/studies/nmn-exercise-tolerance-older-adults-registry.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nmn-exercise-tolerance-older-adults-registry.json",
+      "summary": "Add NMN exercise tolerance older-adult registry.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-finding-nmn-exercise-tolerance-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nmn-exercise-tolerance-recruiting-no-results",
+      "file_path": "data/findings/nmn-exercise-tolerance-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nmn-exercise-tolerance-recruiting-no-results.json",
+      "summary": "Add NMN exercise-tolerance trial is recruiting without posted results.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-study-mitoq-vascular-aging-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "mitoq-vascular-aging-registry",
+      "file_path": "data/studies/mitoq-vascular-aging-registry.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/mitoq-vascular-aging-registry.json",
+      "summary": "Add MitoQ age-related vascular dysfunction registry.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-finding-mitoq-vascular-aging-active-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "mitoq-vascular-aging-active-no-results",
+      "file_path": "data/findings/mitoq-vascular-aging-active-no-results.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/mitoq-vascular-aging-active-no-results.json",
+      "summary": "Add MitoQ vascular-aging trial is active without posted results.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-study-mitoq-frail-older-adults-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "mitoq-frail-older-adults-registry",
+      "file_path": "data/studies/mitoq-frail-older-adults-registry.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/mitoq-frail-older-adults-registry.json",
+      "summary": "Add Mito-Frail MitoQ frail older-adult registry.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-finding-mitoq-frail-older-adults-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "mitoq-frail-older-adults-recruiting-no-results",
+      "file_path": "data/findings/mitoq-frail-older-adults-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/mitoq-frail-older-adults-recruiting-no-results.json",
+      "summary": "Add Mito-Frail MitoQ trial is recruiting without posted results.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-study-mitoq-vascular-oxidative-stress-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "mitoq-vascular-oxidative-stress-registry",
+      "file_path": "data/studies/mitoq-vascular-oxidative-stress-registry.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/mitoq-vascular-oxidative-stress-registry.json",
+      "summary": "Add MitoQ vascular oxidative-stress registry.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-finding-mitoq-vascular-oxidative-stress-completed-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "mitoq-vascular-oxidative-stress-completed-no-results",
+      "file_path": "data/findings/mitoq-vascular-oxidative-stress-completed-no-results.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/mitoq-vascular-oxidative-stress-completed-no-results.json",
+      "summary": "Add MitoQ vascular oxidative-stress trial is completed without posted results.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-source-pmid-42068909",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-42068909",
+      "file_path": "data/sources/pmid-42068909.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/pmid-42068909.json",
+      "summary": "Add An integrated anti-aging framework targeting NAD homeostasis, mitochondrial quality control, and redox stability.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-finding-nad-redox-review-supports-combination-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nad-redox-review-supports-combination-boundary",
+      "file_path": "data/findings/nad-redox-review-supports-combination-boundary.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nad-redox-review-supports-combination-boundary.json",
+      "summary": "Add NAD/redox review supports multi-axis mechanism but not efficacy claims.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-source-pmid-42234350",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-42234350",
+      "file_path": "data/sources/pmid-42234350.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/pmid-42234350.json",
+      "summary": "Add Targeted supplementation and nutritional strategies for healthy aging.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-finding-targeted-supplementation-review-heterogeneity-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "targeted-supplementation-review-heterogeneity-boundary",
+      "file_path": "data/findings/targeted-supplementation-review-heterogeneity-boundary.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/targeted-supplementation-review-heterogeneity-boundary.json",
+      "summary": "Add Supplementation review reinforces heterogeneity and individualized-context boundary.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-source-pmid-42186383",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-42186383",
+      "file_path": "data/sources/pmid-42186383.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/pmid-42186383.json",
+      "summary": "Add Glutathione precursors and dietary interventions in obesity and metabolic health.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-finding-glutathione-precursor-review-replication-gap",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "glutathione-precursor-review-replication-gap",
+      "file_path": "data/findings/glutathione-precursor-review-replication-gap.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/glutathione-precursor-review-replication-gap.json",
+      "summary": "Add Glutathione precursor review reinforces GlyNAC/NAC replication gap.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-source-pmid-41812700",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-41812700",
+      "file_path": "data/sources/pmid-41812700.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/pmid-41812700.json",
+      "summary": "Add NAD as a central metabolic hub regulating the hallmarks of aging.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-finding-nad-homeostasis-review-precision-safety-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nad-homeostasis-review-precision-safety-boundary",
+      "file_path": "data/findings/nad-homeostasis-review-precision-safety-boundary.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/nad-homeostasis-review-precision-safety-boundary.json",
+      "summary": "Add NAD hallmarks review supports precision and safety-boundary framing.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-source-pmid-41933553",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-41933553",
+      "file_path": "data/sources/pmid-41933553.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/pmid-41933553.json",
+      "summary": "Add Vascular aging as a central driver of multimorbidity.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "create-finding-vascular-aging-review-mitoq-translational-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "vascular-aging-review-mitoq-translational-boundary",
+      "file_path": "data/findings/vascular-aging-review-mitoq-translational-boundary.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/vascular-aging-review-mitoq-translational-boundary.json",
+      "summary": "Add Vascular-aging review frames MitoQ as promising but translationally unresolved.",
+      "rationale": "Repair the NAD/redox source map or watchlist without implying a rating upgrade."
+    },
+    {
+      "change_id": "update-outlook-track-nad-and-redox-restoration-outlook",
+      "change_type": "update_outlook",
+      "target_record_type": "outlook",
+      "target_record_id": "track-nad-and-redox-restoration-outlook",
+      "file_path": "data/outlooks/track-nad-and-redox-restoration-outlook.json",
+      "staged_file_path": "data/staged-records/nad-and-redox-restoration-coverage-repair-2026-06-08/track-nad-and-redox-restoration-outlook.json",
+      "summary": "Update NAD and Redox Restoration Track Outlook.",
+      "rationale": "Refresh the public outlook to include repaired source coverage while keeping the stage, momentum, and confidence unchanged."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "nad-and-redox-restoration",
+      "confidence": "low",
+      "note": "Coverage repair improves source completeness and public watchlist boundaries, but does not change evidence_stage, momentum, or confidence because the new MIB-626 and registry records remain short, no-results, disease-context, review-level, or non-durable."
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast",
+    "safety_limitations",
+    "taxonomy_mapping"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-08-nad-and-redox-restoration-coverage-repair.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "coverage-repair",
+    "nad-and-redox-restoration",
+    "mitochondrial_dysfunction"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-nad-and-redox-restoration-coverage-repair-2026-06-08-source-fidelity-r1",
+    "evidence-review-nad-and-redox-restoration-coverage-repair-2026-06-08-interpretation-forecast-r1",
+    "evidence-review-nad-and-redox-restoration-coverage-repair-2026-06-08-safety-limitations-r1",
+    "evidence-review-nad-and-redox-restoration-coverage-repair-2026-06-08-taxonomy-mapping-r1"
+  ],
+  "publication_event_ids": [
+    "publish-nad-and-redox-restoration-coverage-repair-2026-06-08-2026-06-09t10-39-49-637z"
+  ]
+}

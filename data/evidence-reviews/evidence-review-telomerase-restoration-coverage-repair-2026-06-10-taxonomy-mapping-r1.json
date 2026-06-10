@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-telomerase-restoration-coverage-repair-2026-06-10-taxonomy-mapping-r1",
+  "name": "Taxonomy Mapping review for Telomerase Restoration bundle",
+  "candidate_bundle_id": "telomerase-restoration-coverage-repair-2026-06-10",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "taxonomy_mapping",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged repair maps adjacent telomerase records conservatively. Direct TA-65 biomarker evidence stays in Telomerase Restoration; NCT02530255 is correctly represented as cycloastragenol Alzheimer disease boundary context rather than TA-65 evidence; disease-context Libella AAV-hTERT registries remain gene-therapy boundary/watchlist records; and TERT mRNA radiation-injury biology is kept as a non-aging boundary that also touches DNA repair biology.",
+  "reviewed_change_ids": [
+    "create-source-pmid-41286474",
+    "create-study-ta65-systematic-review-meta-analysis",
+    "create-finding-ta65-meta-analysis-telomere-function-disconnect",
+    "create-source-pmid-40958415",
+    "create-study-tert-mrna-radiation-skin-damage",
+    "create-finding-tert-mrna-radiation-dna-damage-boundary",
+    "create-source-nct-02766790",
+    "create-study-ta65md-healthy-volunteers-registry",
+    "create-finding-ta65md-healthy-volunteers-registry-unknown-no-results",
+    "create-source-nct-01753674",
+    "create-study-ta65-metabolic-syndrome-terminated-registry",
+    "create-finding-ta65-metabolic-syndrome-terminated-no-results",
+    "create-source-nct-02531334",
+    "create-study-ta65-metabolic-syndrome-completed-registry",
+    "create-finding-ta65-metabolic-syndrome-completed-no-results",
+    "create-source-nct-02530255",
+    "create-study-cycloastragenol-retinal-amyloid-registry",
+    "create-finding-cycloastragenol-retinal-amyloid-completed-no-results",
+    "create-source-nct-05598359",
+    "create-study-ta65-microvascular-dysfunction-registry",
+    "create-finding-ta65-microvascular-planned-no-results",
+    "create-source-nct-04110964",
+    "create-study-libella-aav-htert-critical-limb-ischemia-registry",
+    "create-finding-libella-aav-htert-critical-limb-registry-no-results",
+    "create-source-nct-04133454",
+    "create-study-libella-aav-htert-alzheimer-registry",
+    "create-finding-libella-aav-htert-alzheimer-registry-no-results",
+    "update-outlook-track-telomerase-restoration"
+  ],
+  "findings": [
+    {
+      "finding_id": "taxonomy-cycloastragenol-separated-from-ta65",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-finding-cycloastragenol-retinal-amyloid-completed-no-results",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "cycloastragenol-retinal-amyloid-completed-no-results"
+      },
+      "claim_or_issue": "NCT02530255 is represented as cycloastragenol retinal-amyloid disease-boundary context, not as a TA-65 trial.",
+      "why_it_matters": "The prior watchlist named this record near TA-65, but the registry intervention is cycloastragenol; conflating them would weaken source fidelity and taxonomy clarity.",
+      "recommended_action": "No revision needed; keep the cycloastragenol-not-TA-65 caveat.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "taxonomy-aav-htert-disease-registries-boundary",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "update-outlook-track-telomerase-restoration",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-telomerase-restoration-outlook"
+      },
+      "claim_or_issue": "Critical limb ischemia and Alzheimer disease AAV-hTERT registries are mapped as disease-context gene-therapy boundary records with no posted results.",
+      "why_it_matters": "They are relevant to human AAV-hTERT safety/watchlist coverage but cannot support a broad aging-directed gene-therapy claim.",
+      "recommended_action": "No revision needed; continue to separate disease-boundary registries from aging-efficacy evidence.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "taxonomy-tert-mrna-radiation-boundary",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-finding-tert-mrna-radiation-dna-damage-boundary",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "tert-mrna-radiation-dna-damage-boundary"
+      },
+      "claim_or_issue": "TERT mRNA is linked to Telomerase Restoration and DNA Repair Enhancement as boundary biology, with the outlook emphasizing radiation injury and no telomere-length extension.",
+      "why_it_matters": "The record crosses hallmark biology, but it should not be reclassified as direct telomere-restoration efficacy or broad DNA repair enhancement evidence.",
+      "recommended_action": "No revision needed.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "taxonomy-observational-telomere-records-left-out-of-scope",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "update-outlook-track-telomerase-restoration",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-telomerase-restoration-outlook"
+      },
+      "claim_or_issue": "The coverage assessment leaves telomere-length-only lifestyle, vitamin, and observational records outside the intervention-focused Telomerase Restoration map.",
+      "why_it_matters": "That keeps the track scoped to telomerase activation/restoration interventions rather than all telomere-length associations.",
+      "recommended_action": "No revision needed; revisit only in a future taxonomy pass if observational telomerase context becomes material.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-10T22:18:00.747Z",
+  "updated_at": "2026-06-10T22:18:00.747Z"
+}

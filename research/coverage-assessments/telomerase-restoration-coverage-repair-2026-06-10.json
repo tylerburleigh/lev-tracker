@@ -1,0 +1,374 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "telomerase-restoration-coverage-repair-2026-06-10",
+  "name": "Telomerase Restoration Coverage Repair Assessment for June 10, 2026",
+  "short_name": "Telomerase restoration coverage repair",
+  "track_id": "telomerase-restoration",
+  "hallmark_id": "telomere_attrition",
+  "assessment_type": "coverage_repair",
+  "assessed_at": "2026-06-10T21:44:30Z",
+  "assessment_window": {
+    "from": "2026-06-10T20:52:17Z",
+    "to": "2026-06-10T21:44:30Z",
+    "basis": "Coverage repair created after the June 10 surveillance assessment requested recent-review, registry-watchlist, safety, and taxonomy-boundary repair before ordinary surveillance resumed."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is now adequate for the current tentative human_biomarker_signal public claim, pending review and publication of the staged repair bundle. The repair stages the 2025 TA-65 systematic review and meta-analysis, no-results TA-65 and telomerase-activator registry records, disease-context Libella AAV-hTERT registry boundaries, TERT mRNA radiation-injury boundary context, and a refreshed Telomerase Restoration evidence map. Coverage is not strong because long-term telomerase safety, human function, clinical outcomes, and gene-therapy results remain missing.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-05-31-telomerase-restoration-bootstrap",
+      "2026-06-10-telomerase-restoration-surveillance",
+      "2026-06-10-telomerase-restoration-coverage-repair"
+    ],
+    "candidate_bundle_ids": [
+      "telomerase-restoration-bootstrap-2026-05-31",
+      "telomerase-restoration-coverage-repair-2026-06-10"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-telomerase-restoration-source-fidelity-r1",
+      "evidence-review-telomerase-restoration-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-telomerase-restoration-bootstrap-2026-05-31-2026-05-31t15-14-40-874z"
+    ],
+    "outlook_ids": [
+      "track-telomerase-restoration-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "The public/staged map now includes TA-65 randomized trials, the uncontrolled TA-65 health-maintenance program, the 2025 TA-65 systematic review, TAT2 ex vivo human-cell evidence, the Libella AAV-hTERT aging registry, two disease-context Libella AAV-hTERT registries, and the TA-65 or telomerase-activator registry watchlist.",
+      "source_ids": [
+        "pmid-26950204",
+        "pmid-37086366",
+        "pmid-20822369",
+        "pmid-41286474",
+        "pmid-18981163",
+        "nct-04133649",
+        "nct-04110964",
+        "nct-04133454",
+        "nct-02766790",
+        "nct-01753674",
+        "nct-02531334",
+        "nct-02530255",
+        "nct-05598359"
+      ],
+      "finding_ids": [
+        "ta65-low-dose-increased-human-telomere-length",
+        "ta65-post-mi-immune-biomarkers-mixed",
+        "ta65-health-maintenance-short-telomere-immune-signal",
+        "ta65-meta-analysis-telomere-function-disconnect",
+        "tat2-ex-vivo-cd8-antiviral-function-positive",
+        "libella-aav-htert-registry-no-results",
+        "libella-aav-htert-critical-limb-registry-no-results",
+        "libella-aav-htert-alzheimer-registry-no-results",
+        "ta65md-healthy-volunteers-registry-unknown-no-results",
+        "ta65-metabolic-syndrome-terminated-no-results",
+        "ta65-metabolic-syndrome-completed-no-results",
+        "cycloastragenol-retinal-amyloid-completed-no-results",
+        "ta65-microvascular-planned-no-results"
+      ],
+      "gap_note": "This is enough for the current biomarker-stage public claim, but not for human clinical benefit, broad healthy-aging claims, or gene-therapy safety."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "thin",
+      "rationale": "The map includes the uncontrolled health-maintenance program as confounded human context. Broader observational telomere-length or telomerase-activity cohorts were not deeply mapped because they do not directly test telomerase-restoration interventions.",
+      "source_ids": [
+        "pmid-20822369"
+      ],
+      "finding_ids": [
+        "ta65-health-maintenance-short-telomere-immune-signal"
+      ],
+      "gap_note": "This category is not required for the current public claim, but future taxonomy work could decide whether specific observational telomerase/telomere maintenance cohorts add useful boundary context."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "The baseline already includes inducible TERT reactivation in telomerase-deficient mice, AAV9-mTERT lifespan evidence in adult and old mice, and TA-65 adult/old mouse healthspan evidence, while separately flagging the CMV-vector TERT lifespan retraction.",
+      "source_ids": [
+        "pmid-21113150",
+        "pmid-22585399",
+        "pmid-21426483",
+        "pmid-40789040"
+      ],
+      "finding_ids": [
+        "tert-reactivation-reversed-degeneration-telomerase-deficient-mice",
+        "aav9-mtert-extended-lifespan-adult-old-mice",
+        "ta65-mouse-short-telomere-healthspan-signal",
+        "cmv-tert-lifespan-paper-retracted"
+      ]
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "Biology coverage now includes telomerase reactivation, AAV9-mTERT delivery, TA-65 telomere and immune-biomarker biology, TAT2 ex vivo telomerase activation, no-results AAV-hTERT registry endpoints, and TERT mRNA radiation-injury context.",
+      "source_ids": [
+        "pmid-21113150",
+        "pmid-22585399",
+        "pmid-21426483",
+        "pmid-26950204",
+        "pmid-20822369",
+        "pmid-37086366",
+        "pmid-18981163",
+        "nct-04133649",
+        "pmid-40958415"
+      ],
+      "finding_ids": [
+        "tert-reactivation-reversed-degeneration-telomerase-deficient-mice",
+        "aav9-mtert-extended-lifespan-adult-old-mice",
+        "ta65-mouse-short-telomere-healthspan-signal",
+        "ta65-low-dose-increased-human-telomere-length",
+        "ta65-health-maintenance-short-telomere-immune-signal",
+        "ta65-post-mi-immune-biomarkers-mixed",
+        "tat2-ex-vivo-cd8-antiviral-function-positive",
+        "libella-aav-htert-registry-no-results",
+        "tert-mrna-radiation-dna-damage-boundary"
+      ],
+      "gap_note": "TERT mRNA remains boundary context because it did not extend telomeres during the experiment and was not an aging intervention result."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The map now captures the null primary CD8+ TEMRA endpoint in the post-MI TA-65 trial, uncontrolled-program confounding, the 2025 review's telomere-function disconnect, no-results TA-65/telomerase-activator registries, no-results AAV-hTERT registries, TERT mRNA non-aging boundary context, and the CMV-vector TERT retraction.",
+      "source_ids": [
+        "pmid-37086366",
+        "pmid-20822369",
+        "pmid-41286474",
+        "nct-02766790",
+        "nct-01753674",
+        "nct-02531334",
+        "nct-02530255",
+        "nct-05598359",
+        "nct-04133649",
+        "nct-04110964",
+        "nct-04133454",
+        "pmid-40958415",
+        "pmid-40789040"
+      ],
+      "finding_ids": [
+        "ta65-post-mi-immune-biomarkers-mixed",
+        "ta65-health-maintenance-short-telomere-immune-signal",
+        "ta65-meta-analysis-telomere-function-disconnect",
+        "ta65md-healthy-volunteers-registry-unknown-no-results",
+        "ta65-metabolic-syndrome-terminated-no-results",
+        "ta65-metabolic-syndrome-completed-no-results",
+        "cycloastragenol-retinal-amyloid-completed-no-results",
+        "ta65-microvascular-planned-no-results",
+        "libella-aav-htert-registry-no-results",
+        "libella-aav-htert-critical-limb-registry-no-results",
+        "libella-aav-htert-alzheimer-registry-no-results",
+        "tert-mrna-radiation-dna-damage-boundary",
+        "cmv-tert-lifespan-paper-retracted"
+      ]
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "adequate",
+      "rationale": "The staged map represents the key safety limitation: short human TA-65 safety windows, mild gastrointestinal events in the review, unresolved longer-term cancer risk, and no posted AAV-hTERT human safety results.",
+      "source_ids": [
+        "pmid-26950204",
+        "pmid-37086366",
+        "pmid-41286474",
+        "nct-04133649",
+        "nct-04110964",
+        "nct-04133454"
+      ],
+      "finding_ids": [
+        "ta65-low-dose-increased-human-telomere-length",
+        "ta65-post-mi-immune-biomarkers-mixed",
+        "ta65-meta-analysis-telomere-function-disconnect",
+        "libella-aav-htert-registry-no-results",
+        "libella-aav-htert-critical-limb-registry-no-results",
+        "libella-aav-htert-alzheimer-registry-no-results"
+      ],
+      "gap_note": "This is adequate coverage of the limitation, not evidence that the limitation is resolved."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "The staged repair represents the identified registry set: the existing Libella AAV-hTERT aging registry, two disease-context Libella AAV-hTERT registries, three historical TA-65 registries, one cycloastragenol disease-boundary registry, and the current planned TA-65 vascular-function registry.",
+      "source_ids": [
+        "nct-04133649",
+        "nct-04110964",
+        "nct-04133454",
+        "nct-02766790",
+        "nct-01753674",
+        "nct-02531334",
+        "nct-02530255",
+        "nct-05598359"
+      ],
+      "finding_ids": [
+        "libella-aav-htert-registry-no-results",
+        "libella-aav-htert-critical-limb-registry-no-results",
+        "libella-aav-htert-alzheimer-registry-no-results",
+        "ta65md-healthy-volunteers-registry-unknown-no-results",
+        "ta65-metabolic-syndrome-terminated-no-results",
+        "ta65-metabolic-syndrome-completed-no-results",
+        "cycloastragenol-retinal-amyloid-completed-no-results",
+        "ta65-microvascular-planned-no-results"
+      ],
+      "gap_note": "Continue ordinary surveillance for status changes, posted registry results, or linked publications."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "adequate",
+      "rationale": "PMID 41286474 is staged as the direct recent TA-65 systematic review/meta-analysis, and PMID 41002620 was screened but excluded as less direct Astragalus vascular-aging context.",
+      "source_ids": [
+        "pmid-41286474"
+      ],
+      "finding_ids": [
+        "ta65-meta-analysis-telomere-function-disconnect"
+      ],
+      "gap_note": "Future reviews may add context, but the named high-priority review gap is repaired."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes key telomerase-deficient mouse rescue, AAV9-mTERT mouse lifespan, TA-65 mouse and human biomarker, TAT2 ex vivo, AAV-hTERT registry, and CMV-vector retraction anchors; the repair adds modern TA-65 review triangulation without displacing those anchors.",
+      "source_ids": [
+        "pmid-21113150",
+        "pmid-22585399",
+        "pmid-21426483",
+        "pmid-26950204",
+        "pmid-20822369",
+        "pmid-37086366",
+        "pmid-18981163",
+        "nct-04133649",
+        "pmid-40789040",
+        "pmid-41286474"
+      ],
+      "finding_ids": [
+        "tert-reactivation-reversed-degeneration-telomerase-deficient-mice",
+        "aav9-mtert-extended-lifespan-adult-old-mice",
+        "ta65-mouse-short-telomere-healthspan-signal",
+        "ta65-low-dose-increased-human-telomere-length",
+        "ta65-health-maintenance-short-telomere-immune-signal",
+        "ta65-post-mi-immune-biomarkers-mixed",
+        "tat2-ex-vivo-cd8-antiviral-function-positive",
+        "libella-aav-htert-registry-no-results",
+        "cmv-tert-lifespan-paper-retracted",
+        "ta65-meta-analysis-telomere-function-disconnect"
+      ]
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The repair now separates direct TA-65 biomarker evidence, telomerase-activator disease-boundary context, no-results AAV-hTERT disease registries, TERT mRNA radiation-injury biology, and telomere-length-only nonintervention records.",
+      "source_ids": [
+        "pmid-40958415",
+        "nct-02530255",
+        "nct-04110964",
+        "nct-04133454"
+      ],
+      "finding_ids": [
+        "tert-mrna-radiation-dna-damage-boundary",
+        "cycloastragenol-retinal-amyloid-completed-no-results",
+        "libella-aav-htert-critical-limb-registry-no-results",
+        "libella-aav-htert-alzheimer-registry-no-results"
+      ],
+      "gap_note": "Future taxonomy work may still split telomere protection, telomerase activation, and DNA-repair-related TERT mRNA claims more finely, but the current public track boundary is adequate."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-21113150",
+    "pmid-22585399",
+    "pmid-21426483",
+    "pmid-26950204",
+    "pmid-20822369",
+    "pmid-37086366",
+    "pmid-18981163",
+    "nct-04133649",
+    "pmid-40789040",
+    "pmid-41286474",
+    "pmid-40958415",
+    "nct-02766790",
+    "nct-01753674",
+    "nct-02531334",
+    "nct-02530255",
+    "nct-05598359",
+    "nct-04110964",
+    "nct-04133454"
+  ],
+  "covered_finding_ids": [
+    "tert-reactivation-reversed-degeneration-telomerase-deficient-mice",
+    "aav9-mtert-extended-lifespan-adult-old-mice",
+    "ta65-mouse-short-telomere-healthspan-signal",
+    "ta65-low-dose-increased-human-telomere-length",
+    "ta65-health-maintenance-short-telomere-immune-signal",
+    "ta65-post-mi-immune-biomarkers-mixed",
+    "tat2-ex-vivo-cd8-antiviral-function-positive",
+    "libella-aav-htert-registry-no-results",
+    "cmv-tert-lifespan-paper-retracted",
+    "ta65-meta-analysis-telomere-function-disconnect",
+    "tert-mrna-radiation-dna-damage-boundary",
+    "ta65md-healthy-volunteers-registry-unknown-no-results",
+    "ta65-metabolic-syndrome-terminated-no-results",
+    "ta65-metabolic-syndrome-completed-no-results",
+    "cycloastragenol-retinal-amyloid-completed-no-results",
+    "ta65-microvascular-planned-no-results",
+    "libella-aav-htert-critical-limb-registry-no-results",
+    "libella-aav-htert-alzheimer-registry-no-results"
+  ],
+  "search_log_summary": "Coverage repair used NCBI PubMed ESummary/EFetch for the named TA-65 meta-analysis, TERT mRNA boundary paper, and Astragalus vascular-aging review; ClinicalTrials.gov API v2 for all named TA-65, cycloastragenol, and Libella AAV-hTERT registries; and local evidence-map comparison against the latest published outlook and the June 10 surveillance coverage assessment.",
+  "source_selection_notes": [
+    "PMID 41286474 was staged because it directly repairs the missing TA-65 systematic review/meta-analysis gap.",
+    "The TA-65 and telomerase-activator registry set was staged because future surveillance needs concrete no-results records rather than an implicit watchlist.",
+    "NCT02530255 is represented as cycloastragenol disease-boundary context because the API does not identify TA-65 as the intervention.",
+    "PMID 40958415 was staged as TERT mRNA boundary context because it reports no telomere extension during the experiment and does not test aging outcomes.",
+    "PMID 41002620 was screened but excluded as context-only because the direct TA-65 synthesis and registry records better addressed the assessment gaps."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "long-term-telomerase-safety-unresolved",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Long-term human safety evidence for telomerase activation or gene therapy remains absent, especially cancer surveillance, clonal expansion, and persistence of effect after treatment.",
+      "priority": "high",
+      "suggested_action": "Keep the public read tentative until independent long-term safety evidence appears."
+    },
+    {
+      "gap_id": "independent-human-function-outcomes-missing",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "Human studies still have not shown repeated, prespecified improvements in function, disease outcomes, or survival tied to telomerase or telomere restoration.",
+      "priority": "high",
+      "suggested_action": "Watch for independent TA-65, telomerase-activator, or telomerase-therapy trials with prespecified function or clinical outcomes."
+    },
+    {
+      "gap_id": "human-gene-therapy-results-missing",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "The aging-directed and disease-context AAV-hTERT registries have no posted results, leaving human gene-therapy safety and target-change claims unsupported.",
+      "priority": "high",
+      "suggested_action": "Continue ClinicalTrials.gov and publication surveillance for NCT04133649, NCT04110964, and NCT04133454."
+    },
+    {
+      "gap_id": "ta65-registry-results-not-posted",
+      "gap_type": "evidence_gap",
+      "category": "active_trials_registries",
+      "description": "The repaired TA-65/telomerase-activator registry set still has no posted results, including completed, terminated, unknown-status, and planned records.",
+      "priority": "medium",
+      "suggested_action": "Re-check registry result sections and linked publications during ordinary surveillance."
+    },
+    {
+      "gap_id": "observational-telomerase-context-not-deeply-mapped",
+      "gap_type": "coverage_gap",
+      "category": "human_observational_or_natural_experiment",
+      "description": "Observational telomere-length, telomerase-activity, stress, nutrition, and disease-boundary cohorts remain outside the present intervention-focused map.",
+      "priority": "low",
+      "suggested_action": "Only expand this category if a future taxonomy pass decides observational cohorts materially clarify intervention boundaries."
+    }
+  ],
+  "next_coverage_action": "Run evidence review and editorial review for the staged coverage-repair bundle. If approved and published, return Telomerase Restoration to ordinary surveillance with special watch on TA-65 registry results, Libella AAV-hTERT registry results, TERT mRNA boundary updates, and long-term safety signals.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-assessment",
+    "coverage-repair",
+    "telomerase-restoration",
+    "telomere_attrition"
+  ]
+}

@@ -19,7 +19,7 @@ export default async function ActivityPage() {
       <PageHero
         kicker="Activity"
         title="Field activity"
-        summary="Curated trial, funding, company, regulatory, and publication events shown apart from evidence of benefit."
+        summary="Curated trial, funding, company, regulatory, and public updates shown apart from evidence of benefit."
       >
         <div className="page-hero__stats">
           <span>{activity.length} curated events</span>

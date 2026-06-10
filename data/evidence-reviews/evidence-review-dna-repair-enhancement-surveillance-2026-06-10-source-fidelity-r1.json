@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-dna-repair-enhancement-surveillance-2026-06-10-source-fidelity-r1",
+  "name": "Source Fidelity review for Dna Repair Enhancement bundle",
+  "candidate_bundle_id": "dna-repair-enhancement-surveillance-2026-06-10",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "NCBI PubMed metadata and abstract facts support the staged use of PMID 42230995: a June 2, 2026 Nature Aging article links DREAM-associated repression with mouse tissue mutation rates, 92-mammal lifespan association, Alzheimer disease association, and reduced mouse brain mutation accumulation after DREAM knockout. The staged records keep the source in a mechanistic, animal/comparative, and human-association lane rather than treating it as a human intervention.",
+  "reviewed_change_ids": [
+    "update-study-dream-somatic-mutation-lifespan-disease",
+    "update-finding-dream-repression-linked-lower-somatic-mutations",
+    "update-outlook-track-dna-repair-enhancement"
+  ],
+  "findings": [
+    {
+      "finding_id": "dream-source-boundary-preserved",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "update-finding-dream-repression-linked-lower-somatic-mutations",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "dream-repression-linked-lower-somatic-mutations"
+      },
+      "claim_or_issue": "The DREAM source supports DNA repair repression, somatic mutation burden, comparative lifespan association, Alzheimer disease association, and mouse knockout mutation-burden reduction, but it does not test a human repair-enhancement intervention.",
+      "why_it_matters": "The public finding and outlook should not imply treated-human target engagement, functional benefit, or preventive-aging efficacy from this source.",
+      "recommended_action": "No revision needed; retain the staged caveats that describe the evidence as mechanistic, animal/observational, comparative, and not a safe drug-like human intervention.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "dream-conflict-context-noted",
+      "severity": "note",
+      "category": "uncertainty",
+      "applies_to_change_id": "update-outlook-track-dna-repair-enhancement",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-dna-repair-enhancement-outlook"
+      },
+      "claim_or_issue": "The PubMed record lists competing-interest and patent disclosures for some authors, while the staged update uses the paper as a biology signal rather than as support for a commercial intervention.",
+      "why_it_matters": "Disclosure context is worth preserving for future repair-regulator coverage, but it does not create a source mismatch for the current conservative public wording.",
+      "recommended_action": "No revision needed for this bundle; revisit disclosure detail if a later coverage-repair pass adds intervention-specific DREAM modulation records.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-10T17:33:52.549Z",
+  "updated_at": "2026-06-10T17:33:52.549Z"
+}

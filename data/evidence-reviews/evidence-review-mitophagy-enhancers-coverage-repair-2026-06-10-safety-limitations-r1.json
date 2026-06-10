@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-mitophagy-enhancers-coverage-repair-2026-06-10-safety-limitations-r1",
+  "name": "Safety Limitations review for Mitophagy Enhancers coverage repair bundle",
+  "candidate_bundle_id": "mitophagy-enhancers-coverage-repair-2026-06-10",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "safety_limitations",
+  "reviewer_kind": "agent",
+  "skill_name": "lev-evidence-review",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The bundle improves safety coverage by adding a renal-calculi case-series signal and by keeping frail older-adult safety results pending. It does not overuse short tolerability trials as chronic reassurance, and it clearly distinguishes diet-linked stone cases from unproven supplement causality.",
+  "reviewed_change_ids": [
+    "create-source-pmid-42058113",
+    "create-study-urolithin-a-renal-calculi-case-series",
+    "create-finding-urolithin-a-renal-calculi-safety-signal",
+    "create-source-pmid-40839339",
+    "create-study-urolithin-a-trained-runners-performance-recovery",
+    "create-finding-urolithin-a-trained-runners-recovery-no-performance-benefit",
+    "create-source-nct-06274749",
+    "create-study-urolithin-a-glucose-metabolism-older-adults-registry",
+    "create-finding-urolithin-a-older-adult-glucose-metabolism-registry-recruiting-no-results",
+    "create-source-nct-07231783",
+    "create-study-urolithin-a-middle-aged-muscle-strength-registry",
+    "create-finding-urolithin-a-middle-aged-strength-registry-recruiting-no-results",
+    "create-source-nct-05921266",
+    "create-study-urolithin-a-obesity-vascular-mitochondrial-registry",
+    "create-finding-urolithin-a-obesity-vascular-registry-completed-no-results",
+    "update-source-nct-06556706",
+    "update-study-urolithin-a-frail-older-adults-registry",
+    "update-finding-completed-frail-urolithin-a-trial-no-results",
+    "update-study-energize-urolithin-a-older-adults",
+    "update-study-atlas-urolithin-a-middle-aged-adults",
+    "update-study-mitoimmune-urolithin-a-immune-aging",
+    "update-outlook-track-mitophagy-enhancers"
+  ],
+  "findings": [
+    {
+      "finding_id": "safety-long-term-reassurance-not-claimed",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "update-outlook-track-mitophagy-enhancers",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-mitophagy-enhancers-outlook"
+      },
+      "claim_or_issue": "The support map treats short urolithin A trials as limited tolerability context and leaves chronic safety, urinary-stone risk, and frail-population safety unresolved.",
+      "why_it_matters": "Short trials are insufficient for chronic supplement risk-benefit judgments in older or frail adults.",
+      "recommended_action": "No revision needed; keep the chronic safety and frail-population result gaps in the public outlook.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "safety-case-series-causality-caveat-present",
+      "severity": "note",
+      "category": "missing_caveat",
+      "applies_to_change_id": "create-finding-urolithin-a-renal-calculi-safety-signal",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "urolithin-a-renal-calculi-safety-signal"
+      },
+      "claim_or_issue": "The renal-calculi record includes the needed case-series, diet-exposure, and no-incidence caveats.",
+      "why_it_matters": "Those caveats prevent the safety signal from becoming an unsupported causal warning about supplements.",
+      "recommended_action": "No revision needed; retain the caveats and watch for larger safety or pharmacovigilance evidence.",
+      "resolution_status": "closed"
+    }
+  ],
+  "created_at": "2026-06-10T14:25:39.803Z",
+  "updated_at": "2026-06-10T14:25:39.803Z"
+}

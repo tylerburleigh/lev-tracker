@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "mitophagy-enhancers-coverage-repair-2026-06-10",
+  "name": "Mitophagy Enhancers Coverage Repair for June 10, 2026",
+  "summary": "Coverage-repair bundle that adds urolithin A safety and limiting-context sources, stages the most relevant active or completed no-results urolithin A registries, refreshes registry metadata for published trials, and updates the Mitophagy Enhancers outlook support map while keeping the track at low-confidence human_biomarker_signal.",
+  "intake_mode": "manual",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-10T14:11:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "Which known source-completeness gaps for Mitophagy Enhancers need repair, and does resolving them change the coverage verdict or public boundaries?",
+    "hallmark_ids": [
+      "mitochondrial_dysfunction"
+    ],
+    "track_ids": [
+      "mitophagy-enhancers"
+    ],
+    "intervention_ids": [
+      "urolithin-a",
+      "usp30-inhibition"
+    ]
+  },
+  "source_ids": [
+    "pmid-42058113",
+    "pmid-40839339",
+    "nct-06274749",
+    "nct-07231783",
+    "nct-05921266",
+    "nct-06556706",
+    "pmid-32694802",
+    "pmid-35050355",
+    "pmid-35584623",
+    "pmid-39002645",
+    "pmid-41174221",
+    "pmid-27400265",
+    "pmid-33890401",
+    "pmid-41587019"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42058113/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC13123385/",
+    "https://pubmed.ncbi.nlm.nih.gov/40839339/",
+    "https://clinicaltrials.gov/study/NCT06274749",
+    "https://clinicaltrials.gov/study/NCT07231783",
+    "https://clinicaltrials.gov/study/NCT05921266",
+    "https://clinicaltrials.gov/study/NCT06556706",
+    "https://clinicaltrials.gov/study/NCT03283462",
+    "https://clinicaltrials.gov/study/NCT03464500",
+    "https://clinicaltrials.gov/study/NCT05735886"
+  ],
+  "related_records": [
+    {
+      "record_type": "track",
+      "record_id": "mitophagy-enhancers"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-mitophagy-enhancers-outlook"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "urolithin-a"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "usp30-inhibition"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-42058113",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-42058113",
+      "file_path": "data/sources/pmid-42058113.json",
+      "staged_file_path": "data/staged-records/mitophagy-enhancers-coverage-repair-2026-06-10/pmid-42058113.json",
+      "summary": "Add urolithin A renal calculi source.",
+      "rationale": "Repair safety/durability coverage with a human urinary-stone safety signal."
+    },
+    {
+      "change_id": "create-study-urolithin-a-renal-calculi-case-series",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "urolithin-a-renal-calculi-case-series",
+      "file_path": "data/studies/urolithin-a-renal-calculi-case-series.json",
+      "staged_file_path": "data/staged-records/mitophagy-enhancers-coverage-repair-2026-06-10/urolithin-a-renal-calculi-case-series.json",
+      "summary": "Add urolithin A renal calculi case-series study.",
+      "rationale": "Represent the human safety source without overclaiming incidence or supplement causality."
+    },
+    {
+      "change_id": "create-finding-urolithin-a-renal-calculi-safety-signal",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "urolithin-a-renal-calculi-safety-signal",
+      "file_path": "data/findings/urolithin-a-renal-calculi-safety-signal.json",
+      "staged_file_path": "data/staged-records/mitophagy-enhancers-coverage-repair-2026-06-10/urolithin-a-renal-calculi-safety-signal.json",
+      "summary": "Add renal calculi safety boundary finding.",
+      "rationale": "Make long-term urinary-safety uncertainty explicit in the public support map.",
+      "uncertainty_flags": [
+        "case-series",
+        "diet-exposure-boundary",
+        "supplement-causality-not-proven"
+      ]
+    },
+    {
+      "change_id": "create-source-pmid-40839339",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-40839339",
+      "file_path": "data/sources/pmid-40839339.json",
+      "staged_file_path": "data/staged-records/mitophagy-enhancers-coverage-repair-2026-06-10/pmid-40839339.json",
+      "summary": "Add trained-runner urolithin A RCT source.",
+      "rationale": "Repair limiting-context coverage for a result-bearing urolithin A registry."
+    },
+    {
+      "change_id": "create-study-urolithin-a-trained-runners-performance-recovery",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "urolithin-a-trained-runners-performance-recovery",
+      "file_path": "data/studies/urolithin-a-trained-runners-performance-recovery.json",
+      "staged_file_path": "data/staged-records/mitophagy-enhancers-coverage-repair-2026-06-10/urolithin-a-trained-runners-performance-recovery.json",
+      "summary": "Add trained-runner performance and recovery study.",
+      "rationale": "Represent the NCT04783207 result while preserving that young-athlete data are not aging evidence."
+    },
+    {
+      "change_id": "create-finding-urolithin-a-trained-runners-recovery-no-performance-benefit",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "urolithin-a-trained-runners-recovery-no-performance-benefit",
+      "file_path": "data/findings/urolithin-a-trained-runners-recovery-no-performance-benefit.json",
+      "staged_file_path": "data/staged-records/mitophagy-enhancers-coverage-repair-2026-06-10/urolithin-a-trained-runners-recovery-no-performance-benefit.json",
+      "summary": "Add trained-runner limiting finding.",
+      "rationale": "Keep recovery and biomarker signals separate from aging-functional benefit.",
+      "uncertainty_flags": [
+        "young-athlete-population",
+        "primary-performance-endpoint-not-significant"
+      ]
+    },
+    {
+      "change_id": "create-source-nct-06274749",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-06274749",
+      "file_path": "data/sources/nct-06274749.json",
+      "staged_file_path": "data/staged-records/mitophagy-enhancers-coverage-repair-2026-06-10/nct-06274749.json",
+      "summary": "Add older-adult glucose metabolism urolithin A registry source.",
+      "rationale": "Repair active-registry coverage for an older-adult trial with mitochondrial endpoints."
+    },
+    {
+      "change_id": "create-study-urolithin-a-glucose-metabolism-older-adults-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "urolithin-a-glucose-metabolism-older-adults-registry",
+      "file_path": "data/studies/urolithin-a-glucose-metabolism-older-adults-registry.json",
+      "staged_file_path": "data/staged-records/mitophagy-enhancers-coverage-repair-2026-06-10/urolithin-a-glucose-metabolism-older-adults-registry.json",
+      "summary": "Add older-adult glucose metabolism urolithin A registry study.",
+      "rationale": "Represent the recruiting older-adult urolithin A trial without treating it as evidence progress."
+    },
+    {
+      "change_id": "create-finding-urolithin-a-older-adult-glucose-metabolism-registry-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "urolithin-a-older-adult-glucose-metabolism-registry-recruiting-no-results",
+      "file_path": "data/findings/urolithin-a-older-adult-glucose-metabolism-registry-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/mitophagy-enhancers-coverage-repair-2026-06-10/urolithin-a-older-adult-glucose-metabolism-registry-recruiting-no-results.json",
+      "summary": "Add older-adult glucose metabolism no-results finding.",
+      "rationale": "Keep the registry visible as watchlist context.",
+      "uncertainty_flags": [
+        "recruiting",
+        "no-posted-results"
+      ]
+    },
+    {
+      "change_id": "create-source-nct-07231783",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-07231783",
+      "file_path": "data/sources/nct-07231783.json",
+      "staged_file_path": "data/staged-records/mitophagy-enhancers-coverage-repair-2026-06-10/nct-07231783.json",
+      "summary": "Add middle-aged muscle-strength urolithin A registry source.",
+      "rationale": "Repair active-registry coverage for a direct muscle-strength trial."
+    },
+    {
+      "change_id": "create-study-urolithin-a-middle-aged-muscle-strength-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "urolithin-a-middle-aged-muscle-strength-registry",
+      "file_path": "data/studies/urolithin-a-middle-aged-muscle-strength-registry.json",
+      "staged_file_path": "data/staged-records/mitophagy-enhancers-coverage-repair-2026-06-10/urolithin-a-middle-aged-muscle-strength-registry.json",
+      "summary": "Add middle-aged muscle-strength urolithin A registry study.",
+      "rationale": "Represent a recruiting replication-style muscle-strength registry without treating it as evidence progress."
+    },
+    {
+      "change_id": "create-finding-urolithin-a-middle-aged-strength-registry-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "urolithin-a-middle-aged-strength-registry-recruiting-no-results",
+      "file_path": "data/findings/urolithin-a-middle-aged-strength-registry-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/mitophagy-enhancers-coverage-repair-2026-06-10/urolithin-a-middle-aged-strength-registry-recruiting-no-results.json",
+      "summary": "Add middle-aged strength no-results finding.",
+      "rationale": "Keep this trial in the watchlist and support map without upgrading stage.",
+      "uncertainty_flags": [
+        "recruiting",
+        "no-posted-results"
+      ]
+    },
+    {
+      "change_id": "create-source-nct-05921266",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-05921266",
+      "file_path": "data/sources/nct-05921266.json",
+      "staged_file_path": "data/staged-records/mitophagy-enhancers-coverage-repair-2026-06-10/nct-05921266.json",
+      "summary": "Add completed obesity vascular mitochondrial urolithin A registry source.",
+      "rationale": "Repair completed no-results registry coverage for vascular and mitochondrial biomarker endpoints."
+    },
+    {
+      "change_id": "create-study-urolithin-a-obesity-vascular-mitochondrial-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "urolithin-a-obesity-vascular-mitochondrial-registry",
+      "file_path": "data/studies/urolithin-a-obesity-vascular-mitochondrial-registry.json",
+      "staged_file_path": "data/staged-records/mitophagy-enhancers-coverage-repair-2026-06-10/urolithin-a-obesity-vascular-mitochondrial-registry.json",
+      "summary": "Add completed obesity vascular mitochondrial urolithin A registry study.",
+      "rationale": "Represent a completed no-results urolithin A biomarker trial."
+    },
+    {
+      "change_id": "create-finding-urolithin-a-obesity-vascular-registry-completed-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "urolithin-a-obesity-vascular-registry-completed-no-results",
+      "file_path": "data/findings/urolithin-a-obesity-vascular-registry-completed-no-results.json",
+      "staged_file_path": "data/staged-records/mitophagy-enhancers-coverage-repair-2026-06-10/urolithin-a-obesity-vascular-registry-completed-no-results.json",
+      "summary": "Add completed obesity no-results finding.",
+      "rationale": "Make completed no-results status explicit for future surveillance.",
+      "uncertainty_flags": [
+        "completed",
+        "no-posted-results"
+      ]
+    },
+    {
+      "change_id": "update-source-nct-06556706",
+      "change_type": "update_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-06556706",
+      "file_path": "data/sources/nct-06556706.json",
+      "staged_file_path": "data/staged-records/mitophagy-enhancers-coverage-repair-2026-06-10/nct-06556706.json",
+      "summary": "Refresh frail older-adult registry source check date.",
+      "rationale": "Keep the no-results registry source current after the June 10 API check."
+    },
+    {
+      "change_id": "update-study-urolithin-a-frail-older-adults-registry",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "urolithin-a-frail-older-adults-registry",
+      "file_path": "data/studies/urolithin-a-frail-older-adults-registry.json",
+      "staged_file_path": "data/staged-records/mitophagy-enhancers-coverage-repair-2026-06-10/urolithin-a-frail-older-adults-registry.json",
+      "summary": "Refresh frail older-adult registry study metadata.",
+      "rationale": "Repair active-trial metadata and safety/function endpoint visibility."
+    },
+    {
+      "change_id": "update-finding-completed-frail-urolithin-a-trial-no-results",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "completed-frail-urolithin-a-trial-no-results",
+      "file_path": "data/findings/completed-frail-urolithin-a-trial-no-results.json",
+      "staged_file_path": "data/staged-records/mitophagy-enhancers-coverage-repair-2026-06-10/completed-frail-urolithin-a-trial-no-results.json",
+      "summary": "Refresh frail older-adult no-results finding.",
+      "rationale": "Keep the public no-results watch item aligned with the June 10 registry check."
+    },
+    {
+      "change_id": "update-study-energize-urolithin-a-older-adults",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "energize-urolithin-a-older-adults",
+      "file_path": "data/studies/energize-urolithin-a-older-adults.json",
+      "staged_file_path": "data/staged-records/mitophagy-enhancers-coverage-repair-2026-06-10/energize-urolithin-a-older-adults.json",
+      "summary": "Refresh ENERGIZE registry metadata.",
+      "rationale": "Repair current registry dates and check metadata while keeping PubMed as the result-bearing source."
+    },
+    {
+      "change_id": "update-study-atlas-urolithin-a-middle-aged-adults",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "atlas-urolithin-a-middle-aged-adults",
+      "file_path": "data/studies/atlas-urolithin-a-middle-aged-adults.json",
+      "staged_file_path": "data/staged-records/mitophagy-enhancers-coverage-repair-2026-06-10/atlas-urolithin-a-middle-aged-adults.json",
+      "summary": "Refresh ATLAS registry metadata.",
+      "rationale": "Repair current registry dates and check metadata while keeping PubMed as the result-bearing source."
+    },
+    {
+      "change_id": "update-study-mitoimmune-urolithin-a-immune-aging",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "mitoimmune-urolithin-a-immune-aging",
+      "file_path": "data/studies/mitoimmune-urolithin-a-immune-aging.json",
+      "staged_file_path": "data/staged-records/mitophagy-enhancers-coverage-repair-2026-06-10/mitoimmune-urolithin-a-immune-aging.json",
+      "summary": "Refresh MitoImmune registry metadata.",
+      "rationale": "Repair current registry dates and check metadata while keeping PubMed as the result-bearing source."
+    },
+    {
+      "change_id": "update-outlook-track-mitophagy-enhancers",
+      "change_type": "update_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-mitophagy-enhancers-outlook",
+      "file_path": "data/outlooks/track-mitophagy-enhancers-outlook.json",
+      "staged_file_path": "data/staged-records/mitophagy-enhancers-coverage-repair-2026-06-10/track-mitophagy-enhancers-outlook.json",
+      "summary": "Refresh Mitophagy Enhancers outlook with repaired support map.",
+      "rationale": "Expose safety, no-results registry, limiting functional, and preclinical boundary context while preserving stage, momentum, and confidence."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "mitophagy-enhancers",
+      "note": "Keep human_biomarker_signal, steady momentum, and low confidence. The staged repair improves safety, registry, limiting-context, and support-map coverage but adds no durable older-human functional benefit.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast",
+    "safety_limitations",
+    "taxonomy_mapping"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-10-mitophagy-enhancers-coverage-repair.json",
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "tags": [
+    "admin",
+    "coverage-repair",
+    "mitophagy-enhancers"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-mitophagy-enhancers-coverage-repair-2026-06-10-source-fidelity-r1",
+    "evidence-review-mitophagy-enhancers-coverage-repair-2026-06-10-interpretation-forecast-r1",
+    "evidence-review-mitophagy-enhancers-coverage-repair-2026-06-10-safety-limitations-r1",
+    "evidence-review-mitophagy-enhancers-coverage-repair-2026-06-10-taxonomy-mapping-r1"
+  ],
+  "publication_event_ids": [
+    "publish-mitophagy-enhancers-coverage-repair-2026-06-10-2026-06-10t14-26-07-178z"
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-10-telomerase-restoration-coverage-repair",
+  "name": "Telomerase Restoration Coverage Repair",
+  "mode": "coverage_repair",
+  "started_at": "2026-06-10T21:05:00Z",
+  "completed_at": "2026-06-10T21:44:30Z",
+  "scope": {
+    "question": "Which known source-completeness gaps for Telomerase Restoration need repair, and does resolving them change the coverage verdict or public boundaries?",
+    "hallmark_ids": [
+      "telomere_attrition"
+    ],
+    "track_ids": [
+      "telomerase-restoration"
+    ],
+    "intervention_ids": [
+      "ta-65",
+      "aav-htert",
+      "tat2",
+      "tert-reactivation"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "telomerase-restoration-coverage-repair-2026-06-10",
+  "summary": "Coverage repair staged the high-priority missing context identified by the June 10 surveillance assessment. The staged bundle adds the 2025 TA-65 systematic review and meta-analysis, a complete no-results TA-65 and telomerase-activator registry watchlist, disease-context Libella AAV-hTERT registry boundaries, TERT mRNA radiation-injury boundary context, and a refreshed Telomerase Restoration outlook. The proposed public read keeps evidence_stage human_biomarker_signal, momentum mixed, and confidence low.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "outlook_refresh",
+    "public_update_needed": true,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The repair materially improves the evidence map and future registry-check surface, but every new human registry record remains no-results and the TA-65 synthesis strengthens the biomarker boundary rather than upgrading the stage."
+  },
+  "search_log": [
+    {
+      "source_name": "NCBI PubMed ESummary and EFetch",
+      "query": "PMID 41286474, PMID 40958415, and PMID 41002620",
+      "checked_at": "2026-06-10T21:44:30Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Confirmed PMID 41286474 as a 2025 TA-65 systematic review and meta-analysis and PMID 40958415 as a 2026 TERT mRNA radiation-injury study. PMID 41002620 was screened as Astragalus vascular-aging review context but not staged because the TA-65 meta-analysis was more direct."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "NCT02766790, NCT01753674, NCT02531334, NCT02530255, NCT05598359, NCT04133649, NCT04110964, and NCT04133454",
+      "checked_at": "2026-06-10T21:44:30Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "Confirmed all named TA-65, cycloastragenol, and Libella AAV-hTERT registries had no posted results in the API view. The current TA-65 vascular-function registry is not yet recruiting; older TA-65 or telomerase-activator registries are unknown, terminated, or completed with no posted results; Libella AAV-hTERT registries remain unknown status with no posted results."
+    },
+    {
+      "source_name": "Local public records and prior coverage assessment",
+      "query": "Telomerase Restoration outlook, source, study, finding, evidence-review, publication-event, and June 10 surveillance coverage assessment",
+      "checked_at": "2026-06-10T21:44:30Z",
+      "summary": "Compared the public outlook and evidence audit trail against the coverage gaps from telomerase-restoration-surveillance-2026-06-10. The staged repair changes public context and evidence-map completeness but not the stage assignment."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT02766790",
+      "study_id": "ta65md-healthy-volunteers-registry",
+      "source_id": "nct-02766790",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02766790",
+      "checked_at": "2026-06-10T21:44:30Z",
+      "current_registry_status": "unknown",
+      "current_results_status": "not_posted",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "new_trial",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Unknown-status TA-65MD healthy-volunteer registry with last-known recruiting status, estimated enrollment of 500, estimated completion in 2017, and no posted results."
+    },
+    {
+      "registry_id": "NCT01753674",
+      "study_id": "ta65-metabolic-syndrome-terminated-registry",
+      "source_id": "nct-01753674",
+      "registry_url": "https://clinicaltrials.gov/study/NCT01753674",
+      "checked_at": "2026-06-10T21:44:30Z",
+      "current_registry_status": "terminated",
+      "current_results_status": "not_posted",
+      "completion_date_kind": "actual",
+      "results_changed": false,
+      "materiality": "termination",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Terminated phase 1 TA-65 metabolic syndrome registry with actual enrollment of 13 and no posted results."
+    },
+    {
+      "registry_id": "NCT02531334",
+      "study_id": "ta65-metabolic-syndrome-completed-registry",
+      "source_id": "nct-02531334",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02531334",
+      "checked_at": "2026-06-10T21:44:30Z",
+      "current_registry_status": "completed",
+      "current_results_status": "not_posted",
+      "completion_date_kind": "actual",
+      "results_changed": false,
+      "materiality": "new_trial",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Completed TA-65 metabolic syndrome registry with estimated enrollment of 40 and no posted results."
+    },
+    {
+      "registry_id": "NCT02530255",
+      "study_id": "cycloastragenol-retinal-amyloid-registry",
+      "source_id": "nct-02530255",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02530255",
+      "checked_at": "2026-06-10T21:44:30Z",
+      "current_registry_status": "completed",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2018-10-31",
+      "study_completion_date": "2018-12-31",
+      "completion_date_kind": "actual",
+      "results_changed": false,
+      "materiality": "new_trial",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Completed cycloastragenol retinal amyloid registry with 48 participants and no posted results; staged as telomerase-activator disease-boundary context rather than direct TA-65 evidence."
+    },
+    {
+      "registry_id": "NCT05598359",
+      "study_id": "ta65-microvascular-dysfunction-registry",
+      "source_id": "nct-05598359",
+      "registry_url": "https://clinicaltrials.gov/study/NCT05598359",
+      "checked_at": "2026-06-10T21:44:30Z",
+      "current_registry_status": "planned",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2028-12-31",
+      "study_completion_date": "2029-12-31",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "new_trial",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Not-yet-recruiting TA-65 microvascular dysfunction registry with estimated enrollment of 180, vascular-function primary endpoint, estimated completion in 2029, and no posted results."
+    },
+    {
+      "registry_id": "NCT04133649",
+      "study_id": "libella-aav-htert-aging-phase1-registry",
+      "source_id": "nct-04133649",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04133649",
+      "checked_at": "2026-06-10T21:44:30Z",
+      "previous_local_status": "unknown",
+      "current_registry_status": "unknown",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "Existing public Libella AAV-hTERT aging registry remains unknown status with last-known recruiting status, estimated enrollment of 5, and no posted results."
+    },
+    {
+      "registry_id": "NCT04110964",
+      "study_id": "libella-aav-htert-critical-limb-ischemia-registry",
+      "source_id": "nct-04110964",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04110964",
+      "checked_at": "2026-06-10T21:44:30Z",
+      "current_registry_status": "unknown",
+      "current_results_status": "not_posted",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "new_trial",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Disease-context Libella AAV-hTERT critical limb ischemia registry remains unknown status with estimated enrollment of 5 and no posted results."
+    },
+    {
+      "registry_id": "NCT04133454",
+      "study_id": "libella-aav-htert-alzheimer-registry",
+      "source_id": "nct-04133454",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04133454",
+      "checked_at": "2026-06-10T21:44:30Z",
+      "current_registry_status": "unknown",
+      "current_results_status": "not_posted",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "new_trial",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Disease-context Libella AAV-hTERT Alzheimer disease registry remains unknown status with estimated enrollment of 5 and no posted results."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 41002620",
+      "title": "Targeting Telomere Shortening in Vascular Aging and Atherosclerosis: Therapeutic Promise of Astragalus membranaceus",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41002620/",
+      "decision": "context_only",
+      "reason": "Review-level Astragalus vascular-aging context overlaps with TA-65/cycloastragenol but is less direct than the staged TA-65 systematic review and the active TA-65 vascular registry."
+    },
+    {
+      "reference": "Telomere-length-only lifestyle, vitamin, or observational records",
+      "decision": "wrong_scope",
+      "reason": "The repair focused on telomerase activation or telomerase-therapy records. Telomere-length associations without a telomerase-restoration intervention remain outside this track unless a later taxonomy pass asks for them."
+    }
+  ],
+  "source_ids": [
+    "pmid-41286474",
+    "pmid-40958415",
+    "nct-02766790",
+    "nct-01753674",
+    "nct-02531334",
+    "nct-02530255",
+    "nct-05598359",
+    "nct-04110964",
+    "nct-04133454"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/41286474/",
+    "https://doi.org/10.1007/s10565-025-10115-6",
+    "https://pubmed.ncbi.nlm.nih.gov/40958415/",
+    "https://doi.org/10.1016/j.ymthe.2025.09.029",
+    "https://pubmed.ncbi.nlm.nih.gov/41002620/",
+    "https://clinicaltrials.gov/study/NCT02766790",
+    "https://clinicaltrials.gov/study/NCT01753674",
+    "https://clinicaltrials.gov/study/NCT02531334",
+    "https://clinicaltrials.gov/study/NCT02530255",
+    "https://clinicaltrials.gov/study/NCT05598359",
+    "https://clinicaltrials.gov/study/NCT04133649",
+    "https://clinicaltrials.gov/study/NCT04110964",
+    "https://clinicaltrials.gov/study/NCT04133454"
+  ],
+  "notes": [
+    "The staged repair intentionally keeps the public evidence stage at human_biomarker_signal.",
+    "NCT02530255 was included because the prior watchlist named it, but the API identifies cycloastragenol rather than branded TA-65 as the intervention.",
+    "The TERT mRNA paper is staged as boundary context because it reports no telomere-length extension during the experiment."
+  ],
+  "next_actions": [
+    "Run source-fidelity, interpretation, safety, and taxonomy review before publishing the staged bundle.",
+    "If approved and published, return Telomerase Restoration to ordinary surveillance with the repaired registry watchlist."
+  ]
+}

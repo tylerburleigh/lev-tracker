@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-telomerase-restoration-coverage-repair-2026-06-10-source-fidelity-r1",
+  "name": "Source Fidelity review for Telomerase Restoration bundle",
+  "candidate_bundle_id": "telomerase-restoration-coverage-repair-2026-06-10",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, finding, and outlook facts match the checked PubMed and ClinicalTrials.gov source records after replacing the generic PMID 40958415 author placeholder with the PubMed author list. PMID 41286474 is correctly used as a TA-65 systematic review/meta-analysis; PMID 40958415 is correctly bounded to TERT mRNA radiation-injury biology without telomere extension; and the NCT records are represented with the current no-results, status, enrollment, phase, sponsor, and endpoint boundaries. No blocking source mismatch remains.",
+  "reviewed_change_ids": [
+    "create-source-pmid-41286474",
+    "create-study-ta65-systematic-review-meta-analysis",
+    "create-finding-ta65-meta-analysis-telomere-function-disconnect",
+    "create-source-pmid-40958415",
+    "create-study-tert-mrna-radiation-skin-damage",
+    "create-finding-tert-mrna-radiation-dna-damage-boundary",
+    "create-source-nct-02766790",
+    "create-study-ta65md-healthy-volunteers-registry",
+    "create-finding-ta65md-healthy-volunteers-registry-unknown-no-results",
+    "create-source-nct-01753674",
+    "create-study-ta65-metabolic-syndrome-terminated-registry",
+    "create-finding-ta65-metabolic-syndrome-terminated-no-results",
+    "create-source-nct-02531334",
+    "create-study-ta65-metabolic-syndrome-completed-registry",
+    "create-finding-ta65-metabolic-syndrome-completed-no-results",
+    "create-source-nct-02530255",
+    "create-study-cycloastragenol-retinal-amyloid-registry",
+    "create-finding-cycloastragenol-retinal-amyloid-completed-no-results",
+    "create-source-nct-05598359",
+    "create-study-ta65-microvascular-dysfunction-registry",
+    "create-finding-ta65-microvascular-planned-no-results",
+    "create-source-nct-04110964",
+    "create-study-libella-aav-htert-critical-limb-ischemia-registry",
+    "create-finding-libella-aav-htert-critical-limb-registry-no-results",
+    "create-source-nct-04133454",
+    "create-study-libella-aav-htert-alzheimer-registry",
+    "create-finding-libella-aav-htert-alzheimer-registry-no-results",
+    "update-outlook-track-telomerase-restoration"
+  ],
+  "findings": [
+    {
+      "finding_id": "ta65-meta-analysis-source-facts-confirmed",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-finding-ta65-meta-analysis-telomere-function-disconnect",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "ta65-meta-analysis-telomere-function-disconnect"
+      },
+      "claim_or_issue": "The staged TA-65 finding reflects PMID 41286474 as a 2025 systematic review and meta-analysis of 8 randomized trials with 750 participants, telomere-length movement, no significant frailty or inflammation improvement, and short-term safety limits.",
+      "why_it_matters": "The review can repair recent-review coverage only if it is treated as review-level synthesis rather than new primary clinical efficacy evidence.",
+      "recommended_action": "No revision needed; preserve the review-level and biomarker-to-health boundary caveats.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "tert-mrna-source-boundary-confirmed",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-tert-mrna-radiation-dna-damage-boundary",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "tert-mrna-radiation-dna-damage-boundary"
+      },
+      "claim_or_issue": "The staged TERT mRNA finding matches PMID 40958415 as human skin radiation-injury biology, including reduced DNA damage and no telomere-length extension during the experiment.",
+      "why_it_matters": "This prevents a DNA-damage protection result from being mistaken for aging-directed telomerase-restoration evidence.",
+      "recommended_action": "No revision needed; keep the radiation-injury, no-telomere-extension, and conflict caveats.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "registry-status-and-results-confirmed",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "update-outlook-track-telomerase-restoration",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-telomerase-restoration-outlook"
+      },
+      "claim_or_issue": "The staged NCT records correctly distinguish unknown, terminated, completed, and planned registry status from posted results; none of the checked registries had posted results.",
+      "why_it_matters": "Registry existence and status are useful watchlist facts, but they do not support a stronger evidence stage.",
+      "recommended_action": "No revision needed; keep no-results registry records as context and future surveillance anchors.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-10T22:17:46.954Z",
+  "updated_at": "2026-06-10T22:17:46.954Z"
+}

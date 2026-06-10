@@ -689,11 +689,11 @@ export type BundleEvidenceReviewReadiness = {
 };
 
 const stageLabels: Record<Stage, string> = {
-  mechanistic_plausibility: "Mechanistic plausibility",
+  mechanistic_plausibility: "Based on biology",
   animal_signal: "Animal signal",
   human_biomarker_signal: "Human biomarker signal",
-  human_functional_benefit: "Human functional benefit",
-  durable_disease_or_mortality_relevance: "Durable disease or mortality relevance"
+  human_functional_benefit: "Evidence that human function improves",
+  durable_disease_or_mortality_relevance: "Long-lasting disease or mortality relevance"
 };
 
 const stagePlainMeanings: Record<Stage, string> = {

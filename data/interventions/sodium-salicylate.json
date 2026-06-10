@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "sodium-salicylate",
+  "name": "Sodium salicylate",
+  "summary": "Sodium salicylate is normalized for preclinical NF-kappaB inhibition and aged muscle repair evidence.",
+  "modalities": [
+    "small_molecule"
+  ],
+  "target_hallmark_ids": [
+    "chronic_inflammation",
+    "stem_cell_exhaustion"
+  ],
+  "track_ids": [
+    "niche-rejuvenation-and-support"
+  ],
+  "mechanism_summary": "Acts as a pharmacologic NF-kappaB pathway inhibitor in the linked mouse muscle-repair context.",
+  "development_stage": "approved_for_other_indication",
+  "linked_study_ids": [
+    "nfkb-myofiber-aged-satellite-cell-niche"
+  ],
+  "linked_finding_ids": [
+    "nfkb-inhibition-improved-aged-muscle-repair"
+  ],
+  "risk_flags": [
+    "animal-aging-evidence",
+    "target-wide-effects",
+    "drug-safety-context"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: NF-kB inhibition improved aged muscle repair in mice; NF-kB myofiber aged satellite-cell niche study.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "chronic_inflammation",
+    "niche-rejuvenation-and-support",
+    "small_molecule",
+    "sodium-salicylate",
+    "stem_cell_exhaustion"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

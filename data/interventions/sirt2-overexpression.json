@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "sirt2-overexpression",
+  "name": "SIRT2 overexpression",
+  "summary": "SIRT2 overexpression is normalized for BubR1-linked mouse genome-surveillance and lifespan evidence.",
+  "modalities": [
+    "gene_therapy"
+  ],
+  "target_hallmark_ids": [
+    "genomic_instability"
+  ],
+  "track_ids": [
+    "genome-surveillance-and-chromosome-stability"
+  ],
+  "mechanism_summary": "Increases SIRT2 activity to affect BubR1 biology and test chromosome-stability-linked aging phenotypes in mice.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "sirt2-nmn-bubr1-hypomorphic-mice"
+  ],
+  "linked_finding_ids": [
+    "sirt2-nmn-raises-bubr1-and-extends-bubr1-hypomorphic-lifespan"
+  ],
+  "risk_flags": [
+    "animal-only",
+    "genetic-overexpression-boundary",
+    "translation-risk"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: SIRT2 and NMN BubR1 hypomorphic mouse study; SIRT2 and NMN increased BubR1 biology and extended BubR1 hypomorphic mouse lifespan.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "gene_therapy",
+    "genome-surveillance-and-chromosome-stability",
+    "genomic_instability",
+    "sirt2-overexpression"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "p38-mapk-inhibition",
+  "name": "p38 MAPK inhibition",
+  "summary": "p38 MAPK inhibition is normalized for aged muscle stem-cell regeneration evidence.",
+  "modalities": [
+    "small_molecule"
+  ],
+  "target_hallmark_ids": [
+    "stem_cell_exhaustion"
+  ],
+  "track_ids": [
+    "stem-cell-rejuvenation"
+  ],
+  "mechanism_summary": "Suppresses p38 MAPK stress signaling to test whether aged muscle stem-cell regenerative potential can be restored.",
+  "development_stage": "preclinical",
+  "linked_study_ids": [
+    "p38-inhibition-aged-musc-regeneration"
+  ],
+  "linked_finding_ids": [
+    "p38-inhibition-restored-aged-musc-regeneration"
+  ],
+  "risk_flags": [
+    "animal-only",
+    "target-wide-effects",
+    "durability-unknown"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "animal",
+    "human_data": false,
+    "open_questions": [
+      "Whether the linked evidence generalizes beyond the specific population, model, tissue, or disease context already recorded in the public finding. Linked context: p38 inhibition and aged muscle stem-cell regeneration; p38 inhibition restored aged muscle stem-cell regenerative function.",
+      "Whether mechanism-specific effects can be separated from combination, product, delivery, or study-design confounding.",
+      "Whether future studies can connect the observed biomarker, functional, or model-organism signal to durable aging-relevant outcomes."
+    ]
+  },
+  "tags": [
+    "p38-mapk-inhibition",
+    "small_molecule",
+    "stem-cell-rejuvenation",
+    "stem_cell_exhaustion"
+  ],
+  "created_at": "2026-06-07T20:00:00Z",
+  "updated_at": "2026-06-07T20:00:00Z"
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-mitophagy-enhancers-coverage-repair-2026-06-10-taxonomy-mapping-r1",
+  "name": "Taxonomy Mapping review for Mitophagy Enhancers coverage repair bundle",
+  "candidate_bundle_id": "mitophagy-enhancers-coverage-repair-2026-06-10",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "taxonomy_mapping",
+  "reviewer_kind": "agent",
+  "skill_name": "lev-evidence-review",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged records are appropriate for the Mitophagy Enhancers track because the included urolithin A and USP30 evidence is tied to mitochondrial quality-control, mitophagy, mitochondrial biomarkers, or related muscle and immune endpoints. The bundle also keeps adjacent microbiome-metabolite, selective-autophagy, cognition, combination, and method-only items out of this repair pass unless they directly support the mitophagy outlook boundary.",
+  "reviewed_change_ids": [
+    "create-source-pmid-42058113",
+    "create-study-urolithin-a-renal-calculi-case-series",
+    "create-finding-urolithin-a-renal-calculi-safety-signal",
+    "create-source-pmid-40839339",
+    "create-study-urolithin-a-trained-runners-performance-recovery",
+    "create-finding-urolithin-a-trained-runners-recovery-no-performance-benefit",
+    "create-source-nct-06274749",
+    "create-study-urolithin-a-glucose-metabolism-older-adults-registry",
+    "create-finding-urolithin-a-older-adult-glucose-metabolism-registry-recruiting-no-results",
+    "create-source-nct-07231783",
+    "create-study-urolithin-a-middle-aged-muscle-strength-registry",
+    "create-finding-urolithin-a-middle-aged-strength-registry-recruiting-no-results",
+    "create-source-nct-05921266",
+    "create-study-urolithin-a-obesity-vascular-mitochondrial-registry",
+    "create-finding-urolithin-a-obesity-vascular-registry-completed-no-results",
+    "update-source-nct-06556706",
+    "update-study-urolithin-a-frail-older-adults-registry",
+    "update-finding-completed-frail-urolithin-a-trial-no-results",
+    "update-study-energize-urolithin-a-older-adults",
+    "update-study-atlas-urolithin-a-middle-aged-adults",
+    "update-study-mitoimmune-urolithin-a-immune-aging",
+    "update-outlook-track-mitophagy-enhancers"
+  ],
+  "findings": [
+    {
+      "finding_id": "taxonomy-urolithin-a-shared-boundary-acceptable",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "update-outlook-track-mitophagy-enhancers",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-mitophagy-enhancers-outlook"
+      },
+      "claim_or_issue": "Urolithin A overlaps with microbiome-metabolite and selective-autophagy topics, but the staged records are used here only where they inform mitophagy or mitochondrial-quality-control evidence boundaries.",
+      "why_it_matters": "Shared interventions can inflate multiple tracks if the endpoint basis is not explicit.",
+      "recommended_action": "No revision needed; keep the support map tied to mitochondrial, mitophagy, muscle, immune, registry, and safety endpoints.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "taxonomy-adjacent-records-properly-deferred",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "update-outlook-track-mitophagy-enhancers",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-mitophagy-enhancers-outlook"
+      },
+      "claim_or_issue": "Adjacent combination, restricted-eating, cognition, and method-focused records were excluded or deferred unless they directly repaired the Mitophagy Enhancers public support map.",
+      "why_it_matters": "Coverage repair should close the specific source-completeness gap without broadening the track beyond its taxonomy.",
+      "recommended_action": "No revision needed; revisit adjacent records only through their own track-specific surveillance or coverage repair.",
+      "resolution_status": "closed"
+    }
+  ],
+  "created_at": "2026-06-10T14:25:43.772Z",
+  "updated_at": "2026-06-10T14:25:43.772Z"
+}

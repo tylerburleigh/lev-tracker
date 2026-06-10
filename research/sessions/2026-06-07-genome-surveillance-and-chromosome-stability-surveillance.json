@@ -1,0 +1,278 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-07-genome-surveillance-and-chromosome-stability-surveillance",
+  "name": "Genome Surveillance and Chromosome Stability field change check for June 7, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-07T22:00:00Z",
+  "completed_at": "2026-06-07T22:29:30Z",
+  "scope": {
+    "question": "What changed for Genome Surveillance and Chromosome Stability since the 2026-05-31 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "genomic_instability"
+    ],
+    "track_ids": [
+      "genome-surveillance-and-chromosome-stability"
+    ],
+    "intervention_ids": [
+      "bubr1-overexpression",
+      "sirt2-overexpression",
+      "vitamin-b12"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "activity_only",
+  "summary": "Ran a field change check from the 2026-05-31T20:14:53.931Z Genome Surveillance and Chromosome Stability baseline publication through June 7, 2026. The local trial audit found zero trial-watch items. Broad ClinicalTrials.gov searches found no result-bearing chromosome-surveillance, BubR1, spindle-checkpoint, mCA, mLOY, micronucleus, or folate/B12 aging-intervention registry. PubMed same-window searches found no correction or retraction to the baseline support set. The closest same-window activity was a JCO supplement abstract associating mosaic chromosomal alterations with epigenetic age acceleration in the PLCO trial, plus CHIP, infection, CKD/cardiovascular, periodontitis, cGAS/genomic-instability, NMN, and SIRT2-context papers that remain observational, animal-stage, protocol-like, review-level, or wrong-scope for direct chromosome-surveillance intervention evidence. No public outlook, source, study, finding, activity item, bundle, or coverage assessment update is warranted.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "activity_only",
+    "public_update_needed": false,
+    "activity_only": true,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The same-window records reinforce the existing human biomarker and clonal-hematopoiesis context but do not add a tested human chromosome-surveillance intervention, functional outcome, disease-prevention result, lifespan result, safety update, correction, retraction, or mechanistic-mediation result that would change the low-confidence human_biomarker_signal baseline."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial audit",
+      "query": "npm run audit:trials -- --track genome-surveillance-and-chromosome-stability --write",
+      "checked_at": "2026-06-07T22:29:30Z",
+      "url": "https://clinicaltrials.gov/",
+      "summary": "The audit found zero trial-watch records, zero missing detail records, zero stale or missing registry checks, and zero open stale watch items for the scoped track."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "mosaic chromosomal alterations OR chromosomal mosaicism OR clonal hematopoiesis chromosome aging intervention",
+      "checked_at": "2026-06-07T22:29:30Z",
+      "url": "https://clinicaltrials.gov/search?term=mosaic%20chromosomal%20alterations%20OR%20chromosomal%20mosaicism%20OR%20clonal%20hematopoiesis%20chromosome%20aging%20intervention",
+      "summary": "Found mLOY, Fanconi anemia gene therapy, embryo mosaicism, niPGT-A, sex-chromosome, AML, infertility, and aneuploidy registries. None posted a same-window aging-relevant chromosome-surveillance intervention result."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "micronucleus chromosome damage folate vitamin B12 aging trial",
+      "checked_at": "2026-06-07T22:29:30Z",
+      "url": "https://clinicaltrials.gov/search?term=micronucleus%20chromosome%20damage%20folate%20vitamin%20B12%20aging%20trial",
+      "summary": "Returned no relevant folate/B12 micronucleus aging-intervention trial records with posted results."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "BubR1 BUB1B BUBR1 spindle checkpoint aneuploidy aging; genomic instability chromosome stability aging intervention DNA damage older adults",
+      "checked_at": "2026-06-07T22:29:30Z",
+      "url": "https://clinicaltrials.gov/search?term=BubR1%20BUB1B%20BUBR1%20spindle%20checkpoint%20aneuploidy%20aging",
+      "summary": "Returned no BubR1, BUB1B, spindle-checkpoint, chromosome-stability, or direct genome-surveillance aging-intervention registry with posted results."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "mosaic chromosomal alteration(s), mCA(s), loss of Y, mLOY, or clonal hematopoiesis terms with aging, longevity, older, infection, or immune; publication dates 2026-05-31 to 2026-06-07",
+      "checked_at": "2026-06-07T22:29:30Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=mosaic%20chromosomal%20alterations%20aging%20clonal%20hematopoiesis",
+      "summary": "Returned nine records. Close records included PMID 42232585, PMID 42216432, PMID 41881101, and PMID 41568536. These added CHIP, infection, CKD/cardiovascular, oncology-treatment, and periodontitis context but no chromosome-surveillance intervention result."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "BubR1, BUB1B, SIRT2, NMN, spindle or mitotic checkpoint, aneuploidy, micronucleus or micronuclei, chromosome or chromosomal instability terms with aging, senescence, lifespan, healthspan, older, intervention, or trial; publication dates 2026-05-31 to 2026-06-07",
+      "checked_at": "2026-06-07T22:29:30Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=BubR1%20BUB1B%20SIRT2%20NMN%20aneuploidy%20aging",
+      "summary": "Returned thirteen records. Close records included PMID 42249189, PMID 42238959, PMID 42068909, PMID 41995619, PMID 41980769, PMID 41806657, and PMID 42236084. None changed the direct BubR1/SIRT2, micronucleus, or human chromosome-stability intervention map."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "query": "folate, folic acid, vitamin B12, or homocysteine terms with micronucleus, micronuclei, chromosome damage, or DNA damage and aging, older, dialysis, hemodialysis, intervention, or supplementation; publication dates 2026-05-31 to 2026-06-07",
+      "checked_at": "2026-06-07T22:29:30Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=folate%20vitamin%20B12%20micronucleus%20aging%20trial",
+      "summary": "Returned zero same-window folate/B12 micronucleus or chromosome-damage intervention records."
+    },
+    {
+      "source_name": "PubMed correction and retraction screen",
+      "query": "Baseline PMIDs 42156563, 36988570, 34099924, 15475955, 23242215, 24825348, 18469307, and 9230275 with retraction, erratum, corrected-and-republished, or expression-of-concern publication types; publication dates 2026-05-31 to 2026-06-07",
+      "checked_at": "2026-06-07T22:29:30Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned zero correction, retraction, erratum, corrected-and-republished, or expression-of-concern records for the eight PubMed baseline supporting sources."
+    },
+    {
+      "source_name": "bioRxiv and medRxiv APIs",
+      "query": "Date window 2026-05-31 to 2026-06-07 with mosaic chromosomal, mCA, mLOY, loss of Y, BUB1B, BubR1, spindle checkpoint, mitotic checkpoint, aneuploidy, micronucleus, micronuclei, chromosome instability, chromosomal instability, genomic instability, and clonal hematopoiesis title/abstract screens",
+      "checked_at": "2026-06-07T22:29:30Z",
+      "url": "https://api.biorxiv.org/",
+      "summary": "Returned one bioRxiv title match, a Cryptococcus parasexual-reproduction genomics preprint, and no medRxiv match. The bioRxiv record is wrong-scope for human aging or chromosome-surveillance intervention evidence."
+    },
+    {
+      "source_name": "Crossref API",
+      "query": "mosaic chromosomal alterations aging; BubR1 chromosome stability aging; date window 2026-05-31 to 2026-06-07",
+      "checked_at": "2026-06-07T22:29:30Z",
+      "url": "https://doi.org/10.1200/JCO.2026.44.16_suppl.10556",
+      "summary": "Found one close same-window JCO supplement abstract, DOI 10.1200/JCO.2026.44.16_suppl.10556, associating mCA burden with epigenetic age acceleration in PLCO blood samples. It is human biomarker context only and does not test intervention, functional outcome, disease prevention, or lifespan."
+    }
+  ],
+  "trial_watch_checks": [],
+  "excluded_sources": [
+    {
+      "reference": "DOI 10.1200/JCO.2026.44.16_suppl.10556",
+      "title": "Association of clonal hematopoiesis driven by mosaic chromosomal alterations with epigenetic age in the PLCO trial.",
+      "url": "https://doi.org/10.1200/JCO.2026.44.16_suppl.10556",
+      "decision": "context_only",
+      "reason": "Same-window human biomarker context: 482 PLCO participants with SNP-array mCA calls and peripheral-blood methylation clocks showed higher epigenetic age acceleration among mCA-positive participants, especially with higher clonal burden. The abstract reinforces the current mCA biomarker boundary but does not test a chromosome-stability intervention or clinical outcome."
+    },
+    {
+      "reference": "PMID 41881101",
+      "title": "Association of infection frequency and incident clonal hematopoiesis of indeterminant potential.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41881101/",
+      "decision": "context_only",
+      "reason": "Prospective ARIC analysis links infection frequency with incident CHIP over long follow-up. It is useful clonal-hematopoiesis context but does not test reducing infections, CHIP, mCAs, or chromosome instability as an aging intervention."
+    },
+    {
+      "reference": "PMID 42232585",
+      "title": "Clonal hematopoiesis of indeterminate potential is associated with increased cardiovascular risk in chronic kidney disease.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42232585/",
+      "decision": "context_only",
+      "reason": "Observational CKD cohort linking CHIP with age, coronary-lesion severity, and cardiovascular endpoints. It does not establish chromosome-surveillance intervention causality or mCA actionability."
+    },
+    {
+      "reference": "PMID 42216432",
+      "title": "A real-world data analysis of the impact of clonal hematopoiesis of indeterminate potential on therapeutic efficacy and adverse events of immune checkpoint inhibitors.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42216432/",
+      "decision": "wrong_scope",
+      "reason": "Oncology-treatment biomarker analysis of CHIP and immune checkpoint inhibitor outcomes. It is not aging-directed chromosome-stability evidence."
+    },
+    {
+      "reference": "PMID 41568536",
+      "title": "Ligature-induced periodontitis promotes Dnmt3a(R878H)-driven clonal hematopoiesis.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41568536/",
+      "decision": "context_only",
+      "reason": "Mouse and inflammation context for clonal hematopoiesis. It does not test a genome-surveillance or chromosome-stability aging intervention."
+    },
+    {
+      "reference": "PMID 41980769",
+      "title": "A dual role for cGAS in shaping cellular and organismal responses to genomic instability.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41980769/",
+      "decision": "context_only",
+      "reason": "Killifish DNA-damage-response syndrome models link cGAS disruption to some rescue phenotypes and some naive-background risk. This is useful genomic-instability mechanism and safety context, but it is not direct mCA, BubR1, spindle-checkpoint, or chromosome-surveillance intervention evidence for this track."
+    },
+    {
+      "reference": "PMID 42249189",
+      "title": "A tumour-host feed-forward loop contributes to the growth of chromosomal instability-induced tumours.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42249189/",
+      "decision": "wrong_scope",
+      "reason": "Drosophila cancer and chromosomal-instability mechanism paper. It does not address aging intervention evidence or the current public chromosome-surveillance claim."
+    },
+    {
+      "reference": "PMID 42238959",
+      "title": "A sustained-release depot formulation of beta-nicotinamide mononucleotide for alleviating chemotherapy-induced myelosuppression.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42238959/",
+      "decision": "wrong_scope",
+      "reason": "NMN formulation study in chemotherapy-induced myelosuppression and model systems. It is oncology supportive-care context, not BubR1/SIRT2 chromosome-surveillance or aging-functional evidence."
+    },
+    {
+      "reference": "PMID 42068909",
+      "title": "An integrated anti-aging framework targeting NAD+ homeostasis, mitochondrial quality control, and redox stability: Roles of NMN/NR, PQQ, and EGT.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42068909/",
+      "decision": "context_only",
+      "reason": "Broad NAD, mitochondrial, and redox review. It does not add primary evidence for BubR1 stabilization, chromosome segregation, mCAs, micronuclei, or direct genome-surveillance intervention."
+    },
+    {
+      "reference": "PMID 41995619",
+      "title": "Effects of AGK-2 treatment on sirtuin-2, oxidative stress and apoptosis in ageing pancreatic tissue of rats.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41995619/",
+      "decision": "wrong_scope",
+      "reason": "Aged-rat pancreas study using the SIRT2 inhibitor AGK-2 for oxidative-stress and apoptosis endpoints. It is not SIRT2 overexpression, BubR1 stabilization, or chromosome-surveillance evidence."
+    },
+    {
+      "reference": "PMID 41806657",
+      "title": "Oocyte-intrinsic aging drives whole-chromosome aneuploidy independent of ovarian reserve beyond maternal age as risk factor.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41806657/",
+      "decision": "wrong_scope",
+      "reason": "Retrospective IVF and PGT-A study of reproductive aneuploidy risk. It does not test a LEV-relevant chromosome-stability intervention."
+    },
+    {
+      "reference": "PMID 42236084",
+      "title": "Comparison of niPGT-A or IVF treatment vs. IVF treatment alone in patients with advanced maternal age, a single-center, open-label, randomized controlled trial protocol.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42236084/",
+      "decision": "no_results",
+      "reason": "Reproductive genetics protocol with no outcome data and no aging-directed genome-surveillance intervention."
+    },
+    {
+      "reference": "NCT06696027",
+      "title": "AYLo - AutoimmunitY and Loss of y",
+      "url": "https://clinicaltrials.gov/study/NCT06696027",
+      "decision": "no_results",
+      "reason": "Recruiting observational mLOY and autoimmunity registry with no posted results. It is relevant mLOY context but predates the surveillance window and does not test intervention."
+    },
+    {
+      "reference": "NCT04248439",
+      "title": "Gene Therapy for Fanconi Anemia, Complementation Group A",
+      "url": "https://clinicaltrials.gov/study/NCT04248439",
+      "decision": "wrong_scope",
+      "reason": "Disease-specific Fanconi anemia gene-therapy registry without posted results; not an aging-directed chromosome-surveillance intervention for the public track."
+    },
+    {
+      "reference": "NCT03503877",
+      "title": "Effect of Culture Media and Culture Conditions on Embryo Morphokinetics and Mosaicism",
+      "url": "https://clinicaltrials.gov/study/NCT03503877",
+      "decision": "wrong_scope",
+      "reason": "Completed IVF embryo-mosaicism study with posted results. Embryo culture media and reproductive mosaicism are outside this LEV aging track."
+    },
+    {
+      "reference": "NCT03520933",
+      "title": "Validation of Non-invasive Preimplantation Genetic Testing for Aneuploidy",
+      "url": "https://clinicaltrials.gov/study/NCT03520933",
+      "decision": "wrong_scope",
+      "reason": "Infertility and niPGT-A registry with no posted results; not a chromosome-surveillance aging intervention."
+    },
+    {
+      "reference": "DOI 10.64898/2026.05.28.728413",
+      "title": "Genomic hallmarks of parasexual reproduction in three hybrid groups of the human pathogen Cryptococcus neoformans",
+      "url": "https://doi.org/10.64898/2026.05.28.728413",
+      "decision": "wrong_scope",
+      "reason": "bioRxiv genomics preprint about a fungal pathogen. The title matched genomic-instability terms but is unrelated to human aging or chromosome-surveillance intervention evidence."
+    }
+  ],
+  "source_ids": [
+    "pmid-42156563",
+    "pmid-36988570",
+    "pmid-34099924",
+    "pmid-15475955",
+    "pmid-23242215",
+    "pmid-24825348",
+    "pmid-18469307",
+    "pmid-9230275"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42156563/",
+    "https://pubmed.ncbi.nlm.nih.gov/36988570/",
+    "https://pubmed.ncbi.nlm.nih.gov/34099924/",
+    "https://pubmed.ncbi.nlm.nih.gov/15475955/",
+    "https://pubmed.ncbi.nlm.nih.gov/23242215/",
+    "https://pubmed.ncbi.nlm.nih.gov/24825348/",
+    "https://pubmed.ncbi.nlm.nih.gov/18469307/",
+    "https://pubmed.ncbi.nlm.nih.gov/9230275/",
+    "https://doi.org/10.1200/JCO.2026.44.16_suppl.10556",
+    "https://pubmed.ncbi.nlm.nih.gov/41881101/",
+    "https://pubmed.ncbi.nlm.nih.gov/42232585/",
+    "https://pubmed.ncbi.nlm.nih.gov/42216432/",
+    "https://pubmed.ncbi.nlm.nih.gov/41568536/",
+    "https://pubmed.ncbi.nlm.nih.gov/41980769/",
+    "https://pubmed.ncbi.nlm.nih.gov/42249189/",
+    "https://pubmed.ncbi.nlm.nih.gov/42238959/",
+    "https://pubmed.ncbi.nlm.nih.gov/42068909/",
+    "https://pubmed.ncbi.nlm.nih.gov/41995619/",
+    "https://pubmed.ncbi.nlm.nih.gov/41806657/",
+    "https://pubmed.ncbi.nlm.nih.gov/42236084/",
+    "https://clinicaltrials.gov/study/NCT06696027",
+    "https://clinicaltrials.gov/study/NCT04248439",
+    "https://clinicaltrials.gov/study/NCT03503877",
+    "https://clinicaltrials.gov/study/NCT03520933",
+    "https://doi.org/10.64898/2026.05.28.728413"
+  ],
+  "notes": [
+    "Triage selected this as the rank-1 next distinct surveillance target after Telomere Protection and Capping surveillance.",
+    "The delta window is anchored to publication event publish-genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31-2026-05-31t20-14-53-931z.",
+    "No coverage assessment exists yet for this track; this ordinary surveillance pass found context-worthy same-window biomarker activity but no category-level change requiring immediate coverage repair.",
+    "The JCO PLCO mCA and epigenetic-age abstract should be reconsidered during a future coverage assessment because it strengthens human biomarker triangulation, but it does not change public stage, momentum, confidence, or actionability on its own.",
+    "The public boundary remains unchanged: human evidence is still mostly observational mCA biology plus narrow micronucleus biomarker movement, while direct BubR1/SIRT2 chromosome-surveillance intervention evidence remains animal-stage and safety-constrained."
+  ],
+  "next_actions": [
+    "Continue ordinary surveillance for result-bearing mCA, mLOY, micronucleus, spindle-checkpoint, BubR1, SIRT2, folate/B12, and chromosome-stability intervention updates.",
+    "Consider a separate coverage assessment when the track needs deeper capture of no-results registries, JCO supplement biomarker abstracts, or clonal-hematopoiesis boundary evidence.",
+    "Create a public bundle only if future evidence changes stage, evidence weight, momentum, blockers, safety, durability, human functional outcomes, disease-prevention evidence, or the causal interpretation of mCA and micronucleus biomarkers."
+  ]
+}
