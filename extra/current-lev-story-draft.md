@@ -1,30 +1,36 @@
 # Current LEV Story Draft
 
-Status: stale
+Status: current
 Style: plain
 Generated for review: 2026-06-10
 
 ## Homepage Story
 
-Title: Field activity changed; the LEV proof gap needs checking
+Title: Broader activity, same human proof gap
 
-No May result changed the LEV outlook. The useful trial read was mostly absence of results: several watched studies were complete or near expected completion with no posted outcomes in available public records, while the field still lacked repeated human evidence that aging-relevant health or function improves for longer. The important question is whether the evidence makes LEV look closer, or only clarifies where evidence remains thin.
+Longevity research now has early human signals in more places, but the center of gravity is still early testing. LEV does not look close until multiple approaches show long-lasting improvements in human health or function, with safety and lasting effects clear enough to matter.
 
 ## Where We Are Now
 
-The overall field read is human biomarker signal, with mixed momentum and a provisional read. The main evidence gap remains: The field still lacks repeated human studies showing long-lasting improvements in health or function in ways that clearly add up toward LEV.
+The field is in early human testing. Some tracks now have early biomarker results, functional results, disease results, or trials worth watching. Most are still uncertain, narrow, or only indirectly about aging itself.
 
 ## What Changed Recently
 
-Recent field updates include: Stem Cell Rejuvenation Missing Context Update for June 9, 2026. Their importance depends on whether they change human outcomes, safety, read firmness, or the main evidence gap; more activity by itself is not progress toward LEV.
+The May field review did not find a result that changed the LEV outlook. The June 9 NAD/redox update and June 10 stem-cell rejuvenation and mitophagy updates made individual tracks easier to judge by adding no-results registries, safety context, review context, and clearer evidence boundaries, but none changed the larger proof gap: repeated human evidence that health or function improves for longer.
 
 ## Review Reasons
 
-- 1 outlook-changing public update(s) are newer than the current story.
+- No staleness reasons detected.
 
 ## Recent Developments
 
-- Stem Cell Rejuvenation Missing Context Update for June 9, 2026: This may affect the overall field read only if it changes human outcomes, safety, read firmness, or the main evidence gap.
+- A broader look exposes the same bottleneck: The field is easier to judge, but the evidence has not moved far enough to make LEV look closer.
+- Early human signals are showing up in more places: The field is easier to track seriously, but many signs are still narrow, disease-specific, or mostly based on biomarkers.
+- More context is narrowing the claims: The update made the evidence easier to judge without treating activity as proof.
+- A senomorphics update added a preclinical signal: It adds a concrete signal to watch, but it does not make the overall LEV outlook more optimistic because treated-human evidence did not change.
+- NAD/redox context widened without changing the read: It makes the track easier to judge, but it does not make LEV look closer because the new records do not show repeated, long-lasting human function or clinical benefit.
+- Stem-cell rejuvenation gained clearer boundaries: It improves the map of what to watch, but it does not make LEV look closer because the new records do not show treated-human benefit or resolved safety.
+- Mitophagy gained safety and registry context: It makes the mitophagy story easier to judge, but it does not make LEV look closer because long-lasting older-adult function, frailty benefit, and long-term safety remain unresolved.
 
 ## Before / Now / Next
 
@@ -46,7 +52,7 @@ Recent field updates include: Stem Cell Rejuvenation Missing Context Update for 
 
 ## Ranked Changes
 
-- 302: Published Stem Cell Rejuvenation Missing Context Update for June 9, 2026 (track outlook, outlook record, finding, study, stage change, momentum change, human evidence, result, safety or null signal, trial lane)
+- No newer outlook-changing public updates.
 
 ## Plain-Language Warnings
 

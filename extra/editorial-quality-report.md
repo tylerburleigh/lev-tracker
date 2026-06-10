@@ -1,13 +1,14 @@
 # Editorial Quality Report
 
-Generated: 2026-06-10T11:57:15.392Z
+Generated: 2026-06-10T16:09:44.239Z
 Overall: passed
 
 ## Summary
 
 - Current LEV story status: current
-- Public copy warnings: 0
+- Public copy warnings: 14
 - Reader-task audit: passed (14 passed, 0 issues, 0 warnings)
+- Top public-copy terms: durable: 4, functional benefit: 2, mechanistic: 2, biomarker-heavy: 1, coverage repair: 1, low confidence: 1, public map: 1, support map: 1
 
 ## Gates
 
@@ -27,7 +28,7 @@ Exit code: 0
 Current LEV story status: current
 Last reviewed: 2026-06-10
 Review due: 2026-07-10
-Watched outlooks: 14
+Watched outlooks: 15
 Changed or missing snapshots: 0
 New outlook-changing public updates: 0
 ```
@@ -38,8 +39,8 @@ Command: `node scripts/public-copy-lint.mjs --write`
 Exit code: 0
 
 ```text
-Public copy warnings: 0
-No tracked jargon terms found.
+Public copy warnings: 14
+Top terms: durable: 4, functional benefit: 2, mechanistic: 2, biomarker-heavy: 1, coverage repair: 1, low confidence: 1, public map: 1, support map: 1
 Wrote extra/public-copy-report.md.
 ```
 
