@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-10T17:34:29.807Z",
+  "updated_at": "2026-06-10T18:02:41.798Z",
   "notes": [
     "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
@@ -621,17 +621,5 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-23."
     }
   ],
-  "coverage_repair_queue": [
-    {
-      "rank": 1,
-      "phase_id": "coverage-repair",
-      "track_id": "dna-repair-enhancement",
-      "hallmark_id": "genomic_instability",
-      "priority_tier": "now",
-      "default_mode": "coverage_repair",
-      "rationale": "After evidence review and publication of the DREAM surveillance bundle, run coverage repair for DNA Repair Enhancement with emphasis on systemic repair-regulator biology, NAD/nucleotide boundary records, active registries, recent reviews, and safety/off-target genome-response limits.",
-      "default_question": "Which known source-completeness gaps for DNA Repair Enhancement need repair, and does resolving them change the coverage verdict or public boundaries?",
-      "notes": "Latest coverage assessment: dna-repair-enhancement-surveillance-2026-06-10."
-    }
-  ]
+  "coverage_repair_queue": []
 }

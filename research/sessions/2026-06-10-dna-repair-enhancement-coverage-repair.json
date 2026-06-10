@@ -1,0 +1,271 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-10-dna-repair-enhancement-coverage-repair",
+  "name": "DNA Repair Enhancement coverage repair for June 10, 2026",
+  "mode": "coverage_repair",
+  "started_at": "2026-06-10T17:35:00Z",
+  "completed_at": "2026-06-10T17:51:39Z",
+  "scope": {
+    "question": "Which known source-completeness gaps for DNA Repair Enhancement need repair, and does resolving them change the coverage verdict or public boundaries?",
+    "hallmark_ids": [
+      "genomic_instability"
+    ],
+    "track_ids": [
+      "dna-repair-enhancement"
+    ],
+    "intervention_ids": [
+      "sirt6-overexpression",
+      "nicotinamide",
+      "nicotinamide-riboside",
+      "nicotinamide-mononucleotide",
+      "topical-dna-repair-enzymes",
+      "photolyase-containing-dna-repair-cream"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "dna-repair-enhancement-coverage-repair-2026-06-10",
+  "summary": "Coverage repair found that the public DNA Repair Enhancement map should add direct preclinical repair-regulator and review triangulation anchors: SIRT6 double-strand break repair across long-lived species, OGG1 small-molecule activation of oxidative DNA repair in cells, and a 2026 review of DNA repair pathway targeting in aging, cancer, and neurodegeneration. Registry and PubMed boundary checks did not find direct systemic human DNA repair-enhancement results. The staged bundle repairs source coverage and public support-map completeness without changing stage, momentum, or confidence.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "outlook_refresh",
+    "public_update_needed": true,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The repair changes the public source map and outlook support map by adding SIRT6, OGG1, and recent review anchors for the named coverage gaps. The additions are preclinical, cellular, or review-level, so they do not justify a stage upgrade or stronger public read."
+  },
+  "search_log": [
+    {
+      "source_name": "PubMed ESearch/ESummary",
+      "query": "(\"DNA repair\" AND aging AND review) from 2024-01-01 onward",
+      "checked_at": "2026-06-10T17:39:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22DNA+repair%22+aging+review",
+      "summary": "Returned recent review and boundary records. PMID 42227145 was staged because it directly reviews repair pathway targeting across aging, cancer, and neurodegeneration. PMID 42189399 was kept as skin photoprotection context and PMID 42188047 as NAD-homeostasis boundary context."
+    },
+    {
+      "source_name": "PubMed ESearch/ESummary/EFetch",
+      "query": "DREAM, SIRT6, DNA glycosylase, ATM, or ATR with DNA repair/genome stability and aging",
+      "checked_at": "2026-06-10T17:41:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=SIRT6+DNA+repair+aging",
+      "summary": "Selected PMID 31002797 as a direct SIRT6 double-strand break repair and longevity anchor and PMID 35737787 as a direct OGG1 small-molecule repair activation anchor. DREAM PMID 42230995 was already published for this track. Other SIRT6, glycosylase, endothelial DNA damage, and resveratrol POI records were kept as review, disease, cell, or boundary context."
+    },
+    {
+      "source_name": "PubMed ESearch/ESummary/EFetch",
+      "query": "NAD, NR, NMN, nucleotide, DNA repair, genomic instability, telomere, aging, older adults, or human",
+      "checked_at": "2026-06-10T17:43:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=nicotinamide+mononucleotide+DNA+repair+human",
+      "summary": "PMID 42265534 remained the main same-window nucleotide boundary record: older-adult nucleotide supplementation affected DNAmAge and telomere endpoints in a secondary analysis, but did not measure direct DNA repair enhancement. No direct human NAD-precursor DNA repair endpoint result was found."
+    },
+    {
+      "source_name": "PubMed ESearch/ESummary",
+      "query": "DNA repair capacity or DNA damage response randomized/intervention older adults/human from 2020 onward",
+      "checked_at": "2026-06-10T17:44:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=DNA+repair+capacity+randomized+older+adults",
+      "summary": "Top hits were nucleotide/telomere, senescence, oncology, photoprotection, or other adjacent records. No systemic aging-relevant human intervention result with direct DNA repair endpoints was selected."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "NCT06465602, NCT06592859, NCT07144527, NCT06324877, NCT04870866, and NCT06208527",
+      "checked_at": "2026-06-10T17:45:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "All named NAD, nicotinamide, NMN, NR, or ataxia-telangiectasia registries had no posted results. NCT06592859, NCT07144527, and NCT06208527 are already represented under NAD and Redox Restoration; NCT06465602 has no DNA repair endpoint; NCT06324877 and NCT04870866 are disease-boundary ataxia-telangiectasia records."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "DNA repair enzyme skin OR photolyase OR T4N5",
+      "checked_at": "2026-06-10T17:46:00Z",
+      "url": "https://clinicaltrials.gov/search?term=DNA%20repair%20enzyme%20skin%20photolyase%20T4N5",
+      "summary": "Returned historical skin-focused DNA repair enzyme or topical T4N5 records, including completed, withdrawn, unknown, and oncology-boundary trials, but no new systemic aging-relevant posted results."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT06465602",
+      "registry_url": "https://clinicaltrials.gov/study/NCT06465602",
+      "checked_at": "2026-06-10T17:45:00Z",
+      "current_registry_status": "unknown",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2024-11-30",
+      "study_completion_date": "2025-02-28",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "wrong_scope",
+      "public_action": "none",
+      "summary": "Nicotinamide older-adult falls/frailty registry with physical performance, posturography, dynamometry, quadriceps saturation, adherence, adverse effects, and plasma endpoints; no posted results and no direct DNA repair endpoint."
+    },
+    {
+      "registry_id": "NCT06592859",
+      "study_id": "nmn-middle-aged-older-adults-registry",
+      "source_id": "nct-06592859",
+      "registry_url": "https://clinicaltrials.gov/study/NCT06592859",
+      "checked_at": "2026-06-10T17:45:00Z",
+      "previous_local_status": "recruiting",
+      "current_registry_status": "recruiting",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2026-05-24",
+      "study_completion_date": "2026-12-31",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "Recruiting NMN registry with biological-age composite and multilevel omics endpoints; already represented under NAD and Redox Restoration and has no posted direct DNA repair result."
+    },
+    {
+      "registry_id": "NCT07144527",
+      "study_id": "nmn-exercise-tolerance-older-adults-registry",
+      "source_id": "nct-07144527",
+      "registry_url": "https://clinicaltrials.gov/study/NCT07144527",
+      "checked_at": "2026-06-10T17:45:00Z",
+      "previous_local_status": "recruiting",
+      "current_registry_status": "recruiting",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2026-12-30",
+      "study_completion_date": "2027-01-01",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "Recruiting NMN exercise-tolerance registry with time-to-fatigue, VO2max, lactate threshold, work-capacity, critical-power, and NAD-metabolite endpoints; already represented under NAD and Redox Restoration and has no posted direct DNA repair result."
+    },
+    {
+      "registry_id": "NCT06324877",
+      "registry_url": "https://clinicaltrials.gov/study/NCT06324877",
+      "checked_at": "2026-06-10T17:45:00Z",
+      "current_registry_status": "unknown",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2025-10-30",
+      "study_completion_date": "2025-10-30",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "wrong_scope",
+      "public_action": "none",
+      "summary": "Nicotinamide riboside ataxia-telangiectasia registry with ataxia rating and neurofilament or interferon-signature endpoints; disease-boundary context, no posted results."
+    },
+    {
+      "registry_id": "NCT04870866",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04870866",
+      "checked_at": "2026-06-10T17:45:00Z",
+      "current_registry_status": "active",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2024-09-03",
+      "study_completion_date": "2027-06-16",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "wrong_scope",
+      "public_action": "none",
+      "summary": "Nicotinamide riboside ataxia-telangiectasia registry with NAD metabolome, function, liver, glucose, and mitochondrial endpoints; disease-boundary context, no posted results."
+    },
+    {
+      "registry_id": "NCT06208527",
+      "study_id": "nadage-nicotinamide-riboside-frailty-registry",
+      "source_id": "nct-06208527",
+      "registry_url": "https://clinicaltrials.gov/study/NCT06208527",
+      "checked_at": "2026-06-10T17:45:00Z",
+      "previous_local_status": "recruiting",
+      "current_registry_status": "recruiting",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "Recruiting NADage NR frailty registry with gait speed, safety, SPPB, grip strength, and cognitive endpoints; already represented under NAD and Redox Restoration and has no posted direct DNA repair result."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 42265534",
+      "title": "Urate-Related Genetic Risk Modulates the Anti-Aging Effects of Exogenous Nucleotides",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42265534/",
+      "decision": "context_only",
+      "reason": "Older-adult nucleotide supplementation affected DNAmAge and telomere endpoints but did not measure direct DNA repair enhancement; it remains nucleotide/telomere boundary context."
+    },
+    {
+      "reference": "PMID 42188047",
+      "title": "Targeting NAD Homeostasis: Compartmentalization, Quantification, and Modulation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42188047/",
+      "decision": "context_only",
+      "reason": "Review supports NAD/DNA repair mechanistic overlap and translational limits, but it belongs primarily to NAD and Redox Restoration."
+    },
+    {
+      "reference": "PMID 42189399",
+      "title": "Biological Photoprotection: A Review of its Mechanisms, Evidence, and Clinical Implications",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42189399/",
+      "decision": "context_only",
+      "reason": "Photoprotection review confirms small, short, heterogeneous skin evidence and sponsor-heavy context; it does not add systemic DNA repair enhancement evidence beyond the existing skin-local records."
+    },
+    {
+      "reference": "PMID 42247759",
+      "title": "XPC and global genome nucleotide excision repair are essential for telomere stability after UVC-induced DNA damage in human cells",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42247759/",
+      "decision": "context_only",
+      "reason": "Human-cell telomere and UV repair mechanism source is relevant boundary context but not an intervention or aging outcome record."
+    },
+    {
+      "reference": "PMID 42059077",
+      "title": "Endothelial DNA Damage Orchestrates Cardio-Kidney-Metabolic Dysfunction Through Endothelin-1 Signaling",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42059077/",
+      "decision": "context_only",
+      "reason": "Mouse and human-association endothelial DNA damage source supports disease mechanism and ETAR-blockade context, but it is not a direct broad DNA repair enhancement intervention."
+    },
+    {
+      "reference": "PMID 41956137",
+      "title": "The role and therapeutic potential of DNA glycosylases in Alzheimer's disease",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41956137/",
+      "decision": "context_only",
+      "reason": "Disease-specific DNA glycosylase review is useful for future disease-boundary work, but OGG1 small-molecule activation was selected as the more direct repair-enhancement anchor."
+    },
+    {
+      "reference": "NCT06465602",
+      "title": "Nicotinamide supplementation improves physical performance in older adults at risk of falls",
+      "url": "https://clinicaltrials.gov/study/NCT06465602",
+      "decision": "wrong_scope",
+      "reason": "No posted results and no direct DNA repair endpoint; track fit is weaker than NAD or physical-function surveillance."
+    },
+    {
+      "reference": "NCT06324877 and NCT04870866",
+      "title": "Nicotinamide riboside ataxia-telangiectasia registries",
+      "url": "https://clinicaltrials.gov/search?term=ataxia%20telangiectasia%20nicotinamide%20riboside",
+      "decision": "wrong_scope",
+      "reason": "Disease-specific DNA repair syndrome context with no posted results; useful boundary evidence but not broad aging-track support."
+    }
+  ],
+  "source_ids": [
+    "pmid-31002797",
+    "pmid-35737787",
+    "pmid-42227145"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/31002797/",
+    "https://doi.org/10.1016/j.cell.2019.03.043",
+    "https://pubmed.ncbi.nlm.nih.gov/35737787/",
+    "https://doi.org/10.1126/science.abf8980",
+    "https://pubmed.ncbi.nlm.nih.gov/42227145/",
+    "https://doi.org/10.1080/14728222.2026.2683686",
+    "https://clinicaltrials.gov/study/NCT06465602",
+    "https://clinicaltrials.gov/study/NCT06592859",
+    "https://clinicaltrials.gov/study/NCT07144527",
+    "https://clinicaltrials.gov/study/NCT06324877",
+    "https://clinicaltrials.gov/study/NCT04870866",
+    "https://clinicaltrials.gov/study/NCT06208527"
+  ],
+  "notes": [
+    "The staged public change repairs source completeness; it does not claim SIRT6, OGG1, or any repair-regulator therapy has human preventive-aging efficacy.",
+    "NAD/NMN/NR registries were treated as taxonomy-boundary and trial-watch context because they lack direct DNA repair endpoints.",
+    "Ataxia-telangiectasia NR registries were kept out of public support because they are disease-specific no-results records.",
+    "The current public stage remains human_biomarker_signal because the human DNA repair endpoint evidence is still skin-local."
+  ],
+  "next_actions": [
+    "Run source-fidelity, interpretation/forecast, safety-limitations, and taxonomy-mapping reviews for the submitted coverage-repair bundle.",
+    "If approved and published, return DNA Repair Enhancement to ordinary surveillance with special watch for systemic human repair-regulator target-engagement evidence."
+  ]
+}
