@@ -1,0 +1,249 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-10-dna-repair-enhancement-surveillance",
+  "name": "DNA Repair Enhancement surveillance pass for June 10, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-10T16:15:00Z",
+  "completed_at": "2026-06-10T16:30:00Z",
+  "scope": {
+    "question": "What changed for DNA Repair Enhancement since the May 31, 2026 baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "genomic_instability"
+    ],
+    "track_ids": [
+      "dna-repair-enhancement"
+    ],
+    "intervention_ids": [
+      "nicotinamide",
+      "nicotinamide-riboside",
+      "nicotinamide-mononucleotide",
+      "topical-dna-repair-enzymes",
+      "photolyase-containing-dna-repair-cream"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "dna-repair-enhancement-surveillance-2026-06-10",
+  "summary": "Same-window surveillance found one material public update candidate: a June 2026 Nat Aging DREAM repression paper linking repair-repressor biology to somatic mutation burden, mammalian lifespan, human Alzheimer's disease association data, and lower mutation accumulation in DREAM-knockout mouse brain. Because the source already exists in the public data, the staged bundle attaches its study/finding to DNA Repair Enhancement and refreshes the track outlook without upgrading stage, momentum, or confidence. Known trial registries did not yield new result-bearing updates, and broader NAD/nucleotide and disease-boundary hits point to a follow-on coverage-repair need.",
+  "next_recommended_mode": "coverage_repair",
+  "materiality_decision": {
+    "material_delta": "outlook_refresh",
+    "public_update_needed": true,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "coverage_repair",
+    "rationale": "PMID 42230995 is a post-baseline primary source directly relevant to DNA repair regulation and somatic mutation burden, so the public support map should include it. The source is preclinical/comparative and does not justify a stage upgrade. Discovery also exposed thin systemic repair-regulator, active-registry, and taxonomy-boundary coverage that should be repaired after this staged update is reviewed."
+  },
+  "search_log": [
+    {
+      "source_name": "PubMed ESearch/ESummary/EFetch",
+      "query": "(\"DNA repair\"[Title/Abstract] AND aging[Title/Abstract]) AND 2026/05/31:3000[Date - Publication]",
+      "checked_at": "2026-06-10T16:18:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22DNA+repair%22%5BTitle%2FAbstract%5D+AND+aging%5BTitle%2FAbstract%5D%29",
+      "summary": "Returned 15 IDs. PMID 42230995 was staged as a material same-window source. Close hits included exogenous nucleotides with epigenetic/telomere endpoints, a DNA-repair-targeting review, endothelial DNA damage disease biology, DNA glycosylase Alzheimer's review context, and skin-cancer mechanism papers that did not change the public track read."
+    },
+    {
+      "source_name": "PubMed ESearch/ESummary",
+      "query": "nicotinamide AND (skin cancer OR DNA repair OR photodamage), 2026/05/31 onward",
+      "checked_at": "2026-06-10T16:19:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=nicotinamide+skin+cancer+DNA+repair",
+      "summary": "Returned 5 IDs, mostly oncology or editorial context. No new result-bearing nicotinamide DNA-repair or skin-chemoprevention trial source was found."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "query": "(photolyase OR \"DNA repair enzyme\") AND (skin OR sunscreen OR actinic), 2026/05/31 onward",
+      "checked_at": "2026-06-10T16:19:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=photolyase+DNA+repair+enzyme+skin+sunscreen+actinic",
+      "summary": "Returned 0 same-window PubMed records."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "query": "(nicotinamide riboside OR nicotinamide mononucleotide OR NMN OR NR) AND (DNA repair OR PARP OR genomic instability) AND human, 2026/05/31 onward",
+      "checked_at": "2026-06-10T16:20:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=nicotinamide+riboside+DNA+repair+human",
+      "summary": "Returned 0 same-window direct human NAD-precursor DNA-repair endpoint records."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "NCT02921659",
+      "checked_at": "2026-06-10T16:21:00Z",
+      "url": "https://clinicaltrials.gov/study/NCT02921659",
+      "summary": "Known NR older-adult registry remained completed, last update posted 2016-12-01, with no ClinicalTrials.gov results section. The PubMed article remains the result-bearing public source."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "DNA repair aging; nicotinamide DNA repair; DNA repair enzyme skin; photolyase sunscreen; nicotinamide mononucleotide older adults",
+      "checked_at": "2026-06-10T16:22:00Z",
+      "url": "https://clinicaltrials.gov/search?term=DNA%20repair%20aging",
+      "summary": "Broad registry searches found no new posted result-bearing DNA-repair-enhancement trial. Close registry hits included NCT06465602 nicotinamide falls/frailty, NCT06208527 NADage, NCT07144527 NMN exercise tolerance, NCT06592859 NMN in middle-aged/elderly people, NR ataxia-telangiectasia registries, and topical DNA repair enzyme skin studies; these were no-results, wrong-scope, already covered in NAD/redox, or historical."
+    },
+    {
+      "source_name": "UMIN Clinical Trials Registry",
+      "query": "UMIN000036321",
+      "checked_at": "2026-06-10T16:23:00Z",
+      "url": "https://upload.umin.ac.jp/cgi-open-bin/ctr_e/ctr_view.cgi?recptno=R000040733",
+      "summary": "UMIN listed the NMN older-men trial as completed, last modified 2021-03-02, with unpublished registry results; the PubMed article remains the result-bearing public source."
+    },
+    {
+      "source_name": "ANZCTR",
+      "query": "ACTRN12612000625875 and ACTRN12617000599370",
+      "checked_at": "2026-06-10T16:24:00Z",
+      "url": "https://www.anzctr.org.au/",
+      "summary": "Direct machine retrieval of ANZCTR trial pages was blocked by a managed challenge. PubMed records and official registry URLs confirm the ACTRN identifiers, and no new result-bearing source was found."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT02921659",
+      "study_id": "nicotinamide-riboside-older-adults-nad",
+      "source_id": "pmid-29599478",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02921659",
+      "checked_at": "2026-06-10T16:21:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "ClinicalTrials.gov still has no registry results section and was last updated in 2016; the published NR trial remains already represented as indirect NAD-linked context without DNA repair endpoints."
+    },
+    {
+      "registry_id": "UMIN000036321",
+      "study_id": "nicotinamide-mononucleotide-older-men-nad-muscle",
+      "source_id": "pmid-35927255",
+      "registry_url": "https://upload.umin.ac.jp/cgi-open-bin/ctr_e/ctr_view.cgi?recptno=R000040733",
+      "checked_at": "2026-06-10T16:23:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "UMIN listed the NMN older-men trial as completed and unpublished in-registry; the published article remains already represented as indirect NAD-linked context without DNA repair endpoints."
+    },
+    {
+      "registry_id": "ACTRN12612000625875",
+      "study_id": "ontrac-nicotinamide-skin-cancer-chemoprevention",
+      "source_id": "pmid-26488693",
+      "registry_url": "https://www.anzctr.org.au/Trial/Registration/TrialReview.aspx?ACTRN=12612000625875",
+      "checked_at": "2026-06-10T16:24:00Z",
+      "previous_local_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "not_retrieved",
+      "public_action": "record_no_op",
+      "summary": "Direct ANZCTR retrieval was blocked, but the ONTRAC PubMed report remains the result-bearing source and no new registry-linked result was found."
+    },
+    {
+      "registry_id": "ACTRN12617000599370",
+      "study_id": "ontrans-nicotinamide-transplant-skin-cancer",
+      "source_id": "pmid-36856616",
+      "registry_url": "https://www.anzctr.org.au/Trial/Registration/TrialReview.aspx?ACTRN=12617000599370",
+      "checked_at": "2026-06-10T16:24:00Z",
+      "previous_local_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "not_retrieved",
+      "public_action": "record_no_op",
+      "summary": "Direct ANZCTR retrieval was blocked, but the ONTRANS PubMed report remains the result-bearing null source and no new registry-linked result was found."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 42265534",
+      "title": "Urate-Related Genetic Risk Modulates the Anti-Aging Effects of Exogenous Nucleotides",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42265534/",
+      "decision": "context_only",
+      "reason": "Human nucleotide supplementation moved DNAmAge and telomere endpoints in a secondary analysis, but it did not directly measure DNA repair enhancement and should be handled, if at all, in coverage repair or a nucleotide/telomere boundary pass."
+    },
+    {
+      "reference": "PMID 42227145",
+      "title": "Therapeutic targeting of DNA repair pathway dysregulation in aging, cancer, and neurodegeneration",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42227145/",
+      "decision": "context_only",
+      "reason": "Recent review is useful for future source completeness but is not primary result-bearing evidence for the staged surveillance update."
+    },
+    {
+      "reference": "PMID 42059077",
+      "title": "Endothelial DNA Damage Orchestrates Cardio-Kidney-Metabolic Dysfunction Through Endothelin-1 Signaling",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42059077/",
+      "decision": "context_only",
+      "reason": "Disease-mechanism and mouse perturbation source is relevant to systemic DNA damage biology but was available before the baseline review window and does not by itself change the current track outlook."
+    },
+    {
+      "reference": "PMID 41956137",
+      "title": "The role and therapeutic potential of DNA glycosylases in Alzheimer's disease",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41956137/",
+      "decision": "context_only",
+      "reason": "Review of DNA glycosylases in Alzheimer's disease is disease-boundary context, not a new treated-aging or direct track-update result."
+    },
+    {
+      "reference": "PMID 41905622",
+      "title": "Photodynamic therapy and nicotinamide-complementary strategies in cutaneous carcinogenesis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41905622/",
+      "decision": "not_material",
+      "reason": "Editorial context did not add primary DNA-repair-enhancement evidence beyond the existing nicotinamide skin-cancer records."
+    },
+    {
+      "reference": "NCT07144527",
+      "title": "Nicotinamide mononucleotide supplementation for exercise tolerance improvement in healthy older adults",
+      "url": "https://clinicaltrials.gov/study/NCT07144527",
+      "decision": "duplicate",
+      "reason": "Already represented in the NAD and Redox Restoration public layer; it has no posted results and no direct DNA repair endpoint."
+    },
+    {
+      "reference": "NCT06592859",
+      "title": "Intervention of nicotinamide mononucleotide in middle-aged and elderly people",
+      "url": "https://clinicaltrials.gov/study/NCT06592859",
+      "decision": "context_only",
+      "reason": "Recruiting no-results NAD/NMN registry is more direct for NAD and Redox Restoration than DNA Repair Enhancement, and it has no posted DNA repair result."
+    },
+    {
+      "reference": "NCT06465602",
+      "title": "Nicotinamide supplementation improves physical performance in older adults at risk of falls",
+      "url": "https://clinicaltrials.gov/study/NCT06465602",
+      "decision": "context_only",
+      "reason": "Nicotinamide frailty/falls registry has unknown status and no posted results; no DNA repair endpoint was identified in the registry summary."
+    },
+    {
+      "reference": "NCT06324877 and NCT04870866",
+      "title": "Nicotinamide riboside ataxia-telangiectasia registries",
+      "url": "https://clinicaltrials.gov/search?term=ataxia%20telangiectasia%20nicotinamide%20riboside",
+      "decision": "wrong_scope",
+      "reason": "Disease-specific DNA repair syndrome registries are useful boundary context but not broad aging-track evidence, and no posted results were identified."
+    }
+  ],
+  "source_ids": [
+    "pmid-42230995"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42230995/",
+    "https://doi.org/10.1038/s43587-026-01132-z",
+    "https://clinicaltrials.gov/study/NCT02921659",
+    "https://upload.umin.ac.jp/cgi-open-bin/ctr_e/ctr_view.cgi?recptno=R000040733",
+    "https://www.anzctr.org.au/Trial/Registration/TrialReview.aspx?ACTRN=12612000625875",
+    "https://www.anzctr.org.au/Trial/Registration/TrialReview.aspx?ACTRN=12617000599370"
+  ],
+  "notes": [
+    "The staged DREAM update broadens the repair-regulator biology but should not be read as a human intervention signal.",
+    "The public read remains limited by skin-local human evidence, null transplant-recipient nicotinamide results, indirect NAD-precursor evidence, and unresolved safety/durability questions for systemic repair manipulation.",
+    "ANZCTR pages were not machine-readable during this pass because the registry returned a managed challenge; the ACTRN identifiers remain traceable through the published ONTRAC and ONTRANS trial reports."
+  ],
+  "next_actions": [
+    "Run evidence review lanes for the submitted surveillance bundle before editorial approval.",
+    "After publication, run coverage repair for DNA Repair Enhancement to handle systemic repair-regulator, nucleotide/NAD boundary, recent review, and disease-specific DNA repair syndrome context."
+  ]
+}

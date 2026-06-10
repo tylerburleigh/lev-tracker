@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-10T14:26:17.680Z",
+  "updated_at": "2026-06-10T16:37:33.675Z",
   "notes": [
     "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
@@ -75,18 +75,6 @@
     {
       "rank": 1,
       "phase_id": "surveillance-rotation",
-      "track_id": "dna-repair-enhancement",
-      "hallmark_id": "genomic_instability",
-      "default_mode": "surveillance",
-      "freshness_status": "never_checked",
-      "cooldown_days": 14,
-      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
-      "default_question": "What changed for DNA Repair Enhancement since the last meaningful review or publication, and does any change justify a public update?",
-      "priority_tier": "now"
-    },
-    {
-      "rank": 2,
-      "phase_id": "surveillance-rotation",
       "track_id": "telomerase-restoration",
       "hallmark_id": "telomere_attrition",
       "default_mode": "surveillance",
@@ -97,7 +85,7 @@
       "priority_tier": "now"
     },
     {
-      "rank": 3,
+      "rank": 2,
       "phase_id": "surveillance-rotation",
       "track_id": "chaperone-and-heat-shock-support",
       "hallmark_id": "loss_of_proteostasis",
@@ -109,7 +97,7 @@
       "priority_tier": "now"
     },
     {
-      "rank": 4,
+      "rank": 3,
       "phase_id": "surveillance-rotation",
       "track_id": "autophagy-induction",
       "hallmark_id": "disabled_macroautophagy",
@@ -118,7 +106,7 @@
       "cooldown_days": 14,
       "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
       "default_question": "What changed for Autophagy Induction since the last meaningful review or publication, and does any change justify a public update?",
-      "priority_tier": "soon"
+      "priority_tier": "now"
     }
   ],
   "surveillance_recent_queue": [

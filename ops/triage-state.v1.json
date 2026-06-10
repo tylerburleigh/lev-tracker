@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-10T16:09:35.383Z",
+  "generated_at": "2026-06-10T16:37:33.775Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-10T14:26:17.679Z",
-    "research_priority_queue_updated_at": "2026-06-10T14:26:17.680Z",
-    "active_candidate_bundle_count": 0,
+    "research_coverage_status_updated_at": "2026-06-10T16:37:33.675Z",
+    "research_priority_queue_updated_at": "2026-06-10T16:37:33.675Z",
+    "active_candidate_bundle_count": 1,
     "bootstrap_queue_count": 0,
-    "surveillance_queue_count": 4,
+    "surveillance_queue_count": 3,
     "surveillance_recent_queue_count": 34,
     "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 24,
+    "coverage_assessment_backlog_count": 23,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
   },
@@ -33,10 +33,10 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "surveillance-dna-repair-enhancement",
-    "top_mode": "surveillance",
-    "active_editorial_count": 0,
-    "ready_research_count": 4,
+    "top_work_item_id": "editorial_review-dna-repair-enhancement-surveillance-2026-06-10",
+    "top_mode": "editorial_review",
+    "active_editorial_count": 1,
+    "ready_research_count": 3,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
@@ -46,24 +46,58 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "surveillance-dna-repair-enhancement",
+      "item_id": "editorial_review-dna-repair-enhancement-surveillance-2026-06-10",
+      "mode": "editorial_review",
+      "domain": "editorial",
+      "priority_tier": "now",
+      "status": "ready",
+      "title": "Review active staged update dna-repair-enhancement-surveillance-2026-06-10",
+      "rationale": "Staged update dna-repair-enhancement-surveillance-2026-06-10 is submitted, so editorial work takes precedence over new research.",
+      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
+      "candidate_bundle_id": "dna-repair-enhancement-surveillance-2026-06-10",
+      "runbook_path": "docs/admin-review.md",
+      "command": "npm run research:bundle -- validate --bundle dna-repair-enhancement-surveillance-2026-06-10",
+      "source_paths": [
+        "data/candidate-bundles",
+        "docs/admin-review.md"
+      ],
+      "references": [
+        {
+          "record_type": "candidate_bundle",
+          "record_id": "dna-repair-enhancement-surveillance-2026-06-10"
+        }
+      ],
+      "signals": [
+        {
+          "name": "lifecycle_status",
+          "value": "submitted"
+        },
+        {
+          "name": "proposed_change_count",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "item_id": "surveillance-telomerase-restoration",
       "mode": "surveillance",
       "domain": "research",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Run field change check for DNA Repair Enhancement",
+      "title": "Run field change check for Telomerase Restoration",
       "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
       "default_action": "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
-      "track_id": "dna-repair-enhancement",
-      "hallmark_id": "genomic_instability",
+      "track_id": "telomerase-restoration",
+      "hallmark_id": "telomere_attrition",
       "references": [
         {
           "record_type": "track",
-          "record_id": "dna-repair-enhancement"
+          "record_id": "telomerase-restoration"
         },
         {
           "record_type": "hallmark",
-          "record_id": "genomic_instability"
+          "record_id": "telomere_attrition"
         }
       ],
       "runbook_path": "docs/surveillance-checklist.md",
@@ -100,25 +134,25 @@
       ]
     },
     {
-      "rank": 2,
-      "item_id": "coverage-assessment-backfill-dna-repair-enhancement",
+      "rank": 3,
+      "item_id": "coverage-assessment-backfill-telomerase-restoration",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for DNA Repair Enhancement",
-      "rationale": "24 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
+      "title": "Backfill coverage assessment for Telomerase Restoration",
+      "rationale": "23 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
       "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
-      "track_id": "dna-repair-enhancement",
-      "hallmark_id": "genomic_instability",
+      "track_id": "telomerase-restoration",
+      "hallmark_id": "telomere_attrition",
       "references": [
         {
           "record_type": "track",
-          "record_id": "dna-repair-enhancement"
+          "record_id": "telomerase-restoration"
         },
         {
           "record_type": "hallmark",
-          "record_id": "genomic_instability"
+          "record_id": "telomere_attrition"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",
@@ -130,7 +164,7 @@
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 24
+          "value": 23
         },
         {
           "name": "generated_surveillance_queue_rank",

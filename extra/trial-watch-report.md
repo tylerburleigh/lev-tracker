@@ -1,43 +1,40 @@
-# Trial Watch Report for Mitophagy Enhancers
+# Trial Watch Report for DNA Repair Enhancement
 
 Generated from reviewed local records on 2026-06-10.
 Stale registry threshold: 90 days. This report does not fetch current registry data.
 
 ## Summary
 
-- Registry-linked interventional studies: 8
-- With `trial_details`: 8
+- Registry-linked interventional studies: 4
+- With `trial_details`: 4
 - Missing `trial_details`: 0
-- Completed or past-completion records with no posted results: 2
-- Registry checks missing or stale: 0
+- Completed or past-completion records with no posted results: 0
+- Registry checks missing or stale: 4
 - Open watchlist records with missing or stale registry checks: 0
 - Posted results recorded locally: 4
 
 ### Result Status
 
-- no posted results: 4
 - posted results: 4
 
 ### Trial Status
 
-- completed: 6
-- recruiting: 2
+- completed: 4
 
 ## Field-Review Watchlist
 
-- [Urolithin A frail older adult mitochondrial-quality registry study](https://clinicaltrials.gov/study/NCT06556706) (NCT06556706): completed; no posted results; completion 2025-04-25; registry 2026-06-10 (0 days old).
-- [Urolithin A obesity vascular mitochondrial registry](https://clinicaltrials.gov/study/NCT05921266) (NCT05921266): completed; no posted results; completion 2025-05-14; registry 2026-06-10 (0 days old).
-- [Urolithin A older-adult glucose metabolism registry](https://clinicaltrials.gov/study/NCT06274749) (NCT06274749): recruiting; no posted results; completion 2027-03-31; registry 2026-06-10 (0 days old).
-- [Urolithin A middle-aged muscle-strength registry](https://clinicaltrials.gov/study/NCT07231783) (NCT07231783): recruiting; no posted results; completion 2027-10-31; registry 2026-06-10 (0 days old).
+No current local trial watch candidates.
 
 ## Completed Or Past-Completion With No Posted Results
 
-- [Urolithin A frail older adult mitochondrial-quality registry study](https://clinicaltrials.gov/study/NCT06556706) (NCT06556706): completed; no posted results; completion 2025-04-25; registry 2026-06-10 (0 days old).
-- [Urolithin A obesity vascular mitochondrial registry](https://clinicaltrials.gov/study/NCT05921266) (NCT05921266): completed; no posted results; completion 2025-05-14; registry 2026-06-10 (0 days old).
+No completed or past-completion local trial records are marked as no posted results.
 
 ## Stale Or Missing Registry Checks
 
-No local registry checks are stale under the configured threshold.
+- [Nicotinamide mononucleotide in healthy older men](https://pubmed.ncbi.nlm.nih.gov/35927255/) (UMIN000036321): completed; posted results; completion not recorded; registry no local check date.
+- [Nicotinamide riboside in healthy middle-aged and older adults](https://pubmed.ncbi.nlm.nih.gov/29599478/) (NCT02921659): completed; posted results; completion not recorded; registry no local check date.
+- [ONTRAC nicotinamide skin-cancer chemoprevention trial](https://pubmed.ncbi.nlm.nih.gov/26488693/) (ACTRN12612000625875): completed; posted results; completion not recorded; registry no local check date.
+- [ONTRANS nicotinamide transplant-recipient skin-cancer trial](https://pubmed.ncbi.nlm.nih.gov/36856616/) (ACTRN12617000599370): completed; posted results; completion not recorded; registry no local check date.
 
 ## Missing Trial Details
 
@@ -54,8 +51,4 @@ All scoped registry-linked interventional studies have trial details.
 - Treat unchanged no-result registries as surveillance facts, not field progress.
 - Treat status-only changes as activity unless they alter the public interpretation.
 - Send posted trial results through staged evidence review before changing an outlook.
-
-## Source Context Example
-
-ClinicalTrials.gov registry for a completed randomized quadruple-masked 26-participant frail-older-adult urolithin A study of mitochondrial-quality muscle endpoints; no posted results were present in the API snapshot checked on 2026-06-10.
 
