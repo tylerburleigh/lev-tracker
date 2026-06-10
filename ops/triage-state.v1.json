@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-10T18:02:41.904Z",
+  "generated_at": "2026-06-10T19:38:57.448Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-10T18:02:41.798Z",
-    "research_priority_queue_updated_at": "2026-06-10T18:02:41.798Z",
-    "active_candidate_bundle_count": 1,
+    "research_coverage_status_updated_at": "2026-06-10T19:38:57.353Z",
+    "research_priority_queue_updated_at": "2026-06-10T19:38:57.353Z",
+    "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 3,
-    "surveillance_recent_queue_count": 34,
+    "surveillance_recent_queue_count": 35,
     "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 23,
     "unnormalized_intervention_id_count": 0,
@@ -33,53 +33,19 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "editorial_review-dna-repair-enhancement-coverage-repair-2026-06-10",
-    "top_mode": "editorial_review",
-    "active_editorial_count": 1,
+    "top_work_item_id": "surveillance-telomerase-restoration",
+    "top_mode": "surveillance",
+    "active_editorial_count": 0,
     "ready_research_count": 3,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
-      "34 surveillance track(s) are hidden from ordinary rotation until their cooldown expires."
+      "35 surveillance track(s) are hidden from ordinary rotation until their cooldown expires."
     ]
   },
   "work_items": [
     {
       "rank": 1,
-      "item_id": "editorial_review-dna-repair-enhancement-coverage-repair-2026-06-10",
-      "mode": "editorial_review",
-      "domain": "editorial",
-      "priority_tier": "now",
-      "status": "ready",
-      "title": "Review active staged update dna-repair-enhancement-coverage-repair-2026-06-10",
-      "rationale": "Staged update dna-repair-enhancement-coverage-repair-2026-06-10 is submitted, so editorial work takes precedence over new research.",
-      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
-      "candidate_bundle_id": "dna-repair-enhancement-coverage-repair-2026-06-10",
-      "runbook_path": "docs/admin-review.md",
-      "command": "npm run research:bundle -- validate --bundle dna-repair-enhancement-coverage-repair-2026-06-10",
-      "source_paths": [
-        "data/candidate-bundles",
-        "docs/admin-review.md"
-      ],
-      "references": [
-        {
-          "record_type": "candidate_bundle",
-          "record_id": "dna-repair-enhancement-coverage-repair-2026-06-10"
-        }
-      ],
-      "signals": [
-        {
-          "name": "lifecycle_status",
-          "value": "submitted"
-        },
-        {
-          "name": "proposed_change_count",
-          "value": 10
-        }
-      ]
-    },
-    {
-      "rank": 2,
       "item_id": "surveillance-telomerase-restoration",
       "mode": "surveillance",
       "domain": "research",
@@ -134,7 +100,7 @@
       ]
     },
     {
-      "rank": 3,
+      "rank": 2,
       "item_id": "coverage-assessment-backfill-telomerase-restoration",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
