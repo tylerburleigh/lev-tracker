@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-dna-repair-enhancement-surveillance-2026-06-10-2026-06-10t17-34-21-637z",
+  "name": "Published DNA Repair Enhancement Surveillance for June 10, 2026",
+  "summary": "Surveillance bundle attaching the existing June 2026 Nat Aging DREAM repression evidence to DNA Repair Enhancement and refreshing the track outlook while keeping the track at low-confidence human_biomarker_signal with mixed momentum.",
+  "candidate_bundle_id": "dna-repair-enhancement-surveillance-2026-06-10",
+  "event_type": "publish",
+  "published_at": "2026-06-10T17:34:21.637Z",
+  "published_by": "tyler",
+  "published_targets": [
+    {
+      "record_type": "study",
+      "record_id": "dream-somatic-mutation-lifespan-disease-study",
+      "action": "updated"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "dream-repression-linked-lower-somatic-mutations",
+      "action": "updated"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-dna-repair-enhancement-outlook",
+      "action": "updated"
+    }
+  ],
+  "affected_outlook_ids": [
+    "track-dna-repair-enhancement-outlook"
+  ],
+  "approving_evidence_review_ids": [
+    "evidence-review-dna-repair-enhancement-surveillance-2026-06-10-interpretation-forecast-r1",
+    "evidence-review-dna-repair-enhancement-surveillance-2026-06-10-source-fidelity-r1",
+    "evidence-review-dna-repair-enhancement-surveillance-2026-06-10-taxonomy-mapping-r1"
+  ],
+  "change_note": "Add a broader DREAM repair-regulator signal while keeping the track at human_biomarker_signal, mixed momentum, and low confidence because the new result is preclinical/comparative rather than treated-human evidence."
+}

@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-10T16:37:33.775Z",
+  "generated_at": "2026-06-10T17:34:29.905Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-10T16:37:33.675Z",
-    "research_priority_queue_updated_at": "2026-06-10T16:37:33.675Z",
-    "active_candidate_bundle_count": 1,
+    "research_coverage_status_updated_at": "2026-06-10T17:34:29.807Z",
+    "research_priority_queue_updated_at": "2026-06-10T17:34:29.807Z",
+    "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 3,
     "surveillance_recent_queue_count": 34,
-    "coverage_repair_queue_count": 0,
+    "coverage_repair_queue_count": 1,
     "coverage_assessment_backlog_count": 23,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
@@ -33,10 +33,10 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "editorial_review-dna-repair-enhancement-surveillance-2026-06-10",
-    "top_mode": "editorial_review",
-    "active_editorial_count": 1,
-    "ready_research_count": 3,
+    "top_work_item_id": "coverage-repair-dna-repair-enhancement",
+    "top_mode": "coverage_repair",
+    "active_editorial_count": 0,
+    "ready_research_count": 4,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
@@ -46,35 +46,37 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "editorial_review-dna-repair-enhancement-surveillance-2026-06-10",
-      "mode": "editorial_review",
-      "domain": "editorial",
+      "item_id": "coverage-repair-dna-repair-enhancement",
+      "mode": "coverage_repair",
+      "domain": "research",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Review active staged update dna-repair-enhancement-surveillance-2026-06-10",
-      "rationale": "Staged update dna-repair-enhancement-surveillance-2026-06-10 is submitted, so editorial work takes precedence over new research.",
-      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
-      "candidate_bundle_id": "dna-repair-enhancement-surveillance-2026-06-10",
-      "runbook_path": "docs/admin-review.md",
-      "command": "npm run research:bundle -- validate --bundle dna-repair-enhancement-surveillance-2026-06-10",
-      "source_paths": [
-        "data/candidate-bundles",
-        "docs/admin-review.md"
-      ],
+      "title": "Repair coverage for DNA Repair Enhancement",
+      "rationale": "After evidence review and publication of the DREAM surveillance bundle, run coverage repair for DNA Repair Enhancement with emphasis on systemic repair-regulator biology, NAD/nucleotide boundary records, active registries, recent reviews, and safety/off-target genome-response limits.",
+      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
+      "track_id": "dna-repair-enhancement",
+      "hallmark_id": "genomic_instability",
       "references": [
         {
-          "record_type": "candidate_bundle",
-          "record_id": "dna-repair-enhancement-surveillance-2026-06-10"
+          "record_type": "track",
+          "record_id": "dna-repair-enhancement"
+        },
+        {
+          "record_type": "hallmark",
+          "record_id": "genomic_instability"
         }
+      ],
+      "runbook_path": "docs/coverage-assessment.md",
+      "source_paths": [
+        "research/backlog/track-priority.v1.json",
+        "research/state/coverage-status.v1.json",
+        "research/coverage-assessments",
+        "docs/coverage-assessment.md"
       ],
       "signals": [
         {
-          "name": "lifecycle_status",
-          "value": "submitted"
-        },
-        {
-          "name": "proposed_change_count",
-          "value": 3
+          "name": "generated_queue_rank",
+          "value": 1
         }
       ]
     },

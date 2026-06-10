@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-10T16:37:33.675Z",
+  "updated_at": "2026-06-10T17:34:29.807Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One baseline-review, field-change, or coverage-repair run should cover one track unless the user explicitly narrows further.",
@@ -124,7 +124,7 @@
       "name": "DNA Repair Enhancement",
       "coverage_status": "baseline",
       "next_mode": "coverage_repair",
-      "queue_state": "active_review",
+      "queue_state": "ready",
       "last_session_id": "2026-06-10-dna-repair-enhancement-surveillance",
       "last_session_at": "2026-06-10T16:30:00Z",
       "last_session_mode": "surveillance",
@@ -137,9 +137,9 @@
       "surveillance_due_at": "2026-06-24T16:30:00.000Z",
       "surveillance_age_days": 0,
       "last_candidate_bundle_id": "dna-repair-enhancement-surveillance-2026-06-10",
-      "last_candidate_bundle_status": "submitted",
-      "last_publication_event_id": "publish-dna-repair-enhancement-bootstrap-2026-05-31-2026-05-31t14-32-18-294z",
-      "last_published_at": "2026-05-31T14:32:18.294Z",
+      "last_candidate_bundle_status": "published",
+      "last_publication_event_id": "publish-dna-repair-enhancement-surveillance-2026-06-10-2026-06-10t17-34-21-637z",
+      "last_published_at": "2026-06-10T17:34:21.637Z",
       "last_coverage_assessment_id": "dna-repair-enhancement-surveillance-2026-06-10",
       "last_coverage_assessed_at": "2026-06-10T16:30:00Z",
       "coverage_verdict": "thin",
@@ -148,7 +148,7 @@
       "next_coverage_action": "After evidence review and publication of the DREAM surveillance bundle, run coverage repair for DNA Repair Enhancement with emphasis on systemic repair-regulator biology, NAD/nucleotide boundary records, active registries, recent reviews, and safety/off-target genome-response limits.",
       "last_coverage_recommended_mode": "coverage_repair",
       "default_research_question": "Which known source-completeness gaps for DNA Repair Enhancement need repair, and does resolving them change the coverage verdict or public boundaries?",
-      "notes": "Staged update dna-repair-enhancement-surveillance-2026-06-10 is still submitted."
+      "notes": "Latest public update: publish-dna-repair-enhancement-surveillance-2026-06-10-2026-06-10t17-34-21-637z."
     },
     {
       "track_id": "genome-surveillance-and-chromosome-stability",
@@ -495,7 +495,7 @@
       "last_surveillance_outcome": "candidate_bundle_revised",
       "surveillance_freshness_status": "recent",
       "surveillance_due_at": "2026-06-13T17:10:00.000Z",
-      "surveillance_age_days": 10,
+      "surveillance_age_days": 11,
       "last_candidate_bundle_id": "rapalogs-update-2026-05-30",
       "last_candidate_bundle_status": "published",
       "last_publication_event_id": "publish-rapalogs-update-2026-05-30",
