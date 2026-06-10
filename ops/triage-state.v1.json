@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-10T11:57:20.728Z",
+  "generated_at": "2026-06-10T12:10:46.592Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-10T11:57:20.627Z",
-    "research_priority_queue_updated_at": "2026-06-10T11:57:20.627Z",
+    "research_coverage_status_updated_at": "2026-06-10T12:10:46.487Z",
+    "research_priority_queue_updated_at": "2026-06-10T12:10:46.487Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
-    "surveillance_queue_count": 5,
+    "surveillance_queue_count": 4,
     "surveillance_recent_queue_count": 33,
-    "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 25,
+    "coverage_repair_queue_count": 1,
+    "coverage_assessment_backlog_count": 24,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
   },
@@ -33,8 +33,8 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "surveillance-mitophagy-enhancers",
-    "top_mode": "surveillance",
+    "top_work_item_id": "coverage-repair-mitophagy-enhancers",
+    "top_mode": "coverage_repair",
     "active_editorial_count": 0,
     "ready_research_count": 5,
     "data_hardening_count": 0,
@@ -46,14 +46,14 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "surveillance-mitophagy-enhancers",
-      "mode": "surveillance",
+      "item_id": "coverage-repair-mitophagy-enhancers",
+      "mode": "coverage_repair",
       "domain": "research",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Run field change check for Mitophagy Enhancers",
-      "rationale": "The track is thin and likely to move through contextual updates before stronger human evidence.",
-      "default_action": "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
+      "title": "Repair coverage for Mitophagy Enhancers",
+      "rationale": "Run coverage_repair for Mitophagy Enhancers before ordinary surveillance resumes. Focus on active and completed-no-results urolithin A registries, registry metadata refresh for published trials, renal-calculi safety context, the young-athlete NCT04783207 result, support-map modernization for the public outlook, and taxonomy boundaries with microbiome-metabolite restoration and selective autophagy.",
+      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
       "track_id": "mitophagy-enhancers",
       "hallmark_id": "mitochondrial_dysfunction",
       "references": [
@@ -64,6 +64,42 @@
         {
           "record_type": "hallmark",
           "record_id": "mitochondrial_dysfunction"
+        }
+      ],
+      "runbook_path": "docs/coverage-assessment.md",
+      "source_paths": [
+        "research/backlog/track-priority.v1.json",
+        "research/state/coverage-status.v1.json",
+        "research/coverage-assessments",
+        "docs/coverage-assessment.md"
+      ],
+      "signals": [
+        {
+          "name": "generated_queue_rank",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "item_id": "surveillance-dna-repair-enhancement",
+      "mode": "surveillance",
+      "domain": "research",
+      "priority_tier": "now",
+      "status": "ready",
+      "title": "Run field change check for DNA Repair Enhancement",
+      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
+      "default_action": "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
+      "track_id": "dna-repair-enhancement",
+      "hallmark_id": "genomic_instability",
+      "references": [
+        {
+          "record_type": "track",
+          "record_id": "dna-repair-enhancement"
+        },
+        {
+          "record_type": "hallmark",
+          "record_id": "genomic_instability"
         }
       ],
       "runbook_path": "docs/surveillance-checklist.md",
@@ -100,25 +136,25 @@
       ]
     },
     {
-      "rank": 2,
-      "item_id": "coverage-assessment-backfill-mitophagy-enhancers",
+      "rank": 3,
+      "item_id": "coverage-assessment-backfill-dna-repair-enhancement",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for Mitophagy Enhancers",
-      "rationale": "25 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
+      "title": "Backfill coverage assessment for DNA Repair Enhancement",
+      "rationale": "24 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
       "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
-      "track_id": "mitophagy-enhancers",
-      "hallmark_id": "mitochondrial_dysfunction",
+      "track_id": "dna-repair-enhancement",
+      "hallmark_id": "genomic_instability",
       "references": [
         {
           "record_type": "track",
-          "record_id": "mitophagy-enhancers"
+          "record_id": "dna-repair-enhancement"
         },
         {
           "record_type": "hallmark",
-          "record_id": "mitochondrial_dysfunction"
+          "record_id": "genomic_instability"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",
@@ -130,7 +166,7 @@
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 25
+          "value": 24
         },
         {
           "name": "generated_surveillance_queue_rank",

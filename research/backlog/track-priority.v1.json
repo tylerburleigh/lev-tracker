@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-10T11:57:20.627Z",
+  "updated_at": "2026-06-10T12:10:46.487Z",
   "notes": [
     "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
@@ -75,18 +75,6 @@
     {
       "rank": 1,
       "phase_id": "surveillance-rotation",
-      "track_id": "mitophagy-enhancers",
-      "hallmark_id": "mitochondrial_dysfunction",
-      "default_mode": "surveillance",
-      "freshness_status": "never_checked",
-      "cooldown_days": 14,
-      "rationale": "The track is thin and likely to move through contextual updates before stronger human evidence.",
-      "default_question": "What changed for Mitophagy Enhancers since the last meaningful review or publication, and does any change justify a public update?",
-      "priority_tier": "now"
-    },
-    {
-      "rank": 2,
-      "phase_id": "surveillance-rotation",
       "track_id": "dna-repair-enhancement",
       "hallmark_id": "genomic_instability",
       "default_mode": "surveillance",
@@ -97,7 +85,7 @@
       "priority_tier": "now"
     },
     {
-      "rank": 3,
+      "rank": 2,
       "phase_id": "surveillance-rotation",
       "track_id": "telomerase-restoration",
       "hallmark_id": "telomere_attrition",
@@ -109,7 +97,7 @@
       "priority_tier": "now"
     },
     {
-      "rank": 4,
+      "rank": 3,
       "phase_id": "surveillance-rotation",
       "track_id": "chaperone-and-heat-shock-support",
       "hallmark_id": "loss_of_proteostasis",
@@ -118,10 +106,10 @@
       "cooldown_days": 14,
       "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
       "default_question": "What changed for Chaperone and Heat-Shock Support since the last meaningful review or publication, and does any change justify a public update?",
-      "priority_tier": "soon"
+      "priority_tier": "now"
     },
     {
-      "rank": 5,
+      "rank": 4,
       "phase_id": "surveillance-rotation",
       "track_id": "autophagy-induction",
       "hallmark_id": "disabled_macroautophagy",
@@ -630,5 +618,17 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-23."
     }
   ],
-  "coverage_repair_queue": []
+  "coverage_repair_queue": [
+    {
+      "rank": 1,
+      "phase_id": "coverage-repair",
+      "track_id": "mitophagy-enhancers",
+      "hallmark_id": "mitochondrial_dysfunction",
+      "priority_tier": "now",
+      "default_mode": "coverage_repair",
+      "rationale": "Run coverage_repair for Mitophagy Enhancers before ordinary surveillance resumes. Focus on active and completed-no-results urolithin A registries, registry metadata refresh for published trials, renal-calculi safety context, the young-athlete NCT04783207 result, support-map modernization for the public outlook, and taxonomy boundaries with microbiome-metabolite restoration and selective autophagy.",
+      "default_question": "Which known source-completeness gaps for Mitophagy Enhancers need repair, and does resolving them change the coverage verdict or public boundaries?",
+      "notes": "Latest coverage assessment: mitophagy-enhancers-coverage-2026-06-10."
+    }
+  ]
 }
