@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-10T12:10:46.592Z",
+  "generated_at": "2026-06-10T14:26:17.793Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-10T12:10:46.487Z",
-    "research_priority_queue_updated_at": "2026-06-10T12:10:46.487Z",
+    "research_coverage_status_updated_at": "2026-06-10T14:26:17.679Z",
+    "research_priority_queue_updated_at": "2026-06-10T14:26:17.680Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 4,
-    "surveillance_recent_queue_count": 33,
-    "coverage_repair_queue_count": 1,
+    "surveillance_recent_queue_count": 34,
+    "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 24,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
@@ -33,50 +33,86 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-repair-mitophagy-enhancers",
-    "top_mode": "coverage_repair",
+    "top_work_item_id": "editorial-rollup-public-summary-surfaces",
+    "top_mode": "editorial_rollup",
     "active_editorial_count": 0,
-    "ready_research_count": 5,
+    "ready_research_count": 4,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
-      "33 surveillance track(s) are hidden from ordinary rotation until their cooldown expires."
+      "34 surveillance track(s) are hidden from ordinary rotation until their cooldown expires."
     ]
   },
   "work_items": [
     {
       "rank": 1,
-      "item_id": "coverage-repair-mitophagy-enhancers",
-      "mode": "coverage_repair",
-      "domain": "research",
+      "item_id": "editorial-rollup-public-summary-surfaces",
+      "mode": "editorial_rollup",
+      "domain": "editorial",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Repair coverage for Mitophagy Enhancers",
-      "rationale": "Run coverage_repair for Mitophagy Enhancers before ordinary surveillance resumes. Focus on active and completed-no-results urolithin A registries, registry metadata refresh for published trials, renal-calculi safety context, the young-athlete NCT04783207 result, support-map modernization for the public outlook, and taxonomy boundaries with microbiome-metabolite restoration and selective autophagy.",
-      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
-      "track_id": "mitophagy-enhancers",
-      "hallmark_id": "mitochondrial_dysfunction",
+      "title": "Review public editorial rollup surfaces",
+      "rationale": "Overall outlook last_updated 2026-06-09 is older than the latest hallmark or track outlook change 2026-06-10.",
+      "default_action": "Review overall outlook, state-of-field edition, hallmark insight copy, and outlook method links; update public content only when the reviewed record warrants it.",
+      "runbook_path": "docs/editorial-rollup.md",
+      "source_paths": [
+        "data/publication-events",
+        "data/outlooks",
+        "data/content/state-of-the-field",
+        "data/content/hallmark-insights.json",
+        "src/components/site-shell.tsx",
+        "docs/editorial-rollup.md"
+      ],
       "references": [
         {
-          "record_type": "track",
-          "record_id": "mitophagy-enhancers"
+          "record_type": "publication_event",
+          "record_id": "publish-mitophagy-enhancers-coverage-repair-2026-06-10-2026-06-10t14-26-07-178z"
         },
         {
-          "record_type": "hallmark",
-          "record_id": "mitochondrial_dysfunction"
+          "record_type": "outlook",
+          "record_id": "overall-lev-outlook"
         }
-      ],
-      "runbook_path": "docs/coverage-assessment.md",
-      "source_paths": [
-        "research/backlog/track-priority.v1.json",
-        "research/state/coverage-status.v1.json",
-        "research/coverage-assessments",
-        "docs/coverage-assessment.md"
       ],
       "signals": [
         {
-          "name": "generated_queue_rank",
+          "name": "trigger_count",
           "value": 1
+        },
+        {
+          "name": "latest_affected_publication_event_id",
+          "value": "publish-mitophagy-enhancers-coverage-repair-2026-06-10-2026-06-10t14-26-07-178z"
+        },
+        {
+          "name": "latest_affected_publication_event_date",
+          "value": "2026-06-10"
+        },
+        {
+          "name": "latest_state_of_field_date",
+          "value": "2026-06-10"
+        },
+        {
+          "name": "overall_outlook_last_updated",
+          "value": "2026-06-09"
+        },
+        {
+          "name": "latest_non_overall_outlook_updated",
+          "value": "2026-06-10"
+        },
+        {
+          "name": "stale_hallmark_insight_count",
+          "value": 0
+        },
+        {
+          "name": "first_stale_hallmark_insight_id",
+          "value": "none"
+        },
+        {
+          "name": "no_current_month_state_of_field",
+          "value": false
+        },
+        {
+          "name": "outlook_method_surface_gap",
+          "value": false
         }
       ]
     },

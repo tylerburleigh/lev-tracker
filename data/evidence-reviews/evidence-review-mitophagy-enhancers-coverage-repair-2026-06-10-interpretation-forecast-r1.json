@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-mitophagy-enhancers-coverage-repair-2026-06-10-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Mitophagy Enhancers coverage repair bundle",
+  "candidate_bundle_id": "mitophagy-enhancers-coverage-repair-2026-06-10",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "skill_name": "lev-evidence-review",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The refreshed outlook makes the repair additive rather than promotional: Mitophagy Enhancers remains low-confidence human_biomarker_signal with steady momentum. The support map separates target-engagement and biomarker movement from durable older-human functional benefit, and it keeps active or completed no-results registries as surveillance context rather than stage-upgrading evidence.",
+  "reviewed_change_ids": [
+    "create-source-pmid-42058113",
+    "create-study-urolithin-a-renal-calculi-case-series",
+    "create-finding-urolithin-a-renal-calculi-safety-signal",
+    "create-source-pmid-40839339",
+    "create-study-urolithin-a-trained-runners-performance-recovery",
+    "create-finding-urolithin-a-trained-runners-recovery-no-performance-benefit",
+    "create-source-nct-06274749",
+    "create-study-urolithin-a-glucose-metabolism-older-adults-registry",
+    "create-finding-urolithin-a-older-adult-glucose-metabolism-registry-recruiting-no-results",
+    "create-source-nct-07231783",
+    "create-study-urolithin-a-middle-aged-muscle-strength-registry",
+    "create-finding-urolithin-a-middle-aged-strength-registry-recruiting-no-results",
+    "create-source-nct-05921266",
+    "create-study-urolithin-a-obesity-vascular-mitochondrial-registry",
+    "create-finding-urolithin-a-obesity-vascular-registry-completed-no-results",
+    "update-source-nct-06556706",
+    "update-study-urolithin-a-frail-older-adults-registry",
+    "update-finding-completed-frail-urolithin-a-trial-no-results",
+    "update-study-energize-urolithin-a-older-adults",
+    "update-study-atlas-urolithin-a-middle-aged-adults",
+    "update-study-mitoimmune-urolithin-a-immune-aging",
+    "update-outlook-track-mitophagy-enhancers"
+  ],
+  "findings": [
+    {
+      "finding_id": "interpretation-stage-conservative-after-repair",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "update-outlook-track-mitophagy-enhancers",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-mitophagy-enhancers-outlook"
+      },
+      "claim_or_issue": "The updated public read keeps the track at human_biomarker_signal despite adding active trials, limiting functional data, and safety context.",
+      "why_it_matters": "Coverage repair should not be interpreted as evidence maturation when durable aging-relevant benefit remains absent.",
+      "recommended_action": "No revision needed; keep the rating-change criteria focused on longer older-adult or frailty trials with functional outcomes and target engagement.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "interpretation-functional-benefit-boundary-retained",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-urolithin-a-trained-runners-recovery-no-performance-benefit",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "urolithin-a-trained-runners-recovery-no-performance-benefit"
+      },
+      "claim_or_issue": "The trained-runner finding is used to bound recovery and pathway signals, not to infer aging-functional benefit.",
+      "why_it_matters": "Young-athlete recovery endpoints do not establish mobility, frailty, or healthy-lifespan relevance.",
+      "recommended_action": "No revision needed; preserve the young-athlete and nonsignificant primary-performance caveats.",
+      "resolution_status": "closed"
+    }
+  ],
+  "created_at": "2026-06-10T14:25:33.212Z",
+  "updated_at": "2026-06-10T14:25:33.212Z"
+}

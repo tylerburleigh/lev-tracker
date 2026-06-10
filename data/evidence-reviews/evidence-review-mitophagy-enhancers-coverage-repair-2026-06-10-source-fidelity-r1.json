@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-mitophagy-enhancers-coverage-repair-2026-06-10-source-fidelity-r1",
+  "name": "Source Fidelity review for Mitophagy Enhancers coverage repair bundle",
+  "candidate_bundle_id": "mitophagy-enhancers-coverage-repair-2026-06-10",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "skill_name": "lev-evidence-review",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, finding, and outlook changes stay within the checked PubMed, PMC, and ClinicalTrials.gov boundaries. The registry records are represented as recruiting or completed without posted results where applicable, the trained-runner trial is framed as young-athlete recovery and pathway context rather than aging evidence, and the renal-calculi case series is not treated as incidence or supplement-causality proof.",
+  "reviewed_change_ids": [
+    "create-source-pmid-42058113",
+    "create-study-urolithin-a-renal-calculi-case-series",
+    "create-finding-urolithin-a-renal-calculi-safety-signal",
+    "create-source-pmid-40839339",
+    "create-study-urolithin-a-trained-runners-performance-recovery",
+    "create-finding-urolithin-a-trained-runners-recovery-no-performance-benefit",
+    "create-source-nct-06274749",
+    "create-study-urolithin-a-glucose-metabolism-older-adults-registry",
+    "create-finding-urolithin-a-older-adult-glucose-metabolism-registry-recruiting-no-results",
+    "create-source-nct-07231783",
+    "create-study-urolithin-a-middle-aged-muscle-strength-registry",
+    "create-finding-urolithin-a-middle-aged-strength-registry-recruiting-no-results",
+    "create-source-nct-05921266",
+    "create-study-urolithin-a-obesity-vascular-mitochondrial-registry",
+    "create-finding-urolithin-a-obesity-vascular-registry-completed-no-results",
+    "update-source-nct-06556706",
+    "update-study-urolithin-a-frail-older-adults-registry",
+    "update-finding-completed-frail-urolithin-a-trial-no-results",
+    "update-study-energize-urolithin-a-older-adults",
+    "update-study-atlas-urolithin-a-middle-aged-adults",
+    "update-study-mitoimmune-urolithin-a-immune-aging",
+    "update-outlook-track-mitophagy-enhancers"
+  ],
+  "findings": [
+    {
+      "finding_id": "source-fidelity-no-overstated-registry-results",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "update-outlook-track-mitophagy-enhancers",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-mitophagy-enhancers-outlook"
+      },
+      "claim_or_issue": "The outlook uses active and completed no-results ClinicalTrials.gov records as watchlist context, not as evidence of benefit.",
+      "why_it_matters": "Registry status can otherwise be misread as progress in efficacy or safety.",
+      "recommended_action": "No revision needed; preserve the no-results and recruiting caveats in the support map.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "source-fidelity-renal-stone-boundary-preserved",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-finding-urolithin-a-renal-calculi-safety-signal",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "urolithin-a-renal-calculi-safety-signal"
+      },
+      "claim_or_issue": "The renal-calculi finding records a human safety signal while preserving that the case series cannot estimate incidence or prove supplement causality.",
+      "why_it_matters": "The source supports caution about urinary-stone risk, not a quantified supplement hazard.",
+      "recommended_action": "No revision needed; keep the diet-exposure and case-series caveats attached to the safety claim.",
+      "resolution_status": "closed"
+    }
+  ],
+  "created_at": "2026-06-10T14:25:29.305Z",
+  "updated_at": "2026-06-10T14:25:29.305Z"
+}

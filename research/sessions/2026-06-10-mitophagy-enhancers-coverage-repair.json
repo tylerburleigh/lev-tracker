@@ -1,0 +1,229 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-10-mitophagy-enhancers-coverage-repair",
+  "name": "Mitophagy Enhancers Coverage Repair",
+  "mode": "coverage_repair",
+  "started_at": "2026-06-10T13:22:00Z",
+  "completed_at": "2026-06-10T14:11:00Z",
+  "scope": {
+    "question": "Which known source-completeness gaps for Mitophagy Enhancers need repair, and does resolving them change the coverage verdict or public boundaries?",
+    "hallmark_ids": [
+      "mitochondrial_dysfunction"
+    ],
+    "track_ids": [
+      "mitophagy-enhancers"
+    ],
+    "intervention_ids": [
+      "urolithin-a",
+      "usp30-inhibition"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "mitophagy-enhancers-coverage-repair-2026-06-10",
+  "summary": "Coverage repair staged public records for the high-priority mitophagy gaps identified in the June 10 surveillance assessment. The staged bundle adds PMID 42058113 as renal-calculi safety context, PMID 40839339/NCT04783207 as young-athlete limiting context, NCT06274749, NCT07231783, and NCT05921266 as active or completed no-results urolithin A registry context, and refreshed registry metadata for NCT06556706, ENERGIZE, ATLAS, and MitoImmune. The staged outlook modernizes the Mitophagy Enhancers support map while keeping evidence_stage human_biomarker_signal, momentum steady, and confidence low.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "outlook_refresh",
+    "public_update_needed": true,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The repair changes public source, study, finding, registry, safety, and support-map coverage, but it does not change the stage, momentum, confidence, or core interpretation. Public staging is warranted because the latest coverage assessment stayed thin due to missing safety, active-registry, limiting-context, registry-metadata, and support-map coverage."
+  },
+  "search_log": [
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "NCT06274749, NCT07231783, NCT05921266, NCT04783207, NCT06556706, NCT03283462, NCT03464500, and NCT05735886 direct registry checks",
+      "checked_at": "2026-06-10T14:11:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "Confirmed current registry status and dates for staged or refreshed urolithin A records. NCT06274749 and NCT07231783 are recruiting with no posted results; NCT05921266 and NCT06556706 are completed with no posted results; NCT04783207 is completed with a PubMed result but no registry results section; ENERGIZE, ATLAS, and MitoImmune remain completed with PubMed result sources represented locally."
+    },
+    {
+      "source_name": "PubMed ESummary and EFetch",
+      "query": "PMID 42058113 and PMID 40839339",
+      "checked_at": "2026-06-10T14:11:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Confirmed that PMID 42058113 is a Kidney International Reports research letter/case series identifying urolithin A in urinary stones from eight older adults and that PMID 40839339 is a Sports Medicine RCT of 1000 mg/day urolithin A in 42 highly trained young male distance runners."
+    },
+    {
+      "source_name": "PubMed Central EFetch",
+      "query": "PMCID PMC13123385",
+      "checked_at": "2026-06-10T14:11:00Z",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13123385/",
+      "summary": "Checked the full renal-calculi article text for patient count, ages, stone composition range, diet-versus-supplement exposure, and safety caveats before staging the safety finding."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT06274749",
+      "study_id": "urolithin-a-glucose-metabolism-older-adults-registry",
+      "source_id": "nct-06274749",
+      "registry_url": "https://clinicaltrials.gov/study/NCT06274749",
+      "checked_at": "2026-06-10T14:11:00Z",
+      "current_registry_status": "recruiting",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2027-03-31",
+      "study_completion_date": "2027-03-31",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "new_trial",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Staged as recruiting no-results trial-watch context because the older-adult study includes mitochondrial respiration and brain oxidative-metabolism endpoints."
+    },
+    {
+      "registry_id": "NCT07231783",
+      "study_id": "urolithin-a-middle-aged-muscle-strength-registry",
+      "source_id": "nct-07231783",
+      "registry_url": "https://clinicaltrials.gov/study/NCT07231783",
+      "checked_at": "2026-06-10T14:11:00Z",
+      "current_registry_status": "recruiting",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2027-10-31",
+      "study_completion_date": "2027-10-31",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "new_trial",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Staged as recruiting no-results trial-watch context because the study directly tests whether Mitopure changes muscle strength in healthy middle-aged adults."
+    },
+    {
+      "registry_id": "NCT05921266",
+      "study_id": "urolithin-a-obesity-vascular-mitochondrial-registry",
+      "source_id": "nct-05921266",
+      "registry_url": "https://clinicaltrials.gov/study/NCT05921266",
+      "checked_at": "2026-06-10T14:11:00Z",
+      "current_registry_status": "completed",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2025-05-14",
+      "study_completion_date": "2025-05-14",
+      "completion_date_kind": "actual",
+      "results_changed": false,
+      "materiality": "new_trial",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Staged as completed no-results trial-watch context because the study includes vascular and mitochondrial biomarker endpoints in middle-aged adults with obesity."
+    },
+    {
+      "registry_id": "NCT04783207",
+      "study_id": "urolithin-a-trained-runners-performance-recovery",
+      "source_id": "pmid-40839339",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04783207",
+      "checked_at": "2026-06-10T14:11:00Z",
+      "current_registry_status": "completed",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2022-05-30",
+      "study_completion_date": "2023-08-30",
+      "completion_date_kind": "actual",
+      "results_changed": false,
+      "materiality": "unchanged",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Staged as result-bearing PubMed context rather than registry-results context; the young-athlete trial bounds performance and aging interpretation."
+    },
+    {
+      "registry_id": "NCT06556706",
+      "study_id": "urolithin-a-frail-older-adults-registry",
+      "source_id": "nct-06556706",
+      "registry_url": "https://clinicaltrials.gov/study/NCT06556706",
+      "checked_at": "2026-06-10T14:11:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2025-04-25",
+      "study_completion_date": "2025-04-25",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "stage_source_or_study",
+      "summary": "Refreshed as the key completed no-results frailty watch item."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "NCT05814705",
+      "title": "The Effects of Protein Supplementation With or Without Urolithin A During Single-leg Immobilization",
+      "url": "https://clinicaltrials.gov/study/NCT05814705",
+      "decision": "context_only",
+      "reason": "Active-not-recruiting immobilization and mitochondrial-respiration study with no posted results. It was not staged because the intervention is protein with or without urolithin A and the context is disuse physiology rather than aging or direct mitophagy-enhancer coverage."
+    },
+    {
+      "reference": "NCT06990256",
+      "title": "Evaluation of Urolithin A and Fisetin on Improving Sleep and Aging Biomarkers",
+      "url": "https://clinicaltrials.gov/study/NCT06990256",
+      "decision": "context_only",
+      "reason": "Recruiting no-results urolithin A/fisetin trial with combination-intervention attribution limits. Keep for future surveillance rather than staging as mitophagy-specific support."
+    },
+    {
+      "reference": "NCT07060898",
+      "title": "Impact of a Novel Brain Longevity Supplement Containing the Postbiotic Urolithin A (Mitopure) on Cognitive Function and Related Health Outcomes",
+      "url": "https://clinicaltrials.gov/study/NCT07060898",
+      "decision": "context_only",
+      "reason": "Active-not-recruiting no-results cognition and brain-longevity supplement study with a multi-ingredient product boundary. It may matter later if results post, but it was not staged as direct mitophagy evidence."
+    },
+    {
+      "reference": "NCT07377136",
+      "title": "Influence of the Urolithin A on the Population With BMI Higher Than 30 During Restricted Eating",
+      "url": "https://clinicaltrials.gov/study/NCT07377136",
+      "decision": "context_only",
+      "reason": "Enrolling-by-invitation no-results BMI and restricted-eating study with broad metabolic, muscle, inflammatory, vascular, and epigenetic-aging endpoints. It is adjacent registry context, but not prioritized over the staged older-adult, strength, and completed obesity registries."
+    },
+    {
+      "reference": "NCT04985630",
+      "title": "The Mitopure Challenge to Detect Levels of Urolithin A in Dried Blood Spots",
+      "url": "https://clinicaltrials.gov/study/NCT04985630",
+      "decision": "method_limit",
+      "reason": "Recruiting methods and exposure-detection registry for dried blood spot urolithin A measurement. Useful for exposure-method context, not efficacy, safety, or aging-stage support."
+    },
+    {
+      "reference": "PMID 42261160",
+      "title": "Rejuvenating Inter-organellar Communication Via Mitophagy in Ageing and Neurodegeneration",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42261160/",
+      "decision": "context_only",
+      "reason": "Review-level urolithin A and mitophagy mechanism context. The repair prioritized primary trial, safety, and registry records over another broad review."
+    },
+    {
+      "reference": "PMID 41722622",
+      "title": "Age-related sarcopenia and the gut microbiome: mechanistic insights into the gut-muscle axis and potential microbiome based therapeutic interventions",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41722622/",
+      "decision": "context_only",
+      "reason": "Review-level gut-muscle-axis context with urolithin A mention. Useful for taxonomy with microbiome-metabolite restoration but not direct enough to stage under Mitophagy Enhancers."
+    }
+  ],
+  "source_ids": [
+    "pmid-42058113",
+    "pmid-40839339",
+    "nct-06274749",
+    "nct-07231783",
+    "nct-05921266",
+    "nct-06556706"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42058113/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC13123385/",
+    "https://pubmed.ncbi.nlm.nih.gov/40839339/",
+    "https://clinicaltrials.gov/study/NCT06274749",
+    "https://clinicaltrials.gov/study/NCT07231783",
+    "https://clinicaltrials.gov/study/NCT05921266",
+    "https://clinicaltrials.gov/study/NCT06556706",
+    "https://clinicaltrials.gov/study/NCT05814705",
+    "https://clinicaltrials.gov/study/NCT06990256",
+    "https://clinicaltrials.gov/study/NCT07060898",
+    "https://clinicaltrials.gov/study/NCT07377136",
+    "https://clinicaltrials.gov/study/NCT04985630",
+    "https://pubmed.ncbi.nlm.nih.gov/42261160/",
+    "https://pubmed.ncbi.nlm.nih.gov/41722622/"
+  ],
+  "notes": [
+    "The staged repair intentionally keeps the public evidence stage at human_biomarker_signal.",
+    "PMID 42058113 is included as safety-boundary evidence, not proof that direct urolithin A supplements cause urinary stones.",
+    "NCT04783207/PMID 40839339 is included as limiting functional and taxonomy context because it is young-athlete performance/recovery evidence rather than aging evidence.",
+    "NCT05814705, NCT06990256, NCT07060898, NCT07377136, and NCT04985630 were explicitly excluded or deferred to avoid overloading the public mitophagy map with adjacent no-results records."
+  ],
+  "next_actions": [
+    "Run source-fidelity, interpretation/forecast, safety-limitations, and taxonomy-mapping reviews for the staged repair bundle.",
+    "If approved and published, return Mitophagy Enhancers to ordinary surveillance with watch items for frail older-adult results, active urolithin A registries, and safety reports."
+  ]
+}
