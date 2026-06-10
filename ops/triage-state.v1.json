@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-09T23:07:26.560Z",
+  "generated_at": "2026-06-10T10:20:38.294Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-09T23:07:26.452Z",
-    "research_priority_queue_updated_at": "2026-06-09T23:07:26.452Z",
-    "active_candidate_bundle_count": 1,
+    "research_coverage_status_updated_at": "2026-06-10T10:20:38.202Z",
+    "research_priority_queue_updated_at": "2026-06-10T10:20:38.202Z",
+    "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
-    "surveillance_queue_count": 37,
+    "surveillance_queue_count": 38,
     "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 25,
     "unnormalized_intervention_id_count": 0,
@@ -32,10 +32,10 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "editorial_review-stem-cell-rejuvenation-coverage-repair-2026-06-09",
-    "top_mode": "editorial_review",
-    "active_editorial_count": 1,
-    "ready_research_count": 37,
+    "top_work_item_id": "editorial-rollup-public-summary-surfaces",
+    "top_mode": "editorial_rollup",
+    "active_editorial_count": 0,
+    "ready_research_count": 38,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
@@ -45,35 +45,73 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "editorial_review-stem-cell-rejuvenation-coverage-repair-2026-06-09",
-      "mode": "editorial_review",
+      "item_id": "editorial-rollup-public-summary-surfaces",
+      "mode": "editorial_rollup",
       "domain": "editorial",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Review active staged update stem-cell-rejuvenation-coverage-repair-2026-06-09",
-      "rationale": "Staged update stem-cell-rejuvenation-coverage-repair-2026-06-09 is submitted, so editorial work takes precedence over new research.",
-      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
-      "candidate_bundle_id": "stem-cell-rejuvenation-coverage-repair-2026-06-09",
-      "runbook_path": "docs/admin-review.md",
-      "command": "npm run research:bundle -- validate --bundle stem-cell-rejuvenation-coverage-repair-2026-06-09",
+      "title": "Review public editorial rollup surfaces",
+      "rationale": "Latest affected public update publish-stem-cell-rejuvenation-coverage-repair-2026-06-09-2026-06-10t10-17-06-414z is newer than the latest state-of-field edition. 1 hallmark insight(s) are unreviewed or older than affected outlook changes.",
+      "default_action": "Review overall outlook, state-of-field edition, hallmark insight copy, and outlook method links; update public content only when the reviewed record warrants it.",
+      "runbook_path": "docs/editorial-rollup.md",
       "source_paths": [
-        "data/candidate-bundles",
-        "docs/admin-review.md"
+        "data/publication-events",
+        "data/outlooks",
+        "data/content/state-of-the-field",
+        "data/content/hallmark-insights.json",
+        "src/components/site-shell.tsx",
+        "docs/editorial-rollup.md"
       ],
       "references": [
         {
-          "record_type": "candidate_bundle",
-          "record_id": "stem-cell-rejuvenation-coverage-repair-2026-06-09"
+          "record_type": "publication_event",
+          "record_id": "publish-stem-cell-rejuvenation-coverage-repair-2026-06-09-2026-06-10t10-17-06-414z"
+        },
+        {
+          "record_type": "outlook",
+          "record_id": "overall-lev-outlook"
         }
       ],
       "signals": [
         {
-          "name": "lifecycle_status",
-          "value": "submitted"
+          "name": "trigger_count",
+          "value": 2
         },
         {
-          "name": "proposed_change_count",
-          "value": 7
+          "name": "latest_affected_publication_event_id",
+          "value": "publish-stem-cell-rejuvenation-coverage-repair-2026-06-09-2026-06-10t10-17-06-414z"
+        },
+        {
+          "name": "latest_affected_publication_event_date",
+          "value": "2026-06-10"
+        },
+        {
+          "name": "latest_state_of_field_date",
+          "value": "2026-06-09"
+        },
+        {
+          "name": "overall_outlook_last_updated",
+          "value": "2026-06-09"
+        },
+        {
+          "name": "latest_non_overall_outlook_updated",
+          "value": "2026-06-09"
+        },
+        {
+          "name": "stale_hallmark_insight_count",
+          "value": 1
+        },
+        {
+          "name": "first_stale_hallmark_insight_id",
+          "value": "stem_cell_exhaustion"
+        },
+        {
+          "name": "no_current_month_state_of_field",
+          "value": false
+        },
+        {
+          "name": "outlook_method_surface_gap",
+          "value": false
         }
       ]
     },
@@ -85,7 +123,7 @@
       "priority_tier": "now",
       "status": "ready",
       "title": "Run field change check for Chaperone and Heat-Shock Support",
-      "rationale": "Next distinct field-change target. Generated field-change queue rank 29; rank 1 was recently handled by a field change check or coverage-repair session.",
+      "rationale": "Next distinct field-change target. Generated field-change queue rank 30; rank 1 was recently handled by a field change check or coverage-repair session.",
       "default_action": "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
       "track_id": "chaperone-and-heat-shock-support",
       "hallmark_id": "loss_of_proteostasis",
@@ -108,7 +146,7 @@
       "signals": [
         {
           "name": "generated_queue_rank",
-          "value": 29
+          "value": 30
         },
         {
           "name": "last_session_mode",
@@ -155,7 +193,7 @@
         },
         {
           "name": "generated_surveillance_queue_rank",
-          "value": 3
+          "value": 4
         },
         {
           "name": "track_next_mode",

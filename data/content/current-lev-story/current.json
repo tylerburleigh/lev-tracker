@@ -4,7 +4,7 @@
   "summary": "Longevity research now has early human signals in more places, but the center of gravity is still early testing. LEV does not look close until multiple approaches show long-lasting improvements in human health or function, with safety and lasting effects clear enough to matter.",
   "date": "2026-06-09",
   "current_evidence_picture": "The field is in early human testing. Some tracks now have early biomarker results, functional results, disease results, or trials worth watching. Most are still uncertain, narrow, or only indirectly about aging itself.",
-  "what_changed": "The May field review did not find a result that changed the LEV outlook. The June 9 NAD/redox update made one track easier to judge by adding MIB-626 records, no-results registries, and review context, but it did not change the larger proof gap: repeated human evidence that health or function improves for longer.",
+  "what_changed": "The May field review did not find a result that changed the LEV outlook. The June 9 NAD/redox update and June 10 stem-cell rejuvenation update made individual tracks easier to judge by adding no-results registries, review context, and clearer evidence boundaries, but neither changed the larger proof gap: repeated human evidence that health or function improves for longer.",
   "before_now_next": [
     {
       "label": "Before",
@@ -89,6 +89,20 @@
       ],
       "related_outlook_ids": [
         "track-nad-and-redox-restoration-outlook"
+      ]
+    },
+    {
+      "label": "Stem-cell rejuvenation gained clearer boundaries",
+      "date": "2026-06-10",
+      "summary": "The stem-cell rejuvenation update added a no-results hDNAgr HSC-aging registry, a current HSC aging review, and explicit boundary context while keeping the track tentative and at an early biomarker stage.",
+      "impact_on_outlook": "It improves the map of what to watch, but it does not make LEV look closer because the new records do not show treated-human benefit or resolved safety.",
+      "subject_type": "track",
+      "subject_id": "stem-cell-rejuvenation",
+      "related_publication_event_ids": [
+        "publish-stem-cell-rejuvenation-coverage-repair-2026-06-09-2026-06-10t10-17-06-414z"
+      ],
+      "related_outlook_ids": [
+        "track-stem-cell-rejuvenation-outlook"
       ]
     }
   ],
@@ -222,9 +236,9 @@
     }
   ],
   "revision": {
-    "last_reviewed": "2026-06-09",
-    "review_reason": "Editorial rollup after the June 9 NAD/redox update confirmed the current story remains accurate: the update adds MIB-626, trial-status, and review context, but no overall stage, momentum, read-firmness, or LEV-relevant interpretation changed.",
-    "review_due": "2026-07-09",
+    "last_reviewed": "2026-06-10",
+    "review_reason": "Editorial rollup after the June 10 stem-cell rejuvenation publication confirmed the current story remains accurate: the update adds no-results hDNAgr registry context, a current HSC aging review, and clearer boundaries, but no overall stage, momentum, read-firmness, or LEV-relevant interpretation changed.",
+    "review_due": "2026-07-10",
     "triggers": [
       {
         "trigger_type": "new_publication_event",
@@ -249,7 +263,7 @@
       {
         "trigger_type": "review_due",
         "description": "Review on the scheduled due date even if no material public event has occurred.",
-        "threshold": "2026-07-09"
+        "threshold": "2026-07-10"
       },
       {
         "trigger_type": "human_editorial_request",
@@ -257,7 +271,7 @@
       }
     ],
     "observed_state_of_field_slug": "2026-06",
-    "observed_latest_publication_event_id": "publish-nad-and-redox-restoration-coverage-repair-2026-06-08-2026-06-09t10-39-49-637z",
+    "observed_latest_publication_event_id": "publish-stem-cell-rejuvenation-coverage-repair-2026-06-09-2026-06-10t10-17-06-414z",
     "observed_outlook_states": [
       {
         "outlook_id": "overall-lev-outlook",
@@ -268,7 +282,7 @@
         "confidence": "moderate",
         "evidence_gap": "The field still lacks repeated human studies showing long-lasting improvements in health or function in ways that clearly add up toward LEV.",
         "strongest_evidence": "The recent picture is broader rather than stronger: early missing-context updates are making the evidence easier to judge without making LEV look closer.",
-        "last_updated": "2026-06-07",
+        "last_updated": "2026-06-09",
         "fingerprint": "5055a4cd22a06a47"
       },
       {
@@ -390,6 +404,18 @@
         "strongest_evidence": "Topical rapamycin reduced p16INK4A and increased collagen VII in a small human skin-aging trial.",
         "last_updated": "2026-06-07",
         "fingerprint": "016fadf201f665b4"
+      },
+      {
+        "outlook_id": "track-stem-cell-rejuvenation-outlook",
+        "subject_type": "track",
+        "subject_id": "stem-cell-rejuvenation",
+        "evidence_stage": "human_biomarker_signal",
+        "momentum": "steady",
+        "confidence": "low",
+        "evidence_gap": "Direct human evidence is ex vivo, biopsy-biomarker evidence, or no-results registry context, not a tested in vivo stem-cell rejuvenation therapy.",
+        "strongest_evidence": "Older human HSCs show Cdc42-linked aging phenotypes, and ex vivo CASIN can repolarize aged human HSCs while shifting xenotransplant behavior toward young-donor patterns.",
+        "last_updated": "2026-06-09",
+        "fingerprint": "262c926fd9293b22"
       },
       {
         "outlook_id": "track-stem-cell-replacement-and-transplantation-outlook",

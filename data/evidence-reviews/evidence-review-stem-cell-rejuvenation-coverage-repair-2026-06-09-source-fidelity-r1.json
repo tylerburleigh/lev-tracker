@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-stem-cell-rejuvenation-coverage-repair-2026-06-09-source-fidelity-r1",
+  "name": "Source Fidelity review for Stem Cell Rejuvenation bundle",
+  "candidate_bundle_id": "stem-cell-rejuvenation-coverage-repair-2026-06-09",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, finding, and outlook claims match the checked primary records. ClinicalTrials.gov still lists NCT06877377 as a 60-participant not-yet-recruiting randomized hDNAgr trial with estimated 2026 completion dates and no posted results, while PubMed records PMID 42216078 as a 2026 Genome Biology HSC aging and rejuvenation-strategy review. The bundle does not treat either source as human efficacy evidence.",
+  "reviewed_change_ids": [
+    "create-intervention-hdnagr-therapy",
+    "create-source-nct-06877377",
+    "create-source-pmid-42216078",
+    "create-study-hdnagr-hsc-aging-registry",
+    "create-finding-hdnagr-hsc-aging-registry-not-yet-recruiting-no-results",
+    "create-finding-hsc-aging-review-rejuvenation-strategy-boundary",
+    "update-outlook-track-stem-cell-rejuvenation"
+  ],
+  "findings": [
+    {
+      "finding_id": "nct06877377-current-registry-boundary-confirmed",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "create-finding-hdnagr-hsc-aging-registry-not-yet-recruiting-no-results",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "hdnagr-hsc-aging-registry-not-yet-recruiting-no-results"
+      },
+      "claim_or_issue": "The staged no-results finding matches the current registry boundary: NCT06877377 is not yet recruiting and has no results posted.",
+      "why_it_matters": "This keeps hDNAgr in the source-completeness and watchlist lane rather than implying demonstrated benefit.",
+      "recommended_action": "No revision needed; continue ordinary surveillance for recruitment, status changes, results, or linked publications.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "pmid42216078-review-level-use-confirmed",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-hsc-aging-review-rejuvenation-strategy-boundary",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "hsc-aging-review-rejuvenation-strategy-boundary"
+      },
+      "claim_or_issue": "PMID 42216078 supports HSC aging mechanism and rejuvenation-strategy context, not a treated-human result.",
+      "why_it_matters": "Review-level context can repair mechanism coverage but should not move the track beyond human biomarker signal.",
+      "recommended_action": "No revision needed; preserve the review-level caveat in public support mapping.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-10T10:16:37.105Z",
+  "updated_at": "2026-06-10T10:16:37.105Z"
+}

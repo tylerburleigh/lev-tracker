@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-stem-cell-rejuvenation-coverage-repair-2026-06-09-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Stem Cell Rejuvenation bundle",
+  "candidate_bundle_id": "stem-cell-rejuvenation-coverage-repair-2026-06-09",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged interpretation is appropriately conservative. The outlook keeps Stem Cell Rejuvenation at low-confidence human_biomarker_signal with steady momentum, adds hDNAgr and HSC-review context only as coverage and boundary support, and states that a stronger stage would require in vivo human intervention evidence tied to functional outcomes.",
+  "reviewed_change_ids": [
+    "create-intervention-hdnagr-therapy",
+    "create-source-nct-06877377",
+    "create-source-pmid-42216078",
+    "create-study-hdnagr-hsc-aging-registry",
+    "create-finding-hdnagr-hsc-aging-registry-not-yet-recruiting-no-results",
+    "create-finding-hsc-aging-review-rejuvenation-strategy-boundary",
+    "update-outlook-track-stem-cell-rejuvenation"
+  ],
+  "findings": [
+    {
+      "finding_id": "stage-confidence-and-momentum-remain-bounded",
+      "severity": "note",
+      "category": "forecast_overreach",
+      "applies_to_change_id": "update-outlook-track-stem-cell-rejuvenation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-stem-cell-rejuvenation-outlook"
+      },
+      "claim_or_issue": "The staged outlook does not upgrade evidence stage, confidence, or momentum after adding no-results registry and review context.",
+      "why_it_matters": "Coverage repair should improve the source map without implying efficacy progress.",
+      "recommended_action": "No revision needed; keep rating-change criteria focused on result-bearing human intervention evidence and replicated safety margins.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "support-map-links-claims-to-findings",
+      "severity": "note",
+      "category": "other",
+      "applies_to_change_id": "update-outlook-track-stem-cell-rejuvenation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-stem-cell-rejuvenation-outlook"
+      },
+      "claim_or_issue": "The public support map links stage, momentum, confidence, and boundary conclusions to concrete finding and source IDs.",
+      "why_it_matters": "The evidence audit trail remains inspectable after publication.",
+      "recommended_action": "No revision needed.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-10T10:16:41.018Z",
+  "updated_at": "2026-06-10T10:16:41.018Z"
+}

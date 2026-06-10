@@ -9,20 +9,21 @@
   "momentum": "steady",
   "confidence": "low",
   "main_evidence_gaps": [
-    "Direct human evidence is ex vivo or biopsy-biomarker evidence, not a tested in vivo stem-cell rejuvenation therapy.",
+    "Direct human evidence is ex vivo, biopsy-biomarker evidence, or no-results registry context, not a tested in vivo stem-cell rejuvenation therapy.",
     "The strongest functional and lifespan signals remain mouse studies across heterogeneous pathways, tissues, and intervention modes.",
-    "Stem-cell activation, expansion, lineage skewing, tumor risk, and off-target pathway effects remain central safety boundaries."
+    "Stem-cell activation, expansion, lineage skewing, tumor risk, genome-targeting claims, telomere effects, and off-target pathway effects remain central safety boundaries."
   ],
   "strongest_current_evidence": [
     "Older human HSCs show Cdc42-linked aging phenotypes, and ex vivo CASIN can repolarize aged human HSCs while shifting xenotransplant behavior toward young-donor patterns.",
     "Cdc42 inhibition, NAD+ repletion, and p38 MAPK inhibition can restore aged mouse stem-cell phenotypes or regenerative function in preclinical studies.",
-    "Human exercise studies show that skeletal-muscle satellite-cell biomarkers remain responsive in people, although this is not a targeted drug or gene-therapy signal."
+    "Human exercise studies show that skeletal-muscle satellite-cell biomarkers remain responsive in people, although this is not a targeted drug or gene-therapy signal.",
+    "A not-yet-recruiting hDNAgr HSC-aging registry and a recent HSC aging review improve coverage, but they add watchlist and boundary context rather than treated-human benefit."
   ],
-  "interpretation_note": "Stem cell rejuvenation now has enough direct human-cell and human-biomarker evidence for a first public baseline at human biomarker signal. The rating should remain tentative because human clinical benefit has not been shown, and the strongest rejuvenation effects are still animal or ex vivo findings.",
+  "interpretation_note": "Stem cell rejuvenation has enough direct human-cell and human-biomarker evidence for a public baseline at human biomarker signal. The rating remains tentative because human clinical benefit has not been shown, the hDNAgr registry has no posted results, and the strongest rejuvenation effects are still animal or ex vivo findings.",
   "what_would_change_the_rating": [
     "A stronger stage assignment would need an in vivo human intervention that improves stem/progenitor-cell function and ties that change to a functional tissue outcome.",
-    "The read would become firmer if independent groups replicated Cdc42, NAD, p38, or related interventions with long-lasting effects and credible safety margins in aged animals and human cells.",
-    "The rating would weaken if human ex vivo Cdc42 findings fail to replicate, if candidate interventions show unacceptable proliferative or lineage-skewing risk, or if mouse functional signals do not translate to human-cell assays."
+    "The read would become firmer if independent groups replicated Cdc42, NAD, p38, hDNAgr-like, or related interventions with long-lasting effects and credible safety margins in aged animals and human cells.",
+    "The rating would weaken if human ex vivo Cdc42 findings fail to replicate, if candidate interventions show unacceptable proliferative, genomic, telomere, or lineage-skewing risk, or if mouse functional signals do not translate to human-cell assays."
   ],
   "supporting_finding_ids": [
     "human-hsc-cdc42-casin-repolarization",
@@ -30,7 +31,9 @@
     "systemic-casin-extended-aged-mouse-lifespan",
     "nr-rejuvenated-aged-mouse-stem-cells",
     "p38-inhibition-restored-aged-musc-regeneration",
-    "exercise-increased-human-pax7-satellite-cells"
+    "exercise-increased-human-pax7-satellite-cells",
+    "hdnagr-hsc-aging-registry-not-yet-recruiting-no-results",
+    "hsc-aging-review-rejuvenation-strategy-boundary"
   ],
   "supporting_evidence": [
     {
@@ -94,18 +97,39 @@
       ]
     },
     {
+      "label": "Active registry and review boundary",
+      "outlook_field": "confidence",
+      "conclusion": "The update adds targeted human-registry and review-level context, but not result-bearing human benefit.",
+      "support_role": "limits",
+      "rationale": "The hDNAgr registry is relevant because it targets HSC aging and includes safety, telomere, CD34-positive progenitor, biological-age, SF-36, and inflammatory endpoints, but it is not yet recruiting and has no posted results. The HSC aging review broadens mechanism coverage while reinforcing that rejuvenation strategies are still early in the path to useful human results.",
+      "finding_ids": [
+        "hdnagr-hsc-aging-registry-not-yet-recruiting-no-results",
+        "hsc-aging-review-rejuvenation-strategy-boundary"
+      ],
+      "source_ids": [
+        "nct-06877377",
+        "pmid-42216078"
+      ],
+      "limitations": [
+        "No hDNAgr results are posted.",
+        "Registry status is not yet recruiting despite past estimated completion dates.",
+        "Review-level context does not substitute for controlled human outcome data."
+      ]
+    },
+    {
       "label": "Momentum",
       "outlook_field": "momentum",
-      "conclusion": "Momentum is steady because the field has convergent preclinical signals and direct human-cell support, but no mature clinical efficacy program.",
+      "conclusion": "Momentum is steady because the field has convergent preclinical signals, direct human-cell support, and early registry activity, but no mature clinical efficacy program.",
       "support_role": "balances",
-      "rationale": "Cdc42, NAD+, p38, and exercise-linked satellite-cell evidence show continuing progress, while the absence of in vivo human rejuvenation trials prevents an accelerating interpretation.",
+      "rationale": "Cdc42, NAD+, p38, exercise-linked satellite-cell evidence, and hDNAgr registry context show continuing activity, while the absence of in vivo human rejuvenation results prevents an accelerating interpretation.",
       "finding_ids": [
         "human-hsc-cdc42-casin-repolarization",
         "cdc42-inhibition-rejuvenated-aged-mouse-hsc",
         "systemic-casin-extended-aged-mouse-lifespan",
         "nr-rejuvenated-aged-mouse-stem-cells",
         "p38-inhibition-restored-aged-musc-regeneration",
-        "exercise-increased-human-pax7-satellite-cells"
+        "exercise-increased-human-pax7-satellite-cells",
+        "hdnagr-hsc-aging-registry-not-yet-recruiting-no-results"
       ],
       "source_ids": [
         "pmid-33440922",
@@ -113,17 +137,19 @@
         "pmid-32755011",
         "pmid-27127236",
         "pmid-24531378",
-        "pmid-36266373"
+        "pmid-36266373",
+        "nct-06877377"
       ],
       "limitations": [
         "Evidence remains pathway- and tissue-fragmented.",
-        "Several strong signals are older preclinical studies rather than recent human efficacy results."
+        "Several strong signals are older preclinical studies rather than recent human efficacy results.",
+        "No-results registry activity should not be treated as evidence progress."
       ]
     },
     {
       "label": "Read firmness",
       "outlook_field": "confidence",
-      "conclusion": "The read remains tentative because moving from ex vivo human cells and mouse regeneration assays to evidence that human function improves is still unproven.",
+      "conclusion": "The read remains tentative because moving from ex vivo human cells, human biomarkers, trials to watch, and mouse regeneration assays to evidence that human function improves is still unproven.",
       "support_role": "limits",
       "rationale": "The evidence is strong enough to reject a pure plausibility-only rating, but not strong enough to claim human functional rejuvenation.",
       "finding_ids": [
@@ -131,18 +157,22 @@
         "systemic-casin-extended-aged-mouse-lifespan",
         "nr-rejuvenated-aged-mouse-stem-cells",
         "p38-inhibition-restored-aged-musc-regeneration",
-        "exercise-increased-human-pax7-satellite-cells"
+        "exercise-increased-human-pax7-satellite-cells",
+        "hdnagr-hsc-aging-registry-not-yet-recruiting-no-results",
+        "hsc-aging-review-rejuvenation-strategy-boundary"
       ],
       "source_ids": [
         "pmid-33440922",
         "pmid-32755011",
         "pmid-27127236",
         "pmid-24531378",
-        "pmid-36266373"
+        "pmid-36266373",
+        "nct-06877377",
+        "pmid-42216078"
       ],
       "limitations": [
         "No staged source demonstrates a targeted stem-cell rejuvenation therapy improving human function.",
-        "Potential proliferative and oncogenic risks are not resolved by the current baseline.",
+        "Potential proliferative, genomic, telomere, and oncogenic risks are not resolved by the current baseline.",
         "Human biomarker responsiveness may reflect broad systemic adaptation rather than cell-intrinsic rejuvenation."
       ]
     }
@@ -153,12 +183,14 @@
     "pmid-32755011",
     "pmid-27127236",
     "pmid-24531378",
-    "pmid-36266373"
+    "pmid-36266373",
+    "nct-06877377",
+    "pmid-42216078"
   ],
-  "last_updated": "2026-05-31",
+  "last_updated": "2026-06-09",
   "tags": [
     "public",
     "track",
-    "thin_coverage"
+    "coverage-repair"
   ]
 }
