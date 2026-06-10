@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-10T22:20:10.234Z",
+  "generated_at": "2026-06-10T22:48:15.861Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-10T22:20:10.121Z",
-    "research_priority_queue_updated_at": "2026-06-10T22:20:10.121Z",
+    "research_coverage_status_updated_at": "2026-06-10T22:48:15.748Z",
+    "research_priority_queue_updated_at": "2026-06-10T22:48:15.748Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
-    "surveillance_queue_count": 2,
+    "surveillance_queue_count": 1,
     "surveillance_recent_queue_count": 36,
-    "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 22,
+    "coverage_repair_queue_count": 1,
+    "coverage_assessment_backlog_count": 21,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
   },
@@ -33,8 +33,8 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "surveillance-chaperone-and-heat-shock-support",
-    "top_mode": "surveillance",
+    "top_work_item_id": "coverage-repair-chaperone-and-heat-shock-support",
+    "top_mode": "coverage_repair",
     "active_editorial_count": 0,
     "ready_research_count": 2,
     "data_hardening_count": 0,
@@ -46,14 +46,14 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "surveillance-chaperone-and-heat-shock-support",
-      "mode": "surveillance",
+      "item_id": "coverage-repair-chaperone-and-heat-shock-support",
+      "mode": "coverage_repair",
       "domain": "research",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Run field change check for Chaperone and Heat-Shock Support",
-      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
-      "default_action": "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
+      "title": "Repair coverage for Chaperone and Heat-Shock Support",
+      "rationale": "Run a Chaperone and Heat-Shock Support coverage-repair pass focused on PMID 40663813, current Miplyffa label and drug-interaction context, arimoclomol extension and early-access registries, BGP-15 registry boundaries, passive-heating/HSP boundary records, and recent review or real-world triangulation. Create a public bundle only for staged records that materially improve the evidence map while preserving the current low-confidence, NPC-specific, broad-aging-tentative interpretation.",
+      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
       "track_id": "chaperone-and-heat-shock-support",
       "hallmark_id": "loss_of_proteostasis",
       "references": [
@@ -64,6 +64,42 @@
         {
           "record_type": "hallmark",
           "record_id": "loss_of_proteostasis"
+        }
+      ],
+      "runbook_path": "docs/coverage-assessment.md",
+      "source_paths": [
+        "research/backlog/track-priority.v1.json",
+        "research/state/coverage-status.v1.json",
+        "research/coverage-assessments",
+        "docs/coverage-assessment.md"
+      ],
+      "signals": [
+        {
+          "name": "generated_queue_rank",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "item_id": "surveillance-autophagy-induction",
+      "mode": "surveillance",
+      "domain": "research",
+      "priority_tier": "now",
+      "status": "ready",
+      "title": "Run field change check for Autophagy Induction",
+      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
+      "default_action": "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
+      "track_id": "autophagy-induction",
+      "hallmark_id": "disabled_macroautophagy",
+      "references": [
+        {
+          "record_type": "track",
+          "record_id": "autophagy-induction"
+        },
+        {
+          "record_type": "hallmark",
+          "record_id": "disabled_macroautophagy"
         }
       ],
       "runbook_path": "docs/surveillance-checklist.md",
@@ -100,25 +136,25 @@
       ]
     },
     {
-      "rank": 2,
-      "item_id": "coverage-assessment-backfill-chaperone-and-heat-shock-support",
+      "rank": 3,
+      "item_id": "coverage-assessment-backfill-autophagy-induction",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for Chaperone and Heat-Shock Support",
-      "rationale": "22 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
+      "title": "Backfill coverage assessment for Autophagy Induction",
+      "rationale": "21 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
       "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
-      "track_id": "chaperone-and-heat-shock-support",
-      "hallmark_id": "loss_of_proteostasis",
+      "track_id": "autophagy-induction",
+      "hallmark_id": "disabled_macroautophagy",
       "references": [
         {
           "record_type": "track",
-          "record_id": "chaperone-and-heat-shock-support"
+          "record_id": "autophagy-induction"
         },
         {
           "record_type": "hallmark",
-          "record_id": "loss_of_proteostasis"
+          "record_id": "disabled_macroautophagy"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",
@@ -130,7 +166,7 @@
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 22
+          "value": 21
         },
         {
           "name": "generated_surveillance_queue_rank",

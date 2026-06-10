@@ -1,0 +1,276 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "chaperone-and-heat-shock-support-surveillance-2026-06-10",
+  "name": "Chaperone and Heat-Shock Support surveillance coverage assessment for June 10, 2026",
+  "short_name": "Chaperone and heat-shock surveillance coverage",
+  "track_id": "chaperone-and-heat-shock-support",
+  "hallmark_id": "loss_of_proteostasis",
+  "assessment_type": "surveillance",
+  "assessed_at": "2026-06-10T22:43:55Z",
+  "assessment_window": {
+    "from": "2026-05-31T15:44:20.234Z",
+    "to": "2026-06-10T22:43:55Z",
+    "basis": "Surveillance window from the published Chaperone and Heat-Shock Support baseline through the June 10 field-change check."
+  },
+  "coverage_verdict": "thin",
+  "summary": "The public baseline is enough to support the current low-confidence, NPC-specific human_functional_benefit claim, but it is thin as a source-completeness map. Same-window surveillance found no public update: the known arimoclomol trials remain completed with posted results, PubMed returned no new primary efficacy or safety result, and a same-window Zevra patent-listing announcement is context-only. The pass did find important pre-baseline gaps that should be repaired before ordinary surveillance resumes, especially PMID 40663813 for the 48-month NPC-002 open-label extension, fuller Miplyffa label and drug-interaction context, broader arimoclomol and BGP-15 registry boundaries, passive-heating boundary records, and recent review or real-world data context.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-05-31-chaperone-and-heat-shock-support-bootstrap",
+      "2026-06-10-chaperone-and-heat-shock-support-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "chaperone-and-heat-shock-support-bootstrap-2026-05-31"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-chaperone-and-heat-shock-support-source-fidelity-r1",
+      "evidence-review-chaperone-and-heat-shock-support-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-chaperone-and-heat-shock-support-bootstrap-2026-05-31-2026-05-31t15-44-20-234z"
+    ],
+    "outlook_ids": [
+      "track-chaperone-and-heat-shock-support-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "The public evidence map includes the randomized arimoclomol NPC phase 2/3 trial, the approval-era rescored NPC analysis, FDA approval context, null ALS and inclusion body myositis trials, a short BGP-15 metabolic proof-of-concept trial, and a small hyperthermia HSP70 biomarker study.",
+      "source_ids": [
+        "pmid-34418116",
+        "pmid-40520915",
+        "fda-miplyffa-approval-2024-09-20",
+        "pmid-38782015",
+        "pmid-37739573",
+        "pmid-19214941",
+        "pmid-17928942"
+      ],
+      "finding_ids": [
+        "arimoclomol-slowed-npc-disease-progression",
+        "arimoclomol-npc-r4dnpccss-posthoc-support",
+        "miplyffa-approved-npc-neurological-symptoms",
+        "arimoclomol-als-phase3-null",
+        "arimoclomol-ibm-trial-null",
+        "bgp15-improved-insulin-sensitivity-proof-of-concept",
+        "hyperthermia-hsp70-pbmcs-no-significant-increase"
+      ],
+      "gap_note": "The evidence is adequate for the current bounded NPC-specific stage but incomplete for durability and broader intervention-family coverage; PMID 40663813 and registry boundary records should be reviewed in coverage repair."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "thin",
+      "rationale": "The current public map does not represent post-approval real-world Miplyffa use, natural-history comparisons, or observational proteostasis/chaperone context. Sponsor and conference materials surfaced during surveillance predate the baseline and need primary-source scrutiny before public use.",
+      "gap_note": "Coverage repair should decide whether any real-world or natural-history context is source-reliable enough to stage, or whether it should remain explicitly excluded."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "thin",
+      "rationale": "The public baseline includes HSF-1 C. elegans lifespan and aggregation biology, but no curated mammalian lifespan, healthspan, or multimorbidity intervention evidence for chaperone or heat-shock support.",
+      "source_ids": [
+        "pmid-12750521"
+      ],
+      "finding_ids": [
+        "hsf1-overexpression-extended-c-elegans-lifespan"
+      ],
+      "gap_note": "The current stage does not depend on mammalian aging evidence, but a coverage-repair pass should verify whether major mammalian HSF/HSP intervention anchors are missing or whether the evidence gap is real."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "The baseline represents HSF-1 worm biology, arimoclomol heat-shock-response amplification in NPC, BGP-15 HSP co-inducer context, and direct human HSP70 hyperthermia biomarker limits.",
+      "source_ids": [
+        "pmid-12750521",
+        "pmid-34418116",
+        "pmid-19214941",
+        "pmid-17928942"
+      ],
+      "finding_ids": [
+        "hsf1-overexpression-extended-c-elegans-lifespan",
+        "arimoclomol-slowed-npc-disease-progression",
+        "bgp15-improved-insulin-sensitivity-proof-of-concept",
+        "hyperthermia-hsp70-pbmcs-no-significant-increase"
+      ],
+      "gap_note": "Mechanism coverage is enough for the current public claim, but repair should prevent over-collapsing arimoclomol, BGP-15, HSP90, passive heat, chaperone-mediated autophagy, and mitochondrial proteostasis into one intervention claim."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The current public outlook captures two major arimoclomol null disease-program boundaries, the thin and indirect BGP-15 endpoint, and the small hyperthermia HSP70 null biomarker result.",
+      "source_ids": [
+        "pmid-38782015",
+        "pmid-37739573",
+        "pmid-19214941",
+        "pmid-17928942"
+      ],
+      "finding_ids": [
+        "arimoclomol-als-phase3-null",
+        "arimoclomol-ibm-trial-null",
+        "bgp15-improved-insulin-sensitivity-proof-of-concept",
+        "hyperthermia-hsp70-pbmcs-no-significant-increase"
+      ],
+      "gap_note": "Repair should review older arimoclomol OLE and terminated/no-results disease registries to determine whether additional limiting or safety context should be explicit."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "The outlook notes hypersensitivity, common adverse effects, discontinuation burdens, and unresolved long-term safety, but the current source map does not include the 48-month NPC open-label extension, the current DailyMed label, drug-interaction review context, or systematic post-approval safety triangulation.",
+      "source_ids": [
+        "fda-miplyffa-approval-2024-09-20",
+        "pmid-38782015",
+        "pmid-37739573"
+      ],
+      "finding_ids": [
+        "miplyffa-approved-npc-neurological-symptoms",
+        "arimoclomol-als-phase3-null",
+        "arimoclomol-ibm-trial-null"
+      ],
+      "gap_note": "PMID 40663813, DailyMed label updates, and PMID 41567854 should be reviewed before the public safety and durability framing is considered adequate."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "thin",
+      "rationale": "The public map includes registry IDs on the three main arimoclomol trials, but trial_details lack registry_last_checked and completion-date fields. Broad surveillance found additional arimoclomol, BGP-15, passive-heating, and HSP/HSP90 records that are mostly pre-baseline, wrong-scope, or no-results but should be explicitly staged or excluded during repair.",
+      "source_ids": [
+        "pmid-34418116",
+        "pmid-38782015",
+        "pmid-37739573"
+      ],
+      "gap_note": "Coverage repair should stage registry detail updates or explicit exclusions for NCT02612129, NCT03491462, NCT02753530, NCT03836716, NCT04049097, NCT03746587, NCT04316637, NCT01069965, and selected passive-heating boundary records."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "The public map is built from primary sources and FDA approval context. It does not yet represent recent review-level synthesis around NPC therapeutics, arimoclomol first approval, drug-interaction management, heat-shock response aging, or HSP intervention boundaries.",
+      "gap_note": "Review PMID 42007957, PMID 39715913, PMID 41567854, and selected heat-shock/chaperone aging reviews during coverage repair; stage only if they materially improve source triangulation or limitation language."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes the pivotal NPC randomized trial, the FDA approval source, major null ALS and IBM trials, classic HSF-1 C. elegans aging biology, BGP-15 human biomarker context, and hyperthermia HSP70 biomarker boundary evidence.",
+      "source_ids": [
+        "pmid-34418116",
+        "fda-miplyffa-approval-2024-09-20",
+        "pmid-38782015",
+        "pmid-37739573",
+        "pmid-12750521",
+        "pmid-19214941",
+        "pmid-17928942"
+      ],
+      "finding_ids": [
+        "arimoclomol-slowed-npc-disease-progression",
+        "miplyffa-approved-npc-neurological-symptoms",
+        "arimoclomol-als-phase3-null",
+        "arimoclomol-ibm-trial-null",
+        "hsf1-overexpression-extended-c-elegans-lifespan",
+        "bgp15-improved-insulin-sensitivity-proof-of-concept",
+        "hyperthermia-hsp70-pbmcs-no-significant-increase"
+      ],
+      "gap_note": "A formal citation-network audit is not urgent, but coverage repair should verify the major mammalian aging and HSP co-inducer anchors before calling this category strong."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "thin",
+      "rationale": "The surveillance pass exposed recurring boundary issues: arimoclomol as NPC lysosomal/heat-shock response therapy, BGP-15 metabolic biomarker context, passive heat exposure, HSP90 oncology or imaging, mitochondrial proteostatic reserve, chaperone-mediated autophagy, and generic chaperone biology should not be treated as interchangeable evidence streams.",
+      "source_ids": [
+        "pmid-34418116",
+        "pmid-19214941",
+        "pmid-17928942"
+      ],
+      "finding_ids": [
+        "arimoclomol-slowed-npc-disease-progression",
+        "bgp15-improved-insulin-sensitivity-proof-of-concept",
+        "hyperthermia-hsp70-pbmcs-no-significant-increase"
+      ],
+      "gap_note": "Coverage repair should define which HSP90, passive-heating, CMA, mitochondrial UPR, and lysosomal NPC records belong inside this track versus adjacent tracks."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-34418116",
+    "pmid-40520915",
+    "fda-miplyffa-approval-2024-09-20",
+    "pmid-38782015",
+    "pmid-37739573",
+    "pmid-19214941",
+    "pmid-12750521",
+    "pmid-17928942"
+  ],
+  "covered_finding_ids": [
+    "arimoclomol-slowed-npc-disease-progression",
+    "arimoclomol-npc-r4dnpccss-posthoc-support",
+    "miplyffa-approved-npc-neurological-symptoms",
+    "arimoclomol-als-phase3-null",
+    "arimoclomol-ibm-trial-null",
+    "bgp15-improved-insulin-sensitivity-proof-of-concept",
+    "hsf1-overexpression-extended-c-elegans-lifespan",
+    "hyperthermia-hsp70-pbmcs-no-significant-increase"
+  ],
+  "search_log_summary": "Ran local trial audit, rechecked the three known arimoclomol NCT records through ClinicalTrials.gov, searched ClinicalTrials.gov for arimoclomol, Miplyffa, BGP-15, heat-shock-response, HSP70, HSF1, passive-heating, geranylgeranylacetone, celastrol, and HSP co-inducer terms, searched PubMed for same-window arimoclomol, Miplyffa, BGP-15, heat-shock, HSP, HSF1, chaperone, proteostasis, and aging records, and used web follow-up for FDA, DailyMed, sponsor, and patent-listing context.",
+  "source_selection_notes": [
+    "No same-window source was selected for public staging because no direct chaperone or heat-shock-support efficacy, safety, result-posting, correction, or regulatory evidence changed after the May 31 baseline.",
+    "PMID 40663813 is high-priority coverage-repair material because it directly reports 48-month NPC-002 open-label extension efficacy and safety, but it predates the baseline and needs review before public staging.",
+    "PMID 42007957 and PMID 41567854 are same-window PubMed records but review-level or safety-management context, not primary evidence requiring an immediate public update.",
+    "The June 8, 2026 Zevra Orange Book patent-listing announcement was not staged as activity because it is IP context rather than a clinical, regulatory, or evidence event.",
+    "Passive-heating aging records and HSP90 imaging or oncology records were excluded as boundary context unless a future repair pass finds direct chaperone or heat-shock target engagement tied to aging-relevant outcomes."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "npc-open-label-extension-not-represented",
+      "gap_type": "coverage_gap",
+      "category": "safety_durability",
+      "description": "The public evidence map does not represent PMID 40663813, the 48-month open-label extension of NPC-002 reporting long-term arimoclomol efficacy and safety in NPC.",
+      "priority": "high",
+      "suggested_action": "Run coverage repair to source-review PMID 40663813 and decide whether to stage a source, study update, finding, and support-map adjustment that preserves the NPC-specific boundary."
+    },
+    {
+      "gap_id": "miplyffa-label-and-ddi-context-thin",
+      "gap_type": "coverage_gap",
+      "category": "safety_durability",
+      "description": "The public baseline uses an FDA approval announcement but does not include the current DailyMed label, label update history, or PMID 41567854 drug-interaction context.",
+      "priority": "high",
+      "suggested_action": "During coverage repair, review DailyMed/FDA label material and PMID 41567854; stage only safety or interaction facts that materially improve public limitation language."
+    },
+    {
+      "gap_id": "registry-boundary-watchlist-incomplete",
+      "gap_type": "coverage_gap",
+      "category": "active_trials_registries",
+      "description": "Known arimoclomol trial records lack local registry check and completion-date details, and broader arimoclomol, BGP-15, passive-heating, HSP70, HSF1, and HSP90 registry boundaries are not represented as public records or explicit exclusions.",
+      "priority": "high",
+      "suggested_action": "Stage registry detail updates or explicit exclusions for the main arimoclomol NCTs plus NCT03836716, NCT04049097, NCT03746587, NCT04316637, NCT01069965, and selected heat-exposure boundary records."
+    },
+    {
+      "gap_id": "recent-review-and-real-world-triangulation-missing",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "Recent NPC, arimoclomol approval, drug-interaction, and sponsor or conference real-world context is not formally reviewed or explicitly excluded.",
+      "priority": "medium",
+      "suggested_action": "Use coverage repair to review PMID 42007957, PMID 39715913, sponsor real-world leads, and label/approval reviews, while treating non-primary sponsor material as leads unless it points to verifiable source data."
+    },
+    {
+      "gap_id": "mammalian-aging-intervention-evidence-absent",
+      "gap_type": "evidence_gap",
+      "category": "animal_lifespan_or_healthspan",
+      "description": "The public map has classic C. elegans HSF-1 lifespan biology but no curated mammalian lifespan, healthspan, or multimorbidity intervention evidence for chaperone or heat-shock support.",
+      "priority": "medium",
+      "suggested_action": "Do not strengthen the broad aging read without mammalian or human aging-relevant intervention evidence; coverage repair should verify whether this is a true evidence gap rather than a search gap."
+    },
+    {
+      "gap_id": "heterogeneous-hsp-boundary-needs-review",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "Arimoclomol NPC, BGP-15 metabolic biomarkers, passive heat exposure, HSP90 imaging or oncology, chaperone-mediated autophagy, mitochondrial UPR, and generic molecular chaperone biology recur in searches but do not map cleanly to one public claim.",
+      "priority": "medium",
+      "suggested_action": "During coverage repair, define which approaches belong in Chaperone and Heat-Shock Support versus adjacent proteostasis, lysosomal, mitochondrial, or oncology/disease-boundary contexts."
+    }
+  ],
+  "next_coverage_action": "Run a Chaperone and Heat-Shock Support coverage-repair pass focused on PMID 40663813, current Miplyffa label and drug-interaction context, arimoclomol extension and early-access registries, BGP-15 registry boundaries, passive-heating/HSP boundary records, and recent review or real-world triangulation. Create a public bundle only for staged records that materially improve the evidence map while preserving the current low-confidence, NPC-specific, broad-aging-tentative interpretation.",
+  "next_recommended_mode": "coverage_repair",
+  "tags": [
+    "surveillance",
+    "coverage-assessment",
+    "chaperone-and-heat-shock-support",
+    "thin-coverage"
+  ]
+}

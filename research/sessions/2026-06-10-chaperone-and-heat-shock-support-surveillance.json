@@ -1,0 +1,304 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-10-chaperone-and-heat-shock-support-surveillance",
+  "name": "Chaperone and Heat-Shock Support field change check for June 10, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-10T22:24:00Z",
+  "completed_at": "2026-06-10T22:43:55Z",
+  "scope": {
+    "question": "What changed for Chaperone and Heat-Shock Support since the 2026-05-31 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "loss_of_proteostasis"
+    ],
+    "track_ids": [
+      "chaperone-and-heat-shock-support"
+    ],
+    "intervention_ids": [
+      "arimoclomol",
+      "bgp-15",
+      "hsf-1-modulation",
+      "active-hyperthermia",
+      "passive-hyperthermia"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "coverage_assessment_updated",
+  "summary": "Ran the first Chaperone and Heat-Shock Support field change check from the 2026-05-31T15:44:20.234Z public baseline publication through June 10, 2026. The three known arimoclomol registry-linked studies remain completed with posted results, and broad ClinicalTrials.gov searches found no same-window arimoclomol, Miplyffa, BGP-15, heat-shock-response, HSP70, HSF1, or passive-heating registry result that changes the public outlook. PubMed returned two post-baseline arimoclomol or Miplyffa-indexed records: an NPC therapeutics review and a 2024 FDA approvals drug-interaction review. Neither adds new primary efficacy evidence or changes the current NPC-specific interpretation. A same-window Zevra Orange Book patent-listing announcement is context-only intellectual-property activity. No public source, study, finding, activity item, outlook, or candidate bundle is warranted. The pass did identify a material pre-baseline coverage gap: PMID 40663813, a 48-month open-label extension of the NPC-002 arimoclomol trial, plus related label, drug-interaction, registry-watch, and taxonomy-boundary coverage. A coverage assessment was created and recommends coverage repair before ordinary surveillance resumes.",
+  "next_recommended_mode": "coverage_repair",
+  "materiality_decision": {
+    "material_delta": "coverage_repair_needed",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "coverage_repair",
+    "rationale": "No same-window source changes the public stage, momentum, read firmness, or support map. The material issue is internal source-completeness risk: the current public baseline does not represent long-term NPC open-label extension evidence, fuller Miplyffa label or drug-interaction context, or the broader arimoclomol/BGP-15/heat-shock registry boundary set. Those should be handled through a bounded coverage-repair pass rather than an ad hoc surveillance bundle."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial audit",
+      "query": "npm run audit:trials -- --track chaperone-and-heat-shock-support --write",
+      "checked_at": "2026-06-10T22:43:55Z",
+      "summary": "The audit found three registry-linked interventional studies for the track. All three have trial_details and are locally marked completed with posted results, but all three had stale or missing local registry check dates and no local completion dates."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "Known registry re-checks: NCT02612129, NCT03491462, and NCT02753530",
+      "checked_at": "2026-06-10T22:43:55Z",
+      "url": "https://clinicaltrials.gov/search?term=NCT02612129%20OR%20NCT03491462%20OR%20NCT02753530",
+      "summary": "NCT02612129, NCT03491462, and NCT02753530 remain completed with results. NCT02612129 lists actual primary completion on 2018-06-25 and actual study completion on 2024-10-31; the ALS and IBM trials list actual completion in 2020 and 2021. No same-window status or results change was found."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "arimoclomol and Miplyffa",
+      "checked_at": "2026-06-10T22:43:55Z",
+      "url": "https://clinicaltrials.gov/search?term=arimoclomol",
+      "summary": "Returned the known NPC, ALS, and IBM trials plus older or adjacent arimoclomol records including ALS open-label extension, IBM open-label extension, Gaucher disease, early access NPC, old SOD1 ALS, and withdrawn or dose-ranging ALS records. These were pre-baseline, wrong-scope, no-results, or already represented by the published ALS/IBM/NPC evidence."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "BGP-15 OR BGP15",
+      "checked_at": "2026-06-10T22:43:55Z",
+      "url": "https://clinicaltrials.gov/search?term=BGP-15%20OR%20BGP15",
+      "summary": "Returned NCT01069965, a terminated type 2 diabetes BGP-15 dose-ranging study with no posted results and no same-window update. It is pre-baseline biomarker or metabolic boundary context, not a public delta."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "\"heat shock response\" aging; \"passive heating\" aging HSP70; \"heat shock protein\" OR HSP70 OR HSF1",
+      "checked_at": "2026-06-10T22:43:55Z",
+      "url": "https://clinicaltrials.gov/search?term=%22heat%20shock%20response%22%20aging",
+      "summary": "Returned passive-heating aging physiology records, heatwave and thermoregulation studies, an HSP90 PET imaging study, HSP90 oncology records, and other wrong-scope or no-results records. No result-bearing chaperone or heat-shock-support intervention record changed the public outlook."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "(arimoclomol OR Miplyffa) with publication dates 2026-05-31 through 2026-06-10",
+      "checked_at": "2026-06-10T22:43:55Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=arimoclomol%20OR%20Miplyffa",
+      "summary": "Returned PMID 42007957, an NPC therapeutics review that repeats arimoclomol approval and phase II/III context, and PMID 41567854, a review of drug-interaction data from 2024 FDA approvals that includes arimoclomol transporter-inhibitor context. Neither is a new primary efficacy or clinical-outcome result."
+    },
+    {
+      "source_name": "PubMed ESearch and ESummary",
+      "query": "BGP-15, BGP15, heat shock response, HSP70, HSF1, heat shock protein, chaperone, proteostasis, aging, lifespan, longevity, and intervention terms with publication dates 2026-05-31 through 2026-06-10",
+      "checked_at": "2026-06-10T22:43:55Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28%22heat%20shock%20response%22%20OR%20HSP70%20OR%20HSF1%20OR%20%22heat%20shock%20protein%22%29%20AND%20aging",
+      "summary": "BGP-15 terms returned zero same-window records. Broad heat-shock and chaperone searches returned mechanistic, plant, forensic, cancer, infection, proteasome, mitochondrial-proteostasis, and disease-model records. No record was a same-window human chaperone-support efficacy, target-engagement, safety, correction, or retraction result for the scoped track."
+    },
+    {
+      "source_name": "PubMed and web lead screen for pre-baseline coverage gaps",
+      "query": "arimoclomol open-label extension 48-month NPC, arimoclomol first approval, Miplyffa label, Miplyffa real-world data, and arimoclomol drug interaction context",
+      "checked_at": "2026-06-10T22:43:55Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40663813/",
+      "summary": "Found pre-baseline but important coverage-repair leads: PMID 40663813 reports 48-month open-label extension efficacy and safety for NPC-002; DailyMed lists a Miplyffa label updated March 18, 2026; sponsor and conference materials describe pre-baseline real-world/post-approval Miplyffa context; and PMID 41567854 summarizes drug-interaction data from 2024 approvals."
+    },
+    {
+      "source_name": "FDA, DailyMed, and sponsor web searches",
+      "query": "Miplyffa arimoclomol label update, FDA approval, Zevra Miplyffa June 2026, and Orange Book patent listing",
+      "checked_at": "2026-06-10T22:43:55Z",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=human&query=Arimoclomol",
+      "summary": "The FDA approval remains the public regulatory anchor. DailyMed showed a March 18, 2026 label update predating the baseline. Zevra announced on June 8, 2026 that it submitted a Miplyffa patent for Orange Book listing; that is same-window IP activity, not clinical or regulatory evidence that changes the public outlook."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT02612129",
+      "study_id": "arimoclomol-npc-phase-2-3",
+      "source_id": "pmid-34418116",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02612129",
+      "checked_at": "2026-06-10T22:43:55Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2018-06-25",
+      "study_completion_date": "2024-10-31",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": true,
+      "materiality": "completion_change",
+      "public_action": "coverage_repair",
+      "summary": "The NPC-002 registry remains completed with posted results. The registry now supplies actual completion dates absent from the local study record, and PubMed source discovery found a 48-month OLE paper that should be reviewed during coverage repair."
+    },
+    {
+      "registry_id": "NCT03491462",
+      "study_id": "arimoclomol-als-orarials-phase3",
+      "source_id": "pmid-38782015",
+      "registry_url": "https://clinicaltrials.gov/study/NCT03491462",
+      "checked_at": "2026-06-10T22:43:55Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2020-12-18",
+      "study_completion_date": "2020-12-18",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": true,
+      "materiality": "completion_change",
+      "public_action": "record_no_op",
+      "summary": "The ORARIALS-01 ALS registry remains completed with posted results and no same-window interpretation change. The completion dates were missing locally but do not change the public null-trial boundary."
+    },
+    {
+      "registry_id": "NCT02753530",
+      "study_id": "arimoclomol-inclusion-body-myositis-trial",
+      "source_id": "pmid-37739573",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02753530",
+      "checked_at": "2026-06-10T22:43:55Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2021-01-11",
+      "study_completion_date": "2021-01-11",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": true,
+      "materiality": "completion_change",
+      "public_action": "record_no_op",
+      "summary": "The inclusion body myositis registry remains completed with posted results and no same-window interpretation change. The completion dates were missing locally but do not change the public null-trial boundary."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 40663813",
+      "title": "Long-term efficacy and safety of arimoclomol in Niemann-Pick disease type C: Final results of the phase 2/3 NPC-002 48-month open-label extension trial.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40663813/",
+      "decision": "context_only",
+      "reason": "Directly relevant arimoclomol NPC durability and safety evidence, but it was published before the May 31 baseline. It should be handled through coverage repair with source-fidelity and interpretation review rather than silently inserted during same-window surveillance."
+    },
+    {
+      "reference": "PMID 42007957",
+      "title": "Current and emerging therapeutic advancements for Niemann-Pick disease type C: where are we now and what does the future hold?",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42007957/",
+      "decision": "context_only",
+      "reason": "Post-baseline PubMed publication date but review-level NPC context, with no new primary arimoclomol efficacy or safety result beyond the already represented approval and trial context."
+    },
+    {
+      "reference": "PMID 41567854",
+      "title": "Understanding Pharmacokinetic-Drug Interactions With Drugs Approved by the US Food and Drug Administration in 2024 to Better Manage the Risk of Drug Interactions With Concomitant Medications.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41567854/",
+      "decision": "context_only",
+      "reason": "Drug-interaction review includes arimoclomol transporter-inhibitor context, but it does not change the evidence stage or same-window public interpretation. It belongs in a safety-focused coverage repair if selected."
+    },
+    {
+      "reference": "Zevra June 8, 2026 Miplyffa Orange Book patent-listing announcement",
+      "title": "Zevra Therapeutics Announces Orange Book Listing of U.S. Patent Covering MIPLYFFA.",
+      "url": "https://investors.zevra.com/news-releases/news-release-details/zevra-therapeutics-announces-orange-book-listing-us-patent",
+      "decision": "context_only",
+      "reason": "Same-window external activity, but it is intellectual-property context rather than evidence, safety, trial, regulatory-approval, or public-outlook movement."
+    },
+    {
+      "reference": "NCT03836716",
+      "title": "Arimoclomol in Amyotrophic Lateral Sclerosis - Open Label Extension Trial",
+      "url": "https://clinicaltrials.gov/study/NCT03836716",
+      "decision": "context_only",
+      "reason": "Pre-baseline terminated ALS open-label extension registry with posted results. It may be useful during coverage repair for safety or durability boundaries, but it is not a same-window delta."
+    },
+    {
+      "reference": "NCT04049097",
+      "title": "Arimoclomol in Sporadic Inclusion Body Myositis - Open Label Extension Trial",
+      "url": "https://clinicaltrials.gov/study/NCT04049097",
+      "decision": "context_only",
+      "reason": "Pre-baseline terminated IBM open-label extension registry with posted results. The public baseline already captures the parent IBM trial's null functional result; extension details require coverage repair if selected."
+    },
+    {
+      "reference": "NCT03746587",
+      "title": "Study of Arimoclomol in Patients Diagnosed With Gaucher Disease Type 1 or 3",
+      "url": "https://clinicaltrials.gov/study/NCT03746587",
+      "decision": "wrong_scope",
+      "reason": "Terminated Gaucher disease arimoclomol registry without posted results. It is disease-specific lysosomal context, not broad aging or heat-shock-support evidence."
+    },
+    {
+      "reference": "NCT04316637",
+      "title": "Early Access Program With Arimoclomol in US Patients With NPC",
+      "url": "https://clinicaltrials.gov/study/NCT04316637",
+      "decision": "context_only",
+      "reason": "Available early-access NPC program with no posted results. It may matter for post-approval context but does not change evidence interpretation during this surveillance window."
+    },
+    {
+      "reference": "NCT01069965",
+      "title": "Safety and Efficacy of BGP-15 in Patients With Type 2 Diabetes Mellitus",
+      "url": "https://clinicaltrials.gov/study/NCT01069965",
+      "decision": "no_results",
+      "reason": "Terminated BGP-15 metabolic disease registry with no posted results and no same-window update. It may be reviewed as BGP-15 boundary context during coverage repair."
+    },
+    {
+      "reference": "NCT06633198",
+      "title": "Heat, Microvascular Function and Aging",
+      "url": "https://clinicaltrials.gov/study/NCT06633198",
+      "decision": "wrong_scope",
+      "reason": "Recruiting passive-heating aging physiology registry with no posted results. It does not establish chaperone or heat-shock target engagement or functional aging benefit."
+    },
+    {
+      "reference": "NCT05618197",
+      "title": "Chronic Passive Heating in Healthy Older Adults",
+      "url": "https://clinicaltrials.gov/study/NCT05618197",
+      "decision": "no_results",
+      "reason": "Completed passive-heating older-adult registry with no posted results. It is heat physiology context, not a same-window chaperone-support update."
+    },
+    {
+      "reference": "NCT05622747",
+      "title": "Acute Passive Heating in Healthy Older Adults",
+      "url": "https://clinicaltrials.gov/study/NCT05622747",
+      "decision": "no_results",
+      "reason": "Completed passive-heating older-adult registry with no posted results. It is heat physiology context, not a same-window chaperone-support update."
+    },
+    {
+      "reference": "NCT07380204",
+      "title": "Quantification of Hsp90 in the Human Brain",
+      "url": "https://clinicaltrials.gov/study/NCT07380204",
+      "decision": "wrong_scope",
+      "reason": "Recruiting PET imaging study in Parkinson disease, Alzheimer disease, and ALS. It measures Hsp90 biology but is not a chaperone-support intervention result."
+    },
+    {
+      "reference": "PMID 42243621",
+      "title": "Oxidative Stress and Diminished Mitochondrial Proteostatic Reserve Are Linked to Enhanced mtUPR Initiation in Aged Mouse Muscle.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42243621/",
+      "decision": "context_only",
+      "reason": "Same-window mammalian aging mechanistic source around mitochondrial proteostatic reserve and mtUPR initiation, but it is not a chaperone-support intervention or human outcome result."
+    }
+  ],
+  "source_ids": [
+    "pmid-34418116",
+    "pmid-40520915",
+    "fda-miplyffa-approval-2024-09-20",
+    "pmid-38782015",
+    "pmid-37739573",
+    "pmid-19214941",
+    "pmid-12750521",
+    "pmid-17928942"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/34418116/",
+    "https://pubmed.ncbi.nlm.nih.gov/40520915/",
+    "https://www.fda.gov/news-events/press-announcements/fda-approves-first-treatment-niemann-pick-disease-type-c",
+    "https://pubmed.ncbi.nlm.nih.gov/38782015/",
+    "https://pubmed.ncbi.nlm.nih.gov/37739573/",
+    "https://pubmed.ncbi.nlm.nih.gov/19214941/",
+    "https://pubmed.ncbi.nlm.nih.gov/12750521/",
+    "https://pubmed.ncbi.nlm.nih.gov/17928942/",
+    "https://pubmed.ncbi.nlm.nih.gov/40663813/",
+    "https://pubmed.ncbi.nlm.nih.gov/42007957/",
+    "https://pubmed.ncbi.nlm.nih.gov/41567854/",
+    "https://clinicaltrials.gov/study/NCT02612129",
+    "https://clinicaltrials.gov/study/NCT03491462",
+    "https://clinicaltrials.gov/study/NCT02753530",
+    "https://dailymed.nlm.nih.gov/dailymed/search.cfm?labeltype=human&query=Arimoclomol",
+    "https://investors.zevra.com/news-releases/news-release-details/zevra-therapeutics-announces-orange-book-listing-us-patent"
+  ],
+  "notes": [
+    "Triage selected this as the rank-1 ready surveillance item for the loss_of_proteostasis hallmark.",
+    "The delta window was anchored to publication event publish-chaperone-and-heat-shock-support-bootstrap-2026-05-31-2026-05-31t15-44-20-234z.",
+    "This track had no prior coverage assessment. The new assessment remains thin and recommends coverage repair before ordinary surveillance resumes.",
+    "PMID 40663813 is pre-baseline but materially relevant to safety and durability framing; it should be reviewed in coverage repair rather than treated as a same-window public delta.",
+    "The same-window Zevra patent listing does not belong in public activity because it is IP context and does not alter evidence interpretation."
+  ],
+  "next_actions": [
+    "Run bounded coverage repair focused on the arimoclomol NPC 48-month open-label extension, label and drug-interaction context, and the broader arimoclomol/BGP-15/heat-exposure registry boundary set.",
+    "During repair, decide whether PMID 40663813 should become a staged source, study update, finding, and outlook support-map adjustment for NPC-specific durability and safety.",
+    "Review whether Miplyffa label, DailyMed, drug-interaction review, and sponsor real-world/conference materials belong as public source context, explicit exclusions, or internal notes.",
+    "Create a public bundle only after source-fidelity and interpretation review show that missing sources materially improve the evidence map while preserving the current NPC-specific and tentative broad-aging boundary."
+  ]
+}
