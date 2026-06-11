@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-11T11:44:23.559Z",
+  "generated_at": "2026-06-11T12:19:49.306Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-11T11:44:15.270Z",
-    "research_priority_queue_updated_at": "2026-06-11T11:44:15.270Z",
+    "research_coverage_status_updated_at": "2026-06-11T12:19:49.196Z",
+    "research_priority_queue_updated_at": "2026-06-11T12:19:49.196Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
-    "surveillance_recent_queue_count": 38,
-    "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 20,
+    "surveillance_recent_queue_count": 37,
+    "coverage_repair_queue_count": 1,
+    "coverage_assessment_backlog_count": 19,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
   },
@@ -33,27 +33,27 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-assessment-backfill-immune-rejuvenation",
-    "top_mode": "coverage_assessment_backfill",
+    "top_work_item_id": "coverage-repair-immune-rejuvenation",
+    "top_mode": "coverage_repair",
     "active_editorial_count": 0,
-    "ready_research_count": 0,
+    "ready_research_count": 1,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
-      "38 surveillance track(s) are hidden from ordinary rotation until their cooldown expires."
+      "37 surveillance track(s) are hidden from ordinary rotation until their cooldown expires."
     ]
   },
   "work_items": [
     {
       "rank": 1,
-      "item_id": "coverage-assessment-backfill-immune-rejuvenation",
-      "mode": "coverage_assessment_backfill",
+      "item_id": "coverage-repair-immune-rejuvenation",
+      "mode": "coverage_repair",
       "domain": "research",
-      "priority_tier": "soon",
+      "priority_tier": "now",
       "status": "ready",
-      "title": "Backfill coverage assessment for Immune Rejuvenation",
-      "rationale": "20 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
-      "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
+      "title": "Repair coverage for Immune Rejuvenation",
+      "rationale": "Run a bounded coverage-repair pass for immune rejuvenation before ordinary surveillance. The repair should assemble source, study, finding, support-map, registry, limiting-evidence, safety, recent-review, and taxonomy-boundary records sufficient to audit the moderate human_functional_benefit public outlook without broadening it into an aging-reversal claim.",
+      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
       "track_id": "immune-rejuvenation",
       "hallmark_id": "chronic_inflammation",
       "references": [
@@ -70,12 +70,48 @@
       "source_paths": [
         "research/backlog/track-priority.v1.json",
         "research/state/coverage-status.v1.json",
+        "research/coverage-assessments",
+        "docs/coverage-assessment.md"
+      ],
+      "signals": [
+        {
+          "name": "generated_queue_rank",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "item_id": "coverage-assessment-backfill-rapalogs",
+      "mode": "coverage_assessment_backfill",
+      "domain": "research",
+      "priority_tier": "soon",
+      "status": "ready",
+      "title": "Backfill coverage assessment for Rapalogs",
+      "rationale": "19 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
+      "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
+      "track_id": "rapalogs",
+      "hallmark_id": "deregulated_nutrient_sensing",
+      "references": [
+        {
+          "record_type": "track",
+          "record_id": "rapalogs"
+        },
+        {
+          "record_type": "hallmark",
+          "record_id": "deregulated_nutrient_sensing"
+        }
+      ],
+      "runbook_path": "docs/coverage-assessment.md",
+      "source_paths": [
+        "research/backlog/track-priority.v1.json",
+        "research/state/coverage-status.v1.json",
         "docs/coverage-assessment.md"
       ],
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 20
+          "value": 19
         },
         {
           "name": "generated_surveillance_queue_rank",

@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "immune-rejuvenation-coverage-2026-06-11",
+  "name": "Immune Rejuvenation Coverage Assessment for June 11, 2026",
+  "short_name": "Immune rejuvenation coverage",
+  "track_id": "immune-rejuvenation",
+  "hallmark_id": "chronic_inflammation",
+  "assessment_type": "surveillance",
+  "assessed_at": "2026-06-11T12:18:24Z",
+  "assessment_window": {
+    "from": "2026-05-30T17:20:00Z",
+    "to": "2026-05-30T23:01:21.056Z",
+    "basis": "Backfill assessment of the published May 30 immune-rejuvenation surveillance wording update from session start through publication; no new source search was run for this assessment."
+  },
+  "coverage_verdict": "thin",
+  "summary": "Coverage is thin for the current moderate-confidence human_functional_benefit public outlook. The May 30 surveillance bundle and reviews support a clearer public statement that immune functional endpoints are more clinically legible than many other hallmark endpoints, while explicitly avoiding an aging-reversal claim or stage move. However, the reviewed artifacts do not contain a curated source, study, finding, registry, recent-review, or seminal-anchor map for immune rejuvenation, so the repository cannot yet audit which human interventions, endpoints, limiting results, safety constraints, or taxonomy boundaries support the public rating. A bounded coverage-repair pass should run before ordinary surveillance resumes.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-05-30-immune-rejuvenation-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "immune-rejuvenation-update-2026-05-30"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-immune-rejuvenation-source-fidelity-r1",
+      "evidence-review-immune-rejuvenation-interpretation-r1"
+    ],
+    "publication_event_ids": [
+      "publish-immune-rejuvenation-update-2026-05-30-2026-05-30t23-01-21-056z"
+    ],
+    "outlook_ids": [
+      "track-immune-rejuvenation-outlook",
+      "hallmark-chronic-inflammation-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "thin",
+      "rationale": "The public outlook is assigned human_functional_benefit and the review record accepts stronger endpoint-legibility language, but the assessed artifacts do not enumerate the specific human interventions, trial designs, endpoints, populations, effect sizes, or source IDs behind that read.",
+      "gap_note": "Coverage repair should build a source, study, and finding map for the main immune-functional human anchors before the public stage is treated as source-complete."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "not_checked",
+      "rationale": "The backfill artifacts do not document observational, cohort, natural-experiment, infection-resilience, vaccine-response, immune-age, or frailty-adjacent evidence selection for this track.",
+      "gap_note": "A repair pass should decide whether observational immune-aging evidence is needed for public limitations or should remain outside the intervention-focused track claim."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "not_checked",
+      "rationale": "The May 30 update was about public wording and human endpoint legibility, not animal lifespan or healthspan support. No animal source map was reviewed or staged.",
+      "gap_note": "Animal evidence is not required for the current human-functional public stage, but repair should check whether preclinical rejuvenation anchors are missing or whether the gap is evidence-level rather than coverage-level."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "thin",
+      "rationale": "The current public wording explains that immune functional endpoints are clinically legible, but it does not map mechanism, target engagement, immune-cell compartments, thymic or hematopoietic effects, inflammatory signaling, vaccine response, or immune-resilience pathways to source IDs.",
+      "gap_note": "Mechanistic support should remain branch-specific and should not collapse general immune improvement, anti-inflammatory effects, immune reconstitution, and aging reversal into one claim."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "thin",
+      "rationale": "The public outlook and reviews preserve the main interpretation limit: general immune benefit does not automatically equal aging reversal. Source-level null, mixed, disease-specific, or endpoint-limited evidence is not yet curated.",
+      "gap_note": "Repair should stage or explicitly exclude limiting records that bound the human_functional_benefit rating."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "No assessed artifact documents durability, infection risk, autoimmunity, malignancy, immune suppression, intervention burden, or chronic preventive-use safety for the interventions that may underpin immune rejuvenation.",
+      "gap_note": "Safety and durability should be high-priority because immune-directed interventions can have population-specific and long-term risks that are not captured by endpoint legibility alone."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "not_checked",
+      "rationale": "The May 30 surveillance session did not record a registry search, active-trial watchlist, or no-results trial reconciliation for immune rejuvenation.",
+      "gap_note": "Coverage repair should run direct registry checks and decide which active, completed-no-results, or wrong-scope trials become public records, watchlist context, or explicit exclusions."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "not_checked",
+      "rationale": "The reviewed update did not use recent reviews or meta-analyses for citation chasing or source-completeness triangulation.",
+      "gap_note": "Repair should compare recent immune-aging, immunosenescence, thymic, vaccine-response, and immune-resilience reviews against the curated source map."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "not_checked",
+      "rationale": "No formal must-include, historical-anchor, or citation-network audit is recorded for immune rejuvenation.",
+      "gap_note": "Repair should identify the minimum anchor set needed to defend a moderate-confidence public stage and distinguish missing evidence from intentionally excluded adjacent literature."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "thin",
+      "rationale": "The public and review records distinguish endpoint legibility from aging reversal, but they do not yet separate immune rejuvenation from chronic inflammation suppression, senolytic immune effects, thymic regeneration, hematopoietic replacement, vaccine-response enhancement, immunometabolic modulation, or disease-specific immune therapies.",
+      "gap_note": "Track boundaries should be repaired before future wording uses broad immune benefit as support for aging-specific claims."
+    }
+  ],
+  "covered_source_ids": [],
+  "covered_finding_ids": [],
+  "search_log_summary": "This backfill reviewed only local project artifacts: the published track outlook, hallmark outlook, May 30 surveillance session, published candidate bundle, staged outlook, two evidence reviews, curator approval comment, and publication event. No PubMed, registry, review, citation-network, or web source search was run for this assessment.",
+  "source_selection_notes": [
+    "No source IDs or finding IDs are listed because the reviewed immune-rejuvenation artifacts do not enumerate source-level evidence records.",
+    "The May 30 bundle supports a public wording improvement about clinically legible endpoints; it does not make the source map source-complete.",
+    "The source-fidelity and interpretation reviews both accept the wording only with the boundary that clearer functional endpoints should not be confused with stronger anti-aging efficacy.",
+    "This assessment does not change public records; it records the internal coverage gap that should drive the next mode."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "immune-rejuvenation-source-map-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "human_interventional",
+      "description": "The repository has a moderate human_functional_benefit public outlook for immune rejuvenation but no curated source, study, finding, or support-map record showing which human intervention evidence supports that stage.",
+      "priority": "high",
+      "suggested_action": "Run coverage repair to build source, study, finding, and support-map records for the main human immune-functional anchors or to explicitly lower/qualify unsupported claims if the source map does not justify them."
+    },
+    {
+      "gap_id": "immune-functional-branches-not-separated",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "Immune rejuvenation can mix thymic, hematopoietic, vaccine-response, immune-resilience, anti-inflammatory, senescence-adjacent, and disease-specific immune therapies, but the current public record does not separate these evidence streams.",
+      "priority": "high",
+      "suggested_action": "During repair, define branch-specific inclusion and exclusion criteria before staging or revising public claims."
+    },
+    {
+      "gap_id": "immune-rejuvenation-registry-watchlist-missing",
+      "gap_type": "coverage_gap",
+      "category": "active_trials_registries",
+      "description": "No active-trial, completed-no-results, or registry-posted-results watchlist is recorded for immune rejuvenation.",
+      "priority": "high",
+      "suggested_action": "Run direct registry searches during coverage repair and record active, completed, no-results, wrong-scope, and result-bearing trials as staged records or explicit exclusions."
+    },
+    {
+      "gap_id": "immune-rejuvenation-limiting-evidence-not-curated",
+      "gap_type": "coverage_gap",
+      "category": "null_negative_or_limiting",
+      "description": "The public outlook names the core limitation that immune benefit does not automatically mean aging reversal, but source-level null, mixed, endpoint-limited, and disease-specific boundary evidence has not been curated.",
+      "priority": "medium",
+      "suggested_action": "Use repair to stage or explicitly exclude limiting records that prevent endpoint legibility from being overread as broad rejuvenation."
+    },
+    {
+      "gap_id": "immune-rejuvenation-safety-durability-undercovered",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "The current public and review artifacts do not document long-term durability, infection risk, autoimmunity, malignancy, immune suppression, or chronic preventive-use safety for immune-directed interventions.",
+      "priority": "high",
+      "suggested_action": "Require safety and durability review before strengthening confidence, momentum, or LEV-relevant interpretation for this track."
+    },
+    {
+      "gap_id": "immune-rejuvenation-review-and-anchor-triangulation-missing",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "Recent-review, meta-analysis, seminal-anchor, and citation-network triangulation has not been recorded for the immune rejuvenation track.",
+      "priority": "medium",
+      "suggested_action": "Use recent reviews and citation chasing during repair to identify must-include human, mechanistic, limiting, and safety anchors."
+    }
+  ],
+  "next_coverage_action": "Run a bounded coverage-repair pass for immune rejuvenation before ordinary surveillance. The repair should assemble source, study, finding, support-map, registry, limiting-evidence, safety, recent-review, and taxonomy-boundary records sufficient to audit the moderate human_functional_benefit public outlook without broadening it into an aging-reversal claim.",
+  "next_recommended_mode": "coverage_repair",
+  "tags": [
+    "coverage-assessment",
+    "surveillance",
+    "chronic_inflammation",
+    "immune-rejuvenation",
+    "coverage-repair-needed"
+  ]
+}
