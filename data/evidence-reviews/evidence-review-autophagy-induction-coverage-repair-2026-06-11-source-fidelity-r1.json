@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-autophagy-induction-coverage-repair-2026-06-11-source-fidelity-r1",
+  "name": "Source Fidelity review for Autophagy Induction bundle",
+  "candidate_bundle_id": "autophagy-induction-coverage-repair-2026-06-11",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Source fidelity passes for revision 1. ClinicalTrials.gov API v2 checks on June 11, 2026 matched the staged NCT titles, status, enrollment, completion timing, no-results state, interventions, and endpoint boundaries for NCT06445569, NCT07383311, NCT06186102, NCT04928963, and NCT05593549. PubMed ESummary/EFetch matched PMID 42086115 metadata, DOI, publication timing, authors, review scope, and conflict statement. The staged records avoid treating registry absence of results as efficacy evidence.",
+  "reviewed_change_ids": [
+    "create-source-nct-06445569",
+    "create-study-kh1-autophagy-prediabetes-registry",
+    "create-finding-kh1-autophagy-prediabetes-completed-no-results",
+    "create-source-nct-07383311",
+    "create-study-spermidine-mci-sleep-autophagy-registry",
+    "create-finding-spermidine-mci-sleep-autophagy-recruiting-no-results",
+    "create-source-nct-06186102",
+    "create-study-spermidine-coronary-artery-disease-older-adults-registry",
+    "create-finding-spermidine-cad-older-adults-active-no-results",
+    "create-source-nct-04928963",
+    "create-study-fmd-immunosenescence-prefrail-elderly-registry",
+    "create-finding-fmd-immunosenescence-prefrail-elderly-unknown-no-results",
+    "create-source-nct-05593549",
+    "create-study-trehalose-t2d-microvascular-autophagy-registry",
+    "create-finding-trehalose-t2d-autophagic-flux-recruiting-no-results",
+    "create-source-pmid-42086115",
+    "create-study-polyamine-autophagy-muscle-aging-review",
+    "create-finding-polyamine-autophagy-muscle-aging-review-boundary",
+    "update-outlook-track-autophagy-induction"
+  ],
+  "findings": [
+    {
+      "finding_id": "month-level-registry-dates-normalized",
+      "severity": "note",
+      "category": "uncertainty",
+      "applies_to_change_id": "create-study-spermidine-mci-sleep-autophagy-registry",
+      "applies_to_record": {
+        "record_type": "study",
+        "record_id": "spermidine-mci-sleep-autophagy-registry"
+      },
+      "claim_or_issue": "Some ClinicalTrials.gov completion dates are month-level values rather than exact days.",
+      "why_it_matters": "Structured date fields require full ISO dates, so the staged study records normalize month-only dates to the first day of the month.",
+      "recommended_action": "No revision required. The free-text expected-results and horizon notes preserve the month-level precision and prevent readers from treating the normalized day as exact.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-11T11:43:51.256Z",
+  "updated_at": "2026-06-11T11:43:51.256Z"
+}

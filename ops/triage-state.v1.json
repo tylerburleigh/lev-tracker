@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-11T10:59:21.838Z",
+  "generated_at": "2026-06-11T11:44:23.559Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-11T10:25:15.890Z",
-    "research_priority_queue_updated_at": "2026-06-11T10:25:15.890Z",
-    "active_candidate_bundle_count": 1,
+    "research_coverage_status_updated_at": "2026-06-11T11:44:15.270Z",
+    "research_priority_queue_updated_at": "2026-06-11T11:44:15.270Z",
+    "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
-    "surveillance_recent_queue_count": 37,
-    "coverage_repair_queue_count": 1,
+    "surveillance_recent_queue_count": 38,
+    "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 20,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
@@ -33,89 +33,19 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "editorial_review-autophagy-induction-coverage-repair-2026-06-11",
-    "top_mode": "editorial_review",
-    "active_editorial_count": 1,
-    "ready_research_count": 1,
+    "top_work_item_id": "coverage-assessment-backfill-immune-rejuvenation",
+    "top_mode": "coverage_assessment_backfill",
+    "active_editorial_count": 0,
+    "ready_research_count": 0,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
-      "37 surveillance track(s) are hidden from ordinary rotation until their cooldown expires."
+      "38 surveillance track(s) are hidden from ordinary rotation until their cooldown expires."
     ]
   },
   "work_items": [
     {
       "rank": 1,
-      "item_id": "editorial_review-autophagy-induction-coverage-repair-2026-06-11",
-      "mode": "editorial_review",
-      "domain": "editorial",
-      "priority_tier": "now",
-      "status": "ready",
-      "title": "Review active staged update autophagy-induction-coverage-repair-2026-06-11",
-      "rationale": "Staged update autophagy-induction-coverage-repair-2026-06-11 is submitted, so editorial work takes precedence over new research.",
-      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
-      "candidate_bundle_id": "autophagy-induction-coverage-repair-2026-06-11",
-      "runbook_path": "docs/admin-review.md",
-      "command": "npm run research:bundle -- validate --bundle autophagy-induction-coverage-repair-2026-06-11",
-      "source_paths": [
-        "data/candidate-bundles",
-        "docs/admin-review.md"
-      ],
-      "references": [
-        {
-          "record_type": "candidate_bundle",
-          "record_id": "autophagy-induction-coverage-repair-2026-06-11"
-        }
-      ],
-      "signals": [
-        {
-          "name": "lifecycle_status",
-          "value": "submitted"
-        },
-        {
-          "name": "proposed_change_count",
-          "value": 19
-        }
-      ]
-    },
-    {
-      "rank": 2,
-      "item_id": "coverage-repair-autophagy-induction",
-      "mode": "coverage_repair",
-      "domain": "research",
-      "priority_tier": "now",
-      "status": "ready",
-      "title": "Repair coverage for Autophagy Induction",
-      "rationale": "Run coverage repair for active/no-results registry normalization, review triangulation, and taxonomy-boundary cleanup before the next ordinary surveillance pass.",
-      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
-      "track_id": "autophagy-induction",
-      "hallmark_id": "disabled_macroautophagy",
-      "references": [
-        {
-          "record_type": "track",
-          "record_id": "autophagy-induction"
-        },
-        {
-          "record_type": "hallmark",
-          "record_id": "disabled_macroautophagy"
-        }
-      ],
-      "runbook_path": "docs/coverage-assessment.md",
-      "source_paths": [
-        "research/backlog/track-priority.v1.json",
-        "research/state/coverage-status.v1.json",
-        "research/coverage-assessments",
-        "docs/coverage-assessment.md"
-      ],
-      "signals": [
-        {
-          "name": "generated_queue_rank",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "rank": 3,
       "item_id": "coverage-assessment-backfill-immune-rejuvenation",
       "mode": "coverage_assessment_backfill",
       "domain": "research",

@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-autophagy-induction-coverage-repair-2026-06-11-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Autophagy Induction bundle",
+  "candidate_bundle_id": "autophagy-induction-coverage-repair-2026-06-11",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Interpretation and forecast framing pass for revision 1. The staged outlook keeps Autophagy Induction at low-confidence human_biomarker_signal with mixed momentum, adds no-results registry context as watchlist/source-completeness evidence, and preserves the requirement for repeated durable human functional, disease, or mortality-relevant outcomes before any rating upgrade.",
+  "reviewed_change_ids": [
+    "create-source-nct-06445569",
+    "create-study-kh1-autophagy-prediabetes-registry",
+    "create-finding-kh1-autophagy-prediabetes-completed-no-results",
+    "create-source-nct-07383311",
+    "create-study-spermidine-mci-sleep-autophagy-registry",
+    "create-finding-spermidine-mci-sleep-autophagy-recruiting-no-results",
+    "create-source-nct-06186102",
+    "create-study-spermidine-coronary-artery-disease-older-adults-registry",
+    "create-finding-spermidine-cad-older-adults-active-no-results",
+    "create-source-nct-04928963",
+    "create-study-fmd-immunosenescence-prefrail-elderly-registry",
+    "create-finding-fmd-immunosenescence-prefrail-elderly-unknown-no-results",
+    "create-source-nct-05593549",
+    "create-study-trehalose-t2d-microvascular-autophagy-registry",
+    "create-finding-trehalose-t2d-autophagic-flux-recruiting-no-results",
+    "create-source-pmid-42086115",
+    "create-study-polyamine-autophagy-muscle-aging-review",
+    "create-finding-polyamine-autophagy-muscle-aging-review-boundary",
+    "update-outlook-track-autophagy-induction"
+  ],
+  "findings": [
+    {
+      "finding_id": "registry-activity-not-efficacy",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "update-outlook-track-autophagy-induction",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-autophagy-induction-outlook"
+      },
+      "claim_or_issue": "The added trial registry records increase visibility of field activity but do not provide posted efficacy or safety results.",
+      "why_it_matters": "Without this distinction, active or completed trials could be misread as progress toward durable LEV-relevant benefit.",
+      "recommended_action": "No revision required. The staged wording repeatedly labels these records as no-results registry context and keeps the stage, momentum, and confidence unchanged.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-11T11:43:51.382Z",
+  "updated_at": "2026-06-11T11:43:51.382Z"
+}

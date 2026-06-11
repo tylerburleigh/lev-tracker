@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "polyamine-autophagy-muscle-aging-review-boundary",
+  "name": "Polyamine autophagy muscle-aging review supports mechanism but not stage upgrade",
+  "summary": "PMID 42086115 reinforces the mechanistic link between polyamines, spermidine, exercise, SMOX, autophagic flux, and muscle aging, but it is review-level context rather than new primary efficacy evidence.",
+  "source_id": "pmid-42086115",
+  "study_id": "polyamine-autophagy-muscle-aging-review",
+  "intervention_ids": [
+    "spermidine"
+  ],
+  "track_ids": [
+    "autophagy-induction"
+  ],
+  "hallmark_ids": [
+    "disabled_macroautophagy"
+  ],
+  "endpoint_category": "mechanistic",
+  "direction": "inconclusive",
+  "evidence_tier": "review_or_meta_analysis",
+  "confidence": "low",
+  "statement": "The 2026 review frames polyamines, especially spermidine, exercise, SMOX, and autophagic flux as a regulatory axis for skeletal muscle homeostasis, sarcopenia, and healthy muscle aging, but it does not add a new primary human result showing durable aging-relevant benefit.",
+  "population_or_model": "Review-level skeletal muscle aging and regeneration literature",
+  "time_horizon": "Published online 2026-05-03",
+  "quantitative_note": "Review source; no new randomized effect estimate is staged.",
+  "caveats": [
+    "Review-level synthesis should not substitute for result-bearing human trials.",
+    "Exercise, SMOX, and spermidine mechanisms overlap with muscle biology beyond macroautophagy.",
+    "The source supports taxonomy and mechanistic plausibility, not a stage upgrade."
+  ],
+  "tags": [
+    "review",
+    "spermidine",
+    "polyamines",
+    "muscle-aging",
+    "taxonomy-boundary",
+    "coverage-repair"
+  ]
+}

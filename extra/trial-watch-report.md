@@ -5,29 +5,38 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 
 ## Summary
 
-- Registry-linked interventional studies: 5
-- With `trial_details`: 5
+- Registry-linked interventional studies: 10
+- With `trial_details`: 10
 - Missing `trial_details`: 0
-- Completed or past-completion records with no posted results: 0
+- Completed or past-completion records with no posted results: 2
 - Registry checks missing or stale: 4
 - Open watchlist records with missing or stale registry checks: 0
 - Posted results recorded locally: 5
 
 ### Result Status
 
+- no posted results: 5
 - posted results: 5
 
 ### Trial Status
 
-- completed: 5
+- active: 1
+- completed: 6
+- recruiting: 2
+- unknown: 1
 
 ## Field-Review Watchlist
 
-No current local trial watch candidates.
+- [FMD immunosenescence prefrail elderly registry](https://clinicaltrials.gov/study/NCT04928963) (NCT04928963): unknown; no posted results; completion 2022-11-01; registry 2026-06-11 (0 days old).
+- [KH-1 autophagy prediabetes registry](https://clinicaltrials.gov/study/NCT06445569) (NCT06445569): completed; no posted results; completion 2023-06-08; registry 2026-06-11 (0 days old).
+- [Spermidine elderly coronary artery disease registry](https://clinicaltrials.gov/study/NCT06186102) (NCT06186102): active; no posted results; completion 2026-07-01; registry 2026-06-11 (0 days old).
+- [Spermidine MCI sleep autophagy registry](https://clinicaltrials.gov/study/NCT07383311) (NCT07383311): recruiting; no posted results; completion 2028-12-01; registry 2026-06-11 (0 days old).
+- [Trehalose T2D microvascular autophagy registry](https://clinicaltrials.gov/study/NCT05593549) (NCT05593549): recruiting; no posted results; completion 2028-12-31; registry 2026-06-11 (0 days old).
 
 ## Completed Or Past-Completion With No Posted Results
 
-No completed or past-completion local trial records are marked as no posted results.
+- [FMD immunosenescence prefrail elderly registry](https://clinicaltrials.gov/study/NCT04928963) (NCT04928963): unknown; no posted results; completion 2022-11-01; registry 2026-06-11 (0 days old).
+- [KH-1 autophagy prediabetes registry](https://clinicaltrials.gov/study/NCT06445569) (NCT06445569): completed; no posted results; completion 2023-06-08; registry 2026-06-11 (0 days old).
 
 ## Stale Or Missing Registry Checks
 
@@ -51,4 +60,8 @@ All scoped registry-linked interventional studies have trial details.
 - Treat unchanged no-result registries as surveillance facts, not field progress.
 - Treat status-only changes as activity unless they alter the public interpretation.
 - Send posted trial results through staged evidence review before changing an outlook.
+
+## Source Context Example
+
+ClinicalTrials.gov unknown-status 40-participant randomized single-masked fasting-mimicking diet trial in frailty, inflammation, and immune-system-disorder context, with safety, feasibility, flu-vaccine immune response, and frailty-prevention endpoints and no posted results in the June 11, 2026 API view.
 
