@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-autophagy-induction-surveillance-2026-06-11-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Autophagy Induction bundle",
+  "candidate_bundle_id": "autophagy-induction-surveillance-2026-06-11",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged interpretation is appropriately conservative: Autophagy Induction stays at human_biomarker_signal, mixed momentum, and low confidence, while the new spermidine result is described as a small vaccine-response and immune-cell autophagy signal rather than broad aging-function or LEV progress.",
+  "reviewed_change_ids": [
+    "create-source-pmid-42169618",
+    "create-study-spermidine-vaccine-response-older-adults-pilot",
+    "create-finding-spermidine-vaccine-nonresponders-immune-response",
+    "create-finding-spermidine-vaccine-autophagy-senescence-markers",
+    "update-outlook-track-autophagy-induction"
+  ],
+  "findings": [
+    {
+      "finding_id": "autophagy-surveillance-functional-boundary-note",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "update-outlook-track-autophagy-induction",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-autophagy-induction-outlook"
+      },
+      "claim_or_issue": "The staged finding uses vaccine-response markers as the functional signal, but the outlook keeps the rating in the biomarker-signal lane and explicitly rejects infection, frailty, mortality, or broad healthy-aging inference.",
+      "why_it_matters": "Vaccine-response assays are more clinically legible than target markers, but they are still not durable aging-function outcomes.",
+      "recommended_action": "Keep the current stage, confidence, and wording unchanged unless larger replicated trials connect autophagy measures to durable functional or disease outcomes.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "autophagy-surveillance-thin-coverage-note",
+      "severity": "note",
+      "category": "uncertainty",
+      "applies_to_change_id": "update-outlook-track-autophagy-induction",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-autophagy-induction-outlook"
+      },
+      "claim_or_issue": "The linked coverage assessment remains thin, with active/no-results registry gaps, recent-review gaps, and taxonomy-boundary ambiguity.",
+      "why_it_matters": "Thin coverage should not prevent a narrowly framed public update, but it should prevent a stronger forecast.",
+      "recommended_action": "Publish only with the staged low-confidence mixed read and keep coverage repair as the next track action.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-11T10:24:39.642Z",
+  "updated_at": "2026-06-11T10:24:39.642Z"
+}

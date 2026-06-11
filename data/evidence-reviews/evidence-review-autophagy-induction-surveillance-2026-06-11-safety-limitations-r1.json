@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-autophagy-induction-surveillance-2026-06-11-safety-limitations-r1",
+  "name": "Safety Limitations review for Autophagy Induction bundle",
+  "candidate_bundle_id": "autophagy-induction-surveillance-2026-06-11",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "safety_limitations",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged safety interpretation is bounded to the pilot: 6 mg/day spermidine was well tolerated over 13 weeks with monitored labs and adverse events, but the records do not imply optimized dosing, durable safety, clinical protection, or broad aging benefit.",
+  "reviewed_change_ids": [
+    "create-source-pmid-42169618",
+    "create-study-spermidine-vaccine-response-older-adults-pilot",
+    "create-finding-spermidine-vaccine-nonresponders-immune-response",
+    "create-finding-spermidine-vaccine-autophagy-senescence-markers",
+    "update-outlook-track-autophagy-induction"
+  ],
+  "findings": [
+    {
+      "finding_id": "autophagy-surveillance-short-safety-note",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-study-spermidine-vaccine-response-older-adults-pilot",
+      "applies_to_record": {
+        "record_type": "study",
+        "record_id": "spermidine-vaccine-response-older-adults-pilot"
+      },
+      "claim_or_issue": "The tolerability signal comes from a small short-duration pilot with 40 older adults and 13 weeks of supplementation.",
+      "why_it_matters": "A short well-tolerated pilot cannot establish long-term safety, optimized dose, or suitability across older adults with broader comorbidity profiles.",
+      "recommended_action": "Keep safety language limited to short-term tolerability and preserve the coverage assessment's thin safety-durability verdict.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "autophagy-surveillance-safety-conflict-note",
+      "severity": "note",
+      "category": "uncertainty",
+      "applies_to_change_id": "update-outlook-track-autophagy-induction",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-autophagy-induction-outlook"
+      },
+      "claim_or_issue": "The article's product-provider and consultant context should temper any future stronger safety or efficacy language.",
+      "why_it_matters": "Sponsor and conflict context matters most when public language moves from cautious signal tracking toward recommendation-like claims.",
+      "recommended_action": "Do not upgrade beyond the staged short-term tolerability framing without replicated independent safety data.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-11T10:24:39.763Z",
+  "updated_at": "2026-06-11T10:24:39.763Z"
+}

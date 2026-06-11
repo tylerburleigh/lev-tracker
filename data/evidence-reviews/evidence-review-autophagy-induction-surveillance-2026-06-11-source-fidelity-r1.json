@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-autophagy-induction-surveillance-2026-06-11-source-fidelity-r1",
+  "name": "Source Fidelity review for Autophagy Induction bundle",
+  "candidate_bundle_id": "autophagy-induction-surveillance-2026-06-11",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, findings, and outlook are faithful to the known article and registry: they capture the randomized 40-person older-adult pilot, 6 mg/day spermidine for 13 weeks, follow-up to 37 weeks, no ClinicalTrials.gov results module, subgroup-concentrated vaccine-response signal, autophagy/senescence markers, and the small exploratory boundary.",
+  "reviewed_change_ids": [
+    "create-source-pmid-42169618",
+    "create-study-spermidine-vaccine-response-older-adults-pilot",
+    "create-finding-spermidine-vaccine-nonresponders-immune-response",
+    "create-finding-spermidine-vaccine-autophagy-senescence-markers",
+    "update-outlook-track-autophagy-induction"
+  ],
+  "findings": [
+    {
+      "finding_id": "autophagy-surveillance-source-boundary-note",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "create-finding-spermidine-vaccine-nonresponders-immune-response",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "spermidine-vaccine-nonresponders-immune-response"
+      },
+      "claim_or_issue": "The strongest quantitative signal comes from eight spermidine-arm baseline vaccine non-responders, while whole-arm anti-spike IgG increases were not statistically significant.",
+      "why_it_matters": "This prevents a pilot immune-marker signal from being read as a definitive treatment effect across the full randomized arm.",
+      "recommended_action": "Keep the finding and outlook language subgroup-limited and avoid treating the result as broad clinical efficacy.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "autophagy-surveillance-conflict-context-note",
+      "severity": "note",
+      "category": "uncertainty",
+      "applies_to_change_id": "create-source-pmid-42169618",
+      "applies_to_record": {
+        "record_type": "source",
+        "record_id": "pmid-42169618"
+      },
+      "claim_or_issue": "The article includes product, funding, and consultant context involving The Longevity Labs GmbH and Oxford Healthspan that is not represented as a dedicated public field in the staged records.",
+      "why_it_matters": "Sponsor and conflict context should stay visible if the source is later used for stronger efficacy or safety claims.",
+      "recommended_action": "Treat this as source-context material for any future detailed source display or coverage repair; it does not block this conservative outlook update.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-11T10:24:39.518Z",
+  "updated_at": "2026-06-11T10:24:39.518Z"
+}

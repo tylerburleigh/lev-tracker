@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-11T10:12:52.846Z",
+  "updated_at": "2026-06-11T10:25:15.890Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One baseline-review, field-change, or coverage-repair run should cover one track unless the user explicitly narrows further.",
@@ -438,7 +438,7 @@
       "name": "Autophagy Induction",
       "coverage_status": "baseline",
       "next_mode": "coverage_repair",
-      "queue_state": "active_review",
+      "queue_state": "ready",
       "last_session_id": "2026-06-11-autophagy-induction-surveillance",
       "last_session_at": "2026-06-11T10:05:48Z",
       "last_session_mode": "surveillance",
@@ -451,9 +451,9 @@
       "surveillance_due_at": "2026-06-25T10:05:48.000Z",
       "surveillance_age_days": 0,
       "last_candidate_bundle_id": "autophagy-induction-surveillance-2026-06-11",
-      "last_candidate_bundle_status": "submitted",
-      "last_publication_event_id": "publish-autophagy-induction-track-scan-2026-05-30-2026-05-31t11-01-02-701z",
-      "last_published_at": "2026-05-31T11:01:02.701Z",
+      "last_candidate_bundle_status": "published",
+      "last_publication_event_id": "publish-autophagy-induction-surveillance-2026-06-11-2026-06-11t10-25-04-657z",
+      "last_published_at": "2026-06-11T10:25:04.657Z",
       "last_coverage_assessment_id": "autophagy-induction-surveillance-2026-06-11",
       "last_coverage_assessed_at": "2026-06-11T10:05:48Z",
       "coverage_verdict": "thin",
@@ -462,7 +462,7 @@
       "next_coverage_action": "Run coverage repair for active/no-results registry normalization, review triangulation, and taxonomy-boundary cleanup before the next ordinary surveillance pass.",
       "last_coverage_recommended_mode": "coverage_repair",
       "default_research_question": "Which known source-completeness gaps for Autophagy Induction need repair, and does resolving them change the coverage verdict or public boundaries?",
-      "notes": "Staged update autophagy-induction-surveillance-2026-06-11 is still submitted."
+      "notes": "Latest public update: publish-autophagy-induction-surveillance-2026-06-11-2026-06-11t10-25-04-657z."
     },
     {
       "track_id": "lysosomal-restoration",
@@ -1032,7 +1032,7 @@
       "last_surveillance_outcome": "activity_only",
       "surveillance_freshness_status": "recent",
       "surveillance_due_at": "2026-06-22T10:23:46.000Z",
-      "surveillance_age_days": 2,
+      "surveillance_age_days": 3,
       "last_candidate_bundle_id": "cytokine-and-inflammasome-modulation-bootstrap-2026-05-31",
       "last_candidate_bundle_status": "published",
       "last_publication_event_id": "publish-cytokine-and-inflammasome-modulation-bootstrap-2026-05-31-2026-05-31t19-43-59-521z",
