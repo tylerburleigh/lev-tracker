@@ -1,0 +1,308 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "immune-rejuvenation-coverage-repair-2026-06-11",
+  "name": "Immune Rejuvenation Coverage Repair for June 11, 2026",
+  "summary": "Coverage-repair bundle staging mTOR/TORC1 older-adult immune-function anchors, an RTB101 phase 3 limiting record, a direct immune-aging recruiting registry, a recent review/taxonomy-boundary record, and a revised support-mapped Immune Rejuvenation outlook. The proposed outlook keeps the track at human_functional_benefit but changes momentum to mixed and confidence to low.",
+  "intake_mode": "manual",
+  "lifecycle_status": "submitted",
+  "submitted_at": "2026-06-11T12:38:22Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "Which known source-completeness gaps for Immune Rejuvenation need repair, and does resolving them change the coverage verdict or public boundaries?",
+    "hallmark_ids": [
+      "chronic_inflammation"
+    ],
+    "track_ids": [
+      "immune-rejuvenation"
+    ],
+    "intervention_ids": [
+      "everolimus",
+      "rtb101",
+      "spermidine",
+      "triim-regimen",
+      "gi-102-gib-7"
+    ]
+  },
+  "session_reference": "research/sessions/2026-06-11-immune-rejuvenation-coverage-repair.json",
+  "source_ids": [
+    "pmid-25540326",
+    "pmid-29997249",
+    "pmid-33977284",
+    "pmid-42169620",
+    "nct-07363057",
+    "pmid-42169618",
+    "pmid-31496122",
+    "nct-04375657"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/25540326/",
+    "https://doi.org/10.1126/scitranslmed.3009892",
+    "https://pubmed.ncbi.nlm.nih.gov/29997249/",
+    "https://doi.org/10.1126/scitranslmed.aaq1564",
+    "https://pubmed.ncbi.nlm.nih.gov/33977284/",
+    "https://doi.org/10.1016/S2666-7568(21)00062-3",
+    "https://pubmed.ncbi.nlm.nih.gov/42169620/",
+    "https://doi.org/10.1111/acel.70548",
+    "https://clinicaltrials.gov/study/NCT07363057",
+    "https://pubmed.ncbi.nlm.nih.gov/42169618/",
+    "https://pubmed.ncbi.nlm.nih.gov/31496122/",
+    "https://clinicaltrials.gov/study/NCT04375657"
+  ],
+  "related_records": [
+    {
+      "record_type": "track",
+      "record_id": "immune-rejuvenation"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-immune-rejuvenation-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-chronic-inflammation-outlook"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "everolimus"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "rtb101"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "gi-102-gib-7"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "spermidine"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "triim-regimen"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-25540326",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-25540326",
+      "file_path": "data/sources/pmid-25540326.json",
+      "staged_file_path": "data/staged-records/immune-rejuvenation-coverage-repair-2026-06-11/pmid-25540326.json",
+      "summary": "Add the 2014 everolimus influenza-vaccine response RCT source.",
+      "rationale": "This is a core human functional anchor for the mTOR/TORC1 immune-rejuvenation branch."
+    },
+    {
+      "change_id": "create-source-pmid-29997249",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-29997249",
+      "file_path": "data/sources/pmid-29997249.json",
+      "staged_file_path": "data/staged-records/immune-rejuvenation-coverage-repair-2026-06-11/pmid-29997249.json",
+      "summary": "Add the 2018 TORC1 inhibition phase 2a source.",
+      "rationale": "This source provides infection-rate, antiviral gene-expression, and vaccine-response support."
+    },
+    {
+      "change_id": "create-source-pmid-33977284",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-33977284",
+      "file_path": "data/sources/pmid-33977284.json",
+      "staged_file_path": "data/staged-records/immune-rejuvenation-coverage-repair-2026-06-11/pmid-33977284.json",
+      "summary": "Add the RTB101 phase 2b and phase 3 trial source.",
+      "rationale": "This is both an anchor and the key limiting evidence for the public read."
+    },
+    {
+      "change_id": "create-source-pmid-42169620",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-42169620",
+      "file_path": "data/sources/pmid-42169620.json",
+      "staged_file_path": "data/staged-records/immune-rejuvenation-coverage-repair-2026-06-11/pmid-42169620.json",
+      "summary": "Add the 2026 immunosenescence vaccine mTOR microbiota review source.",
+      "rationale": "This repairs recent review and taxonomy-boundary coverage."
+    },
+    {
+      "change_id": "create-source-nct-07363057",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-07363057",
+      "file_path": "data/sources/nct-07363057.json",
+      "staged_file_path": "data/staged-records/immune-rejuvenation-coverage-repair-2026-06-11/nct-07363057.json",
+      "summary": "Add the GIANTS-1 recruiting immune-aging registry source.",
+      "rationale": "This repairs active direct immune-aging trial-watch coverage without treating registry status as efficacy."
+    },
+    {
+      "change_id": "create-intervention-everolimus",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "everolimus",
+      "file_path": "data/interventions/everolimus.json",
+      "staged_file_path": "data/staged-records/immune-rejuvenation-coverage-repair-2026-06-11/everolimus.json",
+      "summary": "Add an everolimus intervention record for the older-adult immune-function trial sequence.",
+      "rationale": "The staged studies need a normalized intervention record with rapalog and immune-rejuvenation boundaries."
+    },
+    {
+      "change_id": "create-intervention-rtb101",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "rtb101",
+      "file_path": "data/interventions/rtb101.json",
+      "staged_file_path": "data/staged-records/immune-rejuvenation-coverage-repair-2026-06-11/rtb101.json",
+      "summary": "Add an RTB101 intervention record.",
+      "rationale": "RTB101 needs its own intervention record because it is the main phase 2b/phase 3 limiting-evidence branch."
+    },
+    {
+      "change_id": "create-intervention-gi-102-gib-7",
+      "change_type": "create_record",
+      "target_record_type": "intervention",
+      "target_record_id": "gi-102-gib-7",
+      "file_path": "data/interventions/gi-102-gib-7.json",
+      "staged_file_path": "data/staged-records/immune-rejuvenation-coverage-repair-2026-06-11/gi-102-gib-7.json",
+      "summary": "Add a GI-102 plus GIB-7 intervention record.",
+      "rationale": "The direct immune-aging registry combines immune cytokine and synbiotic mechanisms that need explicit boundary flags."
+    },
+    {
+      "change_id": "create-study-everolimus-influenza-vaccine-elderly-rct",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "everolimus-influenza-vaccine-elderly-rct",
+      "file_path": "data/studies/everolimus-influenza-vaccine-elderly-rct.json",
+      "staged_file_path": "data/staged-records/immune-rejuvenation-coverage-repair-2026-06-11/everolimus-influenza-vaccine-elderly-rct.json",
+      "summary": "Add the everolimus influenza-vaccine response RCT study.",
+      "rationale": "The support map needs the study separate from the source and finding."
+    },
+    {
+      "change_id": "create-study-torc1-inhibition-elderly-infection-vaccine-phase2a",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "torc1-inhibition-elderly-infection-vaccine-phase2a",
+      "file_path": "data/studies/torc1-inhibition-elderly-infection-vaccine-phase2a.json",
+      "staged_file_path": "data/staged-records/immune-rejuvenation-coverage-repair-2026-06-11/torc1-inhibition-elderly-infection-vaccine-phase2a.json",
+      "summary": "Add the TORC1 phase 2a infection and vaccine study.",
+      "rationale": "This study anchors the strongest positive infection-rate signal."
+    },
+    {
+      "change_id": "create-study-rtb101-older-adult-rti-phase2b-phase3",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "rtb101-older-adult-rti-phase2b-phase3",
+      "file_path": "data/studies/rtb101-older-adult-rti-phase2b-phase3.json",
+      "staged_file_path": "data/staged-records/immune-rejuvenation-coverage-repair-2026-06-11/rtb101-older-adult-rti-phase2b-phase3.json",
+      "summary": "Add the RTB101 phase 2b and phase 3 study record.",
+      "rationale": "This study anchors the mixed public read and phase 3 miss."
+    },
+    {
+      "change_id": "create-study-immunosenescence-vaccine-mtor-microbiota-review",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "immunosenescence-vaccine-mtor-microbiota-review",
+      "file_path": "data/studies/immunosenescence-vaccine-mtor-microbiota-review.json",
+      "staged_file_path": "data/staged-records/immune-rejuvenation-coverage-repair-2026-06-11/immunosenescence-vaccine-mtor-microbiota-review.json",
+      "summary": "Add the recent review as a study-like review record.",
+      "rationale": "This keeps review and taxonomy-boundary evidence auditable."
+    },
+    {
+      "change_id": "create-study-giants-1-immune-aging-biomarker-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "giants-1-immune-aging-biomarker-registry",
+      "file_path": "data/studies/giants-1-immune-aging-biomarker-registry.json",
+      "staged_file_path": "data/staged-records/immune-rejuvenation-coverage-repair-2026-06-11/giants-1-immune-aging-biomarker-registry.json",
+      "summary": "Add the GIANTS-1 study record.",
+      "rationale": "This normalizes the active direct immune-aging registry as no-results trial-watch context."
+    },
+    {
+      "change_id": "create-finding-everolimus-improved-influenza-vaccine-response-elderly",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "everolimus-improved-influenza-vaccine-response-elderly",
+      "file_path": "data/findings/everolimus-improved-influenza-vaccine-response-elderly.json",
+      "staged_file_path": "data/staged-records/immune-rejuvenation-coverage-repair-2026-06-11/everolimus-improved-influenza-vaccine-response-elderly.json",
+      "summary": "Add the everolimus vaccine-response finding.",
+      "rationale": "This supplies a concrete finding ID for the stage-assignment support map."
+    },
+    {
+      "change_id": "create-finding-torc1-inhibition-reduced-infections-vaccine-response-elderly",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "torc1-inhibition-reduced-infections-vaccine-response-elderly",
+      "file_path": "data/findings/torc1-inhibition-reduced-infections-vaccine-response-elderly.json",
+      "staged_file_path": "data/staged-records/immune-rejuvenation-coverage-repair-2026-06-11/torc1-inhibition-reduced-infections-vaccine-response-elderly.json",
+      "summary": "Add the phase 2a TORC1 infection and vaccine-response finding.",
+      "rationale": "This is the strongest positive human-function support record."
+    },
+    {
+      "change_id": "create-finding-rtb101-phase2b-signal-phase3-rti-miss",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "rtb101-phase2b-signal-phase3-rti-miss",
+      "file_path": "data/findings/rtb101-phase2b-signal-phase3-rti-miss.json",
+      "staged_file_path": "data/staged-records/immune-rejuvenation-coverage-repair-2026-06-11/rtb101-phase2b-signal-phase3-rti-miss.json",
+      "summary": "Add the RTB101 mixed phase 2b/phase 3 finding.",
+      "rationale": "This prevents the support map from overstating the mTOR/TORC1 branch."
+    },
+    {
+      "change_id": "create-finding-immunosenescence-vaccine-mtor-microbiota-review-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "immunosenescence-vaccine-mtor-microbiota-review-boundary",
+      "file_path": "data/findings/immunosenescence-vaccine-mtor-microbiota-review-boundary.json",
+      "staged_file_path": "data/staged-records/immune-rejuvenation-coverage-repair-2026-06-11/immunosenescence-vaccine-mtor-microbiota-review-boundary.json",
+      "summary": "Add the recent-review taxonomy-boundary finding.",
+      "rationale": "This supports the public boundary between immunosenescence, mTOR, microbiome, and vaccine-response claims."
+    },
+    {
+      "change_id": "create-finding-giants-1-immune-aging-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "giants-1-immune-aging-recruiting-no-results",
+      "file_path": "data/findings/giants-1-immune-aging-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/immune-rejuvenation-coverage-repair-2026-06-11/giants-1-immune-aging-recruiting-no-results.json",
+      "summary": "Add the GIANTS-1 recruiting no-results finding.",
+      "rationale": "This provides active trial-watch coverage without upgrading evidence strength."
+    },
+    {
+      "change_id": "update-outlook-track-immune-rejuvenation",
+      "change_type": "update_outlook",
+      "target_record_type": "outlook",
+      "target_record_id": "track-immune-rejuvenation-outlook",
+      "file_path": "data/outlooks/track-immune-rejuvenation-outlook.json",
+      "staged_file_path": "data/staged-records/immune-rejuvenation-coverage-repair-2026-06-11/track-immune-rejuvenation-outlook.json",
+      "summary": "Update the Immune Rejuvenation track outlook with support maps and lower-confidence mixed momentum.",
+      "rationale": "The current public outlook is not auditable enough for a moderate/steady read once the mTOR phase 3 miss and no-results registries are represented."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "immune-rejuvenation",
+      "note": "Keep the human_functional_benefit stage because human immune-function endpoints exist, but downgrade confidence to low and momentum to mixed because support is branch-specific, RTB101 did not replicate in phase 3, active registries have no posted results, and durability/safety remain unresolved.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast",
+    "safety_limitations",
+    "taxonomy_mapping"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "next_actions": [
+    "Run source-fidelity, interpretation/forecast, safety-limitations, and taxonomy-mapping review for the staged repair bundle.",
+    "If approved and published, sync the coverage status so Immune Rejuvenation returns to ordinary surveillance."
+  ],
+  "tags": [
+    "coverage-repair",
+    "immune-rejuvenation",
+    "source-completeness",
+    "support-map"
+  ]
+}

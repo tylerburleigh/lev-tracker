@@ -1,0 +1,234 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "immune-rejuvenation-coverage-repair-2026-06-11",
+  "name": "Immune Rejuvenation Coverage Repair Assessment for June 11, 2026",
+  "short_name": "Immune rejuvenation coverage repair",
+  "track_id": "immune-rejuvenation",
+  "hallmark_id": "chronic_inflammation",
+  "assessment_type": "coverage_repair",
+  "assessed_at": "2026-06-11T12:38:22Z",
+  "assessment_window": {
+    "from": "2026-06-11T12:18:24Z",
+    "to": "2026-06-11T12:38:22Z",
+    "basis": "Coverage repair created after the June 11 assessment found thin support-map, source, registry, limiting-evidence, review, safety, and taxonomy-boundary coverage for the moderate human_functional_benefit public outlook."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is now adequate for a low-confidence, mixed-momentum human_functional_benefit public claim, pending review and publication of the staged repair bundle. The repair stages the missing mTOR/TORC1 older-adult trial anchors, the RTB101 phase 3 limiting evidence, a direct immune-aging registry, a recent immunosenescence/vaccine/mTOR/microbiota review, and an outlook support map that reuses existing TRIIM and spermidine records. Coverage is not strong because the evidence is branch-specific, the most mature program includes a phase 3 miss, active direct trials have no posted results, and long-term preventive safety and durability remain thin.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-05-30-immune-rejuvenation-surveillance",
+      "2026-06-11-immune-rejuvenation-coverage-repair"
+    ],
+    "candidate_bundle_ids": [
+      "immune-rejuvenation-update-2026-05-30",
+      "immune-rejuvenation-coverage-repair-2026-06-11"
+    ],
+    "outlook_ids": [
+      "track-immune-rejuvenation-outlook",
+      "hallmark-chronic-inflammation-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "The repair stages three mTOR/TORC1 older-adult human trial records with vaccine-response, infection-rate, and respiratory-illness endpoints, and reuses existing spermidine and TRIIM human records as smaller adjacent immune-response and immunosenescence-marker branches.",
+      "source_ids": [
+        "pmid-25540326",
+        "pmid-29997249",
+        "pmid-33977284",
+        "pmid-42169618",
+        "pmid-31496122"
+      ],
+      "finding_ids": [
+        "everolimus-improved-influenza-vaccine-response-elderly",
+        "torc1-inhibition-reduced-infections-vaccine-response-elderly",
+        "rtb101-phase2b-signal-phase3-rti-miss",
+        "spermidine-vaccine-nonresponders-immune-response",
+        "triim-human-epigenetic-age-decrease"
+      ],
+      "gap_note": "The coverage is adequate for a narrow human-function stage, not strong enough for broad immune aging reversal."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "The staged and reused records cover mTOR/TORC1 antiviral gene expression, PD-1-positive T-cell movement, TRIIM immunosenescence markers, spermidine autophagy-linked immune-cell markers, and review-level mTOR/microbiome/immunosenescence context.",
+      "source_ids": [
+        "pmid-25540326",
+        "pmid-29997249",
+        "pmid-42169618",
+        "pmid-31496122",
+        "pmid-42169620"
+      ],
+      "finding_ids": [
+        "everolimus-improved-influenza-vaccine-response-elderly",
+        "torc1-inhibition-reduced-infections-vaccine-response-elderly",
+        "spermidine-vaccine-autophagy-senescence-markers",
+        "triim-human-epigenetic-age-decrease",
+        "immunosenescence-vaccine-mtor-microbiota-review-boundary"
+      ]
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The RTB101 phase 3 miss is staged as the main limiting human-functional evidence, and no-results GIANTS-1 and TRIIM-X registry context prevents over-reading active trial activity.",
+      "source_ids": [
+        "pmid-33977284",
+        "nct-07363057",
+        "nct-04375657"
+      ],
+      "finding_ids": [
+        "rtb101-phase2b-signal-phase3-rti-miss",
+        "giants-1-immune-aging-recruiting-no-results",
+        "triim-x-registry-no-results"
+      ]
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "The mTOR/TORC1 trials report short-term tolerability and the active registries include safety endpoints, but chronic preventive immune, cytokine, endocrine, and mTOR safety and durability are not resolved.",
+      "source_ids": [
+        "pmid-25540326",
+        "pmid-29997249",
+        "pmid-33977284",
+        "nct-07363057",
+        "nct-04375657"
+      ],
+      "finding_ids": [
+        "everolimus-improved-influenza-vaccine-response-elderly",
+        "torc1-inhibition-reduced-infections-vaccine-response-elderly",
+        "rtb101-phase2b-signal-phase3-rti-miss",
+        "giants-1-immune-aging-recruiting-no-results",
+        "triim-x-registry-no-results"
+      ],
+      "gap_note": "Upgrade only after longer, larger, preventive-use safety datasets post results for older adults."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "The repair stages GIANTS-1 and rechecks TRIIM-X and a withdrawn RTB101 follow-up; this is enough to return to ordinary surveillance rather than continue coverage repair.",
+      "source_ids": [
+        "nct-07363057",
+        "nct-04375657"
+      ],
+      "finding_ids": [
+        "giants-1-immune-aging-recruiting-no-results",
+        "triim-x-registry-no-results"
+      ],
+      "gap_note": "Continue ordinary surveillance for GIANTS-1 and TRIIM-X status changes or posted results."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "adequate",
+      "rationale": "PMID 42169620 is staged as a recent review connecting immunosenescence, vaccine efficacy, gut microbiota, and mTOR signaling while explicitly not counting as efficacy evidence.",
+      "source_ids": [
+        "pmid-42169620"
+      ],
+      "finding_ids": [
+        "immunosenescence-vaccine-mtor-microbiota-review-boundary"
+      ]
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The mTOR/TORC1 older-adult trial sequence, TRIIM pilot, and 2026 spermidine vaccine-response pilot are now visible in the support map as the current public anchors.",
+      "source_ids": [
+        "pmid-25540326",
+        "pmid-29997249",
+        "pmid-33977284",
+        "pmid-31496122",
+        "pmid-42169618"
+      ],
+      "finding_ids": [
+        "everolimus-improved-influenza-vaccine-response-elderly",
+        "torc1-inhibition-reduced-infections-vaccine-response-elderly",
+        "rtb101-phase2b-signal-phase3-rti-miss",
+        "triim-human-epigenetic-age-decrease",
+        "spermidine-vaccine-nonresponders-immune-response"
+      ],
+      "gap_note": "The anchors justify a narrow stage assignment but still require low confidence."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The staged outlook separates immune rejuvenation from mTOR/rapalogs, autophagy/spermidine, microbiome/synbiotic, thymic/endocrine TRIIM, vaccine-product efficacy, telomerase, and broad geroscience claims.",
+      "source_ids": [
+        "pmid-42169620",
+        "pmid-33977284",
+        "pmid-42169618",
+        "pmid-31496122"
+      ],
+      "finding_ids": [
+        "immunosenescence-vaccine-mtor-microbiota-review-boundary",
+        "rtb101-phase2b-signal-phase3-rti-miss",
+        "spermidine-vaccine-nonresponders-immune-response",
+        "triim-human-epigenetic-age-decrease"
+      ],
+      "gap_note": "Future stronger claims should split branch-level support maps before upgrading confidence."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-25540326",
+    "pmid-29997249",
+    "pmid-33977284",
+    "pmid-42169620",
+    "nct-07363057",
+    "pmid-42169618",
+    "pmid-31496122",
+    "nct-04375657"
+  ],
+  "covered_finding_ids": [
+    "everolimus-improved-influenza-vaccine-response-elderly",
+    "torc1-inhibition-reduced-infections-vaccine-response-elderly",
+    "rtb101-phase2b-signal-phase3-rti-miss",
+    "immunosenescence-vaccine-mtor-microbiota-review-boundary",
+    "giants-1-immune-aging-recruiting-no-results",
+    "spermidine-vaccine-nonresponders-immune-response",
+    "spermidine-vaccine-autophagy-senescence-markers",
+    "triim-human-epigenetic-age-decrease",
+    "triim-x-registry-no-results"
+  ],
+  "search_log_summary": "Coverage repair checked PubMed primary and review records for the mTOR/TORC1, spermidine, TRIIM, vaccine-response, and telomerase-adjacent literature; checked ClinicalTrials.gov for GIANTS-1, TRIIM-X, and withdrawn RTB101 follow-up; staged records that materially repair source map, support map, registry, limiting-evidence, review, and taxonomy-boundary gaps; and left adjacent vaccine-product, telomerase, and generic rapalog context out of the staged public map.",
+  "source_selection_notes": [
+    "PMID 25540326, PMID 29997249, and PMID 33977284 were staged because they are the core older-adult mTOR/TORC1 immune-function trial sequence.",
+    "PMID 42169620 was staged because it provides recent review and taxonomy-boundary context across immunosenescence, vaccine response, mTOR, and microbiome mechanisms.",
+    "NCT07363057 was staged because it is a direct recruiting immune-aging trial with immune-cell, safety, function, cognition, health-event, and microbiome endpoints.",
+    "Existing TRIIM and spermidine result records were reused in the support map instead of restaged because they already exist in the live evidence layer.",
+    "NCT04139915, PMID 42228420, PMID 37086366, and NCT05237687 were checked but excluded from staging as zero-enrollment, vaccine-product, telomerase/disease-context, or generic rapalog context."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "replicated-functional-immune-benefit",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "No staged branch has replicated durable older-adult immune functional benefit across larger successful trials; RTB101 in particular has a phase 3 miss.",
+      "priority": "high",
+      "suggested_action": "Track independent mTOR/TORC1, vaccine-response, infection-prevention, TRIIM-X, GIANTS-1, and spermidine follow-up results before considering any confidence upgrade."
+    },
+    {
+      "gap_id": "preventive-safety-and-durability",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Long-term preventive use remains undercovered for mTOR inhibitors, immunocytokines, endocrine-thymic regimens, and immune-active supplements in older adults.",
+      "priority": "high",
+      "suggested_action": "Require longer safety follow-up, adverse-event reporting, and durability evidence before public wording implies practical preventive use."
+    },
+    {
+      "gap_id": "branch-attribution",
+      "gap_type": "coverage_gap",
+      "category": "taxonomy_boundary",
+      "description": "Immune-rejuvenation evidence overlaps mTOR/rapalogs, autophagy, microbiome, endocrine/thymic restoration, telomerase, and vaccine-product efficacy.",
+      "priority": "medium",
+      "suggested_action": "Keep branch-specific support maps current and avoid upgrading the whole track from a single adjacent mechanism."
+    }
+  ],
+  "next_coverage_action": "Review the staged coverage-repair bundle. If approved and published, return Immune Rejuvenation to ordinary surveillance with watch items for GIANTS-1, TRIIM-X, and any new mTOR/TORC1 immune-function program results.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-repair",
+    "immune-rejuvenation",
+    "source-completeness",
+    "support-map"
+  ]
+}

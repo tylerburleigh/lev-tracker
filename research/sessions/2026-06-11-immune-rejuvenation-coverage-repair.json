@@ -1,0 +1,175 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-11-immune-rejuvenation-coverage-repair",
+  "name": "Immune Rejuvenation Coverage Repair",
+  "mode": "coverage_repair",
+  "started_at": "2026-06-11T12:18:24Z",
+  "completed_at": "2026-06-11T12:38:22Z",
+  "scope": {
+    "question": "Which known source-completeness gaps for Immune Rejuvenation need repair, and does resolving them change the coverage verdict or public boundaries?",
+    "hallmark_ids": [
+      "chronic_inflammation"
+    ],
+    "track_ids": [
+      "immune-rejuvenation"
+    ],
+    "intervention_ids": [
+      "everolimus",
+      "rtb101",
+      "spermidine",
+      "triim-regimen",
+      "gi-102-gib-7"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "immune-rejuvenation-coverage-repair-2026-06-11",
+  "summary": "Coverage repair staged mTOR/TORC1 source, study, finding, intervention, review, active-registry, and outlook-support-map records for Immune Rejuvenation. The staged outlook keeps evidence_stage human_functional_benefit because older-adult trials include vaccine-response, infection-rate, and respiratory-illness endpoints, but changes momentum to mixed and confidence to low because RTB101 had a phase 3 miss, spermidine and TRIIM are small or biomarker-heavy, and active direct trials remain no-results.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "outlook_refresh",
+    "public_update_needed": true,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The repair materially improves source support, limiting-evidence, registry, recent-review, and taxonomy-boundary coverage. It also changes the public read from moderate/steady to low/mixed without broadening the claim beyond narrowly supported human immune-function endpoints."
+  },
+  "search_log": [
+    {
+      "source_name": "PubMed ESummary and EFetch",
+      "query": "PMID 25540326, PMID 29997249, PMID 33977284, PMID 42169618, PMID 42169620, PMID 42228420, PMID 37086366",
+      "checked_at": "2026-06-11T12:38:22Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Confirmed primary mTOR/TORC1 older-adult trial abstracts, the existing 2026 spermidine vaccine-response pilot, the 2026 immunosenescence/vaccine/mTOR/microbiota review, and adjacent vaccine or telomerase context. PMID 25540326, PMID 29997249, PMID 33977284, and PMID 42169620 were staged; PMID 42169618 was reused from the live public layer; PMID 42228420 and PMID 37086366 were retained as context-only or adjacent-track material."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "NCT07363057, NCT04375657, NCT04139915, broad immune-aging and mTOR older-adult trial searches",
+      "checked_at": "2026-06-11T12:38:22Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "Confirmed GIANTS-1 as a recruiting phase 2a immune-aging biomarker trial with no posted results, TRIIM-X as still recruiting with no posted results and last update posted May 7, 2025, and NCT04139915 as a withdrawn RTB101 follow-up after the phase 3 miss."
+    },
+    {
+      "source_name": "Local public records and coverage assessment",
+      "query": "Immune Rejuvenation outlook, TRIIM, spermidine, TA-65, sirolimus, prior bundle, and June 11 coverage artifacts",
+      "checked_at": "2026-06-11T12:38:22Z",
+      "summary": "Compared the current moderate/steady public outlook and thin coverage assessment against staged mTOR, review, registry, TRIIM, and spermidine support. The repair prioritizes a support map and new missing records rather than rewriting existing autophagy, epigenetic, telomerase, or rapalog records."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT07363057",
+      "study_id": "giants-1-immune-aging-biomarker-registry",
+      "source_id": "nct-07363057",
+      "registry_url": "https://clinicaltrials.gov/study/NCT07363057",
+      "checked_at": "2026-06-11T12:38:22Z",
+      "current_registry_status": "recruiting",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2026-05-01",
+      "study_completion_date": "2026-10-01",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "new_trial",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Staged as direct immune-aging recruiting no-results context because it measures NK cells, CD8 T cells, safety, physical function, cognition, microbiome, and health-event endpoints."
+    },
+    {
+      "registry_id": "NCT04375657",
+      "study_id": "triim-x-extension-registry",
+      "source_id": "nct-04375657",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04375657",
+      "checked_at": "2026-06-11T12:38:22Z",
+      "current_registry_status": "recruiting",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2025-12-01",
+      "study_completion_date": "2025-12-01",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "Reused as existing no-results TRIIM-X trial-watch context; the current registry view still showed recruiting status and no posted results."
+    },
+    {
+      "registry_id": "NCT04139915",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04139915",
+      "checked_at": "2026-06-11T12:38:22Z",
+      "current_registry_status": "withdrawn",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2020-09-01",
+      "study_completion_date": "2020-09-01",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "termination",
+      "public_action": "none",
+      "summary": "Excluded from staging because the registry had zero enrollment and was withdrawn after the related phase 3 RTB101 trial missed its primary endpoint; the staged Lancet Healthy Longevity paper captures the material limiting evidence."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 42228420",
+      "title": "Age-related differences in immune responses to inactivated influenza and adjuvanted recombinant herpes zoster vaccines",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42228420/",
+      "decision": "context_only",
+      "reason": "Useful vaccine-response and inflammaging benchmark, but it tests vaccine products and age-response differences rather than an immune-rejuvenation intervention."
+    },
+    {
+      "reference": "PMID 37086366",
+      "title": "Activation of telomerase by TA-65 enhances immunity and reduces inflammation post myocardial infarction",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37086366/",
+      "decision": "context_only",
+      "reason": "Already represented as telomerase-restoration disease-context evidence. It is adjacent immune biomarker context, not a core Immune Rejuvenation support-map anchor."
+    },
+    {
+      "reference": "NCT04139915",
+      "title": "Effect of RTB101 on Illness Associated With Respiratory Tract Infections in Elderly Adults",
+      "url": "https://clinicaltrials.gov/study/NCT04139915",
+      "decision": "no_results",
+      "reason": "Withdrawn with zero enrollment after the phase 3 RTB101 miss; material program risk is captured by PMID 33977284."
+    },
+    {
+      "reference": "NCT05237687",
+      "title": "Sirolimus in Older Adults",
+      "url": "https://clinicaltrials.gov/study/NCT05237687",
+      "decision": "context_only",
+      "reason": "Already represented in the rapalog/nutrient-sensing layer as a small no-results older-adult sirolimus registry; not added to this repair because it is not immune-endpoint-specific."
+    }
+  ],
+  "source_ids": [
+    "pmid-25540326",
+    "pmid-29997249",
+    "pmid-33977284",
+    "pmid-42169620",
+    "nct-07363057",
+    "pmid-42169618",
+    "pmid-31496122",
+    "nct-04375657"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/25540326/",
+    "https://doi.org/10.1126/scitranslmed.3009892",
+    "https://pubmed.ncbi.nlm.nih.gov/29997249/",
+    "https://doi.org/10.1126/scitranslmed.aaq1564",
+    "https://pubmed.ncbi.nlm.nih.gov/33977284/",
+    "https://doi.org/10.1016/S2666-7568(21)00062-3",
+    "https://pubmed.ncbi.nlm.nih.gov/42169620/",
+    "https://doi.org/10.1111/acel.70548",
+    "https://clinicaltrials.gov/study/NCT07363057",
+    "https://pubmed.ncbi.nlm.nih.gov/42169618/",
+    "https://pubmed.ncbi.nlm.nih.gov/31496122/",
+    "https://clinicaltrials.gov/study/NCT04375657",
+    "https://clinicaltrials.gov/study/NCT04139915",
+    "https://pubmed.ncbi.nlm.nih.gov/42228420/",
+    "https://pubmed.ncbi.nlm.nih.gov/37086366/"
+  ],
+  "notes": [
+    "The staged repair intentionally keeps the evidence stage at human_functional_benefit, but narrows confidence and momentum to low and mixed.",
+    "The mTOR/TORC1 records are included because they have clinically legible older-adult immune-function endpoints; they are also explicitly bounded as rapalog/nutrient-sensing evidence.",
+    "Existing TRIIM and spermidine records are referenced in the outlook support map rather than restaged, preserving their current ownership in epigenetic/neuroendocrine and autophagy layers.",
+    "Month-only ClinicalTrials.gov completion dates were normalized to the first day of the month in structured date fields and preserved as month-level timing in text notes."
+  ],
+  "next_actions": [
+    "Run source-fidelity, interpretation/forecast, safety-limitations, and taxonomy-mapping review for the staged repair bundle.",
+    "If approved and published, return Immune Rejuvenation to ordinary surveillance with watch items for GIANTS-1, TRIIM-X, and any renewed mTOR/TORC1 immune-function programs."
+  ]
+}

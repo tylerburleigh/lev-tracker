@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-11T12:19:49.306Z",
+  "generated_at": "2026-06-11T12:47:08.123Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-11T12:19:49.196Z",
-    "research_priority_queue_updated_at": "2026-06-11T12:19:49.196Z",
-    "active_candidate_bundle_count": 0,
+    "research_coverage_status_updated_at": "2026-06-11T12:47:08.022Z",
+    "research_priority_queue_updated_at": "2026-06-11T12:47:08.022Z",
+    "active_candidate_bundle_count": 1,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
     "surveillance_recent_queue_count": 37,
-    "coverage_repair_queue_count": 1,
+    "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 19,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
@@ -33,10 +33,10 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-repair-immune-rejuvenation",
-    "top_mode": "coverage_repair",
-    "active_editorial_count": 0,
-    "ready_research_count": 1,
+    "top_work_item_id": "editorial_review-immune-rejuvenation-coverage-repair-2026-06-11",
+    "top_mode": "editorial_review",
+    "active_editorial_count": 1,
+    "ready_research_count": 0,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
@@ -46,37 +46,35 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "coverage-repair-immune-rejuvenation",
-      "mode": "coverage_repair",
-      "domain": "research",
+      "item_id": "editorial_review-immune-rejuvenation-coverage-repair-2026-06-11",
+      "mode": "editorial_review",
+      "domain": "editorial",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Repair coverage for Immune Rejuvenation",
-      "rationale": "Run a bounded coverage-repair pass for immune rejuvenation before ordinary surveillance. The repair should assemble source, study, finding, support-map, registry, limiting-evidence, safety, recent-review, and taxonomy-boundary records sufficient to audit the moderate human_functional_benefit public outlook without broadening it into an aging-reversal claim.",
-      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
-      "track_id": "immune-rejuvenation",
-      "hallmark_id": "chronic_inflammation",
+      "title": "Review active staged update immune-rejuvenation-coverage-repair-2026-06-11",
+      "rationale": "Staged update immune-rejuvenation-coverage-repair-2026-06-11 is submitted, so editorial work takes precedence over new research.",
+      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
+      "candidate_bundle_id": "immune-rejuvenation-coverage-repair-2026-06-11",
+      "runbook_path": "docs/admin-review.md",
+      "command": "npm run research:bundle -- validate --bundle immune-rejuvenation-coverage-repair-2026-06-11",
+      "source_paths": [
+        "data/candidate-bundles",
+        "docs/admin-review.md"
+      ],
       "references": [
         {
-          "record_type": "track",
-          "record_id": "immune-rejuvenation"
-        },
-        {
-          "record_type": "hallmark",
-          "record_id": "chronic_inflammation"
+          "record_type": "candidate_bundle",
+          "record_id": "immune-rejuvenation-coverage-repair-2026-06-11"
         }
-      ],
-      "runbook_path": "docs/coverage-assessment.md",
-      "source_paths": [
-        "research/backlog/track-priority.v1.json",
-        "research/state/coverage-status.v1.json",
-        "research/coverage-assessments",
-        "docs/coverage-assessment.md"
       ],
       "signals": [
         {
-          "name": "generated_queue_rank",
-          "value": 1
+          "name": "lifecycle_status",
+          "value": "submitted"
+        },
+        {
+          "name": "proposed_change_count",
+          "value": 19
         }
       ]
     },

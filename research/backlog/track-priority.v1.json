@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-11T12:19:49.196Z",
+  "updated_at": "2026-06-11T12:47:08.022Z",
   "notes": [
     "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
@@ -629,17 +629,5 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-25."
     }
   ],
-  "coverage_repair_queue": [
-    {
-      "rank": 1,
-      "phase_id": "coverage-repair",
-      "track_id": "immune-rejuvenation",
-      "hallmark_id": "chronic_inflammation",
-      "priority_tier": "now",
-      "default_mode": "coverage_repair",
-      "rationale": "Run a bounded coverage-repair pass for immune rejuvenation before ordinary surveillance. The repair should assemble source, study, finding, support-map, registry, limiting-evidence, safety, recent-review, and taxonomy-boundary records sufficient to audit the moderate human_functional_benefit public outlook without broadening it into an aging-reversal claim.",
-      "default_question": "Which known source-completeness gaps for Immune Rejuvenation need repair, and does resolving them change the coverage verdict or public boundaries?",
-      "notes": "Latest coverage assessment: immune-rejuvenation-coverage-2026-06-11."
-    }
-  ]
+  "coverage_repair_queue": []
 }
