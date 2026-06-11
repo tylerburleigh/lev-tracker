@@ -1,0 +1,221 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "autophagy-induction-surveillance-2026-06-11",
+  "name": "Autophagy Induction surveillance coverage assessment for June 11, 2026",
+  "short_name": "Autophagy induction surveillance coverage",
+  "track_id": "autophagy-induction",
+  "hallmark_id": "disabled_macroautophagy",
+  "assessment_type": "surveillance",
+  "assessed_at": "2026-06-11T10:05:48Z",
+  "assessment_window": {
+    "from": "2026-05-31T11:01:02.701Z",
+    "to": "2026-06-11T10:05:48Z",
+    "basis": "Ordinary surveillance from the May 31, 2026 public baseline publication through the June 11, 2026 current-source search."
+  },
+  "coverage_verdict": "thin",
+  "summary": "The public Autophagy Induction claim is anchored by a coherent set of human spermidine and fasting-mimicking-diet records, now including a new older-adult spermidine vaccine-response pilot. Coverage remains thin because the pass surfaced older active/no-results registries, recent review context, and taxonomy-boundary questions that have not yet been reconciled into the public evidence map.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-05-30-autophagy-induction-bootstrap",
+      "2026-06-11-autophagy-induction-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "autophagy-induction-track-scan-2026-05-30",
+      "autophagy-induction-surveillance-2026-06-11"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-autophagy-induction-interpretation-forecast-r1",
+      "evidence-review-autophagy-induction-source-fidelity-r1"
+    ],
+    "publication_event_ids": [
+      "publish-autophagy-induction-track-scan-2026-05-30-2026-05-31t11-01-02-701z"
+    ],
+    "outlook_ids": [
+      "track-autophagy-induction-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "The baseline and staged update cover randomized human records for spermidine and fasting-mimicking-diet interventions, including positive short-term marker studies, a null longer-term cognition trial, safety/tolerability trials, and the new vaccine-response pilot.",
+      "source_ids": [
+        "pmid-35616942",
+        "pmid-29315079",
+        "pmid-41372565",
+        "pmid-40816210",
+        "pmid-39405978",
+        "pmid-42169618"
+      ],
+      "finding_ids": [
+        "smartage-spermidine-null-memory-outcomes",
+        "spermidine-older-adults-short-term-tolerability",
+        "fmd-pilot-autophagic-flux-metabolic-markers",
+        "fmd-protein-content-autophagy-metabolic-markers",
+        "high-purity-spermidine-safety-minimal-polyamine-change",
+        "spermidine-vaccine-nonresponders-immune-response",
+        "spermidine-vaccine-autophagy-senescence-markers"
+      ],
+      "gap_note": "Coverage is enough for the current tentative claim, but active and no-results registries remain incomplete."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "thin",
+      "rationale": "The public claim is intervention-focused. Human observational dietary/polyamine or fasting-pattern evidence was not deeply audited in this surveillance pass.",
+      "gap_note": "A coverage-repair pass should decide whether observational dietary spermidine or fasting evidence is needed for boundary context."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "thin",
+      "rationale": "The current public outlook deliberately leans on human studies. Preclinical autophagy and spermidine anchors are present only indirectly through the cited human papers and reviews.",
+      "gap_note": "Seminal animal lifespan and immune-autophagy anchors should be audited if the track needs stronger mechanistic completeness."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "FMD trials and the staged spermidine vaccine pilot include autophagic flux, TFEB/autophagy-gene, immune-senescence, and metabolic-marker readouts.",
+      "source_ids": [
+        "pmid-41372565",
+        "pmid-40816210",
+        "pmid-42169618"
+      ],
+      "finding_ids": [
+        "fmd-pilot-autophagic-flux-metabolic-markers",
+        "fmd-protein-content-autophagy-metabolic-markers",
+        "spermidine-vaccine-autophagy-senescence-markers"
+      ],
+      "gap_note": "The causal attribution to macroautophagy versus broader nutrient-sensing, mTOR, and immune-modulation pathways remains unresolved."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The SmartAge spermidine trial gives a duration-relevant null primary endpoint, while the high-purity spermidine trial limits claims about circulating polyamine movement and the staged vaccine pilot is explicitly small and subgroup-limited.",
+      "source_ids": [
+        "pmid-35616942",
+        "pmid-39405978",
+        "pmid-42169618"
+      ],
+      "finding_ids": [
+        "smartage-spermidine-null-memory-outcomes",
+        "high-purity-spermidine-safety-minimal-polyamine-change",
+        "spermidine-vaccine-nonresponders-immune-response"
+      ]
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "Small human studies suggest tolerability across spermidine formulations, but long-term safety, optimized dosing, and durability remain underbuilt.",
+      "source_ids": [
+        "pmid-29315079",
+        "pmid-39405978",
+        "pmid-42169618"
+      ],
+      "finding_ids": [
+        "spermidine-older-adults-short-term-tolerability",
+        "high-purity-spermidine-safety-minimal-polyamine-change",
+        "spermidine-vaccine-nonresponders-immune-response"
+      ],
+      "gap_note": "The new vaccine pilot followed immune markers to 37 weeks, but it was not a long-term safety or clinical-outcome trial."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "thin",
+      "rationale": "The pass rechecked existing NCTs and identified additional older active, recruiting, completed, or unknown-status no-results registries around spermidine, fasting-mimicking diets, KH-1, and trehalose.",
+      "source_ids": [
+        "pmid-35616942",
+        "pmid-41372565",
+        "pmid-40816210",
+        "pmid-39405978",
+        "pmid-42169618"
+      ],
+      "gap_note": "NCT07383311, NCT06186102, NCT07255300, NCT07354620, NCT06445569, NCT04928963, and NCT05593549 need coverage-repair triage."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "The PubMed delta search found June 2026 review-level context on polyamines/autophagy and vaccine immunosenescence, but this surveillance pass did not stage reviews because a primary human result was the material change.",
+      "source_ids": [
+        "pmid-42169618"
+      ],
+      "gap_note": "Review-level records such as PMID 42169620, PMID 42086115, and PMID 42225652 should be triaged during coverage repair."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "not_checked",
+      "rationale": "This pass did not attempt a seminal-anchor audit for autophagy induction biology.",
+      "gap_note": "Coverage repair should decide which canonical autophagy, spermidine, fasting, and immune-autophagy anchors belong in the public source map."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "thin",
+      "rationale": "The track overlaps immune rejuvenation, nutrient sensing, mTOR modulation, fasting/diet interventions, and disease-specific metabolic contexts.",
+      "gap_note": "Coverage repair should keep vaccine-response and immune-senescence signals from being overread as general autophagy or LEV progress."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-35616942",
+    "pmid-29315079",
+    "pmid-41372565",
+    "pmid-40816210",
+    "pmid-39405978",
+    "pmid-42169618"
+  ],
+  "covered_finding_ids": [
+    "fmd-pilot-autophagic-flux-metabolic-markers",
+    "fmd-protein-content-autophagy-metabolic-markers",
+    "smartage-spermidine-null-memory-outcomes",
+    "spermidine-older-adults-short-term-tolerability",
+    "high-purity-spermidine-safety-minimal-polyamine-change",
+    "spermidine-vaccine-nonresponders-immune-response",
+    "spermidine-vaccine-autophagy-senescence-markers"
+  ],
+  "search_log_summary": "Ran scoped trial audit, ClinicalTrials.gov checks for all known NCT records, broad ClinicalTrials.gov searches for autophagy/spermidine/FMD/aging terms, PubMed ESearch/ESummary for May 31 to June 11 records, PubMed EFetch, and PMC BioC extraction for the material new spermidine pilot.",
+  "source_selection_notes": [
+    "Staged PMID 42169618 because it is a new result-bearing randomized older-adult pilot directly testing spermidine, immune-cell autophagy biology, and vaccine-response endpoints.",
+    "Did not stage older active/no-results registry records because they predated the delta window or lacked results; they should be reconciled in coverage repair.",
+    "Did not stage review-level PubMed hits because the primary result was the material public update and review synthesis belongs in coverage repair."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "autophagy-induction-active-registry-repair",
+      "gap_type": "coverage_gap",
+      "category": "active_trials_registries",
+      "description": "Several active, recruiting, completed, or unknown-status no-results registries around spermidine, fasting-mimicking diet, KH-1, trehalose, and mixed diet/rapamycin interventions are not yet normalized or explicitly excluded.",
+      "priority": "high",
+      "suggested_action": "Run coverage repair to stage or exclude the most relevant registries, starting with NCT07383311, NCT06186102, NCT07255300, NCT06445569, NCT04928963, and NCT05593549."
+    },
+    {
+      "gap_id": "autophagy-induction-review-triangulation",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "Recent reviews on polyamines/autophagy, vaccine immunosenescence, and broad aging intervention strategies were found but not synthesized into the source map.",
+      "priority": "medium",
+      "suggested_action": "Triage PMID 42169620, PMID 42086115, and PMID 42225652 during coverage repair."
+    },
+    {
+      "gap_id": "autophagy-induction-taxonomy-boundary",
+      "gap_type": "coverage_gap",
+      "category": "taxonomy_boundary",
+      "description": "Autophagy induction overlaps nutrient-sensing, immune rejuvenation, mTOR modulation, fasting, and spermidine/polyamine biology, which can make public attribution ambiguous.",
+      "priority": "medium",
+      "suggested_action": "During coverage repair, explicitly mark which sources support Autophagy Induction, which belong mainly to adjacent tracks, and which should remain excluded boundary context."
+    },
+    {
+      "gap_id": "autophagy-induction-general-aging-proof-gap",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "The field still lacks replicated human evidence that autophagy-inducing interventions produce long-lasting aging-relevant functional, disease, or mortality benefit.",
+      "priority": "high",
+      "suggested_action": "Keep the public outlook tentative until larger trials tie autophagy measures to durable human outcomes."
+    }
+  ],
+  "next_coverage_action": "Run coverage repair for active/no-results registry normalization, review triangulation, and taxonomy-boundary cleanup before the next ordinary surveillance pass.",
+  "next_recommended_mode": "coverage_repair",
+  "tags": [
+    "autophagy-induction",
+    "surveillance",
+    "coverage-repair-needed",
+    "thin-coverage"
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "autophagy-induction-surveillance-2026-06-11",
+  "name": "Autophagy Induction Surveillance for June 11, 2026",
+  "summary": "Surveillance bundle adding a 2026 older-adult spermidine vaccine-response pilot and refreshing the Autophagy Induction outlook while keeping the track at low-confidence human_biomarker_signal with mixed momentum.",
+  "intake_mode": "surveillance",
+  "lifecycle_status": "submitted",
+  "submitted_at": "2026-06-11T10:05:48Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "What changed for Autophagy Induction since the May 31, 2026 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "disabled_macroautophagy"
+    ],
+    "track_ids": [
+      "autophagy-induction"
+    ],
+    "intervention_ids": [
+      "spermidine",
+      "fasting-mimicking-diet"
+    ]
+  },
+  "source_ids": [
+    "pmid-42169618"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/42169618/",
+    "https://doi.org/10.1111/acel.70545",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC13240347/",
+    "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC13240347/unicode",
+    "https://clinicaltrials.gov/study/NCT05421546",
+    "https://clinicaltrials.gov/api/v2/studies/NCT05421546"
+  ],
+  "related_records": [
+    {
+      "record_type": "track",
+      "record_id": "autophagy-induction"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-autophagy-induction-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-disabled-macroautophagy-outlook"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "spermidine"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-42169618",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-42169618",
+      "file_path": "data/sources/pmid-42169618.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-surveillance-2026-06-11/pmid-42169618.json",
+      "summary": "Add the older-adult spermidine vaccine-response pilot source.",
+      "rationale": "The PubMed/PMC result was published after the prior Autophagy Induction baseline and directly tests spermidine, immune-cell autophagy signals, safety, and vaccine-response endpoints in older adults.",
+      "uncertainty_flags": [
+        "small-pilot",
+        "subgroup-signal",
+        "vaccine-response-not-clinical-aging-outcome"
+      ]
+    },
+    {
+      "change_id": "create-study-spermidine-vaccine-response-older-adults-pilot",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "spermidine-vaccine-response-older-adults-pilot",
+      "file_path": "data/studies/spermidine-vaccine-response-older-adults-pilot.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-surveillance-2026-06-11/spermidine-vaccine-response-older-adults-pilot.json",
+      "summary": "Add the linked older-adult vaccine-response pilot study.",
+      "rationale": "The study record captures NCT05421546, completion dates, registry-check status, population, dose, endpoints, and publication-result status."
+    },
+    {
+      "change_id": "create-finding-spermidine-vaccine-nonresponders-immune-response",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "spermidine-vaccine-nonresponders-immune-response",
+      "file_path": "data/findings/spermidine-vaccine-nonresponders-immune-response.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-surveillance-2026-06-11/spermidine-vaccine-nonresponders-immune-response.json",
+      "summary": "Add the vaccine-response signal finding.",
+      "rationale": "This finding captures the human immune-function signal while preserving that it is a small baseline non-responder subgroup, not broad aging-function proof.",
+      "uncertainty_flags": [
+        "subgroup-signal",
+        "small-sample",
+        "not-infection-outcomes"
+      ]
+    },
+    {
+      "change_id": "create-finding-spermidine-vaccine-autophagy-senescence-markers",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "spermidine-vaccine-autophagy-senescence-markers",
+      "file_path": "data/findings/spermidine-vaccine-autophagy-senescence-markers.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-surveillance-2026-06-11/spermidine-vaccine-autophagy-senescence-markers.json",
+      "summary": "Add the autophagy and immune-senescence biomarker finding.",
+      "rationale": "This finding links the vaccine-response signal to B-cell autophagy and immune-senescence markers without treating biomarkers as direct aging reversal.",
+      "uncertainty_flags": [
+        "biomarker-weighted",
+        "subgroup-signal",
+        "hypothesis-generating"
+      ]
+    },
+    {
+      "change_id": "update-outlook-track-autophagy-induction",
+      "change_type": "update_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-autophagy-induction-outlook",
+      "file_path": "data/outlooks/track-autophagy-induction-outlook.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-surveillance-2026-06-11/track-autophagy-induction-outlook.json",
+      "summary": "Refresh the Autophagy Induction outlook with the 2026 spermidine vaccine-response pilot.",
+      "rationale": "The outlook should add the new human immune-response/autophagy signal while keeping stage, momentum, and read firmness conservative.",
+      "uncertainty_flags": [
+        "stage-unchanged",
+        "momentum-still-mixed",
+        "broad-aging-claim-not-supported"
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "autophagy-induction",
+      "note": "Add the older-adult spermidine vaccine-response pilot as the strongest new human signal, but preserve human_biomarker_signal, mixed momentum, and low read firmness because the result is small, subgroup-limited, and not broad healthy-aging benefit.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast",
+    "safety_limitations"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-11-autophagy-induction-surveillance.json",
+  "next_actions": [
+    "Review the staged source, study, findings, and outlook before publication.",
+    "After publication, run editorial rollup if public summary surfaces become stale.",
+    "Run coverage repair for Autophagy Induction to reconcile older active/no-results registries and review-level source gaps surfaced by this pass."
+  ],
+  "tags": [
+    "surveillance",
+    "outlook-refresh",
+    "autophagy-induction",
+    "spermidine",
+    "vaccine-response"
+  ]
+}

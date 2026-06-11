@@ -1,0 +1,284 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-11-autophagy-induction-surveillance",
+  "name": "Autophagy induction surveillance pass for June 11, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-11T09:42:00Z",
+  "completed_at": "2026-06-11T10:05:48Z",
+  "scope": {
+    "question": "What changed for Autophagy Induction since the May 31, 2026 public baseline publication, and does any change justify a public update?",
+    "hallmark_ids": [
+      "disabled_macroautophagy"
+    ],
+    "track_ids": [
+      "autophagy-induction"
+    ],
+    "intervention_ids": [
+      "spermidine",
+      "fasting-mimicking-diet"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "autophagy-induction-surveillance-2026-06-11",
+  "summary": "Ran a scoped Autophagy Induction field-change check from the May 31, 2026 public baseline through June 11, 2026. The local trial audit found four registry-linked result-bearing studies already represented by PubMed sources but lacking local registry check dates. Current ClinicalTrials.gov checks found no posted registry results for those four records. PubMed and PMC discovery found a new Aging Cell randomized pilot, PMID 42169618, linked to NCT05421546: 6 mg/day spermidine for 13 weeks was well tolerated in older adults and improved vaccine-response, immune-senescence, and autophagy-related B-cell signals in baseline vaccine non-responders. A surveillance bundle was staged to add the source, study, two findings, and an outlook refresh while preserving the current stage, mixed momentum, and tentative read. Broader registry searches also found older active or no-results spermidine/FMD/autophagy records that should be handled through coverage repair rather than this same-window outlook refresh.",
+  "next_recommended_mode": "coverage_repair",
+  "materiality_decision": {
+    "material_delta": "outlook_refresh",
+    "public_update_needed": true,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "coverage_repair",
+    "rationale": "PMID 42169618 is a new, result-bearing human randomized pilot after the prior baseline and changes the public evidence map for spermidine/autophagy induction. The signal is not strong enough for a stage upgrade because it is small, subgroup-concentrated, vaccine-response-specific, and not broad healthy-aging benefit. The same pass also surfaced active/no-results registry and review gaps that should be addressed through coverage repair after the staged bundle is reviewed."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial watch audit",
+      "query": "npm run audit:trials -- --track autophagy-induction --write",
+      "checked_at": "2026-06-11T09:45:00Z",
+      "summary": "Found four registry-linked interventional studies, all with trial_details and posted PubMed result sources: NCT03094546, NCT06115551, NCT06560996, and NCT05459961. All four lacked local registry_last_checked dates."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "NCT03094546, NCT06115551, NCT06560996, and NCT05459961",
+      "checked_at": "2026-06-11T09:48:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT03094546",
+      "summary": "Rechecked every registry ID already attached to Autophagy Induction public study records. All four had no ClinicalTrials.gov results section. NCT03094546 and NCT06560996 were completed, NCT06115551 was unknown-status with an estimated April 2024 completion, and NCT05459961 remained active-not-recruiting despite an existing result publication."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "autophagy aging older adult; autophagy induction aging; spermidine aging older adults; spermidine cognition older adults; fasting mimicking diet autophagy; fasting mimicking diet aging; caloric restriction mimetic autophagy aging; trehalose autophagy aging",
+      "checked_at": "2026-06-11T09:50:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies?format=json&pageSize=10&query.term=autophagy%20induction%20aging",
+      "summary": "Broad registry searches found the new relevant NCT05421546 result source through PubMed, plus several older no-results or active records around spermidine, fasting-mimicking diet, KH-1, trehalose, and mixed diet/rapamycin interventions. Those older records are source-completeness and taxonomy-boundary issues rather than same-window public evidence deltas."
+    },
+    {
+      "source_name": "PubMed ESearch and ESummary",
+      "query": "(autophagy OR autophagy induction) AND aging/older/longevity/healthspan AND human/trial terms; publication date 2026-05-31 to 2026-06-11",
+      "checked_at": "2026-06-11T09:53:00Z",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmode=json&retmax=20&sort=pub+date&mindate=2026/05/31&maxdate=2026/06/11&datetype=pdat",
+      "summary": "Returned broad autophagy/aging records. The material scoped hit was PMID 42169618, an older-adult spermidine vaccine-response pilot in Aging Cell. Other close hits were reviews, mechanism papers, disease-context papers, or wrong-scope records."
+    },
+    {
+      "source_name": "PubMed ESearch and ESummary",
+      "query": "spermidine AND aging/older adults/cognition/immune/longevity; publication date 2026-05-31 to 2026-06-11",
+      "checked_at": "2026-06-11T09:55:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42169618/",
+      "summary": "Returned PMID 42169618 as the only new result-bearing older-adult spermidine clinical source that changes the Autophagy Induction public evidence map. Other spermidine hits were reviews, preclinical/disease contexts, or unrelated polyamine biology."
+    },
+    {
+      "source_name": "PubMed EFetch and PMC BioC",
+      "query": "PMID 42169618 / PMCID PMC13240347",
+      "checked_at": "2026-06-11T09:58:00Z",
+      "url": "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC13240347/unicode",
+      "summary": "Confirmed the study design and results: double-blind randomized placebo-controlled pilot, 40 adults over 65, 6 mg/day spermidine for 13 weeks after SARS-CoV-2 vaccination, well tolerated, non-responder subgroup anti-spike IgG and neutralizing activity improved, and B-cell TFEB/autophagy-related signals increased. The full text also emphasizes small sample size, non-responder imbalance, uncontrolled vaccination timing, and hypothesis-generating limits."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "NCT05421546",
+      "checked_at": "2026-06-11T10:00:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT05421546",
+      "summary": "Confirmed the linked registry: completed University of Oxford triple-masked randomized pilot, 40 actual participants aged 65 to 90, 6 mg/day spermidine or placebo, primary completion Aug. 31, 2023, completion Dec. 2, 2023, last update posted May 9, 2024, and no posted ClinicalTrials.gov results section in the current API view."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT03094546",
+      "study_id": "smartage-spermidine-subjective-cognitive-decline",
+      "source_id": "pmid-35616942",
+      "registry_url": "https://clinicaltrials.gov/study/NCT03094546",
+      "checked_at": "2026-06-11T09:48:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2020-05-01",
+      "study_completion_date": "2020-10-01",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "none",
+      "summary": "SmartAge remains completed. ClinicalTrials.gov has no posted results module, but the result-bearing JAMA Network Open publication is already in the evidence layer and no public update is needed."
+    },
+    {
+      "registry_id": "NCT06115551",
+      "study_id": "fmd-autophagic-flux-metabolic-health-pilot",
+      "source_id": "pmid-41372565",
+      "registry_url": "https://clinicaltrials.gov/study/NCT06115551",
+      "checked_at": "2026-06-11T09:48:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "unknown",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2024-04-30",
+      "study_completion_date": "2024-04-30",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The registry remains unknown-status with no ClinicalTrials.gov results section, while the GeroScience result publication is already represented. This is registry metadata context, not a new public evidence delta."
+    },
+    {
+      "registry_id": "NCT06560996",
+      "study_id": "fmd-protein-content-autophagy-rct",
+      "source_id": "pmid-40816210",
+      "registry_url": "https://clinicaltrials.gov/study/NCT06560996",
+      "checked_at": "2026-06-11T09:48:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2024-09-30",
+      "study_completion_date": "2025-01-31",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The very-low-calorie diet registry remains completed with no ClinicalTrials.gov results module; the Clinical Nutrition result publication is already represented."
+    },
+    {
+      "registry_id": "NCT05459961",
+      "study_id": "high-purity-spermidine-older-men-safety",
+      "source_id": "pmid-39405978",
+      "registry_url": "https://clinicaltrials.gov/study/NCT05459961",
+      "checked_at": "2026-06-11T09:48:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "active",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2023-12-25",
+      "study_completion_date": "2025-02-01",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "coverage_repair",
+      "summary": "The registry remains active-not-recruiting with no ClinicalTrials.gov results section despite an existing Nutrition Research result publication. Coverage repair should decide whether to refresh local registry metadata, but this did not alter the public outlook."
+    },
+    {
+      "registry_id": "NCT05421546",
+      "study_id": "spermidine-vaccine-response-older-adults-pilot",
+      "source_id": "pmid-42169618",
+      "registry_url": "https://clinicaltrials.gov/study/NCT05421546",
+      "checked_at": "2026-06-11T10:00:00Z",
+      "current_registry_status": "completed",
+      "current_results_status": "posted",
+      "primary_completion_date": "2023-08-31",
+      "study_completion_date": "2023-12-02",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": true,
+      "completion_date_changed": false,
+      "materiality": "results_posted",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "NCT05421546 is a completed older-adult spermidine vaccine-response pilot. ClinicalTrials.gov has no posted results module, but PMID 42169618 is a new result publication after the prior baseline and is staged for source, study, finding, and outlook review."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 42169620",
+      "title": "Immunosenescence and Vaccine Efficacy in Aging: Dynamic Interplay of Gut Microbiota and mTOR Signaling Pathways",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42169620/",
+      "decision": "context_only",
+      "reason": "Review-level vaccine/immunosenescence context, useful for later triangulation but not a primary intervention result for Autophagy Induction."
+    },
+    {
+      "reference": "PMID 42086115",
+      "title": "Polyamines and autophagy as a dynamic regulatory network in skeletal muscle regeneration and aging",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42086115/",
+      "decision": "context_only",
+      "reason": "Review-level polyamine/autophagy context rather than a new human intervention result."
+    },
+    {
+      "reference": "PMID 42225652",
+      "title": "Insights into the therapeutic strategies for aging and aging-associated diseases",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42225652/",
+      "decision": "context_only",
+      "reason": "Broad aging-therapy review, not a direct autophagy-induction result that changes the track outlook."
+    },
+    {
+      "reference": "NCT07383311",
+      "title": "Autophagy-Enhancers to Reduce Sleep Disturbances",
+      "url": "https://clinicaltrials.gov/study/NCT07383311",
+      "decision": "no_results",
+      "reason": "Recruiting spermidine trial in mild cognitive impairment with no posted results. Relevant to future coverage repair, but not a current evidence change."
+    },
+    {
+      "reference": "NCT06186102",
+      "title": "Polyamine Treatment in Elderly Patients With Coronary Artery Disease",
+      "url": "https://clinicaltrials.gov/study/NCT06186102",
+      "decision": "no_results",
+      "reason": "Active-not-recruiting spermidine trial in elderly coronary artery disease patients with no posted results; disease-context and source-completeness issue for coverage repair."
+    },
+    {
+      "reference": "NCT07255300",
+      "title": "Follow up Study of Varapodio Trial: Effect of Longevity and Fasting Mimicking Diet on Risk Factors Age Correlated and Biomarkers of Aging",
+      "url": "https://clinicaltrials.gov/study/NCT07255300",
+      "decision": "no_results",
+      "reason": "Recruiting fasting-mimicking diet aging-biomarker trial with no posted results; future watchlist context only."
+    },
+    {
+      "reference": "NCT07354620",
+      "title": "A Pilot Study on Reverse Aging (The REVERSE Study)",
+      "url": "https://clinicaltrials.gov/study/NCT07354620",
+      "decision": "no_results",
+      "reason": "Active-not-recruiting rapamycin plus ProLon diet registry with no posted results and mixed track attribution; defer to coverage repair/taxonomy review."
+    },
+    {
+      "reference": "NCT06445569",
+      "title": "Safety and Efficacy of KH-1 for Stimulating Autophagy in Non-diabetic Adults With Elevated Blood Glucose Concentration",
+      "url": "https://clinicaltrials.gov/study/NCT06445569",
+      "decision": "no_results",
+      "reason": "Completed KH-1 autophagy registry with no posted results and no result publication found in this pass; potential coverage-repair item."
+    },
+    {
+      "reference": "NCT04928963",
+      "title": "Fighting Immunosenescence and Promoting Immunity by a Fasting-mimicking Diet Elderly",
+      "url": "https://clinicaltrials.gov/study/NCT04928963",
+      "decision": "no_results",
+      "reason": "Older fasting-mimicking diet frailty/immunity registry with unknown status and no posted results; not a new delta."
+    },
+    {
+      "reference": "NCT05593549",
+      "title": "Role of Autophagy in Type 2 Diabetes Microvascular Dysfunction",
+      "url": "https://clinicaltrials.gov/study/NCT05593549",
+      "decision": "no_results",
+      "reason": "Recruiting trehalose registry in diabetes/healthy-aging vascular function with no posted results; boundary context for coverage repair."
+    }
+  ],
+  "source_ids": [
+    "pmid-35616942",
+    "pmid-29315079",
+    "pmid-41372565",
+    "pmid-40816210",
+    "pmid-39405978",
+    "pmid-42169618"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/35616942/",
+    "https://pubmed.ncbi.nlm.nih.gov/29315079/",
+    "https://pubmed.ncbi.nlm.nih.gov/41372565/",
+    "https://pubmed.ncbi.nlm.nih.gov/40816210/",
+    "https://pubmed.ncbi.nlm.nih.gov/39405978/",
+    "https://pubmed.ncbi.nlm.nih.gov/42169618/",
+    "https://clinicaltrials.gov/study/NCT05421546"
+  ],
+  "notes": [
+    "The staged outlook deliberately does not upgrade evidence_stage because the new result is a small pilot, subgroup-concentrated, and vaccine-response-specific.",
+    "The trial registry and result publication are both useful: the registry anchors design, population, and completion dates; the PubMed/PMC article anchors results and limitations.",
+    "Older no-results or active registry contexts should be handled through coverage repair, not silently expanded inside this ordinary surveillance bundle."
+  ],
+  "next_actions": [
+    "Run evidence review for source fidelity, interpretation, and safety/boundary limitations on autophagy-induction-surveillance-2026-06-11.",
+    "After bundle publication, run editorial rollup because Autophagy Induction public outlook wording will have changed.",
+    "Run Autophagy Induction coverage repair to reconcile older active/no-results registries and recent review context."
+  ]
+}

@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-11T01:23:34.463Z",
+  "updated_at": "2026-06-11T10:12:52.846Z",
   "notes": [
     "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
@@ -71,20 +71,7 @@
     }
   ],
   "bootstrap_queue": [],
-  "surveillance_queue": [
-    {
-      "rank": 1,
-      "phase_id": "surveillance-rotation",
-      "track_id": "autophagy-induction",
-      "hallmark_id": "disabled_macroautophagy",
-      "default_mode": "surveillance",
-      "freshness_status": "never_checked",
-      "cooldown_days": 14,
-      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
-      "default_question": "What changed for Autophagy Induction since the last meaningful review or publication, and does any change justify a public update?",
-      "priority_tier": "now"
-    }
-  ],
+  "surveillance_queue": [],
   "surveillance_recent_queue": [
     {
       "rank": 1,

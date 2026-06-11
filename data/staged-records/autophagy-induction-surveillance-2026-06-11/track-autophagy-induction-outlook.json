@@ -1,0 +1,194 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-autophagy-induction-outlook",
+  "name": "Autophagy Induction Track Outlook",
+  "subject_type": "track",
+  "subject_id": "autophagy-induction",
+  "evidence_stage": "human_biomarker_signal",
+  "momentum": "mixed",
+  "confidence": "low",
+  "main_evidence_gaps": [
+    "The best-controlled 12-month spermidine trial in older adults was null on its primary memory endpoint and secondary outcomes.",
+    "The new spermidine vaccine-response signal is a small pilot result concentrated in baseline vaccine non-responders, not proof of clinical infection prevention, frailty improvement, mortality relevance, or broad healthy-aging benefit.",
+    "Most positive human signals are still short-term biomarker, immune-response, or metabolic shifts rather than long-lasting evidence of better aging-relevant function.",
+    "The track overlaps adjacent nutrient-sensing, immune-rejuvenation, and metabolic interventions, which makes clean attribution to autophagy difficult."
+  ],
+  "strongest_current_evidence": [
+    "A 2026 spermidine pilot in older vaccine non-responders linked autophagy-related B-cell signals with improved vaccine-response markers, while remaining small and exploratory.",
+    "Short fasting-mimicking diet trials report human changes in autophagic flux markers alongside metabolic movement.",
+    "Spermidine interventions appear tolerable in older adults and keep the track clinically visible even though efficacy remains mixed."
+  ],
+  "interpretation_note": "Autophagy induction has a stronger human signal after a small spermidine vaccine-response pilot in older adults, but the public read should stay tentative. The new result links autophagy-related immune-cell markers to vaccine-response improvement in a non-responder subgroup; it does not yet show broad, repeated, or long-lasting healthy-lifespan benefit.",
+  "what_would_change_the_rating": [
+    "A stronger stage assignment would need repeated human studies where measured autophagy activity tracks with long-lasting functional, disease, or mortality-relevant outcomes.",
+    "A firmer read would need larger and longer trials with independent replication, clearer endpoint relevance, and better attribution to macroautophagic flux rather than broad nutrient-sensing or immune-modulation effects.",
+    "The rating would weaken if longer-duration human trials repeatedly remain null or if safety, tolerability, or target-measurement problems become more visible."
+  ],
+  "supporting_finding_ids": [
+    "fmd-pilot-autophagic-flux-metabolic-markers",
+    "fmd-protein-content-autophagy-metabolic-markers",
+    "smartage-spermidine-null-memory-outcomes",
+    "spermidine-older-adults-short-term-tolerability",
+    "high-purity-spermidine-safety-minimal-polyamine-change",
+    "spermidine-vaccine-nonresponders-immune-response",
+    "spermidine-vaccine-autophagy-senescence-markers"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "evidence_stage",
+      "conclusion": "The track remains at human biomarker signal because human studies show autophagy-marker, immune-cell, and metabolic-marker movement, but not repeated long-lasting aging-relevant functional benefit.",
+      "support_role": "supports",
+      "rationale": "Fasting-mimicking diet studies directly measured autophagy-related molecular outcomes, and the 2026 spermidine pilot links immune-cell autophagy signals to vaccine-response markers. The new signal is still too small and subgroup-limited to move the track to broad human functional benefit.",
+      "finding_ids": [
+        "fmd-pilot-autophagic-flux-metabolic-markers",
+        "fmd-protein-content-autophagy-metabolic-markers",
+        "spermidine-vaccine-autophagy-senescence-markers",
+        "spermidine-vaccine-nonresponders-immune-response"
+      ],
+      "source_ids": [
+        "pmid-41372565",
+        "pmid-40816210",
+        "pmid-42169618"
+      ],
+      "limitations": [
+        "The FMD studies are short-term.",
+        "The spermidine vaccine pilot was small and concentrated its strongest effect in baseline vaccine non-responders.",
+        "The endpoints are target, immune-response, and metabolic markers rather than long-lasting healthy-lifespan outcomes."
+      ]
+    },
+    {
+      "label": "Main blocker",
+      "outlook_field": "main_evidence_gaps",
+      "conclusion": "The strongest longer-term spermidine trial still prevents a stronger public read, and the new vaccine-response pilot does not remove the need for larger replicated functional evidence.",
+      "support_role": "limits",
+      "rationale": "A 12-month randomized trial is more duration-relevant than the short biomarker studies, and its null primary memory result keeps the track mixed. The new pilot is positive but small, subgroup-limited, and vaccine-response-specific.",
+      "finding_ids": [
+        "smartage-spermidine-null-memory-outcomes",
+        "spermidine-vaccine-nonresponders-immune-response"
+      ],
+      "source_ids": [
+        "pmid-35616942",
+        "pmid-42169618"
+      ],
+      "limitations": [
+        "The null SmartAge result is a spermidine result, not a decisive test of every autophagy-inducing intervention.",
+        "The vaccine-response signal is clinically legible but does not show infection outcomes, frailty, lifespan, or broad healthy-aging benefit."
+      ]
+    },
+    {
+      "label": "Momentum",
+      "outlook_field": "momentum",
+      "conclusion": "Momentum remains mixed: a new older-adult spermidine immune-response signal adds movement, while null longer-duration data and heterogeneous interventions prevent a stronger read.",
+      "support_role": "balances",
+      "rationale": "The evidence set now contains visible human activity, target-linked immune-cell biology, and vaccine-response movement, but it has not converted into repeated evidence of long-lasting functional improvement.",
+      "finding_ids": [
+        "fmd-pilot-autophagic-flux-metabolic-markers",
+        "fmd-protein-content-autophagy-metabolic-markers",
+        "smartage-spermidine-null-memory-outcomes",
+        "high-purity-spermidine-safety-minimal-polyamine-change",
+        "spermidine-vaccine-nonresponders-immune-response",
+        "spermidine-vaccine-autophagy-senescence-markers"
+      ],
+      "source_ids": [
+        "pmid-41372565",
+        "pmid-40816210",
+        "pmid-35616942",
+        "pmid-39405978",
+        "pmid-42169618"
+      ],
+      "limitations": [
+        "Recent activity is mostly biomarker movement, immune-response markers, and short-term safety work.",
+        "The evidence comes from heterogeneous interventions rather than one coherent program."
+      ]
+    },
+    {
+      "label": "Read firmness",
+      "outlook_field": "confidence",
+      "conclusion": "The read remains tentative because the positive evidence is short-term, biomarker-weighted, or subgroup-limited, while the most duration-relevant efficacy trial was null.",
+      "support_role": "limits",
+      "rationale": "The cited studies are useful enough to maintain a public baseline and add the new spermidine signal, but not strong enough to support a firm claim about long-lasting healthy-lifespan benefit.",
+      "finding_ids": [
+        "fmd-pilot-autophagic-flux-metabolic-markers",
+        "fmd-protein-content-autophagy-metabolic-markers",
+        "smartage-spermidine-null-memory-outcomes",
+        "spermidine-older-adults-short-term-tolerability",
+        "high-purity-spermidine-safety-minimal-polyamine-change",
+        "spermidine-vaccine-nonresponders-immune-response",
+        "spermidine-vaccine-autophagy-senescence-markers"
+      ],
+      "source_ids": [
+        "pmid-41372565",
+        "pmid-40816210",
+        "pmid-35616942",
+        "pmid-29315079",
+        "pmid-39405978",
+        "pmid-42169618"
+      ],
+      "limitations": [
+        "No cited source demonstrates long-lasting disease, mortality, or broad healthy-aging relevance.",
+        "Safety and evidence that intended targets changed do not establish broad efficacy.",
+        "The new vaccine-response result needs replication in a larger, prospectively balanced trial."
+      ]
+    },
+    {
+      "label": "Best current signal",
+      "outlook_field": "strongest_current_evidence",
+      "conclusion": "The 2026 spermidine vaccine-response pilot and short fasting-mimicking diet studies provide the clearest current human signals that autophagy-related targets moved.",
+      "support_role": "supports",
+      "rationale": "The spermidine pilot connected immune-cell autophagy and senescence markers with vaccine-response improvement in older non-responders, while FMD studies directly measured autophagy-related molecular outcomes alongside metabolic changes.",
+      "finding_ids": [
+        "spermidine-vaccine-nonresponders-immune-response",
+        "spermidine-vaccine-autophagy-senescence-markers",
+        "fmd-pilot-autophagic-flux-metabolic-markers",
+        "fmd-protein-content-autophagy-metabolic-markers"
+      ],
+      "source_ids": [
+        "pmid-42169618",
+        "pmid-41372565",
+        "pmid-40816210"
+      ],
+      "limitations": [
+        "The spermidine result is a pilot subgroup signal.",
+        "The FMD studies do not isolate whether autophagy itself is the causal lever versus broader nutrient-sensing and metabolic effects."
+      ]
+    },
+    {
+      "label": "Safety and clinical visibility",
+      "outlook_field": "strongest_current_evidence",
+      "conclusion": "Spermidine remains clinically visible because small human trials suggest tolerability, but efficacy remains unresolved.",
+      "support_role": "contextualizes",
+      "rationale": "The safety/tolerability findings justify continued watchfulness without counting as proof of long-lasting benefit.",
+      "finding_ids": [
+        "spermidine-older-adults-short-term-tolerability",
+        "high-purity-spermidine-safety-minimal-polyamine-change",
+        "spermidine-vaccine-nonresponders-immune-response"
+      ],
+      "source_ids": [
+        "pmid-29315079",
+        "pmid-39405978",
+        "pmid-42169618"
+      ],
+      "limitations": [
+        "The trials were small and short.",
+        "The high-purity spermidine study saw minimal circulating polyamine movement, so target change is not settled.",
+        "The 2026 vaccine-response pilot used a conservative 6 mg/day dose and was not designed as a broad efficacy trial."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-35616942",
+    "pmid-29315079",
+    "pmid-41372565",
+    "pmid-40816210",
+    "pmid-39405978",
+    "pmid-42169618"
+  ],
+  "last_updated": "2026-06-11",
+  "tags": [
+    "public",
+    "track",
+    "thin_coverage"
+  ]
+}

@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-11T01:23:34.580Z",
+  "generated_at": "2026-06-11T10:12:52.953Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-11T01:23:34.463Z",
-    "research_priority_queue_updated_at": "2026-06-11T01:23:34.463Z",
-    "active_candidate_bundle_count": 0,
+    "research_coverage_status_updated_at": "2026-06-11T10:12:52.846Z",
+    "research_priority_queue_updated_at": "2026-06-11T10:12:52.846Z",
+    "active_candidate_bundle_count": 1,
     "bootstrap_queue_count": 0,
-    "surveillance_queue_count": 1,
+    "surveillance_queue_count": 0,
     "surveillance_recent_queue_count": 37,
     "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 21,
+    "coverage_assessment_backlog_count": 20,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
   },
@@ -33,10 +33,10 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "surveillance-autophagy-induction",
-    "top_mode": "surveillance",
-    "active_editorial_count": 0,
-    "ready_research_count": 1,
+    "top_work_item_id": "editorial_review-autophagy-induction-surveillance-2026-06-11",
+    "top_mode": "editorial_review",
+    "active_editorial_count": 1,
+    "ready_research_count": 0,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
@@ -46,79 +46,58 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "surveillance-autophagy-induction",
-      "mode": "surveillance",
-      "domain": "research",
+      "item_id": "editorial_review-autophagy-induction-surveillance-2026-06-11",
+      "mode": "editorial_review",
+      "domain": "editorial",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Run field change check for Autophagy Induction",
-      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
-      "default_action": "Run one track-level field change check, record materiality, excluded sources, and a session; create a staged update only for a material public change.",
-      "track_id": "autophagy-induction",
-      "hallmark_id": "disabled_macroautophagy",
+      "title": "Review active staged update autophagy-induction-surveillance-2026-06-11",
+      "rationale": "Staged update autophagy-induction-surveillance-2026-06-11 is submitted, so editorial work takes precedence over new research.",
+      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
+      "candidate_bundle_id": "autophagy-induction-surveillance-2026-06-11",
+      "runbook_path": "docs/admin-review.md",
+      "command": "npm run research:bundle -- validate --bundle autophagy-induction-surveillance-2026-06-11",
+      "source_paths": [
+        "data/candidate-bundles",
+        "docs/admin-review.md"
+      ],
       "references": [
         {
-          "record_type": "track",
-          "record_id": "autophagy-induction"
-        },
-        {
-          "record_type": "hallmark",
-          "record_id": "disabled_macroautophagy"
+          "record_type": "candidate_bundle",
+          "record_id": "autophagy-induction-surveillance-2026-06-11"
         }
-      ],
-      "runbook_path": "docs/surveillance-checklist.md",
-      "source_paths": [
-        "research/backlog/track-priority.v1.json",
-        "research/state/coverage-status.v1.json",
-        "docs/surveillance-checklist.md"
       ],
       "signals": [
         {
-          "name": "generated_queue_rank",
-          "value": 1
+          "name": "lifecycle_status",
+          "value": "submitted"
         },
         {
-          "name": "surveillance_freshness_status",
-          "value": "never_checked"
-        },
-        {
-          "name": "last_surveillance_mode",
-          "value": "none"
-        },
-        {
-          "name": "last_surveillance_at",
-          "value": "never"
-        },
-        {
-          "name": "surveillance_due_at",
-          "value": "now"
-        },
-        {
-          "name": "has_coverage_assessment",
-          "value": false
+          "name": "proposed_change_count",
+          "value": 5
         }
       ]
     },
     {
       "rank": 2,
-      "item_id": "coverage-assessment-backfill-autophagy-induction",
+      "item_id": "coverage-assessment-backfill-immune-rejuvenation",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for Autophagy Induction",
-      "rationale": "21 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
+      "title": "Backfill coverage assessment for Immune Rejuvenation",
+      "rationale": "20 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
       "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
-      "track_id": "autophagy-induction",
-      "hallmark_id": "disabled_macroautophagy",
+      "track_id": "immune-rejuvenation",
+      "hallmark_id": "chronic_inflammation",
       "references": [
         {
           "record_type": "track",
-          "record_id": "autophagy-induction"
+          "record_id": "immune-rejuvenation"
         },
         {
           "record_type": "hallmark",
-          "record_id": "disabled_macroautophagy"
+          "record_id": "chronic_inflammation"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",
@@ -130,7 +109,7 @@
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 21
+          "value": 20
         },
         {
           "name": "generated_surveillance_queue_rank",
