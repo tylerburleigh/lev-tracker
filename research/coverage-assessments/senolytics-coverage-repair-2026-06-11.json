@@ -1,0 +1,306 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "senolytics-coverage-repair-2026-06-11",
+  "name": "Senolytics Coverage Repair Assessment for June 11, 2026",
+  "short_name": "Senolytics coverage repair",
+  "track_id": "senolytics",
+  "hallmark_id": "cellular_senescence",
+  "assessment_type": "coverage_repair",
+  "assessed_at": "2026-06-11T23:10:39Z",
+  "assessment_window": {
+    "from": "2026-06-11T22:42:00Z",
+    "to": "2026-06-11T23:10:39Z",
+    "basis": "Coverage repair created after the June 11 assessment found that the published Senolytics outlook was missing direct source, study, finding, trial-watch, review, seminal-anchor, and support-map coverage."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is now adequate for a moderate-confidence human_biomarker_signal Senolytics public claim, pending review and publication of the staged repair bundle. The repair stages D+Q discovery and old-mouse healthspan/lifespan anchors, direct human D+Q IPF, DKD, postmenopausal bone, and cognition/mobility records, a translation-review safety boundary, fisetin discovery context, active no-results fisetin and D+Q registry watch records, and support-map normalization for the existing D+Q endothelial TIF animal record. Coverage is not strong because durable human functional benefit, broad healthy-aging prevention, disease modification, long-term safety, and senescent-cell specificity remain unresolved.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-05-30-senolytics-surveillance",
+      "2026-06-11-senolytics-coverage-repair"
+    ],
+    "candidate_bundle_ids": [
+      "senescence-watch-update-2026-05-25",
+      "senolytics-coverage-repair-2026-06-11"
+    ],
+    "publication_event_ids": [
+      "publish-senescence-watch-update-2026-05-25"
+    ],
+    "outlook_ids": [
+      "track-senolytics-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "The repair stages direct human D+Q records across IPF open-label function, DKD senescent-cell biomarkers, randomized IPF tolerability, postmenopausal bone RCT biomarkers, and a 2025 cognition/mobility pilot, plus active D+Q and fisetin registry-watch records.",
+      "source_ids": [
+        "pmid-30616998",
+        "pmid-31542391",
+        "pmid-36857968",
+        "pmid-38956196",
+        "pmid-40010154",
+        "nct-03430037",
+        "nct-03675724",
+        "nct-06133634",
+        "nct-04685590"
+      ],
+      "finding_ids": [
+        "dq-ipf-open-label-physical-function-signal",
+        "dq-dkd-human-senescent-cell-biomarker-signal",
+        "dq-ipf-randomized-tolerability-limited-efficacy-boundary",
+        "dq-bone-rct-primary-null-subgroup-biomarker-signal",
+        "dq-ad-risk-pilot-cognition-mobility-signal",
+        "fisetin-older-women-frailty-enrolling-no-results",
+        "fisetin-frailty-enrolling-no-results",
+        "fisetin-vascular-active-no-results",
+        "dq-stomp-ad-phase2-active-no-results"
+      ],
+      "gap_note": "The remaining issue is evidence strength rather than coverage: human functional and disease-modification signals remain preliminary, small, mixed, or no-results."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "not_applicable",
+      "rationale": "The staged public claim depends on interventional senolytic studies, animal/mechanistic anchors, and registry watch rather than observational or natural-experiment evidence.",
+      "gap_note": "Future safety surveillance could use observational cohorts if off-label preventive use becomes common, but that is not required for the current support map."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "The repair stages the Achilles heel discovery paper, the 2018 old-mouse healthspan/lifespan D+Q paper, and the existing aged-mouse endothelial TIF result as direct animal support.",
+      "source_ids": [
+        "pmid-25754370",
+        "pmid-29988130",
+        "pmid-40109908"
+      ],
+      "finding_ids": [
+        "dq-senolytic-drug-discovery-preclinical",
+        "dq-improved-old-mouse-function-and-survival",
+        "dq-senolytics-reduced-endothelial-tif-aged-mice"
+      ],
+      "gap_note": "Animal support is adequate for rationale, but it remains translation support rather than human longevity evidence."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "The repair stages senescent-cell pro-survival pathway discovery, fisetin cell-type specificity, human senescent-cell/SASP biomarker movement, and review-level translation context.",
+      "source_ids": [
+        "pmid-25754370",
+        "pmid-28273655",
+        "pmid-31542391",
+        "pmid-32686219"
+      ],
+      "finding_ids": [
+        "dq-senolytic-drug-discovery-preclinical",
+        "fisetin-and-bclxl-senolytics-preclinical",
+        "dq-dkd-human-senescent-cell-biomarker-signal",
+        "senolytic-drugs-translation-boundary"
+      ],
+      "gap_note": "Mechanistic target engagement still needs tissue-specific human replication and linkage to durable functional outcomes."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The support map now foregrounds the randomized IPF feasibility trial's lack of meaningful exploratory functional separation, the postmenopausal bone RCT's null primary endpoint, no-results registries, and the review-level caution against use outside trials.",
+      "source_ids": [
+        "pmid-36857968",
+        "pmid-38956196",
+        "pmid-32686219",
+        "nct-03430037",
+        "nct-03675724",
+        "nct-06133634",
+        "nct-04685590"
+      ],
+      "finding_ids": [
+        "dq-ipf-randomized-tolerability-limited-efficacy-boundary",
+        "dq-bone-rct-primary-null-subgroup-biomarker-signal",
+        "senolytic-drugs-translation-boundary",
+        "fisetin-older-women-frailty-enrolling-no-results",
+        "fisetin-frailty-enrolling-no-results",
+        "fisetin-vascular-active-no-results",
+        "dq-stomp-ad-phase2-active-no-results"
+      ]
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "The repair improves safety coverage with D+Q IPF, bone RCT, cognition/mobility pilot, and review context, but long-term preventive-use safety, off-target toxicity, tissue-specific clearance risk, durability, and intermittent dosing risk-benefit remain thin.",
+      "source_ids": [
+        "pmid-30616998",
+        "pmid-36857968",
+        "pmid-38956196",
+        "pmid-40010154",
+        "pmid-32686219"
+      ],
+      "finding_ids": [
+        "dq-ipf-open-label-physical-function-signal",
+        "dq-ipf-randomized-tolerability-limited-efficacy-boundary",
+        "dq-bone-rct-primary-null-subgroup-biomarker-signal",
+        "dq-ad-risk-pilot-cognition-mobility-signal",
+        "senolytic-drugs-translation-boundary"
+      ],
+      "gap_note": "Upgrade only after larger, longer, dose-specific human trials show acceptable safety and durable aging-relevant benefit."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "The repair stages current no-results watch records for AFFIRM, AFFIRM-LITE, fisetin vascular function, and SToMP-AD phase 2, and records posted-result context for NCT05422885 and NCT04313634 in the session and study details.",
+      "source_ids": [
+        "nct-03430037",
+        "nct-03675724",
+        "nct-06133634",
+        "nct-04685590",
+        "pmid-40010154",
+        "pmid-38956196"
+      ],
+      "finding_ids": [
+        "fisetin-older-women-frailty-enrolling-no-results",
+        "fisetin-frailty-enrolling-no-results",
+        "fisetin-vascular-active-no-results",
+        "dq-stomp-ad-phase2-active-no-results",
+        "dq-ad-risk-pilot-cognition-mobility-signal",
+        "dq-bone-rct-primary-null-subgroup-biomarker-signal"
+      ],
+      "gap_note": "Continue surveillance for posted results, status changes, and linked publications, especially NCT03430037, NCT03675724, NCT06133634, NCT04685590, and NCT04785300."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "adequate",
+      "rationale": "The repair stages the direct senolytic-drugs discovery-to-translation review as the review-level safety and clinical-boundary anchor, while newer result-bearing human papers carry the current evidence update.",
+      "source_ids": [
+        "pmid-32686219",
+        "pmid-38956196",
+        "pmid-40010154"
+      ],
+      "finding_ids": [
+        "senolytic-drugs-translation-boundary",
+        "dq-bone-rct-primary-null-subgroup-biomarker-signal",
+        "dq-ad-risk-pilot-cognition-mobility-signal"
+      ],
+      "gap_note": "A later review-refresh pass could add post-2024 syntheses, but the current public claim no longer lacks review-level boundary support."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The Achilles heel discovery paper, fisetin/BCL-XL discovery paper, and old-mouse D+Q healthspan/lifespan paper now anchor core D+Q and fisetin branch history.",
+      "source_ids": [
+        "pmid-25754370",
+        "pmid-28273655",
+        "pmid-29988130"
+      ],
+      "finding_ids": [
+        "dq-senolytic-drug-discovery-preclinical",
+        "fisetin-and-bclxl-senolytics-preclinical",
+        "dq-improved-old-mouse-function-and-survival"
+      ],
+      "gap_note": "Future branch-specific repairs could add navitoclax or BCL-family records if the public scope expands beyond D+Q and fisetin."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The staged outlook separates senolytics from senomorphics, immune clearance, telomere-protection, BCL-family, fisetin, D+Q, and disease-specific trial claims.",
+      "source_ids": [
+        "pmid-32686219",
+        "pmid-28273655",
+        "pmid-40109908",
+        "nct-04685590"
+      ],
+      "finding_ids": [
+        "senolytic-drugs-translation-boundary",
+        "fisetin-and-bclxl-senolytics-preclinical",
+        "dq-senolytics-reduced-endothelial-tif-aged-mice",
+        "dq-stomp-ad-phase2-active-no-results"
+      ],
+      "gap_note": "Future publication and surveillance should keep D+Q, fisetin, BCL-family agents, immune-clearance therapies, and senomorphic agents separate unless direct comparative evidence supports class-level claims."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-25754370",
+    "pmid-28273655",
+    "pmid-29988130",
+    "pmid-30616998",
+    "pmid-31542391",
+    "pmid-36857968",
+    "pmid-38956196",
+    "pmid-40010154",
+    "pmid-32686219",
+    "pmid-40109908",
+    "nct-03430037",
+    "nct-03675724",
+    "nct-06133634",
+    "nct-04685590"
+  ],
+  "covered_finding_ids": [
+    "dq-senolytic-drug-discovery-preclinical",
+    "fisetin-and-bclxl-senolytics-preclinical",
+    "dq-improved-old-mouse-function-and-survival",
+    "dq-ipf-open-label-physical-function-signal",
+    "dq-dkd-human-senescent-cell-biomarker-signal",
+    "dq-ipf-randomized-tolerability-limited-efficacy-boundary",
+    "dq-bone-rct-primary-null-subgroup-biomarker-signal",
+    "dq-ad-risk-pilot-cognition-mobility-signal",
+    "senolytic-drugs-translation-boundary",
+    "fisetin-older-women-frailty-enrolling-no-results",
+    "fisetin-frailty-enrolling-no-results",
+    "fisetin-vascular-active-no-results",
+    "dq-stomp-ad-phase2-active-no-results",
+    "dq-senolytics-reduced-endothelial-tif-aged-mice"
+  ],
+  "search_log_summary": "Used PubMed ESummary/EFetch and ClinicalTrials.gov API v2 on June 11, 2026, with local comparison against the Senolytics outlook, prior surveillance session, previous June 11 coverage assessment, existing D+Q records, and neighboring support maps.",
+  "source_selection_notes": [
+    "Staged result-bearing human D+Q records and representative current no-results D+Q/fisetin registries rather than every disease-specific senolytic registry hit.",
+    "Kept evidence_stage at human_biomarker_signal because controlled human evidence is biomarker-heavy and mixed; functional signals remain exploratory.",
+    "Included the existing D+Q endothelial TIF record as a staged update so Senolytics gets direct support while retaining the telomere-protection boundary."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "durable-human-functional-benefit",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "No replicated adequately powered randomized human trial yet shows durable functional, disease, frailty, cognition, mobility, morbidity, or mortality benefit from senolytics.",
+      "priority": "high",
+      "suggested_action": "Watch posted results and publications from D+Q and fisetin trials; require prespecified functional outcomes before stage upgrade."
+    },
+    {
+      "gap_id": "long-term-preventive-safety",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Current human safety coverage is short, small, and disease-specific; chronic or repeated preventive-use safety remains unresolved.",
+      "priority": "high",
+      "suggested_action": "Keep safety limitations in editorial review and surveillance; do not strengthen public claims until longer controlled safety data are available."
+    },
+    {
+      "gap_id": "fisetin-results-watch",
+      "gap_type": "operational_gap",
+      "category": "active_trials_registries",
+      "description": "Direct fisetin older-women frailty, older-adult inflammation, and vascular-function trials remain no-results in the June 11, 2026 ClinicalTrials.gov view.",
+      "priority": "medium",
+      "suggested_action": "Recheck NCT03430037, NCT03675724, and NCT06133634 during ordinary surveillance."
+    },
+    {
+      "gap_id": "post-2024-review-refresh",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "The repair stages a direct 2020 translation review plus newer result-bearing papers, but a later post-2024 review synthesis could improve review recency.",
+      "priority": "low",
+      "suggested_action": "Consider a review-refresh pass only after the staged repair is reviewed and if the public narrative needs synthesis beyond the current support map."
+    },
+    {
+      "gap_id": "branch-specific-target-engagement",
+      "gap_type": "evidence_gap",
+      "category": "mechanistic",
+      "description": "D+Q, fisetin, BCL-family agents, and immune-mediated senescent-cell clearance may affect different senescent-cell populations and tissues.",
+      "priority": "medium",
+      "suggested_action": "Maintain branch-specific support maps and avoid class-wide claims unless direct comparative or mechanistic target-engagement evidence supports them."
+    }
+  ],
+  "next_coverage_action": "Run evidence review on senolytics-coverage-repair-2026-06-11; if approved and published, return Senolytics to ordinary surveillance with watch on current no-results D+Q and fisetin trials.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "senolytics",
+    "coverage-repair",
+    "cellular-senescence"
+  ]
+}

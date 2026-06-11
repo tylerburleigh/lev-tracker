@@ -1,0 +1,269 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-11-senolytics-coverage-repair",
+  "name": "Senolytics Coverage Repair",
+  "mode": "coverage_repair",
+  "started_at": "2026-06-11T22:42:00Z",
+  "completed_at": "2026-06-11T23:10:39Z",
+  "scope": {
+    "question": "Which known source-completeness gaps for Senolytics need repair, and does resolving them change the coverage verdict or public boundaries?",
+    "hallmark_ids": [
+      "cellular_senescence"
+    ],
+    "track_ids": [
+      "senolytics"
+    ],
+    "intervention_ids": [
+      "dasatinib-quercetin",
+      "fisetin"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "senolytics-coverage-repair-2026-06-11",
+  "summary": "Coverage repair staged source, study, finding, intervention, registry-watch, review, animal-anchor, support-map, and coverage-assessment records for Senolytics. The repair adds D+Q discovery and old-mouse healthspan/lifespan anchors, direct human D+Q IPF, diabetic kidney disease, postmenopausal bone, and cognition/mobility records, a translation-review boundary, fisetin discovery context, active no-results fisetin frailty and vascular-function registries, an active no-results D+Q Alzheimer's phase 2 registry, and a staged outlook support map. The staged outlook keeps the track at moderate-confidence human_biomarker_signal with mixed momentum rather than upgrading to human_functional_benefit.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "outlook_refresh",
+    "public_update_needed": true,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The repair materially changes the public support map and boundary language without changing the stage: direct human biomarker support is now auditable, functional signals are visible but still low-confidence, and current registry activity is represented as no-results watch context rather than benefit evidence."
+  },
+  "search_log": [
+    {
+      "source_name": "PubMed ESummary and EFetch",
+      "query": "PMID 25754370, 28273655, 29988130, 30616998, 31542391, 36857968, 38956196, 40010154, 32686219, 35098970, and 41564845",
+      "checked_at": "2026-06-11T23:10:39Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Confirmed source metadata and abstracts for the D+Q discovery, fisetin discovery, old-mouse healthspan/lifespan, first-in-human IPF, DKD biomarker, randomized IPF tolerability, postmenopausal bone RCT, 2025 cognition/mobility pilot, and senolytic-drugs translation review records. The SToMP-AD protocol and 2026 murine DKD source were recorded as context but not staged to keep the repair bounded."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "senolytic OR fisetin OR dasatinib quercetin plus direct checks for NCT03430037, NCT03675724, NCT06133634, NCT04685590, NCT05422885, NCT04313634, NCT02874989, and NCT02848131",
+      "checked_at": "2026-06-11T23:10:39Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "Confirmed current status, enrollment, dates, endpoint scope, and results status. AFFIRM, AFFIRM-LITE, fisetin vascular function, and SToMP-AD phase 2 are no-results watch items. NCT05422885 and NCT04313634 have result-bearing paper support; NCT02874989 and NCT02848131 have paper support but no posted registry results in the API view."
+    },
+    {
+      "source_name": "Local public records and coverage assessment",
+      "query": "Senolytics outlook, May 30 surveillance session, June 11 coverage assessment, existing D+Q intervention, existing D+Q endothelial TIF records, and neighboring senomorphic, immune-clearance, and telomere-protection support maps",
+      "checked_at": "2026-06-11T23:10:39Z",
+      "summary": "Compared the prior thin support map against local records and adjacent tracks. The repair prioritizes direct Senolytics support-map normalization, human biomarker and functional boundaries, trial-watch records, and taxonomy separation from senomorphics, immune clearance, and telomere-protection interpretations."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT03430037",
+      "study_id": "fisetin-frailty-older-women-registry",
+      "source_id": "nct-03430037",
+      "registry_url": "https://clinicaltrials.gov/study/NCT03430037",
+      "checked_at": "2026-06-11T23:10:39Z",
+      "current_registry_status": "recruiting",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2026-11-01",
+      "study_completion_date": "2027-11-01",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "new_trial",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Staged as an enrolling-by-invitation no-results fisetin frailty trial in older women with a 6-minute-walk primary endpoint."
+    },
+    {
+      "registry_id": "NCT03675724",
+      "study_id": "fisetin-frailty-older-adults-registry",
+      "source_id": "nct-03675724",
+      "registry_url": "https://clinicaltrials.gov/study/NCT03675724",
+      "checked_at": "2026-06-11T23:10:39Z",
+      "current_registry_status": "recruiting",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2026-11-01",
+      "study_completion_date": "2027-11-01",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "new_trial",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Staged as an enrolling-by-invitation no-results fisetin older-adults trial with a blood inflammation marker primary endpoint."
+    },
+    {
+      "registry_id": "NCT06133634",
+      "study_id": "fisetin-vascular-function-older-adults-registry",
+      "source_id": "nct-06133634",
+      "registry_url": "https://clinicaltrials.gov/study/NCT06133634",
+      "checked_at": "2026-06-11T23:10:39Z",
+      "current_registry_status": "active",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2026-03-31",
+      "study_completion_date": "2027-03-31",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "new_trial",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Staged as an active-not-recruiting no-results fisetin vascular-function trial in older adults."
+    },
+    {
+      "registry_id": "NCT04685590",
+      "study_id": "dq-stomp-ad-phase2-registry",
+      "source_id": "nct-04685590",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04685590",
+      "checked_at": "2026-06-11T23:10:39Z",
+      "current_registry_status": "active",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2028-01-01",
+      "study_completion_date": "2029-01-01",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "new_trial",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Staged as an active-not-recruiting no-results randomized phase 2 D+Q Alzheimer's disease safety and feasibility trial."
+    },
+    {
+      "registry_id": "NCT05422885",
+      "study_id": "dq-cognition-mobility-ad-risk-pilot",
+      "source_id": "pmid-40010154",
+      "registry_url": "https://clinicaltrials.gov/study/NCT05422885",
+      "checked_at": "2026-06-11T23:10:39Z",
+      "current_registry_status": "completed",
+      "current_results_status": "posted",
+      "primary_completion_date": "2024-01-24",
+      "study_completion_date": "2024-01-24",
+      "completion_date_kind": "actual",
+      "results_first_posted_date": "2025-03-17",
+      "results_changed": true,
+      "materiality": "results_posted",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Staged the peer-reviewed 2025 EBioMedicine pilot as result-bearing D+Q cognition, mobility, safety, and biomarker context."
+    },
+    {
+      "registry_id": "NCT04313634",
+      "study_id": "dq-postmenopausal-bone-rct",
+      "source_id": "pmid-38956196",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04313634",
+      "checked_at": "2026-06-11T23:10:39Z",
+      "current_registry_status": "completed",
+      "current_results_status": "posted",
+      "primary_completion_date": "2023-06-06",
+      "study_completion_date": "2023-06-06",
+      "completion_date_kind": "actual",
+      "results_first_posted_date": "2024-06-01",
+      "results_changed": true,
+      "materiality": "results_posted",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Staged the peer-reviewed Nature Medicine phase 2 bone RCT as a mixed human biomarker and safety boundary record."
+    },
+    {
+      "registry_id": "NCT02874989",
+      "source_id": "pmid-36857968",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02874989",
+      "checked_at": "2026-06-11T23:10:39Z",
+      "current_registry_status": "completed",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2019-06-03",
+      "study_completion_date": "2019-06-03",
+      "completion_date_kind": "actual",
+      "results_changed": false,
+      "materiality": "unchanged",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "The registry remains completed without posted API results, but result-bearing IPF publications support the staged human functional and randomized feasibility findings."
+    },
+    {
+      "registry_id": "NCT02848131",
+      "study_id": "dq-diabetic-kidney-disease-pilot",
+      "source_id": "pmid-31542391",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02848131",
+      "checked_at": "2026-06-11T23:10:39Z",
+      "current_registry_status": "recruiting",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2027-04-01",
+      "study_completion_date": "2027-04-01",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "unchanged",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "The registry remains no-results in the API view; the peer-reviewed 2019 DKD pilot provides the staged human senescent-cell biomarker signal."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 35098970",
+      "title": "Senolytic Therapy to Modulate the Progression of Alzheimer's Disease (SToMP-AD): A Pilot Clinical Trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35098970/",
+      "decision": "context_only",
+      "reason": "Protocol and rationale source for early D+Q Alzheimer's work; the repair instead stages the result-bearing 2025 cognition/mobility pilot and the current randomized SToMP-AD phase 2 registry."
+    },
+    {
+      "reference": "PMID 41564845",
+      "title": "Senolytics, dasatanib plus quercetin, reduce kidney inflammation, senescent cell abundance, and injury while restoring geroprotective factors in murine diabetic kidney disease",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41564845/",
+      "decision": "context_only",
+      "reason": "Recent 2026 murine DKD follow-up is direct but not necessary for this bounded repair after staging the human DKD biomarker pilot, old-mouse healthspan/lifespan anchor, and existing aged-mouse endothelial TIF record."
+    },
+    {
+      "reference": "PMID 31982828",
+      "title": "Corrigendum to 'Senolytics decrease senescent cells in humans'",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31982828/",
+      "decision": "duplicate",
+      "reason": "Corrigendum was noted but does not require a separate staged public support record."
+    },
+    {
+      "reference": "NCT04785300",
+      "title": "ALSENLITE: Senolytics for Alzheimer's Disease",
+      "url": "https://clinicaltrials.gov/study/NCT04785300",
+      "decision": "context_only",
+      "reason": "Direct but open-label no-results Alzheimer's D+Q registry; the staged bundle keeps the AD branch bounded to the 2025 result-bearing pilot and the randomized SToMP-AD phase 2 registry."
+    },
+    {
+      "reference": "COVID, oncology, osteoarthritis, endometrial, and supplement-brand senolytic registry matches",
+      "decision": "wrong_scope",
+      "reason": "ClinicalTrials.gov senolytic/fisetin/D+Q search returned many disease-treatment or commercial-adjacent records; these were not staged because the repair target was aging-relevant Senolytics coverage for D+Q and fisetin core branches."
+    }
+  ],
+  "source_ids": [
+    "pmid-25754370",
+    "pmid-28273655",
+    "pmid-29988130",
+    "pmid-30616998",
+    "pmid-31542391",
+    "pmid-36857968",
+    "pmid-38956196",
+    "pmid-40010154",
+    "pmid-32686219",
+    "pmid-40109908",
+    "nct-03430037",
+    "nct-03675724",
+    "nct-06133634",
+    "nct-04685590"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/25754370/",
+    "https://pubmed.ncbi.nlm.nih.gov/28273655/",
+    "https://pubmed.ncbi.nlm.nih.gov/29988130/",
+    "https://pubmed.ncbi.nlm.nih.gov/30616998/",
+    "https://pubmed.ncbi.nlm.nih.gov/31542391/",
+    "https://pubmed.ncbi.nlm.nih.gov/36857968/",
+    "https://pubmed.ncbi.nlm.nih.gov/38956196/",
+    "https://pubmed.ncbi.nlm.nih.gov/40010154/",
+    "https://pubmed.ncbi.nlm.nih.gov/32686219/",
+    "https://pubmed.ncbi.nlm.nih.gov/40109908/",
+    "https://clinicaltrials.gov/study/NCT03430037",
+    "https://clinicaltrials.gov/study/NCT03675724",
+    "https://clinicaltrials.gov/study/NCT06133634",
+    "https://clinicaltrials.gov/study/NCT04685590",
+    "https://clinicaltrials.gov/study/NCT05422885",
+    "https://clinicaltrials.gov/study/NCT04313634",
+    "https://clinicaltrials.gov/study/NCT02874989",
+    "https://clinicaltrials.gov/study/NCT02848131"
+  ],
+  "notes": [
+    "The staged repair intentionally keeps evidence_stage at human_biomarker_signal because the direct controlled human evidence is biomarker-heavy and mixed.",
+    "No-results registry entries are represented as regulatory/program-update findings with inconclusive direction.",
+    "Month-only ClinicalTrials.gov completion dates were normalized to the first day of the month in structured date fields and preserved as month-level timing in notes.",
+    "The bundle stages public record candidates only and does not approve or publish them."
+  ],
+  "next_actions": [
+    "Run source-fidelity, interpretation/forecast, taxonomy-mapping, and safety-limitations review for the staged Senolytics coverage-repair bundle.",
+    "If approved and published, return Senolytics to ordinary surveillance with special watch on NCT03430037, NCT03675724, NCT06133634, NCT04685590, NCT04785300, and follow-up result postings for completed D+Q trials."
+  ]
+}

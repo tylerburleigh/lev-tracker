@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-11T22:13:17.247Z",
+  "generated_at": "2026-06-11T23:17:27.417Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-11T22:13:17.127Z",
-    "research_priority_queue_updated_at": "2026-06-11T22:13:17.127Z",
-    "active_candidate_bundle_count": 0,
+    "research_coverage_status_updated_at": "2026-06-11T23:17:27.306Z",
+    "research_priority_queue_updated_at": "2026-06-11T23:17:27.306Z",
+    "active_candidate_bundle_count": 1,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
     "surveillance_recent_queue_count": 37,
-    "coverage_repair_queue_count": 1,
+    "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 17,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
@@ -33,10 +33,10 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-repair-senolytics",
-    "top_mode": "coverage_repair",
-    "active_editorial_count": 0,
-    "ready_research_count": 1,
+    "top_work_item_id": "editorial_review-senolytics-coverage-repair-2026-06-11",
+    "top_mode": "editorial_review",
+    "active_editorial_count": 1,
+    "ready_research_count": 0,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
@@ -46,37 +46,35 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "coverage-repair-senolytics",
-      "mode": "coverage_repair",
-      "domain": "research",
+      "item_id": "editorial_review-senolytics-coverage-repair-2026-06-11",
+      "mode": "editorial_review",
+      "domain": "editorial",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Repair coverage for Senolytics",
-      "rationale": "Run a bounded coverage-repair pass for Senolytics before ordinary surveillance. The repair should assemble direct human, animal, mechanistic, limiting, safety, registry-watch, review, seminal-anchor, and taxonomy-boundary records sufficient to audit the moderate human_biomarker_signal public outlook and decide whether confidence, support maps, or public wording need adjustment.",
-      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
-      "track_id": "senolytics",
-      "hallmark_id": "cellular_senescence",
+      "title": "Review active staged update senolytics-coverage-repair-2026-06-11",
+      "rationale": "Staged update senolytics-coverage-repair-2026-06-11 is submitted, so editorial work takes precedence over new research.",
+      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
+      "candidate_bundle_id": "senolytics-coverage-repair-2026-06-11",
+      "runbook_path": "docs/admin-review.md",
+      "command": "npm run research:bundle -- validate --bundle senolytics-coverage-repair-2026-06-11",
+      "source_paths": [
+        "data/candidate-bundles",
+        "docs/admin-review.md"
+      ],
       "references": [
         {
-          "record_type": "track",
-          "record_id": "senolytics"
-        },
-        {
-          "record_type": "hallmark",
-          "record_id": "cellular_senescence"
+          "record_type": "candidate_bundle",
+          "record_id": "senolytics-coverage-repair-2026-06-11"
         }
-      ],
-      "runbook_path": "docs/coverage-assessment.md",
-      "source_paths": [
-        "research/backlog/track-priority.v1.json",
-        "research/state/coverage-status.v1.json",
-        "research/coverage-assessments",
-        "docs/coverage-assessment.md"
       ],
       "signals": [
         {
-          "name": "generated_queue_rank",
-          "value": 1
+          "name": "lifecycle_status",
+          "value": "submitted"
+        },
+        {
+          "name": "proposed_change_count",
+          "value": 44
         }
       ]
     },

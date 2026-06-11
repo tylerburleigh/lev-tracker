@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "dq-senolytics-reduced-endothelial-tif-aged-mice",
+  "name": "Dasatinib plus quercetin reduced endothelial telomere dysfunction-induced foci in aged mice",
+  "summary": "An aged-mouse senolytic intervention reduced telomere dysfunction markers in endothelial cells, supporting the Senolytics animal biomarker map while preserving the telomere-protection boundary.",
+  "source_id": "pmid-40109908",
+  "study_id": "dq-senolytics-aged-mouse-endothelial-tif",
+  "intervention_ids": [
+    "dasatinib-quercetin"
+  ],
+  "track_ids": [
+    "senolytics",
+    "telomere-protection-and-capping"
+  ],
+  "hallmark_ids": [
+    "telomere_attrition",
+    "cellular_senescence"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "positive",
+  "evidence_tier": "animal",
+  "confidence": "low",
+  "statement": "In old mice, intermittent dasatinib plus quercetin reduced endothelial p21 expression, DNA damage, and telomere dysfunction-induced foci despite reducing mean endothelial telomere length.",
+  "population_or_model": "Old C57BL/6 mice treated with dasatinib plus quercetin or vehicle from 21 to 24 months of age",
+  "time_horizon": "Three months of intermittent dosing",
+  "quantitative_note": "The source reports 10 mice per group and approximately 57% lower endothelial p21 expression with D+Q; telomere length decreased by about 17% without producing critically short telomeres.",
+  "caveats": [
+    "This is an aged-mouse senolytic result, not a direct shelterin or capping-restoration therapy.",
+    "The telomere-dysfunction signal may reflect removal of senescent cells rather than preservation of capping in surviving cells.",
+    "Mouse telomeres are longer than human telomeres, limiting translation of the telomere-length boundary."
+  ],
+  "tags": [
+    "animal",
+    "senolytics",
+    "dasatinib-quercetin",
+    "biomarker",
+    "coverage-repair"
+  ]
+}

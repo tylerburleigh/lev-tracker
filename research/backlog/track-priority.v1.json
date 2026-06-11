@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-11T22:13:17.127Z",
+  "updated_at": "2026-06-11T23:17:27.306Z",
   "notes": [
     "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
@@ -629,17 +629,5 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-25."
     }
   ],
-  "coverage_repair_queue": [
-    {
-      "rank": 1,
-      "phase_id": "coverage-repair",
-      "track_id": "senolytics",
-      "hallmark_id": "cellular_senescence",
-      "priority_tier": "now",
-      "default_mode": "coverage_repair",
-      "rationale": "Run a bounded coverage-repair pass for Senolytics before ordinary surveillance. The repair should assemble direct human, animal, mechanistic, limiting, safety, registry-watch, review, seminal-anchor, and taxonomy-boundary records sufficient to audit the moderate human_biomarker_signal public outlook and decide whether confidence, support maps, or public wording need adjustment.",
-      "default_question": "Which known source-completeness gaps for Senolytics need repair, and does resolving them change the coverage verdict or public boundaries?",
-      "notes": "Latest coverage assessment: senolytics-coverage-2026-06-11."
-    }
-  ]
+  "coverage_repair_queue": []
 }
