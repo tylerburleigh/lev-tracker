@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "kh1-autophagy-prediabetes-completed-no-results",
+  "name": "KH-1 autophagy prediabetes trial is completed with no posted results",
+  "summary": "NCT06445569 is directly relevant autophagy-induction registry context, but it is completed without posted results and cannot change the public evidence stage.",
+  "source_id": "nct-06445569",
+  "study_id": "kh1-autophagy-prediabetes-registry",
+  "track_ids": [
+    "autophagy-induction"
+  ],
+  "hallmark_ids": [
+    "disabled_macroautophagy"
+  ],
+  "endpoint_category": "regulatory",
+  "direction": "inconclusive",
+  "evidence_tier": "regulatory_or_program_update",
+  "confidence": "low",
+  "statement": "ClinicalTrials.gov lists NCT06445569 as a completed 42-participant randomized KH-1 trial with insulin-resistance, autophagy, safety, inflammatory, cardiovascular, immune, and quality-of-life endpoints and no posted results in the June 11, 2026 API view.",
+  "population_or_model": "Non-diabetic adults with elevated blood glucose concentration",
+  "time_horizon": "Three-month randomized period with longer-term six-month follow-up endpoints",
+  "quantitative_note": "Actual enrollment is 42; registry status is completed; actual study completion was 2023-06-08; result status is not posted.",
+  "caveats": [
+    "No-results registry status is not evidence of efficacy or harm.",
+    "KH-1 does not yet have a normalized intervention record in the public map.",
+    "The primary endpoint is insulin resistance rather than a durable aging-functional endpoint."
+  ],
+  "tags": [
+    "human",
+    "kh-1",
+    "trial-registry",
+    "completed",
+    "no-results",
+    "coverage-repair"
+  ]
+}

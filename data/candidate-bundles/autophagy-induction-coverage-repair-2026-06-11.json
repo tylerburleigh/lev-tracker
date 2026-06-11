@@ -1,0 +1,335 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "autophagy-induction-coverage-repair-2026-06-11",
+  "name": "Autophagy Induction Coverage Repair for June 11, 2026",
+  "summary": "Coverage-repair bundle staging active, completed, and stale no-results Autophagy Induction registry context plus a direct 2026 polyamine/autophagy review boundary. The proposed outlook refresh keeps the track at low-confidence human_biomarker_signal with mixed momentum.",
+  "intake_mode": "manual",
+  "lifecycle_status": "submitted",
+  "submitted_at": "2026-06-11T10:55:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "Which source-completeness gaps for Autophagy Induction need repair before ordinary surveillance resumes, and do active/no-results registries or recent reviews change the public read?",
+    "hallmark_ids": [
+      "disabled_macroautophagy"
+    ],
+    "track_ids": [
+      "autophagy-induction"
+    ],
+    "intervention_ids": [
+      "spermidine",
+      "fasting-mimicking-diet",
+      "trehalose"
+    ]
+  },
+  "source_ids": [
+    "nct-06445569",
+    "nct-07383311",
+    "nct-06186102",
+    "nct-04928963",
+    "nct-05593549",
+    "pmid-42086115"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT06445569",
+    "https://clinicaltrials.gov/study/NCT07383311",
+    "https://clinicaltrials.gov/study/NCT06186102",
+    "https://clinicaltrials.gov/study/NCT04928963",
+    "https://clinicaltrials.gov/study/NCT05593549",
+    "https://clinicaltrials.gov/study/NCT07255300",
+    "https://clinicaltrials.gov/study/NCT07354620",
+    "https://pubmed.ncbi.nlm.nih.gov/42086115/",
+    "https://doi.org/10.1016/j.mad.2026.112188",
+    "https://pubmed.ncbi.nlm.nih.gov/42169620/",
+    "https://pubmed.ncbi.nlm.nih.gov/42225652/"
+  ],
+  "related_records": [
+    {
+      "record_type": "track",
+      "record_id": "autophagy-induction"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-autophagy-induction-outlook"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "hallmark-disabled-macroautophagy-outlook"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "spermidine"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "fasting-mimicking-diet"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "trehalose"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-nct-06445569",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-06445569",
+      "file_path": "data/sources/nct-06445569.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-coverage-repair-2026-06-11/nct-06445569.json",
+      "summary": "Add the completed KH-1 autophagy prediabetes registry source.",
+      "rationale": "The June 11 assessment identified this as the most direct missing completed no-results autophagy-induction registry."
+    },
+    {
+      "change_id": "create-study-kh1-autophagy-prediabetes-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "kh1-autophagy-prediabetes-registry",
+      "file_path": "data/studies/kh1-autophagy-prediabetes-registry.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-coverage-repair-2026-06-11/kh1-autophagy-prediabetes-registry.json",
+      "summary": "Add the KH-1 completed no-results study record.",
+      "rationale": "Represent actual completion, endpoint scope, and no-results status without creating an efficacy claim."
+    },
+    {
+      "change_id": "create-finding-kh1-autophagy-prediabetes-completed-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "kh1-autophagy-prediabetes-completed-no-results",
+      "file_path": "data/findings/kh1-autophagy-prediabetes-completed-no-results.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-coverage-repair-2026-06-11/kh1-autophagy-prediabetes-completed-no-results.json",
+      "summary": "Add the KH-1 completed no-results finding.",
+      "rationale": "Make the completed direct autophagy registry visible as source-completeness and watchlist context.",
+      "uncertainty_flags": [
+        "completed",
+        "no-posted-results",
+        "primary-endpoint-insulin-resistance"
+      ]
+    },
+    {
+      "change_id": "create-source-nct-07383311",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-07383311",
+      "file_path": "data/sources/nct-07383311.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-coverage-repair-2026-06-11/nct-07383311.json",
+      "summary": "Add the recruiting spermidine MCI sleep autophagy registry source.",
+      "rationale": "Repair active spermidine/autophagy registry coverage for a trial with polyamine and eIF5A hypusination endpoints."
+    },
+    {
+      "change_id": "create-study-spermidine-mci-sleep-autophagy-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "spermidine-mci-sleep-autophagy-registry",
+      "file_path": "data/studies/spermidine-mci-sleep-autophagy-registry.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-coverage-repair-2026-06-11/spermidine-mci-sleep-autophagy-registry.json",
+      "summary": "Add the spermidine MCI sleep autophagy registry study.",
+      "rationale": "Represent the recruiting disease-context trial while keeping it separate from general healthy-aging evidence."
+    },
+    {
+      "change_id": "create-finding-spermidine-mci-sleep-autophagy-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "spermidine-mci-sleep-autophagy-recruiting-no-results",
+      "file_path": "data/findings/spermidine-mci-sleep-autophagy-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-coverage-repair-2026-06-11/spermidine-mci-sleep-autophagy-recruiting-no-results.json",
+      "summary": "Add the spermidine MCI recruiting no-results finding.",
+      "rationale": "Keep the active autophagy-marker trial in the public watch map without upgrading stage.",
+      "uncertainty_flags": [
+        "recruiting",
+        "no-posted-results",
+        "disease-context"
+      ]
+    },
+    {
+      "change_id": "create-source-nct-06186102",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-06186102",
+      "file_path": "data/sources/nct-06186102.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-coverage-repair-2026-06-11/nct-06186102.json",
+      "summary": "Add the active spermidine elderly CAD registry source.",
+      "rationale": "Repair active registry coverage for the larger older-patient spermidine trial with autophagy, polyamine, muscle, cognition, cardiometabolic, and cardiovascular endpoints."
+    },
+    {
+      "change_id": "create-study-spermidine-coronary-artery-disease-older-adults-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "spermidine-coronary-artery-disease-older-adults-registry",
+      "file_path": "data/studies/spermidine-coronary-artery-disease-older-adults-registry.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-coverage-repair-2026-06-11/spermidine-coronary-artery-disease-older-adults-registry.json",
+      "summary": "Add the spermidine elderly CAD phase 2 registry study.",
+      "rationale": "Capture status, sample size, broad endpoint scope, autophagy-marker endpoints, and no-results status."
+    },
+    {
+      "change_id": "create-finding-spermidine-cad-older-adults-active-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "spermidine-cad-older-adults-active-no-results",
+      "file_path": "data/findings/spermidine-cad-older-adults-active-no-results.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-coverage-repair-2026-06-11/spermidine-cad-older-adults-active-no-results.json",
+      "summary": "Add the spermidine elderly CAD active no-results finding.",
+      "rationale": "Make the large older-patient spermidine registry visible while preserving disease-context and attribution caveats.",
+      "uncertainty_flags": [
+        "active-not-recruiting",
+        "no-posted-results",
+        "disease-context",
+        "broad-endpoint-set"
+      ]
+    },
+    {
+      "change_id": "create-source-nct-04928963",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-04928963",
+      "file_path": "data/sources/nct-04928963.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-coverage-repair-2026-06-11/nct-04928963.json",
+      "summary": "Add the stale FMD immunosenescence elderly registry source.",
+      "rationale": "Repair stale unknown-status registry coverage at the FMD, immune-response, and frailty boundary."
+    },
+    {
+      "change_id": "create-study-fmd-immunosenescence-prefrail-elderly-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "fmd-immunosenescence-prefrail-elderly-registry",
+      "file_path": "data/studies/fmd-immunosenescence-prefrail-elderly-registry.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-coverage-repair-2026-06-11/fmd-immunosenescence-prefrail-elderly-registry.json",
+      "summary": "Add the FMD immunosenescence prefrail elderly registry study.",
+      "rationale": "Represent the stale no-results FMD trial without collapsing FMD immune/frailty outcomes into autophagy-specific efficacy."
+    },
+    {
+      "change_id": "create-finding-fmd-immunosenescence-prefrail-elderly-unknown-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "fmd-immunosenescence-prefrail-elderly-unknown-no-results",
+      "file_path": "data/findings/fmd-immunosenescence-prefrail-elderly-unknown-no-results.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-coverage-repair-2026-06-11/fmd-immunosenescence-prefrail-elderly-unknown-no-results.json",
+      "summary": "Add the FMD stale unknown-status no-results finding.",
+      "rationale": "Make the stale registry status explicit as an operational watch item and taxonomy boundary.",
+      "uncertainty_flags": [
+        "unknown-status",
+        "stale-registry",
+        "no-posted-results",
+        "taxonomy-boundary"
+      ]
+    },
+    {
+      "change_id": "create-source-nct-05593549",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-05593549",
+      "file_path": "data/sources/nct-05593549.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-coverage-repair-2026-06-11/nct-05593549.json",
+      "summary": "Add the recruiting trehalose T2D microvascular autophagy registry source.",
+      "rationale": "Repair mechanistic autophagic-flux registry coverage while keeping diabetes microvascular context separate from broad aging evidence."
+    },
+    {
+      "change_id": "create-study-trehalose-t2d-microvascular-autophagy-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "trehalose-t2d-microvascular-autophagy-registry",
+      "file_path": "data/studies/trehalose-t2d-microvascular-autophagy-registry.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-coverage-repair-2026-06-11/trehalose-t2d-microvascular-autophagy-registry.json",
+      "summary": "Add the trehalose T2D microvascular autophagy registry study.",
+      "rationale": "Represent the short mechanistic trial and autophagic-flux endpoint without overstating healthy-aging relevance."
+    },
+    {
+      "change_id": "create-finding-trehalose-t2d-autophagic-flux-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "trehalose-t2d-autophagic-flux-recruiting-no-results",
+      "file_path": "data/findings/trehalose-t2d-autophagic-flux-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-coverage-repair-2026-06-11/trehalose-t2d-autophagic-flux-recruiting-no-results.json",
+      "summary": "Add the trehalose recruiting no-results finding.",
+      "rationale": "Expose the direct autophagic-flux watch item and its short, disease-context limitations.",
+      "uncertainty_flags": [
+        "recruiting",
+        "no-posted-results",
+        "short-duration",
+        "diabetes-context"
+      ]
+    },
+    {
+      "change_id": "create-source-pmid-42086115",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-42086115",
+      "file_path": "data/sources/pmid-42086115.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-coverage-repair-2026-06-11/pmid-42086115.json",
+      "summary": "Add the 2026 polyamine/autophagy muscle-aging review source.",
+      "rationale": "Repair direct review-triangulation coverage for spermidine/polyamine autophagy and muscle-aging mechanism."
+    },
+    {
+      "change_id": "create-study-polyamine-autophagy-muscle-aging-review",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "polyamine-autophagy-muscle-aging-review",
+      "file_path": "data/studies/polyamine-autophagy-muscle-aging-review.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-coverage-repair-2026-06-11/polyamine-autophagy-muscle-aging-review.json",
+      "summary": "Add the review-level study record.",
+      "rationale": "Represent the review as mechanism and taxonomy context rather than result-bearing human efficacy evidence."
+    },
+    {
+      "change_id": "create-finding-polyamine-autophagy-muscle-aging-review-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "polyamine-autophagy-muscle-aging-review-boundary",
+      "file_path": "data/findings/polyamine-autophagy-muscle-aging-review-boundary.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-coverage-repair-2026-06-11/polyamine-autophagy-muscle-aging-review-boundary.json",
+      "summary": "Add the polyamine/autophagy review boundary finding.",
+      "rationale": "Use the review to clarify mechanism and taxonomy without upgrading the public stage.",
+      "uncertainty_flags": [
+        "review-level",
+        "mechanistic-context",
+        "no-new-primary-result"
+      ]
+    },
+    {
+      "change_id": "update-outlook-track-autophagy-induction",
+      "change_type": "update_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-autophagy-induction-outlook",
+      "file_path": "data/outlooks/track-autophagy-induction-outlook.json",
+      "staged_file_path": "data/staged-records/autophagy-induction-coverage-repair-2026-06-11/track-autophagy-induction-outlook.json",
+      "summary": "Refresh the Autophagy Induction outlook support map with registry watch and review-boundary context.",
+      "rationale": "The public outlook should expose the repaired registry landscape and taxonomy boundary while keeping evidence stage, momentum, and confidence conservative.",
+      "uncertainty_flags": [
+        "stage-unchanged",
+        "momentum-still-mixed",
+        "no-results-registry-context",
+        "taxonomy-boundary"
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "autophagy-induction",
+      "note": "Add no-results registry watch context and a direct polyamine/autophagy review boundary while preserving human_biomarker_signal, mixed momentum, and low confidence because the repair does not add durable human functional benefit.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast",
+    "taxonomy_mapping",
+    "safety_limitations"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-11-autophagy-induction-coverage-repair.json",
+  "next_actions": [
+    "Run source-fidelity, interpretation, taxonomy, and safety review before publishing the staged coverage-repair bundle.",
+    "If approved, publish the staged records and return Autophagy Induction to ordinary surveillance with watch items for posted registry results and status changes."
+  ],
+  "tags": [
+    "coverage-repair",
+    "autophagy-induction",
+    "trial-registry",
+    "no-results",
+    "taxonomy-boundary"
+  ]
+}

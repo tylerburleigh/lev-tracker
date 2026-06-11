@@ -5,21 +5,21 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 
 ## Summary
 
-- Registry-linked interventional studies: 4
-- With `trial_details`: 4
+- Registry-linked interventional studies: 5
+- With `trial_details`: 5
 - Missing `trial_details`: 0
 - Completed or past-completion records with no posted results: 0
 - Registry checks missing or stale: 4
 - Open watchlist records with missing or stale registry checks: 0
-- Posted results recorded locally: 4
+- Posted results recorded locally: 5
 
 ### Result Status
 
-- posted results: 4
+- posted results: 5
 
 ### Trial Status
 
-- completed: 4
+- completed: 5
 
 ## Field-Review Watchlist
 

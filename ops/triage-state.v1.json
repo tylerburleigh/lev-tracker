@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-11T10:41:39.693Z",
+  "generated_at": "2026-06-11T10:59:21.838Z",
   "source_state": {
     "research_coverage_status_updated_at": "2026-06-11T10:25:15.890Z",
     "research_priority_queue_updated_at": "2026-06-11T10:25:15.890Z",
-    "active_candidate_bundle_count": 0,
+    "active_candidate_bundle_count": 1,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
     "surveillance_recent_queue_count": 37,
@@ -33,9 +33,9 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-repair-autophagy-induction",
-    "top_mode": "coverage_repair",
-    "active_editorial_count": 0,
+    "top_work_item_id": "editorial_review-autophagy-induction-coverage-repair-2026-06-11",
+    "top_mode": "editorial_review",
+    "active_editorial_count": 1,
     "ready_research_count": 1,
     "data_hardening_count": 0,
     "notes": [
@@ -46,6 +46,40 @@
   "work_items": [
     {
       "rank": 1,
+      "item_id": "editorial_review-autophagy-induction-coverage-repair-2026-06-11",
+      "mode": "editorial_review",
+      "domain": "editorial",
+      "priority_tier": "now",
+      "status": "ready",
+      "title": "Review active staged update autophagy-induction-coverage-repair-2026-06-11",
+      "rationale": "Staged update autophagy-induction-coverage-repair-2026-06-11 is submitted, so editorial work takes precedence over new research.",
+      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
+      "candidate_bundle_id": "autophagy-induction-coverage-repair-2026-06-11",
+      "runbook_path": "docs/admin-review.md",
+      "command": "npm run research:bundle -- validate --bundle autophagy-induction-coverage-repair-2026-06-11",
+      "source_paths": [
+        "data/candidate-bundles",
+        "docs/admin-review.md"
+      ],
+      "references": [
+        {
+          "record_type": "candidate_bundle",
+          "record_id": "autophagy-induction-coverage-repair-2026-06-11"
+        }
+      ],
+      "signals": [
+        {
+          "name": "lifecycle_status",
+          "value": "submitted"
+        },
+        {
+          "name": "proposed_change_count",
+          "value": 19
+        }
+      ]
+    },
+    {
+      "rank": 2,
       "item_id": "coverage-repair-autophagy-induction",
       "mode": "coverage_repair",
       "domain": "research",
@@ -81,7 +115,7 @@
       ]
     },
     {
-      "rank": 2,
+      "rank": 3,
       "item_id": "coverage-assessment-backfill-immune-rejuvenation",
       "mode": "coverage_assessment_backfill",
       "domain": "research",

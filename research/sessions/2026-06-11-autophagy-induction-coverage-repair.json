@@ -1,0 +1,228 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-11-autophagy-induction-coverage-repair",
+  "name": "Autophagy Induction Coverage Repair",
+  "mode": "coverage_repair",
+  "started_at": "2026-06-11T10:25:00Z",
+  "completed_at": "2026-06-11T10:55:00Z",
+  "scope": {
+    "question": "Which source-completeness gaps for Autophagy Induction need repair before ordinary surveillance resumes, and do active/no-results registries or recent reviews change the public read?",
+    "hallmark_ids": [
+      "disabled_macroautophagy"
+    ],
+    "track_ids": [
+      "autophagy-induction"
+    ],
+    "intervention_ids": [
+      "spermidine",
+      "fasting-mimicking-diet",
+      "trehalose"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "autophagy-induction-coverage-repair-2026-06-11",
+  "summary": "Coverage repair staged source, study, finding, and outlook records for the high-priority Autophagy Induction gaps identified after June 11 surveillance. The repair adds completed no-results KH-1 autophagy registry context, recruiting spermidine MCI sleep/autophagy context, active-not-recruiting spermidine elderly coronary artery disease context, stale unknown-status fasting-mimicking diet immunosenescence/frailty context, recruiting trehalose autophagic-flux context, and a direct 2026 polyamine/autophagy muscle-aging review boundary. The staged outlook keeps evidence_stage human_biomarker_signal, momentum mixed, and confidence low.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "outlook_refresh",
+    "public_update_needed": true,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The repair materially improves registry normalization, review triangulation, and taxonomy-boundary coverage, but it does not add posted results that would change stage, momentum, confidence, or the core interpretation."
+  },
+  "search_log": [
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "NCT07383311, NCT06186102, NCT07255300, NCT07354620, NCT06445569, NCT04928963, and NCT05593549 direct registry checks",
+      "checked_at": "2026-06-11T10:55:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "Confirmed current registry status, dates, endpoint scope, enrollment, and no-results status for the flagged Autophagy Induction coverage gaps. NCT06445569 is completed with no posted results; NCT07383311 and NCT05593549 are recruiting with no posted results; NCT06186102 and NCT07354620 are active not recruiting with no posted results; NCT04928963 is unknown-status and stale with no posted results; NCT07255300 is recruiting with no posted results."
+    },
+    {
+      "source_name": "PubMed ESummary and EFetch",
+      "query": "PMID 42086115, PMID 42169620, and PMID 42225652",
+      "checked_at": "2026-06-11T10:55:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Confirmed PMID 42086115 as the direct 2026 Mechanisms of Ageing and Development review on polyamines, spermidine, exercise, SMOX, autophagy, skeletal muscle regeneration, and aging. PMID 42169620 was screened as vaccine/microbiota/mTOR context, and PMID 42225652 as broad aging-therapeutics review context; neither added a new primary Autophagy Induction result."
+    },
+    {
+      "source_name": "Local public records and coverage assessment",
+      "query": "Autophagy Induction outlook, source, study, finding, candidate-bundle, and June 11 surveillance coverage artifacts",
+      "checked_at": "2026-06-11T10:55:00Z",
+      "summary": "Compared the current public outlook and surveillance assessment against staged candidates. The repair prioritized registries and the direct polyamine/autophagy review that improve coverage without overloading the public map with single-arm, rapamycin/FMD combination, or broad review records."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT06445569",
+      "study_id": "kh1-autophagy-prediabetes-registry",
+      "source_id": "nct-06445569",
+      "registry_url": "https://clinicaltrials.gov/study/NCT06445569",
+      "checked_at": "2026-06-11T10:55:00Z",
+      "current_registry_status": "completed",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2023-06-08",
+      "study_completion_date": "2023-06-08",
+      "completion_date_kind": "actual",
+      "results_changed": false,
+      "materiality": "new_trial",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Staged as completed no-results trial-watch context because the trial directly names autophagy stimulation and includes autophagy endpoints."
+    },
+    {
+      "registry_id": "NCT07383311",
+      "study_id": "spermidine-mci-sleep-autophagy-registry",
+      "source_id": "nct-07383311",
+      "registry_url": "https://clinicaltrials.gov/study/NCT07383311",
+      "checked_at": "2026-06-11T10:55:00Z",
+      "current_registry_status": "recruiting",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2028-12-01",
+      "study_completion_date": "2029-05-01",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "new_trial",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Staged as recruiting no-results trial-watch context because it directly tests spermidine and includes polyamine and eIF5A hypusination endpoints."
+    },
+    {
+      "registry_id": "NCT06186102",
+      "study_id": "spermidine-coronary-artery-disease-older-adults-registry",
+      "source_id": "nct-06186102",
+      "registry_url": "https://clinicaltrials.gov/study/NCT06186102",
+      "checked_at": "2026-06-11T10:55:00Z",
+      "current_registry_status": "active",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2026-07-01",
+      "study_completion_date": "2027-01-01",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "new_trial",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Staged as active no-results trial-watch context because the large older-patient spermidine phase 2 trial includes autophagy, polyamine, physical-performance, cognition, and cardiovascular endpoints."
+    },
+    {
+      "registry_id": "NCT04928963",
+      "study_id": "fmd-immunosenescence-prefrail-elderly-registry",
+      "source_id": "nct-04928963",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04928963",
+      "checked_at": "2026-06-11T10:55:00Z",
+      "current_registry_status": "unknown",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2022-11-01",
+      "study_completion_date": "2022-12-01",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "new_trial",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Staged as stale unknown-status no-results trial-watch context because it is an elderly FMD immunosenescence, flu-vaccine response, and frailty-prevention registry at the autophagy/immune boundary."
+    },
+    {
+      "registry_id": "NCT05593549",
+      "study_id": "trehalose-t2d-microvascular-autophagy-registry",
+      "source_id": "nct-05593549",
+      "registry_url": "https://clinicaltrials.gov/study/NCT05593549",
+      "checked_at": "2026-06-11T10:55:00Z",
+      "current_registry_status": "recruiting",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2028-12-31",
+      "study_completion_date": "2029-12-31",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "new_trial",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Staged as recruiting no-results mechanistic context because trehalose is tested with autophagic-flux protein expression and vascular endpoints in type 2 diabetes and healthy-aging context."
+    },
+    {
+      "registry_id": "NCT07255300",
+      "registry_url": "https://clinicaltrials.gov/study/NCT07255300",
+      "checked_at": "2026-06-11T10:55:00Z",
+      "current_registry_status": "recruiting",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2027-05-02",
+      "study_completion_date": "2027-06-02",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "wrong_scope",
+      "public_action": "none",
+      "summary": "Excluded from staging because it is a single-group FMD follow-up focused on body fat and risk-factor maintenance rather than interpretable autophagy induction."
+    },
+    {
+      "registry_id": "NCT07354620",
+      "registry_url": "https://clinicaltrials.gov/study/NCT07354620",
+      "checked_at": "2026-06-11T10:55:00Z",
+      "current_registry_status": "active",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2026-02-01",
+      "study_completion_date": "2026-05-01",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "wrong_scope",
+      "public_action": "none",
+      "summary": "Excluded from staging because the rapamycin and ProLon reverse-aging pilot is primarily nutrient-sensing, mTOR, combination, and methylation-age context rather than clean Autophagy Induction evidence."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "NCT07255300",
+      "title": "Follow up Study of Varapodio Trial: Effect of Longevity and Fasting Mimicking Diet on Risk Factors Age Correlated and Biomarkers of Aging",
+      "url": "https://clinicaltrials.gov/study/NCT07255300",
+      "decision": "context_only",
+      "reason": "Recruiting no-results single-group FMD follow-up with body-fat and risk-factor maintenance endpoints. It is useful FMD surveillance context but not direct enough to stage as Autophagy Induction evidence."
+    },
+    {
+      "reference": "NCT07354620",
+      "title": "A Pilot Study on Reverse Aging (The REVERSE Study)",
+      "url": "https://clinicaltrials.gov/study/NCT07354620",
+      "decision": "wrong_scope",
+      "reason": "Active-not-recruiting no-results rapamycin plus ProLon methylation-age pilot. It primarily belongs to nutrient-sensing, mTOR modulation, combination-intervention, and biological-age-marker boundary coverage."
+    },
+    {
+      "reference": "PMID 42169620",
+      "title": "Immunosenescence and Vaccine Efficacy in Aging: Dynamic Interplay of Gut Microbiota and mTOR Signaling Pathways",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42169620/",
+      "decision": "context_only",
+      "reason": "Review-level vaccine, microbiota, and mTOR context with autophagy mentioned through mTOR suppression. It does not add a new primary autophagy-induction result beyond the staged spermidine vaccine pilot."
+    },
+    {
+      "reference": "PMID 42225652",
+      "title": "Insights into the therapeutic strategies for aging and aging-associated diseases",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42225652/",
+      "decision": "context_only",
+      "reason": "Broad aging-therapeutics review that mentions metabolic interventions and autophagy. It is too broad to stage as a public Autophagy Induction evidence record."
+    }
+  ],
+  "source_ids": [
+    "nct-06445569",
+    "nct-07383311",
+    "nct-06186102",
+    "nct-04928963",
+    "nct-05593549",
+    "pmid-42086115"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT06445569",
+    "https://clinicaltrials.gov/study/NCT07383311",
+    "https://clinicaltrials.gov/study/NCT06186102",
+    "https://clinicaltrials.gov/study/NCT04928963",
+    "https://clinicaltrials.gov/study/NCT05593549",
+    "https://clinicaltrials.gov/study/NCT07255300",
+    "https://clinicaltrials.gov/study/NCT07354620",
+    "https://pubmed.ncbi.nlm.nih.gov/42086115/",
+    "https://pubmed.ncbi.nlm.nih.gov/42169620/",
+    "https://pubmed.ncbi.nlm.nih.gov/42225652/"
+  ],
+  "notes": [
+    "The staged repair intentionally keeps the public evidence stage at human_biomarker_signal.",
+    "No-results registry entries are represented as regulatory/program-update findings with inconclusive direction.",
+    "Month-only ClinicalTrials.gov completion dates were normalized to the first day of the month in structured date fields and preserved as month-level timing in text notes.",
+    "KH-1 was staged without creating a new intervention record because the repair goal is source-completeness and the product is not otherwise normalized in the intervention map."
+  ],
+  "next_actions": [
+    "Run source-fidelity, interpretation/forecast, taxonomy-mapping, and safety-limitations review for the staged repair bundle.",
+    "If approved and published, return Autophagy Induction to ordinary surveillance with watch items for KH-1 results, active spermidine registries, FMD unknown-status updates, and trehalose autophagic-flux results."
+  ]
+}
