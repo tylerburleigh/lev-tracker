@@ -3,17 +3,19 @@
   "record_type": "finding",
   "id": "topical-rapamycin-reduced-human-skin-p16",
   "name": "Topical rapamycin reduced human skin p16 senescence marker",
-  "summary": "The main direct human biomarker signal for the senomorphics baseline is local skin p16 reduction after topical rapamycin.",
+  "summary": "Topical rapamycin provides a direct but local human biomarker signal for rapamycin-class biology; it should support Rapalogs only as boundary-limited skin evidence, not systemic rejuvenation.",
   "source_id": "pmid-31761958",
   "study_id": "topical-rapamycin-human-skin-aging",
   "intervention_ids": [
     "sirolimus"
   ],
   "track_ids": [
-    "senomorphics"
+    "senomorphics",
+    "rapalogs"
   ],
   "hallmark_ids": [
-    "cellular_senescence"
+    "cellular_senescence",
+    "deregulated_nutrient_sensing"
   ],
   "endpoint_category": "biomarker",
   "direction": "positive",
@@ -32,8 +34,10 @@
     "human",
     "sirolimus",
     "rapamycin",
+    "rapalogs",
     "skin",
     "p16",
-    "biomarker"
+    "biomarker",
+    "coverage-repair"
   ]
 }

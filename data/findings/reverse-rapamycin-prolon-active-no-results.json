@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "reverse-rapamycin-prolon-active-no-results",
+  "name": "REVERSE rapamycin and ProLon trial is active with no posted results",
+  "summary": "REVERSE is direct Rapalogs trial-watch context but cannot support efficacy because it is active not recruiting with no posted results and combines rapamycin with fasting-mimicking diet context.",
+  "source_id": "nct-07354620",
+  "study_id": "reverse-rapamycin-prolon-registry",
+  "intervention_ids": [
+    "sirolimus",
+    "fasting-mimicking-diet"
+  ],
+  "track_ids": [
+    "rapalogs",
+    "autophagy-induction"
+  ],
+  "hallmark_ids": [
+    "deregulated_nutrient_sensing",
+    "disabled_macroautophagy"
+  ],
+  "endpoint_category": "regulatory",
+  "direction": "inconclusive",
+  "evidence_tier": "regulatory_or_program_update",
+  "confidence": "low",
+  "statement": "ClinicalTrials.gov lists NCT07354620 as an active-not-recruiting 52-participant early phase 1 aging-prevention pilot testing weekly rapamycin and ProLon fasting-mimicking diet arms, with OMICm methylation-age, cognition, insulin-resistance, and safety endpoints and no posted results in the June 11, 2026 API view.",
+  "population_or_model": "Adults aged 50 to 80 years in an aging-prevention registry",
+  "time_horizon": "Twenty-four-week methylation and cognition endpoints with twenty-eight-week safety follow-up",
+  "quantitative_note": "Actual enrollment is 52; estimated primary completion was 2026-02-01; estimated study completion was 2026-05-01; results were not posted.",
+  "caveats": [
+    "No-results registry status is not evidence of benefit or harm.",
+    "The ProLon fasting-mimicking diet arm and combination context make rapamycin-specific attribution difficult.",
+    "Methylation-age movement would remain a biomarker signal unless paired with durable functional outcomes."
+  ],
+  "tags": [
+    "human",
+    "rapamycin",
+    "methylation-age",
+    "trial-registry",
+    "active-not-recruiting",
+    "no-results",
+    "taxonomy-boundary",
+    "coverage-repair"
+  ]
+}

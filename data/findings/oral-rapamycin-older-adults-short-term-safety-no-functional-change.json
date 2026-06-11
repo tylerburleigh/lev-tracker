@@ -3,17 +3,19 @@
   "record_type": "finding",
   "id": "oral-rapamycin-older-adults-short-term-safety-no-functional-change",
   "name": "Short-term oral rapamycin in older adults was feasible but did not improve function",
-  "summary": "This older-adult rapamycin trial constrains systemic senomorphic extrapolation because it was short, small, and not a senescence-endpoint efficacy trial.",
+  "summary": "This older-adult rapamycin trial constrains systemic rapalog and senomorphic extrapolation because it was short, small, and did not improve measured cognitive, physical-performance, self-perceived health, or most immune parameters.",
   "source_id": "pmid-29408453",
   "study_id": "oral-rapamycin-older-adult-feasibility",
   "intervention_ids": [
     "sirolimus"
   ],
   "track_ids": [
-    "senomorphics"
+    "senomorphics",
+    "rapalogs"
   ],
   "hallmark_ids": [
-    "cellular_senescence"
+    "cellular_senescence",
+    "deregulated_nutrient_sensing"
   ],
   "endpoint_category": "safety",
   "direction": "mixed",
@@ -32,7 +34,9 @@
     "human",
     "sirolimus",
     "rapamycin",
+    "rapalogs",
     "safety",
-    "functional-boundary"
+    "functional-boundary",
+    "coverage-repair"
   ]
 }

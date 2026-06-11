@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-11T17:30:03.105Z",
+  "generated_at": "2026-06-11T18:24:44.509Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-11T17:30:02.990Z",
-    "research_priority_queue_updated_at": "2026-06-11T17:30:02.990Z",
-    "active_candidate_bundle_count": 1,
+    "research_coverage_status_updated_at": "2026-06-11T18:24:44.393Z",
+    "research_priority_queue_updated_at": "2026-06-11T18:24:44.393Z",
+    "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
-    "surveillance_recent_queue_count": 37,
+    "surveillance_recent_queue_count": 38,
     "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 18,
     "unnormalized_intervention_id_count": 0,
@@ -33,53 +33,19 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "editorial_review-rapalogs-coverage-repair-2026-06-11",
-    "top_mode": "editorial_review",
-    "active_editorial_count": 1,
+    "top_work_item_id": "coverage-assessment-backfill-senolytics",
+    "top_mode": "coverage_assessment_backfill",
+    "active_editorial_count": 0,
     "ready_research_count": 0,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
-      "37 surveillance track(s) are hidden from ordinary rotation until their cooldown expires."
+      "38 surveillance track(s) are hidden from ordinary rotation until their cooldown expires."
     ]
   },
   "work_items": [
     {
       "rank": 1,
-      "item_id": "editorial_review-rapalogs-coverage-repair-2026-06-11",
-      "mode": "editorial_review",
-      "domain": "editorial",
-      "priority_tier": "now",
-      "status": "ready",
-      "title": "Review active staged update rapalogs-coverage-repair-2026-06-11",
-      "rationale": "Staged update rapalogs-coverage-repair-2026-06-11 is submitted, so editorial work takes precedence over new research.",
-      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
-      "candidate_bundle_id": "rapalogs-coverage-repair-2026-06-11",
-      "runbook_path": "docs/admin-review.md",
-      "command": "npm run research:bundle -- validate --bundle rapalogs-coverage-repair-2026-06-11",
-      "source_paths": [
-        "data/candidate-bundles",
-        "docs/admin-review.md"
-      ],
-      "references": [
-        {
-          "record_type": "candidate_bundle",
-          "record_id": "rapalogs-coverage-repair-2026-06-11"
-        }
-      ],
-      "signals": [
-        {
-          "name": "lifecycle_status",
-          "value": "submitted"
-        },
-        {
-          "name": "proposed_change_count",
-          "value": 33
-        }
-      ]
-    },
-    {
-      "rank": 2,
       "item_id": "coverage-assessment-backfill-senolytics",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
@@ -113,7 +79,7 @@
         },
         {
           "name": "generated_surveillance_queue_rank",
-          "value": 2
+          "value": 3
         },
         {
           "name": "track_next_mode",

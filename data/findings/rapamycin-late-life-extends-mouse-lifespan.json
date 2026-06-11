@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "rapamycin-late-life-extends-mouse-lifespan",
+  "name": "Late-life rapamycin extended lifespan in genetically heterogeneous mice",
+  "summary": "The Harrison 2009 ITP paper is the core mammalian lifespan anchor for Rapalogs: late-life dietary rapamycin extended mouse lifespan across sites, but remains animal evidence rather than proof of human longevity benefit.",
+  "source_id": "pmid-19587680",
+  "study_id": "harrison-rapamycin-late-life-mouse-lifespan",
+  "intervention_ids": [
+    "sirolimus"
+  ],
+  "track_ids": [
+    "rapalogs"
+  ],
+  "hallmark_ids": [
+    "deregulated_nutrient_sensing"
+  ],
+  "endpoint_category": "lifespan",
+  "direction": "positive",
+  "evidence_tier": "mortality_or_lifespan",
+  "confidence": "moderate",
+  "statement": "Dietary rapamycin begun at 600 days of age extended median and maximal lifespan in both male and female genetically heterogeneous mice, with age at 90% mortality increased by 14% in females and 9% in males.",
+  "population_or_model": "Genetically heterogeneous mice treated at three independent ITP sites",
+  "time_horizon": "Late-life treatment beginning at 600 days with lifespan follow-up",
+  "quantitative_note": "The abstract reports age-at-90%-mortality increases of 14% in females and 9% in males, plus increased survival in a separate 270-day-start cohort.",
+  "caveats": [
+    "This is animal lifespan evidence, not human longevity evidence.",
+    "Mouse lifespan benefit does not settle human dose, schedule, safety, or endpoint relevance.",
+    "The authors noted lifespan could reflect postponed cancer, retarded aging mechanisms, or both."
+  ],
+  "tags": [
+    "animal",
+    "mouse",
+    "rapamycin",
+    "lifespan",
+    "seminal-anchor",
+    "coverage-repair"
+  ]
+}

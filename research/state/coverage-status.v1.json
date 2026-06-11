@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-11T17:30:02.990Z",
+  "updated_at": "2026-06-11T18:24:44.393Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One baseline-review, field-change, or coverage-repair run should cover one track unless the user explicitly narrows further.",
@@ -135,7 +135,7 @@
       "last_surveillance_outcome": "candidate_bundle_submitted",
       "surveillance_freshness_status": "recent",
       "surveillance_due_at": "2026-06-24T17:51:39.000Z",
-      "surveillance_age_days": 0,
+      "surveillance_age_days": 1,
       "last_candidate_bundle_id": "dna-repair-enhancement-coverage-repair-2026-06-10",
       "last_candidate_bundle_status": "published",
       "last_publication_event_id": "publish-dna-repair-enhancement-coverage-repair-2026-06-10-2026-06-10t19-38-52-918z",
@@ -523,7 +523,7 @@
       "name": "Rapalogs",
       "coverage_status": "baseline",
       "next_mode": "surveillance",
-      "queue_state": "active_review",
+      "queue_state": "ready",
       "last_session_id": "2026-06-11-rapalogs-coverage-repair",
       "last_session_at": "2026-06-11T13:40:34Z",
       "last_session_mode": "coverage_repair",
@@ -536,9 +536,9 @@
       "surveillance_due_at": "2026-06-25T13:40:34.000Z",
       "surveillance_age_days": 0,
       "last_candidate_bundle_id": "rapalogs-coverage-repair-2026-06-11",
-      "last_candidate_bundle_status": "submitted",
-      "last_publication_event_id": "publish-rapalogs-update-2026-05-30",
-      "last_published_at": "2026-05-30T17:15:00Z",
+      "last_candidate_bundle_status": "published",
+      "last_publication_event_id": "publish-rapalogs-coverage-repair-2026-06-11-2026-06-11t18-24-35-790z",
+      "last_published_at": "2026-06-11T18:24:35.790Z",
       "last_coverage_assessment_id": "rapalogs-coverage-repair-2026-06-11",
       "last_coverage_assessed_at": "2026-06-11T13:40:34Z",
       "coverage_verdict": "adequate",
@@ -547,7 +547,7 @@
       "next_coverage_action": "Review the staged Rapalogs coverage-repair bundle through source-fidelity, interpretation/forecast, taxonomy-mapping, and safety-limitations lanes. If approved and published, return Rapalogs to ordinary surveillance with explicit watch on active and completed no-results registries plus PEARL replication.",
       "last_coverage_recommended_mode": "surveillance",
       "default_research_question": "What changed for Rapalogs since the last meaningful review or publication, and does any change justify a public update?",
-      "notes": "Staged update rapalogs-coverage-repair-2026-06-11 is still submitted."
+      "notes": "Latest public update: publish-rapalogs-coverage-repair-2026-06-11-2026-06-11t18-24-35-790z."
     },
     {
       "track_id": "ampk-and-metabolic-modulators",
