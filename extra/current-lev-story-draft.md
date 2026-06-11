@@ -2,7 +2,7 @@
 
 Status: current
 Style: plain
-Generated for review: 2026-06-10
+Generated for review: 2026-06-11
 
 ## Homepage Story
 
@@ -16,7 +16,7 @@ The field is in early human testing. Some tracks now have early biomarker result
 
 ## What Changed Recently
 
-The May field review did not find a result that changed the LEV outlook. The June 9 NAD/redox update and June 10 stem-cell rejuvenation and mitophagy updates made individual tracks easier to judge by adding no-results registries, safety context, review context, and clearer evidence boundaries, but none changed the larger proof gap: repeated human evidence that health or function improves for longer.
+The May field review did not find a result that changed the LEV outlook. The June 9 NAD/redox, June 10 stem-cell rejuvenation and mitophagy, and June 11 chaperone and heat-shock updates made individual tracks easier to judge by adding no-results registries, safety context, review context, open-label NPC context, label boundaries, and clearer evidence boundaries, but none changed the larger proof gap: repeated human evidence that health or function improves for longer.
 
 ## Review Reasons
 
@@ -31,6 +31,7 @@ The May field review did not find a result that changed the LEV outlook. The Jun
 - NAD/redox context widened without changing the read: It makes the track easier to judge, but it does not make LEV look closer because the new records do not show repeated, long-lasting human function or clinical benefit.
 - Stem-cell rejuvenation gained clearer boundaries: It improves the map of what to watch, but it does not make LEV look closer because the new records do not show treated-human benefit or resolved safety.
 - Mitophagy gained safety and registry context: It makes the mitophagy story easier to judge, but it does not make LEV look closer because long-lasting older-adult function, frailty benefit, and long-term safety remain unresolved.
+- Chaperone support gained narrower NPC context: It makes the narrow NPC signal easier to judge, but it does not make LEV look closer because broad aging evidence, independent replication, and long-term preventive-use safety remain unresolved.
 
 ## Before / Now / Next
 
