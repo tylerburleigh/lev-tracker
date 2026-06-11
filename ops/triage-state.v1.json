@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-11T18:24:44.509Z",
+  "generated_at": "2026-06-11T22:13:17.247Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-11T18:24:44.393Z",
-    "research_priority_queue_updated_at": "2026-06-11T18:24:44.393Z",
+    "research_coverage_status_updated_at": "2026-06-11T22:13:17.127Z",
+    "research_priority_queue_updated_at": "2026-06-11T22:13:17.127Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
-    "surveillance_recent_queue_count": 38,
-    "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 18,
+    "surveillance_recent_queue_count": 37,
+    "coverage_repair_queue_count": 1,
+    "coverage_assessment_backlog_count": 17,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
   },
@@ -33,27 +33,27 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-assessment-backfill-senolytics",
-    "top_mode": "coverage_assessment_backfill",
+    "top_work_item_id": "coverage-repair-senolytics",
+    "top_mode": "coverage_repair",
     "active_editorial_count": 0,
-    "ready_research_count": 0,
+    "ready_research_count": 1,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
-      "38 surveillance track(s) are hidden from ordinary rotation until their cooldown expires."
+      "37 surveillance track(s) are hidden from ordinary rotation until their cooldown expires."
     ]
   },
   "work_items": [
     {
       "rank": 1,
-      "item_id": "coverage-assessment-backfill-senolytics",
-      "mode": "coverage_assessment_backfill",
+      "item_id": "coverage-repair-senolytics",
+      "mode": "coverage_repair",
       "domain": "research",
-      "priority_tier": "soon",
+      "priority_tier": "now",
       "status": "ready",
-      "title": "Backfill coverage assessment for Senolytics",
-      "rationale": "18 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
-      "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
+      "title": "Repair coverage for Senolytics",
+      "rationale": "Run a bounded coverage-repair pass for Senolytics before ordinary surveillance. The repair should assemble direct human, animal, mechanistic, limiting, safety, registry-watch, review, seminal-anchor, and taxonomy-boundary records sufficient to audit the moderate human_biomarker_signal public outlook and decide whether confidence, support maps, or public wording need adjustment.",
+      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
       "track_id": "senolytics",
       "hallmark_id": "cellular_senescence",
       "references": [
@@ -70,16 +70,52 @@
       "source_paths": [
         "research/backlog/track-priority.v1.json",
         "research/state/coverage-status.v1.json",
+        "research/coverage-assessments",
+        "docs/coverage-assessment.md"
+      ],
+      "signals": [
+        {
+          "name": "generated_queue_rank",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "item_id": "coverage-assessment-backfill-partial-reprogramming",
+      "mode": "coverage_assessment_backfill",
+      "domain": "research",
+      "priority_tier": "soon",
+      "status": "ready",
+      "title": "Backfill coverage assessment for Partial Reprogramming",
+      "rationale": "17 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
+      "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
+      "track_id": "partial-reprogramming",
+      "hallmark_id": "epigenetic_alterations",
+      "references": [
+        {
+          "record_type": "track",
+          "record_id": "partial-reprogramming"
+        },
+        {
+          "record_type": "hallmark",
+          "record_id": "epigenetic_alterations"
+        }
+      ],
+      "runbook_path": "docs/coverage-assessment.md",
+      "source_paths": [
+        "research/backlog/track-priority.v1.json",
+        "research/state/coverage-status.v1.json",
         "docs/coverage-assessment.md"
       ],
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 18
+          "value": 17
         },
         {
           "name": "generated_surveillance_queue_rank",
-          "value": 3
+          "value": 5
         },
         {
           "name": "track_next_mode",

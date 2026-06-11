@@ -1,0 +1,194 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "senolytics-coverage-2026-06-11",
+  "name": "Senolytics Coverage Assessment for June 11, 2026",
+  "short_name": "Senolytics coverage",
+  "track_id": "senolytics",
+  "hallmark_id": "cellular_senescence",
+  "assessment_type": "manual",
+  "assessed_at": "2026-06-11T22:11:40Z",
+  "assessment_window": {
+    "from": "2026-05-25T16:00:00Z",
+    "to": "2026-06-11T22:11:40Z",
+    "basis": "Backfill assessment of the published Senolytics outlook, May 25 senescence watch publication, May 30 no-op Senolytics surveillance session, and current local source/study/finding map; no new external source search was run for this assessment."
+  },
+  "coverage_verdict": "thin",
+  "summary": "Coverage is thin for the current moderate-confidence human_biomarker_signal Senolytics public outlook. The published outlook and hallmark update correctly warn that human functional outcomes remain narrower than public enthusiasm suggests, and the latest surveillance session found no material public delta. However, the repository does not yet contain a Senolytics-specific source, study, finding, evidence-review, registry-watch, recent-review, or seminal-anchor map that explains which human biomarker evidence supports the public stage. The only directly visible local source-level senolytic record is an adjacent dasatinib-plus-quercetin aged-mouse endothelial biomarker finding that is currently mapped to telomere protection and capping. A bounded coverage-repair pass should assemble direct small-molecule and biologic senolytic records, limiting evidence, safety boundaries, and active-trial watch context before ordinary surveillance resumes.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-05-30-senolytics-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "senescence-watch-update-2026-05-25"
+    ],
+    "publication_event_ids": [
+      "publish-senescence-watch-update-2026-05-25"
+    ],
+    "outlook_ids": [
+      "track-senolytics-outlook",
+      "hallmark-cellular-senescence-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "thin",
+      "rationale": "The public outlook is set to human_biomarker_signal with moderate confidence, but the live Senolytics track has no supporting_finding_ids, supporting_source_ids, or supporting_evidence map, and no direct Senolytics human source, study, or finding records are tagged to the track. The May 25 and May 30 artifacts preserve endpoint discipline but do not enumerate the human biomarker trials behind the stage.",
+      "gap_note": "Coverage repair should identify and stage or explicitly exclude direct D+Q, fisetin, BCL2-family, and other senolytic human biomarker or trial records before this public stage is treated as source-complete."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "not_checked",
+      "rationale": "No assessed artifact records observational, natural-experiment, pharmacoepidemiology, disease-cohort, or senescent-cell-burden evidence selection for Senolytics.",
+      "gap_note": "A repair pass should decide whether observational senescent-cell burden or off-label exposure evidence belongs in public limitations or should remain outside the intervention-focused track claim."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "thin",
+      "rationale": "The local data include an adjacent aged-mouse dasatinib-plus-quercetin biomarker finding, but it is mapped to telomere protection and capping rather than directly to the Senolytics outlook and it does not establish lifespan, durable healthspan, or human translation.",
+      "source_ids": [
+        "pmid-40109908"
+      ],
+      "finding_ids": [
+        "dq-senolytics-reduced-endothelial-tif-aged-mice"
+      ],
+      "gap_note": "Coverage repair should determine the direct animal anchor set for senolytics, including whether aged-mouse clearance, frailty, tissue-function, and lifespan/healthspan studies are represented or missing."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "thin",
+      "rationale": "Senolytics have a clear intervention thesis in the public outlook and taxonomy, and the D+Q mouse record captures p21, DNA damage, and telomere-dysfunction biomarker movement. The assessed artifacts do not map the core clearance mechanisms, senescent-cell selectivity, apoptosis vulnerabilities, BCL2-family targeting, tissue specificity, or biomarker validation sources for the track.",
+      "source_ids": [
+        "pmid-40109908"
+      ],
+      "finding_ids": [
+        "dq-senolytics-reduced-endothelial-tif-aged-mice"
+      ],
+      "gap_note": "Mechanistic repair should distinguish senolytic clearance from senomorphic SASP modulation, immune-mediated clearance, and adjacent telomere or nutrient-sensing effects."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "thin",
+      "rationale": "The public track and hallmark wording correctly state the key limitation that human functional outcomes are sparse and uneven, and the May 30 session reports no material delta. Source-level null, mixed, underpowered, disease-specific, registry-only, or endpoint-limited human senolytic records are not curated.",
+      "gap_note": "Repair should stage limiting records or explicit exclusions so biomarker and activity signals cannot be overread as durable functional benefit."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "No assessed artifact maps senolytic safety, durability, intermittent dosing, off-target cytotoxicity, thrombocytopenia or marrow risks, wound-repair tradeoffs, beneficial-senescence boundaries, or chronic preventive-use tolerability.",
+      "gap_note": "Safety and durability should be mandatory in repair because selective clearance can be biologically attractive while still carrying tissue-, dose-, and population-specific risks."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "thin",
+      "rationale": "The May 25 bundle describes a contextual trial-watch activity item and the May 30 session mentions trial-watch noise, but the referenced activity item is not present as a live data file and no registry source, study, finding, or explicit-exclusion map is available for Senolytics.",
+      "gap_note": "Repair should rebuild a current direct trial-watch list and separate active, completed-no-results, posted-results, wrong-scope, and adjacent senescence trials."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "not_checked",
+      "rationale": "The assessed artifacts do not record recent-review, meta-analysis, guideline, citation-network, or expert-review triangulation for Senolytics.",
+      "gap_note": "Use recent reviews and citation chasing during repair to identify must-include human, preclinical, limiting, safety, and taxonomy-boundary anchors."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "not_checked",
+      "rationale": "No formal seminal-anchor audit is recorded for direct senolytic clearance evidence. The taxonomy names D+Q, fisetin, and BCL2-family strategies as exemplars, but the public record does not map their source-level anchors.",
+      "gap_note": "Repair should define the minimum historical anchor set for direct senolytic clearance and avoid relying on enthusiasm or taxonomy labels without source records."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "thin",
+      "rationale": "Current neighboring tracks now have richer support maps for senomorphics, immune clearance of senescent cells, rapalog-adjacent senescence markers, and telomere protection, while Senolytics lacks its own map. This makes boundaries between selective clearance, SASP modulation, immune-mediated clearance, telomere-adjacent D+Q findings, and disease-specific oncology or fibrosis uses operationally fragile.",
+      "source_ids": [
+        "pmid-40109908"
+      ],
+      "finding_ids": [
+        "dq-senolytics-reduced-endothelial-tif-aged-mice"
+      ],
+      "gap_note": "Repair should keep direct senolytic clearance distinct from senomorphic and immune-clearance tracks while still recording overlap when sources genuinely support multiple branches."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-40109908"
+  ],
+  "covered_finding_ids": [
+    "dq-senolytics-reduced-endothelial-tif-aged-mice"
+  ],
+  "search_log_summary": "This backfill reviewed only local project artifacts: the published Senolytics track outlook, cellular-senescence hallmark outlook, May 25 senescence watch bundle and publication event, May 30 Senolytics no-op surveillance session, current local source/study/finding records tagged to Senolytics or cellular senescence, and neighboring cellular-senescence track support maps. No PubMed, ClinicalTrials.gov, preprint, citation-network, or web search was run for this assessment.",
+  "source_selection_notes": [
+    "PMID 40109908 and its D+Q finding are listed because they are the only live source-level local record with a direct senolytic intervention tag, but they are currently staged as adjacent telomere-protection evidence rather than a Senolytics support map.",
+    "No dedicated Senolytics evidence reviews were found for the May 25 public update.",
+    "The May 25 publication event references senescence-trial-watch-expansion, but that activity item is not present in the current live data/activity-items collection, so it should be treated as an operational coverage gap rather than evidence.",
+    "The May 30 surveillance session found no public delta and did not record a source-level search log, trial list, or exclusion list.",
+    "This assessment does not change public records; it records the internal coverage gap that should drive the next mode."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "senolytics-support-map-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "human_interventional",
+      "description": "The repository has a moderate human_biomarker_signal public outlook for Senolytics but no curated Senolytics source, study, finding, or support-map record showing which direct human biomarker evidence supports that stage.",
+      "priority": "high",
+      "suggested_action": "Run coverage repair to build source, study, finding, and support-map records for direct human senolytic anchors, or explicitly revise confidence and wording if the source map does not justify the current public read."
+    },
+    {
+      "gap_id": "senolytics-trial-watch-record-missing",
+      "gap_type": "operational_gap",
+      "category": "active_trials_registries",
+      "description": "The May 25 publication event refers to a contextual trial-watch activity item, and the May 30 session mentions trial-watch noise, but no live Senolytics registry or activity record currently captures those checks.",
+      "priority": "high",
+      "suggested_action": "During repair, rebuild the direct Senolytics registry watchlist and restore, replace, or explicitly retire the missing activity context."
+    },
+    {
+      "gap_id": "senolytics-human-functional-durability-gap",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "The public record itself states that human functional outcomes remain narrower than public enthusiasm suggests; no current local evidence map shows durable functional, disease, frailty, multimorbidity, or mortality benefit from senolytic use.",
+      "priority": "high",
+      "suggested_action": "Keep the public stage below human functional benefit unless direct controlled studies report replicated durable function or clinical outcomes with acceptable safety."
+    },
+    {
+      "gap_id": "senolytics-safety-durability-undercovered",
+      "gap_type": "coverage_gap",
+      "category": "safety_durability",
+      "description": "Long-term preventive safety, dosing schedule, tissue selectivity, off-target cytotoxicity, wound-repair tradeoffs, and beneficial-senescence boundaries are not represented in the Senolytics public support map.",
+      "priority": "high",
+      "suggested_action": "Require safety and durability coverage in any Senolytics repair bundle before strengthening confidence, momentum, or LEV-relevant interpretation."
+    },
+    {
+      "gap_id": "senolytics-branch-boundaries-not-mapped",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "Direct senolytics, senomorphics, immune-mediated clearance, telomere-adjacent D+Q findings, rapalog senescence-marker evidence, and disease-specific senescence therapies are now represented unevenly across neighboring tracks, making the Senolytics boundary unclear.",
+      "priority": "medium",
+      "suggested_action": "Define inclusion and exclusion rules during repair so direct senolytic clearance evidence is not conflated with SASP modulation, immune clearance, telomere protection, or unrelated disease contexts."
+    },
+    {
+      "gap_id": "senolytics-review-and-seminal-anchor-audit-missing",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "No recent-review, meta-analysis, citation-network, or seminal-anchor audit is recorded for direct Senolytics despite the track's high public visibility.",
+      "priority": "medium",
+      "suggested_action": "Use recent reviews and citation chasing in coverage repair to identify must-include D+Q, fisetin, BCL2-family, FOXO4, preclinical, human, safety, and limiting-evidence anchors."
+    },
+    {
+      "gap_id": "senolytics-animal-and-limiting-map-incomplete",
+      "gap_type": "coverage_gap",
+      "category": "animal_lifespan_or_healthspan",
+      "description": "The only visible source-level senolytic local record is an adjacent D+Q aged-mouse biomarker finding; direct animal healthspan, frailty, lifespan, tissue-function, and null or mixed evidence has not been audited for this track.",
+      "priority": "medium",
+      "suggested_action": "During repair, separate animal clearance and function anchors from adjacent biomarker-only records and explicitly record limiting or negative results."
+    }
+  ],
+  "next_coverage_action": "Run a bounded coverage-repair pass for Senolytics before ordinary surveillance. The repair should assemble direct human, animal, mechanistic, limiting, safety, registry-watch, review, seminal-anchor, and taxonomy-boundary records sufficient to audit the moderate human_biomarker_signal public outlook and decide whether confidence, support maps, or public wording need adjustment.",
+  "next_recommended_mode": "coverage_repair",
+  "tags": [
+    "coverage-assessment",
+    "manual",
+    "cellular_senescence",
+    "senolytics",
+    "coverage-repair-needed"
+  ]
+}
