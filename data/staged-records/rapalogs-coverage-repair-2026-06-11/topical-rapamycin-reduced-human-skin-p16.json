@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "topical-rapamycin-reduced-human-skin-p16",
+  "name": "Topical rapamycin reduced human skin p16 senescence marker",
+  "summary": "Topical rapamycin provides a direct but local human biomarker signal for rapamycin-class biology; it should support Rapalogs only as boundary-limited skin evidence, not systemic rejuvenation.",
+  "source_id": "pmid-31761958",
+  "study_id": "topical-rapamycin-human-skin-aging",
+  "intervention_ids": [
+    "sirolimus"
+  ],
+  "track_ids": [
+    "senomorphics",
+    "rapalogs"
+  ],
+  "hallmark_ids": [
+    "cellular_senescence",
+    "deregulated_nutrient_sensing"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "positive",
+  "evidence_tier": "human_biomarker",
+  "confidence": "low",
+  "statement": "In an exploratory placebo-controlled human skin trial, topical rapamycin was associated with reduced p16INK4A protein expression, increased collagen VII, and clinical or histologic skin-aging improvements in multiple participants.",
+  "population_or_model": "Adults over 40 with age-related photoaging and dermal volume loss",
+  "time_horizon": "End-of-study topical treatment follow-up in a small dermatology trial",
+  "quantitative_note": "The PubMed abstract reports 36 participants enrolled, 19 discontinued or were lost to follow-up, p16INK4A reduction with P = 0.008, and collagen VII increase with P = 0.0077.",
+  "caveats": [
+    "The trial was exploratory and local to skin, with substantial discontinuation or loss to follow-up.",
+    "p16 reduction is a senescence biomarker signal, not proof of durable systemic rejuvenation.",
+    "Topical rapamycin does not establish the benefit-risk profile of systemic rapalog use for broad aging prevention."
+  ],
+  "tags": [
+    "human",
+    "sirolimus",
+    "rapamycin",
+    "rapalogs",
+    "skin",
+    "p16",
+    "biomarker",
+    "coverage-repair"
+  ]
+}

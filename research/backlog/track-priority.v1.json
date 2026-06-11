@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-11T13:22:46.640Z",
+  "updated_at": "2026-06-11T13:43:59.801Z",
   "notes": [
     "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
@@ -629,17 +629,5 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-25."
     }
   ],
-  "coverage_repair_queue": [
-    {
-      "rank": 1,
-      "phase_id": "coverage-repair",
-      "track_id": "rapalogs",
-      "hallmark_id": "deregulated_nutrient_sensing",
-      "priority_tier": "now",
-      "default_mode": "coverage_repair",
-      "rationale": "Run a bounded coverage-repair pass for Rapalogs before ordinary surveillance. The repair should assemble source, study, finding, support-map, registry, limiting-evidence, safety, recent-review, preclinical-anchor, and taxonomy-boundary records sufficient to audit the moderate human_biomarker_signal public outlook without overstating biomarker, immune, dermatologic, or short-term feasibility signals as durable functional aging benefit.",
-      "default_question": "Which known source-completeness gaps for Rapalogs need repair, and does resolving them change the coverage verdict or public boundaries?",
-      "notes": "Latest coverage assessment: rapalogs-coverage-2026-06-11."
-    }
-  ]
+  "coverage_repair_queue": []
 }

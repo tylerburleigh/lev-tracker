@@ -1,0 +1,307 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "rapalogs-coverage-repair-2026-06-11",
+  "name": "Rapalogs Coverage Repair Assessment for June 11, 2026",
+  "short_name": "Rapalogs coverage repair",
+  "track_id": "rapalogs",
+  "hallmark_id": "deregulated_nutrient_sensing",
+  "assessment_type": "coverage_repair",
+  "assessed_at": "2026-06-11T13:40:34Z",
+  "assessment_window": {
+    "from": "2026-06-11T13:24:00Z",
+    "to": "2026-06-11T13:40:34Z",
+    "basis": "Coverage repair created after the June 11 backfill assessment found that the published Rapalogs outlook was activity-only and missing source, study, finding, review, registry, safety, and seminal-anchor support."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is now adequate for a low-confidence human_functional_benefit Rapalogs public claim, pending review and publication of the staged repair bundle. The repair stages PEARL one-year human safety and healthspan results, the Harrison 2009 mammalian lifespan anchor, a 2025 vertebrate lifespan meta-analysis, a direct mTOR inhibitors aging review, active and completed no-results registry watch items, finding-level context for the already-public sirolimus older-adults registry, and support-map normalization for oral and topical rapamycin records. Coverage is not strong because durable human functional, disease, frailty, mortality, dose-schedule, and long-term preventive-safety evidence remain unresolved.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-05-30-rapalogs-surveillance",
+      "2026-06-11-rapalogs-coverage-repair"
+    ],
+    "candidate_bundle_ids": [
+      "rapalogs-update-2026-05-30",
+      "rapalogs-coverage-repair-2026-06-11"
+    ],
+    "publication_event_ids": [
+      "publish-rapalogs-update-2026-05-30"
+    ],
+    "outlook_ids": [
+      "track-rapalogs-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "The repair stages PEARL as a result-bearing one-year randomized rapamycin trial, keeps older-adult mTOR/TORC1 vaccine and infection trials visible, normalizes the oral and topical rapamycin records, and adds no-results registry findings for sirolimus, REVERSE, Everolimus Aging, RESTOR, Rapa/cMRI, and RAP PAC.",
+      "source_ids": [
+        "pmid-40188830",
+        "pmid-25540326",
+        "pmid-29997249",
+        "pmid-33977284",
+        "pmid-29408453",
+        "pmid-31761958",
+        "nct05237687",
+        "nct-07354620",
+        "nct-05835999",
+        "nct-06658093",
+        "nct-04742777",
+        "nct-05949658"
+      ],
+      "finding_ids": [
+        "pearl-rapamycin-one-year-safety-healthspan-mixed",
+        "everolimus-improved-influenza-vaccine-response-elderly",
+        "torc1-inhibition-reduced-infections-vaccine-response-elderly",
+        "rtb101-phase2b-signal-phase3-rti-miss",
+        "oral-rapamycin-older-adults-short-term-safety-no-functional-change",
+        "topical-rapamycin-reduced-human-skin-p16",
+        "sirolimus-older-adults-recruiting-no-results",
+        "reverse-rapamycin-prolon-active-no-results",
+        "everolimus-aging-active-no-results",
+        "restor-mtori-older-adults-recruiting-no-results",
+        "rapa-cmri-older-adults-completed-no-results",
+        "rap-pac-rapalog-pharmacology-recruiting-no-results"
+      ],
+      "gap_note": "The remaining issue is an evidence gap rather than a coverage gap: human records are mixed and still do not show durable broad aging benefit."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "not_applicable",
+      "rationale": "The staged public claim depends on interventional rapalog trials, registry watch, and review-level translation boundaries rather than observational or natural-experiment evidence.",
+      "gap_note": "Future safety work may still use off-label observational cohorts or pharmacoepidemiology, but that is not required to make the current low-confidence interventional support map adequate."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "The repair stages the canonical Harrison 2009 ITP mouse lifespan source and a 2025 vertebrate lifespan meta-analysis as preclinical and review-level anchors.",
+      "source_ids": [
+        "pmid-19587680",
+        "pmid-40532901"
+      ],
+      "finding_ids": [
+        "rapamycin-late-life-extends-mouse-lifespan",
+        "rapamycin-vertebrate-lifespan-meta-analysis-boundary"
+      ],
+      "gap_note": "Animal coverage is sufficient for current context, but it remains translation support rather than human longevity evidence."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "The staged mTOR inhibitors aging review, RESTOR, RAP PAC, existing TORC1 immune trial records, and immunosenescence/mTOR review context cover target engagement, mTORC1 selectivity, immune, metabolic, and tissue PK/PD boundaries.",
+      "source_ids": [
+        "pmid-37142830",
+        "pmid-29997249",
+        "pmid-42169620",
+        "nct-06658093",
+        "nct-05949658"
+      ],
+      "finding_ids": [
+        "mtor-inhibitors-aging-human-translation-boundary",
+        "torc1-inhibition-reduced-infections-vaccine-response-elderly",
+        "immunosenescence-vaccine-mtor-microbiota-review-boundary",
+        "restor-mtori-older-adults-recruiting-no-results",
+        "rap-pac-rapalog-pharmacology-recruiting-no-results"
+      ]
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The support map now foregrounds the RTB101 phase 3 miss, PEARL's null primary visceral-fat endpoint, the oral rapamycin pilot's lack of measured cognitive or physical-performance improvement, and no-results registry status for multiple direct trials.",
+      "source_ids": [
+        "pmid-33977284",
+        "pmid-40188830",
+        "pmid-29408453",
+        "nct-04742777"
+      ],
+      "finding_ids": [
+        "rtb101-phase2b-signal-phase3-rti-miss",
+        "pearl-rapamycin-one-year-safety-healthspan-mixed",
+        "oral-rapamycin-older-adults-short-term-safety-no-functional-change",
+        "rapa-cmri-older-adults-completed-no-results"
+      ]
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "PEARL and the oral rapamycin pilot improve short- and medium-term safety coverage, while RESTOR and RAP PAC stage dose, PK/PD, and toxicity watch context. Long-term preventive safety, immunosuppression, metabolic effects, wound-healing risk, mucosal effects, and durability remain thin.",
+      "source_ids": [
+        "pmid-40188830",
+        "pmid-29408453",
+        "pmid-37142830",
+        "nct-06658093",
+        "nct-05949658"
+      ],
+      "finding_ids": [
+        "pearl-rapamycin-one-year-safety-healthspan-mixed",
+        "oral-rapamycin-older-adults-short-term-safety-no-functional-change",
+        "mtor-inhibitors-aging-human-translation-boundary",
+        "restor-mtori-older-adults-recruiting-no-results",
+        "rap-pac-rapalog-pharmacology-recruiting-no-results"
+      ],
+      "gap_note": "Upgrade only after larger, longer, dose-specific preventive-use safety and durability evidence is available."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "The repair stages no-results or posted-result context for PEARL, NCT05237687, REVERSE, Everolimus Aging, RESTOR, Rapa/cMRI, and RAP PAC, and records NCT06789900 and NCT07191353 as direct but bone/exercise boundary watch items.",
+      "source_ids": [
+        "pmid-40188830",
+        "nct05237687",
+        "nct-07354620",
+        "nct-05835999",
+        "nct-06658093",
+        "nct-04742777",
+        "nct-05949658"
+      ],
+      "finding_ids": [
+        "pearl-rapamycin-one-year-safety-healthspan-mixed",
+        "sirolimus-older-adults-recruiting-no-results",
+        "reverse-rapamycin-prolon-active-no-results",
+        "everolimus-aging-active-no-results",
+        "restor-mtori-older-adults-recruiting-no-results",
+        "rapa-cmri-older-adults-completed-no-results",
+        "rap-pac-rapalog-pharmacology-recruiting-no-results"
+      ],
+      "gap_note": "Continue ordinary surveillance for posted results, linked publications, status changes, and direct bone/exercise rapalog trials."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "adequate",
+      "rationale": "The repair stages the 2025 vertebrate lifespan meta-analysis and the 2023 mTOR inhibitors aging review, while retaining the 2026 immunosenescence, vaccine, microbiota, and mTOR review as taxonomy context.",
+      "source_ids": [
+        "pmid-40532901",
+        "pmid-37142830",
+        "pmid-42169620"
+      ],
+      "finding_ids": [
+        "rapamycin-vertebrate-lifespan-meta-analysis-boundary",
+        "mtor-inhibitors-aging-human-translation-boundary",
+        "immunosenescence-vaccine-mtor-microbiota-review-boundary"
+      ]
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "Harrison 2009 is staged as the canonical mammalian lifespan anchor, and the recent meta-analysis triangulates the broader vertebrate rapamycin lifespan literature.",
+      "source_ids": [
+        "pmid-19587680",
+        "pmid-40532901"
+      ],
+      "finding_ids": [
+        "rapamycin-late-life-extends-mouse-lifespan",
+        "rapamycin-vertebrate-lifespan-meta-analysis-boundary"
+      ],
+      "gap_note": "Coverage is adequate for current public claims; a stronger audit could later add additional ITP dose, sex, schedule, and healthspan anchors."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The staged outlook separates Rapalogs from immune rejuvenation, autophagy induction, senomorphics, dermatologic topical evidence, microbiome/vaccine review context, and fasting-mimicking-diet combination trials.",
+      "source_ids": [
+        "pmid-37142830",
+        "pmid-42169620",
+        "pmid-31761958",
+        "nct-07354620"
+      ],
+      "finding_ids": [
+        "mtor-inhibitors-aging-human-translation-boundary",
+        "immunosenescence-vaccine-mtor-microbiota-review-boundary",
+        "topical-rapamycin-reduced-human-skin-p16",
+        "reverse-rapamycin-prolon-active-no-results"
+      ],
+      "gap_note": "Future publication and surveillance should keep branch-level support maps separate when new results arrive."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-40188830",
+    "pmid-19587680",
+    "pmid-40532901",
+    "pmid-37142830",
+    "nct-07354620",
+    "nct-05835999",
+    "nct-06658093",
+    "nct-04742777",
+    "nct-05949658",
+    "nct05237687",
+    "pmid-25540326",
+    "pmid-29997249",
+    "pmid-33977284",
+    "pmid-29408453",
+    "pmid-31761958",
+    "pmid-42169620"
+  ],
+  "covered_finding_ids": [
+    "pearl-rapamycin-one-year-safety-healthspan-mixed",
+    "rapamycin-late-life-extends-mouse-lifespan",
+    "rapamycin-vertebrate-lifespan-meta-analysis-boundary",
+    "mtor-inhibitors-aging-human-translation-boundary",
+    "reverse-rapamycin-prolon-active-no-results",
+    "everolimus-aging-active-no-results",
+    "restor-mtori-older-adults-recruiting-no-results",
+    "rapa-cmri-older-adults-completed-no-results",
+    "rap-pac-rapalog-pharmacology-recruiting-no-results",
+    "sirolimus-older-adults-recruiting-no-results",
+    "everolimus-improved-influenza-vaccine-response-elderly",
+    "torc1-inhibition-reduced-infections-vaccine-response-elderly",
+    "rtb101-phase2b-signal-phase3-rti-miss",
+    "oral-rapamycin-older-adults-short-term-safety-no-functional-change",
+    "topical-rapamycin-reduced-human-skin-p16",
+    "immunosenescence-vaccine-mtor-microbiota-review-boundary"
+  ],
+  "search_log_summary": "Coverage repair directly checked ClinicalTrials.gov API v2 for PEARL, sirolimus older adults, REVERSE, Everolimus Aging, RESTOR, Rapa/cMRI, RAP PAC, and two bone/exercise boundary trials; fetched PubMed metadata and abstracts for PEARL, Harrison 2009, the 2025 vertebrate lifespan meta-analysis, and the 2023 mTOR inhibitors aging review; and compared those sources against the published Rapalogs outlook, May 30 surveillance bundle, June 11 backfill assessment, and linked local immune-rejuvenation and senomorphic records.",
+  "source_selection_notes": [
+    "PEARL was staged because it is a peer-reviewed randomized one-year rapamycin trial in healthy adults and directly repairs human safety and healthspan coverage.",
+    "Harrison 2009 and PMID 40532901 were staged to repair seminal and recent-review animal lifespan coverage.",
+    "PMID 37142830 was staged to repair review-level safety, translation, and taxonomy-boundary coverage for mTOR inhibitors.",
+    "NCT07354620, NCT05835999, NCT06658093, NCT04742777, and NCT05949658 were staged because they are direct rapalog registry watch items with aging, PK/PD, methylation, cardiac, metabolic, or safety endpoints and no posted results.",
+    "NCT06789900 and NCT07191353 were screened but not staged because they are direct rapalog bone/exercise boundary trials and would be better handled in later surveillance or skeletal-aging context.",
+    "This assessment does not publish public records; it records the internal coverage state of the staged repair bundle."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "durable-human-geroprotection-not-shown",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "No staged source shows replicated durable human disease, frailty, mortality, or broad healthy-aging benefit from rapalog use.",
+      "priority": "high",
+      "suggested_action": "Continue surveillance and only strengthen confidence if PEARL-like signals replicate or active rapalog trials post durable functional or clinical outcomes with acceptable safety."
+    },
+    {
+      "gap_id": "long-term-preventive-safety-unresolved",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Preventive long-term safety, immunosuppression, metabolic risk, mucosal effects, wound healing, dose scheduling, and durability remain unresolved for older adults.",
+      "priority": "high",
+      "suggested_action": "Keep safety-limitations review mandatory before publication and track RESTOR, RAP PAC, Everolimus Aging, and longer PEARL follow-up or replication."
+    },
+    {
+      "gap_id": "active-registry-results-watch",
+      "gap_type": "coverage_gap",
+      "category": "active_trials_registries",
+      "description": "Several direct registries remain active, recruiting, or completed with no posted results, including NCT05237687, NCT07354620, NCT05835999, NCT06658093, NCT04742777, and NCT05949658.",
+      "priority": "medium",
+      "suggested_action": "Return to ordinary surveillance after review and publication, with explicit watch on posted results, linked publications, and status changes."
+    },
+    {
+      "gap_id": "bone-exercise-rapalog-boundary",
+      "gap_type": "coverage_gap",
+      "category": "taxonomy_boundary",
+      "description": "NCT06789900 and NCT07191353 are direct rapalog bone/exercise boundary trials but were not staged in this bounded repair to keep the core Rapalogs support map focused.",
+      "priority": "low",
+      "suggested_action": "Reconsider these records in the next Rapalogs registry pass or in a skeletal-aging/bone-health evidence map."
+    }
+  ],
+  "next_coverage_action": "Review the staged Rapalogs coverage-repair bundle through source-fidelity, interpretation/forecast, taxonomy-mapping, and safety-limitations lanes. If approved and published, return Rapalogs to ordinary surveillance with explicit watch on active and completed no-results registries plus PEARL replication.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-repair",
+    "rapalogs",
+    "mTOR",
+    "trial-registry",
+    "review-triangulation",
+    "safety",
+    "taxonomy-boundary"
+  ]
+}

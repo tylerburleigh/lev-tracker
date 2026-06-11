@@ -1,0 +1,533 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "rapalogs-coverage-repair-2026-06-11",
+  "name": "Rapalogs Coverage Repair for June 11, 2026",
+  "summary": "Coverage-repair bundle staging Rapalogs source, study, finding, registry-watch, review, seminal-anchor, and outlook-support records. The proposed outlook refresh moves the track to low-confidence human_functional_benefit with mixed momentum because human functional endpoints have been tested, but the evidence remains branch-specific, mixed, and short of durable disease, frailty, mortality, or broad healthy-aging benefit.",
+  "intake_mode": "manual",
+  "lifecycle_status": "submitted",
+  "submitted_at": "2026-06-11T13:40:34Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "Which known source-completeness gaps for Rapalogs need repair, and does resolving them change the coverage verdict or public boundaries?",
+    "hallmark_ids": [
+      "deregulated_nutrient_sensing"
+    ],
+    "track_ids": [
+      "rapalogs"
+    ],
+    "intervention_ids": [
+      "sirolimus",
+      "everolimus",
+      "rtb101",
+      "fasting-mimicking-diet"
+    ]
+  },
+  "source_ids": [
+    "pmid-40188830",
+    "pmid-19587680",
+    "pmid-40532901",
+    "pmid-37142830",
+    "nct-07354620",
+    "nct-05835999",
+    "nct-06658093",
+    "nct-04742777",
+    "nct-05949658",
+    "nct05237687",
+    "pmid-25540326",
+    "pmid-29997249",
+    "pmid-33977284",
+    "pmid-29408453",
+    "pmid-31761958",
+    "pmid-42169620"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/40188830/",
+    "https://doi.org/10.18632/aging.206235",
+    "https://clinicaltrials.gov/study/NCT04488601",
+    "https://pubmed.ncbi.nlm.nih.gov/19587680/",
+    "https://doi.org/10.1038/nature08221",
+    "https://pubmed.ncbi.nlm.nih.gov/40532901/",
+    "https://doi.org/10.1111/acel.70131",
+    "https://pubmed.ncbi.nlm.nih.gov/37142830/",
+    "https://doi.org/10.1038/s43587-023-00416-y",
+    "https://clinicaltrials.gov/study/NCT07354620",
+    "https://clinicaltrials.gov/study/NCT05835999",
+    "https://clinicaltrials.gov/study/NCT06658093",
+    "https://clinicaltrials.gov/study/NCT04742777",
+    "https://clinicaltrials.gov/study/NCT05949658",
+    "https://clinicaltrials.gov/study/NCT06789900",
+    "https://clinicaltrials.gov/study/NCT07191353",
+    "https://clinicaltrials.gov/study/NCT05237687",
+    "https://pubmed.ncbi.nlm.nih.gov/25540326/",
+    "https://pubmed.ncbi.nlm.nih.gov/29997249/",
+    "https://pubmed.ncbi.nlm.nih.gov/33977284/",
+    "https://pubmed.ncbi.nlm.nih.gov/29408453/",
+    "https://pubmed.ncbi.nlm.nih.gov/31761958/",
+    "https://pubmed.ncbi.nlm.nih.gov/42169620/"
+  ],
+  "related_records": [
+    {
+      "record_type": "track",
+      "record_id": "rapalogs"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-rapalogs-outlook"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "sirolimus"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "everolimus"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "rtb101"
+    },
+    {
+      "record_type": "intervention",
+      "record_id": "fasting-mimicking-diet"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-40188830",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-40188830",
+      "file_path": "data/sources/pmid-40188830.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/pmid-40188830.json",
+      "summary": "Add the PEARL one-year rapamycin trial source.",
+      "rationale": "Repair result-bearing human safety and healthspan coverage for Rapalogs."
+    },
+    {
+      "change_id": "create-study-pearl-rapamycin-healthspan-trial",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "pearl-rapamycin-healthspan-trial",
+      "file_path": "data/studies/pearl-rapamycin-healthspan-trial.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/pearl-rapamycin-healthspan-trial.json",
+      "summary": "Add the PEARL human rapamycin healthspan study.",
+      "rationale": "Represent PEARL as a completed randomized human trial with safety, biomarker, and healthspan endpoints."
+    },
+    {
+      "change_id": "create-finding-pearl-rapamycin-one-year-safety-healthspan-mixed",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "pearl-rapamycin-one-year-safety-healthspan-mixed",
+      "file_path": "data/findings/pearl-rapamycin-one-year-safety-healthspan-mixed.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/pearl-rapamycin-one-year-safety-healthspan-mixed.json",
+      "summary": "Add the PEARL mixed safety and healthspan finding.",
+      "rationale": "Surface PEARL's safety signal, null primary endpoint, and limited secondary/subgroup positives without overstating durable geroprotection.",
+      "uncertainty_flags": [
+        "primary-endpoint-null",
+        "secondary-signals",
+        "conflict-of-interest",
+        "replication-needed"
+      ]
+    },
+    {
+      "change_id": "create-source-pmid-19587680",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-19587680",
+      "file_path": "data/sources/pmid-19587680.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/pmid-19587680.json",
+      "summary": "Add the Harrison 2009 late-life rapamycin mouse lifespan source.",
+      "rationale": "Repair the missing seminal preclinical lifespan anchor for Rapalogs."
+    },
+    {
+      "change_id": "create-study-harrison-rapamycin-late-life-mouse-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "harrison-rapamycin-late-life-mouse-lifespan",
+      "file_path": "data/studies/harrison-rapamycin-late-life-mouse-lifespan.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/harrison-rapamycin-late-life-mouse-lifespan.json",
+      "summary": "Add the ITP mouse lifespan study record.",
+      "rationale": "Represent the canonical mammalian lifespan experiment that anchors Rapalogs biologic rationale."
+    },
+    {
+      "change_id": "create-finding-rapamycin-late-life-extends-mouse-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "rapamycin-late-life-extends-mouse-lifespan",
+      "file_path": "data/findings/rapamycin-late-life-extends-mouse-lifespan.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/rapamycin-late-life-extends-mouse-lifespan.json",
+      "summary": "Add the late-life rapamycin mouse lifespan finding.",
+      "rationale": "Make the animal lifespan anchor visible while caveating translation to humans.",
+      "uncertainty_flags": [
+        "animal-evidence",
+        "translation-gap"
+      ]
+    },
+    {
+      "change_id": "create-source-pmid-40532901",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-40532901",
+      "file_path": "data/sources/pmid-40532901.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/pmid-40532901.json",
+      "summary": "Add the 2025 rapamycin vertebrate lifespan meta-analysis source.",
+      "rationale": "Repair recent-review and animal-lifespan triangulation."
+    },
+    {
+      "change_id": "create-study-rapamycin-vertebrate-lifespan-meta-analysis",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "rapamycin-vertebrate-lifespan-meta-analysis",
+      "file_path": "data/studies/rapamycin-vertebrate-lifespan-meta-analysis.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/rapamycin-vertebrate-lifespan-meta-analysis.json",
+      "summary": "Add the vertebrate lifespan meta-analysis study.",
+      "rationale": "Represent recent synthesis as review-level context rather than a human efficacy result."
+    },
+    {
+      "change_id": "create-finding-rapamycin-vertebrate-lifespan-meta-analysis-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "rapamycin-vertebrate-lifespan-meta-analysis-boundary",
+      "file_path": "data/findings/rapamycin-vertebrate-lifespan-meta-analysis-boundary.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/rapamycin-vertebrate-lifespan-meta-analysis-boundary.json",
+      "summary": "Add the meta-analysis lifespan boundary finding.",
+      "rationale": "Use the review to strengthen preclinical coverage while preserving heterogeneity, bias, and human-translation limits.",
+      "uncertainty_flags": [
+        "review-level",
+        "publication-bias",
+        "heterogeneity",
+        "not-human-efficacy"
+      ]
+    },
+    {
+      "change_id": "create-source-pmid-37142830",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-37142830",
+      "file_path": "data/sources/pmid-37142830.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/pmid-37142830.json",
+      "summary": "Add the Nature Aging mTOR inhibitors review source.",
+      "rationale": "Repair recent review, safety, translation, and taxonomy-boundary coverage."
+    },
+    {
+      "change_id": "create-study-mtor-inhibitors-aging-review",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "mtor-inhibitors-aging-review",
+      "file_path": "data/studies/mtor-inhibitors-aging-review.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/mtor-inhibitors-aging-review.json",
+      "summary": "Add the mTOR inhibitors aging review study.",
+      "rationale": "Represent review-level synthesis across animal longevity, human trials, and translational barriers."
+    },
+    {
+      "change_id": "create-finding-mtor-inhibitors-aging-human-translation-boundary",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "mtor-inhibitors-aging-human-translation-boundary",
+      "file_path": "data/findings/mtor-inhibitors-aging-human-translation-boundary.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/mtor-inhibitors-aging-human-translation-boundary.json",
+      "summary": "Add the mTOR inhibitor translation-boundary finding.",
+      "rationale": "Make safety, dose, selectivity, endpoint, and taxonomy constraints visible in the Rapalogs support map.",
+      "uncertainty_flags": [
+        "review-level",
+        "dose-schedule",
+        "safety",
+        "taxonomy-boundary"
+      ]
+    },
+    {
+      "change_id": "create-source-nct-07354620",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-07354620",
+      "file_path": "data/sources/nct-07354620.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/nct-07354620.json",
+      "summary": "Add the REVERSE rapamycin/ProLon registry source.",
+      "rationale": "Repair active no-results registry coverage for a rapamycin methylation-age study."
+    },
+    {
+      "change_id": "create-study-reverse-rapamycin-prolon-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "reverse-rapamycin-prolon-registry",
+      "file_path": "data/studies/reverse-rapamycin-prolon-registry.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/reverse-rapamycin-prolon-registry.json",
+      "summary": "Add the REVERSE active no-results study.",
+      "rationale": "Track the aging-labeled rapamycin and fasting-mimicking-diet combination trial while preserving attribution caveats."
+    },
+    {
+      "change_id": "create-finding-reverse-rapamycin-prolon-active-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "reverse-rapamycin-prolon-active-no-results",
+      "file_path": "data/findings/reverse-rapamycin-prolon-active-no-results.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/reverse-rapamycin-prolon-active-no-results.json",
+      "summary": "Add the REVERSE active no-results finding.",
+      "rationale": "Expose the methylation-age and combination-intervention watch item without upgrading efficacy.",
+      "uncertainty_flags": [
+        "active-not-recruiting",
+        "no-posted-results",
+        "combination-intervention",
+        "methylation-age"
+      ]
+    },
+    {
+      "change_id": "create-source-nct-05835999",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-05835999",
+      "file_path": "data/sources/nct-05835999.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/nct-05835999.json",
+      "summary": "Add the Everolimus Aging Study registry source.",
+      "rationale": "Repair active human geroprotection registry coverage for everolimus."
+    },
+    {
+      "change_id": "create-study-everolimus-aging-geroprotection-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "everolimus-aging-geroprotection-registry",
+      "file_path": "data/studies/everolimus-aging-geroprotection-registry.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/everolimus-aging-geroprotection-registry.json",
+      "summary": "Add the Everolimus Aging geroprotection registry study.",
+      "rationale": "Track metabolic, cardiac, cognitive, molecular, and safety endpoints in an active older-adult trial."
+    },
+    {
+      "change_id": "create-finding-everolimus-aging-active-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "everolimus-aging-active-no-results",
+      "file_path": "data/findings/everolimus-aging-active-no-results.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/everolimus-aging-active-no-results.json",
+      "summary": "Add the Everolimus Aging active no-results finding.",
+      "rationale": "Make the active no-results status visible without treating enrollment as evidence.",
+      "uncertainty_flags": [
+        "active-not-recruiting",
+        "no-posted-results",
+        "prediabetes-context"
+      ]
+    },
+    {
+      "change_id": "create-source-nct-06658093",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-06658093",
+      "file_path": "data/sources/nct-06658093.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/nct-06658093.json",
+      "summary": "Add the RESTOR mTORi older-adults registry source.",
+      "rationale": "Repair rapamycin and everolimus PK/PD registry coverage."
+    },
+    {
+      "change_id": "create-study-restor-mtori-older-adults-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "restor-mtori-older-adults-registry",
+      "file_path": "data/studies/restor-mtori-older-adults-registry.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/restor-mtori-older-adults-registry.json",
+      "summary": "Add the RESTOR older-adult rapamycin/everolimus PK/PD study.",
+      "rationale": "Track dose timing, tissue target engagement, and safety prerequisites for stronger claims."
+    },
+    {
+      "change_id": "create-finding-restor-mtori-older-adults-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "restor-mtori-older-adults-recruiting-no-results",
+      "file_path": "data/findings/restor-mtori-older-adults-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/restor-mtori-older-adults-recruiting-no-results.json",
+      "summary": "Add the RESTOR recruiting no-results finding.",
+      "rationale": "Expose the recruiting PK/PD and target-engagement watch item.",
+      "uncertainty_flags": [
+        "recruiting",
+        "no-posted-results",
+        "pk-pd",
+        "target-engagement"
+      ]
+    },
+    {
+      "change_id": "create-source-nct-04742777",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-04742777",
+      "file_path": "data/sources/nct-04742777.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/nct-04742777.json",
+      "summary": "Add the Rapa/cMRI older-adults registry source.",
+      "rationale": "Repair completed no-results registry coverage for older-adult cardiac-function endpoints."
+    },
+    {
+      "change_id": "create-study-rapa-cmri-older-adults-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "rapa-cmri-older-adults-registry",
+      "file_path": "data/studies/rapa-cmri-older-adults-registry.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/rapa-cmri-older-adults-registry.json",
+      "summary": "Add the completed Rapa/cMRI older-adult study.",
+      "rationale": "Track the small completed trial with no posted functional cardiac MRI results."
+    },
+    {
+      "change_id": "create-finding-rapa-cmri-older-adults-completed-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "rapa-cmri-older-adults-completed-no-results",
+      "file_path": "data/findings/rapa-cmri-older-adults-completed-no-results.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/rapa-cmri-older-adults-completed-no-results.json",
+      "summary": "Add the completed no-results Rapa/cMRI finding.",
+      "rationale": "Represent completed no-results status as limiting watch context.",
+      "uncertainty_flags": [
+        "completed",
+        "no-posted-results",
+        "single-group",
+        "small-sample"
+      ]
+    },
+    {
+      "change_id": "create-source-nct-05949658",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-05949658",
+      "file_path": "data/sources/nct-05949658.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/nct-05949658.json",
+      "summary": "Add the RAP PAC rapalog pharmacology registry source.",
+      "rationale": "Repair dose, safety, pharmacology, and mTOR target-engagement registry coverage."
+    },
+    {
+      "change_id": "create-study-rap-pac-rapalog-pharmacology-registry",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "rap-pac-rapalog-pharmacology-registry",
+      "file_path": "data/studies/rap-pac-rapalog-pharmacology-registry.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/rap-pac-rapalog-pharmacology-registry.json",
+      "summary": "Add the RAP PAC pharmacology study.",
+      "rationale": "Track weekly sirolimus and everolimus dose, toxicity, PK, and tissue target-engagement context."
+    },
+    {
+      "change_id": "create-finding-rap-pac-rapalog-pharmacology-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "rap-pac-rapalog-pharmacology-recruiting-no-results",
+      "file_path": "data/findings/rap-pac-rapalog-pharmacology-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/rap-pac-rapalog-pharmacology-recruiting-no-results.json",
+      "summary": "Add the RAP PAC recruiting no-results finding.",
+      "rationale": "Expose the recruiting dose and safety watch item without treating it as efficacy evidence.",
+      "uncertainty_flags": [
+        "recruiting",
+        "no-posted-results",
+        "phase1",
+        "dose-finding"
+      ]
+    },
+    {
+      "change_id": "create-finding-sirolimus-older-adults-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "sirolimus-older-adults-recruiting-no-results",
+      "file_path": "data/findings/sirolimus-older-adults-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/sirolimus-older-adults-recruiting-no-results.json",
+      "summary": "Add finding-level watch context for the existing sirolimus older-adults registry.",
+      "rationale": "The public outlook already cites NCT05237687, but the support map needs a no-results finding rather than only an activity item.",
+      "uncertainty_flags": [
+        "recruiting",
+        "no-posted-results",
+        "small-sample"
+      ]
+    },
+    {
+      "change_id": "update-study-oral-rapamycin-older-adult-feasibility",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "oral-rapamycin-older-adult-feasibility",
+      "file_path": "data/studies/oral-rapamycin-older-adult-feasibility.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/oral-rapamycin-older-adult-feasibility.json",
+      "summary": "Add Rapalogs track and nutrient-sensing hallmark mapping to the oral rapamycin feasibility study.",
+      "rationale": "Normalize direct systemic rapamycin evidence across Senomorphics and Rapalogs."
+    },
+    {
+      "change_id": "update-finding-oral-rapamycin-older-adults-short-term-safety-no-functional-change",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "oral-rapamycin-older-adults-short-term-safety-no-functional-change",
+      "file_path": "data/findings/oral-rapamycin-older-adults-short-term-safety-no-functional-change.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/oral-rapamycin-older-adults-short-term-safety-no-functional-change.json",
+      "summary": "Add Rapalogs support mapping to the oral rapamycin feasibility finding.",
+      "rationale": "Use the study as safety and limiting functional context for Rapalogs.",
+      "uncertainty_flags": [
+        "short-term",
+        "small-sample",
+        "no-functional-change"
+      ]
+    },
+    {
+      "change_id": "update-study-topical-rapamycin-human-skin-aging",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "topical-rapamycin-human-skin-aging",
+      "file_path": "data/studies/topical-rapamycin-human-skin-aging.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/topical-rapamycin-human-skin-aging.json",
+      "summary": "Add Rapalogs track and nutrient-sensing hallmark mapping to the topical rapamycin skin study.",
+      "rationale": "Normalize direct rapamycin biomarker context while preserving local skin and senomorphic boundaries."
+    },
+    {
+      "change_id": "update-finding-topical-rapamycin-reduced-human-skin-p16",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "topical-rapamycin-reduced-human-skin-p16",
+      "file_path": "data/findings/topical-rapamycin-reduced-human-skin-p16.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/topical-rapamycin-reduced-human-skin-p16.json",
+      "summary": "Add Rapalogs support mapping to the topical rapamycin p16 finding.",
+      "rationale": "Use the finding as local human biomarker context without implying systemic rapalog benefit.",
+      "uncertainty_flags": [
+        "local-skin",
+        "biomarker-only",
+        "systemic-translation-limited"
+      ]
+    },
+    {
+      "change_id": "update-outlook-track-rapalogs",
+      "change_type": "update_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-rapalogs-outlook",
+      "file_path": "data/outlooks/track-rapalogs-outlook.json",
+      "staged_file_path": "data/staged-records/rapalogs-coverage-repair-2026-06-11/track-rapalogs-outlook.json",
+      "summary": "Refresh the Rapalogs outlook support map and boundary language.",
+      "rationale": "Move from a thin activity-only public map to a source-backed low-confidence human_functional_benefit read with explicit animal, human, limiting, safety, registry, and taxonomy support.",
+      "uncertainty_flags": [
+        "stage-changed",
+        "confidence-lowered",
+        "mixed-human-evidence",
+        "active-no-results-registries"
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "rapalogs",
+      "note": "Replace the activity-only moderate human_biomarker_signal outlook with a source-backed low-confidence human_functional_benefit read. The stage changes because human functional endpoints have been tested; confidence lowers because PEARL is mixed, RTB101 has a phase 3 miss, and many registries remain no-results.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast",
+    "taxonomy_mapping",
+    "safety_limitations"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-11-rapalogs-coverage-repair.json",
+  "next_actions": [
+    "Run source-fidelity, interpretation/forecast, taxonomy-mapping, and safety-limitations review for the staged Rapalogs coverage-repair bundle.",
+    "If approved and published, return Rapalogs to ordinary surveillance with watch items for NCT05237687, NCT07354620, NCT05835999, NCT06658093, NCT04742777, NCT05949658, NCT06789900, and NCT07191353."
+  ],
+  "tags": [
+    "coverage-repair",
+    "rapalogs",
+    "mTOR",
+    "trial-registry",
+    "review-triangulation",
+    "safety",
+    "taxonomy-boundary"
+  ]
+}
