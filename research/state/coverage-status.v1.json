@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "state_type": "coverage_status",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-11T13:13:04.678Z",
+  "updated_at": "2026-06-11T13:22:46.640Z",
   "notes": [
     "The unit of research work is a track, not a hallmark.",
     "One baseline-review, field-change, or coverage-repair run should cover one track unless the user explicitly narrows further.",
@@ -522,7 +522,7 @@
       "canonical_order": 1,
       "name": "Rapalogs",
       "coverage_status": "baseline",
-      "next_mode": "surveillance",
+      "next_mode": "coverage_repair",
       "queue_state": "ready",
       "last_session_id": "2026-05-30-rapalogs-surveillance",
       "last_session_at": "2026-05-30T17:10:00Z",
@@ -539,7 +539,14 @@
       "last_candidate_bundle_status": "published",
       "last_publication_event_id": "publish-rapalogs-update-2026-05-30",
       "last_published_at": "2026-05-30T17:15:00Z",
-      "default_research_question": "What changed for Rapalogs since the last meaningful review or publication, and does any change justify a public update?",
+      "last_coverage_assessment_id": "rapalogs-coverage-2026-06-11",
+      "last_coverage_assessed_at": "2026-06-11T13:21:25Z",
+      "coverage_verdict": "thin",
+      "known_gap_count": 6,
+      "high_priority_gap_count": 4,
+      "next_coverage_action": "Run a bounded coverage-repair pass for Rapalogs before ordinary surveillance. The repair should assemble source, study, finding, support-map, registry, limiting-evidence, safety, recent-review, preclinical-anchor, and taxonomy-boundary records sufficient to audit the moderate human_biomarker_signal public outlook without overstating biomarker, immune, dermatologic, or short-term feasibility signals as durable functional aging benefit.",
+      "last_coverage_recommended_mode": "coverage_repair",
+      "default_research_question": "Which known source-completeness gaps for Rapalogs need repair, and does resolving them change the coverage verdict or public boundaries?",
       "notes": "Latest public update: publish-rapalogs-update-2026-05-30."
     },
     {

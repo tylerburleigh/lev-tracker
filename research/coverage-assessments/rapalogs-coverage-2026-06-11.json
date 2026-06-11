@@ -1,0 +1,250 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "rapalogs-coverage-2026-06-11",
+  "name": "Rapalogs Coverage Assessment for June 11, 2026",
+  "short_name": "Rapalogs coverage",
+  "track_id": "rapalogs",
+  "hallmark_id": "deregulated_nutrient_sensing",
+  "assessment_type": "surveillance",
+  "assessed_at": "2026-06-11T13:21:25Z",
+  "assessment_window": {
+    "from": "2026-05-30T17:15:00Z",
+    "to": "2026-06-11T13:21:25Z",
+    "basis": "Backfill assessment of the published May 30 rapalogs surveillance update and existing local source records; no new external source search was run for this assessment."
+  },
+  "coverage_verdict": "thin",
+  "summary": "Coverage is thin for the current moderate-confidence human_biomarker_signal public outlook. The published Rapalogs outlook points only to an active no-results sirolimus registry item, while live project records contain additional rapalog, mTOR/TORC1, and rapamycin-context human and mechanistic evidence that is not yet normalized into the Rapalogs support map. A bounded coverage-repair pass should run before ordinary surveillance resumes so the public claim can be audited against human trial anchors, limiting results, safety and durability evidence, active registries, recent reviews, seminal preclinical anchors, and taxonomy boundaries.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-05-30-rapalogs-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "rapalogs-update-2026-05-30"
+    ],
+    "publication_event_ids": [
+      "publish-rapalogs-update-2026-05-30"
+    ],
+    "outlook_ids": [
+      "track-rapalogs-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "thin",
+      "rationale": "Local records include elderly everolimus vaccine-response, TORC1 inhibition infection/vaccine-response, RTB101 phase 2b/phase 3, topical rapamycin skin, oral rapamycin feasibility, and an active sirolimus older-adult registry. The current public Rapalogs outlook does not map these studies or findings to its moderate human_biomarker_signal claim.",
+      "source_ids": [
+        "pmid-25540326",
+        "pmid-29997249",
+        "pmid-33977284",
+        "pmid-31761958",
+        "pmid-29408453",
+        "nct05237687"
+      ],
+      "finding_ids": [
+        "everolimus-improved-influenza-vaccine-response-elderly",
+        "torc1-inhibition-reduced-infections-vaccine-response-elderly",
+        "rtb101-phase2b-signal-phase3-rti-miss",
+        "topical-rapamycin-reduced-human-skin-p16",
+        "oral-rapamycin-older-adults-short-term-safety-no-functional-change"
+      ],
+      "gap_note": "Coverage repair should decide which adjacent immune-rejuvenation and senomorphic rapamycin records directly support Rapalogs and should add or revise public support mappings accordingly."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "not_checked",
+      "rationale": "The backfill artifacts do not document observational, cohort, natural-experiment, pharmacoepidemiology, transplant, or off-label rapalog evidence selection.",
+      "gap_note": "Repair should decide whether observational safety or durability records are needed to bound preventive-use interpretation, or whether this category should remain outside the current interventional claim."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "thin",
+      "rationale": "Rapamycin and related mTOR inhibition have canonical animal-aging relevance, but no animal lifespan or healthspan anchors are mapped in the current Rapalogs public outlook or May 30 surveillance artifacts.",
+      "gap_note": "A repair pass should stage or explicitly exclude the minimum preclinical lifespan and healthspan anchors needed to contextualize a nutrient-sensing rapalog track."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "thin",
+      "rationale": "Local records include mTOR/TORC1 immune and SASP-adjacent mechanisms, but the public Rapalogs outlook does not separate target engagement, immune effects, senomorphic effects, autophagy overlap, and nutrient-sensing mechanism into an auditable source map.",
+      "source_ids": [
+        "pmid-29997249",
+        "pmid-42169620",
+        "pmid-26147250",
+        "pmid-26280535"
+      ],
+      "finding_ids": [
+        "torc1-inhibition-reduced-infections-vaccine-response-elderly",
+        "immunosenescence-vaccine-mtor-microbiota-review-boundary",
+        "mtor-inhibition-suppressed-sasp-via-il1a-translation",
+        "mtor-mapkapk2-axis-controlled-sasp"
+      ],
+      "gap_note": "Mechanistic coverage should be repaired with branch-specific boundaries so immune, senescence, autophagy, and nutrient-sensing evidence are not treated as interchangeable."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "thin",
+      "rationale": "The repository contains limiting evidence, including the RTB101 phase 3 respiratory-illness miss and a small oral rapamycin feasibility trial with no cognitive, physical-performance, self-perceived health, or most immune changes. These limits are not visible in the current Rapalogs outlook support map.",
+      "source_ids": [
+        "pmid-33977284",
+        "pmid-29408453"
+      ],
+      "finding_ids": [
+        "rtb101-phase2b-signal-phase3-rti-miss",
+        "oral-rapamycin-older-adults-short-term-safety-no-functional-change"
+      ],
+      "gap_note": "Repair should make limiting evidence first-class so positive biomarker or immune signals do not imply durable functional aging benefit."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "Short-term tolerability appears in local human trial records and the active sirolimus registry includes safety endpoints, but the public Rapalogs record does not audit chronic preventive-use safety, immunosuppression risk, dose scheduling, durability, or older-adult long-term risk-benefit.",
+      "source_ids": [
+        "pmid-29408453",
+        "pmid-29997249",
+        "nct05237687"
+      ],
+      "finding_ids": [
+        "oral-rapamycin-older-adults-short-term-safety-no-functional-change",
+        "torc1-inhibition-reduced-infections-vaccine-response-elderly"
+      ],
+      "gap_note": "Safety and durability should remain high-priority blockers for strengthening confidence or stage."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "thin",
+      "rationale": "The May 30 update records NCT05237687 as recruiting with no posted results, but no broader rapalog registry reconciliation, completed-no-results watchlist, or linked-publication check is recorded.",
+      "source_ids": [
+        "nct05237687"
+      ],
+      "gap_note": "Coverage repair should check active, completed, no-results, and recently updated rapalog registries before ordinary surveillance resumes."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "A recent immunosenescence, vaccine, mTOR, and microbiota review is present as taxonomy context, but the Rapalogs outlook has not been triangulated against recent rapamycin, mTOR, geroscience, safety, or trial-review literature.",
+      "source_ids": [
+        "pmid-42169620"
+      ],
+      "finding_ids": [
+        "immunosenescence-vaccine-mtor-microbiota-review-boundary"
+      ],
+      "gap_note": "Repair should use recent reviews and citation chasing to identify must-include human, animal, mechanistic, limiting, and safety anchors."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "thin",
+      "rationale": "No formal must-include or seminal-anchor audit is recorded for Rapalogs, despite the track's dependence on canonical mTOR and rapamycin aging biology.",
+      "gap_note": "Repair should identify the minimum canonical source set needed for a defensible Rapalogs track and separate missing evidence from intentionally excluded adjacent literature."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "thin",
+      "rationale": "Current records show overlap with immune rejuvenation, senomorphics, autophagy induction, nutrient sensing, microbiome, vaccine response, dermatologic biomarker, and systemic rapalog branches. The current public outlook does not define which branches support Rapalogs versus adjacent tracks.",
+      "source_ids": [
+        "pmid-42169620",
+        "pmid-31761958",
+        "pmid-29408453",
+        "pmid-25540326",
+        "pmid-29997249",
+        "pmid-33977284"
+      ],
+      "finding_ids": [
+        "immunosenescence-vaccine-mtor-microbiota-review-boundary",
+        "topical-rapamycin-reduced-human-skin-p16",
+        "oral-rapamycin-older-adults-short-term-safety-no-functional-change",
+        "everolimus-improved-influenza-vaccine-response-elderly",
+        "torc1-inhibition-reduced-infections-vaccine-response-elderly",
+        "rtb101-phase2b-signal-phase3-rti-miss"
+      ],
+      "gap_note": "Repair should define branch-level inclusion and exclusion criteria before future public wording treats rapalog activity as a unified aging-intervention signal."
+    }
+  ],
+  "covered_source_ids": [
+    "nct05237687",
+    "pmid-25540326",
+    "pmid-29997249",
+    "pmid-33977284",
+    "pmid-42169620",
+    "pmid-29408453",
+    "pmid-31761958",
+    "pmid-26147250",
+    "pmid-26280535"
+  ],
+  "covered_finding_ids": [
+    "everolimus-improved-influenza-vaccine-response-elderly",
+    "torc1-inhibition-reduced-infections-vaccine-response-elderly",
+    "rtb101-phase2b-signal-phase3-rti-miss",
+    "immunosenescence-vaccine-mtor-microbiota-review-boundary",
+    "oral-rapamycin-older-adults-short-term-safety-no-functional-change",
+    "topical-rapamycin-reduced-human-skin-p16",
+    "mtor-inhibition-suppressed-sasp-via-il1a-translation",
+    "mtor-mapkapk2-axis-controlled-sasp"
+  ],
+  "search_log_summary": "This backfill reviewed local project artifacts: the published Rapalogs outlook, May 30 surveillance session, published candidate bundle, publication event, active sirolimus registry activity item, and existing rapalog or rapamycin-linked source and finding records. No PubMed, registry, review, citation-network, or web source search was run for this assessment.",
+  "source_selection_notes": [
+    "NCT05237687 is the only source directly named by the current public Rapalogs outlook; it is an active no-results registry record and should not by itself carry a moderate evidence interpretation.",
+    "PMID 25540326, PMID 29997249, PMID 33977284, and PMID 42169620 are already tagged to Rapalogs through immune-rejuvenation and mTOR/TORC1 records, but they are not represented in the Rapalogs outlook support map.",
+    "PMID 29408453, PMID 31761958, PMID 26147250, and PMID 26280535 are sirolimus-linked records from adjacent senomorphic coverage; they should be considered during repair but may need explicit boundary handling before they become Rapalogs support.",
+    "This assessment does not change public records; it records the internal coverage gap that should drive the next mode."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "rapalogs-public-support-map-incomplete",
+      "gap_type": "coverage_gap",
+      "category": "human_interventional",
+      "description": "The current moderate-confidence Rapalogs public outlook references only an active no-results sirolimus registry, while existing human rapalog and mTOR/TORC1 trial records are not normalized into the Rapalogs support map.",
+      "priority": "high",
+      "suggested_action": "Run coverage repair to build source, study, finding, and public support mappings for direct Rapalogs evidence, then reassess whether the current confidence and stage remain justified."
+    },
+    {
+      "gap_id": "rapalogs-seminal-preclinical-anchors-missing",
+      "gap_type": "coverage_gap",
+      "category": "seminal_anchors",
+      "description": "No canonical rapamycin or mTOR aging-biology anchor set is recorded for Rapalogs, including animal lifespan or healthspan evidence.",
+      "priority": "high",
+      "suggested_action": "Identify, stage, or explicitly exclude the minimum preclinical and mechanistic anchors needed to contextualize the nutrient-sensing track."
+    },
+    {
+      "gap_id": "rapalogs-safety-durability-undercovered",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Short-term tolerability and registry safety endpoints are visible locally, but chronic preventive-use safety, dose scheduling, immunosuppression risk, and durability remain undercovered for older adults.",
+      "priority": "high",
+      "suggested_action": "Require safety and durability review before strengthening stage, confidence, or LEV-relevant interpretation."
+    },
+    {
+      "gap_id": "rapalogs-registry-watchlist-incomplete",
+      "gap_type": "coverage_gap",
+      "category": "active_trials_registries",
+      "description": "Only NCT05237687 is recorded as an active Rapalogs watch item, with no broader active, completed-no-results, stale, or linked-publication registry reconciliation.",
+      "priority": "medium",
+      "suggested_action": "Run direct registry searches during coverage repair and record active, completed, no-results, wrong-scope, and result-bearing trials as staged records or explicit exclusions."
+    },
+    {
+      "gap_id": "rapalogs-review-triangulation-missing",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "Recent rapamycin, mTOR, geroscience, safety, and trial-review literature has not been used to triangulate source completeness for this track.",
+      "priority": "medium",
+      "suggested_action": "Use recent reviews and citation chasing during repair to identify must-include human, animal, mechanistic, limiting, and safety records."
+    },
+    {
+      "gap_id": "rapalogs-branch-boundaries-unclear",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "Rapalog records overlap immune rejuvenation, senomorphics, autophagy induction, microbiome, dermatology, vaccine-response, and systemic nutrient-sensing branches, but the public Rapalogs track does not yet define branch-level inclusion rules.",
+      "priority": "high",
+      "suggested_action": "During repair, define which branches directly support Rapalogs and which should remain adjacent context or explicit exclusions."
+    }
+  ],
+  "next_coverage_action": "Run a bounded coverage-repair pass for Rapalogs before ordinary surveillance. The repair should assemble source, study, finding, support-map, registry, limiting-evidence, safety, recent-review, preclinical-anchor, and taxonomy-boundary records sufficient to audit the moderate human_biomarker_signal public outlook without overstating biomarker, immune, dermatologic, or short-term feasibility signals as durable functional aging benefit.",
+  "next_recommended_mode": "coverage_repair",
+  "tags": [
+    "coverage-assessment",
+    "surveillance",
+    "deregulated_nutrient_sensing",
+    "rapalogs",
+    "coverage-repair-needed"
+  ]
+}
