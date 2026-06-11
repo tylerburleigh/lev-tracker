@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-chaperone-and-heat-shock-support-coverage-repair-2026-06-10-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Chaperone And Heat Shock Support bundle",
+  "candidate_bundle_id": "chaperone-and-heat-shock-support-coverage-repair-2026-06-10",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged interpretation is appropriately conservative. It repairs NPC durability and label context while leaving evidence_stage at human_functional_benefit, momentum mixed, and confidence low, and it preserves the high-priority non-NPC aging evidence gap identified in the coverage assessment.",
+  "reviewed_change_ids": [
+    "create-source-pmid-40663813",
+    "create-source-dailymed-miplyffa-label-2026-03-18",
+    "update-study-arimoclomol-npc-phase-2-3",
+    "create-finding-arimoclomol-npc-ole-sustained-disease-safety",
+    "create-finding-miplyffa-label-safety-interaction-boundary",
+    "update-outlook-track-chaperone-and-heat-shock-support"
+  ],
+  "findings": [
+    {
+      "finding_id": "stage-unchanged-and-supported",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "applies_to_change_id": "update-outlook-track-chaperone-and-heat-shock-support",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-chaperone-and-heat-shock-support-outlook"
+      },
+      "claim_or_issue": "The bundle does not upgrade stage, momentum, confidence, or LEV timing despite adding positive NPC OLE context.",
+      "why_it_matters": "The latest coverage assessment still has a high-priority gap for non-NPC aging-relevant human evidence, so a broader interpretation would overreach.",
+      "recommended_action": "Approve with the staged interpretation unchanged; continue ordinary surveillance for non-NPC and aging-relevant evidence.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "support-map-explicitly-links-new-evidence",
+      "severity": "note",
+      "category": "other",
+      "applies_to_change_id": "update-outlook-track-chaperone-and-heat-shock-support",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-chaperone-and-heat-shock-support-outlook"
+      },
+      "claim_or_issue": "The staged support map adds a dedicated NPC durability and safety context entry linking the OLE and label findings to their source IDs.",
+      "why_it_matters": "The outlook does not rely on an unstructured source list; rating rationale remains traceable through source, study, finding, and support-map records.",
+      "recommended_action": "Keep the dedicated support-map entry and the rating-change criteria that require replicated age-relevant human function evidence.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-11T01:10:45.745Z",
+  "updated_at": "2026-06-11T01:10:45.745Z"
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-chaperone-and-heat-shock-support-coverage-repair-2026-06-10-safety-limitations-r1",
+  "name": "Safety Limitations review for Chaperone And Heat Shock Support bundle",
+  "candidate_bundle_id": "chaperone-and-heat-shock-support-coverage-repair-2026-06-10",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "safety_limitations",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The safety lane is acceptable because the staged records make the Miplyffa label boundaries and OLE safety limits explicit. The public wording includes hypersensitivity, embryofetal risk, creatinine/OCT2 interaction language, common adverse reactions, open-label durability limits, and unresolved chronic preventive-use safety.",
+  "reviewed_change_ids": [
+    "create-source-pmid-40663813",
+    "create-source-dailymed-miplyffa-label-2026-03-18",
+    "update-study-arimoclomol-npc-phase-2-3",
+    "create-finding-arimoclomol-npc-ole-sustained-disease-safety",
+    "create-finding-miplyffa-label-safety-interaction-boundary",
+    "update-outlook-track-chaperone-and-heat-shock-support"
+  ],
+  "findings": [
+    {
+      "finding_id": "label-safety-limitations-represented",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-finding-miplyffa-label-safety-interaction-boundary",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "miplyffa-label-safety-interaction-boundary"
+      },
+      "claim_or_issue": "The label finding carries the important safety and interaction constraints needed for public interpretation.",
+      "why_it_matters": "Without these limitations, the public record could treat approval as a clean safety endorsement rather than a bounded NPC-with-miglustat label context.",
+      "recommended_action": "Publish with the staged label caveats intact and keep post-approval safety and pharmacovigilance data on the surveillance watchlist.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ole-safety-does-not-resolve-aging-use",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "create-finding-arimoclomol-npc-ole-sustained-disease-safety",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "arimoclomol-npc-ole-sustained-disease-safety"
+      },
+      "claim_or_issue": "The OLE finding states no new safety concerns in NPC but does not imply chronic preventive-use safety for aging populations.",
+      "why_it_matters": "This distinction prevents safety overreach from a rare-disease treatment context to broad aging use.",
+      "recommended_action": "Preserve the staged caveat that NPC OLE safety does not resolve chronic preventive-use safety in aging populations.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-11T01:10:50.028Z",
+  "updated_at": "2026-06-11T01:10:50.028Z"
+}

@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-10T23:15:24.924Z",
+  "updated_at": "2026-06-11T01:11:17.904Z",
   "notes": [
     "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
@@ -623,6 +623,21 @@
       "cooldown_days": 14,
       "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
       "default_question": "What changed for Telomerase Restoration since the last meaningful review or publication, and does any change justify a public update?",
+      "priority_tier": "later",
+      "notes": "Recently handled; ordinary rotation is due after 2026-06-24."
+    },
+    {
+      "rank": 37,
+      "phase_id": "surveillance-rotation",
+      "track_id": "chaperone-and-heat-shock-support",
+      "hallmark_id": "loss_of_proteostasis",
+      "default_mode": "surveillance",
+      "freshness_status": "recent",
+      "last_reviewed_at": "2026-06-10T23:10:18Z",
+      "next_due_at": "2026-06-24T23:10:18.000Z",
+      "cooldown_days": 14,
+      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
+      "default_question": "What changed for Chaperone and Heat-Shock Support since the last meaningful review or publication, and does any change justify a public update?",
       "priority_tier": "later",
       "notes": "Recently handled; ordinary rotation is due after 2026-06-24."
     }

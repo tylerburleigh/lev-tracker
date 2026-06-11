@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-chaperone-and-heat-shock-support-coverage-repair-2026-06-10-source-fidelity-r1",
+  "name": "Source Fidelity review for Chaperone And Heat Shock Support bundle",
+  "candidate_bundle_id": "chaperone-and-heat-shock-support-coverage-repair-2026-06-10",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, and finding records match the primary-source boundaries for the NPC-002 open-label extension and the March 2026 Miplyffa label. Extracted facts cover population, sample size, duration, endpoints, quantitative disease-severity results, safety, registry linkage, and sponsor/conflict limitations without converting the open-label NPC evidence into broad aging evidence.",
+  "reviewed_change_ids": [
+    "create-source-pmid-40663813",
+    "create-source-dailymed-miplyffa-label-2026-03-18",
+    "update-study-arimoclomol-npc-phase-2-3",
+    "create-finding-arimoclomol-npc-ole-sustained-disease-safety",
+    "create-finding-miplyffa-label-safety-interaction-boundary",
+    "update-outlook-track-chaperone-and-heat-shock-support"
+  ],
+  "findings": [
+    {
+      "finding_id": "ole-source-boundary-preserved",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-finding-arimoclomol-npc-ole-sustained-disease-safety",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "arimoclomol-npc-ole-sustained-disease-safety"
+      },
+      "claim_or_issue": "The OLE finding accurately describes an open-label 48-month NPC extension rather than a new randomized durability trial.",
+      "why_it_matters": "The source supports longer-term NPC severity and safety context but cannot independently prove broad proteostasis or aging benefit.",
+      "recommended_action": "Keep the existing open-label, NPC-specific, sponsor-affiliation, and chronic-use caveats attached to the finding and outlook.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "label-source-boundary-preserved",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-finding-miplyffa-label-safety-interaction-boundary",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "miplyffa-label-safety-interaction-boundary"
+      },
+      "claim_or_issue": "The label finding limits itself to regulatory indication, adverse-reaction, warning, creatinine, and OCT2 interaction context.",
+      "why_it_matters": "DailyMed is appropriate primary regulatory support for safety and interaction boundaries, but it is not a new efficacy source.",
+      "recommended_action": "Publish with the staged label framing unchanged and avoid using the label as evidence for broad aging efficacy.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-11T01:10:41.365Z",
+  "updated_at": "2026-06-11T01:10:41.365Z"
+}

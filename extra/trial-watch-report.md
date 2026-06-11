@@ -1,6 +1,6 @@
 # Trial Watch Report for Chaperone and Heat-Shock Support
 
-Generated from reviewed local records on 2026-06-10.
+Generated from reviewed local records on 2026-06-11.
 Stale registry threshold: 90 days. This report does not fetch current registry data.
 
 ## Summary
@@ -9,7 +9,7 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 - With `trial_details`: 3
 - Missing `trial_details`: 0
 - Completed or past-completion records with no posted results: 0
-- Registry checks missing or stale: 3
+- Registry checks missing or stale: 2
 - Open watchlist records with missing or stale registry checks: 0
 - Posted results recorded locally: 3
 
@@ -32,7 +32,6 @@ No completed or past-completion local trial records are marked as no posted resu
 ## Stale Or Missing Registry Checks
 
 - [Arimoclomol inclusion body myositis randomized trial](https://pubmed.ncbi.nlm.nih.gov/37739573/) (NCT02753530): completed; posted results; completion not recorded; registry no local check date.
-- [Arimoclomol NPC phase 2/3 trial](https://www.fda.gov/news-events/press-announcements/fda-approves-first-treatment-niemann-pick-disease-type-c) (NCT02612129): completed; posted results; completion not recorded; registry no local check date.
 - [ORARIALS-01 arimoclomol ALS phase 3 trial](https://pubmed.ncbi.nlm.nih.gov/38782015/) (NCT03491462): completed; posted results; completion not recorded; registry no local check date.
 
 ## Missing Trial Details
