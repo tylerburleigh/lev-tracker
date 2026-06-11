@@ -6,18 +6,141 @@
   "subject_type": "track",
   "subject_id": "immune-rejuvenation",
   "evidence_stage": "human_functional_benefit",
-  "momentum": "steady",
-  "confidence": "moderate",
+  "momentum": "mixed",
+  "confidence": "low",
   "main_evidence_gaps": [
-    "General immune benefit does not automatically equal aging reversal."
+    "The strongest human functional evidence is concentrated in the mTOR/TORC1 branch and does not generalize to all immune-rejuvenation strategies.",
+    "The RTB101 program is mixed: a phase 2b respiratory-infection signal was followed by a phase 3 miss on clinically symptomatic respiratory illness.",
+    "Spermidine and TRIIM add human immune-response or immunosenescence-marker signals, but they remain small, subgroup-limited, biomarker-heavy, or uncontrolled.",
+    "Active direct registries, including TRIIM-X and GIANTS-1, have no posted results as of June 11, 2026.",
+    "Durability, preventive safety, and attribution across mTOR, autophagy, microbiome, endocrine, thymic, and immune-specific mechanisms remain unresolved."
   ],
   "strongest_current_evidence": [
-    "Human functional readouts here are easier to justify than in many hallmarks."
+    "Older-adult mTOR/TORC1 trials report human vaccine-response, antiviral-gene, infection-rate, and respiratory-illness endpoints, including both positive phase 2 signals and a phase 3 miss.",
+    "A 2026 spermidine pilot reports improved SARS-CoV-2 vaccine-response markers in baseline older vaccine non-responders, with mechanistic immune-cell autophagy and senescence readouts.",
+    "TRIIM contributes uncontrolled human immunosenescence-marker and thymus-restoration context, while TRIIM-X remains an important no-results registry watch item.",
+    "A 2026 review supports the mTOR, microbiota, inflammaging, and vaccine-response taxonomy boundary without adding direct efficacy evidence."
   ],
-  "interpretation_note": "This remains one of the more clinically legible tracks on the site: human functional endpoints are easier to discuss here, even though that still falls short of broad aging reversal.",
-  "last_updated": "2026-05-30",
+  "interpretation_note": "Immune Rejuvenation can still be labeled human_functional_benefit because older-adult trials include vaccine-response, infection, and respiratory-illness endpoints. The confidence should be low and momentum mixed because the evidence is branch-specific, phase 3 replication is negative for RTB101, several signals are small or biomarker-heavy, and active trials remain no-results.",
+  "earliest_plausible_window": "No credible LEV-relevant window can be assigned before replicated trials show durable immune function or infection benefit with acceptable preventive safety and clear separation from adjacent mTOR, autophagy, microbiome, and endocrine mechanisms.",
+  "what_would_change_the_rating": [
+    "A stronger rating would need replicated older-adult trials showing durable infection prevention, vaccine-response improvement, or other clinically meaningful immune function with safety suitable for preventive use.",
+    "A firmer read would need resolution of the RTB101 phase 2b versus phase 3 discrepancy or independent evidence that a different immune-intervention branch produces reliable functional benefit.",
+    "TRIIM-X, GIANTS-1, or similar trials posting interpretable results could change momentum if they show functional endpoints rather than only biomarkers.",
+    "The rating would weaken if active registries remain unpublished, if larger immune-intervention trials are null, or if chronic immune, cytokine, endocrine, or mTOR safety issues dominate."
+  ],
+  "supporting_finding_ids": [
+    "everolimus-improved-influenza-vaccine-response-elderly",
+    "torc1-inhibition-reduced-infections-vaccine-response-elderly",
+    "rtb101-phase2b-signal-phase3-rti-miss",
+    "spermidine-vaccine-nonresponders-immune-response",
+    "spermidine-vaccine-autophagy-senescence-markers",
+    "triim-human-epigenetic-age-decrease",
+    "triim-x-registry-no-results",
+    "giants-1-immune-aging-recruiting-no-results",
+    "immunosenescence-vaccine-mtor-microbiota-review-boundary"
+  ],
+  "supporting_source_ids": [
+    "pmid-25540326",
+    "pmid-29997249",
+    "pmid-33977284",
+    "pmid-42169618",
+    "pmid-31496122",
+    "nct-04375657",
+    "nct-07363057",
+    "pmid-42169620"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "evidence_stage",
+      "conclusion": "The track remains at human_functional_benefit because older-adult trials include vaccine-response, infection-rate, and respiratory-illness endpoints rather than only immune biomarkers.",
+      "support_role": "supports",
+      "rationale": "The everolimus trial reported improved influenza-vaccine response, the phase 2a TORC1 trial reported lower infection rate plus vaccine-response movement, and the RTB101 program tested respiratory-illness endpoints in large older-adult randomized trials.",
+      "finding_ids": [
+        "everolimus-improved-influenza-vaccine-response-elderly",
+        "torc1-inhibition-reduced-infections-vaccine-response-elderly",
+        "rtb101-phase2b-signal-phase3-rti-miss"
+      ],
+      "source_ids": [
+        "pmid-25540326",
+        "pmid-29997249",
+        "pmid-33977284"
+      ],
+      "limitations": [
+        "The strongest functional evidence is specific to mTOR/TORC1 modulation.",
+        "Vaccine response and respiratory-infection endpoints do not establish broad aging reversal.",
+        "The largest RTB101 trial missed its clinical respiratory-illness endpoint."
+      ]
+    },
+    {
+      "label": "Confidence and momentum",
+      "outlook_field": "confidence",
+      "conclusion": "Confidence should be low and momentum mixed because the most developed human program includes both positive earlier signals and a phase 3 failure.",
+      "support_role": "limits",
+      "rationale": "The phase 2a and phase 2b mTOR/TORC1 signals keep the track clinically legible, but the phase 3 RTB101 miss prevents a moderate-confidence public read.",
+      "finding_ids": [
+        "torc1-inhibition-reduced-infections-vaccine-response-elderly",
+        "rtb101-phase2b-signal-phase3-rti-miss"
+      ],
+      "source_ids": [
+        "pmid-29997249",
+        "pmid-33977284"
+      ],
+      "limitations": [
+        "Endpoint definitions differed across trials.",
+        "Dose, schedule, drug combination, and participant-risk selection remain unresolved.",
+        "Short-term tolerability does not settle long-term preventive safety."
+      ]
+    },
+    {
+      "label": "Small human immune-response branches",
+      "outlook_field": "strongest_current_evidence",
+      "conclusion": "Spermidine and TRIIM broaden the human immune-rejuvenation map but do not independently justify moderate confidence.",
+      "support_role": "balances",
+      "rationale": "The spermidine pilot is randomized and immune-response-relevant but small and subgroup-limited. TRIIM reports human immunosenescence-marker movement in an uncontrolled nine-person pilot, while TRIIM-X is still recruiting with no posted results.",
+      "finding_ids": [
+        "spermidine-vaccine-nonresponders-immune-response",
+        "spermidine-vaccine-autophagy-senescence-markers",
+        "triim-human-epigenetic-age-decrease",
+        "triim-x-registry-no-results"
+      ],
+      "source_ids": [
+        "pmid-42169618",
+        "pmid-31496122",
+        "nct-04375657"
+      ],
+      "limitations": [
+        "The spermidine signal is concentrated in baseline vaccine non-responders and does not show infection outcomes.",
+        "TRIIM is uncontrolled, very small, and uses a multi-drug endocrine-thymic regimen.",
+        "TRIIM-X has no public results despite ongoing registry activity."
+      ]
+    },
+    {
+      "label": "Trial watch and taxonomy boundary",
+      "outlook_field": "main_evidence_gaps",
+      "conclusion": "The repaired map should track active immune-aging registries and keep immune rejuvenation separated from adjacent mTOR, microbiome, autophagy, endocrine, and vaccine-product claims.",
+      "support_role": "limits",
+      "rationale": "GIANTS-1 is a direct recruiting immune-aging biomarker trial with no posted results, and the 2026 review places vaccine-response work at the gut microbiota, mTOR, inflammaging, and immunosenescence boundary.",
+      "finding_ids": [
+        "giants-1-immune-aging-recruiting-no-results",
+        "immunosenescence-vaccine-mtor-microbiota-review-boundary"
+      ],
+      "source_ids": [
+        "nct-07363057",
+        "pmid-42169620"
+      ],
+      "limitations": [
+        "Recruiting registry status is not evidence of benefit.",
+        "Review-level synthesis is useful for boundaries but not a direct efficacy result.",
+        "Microbiome, mTOR, autophagy, endocrine, and immune-specific mechanisms need separate support maps when claims become stronger."
+      ]
+    }
+  ],
+  "last_updated": "2026-06-11",
   "tags": [
     "public",
-    "track"
+    "track",
+    "coverage-repair"
   ]
 }

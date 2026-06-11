@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-immune-rejuvenation-coverage-repair-2026-06-11-source-fidelity-r1",
+  "name": "Source Fidelity review for Immune Rejuvenation bundle",
+  "candidate_bundle_id": "immune-rejuvenation-coverage-repair-2026-06-11",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Source metadata, registry status, study provenance, endpoint descriptions, and quantitative notes match the selected primary sources after correcting two staged author-list typos before review application. The mTOR/TORC1 trial claims stay within the PubMed abstracts, GIANTS-1 and TRIIM-X are represented as recruiting/no-results registry context, and the review source is treated as boundary context rather than efficacy evidence.",
+  "reviewed_change_ids": [
+    "create-source-pmid-25540326",
+    "create-source-pmid-29997249",
+    "create-source-pmid-33977284",
+    "create-source-pmid-42169620",
+    "create-source-nct-07363057",
+    "create-intervention-everolimus",
+    "create-intervention-rtb101",
+    "create-intervention-gi-102-gib-7",
+    "create-study-everolimus-influenza-vaccine-elderly-rct",
+    "create-study-torc1-inhibition-elderly-infection-vaccine-phase2a",
+    "create-study-rtb101-older-adult-rti-phase2b-phase3",
+    "create-study-immunosenescence-vaccine-mtor-microbiota-review",
+    "create-study-giants-1-immune-aging-biomarker-registry",
+    "create-finding-everolimus-improved-influenza-vaccine-response-elderly",
+    "create-finding-torc1-inhibition-reduced-infections-vaccine-response-elderly",
+    "create-finding-rtb101-phase2b-signal-phase3-rti-miss",
+    "create-finding-immunosenescence-vaccine-mtor-microbiota-review-boundary",
+    "create-finding-giants-1-immune-aging-recruiting-no-results",
+    "update-outlook-track-immune-rejuvenation"
+  ],
+  "findings": [
+    {
+      "finding_id": "source-author-metadata-corrected",
+      "severity": "note",
+      "category": "source_mismatch",
+      "claim_or_issue": "The source-fidelity pass found and corrected author metadata in the staged PMID 33977284 and PMID 42169620 source records before this review was applied.",
+      "why_it_matters": "Author-list fidelity is part of the source audit trail even though the public interpretation does not depend on author names.",
+      "recommended_action": "No further action; retain the corrected staged source records during approval and publication.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-11T13:12:10.223Z",
+  "updated_at": "2026-06-11T13:12:10.223Z"
+}

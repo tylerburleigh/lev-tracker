@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-immune-rejuvenation-coverage-repair-2026-06-11-safety-limitations-r1",
+  "name": "Safety Limitations review for Immune Rejuvenation bundle",
+  "candidate_bundle_id": "immune-rejuvenation-coverage-repair-2026-06-11",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "safety_limitations",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Safety and durability limitations are visible and proportionate. The staged records note short-term tolerability in the mTOR/TORC1 trials, no-results safety endpoints in GIANTS-1 and TRIIM-X, and unresolved preventive-use safety for mTOR inhibitors, immunocytokines, endocrine-thymic regimens, and immune-active supplements.",
+  "reviewed_change_ids": [
+    "create-source-pmid-25540326",
+    "create-source-pmid-29997249",
+    "create-source-pmid-33977284",
+    "create-source-pmid-42169620",
+    "create-source-nct-07363057",
+    "create-intervention-everolimus",
+    "create-intervention-rtb101",
+    "create-intervention-gi-102-gib-7",
+    "create-study-everolimus-influenza-vaccine-elderly-rct",
+    "create-study-torc1-inhibition-elderly-infection-vaccine-phase2a",
+    "create-study-rtb101-older-adult-rti-phase2b-phase3",
+    "create-study-immunosenescence-vaccine-mtor-microbiota-review",
+    "create-study-giants-1-immune-aging-biomarker-registry",
+    "create-finding-everolimus-improved-influenza-vaccine-response-elderly",
+    "create-finding-torc1-inhibition-reduced-infections-vaccine-response-elderly",
+    "create-finding-rtb101-phase2b-signal-phase3-rti-miss",
+    "create-finding-immunosenescence-vaccine-mtor-microbiota-review-boundary",
+    "create-finding-giants-1-immune-aging-recruiting-no-results",
+    "update-outlook-track-immune-rejuvenation"
+  ],
+  "findings": [
+    {
+      "finding_id": "preventive-safety-remains-thin",
+      "severity": "note",
+      "category": "safety_limitation",
+      "applies_to_change_id": "update-outlook-track-immune-rejuvenation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-immune-rejuvenation-outlook"
+      },
+      "claim_or_issue": "The bundle cannot resolve long-term preventive safety or durability for immune-active interventions in older adults.",
+      "why_it_matters": "Low-dose tolerability and recruiting safety endpoints are not enough to imply practical preventive use.",
+      "recommended_action": "No revision needed; preserve the staged low-confidence wording and the safety/durability gap in the outlook and coverage assessment.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-11T13:12:23.385Z",
+  "updated_at": "2026-06-11T13:12:23.385Z"
+}

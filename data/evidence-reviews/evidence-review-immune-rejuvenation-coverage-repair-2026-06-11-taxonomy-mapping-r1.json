@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-immune-rejuvenation-coverage-repair-2026-06-11-taxonomy-mapping-r1",
+  "name": "Taxonomy Mapping review for Immune Rejuvenation bundle",
+  "candidate_bundle_id": "immune-rejuvenation-coverage-repair-2026-06-11",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "taxonomy_mapping",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged taxonomy mapping is acceptable. The outlook and intervention records explicitly separate immune rejuvenation from rapalogs/mTOR, autophagy/spermidine, microbiome/synbiotic, thymic/endocrine TRIIM, telomerase-adjacent, and vaccine-product efficacy claims while still allowing the immune track to cite shared boundary evidence.",
+  "reviewed_change_ids": [
+    "create-source-pmid-25540326",
+    "create-source-pmid-29997249",
+    "create-source-pmid-33977284",
+    "create-source-pmid-42169620",
+    "create-source-nct-07363057",
+    "create-intervention-everolimus",
+    "create-intervention-rtb101",
+    "create-intervention-gi-102-gib-7",
+    "create-study-everolimus-influenza-vaccine-elderly-rct",
+    "create-study-torc1-inhibition-elderly-infection-vaccine-phase2a",
+    "create-study-rtb101-older-adult-rti-phase2b-phase3",
+    "create-study-immunosenescence-vaccine-mtor-microbiota-review",
+    "create-study-giants-1-immune-aging-biomarker-registry",
+    "create-finding-everolimus-improved-influenza-vaccine-response-elderly",
+    "create-finding-torc1-inhibition-reduced-infections-vaccine-response-elderly",
+    "create-finding-rtb101-phase2b-signal-phase3-rti-miss",
+    "create-finding-immunosenescence-vaccine-mtor-microbiota-review-boundary",
+    "create-finding-giants-1-immune-aging-recruiting-no-results",
+    "update-outlook-track-immune-rejuvenation"
+  ],
+  "findings": [
+    {
+      "finding_id": "branch-boundaries-explicit",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "update-outlook-track-immune-rejuvenation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-immune-rejuvenation-outlook"
+      },
+      "claim_or_issue": "The support map spans mTOR/TORC1, spermidine/autophagy, TRIIM/thymic-endocrine, GIANTS-1 microbiome/immune, and review-level vaccine-response boundary evidence.",
+      "why_it_matters": "Without explicit branch boundaries, a single adjacent mechanism could be misread as support for the whole immune-rejuvenation track.",
+      "recommended_action": "No revision needed; retain branch-specific support-map labels, source IDs, finding IDs, and limitations during publication.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-11T13:12:27.692Z",
+  "updated_at": "2026-06-11T13:12:27.692Z"
+}

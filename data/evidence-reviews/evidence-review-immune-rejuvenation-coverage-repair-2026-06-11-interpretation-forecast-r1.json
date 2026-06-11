@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-immune-rejuvenation-coverage-repair-2026-06-11-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Immune Rejuvenation bundle",
+  "candidate_bundle_id": "immune-rejuvenation-coverage-repair-2026-06-11",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged outlook interpretation is appropriately conservative. It keeps human_functional_benefit only because older-adult mTOR/TORC1 trials include vaccine-response, infection-rate, and respiratory-illness endpoints, while lowering confidence to low and momentum to mixed because the RTB101 program includes a phase 3 miss and the TRIIM, spermidine, and registry branches remain limited.",
+  "reviewed_change_ids": [
+    "create-source-pmid-25540326",
+    "create-source-pmid-29997249",
+    "create-source-pmid-33977284",
+    "create-source-pmid-42169620",
+    "create-source-nct-07363057",
+    "create-intervention-everolimus",
+    "create-intervention-rtb101",
+    "create-intervention-gi-102-gib-7",
+    "create-study-everolimus-influenza-vaccine-elderly-rct",
+    "create-study-torc1-inhibition-elderly-infection-vaccine-phase2a",
+    "create-study-rtb101-older-adult-rti-phase2b-phase3",
+    "create-study-immunosenescence-vaccine-mtor-microbiota-review",
+    "create-study-giants-1-immune-aging-biomarker-registry",
+    "create-finding-everolimus-improved-influenza-vaccine-response-elderly",
+    "create-finding-torc1-inhibition-reduced-infections-vaccine-response-elderly",
+    "create-finding-rtb101-phase2b-signal-phase3-rti-miss",
+    "create-finding-immunosenescence-vaccine-mtor-microbiota-review-boundary",
+    "create-finding-giants-1-immune-aging-recruiting-no-results",
+    "update-outlook-track-immune-rejuvenation"
+  ],
+  "findings": [
+    {
+      "finding_id": "functional-stage-boundary-explicit",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "update-outlook-track-immune-rejuvenation",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-immune-rejuvenation-outlook"
+      },
+      "claim_or_issue": "The public stage depends on immune-function endpoints from a narrow mTOR/TORC1 branch, not on broad aging reversal or replicated durable immune rejuvenation.",
+      "why_it_matters": "The outlook would overstate the field if the stage were read as a general track-level proof of aging reversal.",
+      "recommended_action": "No revision needed; the staged outlook already states the mTOR/TORC1 branch limit, phase 3 miss, no-results registries, and durability requirements.",
+      "resolution_status": "closed"
+    }
+  ],
+  "skill_name": "lev-evidence-review",
+  "created_at": "2026-06-11T13:12:15.333Z",
+  "updated_at": "2026-06-11T13:12:15.333Z"
+}
