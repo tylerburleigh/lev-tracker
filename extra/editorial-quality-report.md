@@ -1,6 +1,6 @@
 # Editorial Quality Report
 
-Generated: 2026-06-11T01:23:18.214Z
+Generated: 2026-06-11T10:41:39.727Z
 Overall: passed
 
 ## Summary
@@ -15,10 +15,6 @@ Overall: passed
   Status is current.
 - PASS: Reader-task audit has no issues
   0 issue(s), 0 warning(s).
-- PASS: Public copy warnings <= 269
-  Current public copy warning count is 0.
-- PASS: Reader-task warnings <= 0
-  Current reader-task warning count is 0.
 
 ## Command Output
 
@@ -31,7 +27,7 @@ Exit code: 0
 Current LEV story status: current
 Last reviewed: 2026-06-11
 Review due: 2026-07-11
-Watched outlooks: 16
+Watched outlooks: 17
 Changed or missing snapshots: 0
 New outlook-changing public updates: 0
 ```

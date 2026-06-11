@@ -4,7 +4,7 @@
   "summary": "Longevity research now has early human signals in more places, but the center of gravity is still early testing. LEV does not look close until multiple approaches show long-lasting improvements in human health or function, with safety and lasting effects clear enough to matter.",
   "date": "2026-06-11",
   "current_evidence_picture": "The field is in early human testing. Some tracks now have early biomarker results, functional results, disease results, or trials worth watching. Most are still uncertain, narrow, or only indirectly about aging itself.",
-  "what_changed": "The May field review did not find a result that changed the LEV outlook. The June 9 NAD/redox, June 10 stem-cell rejuvenation and mitophagy, and June 11 chaperone and heat-shock updates made individual tracks easier to judge by adding no-results registries, safety context, review context, open-label NPC context, label boundaries, and clearer evidence boundaries, but none changed the larger proof gap: repeated human evidence that health or function improves for longer.",
+  "what_changed": "The May field review did not find a result that changed the LEV outlook. The June 9 NAD/redox, June 10 stem-cell rejuvenation and mitophagy, and June 11 chaperone and autophagy updates made individual tracks easier to judge by adding no-results registries, safety context, review context, open-label NPC context, label boundaries, a small spermidine vaccine-response signal, and clearer evidence boundaries, but none changed the larger proof gap: repeated human evidence that health or function improves for longer.",
   "before_now_next": [
     {
       "label": "Before",
@@ -131,6 +131,20 @@
       ],
       "related_outlook_ids": [
         "track-chaperone-and-heat-shock-support-outlook"
+      ]
+    },
+    {
+      "label": "Autophagy induction gained a narrow spermidine signal",
+      "date": "2026-06-11",
+      "summary": "The autophagy update added an older-adult spermidine vaccine-response pilot that linked B-cell autophagy markers with improved response markers in baseline non-responders, while keeping the track tentative and at an early human biomarker stage.",
+      "impact_on_outlook": "It adds a useful human signal, but it does not make LEV look closer because the result is small, subgroup-limited, and not proof of lasting aging-relevant function.",
+      "subject_type": "track",
+      "subject_id": "autophagy-induction",
+      "related_publication_event_ids": [
+        "publish-autophagy-induction-surveillance-2026-06-11-2026-06-11t10-25-04-657z"
+      ],
+      "related_outlook_ids": [
+        "track-autophagy-induction-outlook"
       ]
     }
   ],
@@ -300,7 +314,7 @@
       }
     ],
     "observed_state_of_field_slug": "2026-06",
-    "observed_latest_publication_event_id": "publish-chaperone-and-heat-shock-support-coverage-repair-2026-06-10-2026-06-11t01-11-08-627z",
+    "observed_latest_publication_event_id": "publish-autophagy-induction-surveillance-2026-06-11-2026-06-11t10-25-04-657z",
     "observed_outlook_states": [
       {
         "outlook_id": "overall-lev-outlook",
@@ -310,9 +324,9 @@
         "momentum": "mixed",
         "confidence": "moderate",
         "evidence_gap": "The field still lacks repeated human studies showing long-lasting improvements in health or function in ways that clearly add up toward LEV.",
-        "strongest_evidence": "The recent picture is broader rather than stronger: early missing-context updates are making the evidence easier to judge without making LEV look closer.",
-        "last_updated": "2026-06-10",
-        "fingerprint": "5055a4cd22a06a47"
+        "strongest_evidence": "The recent picture is broader rather than stronger: updates in senomorphics, NAD/redox, stem-cell rejuvenation, mitophagy, chaperone support, and autophagy induction are making the evidence easier to judge without making LEV look closer.",
+        "last_updated": "2026-06-11",
+        "fingerprint": "73d2a78a9d6ed08b"
       },
       {
         "outlook_id": "track-ampk-and-metabolic-modulators-outlook",
@@ -325,6 +339,18 @@
         "strongest_evidence": "MILES provides the main direct human biomarker anchor: short-term metformin changed glucose handling and skeletal-muscle and adipose transcriptomic pathways in older adults with impaired glucose tolerance.",
         "last_updated": "2026-06-01",
         "fingerprint": "d9f2903ca6cabb5c"
+      },
+      {
+        "outlook_id": "track-autophagy-induction-outlook",
+        "subject_type": "track",
+        "subject_id": "autophagy-induction",
+        "evidence_stage": "human_biomarker_signal",
+        "momentum": "mixed",
+        "confidence": "low",
+        "evidence_gap": "The best-controlled 12-month spermidine trial in older adults was null on its primary memory endpoint and secondary outcomes.",
+        "strongest_evidence": "A 2026 spermidine pilot in older vaccine non-responders linked autophagy-related B-cell signals with improved vaccine-response markers, while remaining small and exploratory.",
+        "last_updated": "2026-06-11",
+        "fingerprint": "d1648171b150f41c"
       },
       {
         "outlook_id": "track-chaperone-and-heat-shock-support-outlook",
@@ -504,7 +530,8 @@
     "publish-nad-and-redox-restoration-coverage-repair-2026-06-08-2026-06-09t10-39-49-637z",
     "publish-stem-cell-rejuvenation-coverage-repair-2026-06-09-2026-06-10t10-17-06-414z",
     "publish-mitophagy-enhancers-coverage-repair-2026-06-10-2026-06-10t14-26-07-178z",
-    "publish-chaperone-and-heat-shock-support-coverage-repair-2026-06-10-2026-06-11t01-11-08-627z"
+    "publish-chaperone-and-heat-shock-support-coverage-repair-2026-06-10-2026-06-11t01-11-08-627z",
+    "publish-autophagy-induction-surveillance-2026-06-11-2026-06-11t10-25-04-657z"
   ],
   "related_outlook_ids": [
     "overall-lev-outlook",
@@ -518,6 +545,7 @@
     "track-nad-and-redox-restoration-outlook",
     "track-stem-cell-rejuvenation-outlook",
     "track-mitophagy-enhancers-outlook",
-    "track-chaperone-and-heat-shock-support-outlook"
+    "track-chaperone-and-heat-shock-support-outlook",
+    "track-autophagy-induction-outlook"
   ]
 }
