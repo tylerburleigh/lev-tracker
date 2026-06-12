@@ -1,0 +1,310 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "protein-aggregate-clearance-coverage-2026-06-12",
+  "name": "Protein Aggregate Clearance Coverage Assessment for June 12, 2026",
+  "short_name": "Protein aggregate clearance coverage",
+  "track_id": "protein-aggregate-clearance",
+  "hallmark_id": "loss_of_proteostasis",
+  "assessment_type": "manual",
+  "assessed_at": "2026-06-12T22:43:55Z",
+  "assessment_window": {
+    "from": "2026-06-02T11:35:00Z",
+    "to": "2026-06-05T23:37:10Z",
+    "basis": "Backfill assessment of the published June 2 protein-aggregate-clearance baseline and the June 5 no-op surveillance session; no new external source search was run for this assessment."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is adequate for the current low-confidence durable_disease_or_mortality_relevance public claim because the local map contains multiple randomized human outcome anchors in age-associated amyloid disease: ATTR-CM stabilizer and TTR-lowering trials with mortality, hospitalization, cardiovascular-event, functional, or hierarchical outcome evidence; Alzheimer's amyloid antibodies with direct amyloid lowering and modest clinical slowing; and direct ATTR depleter antibodies with biomarker support plus a functional-boundary result. Coverage is not strong because the evidence remains disease- and substrate-specific, the strongest ATTR outcome therapies prevent new amyloid formation or reduce precursor supply rather than directly clearing existing deposits, direct aggregate-depleter antibodies have not yet shown confirmed functional or outcome benefit, Alzheimer antibody net benefit is constrained by ARIA and monitoring burden, animal lifespan or broad healthy-aging evidence is not mapped, and recent-review or formal seminal-anchor triangulation has not been recorded. The June 5 surveillance pass found no material post-publication delta, so ordinary surveillance can continue.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-06-02-protein-aggregate-clearance-bootstrap",
+      "2026-06-05-protein-aggregate-clearance-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "protein-aggregate-clearance-bootstrap-2026-06-02"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-protein-aggregate-clearance-source-fidelity-r1",
+      "evidence-review-protein-aggregate-clearance-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-protein-aggregate-clearance-bootstrap-2026-06-02-2026-06-02t12-29-42-280z"
+    ],
+    "outlook_ids": [
+      "track-protein-aggregate-clearance-outlook",
+      "hallmark-loss-of-proteostasis-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "strong",
+      "rationale": "The baseline contains eight human randomized-trial anchors across Alzheimer's disease and ATTR cardiomyopathy. Lecanemab and donanemab directly lower amyloid-beta pathology and slow early Alzheimer's decline; NI006 and coramitug test direct ATTR amyloid-depleter antibodies; patisiran and vutrisiran suppress TTR production; and tafamidis and acoramidis stabilize TTR with clinical outcome evidence.",
+      "source_ids": [
+        "pmid-36449413",
+        "pmid-37459141",
+        "pmid-37212440",
+        "pmid-41212997",
+        "pmid-37888916",
+        "pmid-30145929",
+        "pmid-38197816",
+        "pmid-39213194"
+      ],
+      "finding_ids": [
+        "lecanemab-reduced-amyloid-and-slowed-early-ad-decline",
+        "donanemab-cleared-amyloid-and-slowed-early-ad-decline",
+        "ni006-reduced-attr-cm-amyloid-load-biomarkers",
+        "coramitug-reduced-ntprobnp-without-6mwt-benefit",
+        "patisiran-preserved-6mwt-attr-cm",
+        "tafamidis-reduced-attr-cm-mortality-hospitalizations",
+        "acoramidis-improved-attr-cm-hierarchical-outcome",
+        "vutrisiran-reduced-attr-cm-death-cv-events"
+      ],
+      "gap_note": "Strong human interventional coverage is limited to disease-specific amyloid indications and does not establish systemic proteostasis restoration or broad aging benefit."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "not_checked",
+      "rationale": "The assessed artifacts do not systematically map observational cohorts, natural-history comparisons, real-world effectiveness, biomarker-trajectory cohorts, or natural experiments for amyloid-beta, TTR, tau-adjacent, or other aggregate substrates.",
+      "gap_note": "This does not block the current randomized-trial-driven public claim, but future review could add useful context for disease progression, real-world safety, access, and durability."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "not_checked",
+      "rationale": "The public baseline is driven by treated-human Alzheimer's and ATTR disease trials, not by animal lifespan or healthspan evidence. The assessed artifacts do not map animal aggregate-clearance lifespan studies or broad proteostasis-aging models.",
+      "gap_note": "A broader LEV-relevant interpretation would need evidence beyond disease-specific human amyloid trials, including aging-relevant tissue function and, ideally, cross-substrate or cross-tissue evidence."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "Mechanistic coverage distinguishes direct amyloid-beta lowering, ATTR amyloid-depleter antibodies, TTR stabilization, and TTR precursor suppression. The map also separates direct aggregate-load movement from aggregate formation prevention or precursor reduction, which is the core mechanism boundary for this track.",
+      "source_ids": [
+        "pmid-36449413",
+        "pmid-37459141",
+        "pmid-37212440",
+        "pmid-41212997",
+        "pmid-37888916",
+        "pmid-30145929",
+        "pmid-38197816",
+        "pmid-39213194"
+      ],
+      "finding_ids": [
+        "lecanemab-reduced-amyloid-and-slowed-early-ad-decline",
+        "donanemab-cleared-amyloid-and-slowed-early-ad-decline",
+        "ni006-reduced-attr-cm-amyloid-load-biomarkers",
+        "coramitug-reduced-ntprobnp-without-6mwt-benefit",
+        "patisiran-preserved-6mwt-attr-cm",
+        "tafamidis-reduced-attr-cm-mortality-hospitalizations",
+        "acoramidis-improved-attr-cm-hierarchical-outcome",
+        "vutrisiran-reduced-attr-cm-death-cv-events"
+      ],
+      "gap_note": "Mechanistic coverage is adequate for the public boundary, but the field remains split by substrate, tissue, and mechanism, so the map should not collapse amyloid-beta removal, TTR stabilization, TTR silencing, and direct ATTR depletion into one generalized clearance claim."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The outlook and reviews preserve important limits: coramitug reduced NT-proBNP without significant 6-minute-walk benefit, APOLLO-B did not show significant benefit on listed composite secondary endpoints, direct ATTR depleter antibodies remain biomarker-stage, Alzheimer's antibodies have modest clinical slowing and meaningful ARIA risk, and ATTR-CM outcome therapies are disease-specific and often non-clearance mechanisms.",
+      "source_ids": [
+        "pmid-36449413",
+        "pmid-37459141",
+        "pmid-41212997",
+        "pmid-37888916"
+      ],
+      "finding_ids": [
+        "lecanemab-reduced-amyloid-and-slowed-early-ad-decline",
+        "donanemab-cleared-amyloid-and-slowed-early-ad-decline",
+        "coramitug-reduced-ntprobnp-without-6mwt-benefit",
+        "patisiran-preserved-6mwt-attr-cm"
+      ],
+      "gap_note": "Limiting evidence is adequate for the current public claim, but broader null and discontinuation evidence across failed amyloid or aggregate programs has not been formally reconciled."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "adequate",
+      "rationale": "The public outlook explicitly names Alzheimer antibody ARIA, infusion reactions, and monitoring burden, and the ATTR-CM evidence includes 12- to 30-month randomized disease-outcome trials. The June 5 surveillance pass also found a severe lecanemab ARIA case report as context, reinforcing but not changing the existing safety boundary.",
+      "source_ids": [
+        "pmid-36449413",
+        "pmid-37459141",
+        "pmid-37888916",
+        "pmid-30145929",
+        "pmid-38197816",
+        "pmid-39213194"
+      ],
+      "finding_ids": [
+        "lecanemab-reduced-amyloid-and-slowed-early-ad-decline",
+        "donanemab-cleared-amyloid-and-slowed-early-ad-decline",
+        "patisiran-preserved-6mwt-attr-cm",
+        "tafamidis-reduced-attr-cm-mortality-hospitalizations",
+        "acoramidis-improved-attr-cm-hierarchical-outcome",
+        "vutrisiran-reduced-attr-cm-death-cv-events"
+      ],
+      "gap_note": "Safety and durability are not strong for broad aging use; long-term real-world net benefit, prevention settings, frailty, comorbidity, and direct-depleter cardiac safety still need surveillance."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "The June 5 surveillance session rechecked the baseline registries NCT03887455, NCT04437511, NCT04360434, NCT05442047, NCT03997383, NCT01994889, NCT03860935, and NCT04153149 and screened Alzheimer antibody and ATTR terms. It found no material posted-result or status change, and same-window Alzheimer registry updates such as NCT05508789 and NCT04468659 had no posted results.",
+      "gap_note": "Continue watching direct ATTR depleter programs, Alzheimer antibody prevention or dosing studies, and ATTR-CM treatment registries for posted results, safety updates, label changes, or functional and outcome evidence."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "The backfill reviewed local bootstrap and surveillance artifacts. The June 5 pass screened same-window literature and context records, but no formal recent-review, guideline, meta-analysis, or comparative-effectiveness triangulation has been reconciled against the eight-source baseline.",
+      "gap_note": "A future source-completeness pass should compare recent Alzheimer antibody, ATTR-CM treatment, amyloid-depleter, anti-amyloid safety, and proteostasis review literature against the current source map."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes plausible anchor records for lecanemab, donanemab, NI006, coramitug, patisiran, tafamidis, acoramidis, and vutrisiran. These are sufficient for the current disease-specific public read and include the primary stage-driving ATTR-CM outcome trials.",
+      "source_ids": [
+        "pmid-36449413",
+        "pmid-37459141",
+        "pmid-37212440",
+        "pmid-41212997",
+        "pmid-37888916",
+        "pmid-30145929",
+        "pmid-38197816",
+        "pmid-39213194"
+      ],
+      "finding_ids": [
+        "lecanemab-reduced-amyloid-and-slowed-early-ad-decline",
+        "donanemab-cleared-amyloid-and-slowed-early-ad-decline",
+        "ni006-reduced-attr-cm-amyloid-load-biomarkers",
+        "coramitug-reduced-ntprobnp-without-6mwt-benefit",
+        "patisiran-preserved-6mwt-attr-cm",
+        "tafamidis-reduced-attr-cm-mortality-hospitalizations",
+        "acoramidis-improved-attr-cm-hierarchical-outcome",
+        "vutrisiran-reduced-attr-cm-death-cv-events"
+      ],
+      "gap_note": "Formal must-include, guideline-cited, review-cited, or citation-network auditing could move this category from adequate to strong."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The outlook, bootstrap notes, and interpretation review explicitly distinguish Alzheimer's amyloid-beta immunotherapy, ATTR direct depleter antibodies, TTR stabilization, TTR RNA interference, and broader loss-of-proteostasis biology. They also keep disease-specific aggregate programs separate from generalized LEV-relevant proteostasis restoration.",
+      "source_ids": [
+        "pmid-36449413",
+        "pmid-37459141",
+        "pmid-37212440",
+        "pmid-41212997",
+        "pmid-37888916",
+        "pmid-30145929",
+        "pmid-38197816",
+        "pmid-39213194"
+      ],
+      "finding_ids": [
+        "lecanemab-reduced-amyloid-and-slowed-early-ad-decline",
+        "donanemab-cleared-amyloid-and-slowed-early-ad-decline",
+        "ni006-reduced-attr-cm-amyloid-load-biomarkers",
+        "coramitug-reduced-ntprobnp-without-6mwt-benefit",
+        "patisiran-preserved-6mwt-attr-cm",
+        "tafamidis-reduced-attr-cm-mortality-hospitalizations",
+        "acoramidis-improved-attr-cm-hierarchical-outcome",
+        "vutrisiran-reduced-attr-cm-death-cv-events"
+      ],
+      "gap_note": "Boundary maintenance remains important because future tau, amyloid-beta, ATTR, proteasome, autophagy, chaperone, and disease-modifying dementia or cardiomyopathy records may overlap adjacent tracks."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-36449413",
+    "pmid-37459141",
+    "pmid-37212440",
+    "pmid-41212997",
+    "pmid-37888916",
+    "pmid-30145929",
+    "pmid-38197816",
+    "pmid-39213194"
+  ],
+  "covered_finding_ids": [
+    "lecanemab-reduced-amyloid-and-slowed-early-ad-decline",
+    "donanemab-cleared-amyloid-and-slowed-early-ad-decline",
+    "ni006-reduced-attr-cm-amyloid-load-biomarkers",
+    "coramitug-reduced-ntprobnp-without-6mwt-benefit",
+    "patisiran-preserved-6mwt-attr-cm",
+    "tafamidis-reduced-attr-cm-mortality-hospitalizations",
+    "acoramidis-improved-attr-cm-hierarchical-outcome",
+    "vutrisiran-reduced-attr-cm-death-cv-events"
+  ],
+  "search_log_summary": "This backfill reviewed local project artifacts: the published Protein Aggregate Clearance outlook, June 2 bootstrap session, published candidate bundle, source-fidelity and interpretation reviews, publication event, and June 5 no-op surveillance session with its PubMed, ClinicalTrials.gov, bioRxiv/medRxiv, correction/retraction, regulator, sponsor, and web-search log. No new PubMed, registry, preprint, citation-network, or web source search was run for this assessment.",
+  "source_selection_notes": [
+    "PMID 30145929, PMID 38197816, and PMID 39213194 are the main stage-driving ATTR-CM outcome anchors for mortality, hospitalization, cardiovascular events, function, and hierarchical outcome evidence.",
+    "PMID 36449413 and PMID 37459141 provide direct amyloid-beta lowering with modest clinical slowing in early Alzheimer's disease, while preserving ARIA and monitoring limits.",
+    "PMID 37212440 and PMID 41212997 represent direct ATTR amyloid-depleter antibody evidence, but currently at biomarker or functional-boundary stage rather than confirmed outcome benefit.",
+    "PMID 37888916 supports functional relevance for TTR-lowering in ATTR-CM while remaining precursor-suppression rather than direct deposit-clearance evidence.",
+    "The June 5 surveillance pass found no material post-publication source, no correction or retraction for the eight supporting PMIDs, no direct-depleter outcome result, and no posted result from same-window Alzheimer antibody registry updates."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "disease-specific-stage-generalization-limit",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "The public durable_disease_or_mortality_relevance stage is anchored to age-associated amyloid diseases, especially ATTR-CM, not to broad aging, multimorbidity, frailty, or systemic proteostasis restoration.",
+      "priority": "high",
+      "suggested_action": "Keep confidence low and require aggregate-burden reduction linked to functional or outcome benefit across additional aging-relevant tissues or substrates before strengthening broad-aging interpretation."
+    },
+    {
+      "gap_id": "direct-clearance-outcomes-not-proven",
+      "gap_type": "evidence_gap",
+      "category": "mechanistic",
+      "description": "The strongest ATTR-CM outcome therapies stabilize TTR or reduce TTR production, while direct ATTR depleter antibodies remain biomarker-stage or lack confirmed functional benefit.",
+      "priority": "high",
+      "suggested_action": "Prioritize surveillance for NI006, coramitug, PRX004, and related direct-depleter programs reporting function, hospitalization, mortality, amyloid-load, safety, or durability outcomes."
+    },
+    {
+      "gap_id": "alzheimer-antibody-net-benefit-constrained",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Lecanemab and donanemab lower amyloid and slow early Alzheimer's decline, but clinical effects are modest and constrained by ARIA, infusion reactions, monitoring requirements, and prevention or real-world net-benefit uncertainty.",
+      "priority": "high",
+      "suggested_action": "Continue surveillance for ARIA, label, dosing, prevention, real-world effectiveness, and regulator communications before changing confidence or momentum."
+    },
+    {
+      "gap_id": "animal-and-broad-healthspan-layer-unmapped",
+      "gap_type": "coverage_gap",
+      "category": "animal_lifespan_or_healthspan",
+      "description": "The current assessment does not map animal lifespan, healthspan, or broad proteostasis-aging aggregate-clearance studies because the public claim is human disease-trial driven.",
+      "priority": "medium",
+      "suggested_action": "Use a later source-completeness pass if the track needs broader LEV-relevant aging triangulation beyond Alzheimer's and ATTR disease programs."
+    },
+    {
+      "gap_id": "observational-and-real-world-layer-unmapped",
+      "gap_type": "coverage_gap",
+      "category": "human_observational_or_natural_experiment",
+      "description": "Observational, real-world, natural-history, access, and comparative-effectiveness evidence has not been systematically reconciled for Alzheimer antibodies or ATTR therapies.",
+      "priority": "medium",
+      "suggested_action": "Consider a future coverage-repair or surveillance review focused on real-world safety, treatment discontinuation, access, durability, and natural-history comparators."
+    },
+    {
+      "gap_id": "active-registry-watch-needed",
+      "gap_type": "coverage_gap",
+      "category": "active_trials_registries",
+      "description": "Alzheimer antibody registries such as NCT05508789 and NCT04468659 and ATTR direct-depleter or related treatment registries remain important no-results watch items.",
+      "priority": "medium",
+      "suggested_action": "Use ordinary surveillance to recheck posted results, linked publications, regulator pages, and sponsor communications for direct-depleter, prevention, dosing, safety, and outcome updates."
+    },
+    {
+      "gap_id": "recent-review-triangulation-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "Recent reviews, meta-analyses, guidelines, and comparative-effectiveness syntheses around Alzheimer antibody therapy, ATTR-CM treatment, direct amyloid depletion, safety, and aggregate biology have not been formally reconciled against the eight-source baseline.",
+      "priority": "medium",
+      "suggested_action": "Use a future source-completeness pass to compare recent review and guideline literature with the current source list and document missing decision-relevant records."
+    },
+    {
+      "gap_id": "aggregate-substrate-taxonomy-maintenance",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "The track combines amyloid-beta, transthyretin, direct depleter antibodies, TTR stabilization, TTR silencing, and adjacent tau or proteostasis biology, each with different intervention logic and risk.",
+      "priority": "medium",
+      "suggested_action": "Keep future staged records explicit about whether they test aggregate clearance, aggregate formation prevention, precursor suppression, diagnostic imaging, chaperone support, proteasome biology, autophagy, or adjacent disease-modifying therapy."
+    }
+  ],
+  "next_coverage_action": "Continue ordinary surveillance for Protein Aggregate Clearance. On the next pass, recheck direct ATTR amyloid-depleter programs, Alzheimer antibody prevention or dosing studies, ARIA and regulator updates, ATTR-CM treatment registries, and recent review or guideline context; reserve coverage_repair for a later real-world evidence, review-triangulation, animal-healthspan, or formal seminal-anchor audit if no material field delta appears.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-assessment",
+    "manual",
+    "loss_of_proteostasis",
+    "protein-aggregate-clearance"
+  ]
+}
