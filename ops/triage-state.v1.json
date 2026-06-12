@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-12T18:56:57.003Z",
+  "generated_at": "2026-06-12T19:00:56.669Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-12T18:56:56.890Z",
-    "research_priority_queue_updated_at": "2026-06-12T18:56:56.890Z",
+    "research_coverage_status_updated_at": "2026-06-12T19:00:56.553Z",
+    "research_priority_queue_updated_at": "2026-06-12T19:00:56.553Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
     "surveillance_recent_queue_count": 38,
     "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 14,
+    "coverage_assessment_backlog_count": 13,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
   },
@@ -33,7 +33,7 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-assessment-backfill-mitochondrial-biogenesis-and-dynamics",
+    "top_work_item_id": "coverage-assessment-backfill-selective-autophagy-and-organelle-quality-control",
     "top_mode": "coverage_assessment_backfill",
     "active_editorial_count": 0,
     "ready_research_count": 0,
@@ -46,24 +46,24 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "coverage-assessment-backfill-mitochondrial-biogenesis-and-dynamics",
+      "item_id": "coverage-assessment-backfill-selective-autophagy-and-organelle-quality-control",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for Mitochondrial Biogenesis and Dynamics",
-      "rationale": "14 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
+      "title": "Backfill coverage assessment for Selective Autophagy and Organelle Quality Control",
+      "rationale": "13 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
       "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
-      "track_id": "mitochondrial-biogenesis-and-dynamics",
-      "hallmark_id": "mitochondrial_dysfunction",
+      "track_id": "selective-autophagy-and-organelle-quality-control",
+      "hallmark_id": "disabled_macroautophagy",
       "references": [
         {
           "record_type": "track",
-          "record_id": "mitochondrial-biogenesis-and-dynamics"
+          "record_id": "selective-autophagy-and-organelle-quality-control"
         },
         {
           "record_type": "hallmark",
-          "record_id": "mitochondrial_dysfunction"
+          "record_id": "disabled_macroautophagy"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",
@@ -75,11 +75,11 @@
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 14
+          "value": 13
         },
         {
           "name": "generated_surveillance_queue_rank",
-          "value": 14
+          "value": 16
         },
         {
           "name": "track_next_mode",

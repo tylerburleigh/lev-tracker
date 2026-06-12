@@ -1,0 +1,273 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "mitochondrial-biogenesis-and-dynamics-coverage-2026-06-12",
+  "name": "Mitochondrial Biogenesis and Dynamics Coverage Assessment for June 12, 2026",
+  "short_name": "Mitochondrial biogenesis coverage",
+  "track_id": "mitochondrial-biogenesis-and-dynamics",
+  "hallmark_id": "mitochondrial_dysfunction",
+  "assessment_type": "manual",
+  "assessed_at": "2026-06-12T18:58:59Z",
+  "assessment_window": {
+    "from": "2026-06-02T17:20:00Z",
+    "to": "2026-06-05T22:53:15Z",
+    "basis": "Backfill assessment of the published June 2 mitochondrial-biogenesis baseline and the June 5 no-op surveillance session; no new external source search was run for this assessment."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is adequate for the current low-confidence human_functional_benefit public claim because the local map contains structured-exercise human studies that pair older-adult functional gains with mitochondrial respiration, protein synthesis, biogenesis, fusion/fission, or mitochondrial-enriched transcriptome signals. The map also includes important druglike boundaries: metformin blunted some exercise mitochondrial adaptations, mavodelpar STRIDE posted no 12-minute-walk advantage in primary mitochondrial myopathy, berberine remains animal-only PGC-1alpha-adjacent evidence, and SHAPE elamipretide is activity-only with no posted results. Coverage is not strong because the public stage is exercise-specific and supervised, long-lasting disability or clinical outcomes are absent, druglike translation remains weak, safety and durability are not deeply mapped, recent-review triangulation is incomplete, and the track overlaps NAD/redox restoration, mitophagy enhancers, AMPK modulation, cardiolipin biology, and general exercise physiology. The June 5 surveillance pass found no material post-publication delta, so ordinary surveillance can continue.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-06-02-mitochondrial-biogenesis-and-dynamics-bootstrap",
+      "2026-06-05-mitochondrial-biogenesis-and-dynamics-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-mitochondrial-biogenesis-and-dynamics-source-fidelity-r1",
+      "evidence-review-mitochondrial-biogenesis-and-dynamics-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-mitochondrial-biogenesis-and-dynamics-bootstrap-2026-06-02-2026-06-02t19-00-55-783z"
+    ],
+    "outlook_ids": [
+      "track-mitochondrial-biogenesis-and-dynamics-outlook",
+      "hallmark-mitochondrial-dysfunction-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes three structured-exercise human intervention anchors: HIIT/combined training with VO2 peak and mitochondrial respiration, protein-synthesis, and proteome changes; aerobic cycling with PGC-1alpha, oxidative-enzyme, MFN1, MFN2, and FIS1 movement; and resistance training with strength gain plus a mitochondrial-function-enriched transcriptome shift. It also includes human druglike or registry boundaries through metformin, mavodelpar, and elamipretide.",
+      "source_ids": [
+        "pmid-28273480",
+        "pmid-23873965",
+        "pmid-17520024",
+        "pmid-30548390",
+        "nct-04535609",
+        "nct-07275424"
+      ],
+      "finding_ids": [
+        "hiit-improved-older-adult-mitochondrial-respiration-proteome",
+        "aerobic-training-increased-biogenesis-dynamics-older-men",
+        "resistance-training-reversed-muscle-mitochondrial-aging-signature",
+        "metformin-blunted-exercise-mitochondrial-adaptations-older-adults",
+        "mavodelpar-stride-no-12mwt-advantage"
+      ],
+      "gap_note": "Coverage is adequate for the current exercise-anchored stage, but not strong for druglike or long-lasting clinical claims."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "not_checked",
+      "rationale": "The public claim is intervention-focused and the backfill artifacts do not systematically map observational cohorts, natural experiments, longitudinal physical-activity exposure, mitochondrial marker trajectories, disability risk, multimorbidity, or mortality associations.",
+      "gap_note": "This does not block the current intervention baseline, but future review could decide whether longitudinal observational evidence would help connect mitochondrial adaptations to aging trajectories."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "thin",
+      "rationale": "The local map includes berberine in naturally aging rats with cognition, muscle, oxidative-stress, ATP, and AMPK/SIRT1/PGC-1alpha pathway signals, but no direct animal lifespan anchor for this track and no staged animal result that outweighs the human exercise evidence.",
+      "source_ids": [
+        "pmid-29806860"
+      ],
+      "finding_ids": [
+        "berberine-improved-aged-rat-cognition-muscle-ampk-signaling"
+      ],
+      "gap_note": "Animal evidence is useful as boundary or plausibility support, not the reason for the public stage."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "Mechanistic coverage includes skeletal-muscle mitochondrial respiration, mitochondrial protein synthesis, mitochondrial protein abundance, PGC-1alpha, oxidative enzymes, MFN1, MFN2, FIS1, mitochondrial-function-enriched transcriptomics, AMPK/SIRT1/PGC-1alpha animal biology, and druglike boundary evidence where metformin or mavodelpar did not cleanly reproduce exercise-like adaptation.",
+      "source_ids": [
+        "pmid-28273480",
+        "pmid-23873965",
+        "pmid-17520024",
+        "pmid-30548390",
+        "pmid-29806860",
+        "nct-04535609"
+      ],
+      "finding_ids": [
+        "hiit-improved-older-adult-mitochondrial-respiration-proteome",
+        "aerobic-training-increased-biogenesis-dynamics-older-men",
+        "resistance-training-reversed-muscle-mitochondrial-aging-signature",
+        "metformin-blunted-exercise-mitochondrial-adaptations-older-adults",
+        "berberine-improved-aged-rat-cognition-muscle-ampk-signaling",
+        "mavodelpar-stride-no-12mwt-advantage"
+      ],
+      "gap_note": "Exercise adaptations are pleiotropic and not exclusively attributable to biogenesis or fusion/fission pathways."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "strong",
+      "rationale": "The assessment includes several limiting records that directly bound public interpretation: metformin blunted some older-adult exercise mitochondrial adaptations, STRIDE posted no mavodelpar 12-minute-walk advantage, SHAPE elamipretide is recruiting with no posted results, and June 5 surveillance found no post-baseline result that changes those boundaries.",
+      "source_ids": [
+        "pmid-30548390",
+        "nct-04535609",
+        "nct-07275424"
+      ],
+      "finding_ids": [
+        "metformin-blunted-exercise-mitochondrial-adaptations-older-adults",
+        "mavodelpar-stride-no-12mwt-advantage"
+      ]
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "Exercise studies and registries provide some tolerability context, but the assessed records do not deeply map long-term durability, disability, multimorbidity, mortality, injury risk, adherence, drug safety, cardiolipin-targeted safety, or chronic mitochondrial-modulation tradeoffs in older adults.",
+      "source_ids": [
+        "nct-07275424",
+        "nct-04535609"
+      ],
+      "gap_note": "Safety and durability should be explicit review lanes before strengthening confidence or treating druglike mitochondrial modulation as gerotherapeutic."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes STRIDE/NCT04535609 with posted mavodelpar primary mitochondrial myopathy results and SHAPE/NCT07275424 as a recruiting, single-arm elamipretide healthy-aging activity item with no posted results. The June 5 surveillance pass rechecked both and screened updated registries without finding a track-moving result.",
+      "source_ids": [
+        "nct-04535609",
+        "nct-07275424"
+      ],
+      "finding_ids": [
+        "mavodelpar-stride-no-12mwt-advantage"
+      ],
+      "gap_note": "Continue registry surveillance for SHAPE results and any controlled older-adult druglike mitochondrial-biogenesis or dynamics trials."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "The backfill reviewed local bootstrap and surveillance artifacts. The June 5 pass noted broad exercise-myokine, sarcopenia, and mitochondrial-dynamics reviews as context, but no formal review or meta-analysis triangulation has been reconciled against the source map.",
+      "gap_note": "A future source-completeness pass should compare recent exercise-mitochondria, sarcopenia, PGC-1alpha, mitochondrial dynamics, and mitochondrial-drug reviews against the current source list."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes plausible anchors for exercise-linked human mitochondrial adaptation, aerobic biogenesis/dynamics markers, resistance-training mitochondrial transcriptomics, metformin exercise-interaction limits, mavodelpar druglike trial limits, and berberine animal PGC-1alpha-linked support. It is not strong because no formal must-include, review-cited, or citation-network audit is recorded.",
+      "source_ids": [
+        "pmid-28273480",
+        "pmid-23873965",
+        "pmid-17520024",
+        "pmid-30548390",
+        "pmid-29806860",
+        "nct-04535609",
+        "nct-07275424"
+      ],
+      "finding_ids": [
+        "hiit-improved-older-adult-mitochondrial-respiration-proteome",
+        "aerobic-training-increased-biogenesis-dynamics-older-men",
+        "resistance-training-reversed-muscle-mitochondrial-aging-signature",
+        "metformin-blunted-exercise-mitochondrial-adaptations-older-adults",
+        "mavodelpar-stride-no-12mwt-advantage",
+        "berberine-improved-aged-rat-cognition-muscle-ampk-signaling"
+      ],
+      "gap_note": "Formal anchor auditing could move this category from adequate to strong."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The bundle and evidence reviews explicitly bound this track against NAD/redox restoration, mitophagy enhancement, AMPK modulation, cardiolipin biology, nutrient sensing, and general exercise physiology. The evidence map also separates structured exercise from druglike PPAR/PGC-1alpha, metformin, berberine, mavodelpar, and elamipretide claims.",
+      "source_ids": [
+        "pmid-28273480",
+        "pmid-23873965",
+        "pmid-30548390",
+        "pmid-29806860",
+        "nct-04535609",
+        "nct-07275424"
+      ],
+      "finding_ids": [
+        "hiit-improved-older-adult-mitochondrial-respiration-proteome",
+        "aerobic-training-increased-biogenesis-dynamics-older-men",
+        "metformin-blunted-exercise-mitochondrial-adaptations-older-adults",
+        "berberine-improved-aged-rat-cognition-muscle-ampk-signaling",
+        "mavodelpar-stride-no-12mwt-advantage"
+      ],
+      "gap_note": "Boundary maintenance remains important because future exercise, NAD, mitophagy, AMPK, and mitochondrial-drug evidence can easily be misattributed."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-28273480",
+    "pmid-23873965",
+    "pmid-17520024",
+    "pmid-30548390",
+    "pmid-29806860",
+    "nct-04535609",
+    "nct-07275424"
+  ],
+  "covered_finding_ids": [
+    "hiit-improved-older-adult-mitochondrial-respiration-proteome",
+    "aerobic-training-increased-biogenesis-dynamics-older-men",
+    "resistance-training-reversed-muscle-mitochondrial-aging-signature",
+    "metformin-blunted-exercise-mitochondrial-adaptations-older-adults",
+    "mavodelpar-stride-no-12mwt-advantage",
+    "berberine-improved-aged-rat-cognition-muscle-ampk-signaling"
+  ],
+  "search_log_summary": "This backfill reviewed local project artifacts: the published Mitochondrial Biogenesis and Dynamics outlook, June 2 bootstrap session, published candidate bundle, source-fidelity and interpretation reviews, publication event, and June 5 no-op surveillance session with its PubMed, ClinicalTrials.gov, preprint, regulator, sponsor, and web-search log. No new PubMed, registry, preprint, citation-network, or web source search was run for this assessment.",
+  "source_selection_notes": [
+    "PMID 28273480 is the strongest human anchor because it pairs older-adult exercise functional gains with mitochondrial respiration, mitochondrial protein synthesis, and mitochondrial proteome changes.",
+    "PMID 23873965 directly measures biogenesis and fusion/fission markers in older men's skeletal muscle after supervised aerobic training.",
+    "PMID 17520024 adds resistance-training strength improvement and a mitochondrial-function-enriched transcriptome shift in older adults.",
+    "PMID 30548390 and NCT04535609 are included as druglike or co-intervention boundary records, not as positive gerotherapeutic efficacy.",
+    "PMID 29806860 is animal-only berberine support and should not be used for human druglike claims.",
+    "NCT07275424 is included as activity-only SHAPE elamipretide context with no posted results.",
+    "The June 5 surveillance pass found no material post-publication source, no correction or retraction for the baseline PMIDs, no posted SHAPE result, and no STRIDE registry movement."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "exercise-specific-human-stage",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "The public human_functional_benefit stage is anchored to supervised structured exercise, not to a validated druglike mitochondrial-biogenesis or dynamics therapy.",
+      "priority": "high",
+      "suggested_action": "Keep public interpretation explicit that exercise drives the current human stage; require controlled older-adult human function plus target engagement before strengthening druglike claims."
+    },
+    {
+      "gap_id": "durable-clinical-outcomes-missing",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "The current source map lacks long-lasting disability, multimorbidity, disease, mortality, adherence, durability, and long-term safety outcomes tied specifically to mitochondrial biogenesis or dynamics endpoints.",
+      "priority": "high",
+      "suggested_action": "Do not strengthen confidence or LEV relevance until larger older-adult studies connect mitochondrial adaptation with durable functional or clinical outcomes."
+    },
+    {
+      "gap_id": "druglike-translation-weak-or-negative",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "Druglike PPAR/PGC-1alpha, cardiolipin, AMPK, metformin, berberine, mavodelpar, and elamipretide evidence is animal-only, disease-specific, negative, co-intervention-limited, or activity-only rather than clear older-adult functional benefit.",
+      "priority": "high",
+      "suggested_action": "Use ordinary surveillance to watch SHAPE, mavodelpar/PPAR, elamipretide/cardiolipin, metformin, berberine, and adjacent druglike programs for controlled human function and target-engagement results."
+    },
+    {
+      "gap_id": "recent-review-triangulation-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "Recent reviews and meta-analyses around exercise-mitochondria, sarcopenia, mitochondrial biogenesis, mitochondrial dynamics, PGC-1alpha, and mitochondrial drug programs have not been formally reconciled against the current source list.",
+      "priority": "medium",
+      "suggested_action": "Use a future coverage-repair pass or surveillance review to compare recent reviews with the seven-source baseline and document any missing decision-relevant records."
+    },
+    {
+      "gap_id": "formal-seminal-anchor-audit-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "seminal_anchors",
+      "description": "The baseline includes plausible anchor papers and registries, but no formal must-include, review-cited, or citation-network audit has been recorded for mitochondrial biogenesis and dynamics.",
+      "priority": "medium",
+      "suggested_action": "During a future source-completeness pass, audit highly cited and review-cited exercise, PGC-1alpha, fusion/fission, mitochondrial-dynamics, and druglike mitochondrial-modulation anchors against the current source list."
+    },
+    {
+      "gap_id": "cross-track-attribution-needs-maintenance",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "The track overlaps NAD/redox restoration, mitophagy enhancers, AMPK and metabolic modulators, cardiolipin-targeted drugs, nutrient sensing, and broad exercise physiology.",
+      "priority": "medium",
+      "suggested_action": "Keep future staged records explicit about whether they test biogenesis or dynamics specifically, general mitochondrial function, NAD/redox, mitophagy, AMPK, cardiolipin stabilization, or exercise physiology."
+    }
+  ],
+  "next_coverage_action": "Continue ordinary surveillance for Mitochondrial Biogenesis and Dynamics. On the next pass, recheck SHAPE elamipretide, STRIDE/mavodelpar context, controlled older-adult exercise-mitochondrial studies, and druglike PPAR/PGC-1alpha, cardiolipin, AMPK, metformin, or berberine programs for posted target-engagement, functional, safety, or durability results; reserve coverage_repair for a later review-triangulation or formal seminal-anchor audit if no material field delta appears.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-assessment",
+    "manual",
+    "mitochondrial_dysfunction",
+    "mitochondrial-biogenesis-and-dynamics"
+  ]
+}
