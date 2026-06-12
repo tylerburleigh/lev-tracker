@@ -1,0 +1,288 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "selective-autophagy-and-organelle-quality-control-coverage-2026-06-12",
+  "name": "Selective Autophagy and Organelle Quality Control Coverage Assessment for June 12, 2026",
+  "short_name": "Selective autophagy coverage",
+  "track_id": "selective-autophagy-and-organelle-quality-control",
+  "hallmark_id": "disabled_macroautophagy",
+  "assessment_type": "manual",
+  "assessed_at": "2026-06-12T19:05:36Z",
+  "assessment_window": {
+    "from": "2026-06-02T14:00:00Z",
+    "to": "2026-06-05T23:29:20Z",
+    "basis": "Backfill assessment of the published June 2 selective-autophagy baseline and the June 5 no-op surveillance session; no new external source search was run for this assessment."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is adequate for the current low-confidence human_functional_benefit public claim because the local map contains repeated urolithin A human intervention signals for muscle endurance or strength, human mitochondrial and immune-aging biomarker support, animal mitophagy and muscle-function proof-of-concept, USP30 mouse mitophagy tractability, and a 2026 MF-094 mutant-mtDNA boundary. Coverage is not strong because the human stage is short-duration, sponsor-heavy, and dominated by one supplement program; endpoint results are mixed; causal attribution to mitophagy or broader selective-organelle quality control is unresolved; USP30 inhibition remains preclinical or in vitro; safety and durability are not deeply mapped; active urolithin A registries remain no-results watch items; and recent-review or formal seminal-anchor triangulation has not been recorded. The June 5 surveillance pass found no material post-publication delta, so ordinary surveillance can continue.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-06-02-selective-autophagy-and-organelle-quality-control-bootstrap",
+      "2026-06-05-selective-autophagy-and-organelle-quality-control-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-selective-autophagy-and-organelle-quality-control-source-fidelity-r1",
+      "evidence-review-selective-autophagy-and-organelle-quality-control-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02-2026-06-02t14-33-46-625z"
+    ],
+    "outlook_ids": [
+      "track-selective-autophagy-and-organelle-quality-control-outlook",
+      "hallmark-disabled-macroautophagy-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes the main urolithin A human intervention anchors for the current public stage: first-in-human safety and mitochondrial signatures, ENERGIZE older-adult muscle-endurance and biomarker movement, ATLAS middle-aged muscle-strength and biomarker movement, and MitoImmune immune-cell composition, metabolism, and ex vivo function. The source-fidelity and interpretation reviews preserve the short-duration, mixed-endpoint, and commercial-program boundaries.",
+      "source_ids": [
+        "pmid-32694802",
+        "pmid-35050355",
+        "pmid-35584623",
+        "pmid-41174221"
+      ],
+      "finding_ids": [
+        "urolithin-a-safe-mitochondrial-signature-older-adults",
+        "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+        "urolithin-a-improved-middle-aged-muscle-strength-performance",
+        "urolithin-a-shifted-immune-aging-biomarkers-function"
+      ],
+      "gap_note": "Adequacy is limited to the current narrow urolithin A functional-stage read; the map does not establish durable mobility, frailty, disease, infection, hospitalization, mortality, or broad selective-autophagy benefit."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "not_checked",
+      "rationale": "The assessed artifacts do not systematically map observational cohorts, natural experiments, dietary urolithin exposure, microbiome-conversion phenotypes, tissue mitophagy marker trajectories, or aging outcomes.",
+      "gap_note": "This is not blocking for the current intervention baseline, but future review could decide whether observational urolithin-production or organelle-quality-control evidence adds useful human relevance or attribution limits."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "The Ryu urolithin A source anchors preclinical mitophagy induction, C. elegans lifespan extension, and rodent muscle-function improvement. This is enough to support biological plausibility for the current public read while keeping mammalian lifespan and broad healthspan claims out of scope.",
+      "source_ids": [
+        "pmid-27400265"
+      ],
+      "finding_ids": [
+        "urolithin-a-extended-worm-lifespan-improved-rodent-muscle"
+      ],
+      "gap_note": "Animal coverage is not a substitute for replicated older-adult functional benefit, and the lifespan signal is non-mammalian."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "Mechanistic coverage spans urolithin A mitophagy and mitochondrial-health signatures, human skeletal-muscle and systemic biomarker movement, immune-cell metabolism and ex vivo function, USP30/ST-539 reporter-mouse mitophagy activation, and MF-094-induced mitochondrial ubiquitination and mitolysosome formation in cybrids.",
+      "source_ids": [
+        "pmid-27400265",
+        "pmid-32694802",
+        "pmid-35050355",
+        "pmid-35584623",
+        "pmid-41174221",
+        "pmid-33890401",
+        "pmid-41587019"
+      ],
+      "finding_ids": [
+        "urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+        "urolithin-a-safe-mitochondrial-signature-older-adults",
+        "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+        "urolithin-a-improved-middle-aged-muscle-strength-performance",
+        "urolithin-a-shifted-immune-aging-biomarkers-function",
+        "usp30-inhibition-induced-tissue-specific-mouse-mitophagy",
+        "mf094-induced-mitophagy-without-mtdna-load-reduction"
+      ],
+      "gap_note": "Mitophagy-linked biomarkers do not prove that selective autophagy causally drove the human functional signals, and the track has little mature evidence outside mitophagy."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The public outlook and reviews explicitly preserve the main limiting results: ENERGIZE did not significantly improve 6-minute walk distance or maximal ATP production, ATLAS did not significantly improve the primary peak-power endpoint, MitoImmune is biomarker and ex vivo function weighted rather than clinical-outcome evidence, and MF-094 induced mitophagy markers without significantly reducing mutant mtDNA load.",
+      "source_ids": [
+        "pmid-35050355",
+        "pmid-35584623",
+        "pmid-41174221",
+        "pmid-41587019"
+      ],
+      "finding_ids": [
+        "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+        "urolithin-a-improved-middle-aged-muscle-strength-performance",
+        "urolithin-a-shifted-immune-aging-biomarkers-function",
+        "mf094-induced-mitophagy-without-mtdna-load-reduction"
+      ],
+      "gap_note": "Coverage does not include a broad null-results registry map as public records; the June 5 surveillance log instead records no-results or unchanged registry status for watch items."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "The local map represents short-term urolithin A safety in human trials and preserves commercial-conflict and endpoint caveats, but it does not deeply map chronic durability, frailty-specific safety, kidney or supplement-safety signals, long-term immune effects, target-selectivity risk, or chronic USP30 inhibition safety.",
+      "source_ids": [
+        "pmid-32694802",
+        "pmid-35050355",
+        "pmid-35584623",
+        "pmid-41174221"
+      ],
+      "finding_ids": [
+        "urolithin-a-safe-mitochondrial-signature-older-adults",
+        "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+        "urolithin-a-improved-middle-aged-muscle-strength-performance",
+        "urolithin-a-shifted-immune-aging-biomarkers-function"
+      ],
+      "gap_note": "Do not strengthen confidence or LEV relevance without longer-duration functional, safety, and durability data tied to target engagement."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "thin",
+      "rationale": "The June 5 surveillance session checked baseline urolithin A registries and broader urolithin A, Mitopure, USP30, ST-539, MF-094, mitophagy, and mitochondrial-quality-control registry terms. Known urolithin A records remained completed or active without posted results, and NCT06274749 surfaced as recruiting with no results.",
+      "gap_note": "Continue to watch NCT06274749, NCT06556706, NCT07231783, NCT07060898, and related urolithin A registries, but current no-results registry context does not require coverage repair before surveillance resumes."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "The backfill reviewed local bootstrap and surveillance artifacts. The June 5 pass found a July 2025 human urolithin A systematic-review preprint and several review-level mitophagy or organelle-quality-control records as context, but no formal review or meta-analysis triangulation has been reconciled against the seven-source baseline.",
+      "gap_note": "A future source-completeness pass should compare recent urolithin A, mitophagy, USP30, sarcopenia, immune aging, and selective-autophagy reviews against the current source map."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes plausible anchor records for urolithin A animal mitophagy, first-in-human safety and mitochondrial biomarkers, ENERGIZE, ATLAS, MitoImmune, ST-539 USP30 mouse mitophagy, and MF-094 USP30 cybrid limitations. It is not strong because no formal must-include, review-cited, or citation-network audit is recorded.",
+      "source_ids": [
+        "pmid-27400265",
+        "pmid-32694802",
+        "pmid-35050355",
+        "pmid-35584623",
+        "pmid-41174221",
+        "pmid-33890401",
+        "pmid-41587019"
+      ],
+      "finding_ids": [
+        "urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+        "urolithin-a-safe-mitochondrial-signature-older-adults",
+        "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+        "urolithin-a-improved-middle-aged-muscle-strength-performance",
+        "urolithin-a-shifted-immune-aging-biomarkers-function",
+        "usp30-inhibition-induced-tissue-specific-mouse-mitophagy",
+        "mf094-induced-mitophagy-without-mtdna-load-reduction"
+      ],
+      "gap_note": "Formal anchor auditing could move this category from adequate to strong."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The outlook, bootstrap notes, and interpretation review explicitly bound this track against mitophagy-enhancers, mitochondrial dysfunction, mitochondrial biogenesis, autophagy induction, nutrient sensing, microbiome-metabolite restoration, immune aging, and broader supplement or exercise-performance claims. USP30 is kept as mechanistic and boundary evidence rather than as support for the human stage.",
+      "source_ids": [
+        "pmid-27400265",
+        "pmid-32694802",
+        "pmid-35050355",
+        "pmid-35584623",
+        "pmid-41174221",
+        "pmid-33890401",
+        "pmid-41587019"
+      ],
+      "finding_ids": [
+        "urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+        "urolithin-a-safe-mitochondrial-signature-older-adults",
+        "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+        "urolithin-a-improved-middle-aged-muscle-strength-performance",
+        "urolithin-a-shifted-immune-aging-biomarkers-function",
+        "usp30-inhibition-induced-tissue-specific-mouse-mitophagy",
+        "mf094-induced-mitophagy-without-mtdna-load-reduction"
+      ],
+      "gap_note": "Boundary maintenance remains important because future urolithin A, USP30, exercise, immune, microbiome, or mitochondrial-metabolism records may belong partly or primarily to neighboring tracks."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-27400265",
+    "pmid-32694802",
+    "pmid-35050355",
+    "pmid-35584623",
+    "pmid-41174221",
+    "pmid-33890401",
+    "pmid-41587019"
+  ],
+  "covered_finding_ids": [
+    "urolithin-a-extended-worm-lifespan-improved-rodent-muscle",
+    "urolithin-a-safe-mitochondrial-signature-older-adults",
+    "urolithin-a-improved-older-adult-muscle-endurance-biomarkers",
+    "urolithin-a-improved-middle-aged-muscle-strength-performance",
+    "urolithin-a-shifted-immune-aging-biomarkers-function",
+    "usp30-inhibition-induced-tissue-specific-mouse-mitophagy",
+    "mf094-induced-mitophagy-without-mtdna-load-reduction"
+  ],
+  "search_log_summary": "This backfill reviewed local project artifacts: the published Selective Autophagy and Organelle Quality Control outlook, June 2 bootstrap session, published candidate bundle, source-fidelity and interpretation reviews, publication event, and June 5 no-op surveillance session with its PubMed, ClinicalTrials.gov, bioRxiv/medRxiv, correction/retraction, and web-search log. No new PubMed, registry, preprint, citation-network, or web source search was run for this assessment.",
+  "source_selection_notes": [
+    "PMID 32694802, PMID 35050355, PMID 35584623, and PMID 41174221 are the human urolithin A anchors for safety, mitochondrial biomarkers, muscle endurance or strength, and immune-aging biomarker or ex vivo function context.",
+    "PMID 27400265 anchors preclinical urolithin A mitophagy, worm lifespan, and rodent muscle-function support.",
+    "PMID 33890401 and PMID 41587019 anchor USP30 targeted-mitophagy tractability and the mutant-mtDNA translation boundary.",
+    "The June 5 surveillance pass found no material post-publication source, no correction or retraction for the seven supporting PMIDs, no USP30 clinical result, and no posted urolithin A registry result.",
+    "NCT06274749, NCT06556706, NCT07231783, and NCT07060898 remain watch items rather than covered public sources because they had no posted results in the assessed surveillance log."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "urolithin-a-stage-concentration",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "The public human_functional_benefit stage is driven almost entirely by short-duration urolithin A trials with mixed endpoint results and visible commercial-program concentration.",
+      "priority": "high",
+      "suggested_action": "Keep confidence low and require independent, longer-duration, prespecified functional or clinical endpoint replication before strengthening the public stage."
+    },
+    {
+      "gap_id": "causal-mitophagy-attribution-unresolved",
+      "gap_type": "evidence_gap",
+      "category": "mechanistic",
+      "description": "Human mitochondrial, immune, and muscle-function signals do not prove that mitophagy or selective-organelle quality control causally drove the observed functional outcomes.",
+      "priority": "high",
+      "suggested_action": "Require target-engagement evidence that tracks with durable functional or disease-relevant benefit before making stronger selective-autophagy claims."
+    },
+    {
+      "gap_id": "durable-clinical-outcomes-missing",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "The current source map lacks long-lasting mobility, frailty, infection, vaccine-response, morbidity, hospitalization, mortality, and chronic safety or durability outcomes.",
+      "priority": "high",
+      "suggested_action": "Do not assign a LEV-relevant timing claim or strengthen confidence until longer-term safety and clinically meaningful outcomes are available."
+    },
+    {
+      "gap_id": "non-urolithin-human-translation-absent",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "USP30 inhibition and other non-urolithin selective-autophagy or organelle-quality-control strategies remain preclinical, in vitro, or review-level for aging-relevant use.",
+      "priority": "medium",
+      "suggested_action": "Keep USP30 as mechanistic and limiting evidence until human target-engagement, safety, and functional data appear."
+    },
+    {
+      "gap_id": "urolithin-registry-results-pending",
+      "gap_type": "coverage_gap",
+      "category": "active_trials_registries",
+      "description": "Urolithin A registry watch items such as NCT06274749, NCT06556706, NCT07231783, and NCT07060898 remain no-results or unchanged in the assessed surveillance log.",
+      "priority": "medium",
+      "suggested_action": "Use ordinary surveillance to recheck these registries and linked publications for posted results or status changes."
+    },
+    {
+      "gap_id": "recent-review-triangulation-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "Recent reviews, meta-analyses, and preprint systematic-review context around urolithin A, mitophagy, USP30, and selective autophagy have not been formally reconciled against the seven-source baseline.",
+      "priority": "medium",
+      "suggested_action": "Use a future coverage-repair pass or surveillance review to compare recent reviews with the current source list and document missing decision-relevant records."
+    },
+    {
+      "gap_id": "cross-track-attribution-needs-maintenance",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "The same urolithin A and USP30 evidence touches mitophagy enhancers, microbiome-metabolite restoration, mitochondrial dysfunction, immune aging, supplement safety, nutrient sensing, and general exercise-performance contexts.",
+      "priority": "medium",
+      "suggested_action": "Keep future staged records explicit about whether they support selective autophagy, mitophagy, microbiome-derived metabolite replacement, mitochondrial metabolism, immune aging, or adjacent supplement claims."
+    }
+  ],
+  "next_coverage_action": "Continue ordinary surveillance for Selective Autophagy and Organelle Quality Control. On the next pass, recheck urolithin A registries and publications, USP30 or other targeted-organelle-quality-control human translation, safety and durability signals, review-level context, and correction or retraction status; reserve coverage_repair for a future review-triangulation or formal seminal-anchor audit if no material field delta appears.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-assessment",
+    "manual",
+    "disabled_macroautophagy",
+    "selective-autophagy-and-organelle-quality-control"
+  ]
+}
