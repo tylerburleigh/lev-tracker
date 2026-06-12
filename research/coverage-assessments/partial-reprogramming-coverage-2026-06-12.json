@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "partial-reprogramming-coverage-2026-06-12",
+  "name": "Partial Reprogramming Coverage Assessment for June 12, 2026",
+  "short_name": "Partial reprogramming coverage",
+  "track_id": "partial-reprogramming",
+  "hallmark_id": "epigenetic_alterations",
+  "assessment_type": "manual",
+  "assessed_at": "2026-06-12T12:02:58Z",
+  "assessment_window": {
+    "from": "2026-05-30T17:45:00Z",
+    "to": "2026-06-12T12:02:58Z",
+    "basis": "Backfill assessment of the published partial-reprogramming outlook, May 30 surveillance revision, review comments, evidence reviews, candidate bundle, publication event, and local source/finding map. No new external source search was run for this assessment."
+  },
+  "coverage_verdict": "thin",
+  "summary": "Coverage is thin. The current public outlook is appropriately conservative: animal_signal, accelerating momentum, low confidence, and an explicit warning that no direct human intervention evidence exists. That public claim is bounded by review history, but the track lacks a curated source and finding map for the animal, mechanistic, safety, trial, review, seminal-anchor, and taxonomy-boundary categories that would make coverage adequate. The next useful step is a bounded coverage-repair pass before ordinary surveillance resumes.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-05-30-partial-reprogramming-surveillance-revision"
+    ],
+    "candidate_bundle_ids": [
+      "partial-reprogramming-update-2026-05-29"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-partial-reprogramming-interpretation-r1",
+      "evidence-review-partial-reprogramming-source-fidelity-r2",
+      "evidence-review-partial-reprogramming-interpretation-r2",
+      "evidence-review-partial-reprogramming-interpretation-forecast-r2-round-3"
+    ],
+    "publication_event_ids": [
+      "publish-partial-reprogramming-update-2026-05-29-2026-05-31t13-30-12-515z"
+    ],
+    "outlook_ids": [
+      "track-partial-reprogramming-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "thin",
+      "rationale": "The public outlook and accepted reviews correctly state that no direct human intervention evidence is represented. However, the source landscape has not been explicitly searched, mapped, or documented with human trial, protocol, exclusion, or no-results records.",
+      "gap_note": "Coverage repair should verify whether any human partial-reprogramming, epigenetic rejuvenation, delivery, safety, or disease-boundary trials should be staged or explicitly excluded."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "not_checked",
+      "rationale": "No human observational, natural-experiment, biomarker, epigenetic-clock, or ex vivo human-cell records are curated for this track in the current public map.",
+      "gap_note": "A repair pass should decide whether human-cell or observational epigenetic-age context belongs here, in adjacent epigenetic-modulation tracks, or only as boundary context."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "thin",
+      "rationale": "The current stage is animal_signal and the outlook says the mechanism could be unusually broad, but no animal lifespan, healthspan, injury-repair, rejuvenation, or safety source records are curated for this track.",
+      "gap_note": "The animal anchor set needs a source-fidelity pass before the public animal_signal claim can be considered adequately mapped."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "thin",
+      "rationale": "The review history keeps conceptual promise bounded, but no mechanistic source map currently distinguishes transient reprogramming, OSK/OSKM delivery, epigenetic-age movement, dedifferentiation risk, tissue repair, or cell-state-reset claims.",
+      "gap_note": "Coverage repair should map the main mechanisms and avoid treating broad conceptual promise as human evidence."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The publication, review comments, and completed evidence reviews strongly preserve the main limiting point: no direct human intervention evidence and no stage or confidence upgrade. This is adequate for interpretive discipline, even though source-level limiting records remain sparse.",
+      "gap_note": "If repair adds animal or mechanistic anchors, it should also add limiting evidence around delivery control, tumor or dysplasia risk, incomplete reprogramming, and failed or non-generalizing results when available."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "not_checked",
+      "rationale": "The current public outlook names human translation risk but does not have curated safety, durability, delivery-control, off-target, tumorigenicity, immune-response, or repeat-dosing evidence records.",
+      "gap_note": "Safety and durability should be high-priority boundaries for any future public expansion of this track."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "not_checked",
+      "rationale": "No active trial or registry layer is represented for partial reprogramming. The existing review artifacts do not document a current ClinicalTrials.gov, EUCTR, ISRCTN, or company-pipeline registry check.",
+      "gap_note": "Coverage repair should search current registries and pipeline disclosures for direct or adjacent partial-reprogramming programs, then stage no-results or exclusion records when useful."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "not_checked",
+      "rationale": "No formal recent-review or meta-analysis triangulation is recorded for the current partial-reprogramming source landscape.",
+      "gap_note": "A repair pass should compare recent reviews against the current empty source map and identify must-include animal, mechanistic, safety, and translation-boundary anchors."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "not_checked",
+      "rationale": "The track currently has no curated seminal-anchor source records. The public animal_signal stage may be directionally right, but the underlying anchor set has not been recorded.",
+      "gap_note": "Coverage repair should identify and review the main partial-reprogramming anchor papers before treating the baseline as source-complete."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "thin",
+      "rationale": "The public record is scoped to partial reprogramming under epigenetic alterations, but no explicit source-level boundary separates partial reprogramming from stem-cell replacement, epigenetic clock modulation, cellular rejuvenation claims, gene therapy delivery, or general regenerative medicine.",
+      "gap_note": "Repair should define which sources belong in Partial Reprogramming versus adjacent tracks before expanding the public evidence map."
+    }
+  ],
+  "covered_source_ids": [],
+  "covered_finding_ids": [],
+  "search_log_summary": "Reviewed local public and review artifacts for partial reprogramming, including the current outlook, staged outlook, May 30 research session, revision bundle, review comments, completed and superseded evidence reviews, publication event, and generated planning state. Local source/finding searches found no curated partial-reprogramming source or finding records in the current public evidence map. No external database search was run.",
+  "source_selection_notes": [
+    "No source IDs are listed because this backfill did not source-review external literature and the current public map contains no partial-reprogramming source records.",
+    "The assessment relies on existing reviewed artifacts only; it should not be read as a claim that the external partial-reprogramming literature is absent.",
+    "The completed evidence reviews support the current cautionary public wording but do not substitute for a source-completeness repair pass."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "animal-and-seminal-anchor-map-missing",
+      "gap_type": "coverage_gap",
+      "category": "seminal_anchors",
+      "description": "The public outlook sits at animal_signal, but the track has no curated animal or seminal-anchor source records supporting that stage.",
+      "priority": "high",
+      "suggested_action": "Run coverage repair to identify, source-review, and stage or explicitly exclude the main partial-reprogramming animal, healthspan, rejuvenation, and safety anchor papers."
+    },
+    {
+      "gap_id": "direct-human-evidence-absent-and-not-mapped",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "The reviewed public claim correctly says direct human intervention evidence is absent, but no human trial, registry, protocol, or no-results map documents that boundary.",
+      "priority": "high",
+      "suggested_action": "Search current trial registries and human-program disclosures during coverage repair; stage no-results or exclusion records only when they clarify the public boundary."
+    },
+    {
+      "gap_id": "safety-delivery-durability-not-mapped",
+      "gap_type": "coverage_gap",
+      "category": "safety_durability",
+      "description": "Delivery control, tumorigenicity, dedifferentiation, immune response, tissue specificity, reversibility, durability, and repeat-dosing risks are not represented as source-level boundaries.",
+      "priority": "high",
+      "suggested_action": "Prioritize safety and delivery-control sources in coverage repair before considering any stronger public framing."
+    },
+    {
+      "gap_id": "recent-review-triangulation-missing",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "No recent-review or citation-network triangulation has been recorded, so the project has not checked whether obvious partial-reprogramming anchors or limiting sources are missing.",
+      "priority": "medium",
+      "suggested_action": "Compare recent partial-reprogramming and epigenetic-rejuvenation reviews against the staged source list during repair."
+    },
+    {
+      "gap_id": "taxonomy-boundary-underdefined",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "The boundary between partial reprogramming, epigenetic clock modulation, stem-cell replacement, gene-therapy delivery, and broad regenerative-medicine claims is not yet source-mapped.",
+      "priority": "medium",
+      "suggested_action": "Define track-inclusion and exclusion rules in the repair assessment and preserve them in any later public update."
+    }
+  ],
+  "next_coverage_action": "Run a bounded coverage-repair pass before ordinary surveillance resumes, focused on seminal animal and mechanistic anchors, direct or adjacent human registry checks, safety/delivery/durability limits, recent-review triangulation, and taxonomy boundaries.",
+  "next_recommended_mode": "coverage_repair",
+  "tags": [
+    "coverage-assessment",
+    "manual-backfill",
+    "epigenetic_alterations",
+    "partial-reprogramming",
+    "thin-coverage",
+    "coverage-repair-needed"
+  ]
+}

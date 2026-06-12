@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-12T01:43:03.494Z",
+  "generated_at": "2026-06-12T12:04:17.701Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-12T00:05:27.603Z",
-    "research_priority_queue_updated_at": "2026-06-12T00:05:27.603Z",
+    "research_coverage_status_updated_at": "2026-06-12T12:04:17.582Z",
+    "research_priority_queue_updated_at": "2026-06-12T12:04:17.582Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
-    "surveillance_recent_queue_count": 38,
-    "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 17,
+    "surveillance_recent_queue_count": 37,
+    "coverage_repair_queue_count": 1,
+    "coverage_assessment_backlog_count": 16,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
   },
@@ -33,27 +33,27 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-assessment-backfill-partial-reprogramming",
-    "top_mode": "coverage_assessment_backfill",
+    "top_work_item_id": "coverage-repair-partial-reprogramming",
+    "top_mode": "coverage_repair",
     "active_editorial_count": 0,
-    "ready_research_count": 0,
+    "ready_research_count": 1,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
-      "38 surveillance track(s) are hidden from ordinary rotation until their cooldown expires."
+      "37 surveillance track(s) are hidden from ordinary rotation until their cooldown expires."
     ]
   },
   "work_items": [
     {
       "rank": 1,
-      "item_id": "coverage-assessment-backfill-partial-reprogramming",
-      "mode": "coverage_assessment_backfill",
+      "item_id": "coverage-repair-partial-reprogramming",
+      "mode": "coverage_repair",
       "domain": "research",
-      "priority_tier": "soon",
+      "priority_tier": "now",
       "status": "ready",
-      "title": "Backfill coverage assessment for Partial Reprogramming",
-      "rationale": "17 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
-      "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
+      "title": "Repair coverage for Partial Reprogramming",
+      "rationale": "Run a bounded coverage-repair pass before ordinary surveillance resumes, focused on seminal animal and mechanistic anchors, direct or adjacent human registry checks, safety/delivery/durability limits, recent-review triangulation, and taxonomy boundaries.",
+      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
       "track_id": "partial-reprogramming",
       "hallmark_id": "epigenetic_alterations",
       "references": [
@@ -70,16 +70,52 @@
       "source_paths": [
         "research/backlog/track-priority.v1.json",
         "research/state/coverage-status.v1.json",
+        "research/coverage-assessments",
+        "docs/coverage-assessment.md"
+      ],
+      "signals": [
+        {
+          "name": "generated_queue_rank",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "item_id": "coverage-assessment-backfill-niche-rejuvenation-and-support",
+      "mode": "coverage_assessment_backfill",
+      "domain": "research",
+      "priority_tier": "soon",
+      "status": "ready",
+      "title": "Backfill coverage assessment for Niche Rejuvenation and Support",
+      "rationale": "16 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
+      "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
+      "track_id": "niche-rejuvenation-and-support",
+      "hallmark_id": "stem_cell_exhaustion",
+      "references": [
+        {
+          "record_type": "track",
+          "record_id": "niche-rejuvenation-and-support"
+        },
+        {
+          "record_type": "hallmark",
+          "record_id": "stem_cell_exhaustion"
+        }
+      ],
+      "runbook_path": "docs/coverage-assessment.md",
+      "source_paths": [
+        "research/backlog/track-priority.v1.json",
+        "research/state/coverage-status.v1.json",
         "docs/coverage-assessment.md"
       ],
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 17
+          "value": 16
         },
         {
           "name": "generated_surveillance_queue_rank",
-          "value": 6
+          "value": 12
         },
         {
           "name": "track_next_mode",
