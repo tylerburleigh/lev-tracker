@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "fisetin-and-bclxl-senolytics-preclinical",
+  "name": "Fisetin showed cell-type-specific in vitro senolytic activity",
+  "summary": "Fisetin has a direct senolytic discovery anchor, but the finding is cell-type-specific and should not be treated as human aging evidence.",
+  "source_id": "pmid-28273655",
+  "study_id": "fisetin-bclxl-senolytics-discovery",
+  "intervention_ids": [
+    "fisetin"
+  ],
+  "track_ids": [
+    "senolytics"
+  ],
+  "hallmark_ids": [
+    "cellular_senescence"
+  ],
+  "endpoint_category": "mechanistic",
+  "direction": "mixed",
+  "evidence_tier": "in_vitro",
+  "confidence": "low",
+  "statement": "The study reported that fisetin selectively induced apoptosis in senescent human umbilical vein endothelial cells but was not senolytic in senescent IMR90 lung fibroblasts or primary human preadipocytes, making it a plausible but cell-type-limited senolytic candidate.",
+  "population_or_model": "Senescent and control human cell assays",
+  "time_horizon": "In vitro candidate-screening assays",
+  "quantitative_note": "The abstract does not provide a single human efficacy estimate; it emphasizes cell-type specificity and candidate selection.",
+  "caveats": [
+    "In vitro senolysis does not establish human tissue target engagement or clinical benefit.",
+    "Fisetin effects varied by cell type.",
+    "The paper also discusses BCL-XL inhibitors and navitoclax-related hematologic toxicity, which should not be collapsed into a fisetin efficacy claim."
+  ],
+  "tags": [
+    "senolytics",
+    "fisetin",
+    "in-vitro",
+    "mechanistic",
+    "cell-type-specific",
+    "coverage-repair"
+  ]
+}

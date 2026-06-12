@@ -9,15 +9,219 @@
   "momentum": "mixed",
   "confidence": "moderate",
   "main_evidence_gaps": [
-    "Human functional outcomes remain narrower than public enthusiasm suggests."
+    "Human biomarker evidence is direct but preliminary: the DKD D+Q pilot reported senescent-cell and SASP reductions, while the larger postmenopausal bone RCT had a null primary endpoint with exploratory subgroup signals.",
+    "Human functional evidence remains too narrow for a stage upgrade: the IPF open-label pilot and the 2025 cognition/mobility pilot suggest possible functional signals, but both were small and uncontrolled, and the randomized IPF feasibility trial did not show meaningful exploratory functional separation.",
+    "Safety and durability remain major blockers because short intermittent D+Q pilots and one 20-week bone RCT do not settle long-term preventive-use risk, tissue-specific senescent-cell clearance, or off-target toxicity.",
+    "Fisetin has mechanistic and active trial-watch coverage, but aging-relevant fisetin frailty, inflammation, and vascular-function trials had no posted results in the June 11, 2026 ClinicalTrials.gov checks.",
+    "Branch boundaries remain important: D+Q, fisetin, BCL-family targeting, senomorphics, immune clearance, telomere-dysfunction changes, and disease-specific trials should not be collapsed into one generic senolytic efficacy claim."
   ],
   "strongest_current_evidence": [
-    "Clear intervention thesis plus continued trial activity."
+    "D+Q has the clearest direct human senolytic biomarker signal: a nine-person diabetic kidney disease pilot reported reduced adipose and skin senescence markers plus circulating SASP factors after short-course treatment.",
+    "The strongest controlled human D+Q evidence is mixed: a 60-participant postmenopausal bone RCT did not meet its primary bone-resorption endpoint, while transient bone-formation and high-senescent-burden subgroup signals keep the hypothesis active.",
+    "Animal support remains strong enough to justify continued priority tracking: D+Q discovery and old-mouse studies reported senescent-cell clearance, improved physical function, and increased post-treatment survival, with an adjacent aged-mouse endothelial TIF biomarker result.",
+    "Trial activity is substantial across D+Q and fisetin, including older-women frailty, older-adult inflammation and vascular-function, and Alzheimer's disease registries, but current no-results registries are watchlist context rather than evidence of benefit."
   ],
-  "interpretation_note": "A flagship track for the site, but one that still needs disciplined interpretation.",
-  "last_updated": "2026-05-28",
+  "interpretation_note": "Senolytics remain a flagship cellular-senescence track because the intervention thesis is unusually direct: clear harmful senescent cells rather than only modulate their secretions. The public read should stay at moderate-confidence human_biomarker_signal with mixed momentum. Human functional benefit is plausible but not established; current functional signals are small, open-label, disease-specific, or exploratory, and controlled evidence includes a null primary endpoint. The track should be framed as active and biologically compelling, but still early for durable human function, disease modification, healthy-aging prevention, or LEV relevance.",
+  "what_would_change_the_rating": [
+    "A stronger rating would need replicated randomized human trials showing durable functional, disease, frailty, cognition, mobility, or morbidity benefit with acceptable safety.",
+    "Confidence would rise if biomarker-positive studies also demonstrated tissue-specific senescent-cell clearance, mechanistic target engagement, and concordant functional outcomes in prespecified analyses.",
+    "The rating would weaken if posted fisetin or D+Q trials are null, if safety or tolerability limits intermittent dosing, or if subgroup-dependent results fail to replicate.",
+    "Trial-watch priority should stay on NCT03430037, NCT03675724, NCT06133634, NCT04685590, and any posted follow-up to completed D+Q studies."
+  ],
+  "supporting_finding_ids": [
+    "dq-senolytic-drug-discovery-preclinical",
+    "fisetin-and-bclxl-senolytics-preclinical",
+    "dq-improved-old-mouse-function-and-survival",
+    "dq-ipf-open-label-physical-function-signal",
+    "dq-dkd-human-senescent-cell-biomarker-signal",
+    "dq-ipf-randomized-tolerability-limited-efficacy-boundary",
+    "dq-bone-rct-primary-null-subgroup-biomarker-signal",
+    "dq-ad-risk-pilot-cognition-mobility-signal",
+    "senolytic-drugs-translation-boundary",
+    "fisetin-older-women-frailty-enrolling-no-results",
+    "fisetin-frailty-enrolling-no-results",
+    "fisetin-vascular-active-no-results",
+    "dq-stomp-ad-phase2-active-no-results",
+    "dq-senolytics-reduced-endothelial-tif-aged-mice"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "evidence_stage",
+      "conclusion": "Human_biomarker_signal remains the best public stage because direct senescent-cell and SASP biomarker movement is visible in humans, while functional benefit is still not replicated or controlled enough for upgrade.",
+      "support_role": "supports",
+      "rationale": "The DKD pilot directly measured senescence and SASP markers after D+Q, and the postmenopausal bone RCT adds controlled human biomarker context even though its primary endpoint was null.",
+      "finding_ids": [
+        "dq-dkd-human-senescent-cell-biomarker-signal",
+        "dq-bone-rct-primary-null-subgroup-biomarker-signal"
+      ],
+      "source_ids": [
+        "pmid-31542391",
+        "pmid-38956196"
+      ],
+      "limitations": [
+        "The DKD pilot was open-label and only nine participants.",
+        "The bone RCT primary endpoint was null in the overall group.",
+        "Biomarker movement does not establish durable functional or disease benefit."
+      ]
+    },
+    {
+      "label": "Human functional boundary",
+      "outlook_field": "main_evidence_gaps",
+      "conclusion": "Human functional signals are hypothesis-generating and should not move the track to human_functional_benefit yet.",
+      "support_role": "limits",
+      "rationale": "The IPF open-label pilot reported physical-function improvements and the 2025 older-adult AD-risk pilot reported exploratory cognition and TNF-alpha correlations, but both lacked a control group; the randomized IPF pilot mainly supports feasibility and tolerability with no meaningful exploratory functional separation.",
+      "finding_ids": [
+        "dq-ipf-open-label-physical-function-signal",
+        "dq-ipf-randomized-tolerability-limited-efficacy-boundary",
+        "dq-ad-risk-pilot-cognition-mobility-signal"
+      ],
+      "source_ids": [
+        "pmid-30616998",
+        "pmid-36857968",
+        "pmid-40010154"
+      ],
+      "limitations": [
+        "Small samples and disease-specific populations limit generalization.",
+        "Open-label studies cannot separate treatment effects from expectation, regression, or disease-course effects.",
+        "Short feasibility and pilot horizons do not address durability."
+      ]
+    },
+    {
+      "label": "Animal and discovery anchors",
+      "outlook_field": "strongest_current_evidence",
+      "conclusion": "The preclinical rationale remains strong enough to justify high surveillance priority.",
+      "support_role": "supports",
+      "rationale": "The Achilles heel discovery paper identified senescent-cell pro-survival vulnerabilities and D+Q activity, the old-mouse Nature Medicine paper reported physical-function and survival gains, and the existing endothelial TIF study adds aged-mouse biomarker context.",
+      "finding_ids": [
+        "dq-senolytic-drug-discovery-preclinical",
+        "dq-improved-old-mouse-function-and-survival",
+        "dq-senolytics-reduced-endothelial-tif-aged-mice"
+      ],
+      "source_ids": [
+        "pmid-25754370",
+        "pmid-29988130",
+        "pmid-40109908"
+      ],
+      "limitations": [
+        "Animal healthspan and lifespan signals are not human longevity evidence.",
+        "Mouse senescent-cell biology, tissue context, and dosing may not translate cleanly.",
+        "The endothelial TIF result may reflect removal of damaged cells rather than direct telomere-capping repair."
+      ]
+    },
+    {
+      "label": "Fisetin branch",
+      "outlook_field": "momentum",
+      "conclusion": "Fisetin contributes trial activity and candidate diversity but not yet human efficacy evidence.",
+      "support_role": "balances",
+      "rationale": "Fisetin has a direct in vitro discovery record and current older-women frailty, older-adult inflammation-marker, and older-adult vascular-function registries, but these aging-relevant registries were no-results in the June 11, 2026 API view.",
+      "finding_ids": [
+        "fisetin-and-bclxl-senolytics-preclinical",
+        "fisetin-older-women-frailty-enrolling-no-results",
+        "fisetin-frailty-enrolling-no-results",
+        "fisetin-vascular-active-no-results"
+      ],
+      "source_ids": [
+        "pmid-28273655",
+        "nct-03430037",
+        "nct-03675724",
+        "nct-06133634"
+      ],
+      "limitations": [
+        "In vitro senolytic activity was cell-type-specific.",
+        "No-results registries cannot support benefit or harm.",
+        "Supplement exposure, formulation, and tissue distribution remain important uncertainties."
+      ]
+    },
+    {
+      "label": "Safety and translation",
+      "outlook_field": "main_evidence_gaps",
+      "conclusion": "Safety coverage is improved but remains insufficient for preventive-use confidence.",
+      "support_role": "limits",
+      "rationale": "D+Q pilots and the bone RCT report no related serious adverse events in small or short settings, but the randomized IPF pilot had more non-serious adverse events in the D+Q arm and the translation review cautions against use outside trials.",
+      "finding_ids": [
+        "dq-ipf-randomized-tolerability-limited-efficacy-boundary",
+        "dq-bone-rct-primary-null-subgroup-biomarker-signal",
+        "senolytic-drugs-translation-boundary"
+      ],
+      "source_ids": [
+        "pmid-36857968",
+        "pmid-38956196",
+        "pmid-32686219"
+      ],
+      "limitations": [
+        "Short, intermittent, disease-specific studies do not settle long-term prevention safety.",
+        "Dasatinib-specific toxicity and off-target effects matter even when dosing is intermittent.",
+        "Senescent-cell clearance may be context-dependent and not uniformly beneficial."
+      ]
+    },
+    {
+      "label": "Trial watch",
+      "outlook_field": "momentum",
+      "conclusion": "Momentum is mixed: relevant human trials are active, but major current registries are no-results or not yet mature.",
+      "support_role": "balances",
+      "rationale": "The repair stages current registry checks for fisetin older-women frailty, fisetin older-adult inflammation, fisetin vascular function, and the phase 2 SToMP-AD D+Q trial, all without posted results in the June 11, 2026 API view.",
+      "finding_ids": [
+        "fisetin-older-women-frailty-enrolling-no-results",
+        "fisetin-frailty-enrolling-no-results",
+        "fisetin-vascular-active-no-results",
+        "dq-stomp-ad-phase2-active-no-results"
+      ],
+      "source_ids": [
+        "nct-03430037",
+        "nct-03675724",
+        "nct-06133634",
+        "nct-04685590"
+      ],
+      "limitations": [
+        "No-results status is operational context, not scientific evidence.",
+        "Estimated completion dates can change.",
+        "Disease-specific Alzheimer's results may not generalize to healthy-aging prevention."
+      ]
+    },
+    {
+      "label": "Taxonomy boundary",
+      "outlook_field": "main_evidence_gaps",
+      "conclusion": "Senolytics should stay distinct from senomorphics, immune clearance, telomere protection, and broad anti-inflammatory claims.",
+      "support_role": "limits",
+      "rationale": "D+Q and fisetin target senescent-cell survival or apoptosis, while senomorphic mTOR/JAK/NFkB records modulate SASP, immune-clearance tracks use cellular or antibody approaches, and the endothelial TIF record is a senolytic-adjacent telomere-dysfunction biomarker rather than direct capping restoration.",
+      "finding_ids": [
+        "senolytic-drugs-translation-boundary",
+        "dq-senolytics-reduced-endothelial-tif-aged-mice",
+        "fisetin-and-bclxl-senolytics-preclinical"
+      ],
+      "source_ids": [
+        "pmid-32686219",
+        "pmid-40109908",
+        "pmid-28273655"
+      ],
+      "limitations": [
+        "Clearing senescent cells and suppressing senescent-cell secretions are adjacent but different intervention claims.",
+        "BCL-family and fisetin findings should not be treated as interchangeable with D+Q human data.",
+        "Telomere-dysfunction changes need separate interpretation from telomere-maintenance therapies."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-25754370",
+    "pmid-28273655",
+    "pmid-29988130",
+    "pmid-30616998",
+    "pmid-31542391",
+    "pmid-36857968",
+    "pmid-38956196",
+    "pmid-40010154",
+    "pmid-32686219",
+    "pmid-40109908",
+    "nct-03430037",
+    "nct-03675724",
+    "nct-06133634",
+    "nct-04685590"
+  ],
+  "last_updated": "2026-06-11",
   "tags": [
     "public",
-    "track"
+    "track",
+    "coverage-repair"
   ]
 }

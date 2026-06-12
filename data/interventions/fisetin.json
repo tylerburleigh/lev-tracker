@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "fisetin",
+  "name": "Fisetin",
+  "summary": "Naturally occurring flavone tracked as a candidate senolytic with in vitro senescent-cell selectivity and active human trial-watch records in older-adult frailty and vascular-function settings.",
+  "aliases": [
+    "3,3',4',7-tetrahydroxyflavone"
+  ],
+  "modalities": [
+    "small_molecule",
+    "dietary_supplement"
+  ],
+  "target_hallmark_ids": [
+    "cellular_senescence"
+  ],
+  "secondary_hallmark_ids": [
+    "chronic_inflammation"
+  ],
+  "track_ids": [
+    "senolytics"
+  ],
+  "mechanism_summary": "Reported to induce apoptosis in some senescent cell types, especially senescent endothelial cells in discovery assays, but selectivity varies by cell type and human efficacy remains unposted in aging-relevant trials.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "fisetin-bclxl-senolytics-discovery",
+    "fisetin-frailty-older-women-registry",
+    "fisetin-frailty-older-adults-registry",
+    "fisetin-vascular-function-older-adults-registry"
+  ],
+  "linked_finding_ids": [
+    "fisetin-and-bclxl-senolytics-preclinical",
+    "fisetin-older-women-frailty-enrolling-no-results",
+    "fisetin-frailty-enrolling-no-results",
+    "fisetin-vascular-active-no-results"
+  ],
+  "risk_flags": [
+    "cell-type-specificity",
+    "clinical-efficacy-unposted",
+    "supplement-quality-and-dose",
+    "translation-gap"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "in_vitro",
+    "human_data": false,
+    "open_questions": [
+      "Whether fisetin clears senescent cells in humans at tested doses",
+      "Whether active frailty and vascular-function trials post aging-relevant biomarker or functional results",
+      "How supplement formulation, exposure, and tissue distribution affect senolytic activity"
+    ]
+  },
+  "tags": [
+    "senolytics",
+    "fisetin",
+    "flavone",
+    "trial-watch",
+    "coverage-repair"
+  ]
+}

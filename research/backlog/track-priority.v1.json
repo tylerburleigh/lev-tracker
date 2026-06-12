@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-11T23:17:27.306Z",
+  "updated_at": "2026-06-12T00:05:27.603Z",
   "notes": [
     "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
@@ -106,6 +106,21 @@
     {
       "rank": 3,
       "phase_id": "surveillance-rotation",
+      "track_id": "senolytics",
+      "hallmark_id": "cellular_senescence",
+      "default_mode": "surveillance",
+      "freshness_status": "recent",
+      "last_reviewed_at": "2026-06-11T23:10:39Z",
+      "next_due_at": "2026-06-25T23:10:39.000Z",
+      "cooldown_days": 14,
+      "rationale": "This is a visible public track where mixed signals and endpoint discipline need regular maintenance.",
+      "default_question": "What changed for Senolytics since the last meaningful review or publication, and does any change justify a public update?",
+      "priority_tier": "later",
+      "notes": "Recently handled; ordinary rotation is due after 2026-06-25."
+    },
+    {
+      "rank": 4,
+      "phase_id": "surveillance-rotation",
       "track_id": "mitophagy-enhancers",
       "hallmark_id": "mitochondrial_dysfunction",
       "default_mode": "surveillance",
@@ -119,7 +134,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-24."
     },
     {
-      "rank": 4,
+      "rank": 5,
       "phase_id": "surveillance-rotation",
       "track_id": "microbiome-composition-modulation",
       "hallmark_id": "dysbiosis",
@@ -134,7 +149,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-17."
     },
     {
-      "rank": 5,
+      "rank": 6,
       "phase_id": "surveillance-rotation",
       "track_id": "partial-reprogramming",
       "hallmark_id": "epigenetic_alterations",
@@ -149,7 +164,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-13."
     },
     {
-      "rank": 6,
+      "rank": 7,
       "phase_id": "surveillance-rotation",
       "track_id": "ecosystem-replacement",
       "hallmark_id": "dysbiosis",
@@ -164,7 +179,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-17."
     },
     {
-      "rank": 7,
+      "rank": 8,
       "phase_id": "surveillance-rotation",
       "track_id": "mitochondrial-delivery-and-transplantation",
       "hallmark_id": "mitochondrial_dysfunction",
@@ -179,7 +194,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-17."
     },
     {
-      "rank": 8,
+      "rank": 9,
       "phase_id": "surveillance-rotation",
       "track_id": "insulin-igf-axis-modulation",
       "hallmark_id": "deregulated_nutrient_sensing",
@@ -194,7 +209,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-18."
     },
     {
-      "rank": 9,
+      "rank": 10,
       "phase_id": "surveillance-rotation",
       "track_id": "microbiome-metabolite-restoration",
       "hallmark_id": "dysbiosis",
@@ -209,7 +224,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-18."
     },
     {
-      "rank": 10,
+      "rank": 11,
       "phase_id": "surveillance-rotation",
       "track_id": "resolution-pathway-and-tissue-repair",
       "hallmark_id": "chronic_inflammation",
@@ -224,7 +239,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-18."
     },
     {
-      "rank": 11,
+      "rank": 12,
       "phase_id": "surveillance-rotation",
       "track_id": "neuroendocrine-and-systemic-signal-reset",
       "hallmark_id": "altered_intercellular_communication",
@@ -239,7 +254,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-18."
     },
     {
-      "rank": 12,
+      "rank": 13,
       "phase_id": "surveillance-rotation",
       "track_id": "niche-rejuvenation-and-support",
       "hallmark_id": "stem_cell_exhaustion",
@@ -254,7 +269,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-19."
     },
     {
-      "rank": 13,
+      "rank": 14,
       "phase_id": "surveillance-rotation",
       "track_id": "immune-clearance-of-senescent-cells",
       "hallmark_id": "cellular_senescence",
@@ -269,7 +284,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-19."
     },
     {
-      "rank": 14,
+      "rank": 15,
       "phase_id": "surveillance-rotation",
       "track_id": "mitochondrial-biogenesis-and-dynamics",
       "hallmark_id": "mitochondrial_dysfunction",
@@ -284,7 +299,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-19."
     },
     {
-      "rank": 15,
+      "rank": 16,
       "phase_id": "surveillance-rotation",
       "track_id": "caloric-restriction-mimetics",
       "hallmark_id": "deregulated_nutrient_sensing",
@@ -299,7 +314,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-19."
     },
     {
-      "rank": 16,
+      "rank": 17,
       "phase_id": "surveillance-rotation",
       "track_id": "selective-autophagy-and-organelle-quality-control",
       "hallmark_id": "disabled_macroautophagy",
@@ -314,7 +329,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-19."
     },
     {
-      "rank": 17,
+      "rank": 18,
       "phase_id": "surveillance-rotation",
       "track_id": "protein-aggregate-clearance",
       "hallmark_id": "loss_of_proteostasis",
@@ -329,7 +344,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-19."
     },
     {
-      "rank": 18,
+      "rank": 19,
       "phase_id": "surveillance-rotation",
       "track_id": "chromatin-and-histone-modulation",
       "hallmark_id": "epigenetic_alterations",
@@ -344,7 +359,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-20."
     },
     {
-      "rank": 19,
+      "rank": 20,
       "phase_id": "surveillance-rotation",
       "track_id": "transposon-and-somatic-mutation-control",
       "hallmark_id": "genomic_instability",
@@ -359,7 +374,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-20."
     },
     {
-      "rank": 20,
+      "rank": 21,
       "phase_id": "surveillance-rotation",
       "track_id": "live-biotherapeutics-and-engineered-microbes",
       "hallmark_id": "dysbiosis",
@@ -374,7 +389,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-20."
     },
     {
-      "rank": 21,
+      "rank": 22,
       "phase_id": "surveillance-rotation",
       "track_id": "extracellular-vesicle-and-secretome-therapies",
       "hallmark_id": "altered_intercellular_communication",
@@ -389,7 +404,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-20."
     },
     {
-      "rank": 22,
+      "rank": 23,
       "phase_id": "surveillance-rotation",
       "track_id": "stem-cell-replacement-and-transplantation",
       "hallmark_id": "stem_cell_exhaustion",
@@ -404,7 +419,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-20."
     },
     {
-      "rank": 23,
+      "rank": 24,
       "phase_id": "surveillance-rotation",
       "track_id": "senomorphics",
       "hallmark_id": "cellular_senescence",
@@ -419,7 +434,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-21."
     },
     {
-      "rank": 24,
+      "rank": 25,
       "phase_id": "surveillance-rotation",
       "track_id": "ampk-and-metabolic-modulators",
       "hallmark_id": "deregulated_nutrient_sensing",
@@ -434,7 +449,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-21."
     },
     {
-      "rank": 25,
+      "rank": 26,
       "phase_id": "surveillance-rotation",
       "track_id": "lysosomal-restoration",
       "hallmark_id": "disabled_macroautophagy",
@@ -449,7 +464,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-21."
     },
     {
-      "rank": 26,
+      "rank": 27,
       "phase_id": "surveillance-rotation",
       "track_id": "proteasome-enhancement",
       "hallmark_id": "loss_of_proteostasis",
@@ -464,7 +479,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-21."
     },
     {
-      "rank": 27,
+      "rank": 28,
       "phase_id": "surveillance-rotation",
       "track_id": "dna-methylation-and-epigenome-restoration",
       "hallmark_id": "epigenetic_alterations",
@@ -479,7 +494,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-21."
     },
     {
-      "rank": 28,
+      "rank": 29,
       "phase_id": "surveillance-rotation",
       "track_id": "telomere-protection-and-capping",
       "hallmark_id": "telomere_attrition",
@@ -494,7 +509,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-21."
     },
     {
-      "rank": 29,
+      "rank": 30,
       "phase_id": "surveillance-rotation",
       "track_id": "genome-surveillance-and-chromosome-stability",
       "hallmark_id": "genomic_instability",
@@ -509,7 +524,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-21."
     },
     {
-      "rank": 30,
+      "rank": 31,
       "phase_id": "surveillance-rotation",
       "track_id": "cytokine-and-inflammasome-modulation",
       "hallmark_id": "chronic_inflammation",
@@ -524,7 +539,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-22."
     },
     {
-      "rank": 31,
+      "rank": 32,
       "phase_id": "surveillance-rotation",
       "track_id": "nad-and-redox-restoration",
       "hallmark_id": "mitochondrial_dysfunction",
@@ -539,7 +554,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-22."
     },
     {
-      "rank": 32,
+      "rank": 33,
       "phase_id": "surveillance-rotation",
       "track_id": "circulating-factor-modulation",
       "hallmark_id": "altered_intercellular_communication",
@@ -554,7 +569,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-23."
     },
     {
-      "rank": 33,
+      "rank": 34,
       "phase_id": "surveillance-rotation",
       "track_id": "stem-cell-rejuvenation",
       "hallmark_id": "stem_cell_exhaustion",
@@ -569,7 +584,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-23."
     },
     {
-      "rank": 34,
+      "rank": 35,
       "phase_id": "surveillance-rotation",
       "track_id": "dna-repair-enhancement",
       "hallmark_id": "genomic_instability",
@@ -584,7 +599,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-24."
     },
     {
-      "rank": 35,
+      "rank": 36,
       "phase_id": "surveillance-rotation",
       "track_id": "telomerase-restoration",
       "hallmark_id": "telomere_attrition",
@@ -599,7 +614,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-24."
     },
     {
-      "rank": 36,
+      "rank": 37,
       "phase_id": "surveillance-rotation",
       "track_id": "chaperone-and-heat-shock-support",
       "hallmark_id": "loss_of_proteostasis",
@@ -614,7 +629,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-24."
     },
     {
-      "rank": 37,
+      "rank": 38,
       "phase_id": "surveillance-rotation",
       "track_id": "autophagy-induction",
       "hallmark_id": "disabled_macroautophagy",
