@@ -2,9 +2,9 @@
   "slug": "current",
   "title": "Broader activity, same human proof gap",
   "summary": "Longevity research now has early human signals in more places, but the center of gravity is still early testing. LEV does not look close until multiple approaches show long-lasting improvements in human health or function, with safety and lasting effects clear enough to matter.",
-  "date": "2026-06-11",
+  "date": "2026-06-12",
   "current_evidence_picture": "The field is in early human testing. Some tracks now have early biomarker results, functional results, disease results, or trials worth watching. Most are still uncertain, narrow, or only indirectly about aging itself.",
-  "what_changed": "The May field review did not find a result that changed the LEV outlook. The June 9 NAD/redox, June 10 stem-cell rejuvenation and mitophagy, and June 11 chaperone and autophagy updates made individual tracks easier to judge by adding no-results registries, safety context, review context, open-label NPC context, label boundaries, a small spermidine vaccine-response signal, and clearer evidence boundaries, but none changed the larger proof gap: repeated human evidence that health or function improves for longer.",
+  "what_changed": "The May field review did not find a result that changed the LEV outlook. The June 9 NAD/redox, June 10 stem-cell rejuvenation and mitophagy, June 11 chaperone and autophagy, and June 12 senolytics updates made individual tracks easier to judge by adding no-results registries, safety context, review context, open-label NPC context, label boundaries, a small spermidine vaccine-response signal, and clearer senolytic biomarker, function, and safety boundaries, but none changed the larger proof gap: repeated human evidence that health or function improves for longer.",
   "before_now_next": [
     {
       "label": "Before",
@@ -146,6 +146,20 @@
       "related_outlook_ids": [
         "track-autophagy-induction-outlook"
       ]
+    },
+    {
+      "label": "Senolytics gained clearer human boundaries",
+      "date": "2026-06-12",
+      "summary": "The senolytics update added D+Q and fisetin biomarker, function, safety, animal, and no-results registry context while keeping the track at an early human biomarker stage.",
+      "impact_on_outlook": "It makes a flagship cellular-senescence track easier to judge, but it does not make LEV look closer because controlled human evidence remains mixed and long-term functional and safety evidence remains unresolved.",
+      "subject_type": "track",
+      "subject_id": "senolytics",
+      "related_publication_event_ids": [
+        "publish-senolytics-coverage-repair-2026-06-11-2026-06-12t00-05-23-406z"
+      ],
+      "related_outlook_ids": [
+        "track-senolytics-outlook"
+      ]
     }
   ],
   "what_to_watch_next": [
@@ -279,9 +293,9 @@
     }
   ],
   "revision": {
-    "last_reviewed": "2026-06-11",
-    "review_reason": "Editorial rollup after the June 11 Autophagy Induction publication reviewed the new spermidine vaccine-response signal against the public story. The autophagy update adds a small subgroup-limited human signal, but it does not change the current story: recent updates clarify individual tracks while the overall proof gap remains repeated, long-lasting human health or function improvement.",
-    "review_due": "2026-07-11",
+    "last_reviewed": "2026-06-12",
+    "review_reason": "Editorial rollup after the June 12 Senolytics publication reviewed the expanded D+Q and fisetin evidence context against the public story. The senolytics update clarifies biomarker, function, safety, animal, and no-results registry boundaries, but it does not change the current story: recent updates clarify individual tracks while the overall proof gap remains repeated, long-lasting human health or function improvement.",
+    "review_due": "2026-07-12",
     "triggers": [
       {
         "trigger_type": "new_publication_event",
@@ -314,7 +328,7 @@
       }
     ],
     "observed_state_of_field_slug": "2026-06",
-    "observed_latest_publication_event_id": "publish-autophagy-induction-surveillance-2026-06-11-2026-06-11t10-25-04-657z",
+    "observed_latest_publication_event_id": "publish-senolytics-coverage-repair-2026-06-11-2026-06-12t00-05-23-406z",
     "observed_outlook_states": [
       {
         "outlook_id": "overall-lev-outlook",
@@ -473,6 +487,18 @@
         "fingerprint": "c89bad83d78cbf09"
       },
       {
+        "outlook_id": "track-senolytics-outlook",
+        "subject_type": "track",
+        "subject_id": "senolytics",
+        "evidence_stage": "human_biomarker_signal",
+        "momentum": "mixed",
+        "confidence": "moderate",
+        "evidence_gap": "Human biomarker evidence is direct but preliminary: the DKD D+Q pilot reported senescent-cell and SASP reductions, while the larger postmenopausal bone RCT had a null primary endpoint with exploratory subgroup signals.",
+        "strongest_evidence": "D+Q has the clearest direct human senolytic biomarker signal: a nine-person diabetic kidney disease pilot reported reduced adipose and skin senescence markers plus circulating SASP factors after short-course treatment.",
+        "last_updated": "2026-06-11",
+        "fingerprint": "97a4cc76a0d3e4ef"
+      },
+      {
         "outlook_id": "track-senomorphics-outlook",
         "subject_type": "track",
         "subject_id": "senomorphics",
@@ -531,7 +557,8 @@
     "publish-stem-cell-rejuvenation-coverage-repair-2026-06-09-2026-06-10t10-17-06-414z",
     "publish-mitophagy-enhancers-coverage-repair-2026-06-10-2026-06-10t14-26-07-178z",
     "publish-chaperone-and-heat-shock-support-coverage-repair-2026-06-10-2026-06-11t01-11-08-627z",
-    "publish-autophagy-induction-surveillance-2026-06-11-2026-06-11t10-25-04-657z"
+    "publish-autophagy-induction-surveillance-2026-06-11-2026-06-11t10-25-04-657z",
+    "publish-senolytics-coverage-repair-2026-06-11-2026-06-12t00-05-23-406z"
   ],
   "related_outlook_ids": [
     "overall-lev-outlook",
@@ -546,6 +573,7 @@
     "track-stem-cell-rejuvenation-outlook",
     "track-mitophagy-enhancers-outlook",
     "track-chaperone-and-heat-shock-support-outlook",
-    "track-autophagy-induction-outlook"
+    "track-autophagy-induction-outlook",
+    "track-senolytics-outlook"
   ]
 }
