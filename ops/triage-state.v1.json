@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-12T22:45:58.058Z",
+  "generated_at": "2026-06-12T23:56:21.019Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-12T22:45:57.932Z",
-    "research_priority_queue_updated_at": "2026-06-12T22:45:57.932Z",
+    "research_coverage_status_updated_at": "2026-06-12T23:56:20.915Z",
+    "research_priority_queue_updated_at": "2026-06-12T23:56:20.915Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
     "surveillance_recent_queue_count": 38,
     "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 11,
+    "coverage_assessment_backlog_count": 10,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
   },
@@ -33,7 +33,7 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-assessment-backfill-chromatin-and-histone-modulation",
+    "top_work_item_id": "coverage-assessment-backfill-extracellular-vesicle-and-secretome-therapies",
     "top_mode": "coverage_assessment_backfill",
     "active_editorial_count": 0,
     "ready_research_count": 0,
@@ -46,24 +46,24 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "coverage-assessment-backfill-chromatin-and-histone-modulation",
+      "item_id": "coverage-assessment-backfill-extracellular-vesicle-and-secretome-therapies",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for Chromatin and Histone Modulation",
-      "rationale": "11 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
+      "title": "Backfill coverage assessment for Extracellular Vesicle and Secretome Therapies",
+      "rationale": "10 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
       "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
-      "track_id": "chromatin-and-histone-modulation",
-      "hallmark_id": "epigenetic_alterations",
+      "track_id": "extracellular-vesicle-and-secretome-therapies",
+      "hallmark_id": "altered_intercellular_communication",
       "references": [
         {
           "record_type": "track",
-          "record_id": "chromatin-and-histone-modulation"
+          "record_id": "extracellular-vesicle-and-secretome-therapies"
         },
         {
           "record_type": "hallmark",
-          "record_id": "epigenetic_alterations"
+          "record_id": "altered_intercellular_communication"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",
@@ -75,11 +75,11 @@
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 11
+          "value": 10
         },
         {
           "name": "generated_surveillance_queue_rank",
-          "value": 18
+          "value": 21
         },
         {
           "name": "track_next_mode",

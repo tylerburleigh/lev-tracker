@@ -1,0 +1,318 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "chromatin-and-histone-modulation-coverage-2026-06-12",
+  "name": "Chromatin and Histone Modulation Coverage Assessment for June 12, 2026",
+  "short_name": "Chromatin histone coverage",
+  "track_id": "chromatin-and-histone-modulation",
+  "hallmark_id": "epigenetic_alterations",
+  "assessment_type": "manual",
+  "assessed_at": "2026-06-12T23:54:07Z",
+  "assessment_window": {
+    "from": "2026-06-02T10:45:00Z",
+    "to": "2026-06-06T00:55:46Z",
+    "basis": "Backfill assessment of the published June 2 chromatin and histone modulation baseline and the June 5 no-op surveillance session; no new external source search was run for this assessment."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is adequate for the current low-confidence animal_signal public claim because the local map contains multiple model-organism and mammalian anchors connecting chromatin or histone modulation to lifespan, healthspan, senescence, frailty, or disease-model multimorbidity: KAT7 inactivation, two SIRT6 overexpression mouse studies, SRT1720, spermidine-linked histone hypoacetylation and autophagy, beta-hydroxybutyrate HDAC biology, H3K4/H3K27 modifier genetics in C. elegans, and a 2026 butyrate/tributyrin histone-acylation mouse disease-model result. Coverage is not strong because the evidence is heterogeneous, often genetic or transgenic, pleiotropic, and boundary-track-heavy; no direct human chromatin or histone intervention shows aging-relevant target engagement, biomarkers, function, disease modification, or survival; chronic tissue-specific safety is unresolved; and recent-review, human trial-watch, pre-baseline SIRT6 chromatin-target-engagement, and formal seminal-anchor triangulation remain incomplete. The June 5 surveillance pass found no material post-publication delta, so ordinary surveillance can continue.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-06-02-chromatin-and-histone-modulation-bootstrap",
+      "2026-06-05-chromatin-and-histone-modulation-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "chromatin-and-histone-modulation-bootstrap-2026-06-02"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-chromatin-and-histone-modulation-source-fidelity-r1",
+      "evidence-review-chromatin-and-histone-modulation-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-chromatin-and-histone-modulation-bootstrap-2026-06-02-2026-06-02t11-35-30-622z"
+    ],
+    "outlook_ids": [
+      "track-chromatin-and-histone-modulation-outlook",
+      "hallmark-epigenetic-alterations-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "thin",
+      "rationale": "The assessed public map has no direct human chromatin or histone intervention trial with aging-relevant target engagement, biomarkers, function, disease modification, or survival. Human relevance is limited to KAT7 human progeroid-cell screening and spermidine human immune-cell survival context rather than treated-human chromatin evidence.",
+      "source_ids": [
+        "pmid-33408182",
+        "pmid-19801973"
+      ],
+      "finding_ids": [
+        "kat7-inactivation-extended-aged-mouse-lifespan",
+        "spermidine-histone-hypoacetylation-longevity-autophagy"
+      ],
+      "gap_note": "This is the main reason the track remains below human_biomarker_signal."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "not_checked",
+      "rationale": "The bootstrap and no-op surveillance artifacts do not systematically map human observational, natural-history, biopsy, epigenetic-aging, chromatin-accessibility, histone-mark, diet, ketone, polyamine, or microbiome-metabolite cohorts for this track.",
+      "gap_note": "This does not block the current animal_signal claim, but future review could decide whether observational human chromatin or histone trajectories would add useful translation or safety context."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "The baseline contains the current animal case: KAT7 inactivation extended aged and progeroid mouse lifespan, SIRT6 overexpression extended lifespan in two mouse studies, SRT1720 improved mouse healthspan and mean lifespan, spermidine and beta-hydroxybutyrate extended model-organism lifespan with histone or HDAC links, H3K4/H3K27 modifier genetics regulated C. elegans lifespan, and tributyrin/butyrate delayed multimorbidity and extended lifespan in mitochondrial-deficiency mice.",
+      "source_ids": [
+        "pmid-33408182",
+        "pmid-34050173",
+        "pmid-22367546",
+        "pmid-24582957",
+        "pmid-19801973",
+        "pmid-25127866",
+        "pmid-20555324",
+        "pmid-21834846",
+        "pmid-41826362"
+      ],
+      "finding_ids": [
+        "kat7-inactivation-extended-aged-mouse-lifespan",
+        "sirt6-overexpression-reduced-frailty-extended-mouse-lifespan",
+        "sirt6-overexpression-extended-male-mouse-lifespan",
+        "srt1720-standard-diet-mean-lifespan-healthspan-mice",
+        "spermidine-histone-hypoacetylation-longevity-autophagy",
+        "beta-hydroxybutyrate-hdac-extended-c-elegans-lifespan",
+        "h3k4me3-complex-deficiency-extended-c-elegans-lifespan",
+        "utx1-h3k27-knockdown-extended-c-elegans-lifespan",
+        "butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan"
+      ],
+      "gap_note": "Animal evidence is adequate for a low-confidence animal_signal baseline, not for human translation or broad LEV relevance."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "Mechanistic coverage spans KAT7/H3K14 acetylation, SIRT6 chromatin-linked deacylase and energy-homeostasis biology, SIRT1-linked SRT1720 biology, spermidine-linked histone hypoacetylation and autophagy, beta-hydroxybutyrate HDAC-linked biology, H3K4me3 and H3K27me3 modifier genetics, and butyrate-linked histone acylation rescue in a mitochondrial-deficiency model.",
+      "source_ids": [
+        "pmid-33408182",
+        "pmid-34050173",
+        "pmid-22367546",
+        "pmid-24582957",
+        "pmid-19801973",
+        "pmid-25127866",
+        "pmid-20555324",
+        "pmid-21834846",
+        "pmid-41826362"
+      ],
+      "finding_ids": [
+        "kat7-inactivation-extended-aged-mouse-lifespan",
+        "sirt6-overexpression-reduced-frailty-extended-mouse-lifespan",
+        "sirt6-overexpression-extended-male-mouse-lifespan",
+        "srt1720-standard-diet-mean-lifespan-healthspan-mice",
+        "spermidine-histone-hypoacetylation-longevity-autophagy",
+        "beta-hydroxybutyrate-hdac-extended-c-elegans-lifespan",
+        "h3k4me3-complex-deficiency-extended-c-elegans-lifespan",
+        "utx1-h3k27-knockdown-extended-c-elegans-lifespan",
+        "butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan"
+      ],
+      "gap_note": "Adequate mechanistic coverage does not isolate chromatin causality for every signal; several mechanisms overlap autophagy, nutrient sensing, mitochondrial dysfunction, microbiome metabolites, senescence, DNA repair, and NAD biology."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The public outlook and evidence reviews preserve the main limiting boundaries: SIRT6 lifespan effects include sex/background and broad pathway caveats, SRT1720 is broad SIRT1/NAD biology with mean-versus-maximum lifespan boundaries, spermidine is strongly autophagy-linked, beta-hydroxybutyrate is broad metabolic HDAC biology, and the 2026 butyrate/tributyrin result is a mitochondrial-deficiency disease model rather than normal aging.",
+      "source_ids": [
+        "pmid-22367546",
+        "pmid-24582957",
+        "pmid-19801973",
+        "pmid-25127866",
+        "pmid-41826362"
+      ],
+      "finding_ids": [
+        "sirt6-overexpression-extended-male-mouse-lifespan",
+        "srt1720-standard-diet-mean-lifespan-healthspan-mice",
+        "spermidine-histone-hypoacetylation-longevity-autophagy",
+        "beta-hydroxybutyrate-hdac-extended-c-elegans-lifespan",
+        "butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan"
+      ],
+      "gap_note": "The map has good interpretive caveats, but no broad failed-program or adverse-effect synthesis for chromatin/histone interventions has been formally reconciled."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "The public outlook names unresolved cancer, developmental, fertility, immune, neurocognitive, and tissue-repair tradeoffs from chronic chromatin modulation, but the assessed source map does not provide enough long-term selective-modulation safety, dose-response, reversibility, or tissue-specificity evidence for human translation.",
+      "source_ids": [
+        "pmid-33408182",
+        "pmid-34050173",
+        "pmid-22367546"
+      ],
+      "finding_ids": [
+        "kat7-inactivation-extended-aged-mouse-lifespan",
+        "sirt6-overexpression-reduced-frailty-extended-mouse-lifespan",
+        "sirt6-overexpression-extended-male-mouse-lifespan"
+      ],
+      "gap_note": "Safety and durability should remain high-priority evidence requirements before confidence or human relevance is strengthened."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "The June 5 surveillance session checked ClinicalTrials.gov for SIRT6, KAT7, SIRT1, SRT1720, spermidine, beta-hydroxybutyrate, butyrate, tributyrin, HDAC, chromatin, and epigenetic-age terms. Same-window hits were no-results, observational, oncology, ketogenic, obesity, or biological-aging context and did not supply direct result-bearing chromatin/histone intervention evidence.",
+      "gap_note": "Continue watching REPROGRAM, POLYCAD, spermidine, ketone, HDAC, SIRT1/SIRT6, and chromatin-aging registries for posted results or chromatin/histone target-engagement measures."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "The backfill reviewed local bootstrap and surveillance artifacts. The June 5 pass found HDAC, epigenetic-age, spermidine, autophagy-epigenetic, and chromatin review context, but no formal recent-review or meta-analysis triangulation has been reconciled against the nine-source baseline.",
+      "gap_note": "A future source-completeness pass should compare recent chromatin-aging, histone-modifier, HDAC, sirtuin, spermidine, ketone, butyrate, and epigenetic-therapy reviews against the current source map."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes plausible anchors for KAT7 inactivation, two SIRT6 mouse studies, SRT1720, spermidine, beta-hydroxybutyrate, H3K4me3 complex genetics, UTX-1/H3K27 demethylase genetics, and butyrate/tributyrin disease-model histone-acylation support. It is not strong because no formal must-include, review-cited, or citation-network audit is recorded.",
+      "source_ids": [
+        "pmid-33408182",
+        "pmid-34050173",
+        "pmid-22367546",
+        "pmid-24582957",
+        "pmid-19801973",
+        "pmid-25127866",
+        "pmid-20555324",
+        "pmid-21834846",
+        "pmid-41826362"
+      ],
+      "finding_ids": [
+        "kat7-inactivation-extended-aged-mouse-lifespan",
+        "sirt6-overexpression-reduced-frailty-extended-mouse-lifespan",
+        "sirt6-overexpression-extended-male-mouse-lifespan",
+        "srt1720-standard-diet-mean-lifespan-healthspan-mice",
+        "spermidine-histone-hypoacetylation-longevity-autophagy",
+        "beta-hydroxybutyrate-hdac-extended-c-elegans-lifespan",
+        "h3k4me3-complex-deficiency-extended-c-elegans-lifespan",
+        "utx1-h3k27-knockdown-extended-c-elegans-lifespan",
+        "butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan"
+      ],
+      "gap_note": "Formal anchor auditing could move this category from adequate to strong and decide whether PMID 42135312 should be staged or explicitly deferred."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The outlook, bootstrap notes, and interpretation review explicitly separate chromatin and histone modulation from autophagy, nutrient sensing, NAD/sirtuin biology, mitochondrial dysfunction, microbiome-derived metabolites, cellular senescence, DNA repair, oncology epigenetic therapy, and general epigenetic-age association records.",
+      "source_ids": [
+        "pmid-33408182",
+        "pmid-34050173",
+        "pmid-22367546",
+        "pmid-24582957",
+        "pmid-19801973",
+        "pmid-25127866",
+        "pmid-20555324",
+        "pmid-21834846",
+        "pmid-41826362"
+      ],
+      "finding_ids": [
+        "kat7-inactivation-extended-aged-mouse-lifespan",
+        "sirt6-overexpression-reduced-frailty-extended-mouse-lifespan",
+        "sirt6-overexpression-extended-male-mouse-lifespan",
+        "srt1720-standard-diet-mean-lifespan-healthspan-mice",
+        "spermidine-histone-hypoacetylation-longevity-autophagy",
+        "beta-hydroxybutyrate-hdac-extended-c-elegans-lifespan",
+        "h3k4me3-complex-deficiency-extended-c-elegans-lifespan",
+        "utx1-h3k27-knockdown-extended-c-elegans-lifespan",
+        "butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan"
+      ],
+      "gap_note": "Boundary maintenance remains important because future source additions can easily belong partly or primarily to neighboring tracks."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-33408182",
+    "pmid-34050173",
+    "pmid-22367546",
+    "pmid-24582957",
+    "pmid-19801973",
+    "pmid-25127866",
+    "pmid-20555324",
+    "pmid-21834846",
+    "pmid-41826362"
+  ],
+  "covered_finding_ids": [
+    "kat7-inactivation-extended-aged-mouse-lifespan",
+    "sirt6-overexpression-reduced-frailty-extended-mouse-lifespan",
+    "sirt6-overexpression-extended-male-mouse-lifespan",
+    "srt1720-standard-diet-mean-lifespan-healthspan-mice",
+    "spermidine-histone-hypoacetylation-longevity-autophagy",
+    "beta-hydroxybutyrate-hdac-extended-c-elegans-lifespan",
+    "h3k4me3-complex-deficiency-extended-c-elegans-lifespan",
+    "utx1-h3k27-knockdown-extended-c-elegans-lifespan",
+    "butyrate-recovered-histone-acylation-extended-mito-deficient-mouse-lifespan"
+  ],
+  "search_log_summary": "This backfill reviewed local project artifacts: the published Chromatin and Histone Modulation outlook, June 2 bootstrap session, published candidate bundle, source-fidelity and interpretation reviews, publication event, and June 5 no-op surveillance session with its PubMed, ClinicalTrials.gov, bioRxiv/medRxiv, correction/retraction, and web-search log. No new PubMed, registry, preprint, citation-network, or web source search was run for this assessment.",
+  "source_selection_notes": [
+    "PMID 33408182 and PMID 34050173 are the strongest mammalian anchors because they connect KAT7 inactivation or SIRT6 overexpression to aged/progeroid mouse lifespan, frailty, or aging markers.",
+    "PMID 22367546 is included as an earlier SIRT6 lifespan anchor while preserving the male-specific and background-specific boundary.",
+    "PMID 24582957 adds small-molecule mammalian support through SRT1720, but remains broad SIRT1/NAD biology with maximum-lifespan boundaries.",
+    "PMID 19801973 and PMID 25127866 are chromatin/histone-linked model-organism and metabolite anchors with strong autophagy, nutrient-sensing, or metabolic overlap.",
+    "PMID 20555324 and PMID 21834846 anchor direct histone methylation-state lifespan genetics in C. elegans.",
+    "PMID 41826362 is current mammalian disease-model support that links tributyrin/butyrate to restored histone acylation and lifespan extension in mitochondrial-deficiency mice.",
+    "PMID 42135312 was noted in June 5 surveillance as a pre-baseline source-completeness lead for SIRT6 chromatin target engagement, but it is not in covered_source_ids because no public source or finding exists yet and it did not change the current public stage."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "direct-human-chromatin-intervention-evidence-absent",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "No result-bearing human intervention shows chromatin or histone target engagement tied to aging-relevant biomarkers, function, disease progression, survival, or acceptable short-term safety.",
+      "priority": "high",
+      "suggested_action": "Keep the public stage at animal_signal until a human intervention reports direct chromatin or histone pathway engagement in aging-relevant tissue."
+    },
+    {
+      "gap_id": "selective-druglike-translation-unproven",
+      "gap_type": "evidence_gap",
+      "category": "mechanistic",
+      "description": "The strongest mammalian signals are KAT7 gene targeting and SIRT6 overexpression, while small-molecule and metabolite evidence is broad, pleiotropic, and not validated as selective chromatin or histone modulation in humans.",
+      "priority": "high",
+      "suggested_action": "Require selective, dose-controlled, tissue-aware intervention data before treating the track as a coherent human-ready intervention class."
+    },
+    {
+      "gap_id": "chromatin-safety-and-tissue-specificity-unresolved",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Chronic chromatin or histone modulation could plausibly alter cancer, developmental, fertility, immune, neurocognitive, repair, and cell-state programs; the current source map does not resolve those tradeoffs.",
+      "priority": "high",
+      "suggested_action": "Require explicit long-term safety, reversibility, tissue specificity, and off-target review before strengthening confidence or human relevance."
+    },
+    {
+      "gap_id": "prebaseline-sirt6-chromatin-lead-unmapped",
+      "gap_type": "coverage_gap",
+      "category": "mechanistic",
+      "description": "PMID 42135312 was surfaced during surveillance as a pre-baseline SIRT6 mouse liver chromatin-accessibility source, but it has not been staged or explicitly excluded.",
+      "priority": "medium",
+      "suggested_action": "Consider a later source-completeness pass to decide whether this SIRT6 chromatin target-engagement record should be added as support or documented as context-only."
+    },
+    {
+      "gap_id": "boundary-track-attribution-needs-maintenance",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "Spermidine, beta-hydroxybutyrate, butyrate/tributyrin, SRT1720, SIRT6, and KAT7 evidence overlaps autophagy, nutrient sensing, NAD biology, mitochondrial dysfunction, microbiome-metabolite restoration, senescence, and DNA repair.",
+      "priority": "medium",
+      "suggested_action": "Keep future staged records explicit about whether the result tests chromatin/histone engagement directly or belongs mainly to an adjacent mechanism."
+    },
+    {
+      "gap_id": "trial-watch-results-pending",
+      "gap_type": "coverage_gap",
+      "category": "active_trials_registries",
+      "description": "REPROGRAM, POLYCAD, spermidine, ketone, HDAC, SIRT1/SIRT6, chromatin, epigenetic-age, and adjacent biological-aging registry contexts remain no-results or wrong-scope in the assessed surveillance log.",
+      "priority": "medium",
+      "suggested_action": "Use ordinary surveillance to recheck posted results, linked publications, and whether any trial reports direct chromatin or histone target engagement."
+    },
+    {
+      "gap_id": "recent-review-triangulation-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "Recent reviews and meta-analyses around chromatin aging, histone acetylation and methylation, sirtuins, HDACs, spermidine, ketones, butyrate, and epigenetic therapies have not been formally reconciled against the nine-source baseline.",
+      "priority": "medium",
+      "suggested_action": "Use a future source-completeness pass to compare recent review literature with the current source list and document missing decision-relevant records."
+    }
+  ],
+  "next_coverage_action": "Continue ordinary surveillance for Chromatin and Histone Modulation. On the next pass, recheck human chromatin or histone target-engagement studies, KAT7 and SIRT6 intervention programs, spermidine, butyrate or tributyrin, beta-hydroxybutyrate, HDAC, and SIRT1/SIRT6 programs for result-bearing older-adult or aging-relevant data; reserve coverage_repair for a later PMID 42135312, review-triangulation, trial-watch, safety, or formal seminal-anchor audit if no material field delta appears.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-assessment",
+    "manual",
+    "epigenetic_alterations",
+    "chromatin-and-histone-modulation"
+  ]
+}
