@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-12T12:04:17.582Z",
+  "updated_at": "2026-06-12T12:32:22.380Z",
   "notes": [
     "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
@@ -629,17 +629,5 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-25."
     }
   ],
-  "coverage_repair_queue": [
-    {
-      "rank": 1,
-      "phase_id": "coverage-repair",
-      "track_id": "partial-reprogramming",
-      "hallmark_id": "epigenetic_alterations",
-      "priority_tier": "now",
-      "default_mode": "coverage_repair",
-      "rationale": "Run a bounded coverage-repair pass before ordinary surveillance resumes, focused on seminal animal and mechanistic anchors, direct or adjacent human registry checks, safety/delivery/durability limits, recent-review triangulation, and taxonomy boundaries.",
-      "default_question": "Which known source-completeness gaps for Partial Reprogramming need repair, and does resolving them change the coverage verdict or public boundaries?",
-      "notes": "Latest coverage assessment: partial-reprogramming-coverage-2026-06-12."
-    }
-  ]
+  "coverage_repair_queue": []
 }

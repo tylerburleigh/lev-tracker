@@ -1,0 +1,373 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "partial-reprogramming-coverage-repair-2026-06-12",
+  "name": "Partial Reprogramming Coverage Repair for June 12, 2026",
+  "summary": "Coverage-repair bundle staging Partial Reprogramming source, study, finding, registry-watch, review, safety-boundary, seminal-anchor, and outlook-support records. The proposed outlook refresh keeps the track at low-confidence animal_signal with accelerating momentum, updates the human boundary to no human outcomes evidence, and adds ER-100 as a no-results phase 1 trial-watch item.",
+  "intake_mode": "manual",
+  "lifecycle_status": "submitted",
+  "submitted_at": "2026-06-12T12:22:53Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "Which known source-completeness gaps for Partial Reprogramming need repair, and does resolving them change the coverage verdict or public boundaries?",
+    "hallmark_ids": [
+      "epigenetic_alterations"
+    ],
+    "track_ids": [
+      "partial-reprogramming"
+    ]
+  },
+  "source_ids": [
+    "pmid-27984723",
+    "pmid-33268865",
+    "pmid-37118377",
+    "pmid-38381405",
+    "pmid-39259812",
+    "pmid-24025773",
+    "pmid-39267613",
+    "pmid-41490578",
+    "nct-07290244"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/27984723/",
+    "https://doi.org/10.1016/j.cell.2016.11.052",
+    "https://pubmed.ncbi.nlm.nih.gov/33268865/",
+    "https://doi.org/10.1038/s41586-020-2975-4",
+    "https://pubmed.ncbi.nlm.nih.gov/37118377/",
+    "https://doi.org/10.1038/s43587-022-00183-2",
+    "https://pubmed.ncbi.nlm.nih.gov/38381405/",
+    "https://doi.org/10.1089/cell.2023.0072",
+    "https://pubmed.ncbi.nlm.nih.gov/39259812/",
+    "https://doi.org/10.1126/scitranslmed.adg1777",
+    "https://pubmed.ncbi.nlm.nih.gov/24025773/",
+    "https://doi.org/10.1038/nature12586",
+    "https://pubmed.ncbi.nlm.nih.gov/39267613/",
+    "https://doi.org/10.17912/micropub.biology.001304",
+    "https://pubmed.ncbi.nlm.nih.gov/41490578/",
+    "https://doi.org/10.1016/j.arr.2026.103009",
+    "https://clinicaltrials.gov/study/NCT07290244"
+  ],
+  "related_records": [
+    {
+      "record_type": "track",
+      "record_id": "partial-reprogramming"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-partial-reprogramming-outlook"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-27984723",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-27984723",
+      "file_path": "data/sources/pmid-27984723.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/pmid-27984723.json",
+      "summary": "Add Ocampo 2016 cyclic OSKM source.",
+      "rationale": "Repair the missing seminal animal anchor for Partial Reprogramming."
+    },
+    {
+      "change_id": "create-source-pmid-33268865",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-33268865",
+      "file_path": "data/sources/pmid-33268865.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/pmid-33268865.json",
+      "summary": "Add Lu 2020 OSK retinal reprogramming source.",
+      "rationale": "Represent tissue-specific animal functional evidence and epigenetic restoration."
+    },
+    {
+      "change_id": "create-source-pmid-37118377",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-37118377",
+      "file_path": "data/sources/pmid-37118377.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/pmid-37118377.json",
+      "summary": "Add Browder 2022 physiological-aging mouse source.",
+      "rationale": "Repair molecular and biomarker support for longer-term partial reprogramming in wild-type mice."
+    },
+    {
+      "change_id": "create-source-pmid-38381405",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-38381405",
+      "file_path": "data/sources/pmid-38381405.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/pmid-38381405.json",
+      "summary": "Add Macip 2024 AAV OSK aged-mouse lifespan source.",
+      "rationale": "Represent later aged-mouse lifespan and frailty evidence with explicit limitations."
+    },
+    {
+      "change_id": "create-source-pmid-39259812",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-39259812",
+      "file_path": "data/sources/pmid-39259812.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/pmid-39259812.json",
+      "summary": "Add Sahu 2024 Cdkn2a-OSK targeted partial-reprogramming source.",
+      "rationale": "Represent recent targeted delivery, lifespan, health-marker, and tumor-incidence boundary evidence."
+    },
+    {
+      "change_id": "create-source-pmid-24025773",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-24025773",
+      "file_path": "data/sources/pmid-24025773.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/pmid-24025773.json",
+      "summary": "Add Abad 2013 full-reprogramming safety boundary source.",
+      "rationale": "Repair the tumorigenicity and taxonomy-boundary gap for over-reprogramming risk."
+    },
+    {
+      "change_id": "create-source-pmid-39267613",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-39267613",
+      "file_path": "data/sources/pmid-39267613.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/pmid-39267613.json",
+      "summary": "Add Toraason 2024 model-organism limiting source.",
+      "rationale": "Represent a small negative/null generalization boundary for reprogramming-factor orthologs."
+    },
+    {
+      "change_id": "create-source-pmid-41490578",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-41490578",
+      "file_path": "data/sources/pmid-41490578.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/pmid-41490578.json",
+      "summary": "Add Li 2026 partial reprogramming review source.",
+      "rationale": "Repair recent-review triangulation and translation checklist coverage."
+    },
+    {
+      "change_id": "create-source-nct-07290244",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-07290244",
+      "file_path": "data/sources/nct-07290244.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/nct-07290244.json",
+      "summary": "Add the ER-100 phase 1 ClinicalTrials.gov registry source.",
+      "rationale": "Repair active human registry coverage and update the public boundary from no human program to no human outcomes evidence."
+    },
+    {
+      "change_id": "create-study-ocampo-cyclic-oskm-mouse-partial-reprogramming",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "ocampo-cyclic-oskm-mouse-partial-reprogramming",
+      "file_path": "data/studies/ocampo-cyclic-oskm-mouse-partial-reprogramming.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/ocampo-cyclic-oskm-mouse-partial-reprogramming.json",
+      "summary": "Add the Ocampo cyclic OSKM animal study.",
+      "rationale": "Map the main animal lifespan, healthspan, function, and biomarker anchor."
+    },
+    {
+      "change_id": "create-study-lu-osk-retinal-reprogramming-vision-mice",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "lu-osk-retinal-reprogramming-vision-mice",
+      "file_path": "data/studies/lu-osk-retinal-reprogramming-vision-mice.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/lu-osk-retinal-reprogramming-vision-mice.json",
+      "summary": "Add the Lu OSK retinal animal study.",
+      "rationale": "Map tissue-specific animal functional and mechanistic evidence."
+    },
+    {
+      "change_id": "create-study-browder-long-term-oskm-physiological-aging-mice",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "browder-long-term-oskm-physiological-aging-mice",
+      "file_path": "data/studies/browder-long-term-oskm-physiological-aging-mice.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/browder-long-term-oskm-physiological-aging-mice.json",
+      "summary": "Add the Browder physiological-aging animal study.",
+      "rationale": "Map longer-term biomarker and safety-relevant mouse evidence."
+    },
+    {
+      "change_id": "create-study-macip-aav-osk-aged-mouse-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "macip-aav-osk-aged-mouse-lifespan",
+      "file_path": "data/studies/macip-aav-osk-aged-mouse-lifespan.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/macip-aav-osk-aged-mouse-lifespan.json",
+      "summary": "Add the Macip AAV OSK aged-mouse lifespan study.",
+      "rationale": "Map a later aged-mouse lifespan and frailty signal."
+    },
+    {
+      "change_id": "create-study-sahu-cdkn2a-osk-aged-cell-targeted-mice",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "sahu-cdkn2a-osk-aged-cell-targeted-mice",
+      "file_path": "data/studies/sahu-cdkn2a-osk-aged-cell-targeted-mice.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/sahu-cdkn2a-osk-aged-cell-targeted-mice.json",
+      "summary": "Add the Sahu Cdkn2a-OSK targeted mouse study.",
+      "rationale": "Map recent targeted delivery, mouse lifespan, safety, and human-cell context."
+    },
+    {
+      "change_id": "create-study-abad-in-vivo-oskm-full-reprogramming-teratoma",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "abad-in-vivo-oskm-full-reprogramming-teratoma",
+      "file_path": "data/studies/abad-in-vivo-oskm-full-reprogramming-teratoma.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/abad-in-vivo-oskm-full-reprogramming-teratoma.json",
+      "summary": "Add the Abad in vivo full-reprogramming safety study.",
+      "rationale": "Map tumorigenicity and dedifferentiation boundary evidence."
+    },
+    {
+      "change_id": "create-study-toraason-neuronal-reprogramming-factor-worm-cognition",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "toraason-neuronal-reprogramming-factor-worm-cognition",
+      "file_path": "data/studies/toraason-neuronal-reprogramming-factor-worm-cognition.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/toraason-neuronal-reprogramming-factor-worm-cognition.json",
+      "summary": "Add the Toraason model-organism limiting study.",
+      "rationale": "Map negative/null model-organism context for generalization boundaries."
+    },
+    {
+      "change_id": "create-study-li-tay-epigenetic-rejuvenation-review",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "li-tay-epigenetic-rejuvenation-review",
+      "file_path": "data/studies/li-tay-epigenetic-rejuvenation-review.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/li-tay-epigenetic-rejuvenation-review.json",
+      "summary": "Add the Li and Tay review study record.",
+      "rationale": "Map recent review triangulation and translation-limitation context."
+    },
+    {
+      "change_id": "create-study-er100-optic-neuropathy-phase1",
+      "change_type": "create_record",
+      "target_record_type": "study",
+      "target_record_id": "er100-optic-neuropathy-phase1",
+      "file_path": "data/studies/er100-optic-neuropathy-phase1.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/er100-optic-neuropathy-phase1.json",
+      "summary": "Add the ER-100 optic-neuropathy phase 1 study.",
+      "rationale": "Map the current human no-results trial-watch entry for Partial Reprogramming."
+    },
+    {
+      "change_id": "create-finding-cyclic-oskm-ameliorated-aged-mouse-hallmarks",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "cyclic-oskm-ameliorated-aged-mouse-hallmarks",
+      "file_path": "data/findings/cyclic-oskm-ameliorated-aged-mouse-hallmarks.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/cyclic-oskm-ameliorated-aged-mouse-hallmarks.json",
+      "summary": "Add the cyclic OSKM animal lifespan and recovery finding.",
+      "rationale": "Anchor the animal_signal stage in a concrete source-backed finding."
+    },
+    {
+      "change_id": "create-finding-osk-restored-retinal-function-epigenetic-state-mice",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "osk-restored-retinal-function-epigenetic-state-mice",
+      "file_path": "data/findings/osk-restored-retinal-function-epigenetic-state-mice.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/osk-restored-retinal-function-epigenetic-state-mice.json",
+      "summary": "Add the OSK retinal functional animal finding.",
+      "rationale": "Represent tissue-specific functional support without overgeneralizing it."
+    },
+    {
+      "change_id": "create-finding-long-term-oskm-reverted-age-molecular-signatures-mice",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "long-term-oskm-reverted-age-molecular-signatures-mice",
+      "file_path": "data/findings/long-term-oskm-reverted-age-molecular-signatures-mice.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/long-term-oskm-reverted-age-molecular-signatures-mice.json",
+      "summary": "Add the long-term OSKM mouse biomarker finding.",
+      "rationale": "Represent physiologic-aging biomarker and mechanism support."
+    },
+    {
+      "change_id": "create-finding-aav-osk-extended-remaining-lifespan-aged-mice",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "aav-osk-extended-remaining-lifespan-aged-mice",
+      "file_path": "data/findings/aav-osk-extended-remaining-lifespan-aged-mice.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/aav-osk-extended-remaining-lifespan-aged-mice.json",
+      "summary": "Add the AAV OSK aged-mouse lifespan finding.",
+      "rationale": "Map a later animal lifespan signal with confidence and conflict caveats."
+    },
+    {
+      "change_id": "create-finding-cdkn2a-osk-extended-life-and-health-markers-mice",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "cdkn2a-osk-extended-life-and-health-markers-mice",
+      "file_path": "data/findings/cdkn2a-osk-extended-life-and-health-markers-mice.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/cdkn2a-osk-extended-life-and-health-markers-mice.json",
+      "summary": "Add the Cdkn2a-targeted OSK mouse lifespan and safety finding.",
+      "rationale": "Represent targeted delivery, health-marker, and tumor-incidence boundary evidence."
+    },
+    {
+      "change_id": "create-finding-in-vivo-oskm-full-reprogramming-teratoma-risk",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "in-vivo-oskm-full-reprogramming-teratoma-risk",
+      "file_path": "data/findings/in-vivo-oskm-full-reprogramming-teratoma-risk.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/in-vivo-oskm-full-reprogramming-teratoma-risk.json",
+      "summary": "Add the full-reprogramming teratoma safety finding.",
+      "rationale": "Make safety and taxonomy boundaries explicit in the evidence map."
+    },
+    {
+      "change_id": "create-finding-neuronal-osk-orthologs-worm-null-cognition-lifespan",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "neuronal-osk-orthologs-worm-null-cognition-lifespan",
+      "file_path": "data/findings/neuronal-osk-orthologs-worm-null-cognition-lifespan.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/neuronal-osk-orthologs-worm-null-cognition-lifespan.json",
+      "summary": "Add the C. elegans limiting finding.",
+      "rationale": "Represent a negative/null model-organism generalization boundary."
+    },
+    {
+      "change_id": "create-finding-partial-reprogramming-review-safety-delivery-checklist",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "partial-reprogramming-review-safety-delivery-checklist",
+      "file_path": "data/findings/partial-reprogramming-review-safety-delivery-checklist.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/partial-reprogramming-review-safety-delivery-checklist.json",
+      "summary": "Add the review-based safety and delivery checklist finding.",
+      "rationale": "Repair recent-review triangulation and translation-boundary support."
+    },
+    {
+      "change_id": "create-finding-er100-phase1-recruiting-no-results",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "er100-phase1-recruiting-no-results",
+      "file_path": "data/findings/er100-phase1-recruiting-no-results.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/er100-phase1-recruiting-no-results.json",
+      "summary": "Add the ER-100 recruiting no-results trial-watch finding.",
+      "rationale": "Represent the current human registry boundary without treating it as efficacy evidence."
+    },
+    {
+      "change_id": "update-outlook-track-partial-reprogramming",
+      "change_type": "update_outlook",
+      "target_record_type": "outlook",
+      "target_record_id": "track-partial-reprogramming-outlook",
+      "file_path": "data/outlooks/track-partial-reprogramming-outlook.json",
+      "staged_file_path": "data/staged-records/partial-reprogramming-coverage-repair-2026-06-12/track-partial-reprogramming-outlook.json",
+      "summary": "Refresh the Partial Reprogramming outlook support map and human boundary wording.",
+      "rationale": "Keep the public stage at animal_signal while making the animal anchors, safety limits, review triangulation, and ER-100 no-results registry auditable."
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "partial-reprogramming",
+      "note": "Keep evidence_stage at low-confidence animal_signal and momentum accelerating. Update the human boundary from no direct human intervention evidence to no human outcomes evidence, with ER-100 recorded as a recruiting phase 1 no-results registry.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast",
+    "taxonomy_mapping",
+    "safety_limitations"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-12-partial-reprogramming-coverage-repair.json",
+  "next_actions": [
+    "Run source-fidelity review against the staged PubMed and ClinicalTrials.gov records, especially effect-size, model, sex, delivery, conflict, and safety details.",
+    "Run interpretation and taxonomy review to confirm the human boundary, ER-100 trial-watch framing, and separation from full reprogramming, stem-cell replacement, generic gene therapy, and epigenetic-clock-only claims.",
+    "If approved and published, return Partial Reprogramming to ordinary surveillance with special watch on NCT07290244 results, ER-100 updates, and independent replication of the 2024 mouse lifespan and safety signals."
+  ],
+  "tags": [
+    "partial-reprogramming",
+    "coverage-repair",
+    "epigenetic_alterations"
+  ]
+}

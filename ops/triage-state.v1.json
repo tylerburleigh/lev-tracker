@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-12T12:04:17.701Z",
+  "generated_at": "2026-06-12T12:32:22.488Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-12T12:04:17.582Z",
-    "research_priority_queue_updated_at": "2026-06-12T12:04:17.582Z",
-    "active_candidate_bundle_count": 0,
+    "research_coverage_status_updated_at": "2026-06-12T12:32:22.380Z",
+    "research_priority_queue_updated_at": "2026-06-12T12:32:22.380Z",
+    "active_candidate_bundle_count": 1,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
     "surveillance_recent_queue_count": 37,
-    "coverage_repair_queue_count": 1,
+    "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 16,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
@@ -33,10 +33,10 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-repair-partial-reprogramming",
-    "top_mode": "coverage_repair",
-    "active_editorial_count": 0,
-    "ready_research_count": 1,
+    "top_work_item_id": "editorial_review-partial-reprogramming-coverage-repair-2026-06-12",
+    "top_mode": "editorial_review",
+    "active_editorial_count": 1,
+    "ready_research_count": 0,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
@@ -46,37 +46,35 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "coverage-repair-partial-reprogramming",
-      "mode": "coverage_repair",
-      "domain": "research",
+      "item_id": "editorial_review-partial-reprogramming-coverage-repair-2026-06-12",
+      "mode": "editorial_review",
+      "domain": "editorial",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Repair coverage for Partial Reprogramming",
-      "rationale": "Run a bounded coverage-repair pass before ordinary surveillance resumes, focused on seminal animal and mechanistic anchors, direct or adjacent human registry checks, safety/delivery/durability limits, recent-review triangulation, and taxonomy boundaries.",
-      "default_action": "Run a coverage-repair pass against the latest assessment gaps; update public records only if the repair changes public boundaries.",
-      "track_id": "partial-reprogramming",
-      "hallmark_id": "epigenetic_alterations",
+      "title": "Review active staged update partial-reprogramming-coverage-repair-2026-06-12",
+      "rationale": "Staged update partial-reprogramming-coverage-repair-2026-06-12 is submitted, so editorial work takes precedence over new research.",
+      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
+      "candidate_bundle_id": "partial-reprogramming-coverage-repair-2026-06-12",
+      "runbook_path": "docs/admin-review.md",
+      "command": "npm run research:bundle -- validate --bundle partial-reprogramming-coverage-repair-2026-06-12",
+      "source_paths": [
+        "data/candidate-bundles",
+        "docs/admin-review.md"
+      ],
       "references": [
         {
-          "record_type": "track",
-          "record_id": "partial-reprogramming"
-        },
-        {
-          "record_type": "hallmark",
-          "record_id": "epigenetic_alterations"
+          "record_type": "candidate_bundle",
+          "record_id": "partial-reprogramming-coverage-repair-2026-06-12"
         }
-      ],
-      "runbook_path": "docs/coverage-assessment.md",
-      "source_paths": [
-        "research/backlog/track-priority.v1.json",
-        "research/state/coverage-status.v1.json",
-        "research/coverage-assessments",
-        "docs/coverage-assessment.md"
       ],
       "signals": [
         {
-          "name": "generated_queue_rank",
-          "value": 1
+          "name": "lifecycle_status",
+          "value": "submitted"
+        },
+        {
+          "name": "proposed_change_count",
+          "value": 28
         }
       ]
     },

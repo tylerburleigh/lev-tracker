@@ -1,0 +1,170 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "outlook",
+  "id": "track-partial-reprogramming-outlook",
+  "name": "Partial Reprogramming Track Outlook",
+  "subject_type": "track",
+  "subject_id": "partial-reprogramming",
+  "evidence_stage": "animal_signal",
+  "momentum": "accelerating",
+  "confidence": "low",
+  "main_evidence_gaps": [
+    "Human outcomes evidence is still absent: a recruiting ER-100 phase 1 ocular safety registry is now visible, but there are no posted human safety, target-engagement, functional, disease, or aging results.",
+    "Animal evidence is broader than the previous public support map showed, but delivery control, dosing schedule, durability, immune response, tissue specificity, tumorigenicity, and dedifferentiation risk remain central blockers.",
+    "Most positive signals are mouse, tissue-specific, disease-model, injury-repair, or biomarker-heavy results rather than broad human healthy-aging evidence.",
+    "The track boundary must stay separate from full reprogramming, stem-cell replacement, generic gene therapy delivery, epigenetic-clock readouts, and broad regenerative-medicine claims."
+  ],
+  "strongest_current_evidence": [
+    "Cyclic OSKM partial reprogramming improved age-associated hallmarks, prolonged lifespan in a premature-aging mouse model, and improved recovery from metabolic disease and muscle injury in older wild-type mice.",
+    "AAV OSK in mouse retinal ganglion cells restored youthful epigenetic patterns and improved axon regeneration and vision outcomes in injury, glaucoma, and aged-mouse models.",
+    "Recent AAV OSK mouse studies add lifespan, frailty, inflammatory, wound-healing, and targeted aged-cell signals, including a Cdkn2a-OSK approach that reported no altered tumor incidence in the abstracted mouse experiments.",
+    "Longer-term OSKM regimens in physiologically aging mice add tissue, epigenetic-clock, transcriptomic, metabolic, and organism-level biomarker support."
+  ],
+  "interpretation_note": "Partial reprogramming remains an unusually provocative animal-signal track, not a human-efficacy track. The repaired source map strengthens the basis for animal_signal and accelerating momentum, but it also tightens the human boundary: ClinicalTrials.gov now lists a recruiting ER-100 phase 1 ocular OSK safety study, yet no human results are posted. Public interpretation should emphasize current human translation activity without treating registry presence as evidence of benefit.",
+  "what_would_change_the_rating": [
+    "A stronger stage would require posted or published human partial-reprogramming results showing acceptable safety, controlled expression, target engagement, and prespecified functional or disease-relevant outcomes.",
+    "Confidence would rise if independent animal studies replicate lifespan, frailty, tissue-repair, and safety findings across sexes, tissues, delivery systems, and longer follow-up windows.",
+    "Confidence would weaken if ER-100 or other controlled-delivery programs show serious ocular, immune, biodistribution, dedifferentiation, tumor, or durability problems, or if positive mouse signals fail in independent replication.",
+    "Broad LEV relevance would require evidence beyond ocular or disease-specific entry points: durable systemic or multi-tissue benefit in humans with acceptable long-term safety."
+  ],
+  "supporting_finding_ids": [
+    "cyclic-oskm-ameliorated-aged-mouse-hallmarks",
+    "osk-restored-retinal-function-epigenetic-state-mice",
+    "long-term-oskm-reverted-age-molecular-signatures-mice",
+    "aav-osk-extended-remaining-lifespan-aged-mice",
+    "cdkn2a-osk-extended-life-and-health-markers-mice",
+    "in-vivo-oskm-full-reprogramming-teratoma-risk",
+    "neuronal-osk-orthologs-worm-null-cognition-lifespan",
+    "partial-reprogramming-review-safety-delivery-checklist",
+    "er100-phase1-recruiting-no-results"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Stage assignment",
+      "outlook_field": "evidence_stage",
+      "conclusion": "Animal_signal remains the correct public stage because the strongest result-bearing evidence is in mice and other model systems, not human outcomes.",
+      "support_role": "supports",
+      "rationale": "Ocampo 2016, Lu 2020, Browder 2022, Macip 2024, and Sahu 2024 collectively support partial-reprogramming plausibility through mouse lifespan, function, tissue repair, biomarker, and targeted aged-cell signals.",
+      "finding_ids": [
+        "cyclic-oskm-ameliorated-aged-mouse-hallmarks",
+        "osk-restored-retinal-function-epigenetic-state-mice",
+        "long-term-oskm-reverted-age-molecular-signatures-mice",
+        "aav-osk-extended-remaining-lifespan-aged-mice",
+        "cdkn2a-osk-extended-life-and-health-markers-mice"
+      ],
+      "source_ids": [
+        "pmid-27984723",
+        "pmid-33268865",
+        "pmid-37118377",
+        "pmid-38381405",
+        "pmid-39259812"
+      ],
+      "limitations": [
+        "Mouse lifespan and tissue-repair evidence does not establish human aging benefit.",
+        "Some signals are progeroid, tissue-specific, disease-model, delivery-specific, or biomarker-heavy.",
+        "Delivery control and long-term safety remain unsettled."
+      ]
+    },
+    {
+      "label": "Human boundary",
+      "outlook_field": "main_evidence_gaps",
+      "conclusion": "The public gap should be no human outcomes evidence, not no human program, because ER-100 is now registered as a recruiting phase 1 ocular OSK study with no posted results.",
+      "support_role": "limits",
+      "rationale": "NCT07290244 is a current human partial-reprogramming registry, but it is a no-results safety study in optic neuropathies and cannot support efficacy, durability, or broad aging claims.",
+      "finding_ids": [
+        "er100-phase1-recruiting-no-results"
+      ],
+      "source_ids": [
+        "nct-07290244"
+      ],
+      "limitations": [
+        "No results are posted in the June 12, 2026 ClinicalTrials.gov API view.",
+        "The trial is phase 1, non-randomized, disease-specific, ocular, and small.",
+        "Registry presence is program activity, not evidence of benefit."
+      ]
+    },
+    {
+      "label": "Safety and translation",
+      "outlook_field": "main_evidence_gaps",
+      "conclusion": "Safety and delivery boundaries remain a major reason for low confidence.",
+      "support_role": "limits",
+      "rationale": "Full in vivo OSKM reprogramming can produce teratomas and iPS-like cells, targeted OSK studies still need delivery and tumor-incidence source review, and the 2026 review emphasizes schedule, delivery, and safety pharmacology as translation requirements.",
+      "finding_ids": [
+        "in-vivo-oskm-full-reprogramming-teratoma-risk",
+        "cdkn2a-osk-extended-life-and-health-markers-mice",
+        "partial-reprogramming-review-safety-delivery-checklist",
+        "er100-phase1-recruiting-no-results"
+      ],
+      "source_ids": [
+        "pmid-24025773",
+        "pmid-39259812",
+        "pmid-41490578",
+        "nct-07290244"
+      ],
+      "limitations": [
+        "The Abad result is a full-reprogramming boundary rather than a controlled partial-reprogramming therapy.",
+        "A mouse no-altered-tumor-incidence signal does not settle human long-term risk.",
+        "The ER-100 registry will not resolve long-term systemic or multi-tissue risk by itself."
+      ]
+    },
+    {
+      "label": "Generalization boundary",
+      "outlook_field": "confidence",
+      "conclusion": "Low confidence remains appropriate because positive signals do not generalize uniformly across models or endpoints.",
+      "support_role": "balances",
+      "rationale": "The C. elegans neuronal ortholog study found no memory or lifespan benefit and possible chemotaxis disruption, which is not decisive for mammalian OSK but helps prevent class-wide overgeneralization.",
+      "finding_ids": [
+        "neuronal-osk-orthologs-worm-null-cognition-lifespan",
+        "long-term-oskm-reverted-age-molecular-signatures-mice"
+      ],
+      "source_ids": [
+        "pmid-39267613",
+        "pmid-37118377"
+      ],
+      "limitations": [
+        "C. elegans ortholog expression is distant from mammalian partial-reprogramming therapy.",
+        "Mouse biomarker movement does not guarantee durable function or human translation."
+      ]
+    },
+    {
+      "label": "Momentum",
+      "outlook_field": "momentum",
+      "conclusion": "Accelerating momentum is justified by recent animal papers, review synthesis, and first visible human registry activity, while confidence remains low.",
+      "support_role": "supports",
+      "rationale": "The 2024 mouse papers, 2026 review, and recruiting ER-100 registry show active translation and source growth without changing the evidence stage.",
+      "finding_ids": [
+        "aav-osk-extended-remaining-lifespan-aged-mice",
+        "cdkn2a-osk-extended-life-and-health-markers-mice",
+        "partial-reprogramming-review-safety-delivery-checklist",
+        "er100-phase1-recruiting-no-results"
+      ],
+      "source_ids": [
+        "pmid-38381405",
+        "pmid-39259812",
+        "pmid-41490578",
+        "nct-07290244"
+      ],
+      "limitations": [
+        "Momentum is not the same as validated human benefit.",
+        "Commercial and platform enthusiasm should be separated from result-bearing evidence."
+      ]
+    }
+  ],
+  "supporting_source_ids": [
+    "pmid-27984723",
+    "pmid-33268865",
+    "pmid-37118377",
+    "pmid-38381405",
+    "pmid-39259812",
+    "pmid-24025773",
+    "pmid-39267613",
+    "pmid-41490578",
+    "nct-07290244"
+  ],
+  "last_updated": "2026-06-12",
+  "tags": [
+    "public",
+    "track",
+    "coverage-repair"
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-12-partial-reprogramming-coverage-repair",
+  "name": "Partial Reprogramming Coverage Repair",
+  "mode": "coverage_repair",
+  "started_at": "2026-06-12T12:06:00Z",
+  "completed_at": "2026-06-12T12:22:53Z",
+  "scope": {
+    "question": "Which known source-completeness gaps for Partial Reprogramming need repair, and does resolving them change the coverage verdict or public boundaries?",
+    "hallmark_ids": [
+      "epigenetic_alterations"
+    ],
+    "track_ids": [
+      "partial-reprogramming"
+    ]
+  },
+  "selected_via": "queue_default",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "partial-reprogramming-coverage-repair-2026-06-12",
+  "summary": "Coverage repair staged source, study, finding, registry-watch, review, safety-boundary, seminal-anchor, support-map, and coverage-assessment records for Partial Reprogramming. The repair adds cyclic OSKM, retinal OSK, long-term OSKM, AAV OSK, Cdkn2a-OSK, full-reprogramming teratoma-boundary, model-organism limiting, 2026 review, and ER-100 phase 1 no-results registry records. The staged outlook keeps the track at low-confidence animal_signal with accelerating momentum and updates the public human boundary to no human outcomes evidence rather than no human program.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "outlook_refresh",
+    "public_update_needed": true,
+    "activity_only": false,
+    "coverage_assessment_needed": true,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The repair materially changes the public support map and boundary language without changing the stage: animal anchors are now auditable, safety and taxonomy limits are explicit, recent-review triangulation is represented, and the ER-100 registry is visible as no-results trial-watch context rather than evidence of benefit."
+  },
+  "search_log": [
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "partial reprogramming aging OSK OR OSKM Yamanaka aging; partial cellular reprogramming rejuvenation review; selected PMIDs 27984723, 33268865, 37118377, 38381405, 39259812, 24025773, 39267613, 41490578",
+      "checked_at": "2026-06-12T12:22:53Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Confirmed metadata and abstracts for core animal anchors, tissue-specific OSK function, long-term OSKM molecular aging effects, 2024 AAV and targeted OSK papers, a full-reprogramming teratoma safety boundary, a model-organism null/negative result, and a 2026 review emphasizing schedule, delivery, and safety pharmacology."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "\"partial reprogramming\"; \"Yamanaka factors\"; \"Oct4 Sox2 Klf4\"; \"OSK\" \"aging\"; \"epigenetic reprogramming\" \"aging\"; \"cellular reprogramming\" \"aging\"; \"epigenetic rejuvenation\"; \"rejuvenation\" \"Yamanaka\"",
+      "checked_at": "2026-06-12T12:22:53Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "Exact partial-reprogramming and Yamanaka-factor searches returned no studies, but broader OSK/aging and epigenetic-reprogramming/aging searches identified NCT07290244, a recruiting Life Biosciences ER-100 phase 1 ocular AAV OSK safety study with no posted results."
+    },
+    {
+      "source_name": "Local public records and prior review artifacts",
+      "query": "Partial Reprogramming outlook, May 30 surveillance revision bundle, evidence reviews, publication event, June 12 coverage assessment, local source/finding searches, and planning state",
+      "checked_at": "2026-06-12T12:22:53Z",
+      "summary": "Confirmed the previous public outlook was appropriately conservative but lacked curated source, study, finding, review, safety, registry, and taxonomy-boundary records. The new repair stages those records without publishing them."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT07290244",
+      "study_id": "er100-optic-neuropathy-phase1",
+      "source_id": "nct-07290244",
+      "registry_url": "https://clinicaltrials.gov/study/NCT07290244",
+      "checked_at": "2026-06-12T12:22:53Z",
+      "current_registry_status": "recruiting",
+      "current_results_status": "not_posted",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "new_trial",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Staged as a recruiting phase 1 no-results ER-100 AAV OSK ocular safety registry. Month-level registry fields list primary completion as May 2027 and study completion as March 2032."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "ClinicalTrials.gov exact partial-reprogramming phrase searches",
+      "decision": "no_results",
+      "reason": "Exact searches for \"partial reprogramming\", \"Yamanaka factors\", and \"Oct4 Sox2 Klf4\" returned no ClinicalTrials.gov studies in the June 12, 2026 API checks; the direct human registry was found through broader OSK/aging and epigenetic-reprogramming/aging searches."
+    },
+    {
+      "reference": "NCT01977885",
+      "title": "Exercise-Induced Epigenetic Modifications in Obese Aging Women",
+      "url": "https://clinicaltrials.gov/study/NCT01977885",
+      "decision": "wrong_scope",
+      "reason": "Exercise and diet epigenetic-modification study in metabolic syndrome, not partial reprogramming or OSK/Yamanaka-factor therapy."
+    },
+    {
+      "reference": "NCT03734419",
+      "title": "The Use of Aging Biomarkers in Saliva, Based on DNA Methylation Status in Elovl2 to Predict Biological Age",
+      "url": "https://clinicaltrials.gov/study/NCT03734419",
+      "decision": "wrong_scope",
+      "reason": "Biomarker-prediction study, not an interventional partial-reprogramming therapy."
+    },
+    {
+      "reference": "PMID 39937646",
+      "title": "Cellular rejuvenation protects neurons from inflammation-mediated cell death",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39937646/",
+      "decision": "context_only",
+      "reason": "Relevant disease-context OSK neuroprotection paper, but the repair prioritized aging-track animal lifespan, tissue-function, safety, review, and current human registry anchors."
+    },
+    {
+      "reference": "PMID 40122394",
+      "title": "Conserved biological processes in partial cellular reprogramming: Relevance to aging and rejuvenation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40122394/",
+      "decision": "context_only",
+      "reason": "Useful review context, but the staged 2026 review more directly addressed current translation, schedule, delivery, and safety-pharmacology gaps for this bounded repair."
+    }
+  ],
+  "source_ids": [
+    "pmid-27984723",
+    "pmid-33268865",
+    "pmid-37118377",
+    "pmid-38381405",
+    "pmid-39259812",
+    "pmid-24025773",
+    "pmid-39267613",
+    "pmid-41490578",
+    "nct-07290244"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/27984723/",
+    "https://pubmed.ncbi.nlm.nih.gov/33268865/",
+    "https://pubmed.ncbi.nlm.nih.gov/37118377/",
+    "https://pubmed.ncbi.nlm.nih.gov/38381405/",
+    "https://pubmed.ncbi.nlm.nih.gov/39259812/",
+    "https://pubmed.ncbi.nlm.nih.gov/24025773/",
+    "https://pubmed.ncbi.nlm.nih.gov/39267613/",
+    "https://pubmed.ncbi.nlm.nih.gov/41490578/",
+    "https://clinicaltrials.gov/study/NCT07290244"
+  ],
+  "notes": [
+    "The staged repair intentionally keeps evidence_stage at animal_signal because no human partial-reprogramming results are posted or published.",
+    "The ER-100 registry is represented as regulatory/program activity with inconclusive direction, not as safety or efficacy evidence.",
+    "Month-only ClinicalTrials.gov completion dates were preserved in notes rather than normalized into exact structured dates.",
+    "The bundle stages public record candidates only and does not approve or publish them."
+  ],
+  "next_actions": [
+    "Run source-fidelity, interpretation/forecast, taxonomy-mapping, and safety-limitations review for the staged Partial Reprogramming coverage-repair bundle.",
+    "If approved and published, return Partial Reprogramming to ordinary surveillance with watch on NCT07290244 result postings, ER-100 program updates, and independent replication or limitation of the 2024 mouse lifespan and safety signals."
+  ]
+}

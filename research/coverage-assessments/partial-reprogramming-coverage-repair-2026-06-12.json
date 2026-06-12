@@ -1,0 +1,269 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "partial-reprogramming-coverage-repair-2026-06-12",
+  "name": "Partial Reprogramming Coverage Repair Assessment for June 12, 2026",
+  "short_name": "Partial reprogramming coverage repair",
+  "track_id": "partial-reprogramming",
+  "hallmark_id": "epigenetic_alterations",
+  "assessment_type": "coverage_repair",
+  "assessed_at": "2026-06-12T12:22:53Z",
+  "assessment_window": {
+    "from": "2026-06-12T12:02:58Z",
+    "to": "2026-06-12T12:22:53Z",
+    "basis": "Bounded coverage-repair pass against the June 12 thin-coverage assessment, using local records, PubMed ESearch/ESummary/EFetch, and ClinicalTrials.gov API v2 checks."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is now adequate for a low-confidence animal_signal public read, but not strong. The staged repair adds concrete animal, mechanistic, lifespan, functional, safety, review, registry, limiting, and taxonomy-boundary records. It also materially updates the human boundary: there is a recruiting ER-100 phase 1 ocular AAV OSK registry, but there are still no posted human outcomes, efficacy, target-engagement, durability, or safety results. The staged outlook should therefore keep Partial Reprogramming at animal_signal with accelerating momentum and low confidence.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-05-30-partial-reprogramming-surveillance-revision",
+      "2026-06-12-partial-reprogramming-coverage-repair"
+    ],
+    "candidate_bundle_ids": [
+      "partial-reprogramming-update-2026-05-29",
+      "partial-reprogramming-coverage-repair-2026-06-12"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-partial-reprogramming-interpretation-r1",
+      "evidence-review-partial-reprogramming-source-fidelity-r2",
+      "evidence-review-partial-reprogramming-interpretation-r2",
+      "evidence-review-partial-reprogramming-interpretation-forecast-r2-round-3"
+    ],
+    "publication_event_ids": [
+      "publish-partial-reprogramming-update-2026-05-29-2026-05-31t13-30-12-515z"
+    ],
+    "outlook_ids": [
+      "track-partial-reprogramming-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "thin",
+      "rationale": "The repair found and staged one direct human partial-reprogramming registry: NCT07290244, a recruiting phase 1 ER-100 ocular AAV OSK safety study. This repairs the registry gap, but the human evidence itself remains thin because the registry has no posted results and is small, ocular, disease-specific, and early-phase.",
+      "source_ids": [
+        "nct-07290244"
+      ],
+      "finding_ids": [
+        "er100-phase1-recruiting-no-results"
+      ],
+      "gap_note": "No human partial-reprogramming outcomes, target-engagement, functional, disease, safety, durability, or aging results are posted or published in the checked sources."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "not_checked",
+      "rationale": "This repair focused on intervention anchors, animal and mechanistic evidence, safety boundaries, registry activity, and recent review triangulation. Human-cell context was noted in staged animal/mechanistic sources, but human observational, natural-experiment, or ex vivo biomarker cohorts were not systematically mapped.",
+      "gap_note": "A future taxonomy pass can decide whether human-cell epigenetic-age and chemical-reprogramming context belongs in this track or adjacent epigenetic-modulation tracks."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "The staged map now includes the main animal_signal anchors: Ocampo cyclic OSKM, Macip AAV OSK aged-mouse lifespan, and Sahu Cdkn2a-OSK targeted partial reprogramming, with Lu retinal function and Browder physiological-aging biomarker support in adjacent categories.",
+      "source_ids": [
+        "pmid-27984723",
+        "pmid-38381405",
+        "pmid-39259812"
+      ],
+      "finding_ids": [
+        "cyclic-oskm-ameliorated-aged-mouse-hallmarks",
+        "aav-osk-extended-remaining-lifespan-aged-mice",
+        "cdkn2a-osk-extended-life-and-health-markers-mice"
+      ],
+      "gap_note": "Independent replication, sex balance, dose scheduling, and long-term safety remain evidence gaps, not coverage gaps."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "The repair stages OSKM epigenetic remodeling, OSK retinal epigenetic-information recovery, long-term mouse epigenetic-clock and transcriptomic shifts, Cdkn2a-targeted aged-cell OSK control, and review synthesis around lineage-preserving rejuvenation mechanisms.",
+      "source_ids": [
+        "pmid-27984723",
+        "pmid-33268865",
+        "pmid-37118377",
+        "pmid-39259812",
+        "pmid-41490578"
+      ],
+      "finding_ids": [
+        "cyclic-oskm-ameliorated-aged-mouse-hallmarks",
+        "osk-restored-retinal-function-epigenetic-state-mice",
+        "long-term-oskm-reverted-age-molecular-signatures-mice",
+        "cdkn2a-osk-extended-life-and-health-markers-mice",
+        "partial-reprogramming-review-safety-delivery-checklist"
+      ],
+      "gap_note": "Mechanistic coverage is adequate for public rating support, but it does not settle which molecular shifts are causal, durable, or safe in humans."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The staged evidence map now includes explicit limiting records: full in vivo OSKM reprogramming can produce teratomas and iPS-like cells; C. elegans neuronal reprogramming-factor ortholog expression did not improve memory or lifespan; and the ER-100 registry is no-results activity rather than benefit evidence.",
+      "source_ids": [
+        "pmid-24025773",
+        "pmid-39267613",
+        "nct-07290244"
+      ],
+      "finding_ids": [
+        "in-vivo-oskm-full-reprogramming-teratoma-risk",
+        "neuronal-osk-orthologs-worm-null-cognition-lifespan",
+        "er100-phase1-recruiting-no-results"
+      ],
+      "gap_note": "Future surveillance should add null or adverse mammalian partial-reprogramming results if they appear."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "adequate",
+      "rationale": "Safety coverage is now source-mapped through Abad 2013 full-reprogramming tumorigenicity risk, Sahu 2024 targeted OSK tumor-incidence boundary, the 2026 review's schedule/delivery/safety-pharmacology checklist, and ER-100 phase 1 safety endpoints. Evidence remains unresolved, but the key safety categories are represented.",
+      "source_ids": [
+        "pmid-24025773",
+        "pmid-39259812",
+        "pmid-41490578",
+        "nct-07290244"
+      ],
+      "finding_ids": [
+        "in-vivo-oskm-full-reprogramming-teratoma-risk",
+        "cdkn2a-osk-extended-life-and-health-markers-mice",
+        "partial-reprogramming-review-safety-delivery-checklist",
+        "er100-phase1-recruiting-no-results"
+      ],
+      "gap_note": "Human long-term safety, immune response, biodistribution, repeat dosing, dose control, reversibility, and tumor surveillance remain high-priority evidence gaps."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "ClinicalTrials.gov API v2 searches were run for exact partial-reprogramming/Yamanaka-factor phrases and broader OSK/aging and epigenetic-reprogramming/aging terms. The repair stages the one direct hit, NCT07290244, and records wrong-scope or no-result searches in the session.",
+      "source_ids": [
+        "nct-07290244"
+      ],
+      "finding_ids": [
+        "er100-phase1-recruiting-no-results"
+      ],
+      "gap_note": "ClinicalTrials.gov coverage is adequate for this repair, but ordinary surveillance should continue to monitor ER-100 updates and any non-US or company-pipeline disclosures."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "adequate",
+      "rationale": "The repair stages a current 2026 Ageing Research Reviews synthesis that frames partial reprogramming as promising but emphasizes schedule, delivery, and safety pharmacology requirements before clinical translation claims are strengthened.",
+      "source_ids": [
+        "pmid-41490578"
+      ],
+      "finding_ids": [
+        "partial-reprogramming-review-safety-delivery-checklist"
+      ],
+      "gap_note": "Additional reviews can be used for future narrative synthesis, but the latest repair has enough review triangulation to support the conservative public outlook."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The staged map now includes Ocampo 2016 as the seminal partial-reprogramming animal anchor, Lu 2020 as a tissue-specific OSK functional anchor, Browder 2022 as a physiological-aging biomarker anchor, and Abad 2013 as an essential safety and taxonomy boundary.",
+      "source_ids": [
+        "pmid-27984723",
+        "pmid-33268865",
+        "pmid-37118377",
+        "pmid-24025773"
+      ],
+      "finding_ids": [
+        "cyclic-oskm-ameliorated-aged-mouse-hallmarks",
+        "osk-restored-retinal-function-epigenetic-state-mice",
+        "long-term-oskm-reverted-age-molecular-signatures-mice",
+        "in-vivo-oskm-full-reprogramming-teratoma-risk"
+      ],
+      "gap_note": "The stage can be audited from the source map after review; future coverage may still add additional seminal chemical or non-OSK strategy records if taxonomy review calls for them."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The staged outlook and support map now distinguish partial reprogramming from full reprogramming, generic gene therapy, stem-cell replacement, epigenetic-clock-only biomarker movement, model-organism ortholog experiments, and disease-specific ocular translation.",
+      "source_ids": [
+        "pmid-24025773",
+        "pmid-39267613",
+        "pmid-41490578",
+        "nct-07290244"
+      ],
+      "finding_ids": [
+        "in-vivo-oskm-full-reprogramming-teratoma-risk",
+        "neuronal-osk-orthologs-worm-null-cognition-lifespan",
+        "partial-reprogramming-review-safety-delivery-checklist",
+        "er100-phase1-recruiting-no-results"
+      ],
+      "gap_note": "Editorial review should confirm the final wording, especially the boundary between human registry activity and human evidence."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-27984723",
+    "pmid-33268865",
+    "pmid-37118377",
+    "pmid-38381405",
+    "pmid-39259812",
+    "pmid-24025773",
+    "pmid-39267613",
+    "pmid-41490578",
+    "nct-07290244"
+  ],
+  "covered_finding_ids": [
+    "cyclic-oskm-ameliorated-aged-mouse-hallmarks",
+    "osk-restored-retinal-function-epigenetic-state-mice",
+    "long-term-oskm-reverted-age-molecular-signatures-mice",
+    "aav-osk-extended-remaining-lifespan-aged-mice",
+    "cdkn2a-osk-extended-life-and-health-markers-mice",
+    "in-vivo-oskm-full-reprogramming-teratoma-risk",
+    "neuronal-osk-orthologs-worm-null-cognition-lifespan",
+    "partial-reprogramming-review-safety-delivery-checklist",
+    "er100-phase1-recruiting-no-results"
+  ],
+  "search_log_summary": "Used PubMed ESearch/ESummary/EFetch for partial reprogramming aging, OSK/OSKM/Yamanaka aging, safety, and recent review triangulation; ClinicalTrials.gov API v2 for exact and broader partial-reprogramming registry searches; and local comparison against the published outlook, prior surveillance bundle, evidence reviews, publication event, and June 12 thin-coverage assessment.",
+  "source_selection_notes": [
+    "Staged a compact but auditable anchor set rather than every adjacent epigenetic-rejuvenation or disease-context paper.",
+    "Included NCT07290244 because it materially changes the human boundary to no human outcomes evidence, but framed it as no-results registry activity rather than benefit evidence.",
+    "Kept evidence_stage at animal_signal and confidence low because no posted human partial-reprogramming results are represented.",
+    "Recorded full in vivo OSKM reprogramming as a safety and taxonomy boundary, not as evidence against controlled partial reprogramming."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "human-outcomes-evidence-absent",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "No human partial-reprogramming results yet show safety, target engagement, functional benefit, disease benefit, aging-biomarker movement, durability, or LEV-relevant outcomes.",
+      "priority": "high",
+      "suggested_action": "Keep the track at animal_signal until ER-100 or another human program posts or publishes interpretable results."
+    },
+    {
+      "gap_id": "er100-results-watch",
+      "gap_type": "operational_gap",
+      "category": "active_trials_registries",
+      "description": "NCT07290244 is recruiting with no posted results in the June 12, 2026 ClinicalTrials.gov API view; month-level registry fields list primary completion as May 2027 and study completion as March 2032.",
+      "priority": "high",
+      "suggested_action": "Recheck NCT07290244 during ordinary surveillance for status changes, posted results, protocol updates, publications, or safety disclosures."
+    },
+    {
+      "gap_id": "delivery-expression-safety-durability-unresolved",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Delivery control, expression reversibility, biodistribution, immune response, repeat dosing, tissue specificity, dedifferentiation, tumorigenicity, and long-term durability remain unresolved for human translation.",
+      "priority": "high",
+      "suggested_action": "Require safety-limitations review before publication and preserve conservative public wording until longer controlled safety data are available."
+    },
+    {
+      "gap_id": "independent-replication-and-generalization-needed",
+      "gap_type": "evidence_gap",
+      "category": "animal_lifespan_or_healthspan",
+      "description": "Recent aged-mouse lifespan and targeted OSK signals need independent replication across sex, tissue, delivery vector, dose schedule, age, and follow-up duration before confidence can rise.",
+      "priority": "medium",
+      "suggested_action": "Use ordinary surveillance to watch for independent replication, null results, adverse findings, or protocol-level limitations."
+    },
+    {
+      "gap_id": "human-cell-and-non-osk-boundary-not-deeply-mapped",
+      "gap_type": "coverage_gap",
+      "category": "human_observational_or_natural_experiment",
+      "description": "Human-cell, chemical reprogramming, CRISPR-control, and epigenetic-clock-only records were not deeply mapped in this bounded repair.",
+      "priority": "medium",
+      "suggested_action": "Only expand this category if taxonomy review determines those records materially affect the Partial Reprogramming public outlook rather than adjacent epigenetic-modulation tracks."
+    }
+  ],
+  "next_coverage_action": "Run evidence review on partial-reprogramming-coverage-repair-2026-06-12; if approved and published, return Partial Reprogramming to ordinary surveillance with watch on ER-100/NCT07290244 updates, human result postings, safety disclosures, and independent replication of recent mouse lifespan and targeted-delivery findings.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-assessment",
+    "coverage-repair",
+    "partial-reprogramming",
+    "epigenetic_alterations"
+  ]
+}
