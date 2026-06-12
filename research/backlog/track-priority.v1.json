@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-12T12:32:22.380Z",
+  "updated_at": "2026-06-12T13:29:56.954Z",
   "notes": [
     "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
@@ -627,6 +627,21 @@
       "default_question": "What changed for Autophagy Induction since the last meaningful review or publication, and does any change justify a public update?",
       "priority_tier": "later",
       "notes": "Recently handled; ordinary rotation is due after 2026-06-25."
+    },
+    {
+      "rank": 38,
+      "phase_id": "surveillance-rotation",
+      "track_id": "partial-reprogramming",
+      "hallmark_id": "epigenetic_alterations",
+      "default_mode": "surveillance",
+      "freshness_status": "recent",
+      "last_reviewed_at": "2026-06-12T12:22:53Z",
+      "next_due_at": "2026-06-26T12:22:53.000Z",
+      "cooldown_days": 14,
+      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
+      "default_question": "What changed for Partial Reprogramming since the last meaningful review or publication, and does any change justify a public update?",
+      "priority_tier": "later",
+      "notes": "Recently handled; ordinary rotation is due after 2026-06-26."
     }
   ],
   "coverage_repair_queue": []

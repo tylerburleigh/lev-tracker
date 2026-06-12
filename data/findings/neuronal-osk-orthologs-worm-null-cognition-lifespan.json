@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "neuronal-osk-orthologs-worm-null-cognition-lifespan",
+  "name": "Neuronal reprogramming-factor orthologs did not improve worm cognition or lifespan",
+  "summary": "Toraason 2024 provides a small model-organism limiting result: neuron-specific expression of OSK-factor orthologs did not improve associative memory or lifespan and could impair chemotaxis.",
+  "source_id": "pmid-39267613",
+  "study_id": "toraason-neuronal-reprogramming-factor-worm-cognition",
+  "track_ids": [
+    "partial-reprogramming"
+  ],
+  "hallmark_ids": [
+    "epigenetic_alterations"
+  ],
+  "endpoint_category": "functional",
+  "direction": "mixed",
+  "evidence_tier": "animal",
+  "confidence": "low",
+  "statement": "Neuron-specific expression of C. elegans OSK-factor orthologs did not improve short-term associative memory or lifespan and could further disrupt chemotaxis behavior.",
+  "population_or_model": "Aging C. elegans neurons expressing reprogramming-factor orthologs",
+  "time_horizon": "Doxycycline-inducible expression during aging with memory, lifespan, and chemotaxis readouts",
+  "quantitative_note": "The PubMed abstract reports no memory or lifespan improvement and possible chemotaxis disruption without a single effect size.",
+  "caveats": [
+    "C. elegans reprogramming-factor orthologs are distant from mammalian OSK/OSKM therapy.",
+    "The result is useful as a generalization boundary, not as decisive evidence against mammalian partial reprogramming.",
+    "Neuron-specific expression may not represent systemic or targeted mammalian delivery."
+  ],
+  "tags": [
+    "animal",
+    "model-organism",
+    "negative",
+    "limiting-evidence",
+    "coverage-repair"
+  ]
+}

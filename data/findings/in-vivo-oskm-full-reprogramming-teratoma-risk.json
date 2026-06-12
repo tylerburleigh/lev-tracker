@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "in-vivo-oskm-full-reprogramming-teratoma-risk",
+  "name": "Full in vivo OSKM reprogramming produced teratomas and iPS-like cells",
+  "summary": "Abad 2013 is a safety and taxonomy boundary: in vivo reprogramming can overshoot into pluripotent or totipotency-like states with teratoma formation, so partial-reprogramming claims must stay tied to controlled, lineage-preserving schedules.",
+  "source_id": "pmid-24025773",
+  "study_id": "abad-in-vivo-oskm-full-reprogramming-teratoma",
+  "track_ids": [
+    "partial-reprogramming"
+  ],
+  "hallmark_ids": [
+    "epigenetic_alterations"
+  ],
+  "endpoint_category": "safety",
+  "direction": "negative",
+  "evidence_tier": "animal",
+  "confidence": "moderate",
+  "statement": "Transitory in vivo OSKM induction produced teratomas in multiple organs, dedifferentiated NANOG-positive cells, reprogrammable hematopoietic cells, and circulating iPS-like cells, demonstrating the safety hazard of uncontrolled or full in vivo reprogramming.",
+  "population_or_model": "Reprogrammable mice with in vivo OSKM induction",
+  "time_horizon": "In vivo OSKM induction with tumor and reprogrammed-cell characterization",
+  "quantitative_note": "The abstract reports teratomas emerging from multiple organs but does not provide a single incidence figure.",
+  "caveats": [
+    "This is full or excessive in vivo reprogramming, not a controlled partial-reprogramming therapeutic regimen.",
+    "It is most useful as a safety and taxonomy boundary.",
+    "The result should limit overgeneralized rejuvenation claims rather than negate all partial-reprogramming approaches."
+  ],
+  "tags": [
+    "animal",
+    "mouse",
+    "oskm",
+    "safety",
+    "taxonomy-boundary",
+    "coverage-repair"
+  ]
+}
