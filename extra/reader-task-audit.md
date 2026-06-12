@@ -1,6 +1,6 @@
 # Reader Task Audit
 
-Generated: 2026-06-12T01:43:22.292Z
+Generated: 2026-06-12T18:14:32.914Z
 Passed: 14
 Issues: 0
 Warnings: 0
@@ -14,7 +14,7 @@ Warnings: 0
 - PASS: Public story describes the field, not tracker operations
   No tracker/process framing found in visible story fields.
 - PASS: Reader can see progress over time
-  10 recent development(s); 9 dated.
+  11 recent development(s); 10 dated.
 - PASS: Reader can see what would make the outlook more or less optimistic
   3 outlook-change item(s).
 - PASS: Reader can tell what to watch next

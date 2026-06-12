@@ -1,20 +1,20 @@
 # Public Copy Lint Report
 
-Generated: 2026-06-12T01:43:22.386Z
-Warnings: 42
+Generated: 2026-06-12T18:14:33.017Z
+Warnings: 56
 
 ## Highest-Volume Terms
 
-- durable: 12 warning(s); consider "long-lasting"
+- durable: 14 warning(s); consider "long-lasting"
+- translation: 9 warning(s); consider "path to useful human results"
 - functional benefit: 7 warning(s); consider "long-lasting improvement in human function"
 - mechanistic: 6 warning(s); consider "biological"
-- coverage repair: 4 warning(s); consider "missing-context update"
-- translation: 4 warning(s); consider "path to useful human results"
-- biomarker-heavy: 2 warning(s); consider "mostly based on biomarkers"
-- support map: 2 warning(s); consider "evidence map"
-- trial-watch: 2 warning(s); consider "trials to watch"
+- coverage repair: 5 warning(s); consider "missing-context update"
+- biomarker-heavy: 4 warning(s); consider "mostly based on biomarkers"
+- low confidence: 3 warning(s); consider "tentative"
+- support map: 3 warning(s); consider "evidence map"
+- trial-watch: 3 warning(s); consider "trials to watch"
 - branch boundaries: 1 warning(s); consider "which claims are in scope and which are not"
-- low confidence: 1 warning(s); consider "tentative"
 - support maps: 1 warning(s); consider "evidence maps"
 
 ## Findings
@@ -41,6 +41,30 @@ Warnings: 42
   Excerpt: A stronger rating would need replicated older-adult trials showing durable infection prevention, vaccine-response improvement, or other clinical...
 - data/outlooks/track-immune-rejuvenation-outlook.json $.what_would_change_the_rating[1]: "functional benefit" -> consider "long-lasting improvement in human function"
   Excerpt: ...vidence that a different immune-intervention branch produces reliable functional benefit.
+- data/outlooks/track-partial-reprogramming-outlook.json $.interpretation_note: "translation" -> consider "path to useful human results"
+  Excerpt: ...ults are posted. Public interpretation should emphasize current human translation activity without treating registry presence as evidence of benefit.
+- data/outlooks/track-partial-reprogramming-outlook.json $.main_evidence_gaps[1]: "support map" -> consider "evidence map"
+  Excerpt: Animal evidence is broader than the previous public support map showed, but delivery control, dosing schedule, durability, immune res...
+- data/outlooks/track-partial-reprogramming-outlook.json $.main_evidence_gaps[2]: "biomarker-heavy" -> consider "mostly based on biomarkers"
+  Excerpt: ... signals are mouse, tissue-specific, disease-model, injury-repair, or biomarker-heavy results rather than broad human healthy-aging evidence.
+- data/outlooks/track-partial-reprogramming-outlook.json $.supporting_evidence[0].limitations[1]: "biomarker-heavy" -> consider "mostly based on biomarkers"
+  Excerpt: ... are progeroid, tissue-specific, disease-model, delivery-specific, or biomarker-heavy.
+- data/outlooks/track-partial-reprogramming-outlook.json $.supporting_evidence[2].conclusion: "low confidence" -> consider "tentative"
+  Excerpt: Safety and delivery boundaries remain a major reason for low confidence.
+- data/outlooks/track-partial-reprogramming-outlook.json $.supporting_evidence[2].label: "translation" -> consider "path to useful human results"
+  Excerpt: Safety and translation
+- data/outlooks/track-partial-reprogramming-outlook.json $.supporting_evidence[2].rationale: "translation" -> consider "path to useful human results"
+  Excerpt: ...2026 review emphasizes schedule, delivery, and safety pharmacology as translation requirements.
+- data/outlooks/track-partial-reprogramming-outlook.json $.supporting_evidence[3].conclusion: "low confidence" -> consider "tentative"
+  Excerpt: Low confidence remains appropriate because positive signals do not generalize unifor...
+- data/outlooks/track-partial-reprogramming-outlook.json $.supporting_evidence[3].limitations[1]: "durable" -> consider "long-lasting"
+  Excerpt: Mouse biomarker movement does not guarantee durable function or human translation.
+- data/outlooks/track-partial-reprogramming-outlook.json $.supporting_evidence[3].limitations[1]: "translation" -> consider "path to useful human results"
+  Excerpt: Mouse biomarker movement does not guarantee durable function or human translation.
+- data/outlooks/track-partial-reprogramming-outlook.json $.supporting_evidence[4].rationale: "translation" -> consider "path to useful human results"
+  Excerpt: ...mouse papers, 2026 review, and recruiting ER-100 registry show active translation and source growth without changing the evidence stage.
+- data/outlooks/track-partial-reprogramming-outlook.json $.what_would_change_the_rating[3]: "durable" -> consider "long-lasting"
+  Excerpt: ...ould require evidence beyond ocular or disease-specific entry points: durable systemic or multi-tissue benefit in humans with acceptable long-term ...
 - data/outlooks/track-rapalogs-outlook.json $.interpretation_note: "durable" -> consider "long-lasting"
   Excerpt: ...tion studies, but the evidence is mixed, branch-specific, and not yet durable disease, frailty, mortality, or broad healthy-aging benefit. The stro...
 - data/outlooks/track-rapalogs-outlook.json $.main_evidence_gaps[2]: "durable" -> consider "long-lasting"
@@ -91,6 +115,10 @@ Warnings: 42
   Excerpt: Published Autophagy Induction Coverage Repair for June 11, 2026
 - data/publication-events/publish-immune-rejuvenation-coverage-repair-2026-06-11-2026-06-11t13-12-57-339z.json $.name: "coverage repair" -> consider "missing-context update"
   Excerpt: Published Immune Rejuvenation Coverage Repair for June 11, 2026
+- data/publication-events/publish-partial-reprogramming-coverage-repair-2026-06-12-2026-06-12t13-29-16-586z.json $.name: "coverage repair" -> consider "missing-context update"
+  Excerpt: Published Partial Reprogramming Coverage Repair for June 12, 2026
+- data/publication-events/publish-partial-reprogramming-coverage-repair-2026-06-12-2026-06-12t13-29-16-586z.json $.summary: "trial-watch" -> consider "trials to watch"
+  Excerpt: ...o no human outcomes evidence, and adds ER-100 as a no-results phase 1 trial-watch item.
 - data/publication-events/publish-rapalogs-coverage-repair-2026-06-11-2026-06-11t18-24-35-790z.json $.name: "coverage repair" -> consider "missing-context update"
   Excerpt: Published Rapalogs Coverage Repair for June 11, 2026
 - data/publication-events/publish-rapalogs-coverage-repair-2026-06-11-2026-06-11t18-24-35-790z.json $.summary: "durable" -> consider "long-lasting"

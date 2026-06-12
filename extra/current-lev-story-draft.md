@@ -16,7 +16,7 @@ The field is in early human testing. Some tracks now have early biomarker result
 
 ## What Changed Recently
 
-The May field review did not find a result that changed the LEV outlook. The June 9 NAD/redox, June 10 stem-cell rejuvenation and mitophagy, June 11 chaperone and autophagy, and June 12 senolytics updates made individual tracks easier to judge by adding no-results registries, safety context, review context, open-label NPC context, label boundaries, a small spermidine vaccine-response signal, and clearer senolytic biomarker, function, and safety boundaries, but none changed the larger proof gap: repeated human evidence that health or function improves for longer.
+The May field review did not find a result that changed the LEV outlook. The June 9 NAD/redox, June 10 stem-cell rejuvenation and mitophagy, June 11 chaperone and autophagy, and June 12 senolytics and partial reprogramming updates made individual tracks easier to judge by adding no-results registries, safety context, review context, open-label NPC context, label boundaries, a small spermidine vaccine-response signal, clearer senolytic biomarker, function, and safety boundaries, and a stronger partial-reprogramming animal map with a no-results ER-100 registry boundary, but none changed the larger proof gap: repeated human evidence that health or function improves for longer.
 
 ## Review Reasons
 
@@ -34,6 +34,7 @@ The May field review did not find a result that changed the LEV outlook. The Jun
 - Chaperone support gained narrower NPC context: It makes the narrow NPC signal easier to judge, but it does not make LEV look closer because broad aging evidence, independent replication, and long-term preventive-use safety remain unresolved.
 - Autophagy induction gained a narrow spermidine signal: It adds a useful human signal, but it does not make LEV look closer because the result is small, subgroup-limited, and not proof of lasting aging-relevant function.
 - Senolytics gained clearer human boundaries: It makes a flagship cellular-senescence track easier to judge, but it does not make LEV look closer because controlled human evidence remains mixed and long-term functional and safety evidence remains unresolved.
+- Partial reprogramming gained a clearer animal-to-human boundary: It makes a fast-moving frontier easier to inspect, but it does not make LEV look closer because no human safety results, evidence that the intervention changed its intended target, functional results, disease results, or aging results are posted.
 
 ## Before / Now / Next
 
@@ -50,7 +51,7 @@ The May field review did not find a result that changed the LEV outlook. The Jun
 ## Concrete Examples
 
 - Microbiome metabolite restoration: There are human functional signals, but the evidence is still narrow and not yet proof of broad aging benefit. (/tracks/microbiome-metabolite-restoration)
-- Partial reprogramming: The biological idea could be broad, but moving it into people, controlling delivery, and proving safety remain the key questions. (/tracks/partial-reprogramming)
+- Partial reprogramming: The animal source map is stronger and ER-100 is now a no-results human registry, but human outcomes, delivery control, and long-lasting safety remain the key questions. (/tracks/partial-reprogramming)
 - Stem-cell replacement: Some human functional signal exists, but the field still has to separate general aging benefit from narrow repair stories. (/tracks/stem-cell-replacement-and-transplantation)
 
 ## Ranked Changes
