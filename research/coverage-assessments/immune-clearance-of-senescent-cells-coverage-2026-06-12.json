@@ -1,0 +1,274 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "immune-clearance-of-senescent-cells-coverage-2026-06-12",
+  "name": "Immune Clearance of Senescent Cells Coverage Assessment for June 12, 2026",
+  "short_name": "Immune clearance coverage",
+  "track_id": "immune-clearance-of-senescent-cells",
+  "hallmark_id": "cellular_senescence",
+  "assessment_type": "manual",
+  "assessed_at": "2026-06-12T18:54:57Z",
+  "assessment_window": {
+    "from": "2026-06-02T18:15:00Z",
+    "to": "2026-06-05T13:07:40Z",
+    "basis": "Backfill assessment of the published June 2 immune-clearance baseline and the June 5 no-op surveillance session; no new external source search was run for this assessment."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is adequate for the current low-confidence animal_signal public claim. The local map includes several preclinical intervention clusters: anti-uPAR CAR T mouse pathology, metabolic-aging, and intestinal-aging studies; NKG2D-CAR T aged-mouse and aged nonhuman-primate senescent-cell clearance; and anti-GD3 mouse fibrosis and bone-remodeling intervention evidence. It also includes immune-surveillance rationale from perforin-deficient mice plus human tissue, cell, and ex vivo mechanism records for HLA-E/NKG2A and CMV-antigen-directed cytotoxic CD4 T cells. Coverage is not strong because no treated-human aging or senescent-cell target-engagement trial is represented, long-term immune safety and target selectivity remain unresolved, recent-review and formal seminal-anchor triangulation are incomplete, and the track requires active boundary maintenance against generic oncology CAR T, broad checkpoint blockade, and small-molecule senolysis. The June 5 surveillance pass found no material post-publication delta, so ordinary surveillance can continue.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-06-02-immune-clearance-of-senescent-cells-bootstrap",
+      "2026-06-05-immune-clearance-of-senescent-cells-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "immune-clearance-of-senescent-cells-bootstrap-2026-06-02"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-immune-clearance-of-senescent-cells-source-fidelity-r1",
+      "evidence-review-immune-clearance-of-senescent-cells-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-immune-clearance-of-senescent-cells-bootstrap-2026-06-02-2026-06-02t19-01-04-272z"
+    ],
+    "outlook_ids": [
+      "track-immune-clearance-of-senescent-cells-outlook",
+      "hallmark-cellular-senescence-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "thin",
+      "rationale": "No assessed artifact contains a treated-human intervention that tests immune-mediated senescent-cell clearance, target engagement, reduced senescence burden, tissue function, or aging outcomes. The June 5 registry checks found no direct human trial for senolytic CAR T, uPAR CAR T, or senescent-cell immune-clearance terms.",
+      "gap_note": "A human-stage upgrade would require treated-human senescent-cell target engagement and acceptable acute immune safety, not only oncology CAR T activity or ex vivo human mechanism."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "adequate",
+      "rationale": "Human relevance is represented by HLA-E/NKG2A senescent-cell immune-evasion evidence in human skin and cell systems and CMV-antigen-directed cytotoxic CD4 T-cell recognition of senescent human skin fibroblasts. These records support human mechanism but not treated-human efficacy.",
+      "source_ids": [
+        "pmid-31160572",
+        "pmid-37001502"
+      ],
+      "finding_ids": [
+        "hla-e-nkg2a-blockade-boosted-senescent-cell-immune-response",
+        "cd4-ctl-targeted-cmv-antigen-senescent-human-skin-fibroblasts"
+      ],
+      "gap_note": "Coverage is adequate for mechanism, but not enough for a human_biomarker_signal stage because no in vivo human intervention is represented."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes multiple animal-stage intervention signals: uPAR CAR T in pathology, metabolic-aging, and intestinal-aging mouse models; NKG2D-CAR T in aged mice and aged nonhuman primates; and anti-GD3 immunotherapy in mouse fibrosis and bone-remodeling contexts. Perforin-deficient mice add immune-surveillance aging rationale.",
+      "source_ids": [
+        "pmid-32555459",
+        "pmid-38267706",
+        "pmid-41291258",
+        "pmid-37585504",
+        "pmid-30575733",
+        "pmid-39730825"
+      ],
+      "finding_ids": [
+        "upar-car-t-cleared-senescent-cells-in-pathology-models",
+        "upar-car-t-improved-aged-mouse-metabolic-fitness",
+        "upar-car-t-improved-aged-intestinal-regeneration",
+        "nkg2d-car-t-cleared-senescent-cells-aged-mice-primates",
+        "perforin-surveillance-loss-accelerated-senescence-aging",
+        "anti-gd3-immunotherapy-attenuated-fibrosis-bone-aging"
+      ],
+      "gap_note": "Animal coverage is strong enough for animal_signal, but it remains tissue-, model-, and platform-specific and does not establish human benefit."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "strong",
+      "rationale": "Mechanistic coverage spans uPAR as a senescence-associated surface target, NKG2D ligand recognition, GD3 and HLA-E/NKG2A immune-evasion checkpoints, CMV-antigen-directed cytotoxic CD4 recognition, and perforin-mediated cytotoxic immune surveillance. The evidence reviews confirm that these mechanisms are source-faithful and bounded.",
+      "source_ids": [
+        "pmid-32555459",
+        "pmid-37585504",
+        "pmid-30575733",
+        "pmid-31160572",
+        "pmid-39730825",
+        "pmid-37001502"
+      ],
+      "finding_ids": [
+        "upar-car-t-cleared-senescent-cells-in-pathology-models",
+        "nkg2d-car-t-cleared-senescent-cells-aged-mice-primates",
+        "perforin-surveillance-loss-accelerated-senescence-aging",
+        "hla-e-nkg2a-blockade-boosted-senescent-cell-immune-response",
+        "anti-gd3-immunotherapy-attenuated-fibrosis-bone-aging",
+        "cd4-ctl-targeted-cmv-antigen-senescent-human-skin-fibroblasts"
+      ]
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The public outlook and reviews preserve key limits: perforin deficiency is immune-surveillance biology rather than therapy; HLA-E/NKG2A and CMV-antigen evidence is human mechanism or ex vivo, not human efficacy; target selectivity is unresolved; beneficial senescence can support repair and tumor suppression; and June 5 searches found no direct post-baseline human result or registry delta.",
+      "source_ids": [
+        "pmid-30575733",
+        "pmid-31160572",
+        "pmid-37001502"
+      ],
+      "finding_ids": [
+        "perforin-surveillance-loss-accelerated-senescence-aging",
+        "hla-e-nkg2a-blockade-boosted-senescent-cell-immune-response",
+        "cd4-ctl-targeted-cmv-antigen-senescent-human-skin-fibroblasts"
+      ],
+      "gap_note": "There is no curated result-bearing human null or safety-failure record for this track because no direct treated-human program was identified."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "The outlook names the important safety problems: CAR T persistence, cytokine toxicity, lymphodepletion, dose control, manufacturing burden, target selectivity, infection and cancer tradeoffs, and loss of beneficial senescence functions. The assessed records do not yet provide enough long-term or aging-use safety evidence to resolve those issues.",
+      "source_ids": [
+        "pmid-37585504"
+      ],
+      "finding_ids": [
+        "nkg2d-car-t-cleared-senescent-cells-aged-mice-primates"
+      ],
+      "gap_note": "The aged nonhuman-primate report is useful safety context, but preventive or broad aging use would need much deeper acute and long-term immune safety evidence."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "The bootstrap found no direct treated-human aging trial, and the June 5 surveillance pass checked ClinicalTrials.gov for senescent-cell, CAR T, uPAR, NKG2D, GD3, NKG2A, HLA-E, and immunotherapy terms. Returned records were oncology, autoimmune, allergy, or generic immunotherapy context rather than senescent-cell immune-clearance trials with aging-relevant results.",
+      "gap_note": "Continue registry surveillance, but current absence of a direct registry is adequately documented for this backfill."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "The backfill reviewed local bootstrap and surveillance artifacts. The June 5 surveillance pass noted broad review context, including a pre-window senotherapeutics review and aging-immunity reviews, but no formal recent-review or meta-analysis triangulation was reconciled against the eight-source baseline.",
+      "gap_note": "A future source-completeness pass should compare recent immune-senolysis, senotherapeutic, CAR T, NK-cell, and senescence-checkpoint reviews against the current source map."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes plausible anchors for uPAR CAR T, NKG2D-CAR T, perforin immune surveillance, HLA-E/NKG2A immune evasion, GD3 immune checkpoint, and CMV-antigen cytotoxic CD4 recognition. It is not strong because no formal must-include, review-cited, or citation-network audit is recorded.",
+      "source_ids": [
+        "pmid-32555459",
+        "pmid-38267706",
+        "pmid-41291258",
+        "pmid-37585504",
+        "pmid-30575733",
+        "pmid-31160572",
+        "pmid-39730825",
+        "pmid-37001502"
+      ],
+      "finding_ids": [
+        "upar-car-t-cleared-senescent-cells-in-pathology-models",
+        "upar-car-t-improved-aged-mouse-metabolic-fitness",
+        "upar-car-t-improved-aged-intestinal-regeneration",
+        "nkg2d-car-t-cleared-senescent-cells-aged-mice-primates",
+        "perforin-surveillance-loss-accelerated-senescence-aging",
+        "hla-e-nkg2a-blockade-boosted-senescent-cell-immune-response",
+        "anti-gd3-immunotherapy-attenuated-fibrosis-bone-aging",
+        "cd4-ctl-targeted-cmv-antigen-senescent-human-skin-fibroblasts"
+      ],
+      "gap_note": "Formal anchor auditing could move this category from adequate to strong."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The bundle and reviews distinguish immune-mediated senescent-cell clearance from small-molecule senolysis, generic oncology CAR T, broad checkpoint blockade, non-senescent uPAR or NKG2D oncology targeting, and senescence mechanism without a clearance intervention. The June 5 surveillance pass excluded adjacent uPAR manufacturing, oncology, and broad-review records as context-only or wrong-scope.",
+      "source_ids": [
+        "pmid-32555459",
+        "pmid-37585504",
+        "pmid-31160572",
+        "pmid-39730825"
+      ],
+      "finding_ids": [
+        "upar-car-t-cleared-senescent-cells-in-pathology-models",
+        "nkg2d-car-t-cleared-senescent-cells-aged-mice-primates",
+        "hla-e-nkg2a-blockade-boosted-senescent-cell-immune-response",
+        "anti-gd3-immunotherapy-attenuated-fibrosis-bone-aging"
+      ],
+      "gap_note": "Boundary maintenance remains important because future oncology CAR T or checkpoint records may share targets without testing senescent-cell clearance."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-32555459",
+    "pmid-38267706",
+    "pmid-41291258",
+    "pmid-37585504",
+    "pmid-30575733",
+    "pmid-31160572",
+    "pmid-39730825",
+    "pmid-37001502"
+  ],
+  "covered_finding_ids": [
+    "upar-car-t-cleared-senescent-cells-in-pathology-models",
+    "upar-car-t-improved-aged-mouse-metabolic-fitness",
+    "upar-car-t-improved-aged-intestinal-regeneration",
+    "nkg2d-car-t-cleared-senescent-cells-aged-mice-primates",
+    "perforin-surveillance-loss-accelerated-senescence-aging",
+    "hla-e-nkg2a-blockade-boosted-senescent-cell-immune-response",
+    "anti-gd3-immunotherapy-attenuated-fibrosis-bone-aging",
+    "cd4-ctl-targeted-cmv-antigen-senescent-human-skin-fibroblasts"
+  ],
+  "search_log_summary": "This backfill reviewed local project artifacts: the published Immune Clearance of Senescent Cells outlook, June 2 bootstrap session, published candidate bundle, source-fidelity and interpretation reviews, publication event, and June 5 no-op surveillance session with its PubMed, ClinicalTrials.gov, preprint, correction/retraction, and web-search log. No new PubMed, registry, preprint, citation-network, or web source search was run for this assessment.",
+  "source_selection_notes": [
+    "PMID 32555459, PMID 38267706, and PMID 41291258 anchor the anti-uPAR CAR T cluster from pathology models through physiological-aging and intestinal-aging mouse signals.",
+    "PMID 37585504 anchors an independent NKG2D-CAR T cluster with aged mouse and aged nonhuman-primate senescent-cell clearance.",
+    "PMID 39730825 anchors a non-CAR immune-checkpoint-style intervention through GD3 and anti-GD3 mouse fibrosis and bone-remodeling effects.",
+    "PMID 30575733 is included as immune-surveillance rationale, not as therapeutic immune enhancement.",
+    "PMID 31160572 and PMID 37001502 provide human tissue, cell, and ex vivo mechanism support without treated-human efficacy.",
+    "The June 5 surveillance pass found no material post-publication source, no correction or retraction for the eight supporting PMIDs, and no relevant posted trial result."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "treated-human-immune-clearance-evidence-absent",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "No treated-human study shows immune-mediated senescent-cell clearance, senescence-burden reduction, tissue function improvement, or aging-relevant benefit.",
+      "priority": "high",
+      "suggested_action": "Keep the public stage at animal_signal until a human study reports selective senescent-cell target engagement with acceptable acute immune safety."
+    },
+    {
+      "gap_id": "immune-clearance-safety-durability-unresolved",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "The local map does not resolve CAR T persistence, cytokine toxicity, lymphodepletion, dose control, target selectivity, infection or cancer tradeoffs, or long-term safety for preventive or broad aging use.",
+      "priority": "high",
+      "suggested_action": "Require explicit safety and durability review before strengthening confidence, human relevance, or LEV-relevant interpretation."
+    },
+    {
+      "gap_id": "beneficial-senescence-control-not-proven",
+      "gap_type": "evidence_gap",
+      "category": "null_negative_or_limiting",
+      "description": "The evidence map acknowledges that senescent cells can support wound repair, tumor suppression, and immune surveillance, but it does not yet show tissue-, timing-, and indication-specific immune-clearance control.",
+      "priority": "high",
+      "suggested_action": "Treat selective control of harmful versus beneficial senescent states as a required milestone before broad aging claims."
+    },
+    {
+      "gap_id": "recent-review-triangulation-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "Recent reviews and meta-analyses around immune senolysis, CAR T senolytics, NK-cell senescence surveillance, and senescence immune checkpoints have not been formally reconciled against the current source list.",
+      "priority": "medium",
+      "suggested_action": "Use a future coverage-repair pass or surveillance review to compare recent reviews with the eight-source baseline and document any missing decision-relevant records."
+    },
+    {
+      "gap_id": "formal-seminal-anchor-audit-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "seminal_anchors",
+      "description": "The baseline includes plausible anchor papers, but no formal must-include, review-cited, or citation-network audit has been recorded for immune clearance of senescent cells.",
+      "priority": "medium",
+      "suggested_action": "During a future source-completeness pass, audit highly cited and review-cited immune-clearance anchors against the current source list."
+    },
+    {
+      "gap_id": "ontology-boundaries-with-oncology-senolytics-and-checkpoints",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "uPAR, NKG2D, GD3, HLA-E/NKG2A, and CAR T records can easily enter through oncology, broad immunotherapy, or generic senolytic contexts without testing senescent-cell immune clearance.",
+      "priority": "medium",
+      "suggested_action": "Keep future staged records explicit about whether they test senescent-cell immune clearance, generic senolysis, oncology cell therapy, immune checkpoint biology, or adjacent manufacturing context."
+    }
+  ],
+  "next_coverage_action": "Continue ordinary surveillance for Immune Clearance of Senescent Cells. On the next pass, recheck registered or published human senescent-cell immune-clearance studies, uPAR/NKG2D/GD3/HLA-E/NKG2A target-selectivity data, and safety signals; reserve coverage_repair for a later review-triangulation or formal seminal-anchor audit if no material field delta appears.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-assessment",
+    "manual",
+    "cellular_senescence",
+    "immune-clearance-of-senescent-cells"
+  ]
+}
