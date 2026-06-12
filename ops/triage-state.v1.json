@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-12T18:13:32.319Z",
+  "generated_at": "2026-06-12T18:40:48.717Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-12T13:29:56.954Z",
-    "research_priority_queue_updated_at": "2026-06-12T13:29:56.954Z",
+    "research_coverage_status_updated_at": "2026-06-12T18:40:48.580Z",
+    "research_priority_queue_updated_at": "2026-06-12T18:40:48.580Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
     "surveillance_recent_queue_count": 38,
     "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 16,
+    "coverage_assessment_backlog_count": 15,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
   },
@@ -33,7 +33,7 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-assessment-backfill-niche-rejuvenation-and-support",
+    "top_work_item_id": "coverage-assessment-backfill-immune-clearance-of-senescent-cells",
     "top_mode": "coverage_assessment_backfill",
     "active_editorial_count": 0,
     "ready_research_count": 0,
@@ -46,24 +46,24 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "coverage-assessment-backfill-niche-rejuvenation-and-support",
+      "item_id": "coverage-assessment-backfill-immune-clearance-of-senescent-cells",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for Niche Rejuvenation and Support",
-      "rationale": "16 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
+      "title": "Backfill coverage assessment for Immune Clearance of Senescent Cells",
+      "rationale": "15 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
       "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
-      "track_id": "niche-rejuvenation-and-support",
-      "hallmark_id": "stem_cell_exhaustion",
+      "track_id": "immune-clearance-of-senescent-cells",
+      "hallmark_id": "cellular_senescence",
       "references": [
         {
           "record_type": "track",
-          "record_id": "niche-rejuvenation-and-support"
+          "record_id": "immune-clearance-of-senescent-cells"
         },
         {
           "record_type": "hallmark",
-          "record_id": "stem_cell_exhaustion"
+          "record_id": "cellular_senescence"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",
@@ -75,11 +75,11 @@
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 16
+          "value": 15
         },
         {
           "name": "generated_surveillance_queue_rank",
-          "value": 12
+          "value": 13
         },
         {
           "name": "track_next_mode",

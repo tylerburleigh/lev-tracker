@@ -1,0 +1,252 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "niche-rejuvenation-and-support-coverage-2026-06-12",
+  "name": "Niche Rejuvenation and Support Coverage Assessment for June 12, 2026",
+  "short_name": "Niche rejuvenation coverage",
+  "track_id": "niche-rejuvenation-and-support",
+  "hallmark_id": "stem_cell_exhaustion",
+  "assessment_type": "manual",
+  "assessed_at": "2026-06-12T18:38:38Z",
+  "assessment_window": {
+    "from": "2026-06-02T19:15:00Z",
+    "to": "2026-06-05T12:59:23Z",
+    "basis": "Backfill assessment of the published June 2 niche-rejuvenation baseline and the June 5 no-op surveillance session; no new external source search was run for this assessment."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is adequate for the current low-confidence animal_signal public claim. The local map includes systemic-milieu and plasma-dilution aged-mouse anchors, direct aged-muscle niche mechanisms through oxytocin, fibronectin reconstitution, and myofiber NF-kB inhibition, and an HSC boundary showing that bloodborne rejuvenation is not tissue-general. Coverage is not strong because direct human niche-engagement evidence is absent, safety and durability are unresolved for chronic or systemic niche manipulation, recent-review and formal seminal-anchor triangulation are incomplete, and the track still sits near circulating-factor, neuroendocrine, stem-cell rejuvenation, and tissue-repair boundaries. The June 5 surveillance pass found no material post-publication delta, so ordinary surveillance can continue.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-06-02-niche-rejuvenation-and-support-bootstrap",
+      "2026-06-05-niche-rejuvenation-and-support-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "niche-rejuvenation-and-support-bootstrap-2026-06-02"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-niche-rejuvenation-and-support-source-fidelity-r1",
+      "evidence-review-niche-rejuvenation-and-support-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-niche-rejuvenation-and-support-bootstrap-2026-06-02-2026-06-02t20-05-01-386z"
+    ],
+    "outlook_ids": [
+      "track-niche-rejuvenation-and-support-outlook",
+      "hallmark-stem-cell-exhaustion-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "thin",
+      "rationale": "The assessed artifacts do not include a result-bearing targeted human niche-support intervention. Human therapeutic plasma exchange appears only as adjacent context in the plasma-dilution source and was explicitly not used to upgrade the track beyond animal_signal; the June 5 surveillance pass also found no targeted human niche-engagement result.",
+      "source_ids": [
+        "pmid-32474458"
+      ],
+      "finding_ids": [
+        "plasma-dilution-rejuvenated-aged-mouse-tissues"
+      ],
+      "gap_note": "A human upgrade would require in vivo evidence that a niche-support intervention moves aging-relevant niche markers and improves tissue function."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "not_checked",
+      "rationale": "The bootstrap and no-op surveillance artifacts did not systematically map human observational, biopsy, natural-experiment, plasma-exchange, sarcopenia, or tissue-repair cohorts for stem-cell niche aging.",
+      "gap_note": "This is not blocking for the current animal_signal claim, but future repair could decide whether observational human niche-aging context would add useful limits."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "The baseline captures the current animal case: young systemic environment, neutral plasma dilution, oxytocin, fibronectin reconstitution, and myofiber NF-kB inhibition improve aged mouse progenitor, tissue, or muscle-repair readouts, while HSC refractoriness limits tissue-general claims.",
+      "source_ids": [
+        "pmid-15716955",
+        "pmid-32474458",
+        "pmid-24915299",
+        "pmid-27376579",
+        "pmid-27852976",
+        "pmid-34032859"
+      ],
+      "finding_ids": [
+        "young-systemic-environment-rejuvenated-aged-progenitors",
+        "plasma-dilution-rejuvenated-aged-mouse-tissues",
+        "oxytocin-improved-aged-muscle-stem-cell-activation",
+        "fibronectin-reconstitution-restored-aged-muscle-regeneration",
+        "nfkb-inhibition-improved-aged-muscle-repair",
+        "aged-hsc-refractory-to-bloodborne-rejuvenation"
+      ],
+      "gap_note": "The animal map is tissue- and injury-model heavy and does not include a lifespan anchor for this track."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "Mechanistic coverage spans systemic milieu, dilution of old plasma factors, endocrine support through oxytocin, extracellular-matrix niche restoration through fibronectin, cell-non-autonomous inflammatory signaling through myofiber NF-kB, and tissue-specific HSC resistance.",
+      "source_ids": [
+        "pmid-15716955",
+        "pmid-32474458",
+        "pmid-24915299",
+        "pmid-27376579",
+        "pmid-27852976",
+        "pmid-34032859"
+      ],
+      "finding_ids": [
+        "young-systemic-environment-rejuvenated-aged-progenitors",
+        "plasma-dilution-rejuvenated-aged-mouse-tissues",
+        "oxytocin-improved-aged-muscle-stem-cell-activation",
+        "fibronectin-reconstitution-restored-aged-muscle-regeneration",
+        "nfkb-inhibition-improved-aged-muscle-repair",
+        "aged-hsc-refractory-to-bloodborne-rejuvenation"
+      ],
+      "gap_note": "The mechanisms are not one unified intervention class, so future updates should keep systemic-factor removal, endocrine support, ECM restoration, and inflammatory niche modulation separate."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The evidence map includes aged-HSC refractoriness as direct limiting evidence and preserves the human plasma-exchange boundary: adjacent human serum or biomarker context is not treated as direct human stem-cell niche rejuvenation evidence.",
+      "source_ids": [
+        "pmid-34032859",
+        "pmid-32474458"
+      ],
+      "finding_ids": [
+        "aged-hsc-refractory-to-bloodborne-rejuvenation",
+        "plasma-dilution-rejuvenated-aged-mouse-tissues"
+      ],
+      "gap_note": "More limiting evidence could help separate positive aged-muscle repair signals from tissue-general rejuvenation claims."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "The public outlook flags risks from systemic factor removal, endocrine signaling, inflammatory suppression, and matrix remodeling, but the assessed source map does not contain dedicated long-term safety or durability records for chronic niche manipulation.",
+      "gap_note": "Safety and durability should remain high-priority evidence requirements before confidence or human relevance is strengthened."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "The June 5 surveillance session checked ClinicalTrials.gov for adjacent aging plasma-exchange and stem-cell or satellite-cell niche terms. Adjacent plasma-exchange records remained no-results context, and no targeted human niche-support intervention with niche-engagement or functional result data was found.",
+      "gap_note": "Registry status should be rechecked during ordinary surveillance, especially for targeted niche-support, plasma-exchange, muscle-regeneration, sarcopenia, or stem-cell niche terms."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "The backfill reviewed local bootstrap and surveillance artifacts. A broad pre-window review was noted as context-only during surveillance, but recent review and meta-analysis triangulation has not been formally reconciled against the included source map.",
+      "gap_note": "A later coverage repair pass could compare recent stem-cell niche, muscle regeneration, systemic milieu, and plasma-exchange reviews against the current anchors."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes plausible anchor papers for heterochronic parabiosis, plasma dilution, oxytocin, fibronectin niche reconstitution, myofiber NF-kB signaling, and HSC refractoriness. It is not strong because no formal must-include or citation-network audit is recorded.",
+      "source_ids": [
+        "pmid-15716955",
+        "pmid-32474458",
+        "pmid-24915299",
+        "pmid-27376579",
+        "pmid-27852976",
+        "pmid-34032859"
+      ],
+      "finding_ids": [
+        "young-systemic-environment-rejuvenated-aged-progenitors",
+        "plasma-dilution-rejuvenated-aged-mouse-tissues",
+        "oxytocin-improved-aged-muscle-stem-cell-activation",
+        "fibronectin-reconstitution-restored-aged-muscle-regeneration",
+        "nfkb-inhibition-improved-aged-muscle-repair",
+        "aged-hsc-refractory-to-bloodborne-rejuvenation"
+      ],
+      "gap_note": "Formal review triangulation or citation chasing could move this category from adequate to strong."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The bootstrap notes and evidence reviews preserve boundaries with stem-cell rejuvenation, circulating-factor modulation, therapeutic plasma exchange, cell-intrinsic HSC rejuvenation, and broader tissue repair. The June 5 surveillance pass also excluded adjacent 15-PGDH muscle-repair and skin-fibroblast ECM records as not material to this track.",
+      "source_ids": [
+        "pmid-15716955",
+        "pmid-32474458",
+        "pmid-24915299",
+        "pmid-27376579",
+        "pmid-27852976",
+        "pmid-34032859"
+      ],
+      "finding_ids": [
+        "young-systemic-environment-rejuvenated-aged-progenitors",
+        "plasma-dilution-rejuvenated-aged-mouse-tissues",
+        "oxytocin-improved-aged-muscle-stem-cell-activation",
+        "fibronectin-reconstitution-restored-aged-muscle-regeneration",
+        "nfkb-inhibition-improved-aged-muscle-repair",
+        "aged-hsc-refractory-to-bloodborne-rejuvenation"
+      ],
+      "gap_note": "The boundary remains important because systemic milieu, endocrine, ECM, and inflammatory-niche evidence can overlap neighboring tracks."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-15716955",
+    "pmid-32474458",
+    "pmid-24915299",
+    "pmid-27376579",
+    "pmid-27852976",
+    "pmid-34032859"
+  ],
+  "covered_finding_ids": [
+    "young-systemic-environment-rejuvenated-aged-progenitors",
+    "plasma-dilution-rejuvenated-aged-mouse-tissues",
+    "oxytocin-improved-aged-muscle-stem-cell-activation",
+    "fibronectin-reconstitution-restored-aged-muscle-regeneration",
+    "nfkb-inhibition-improved-aged-muscle-repair",
+    "aged-hsc-refractory-to-bloodborne-rejuvenation"
+  ],
+  "search_log_summary": "This backfill reviewed local project artifacts: the published Niche Rejuvenation and Support track outlook, June 2 bootstrap session, published candidate bundle, source-fidelity and interpretation reviews, publication event, and June 5 no-op surveillance session with its PubMed, ClinicalTrials.gov, preprint, and web-search log. No new PubMed, registry, preprint, citation-network, or web source search was run for this assessment.",
+  "source_selection_notes": [
+    "PMID 15716955 and PMID 32474458 anchor systemic-milieu and plasma-dilution support while preserving the clinical-translatability boundary.",
+    "PMID 24915299, PMID 27376579, and PMID 27852976 anchor direct aged-muscle niche mechanisms through oxytocin, fibronectin, and myofiber NF-kB signaling.",
+    "PMID 34032859 is included as boundary evidence because aged HSCs did not regain youthful function after bloodborne systemic rejuvenation interventions.",
+    "Human therapeutic plasma exchange and aging registry context is treated as adjacent unless a study measures stem-cell niche engagement and functional tissue repair.",
+    "The June 5 surveillance pass found no material post-publication source, no correction or retraction for the six supporting PMIDs, and no relevant posted trial result."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "human-niche-engagement-evidence-absent",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "No result-bearing human intervention shows aging-relevant stem-cell niche marker movement linked to tissue repair, strength, hematopoietic, neurogenic, or resilience outcomes.",
+      "priority": "high",
+      "suggested_action": "Keep the public stage at animal_signal until a targeted human niche-support intervention reports niche engagement and functional or disease-relevant outcomes."
+    },
+    {
+      "gap_id": "niche-safety-durability-undercovered",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "The source map does not establish long-term safety, durability, dosing boundaries, fibrosis, tumor, immune, endocrine, or repair tradeoffs for systemic or local niche manipulation.",
+      "priority": "high",
+      "suggested_action": "Require explicit safety and durability review before strengthening confidence, momentum, or human relevance for any niche-support intervention."
+    },
+    {
+      "gap_id": "recent-review-triangulation-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "Recent reviews and meta-analyses around stem-cell niches, systemic milieu, plasma dilution, aged muscle repair, and niche support have not been reconciled against the current source list.",
+      "priority": "medium",
+      "suggested_action": "Use a future coverage-repair pass or surveillance review to compare recent reviews with the six-anchor source map and document any missing decision-relevant records."
+    },
+    {
+      "gap_id": "formal-seminal-anchor-audit-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "seminal_anchors",
+      "description": "The baseline includes plausible anchor papers, but no formal must-include, review-cited, or citation-network audit has been recorded for the track.",
+      "priority": "medium",
+      "suggested_action": "During a future source-completeness pass, audit highly cited and review-cited niche-rejuvenation anchors against the current source list."
+    },
+    {
+      "gap_id": "neighbor-track-boundaries-need-maintenance",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "Niche rejuvenation overlaps circulating-factor modulation, neuroendocrine signaling, stem-cell rejuvenation, inflammatory modulation, and tissue repair, so future source additions can easily blur track scope.",
+      "priority": "medium",
+      "suggested_action": "Keep future staged records explicit about whether they test systemic milieu, local niche support, cell-intrinsic stem-cell rejuvenation, endocrine signaling, inflammatory repair, or general tissue repair."
+    }
+  ],
+  "next_coverage_action": "Continue ordinary surveillance for Niche Rejuvenation and Support. On the next pass, recheck targeted niche-support, plasma-exchange, muscle-regeneration, sarcopenia, and stem-cell niche terms for human niche-engagement results or meaningful registry movement; reserve coverage_repair for a later review-triangulation or formal seminal-anchor audit if no material field delta appears.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-assessment",
+    "manual",
+    "stem_cell_exhaustion",
+    "niche-rejuvenation-and-support"
+  ]
+}
