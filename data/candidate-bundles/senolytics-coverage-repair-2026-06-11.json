@@ -91,6 +91,8 @@
       "change_type": "update_record",
       "target_record_type": "intervention",
       "target_record_id": "dasatinib-quercetin",
+      "file_path": "data/interventions/dasatinib-quercetin.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/dasatinib-quercetin.json",
       "summary": "Update D+Q intervention links and evidence snapshot.",
       "rationale": "Connect the existing D+Q intervention to the repaired Senolytics source, study, finding, safety, and boundary map."
     },
@@ -99,6 +101,8 @@
       "change_type": "create_record",
       "target_record_type": "intervention",
       "target_record_id": "fisetin",
+      "file_path": "data/interventions/fisetin.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/fisetin.json",
       "summary": "Add fisetin as a Senolytics intervention record.",
       "rationale": "Fisetin has direct senolytic discovery context and multiple aging-relevant active trial-watch records."
     },
@@ -107,6 +111,8 @@
       "change_type": "create_record",
       "target_record_type": "source",
       "target_record_id": "pmid-25754370",
+      "file_path": "data/sources/pmid-25754370.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/pmid-25754370.json",
       "summary": "Add the Achilles heel senolytic discovery source.",
       "rationale": "Repair missing seminal D+Q discovery, mechanistic, and animal support."
     },
@@ -115,6 +121,8 @@
       "change_type": "create_record",
       "target_record_type": "study",
       "target_record_id": "zhu-senolytic-drug-discovery",
+      "file_path": "data/studies/zhu-senolytic-drug-discovery.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/zhu-senolytic-drug-discovery.json",
       "summary": "Add the senolytic drug discovery study.",
       "rationale": "Represent the foundational pro-survival-network and D+Q validation experiment."
     },
@@ -123,6 +131,8 @@
       "change_type": "create_record",
       "target_record_type": "finding",
       "target_record_id": "dq-senolytic-drug-discovery-preclinical",
+      "file_path": "data/findings/dq-senolytic-drug-discovery-preclinical.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/dq-senolytic-drug-discovery-preclinical.json",
       "summary": "Add D+Q preclinical discovery finding.",
       "rationale": "Make senescent-cell clearance and preclinical functional signals visible in the support map.",
       "uncertainty_flags": [
@@ -136,6 +146,8 @@
       "change_type": "create_record",
       "target_record_type": "source",
       "target_record_id": "pmid-28273655",
+      "file_path": "data/sources/pmid-28273655.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/pmid-28273655.json",
       "summary": "Add the fisetin and BCL-XL senolytic discovery source.",
       "rationale": "Repair fisetin branch discovery and cell-type-specificity coverage."
     },
@@ -144,6 +156,8 @@
       "change_type": "create_record",
       "target_record_type": "study",
       "target_record_id": "fisetin-bclxl-senolytics-discovery",
+      "file_path": "data/studies/fisetin-bclxl-senolytics-discovery.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/fisetin-bclxl-senolytics-discovery.json",
       "summary": "Add fisetin in vitro senolytic discovery study.",
       "rationale": "Represent fisetin as a candidate senolytic while preserving cell-type specificity."
     },
@@ -152,6 +166,8 @@
       "change_type": "create_record",
       "target_record_type": "finding",
       "target_record_id": "fisetin-and-bclxl-senolytics-preclinical",
+      "file_path": "data/findings/fisetin-and-bclxl-senolytics-preclinical.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/fisetin-and-bclxl-senolytics-preclinical.json",
       "summary": "Add fisetin cell-type-specific senolytic finding.",
       "rationale": "Support the fisetin branch without implying human efficacy.",
       "uncertainty_flags": [
@@ -165,6 +181,8 @@
       "change_type": "create_record",
       "target_record_type": "source",
       "target_record_id": "pmid-29988130",
+      "file_path": "data/sources/pmid-29988130.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/pmid-29988130.json",
       "summary": "Add the D+Q old-mouse healthspan and lifespan source.",
       "rationale": "Repair missing animal healthspan and lifespan anchor coverage."
     },
@@ -173,6 +191,8 @@
       "change_type": "create_record",
       "target_record_type": "study",
       "target_record_id": "dq-old-mouse-healthspan-lifespan",
+      "file_path": "data/studies/dq-old-mouse-healthspan-lifespan.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/dq-old-mouse-healthspan-lifespan.json",
       "summary": "Add D+Q old-mouse healthspan/lifespan study.",
       "rationale": "Represent direct D+Q animal function and survival support."
     },
@@ -181,6 +201,8 @@
       "change_type": "create_record",
       "target_record_type": "finding",
       "target_record_id": "dq-improved-old-mouse-function-and-survival",
+      "file_path": "data/findings/dq-improved-old-mouse-function-and-survival.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/dq-improved-old-mouse-function-and-survival.json",
       "summary": "Add D+Q old-mouse function and survival finding.",
       "rationale": "Make animal lifespan and healthspan support auditable while caveating translation.",
       "uncertainty_flags": [
@@ -194,6 +216,8 @@
       "change_type": "create_record",
       "target_record_type": "source",
       "target_record_id": "pmid-30616998",
+      "file_path": "data/sources/pmid-30616998.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/pmid-30616998.json",
       "summary": "Add the first-in-human D+Q IPF open-label pilot source.",
       "rationale": "Repair human functional pilot coverage for D+Q."
     },
@@ -202,6 +226,8 @@
       "change_type": "create_record",
       "target_record_type": "study",
       "target_record_id": "dq-ipf-open-label-pilot",
+      "file_path": "data/studies/dq-ipf-open-label-pilot.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/dq-ipf-open-label-pilot.json",
       "summary": "Add the D+Q IPF open-label pilot study.",
       "rationale": "Represent first-in-human feasibility and exploratory function outcomes."
     },
@@ -210,6 +236,8 @@
       "change_type": "create_record",
       "target_record_type": "finding",
       "target_record_id": "dq-ipf-open-label-physical-function-signal",
+      "file_path": "data/findings/dq-ipf-open-label-physical-function-signal.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/dq-ipf-open-label-physical-function-signal.json",
       "summary": "Add the IPF open-label physical-function signal finding.",
       "rationale": "Surface functional evidence without overstating uncontrolled disease-specific data.",
       "uncertainty_flags": [
@@ -224,6 +252,8 @@
       "change_type": "create_record",
       "target_record_type": "source",
       "target_record_id": "pmid-31542391",
+      "file_path": "data/sources/pmid-31542391.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/pmid-31542391.json",
       "summary": "Add the D+Q diabetic kidney disease biomarker pilot source.",
       "rationale": "Repair direct human senescent-cell and SASP biomarker support."
     },
@@ -232,6 +262,8 @@
       "change_type": "create_record",
       "target_record_type": "study",
       "target_record_id": "dq-diabetic-kidney-disease-pilot",
+      "file_path": "data/studies/dq-diabetic-kidney-disease-pilot.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/dq-diabetic-kidney-disease-pilot.json",
       "summary": "Add the D+Q DKD senescent-cell biomarker study.",
       "rationale": "Represent the clearest direct human senolytic biomarker signal."
     },
@@ -240,6 +272,8 @@
       "change_type": "create_record",
       "target_record_type": "finding",
       "target_record_id": "dq-dkd-human-senescent-cell-biomarker-signal",
+      "file_path": "data/findings/dq-dkd-human-senescent-cell-biomarker-signal.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/dq-dkd-human-senescent-cell-biomarker-signal.json",
       "summary": "Add D+Q human senescent-cell biomarker finding.",
       "rationale": "Support the staged human_biomarker_signal outlook with direct human tissue and SASP evidence.",
       "uncertainty_flags": [
@@ -254,6 +288,8 @@
       "change_type": "create_record",
       "target_record_type": "source",
       "target_record_id": "pmid-36857968",
+      "file_path": "data/sources/pmid-36857968.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/pmid-36857968.json",
       "summary": "Add the randomized D+Q IPF feasibility and tolerability source.",
       "rationale": "Repair controlled human safety and functional-boundary coverage."
     },
@@ -262,6 +298,8 @@
       "change_type": "create_record",
       "target_record_type": "study",
       "target_record_id": "dq-ipf-randomized-feasibility-trial",
+      "file_path": "data/studies/dq-ipf-randomized-feasibility-trial.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/dq-ipf-randomized-feasibility-trial.json",
       "summary": "Add the randomized D+Q IPF feasibility trial study.",
       "rationale": "Represent controlled feasibility, tolerability, and exploratory outcome context."
     },
@@ -270,6 +308,8 @@
       "change_type": "create_record",
       "target_record_type": "finding",
       "target_record_id": "dq-ipf-randomized-tolerability-limited-efficacy-boundary",
+      "file_path": "data/findings/dq-ipf-randomized-tolerability-limited-efficacy-boundary.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/dq-ipf-randomized-tolerability-limited-efficacy-boundary.json",
       "summary": "Add randomized IPF tolerability and limited-efficacy boundary finding.",
       "rationale": "Temper the open-label IPF signal with controlled pilot context.",
       "uncertainty_flags": [
@@ -284,6 +324,8 @@
       "change_type": "create_record",
       "target_record_type": "source",
       "target_record_id": "pmid-38956196",
+      "file_path": "data/sources/pmid-38956196.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/pmid-38956196.json",
       "summary": "Add the D+Q postmenopausal bone RCT source.",
       "rationale": "Repair controlled human biomarker and limiting-evidence coverage."
     },
@@ -292,6 +334,8 @@
       "change_type": "create_record",
       "target_record_type": "study",
       "target_record_id": "dq-postmenopausal-bone-rct",
+      "file_path": "data/studies/dq-postmenopausal-bone-rct.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/dq-postmenopausal-bone-rct.json",
       "summary": "Add the D+Q postmenopausal bone RCT study.",
       "rationale": "Represent the largest staged controlled human D+Q dataset."
     },
@@ -300,6 +344,8 @@
       "change_type": "create_record",
       "target_record_type": "finding",
       "target_record_id": "dq-bone-rct-primary-null-subgroup-biomarker-signal",
+      "file_path": "data/findings/dq-bone-rct-primary-null-subgroup-biomarker-signal.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/dq-bone-rct-primary-null-subgroup-biomarker-signal.json",
       "summary": "Add the bone RCT null-primary and subgroup-signal finding.",
       "rationale": "Make limiting controlled human evidence visible in the support map.",
       "uncertainty_flags": [
@@ -313,6 +359,8 @@
       "change_type": "create_record",
       "target_record_type": "source",
       "target_record_id": "pmid-40010154",
+      "file_path": "data/sources/pmid-40010154.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/pmid-40010154.json",
       "summary": "Add the 2025 D+Q cognition and mobility pilot source.",
       "rationale": "Repair current human functional pilot coverage."
     },
@@ -321,6 +369,8 @@
       "change_type": "create_record",
       "target_record_type": "study",
       "target_record_id": "dq-cognition-mobility-ad-risk-pilot",
+      "file_path": "data/studies/dq-cognition-mobility-ad-risk-pilot.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/dq-cognition-mobility-ad-risk-pilot.json",
       "summary": "Add D+Q cognition and mobility pilot study.",
       "rationale": "Represent the current older-adult functional and biomarker pilot."
     },
@@ -329,6 +379,8 @@
       "change_type": "create_record",
       "target_record_type": "finding",
       "target_record_id": "dq-ad-risk-pilot-cognition-mobility-signal",
+      "file_path": "data/findings/dq-ad-risk-pilot-cognition-mobility-signal.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/dq-ad-risk-pilot-cognition-mobility-signal.json",
       "summary": "Add the D+Q AD-risk cognition/mobility signal finding.",
       "rationale": "Surface current functional signal while caveating the single-arm design.",
       "uncertainty_flags": [
@@ -343,6 +395,8 @@
       "change_type": "create_record",
       "target_record_type": "source",
       "target_record_id": "pmid-32686219",
+      "file_path": "data/sources/pmid-32686219.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/pmid-32686219.json",
       "summary": "Add senolytic-drugs discovery-to-translation review source.",
       "rationale": "Repair review-level safety, trial, and non-trial-use boundary coverage."
     },
@@ -351,6 +405,8 @@
       "change_type": "create_record",
       "target_record_type": "study",
       "target_record_id": "senolytic-drugs-translation-review",
+      "file_path": "data/studies/senolytic-drugs-translation-review.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/senolytic-drugs-translation-review.json",
       "summary": "Add senolytic-drugs translation review study.",
       "rationale": "Represent review-level synthesis across discovery, preclinical, and early clinical records."
     },
@@ -359,6 +415,8 @@
       "change_type": "create_record",
       "target_record_type": "finding",
       "target_record_id": "senolytic-drugs-translation-boundary",
+      "file_path": "data/findings/senolytic-drugs-translation-boundary.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/senolytic-drugs-translation-boundary.json",
       "summary": "Add senolytic-drugs translation boundary finding.",
       "rationale": "Keep public safety and non-trial-use language conservative.",
       "uncertainty_flags": [
@@ -373,6 +431,8 @@
       "change_type": "create_record",
       "target_record_type": "source",
       "target_record_id": "nct-03430037",
+      "file_path": "data/sources/nct-03430037.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/nct-03430037.json",
       "summary": "Add the AFFIRM fisetin older-women registry source.",
       "rationale": "Repair direct fisetin functional trial-watch coverage."
     },
@@ -381,6 +441,8 @@
       "change_type": "create_record",
       "target_record_type": "study",
       "target_record_id": "fisetin-frailty-older-women-registry",
+      "file_path": "data/studies/fisetin-frailty-older-women-registry.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/fisetin-frailty-older-women-registry.json",
       "summary": "Add AFFIRM fisetin older-women frailty registry study.",
       "rationale": "Represent the active no-results fisetin trial with a 6-minute-walk primary endpoint."
     },
@@ -389,6 +451,8 @@
       "change_type": "create_record",
       "target_record_type": "finding",
       "target_record_id": "fisetin-older-women-frailty-enrolling-no-results",
+      "file_path": "data/findings/fisetin-older-women-frailty-enrolling-no-results.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/fisetin-older-women-frailty-enrolling-no-results.json",
       "summary": "Add AFFIRM older-women no-results finding.",
       "rationale": "Track fisetin functional trial activity without treating it as efficacy evidence.",
       "uncertainty_flags": [
@@ -402,6 +466,8 @@
       "change_type": "create_record",
       "target_record_type": "source",
       "target_record_id": "nct-03675724",
+      "file_path": "data/sources/nct-03675724.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/nct-03675724.json",
       "summary": "Add AFFIRM-LITE fisetin older-adults registry source.",
       "rationale": "Repair fisetin older-adult inflammation and frailty trial-watch coverage."
     },
@@ -410,6 +476,8 @@
       "change_type": "create_record",
       "target_record_type": "study",
       "target_record_id": "fisetin-frailty-older-adults-registry",
+      "file_path": "data/studies/fisetin-frailty-older-adults-registry.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/fisetin-frailty-older-adults-registry.json",
       "summary": "Add AFFIRM-LITE fisetin older-adults registry study.",
       "rationale": "Represent active no-results fisetin inflammation-marker trial activity."
     },
@@ -418,6 +486,8 @@
       "change_type": "create_record",
       "target_record_type": "finding",
       "target_record_id": "fisetin-frailty-enrolling-no-results",
+      "file_path": "data/findings/fisetin-frailty-enrolling-no-results.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/fisetin-frailty-enrolling-no-results.json",
       "summary": "Add AFFIRM-LITE no-results finding.",
       "rationale": "Track fisetin biomarker trial activity without treating it as efficacy evidence.",
       "uncertainty_flags": [
@@ -431,6 +501,8 @@
       "change_type": "create_record",
       "target_record_type": "source",
       "target_record_id": "nct-06133634",
+      "file_path": "data/sources/nct-06133634.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/nct-06133634.json",
       "summary": "Add fisetin vascular-function registry source.",
       "rationale": "Repair older-adult fisetin vascular-function trial-watch coverage."
     },
@@ -439,6 +511,8 @@
       "change_type": "create_record",
       "target_record_type": "study",
       "target_record_id": "fisetin-vascular-function-older-adults-registry",
+      "file_path": "data/studies/fisetin-vascular-function-older-adults-registry.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/fisetin-vascular-function-older-adults-registry.json",
       "summary": "Add fisetin vascular-function registry study.",
       "rationale": "Represent active no-results endothelial-function trial activity."
     },
@@ -447,6 +521,8 @@
       "change_type": "create_record",
       "target_record_type": "finding",
       "target_record_id": "fisetin-vascular-active-no-results",
+      "file_path": "data/findings/fisetin-vascular-active-no-results.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/fisetin-vascular-active-no-results.json",
       "summary": "Add fisetin vascular no-results finding.",
       "rationale": "Track fisetin vascular-function activity without treating it as efficacy evidence.",
       "uncertainty_flags": [
@@ -460,6 +536,8 @@
       "change_type": "create_record",
       "target_record_type": "source",
       "target_record_id": "nct-04685590",
+      "file_path": "data/sources/nct-04685590.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/nct-04685590.json",
       "summary": "Add SToMP-AD phase 2 D+Q registry source.",
       "rationale": "Repair D+Q randomized Alzheimer's disease trial-watch coverage."
     },
@@ -468,6 +546,8 @@
       "change_type": "create_record",
       "target_record_type": "study",
       "target_record_id": "dq-stomp-ad-phase2-registry",
+      "file_path": "data/studies/dq-stomp-ad-phase2-registry.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/dq-stomp-ad-phase2-registry.json",
       "summary": "Add SToMP-AD phase 2 D+Q registry study.",
       "rationale": "Represent active no-results randomized D+Q neurodegeneration trial activity."
     },
@@ -476,6 +556,8 @@
       "change_type": "create_record",
       "target_record_type": "finding",
       "target_record_id": "dq-stomp-ad-phase2-active-no-results",
+      "file_path": "data/findings/dq-stomp-ad-phase2-active-no-results.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/dq-stomp-ad-phase2-active-no-results.json",
       "summary": "Add SToMP-AD phase 2 no-results finding.",
       "rationale": "Track D+Q randomized trial activity without treating it as efficacy evidence.",
       "uncertainty_flags": [
@@ -489,6 +571,8 @@
       "change_type": "update_record",
       "target_record_type": "study",
       "target_record_id": "dq-senolytics-aged-mouse-endothelial-tif",
+      "file_path": "data/studies/dq-senolytics-aged-mouse-endothelial-tif.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/dq-senolytics-aged-mouse-endothelial-tif.json",
       "summary": "Update existing D+Q endothelial TIF study track mapping.",
       "rationale": "Add Senolytics support while preserving the telomere-protection boundary."
     },
@@ -497,6 +581,8 @@
       "change_type": "update_record",
       "target_record_type": "finding",
       "target_record_id": "dq-senolytics-reduced-endothelial-tif-aged-mice",
+      "file_path": "data/findings/dq-senolytics-reduced-endothelial-tif-aged-mice.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/dq-senolytics-reduced-endothelial-tif-aged-mice.json",
       "summary": "Update existing D+Q endothelial TIF finding track mapping.",
       "rationale": "Add Senolytics support and clarify that the result is senolytic-adjacent, not direct capping restoration.",
       "uncertainty_flags": [
@@ -510,6 +596,8 @@
       "change_type": "update_outlook",
       "target_record_type": "outlook",
       "target_record_id": "track-senolytics-outlook",
+      "file_path": "data/outlooks/track-senolytics-outlook.json",
+      "staged_file_path": "data/staged-records/senolytics-coverage-repair-2026-06-11/track-senolytics-outlook.json",
       "summary": "Refresh the Senolytics outlook support map.",
       "rationale": "Replace the thin activity-only outlook with auditable support and boundary language while retaining human_biomarker_signal stage."
     }

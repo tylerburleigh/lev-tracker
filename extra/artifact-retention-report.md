@@ -1,6 +1,6 @@
 # Artifact Retention Report
 
-Generated: 2026-06-13T16:18:32.984Z
+Generated: 2026-06-13T16:34:19.866Z
 
 This report classifies file-backed artifacts by retention role. It is non-destructive: it identifies pruning and compression candidates but does not delete or rewrite files.
 
