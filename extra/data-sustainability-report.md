@@ -1,16 +1,16 @@
 # Data Sustainability Report
 
-Generated: 2026-06-13T16:34:19.936Z
+Generated: 2026-06-13T17:52:08.296Z
 
 This report summarizes the file-backed data estate so growth pressure, staged-history drift, and lifecycle shape are visible before they become maintenance work.
 
 ## Summary
 
-- Data footprint: 2712 files, 5.9 MB.
+- Data footprint: 2713 files, 7.1 MB.
 - Tracked record files: 1509.
 - Candidate bundles: 59.
 - Staged history: 1200 JSON files across 56 directories.
-- Staged share of data bytes: 33.7%.
+- Staged share of data bytes: 28.0%.
 - Active staged directories: 0.
 - Historical staged directories: 56.
 - Staged directories without a candidate bundle: 0.
@@ -25,6 +25,7 @@ This report summarizes the file-backed data estate so growth pressure, staged-hi
 | Section | Files | JSON | Size |
 | --- | --- | --- | --- |
 | data/staged-records | 1200 | 1200 | 2.0 MB |
+| data/staged-record-manifests | 1 | 1 | 1.2 MB |
 | data/candidate-bundles | 59 | 59 | 968 KB |
 | data/evidence-reviews | 148 | 148 | 695 KB |
 | data/findings | 348 | 348 | 587 KB |
@@ -62,6 +63,7 @@ This report summarizes the file-backed data estate so growth pressure, staged-hi
 
 | File | Size |
 | --- | --- |
+| data/staged-record-manifests/terminal-bundles.v1.json | 1.2 MB |
 | data/candidate-bundles/nad-and-redox-restoration-coverage-repair-2026-06-08.json | 40 KB |
 | data/content/current-lev-story/current.json | 35 KB |
 | data/candidate-bundles/senolytics-coverage-repair-2026-06-11.json | 31 KB |
@@ -71,7 +73,6 @@ This report summarizes the file-backed data estate so growth pressure, staged-hi
 | data/candidate-bundles/rapalogs-coverage-repair-2026-06-11.json | 26 KB |
 | data/candidate-bundles/resolution-pathway-and-tissue-repair-bootstrap-2026-06-02.json | 25 KB |
 | data/candidate-bundles/ecosystem-replacement-bootstrap-2026-06-03.json | 25 KB |
-| data/candidate-bundles/ampk-and-metabolic-modulators-bootstrap-2026-06-01.json | 24 KB |
 
 ## Staged History
 

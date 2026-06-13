@@ -30,6 +30,11 @@ const categories = {
     retention: "compress_candidate",
     action: "Preserve now; later replace with a manifest/hash archive only after explicit review."
   },
+  staged_record_manifest: {
+    label: "Staged Record Manifests",
+    retention: "retain_for_archive",
+    action: "Keep as the hash/index layer required before terminal staged JSON can be compressed."
+  },
   orphan_staged_intermediate: {
     label: "Orphan Staged Intermediate",
     retention: "review",
@@ -326,6 +331,8 @@ async function classifyArtifacts() {
     "research/backlog/track-priority.v1.json",
     "research/state/coverage-status.v1.json"
   ].filter((filePath) => existsSync(workspacePath(filePath))));
+
+  add("staged_record_manifest", await walkFiles("data/staged-record-manifests"));
 
   const generatedReportPaths = [
     "extra/artifact-retention-report.md",

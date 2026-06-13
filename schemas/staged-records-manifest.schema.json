@@ -1,0 +1,328 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./staged-records-manifest.schema.json",
+  "title": "Terminal staged records manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "manifest_type",
+    "generated_by",
+    "source_roots",
+    "summary",
+    "bundles"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "manifest_type": {
+      "const": "terminal_staged_records"
+    },
+    "generated_by": {
+      "type": "string"
+    },
+    "source_roots": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_bundles",
+        "staged_records",
+        "publication_events"
+      ],
+      "properties": {
+        "candidate_bundles": {
+          "type": "string"
+        },
+        "staged_records": {
+          "type": "string"
+        },
+        "publication_events": {
+          "type": "string"
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "terminal_bundle_count",
+        "active_bundle_count",
+        "staged_directory_count",
+        "staged_file_count",
+        "manifested_staged_file_count",
+        "missing_bundle_directory_count",
+        "missing_staged_file_reference_count",
+        "legacy_unstaged_change_count",
+        "unreferenced_staged_file_count",
+        "total_staged_bytes"
+      ],
+      "properties": {
+        "terminal_bundle_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "active_bundle_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "staged_directory_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "staged_file_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "manifested_staged_file_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "missing_bundle_directory_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "missing_staged_file_reference_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "legacy_unstaged_change_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unreferenced_staged_file_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "total_staged_bytes": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "bundles": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/terminalBundleManifest"
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "nullableSha256": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/sha256"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "nullableInteger": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "terminalBundleManifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bundle_id",
+        "lifecycle_status",
+        "revision_number",
+        "submitted_at",
+        "staged_directory",
+        "proposed_change_count",
+        "staged_file_count",
+        "staged_total_bytes",
+        "staged_directory_sha256",
+        "evidence_review_ids",
+        "publication_event_ids",
+        "legacy_unstaged_change_count",
+        "legacy_unstaged_changes",
+        "changes"
+      ],
+      "properties": {
+        "bundle_id": {
+          "$ref": "./common.schema.json#/$defs/candidateBundleRef"
+        },
+        "lifecycle_status": {
+          "enum": [
+            "published",
+            "rejected"
+          ]
+        },
+        "revision_number": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "submitted_at": {
+          "$ref": "./common.schema.json#/$defs/dateTime"
+        },
+        "staged_directory": {
+          "type": "string"
+        },
+        "proposed_change_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "staged_file_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "staged_total_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "staged_directory_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "evidence_review_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "./common.schema.json#/$defs/evidenceReviewRef"
+          },
+          "uniqueItems": true
+        },
+        "publication_event_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "./common.schema.json#/$defs/publicationEventRef"
+          },
+          "uniqueItems": true
+        },
+        "legacy_unstaged_change_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "legacy_unstaged_changes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/legacyUnstagedChangeManifest"
+          }
+        },
+        "changes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/changeManifest"
+          }
+        }
+      }
+    },
+    "legacyUnstagedChangeManifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "change_id",
+        "change_type",
+        "target_record_type",
+        "target_record_id",
+        "target_file_path",
+        "target_file_exists",
+        "target_file_sha256",
+        "target_file_bytes"
+      ],
+      "properties": {
+        "change_id": {
+          "$ref": "./common.schema.json#/$defs/identifier"
+        },
+        "change_type": {
+          "$ref": "./common.schema.json#/$defs/changeType"
+        },
+        "target_record_type": {
+          "$ref": "./common.schema.json#/$defs/recordType"
+        },
+        "target_record_id": {
+          "$ref": "./common.schema.json#/$defs/identifier"
+        },
+        "target_file_path": {
+          "type": "string"
+        },
+        "target_file_exists": {
+          "type": "boolean"
+        },
+        "target_file_sha256": {
+          "$ref": "#/$defs/nullableSha256"
+        },
+        "target_file_bytes": {
+          "$ref": "#/$defs/nullableInteger"
+        }
+      }
+    },
+    "changeManifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "change_id",
+        "change_type",
+        "target_record_type",
+        "target_record_id",
+        "target_file_path",
+        "target_file_exists",
+        "target_file_sha256",
+        "target_file_bytes",
+        "staged_file_path",
+        "staged_file_sha256",
+        "staged_file_bytes",
+        "staged_record_type",
+        "staged_record_id",
+        "staged_record_name"
+      ],
+      "properties": {
+        "change_id": {
+          "$ref": "./common.schema.json#/$defs/identifier"
+        },
+        "change_type": {
+          "$ref": "./common.schema.json#/$defs/changeType"
+        },
+        "target_record_type": {
+          "$ref": "./common.schema.json#/$defs/recordType"
+        },
+        "target_record_id": {
+          "$ref": "./common.schema.json#/$defs/identifier"
+        },
+        "target_file_path": {
+          "type": "string"
+        },
+        "target_file_exists": {
+          "type": "boolean"
+        },
+        "target_file_sha256": {
+          "$ref": "#/$defs/nullableSha256"
+        },
+        "target_file_bytes": {
+          "$ref": "#/$defs/nullableInteger"
+        },
+        "staged_file_path": {
+          "type": "string"
+        },
+        "staged_file_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "staged_file_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "staged_record_type": {
+          "$ref": "./common.schema.json#/$defs/recordType"
+        },
+        "staged_record_id": {
+          "$ref": "./common.schema.json#/$defs/identifier"
+        },
+        "staged_record_name": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -8,6 +8,7 @@ Use this document with:
 - `npm run audit:data`
 - `npm run audit:data:sustainability`
 - `npm run audit:artifacts`
+- `npm run manifest:staged-records`
 - `docs/artifact-retention.md`
 - `docs/source-ingestion-rules.md`
 - `docs/intervention-normalization.md`
@@ -60,9 +61,10 @@ npm run validate:records
 npm run audit:data
 npm run audit:data:sustainability -- --write
 npm run audit:artifacts -- --write
+npm run manifest:staged-records -- --write
 ```
 
-Use `npm run audit:data:sustainability -- --max-unreferenced-staged 0` only when deliberately ratcheting staged-history hygiene. The current report is informational by default because older published bundles may need explicit historical repair instead of silent mutation.
+Use `npm run audit:data:sustainability -- --max-unreferenced-staged 0` to enforce staged-history hygiene after historical bundle metadata repair.
 
 ## Review Signals
 
@@ -95,6 +97,6 @@ These are signals, not automatic failures. Broken schemas, missing required refe
 - Add an `outlook` update only when interpretation changes or public evidence framing needs repair.
 - Put close-but-excluded material in `research/sessions[].excluded_sources`, not in public records.
 
-## Current Known Debt
+## Current State
 
-The first sustainability report identifies historical staged JSON files that are not referenced by candidate-bundle `proposed_changes[]`. These files are concentrated in published coverage-repair bundles. Treat this as audit-history maintenance, not evidence drift.
+The staged-history metadata repair has eliminated unreferenced staged JSON files. The remaining sustainability question is whether terminal staged records should stay as full JSON forever or eventually be replaced by a reviewed manifest/hash archive.
