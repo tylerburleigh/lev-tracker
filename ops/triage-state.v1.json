@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-13T12:29:44.097Z",
+  "generated_at": "2026-06-13T12:35:58.160Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-13T12:29:43.957Z",
-    "research_priority_queue_updated_at": "2026-06-13T12:29:43.958Z",
+    "research_coverage_status_updated_at": "2026-06-13T12:35:58.048Z",
+    "research_priority_queue_updated_at": "2026-06-13T12:35:58.049Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
     "surveillance_recent_queue_count": 38,
     "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 7,
+    "coverage_assessment_backlog_count": 6,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
   },
@@ -33,7 +33,7 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-assessment-backfill-ampk-and-metabolic-modulators",
+    "top_work_item_id": "coverage-assessment-backfill-lysosomal-restoration",
     "top_mode": "coverage_assessment_backfill",
     "active_editorial_count": 0,
     "ready_research_count": 0,
@@ -46,24 +46,24 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "coverage-assessment-backfill-ampk-and-metabolic-modulators",
+      "item_id": "coverage-assessment-backfill-lysosomal-restoration",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for AMPK and Metabolic Modulators",
-      "rationale": "7 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
+      "title": "Backfill coverage assessment for Lysosomal Restoration",
+      "rationale": "6 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
       "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
-      "track_id": "ampk-and-metabolic-modulators",
-      "hallmark_id": "deregulated_nutrient_sensing",
+      "track_id": "lysosomal-restoration",
+      "hallmark_id": "disabled_macroautophagy",
       "references": [
         {
           "record_type": "track",
-          "record_id": "ampk-and-metabolic-modulators"
+          "record_id": "lysosomal-restoration"
         },
         {
           "record_type": "hallmark",
-          "record_id": "deregulated_nutrient_sensing"
+          "record_id": "disabled_macroautophagy"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",
@@ -75,11 +75,11 @@
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 7
+          "value": 6
         },
         {
           "name": "generated_surveillance_queue_rank",
-          "value": 24
+          "value": 25
         },
         {
           "name": "track_next_mode",
