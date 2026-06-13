@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-13T14:10:58.935Z",
+  "generated_at": "2026-06-13T14:19:37.766Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-13T14:10:58.807Z",
-    "research_priority_queue_updated_at": "2026-06-13T14:10:58.807Z",
+    "research_coverage_status_updated_at": "2026-06-13T14:19:37.663Z",
+    "research_priority_queue_updated_at": "2026-06-13T14:19:37.663Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
     "surveillance_recent_queue_count": 38,
     "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 2,
+    "coverage_assessment_backlog_count": 1,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
   },
@@ -33,7 +33,7 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-assessment-backfill-genome-surveillance-and-chromosome-stability",
+    "top_work_item_id": "coverage-assessment-backfill-cytokine-and-inflammasome-modulation",
     "top_mode": "coverage_assessment_backfill",
     "active_editorial_count": 0,
     "ready_research_count": 0,
@@ -46,24 +46,24 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "coverage-assessment-backfill-genome-surveillance-and-chromosome-stability",
+      "item_id": "coverage-assessment-backfill-cytokine-and-inflammasome-modulation",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for Genome Surveillance and Chromosome Stability",
-      "rationale": "2 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
+      "title": "Backfill coverage assessment for Cytokine and Inflammasome Modulation",
+      "rationale": "1 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
       "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
-      "track_id": "genome-surveillance-and-chromosome-stability",
-      "hallmark_id": "genomic_instability",
+      "track_id": "cytokine-and-inflammasome-modulation",
+      "hallmark_id": "chronic_inflammation",
       "references": [
         {
           "record_type": "track",
-          "record_id": "genome-surveillance-and-chromosome-stability"
+          "record_id": "cytokine-and-inflammasome-modulation"
         },
         {
           "record_type": "hallmark",
-          "record_id": "genomic_instability"
+          "record_id": "chronic_inflammation"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",
@@ -75,11 +75,11 @@
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 2
+          "value": 1
         },
         {
           "name": "generated_surveillance_queue_rank",
-          "value": 29
+          "value": 30
         },
         {
           "name": "track_next_mode",

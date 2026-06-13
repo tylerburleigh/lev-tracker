@@ -1,0 +1,347 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "genome-surveillance-and-chromosome-stability-coverage-2026-06-13",
+  "name": "Genome Surveillance and Chromosome Stability Coverage Assessment for June 13, 2026",
+  "short_name": "Genome surveillance chromosome stability coverage",
+  "track_id": "genome-surveillance-and-chromosome-stability",
+  "hallmark_id": "genomic_instability",
+  "assessment_type": "manual",
+  "assessed_at": "2026-06-13T14:17:26Z",
+  "assessment_window": {
+    "from": "2026-05-31T19:50:00Z",
+    "to": "2026-06-07T22:29:30Z",
+    "basis": "Backfill assessment of the published May 31 Genome Surveillance and Chromosome Stability baseline plus the June 7 activity-only surveillance session; no new external source search was run for this assessment."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is adequate for the current low-confidence human_biomarker_signal public claim because the local map includes large human blood mosaic-chromosomal-alteration cohorts, familial-longevity and infection-risk mCA context, human BUB1B disease genetics, a narrow human folate/B12 micronucleus biomarker intervention, a null folic-acid supplementation boundary in older men, direct BubR1 mouse lifespan evidence, SIRT2/NMN BubR1 hypomorphic mouse evidence, and a June 7 surveillance pass that found no result-bearing human chromosome-surveillance intervention or correction/retraction. Coverage is not strong because the actionable human intervention layer is thin and context-specific, mCAs may be markers or selected clones rather than modifiable causal targets, direct checkpoint-reinforcement evidence remains animal-stage and not clinically deployable, safety and durability for mitotic checkpoint modulation are unresolved, active registries are empty for the scoped track, and recent-review, formal seminal-anchor, citation-network, and clonal-hematopoiesis boundary triangulation remain incomplete.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-05-31-genome-surveillance-and-chromosome-stability-bootstrap",
+      "2026-06-07-genome-surveillance-and-chromosome-stability-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-genome-surveillance-and-chromosome-stability-source-fidelity-r1",
+      "evidence-review-genome-surveillance-and-chromosome-stability-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-genome-surveillance-and-chromosome-stability-bootstrap-2026-05-31-2026-05-31t20-14-53-931z"
+    ],
+    "outlook_ids": [
+      "track-genome-surveillance-and-chromosome-stability-outlook",
+      "hallmark-genomic-instability-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "thin",
+      "rationale": "The clearest human intervention biomarker signal is a small high-risk hemodialysis study in which folic acid plus vitamin B12 reduced lymphocyte micronucleus frequency. The public map also includes a healthy older-men folic-acid supplementation boundary with no micronucleus-index reduction. No staged human study directly reinforces BubR1, BUB1B, SIRT2, spindle-checkpoint, mCA, mLOY, or chromosome-surveillance biology with functional, disease, or durability outcomes.",
+      "source_ids": [
+        "pmid-18469307",
+        "pmid-9230275"
+      ],
+      "finding_ids": [
+        "folate-b12-reduced-micronuclei-dialysis",
+        "folate-supplementation-did-not-reduce-micronuclei-older-men"
+      ],
+      "gap_note": "Coverage supports only a narrow biomarker-stage claim; it does not establish broad preventive chromosome-stability intervention benefit in older adults."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "adequate",
+      "rationale": "Human observational coverage includes the UK Biobank whole-genome sequencing mCA map, lower autosomal mCA burden in familial-longevity cohorts, expanded mCAs predicting infection risk across biobanks, and BUB1B mutations causing mosaic variegated aneuploidy and cancer predisposition. These records make chromosome instability measurable and clinically relevant in humans.",
+      "source_ids": [
+        "pmid-42156563",
+        "pmid-36988570",
+        "pmid-34099924",
+        "pmid-15475955"
+      ],
+      "finding_ids": [
+        "aging-blood-accrues-predictable-mcas",
+        "lower-mca-burden-in-familial-longevity",
+        "expanded-mcas-predict-infection-risk",
+        "bub1b-mutations-cause-human-mosaic-aneuploidy"
+      ],
+      "gap_note": "Coverage is not strong because mCAs and rare disease genetics support relevance and risk stratification, not intervention actionability or clinical benefit from modifying chromosome instability."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "The direct animal intervention map includes BubR1 overexpression extending healthy lifespan, reducing tumorigenesis, and protecting against aneuploidy in mice, plus SIRT2/NMN-linked BubR1 stabilization and lifespan extension in BubR1 hypomorphic mice.",
+      "source_ids": [
+        "pmid-23242215",
+        "pmid-24825348"
+      ],
+      "finding_ids": [
+        "bubr1-overexpression-extends-healthy-lifespan-mice",
+        "sirt2-nmn-raises-bubr1-and-extends-bubr1-hypomorphic-lifespan"
+      ],
+      "gap_note": "Coverage is not strong because the strongest evidence is transgenic, pleiotropic, or disease-model-specific and does not establish a controllable human checkpoint-reinforcement therapy."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "Mechanistic coverage spans human BUB1B/BubR1 chromosome-surveillance genetics, BubR1 overexpression in mice, SIRT2/NAD regulation of BubR1 abundance, mCA clonal evolution in aging blood, mCA links to infection and longevity phenotypes, and folate/B12 or homocysteine-related micronucleus biomarkers.",
+      "source_ids": [
+        "pmid-42156563",
+        "pmid-36988570",
+        "pmid-34099924",
+        "pmid-15475955",
+        "pmid-23242215",
+        "pmid-24825348",
+        "pmid-18469307",
+        "pmid-9230275"
+      ],
+      "finding_ids": [
+        "aging-blood-accrues-predictable-mcas",
+        "lower-mca-burden-in-familial-longevity",
+        "expanded-mcas-predict-infection-risk",
+        "bub1b-mutations-cause-human-mosaic-aneuploidy",
+        "bubr1-overexpression-extends-healthy-lifespan-mice",
+        "sirt2-nmn-raises-bubr1-and-extends-bubr1-hypomorphic-lifespan",
+        "folate-b12-reduced-micronuclei-dialysis",
+        "folate-supplementation-did-not-reduce-micronuclei-older-men"
+      ],
+      "gap_note": "Mechanistic coverage is still heterogeneous; mCAs, micronuclei, BUB1B disease genetics, BubR1 overexpression, SIRT2/NMN, and one-carbon metabolism should not be collapsed into one mature intervention class."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The evidence map preserves key limiting context: mCA evidence is observational and blood-focused, BUB1B evidence is rare disease genetics, BubR1 overexpression is transgenic animal evidence, SIRT2/NMN is pleiotropic and studied in BubR1 hypomorphic mice, folate/B12 biomarker improvement is confined to hemodialysis patients, healthy older men did not show micronucleus-index reduction after folic acid supplementation, and the June 7 surveillance pass found no material result-bearing intervention delta.",
+      "source_ids": [
+        "pmid-42156563",
+        "pmid-34099924",
+        "pmid-15475955",
+        "pmid-23242215",
+        "pmid-24825348",
+        "pmid-18469307",
+        "pmid-9230275"
+      ],
+      "finding_ids": [
+        "aging-blood-accrues-predictable-mcas",
+        "expanded-mcas-predict-infection-risk",
+        "bub1b-mutations-cause-human-mosaic-aneuploidy",
+        "bubr1-overexpression-extends-healthy-lifespan-mice",
+        "sirt2-nmn-raises-bubr1-and-extends-bubr1-hypomorphic-lifespan",
+        "folate-b12-reduced-micronuclei-dialysis",
+        "folate-supplementation-did-not-reduce-micronuclei-older-men"
+      ],
+      "gap_note": "A broader failed-program, non-responder, safety, and biomarker-actionability map has not been formalized."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "Safety coverage is mostly conceptual and forecast-level. The public map notes that checkpoint reinforcement could create cancer, fertility, tissue-renewal, or antiproliferative risks, but the staged evidence does not contain long-term human safety, dose-response, reversibility, tissue-specific checkpoint modulation, clonal-expansion, fertility, cancer, immune, or hematopoietic durability data.",
+      "source_ids": [
+        "pmid-23242215",
+        "pmid-24825348",
+        "pmid-18469307",
+        "pmid-9230275"
+      ],
+      "finding_ids": [
+        "bubr1-overexpression-extends-healthy-lifespan-mice",
+        "sirt2-nmn-raises-bubr1-and-extends-bubr1-hypomorphic-lifespan",
+        "folate-b12-reduced-micronuclei-dialysis",
+        "folate-supplementation-did-not-reduce-micronuclei-older-men"
+      ],
+      "gap_note": "Do not strengthen confidence or assign LEV-relevant timing without long-term checkpoint, proliferative, fertility, cancer, clonal, and tissue-renewal safety evidence."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "The June 7 surveillance pass ran a local trial audit and broad ClinicalTrials.gov searches for mCAs, mLOY, micronuclei, folate/B12, BubR1, BUB1B, spindle checkpoint, aneuploidy, and chromosome-stability intervention terms. It found zero trial-watch records and no result-bearing scoped aging-intervention registry.",
+      "gap_note": "Continue watching for result-bearing mCA, mLOY, micronucleus, spindle-checkpoint, BubR1, SIRT2, folate/B12, and chromosome-stability intervention updates."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "The backfill reviewed local bootstrap and surveillance artifacts. The June 7 surveillance pass found review-level or context records around CHIP, infection, CKD/cardiovascular risk, periodontitis, cGAS/genomic instability, NMN, SIRT2, reproductive aneuploidy, and broad NAD biology, but no formal review, guideline, meta-analysis, assay-comparison, or citation-network triangulation has been reconciled against the eight-source public map.",
+      "gap_note": "A future source-completeness pass should compare recent mCA, mLOY, CHIP, micronucleus, aneuploidy, BUB1B/BubR1, SIRT2/NAD, mitotic-checkpoint, and chromosome-instability reviews against the current source map."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes plausible anchors for high-resolution aging-blood mCA mapping, familial-longevity mCA burden, mCA infection-risk prediction, human BUB1B mosaic variegated aneuploidy genetics, BubR1 overexpression mouse lifespan, SIRT2/NMN BubR1 hypomorphic mouse lifespan, folate/B12 dialysis micronucleus reduction, and older-men folate null supplementation.",
+      "source_ids": [
+        "pmid-42156563",
+        "pmid-36988570",
+        "pmid-34099924",
+        "pmid-15475955",
+        "pmid-23242215",
+        "pmid-24825348",
+        "pmid-18469307",
+        "pmid-9230275"
+      ],
+      "finding_ids": [
+        "aging-blood-accrues-predictable-mcas",
+        "lower-mca-burden-in-familial-longevity",
+        "expanded-mcas-predict-infection-risk",
+        "bub1b-mutations-cause-human-mosaic-aneuploidy",
+        "bubr1-overexpression-extends-healthy-lifespan-mice",
+        "sirt2-nmn-raises-bubr1-and-extends-bubr1-hypomorphic-lifespan",
+        "folate-b12-reduced-micronuclei-dialysis",
+        "folate-supplementation-did-not-reduce-micronuclei-older-men"
+      ],
+      "gap_note": "Formal must-include, review-cited, registry-network, and citation-network auditing could still change source-completeness confidence."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The outlook, bootstrap session, surveillance log, and reviews distinguish genome surveillance and chromosome stability from DNA repair enhancement, clonal hematopoiesis risk stratification, mLOY observational studies, Fanconi anemia gene therapy, embryo or reproductive aneuploidy, oncology chromosome instability, broad NAD and mitochondrial support, cGAS genomic-instability response, and one-carbon nutrition that does not change aging-relevant chromosome-stability interpretation.",
+      "source_ids": [
+        "pmid-42156563",
+        "pmid-36988570",
+        "pmid-34099924",
+        "pmid-15475955",
+        "pmid-23242215",
+        "pmid-24825348",
+        "pmid-18469307",
+        "pmid-9230275"
+      ],
+      "finding_ids": [
+        "aging-blood-accrues-predictable-mcas",
+        "lower-mca-burden-in-familial-longevity",
+        "expanded-mcas-predict-infection-risk",
+        "bub1b-mutations-cause-human-mosaic-aneuploidy",
+        "bubr1-overexpression-extends-healthy-lifespan-mice",
+        "sirt2-nmn-raises-bubr1-and-extends-bubr1-hypomorphic-lifespan",
+        "folate-b12-reduced-micronuclei-dialysis",
+        "folate-supplementation-did-not-reduce-micronuclei-older-men"
+      ],
+      "gap_note": "Boundary maintenance remains important because future mCA, CHIP, mLOY, DNA damage, DNA repair, NAD, fertility, oncology, and cytogenetic-biomarker records may be adjacent but not direct chromosome-surveillance intervention evidence."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-42156563",
+    "pmid-36988570",
+    "pmid-34099924",
+    "pmid-15475955",
+    "pmid-23242215",
+    "pmid-24825348",
+    "pmid-18469307",
+    "pmid-9230275"
+  ],
+  "covered_finding_ids": [
+    "aging-blood-accrues-predictable-mcas",
+    "lower-mca-burden-in-familial-longevity",
+    "expanded-mcas-predict-infection-risk",
+    "bub1b-mutations-cause-human-mosaic-aneuploidy",
+    "bubr1-overexpression-extends-healthy-lifespan-mice",
+    "sirt2-nmn-raises-bubr1-and-extends-bubr1-hypomorphic-lifespan",
+    "folate-b12-reduced-micronuclei-dialysis",
+    "folate-supplementation-did-not-reduce-micronuclei-older-men"
+  ],
+  "search_log_summary": "This backfill reviewed local project artifacts: the published Genome Surveillance and Chromosome Stability outlook, May 31 bootstrap session, published candidate bundle, source-fidelity and interpretation reviews, publication event, and June 7 activity-only surveillance session with its local trial audit, ClinicalTrials.gov, PubMed, correction/retraction, preprint, Crossref, registry, boundary, and exclusion logs. No new PubMed, registry, preprint, citation-network, or web source search was run for this assessment.",
+  "source_selection_notes": [
+    "PMID 42156563, PMID 36988570, and PMID 34099924 are the core human mCA biomarker and clinical-relevance anchors, but they are observational and blood-focused.",
+    "PMID 15475955 anchors BUB1B/BubR1 as a human chromosome-surveillance node through disease genetics, not therapy.",
+    "PMID 23242215 and PMID 24825348 are the direct animal intervention anchors through BubR1 and SIRT2/NMN biology, but they remain transgenic, pleiotropic, or BubR1-deficiency model evidence.",
+    "PMID 18469307 is the main positive human intervention biomarker anchor, while PMID 9230275 is the main folate/B12 micronucleus null boundary in older men.",
+    "The June 7 surveillance pass found one same-window JCO PLCO mCA and epigenetic-age abstract that reinforces human biomarker context but does not test intervention or change the public claim.",
+    "The June 7 surveillance pass found no scoped human clinical program, no result-bearing chromosome-surveillance registry, no correction or retraction for baseline PMIDs, and no material public-source delta."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "human-functional-outcomes-absent",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "No staged human intervention improves functional, disease, mortality, immune, cancer-risk, frailty, or durable healthspan outcomes by reducing mCAs, micronuclei, aneuploidy, or chromosome-instability biomarkers.",
+      "priority": "high",
+      "suggested_action": "Keep the public stage at human_biomarker_signal until randomized human evidence links chromosome-instability biomarker improvement to clinical or functional benefit."
+    },
+    {
+      "gap_id": "direct-checkpoint-human-intervention-absent",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "No human program directly targets BubR1, BUB1B, SIRT2-linked BubR1 stabilization, spindle-checkpoint reinforcement, mCA reduction, or chromosome segregation fidelity in an aging-relevant intervention.",
+      "priority": "high",
+      "suggested_action": "Require treated-human target engagement and biomarker evidence before using BubR1 or checkpoint biology to strengthen the human interpretation."
+    },
+    {
+      "gap_id": "checkpoint-safety-durability-unresolved",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Long-term safety, dose, reversibility, tissue renewal, fertility, cancer, clonal expansion, and antiproliferative risks remain unresolved for any checkpoint-reinforcement or chromosome-surveillance modulation strategy.",
+      "priority": "high",
+      "suggested_action": "Do not assign LEV-relevant timing or stronger confidence without long-term mammalian and human safety, durability, and tissue-specific checkpoint evidence."
+    },
+    {
+      "gap_id": "mca-actionability-unproven",
+      "gap_type": "evidence_gap",
+      "category": "human_observational_or_natural_experiment",
+      "description": "Blood mCAs are measurable and clinically relevant, but they may be markers, mediators, or selected clones rather than validated causal targets that can be safely modified for aging benefit.",
+      "priority": "medium",
+      "suggested_action": "Keep mCA evidence framed as biomarker and risk-stratification support until intervention or mediation evidence shows actionability."
+    },
+    {
+      "gap_id": "human-intervention-biomarker-context-narrow",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "The positive human micronucleus intervention signal comes from hemodialysis patients receiving folate/B12, while a healthy older-men folic-acid component did not reduce micronucleus index.",
+      "priority": "medium",
+      "suggested_action": "Avoid generalizing folate/B12 or micronucleus effects beyond deficiency, homocysteine, kidney-disease, and combined-nutrient contexts without replication."
+    },
+    {
+      "gap_id": "animal-translation-and-modality-gap",
+      "gap_type": "evidence_gap",
+      "category": "animal_lifespan_or_healthspan",
+      "description": "BubR1 overexpression and SIRT2/NMN evidence is compelling animal-stage support, but it is transgenic, pleiotropic, or BubR1-deficiency model evidence rather than a controllable human modality.",
+      "priority": "medium",
+      "suggested_action": "Prioritize independently replicated, naturally aged, dose-controlled, target-engagement, and safety-rich animal studies before treating BubR1/SIRT2 as deployable."
+    },
+    {
+      "gap_id": "registry-watchlist-empty-for-scoped-track",
+      "gap_type": "coverage_gap",
+      "category": "active_trials_registries",
+      "description": "The June 7 local trial audit and broad ClinicalTrials.gov searches found no active scoped trial-watch record for a result-bearing chromosome-surveillance or checkpoint-reinforcement aging program.",
+      "priority": "medium",
+      "suggested_action": "Continue ordinary surveillance for mCA, mLOY, micronucleus, BUB1B, BubR1, SIRT2, spindle-checkpoint, aneuploidy, and chromosome-stability endpoint trials."
+    },
+    {
+      "gap_id": "jco-plco-biomarker-abstract-not-staged",
+      "gap_type": "coverage_gap",
+      "category": "human_observational_or_natural_experiment",
+      "description": "The June 7 surveillance pass identified a same-window JCO PLCO abstract associating mCA burden with epigenetic age acceleration, but it was not staged because it did not change public interpretation.",
+      "priority": "medium",
+      "suggested_action": "Consider staging or explicitly excluding this abstract in a later source-completeness pass if human biomarker triangulation becomes a priority."
+    },
+    {
+      "gap_id": "recent-review-triangulation-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "Recent review, systematic-review, guideline, assay-validation, CHIP/mCA/mLOY, micronucleus, BUB1B/BubR1, SIRT2/NAD, and chromosome-instability citation-network triangulation has not been recorded.",
+      "priority": "medium",
+      "suggested_action": "Compare recent review and citation-network coverage against the current eight-source public map in a later source-completeness pass."
+    },
+    {
+      "gap_id": "seminal-anchor-audit-not-formalized",
+      "gap_type": "coverage_gap",
+      "category": "seminal_anchors",
+      "description": "The baseline includes plausible anchors, but no formal must-include, review-cited, registry-network, assay-validation, or citation-network audit has been recorded.",
+      "priority": "medium",
+      "suggested_action": "Run a formal anchor audit before treating coverage as strong or using this track for broader genomic-instability synthesis."
+    },
+    {
+      "gap_id": "taxonomy-boundary-maintenance",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "Genome surveillance and chromosome stability overlaps with DNA repair enhancement, clonal hematopoiesis, mLOY risk, Fanconi anemia gene therapy, reproductive aneuploidy, oncology chromosomal instability, broad NAD biology, cGAS genomic-instability response, and one-carbon nutrition.",
+      "priority": "medium",
+      "suggested_action": "Assign future records by whether they directly change aging-relevant chromosome surveillance, chromosome segregation, mCA, micronucleus, or aneuploidy interpretation rather than adjacent genomic-instability context."
+    }
+  ],
+  "next_coverage_action": "Continue ordinary surveillance for result-bearing mCA, mLOY, micronucleus, spindle-checkpoint, BubR1, BUB1B, SIRT2, folate/B12, chromosome-stability, aneuploidy, clonal-hematopoiesis, and chromosome-surveillance intervention updates; safety and durability data for checkpoint modulation; and evidence that chromosome-instability biomarkers are causally modifiable with clinical benefit. Reserve coverage repair for a later source-completeness pass focused on JCO PLCO biomarker context, clonal-hematopoiesis boundaries, recent-review triangulation, formal seminal-anchor auditing, registry network checks, broader safety maps, and taxonomy maintenance if no material delta appears.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-backfill",
+    "genome-surveillance",
+    "chromosome-stability",
+    "genomic-instability",
+    "human-biomarker-signal",
+    "surveillance-ready"
+  ]
+}
