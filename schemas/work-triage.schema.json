@@ -119,10 +119,24 @@
       ],
       "properties": {
         "top_work_item_id": {
-          "$ref": "./common.schema.json#/$defs/identifier"
+          "anyOf": [
+            {
+              "$ref": "./common.schema.json#/$defs/identifier"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "top_mode": {
-          "$ref": "#/$defs/workMode"
+          "anyOf": [
+            {
+              "$ref": "#/$defs/workMode"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "active_editorial_count": {
           "type": "integer",

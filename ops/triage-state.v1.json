@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-13T14:19:37.766Z",
+  "generated_at": "2026-06-13T14:52:54.660Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-13T14:19:37.663Z",
-    "research_priority_queue_updated_at": "2026-06-13T14:19:37.663Z",
+    "research_coverage_status_updated_at": "2026-06-13T14:52:54.555Z",
+    "research_priority_queue_updated_at": "2026-06-13T14:52:54.556Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
     "surveillance_recent_queue_count": 38,
     "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 1,
+    "coverage_assessment_backlog_count": 0,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
   },
@@ -33,59 +33,16 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-assessment-backfill-cytokine-and-inflammasome-modulation",
-    "top_mode": "coverage_assessment_backfill",
+    "top_work_item_id": null,
+    "top_mode": null,
     "active_editorial_count": 0,
     "ready_research_count": 0,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
-      "38 surveillance track(s) are hidden from ordinary rotation until their cooldown expires."
+      "38 surveillance track(s) are hidden from ordinary rotation until their cooldown expires.",
+      "No ready operational work items are currently queued."
     ]
   },
-  "work_items": [
-    {
-      "rank": 1,
-      "item_id": "coverage-assessment-backfill-cytokine-and-inflammasome-modulation",
-      "mode": "coverage_assessment_backfill",
-      "domain": "research",
-      "priority_tier": "soon",
-      "status": "ready",
-      "title": "Backfill coverage assessment for Cytokine and Inflammasome Modulation",
-      "rationale": "1 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
-      "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
-      "track_id": "cytokine-and-inflammasome-modulation",
-      "hallmark_id": "chronic_inflammation",
-      "references": [
-        {
-          "record_type": "track",
-          "record_id": "cytokine-and-inflammasome-modulation"
-        },
-        {
-          "record_type": "hallmark",
-          "record_id": "chronic_inflammation"
-        }
-      ],
-      "runbook_path": "docs/coverage-assessment.md",
-      "source_paths": [
-        "research/backlog/track-priority.v1.json",
-        "research/state/coverage-status.v1.json",
-        "docs/coverage-assessment.md"
-      ],
-      "signals": [
-        {
-          "name": "coverage_assessment_backlog_count",
-          "value": 1
-        },
-        {
-          "name": "generated_surveillance_queue_rank",
-          "value": 30
-        },
-        {
-          "name": "track_next_mode",
-          "value": "surveillance"
-        }
-      ]
-    }
-  ]
+  "work_items": []
 }

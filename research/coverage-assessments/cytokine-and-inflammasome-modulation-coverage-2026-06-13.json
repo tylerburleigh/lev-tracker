@@ -1,0 +1,375 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "cytokine-and-inflammasome-modulation-coverage-2026-06-13",
+  "name": "Cytokine and Inflammasome Modulation Coverage Assessment for June 13, 2026",
+  "short_name": "Cytokine inflammasome coverage",
+  "track_id": "cytokine-and-inflammasome-modulation",
+  "hallmark_id": "chronic_inflammation",
+  "assessment_type": "manual",
+  "assessed_at": "2026-06-13T14:49:32Z",
+  "assessment_window": {
+    "from": "2026-05-31T19:20:00Z",
+    "to": "2026-06-08T10:23:46Z",
+    "basis": "Backfill assessment of the published May 31 Cytokine and Inflammasome Modulation baseline plus the June 8 activity-only surveillance session; no new external source search was run for this assessment."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is adequate for the current low-confidence durable_disease_or_mortality_relevance public claim because the local map contains large human cardiovascular outcome trials for IL-1beta inhibition and low-dose colchicine, CANTOS exploratory lung-cancer and frailty-boundary analyses, reproducible IL-6 biomarker movement with ziltivekimab and clazakizumab, early direct oral NLRP3 human safety evidence with dapansutrile, ZEUS phase 3 no-results watch context, and a June 8 surveillance pass that rechecked trial registries and found no posted ZEUS, POSIBIL6ESKD, direct NLRP3, frailty, broad aging-functional, correction, or retraction result. Coverage is not strong because human benefit remains cardiovascular secondary-prevention and high-risk-population specific, direct frailty evidence is null, IL-6 outcome confirmation is pending, direct NLRP3 evidence is early and short, long-term preventive safety is unresolved, no-results registry completeness is not fully staged, animal lifespan and human observational layers are not systematically mapped, and recent-review, formal seminal-anchor, and citation-network triangulation are incomplete.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-05-31-cytokine-and-inflammasome-modulation-bootstrap",
+      "2026-06-08-cytokine-and-inflammasome-modulation-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "cytokine-and-inflammasome-modulation-bootstrap-2026-05-31"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-cytokine-and-inflammasome-modulation-source-fidelity-r1",
+      "evidence-review-cytokine-and-inflammasome-modulation-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-cytokine-and-inflammasome-modulation-bootstrap-2026-05-31-2026-05-31t19-43-59-521z"
+    ],
+    "outlook_ids": [
+      "track-cytokine-and-inflammasome-modulation-outlook",
+      "hallmark-chronic-inflammation-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "The baseline contains multiple human interventional anchors: CANTOS canakinumab for recurrent cardiovascular outcomes, CANTOS frailty and lung-cancer analyses, LoDoCo2 and COLCOT low-dose colchicine cardiovascular outcome trials, RESCUE ziltivekimab phase 2 IL-6 biomarker movement, clazakizumab dialysis phase 2b IL-6 biomarker movement, dapansutrile HFrEF phase 1B NLRP3 safety and pharmacodynamic evidence, and ZEUS phase 3 ziltivekimab no-results watch context.",
+      "source_ids": [
+        "pmid-28845751",
+        "pmid-28855077",
+        "pmid-37927208",
+        "pmid-32865380",
+        "pmid-31733140",
+        "pmid-34015342",
+        "pmid-38796655",
+        "pmid-33235030",
+        "pmid-41369941",
+        "nct-05021835"
+      ],
+      "finding_ids": [
+        "canakinumab-reduced-recurrent-cardiovascular-events",
+        "canakinumab-exploratory-lung-cancer-signal",
+        "canakinumab-did-not-prevent-frailty",
+        "colchicine-reduced-chronic-coronary-events",
+        "colchicine-post-mi-reduced-ischemic-events-safety-signal",
+        "ziltivekimab-reduced-inflammatory-thrombotic-biomarkers",
+        "clazakizumab-reduced-il6-biomarkers-dialysis",
+        "dapansutrile-hfref-early-safety-functional-signal",
+        "zeus-ziltivekimab-outcomes-trial-active-no-results"
+      ],
+      "gap_note": "Coverage supports disease-result maturity, not broad healthy-aging or LEV-relevant rejuvenation, because outcomes are mostly cardiovascular secondary prevention and high-risk inflammatory disease contexts."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "thin",
+      "rationale": "The assessed public map is trial-led. The June 8 surveillance pass noted contextual pharmacovigilance, retrospective colchicine, CANTOS biomarker stratification, and disease-boundary records, but no systematic observational, real-world, natural-experiment, or target-population safety map has been reconciled against the track.",
+      "gap_note": "Future source-completeness work could decide whether observational infection, mortality, frailty, inflammation, CKD, cardiovascular, cancer, or pharmacovigilance data add useful safety and target-population boundaries without weakening causal interpretation."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "not_checked",
+      "rationale": "The current public claim does not depend on animal lifespan or healthspan evidence, and the assessed artifacts do not systematically map NLRP3, IL-1beta, IL-6, colchicine, or cytokine-modulation animal aging evidence.",
+      "gap_note": "This is not blocking for a human disease-result baseline, but future source-completeness work could compare animal inflammasome or inflammaging intervention evidence against human trial interpretation."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "Mechanistic coverage includes IL-1beta inhibition without lipid lowering, colchicine as broad anti-inflammatory therapy in coronary disease, IL-6 ligand inhibition with ziltivekimab and clazakizumab lowering hsCRP and thrombotic or inflammatory biomarkers, and direct oral NLRP3 inhibition with dapansutrile. The support map keeps these mechanisms separate rather than merging canakinumab, colchicine, IL-6 antibodies, and NLRP3 inhibitors into one class effect.",
+      "source_ids": [
+        "pmid-28845751",
+        "pmid-32865380",
+        "pmid-31733140",
+        "pmid-34015342",
+        "pmid-38796655",
+        "pmid-33235030",
+        "pmid-41369941",
+        "nct-05021835"
+      ],
+      "finding_ids": [
+        "canakinumab-reduced-recurrent-cardiovascular-events",
+        "colchicine-reduced-chronic-coronary-events",
+        "colchicine-post-mi-reduced-ischemic-events-safety-signal",
+        "ziltivekimab-reduced-inflammatory-thrombotic-biomarkers",
+        "clazakizumab-reduced-il6-biomarkers-dialysis",
+        "dapansutrile-hfref-early-safety-functional-signal",
+        "zeus-ziltivekimab-outcomes-trial-active-no-results"
+      ],
+      "gap_note": "Mechanistic coverage is not strong because biomarker lowering, broad anti-inflammatory action, and direct inflammasome inhibition do not automatically translate into frailty, multimorbidity, immune resilience, or safe prevention."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "strong",
+      "rationale": "The public map captures several key limits: CANTOS did not prevent incident frailty, the lung-cancer signal is exploratory, colchicine evidence is broad anti-inflammatory rather than selective cytokine blockade, ziltivekimab and clazakizumab are biomarker rather than outcome evidence so far, ZEUS has no posted results, dapansutrile is small and short phase 1B evidence, and the June 8 surveillance pass found no material result-bearing public delta.",
+      "source_ids": [
+        "pmid-28855077",
+        "pmid-37927208",
+        "pmid-32865380",
+        "pmid-31733140",
+        "pmid-34015342",
+        "pmid-38796655",
+        "pmid-33235030",
+        "pmid-41369941",
+        "nct-05021835"
+      ],
+      "finding_ids": [
+        "canakinumab-exploratory-lung-cancer-signal",
+        "canakinumab-did-not-prevent-frailty",
+        "colchicine-reduced-chronic-coronary-events",
+        "colchicine-post-mi-reduced-ischemic-events-safety-signal",
+        "ziltivekimab-reduced-inflammatory-thrombotic-biomarkers",
+        "clazakizumab-reduced-il6-biomarkers-dialysis",
+        "dapansutrile-hfref-early-safety-functional-signal",
+        "zeus-ziltivekimab-outcomes-trial-active-no-results"
+      ],
+      "gap_note": "Limiting coverage is strong for the current public read, though broader failed-program, nonresponder, and aging-functional null maps are not formalized."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "adequate",
+      "rationale": "The map preserves major safety boundaries: fatal infections in CANTOS, serious pneumonia signal in COLCOT, noncardiovascular mortality signal in LoDoCo2, dose-related serious-infection caution in clazakizumab dialysis testing, and the general need for infection, lipid, neutrophil, platelet, kidney, and laboratory safety monitoring before chronic preventive use.",
+      "source_ids": [
+        "pmid-28845751",
+        "pmid-32865380",
+        "pmid-31733140",
+        "pmid-38796655",
+        "pmid-33235030",
+        "pmid-41369941"
+      ],
+      "finding_ids": [
+        "canakinumab-reduced-recurrent-cardiovascular-events",
+        "colchicine-reduced-chronic-coronary-events",
+        "colchicine-post-mi-reduced-ischemic-events-safety-signal",
+        "clazakizumab-reduced-il6-biomarkers-dialysis",
+        "dapansutrile-hfref-early-safety-functional-signal",
+        "zeus-ziltivekimab-outcomes-trial-active-no-results"
+      ],
+      "gap_note": "Coverage is not strong because long-term preventive safety in lower-risk older adults, durability after intervention, infection and malignancy surveillance, and noncardiovascular mortality tradeoffs remain unresolved."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes ZEUS registry context, and the June 8 surveillance pass rechecked seven registry-linked interventional studies. ZEUS remained active not recruiting with no posted results and an estimated June 9, 2026 completion date; POSIBIL6ESKD emerged as recruiting clazakizumab phase 2b/3 dialysis cardiovascular outcomes context with no posted results; and broad searches found other no-results ziltivekimab, clazakizumab, dapansutrile, colchicine, and cytokine/inflammasome registries without a material post-baseline result.",
+      "source_ids": [
+        "nct-05021835",
+        "pmid-28845751",
+        "pmid-32865380",
+        "pmid-31733140",
+        "pmid-34015342",
+        "pmid-38796655",
+        "pmid-33235030"
+      ],
+      "finding_ids": [
+        "zeus-ziltivekimab-outcomes-trial-active-no-results",
+        "canakinumab-reduced-recurrent-cardiovascular-events",
+        "colchicine-reduced-chronic-coronary-events",
+        "colchicine-post-mi-reduced-ischemic-events-safety-signal",
+        "ziltivekimab-reduced-inflammatory-thrombotic-biomarkers",
+        "clazakizumab-reduced-il6-biomarkers-dialysis",
+        "dapansutrile-hfref-early-safety-functional-signal"
+      ],
+      "gap_note": "Registry coverage is adequate for ordinary surveillance, but no-results records such as POSIBIL6ESKD, ARTEMIS, HERMES, COHERENT, and other cytokine or colchicine programs are not fully staged."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "The backfill reviewed local bootstrap and surveillance artifacts. The June 8 surveillance pass found same-window review or meta-analysis context, including colchicine cardiovascular review/meta-analysis records and NLRP3 or neuroinflammation reviews, but no formal review, guideline, meta-analysis, safety synthesis, or citation-network triangulation has been reconciled against the ten-source public map.",
+      "gap_note": "A future source-completeness pass should compare recent colchicine cardiovascular meta-analyses, canakinumab safety and cancer biomarker papers, IL-6 inhibition reviews, NLRP3 inhibitor reviews, CKD/dialysis inflammation reviews, and geroscience inflammaging reviews against the current map."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes plausible anchors for CANTOS cardiovascular outcomes, CANTOS lung-cancer exploratory signal, CANTOS frailty null, LoDoCo2 chronic coronary disease, COLCOT post-MI colchicine, RESCUE ziltivekimab biomarkers, clazakizumab dialysis biomarkers, dapansutrile HFrEF NLRP3 phase 1B evidence, ZEUS design, and ZEUS registry status.",
+      "source_ids": [
+        "pmid-28845751",
+        "pmid-28855077",
+        "pmid-37927208",
+        "pmid-32865380",
+        "pmid-31733140",
+        "pmid-34015342",
+        "pmid-38796655",
+        "pmid-33235030",
+        "pmid-41369941",
+        "nct-05021835"
+      ],
+      "finding_ids": [
+        "canakinumab-reduced-recurrent-cardiovascular-events",
+        "canakinumab-exploratory-lung-cancer-signal",
+        "canakinumab-did-not-prevent-frailty",
+        "colchicine-reduced-chronic-coronary-events",
+        "colchicine-post-mi-reduced-ischemic-events-safety-signal",
+        "ziltivekimab-reduced-inflammatory-thrombotic-biomarkers",
+        "clazakizumab-reduced-il6-biomarkers-dialysis",
+        "dapansutrile-hfref-early-safety-functional-signal",
+        "zeus-ziltivekimab-outcomes-trial-active-no-results"
+      ],
+      "gap_note": "Formal must-include, review-cited, registry-network, guideline, safety-synthesis, and citation-network auditing could still change source-completeness confidence."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The outlook, bootstrap session, surveillance log, and reviews distinguish canakinumab, colchicine, IL-6 ligand antibodies, and NLRP3 inhibitors as distinct mechanisms; keep cardiovascular secondary prevention separate from broad geroscience; treat ZEUS and POSIBIL6ESKD as no-results activity; and separate cytokine/inflammasome modulation from senomorphics, clonal hematopoiesis/TET2 programs, transplant immunology, sepsis, psoriasis, neuroinflammation reviews, oncology CAR-T toxicity, and generic inflammatory biomarkers.",
+      "source_ids": [
+        "pmid-28845751",
+        "pmid-28855077",
+        "pmid-37927208",
+        "pmid-32865380",
+        "pmid-31733140",
+        "pmid-34015342",
+        "pmid-38796655",
+        "pmid-33235030",
+        "pmid-41369941",
+        "nct-05021835"
+      ],
+      "finding_ids": [
+        "canakinumab-reduced-recurrent-cardiovascular-events",
+        "canakinumab-exploratory-lung-cancer-signal",
+        "canakinumab-did-not-prevent-frailty",
+        "colchicine-reduced-chronic-coronary-events",
+        "colchicine-post-mi-reduced-ischemic-events-safety-signal",
+        "ziltivekimab-reduced-inflammatory-thrombotic-biomarkers",
+        "clazakizumab-reduced-il6-biomarkers-dialysis",
+        "dapansutrile-hfref-early-safety-functional-signal",
+        "zeus-ziltivekimab-outcomes-trial-active-no-results"
+      ],
+      "gap_note": "Boundary maintenance remains important because future records may belong primarily to senomorphic, transposon/CHIP, cardiovascular disease, CKD, transplant, infection, oncology, neuroinflammation, or broad immune-modulation tracks."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-28845751",
+    "pmid-28855077",
+    "pmid-37927208",
+    "pmid-32865380",
+    "pmid-31733140",
+    "pmid-34015342",
+    "pmid-38796655",
+    "pmid-33235030",
+    "pmid-41369941",
+    "nct-05021835"
+  ],
+  "covered_finding_ids": [
+    "canakinumab-reduced-recurrent-cardiovascular-events",
+    "canakinumab-exploratory-lung-cancer-signal",
+    "canakinumab-did-not-prevent-frailty",
+    "colchicine-reduced-chronic-coronary-events",
+    "colchicine-post-mi-reduced-ischemic-events-safety-signal",
+    "ziltivekimab-reduced-inflammatory-thrombotic-biomarkers",
+    "clazakizumab-reduced-il6-biomarkers-dialysis",
+    "dapansutrile-hfref-early-safety-functional-signal",
+    "zeus-ziltivekimab-outcomes-trial-active-no-results"
+  ],
+  "search_log_summary": "This backfill reviewed local project artifacts: the published Cytokine and Inflammasome Modulation outlook, May 31 bootstrap session, published candidate bundle, source-fidelity and interpretation reviews, publication event, and June 8 activity-only surveillance session with its local trial audit, ClinicalTrials.gov, ANZCTR, PubMed, correction/retraction, preprint, Crossref, web, registry, boundary, and exclusion logs. No new PubMed, registry, preprint, citation-network, or web source search was run for this assessment.",
+  "source_selection_notes": [
+    "PMID 28845751 is the main targeted cytokine cardiovascular outcome anchor; PMID 28855077 and PMID 37927208 preserve the exploratory lung-cancer signal and frailty null boundary.",
+    "PMID 32865380 and PMID 31733140 provide replicated low-dose colchicine cardiovascular outcome support, but colchicine is broad anti-inflammatory therapy and carries safety caveats.",
+    "PMID 34015342 and PMID 38796655 provide IL-6 biomarker target-engagement evidence, while PMID 41369941 and NCT05021835 keep ZEUS outcome testing visible as no-results momentum.",
+    "PMID 33235030 is the direct oral NLRP3 human foothold, but it is short phase 1B HFrEF safety and pharmacodynamic evidence rather than mature efficacy.",
+    "The June 8 surveillance pass found POSIBIL6ESKD NCT05485961 recruiting as clazakizumab phase 2b/3 dialysis cardiovascular outcomes context, plus other no-results ziltivekimab and colchicine registries, but no material posted result.",
+    "The June 8 surveillance pass found no broad aging-functional result, no posted ZEUS result, no direct NLRP3 outcome result, no correction or retraction for baseline PMIDs, and no public-stage-changing evidence."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "aging-functional-benefit-not-established",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "The strongest outcome evidence is cardiovascular secondary prevention in high-risk disease populations, while direct frailty evidence from CANTOS was null and no intervention has shown broad older-adult function, immune resilience, multimorbidity, mortality, or LEV-relevant benefit.",
+      "priority": "high",
+      "suggested_action": "Keep the public read low-confidence and disease-result specific until targeted cytokine or inflammasome trials improve aging-relevant functional or multimorbidity endpoints."
+    },
+    {
+      "gap_id": "long-term-preventive-safety-unresolved",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Fatal infection, serious pneumonia, noncardiovascular mortality, dose-related infection, and laboratory safety concerns remain central blockers for long-term preventive use in lower-risk or otherwise healthy older adults.",
+      "priority": "high",
+      "suggested_action": "Do not strengthen confidence without long-duration infection, malignancy, noncardiovascular mortality, lipid, neutrophil, platelet, kidney, and laboratory safety data in relevant populations."
+    },
+    {
+      "gap_id": "il6-outcome-confirmation-pending",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "Ziltivekimab and clazakizumab strongly move IL-6-linked biomarkers, but ZEUS and POSIBIL6ESKD have not posted outcome results, so IL-6 benefit remains unconfirmed at the clinical outcome layer.",
+      "priority": "high",
+      "suggested_action": "Continue watch on ZEUS NCT05021835 and POSIBIL6ESKD NCT05485961, and only update public claims when outcome and safety results are posted or published."
+    },
+    {
+      "gap_id": "direct-nlrp3-evidence-early",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "Dapansutrile supplies direct oral NLRP3 human safety and pharmacodynamic footholds, but the staged evidence is small, short, and not powered for clinical or aging-relevant efficacy.",
+      "priority": "medium",
+      "suggested_action": "Require randomized phase 2 or phase 3 NLRP3 inhibitor trials with prespecified functional, cardiovascular, frailty, or multimorbidity endpoints before strengthening the direct inflammasome read."
+    },
+    {
+      "gap_id": "mechanism-class-heterogeneity",
+      "gap_type": "evidence_gap",
+      "category": "mechanistic",
+      "description": "Canakinumab, colchicine, ziltivekimab, clazakizumab, and dapansutrile differ substantially in targets, specificity, populations, safety, and outcome maturity, so class-level claims would overgeneralize.",
+      "priority": "medium",
+      "suggested_action": "Keep mechanism-specific support maps and avoid transferring evidence between IL-1beta, broad colchicine, IL-6, and NLRP3 programs without direct endpoint data."
+    },
+    {
+      "gap_id": "animal-aging-map-not-checked",
+      "gap_type": "coverage_gap",
+      "category": "animal_lifespan_or_healthspan",
+      "description": "The current assessment does not systematically map animal lifespan, healthspan, frailty, immune-resilience, NLRP3, IL-1beta, IL-6, colchicine, or inflammaging intervention evidence.",
+      "priority": "medium",
+      "suggested_action": "Use a later source-completeness pass to decide whether animal inflammaging evidence adds useful mechanistic or translational boundaries."
+    },
+    {
+      "gap_id": "observational-safety-map-not-systematic",
+      "gap_type": "coverage_gap",
+      "category": "human_observational_or_natural_experiment",
+      "description": "Real-world pharmacovigilance, infection, frailty, cancer, CKD, cardiovascular, and mortality data for chronic cytokine suppression have not been systematically mapped.",
+      "priority": "medium",
+      "suggested_action": "Review observational and pharmacovigilance evidence in a future source-completeness pass without treating it as randomized efficacy evidence."
+    },
+    {
+      "gap_id": "no-results-registry-layer-incomplete",
+      "gap_type": "coverage_gap",
+      "category": "active_trials_registries",
+      "description": "ZEUS is staged, but POSIBIL6ESKD, ARTEMIS, HERMES, COHERENT, acute-MI plaque trials, and other no-results cytokine, colchicine, IL-6, or inflammasome registries are not fully represented as staged records.",
+      "priority": "medium",
+      "suggested_action": "Consider trial-layer maintenance if no-results registry completeness becomes a priority, especially after ZEUS completion status changes or results are posted."
+    },
+    {
+      "gap_id": "recent-review-triangulation-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "Recent colchicine cardiovascular meta-analyses, canakinumab safety and cancer biomarker papers, IL-6 inhibition reviews, NLRP3 inhibitor reviews, CKD/dialysis inflammation reviews, and geroscience inflammaging reviews have not been formally triangulated.",
+      "priority": "medium",
+      "suggested_action": "Compare review and meta-analysis literature against the current source map in a later source-completeness pass."
+    },
+    {
+      "gap_id": "seminal-anchor-audit-not-formalized",
+      "gap_type": "coverage_gap",
+      "category": "seminal_anchors",
+      "description": "The baseline includes plausible anchors, but no formal must-include, guideline-cited, review-cited, registry-network, safety-synthesis, or citation-network audit has been recorded.",
+      "priority": "medium",
+      "suggested_action": "Run a formal anchor audit before treating coverage as strong or using this track for broader chronic-inflammation synthesis."
+    },
+    {
+      "gap_id": "taxonomy-boundary-maintenance",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "Cytokine and inflammasome modulation overlaps with senomorphics, immune rejuvenation, clonal hematopoiesis and TET2 programs, cardiovascular disease prevention, CKD and dialysis inflammation, transplant immunology, sepsis, psoriasis, neuroinflammation, oncology immunotoxicity, and generic inflammatory biomarker records.",
+      "priority": "medium",
+      "suggested_action": "Assign future records by target, intervention mechanism, population, endpoint, and whether the evidence changes this track rather than neighboring immune, senomorphic, CHIP, cardiovascular, CKD, or disease-specific tracks."
+    }
+  ],
+  "next_coverage_action": "Continue ordinary surveillance for ZEUS NCT05021835 posted results, POSIBIL6ESKD NCT05485961 status and outcomes, other IL-6 outcome trials, direct NLRP3 inhibitor phase 2 or phase 3 results, colchicine safety and outcomes, canakinumab safety and disease-boundary updates, broad aging-functional or frailty outcomes, and long-term preventive safety. Reserve coverage repair for a later source-completeness pass focused on no-results registry completeness, observational and pharmacovigilance safety maps, animal inflammaging evidence, recent-review triangulation, formal seminal-anchor auditing, and taxonomy maintenance if no material delta appears.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-backfill",
+    "cytokine-modulation",
+    "inflammasome-modulation",
+    "chronic-inflammation",
+    "disease-result",
+    "surveillance-ready"
+  ]
+}

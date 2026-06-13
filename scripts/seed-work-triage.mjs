@@ -744,8 +744,8 @@ async function main() {
       ]
     },
     summary: {
-      top_work_item_id: topItem.item_id,
-      top_mode: topItem.mode,
+      top_work_item_id: topItem?.item_id ?? null,
+      top_mode: topItem?.mode ?? null,
       active_editorial_count: editorialItems.length,
       ready_research_count:
         priorityQueue.bootstrap_queue.length +
@@ -754,7 +754,8 @@ async function main() {
       data_hardening_count: missingInterventions.missingIdCount > 0 ? 1 : 0,
       notes: [
         "Roadmap remains narrative context; this file is the operational dispatcher.",
-        `${priorityQueue.surveillance_recent_queue?.length ?? 0} surveillance track(s) are hidden from ordinary rotation until their cooldown expires.`
+        `${priorityQueue.surveillance_recent_queue?.length ?? 0} surveillance track(s) are hidden from ordinary rotation until their cooldown expires.`,
+        ...(topItem ? [] : ["No ready operational work items are currently queued."])
       ]
     },
     work_items: workItems
