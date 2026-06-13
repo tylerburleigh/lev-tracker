@@ -1,14 +1,14 @@
 # Artifact Retention Report
 
-Generated: 2026-06-13T18:03:43.305Z
+Generated: 2026-06-13T18:10:53.448Z
 
 This report classifies file-backed artifacts by retention role. It is non-destructive: it identifies pruning and compression candidates but does not delete or rewrite files.
 
 ## Summary
 
 - Artifact roots scanned: data, research, ops, extra.
-- Artifact files classified: 2869.
-- Artifact footprint: 9.0 MB.
+- Artifact files classified: 2870.
+- Artifact footprint: 9.9 MB.
 - Unclassified artifacts: 0.
 - Active staged intermediate files: 0.
 - Terminal staged intermediate files: 1200.
@@ -23,6 +23,7 @@ This report classifies file-backed artifacts by retention role. It is non-destru
 | Publication Audit Trail | retain | 271 | 1.8 MB | Keep to explain review, approval, and publication history. |
 | Staged Record Manifests | retain_for_archive | 1 | 1.2 MB | Keep as the hash/index layer required before terminal staged JSON can be compressed. |
 | Research Session Logs | retain_then_summarize | 88 | 843 KB | Keep until source discovery and excluded-source rationale are synthesized elsewhere. |
+| Staged Record Archives | retain_for_archive | 1 | 839 KB | Keep packed changed staged bodies required to reconstruct terminal staged records that differ from live records. |
 | Current Coverage Synthesis | retain | 38 | 670 KB | Keep as the latest source-completeness judgment for each track. |
 | Superseded Coverage Synthesis | compress_candidate | 16 | 232 KB | Keep for now; later summarize into the latest assessment revision history. |
 | Generated Planning State | current_copy_only | 3 | 122 KB | Keep current files, but do not preserve old snapshots unless debugging a generation change. |

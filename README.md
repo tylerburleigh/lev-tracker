@@ -86,6 +86,8 @@ The first pass is intentionally small:
   Compares terminal staged JSON with current live records to decide whether manifest-only archival would lose historical staged bodies.
 - `npm run manifest:staged-records`
   Generates or checks the hash manifest for terminal staged records before any future staged JSON compression.
+- `npm run archive:staged-records`
+  Generates or checks the archive pack containing changed terminal staged JSON bodies that cannot be represented by manifest-only archival.
 
 ## Research Commands
 

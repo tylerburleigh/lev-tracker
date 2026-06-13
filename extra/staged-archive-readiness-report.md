@@ -1,6 +1,6 @@
 # Staged Archive Readiness Report
 
-Generated: 2026-06-13T18:03:43.333Z
+Generated: 2026-06-13T18:10:46.814Z
 
 This report compares terminal staged records against current live target files. It is non-destructive: it decides whether manifest-only archival would preserve enough, or whether some staged JSON bodies still need to be retained.
 

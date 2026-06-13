@@ -13,6 +13,7 @@
     "audit:artifacts": "node scripts/artifact-retention-report.mjs",
     "audit:staged-archive-readiness": "node scripts/staged-archive-readiness.mjs",
     "manifest:staged-records": "node scripts/staged-records-manifest.mjs",
+    "archive:staged-records": "node scripts/staged-records-archive.mjs",
     "sync:research-planning": "node scripts/seed-research-planning.mjs && node scripts/seed-work-triage.mjs",
     "sync:work-triage": "node scripts/seed-work-triage.mjs",
     "lint:public-copy": "node scripts/public-copy-lint.mjs",

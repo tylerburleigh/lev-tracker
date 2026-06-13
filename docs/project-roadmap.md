@@ -505,7 +505,8 @@ Research runs should continue to follow `docs/research-ops-state.md`: one track 
    - Note: `npm run manifest:staged-records` writes `data/staged-record-manifests/terminal-bundles.v1.json`, a deterministic hash/index manifest for terminal staged records.
    - Note: `npm run audit:staged-archive-readiness` compares terminal staged files with current live targets and reports whether manifest-only archival would lose changed staged bodies.
    - Note: the current readiness report finds 1008 staged files identical to current live targets and 192 staged files that differ, so manifest-only archival is insufficient for the whole staged tree.
-   - Remaining: design an archive pack that keeps changed staged bodies while allowing identical staged files to be represented by manifest hashes.
+   - Note: `npm run archive:staged-records` writes `data/staged-record-archives/changed-terminal-bodies.v1.json`, retaining the changed staged JSON bodies while omitting identical staged files already represented by manifest hashes.
+   - Remaining: design and review the actual prune step for identical terminal staged JSON files.
 
 ## Priority 5: Documentation Cleanup
 
@@ -536,6 +537,7 @@ npm run audit:data:sustainability -- --write
 npm run audit:artifacts -- --write
 npm run manifest:staged-records -- --write
 npm run audit:staged-archive-readiness -- --write
+npm run archive:staged-records -- --write
 npm run typecheck
 npm run build
 npm run research:bundle -- smoke --bundle <bundle-id> --base-url <local-url>

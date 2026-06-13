@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./staged-records-archive.schema.json",
+  "title": "Changed terminal staged record bodies archive",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "archive_type",
+    "generated_by",
+    "source_manifest_path",
+    "source_manifest_sha256",
+    "summary",
+    "entries"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "archive_type": {
+      "const": "changed_terminal_staged_bodies"
+    },
+    "generated_by": {
+      "type": "string"
+    },
+    "source_manifest_path": {
+      "type": "string"
+    },
+    "source_manifest_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "terminal_bundle_count",
+        "total_staged_file_count",
+        "identical_to_live_count",
+        "archived_body_count",
+        "archived_body_bytes",
+        "missing_live_target_count",
+        "manifest_drift_count",
+        "legacy_unstaged_change_count"
+      ],
+      "properties": {
+        "terminal_bundle_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "total_staged_file_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "identical_to_live_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "archived_body_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "archived_body_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "missing_live_target_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "manifest_drift_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "legacy_unstaged_change_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/archiveEntry"
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "nullableSha256": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/sha256"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "nullableInteger": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "archiveEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bundle_id",
+        "change_id",
+        "archive_reason",
+        "target_record_type",
+        "target_record_id",
+        "target_file_path",
+        "target_file_exists",
+        "target_file_sha256",
+        "target_file_bytes",
+        "staged_file_path",
+        "staged_file_sha256",
+        "staged_file_bytes",
+        "staged_record"
+      ],
+      "properties": {
+        "bundle_id": {
+          "$ref": "./common.schema.json#/$defs/candidateBundleRef"
+        },
+        "change_id": {
+          "$ref": "./common.schema.json#/$defs/identifier"
+        },
+        "archive_reason": {
+          "enum": [
+            "differs_from_live",
+            "missing_live_target"
+          ]
+        },
+        "target_record_type": {
+          "$ref": "./common.schema.json#/$defs/recordType"
+        },
+        "target_record_id": {
+          "$ref": "./common.schema.json#/$defs/identifier"
+        },
+        "target_file_path": {
+          "type": "string"
+        },
+        "target_file_exists": {
+          "type": "boolean"
+        },
+        "target_file_sha256": {
+          "$ref": "#/$defs/nullableSha256"
+        },
+        "target_file_bytes": {
+          "$ref": "#/$defs/nullableInteger"
+        },
+        "staged_file_path": {
+          "type": "string"
+        },
+        "staged_file_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "staged_file_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "staged_record": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    }
+  }
+}

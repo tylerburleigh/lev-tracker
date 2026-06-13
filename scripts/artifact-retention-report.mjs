@@ -35,6 +35,11 @@ const categories = {
     retention: "retain_for_archive",
     action: "Keep as the hash/index layer required before terminal staged JSON can be compressed."
   },
+  staged_record_archive: {
+    label: "Staged Record Archives",
+    retention: "retain_for_archive",
+    action: "Keep packed changed staged bodies required to reconstruct terminal staged records that differ from live records."
+  },
   orphan_staged_intermediate: {
     label: "Orphan Staged Intermediate",
     retention: "review",
@@ -333,6 +338,7 @@ async function classifyArtifacts() {
   ].filter((filePath) => existsSync(workspacePath(filePath))));
 
   add("staged_record_manifest", await walkFiles("data/staged-record-manifests"));
+  add("staged_record_archive", await walkFiles("data/staged-record-archives"));
 
   const generatedReportPaths = [
     "extra/artifact-retention-report.md",
