@@ -1,0 +1,327 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "senomorphics-coverage-2026-06-13",
+  "name": "Senomorphics Coverage Assessment for June 13, 2026",
+  "short_name": "Senomorphics coverage",
+  "track_id": "senomorphics",
+  "hallmark_id": "cellular_senescence",
+  "assessment_type": "manual",
+  "assessed_at": "2026-06-13T12:26:00Z",
+  "assessment_window": {
+    "from": "2026-06-01T14:45:00Z",
+    "to": "2026-06-07T16:41:34.635Z",
+    "basis": "Backfill assessment of the published June 1 senomorphics baseline plus the June 7 field-change update; no new external source search was run for this assessment."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is adequate for the current low-confidence human_biomarker_signal public claim because the local map contains two direct but small human senescence/SASP biomarker anchors, a short-term oral rapamycin human safety and no-functional-change boundary, aged-mouse functional and lifespan or healthspan signals, coherent mTOR, NF-kB, JAK, and calcium-homeostasis SASP mechanisms, and a June 7 surveillance pass that added a material mianserin preclinical source while refreshing registry context. Coverage is not strong because treated-human evidence remains local, short, or acute-stress focused; candidate interventions are pleiotropic and overlap nutrient-sensing, inflammatory, serotonin-receptor, and calcium-homeostasis biology; no human trial connects senescence/SASP biomarker movement to durable function, tissue resilience, disease modification, mortality, or LEV-relevant outcomes; chronic SASP suppression may interfere with repair, immune surveillance, or tumor suppression; active registries have no posted senomorphic efficacy results; and recent-review, observational, and formal seminal-anchor triangulation has not been recorded. Ordinary surveillance can continue.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-06-01-senomorphics-bootstrap",
+      "2026-06-07-senomorphics-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "senomorphics-bootstrap-2026-06-01",
+      "senomorphics-surveillance-2026-06-07"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-senomorphics-source-fidelity-r1",
+      "evidence-review-senomorphics-interpretation-forecast-r1",
+      "evidence-review-senomorphics-surveillance-2026-06-07-source-fidelity-r1",
+      "evidence-review-senomorphics-surveillance-2026-06-07-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-senomorphics-bootstrap-2026-06-01-2026-06-01t16-26-47-676z",
+      "publish-senomorphics-surveillance-2026-06-07-2026-06-07t16-41-34-635z"
+    ],
+    "outlook_ids": [
+      "track-senomorphics-outlook",
+      "hallmark-cellular-senescence-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes the direct human anchors for the public stage: topical rapamycin reduced skin p16INK4A and increased collagen VII in an exploratory placebo-controlled skin-aging study, and metformin lowered skeletal-muscle senescence/SASP and fibrosis-linked markers in an older-adult bed-rest and re-ambulation model. A short-term oral rapamycin older-adult pilot adds feasibility and no-functional-change boundary evidence.",
+      "source_ids": [
+        "pmid-31761958",
+        "pmid-37486024",
+        "pmid-29408453"
+      ],
+      "finding_ids": [
+        "topical-rapamycin-reduced-human-skin-p16",
+        "metformin-reduced-older-adult-muscle-sasp-after-disuse",
+        "oral-rapamycin-older-adults-short-term-safety-no-functional-change"
+      ],
+      "gap_note": "Human coverage is adequate only for biomarker-stage interpretation; it does not show durable function, tissue resilience, disease modification, mortality, or systemic rejuvenation."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "thin",
+      "rationale": "The assessed artifacts do not systematically map observational cohorts, natural experiments, real-world drug exposure, longitudinal SASP biomarkers, or tissue-specific senescence-marker trajectories. The June 7 surveillance pass noted a three-person observational GLP-1 skin p21 pilot as method-limited context, but it was not staged.",
+      "gap_note": "Future source-completeness work could decide whether observational metformin, rapalog, GLP-1, JAK, calcium-homeostasis, or senescence-biomarker records help bound attribution and safety."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "The map contains aged-mouse functional support for JAK inhibition and a post-baseline mianserin/Ca2+ source reporting improved aging phenotypes and lifespan extension in progeroid and naturally aged mice, with human aging/progeria-derived cell senescence support.",
+      "source_ids": [
+        "pmid-26578790",
+        "pmid-42251040"
+      ],
+      "finding_ids": [
+        "jak-inhibition-reduced-sasp-and-improved-aged-mouse-function",
+        "mianserin-calcium-homeostasis-improved-aged-mouse-healthspan-lifespan"
+      ],
+      "gap_note": "Animal functional and lifespan evidence does not upgrade the treated-human stage, and translation remains constrained by intervention-specific safety and attribution."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "Mechanistic coverage spans metformin IKK/NF-kB-linked SASP suppression, rapamycin-sensitive mTOR/IL1A and mTOR/MAPKAPK2/ZFP36L1 SASP regulation, JAK inhibition in senescent human cells and aged mice, and mianserin-linked calcium-homeostasis/SASP biology in human-derived cells and mouse models.",
+      "source_ids": [
+        "pmid-23521863",
+        "pmid-26147250",
+        "pmid-26280535",
+        "pmid-26578790",
+        "pmid-42251040",
+        "pmid-31761958",
+        "pmid-37486024"
+      ],
+      "finding_ids": [
+        "metformin-inhibited-sasp-through-ikk-nfkb-cell-models",
+        "mtor-inhibition-suppressed-sasp-via-il1a-translation",
+        "mtor-mapkapk2-axis-controlled-sasp",
+        "jak-inhibition-reduced-sasp-and-improved-aged-mouse-function",
+        "mianserin-calcium-homeostasis-improved-aged-mouse-healthspan-lifespan",
+        "topical-rapamycin-reduced-human-skin-p16",
+        "metformin-reduced-older-adult-muscle-sasp-after-disuse"
+      ],
+      "gap_note": "Mechanistic coherence does not prove that clinical effects are specifically senomorphic rather than general anti-inflammatory, metabolic, mTOR, serotonin-receptor, calcium-homeostasis, or stress-response effects."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The outlook and reviews preserve the main limits: topical rapamycin is local skin evidence, metformin is an acute disuse/recovery biomarker study, JAK and mianserin remain preclinical for aging use, and the oral rapamycin older-adult pilot did not improve measured cognitive, physical-performance, self-perceived health, or most immune parameters.",
+      "source_ids": [
+        "pmid-31761958",
+        "pmid-37486024",
+        "pmid-26578790",
+        "pmid-42251040",
+        "pmid-29408453"
+      ],
+      "finding_ids": [
+        "topical-rapamycin-reduced-human-skin-p16",
+        "metformin-reduced-older-adult-muscle-sasp-after-disuse",
+        "jak-inhibition-reduced-sasp-and-improved-aged-mouse-function",
+        "mianserin-calcium-homeostasis-improved-aged-mouse-healthspan-lifespan",
+        "oral-rapamycin-older-adults-short-term-safety-no-functional-change"
+      ],
+      "gap_note": "A broader failed-program, null human endpoint, or adverse-registry map has not been formally reconciled."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "The local map contains short-term topical rapamycin, metformin, and oral rapamycin human safety context plus explicit JAK and chronic SASP-suppression cautions, but it does not deeply map long-term preventive safety, infection risk, wound-healing effects, cancer or tumor-surveillance tradeoffs, metabolic burden, neuropsychiatric or CNS risk for mianserin-like agents, or durability of senescence-marker changes.",
+      "source_ids": [
+        "pmid-31761958",
+        "pmid-37486024",
+        "pmid-29408453",
+        "pmid-26578790",
+        "pmid-42251040"
+      ],
+      "finding_ids": [
+        "topical-rapamycin-reduced-human-skin-p16",
+        "metformin-reduced-older-adult-muscle-sasp-after-disuse",
+        "oral-rapamycin-older-adults-short-term-safety-no-functional-change",
+        "jak-inhibition-reduced-sasp-and-improved-aged-mouse-function",
+        "mianserin-calcium-homeostasis-improved-aged-mouse-healthspan-lifespan"
+      ],
+      "gap_note": "Do not strengthen confidence or LEV relevance without longer-duration human safety and durability data tied to tissue-relevant senescence/SASP endpoints and function."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "The June 7 surveillance pass refreshed the two registry-linked human evidence records: NCT03103893 remained completed with no ClinicalTrials.gov results section while the peer-reviewed topical rapamycin result is already public, and NCT03107884 remained active, not recruiting, with no posted registry results while the published metformin bed-rest substudy remains public evidence. The pass also logged no-results watch context for mTOR inhibitor, rapamycin, everolimus, sirolimus, and metformin registries.",
+      "source_ids": [
+        "pmid-31761958",
+        "pmid-37486024"
+      ],
+      "finding_ids": [
+        "topical-rapamycin-reduced-human-skin-p16",
+        "metformin-reduced-older-adult-muscle-sasp-after-disuse"
+      ],
+      "gap_note": "Continue watching NCT03107884, NCT06727305, NCT07191353, NCT05237687, NCT07395960, and adjacent senescence/SASP registries for posted results or material endpoint changes."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "The backfill reviewed local bootstrap and surveillance artifacts. The June 7 surveillance pass found a recent review-level aging-therapeutics record as context, but no formal recent-review, guideline, meta-analysis, or comparative triangulation has been reconciled against the eight-source public map.",
+      "gap_note": "A future source-completeness pass should compare recent senomorphics, SASP, rapalog, metformin, JAK, calcium-homeostasis, and cellular-senescence review literature against the current source map."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The current map includes plausible anchors for topical rapamycin human p16/collagen VII, metformin older-adult muscle SASP biomarkers, JAK SASP suppression and aged-mouse function, mianserin/Ca2+ human-cell and mouse healthspan/lifespan support, metformin IKK/NF-kB mechanism, two mTOR-SASP rapamycin mechanisms, and oral rapamycin older-adult feasibility and no-functional-change boundary.",
+      "source_ids": [
+        "pmid-31761958",
+        "pmid-37486024",
+        "pmid-26578790",
+        "pmid-42251040",
+        "pmid-23521863",
+        "pmid-26147250",
+        "pmid-26280535",
+        "pmid-29408453"
+      ],
+      "finding_ids": [
+        "topical-rapamycin-reduced-human-skin-p16",
+        "metformin-reduced-older-adult-muscle-sasp-after-disuse",
+        "jak-inhibition-reduced-sasp-and-improved-aged-mouse-function",
+        "mianserin-calcium-homeostasis-improved-aged-mouse-healthspan-lifespan",
+        "metformin-inhibited-sasp-through-ikk-nfkb-cell-models",
+        "mtor-inhibition-suppressed-sasp-via-il1a-translation",
+        "mtor-mapkapk2-axis-controlled-sasp",
+        "oral-rapamycin-older-adults-short-term-safety-no-functional-change"
+      ],
+      "gap_note": "Formal must-include, review-cited, guideline-cited, registry-network, or citation-network auditing could still change source-completeness confidence."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The outlook, bootstrap notes, surveillance log, and reviews explicitly distinguish senomorphics from senolytics, rapalog/nutrient-sensing claims, metformin metabolic claims, JAK immunomodulation, GLP-1 skin context, dasatinib/quercetin delivery, and generic anti-inflammatory or regenerative claims. The mianserin update is kept as preclinical SASP/Ca2+ biology rather than treated-human evidence.",
+      "source_ids": [
+        "pmid-31761958",
+        "pmid-37486024",
+        "pmid-26578790",
+        "pmid-42251040",
+        "pmid-23521863",
+        "pmid-26147250",
+        "pmid-26280535",
+        "pmid-29408453"
+      ],
+      "finding_ids": [
+        "topical-rapamycin-reduced-human-skin-p16",
+        "metformin-reduced-older-adult-muscle-sasp-after-disuse",
+        "jak-inhibition-reduced-sasp-and-improved-aged-mouse-function",
+        "mianserin-calcium-homeostasis-improved-aged-mouse-healthspan-lifespan",
+        "metformin-inhibited-sasp-through-ikk-nfkb-cell-models",
+        "mtor-inhibition-suppressed-sasp-via-il1a-translation",
+        "mtor-mapkapk2-axis-controlled-sasp",
+        "oral-rapamycin-older-adults-short-term-safety-no-functional-change"
+      ],
+      "gap_note": "Boundary maintenance remains important because candidate drugs are pleiotropic and many future senescence records may belong primarily to senolytics, rapalogs, nutrient sensing, immune modulation, metabolic therapy, or disease-specific tracks."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-31761958",
+    "pmid-37486024",
+    "pmid-26578790",
+    "pmid-42251040",
+    "pmid-23521863",
+    "pmid-26147250",
+    "pmid-26280535",
+    "pmid-29408453"
+  ],
+  "covered_finding_ids": [
+    "topical-rapamycin-reduced-human-skin-p16",
+    "metformin-reduced-older-adult-muscle-sasp-after-disuse",
+    "jak-inhibition-reduced-sasp-and-improved-aged-mouse-function",
+    "mianserin-calcium-homeostasis-improved-aged-mouse-healthspan-lifespan",
+    "metformin-inhibited-sasp-through-ikk-nfkb-cell-models",
+    "mtor-inhibition-suppressed-sasp-via-il1a-translation",
+    "mtor-mapkapk2-axis-controlled-sasp",
+    "oral-rapamycin-older-adults-short-term-safety-no-functional-change"
+  ],
+  "search_log_summary": "This backfill reviewed local project artifacts: the published Senomorphics outlook, June 1 bootstrap session, published baseline candidate bundle, source-fidelity and interpretation reviews, baseline publication event, June 7 field-change session, published surveillance candidate bundle, surveillance evidence reviews, and June 7 publication event. The surveillance log included PubMed, ClinicalTrials.gov, trial-audit, and context-source checks through June 7. No new PubMed, registry, preprint, citation-network, or web source search was run for this assessment.",
+  "source_selection_notes": [
+    "PMID 31761958 and PMID 37486024 are the direct human biomarker-stage anchors for topical rapamycin skin p16/collagen VII and metformin older-adult muscle senescence/SASP markers.",
+    "PMID 29408453 provides a short-term older-adult oral rapamycin feasibility and no-functional-change boundary.",
+    "PMID 26578790 and PMID 42251040 provide the main preclinical functional, healthspan, lifespan, and human-derived-cell senescence support for JAK inhibition and mianserin/Ca2+ biology.",
+    "PMID 23521863, PMID 26147250, and PMID 26280535 anchor metformin IKK/NF-kB and rapamycin-sensitive mTOR-SASP mechanisms.",
+    "The June 7 surveillance pass found no treated-human efficacy upgrade, no posted registry result from the refreshed human registries, and no correction or retraction that changed the baseline interpretation."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "durable-human-function-not-established",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "No treated-human senomorphic trial in the current map links senescence or SASP biomarker movement to durable function, tissue resilience, disease modification, mortality, or broad aging benefit.",
+      "priority": "high",
+      "suggested_action": "Keep the public stage at human_biomarker_signal until randomized human trials connect tissue-relevant senescence/SASP markers to sustained functional or clinical outcomes."
+    },
+    {
+      "gap_id": "senomorphic-attribution-pleiotropy",
+      "gap_type": "evidence_gap",
+      "category": "mechanistic",
+      "description": "Rapamycin, metformin, JAK inhibition, and mianserin each affect broad pathways beyond senomorphic SASP modulation, making causal attribution to senescence phenotype modulation uncertain.",
+      "priority": "high",
+      "suggested_action": "Require endpoint designs that separate senomorphic activity from general anti-inflammatory, nutrient-sensing, metabolic, serotonin-receptor, calcium-homeostasis, or stress-response effects."
+    },
+    {
+      "gap_id": "chronic-sasp-suppression-safety-unresolved",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "The current map does not resolve long-term safety tradeoffs from chronic SASP modulation, including immune effects, infection risk, wound repair, tumor surveillance, metabolic effects, and intervention-specific risks.",
+      "priority": "high",
+      "suggested_action": "Do not strengthen confidence or assign LEV-relevant timing without longer-duration human safety, durability, and risk-benefit evidence."
+    },
+    {
+      "gap_id": "human-biomarker-context-specificity",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "The direct human biomarker evidence is limited to topical skin rapamycin and an older-adult bed-rest/recovery metformin model rather than repeated systemic aging or disease-prevention trials.",
+      "priority": "medium",
+      "suggested_action": "Continue presenting the current human evidence as local or acute-stress biomarker support, not systemic rejuvenation or durable functional benefit."
+    },
+    {
+      "gap_id": "animal-lifespan-translation-gap",
+      "gap_type": "evidence_gap",
+      "category": "animal_lifespan_or_healthspan",
+      "description": "JAK and mianserin provide aged-mouse function, healthspan, or lifespan support, but intervention-specific feasibility, dosing, safety, and treated-human translation remain unresolved.",
+      "priority": "medium",
+      "suggested_action": "Keep animal lifespan and function signals as preclinical support until human senescence/SASP endpoints and functional outcomes are tested."
+    },
+    {
+      "gap_id": "registry-results-pending",
+      "gap_type": "coverage_gap",
+      "category": "active_trials_registries",
+      "description": "The refreshed topical rapamycin and metformin registries have no ClinicalTrials.gov results sections, and adjacent mTOR inhibitor, rapamycin, everolimus, sirolimus, and metformin registries remain no-results watch items.",
+      "priority": "medium",
+      "suggested_action": "Continue ordinary surveillance for NCT03107884, NCT06727305, NCT07191353, NCT05237687, NCT07395960, and other senescence/SASP registries with posted results or status changes."
+    },
+    {
+      "gap_id": "observational-real-world-followup-not-mapped",
+      "gap_type": "coverage_gap",
+      "category": "human_observational_or_natural_experiment",
+      "description": "Observational, natural-experiment, real-world exposure, and longitudinal senescence-marker evidence has not been systematically mapped for senomorphic candidates.",
+      "priority": "medium",
+      "suggested_action": "Use a future source-completeness pass to decide whether observational rapalog, metformin, GLP-1, JAK, calcium-homeostasis, or senescence-biomarker records improve context or safety boundaries."
+    },
+    {
+      "gap_id": "recent-review-anchor-triangulation-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "Recent review, meta-analysis, guideline, and formal seminal-anchor triangulation across senomorphics, SASP biology, rapalogs, metformin, JAK inhibition, and calcium-homeostasis interventions has not been recorded.",
+      "priority": "medium",
+      "suggested_action": "Compare recent review and citation-network coverage against the current eight-source public map in a later source-completeness pass."
+    },
+    {
+      "gap_id": "taxonomy-boundary-maintenance",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "Senomorphics overlaps heavily with senolytics, rapalogs, nutrient sensing, immune modulation, metabolic drugs, GLP-1 skin context, and disease-specific anti-inflammatory records.",
+      "priority": "medium",
+      "suggested_action": "Keep assigning records by intended mechanism, endpoint, comparator, and aging relevance, and avoid upgrading senomorphic claims from pleiotropic drug effects alone."
+    }
+  ],
+  "next_coverage_action": "Continue ordinary surveillance for treated-human senescence/SASP biomarker trials, functional or disease outcomes, registry results, chronic safety, JAK and mTOR safety tradeoffs, mianserin/Ca2+ translation, and taxonomy-boundary records. Reserve coverage repair for a later source-completeness pass focused on observational evidence, recent-review triangulation, formal seminal-anchor auditing, broader null or safety maps, and active registry network checks if no material delta appears.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-backfill",
+    "senomorphics",
+    "cellular-senescence",
+    "human-biomarker-signal",
+    "surveillance-ready"
+  ]
+}
