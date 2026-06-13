@@ -1,0 +1,315 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "proteasome-enhancement-coverage-2026-06-13",
+  "name": "Proteasome Enhancement Coverage Assessment for June 13, 2026",
+  "short_name": "Proteasome enhancement coverage",
+  "track_id": "proteasome-enhancement",
+  "hallmark_id": "loss_of_proteostasis",
+  "assessment_type": "manual",
+  "assessed_at": "2026-06-13T13:29:22Z",
+  "assessment_window": {
+    "from": "2026-06-01T09:35:00Z",
+    "to": "2026-06-07T21:14:26Z",
+    "basis": "Backfill assessment of the published June 1 proteasome-enhancement baseline plus the June 7 no-op surveillance session; no new external source search was run for this assessment."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is adequate for the current low-confidence animal_signal public claim because the local map contains repeated C. elegans lifespan, stress-resistance, proteotoxicity, aggregation, and coordinated proteasome-regulation evidence, mammalian-cell and purified-proteasome tractability evidence, human-cell proteasome-activity evidence, and a tauopathy mouse disease-model boundary. Coverage is not strong because organismal lifespan support is worm-heavy, no direct human target-engagement or intervention study is staged, mammalian aging evidence is sparse, candidate mechanisms are heterogeneous and pleiotropic, and chronic safety or tradeoff evidence is thin beyond the open-gate fecundity cost and broad-pathway concerns. The June 7 surveillance pass found no scoped registry-linked human studies, no same-window human or mammalian aging result, no correction or retraction, and no public-stage-changing source, so ordinary surveillance can continue.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-06-01-proteasome-enhancement-bootstrap",
+      "2026-06-07-proteasome-enhancement-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "proteasome-enhancement-bootstrap-2026-06-01"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-proteasome-enhancement-source-fidelity-r1",
+      "evidence-review-proteasome-enhancement-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-proteasome-enhancement-bootstrap-2026-06-01-2026-06-01t10-27-12-753z"
+    ],
+    "outlook_ids": [
+      "track-proteasome-enhancement-outlook",
+      "hallmark-loss-of-proteostasis-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "thin",
+      "rationale": "No direct human proteasome-enhancing intervention study with aging-relevant target engagement, biomarkers, function, or disease outcomes is staged. The human-relevant support is currently cell-based, and the June 7 trial audit and broad ClinicalTrials.gov screens found no scoped registry-linked human proteasome-enhancement aging program.",
+      "gap_note": "A human_biomarker_signal upgrade would require an intervention study in humans with reproducible proteasome target engagement in aging-relevant tissue."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "not_checked",
+      "rationale": "The assessed artifacts do not systematically map observational proteasome activity, UPS biomarker, neurodegeneration, muscle aging, cold exposure, supplement, exercise, or natural-experiment cohorts.",
+      "gap_note": "This is not blocking for the current animal-signal baseline, but future source-completeness work could decide whether observational UPS or proteasome biomarkers add context."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "The public map includes repeated organismal evidence: RPN-6 expression extended C. elegans lifespan and proteotoxic-stress resistance; 18alpha-GA extended worm lifespan in a proteasome-dependent manner; an endogenous open-gate proteasome extended worm lifespan with fecundity cost; cold-induced PA28gamma/PSME-3 was required for worm longevity and aggregation resistance; and SKN-1A/Nrf1-linked proteasome subunit coordination was required for multiple longevity programs.",
+      "source_ids": [
+        "pmid-22922647",
+        "pmid-26886723",
+        "pmid-36007615",
+        "pmid-37118550",
+        "pmid-41703241"
+      ],
+      "finding_ids": [
+        "rpn6-overexpression-extended-c-elegans-lifespan",
+        "18alpha-ga-extended-c-elegans-lifespan-proteasome-dependent",
+        "open-gate-proteasome-extended-c-elegans-lifespan-fecundity-cost",
+        "cold-pa28-induced-proteasome-longevity-aggregation-boundary",
+        "skn1a-proteasome-expression-required-for-longevity"
+      ],
+      "gap_note": "Coverage is not strong because lifespan and healthspan evidence is dominated by C. elegans, with little deployable mammalian aging evidence."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "Mechanistic coverage spans Nrf2-linked 18alpha-GA proteasome activation in human fibroblasts, RPN-6/Rpn6 proteasome regulation, cAMP-PKA-driven Rpn6/PSMD11 phosphorylation in mammalian cells and purified proteasomes, rolipram/cAMP-PKA tauopathy mouse tractability, open-gate 20S proteasome engineering, cold-induced PA28gamma/PSME-3 biology, and SKN-1A/Nrf1-linked coordinated proteasome subunit expression.",
+      "source_ids": [
+        "pmid-20068043",
+        "pmid-22922647",
+        "pmid-26669444",
+        "pmid-26692334",
+        "pmid-26886723",
+        "pmid-36007615",
+        "pmid-37118550",
+        "pmid-41703241"
+      ],
+      "finding_ids": [
+        "nrf2-18alpha-ga-activated-proteasome-human-fibroblasts",
+        "rpn6-overexpression-extended-c-elegans-lifespan",
+        "camp-pka-rpn6-activated-mammalian-proteasomes",
+        "rolipram-early-tauopathy-improved-proteasome-cognition-mice",
+        "18alpha-ga-extended-c-elegans-lifespan-proteasome-dependent",
+        "open-gate-proteasome-extended-c-elegans-lifespan-fecundity-cost",
+        "cold-pa28-induced-proteasome-longevity-aggregation-boundary",
+        "skn1a-proteasome-expression-required-for-longevity"
+      ],
+      "gap_note": "Mechanistic coverage is broad but heterogeneous; Nrf2, cAMP/PKA, cold response, PA28gamma, SKN-1A/Nrf1, and intrinsic gate-opening mechanisms should not be collapsed into one clinical modality."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The public map preserves several limiting signals: human evidence is cell-based rather than organismal, rolipram was ineffective in late-stage tauopathy mice, open-gate proteasome worms had reduced fecundity, 18alpha-GA and Nrf2 effects are not proteasome-specific, cAMP/PKA has many non-proteasome effects, and the June 7 surveillance pass found no visible human proteasome-enhancement clinical program.",
+      "source_ids": [
+        "pmid-20068043",
+        "pmid-26669444",
+        "pmid-26692334",
+        "pmid-26886723",
+        "pmid-36007615",
+        "pmid-37118550"
+      ],
+      "finding_ids": [
+        "nrf2-18alpha-ga-activated-proteasome-human-fibroblasts",
+        "camp-pka-rpn6-activated-mammalian-proteasomes",
+        "rolipram-early-tauopathy-improved-proteasome-cognition-mice",
+        "18alpha-ga-extended-c-elegans-lifespan-proteasome-dependent",
+        "open-gate-proteasome-extended-c-elegans-lifespan-fecundity-cost",
+        "cold-pa28-induced-proteasome-longevity-aggregation-boundary"
+      ],
+      "gap_note": "A broader mammalian null-results and safety map is not available because deployable proteasome-enhancement programs remain early."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "The main explicit tradeoff is reduced fecundity in open-gate C. elegans, with additional conceptual risks from broad Nrf2 activation, cAMP/PKA activation, cold-response biology, and chronic enhancement of protein degradation. The assessed artifacts do not deeply map mammalian chronic safety, substrate specificity, tissue specificity, cancer, fertility, immune, neurologic, or degradation-balance risks.",
+      "source_ids": [
+        "pmid-36007615",
+        "pmid-20068043",
+        "pmid-26669444",
+        "pmid-26692334",
+        "pmid-37118550"
+      ],
+      "finding_ids": [
+        "open-gate-proteasome-extended-c-elegans-lifespan-fecundity-cost",
+        "nrf2-18alpha-ga-activated-proteasome-human-fibroblasts",
+        "camp-pka-rpn6-activated-mammalian-proteasomes",
+        "rolipram-early-tauopathy-improved-proteasome-cognition-mice",
+        "cold-pa28-induced-proteasome-longevity-aggregation-boundary"
+      ],
+      "gap_note": "Do not strengthen confidence or assign LEV relevance without mammalian and human safety, durability, dose-response, tissue-specificity, and substrate-specific degradation evidence."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "The June 7 surveillance pass ran a local trial audit and broad ClinicalTrials.gov searches. It found zero registry-linked interventional studies, zero open trial-watch items for the scoped track, and no proteasome-enhancement aging program; close registry hits were wrong-scope nutrition, oncology proteasome-inhibitor, supplement, exercise, amyloidosis, or observational records.",
+      "gap_note": "Continue watching for human proteasome target-engagement, selective proteasome-activator, proteostasis, UPS, PA28gamma/PSME3, RPN6/PSMD11, cAMP-PKA, or 18alpha-GA programs with aging-relevant endpoints."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "The backfill reviewed local bootstrap and surveillance artifacts. The June 7 surveillance pass found review-level UPS skeletal-muscle, deubiquitinase, co-aggregation, and neurodegeneration context, but no formal review, guideline, meta-analysis, or comparative triangulation has been reconciled against the eight-source public map.",
+      "gap_note": "A future source-completeness pass should compare recent proteasome, UPS, proteostasis, skeletal-muscle aging, neurodegeneration, Nrf2, cAMP/PKA, PA28gamma, and proteasome-activation review literature against the current source map."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes plausible anchors for human fibroblast Nrf2/proteasome activation, RPN-6 worm longevity, cAMP-PKA/Rpn6 mammalian proteasome activation, rolipram tauopathy mouse benefit and boundary, 18alpha-GA proteasome-dependent worm lifespan, open-gate proteasome worm lifespan with fecundity cost, cold-induced PA28gamma/PSME-3 longevity and aggregation resistance, and SKN-1A/Nrf1 proteasome subunit coordination.",
+      "source_ids": [
+        "pmid-20068043",
+        "pmid-22922647",
+        "pmid-26669444",
+        "pmid-26692334",
+        "pmid-26886723",
+        "pmid-36007615",
+        "pmid-37118550",
+        "pmid-41703241"
+      ],
+      "finding_ids": [
+        "nrf2-18alpha-ga-activated-proteasome-human-fibroblasts",
+        "rpn6-overexpression-extended-c-elegans-lifespan",
+        "camp-pka-rpn6-activated-mammalian-proteasomes",
+        "rolipram-early-tauopathy-improved-proteasome-cognition-mice",
+        "18alpha-ga-extended-c-elegans-lifespan-proteasome-dependent",
+        "open-gate-proteasome-extended-c-elegans-lifespan-fecundity-cost",
+        "cold-pa28-induced-proteasome-longevity-aggregation-boundary",
+        "skn1a-proteasome-expression-required-for-longevity"
+      ],
+      "gap_note": "Formal must-include, review-cited, guideline-cited, registry-network, or citation-network auditing could still change source-completeness confidence."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The outlook, bootstrap session, surveillance log, and reviews distinguish proteasome enhancement from protein aggregate clearance, chaperone and heat-shock support, autophagy and lysosomal restoration, deubiquitinase biology, proteasome inhibition in oncology or amyloidosis, generic proteostasis, exercise or nutrition records, and non-proteasome mitochondrial/parkin contexts.",
+      "source_ids": [
+        "pmid-20068043",
+        "pmid-22922647",
+        "pmid-26669444",
+        "pmid-26692334",
+        "pmid-26886723",
+        "pmid-36007615",
+        "pmid-37118550",
+        "pmid-41703241"
+      ],
+      "finding_ids": [
+        "nrf2-18alpha-ga-activated-proteasome-human-fibroblasts",
+        "rpn6-overexpression-extended-c-elegans-lifespan",
+        "camp-pka-rpn6-activated-mammalian-proteasomes",
+        "rolipram-early-tauopathy-improved-proteasome-cognition-mice",
+        "18alpha-ga-extended-c-elegans-lifespan-proteasome-dependent",
+        "open-gate-proteasome-extended-c-elegans-lifespan-fecundity-cost",
+        "cold-pa28-induced-proteasome-longevity-aggregation-boundary",
+        "skn1a-proteasome-expression-required-for-longevity"
+      ],
+      "gap_note": "Boundary maintenance remains important because future records may belong primarily to neighboring proteostasis, autophagy, lysosomal, aggregate-clearance, neurodegeneration, exercise, nutrition, oncology, or stress-response tracks."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-20068043",
+    "pmid-22922647",
+    "pmid-26669444",
+    "pmid-26692334",
+    "pmid-26886723",
+    "pmid-36007615",
+    "pmid-37118550",
+    "pmid-41703241"
+  ],
+  "covered_finding_ids": [
+    "nrf2-18alpha-ga-activated-proteasome-human-fibroblasts",
+    "rpn6-overexpression-extended-c-elegans-lifespan",
+    "camp-pka-rpn6-activated-mammalian-proteasomes",
+    "rolipram-early-tauopathy-improved-proteasome-cognition-mice",
+    "18alpha-ga-extended-c-elegans-lifespan-proteasome-dependent",
+    "open-gate-proteasome-extended-c-elegans-lifespan-fecundity-cost",
+    "cold-pa28-induced-proteasome-longevity-aggregation-boundary",
+    "skn1a-proteasome-expression-required-for-longevity"
+  ],
+  "search_log_summary": "This backfill reviewed local project artifacts: the published Proteasome Enhancement outlook, June 1 bootstrap session, published candidate bundle, source-fidelity and interpretation reviews, publication event, and June 7 no-op surveillance session with its local trial audit, ClinicalTrials.gov, PubMed, correction/retraction, bioRxiv/medRxiv, registry, and exclusion logs. No new PubMed, registry, preprint, citation-network, or web source search was run for this assessment.",
+  "source_selection_notes": [
+    "PMID 22922647, PMID 26886723, PMID 36007615, PMID 37118550, and PMID 41703241 are the main organismal animal-signal anchors for worm lifespan, proteotoxic stress, aggregation, PA28gamma/PSME-3, and coordinated proteasome regulation.",
+    "PMID 20068043, PMID 26669444, and PMID 37118550 provide human-cell or mammalian-cell pathway support, but not treated-human evidence.",
+    "PMID 26692334 provides the main mouse disease-model support and limitation: early tauopathy benefit with no late-stage rescue.",
+    "The June 7 surveillance pass found no scoped human clinical program, no same-window mammalian aging result, no correction or retraction for baseline PMIDs, and no material public-source delta.",
+    "PMID 41956660 remains a pre-baseline fucoxanthin proteostasis/proteasome context lead for a future source-completeness pass rather than a covered public source in this assessment."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "human-target-engagement-absent",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "No staged human intervention study shows proteasome target engagement, proteostasis biomarker movement, functional benefit, disease modification, or safety for a proteasome-enhancing intervention.",
+      "priority": "high",
+      "suggested_action": "Keep the public stage at animal_signal until treated-human studies directly measure proteasome pathway engagement in aging-relevant tissue."
+    },
+    {
+      "gap_id": "mammalian-aging-translation-sparse",
+      "gap_type": "evidence_gap",
+      "category": "animal_lifespan_or_healthspan",
+      "description": "Organismal support is dominated by C. elegans, while mammalian evidence is mostly cell-based or a tauopathy disease model rather than normal aging, healthspan, or prevention evidence.",
+      "priority": "high",
+      "suggested_action": "Require mammalian aging or disease-prevention studies with durable function, proteasome target engagement, and safety readouts before strengthening confidence."
+    },
+    {
+      "gap_id": "chronic-proteasome-activation-safety-unresolved",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Long-term safety, tissue specificity, substrate specificity, cancer, immune, fertility, neurologic, and degradation-balance risks are unresolved for chronic selective or broad proteasome activation.",
+      "priority": "high",
+      "suggested_action": "Do not assign LEV-relevant timing or stronger confidence without chronic mammalian and human safety, dose-response, and tissue-specific degradation evidence."
+    },
+    {
+      "gap_id": "worm-heavy-organismal-support",
+      "gap_type": "evidence_gap",
+      "category": "animal_lifespan_or_healthspan",
+      "description": "The most repeated lifespan and healthspan signals are in C. elegans genetic, temperature, or compound models, limiting direct translation to mammals.",
+      "priority": "medium",
+      "suggested_action": "Continue to describe organismal support as animal_signal and avoid mammalian or human extrapolation until stronger animal models are available."
+    },
+    {
+      "gap_id": "mechanism-and-intervention-heterogeneity",
+      "gap_type": "evidence_gap",
+      "category": "mechanistic",
+      "description": "Evidence spans Nrf2 activation, cAMP/PKA signaling, RPN-6/Rpn6 biology, PA28gamma/PSME-3, cold response, SKN-1A/Nrf1 coordination, and open-gate proteasomes, with no single mature intervention class.",
+      "priority": "medium",
+      "suggested_action": "Keep mechanisms separate and require pathway-specific target engagement and rescue or blockade tests before making class-level claims."
+    },
+    {
+      "gap_id": "no-visible-human-registry-program",
+      "gap_type": "coverage_gap",
+      "category": "active_trials_registries",
+      "description": "The June 7 local trial audit and broad ClinicalTrials.gov searches found no scoped human proteasome-enhancement aging program or open trial-watch item.",
+      "priority": "medium",
+      "suggested_action": "Continue ordinary surveillance for proteasome activator, proteostasis, UPS, RPN6/PSMD11, PA28gamma/PSME3, Nrf2-proteasome, or cAMP-PKA programs with aging-relevant endpoints."
+    },
+    {
+      "gap_id": "prebaseline-context-leads-unmapped",
+      "gap_type": "coverage_gap",
+      "category": "seminal_anchors",
+      "description": "The June 7 surveillance pass identified pre-baseline fucoxanthin and UPS review context that may be relevant to source completeness but was not staged through no-op surveillance.",
+      "priority": "medium",
+      "suggested_action": "In a later source-completeness pass, decide whether PMID 41956660 and recent UPS aging-review context should be added as mechanistic or boundary evidence."
+    },
+    {
+      "gap_id": "recent-review-triangulation-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "Recent review, meta-analysis, guideline, and citation-network triangulation across proteasome enhancement, UPS, skeletal-muscle aging, neurodegeneration, Nrf2, cAMP/PKA, and PA28gamma biology has not been recorded.",
+      "priority": "medium",
+      "suggested_action": "Compare recent review and citation-network coverage against the current eight-source public map in a later source-completeness pass."
+    },
+    {
+      "gap_id": "taxonomy-boundary-maintenance",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "Proteasome enhancement overlaps with protein aggregate clearance, chaperone support, autophagy, lysosomal restoration, deubiquitinases, neurodegeneration, nutrition, exercise, and oncology proteasome-inhibitor records.",
+      "priority": "medium",
+      "suggested_action": "Keep assigning records by direction of proteasome modulation, intervention mechanism, endpoint, and aging relevance, and exclude proteasome inhibition or generic proteostasis context unless it changes the track boundary."
+    }
+  ],
+  "next_coverage_action": "Continue ordinary surveillance for human proteasome target-engagement studies, selective proteasome-enhancing clinical programs, mammalian aging or disease-prevention evidence, chronic safety and durability signals, proteasome-specific mechanism tests, and taxonomy-boundary records. Reserve coverage repair for a later source-completeness pass focused on fucoxanthin and other prebaseline context leads, recent-review triangulation, formal seminal-anchor auditing, broader mammalian safety/null maps, and registry network checks if no material delta appears.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-backfill",
+    "proteasome-enhancement",
+    "loss-of-proteostasis",
+    "animal-signal",
+    "surveillance-ready"
+  ]
+}

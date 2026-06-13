@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-13T12:59:15.551Z",
+  "generated_at": "2026-06-13T13:32:36.574Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-13T12:59:15.439Z",
-    "research_priority_queue_updated_at": "2026-06-13T12:59:15.439Z",
+    "research_coverage_status_updated_at": "2026-06-13T13:32:36.458Z",
+    "research_priority_queue_updated_at": "2026-06-13T13:32:36.458Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
     "surveillance_recent_queue_count": 38,
     "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 5,
+    "coverage_assessment_backlog_count": 4,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
   },
@@ -33,7 +33,7 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-assessment-backfill-proteasome-enhancement",
+    "top_work_item_id": "coverage-assessment-backfill-dna-methylation-and-epigenome-restoration",
     "top_mode": "coverage_assessment_backfill",
     "active_editorial_count": 0,
     "ready_research_count": 0,
@@ -46,24 +46,24 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "coverage-assessment-backfill-proteasome-enhancement",
+      "item_id": "coverage-assessment-backfill-dna-methylation-and-epigenome-restoration",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for Proteasome Enhancement",
-      "rationale": "5 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
+      "title": "Backfill coverage assessment for DNA Methylation and Epigenome Restoration",
+      "rationale": "4 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
       "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
-      "track_id": "proteasome-enhancement",
-      "hallmark_id": "loss_of_proteostasis",
+      "track_id": "dna-methylation-and-epigenome-restoration",
+      "hallmark_id": "epigenetic_alterations",
       "references": [
         {
           "record_type": "track",
-          "record_id": "proteasome-enhancement"
+          "record_id": "dna-methylation-and-epigenome-restoration"
         },
         {
           "record_type": "hallmark",
-          "record_id": "loss_of_proteostasis"
+          "record_id": "epigenetic_alterations"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",
@@ -75,11 +75,11 @@
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 5
+          "value": 4
         },
         {
           "name": "generated_surveillance_queue_rank",
-          "value": 26
+          "value": 27
         },
         {
           "name": "track_next_mode",
