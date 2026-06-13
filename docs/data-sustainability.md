@@ -1,0 +1,100 @@
+# Data Sustainability
+
+This repo is intentionally file-backed. That makes research work easy to inspect, but it also means the data layer can become hard to maintain if every pass adds records without clear ownership, review state, and audit links.
+
+Use this document with:
+
+- `npm run validate:records`
+- `npm run audit:data`
+- `npm run audit:data:sustainability`
+- `npm run audit:artifacts`
+- `docs/artifact-retention.md`
+- `docs/source-ingestion-rules.md`
+- `docs/intervention-normalization.md`
+- `docs/research-ops-state.md`
+
+## Goals
+
+- Keep live public records small, source-backed, and reusable.
+- Keep staged records auditable without treating historical staged directories as active work.
+- Make generated planning state reproducible and visibly separate from curated records.
+- Prefer one bounded update over broad data expansion.
+- Surface growth pressure early enough that cleanup can be planned.
+
+## File Roles
+
+### Live Records
+
+Live records under `data/sources`, `data/studies`, `data/findings`, `data/interventions`, `data/outlooks`, `data/activity-items`, and `data/content` are the public data layer.
+
+Live records should be promoted through a candidate bundle unless the change is a narrow schema/content maintenance edit. They should carry only durable facts, curated interpretation, or public copy that the app needs now.
+
+### Candidate Bundles
+
+`data/candidate-bundles` is the lifecycle ledger for proposed changes. A bundle should explain the bounded scope, list proposed changes, point to staged files, and preserve evidence-review state.
+
+For sustainability, every staged JSON file that belongs to a bundle should appear in `proposed_changes[].staged_file_path`. If a staged file is useful but not part of a proposed public change, it usually belongs in a research session, coverage assessment, or `extra/` handoff note instead.
+
+### Staged Records
+
+`data/staged-records/<bundle-id>/` is the proposed public state for one bundle. While a bundle is active, staged records are working files. After a bundle is `published` or `rejected`, the directory is immutable audit history.
+
+Do not use published staged directories as backlog. Do not quietly delete historical staged files just because they duplicate live records. If staged history needs cleanup, make it an explicit audit-maintenance task and preserve the reason.
+
+### Research State
+
+`research/sessions`, `research/coverage-assessments`, `research/state`, and `research/backlog` are internal operating records. They should capture search logs, materiality decisions, source-completeness gaps, and generated queue state without becoming public evidence records.
+
+A research run should usually produce one session record, zero or one staged bundle, and at most one coverage assessment update.
+
+### Generated Reports
+
+Reports under `extra/` are design or audit artifacts. They can guide implementation and review, but they are not public product data unless promoted into `docs/` or `data/`.
+
+## Sustainability Checks
+
+Run these before treating a data-maintenance pass as complete:
+
+```bash
+npm run validate:records
+npm run audit:data
+npm run audit:data:sustainability -- --write
+npm run audit:artifacts -- --write
+```
+
+Use `npm run audit:data:sustainability -- --max-unreferenced-staged 0` only when deliberately ratcheting staged-history hygiene. The current report is informational by default because older published bundles may need explicit historical repair instead of silent mutation.
+
+## Review Signals
+
+The sustainability report should be reviewed when:
+
+- staged history is growing faster than live records
+- staged directories exist without matching candidate bundles
+- staged JSON files are not referenced from candidate-bundle proposed changes
+- candidate bundles accumulate outside terminal lifecycle states
+- large individual JSON files start carrying prose that should be split into source, finding, outlook, review, or report records
+- generated planning files are changed without a corresponding research, bundle, publication, or sync reason
+
+These are signals, not automatic failures. Broken schemas, missing required references, duplicate canonical source identifiers, and active staged-bundle inconsistencies remain hard failures in validation or integrity audit.
+
+## Default Maintenance Loop
+
+1. Regenerate planning state only when the source state changed or the current task needs fresh triage.
+2. Run validation and integrity audit to catch hard data failures.
+3. Run the sustainability report to inspect growth pressure.
+4. If the report surfaces drift, prefer adding or tightening an audit rule over manual cleanup.
+5. If historical staged records need repair, make a small maintenance task that updates bundle metadata or documents why the artifact is intentionally unreferenced.
+
+## Data Creation Rules
+
+- Add a `source` only for a canonical citation, registry, official update, or primary document.
+- Add a `study` only when the source supports a distinct trial, experiment, observational cohort, or model-system study.
+- Add a `finding` only for an atomic, source-backed claim that public pages or outlooks need.
+- Add an `activity_item` only for an external field event, not tracker process.
+- Add an `intervention` when a promoted record references the intervention or the page needs normalized naming.
+- Add an `outlook` update only when interpretation changes or public evidence framing needs repair.
+- Put close-but-excluded material in `research/sessions[].excluded_sources`, not in public records.
+
+## Current Known Debt
+
+The first sustainability report identifies historical staged JSON files that are not referenced by candidate-bundle `proposed_changes[]`. These files are concentrated in published coverage-repair bundles. Treat this as audit-history maintenance, not evidence drift.

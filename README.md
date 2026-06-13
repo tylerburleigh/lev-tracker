@@ -22,6 +22,8 @@ The first pass is intentionally small:
 - [Publication checklist](docs/publication-checklist.md): pre-publish and post-publish checklist.
 - [Source ingestion rules](docs/source-ingestion-rules.md): PubMed, ClinicalTrials.gov, and manual source conventions.
 - [Intervention normalization](docs/intervention-normalization.md): rules for turning intervention IDs into public records.
+- [Data sustainability](docs/data-sustainability.md): rules and checks for keeping file-backed records maintainable as the tracker grows.
+- [Artifact retention](docs/artifact-retention.md): retention classes for canonical data, staged intermediates, generated state, reports, drafts, and compression candidates.
 
 ## Design Principles
 
@@ -76,6 +78,10 @@ The first pass is intentionally small:
 
 - `npm run validate:records`
   Validates every JSON file under `data/`, `examples/`, `taxonomies/`, `research/`, and `ops/` against the repository JSON Schema contracts.
+- `npm run audit:data:sustainability`
+  Reports data footprint, staged-history pressure, candidate-bundle lifecycle shape, and staged files that are not linked from bundle metadata.
+- `npm run audit:artifacts`
+  Classifies file-backed artifacts by retention role and identifies prunable or compressible categories without deleting anything.
 
 ## Research Commands
 

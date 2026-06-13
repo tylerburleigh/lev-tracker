@@ -491,6 +491,18 @@ Research runs should continue to follow `docs/research-ops-state.md`: one track 
    - Note: `docs/intervention-normalization.md` defines normalization rules, `data/interventions/` now has records for every intervention ID referenced by live study, finding, activity, and intervention-outlook records, and evidence pages prefer normalized intervention names where records exist.
    - Remaining: keep normalization current as new promoted studies, findings, activity items, or intervention outlooks introduce new intervention IDs.
 
+6. Add data sustainability reporting.
+   - Current status: implemented with `npm run audit:data:sustainability`.
+   - Note: `docs/data-sustainability.md` defines live-record, candidate-bundle, staged-record, research-state, and report-file ownership rules.
+   - Note: the sustainability report writes `extra/data-sustainability-report.md` with data footprint, staged-history pressure, candidate-bundle lifecycle counts, largest files, and staged files that are not linked from candidate-bundle proposed changes.
+   - Remaining: decide whether to ratchet historical staged-file hygiene with `--max-unreferenced-staged 0` after reviewing older published coverage-repair bundles.
+
+7. Add artifact retention classification.
+   - Current status: implemented with `npm run audit:artifacts`.
+   - Note: `docs/artifact-retention.md` classifies canonical public data, publication audit trail, active staged intermediates, terminal staged intermediates, research logs, coverage syntheses, generated planning state, generated reports, drafts, and handoff artifacts.
+   - Note: the retention report writes `extra/artifact-retention-report.md` and identifies prunable/regenerable artifacts separately from compression candidates such as terminal staged records and superseded coverage assessments.
+   - Remaining: design a reviewed manifest/hash archive before pruning terminal staged JSON.
+
 ## Priority 5: Documentation Cleanup
 
 1. Update `docs/product-brief.md`.
@@ -516,6 +528,8 @@ Current expected checks:
 npm run research:bundle -- validate --bundle <bundle-id>
 npm run validate:records
 npm run audit:data
+npm run audit:data:sustainability -- --write
+npm run audit:artifacts -- --write
 npm run typecheck
 npm run build
 npm run research:bundle -- smoke --bundle <bundle-id> --base-url <local-url>

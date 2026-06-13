@@ -1,0 +1,176 @@
+# Artifact Retention
+
+This project creates several kinds of file-backed artifacts while moving from research to public records. They should not all have the same lifetime.
+
+Use this document with:
+
+- `npm run audit:artifacts`
+- `npm run audit:data:sustainability`
+- `docs/data-sustainability.md`
+- `docs/research-ops-state.md`
+- `docs/publication-checklist.md`
+
+## Retention Classes
+
+### Canonical Public Data
+
+Paths:
+
+- `data/sources`
+- `data/studies`
+- `data/findings`
+- `data/interventions`
+- `data/outlooks`
+- `data/activity-items`
+- `data/content`
+
+Policy: retain.
+
+These are the durable public data layer. They should not be pruned for size. Cleanup should happen by correcting, superseding, or merging records through the normal review flow.
+
+### Publication Audit Trail
+
+Paths:
+
+- `data/candidate-bundles`
+- `data/evidence-reviews`
+- `data/publication-events`
+- `data/review-comments`
+
+Policy: retain.
+
+These records explain why public data changed. They may be slimmed by future schema design, but existing records should not be deleted just because their staged files were promoted.
+
+### Active Staged Intermediates
+
+Path:
+
+- `data/staged-records/<active-bundle-id>/`
+
+Policy: retain until terminal.
+
+These are working files for a bundle under review. They should remain full-fidelity until the bundle is published or rejected.
+
+### Terminal Staged Intermediates
+
+Path:
+
+- `data/staged-records/<published-or-rejected-bundle-id>/`
+
+Policy: compression candidate.
+
+After a bundle is terminal, staged records are no longer the source of truth. They mostly duplicate either promoted live records or rejected proposed state. They are useful for audit, but they are the best candidate for future compression.
+
+A future compression process should preserve:
+
+- bundle ID
+- bundle terminal status
+- staged file paths
+- target record IDs and types
+- target live paths where relevant
+- content hashes
+- publication event ID when published
+- evidence review IDs
+- enough diff or manifest detail to understand what changed
+
+Do not delete terminal staged records until this manifest exists and has been reviewed.
+
+### Research Session Logs
+
+Path:
+
+- `research/sessions`
+
+Policy: retain, then summarize later.
+
+These logs preserve search strategy, excluded sources, materiality decisions, and no-op/activity-only outcomes. They are noisy but valuable while the workflow is still evolving.
+
+Compression should wait until the repo has a durable per-track review history that captures:
+
+- last reviewed date
+- search scopes
+- excluded source rationale
+- materiality decision
+- resulting bundle or no-op status
+- next recommended mode
+
+### Coverage Syntheses
+
+Path:
+
+- `research/coverage-assessments`
+
+Policy: keep latest per track; older versions are compression candidates.
+
+Coverage assessments are synthesized judgments. The latest assessment for a track is operationally important. Older assessments can eventually be summarized into revision history if they are superseded by newer coverage assessments for the same track.
+
+### Generated Planning State
+
+Paths:
+
+- `ops/triage-state.v1.json`
+- `research/state/coverage-status.v1.json`
+- `research/backlog/track-priority.v1.json`
+
+Policy: current copy only.
+
+These are generated state files. Keep the current copies because tools and agents read them, but do not preserve old snapshots unless debugging generation logic.
+
+### Generated Reports
+
+Path:
+
+- `extra/*.md`
+- generated drafts under `extra/`
+
+Policy: prunable and regenerable.
+
+Reports under `extra/` are useful snapshots, not canonical data. They can be overwritten or removed when stale if the generating command remains available.
+
+### Draft Work
+
+Path:
+
+- `research/drafts`
+
+Policy: ephemeral.
+
+Drafts should either be applied into durable records or deleted. They should not become an informal backlog.
+
+### Directory Markers
+
+Path:
+
+- `.gitkeep` files under artifact roots
+
+Policy: retain when they preserve intentionally empty workflow directories.
+
+These files are structure metadata, not evidence artifacts. They should be tiny and should not carry notes or data.
+
+## Default Pruning Direction
+
+Start with deletion-free reporting:
+
+```bash
+npm run audit:artifacts -- --write
+```
+
+Then handle candidates in this order:
+
+1. Generated reports: delete or overwrite stale `extra/` reports when they are no longer useful.
+2. Drafts: apply or delete stale drafts.
+3. Generated state: overwrite in place; do not preserve dated copies.
+4. Superseded coverage assessments: summarize older versions into latest assessment revision notes before pruning.
+5. Terminal staged records: replace full JSON with reviewed manifests only after the manifest proves sufficient for audit.
+
+## What Not To Prune
+
+Do not prune canonical sources, studies, findings, interventions, outlooks, evidence reviews, publication events, or candidate bundles for size alone.
+
+Do not prune material that is the only place where a search decision, excluded-source rationale, evidence-review finding, or publication decision is recorded.
+
+Do not prune terminal staged records while a bundle's published public state is under dispute or while evidence review refers to exact staged text.
+
+## Open Design Question
+
+The main unresolved question is whether terminal staged records should stay as full JSON forever or become manifest/hash archives. The retention report measures the size and scope of that tradeoff without forcing the decision.

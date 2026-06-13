@@ -9,6 +9,8 @@
     "typecheck": "tsc --noEmit",
     "validate:records": "node scripts/validate-records.mjs",
     "audit:data": "node scripts/audit-data-integrity.mjs",
+    "audit:data:sustainability": "node scripts/data-sustainability-report.mjs",
+    "audit:artifacts": "node scripts/artifact-retention-report.mjs",
     "sync:research-planning": "node scripts/seed-research-planning.mjs && node scripts/seed-work-triage.mjs",
     "sync:work-triage": "node scripts/seed-work-triage.mjs",
     "lint:public-copy": "node scripts/public-copy-lint.mjs",
