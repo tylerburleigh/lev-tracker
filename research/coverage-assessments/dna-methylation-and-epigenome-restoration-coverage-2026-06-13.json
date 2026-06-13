@@ -1,0 +1,347 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "dna-methylation-and-epigenome-restoration-coverage-2026-06-13",
+  "name": "DNA Methylation and Epigenome Restoration Coverage Assessment for June 13, 2026",
+  "short_name": "DNA methylation epigenome coverage",
+  "track_id": "dna-methylation-and-epigenome-restoration",
+  "hallmark_id": "epigenetic_alterations",
+  "assessment_type": "manual",
+  "assessed_at": "2026-06-13T14:03:30Z",
+  "assessment_window": {
+    "from": "2026-05-31T23:24:00Z",
+    "to": "2026-06-07T21:22:48Z",
+    "basis": "Backfill assessment of the published June 1 DNA methylation and epigenome restoration baseline plus the June 7 activity-only surveillance session; no new external source search was run for this assessment."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is adequate for the current low-confidence human_biomarker_signal public claim because the local map contains multiple human DNA-methylation-clock intervention analyses, separates larger controlled but small or clock-specific effects from uncontrolled or retrospective reversal claims, includes TRIIM-X no-results registry context, preserves a mouse lifespan and blood-methylation plausibility anchor, and records a June 7 surveillance pass that found no result-bearing post-baseline public delta. Coverage is not strong because no human intervention ties methylation or epigenome restoration to replicated functional, disease, mortality, or durable healthspan benefit; methylation-clock movement may be a downstream readout rather than a causal repair mechanism; safety and durability evidence is thin; active registries remain no-results; observational, recent-review, seminal-anchor, and citation-network triangulation are incomplete; and commercial tests, clock choice, tissue source, blood-cell composition, and conflicts remain major interpretation hazards.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31",
+      "2026-06-07-dna-methylation-and-epigenome-restoration-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-dna-methylation-and-epigenome-restoration-source-fidelity-r1",
+      "evidence-review-dna-methylation-and-epigenome-restoration-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31-2026-06-01t00-02-21-706z"
+    ],
+    "outlook_ids": [
+      "track-dna-methylation-and-epigenome-restoration-outlook",
+      "hallmark-epigenetic-alterations-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "The baseline contains several human intervention or intervention-adjacent methylation-clock anchors: the uncontrolled TRIIM pilot, the small methylation-supportive diet and lifestyle randomized pilot, CALERIE caloric restriction, DO-HEALTH omega-3, vitamin D, and exercise, COSMOS multivitamin-multimineral and cocoa extract, and the TRIIM-X phase 2 registry. The better controlled studies support a conservative biomarker stage through small, clock-specific, or ancillary endpoint movement rather than functional benefit.",
+      "source_ids": [
+        "pmid-31496122",
+        "pmid-33844651",
+        "pmid-37118425",
+        "pmid-39900648",
+        "pmid-41803341",
+        "nct-04375657"
+      ],
+      "finding_ids": [
+        "triim-human-epigenetic-age-decrease",
+        "methylation-diet-lifestyle-horvath-age-decrease",
+        "calerie-cr-slowed-dunedinpace",
+        "do-health-omega3-small-dnam-clock-slowing",
+        "cosmos-mvm-small-epigenetic-clock-slowing",
+        "triim-x-registry-no-results"
+      ],
+      "gap_note": "Coverage supports only human biomarker signal; it does not establish functional, disease, mortality, thymus-regeneration, immune-aging, or durable healthspan benefit."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "thin",
+      "rationale": "The public map includes the Rejuvant retrospective before-after supplement formulation analysis, and the surveillance pass screened same-window observational or cross-sectional clock context such as a large supplement/customer-clock association and lifestyle risk studies. These sources help bound reversal claims but do not provide causal evidence.",
+      "source_ids": [
+        "pmid-34847066"
+      ],
+      "finding_ids": [
+        "rejuvant-retrospective-dnam-age-decrease"
+      ],
+      "gap_note": "No systematic observational, natural-experiment, Mendelian-randomization, or real-world methylation-clock map has been reconciled against the track, and available observational signals are highly vulnerable to selection, healthy-user, commercial-test, and regression-to-the-mean biases."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "thin",
+      "rationale": "CASIN in aged female mice links systemic Cdc42 inhibition to younger blood DNA-methylation age alongside lifespan and inflammatory-cytokine movement, giving animal plausibility for methylation-age movement after intervention.",
+      "source_ids": [
+        "pmid-32755011"
+      ],
+      "finding_ids": [
+        "casin-reduced-blood-dnam-age-aged-mice"
+      ],
+      "gap_note": "Animal coverage is not broad: one mouse anchor does not establish a general epigenome-restoration mechanism, and blood methylation plus lifespan in mice cannot substitute for replicated human outcomes."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "thin",
+      "rationale": "Mechanistic coverage is sufficient to interpret the public claim as methylation-clock movement, but it is weak for causal restoration. The interventions include neuroendocrine regimens, diet and lifestyle, caloric restriction, omega-3, vitamin D, exercise, multivitamin-multimineral supplementation, cocoa extract, alpha-ketoglutarate formulations, and Cdc42 inhibition; many could shift methylation as a downstream marker of metabolism, inflammation, blood-cell composition, tissue state, or assay context.",
+      "source_ids": [
+        "pmid-31496122",
+        "pmid-33844651",
+        "pmid-34847066",
+        "pmid-37118425",
+        "pmid-39900648",
+        "pmid-41803341",
+        "pmid-32755011"
+      ],
+      "finding_ids": [
+        "triim-human-epigenetic-age-decrease",
+        "methylation-diet-lifestyle-horvath-age-decrease",
+        "rejuvant-retrospective-dnam-age-decrease",
+        "calerie-cr-slowed-dunedinpace",
+        "do-health-omega3-small-dnam-clock-slowing",
+        "cosmos-mvm-small-epigenetic-clock-slowing",
+        "casin-reduced-blood-dnam-age-aged-mice"
+      ],
+      "gap_note": "A stronger mechanistic read would require evidence that methylation changes mediate downstream health benefits rather than merely track diet, body composition, inflammation, cell composition, or treatment exposure."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "strong",
+      "rationale": "The public map preserves strong limiting context: CALERIE slowed DunedinPACE but not PhenoAge or GrimAge, DO-HEALTH effects were small and omega-3-centered, COSMOS showed modest multivitamin effects on selected clocks with cocoa null, TRIIM was a nine-person uncontrolled male pilot, Rejuvant was retrospective and commercially tied, TRIIM-X has no posted results, and the June 7 surveillance pass found no material post-baseline result, correction, or retraction.",
+      "source_ids": [
+        "pmid-31496122",
+        "pmid-34847066",
+        "pmid-37118425",
+        "pmid-39900648",
+        "pmid-41803341",
+        "nct-04375657"
+      ],
+      "finding_ids": [
+        "triim-human-epigenetic-age-decrease",
+        "rejuvant-retrospective-dnam-age-decrease",
+        "calerie-cr-slowed-dunedinpace",
+        "do-health-omega3-small-dnam-clock-slowing",
+        "cosmos-mvm-small-epigenetic-clock-slowing",
+        "triim-x-registry-no-results"
+      ],
+      "gap_note": "Limiting coverage is strong for the current biomarker-only public read, though broader failed-program, assay-comparison, and non-responder maps remain incomplete."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "Safety and durability coverage is limited. TRIIM-X has safety and tolerability endpoints but no posted results, TRIIM-style endocrine regimens raise regimen-specific monitoring concerns, supplement and lifestyle trials report short-to-medium biomarker windows rather than durable post-withdrawal effects, and the public map does not deeply stage adverse-event, blood-composition, cancer, endocrine, metabolic, immune, or long-term methylation-stability evidence.",
+      "source_ids": [
+        "pmid-31496122",
+        "pmid-33844651",
+        "pmid-34847066",
+        "pmid-37118425",
+        "pmid-39900648",
+        "pmid-41803341",
+        "nct-04375657"
+      ],
+      "finding_ids": [
+        "triim-human-epigenetic-age-decrease",
+        "methylation-diet-lifestyle-horvath-age-decrease",
+        "rejuvant-retrospective-dnam-age-decrease",
+        "calerie-cr-slowed-dunedinpace",
+        "do-health-omega3-small-dnam-clock-slowing",
+        "cosmos-mvm-small-epigenetic-clock-slowing",
+        "triim-x-registry-no-results"
+      ],
+      "gap_note": "Do not strengthen confidence without replicated durability after intervention withdrawal plus safety data tied to the actual intervention class, dose, tissue, and target population."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes TRIIM-X as a no-results phase 2 registry record, and the June 7 surveillance pass ran a local trial audit plus broad ClinicalTrials.gov searches. It found TRIIM-X still recruiting with no posted results and identified no result-bearing post-baseline trial, while flagging no-results or pre-baseline registry context for Ca-AKG, taurine, multivitamin/mineral, TirolGESUND, SHARP, and PROMETHEUS.",
+      "source_ids": [
+        "nct-04375657"
+      ],
+      "finding_ids": [
+        "triim-x-registry-no-results"
+      ],
+      "gap_note": "Registry coverage is adequate for ordinary surveillance, but the no-results registry layer is not fully staged beyond TRIIM-X."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "The backfill reviewed local bootstrap and surveillance artifacts. The June 7 surveillance pass noted review and systematic-review context around neurological disease epigenetic age acceleration, osteoporosis biomarkers, exercise epigenetic modifications, inflammaging tissue epigenetics, and observational or MR lifestyle context, but no formal review, guideline, meta-analysis, assay-comparison, or citation-network triangulation has been reconciled against the public evidence map.",
+      "gap_note": "A future source-completeness pass should compare recent DNA-methylation-clock, epigenetic-aging, intervention, assay-validation, tissue-specific, disease-context, and biological-age review literature against the current source map."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes plausible anchors for prominent human methylation-clock reversal claims, small randomized diet/lifestyle evidence, larger controlled caloric-restriction and supplement/lifestyle clock analyses, active TRIIM-X registry context, and the main mouse CASIN blood-methylation/lifespan plausibility result.",
+      "source_ids": [
+        "pmid-31496122",
+        "pmid-33844651",
+        "pmid-34847066",
+        "pmid-37118425",
+        "pmid-39900648",
+        "pmid-41803341",
+        "nct-04375657",
+        "pmid-32755011"
+      ],
+      "finding_ids": [
+        "triim-human-epigenetic-age-decrease",
+        "methylation-diet-lifestyle-horvath-age-decrease",
+        "rejuvant-retrospective-dnam-age-decrease",
+        "calerie-cr-slowed-dunedinpace",
+        "do-health-omega3-small-dnam-clock-slowing",
+        "cosmos-mvm-small-epigenetic-clock-slowing",
+        "triim-x-registry-no-results",
+        "casin-reduced-blood-dnam-age-aged-mice"
+      ],
+      "gap_note": "Formal must-include, review-cited, assay-validation, registry-network, commercial-clock, and citation-network auditing could still change source-completeness confidence."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The outlook, bootstrap session, surveillance log, and reviews keep this track anchored to DNA-methylation or epigenetic-clock movement and distinguish it from partial reprogramming, neuroendocrine or thymus-regeneration claims, AMPK and metabolic modulators, caloric restriction, supplement geroscience, exercise physiology, skin/cosmetic methylation, disease-only epigenetic age acceleration, and broad biological-age biomarker context.",
+      "source_ids": [
+        "pmid-31496122",
+        "pmid-33844651",
+        "pmid-34847066",
+        "pmid-37118425",
+        "pmid-39900648",
+        "pmid-41803341",
+        "nct-04375657",
+        "pmid-32755011"
+      ],
+      "finding_ids": [
+        "triim-human-epigenetic-age-decrease",
+        "methylation-diet-lifestyle-horvath-age-decrease",
+        "rejuvant-retrospective-dnam-age-decrease",
+        "calerie-cr-slowed-dunedinpace",
+        "do-health-omega3-small-dnam-clock-slowing",
+        "cosmos-mvm-small-epigenetic-clock-slowing",
+        "triim-x-registry-no-results",
+        "casin-reduced-blood-dnam-age-aged-mice"
+      ],
+      "gap_note": "Boundary maintenance remains important because the same sources often overlap with nutrition, endocrine, metabolic, supplement, exercise, biomarker-validation, disease, and partial-reprogramming tracks."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-31496122",
+    "pmid-33844651",
+    "pmid-34847066",
+    "pmid-37118425",
+    "pmid-39900648",
+    "pmid-41803341",
+    "nct-04375657",
+    "pmid-32755011"
+  ],
+  "covered_finding_ids": [
+    "triim-human-epigenetic-age-decrease",
+    "methylation-diet-lifestyle-horvath-age-decrease",
+    "rejuvant-retrospective-dnam-age-decrease",
+    "calerie-cr-slowed-dunedinpace",
+    "do-health-omega3-small-dnam-clock-slowing",
+    "cosmos-mvm-small-epigenetic-clock-slowing",
+    "triim-x-registry-no-results",
+    "casin-reduced-blood-dnam-age-aged-mice"
+  ],
+  "search_log_summary": "This backfill reviewed local project artifacts: the published DNA Methylation and Epigenome Restoration outlook, May 31 bootstrap session, published candidate bundle, source-fidelity and interpretation reviews, publication event, and June 7 activity-only surveillance session with its local trial audit, ClinicalTrials.gov, PubMed, correction/retraction, preprint, registry, and exclusion logs. No new PubMed, registry, preprint, citation-network, or web source search was run for this assessment.",
+  "source_selection_notes": [
+    "PMID 37118425, PMID 39900648, and PMID 41803341 are the stronger controlled human anchors, but their effects are small, clock-specific, ancillary, or mixed and remain biomarker-only.",
+    "PMID 33844651 is a randomized pilot with a larger Horvath DNAmAge signal, but it is small, short, male-only, and multi-component.",
+    "PMID 31496122 and PMID 34847066 capture prominent reversal claims, but their uncontrolled or retrospective designs, commercial context, and conflict boundaries prevent stage strengthening.",
+    "NCT04375657 is included as TRIIM-X no-results registry and momentum context, not efficacy or safety evidence.",
+    "PMID 32755011 anchors animal plausibility through aged female mouse lifespan, cytokine, and blood DNA-methylation clock movement, but it does not prove human epigenome restoration.",
+    "The June 7 surveillance pass found no material post-publication source, no newly posted TRIIM-X or related registry result, no correction or retraction for baseline PMIDs, and no same-window public-stage-changing evidence."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "human-functional-benefit-absent",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "No staged human intervention ties DNA-methylation or epigenome-restoration movement to replicated functional, disease, mortality, thymus-regeneration, immune-aging, or durable healthspan benefit.",
+      "priority": "high",
+      "suggested_action": "Keep the public stage at human_biomarker_signal until randomized trials show clinical or functional benefit with prespecified DNA-methylation endpoints moving in the expected direction."
+    },
+    {
+      "gap_id": "causal-methylation-restoration-unproven",
+      "gap_type": "evidence_gap",
+      "category": "mechanistic",
+      "description": "The current evidence does not show that methylation-clock changes mediate downstream health benefits rather than passively tracking diet, metabolism, inflammation, blood-cell composition, tissue state, or intervention exposure.",
+      "priority": "high",
+      "suggested_action": "Require mediation, target-engagement, tissue-specific, and perturbation evidence before treating methylation movement as causal epigenome restoration."
+    },
+    {
+      "gap_id": "durability-and-safety-unresolved",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Durability after intervention withdrawal and long-term safety are thinly covered, especially for endocrine regimens, supplement formulations, multi-component lifestyle programs, and interventions used in otherwise healthy older adults.",
+      "priority": "high",
+      "suggested_action": "Do not strengthen confidence without longer follow-up, post-withdrawal methylation stability, adverse-event reporting, and intervention-specific safety data."
+    },
+    {
+      "gap_id": "controlled-effects-small-or-clock-specific",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "Larger controlled analyses show small, mixed, or clock-specific biomarker movement, while stronger apparent reversal signals come from small, uncontrolled, retrospective, or commercial-context studies.",
+      "priority": "medium",
+      "suggested_action": "Keep controlled and uncontrolled evidence streams separate and prioritize replicated, preregistered, multi-clock, multi-tissue trials."
+    },
+    {
+      "gap_id": "observational-map-not-systematic",
+      "gap_type": "coverage_gap",
+      "category": "human_observational_or_natural_experiment",
+      "description": "Observational, natural-experiment, Mendelian-randomization, customer-clock, diet-pattern, screen-time, supplement, and real-world biological-age evidence has not been systematically mapped against the track.",
+      "priority": "medium",
+      "suggested_action": "Use a future source-completeness pass to decide whether observational evidence adds useful boundary context without overstating causality."
+    },
+    {
+      "gap_id": "animal-and-mechanism-map-sparse",
+      "gap_type": "coverage_gap",
+      "category": "animal_lifespan_or_healthspan",
+      "description": "The animal map relies mainly on CASIN aged female mice for blood DNA-methylation age and lifespan plausibility; broader animal lifespan, tissue-methylome, and mechanism-specific intervention coverage is sparse.",
+      "priority": "medium",
+      "suggested_action": "Compare animal methylation-age, epigenome-restoration, Cdc42, dietary, endocrine, and intervention studies in a later source-completeness pass."
+    },
+    {
+      "gap_id": "registry-results-and-watchlist-incomplete",
+      "gap_type": "coverage_gap",
+      "category": "active_trials_registries",
+      "description": "TRIIM-X is staged as a no-results registry, while Ca-AKG, taurine, multivitamin/mineral, fasting or smoking-cessation, SHARP, PROMETHEUS, and related DNA-methylation endpoint trials remain surveillance or watchlist context rather than staged records.",
+      "priority": "medium",
+      "suggested_action": "Continue ordinary surveillance for posted results and consider trial-layer maintenance if no-results registry completeness becomes a priority."
+    },
+    {
+      "gap_id": "recent-review-triangulation-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "Recent review, systematic-review, meta-analysis, assay-validation, tissue-specific, disease-context, and citation-network triangulation has not been recorded against the current eight-source public map.",
+      "priority": "medium",
+      "suggested_action": "Compare recent DNA-methylation-clock and biological-age review literature against the current source map in a later source-completeness pass."
+    },
+    {
+      "gap_id": "seminal-anchor-audit-not-formalized",
+      "gap_type": "coverage_gap",
+      "category": "seminal_anchors",
+      "description": "The baseline includes plausible anchors, but no formal must-include, review-cited, assay-validation, commercial-clock, registry-network, or citation-network audit has been recorded.",
+      "priority": "medium",
+      "suggested_action": "Run a formal anchor audit before treating coverage as strong or using the track for broader field-level synthesis."
+    },
+    {
+      "gap_id": "taxonomy-boundary-maintenance",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "DNA-methylation and epigenome-restoration evidence overlaps with partial reprogramming, neuroendocrine signaling, AMPK and metabolic modulators, caloric restriction, supplements, exercise, cosmetic skin aging, disease biomarker, and general biological-age contexts.",
+      "priority": "medium",
+      "suggested_action": "Assign future records by intervention mechanism, methylation endpoint, tissue/systemic relevance, causal claim, and whether the record changes this track rather than a neighboring track."
+    }
+  ],
+  "next_coverage_action": "Continue ordinary surveillance for posted TRIIM-X, Ca-AKG, taurine, multivitamin/mineral, TirolGESUND, SHARP, PROMETHEUS, and other DNA-methylation-clock intervention results; larger preregistered human trials with clinical or functional outcomes; durability and safety data; multi-tissue and multi-clock replication; and evidence that methylation changes mediate health benefit. Reserve coverage repair for a later source-completeness pass focused on no-results registry completeness, observational and natural-experiment context, animal and mechanistic maps, recent-review triangulation, formal seminal-anchor auditing, assay and commercial-clock boundaries, and taxonomy maintenance if no material delta appears.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-backfill",
+    "dna-methylation",
+    "epigenome-restoration",
+    "epigenetic-alterations",
+    "human-biomarker-signal",
+    "surveillance-ready"
+  ]
+}
