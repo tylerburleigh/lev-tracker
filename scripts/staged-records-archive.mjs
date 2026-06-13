@@ -60,11 +60,23 @@ async function readJson(relativePath) {
   return JSON.parse(await fs.readFile(workspacePath(relativePath), "utf8"));
 }
 
-function hasManifestDrift(change, stagedInfo, targetInfo) {
+function reconstructsFromLive(change, targetInfo) {
   return (
-    !stagedInfo.exists ||
-    stagedInfo.sha256 !== change.staged_file_sha256 ||
-    stagedInfo.bytes !== change.staged_file_bytes ||
+    targetInfo.exists &&
+    targetInfo.sha256 === change.staged_file_sha256 &&
+    targetInfo.bytes === change.staged_file_bytes
+  );
+}
+
+function hasManifestDrift(change, stagedInfo, targetInfo) {
+  const stagedFileMatches =
+    stagedInfo.exists &&
+    stagedInfo.sha256 === change.staged_file_sha256 &&
+    stagedInfo.bytes === change.staged_file_bytes;
+  const missingButLiveBacked = !stagedInfo.exists && reconstructsFromLive(change, targetInfo);
+
+  return (
+    (!stagedFileMatches && !missingButLiveBacked) ||
     targetInfo.exists !== change.target_file_exists ||
     targetInfo.sha256 !== change.target_file_sha256 ||
     targetInfo.bytes !== change.target_file_bytes
@@ -100,7 +112,7 @@ async function buildArchive() {
         continue;
       }
 
-      if (targetInfo.exists && stagedInfo.sha256 === targetInfo.sha256) {
+      if (targetInfo.exists && targetInfo.sha256 === change.staged_file_sha256) {
         identicalToLiveCount += 1;
         continue;
       }

@@ -9,6 +9,8 @@ Use this document with:
 - `npm run audit:staged-archive-readiness`
 - `npm run archive:staged-records`
 - `npm run manifest:staged-records`
+- `npm run verify:staged-archive`
+- `npm run prune:staged-records -- --dry-run`
 - `docs/data-sustainability.md`
 - `docs/research-ops-state.md`
 - `docs/publication-checklist.md`
@@ -62,9 +64,9 @@ Path:
 
 Policy: compression candidate.
 
-After a bundle is terminal, staged records are no longer the source of truth. They mostly duplicate either promoted live records or rejected proposed state. They are useful for audit, but they are the best candidate for future compression.
+After a bundle is terminal, staged records are no longer the source of truth. They mostly duplicate either promoted live records or rejected proposed state. They are useful for audit, but they are the best candidate for compression.
 
-A future compression process should preserve:
+The compression process must preserve:
 
 - bundle ID
 - bundle terminal status
@@ -76,7 +78,7 @@ A future compression process should preserve:
 - evidence review IDs
 - enough diff or manifest detail to understand what changed
 
-Do not delete terminal staged records until this manifest has been reviewed and accepted as sufficient for audit.
+Do not prune terminal staged records unless the manifest, archive, verification, and prune dry run all pass.
 
 ### Staged Record Manifests
 
@@ -108,7 +110,7 @@ npm run audit:staged-archive-readiness -- --write --max-manifest-drift 0
 
 Manifest-only archival is acceptable only for staged files that are identical to their current live targets. Staged files that differ from current live records, lack live targets, or show manifest drift need retained bodies, packed snapshots, or another reconstruction path.
 
-Current archive-readiness result: manifest-only archival is not sufficient for the whole staged tree. The latest report found 1008 staged files identical to current live targets and 192 staged files that differ from current live targets. A future archive workflow should retain or pack those differing staged bodies.
+Current archive-readiness result: manifest-only archival is not sufficient for the whole staged tree. The latest report found 1008 staged files identical to current live targets and 192 staged files that differ from current live targets. The changed-body archive retains those 192 differing staged bodies.
 
 ### Staged Record Archives
 
@@ -131,6 +133,28 @@ Use check mode to verify the archive still matches the manifest and current file
 ```bash
 npm run archive:staged-records -- --check
 ```
+
+Use reconstruction verification before pruning any terminal staged JSON:
+
+```bash
+npm run verify:staged-archive -- --write
+```
+
+Verification proves every terminal staged file can be reconstructed without reading `data/staged-records/`: identical staged files come from current live records, and changed staged files come from the archive pack.
+
+Use the prune dry run to list exact staged JSON files that are already pruned or could still be removed after verification:
+
+```bash
+npm run prune:staged-records -- --dry-run --write
+```
+
+Dry-run mode does not delete files. It retains changed staged bodies covered by the archive pack and reports only identical live-backed staged files as safe removal candidates. Apply mode is explicit:
+
+```bash
+npm run prune:staged-records -- --apply --confirm-prune-terminal-staged-records --write
+```
+
+Current prune result: 1008 identical live-backed terminal staged JSON files have been pruned from `data/staged-records/`; 192 changed staged JSON files remain physically present and are also retained in `data/staged-record-archives/changed-terminal-bodies.v1.json`.
 
 ### Research Session Logs
 
@@ -213,6 +237,8 @@ npm run audit:artifacts -- --write
 npm run manifest:staged-records -- --write
 npm run audit:staged-archive-readiness -- --write
 npm run archive:staged-records -- --write
+npm run verify:staged-archive -- --write
+npm run prune:staged-records -- --dry-run --write
 ```
 
 Then handle candidates in this order:
@@ -221,7 +247,7 @@ Then handle candidates in this order:
 2. Drafts: apply or delete stale drafts.
 3. Generated state: overwrite in place; do not preserve dated copies.
 4. Superseded coverage assessments: summarize older versions into latest assessment revision notes before pruning.
-5. Terminal staged records: replace full JSON with reviewed manifests only for staged files that archive-readiness marks identical to current live targets; retain changed staged bodies in `data/staged-record-archives/`.
+5. Terminal staged records: keep the reviewed manifest and changed-body archive; identical live-backed staged JSON has already been pruned, and the remaining 192 changed staged files should stay until a denser archive format is reviewed.
 
 ## What Not To Prune
 
@@ -233,4 +259,4 @@ Do not prune terminal staged records while a bundle's published public state is 
 
 ## Open Design Question
 
-The main unresolved question is whether the terminal staged-record manifest is sufficient to replace full staged JSON, or whether the archive needs a denser diff, packed JSON snapshot, or external storage. The retention report measures the size and scope of that tradeoff without forcing the decision.
+The main unresolved question is whether the remaining 192 changed staged JSON files should eventually be represented only by the changed-body archive, a denser diff, packed JSON snapshot, or external storage. The retention report measures the size and scope of that tradeoff without forcing the decision.

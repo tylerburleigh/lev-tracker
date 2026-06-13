@@ -1,18 +1,20 @@
 # Data Sustainability Report
 
-Generated: 2026-06-13T18:10:37.198Z
+Generated: 2026-06-13T18:34:16.024Z
 
 This report summarizes the file-backed data estate so growth pressure, staged-history drift, and lifecycle shape are visible before they become maintenance work.
 
 ## Summary
 
-- Data footprint: 2714 files, 7.9 MB.
+- Data footprint: 1706 files, 6.5 MB.
 - Tracked record files: 1509.
 - Candidate bundles: 59.
-- Staged history: 1200 JSON files across 56 directories.
-- Staged share of data bytes: 25.1%.
+- Physical staged history: 192 JSON files across 45 directories.
+- Logical staged history: 1200 candidate-bundle staged_file_path reference(s).
+- Manifest-backed pruned staged JSON files: 1008.
+- Staged share of data bytes: 9.0%.
 - Active staged directories: 0.
-- Historical staged directories: 56.
+- Historical staged directories: 45.
 - Staged directories without a candidate bundle: 0.
 - Staged JSON files not referenced by candidate-bundle proposed changes: 0.
 
@@ -24,11 +26,11 @@ This report summarizes the file-backed data estate so growth pressure, staged-hi
 
 | Section | Files | JSON | Size |
 | --- | --- | --- | --- |
-| data/staged-records | 1200 | 1200 | 2.0 MB |
 | data/staged-record-manifests | 1 | 1 | 1.2 MB |
 | data/candidate-bundles | 59 | 59 | 968 KB |
 | data/staged-record-archives | 1 | 1 | 839 KB |
 | data/evidence-reviews | 148 | 148 | 695 KB |
+| data/staged-records | 192 | 192 | 599 KB |
 | data/findings | 348 | 348 | 587 KB |
 | data/outlooks | 51 | 51 | 441 KB |
 | data/studies | 326 | 326 | 398 KB |
@@ -79,21 +81,21 @@ This report summarizes the file-backed data estate so growth pressure, staged-hi
 
 | Staged Directory | Status | JSON | Size |
 | --- | --- | --- | --- |
-| nad-and-redox-restoration-coverage-repair-2026-06-08 | published | 57 | 87 KB |
-| senolytics-coverage-repair-2026-06-11 | published | 44 | 76 KB |
-| microbiome-metabolite-restoration-bootstrap-2026-06-02 | published | 43 | 75 KB |
-| insulin-igf-axis-modulation-bootstrap-2026-06-03 | published | 43 | 67 KB |
-| rapalogs-coverage-repair-2026-06-11 | published | 33 | 62 KB |
-| ecosystem-replacement-bootstrap-2026-06-03 | published | 36 | 58 KB |
-| circulating-factor-modulation-coverage-repair-2026-06-09 | published | 32 | 55 KB |
-| ampk-and-metabolic-modulators-bootstrap-2026-06-01 | published | 33 | 54 KB |
-| resolution-pathway-and-tissue-repair-bootstrap-2026-06-02 | published | 34 | 53 KB |
-| transposon-and-somatic-mutation-control-coverage-repair-2026-06-06 | published | 26 | 50 KB |
-| telomerase-restoration-coverage-repair-2026-06-10 | published | 28 | 50 KB |
-| protein-aggregate-clearance-bootstrap-2026-06-02 | published | 33 | 49 KB |
-| immune-clearance-of-senescent-cells-bootstrap-2026-06-02 | published | 29 | 46 KB |
-| mitophagy-enhancers-coverage-repair-2026-06-10 | published | 22 | 46 KB |
-| mitochondrial-delivery-and-transplantation-bootstrap-2026-06-03 | published | 26 | 44 KB |
+| selective-autophagy-and-organelle-quality-control-bootstrap-2026-06-02 | published | 12 | 27 KB |
+| ampk-and-metabolic-modulators-bootstrap-2026-06-01 | published | 12 | 26 KB |
+| transposon-and-somatic-mutation-control-coverage-repair-2026-06-06 | published | 7 | 23 KB |
+| microbiome-metabolite-restoration-bootstrap-2026-06-02 | published | 9 | 22 KB |
+| circulating-factor-modulation-bootstrap-2026-05-31 | published | 10 | 20 KB |
+| senomorphics-bootstrap-2026-06-01 | published | 7 | 19 KB |
+| stem-cell-replacement-and-transplantation-bootstrap-2026-06-01 | published | 9 | 19 KB |
+| live-biotherapeutics-and-engineered-microbes-bootstrap-2026-06-01 | published | 8 | 18 KB |
+| nad-and-redox-restoration-bootstrap-2026-05-31 | published | 9 | 18 KB |
+| caloric-restriction-mimetics-bootstrap-2026-06-02 | published | 7 | 18 KB |
+| protein-aggregate-clearance-bootstrap-2026-06-02 | published | 9 | 17 KB |
+| cytokine-and-inflammasome-modulation-bootstrap-2026-05-31 | published | 8 | 16 KB |
+| dna-methylation-and-epigenome-restoration-bootstrap-2026-05-31 | published | 6 | 16 KB |
+| ecosystem-replacement-bootstrap-2026-06-03 | published | 4 | 16 KB |
+| neuroendocrine-and-systemic-signal-reset-coverage-repair-2026-06-04 | published | 3 | 15 KB |
 
 ## Unreferenced Staged Files
 

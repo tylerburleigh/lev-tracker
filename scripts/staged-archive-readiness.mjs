@@ -114,11 +114,15 @@ function formatBytes(bytes) {
 async function classifyChange(change) {
   const stagedInfo = await fileInfo(change.staged_file_path);
   const targetInfo = await fileInfo(change.target_file_path);
+  const reconstructsFromLive =
+    targetInfo.exists &&
+    targetInfo.sha256 === change.staged_file_sha256 &&
+    targetInfo.bytes === change.staged_file_bytes;
   const drift = [];
 
-  if (!stagedInfo.exists) {
+  if (!stagedInfo.exists && !reconstructsFromLive) {
     drift.push("missing_staged_file");
-  } else {
+  } else if (stagedInfo.exists) {
     if (stagedInfo.sha256 !== change.staged_file_sha256) {
       drift.push("staged_hash_changed");
     }
@@ -138,11 +142,11 @@ async function classifyChange(change) {
   }
 
   let status = "unknown";
-  if (!stagedInfo.exists) {
+  if (!stagedInfo.exists && !reconstructsFromLive) {
     status = "missing_staged_file";
   } else if (!targetInfo.exists) {
     status = "missing_live_target";
-  } else if (stagedInfo.sha256 === targetInfo.sha256) {
+  } else if (reconstructsFromLive || stagedInfo.sha256 === targetInfo.sha256) {
     status = "identical_to_live";
   } else {
     status = "differs_from_live";
@@ -153,6 +157,7 @@ async function classifyChange(change) {
     drift,
     stagedBytes: stagedInfo.bytes ?? change.staged_file_bytes ?? 0,
     targetBytes: targetInfo.bytes ?? change.target_file_bytes ?? 0,
+    stagedBodyStorage: stagedInfo.exists ? "staged_file" : "live_target",
     bundleId: change.bundle_id,
     changeId: change.change_id,
     targetRecordType: change.target_record_type,
@@ -204,6 +209,7 @@ async function buildReadiness() {
   let manifestDriftCount = 0;
   let bodyRetentionBytes = 0;
   let bodyRetentionFileCount = 0;
+  let liveBackedPrunedCount = 0;
 
   for (const bundle of manifest.bundles ?? []) {
     for (const change of bundle.changes ?? []) {
@@ -211,6 +217,9 @@ async function buildReadiness() {
       increment(statusCounts, classified.status);
       increment(typeCounts, classified.targetRecordType);
       stagedBytes += classified.stagedBytes;
+      if (classified.stagedBodyStorage === "live_target") {
+        liveBackedPrunedCount += 1;
+      }
 
       if (classified.drift.length > 0) {
         manifestDriftCount += 1;
@@ -297,6 +306,7 @@ async function buildReadiness() {
       staged_bytes: stagedBytes,
       body_retention_file_count: bodyRetentionFileCount,
       body_retention_bytes: bodyRetentionBytes,
+      live_backed_pruned_count: liveBackedPrunedCount,
       manifest_file_path: manifestPath
     },
     statusCounts,
@@ -347,6 +357,7 @@ This report compares terminal staged records against current live target files. 
 - Manifest drift entries: ${summary.manifest_drift_count}
 - Staged body bytes checked: ${formatBytes(summary.staged_bytes)}
 - Staged bodies requiring retention: ${summary.body_retention_file_count} file(s), ${formatBytes(summary.body_retention_bytes)}
+- Pruned staged bodies reconstructed from live targets: ${summary.live_backed_pruned_count}
 - Manifest source: ${summary.manifest_file_path}
 
 ## Status Counts

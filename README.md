@@ -85,9 +85,13 @@ The first pass is intentionally small:
 - `npm run audit:staged-archive-readiness`
   Compares terminal staged JSON with current live records to decide whether manifest-only archival would lose historical staged bodies.
 - `npm run manifest:staged-records`
-  Generates or checks the hash manifest for terminal staged records before any future staged JSON compression.
+  Generates or checks the logical hash manifest for terminal staged records, including pruned live-backed staged paths.
 - `npm run archive:staged-records`
   Generates or checks the archive pack containing changed terminal staged JSON bodies that cannot be represented by manifest-only archival.
+- `npm run verify:staged-archive`
+  Verifies every terminal staged record can be reconstructed from live records plus the archive pack before pruning staged JSON.
+- `npm run prune:staged-records -- --dry-run`
+  Reports terminal staged JSON prune state after archive verification. Use `--apply --confirm-prune-terminal-staged-records` only after reviewing the dry run.
 
 ## Research Commands
 

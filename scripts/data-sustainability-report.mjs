@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 
+import { createHash } from "node:crypto";
 import { existsSync } from "node:fs";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
 const workspaceRoot = process.cwd();
 const reportPath = "extra/data-sustainability-report.md";
+const manifestPath = "data/staged-record-manifests/terminal-bundles.v1.json";
 const terminalBundleStatuses = new Set(["published", "rejected"]);
 
 const liveRecordDirectories = [
@@ -77,6 +79,23 @@ function formatPercent(value) {
 
 async function pathExists(relativePath) {
   return existsSync(workspacePath(relativePath));
+}
+
+async function fileInfo(relativePath) {
+  if (!(await pathExists(relativePath))) {
+    return {
+      exists: false,
+      bytes: null,
+      sha256: null
+    };
+  }
+
+  const raw = await fs.readFile(workspacePath(relativePath));
+  return {
+    exists: true,
+    bytes: raw.length,
+    sha256: createHash("sha256").update(raw).digest("hex")
+  };
 }
 
 async function walkFiles(relativeDir) {
@@ -188,9 +207,42 @@ function stagedDirectoryFromPath(filePath) {
   return match?.[1];
 }
 
+async function readManifestChangesByPath(issues) {
+  if (!(await pathExists(manifestPath))) {
+    return new Map();
+  }
+
+  const manifest = await readJson(manifestPath, issues);
+  const changes = new Map();
+  for (const bundle of manifest?.bundles ?? []) {
+    for (const change of bundle.changes ?? []) {
+      changes.set(change.staged_file_path, {
+        bundleId: bundle.bundle_id,
+        ...change
+      });
+    }
+  }
+  return changes;
+}
+
+async function isLiveBackedPrunedStagedFile(stagedFilePath, manifestChangesByPath) {
+  const change = manifestChangesByPath.get(stagedFilePath);
+  if (!change) {
+    return false;
+  }
+
+  const targetInfo = await fileInfo(change.target_file_path);
+  return (
+    targetInfo.exists &&
+    targetInfo.sha256 === change.staged_file_sha256 &&
+    targetInfo.bytes === change.staged_file_bytes
+  );
+}
+
 async function summarizeStagedRecords(candidateBundles, issues) {
   const stagedDirectories = await listDirectories("data/staged-records");
   const stagedFiles = (await walkFiles("data/staged-records")).filter((file) => file.endsWith(".json"));
+  const manifestChangesByPath = await readManifestChangesByPath(issues);
   const bundleById = new Map(candidateBundles.map(({ record }) => [record.id, record]));
   const activeBundleIds = new Set(
     candidateBundles
@@ -200,6 +252,7 @@ async function summarizeStagedRecords(candidateBundles, issues) {
 
   const stagedFileRefs = new Set();
   const missingReferencedFiles = [];
+  const prunedReferencedFiles = [];
   for (const { record: bundle } of candidateBundles) {
     for (const change of bundle.proposed_changes ?? []) {
       if (!change.staged_file_path) {
@@ -208,7 +261,11 @@ async function summarizeStagedRecords(candidateBundles, issues) {
       const stagedFilePath = toPosix(change.staged_file_path);
       stagedFileRefs.add(stagedFilePath);
       if (!(await pathExists(stagedFilePath))) {
-        missingReferencedFiles.push(stagedFilePath);
+        if (await isLiveBackedPrunedStagedFile(stagedFilePath, manifestChangesByPath)) {
+          prunedReferencedFiles.push(stagedFilePath);
+        } else {
+          missingReferencedFiles.push(stagedFilePath);
+        }
       }
     }
   }
@@ -240,6 +297,8 @@ async function summarizeStagedRecords(candidateBundles, issues) {
     stagedFiles,
     stagedFileRefs,
     missingReferencedFiles,
+    prunedReferencedFiles,
+    logicalStagedFileCount: stagedFileRefs.size,
     unreferencedFiles,
     unreferencedByDirectory,
     activeDirectoryCount: directorySummaries.filter((entry) => entry.isActive).length,
@@ -288,7 +347,9 @@ This report summarizes the file-backed data estate so growth pressure, staged-hi
 - Data footprint: ${totalDataFiles} files, ${formatBytes(totalDataBytes)}.
 - Tracked record files: ${liveRecords.length}.
 - Candidate bundles: ${candidateBundles.length}.
-- Staged history: ${stagedSummary.stagedFiles.length} JSON files across ${stagedSummary.stagedDirectories.length} directories.
+- Physical staged history: ${stagedSummary.stagedFiles.length} JSON files across ${stagedSummary.stagedDirectories.length} directories.
+- Logical staged history: ${stagedSummary.logicalStagedFileCount} candidate-bundle staged_file_path reference(s).
+- Manifest-backed pruned staged JSON files: ${stagedSummary.prunedReferencedFiles.length}.
 - Staged share of data bytes: ${formatPercent(stagedShare)}.
 - Active staged directories: ${stagedSummary.activeDirectoryCount}.
 - Historical staged directories: ${stagedSummary.historicalDirectoryCount}.
@@ -407,7 +468,8 @@ async function main() {
   process.stdout.write(
     [
       `Data sustainability report: ${liveRecords.length} tracked record file(s)`,
-      `${stagedSummary.stagedFiles.length} staged JSON file(s)`,
+      `${stagedSummary.stagedFiles.length} physical staged JSON file(s)`,
+      `${stagedSummary.prunedReferencedFiles.length} pruned staged JSON file(s)`,
       `${stagedSummary.unreferencedFiles.length} unreferenced staged JSON file(s)`,
       `${warnings.length} warning(s)`
     ].join(", ") + ".\n"

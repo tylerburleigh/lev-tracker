@@ -28,12 +28,12 @@ const categories = {
   terminal_staged_intermediate: {
     label: "Terminal Staged Intermediate",
     retention: "compress_candidate",
-    action: "Preserve now; later replace with a manifest/hash archive only after explicit review."
+    action: "Retain changed staged bodies; identical live-backed staged files have been pruned after archive verification."
   },
   staged_record_manifest: {
     label: "Staged Record Manifests",
     retention: "retain_for_archive",
-    action: "Keep as the hash/index layer required before terminal staged JSON can be compressed."
+    action: "Keep as the hash/index layer required to reconstruct pruned terminal staged JSON."
   },
   staged_record_archive: {
     label: "Staged Record Archives",
@@ -349,6 +349,8 @@ async function classifyArtifacts() {
     "extra/public-copy-report.md",
     "extra/reader-task-audit.md",
     "extra/staged-archive-readiness-report.md",
+    "extra/staged-archive-verification-report.md",
+    "extra/staged-prune-dry-run-report.md",
     "extra/trial-watch-report.md"
   ].filter((filePath) => existsSync(workspacePath(filePath)));
   add("generated_report", generatedReportPaths);

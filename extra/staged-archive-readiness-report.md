@@ -1,6 +1,6 @@
 # Staged Archive Readiness Report
 
-Generated: 2026-06-13T18:10:46.814Z
+Generated: 2026-06-13T18:34:15.983Z
 
 This report compares terminal staged records against current live target files. It is non-destructive: it decides whether manifest-only archival would preserve enough, or whether some staged JSON bodies still need to be retained.
 
@@ -19,6 +19,7 @@ This report compares terminal staged records against current live target files. 
 - Manifest drift entries: 0
 - Staged body bytes checked: 2.0 MB
 - Staged bodies requiring retention: 192 file(s), 599 KB
+- Pruned staged bodies reconstructed from live targets: 1008
 - Manifest source: data/staged-record-manifests/terminal-bundles.v1.json
 
 ## Status Counts

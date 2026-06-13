@@ -12,6 +12,8 @@ This directory holds exploratory or handoff documentation that is related to the
 - [data-sustainability-report.md](data-sustainability-report.md): generated data footprint and staged-history report from `npm run audit:data:sustainability -- --write`.
 - [artifact-retention-report.md](artifact-retention-report.md): generated artifact classification and retention report from `npm run audit:artifacts -- --write`.
 - [staged-archive-readiness-report.md](staged-archive-readiness-report.md): generated staged-vs-live comparison report from `npm run audit:staged-archive-readiness -- --write`.
+- [staged-archive-verification-report.md](staged-archive-verification-report.md): generated reconstruction report from `npm run verify:staged-archive -- --write`.
+- [staged-prune-dry-run-report.md](staged-prune-dry-run-report.md): generated staged prune state report from `npm run prune:staged-records -- --dry-run --write`.
 
 ## Status
 

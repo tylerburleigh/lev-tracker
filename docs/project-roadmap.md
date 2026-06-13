@@ -496,7 +496,8 @@ Research runs should continue to follow `docs/research-ops-state.md`: one track 
    - Note: `docs/data-sustainability.md` defines live-record, candidate-bundle, staged-record, research-state, and report-file ownership rules.
    - Note: the sustainability report writes `extra/data-sustainability-report.md` with data footprint, staged-history pressure, candidate-bundle lifecycle counts, largest files, and staged files that are not linked from candidate-bundle proposed changes.
    - Note: historical staged-file metadata has been repaired, and `--max-unreferenced-staged 0` now passes.
-   - Remaining: decide whether terminal staged JSON should eventually move to a reviewed manifest/hash archive.
+   - Note: terminal staged history now distinguishes 192 physical staged JSON files, 1008 manifest-backed pruned staged paths, and 1200 logical staged references.
+   - Remaining: keep reconstruction verification in the maintenance checklist whenever live records or staged archives change.
 
 7. Add artifact retention classification.
    - Current status: implemented with `npm run audit:artifacts`.
@@ -506,7 +507,10 @@ Research runs should continue to follow `docs/research-ops-state.md`: one track 
    - Note: `npm run audit:staged-archive-readiness` compares terminal staged files with current live targets and reports whether manifest-only archival would lose changed staged bodies.
    - Note: the current readiness report finds 1008 staged files identical to current live targets and 192 staged files that differ, so manifest-only archival is insufficient for the whole staged tree.
    - Note: `npm run archive:staged-records` writes `data/staged-record-archives/changed-terminal-bodies.v1.json`, retaining the changed staged JSON bodies while omitting identical staged files already represented by manifest hashes.
-   - Remaining: design and review the actual prune step for identical terminal staged JSON files.
+   - Note: `npm run verify:staged-archive` verifies that every terminal staged file can be reconstructed from live records plus the archive pack before pruning staged JSON.
+   - Note: `npm run prune:staged-records -- --dry-run --write` writes `extra/staged-prune-dry-run-report.md` with current prune state and any remaining safe-removal candidates.
+   - Note: apply-mode pruning removed 1008 identical live-backed terminal staged JSON files; 192 changed staged files remain physically present and archived.
+   - Remaining: decide whether the 192 changed staged files should eventually be compacted further after a denser archive format is reviewed.
 
 ## Priority 5: Documentation Cleanup
 
@@ -538,6 +542,8 @@ npm run audit:artifacts -- --write
 npm run manifest:staged-records -- --write
 npm run audit:staged-archive-readiness -- --write
 npm run archive:staged-records -- --write
+npm run verify:staged-archive -- --write
+npm run prune:staged-records -- --dry-run --write
 npm run typecheck
 npm run build
 npm run research:bundle -- smoke --bundle <bundle-id> --base-url <local-url>

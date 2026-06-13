@@ -129,36 +129,51 @@ function targetFilePath(change) {
   return `data/${typeDir}/${change.target_record_id}.json`;
 }
 
-async function stagedDirectoryStats(bundleId) {
-  const stagedDirectory = `data/staged-records/${bundleId}`;
-  const stagedFiles = (await walkFiles(stagedDirectory)).filter((filePath) => filePath.endsWith(".json"));
-  const fileInfos = await Promise.all(
-    stagedFiles.map(async (filePath) => ({
-      filePath,
-      ...(await fileInfo(filePath))
-    }))
-  );
+function changeKey(bundleId, change) {
+  return `${bundleId}\0${change.change_id}\0${change.staged_file_path}`;
+}
 
+async function readExistingManifestChanges() {
+  if (!(await pathExists(manifestPath))) {
+    return new Map();
+  }
+
+  const manifest = await readJson(manifestPath);
+  const changes = new Map();
+  for (const bundle of manifest.bundles ?? []) {
+    for (const change of bundle.changes ?? []) {
+      changes.set(changeKey(bundle.bundle_id, change), change);
+    }
+  }
+  return changes;
+}
+
+function stagedDirectoryStats(bundleId, changes) {
+  const stagedDirectory = `data/staged-records/${bundleId}`;
+  const sortedChanges = [...changes].sort((left, right) =>
+    left.staged_file_path.localeCompare(right.staged_file_path)
+  );
   const directoryHash = createHash("sha256");
-  for (const entry of fileInfos) {
-    directoryHash.update(entry.filePath);
+  for (const entry of sortedChanges) {
+    directoryHash.update(entry.staged_file_path);
     directoryHash.update("\0");
-    directoryHash.update(entry.sha256 ?? "");
+    directoryHash.update(entry.staged_file_sha256 ?? "");
     directoryHash.update("\0");
-    directoryHash.update(String(entry.bytes ?? ""));
+    directoryHash.update(String(entry.staged_file_bytes ?? ""));
     directoryHash.update("\n");
   }
 
   return {
     stagedDirectory,
-    stagedFiles,
-    stagedTotalBytes: fileInfos.reduce((total, entry) => total + (entry.bytes ?? 0), 0),
+    stagedFiles: sortedChanges.map((entry) => entry.staged_file_path),
+    stagedTotalBytes: sortedChanges.reduce((total, entry) => total + (entry.staged_file_bytes ?? 0), 0),
     stagedDirectorySha256: directoryHash.digest("hex")
   };
 }
 
 async function buildManifest() {
   const issues = [];
+  const existingManifestChanges = await readExistingManifestChanges();
   const candidateBundleEntries = await readJsonCollection("data/candidate-bundles");
   const publicationEventEntries = await readJsonCollection("data/publication-events");
   const stagedDirectories = await listDirectories("data/staged-records");
@@ -185,8 +200,6 @@ async function buildManifest() {
   const bundleManifests = [];
 
   for (const { record: bundle } of terminalBundles) {
-    const { stagedDirectory, stagedFiles: bundleStagedFiles, stagedTotalBytes, stagedDirectorySha256 } =
-      await stagedDirectoryStats(bundle.id);
     const changes = [];
     const legacyUnstagedChanges = [];
 
@@ -217,21 +230,41 @@ async function buildManifest() {
         issues.push(`${bundle.id}: duplicate staged file reference ${stagedFilePath}`);
       }
 
+      const targetInfo = await fileInfo(targetPath);
       const stagedInfo = await fileInfo(stagedFilePath);
-      if (!stagedInfo.exists) {
-        missingStagedFileReferenceCount += 1;
-        issues.push(`${bundle.id}: proposed change ${change.change_id} missing staged file ${stagedFilePath}`);
-        continue;
+      let stagedRecord;
+      let stagedFileSha256 = stagedInfo.sha256;
+      let stagedFileBytes = stagedInfo.bytes;
+
+      if (stagedInfo.exists) {
+        stagedRecord = await readJson(stagedFilePath);
+      } else {
+        const existingChange = existingManifestChanges.get(
+          changeKey(bundle.id, { change_id: change.change_id, staged_file_path: stagedFilePath })
+        );
+        const reconstructsFromLive =
+          existingChange &&
+          targetInfo.exists &&
+          targetInfo.sha256 === existingChange.staged_file_sha256 &&
+          targetInfo.bytes === existingChange.staged_file_bytes;
+
+        if (!reconstructsFromLive) {
+          missingStagedFileReferenceCount += 1;
+          issues.push(`${bundle.id}: proposed change ${change.change_id} missing staged file ${stagedFilePath}`);
+          continue;
+        }
+
+        stagedRecord = await readJson(targetPath);
+        stagedFileSha256 = existingChange.staged_file_sha256;
+        stagedFileBytes = existingChange.staged_file_bytes;
       }
 
-      const stagedRecord = await readJson(stagedFilePath);
       if (stagedRecord.record_type !== change.target_record_type || stagedRecord.id !== change.target_record_id) {
         issues.push(
           `${bundle.id}: ${stagedFilePath} is ${stagedRecord.record_type}:${stagedRecord.id}, expected ${change.target_record_type}:${change.target_record_id}`
         );
       }
 
-      const targetInfo = await fileInfo(targetPath);
       if (bundle.lifecycle_status === "published" && !targetInfo.exists) {
         issues.push(`${bundle.id}: published target file is missing: ${targetPath}`);
       }
@@ -247,13 +280,16 @@ async function buildManifest() {
         target_file_sha256: targetInfo.sha256,
         target_file_bytes: targetInfo.bytes,
         staged_file_path: stagedFilePath,
-        staged_file_sha256: stagedInfo.sha256,
-        staged_file_bytes: stagedInfo.bytes,
+        staged_file_sha256: stagedFileSha256,
+        staged_file_bytes: stagedFileBytes,
         staged_record_type: stagedRecord.record_type,
         staged_record_id: stagedRecord.id,
         staged_record_name: stagedRecord.name ?? ""
       });
     }
+
+    const { stagedDirectory, stagedFiles: bundleStagedFiles, stagedTotalBytes, stagedDirectorySha256 } =
+      stagedDirectoryStats(bundle.id, changes);
 
     const publicationEventIds = (publicationEventsByBundle.get(bundle.id) ?? [])
       .sort((left, right) => {
@@ -284,9 +320,9 @@ async function buildManifest() {
 
   const missingBundleDirectoryCount = stagedDirectories.filter((directory) => !bundlesById.has(directory)).length;
   const unreferencedStagedFileCount = stagedFiles.filter((filePath) => !manifestedStagedPaths.has(filePath)).length;
-  const totalStagedBytes = (
-    await Promise.all(stagedFiles.map(async (filePath) => (await fileInfo(filePath)).bytes ?? 0))
-  ).reduce((total, bytes) => total + bytes, 0);
+  const logicalStagedDirectoryCount = bundleManifests.filter((bundle) => bundle.staged_file_count > 0).length;
+  const logicalStagedFileCount = bundleManifests.reduce((total, bundle) => total + bundle.staged_file_count, 0);
+  const logicalStagedBytes = bundleManifests.reduce((total, bundle) => total + bundle.staged_total_bytes, 0);
 
   if (missingBundleDirectoryCount > 0) {
     issues.push(`${missingBundleDirectoryCount} staged director${missingBundleDirectoryCount === 1 ? "y has" : "ies have"} no matching candidate bundle`);
@@ -307,14 +343,14 @@ async function buildManifest() {
     summary: {
       terminal_bundle_count: terminalBundles.length,
       active_bundle_count: activeBundles.length,
-      staged_directory_count: stagedDirectories.length,
-      staged_file_count: stagedFiles.length,
+      staged_directory_count: logicalStagedDirectoryCount,
+      staged_file_count: logicalStagedFileCount,
       manifested_staged_file_count: manifestedStagedPaths.size,
       missing_bundle_directory_count: missingBundleDirectoryCount,
       missing_staged_file_reference_count: missingStagedFileReferenceCount,
       legacy_unstaged_change_count: legacyUnstagedChangeCount,
       unreferenced_staged_file_count: unreferencedStagedFileCount,
-      total_staged_bytes: totalStagedBytes
+      total_staged_bytes: logicalStagedBytes
     },
     bundles: bundleManifests
   };

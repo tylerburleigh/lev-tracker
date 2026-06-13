@@ -1,17 +1,17 @@
 # Artifact Retention Report
 
-Generated: 2026-06-13T18:10:53.448Z
+Generated: 2026-06-13T18:34:15.875Z
 
 This report classifies file-backed artifacts by retention role. It is non-destructive: it identifies pruning and compression candidates but does not delete or rewrite files.
 
 ## Summary
 
 - Artifact roots scanned: data, research, ops, extra.
-- Artifact files classified: 2870.
-- Artifact footprint: 9.9 MB.
+- Artifact files classified: 1864.
+- Artifact footprint: 8.8 MB.
 - Unclassified artifacts: 0.
 - Active staged intermediate files: 0.
-- Terminal staged intermediate files: 1200.
+- Terminal staged intermediate files: 192.
 - Orphan staged intermediate files: 0.
 
 ## Retention Classes
@@ -19,26 +19,26 @@ This report classifies file-backed artifacts by retention role. It is non-destru
 | Class | Retention | Files | Size | Action |
 | --- | --- | --- | --- | --- |
 | Canonical Public Data | retain | 1241 | 2.1 MB | Keep as the reusable evidence graph and public content layer. |
-| Terminal Staged Intermediate | compress_candidate | 1200 | 2.0 MB | Preserve now; later replace with a manifest/hash archive only after explicit review. |
 | Publication Audit Trail | retain | 271 | 1.8 MB | Keep to explain review, approval, and publication history. |
-| Staged Record Manifests | retain_for_archive | 1 | 1.2 MB | Keep as the hash/index layer required before terminal staged JSON can be compressed. |
+| Staged Record Manifests | retain_for_archive | 1 | 1.2 MB | Keep as the hash/index layer required to reconstruct pruned terminal staged JSON. |
 | Research Session Logs | retain_then_summarize | 88 | 843 KB | Keep until source discovery and excluded-source rationale are synthesized elsewhere. |
 | Staged Record Archives | retain_for_archive | 1 | 839 KB | Keep packed changed staged bodies required to reconstruct terminal staged records that differ from live records. |
 | Current Coverage Synthesis | retain | 38 | 670 KB | Keep as the latest source-completeness judgment for each track. |
+| Terminal Staged Intermediate | compress_candidate | 192 | 599 KB | Retain changed staged bodies; identical live-backed staged files have been pruned after archive verification. |
+| Generated Reports | prunable_regenerable | 11 | 412 KB | Safe to delete or overwrite when stale because commands can regenerate them. |
 | Superseded Coverage Synthesis | compress_candidate | 16 | 232 KB | Keep for now; later summarize into the latest assessment revision history. |
 | Generated Planning State | current_copy_only | 3 | 122 KB | Keep current files, but do not preserve old snapshots unless debugging a generation change. |
-| Generated Reports | prunable_regenerable | 9 | 96 KB | Safe to delete or overwrite when stale because commands can regenerate them. |
 | Handoff Artifacts | review | 1 | 2 KB | Keep only while they inform future implementation; promote into docs if durable. |
 | Directory Markers | retain | 1 | 1 B | Keep when needed to preserve intentionally empty workflow directories. |
 
 ## Prunable Now
 
-- 9 generated report file(s), 96 KB.
+- 11 generated report file(s), 412 KB.
 - Generated planning state should be overwritten in place, not preserved as dated snapshots.
 
 ## Compression Candidates
 
-- 1200 terminal staged file(s), 2.0 MB.
+- 192 terminal staged file(s), 599 KB.
 - 16 superseded coverage assessment file(s), 232 KB.
 - 14 no-op research session(s) and 3 activity-only session(s) could eventually be summarized into per-track review history.
 
@@ -46,7 +46,7 @@ This report classifies file-backed artifacts by retention role. It is non-destru
 
 | Bundle Status | Staged File Count |
 | --- | --- |
-| published | 1200 |
+| published | 192 |
 
 ## Research Sessions
 
@@ -95,6 +95,8 @@ This report classifies file-backed artifacts by retention role. It is non-destru
 - extra/public-copy-report.md
 - extra/reader-task-audit.md
 - extra/staged-archive-readiness-report.md
+- extra/staged-archive-verification-report.md
+- extra/staged-prune-dry-run-report.md
 - extra/trial-watch-report.md
 
 ## Unclassified Artifacts
