@@ -503,7 +503,9 @@ Research runs should continue to follow `docs/research-ops-state.md`: one track 
    - Note: `docs/artifact-retention.md` classifies canonical public data, publication audit trail, active staged intermediates, terminal staged intermediates, research logs, coverage syntheses, generated planning state, generated reports, drafts, and handoff artifacts.
    - Note: the retention report writes `extra/artifact-retention-report.md` and identifies prunable/regenerable artifacts separately from compression candidates such as terminal staged records and superseded coverage assessments.
    - Note: `npm run manifest:staged-records` writes `data/staged-record-manifests/terminal-bundles.v1.json`, a deterministic hash/index manifest for terminal staged records.
-   - Remaining: review whether the manifest is sufficient for an archive workflow before pruning terminal staged JSON.
+   - Note: `npm run audit:staged-archive-readiness` compares terminal staged files with current live targets and reports whether manifest-only archival would lose changed staged bodies.
+   - Note: the current readiness report finds 1008 staged files identical to current live targets and 192 staged files that differ, so manifest-only archival is insufficient for the whole staged tree.
+   - Remaining: design an archive pack that keeps changed staged bodies while allowing identical staged files to be represented by manifest hashes.
 
 ## Priority 5: Documentation Cleanup
 
@@ -533,6 +535,7 @@ npm run audit:data
 npm run audit:data:sustainability -- --write
 npm run audit:artifacts -- --write
 npm run manifest:staged-records -- --write
+npm run audit:staged-archive-readiness -- --write
 npm run typecheck
 npm run build
 npm run research:bundle -- smoke --bundle <bundle-id> --base-url <local-url>

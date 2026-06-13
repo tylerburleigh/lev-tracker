@@ -342,6 +342,7 @@ async function classifyArtifacts() {
     "extra/editorial-quality-report.md",
     "extra/public-copy-report.md",
     "extra/reader-task-audit.md",
+    "extra/staged-archive-readiness-report.md",
     "extra/trial-watch-report.md"
   ].filter((filePath) => existsSync(workspacePath(filePath)));
   add("generated_report", generatedReportPaths);

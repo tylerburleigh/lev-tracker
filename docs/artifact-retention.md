@@ -6,6 +6,7 @@ Use this document with:
 
 - `npm run audit:artifacts`
 - `npm run audit:data:sustainability`
+- `npm run audit:staged-archive-readiness`
 - `npm run manifest:staged-records`
 - `docs/data-sustainability.md`
 - `docs/research-ops-state.md`
@@ -98,6 +99,16 @@ Use check mode to ensure the manifest still matches current files:
 npm run manifest:staged-records -- --check
 ```
 
+Use archive-readiness audit to compare staged files with current live targets:
+
+```bash
+npm run audit:staged-archive-readiness -- --write --max-manifest-drift 0
+```
+
+Manifest-only archival is acceptable only for staged files that are identical to their current live targets. Staged files that differ from current live records, lack live targets, or show manifest drift need retained bodies, packed snapshots, or another reconstruction path.
+
+Current archive-readiness result: manifest-only archival is not sufficient for the whole staged tree. The latest report found 1008 staged files identical to current live targets and 192 staged files that differ from current live targets. A future archive workflow should retain or pack those differing staged bodies.
+
 ### Research Session Logs
 
 Path:
@@ -177,6 +188,7 @@ Start with deletion-free reporting:
 ```bash
 npm run audit:artifacts -- --write
 npm run manifest:staged-records -- --write
+npm run audit:staged-archive-readiness -- --write
 ```
 
 Then handle candidates in this order:
@@ -185,7 +197,7 @@ Then handle candidates in this order:
 2. Drafts: apply or delete stale drafts.
 3. Generated state: overwrite in place; do not preserve dated copies.
 4. Superseded coverage assessments: summarize older versions into latest assessment revision notes before pruning.
-5. Terminal staged records: replace full JSON with reviewed manifests only after the manifest proves sufficient for audit.
+5. Terminal staged records: replace full JSON with reviewed manifests only for staged files that archive-readiness marks identical to current live targets; retain full bodies or packed snapshots for staged files that differ.
 
 ## What Not To Prune
 

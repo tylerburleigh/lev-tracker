@@ -1,6 +1,6 @@
 # Data Sustainability Report
 
-Generated: 2026-06-13T17:52:08.296Z
+Generated: 2026-06-13T18:03:43.367Z
 
 This report summarizes the file-backed data estate so growth pressure, staged-history drift, and lifecycle shape are visible before they become maintenance work.
 

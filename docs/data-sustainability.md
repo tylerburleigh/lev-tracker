@@ -8,6 +8,7 @@ Use this document with:
 - `npm run audit:data`
 - `npm run audit:data:sustainability`
 - `npm run audit:artifacts`
+- `npm run audit:staged-archive-readiness`
 - `npm run manifest:staged-records`
 - `docs/artifact-retention.md`
 - `docs/source-ingestion-rules.md`
@@ -62,6 +63,7 @@ npm run audit:data
 npm run audit:data:sustainability -- --write
 npm run audit:artifacts -- --write
 npm run manifest:staged-records -- --write
+npm run audit:staged-archive-readiness -- --write
 ```
 
 Use `npm run audit:data:sustainability -- --max-unreferenced-staged 0` to enforce staged-history hygiene after historical bundle metadata repair.

@@ -11,6 +11,7 @@ This directory holds exploratory or handoff documentation that is related to the
 - [editorial-quality-report.md](editorial-quality-report.md): generated combined quality report from `npm run audit:editorial -- --write`.
 - [data-sustainability-report.md](data-sustainability-report.md): generated data footprint and staged-history report from `npm run audit:data:sustainability -- --write`.
 - [artifact-retention-report.md](artifact-retention-report.md): generated artifact classification and retention report from `npm run audit:artifacts -- --write`.
+- [staged-archive-readiness-report.md](staged-archive-readiness-report.md): generated staged-vs-live comparison report from `npm run audit:staged-archive-readiness -- --write`.
 
 ## Status
 

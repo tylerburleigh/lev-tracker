@@ -1,13 +1,13 @@
 # Artifact Retention Report
 
-Generated: 2026-06-13T17:52:08.189Z
+Generated: 2026-06-13T18:03:43.305Z
 
 This report classifies file-backed artifacts by retention role. It is non-destructive: it identifies pruning and compression candidates but does not delete or rewrite files.
 
 ## Summary
 
 - Artifact roots scanned: data, research, ops, extra.
-- Artifact files classified: 2868.
+- Artifact files classified: 2869.
 - Artifact footprint: 9.0 MB.
 - Unclassified artifacts: 0.
 - Active staged intermediate files: 0.
@@ -26,13 +26,13 @@ This report classifies file-backed artifacts by retention role. It is non-destru
 | Current Coverage Synthesis | retain | 38 | 670 KB | Keep as the latest source-completeness judgment for each track. |
 | Superseded Coverage Synthesis | compress_candidate | 16 | 232 KB | Keep for now; later summarize into the latest assessment revision history. |
 | Generated Planning State | current_copy_only | 3 | 122 KB | Keep current files, but do not preserve old snapshots unless debugging a generation change. |
-| Generated Reports | prunable_regenerable | 8 | 86 KB | Safe to delete or overwrite when stale because commands can regenerate them. |
-| Handoff Artifacts | review | 1 | 1 KB | Keep only while they inform future implementation; promote into docs if durable. |
+| Generated Reports | prunable_regenerable | 9 | 96 KB | Safe to delete or overwrite when stale because commands can regenerate them. |
+| Handoff Artifacts | review | 1 | 2 KB | Keep only while they inform future implementation; promote into docs if durable. |
 | Directory Markers | retain | 1 | 1 B | Keep when needed to preserve intentionally empty workflow directories. |
 
 ## Prunable Now
 
-- 8 generated report file(s), 86 KB.
+- 9 generated report file(s), 96 KB.
 - Generated planning state should be overwritten in place, not preserved as dated snapshots.
 
 ## Compression Candidates
@@ -93,6 +93,7 @@ This report classifies file-backed artifacts by retention role. It is non-destru
 - extra/editorial-quality-report.md
 - extra/public-copy-report.md
 - extra/reader-task-audit.md
+- extra/staged-archive-readiness-report.md
 - extra/trial-watch-report.md
 
 ## Unclassified Artifacts

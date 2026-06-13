@@ -82,6 +82,8 @@ The first pass is intentionally small:
   Reports data footprint, staged-history pressure, candidate-bundle lifecycle shape, and staged files that are not linked from bundle metadata.
 - `npm run audit:artifacts`
   Classifies file-backed artifacts by retention role and identifies prunable or compressible categories without deleting anything.
+- `npm run audit:staged-archive-readiness`
+  Compares terminal staged JSON with current live records to decide whether manifest-only archival would lose historical staged bodies.
 - `npm run manifest:staged-records`
   Generates or checks the hash manifest for terminal staged records before any future staged JSON compression.
 
