@@ -1,0 +1,316 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "lysosomal-restoration-coverage-2026-06-13",
+  "name": "Lysosomal Restoration Coverage Assessment for June 13, 2026",
+  "short_name": "Lysosomal restoration coverage",
+  "track_id": "lysosomal-restoration",
+  "hallmark_id": "disabled_macroautophagy",
+  "assessment_type": "manual",
+  "assessed_at": "2026-06-13T12:56:28Z",
+  "assessment_window": {
+    "from": "2026-06-01T10:05:00Z",
+    "to": "2026-06-07T21:06:47Z",
+    "basis": "Backfill assessment of the published June 1 lysosomal-restoration baseline plus the June 7 no-op surveillance session; no new external source search was run for this assessment."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is adequate for the current low-confidence human_biomarker_signal public claim because the local map contains disease-specific human ambroxol CNS exposure and beta-glucocerebrosidase target-engagement evidence, a randomized Parkinson disease dementia target-engagement trial that constrains functional interpretation, ASPro-PD phase 3 activity context, direct mouse and C. elegans aging-biology evidence for lysosomal function and chaperone-mediated autophagy, and trehalose/TFEB pharmacological tractability in lysosomal storage disease models. Coverage is not strong because human evidence is concentrated in Parkinson disease and Parkinson disease dementia rather than broad aging; controlled ambroxol data do not show cognitive or clinical benefit; much of the aging support is genetic, worm, tissue-specific, disease-model, or stress-response evidence; several additional ambroxol or trehalose disease-program registries remain no-results context; long-term chronic safety and tissue-specific risks are not deeply mapped; and formal recent-review, observational, or seminal-anchor triangulation has not been recorded. The June 7 surveillance pass found no material post-publication delta, so ordinary surveillance can continue.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-06-01-lysosomal-restoration-bootstrap",
+      "2026-06-07-lysosomal-restoration-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "lysosomal-restoration-bootstrap-2026-06-01"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-lysosomal-restoration-source-fidelity-r1",
+      "evidence-review-lysosomal-restoration-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-lysosomal-restoration-bootstrap-2026-06-01-2026-06-01t11-24-31-086z"
+    ],
+    "outlook_ids": [
+      "track-lysosomal-restoration-outlook",
+      "hallmark-disabled-macroautophagy-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "The public stage is anchored by ambroxol human studies: an open-label Parkinson disease trial showing safety, CSF exposure, and glucocerebrosidase-related target engagement; a randomized Parkinson disease dementia phase 2 trial showing beta-glucocerebrosidase target engagement without cognitive or clinical benefit; and ASPro-PD phase 3 protocol activity without results.",
+      "source_ids": [
+        "pmid-31930374",
+        "pmid-40587145",
+        "pmid-41708985"
+      ],
+      "finding_ids": [
+        "ambroxol-open-label-parkinson-csf-target-engagement",
+        "ambroxol-pdd-target-engagement-without-cognitive-benefit",
+        "aspro-pd-phase3-active-no-results"
+      ],
+      "gap_note": "Human coverage is adequate only for biomarker-stage target engagement; it does not establish broad aging, healthy older-adult, functional, disease-modifying, or mortality benefit."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "not_checked",
+      "rationale": "The assessed artifacts do not systematically map observational ambroxol, Gaucher/GBA, Parkinson progression, lysosomal biomarker, lysosomal-storage-disease, real-world safety, or natural-history cohorts.",
+      "gap_note": "This does not block the current intervention-driven public stage, but observational disease-program or biomarker follow-up could help bound target engagement, safety, and phenotype selection."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "The local map includes direct mammalian aging evidence from LAMP-2A preservation in old mouse liver, C. elegans evidence that lysosomal function declines with age and is required for longevity pathways, LySR/vha-6 RNAi worm healthspan evidence, and trehalose/TFEB Batten disease mouse survival support.",
+      "source_ids": [
+        "pmid-18690243",
+        "pmid-32482227",
+        "pmid-40571723",
+        "pmid-28165011"
+      ],
+      "finding_ids": [
+        "lamp2a-restoration-improved-aged-mouse-liver-function",
+        "lysosome-function-declined-with-age-and-supported-longevity-pathways",
+        "lysr-vha6-rnai-extended-worm-healthspan",
+        "trehalose-tfeb-cleared-storage-burden-and-prolonged-batten-mouse-survival"
+      ],
+      "gap_note": "Animal coverage is biologically coherent but heterogeneous across worm, tissue-specific mouse aging, storage-disease mouse survival, genetic preservation, RNAi perturbation, and pharmacological TFEB activation."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "Mechanistic coverage spans LAMP-2A and chaperone-mediated autophagy, lysosomal morphology, motility, acidity, degradation and gene-expression decline, lysosomal surveillance response after partial v-ATPase perturbation, TFEB activation with trehalose, and ambroxol/GCase target engagement in human Parkinson contexts.",
+      "source_ids": [
+        "pmid-18690243",
+        "pmid-32482227",
+        "pmid-40571723",
+        "pmid-28165011",
+        "pmid-31930374",
+        "pmid-40587145",
+        "pmid-41708985"
+      ],
+      "finding_ids": [
+        "lamp2a-restoration-improved-aged-mouse-liver-function",
+        "lysosome-function-declined-with-age-and-supported-longevity-pathways",
+        "lysr-vha6-rnai-extended-worm-healthspan",
+        "trehalose-tfeb-cleared-storage-burden-and-prolonged-batten-mouse-survival",
+        "ambroxol-open-label-parkinson-csf-target-engagement",
+        "ambroxol-pdd-target-engagement-without-cognitive-benefit",
+        "aspro-pd-phase3-active-no-results"
+      ],
+      "gap_note": "Mechanistic coherence does not define one mature intervention class, and GCase chaperoning, TFEB activation, CMA restoration, lysosome repair, and lysosomal stress responses should not be collapsed into one clinical claim."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The map explicitly includes limiting evidence: the randomized Parkinson disease dementia ambroxol trial demonstrated target engagement but no group differences on primary or secondary cognitive and clinical outcomes; ASPro-PD has no efficacy results; trehalose/TFEB evidence is disease-model rather than normal aging; LAMP-2A evidence is tissue-specific and genetic; and LySR evidence is worm RNAi stress-response biology.",
+      "source_ids": [
+        "pmid-40587145",
+        "pmid-41708985",
+        "pmid-28165011",
+        "pmid-18690243",
+        "pmid-40571723"
+      ],
+      "finding_ids": [
+        "ambroxol-pdd-target-engagement-without-cognitive-benefit",
+        "aspro-pd-phase3-active-no-results",
+        "trehalose-tfeb-cleared-storage-burden-and-prolonged-batten-mouse-survival",
+        "lamp2a-restoration-improved-aged-mouse-liver-function",
+        "lysr-vha6-rnai-extended-worm-healthspan"
+      ],
+      "gap_note": "A broader failed-program, no-results registry, and adverse-event map across ambroxol, trehalose, TFEB, and other lysosomal interventions is not represented as public evidence."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "The baseline captures ambroxol short- to medium-term tolerability in Parkinson disease contexts and flags broader chronic lysosomal-activation risk. It does not deeply map long-term preventive safety, neurologic, immune, cancer, metabolic, substrate-specific, tissue-specific, or overactivation risks for chronic lysosomal, TFEB, CMA, v-ATPase, or GCase-directed interventions.",
+      "source_ids": [
+        "pmid-31930374",
+        "pmid-40587145",
+        "pmid-41708985",
+        "pmid-28165011",
+        "pmid-40571723"
+      ],
+      "finding_ids": [
+        "ambroxol-open-label-parkinson-csf-target-engagement",
+        "ambroxol-pdd-target-engagement-without-cognitive-benefit",
+        "aspro-pd-phase3-active-no-results",
+        "trehalose-tfeb-cleared-storage-burden-and-prolonged-batten-mouse-survival",
+        "lysr-vha6-rnai-extended-worm-healthspan"
+      ],
+      "gap_note": "Do not strengthen confidence or assign LEV relevance without longer-duration safety, durability, dose-response, tissue-specific target engagement, and functional outcome data."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "The June 7 surveillance pass rechecked the three registry-linked ambroxol studies. ASPro-PD NCT05778617 remained recruiting with no posted results and estimated 2029 completion; NCT02941822 remained completed without a registry results section while the peer-reviewed open-label result is public; and NCT02914366 remained unknown status without a registry results section while the peer-reviewed PDD result is public. Broad registry screens also surfaced additional no-results ambroxol and trehalose disease-program context.",
+      "source_ids": [
+        "pmid-41708985",
+        "pmid-31930374",
+        "pmid-40587145"
+      ],
+      "finding_ids": [
+        "aspro-pd-phase3-active-no-results",
+        "ambroxol-open-label-parkinson-csf-target-engagement",
+        "ambroxol-pdd-target-engagement-without-cognitive-benefit"
+      ],
+      "gap_note": "Continue watching ASPro-PD/NCT05778617, AMBITIOUS/GBA-PD NCT05287503, Lewy body dementia ambroxol NCT04588285, ambroxol disease-program registries, and SLS-005/trehalose registries for posted results."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "The backfill reviewed local bootstrap and surveillance artifacts. The June 7 surveillance pass found lysosomal aging, mitochondria-lysosome contact, and lysosomal-control review context, but no formal review, guideline, meta-analysis, or comparative triangulation has been reconciled against the seven-source public map.",
+      "gap_note": "A future source-completeness pass should compare recent lysosomal aging, ambroxol/GBA, TFEB, trehalose, CMA, lysosomal repair, LySR, and mitochondria-lysosome review literature against the current source map."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes plausible anchors for LAMP-2A/CMA restoration in old mouse liver, age-related lysosomal decline and longevity pathways in C. elegans, the LySR/vha-6 RNAi healthspan source, trehalose/TFEB disease-model tractability, open-label ambroxol Parkinson target engagement, randomized ambroxol PDD target engagement without clinical benefit, and ASPro-PD phase 3 activity.",
+      "source_ids": [
+        "pmid-18690243",
+        "pmid-32482227",
+        "pmid-40571723",
+        "pmid-28165011",
+        "pmid-31930374",
+        "pmid-40587145",
+        "pmid-41708985"
+      ],
+      "finding_ids": [
+        "lamp2a-restoration-improved-aged-mouse-liver-function",
+        "lysosome-function-declined-with-age-and-supported-longevity-pathways",
+        "lysr-vha6-rnai-extended-worm-healthspan",
+        "trehalose-tfeb-cleared-storage-burden-and-prolonged-batten-mouse-survival",
+        "ambroxol-open-label-parkinson-csf-target-engagement",
+        "ambroxol-pdd-target-engagement-without-cognitive-benefit",
+        "aspro-pd-phase3-active-no-results"
+      ],
+      "gap_note": "Formal must-include, review-cited, guideline-cited, registry-network, or citation-network auditing could still change source-completeness confidence."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The outlook, bootstrap session, surveillance log, and reviews distinguish lysosomal restoration from autophagy induction, selective autophagy, chaperone and heat-shock support, proteostasis, mitochondrial-lysosome contacts, senolytics, disease-specific Parkinson/GBA therapy, storage-disease programs, and generic stress-response or lysosome-repair mechanisms.",
+      "source_ids": [
+        "pmid-18690243",
+        "pmid-32482227",
+        "pmid-40571723",
+        "pmid-28165011",
+        "pmid-31930374",
+        "pmid-40587145",
+        "pmid-41708985"
+      ],
+      "finding_ids": [
+        "lamp2a-restoration-improved-aged-mouse-liver-function",
+        "lysosome-function-declined-with-age-and-supported-longevity-pathways",
+        "lysr-vha6-rnai-extended-worm-healthspan",
+        "trehalose-tfeb-cleared-storage-burden-and-prolonged-batten-mouse-survival",
+        "ambroxol-open-label-parkinson-csf-target-engagement",
+        "ambroxol-pdd-target-engagement-without-cognitive-benefit",
+        "aspro-pd-phase3-active-no-results"
+      ],
+      "gap_note": "Boundary maintenance remains important because future records may be primarily autophagy induction, selective autophagy, proteostasis, lysosome repair, Parkinson disease, storage disease, or mitochondrial quality-control evidence."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-18690243",
+    "pmid-32482227",
+    "pmid-40571723",
+    "pmid-28165011",
+    "pmid-31930374",
+    "pmid-40587145",
+    "pmid-41708985"
+  ],
+  "covered_finding_ids": [
+    "lamp2a-restoration-improved-aged-mouse-liver-function",
+    "lysosome-function-declined-with-age-and-supported-longevity-pathways",
+    "lysr-vha6-rnai-extended-worm-healthspan",
+    "trehalose-tfeb-cleared-storage-burden-and-prolonged-batten-mouse-survival",
+    "ambroxol-open-label-parkinson-csf-target-engagement",
+    "ambroxol-pdd-target-engagement-without-cognitive-benefit",
+    "aspro-pd-phase3-active-no-results"
+  ],
+  "search_log_summary": "This backfill reviewed local project artifacts: the published Lysosomal Restoration outlook, June 1 bootstrap session, published candidate bundle, source-fidelity and interpretation reviews, publication event, and June 7 no-op surveillance session with its local trial audit, ClinicalTrials.gov, PubMed, correction/retraction, bioRxiv/medRxiv, web, sponsor, registry, and exclusion logs. No new PubMed, registry, preprint, citation-network, or web source search was run for this assessment.",
+  "source_selection_notes": [
+    "PMID 31930374 and PMID 40587145 are the human biomarker-stage anchors for ambroxol CNS exposure and beta-glucocerebrosidase target engagement in Parkinson disease contexts.",
+    "PMID 40587145 also provides the key functional boundary because randomized PDD target engagement did not translate into cognitive or clinical outcome differences.",
+    "PMID 41708985 is phase 3 protocol and activity evidence only; it supports momentum but not efficacy.",
+    "PMID 18690243, PMID 32482227, and PMID 40571723 anchor aging-relevant lysosomal biology in old mouse liver and C. elegans.",
+    "PMID 28165011 anchors pharmacological lysosomal-clearance tractability through trehalose/TFEB, but in storage-disease models rather than normal aging.",
+    "The June 7 surveillance pass found no material post-publication source, no correction or retraction for baseline PMIDs, no posted ASPro-PD or related ambroxol result, and no same-window lysosomal-restoration evidence that changed the public baseline."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "human-functional-benefit-not-established",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "Human evidence demonstrates ambroxol CNS exposure and GCase-related target engagement in Parkinson contexts, but controlled data do not show cognitive or clinical benefit and no broad aging-functional trial is staged.",
+      "priority": "high",
+      "suggested_action": "Keep the public stage at human_biomarker_signal until randomized human trials connect lysosomal target engagement to durable function, disease modification, resilience, or aging-relevant outcomes."
+    },
+    {
+      "gap_id": "disease-specific-generalization-limit",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "The human layer is concentrated in Parkinson disease, Parkinson disease dementia, GBA/GCase biology, and lysosomal-disorder program context rather than healthy aging or broad lysosomal decline.",
+      "priority": "high",
+      "suggested_action": "Treat ambroxol evidence as disease-specific target engagement and require aging-relevant or phenotype-enriched human evidence before broadening claims."
+    },
+    {
+      "gap_id": "chronic-lysosomal-activation-safety-unresolved",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Long-term safety, dose-response, tissue specificity, substrate specificity, and overactivation risks are unresolved for chronic lysosomal, TFEB, CMA, v-ATPase, LySR, and GCase-directed strategies.",
+      "priority": "high",
+      "suggested_action": "Do not strengthen confidence or assign LEV-relevant timing without long-duration safety, durability, tissue-specific biomarker, and clinical outcome evidence."
+    },
+    {
+      "gap_id": "preclinical-heterogeneity",
+      "gap_type": "evidence_gap",
+      "category": "animal_lifespan_or_healthspan",
+      "description": "Animal and model evidence spans old mouse liver, worms, storage-disease mice, RNAi perturbation, TFEB activation, and lysosomal stress responses, making translation and class-level claims uncertain.",
+      "priority": "medium",
+      "suggested_action": "Keep animal findings as mechanistic and plausibility support unless mammalian aging interventions show replicated functional benefit with deployable dosing."
+    },
+    {
+      "gap_id": "registry-results-pending",
+      "gap_type": "coverage_gap",
+      "category": "active_trials_registries",
+      "description": "ASPro-PD remains recruiting with no posted results, and additional ambroxol or trehalose registries such as NCT05287503, NCT04588285, NCT04388969, NCT06614894, NCT07285369, NCT05332678, and NCT05490563 are no-results or disease-program context.",
+      "priority": "medium",
+      "suggested_action": "Continue ordinary surveillance for ASPro-PD, AMBITIOUS/GBA-PD, Lewy body dementia ambroxol, disease-program ambroxol, and SLS-005/trehalose posted results or material status changes."
+    },
+    {
+      "gap_id": "observational-disease-program-followup-not-mapped",
+      "gap_type": "coverage_gap",
+      "category": "human_observational_or_natural_experiment",
+      "description": "Observational disease-program follow-up, real-world ambroxol exposure, GBA/GCase stratification, lysosomal biomarker trajectories, and safety cohorts have not been systematically mapped.",
+      "priority": "medium",
+      "suggested_action": "Use a future source-completeness pass to decide whether observational or registry follow-up evidence adds useful safety, target-engagement, or phenotype-selection context."
+    },
+    {
+      "gap_id": "recent-review-triangulation-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "Recent review, guideline, meta-analysis, and citation-network triangulation across lysosomal aging, ambroxol/GBA, TFEB, trehalose, CMA, LySR, lysosome repair, and mitochondria-lysosome contacts is not recorded.",
+      "priority": "medium",
+      "suggested_action": "Compare recent review and citation-network coverage against the seven-source public map in a later source-completeness pass."
+    },
+    {
+      "gap_id": "taxonomy-boundary-maintenance",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "Lysosomal restoration overlaps with autophagy induction, selective autophagy, chaperone-mediated proteostasis, mitochondrial quality control, Parkinson disease programs, storage-disease interventions, and generic stress-response biology.",
+      "priority": "medium",
+      "suggested_action": "Keep assigning records by mechanism, target, disease context, endpoint, and aging relevance, and avoid class-level upgrades from adjacent lysosome biology alone."
+    }
+  ],
+  "next_coverage_action": "Continue ordinary surveillance for ASPro-PD and other ambroxol or trehalose disease-program results, human lysosomal target engagement tied to function, safety and durability signals, mammalian aging interventions, lysosome repair or LySR translation, TFEB/CMA evidence, and taxonomy-boundary records. Reserve coverage repair for a later source-completeness pass focused on no-results registry representation, observational follow-up, recent-review triangulation, formal seminal-anchor auditing, and broader safety/null maps if no material delta appears.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-backfill",
+    "lysosomal-restoration",
+    "disabled-macroautophagy",
+    "human-biomarker-signal",
+    "surveillance-ready"
+  ]
+}

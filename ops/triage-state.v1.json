@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-13T12:35:58.160Z",
+  "generated_at": "2026-06-13T12:59:15.551Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-13T12:35:58.048Z",
-    "research_priority_queue_updated_at": "2026-06-13T12:35:58.049Z",
+    "research_coverage_status_updated_at": "2026-06-13T12:59:15.439Z",
+    "research_priority_queue_updated_at": "2026-06-13T12:59:15.439Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
     "surveillance_recent_queue_count": 38,
     "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 6,
+    "coverage_assessment_backlog_count": 5,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
   },
@@ -33,7 +33,7 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-assessment-backfill-lysosomal-restoration",
+    "top_work_item_id": "coverage-assessment-backfill-proteasome-enhancement",
     "top_mode": "coverage_assessment_backfill",
     "active_editorial_count": 0,
     "ready_research_count": 0,
@@ -46,24 +46,24 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "coverage-assessment-backfill-lysosomal-restoration",
+      "item_id": "coverage-assessment-backfill-proteasome-enhancement",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for Lysosomal Restoration",
-      "rationale": "6 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
+      "title": "Backfill coverage assessment for Proteasome Enhancement",
+      "rationale": "5 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
       "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
-      "track_id": "lysosomal-restoration",
-      "hallmark_id": "disabled_macroautophagy",
+      "track_id": "proteasome-enhancement",
+      "hallmark_id": "loss_of_proteostasis",
       "references": [
         {
           "record_type": "track",
-          "record_id": "lysosomal-restoration"
+          "record_id": "proteasome-enhancement"
         },
         {
           "record_type": "hallmark",
-          "record_id": "disabled_macroautophagy"
+          "record_id": "loss_of_proteostasis"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",
@@ -75,11 +75,11 @@
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 6
+          "value": 5
         },
         {
           "name": "generated_surveillance_queue_rank",
-          "value": 25
+          "value": 26
         },
         {
           "name": "track_next_mode",
