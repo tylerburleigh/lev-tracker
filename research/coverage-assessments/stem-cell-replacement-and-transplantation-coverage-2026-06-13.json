@@ -1,0 +1,302 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "stem-cell-replacement-and-transplantation-coverage-2026-06-13",
+  "name": "Stem Cell Replacement and Transplantation Coverage Assessment for June 13, 2026",
+  "short_name": "Stem cell replacement coverage",
+  "track_id": "stem-cell-replacement-and-transplantation",
+  "hallmark_id": "stem_cell_exhaustion",
+  "assessment_type": "manual",
+  "assessed_at": "2026-06-13T11:31:09Z",
+  "assessment_window": {
+    "from": "2026-06-01T19:05:00Z",
+    "to": "2026-06-07T13:49:41.422Z",
+    "basis": "Backfill assessment of the published June 1 stem-cell replacement and transplantation baseline plus the June 6 activity-only surveillance bundle published on June 7; no new external source search was run for this assessment."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is adequate for the current low-confidence human_functional_benefit public claim because the local map contains a randomized older-adult frailty laromestrocel functional signal, small human Parkinson and retinal graft-survival or exploratory functional signals, a randomized multiple-sclerosis HSCT disease-outcome boundary, and a refreshed exPDite-2 phase 3 registry momentum signal. Coverage is not strong because the most directly aging-relevant MSC result may be paracrine or tissue-support biology rather than durable stem-cell replacement; the clearest engrafting replacement programs remain invasive, small, open-label, and disease-specific; the HSCT evidence is high-intensity immune ablation and reconstitution for multiple sclerosis rather than broad stem-cell-exhaustion reversal; animal lifespan or broad healthy-aging coverage is not mapped; active registries have no posted replacement-efficacy results; and recent-review or formal seminal-anchor triangulation has not been recorded. The June 6 surveillance pass found only an activity-date registry refresh, so ordinary surveillance can continue.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-06-01-stem-cell-replacement-and-transplantation-bootstrap",
+      "2026-06-06-stem-cell-replacement-and-transplantation-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "stem-cell-replacement-and-transplantation-bootstrap-2026-06-01",
+      "stem-cell-replacement-and-transplantation-surveillance-2026-06-06"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-stem-cell-replacement-and-transplantation-source-fidelity-r1",
+      "evidence-review-stem-cell-replacement-and-transplantation-interpretation-forecast-r1",
+      "evidence-review-stem-cell-replacement-and-transplantation-surveillance-2026-06-06-source-fidelity-r1",
+      "evidence-review-stem-cell-replacement-and-transplantation-surveillance-2026-06-06-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-stem-cell-replacement-and-transplantation-bootstrap-2026-06-01-2026-06-01t20-13-00-339z",
+      "publish-stem-cell-replacement-and-transplantation-surveillance-2026-06-06-2026-06-07t13-49-41-422z"
+    ],
+    "outlook_ids": [
+      "track-stem-cell-replacement-and-transplantation-outlook",
+      "hallmark-stem-cell-exhaustion-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes the main human intervention anchors for the public stage: a randomized, blinded, placebo-controlled phase 2b laromestrocel trial in older adults with aging frailty; open-label bemdaneprocel and A9-DPC Parkinson disease graft trials with exploratory motor or PET signals; open-label hESC-derived retinal pigment epithelium transplantation with possible visual benefit; and a randomized nonmyeloablative HSCT multiple-sclerosis trial with disease-progression benefit.",
+      "source_ids": [
+        "pmid-41747733",
+        "pmid-40240592",
+        "pmid-41086804",
+        "pmid-25458728",
+        "pmid-30644983"
+      ],
+      "finding_ids": [
+        "laromestrocel-improved-6mwt-aging-frailty",
+        "bemdaneprocel-pd-graft-survival-motor-signal",
+        "a9-dpc-pd-graft-survival-motor-signal",
+        "hesc-rpe-graft-survival-visual-signal",
+        "nonmyeloablative-hsct-ms-progression-benefit-boundary"
+      ],
+      "gap_note": "Adequacy is limited to a low-confidence functional-benefit claim; independent replication, durable older-adult function, and broader aging-relevant outcomes remain missing."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "not_checked",
+      "rationale": "The assessed artifacts are intervention and registry centered. They do not systematically map observational cohorts, natural-history comparators, transplant registry follow-up, graft-function trajectories, frailty natural experiments, or real-world safety and durability data.",
+      "gap_note": "This is not blocking for the current intervention-driven public stage, but future work could add useful context on durability, selection effects, procedure risk, and real-world implementation."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "not_checked",
+      "rationale": "The public baseline is driven by human functional and disease-specific intervention evidence. The assessed artifacts do not map animal lifespan, healthspan, stem-cell-exhaustion rescue, or broad tissue-replacement models.",
+      "gap_note": "A stronger LEV-relevant interpretation would need animal or human evidence that replacement strategies restore aged tissue function durably across contexts, not only disease-specific graft or transplant effects."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "Mechanistic coverage separates allogeneic MSC frailty therapy, hES or hESC-derived dopaminergic progenitor grafting, hESC-derived retinal pigment epithelium transplantation, phase 3 bemdaneprocel registry momentum, and immune-ablation plus hematopoietic reconstitution in multiple sclerosis. The outlook and reviews explicitly preserve the difference between paracrine MSC effects, literal engrafting replacement, and high-intensity transplantation.",
+      "source_ids": [
+        "pmid-41747733",
+        "pmid-40240592",
+        "pmid-41086804",
+        "nct-06944522",
+        "pmid-25458728",
+        "pmid-30644983"
+      ],
+      "finding_ids": [
+        "laromestrocel-improved-6mwt-aging-frailty",
+        "bemdaneprocel-pd-graft-survival-motor-signal",
+        "a9-dpc-pd-graft-survival-motor-signal",
+        "expdite2-bemdaneprocel-phase3-recruiting",
+        "hesc-rpe-graft-survival-visual-signal",
+        "nonmyeloablative-hsct-ms-progression-benefit-boundary"
+      ],
+      "gap_note": "Mechanistic adequacy does not prove durable replacement of aged stem-cell reserves, and it does not collapse MSC support, neural grafting, retinal grafting, and HSCT into one general rejuvenation mechanism."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The public outlook and reviews preserve important limits: laromestrocel needs independent replication and may not be true replacement; Parkinson and retinal graft data are small, open-label, procedure-intensive, and disease-specific; exPDite-2 is recruiting with no posted results; and HSCT is an intensive disease-specific transplant boundary rather than a broad aging intervention.",
+      "source_ids": [
+        "pmid-41747733",
+        "pmid-40240592",
+        "pmid-41086804",
+        "nct-06944522",
+        "pmid-25458728",
+        "pmid-30644983"
+      ],
+      "finding_ids": [
+        "laromestrocel-improved-6mwt-aging-frailty",
+        "bemdaneprocel-pd-graft-survival-motor-signal",
+        "a9-dpc-pd-graft-survival-motor-signal",
+        "expdite2-bemdaneprocel-phase3-recruiting",
+        "hesc-rpe-graft-survival-visual-signal",
+        "nonmyeloablative-hsct-ms-progression-benefit-boundary"
+      ],
+      "gap_note": "A broader failed-program, discontinuation, or long-term graft-complication map has not been reconciled."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "The baseline captures early safety signals and explicit procedure boundaries for MSC infusion, dopaminergic progenitor grafting, retinal grafting, and HSCT. It does not deeply map long-term graft behavior, tumor risk, ectopic differentiation, dyskinesia, rejection, immunosuppression, conditioning toxicity, infection, clonal expansion, repeat dosing, durability, or frail older-adult implementation burden.",
+      "source_ids": [
+        "pmid-41747733",
+        "pmid-40240592",
+        "pmid-41086804",
+        "pmid-25458728",
+        "pmid-30644983"
+      ],
+      "finding_ids": [
+        "laromestrocel-improved-6mwt-aging-frailty",
+        "bemdaneprocel-pd-graft-survival-motor-signal",
+        "a9-dpc-pd-graft-survival-motor-signal",
+        "hesc-rpe-graft-survival-visual-signal",
+        "nonmyeloablative-hsct-ms-progression-benefit-boundary"
+      ],
+      "gap_note": "Do not strengthen confidence or LEV relevance without longer-term safety and durability evidence tied to clinically meaningful benefit."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "The June 6 surveillance pass directly checked baseline laromestrocel, bemdaneprocel phase 1, A9-DPC, retinal RPE, HSCT/MS, and exPDite-2 registries, plus broader registry searches. The only material same-window delta was the exPDite-2 NCT06944522 last-update-posted date; the trial remained recruiting with estimated enrollment of 102 and no posted results.",
+      "source_ids": [
+        "nct-06944522"
+      ],
+      "finding_ids": [
+        "expdite2-bemdaneprocel-phase3-recruiting"
+      ],
+      "gap_note": "Continue watching exPDite-2, laromestrocel frailty replication, Parkinson graft programs, retinal replacement trials, and HSCT or immune-reconstitution comparators for posted results, status changes, safety, and durability."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "The backfill reviewed local bootstrap and surveillance artifacts. The June 6 surveillance pass found review-level context, including a broad regenerative-medicine review and a kidney-transplant preservation systematic review, but no formal review, meta-analysis, guideline, or comparative-effectiveness triangulation has been reconciled against the six-source baseline.",
+      "gap_note": "A future source-completeness pass should compare recent cell-replacement, MSC frailty, Parkinson graft, retinal graft, HSCT, and stem-cell-exhaustion reviews against the current source map."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes plausible public anchors for laromestrocel aging frailty, bemdaneprocel Parkinson grafting, A9-DPC Parkinson grafting, exPDite-2 phase 3 activity, hESC-derived retinal pigment epithelium transplantation, and nonmyeloablative HSCT in multiple sclerosis. These are sufficient for the current low-confidence public read.",
+      "source_ids": [
+        "pmid-41747733",
+        "pmid-40240592",
+        "pmid-41086804",
+        "nct-06944522",
+        "pmid-25458728",
+        "pmid-30644983"
+      ],
+      "finding_ids": [
+        "laromestrocel-improved-6mwt-aging-frailty",
+        "bemdaneprocel-pd-graft-survival-motor-signal",
+        "a9-dpc-pd-graft-survival-motor-signal",
+        "expdite2-bemdaneprocel-phase3-recruiting",
+        "hesc-rpe-graft-survival-visual-signal",
+        "nonmyeloablative-hsct-ms-progression-benefit-boundary"
+      ],
+      "gap_note": "Formal must-include, review-cited, guideline-cited, registry-network, or citation-network auditing could still change source-completeness confidence."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The outlook, bootstrap notes, surveillance session, and reviews distinguish stem-cell replacement and transplantation from stem-cell rejuvenation, paracrine MSC tissue support, EV or secretome therapy, generic regenerative-medicine claims, disease-specific Parkinson or retinal replacement, and high-intensity HSCT immune reconstitution. The activity-only surveillance bundle also keeps exPDite-2 as momentum rather than efficacy evidence.",
+      "source_ids": [
+        "pmid-41747733",
+        "pmid-40240592",
+        "pmid-41086804",
+        "nct-06944522",
+        "pmid-25458728",
+        "pmid-30644983"
+      ],
+      "finding_ids": [
+        "laromestrocel-improved-6mwt-aging-frailty",
+        "bemdaneprocel-pd-graft-survival-motor-signal",
+        "a9-dpc-pd-graft-survival-motor-signal",
+        "expdite2-bemdaneprocel-phase3-recruiting",
+        "hesc-rpe-graft-survival-visual-signal",
+        "nonmyeloablative-hsct-ms-progression-benefit-boundary"
+      ],
+      "gap_note": "Boundary maintenance remains important because future MSC, EV, organoid, retinal, neural, immune, transplantation, and rejuvenation records may belong partly or primarily to neighboring tracks."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-41747733",
+    "pmid-40240592",
+    "pmid-41086804",
+    "nct-06944522",
+    "pmid-25458728",
+    "pmid-30644983"
+  ],
+  "covered_finding_ids": [
+    "laromestrocel-improved-6mwt-aging-frailty",
+    "bemdaneprocel-pd-graft-survival-motor-signal",
+    "a9-dpc-pd-graft-survival-motor-signal",
+    "expdite2-bemdaneprocel-phase3-recruiting",
+    "hesc-rpe-graft-survival-visual-signal",
+    "nonmyeloablative-hsct-ms-progression-benefit-boundary"
+  ],
+  "search_log_summary": "This backfill reviewed local project artifacts: the published Stem Cell Replacement and Transplantation outlook, June 1 bootstrap session, published baseline candidate bundle, source-fidelity and interpretation reviews, baseline publication event, June 6 activity-only surveillance session, published surveillance candidate bundle, surveillance evidence reviews, and June 7 surveillance publication event. The surveillance log included PubMed, ClinicalTrials.gov, bioRxiv/medRxiv, web, sponsor, and correction/retraction checks through June 6. No new PubMed, registry, preprint, citation-network, or web source search was run for this assessment.",
+  "source_selection_notes": [
+    "PMID 41747733 is the most directly aging-relevant human functional anchor because it reports laromestrocel-associated 6-minute walk improvement in older adults with aging frailty.",
+    "PMID 40240592 and PMID 41086804 anchor current Parkinson disease dopaminergic progenitor graft-survival and exploratory motor-signal evidence.",
+    "NCT06944522 is a momentum and activity source only: exPDite-2 remains a recruiting randomized, triple-masked, sham-surgery-controlled phase 3 trial with no posted results as of the June 5, 2026 ClinicalTrials.gov update.",
+    "PMID 25458728 anchors early hESC-derived retinal pigment epithelium transplantation safety, graft-survival, and possible visual-function support in retinal disease.",
+    "PMID 30644983 anchors the high-intensity transplantation boundary with randomized multiple-sclerosis progression benefit after nonmyeloablative HSCT.",
+    "The June 6 surveillance pass found no material post-baseline efficacy, safety, durability, correction, retraction, or registry-result delta beyond the exPDite-2 activity-date refresh."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "broad-aging-functional-benefit-unproven",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "The current human_functional_benefit stage rests on one directly aging-relevant frailty MSC trial plus disease-specific replacement or transplant programs, not on replicated broad aging, intrinsic-capacity, healthy-lifespan, or mortality benefit.",
+      "priority": "high",
+      "suggested_action": "Keep confidence low and require independent older-adult functional replication or disease-specific controlled outcomes with durable benefit before strengthening the public stage."
+    },
+    {
+      "gap_id": "true-replacement-mechanism-uncertain",
+      "gap_type": "evidence_gap",
+      "category": "mechanistic",
+      "description": "The strongest aging-relevant laromestrocel signal may reflect paracrine, immunovascular, or tissue-support effects rather than durable engraftment or restoration of aged stem-cell reserves.",
+      "priority": "high",
+      "suggested_action": "Treat MSC frailty evidence as functional but mechanistically ambiguous, and require graft, lineage, persistence, target-engagement, or reserve-restoration evidence before making stronger replacement claims."
+    },
+    {
+      "gap_id": "procedure-graft-safety-durability-burden",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Replacement and transplant strategies carry surgery, conditioning, immunosuppression, rejection, infection, dyskinesia, ectopic differentiation, tumor, graft-behavior, and long-term durability concerns that are not deeply resolved in the current source map.",
+      "priority": "high",
+      "suggested_action": "Do not assign LEV-relevant timing or stronger confidence without longer-term safety, durability, and risk-benefit evidence in the intended disease or aging population."
+    },
+    {
+      "gap_id": "disease-specific-generalization-limit",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "Parkinson, retinal disease, and multiple-sclerosis transplant evidence shows bounded disease-specific benefit or signals, but it does not establish general reversal of stem-cell exhaustion or scalable aging intervention utility.",
+      "priority": "medium",
+      "suggested_action": "Keep disease-specific replacement records as support for bounded human feasibility and function, not as broad geroscience efficacy."
+    },
+    {
+      "gap_id": "phase3-and-replication-results-pending",
+      "gap_type": "coverage_gap",
+      "category": "active_trials_registries",
+      "description": "The key exPDite-2 bemdaneprocel phase 3 registry remains recruiting with no posted results, and laromestrocel frailty replication or longer-term follow-up is not yet represented.",
+      "priority": "medium",
+      "suggested_action": "Continue ordinary surveillance for exPDite-2 status or results, laromestrocel replication, and posted results from adjacent Parkinson, retinal, frailty, or HSCT registries."
+    },
+    {
+      "gap_id": "animal-healthspan-coverage-not-mapped",
+      "gap_type": "coverage_gap",
+      "category": "animal_lifespan_or_healthspan",
+      "description": "The assessed artifacts do not map animal lifespan, healthspan, stem-cell reserve, niche, immune-reconstitution, neural graft, or tissue-replacement models that could help bound LEV relevance.",
+      "priority": "medium",
+      "suggested_action": "If source-completeness work is scheduled, decide whether animal replacement and stem-cell-exhaustion models should be added as mechanistic or boundary support."
+    },
+    {
+      "gap_id": "recent-review-triangulation-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "The June 6 surveillance pass found review-level context, but no formal triangulation across recent MSC frailty, Parkinson graft, retinal graft, HSCT, regenerative medicine, or stem-cell-exhaustion reviews is recorded.",
+      "priority": "medium",
+      "suggested_action": "Use a future source-completeness pass to compare recent reviews, guidelines, and meta-analyses against the current six-source public map."
+    },
+    {
+      "gap_id": "taxonomy-boundary-maintenance",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "The track overlaps heavily with stem-cell rejuvenation, EV or secretome therapy, regenerative medicine, organoid or tissue engineering, immune reset, and disease-specific transplantation, creating risk of overbroad aging interpretation.",
+      "priority": "medium",
+      "suggested_action": "Keep assigning records by mechanism, product, route, endpoint, and aging relevance, and preserve exPDite-2 as activity-only until result-bearing evidence appears."
+    }
+  ],
+  "next_coverage_action": "Continue ordinary surveillance for exPDite-2 results or status changes, laromestrocel frailty replication, longer-term graft safety or durability, controlled Parkinson and retinal replacement outcomes, HSCT risk-benefit updates, and stem-cell-exhaustion aging relevance. Reserve coverage repair for a later source-completeness pass focused on animal healthspan models, formal review triangulation, registry network checks, observational follow-up, and seminal-anchor auditing if no material delta appears.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-backfill",
+    "stem-cell-replacement",
+    "transplantation",
+    "human-functional-benefit",
+    "surveillance-ready"
+  ]
+}

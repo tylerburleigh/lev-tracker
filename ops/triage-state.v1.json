@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-13T11:05:03.214Z",
+  "generated_at": "2026-06-13T11:34:36.358Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-13T11:05:03.092Z",
-    "research_priority_queue_updated_at": "2026-06-13T11:05:03.092Z",
+    "research_coverage_status_updated_at": "2026-06-13T11:34:36.251Z",
+    "research_priority_queue_updated_at": "2026-06-13T11:34:36.251Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
     "surveillance_recent_queue_count": 38,
     "coverage_repair_queue_count": 0,
-    "coverage_assessment_backlog_count": 9,
+    "coverage_assessment_backlog_count": 8,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
   },
@@ -33,7 +33,7 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "coverage-assessment-backfill-stem-cell-replacement-and-transplantation",
+    "top_work_item_id": "coverage-assessment-backfill-senomorphics",
     "top_mode": "coverage_assessment_backfill",
     "active_editorial_count": 0,
     "ready_research_count": 0,
@@ -46,24 +46,24 @@
   "work_items": [
     {
       "rank": 1,
-      "item_id": "coverage-assessment-backfill-stem-cell-replacement-and-transplantation",
+      "item_id": "coverage-assessment-backfill-senomorphics",
       "mode": "coverage_assessment_backfill",
       "domain": "research",
       "priority_tier": "soon",
       "status": "ready",
-      "title": "Backfill coverage assessment for Stem Cell Replacement and Transplantation",
-      "rationale": "9 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
+      "title": "Backfill coverage assessment for Senomorphics",
+      "rationale": "8 published baseline track(s) still lack internal coverage assessments; this is the highest-ranked unassessed track in the field-change queue.",
       "default_action": "Review the published outlook, session, staged update, evidence reviews, and public update, then create a coverage assessment without changing public records.",
-      "track_id": "stem-cell-replacement-and-transplantation",
-      "hallmark_id": "stem_cell_exhaustion",
+      "track_id": "senomorphics",
+      "hallmark_id": "cellular_senescence",
       "references": [
         {
           "record_type": "track",
-          "record_id": "stem-cell-replacement-and-transplantation"
+          "record_id": "senomorphics"
         },
         {
           "record_type": "hallmark",
-          "record_id": "stem_cell_exhaustion"
+          "record_id": "cellular_senescence"
         }
       ],
       "runbook_path": "docs/coverage-assessment.md",
@@ -75,11 +75,11 @@
       "signals": [
         {
           "name": "coverage_assessment_backlog_count",
-          "value": 9
+          "value": 8
         },
         {
           "name": "generated_surveillance_queue_rank",
-          "value": 22
+          "value": 23
         },
         {
           "name": "track_next_mode",
