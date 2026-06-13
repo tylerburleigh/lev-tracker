@@ -1,0 +1,309 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "coverage_assessment",
+  "id": "telomere-protection-and-capping-coverage-2026-06-13",
+  "name": "Telomere Protection and Capping Coverage Assessment for June 13, 2026",
+  "short_name": "Telomere protection capping coverage",
+  "track_id": "telomere-protection-and-capping",
+  "hallmark_id": "telomere_attrition",
+  "assessment_type": "manual",
+  "assessed_at": "2026-06-13T14:08:48Z",
+  "assessment_window": {
+    "from": "2026-05-31T21:15:00Z",
+    "to": "2026-06-07T21:51:48Z",
+    "basis": "Backfill assessment of the published May 31 Telomere Protection and Capping baseline plus the June 7 no-op surveillance session; no new external source search was run for this assessment."
+  },
+  "coverage_verdict": "adequate",
+  "summary": "Coverage is adequate for the current low-confidence animal_signal public claim because the local map contains a direct AAV9-TRF1 mouse healthspan intervention, human arterial and endothelial target-relevance biomarkers, causal mouse telomere-uncapping models, adjacent aged-mouse senolytic TIF evidence, a TRF2 overexpression safety and calibration boundary, and a June 7 surveillance pass that found no capping-directed human trial, same-window direct intervention result, correction, or retraction. Coverage is not strong because there is no human capping- or shelterin-directed intervention with prespecified telomere-capping endpoints, the direct therapeutic evidence is a single mouse gene-therapy anchor, human data are observational or cell-based, shelterin modulation is dose- and tissue-sensitive, delivery and durability are unresolved, and recent-review, registry-boundary, formal seminal-anchor, and citation-network triangulation remain incomplete.",
+  "reviewed_artifacts": {
+    "research_session_ids": [
+      "2026-05-31-telomere-protection-and-capping-bootstrap",
+      "2026-06-07-telomere-protection-and-capping-surveillance"
+    ],
+    "candidate_bundle_ids": [
+      "telomere-protection-and-capping-bootstrap-2026-05-31"
+    ],
+    "evidence_review_ids": [
+      "evidence-review-telomere-protection-and-capping-source-fidelity-r1",
+      "evidence-review-telomere-protection-and-capping-interpretation-forecast-r1"
+    ],
+    "publication_event_ids": [
+      "publish-telomere-protection-and-capping-bootstrap-2026-05-31-2026-05-31t21-55-18-580z"
+    ],
+    "outlook_ids": [
+      "track-telomere-protection-and-capping-outlook",
+      "hallmark-telomere-attrition-outlook"
+    ]
+  },
+  "evidence_categories": [
+    {
+      "category": "human_interventional",
+      "coverage_level": "thin",
+      "rationale": "No capping- or shelterin-directed human intervention with telomere-capping, telomere-dysfunction, target-engagement, function, disease, or safety endpoints is staged. The June 7 trial audit and broad ClinicalTrials.gov searches found no scoped registry-linked human study and no capping- or shelterin-directed aging trial.",
+      "gap_note": "A human_biomarker_signal upgrade would require treated-human evidence that improves prespecified capping or telomere-dysfunction markers without concerning genomic-instability, clonal-expansion, or cancer signals."
+    },
+    {
+      "category": "human_observational_or_natural_experiment",
+      "coverage_level": "adequate",
+      "rationale": "Human target-relevance coverage includes age-related arterial telomere uncapping, hypertension-associated arterial uncapping and p53/p21 senescence signaling, and older-donor endothelial-cell dysfunctional-telomere evidence. These records support human relevance while preserving that no capping-directed therapy was tested.",
+      "source_ids": [
+        "pmid-23666675",
+        "pmid-24686009",
+        "pmid-37259606"
+      ],
+      "finding_ids": [
+        "human-arterial-uncapping-increases-with-age",
+        "human-hypertension-arterial-uncapping-senescence-signal",
+        "old-human-endothelial-cells-had-more-dysfunctional-telomeres"
+      ],
+      "gap_note": "Coverage is not strong because observational tissue and cell findings do not establish reversibility, causal human benefit, intervention feasibility, or clinical endpoint movement."
+    },
+    {
+      "category": "animal_lifespan_or_healthspan",
+      "coverage_level": "adequate",
+      "rationale": "The direct therapeutic animal anchor is AAV9-TRF1 treatment in adult and old mice, which improved multiple healthspan markers and reduced short-telomere or telomere-associated DNA-damage signals in some tissues without median telomere lengthening. Additional animal biology includes Trf2 deletion vascular dysfunction, endothelial-specific telomere dysfunction causing vascular-metabolic impairment, and D+Q senolytic reduction of endothelial TIF markers in aged mice as adjacent intervention context.",
+      "source_ids": [
+        "pmid-28944611",
+        "pmid-30502348",
+        "pmid-37259606",
+        "pmid-40109908"
+      ],
+      "finding_ids": [
+        "aav9-trf1-improved-mouse-healthspan-without-lengthening",
+        "trf2-deletion-caused-vascular-uncapping-dysfunction-mice",
+        "endothelial-telomere-dysfunction-induced-vascular-metabolic-impairment",
+        "dq-senolytics-reduced-endothelial-tif-aged-mice"
+      ],
+      "gap_note": "Coverage is not strong because the direct intervention evidence is mostly one AAV9-TRF1 mouse program, D+Q is adjacent rather than shelterin-directed, and independent replication, lifespan, tissue-specific, and delivery evidence remain limited."
+    },
+    {
+      "category": "mechanistic",
+      "coverage_level": "adequate",
+      "rationale": "Mechanistic coverage spans TRF1 rescue, TRF2 loss-of-function vascular uncapping, endothelial telomere dysfunction as a driver of senescence and vascular-metabolic impairment, human age and hypertension uncapping biomarkers independent of mean telomere length, and D+Q effects on aged endothelial TIF markers. The evidence map explicitly separates capping and telomere-dysfunction biology from generic telomere lengthening.",
+      "source_ids": [
+        "pmid-28944611",
+        "pmid-23666675",
+        "pmid-24686009",
+        "pmid-30502348",
+        "pmid-37259606",
+        "pmid-40109908"
+      ],
+      "finding_ids": [
+        "aav9-trf1-improved-mouse-healthspan-without-lengthening",
+        "human-arterial-uncapping-increases-with-age",
+        "human-hypertension-arterial-uncapping-senescence-signal",
+        "trf2-deletion-caused-vascular-uncapping-dysfunction-mice",
+        "old-human-endothelial-cells-had-more-dysfunctional-telomeres",
+        "endothelial-telomere-dysfunction-induced-vascular-metabolic-impairment",
+        "dq-senolytics-reduced-endothelial-tif-aged-mice"
+      ],
+      "gap_note": "Mechanistic coverage remains dose- and context-sensitive; a therapy would need to show cap protection rather than nonspecific anti-inflammatory, senolytic, telomere-length, or DNA-damage effects."
+    },
+    {
+      "category": "null_negative_or_limiting",
+      "coverage_level": "adequate",
+      "rationale": "The public map preserves several limiting signals: no staged human capping intervention exists, the AAV9-TRF1 mouse signal did not establish median lifespan extension or human delivery, D+Q is probably senescent-cell clearance rather than direct cap repair, TRF2 overexpression caused telomere loss, DNA damage, premature skin deterioration, and cancer in mice, and the June 7 surveillance pass found no material capping-directed delta.",
+      "source_ids": [
+        "pmid-28944611",
+        "pmid-40109908",
+        "pmid-16142233"
+      ],
+      "finding_ids": [
+        "aav9-trf1-improved-mouse-healthspan-without-lengthening",
+        "dq-senolytics-reduced-endothelial-tif-aged-mice",
+        "trf2-overexpression-premature-aging-cancer-boundary"
+      ],
+      "gap_note": "A broader failed-program, non-replication, delivery, species-translation, and shelterin-modulation safety map has not been formalized."
+    },
+    {
+      "category": "safety_durability",
+      "coverage_level": "thin",
+      "rationale": "Safety coverage is anchored mainly by the TRF2 overexpression harm record and by conceptual constraints in the AAV9-TRF1 and D+Q evidence. The assessed artifacts do not deeply map long-term AAV or shelterin-modulation safety, tissue-specific dose windows, durability, clonal expansion, genomic instability, cancer risk, immune response, fertility, or reversibility.",
+      "source_ids": [
+        "pmid-16142233",
+        "pmid-28944611",
+        "pmid-40109908"
+      ],
+      "finding_ids": [
+        "trf2-overexpression-premature-aging-cancer-boundary",
+        "aav9-trf1-improved-mouse-healthspan-without-lengthening",
+        "dq-senolytics-reduced-endothelial-tif-aged-mice"
+      ],
+      "gap_note": "Do not strengthen confidence or assign LEV-relevant timing without long-term mammalian and human safety, durability, dose, tissue-specificity, clonal-expansion, and cancer surveillance evidence."
+    },
+    {
+      "category": "active_trials_registries",
+      "coverage_level": "adequate",
+      "rationale": "The June 7 surveillance pass ran a local trial audit and broad ClinicalTrials.gov searches. It found zero registry-linked interventional studies and no capping- or shelterin-directed aging intervention trial; close hits were TA-65, telomere-length, telomerase, oncology, lifestyle, infertility, observational, or no-results boundary records rather than scoped capping evidence.",
+      "gap_note": "Continue watching for capping, uncapping, shelterin, TRF1, TRF2, TERF1, TERF2, POT1, TINF2, TPP1, ACD, or telomere-dysfunction intervention programs with aging-relevant endpoints."
+    },
+    {
+      "category": "recent_reviews_meta_analyses",
+      "coverage_level": "thin",
+      "rationale": "The backfill reviewed local bootstrap and surveillance artifacts. The June 7 surveillance pass found review-level and diagnostic context around cardiac senescence, DNA repair dysregulation, osteoporosis biomarkers, short telomere syndrome, progeria, and telomere biology disorders, but no formal review, guideline, meta-analysis, assay-comparison, or citation-network triangulation has been reconciled against the seven-source public map.",
+      "gap_note": "A future source-completeness pass should compare recent shelterin, telomere uncapping, telomere dysfunction-induced foci, endothelial aging, TRF1, TRF2, POT1, TPP1, short-telomere syndrome, and telomerase-boundary reviews against the current source map."
+    },
+    {
+      "category": "seminal_anchors",
+      "coverage_level": "adequate",
+      "rationale": "The baseline includes plausible anchors for AAV9-TRF1 mouse healthspan intervention, age-related and hypertension-associated human arterial uncapping, Trf2 deletion vascular dysfunction, older human endothelial dysfunctional telomeres and mouse endothelial dysfunction, aged-mouse D+Q TIF reduction as adjacent intervention context, and TRF2 overexpression harm.",
+      "source_ids": [
+        "pmid-28944611",
+        "pmid-23666675",
+        "pmid-24686009",
+        "pmid-30502348",
+        "pmid-37259606",
+        "pmid-40109908",
+        "pmid-16142233"
+      ],
+      "finding_ids": [
+        "aav9-trf1-improved-mouse-healthspan-without-lengthening",
+        "human-arterial-uncapping-increases-with-age",
+        "human-hypertension-arterial-uncapping-senescence-signal",
+        "trf2-deletion-caused-vascular-uncapping-dysfunction-mice",
+        "old-human-endothelial-cells-had-more-dysfunctional-telomeres",
+        "endothelial-telomere-dysfunction-induced-vascular-metabolic-impairment",
+        "dq-senolytics-reduced-endothelial-tif-aged-mice",
+        "trf2-overexpression-premature-aging-cancer-boundary"
+      ],
+      "gap_note": "Formal must-include, review-cited, assay-validation, registry-network, and citation-network auditing could still change source-completeness confidence."
+    },
+    {
+      "category": "taxonomy_boundary",
+      "coverage_level": "adequate",
+      "rationale": "The outlook, bootstrap session, surveillance log, and reviews distinguish telomere protection and capping from telomerase restoration, telomere-length-only biomarkers, telomere biology disorder diagnosis, oncology telomere targeting, generic senescence and DNA damage, D+Q senolytics, lifestyle or supplement telomere endpoints, and telomerase/telomere mRNA or peptide boundary records.",
+      "source_ids": [
+        "pmid-28944611",
+        "pmid-23666675",
+        "pmid-24686009",
+        "pmid-30502348",
+        "pmid-37259606",
+        "pmid-40109908",
+        "pmid-16142233"
+      ],
+      "finding_ids": [
+        "aav9-trf1-improved-mouse-healthspan-without-lengthening",
+        "human-arterial-uncapping-increases-with-age",
+        "human-hypertension-arterial-uncapping-senescence-signal",
+        "trf2-deletion-caused-vascular-uncapping-dysfunction-mice",
+        "old-human-endothelial-cells-had-more-dysfunctional-telomeres",
+        "endothelial-telomere-dysfunction-induced-vascular-metabolic-impairment",
+        "dq-senolytics-reduced-endothelial-tif-aged-mice",
+        "trf2-overexpression-premature-aging-cancer-boundary"
+      ],
+      "gap_note": "Boundary maintenance remains important because future telomerase, telomere-length, senolytic, DNA-damage, oncology, cardiovascular, and short-telomere syndrome records may be adjacent but not direct capping evidence."
+    }
+  ],
+  "covered_source_ids": [
+    "pmid-28944611",
+    "pmid-23666675",
+    "pmid-24686009",
+    "pmid-30502348",
+    "pmid-37259606",
+    "pmid-40109908",
+    "pmid-16142233"
+  ],
+  "covered_finding_ids": [
+    "aav9-trf1-improved-mouse-healthspan-without-lengthening",
+    "human-arterial-uncapping-increases-with-age",
+    "human-hypertension-arterial-uncapping-senescence-signal",
+    "trf2-deletion-caused-vascular-uncapping-dysfunction-mice",
+    "old-human-endothelial-cells-had-more-dysfunctional-telomeres",
+    "endothelial-telomere-dysfunction-induced-vascular-metabolic-impairment",
+    "dq-senolytics-reduced-endothelial-tif-aged-mice",
+    "trf2-overexpression-premature-aging-cancer-boundary"
+  ],
+  "search_log_summary": "This backfill reviewed local project artifacts: the published Telomere Protection and Capping outlook, May 31 bootstrap session, published candidate bundle, source-fidelity and interpretation reviews, publication event, and June 7 no-op surveillance session with its local trial audit, ClinicalTrials.gov, PubMed, correction/retraction, preprint, Crossref, registry, boundary, and exclusion logs. No new PubMed, registry, preprint, citation-network, or web source search was run for this assessment.",
+  "source_selection_notes": [
+    "PMID 28944611 is the main direct animal intervention anchor through AAV9-TRF1 mouse healthspan and telomere-protection marker evidence.",
+    "PMID 23666675, PMID 24686009, and PMID 37259606 provide human artery or endothelial target-relevance biomarkers, but not treated-human capping evidence.",
+    "PMID 30502348 and PMID 37259606 support causal animal capping biology through Trf2 deletion and endothelial telomere dysfunction models.",
+    "PMID 40109908 is included as adjacent aged-mouse senolytic TIF evidence, not as direct shelterin repair.",
+    "PMID 16142233 is the main safety and calibration boundary because TRF2 overexpression caused telomere loss, DNA damage, premature tissue deterioration, and cancer in mice.",
+    "The June 7 surveillance pass found no scoped human clinical program, no same-window direct capping intervention result, no correction or retraction for baseline PMIDs, and no material public-source delta."
+  ],
+  "known_gaps": [
+    {
+      "gap_id": "human-capping-intervention-absent",
+      "gap_type": "evidence_gap",
+      "category": "human_interventional",
+      "description": "No staged human intervention directly improves telomere capping, telomere dysfunction-induced foci, shelterin target engagement, function, disease endpoints, or safety in an aging-relevant context.",
+      "priority": "high",
+      "suggested_action": "Keep the public stage at animal_signal until a capping- or shelterin-directed human study shows prespecified target engagement with acceptable genomic-instability and cancer monitoring."
+    },
+    {
+      "gap_id": "direct-animal-intervention-replication-sparse",
+      "gap_type": "evidence_gap",
+      "category": "animal_lifespan_or_healthspan",
+      "description": "The direct therapeutic signal is dominated by one AAV9-TRF1 mouse program, while D+Q is adjacent and causal dysfunction models are not restoration therapies.",
+      "priority": "high",
+      "suggested_action": "Require independent AAV9-TRF1-like replication, lifespan or durable healthspan outcomes, tissue-specific capping biomarkers, and delivery comparisons before strengthening confidence."
+    },
+    {
+      "gap_id": "shelterin-safety-dose-window-unresolved",
+      "gap_type": "evidence_gap",
+      "category": "safety_durability",
+      "description": "Shelterin modulation is safety-sensitive: TRF2 loss drives dysfunction, but TRF2 overexpression caused telomere loss, DNA damage, premature aging phenotypes, and cancer in mice.",
+      "priority": "high",
+      "suggested_action": "Do not assign LEV-relevant timing without long-term safety, dose-response, tissue-specific, clonal-expansion, genomic-instability, cancer, and reversibility evidence."
+    },
+    {
+      "gap_id": "human-target-relevance-not-reversibility",
+      "gap_type": "evidence_gap",
+      "category": "human_observational_or_natural_experiment",
+      "description": "Human artery and endothelial-cell records support target relevance but do not show that capping restoration is achievable or clinically useful in people.",
+      "priority": "medium",
+      "suggested_action": "Keep human evidence framed as target-relevance biomarkers until intervention data demonstrate reversible telomere dysfunction and downstream benefit."
+    },
+    {
+      "gap_id": "delivery-and-durability-unresolved",
+      "gap_type": "evidence_gap",
+      "category": "mechanistic",
+      "description": "AAV9-TRF1 delivery, tissue specificity, dose control, transgene durability, immune response, and reversibility remain unresolved for human translation.",
+      "priority": "medium",
+      "suggested_action": "Prioritize studies comparing delivery platforms, duration, tissue selectivity, and dose titration for capping-directed interventions."
+    },
+    {
+      "gap_id": "registry-watchlist-empty-for-scoped-track",
+      "gap_type": "coverage_gap",
+      "category": "active_trials_registries",
+      "description": "The June 7 local trial audit and broad ClinicalTrials.gov searches found no scoped capping- or shelterin-directed human aging program, leaving no active result watch item for the track.",
+      "priority": "medium",
+      "suggested_action": "Continue ordinary surveillance for shelterin, TRF1, TRF2, POT1, TPP1, telomere-uncapping, and TIF endpoint trials, while keeping telomerase or telomere-length records in neighboring tracks unless they change capping biology."
+    },
+    {
+      "gap_id": "recent-review-triangulation-not-recorded",
+      "gap_type": "coverage_gap",
+      "category": "recent_reviews_meta_analyses",
+      "description": "Recent review, systematic-review, guideline, assay-validation, short-telomere syndrome, endothelial-aging, shelterin, and citation-network triangulation has not been recorded against the seven-source public map.",
+      "priority": "medium",
+      "suggested_action": "Compare recent telomere-capping, shelterin, telomere-dysfunction, TIF, endothelial-aging, telomere biology disorder, and telomerase-boundary reviews against the current map in a later source-completeness pass."
+    },
+    {
+      "gap_id": "seminal-anchor-audit-not-formalized",
+      "gap_type": "coverage_gap",
+      "category": "seminal_anchors",
+      "description": "The baseline includes plausible anchors, but no formal must-include, review-cited, assay-validation, registry-network, or citation-network audit has been recorded.",
+      "priority": "medium",
+      "suggested_action": "Run a formal anchor audit before treating coverage as strong or using the track for broader telomere attrition synthesis."
+    },
+    {
+      "gap_id": "taxonomy-boundary-maintenance",
+      "gap_type": "operational_gap",
+      "category": "taxonomy_boundary",
+      "description": "Telomere protection and capping overlaps with telomerase restoration, telomere-length biomarkers, senolytics, DNA-damage response, short-telomere syndrome diagnosis, oncology telomere targeting, cardiovascular aging, supplements, and lifestyle records.",
+      "priority": "medium",
+      "suggested_action": "Assign future records by whether they directly modify cap protection or shelterin biology, rather than merely reporting telomere length, telomerase activity, senescence, DNA damage, or disease association."
+    }
+  ],
+  "next_coverage_action": "Continue ordinary surveillance for capping- or shelterin-directed human target-engagement studies, AAV9-TRF1 replication, small-molecule or gene-therapy shelterin modulation, TIF endpoint intervention studies, delivery and durability evidence, and safety signals involving genomic instability, clonal expansion, cancer, immune response, and tissue-specific dose windows. Reserve coverage repair for a later source-completeness pass focused on recent-review triangulation, formal seminal-anchor auditing, telomerase and telomere-length boundary records, short-telomere syndrome context, registry network checks, and broader safety or failed-program maps if no material delta appears.",
+  "next_recommended_mode": "surveillance",
+  "tags": [
+    "coverage-backfill",
+    "telomere-protection",
+    "telomere-capping",
+    "telomere-attrition",
+    "animal-signal",
+    "surveillance-ready"
+  ]
+}
