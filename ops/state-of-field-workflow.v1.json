@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "state_type": "state_of_field_workflow",
-  "updated_at": "2026-06-14T16:45:00.000Z",
+  "updated_at": "2026-06-14T17:41:09.000Z",
   "policy": {
     "public_visibility": "Only completed editions in data/content/state-of-the-field are rendered on the public State of the Field pages.",
     "draft_storage": "Drafts, reconciliation notes, and in-progress states stay in this ops manifest or extra/ artifacts until publication.",
@@ -183,7 +183,7 @@
           "related_outlook_ids": [
             "track-transposon-and-somatic-mutation-control-outlook"
           ],
-          "decision": "needs_decision",
+          "decision": "include_as_current_context",
           "period_interpretation_changed": false,
           "rationale": "June missing-context update that narrowed reverse-transcriptase-inhibitor, trial, program, DREAM, and CHIP boundaries without changing stage, momentum, read firmness, or LEV timing.",
           "next_action": "Classify as June current-context unless the final edition needs it as a named example of better claim boundaries.",
@@ -201,8 +201,10 @@
             "reviewed_by": "codex"
           },
           "human_approval": {
-            "status": "not_required",
-            "notes": "Agent-led low-materiality context recommendation; no top-level public interpretation change."
+            "status": "approved",
+            "resolved_at": "2026-06-14T17:35:14.000Z",
+            "approver": "tyler",
+            "notes": "Approved in packet review as part of the low-risk default slate; no top-level public interpretation change."
           }
         },
         {
@@ -211,7 +213,7 @@
           "related_outlook_ids": [
             "track-stem-cell-replacement-and-transplantation-outlook"
           ],
-          "decision": "needs_decision",
+          "decision": "omit_process_context",
           "period_interpretation_changed": false,
           "rationale": "Activity-only registry refresh: exPDite-2 remained recruiting with no posted results and did not change the outlook.",
           "next_action": "Classify as activity_without_results or omit from public July copy if it is too process-like.",
@@ -229,8 +231,10 @@
             "reviewed_by": "codex"
           },
           "human_approval": {
-            "status": "not_required",
-            "notes": "Agent-led omission of activity-only process context."
+            "status": "approved",
+            "resolved_at": "2026-06-14T17:35:14.000Z",
+            "approver": "tyler",
+            "notes": "Approved in packet review as part of the low-risk default slate; omit activity-only process context."
           }
         },
         {
@@ -239,7 +243,7 @@
           "related_outlook_ids": [
             "track-senomorphics-outlook"
           ],
-          "decision": "needs_decision",
+          "decision": "include_as_field_signal",
           "period_interpretation_changed": false,
           "rationale": "June field-change update adding mianserin/Ca2+ animal lifespan and human-cell senescence support while preserving the track stage.",
           "next_action": "Consider as a June field_signal, bounded as preclinical and not treated-human proof.",
@@ -258,9 +262,11 @@
             "reviewed_by": "codex"
           },
           "human_approval": {
-            "status": "requested",
+            "status": "approved",
             "requested_at": "2026-06-14T16:45:00.000Z",
-            "notes": "Approve whether this should appear as a named June field signal."
+            "resolved_at": "2026-06-14T17:41:09.000Z",
+            "approver": "tyler",
+            "notes": "Approved in packet review as an optional secondary June field signal; keep it bounded as preclinical and not treated-human proof."
           }
         },
         {
@@ -269,7 +275,7 @@
           "related_outlook_ids": [
             "track-nad-and-redox-restoration-outlook"
           ],
-          "decision": "needs_decision",
+          "decision": "include_as_current_context",
           "period_interpretation_changed": false,
           "rationale": "June missing-context update that improved MIB-626, registry, and review boundaries without changing stage, momentum, or read firmness.",
           "next_action": "Classify as current_context unless a trial-horizon item needs explicit NAD/redox coverage.",
@@ -287,8 +293,10 @@
             "reviewed_by": "codex"
           },
           "human_approval": {
-            "status": "not_required",
-            "notes": "Agent-led low-materiality current-context recommendation."
+            "status": "approved",
+            "resolved_at": "2026-06-14T17:35:14.000Z",
+            "approver": "tyler",
+            "notes": "Approved in packet review as part of the low-risk default slate."
           }
         },
         {
@@ -297,7 +305,7 @@
           "related_outlook_ids": [
             "track-stem-cell-rejuvenation-outlook"
           ],
-          "decision": "needs_decision",
+          "decision": "needs_surveillance",
           "period_interpretation_changed": false,
           "rationale": "June missing-context update that added no-results hDNAgr registry and review context while adding no posted human efficacy or safety results.",
           "next_action": "Classify as current_context or trial-horizon boundary.",
@@ -317,9 +325,11 @@
             "reviewed_by": "codex"
           },
           "human_approval": {
-            "status": "requested",
+            "status": "approved",
             "requested_at": "2026-06-14T16:45:00.000Z",
-            "notes": "Approve whether to hold this for surveillance-backed trial-horizon copy."
+            "resolved_at": "2026-06-14T17:41:09.000Z",
+            "approver": "tyler",
+            "notes": "Approved in packet review as a hold for surveillance-backed trial-horizon copy; do not make current registry claims until rechecked or explicitly bounded."
           }
         },
         {
@@ -328,7 +338,7 @@
           "related_outlook_ids": [
             "track-mitophagy-enhancers-outlook"
           ],
-          "decision": "needs_decision",
+          "decision": "include_as_current_context",
           "period_interpretation_changed": false,
           "rationale": "June missing-context update that added urolithin A safety, registry, and limiting context while preserving the track read.",
           "next_action": "Classify as current_context, with possible trial_horizon support after stale registry boundaries are checked.",
@@ -346,8 +356,10 @@
             "reviewed_by": "codex"
           },
           "human_approval": {
-            "status": "not_required",
-            "notes": "Agent-led context recommendation; no fresh trial-status claim should be made without surveillance."
+            "status": "approved",
+            "resolved_at": "2026-06-14T17:35:14.000Z",
+            "approver": "tyler",
+            "notes": "Approved in packet review as part of the low-risk default slate; no fresh trial-status claim should be made without surveillance."
           }
         },
         {
@@ -356,7 +368,7 @@
           "related_outlook_ids": [
             "track-chaperone-and-heat-shock-support-outlook"
           ],
-          "decision": "needs_decision",
+          "decision": "include_as_current_context",
           "period_interpretation_changed": false,
           "rationale": "June context update added NPC open-label extension and current Miplyffa label safety context while preserving a disease-specific, mixed read.",
           "next_action": "Classify as current_context if the July edition needs a proteostasis example.",
@@ -375,9 +387,11 @@
             "reviewed_by": "codex"
           },
           "human_approval": {
-            "status": "requested",
+            "status": "approved",
             "requested_at": "2026-06-14T16:45:00.000Z",
-            "notes": "Approve whether this safety/disease-specific context belongs in the edition."
+            "resolved_at": "2026-06-14T17:41:09.000Z",
+            "approver": "tyler",
+            "notes": "Approved in packet review as optional current context; keep the NPC-specific safety and disease-boundary limitation prominent."
           }
         },
         {
@@ -386,7 +400,7 @@
           "related_outlook_ids": [
             "track-autophagy-induction-outlook"
           ],
-          "decision": "needs_decision",
+          "decision": "include_as_field_signal",
           "period_interpretation_changed": false,
           "rationale": "June field-change update adding a small older-adult spermidine vaccine-response pilot while preserving the early human biomarker stage.",
           "next_action": "Consider as a June field_signal, bounded as small, subgroup-limited, and not proof of lasting aging-relevant function.",
@@ -405,9 +419,11 @@
             "reviewed_by": "codex"
           },
           "human_approval": {
-            "status": "requested",
+            "status": "approved",
             "requested_at": "2026-06-14T16:45:00.000Z",
-            "notes": "Approve whether to include as a named bounded human signal."
+            "resolved_at": "2026-06-14T17:37:56.000Z",
+            "approver": "tyler",
+            "notes": "Approved in packet review as a named bounded human biomarker field signal."
           }
         },
         {
@@ -416,7 +432,7 @@
           "related_outlook_ids": [
             "track-senolytics-outlook"
           ],
-          "decision": "needs_decision",
+          "decision": "include_as_current_context",
           "period_interpretation_changed": false,
           "rationale": "June missing-context update added D+Q and fisetin biomarker, function, safety, animal, and no-results registry context while keeping senolytics at an early human biomarker stage.",
           "next_action": "Classify as current_context unless senolytics is chosen as a flagship boundary example.",
@@ -435,9 +451,11 @@
             "reviewed_by": "codex"
           },
           "human_approval": {
-            "status": "requested",
+            "status": "approved",
             "requested_at": "2026-06-14T16:45:00.000Z",
-            "notes": "Approve whether senolytics should be a prominent June boundary example."
+            "resolved_at": "2026-06-14T17:41:09.000Z",
+            "approver": "tyler",
+            "notes": "Approved in packet review as current context and a possible boundary example; keep the human biomarker stage and mixed functional evidence explicit."
           }
         },
         {
@@ -446,7 +464,7 @@
           "related_outlook_ids": [
             "track-partial-reprogramming-outlook"
           ],
-          "decision": "needs_decision",
+          "decision": "include_as_current_context",
           "period_interpretation_changed": false,
           "rationale": "June missing-context update strengthened the animal source map and added ER-100 as a no-results human registry boundary while preserving animal_signal and accelerating momentum.",
           "next_action": "Classify as current_context or a frontier boundary item; keep the absence of human outcomes explicit.",
@@ -466,9 +484,11 @@
             "reviewed_by": "codex"
           },
           "human_approval": {
-            "status": "requested",
+            "status": "approved",
             "requested_at": "2026-06-14T16:45:00.000Z",
-            "notes": "Approve whether to include as frontier context and/or trial-horizon boundary."
+            "resolved_at": "2026-06-14T17:37:56.000Z",
+            "approver": "tyler",
+            "notes": "Approved in packet review as frontier context and trial-boundary context; keep absence of human outcomes explicit."
           }
         },
         {
@@ -477,7 +497,7 @@
           "related_outlook_ids": [
             "track-microbiome-composition-modulation-outlook"
           ],
-          "decision": "needs_decision",
+          "decision": "include_as_field_signal",
           "period_interpretation_changed": false,
           "rationale": "June field-change update added a disease-specific synbiotic constipation RCT and a null healthy-older-adult exercise/microbiome RCT while keeping the track at a tentative human biomarker stage.",
           "next_action": "Consider as a bounded June field_signal or as current_context for microbiome evidence boundaries.",
@@ -496,9 +516,11 @@
             "reviewed_by": "codex"
           },
           "human_approval": {
-            "status": "requested",
+            "status": "approved",
             "requested_at": "2026-06-14T16:45:00.000Z",
-            "notes": "Approve whether microbiome should be a named June field signal."
+            "resolved_at": "2026-06-14T17:37:56.000Z",
+            "approver": "tyler",
+            "notes": "Approved in packet review as a bounded mixed human RCT field signal."
           }
         },
         {
@@ -507,7 +529,7 @@
           "related_outlook_ids": [
             "track-live-biotherapeutics-and-engineered-microbes-outlook"
           ],
-          "decision": "needs_decision",
+          "decision": "include_as_field_signal",
           "period_interpretation_changed": false,
           "rationale": "June field-change update added a Pediococcus acidilactici PA53 older-adult well-being and gut-health RCT while keeping the track tentative and without a LEV timing upgrade.",
           "next_action": "Consider as a bounded June field_signal if the final edition needs a microbiome/live-biotherapeutic example.",
@@ -526,9 +548,11 @@
             "reviewed_by": "codex"
           },
           "human_approval": {
-            "status": "requested",
+            "status": "approved",
             "requested_at": "2026-06-14T16:45:00.000Z",
-            "notes": "Approve whether live biotherapeutics should be a named June field signal."
+            "resolved_at": "2026-06-14T17:37:56.000Z",
+            "approver": "tyler",
+            "notes": "Approved in packet review as a secondary or folded bounded older-adult RCT field signal."
           }
         },
         {
@@ -537,7 +561,7 @@
           "related_outlook_ids": [
             "track-dna-repair-enhancement-outlook"
           ],
-          "decision": "needs_decision",
+          "decision": "include_as_current_context",
           "period_interpretation_changed": false,
           "rationale": "June field-change update attached DREAM repression evidence to DNA repair enhancement and refreshed the track while keeping it at a tentative human biomarker stage.",
           "next_action": "Classify as a mechanistic field_signal or current_context; avoid implying tested systemic human repair enhancement.",
@@ -555,8 +579,10 @@
             "reviewed_by": "codex"
           },
           "human_approval": {
-            "status": "not_required",
-            "notes": "Agent-led context recommendation with explicit boundary against systemic human repair claims."
+            "status": "approved",
+            "resolved_at": "2026-06-14T17:35:14.000Z",
+            "approver": "tyler",
+            "notes": "Approved in packet review as part of the low-risk default slate with explicit boundary against systemic human repair claims."
           }
         },
         {
@@ -565,7 +591,7 @@
           "related_outlook_ids": [
             "track-autophagy-induction-outlook"
           ],
-          "decision": "needs_decision",
+          "decision": "omit_process_context",
           "period_interpretation_changed": false,
           "rationale": "June missing-context update added autophagy registry and review boundaries while keeping the track at a tentative human biomarker stage with mixed momentum.",
           "next_action": "Fold into the autophagy June field-signal item or trial-horizon boundaries rather than treating it as a separate public change.",
@@ -583,8 +609,10 @@
             "reviewed_by": "codex"
           },
           "human_approval": {
-            "status": "not_required",
-            "notes": "Agent-led duplicate/process-context omission."
+            "status": "approved",
+            "resolved_at": "2026-06-14T17:35:14.000Z",
+            "approver": "tyler",
+            "notes": "Approved in packet review as part of the low-risk default slate; fold into the separate autophagy signal if needed."
           }
         },
         {
@@ -593,7 +621,7 @@
           "related_outlook_ids": [
             "track-immune-rejuvenation-outlook"
           ],
-          "decision": "needs_decision",
+          "decision": "include_as_current_context",
           "period_interpretation_changed": false,
           "rationale": "June missing-context update added older-adult immune-function anchors, RTB101 limiting context, direct immune-aging registry context, and review boundaries while keeping the track at human functional benefit but lowering the read to mixed and tentative.",
           "next_action": "Consider as a June outlook-boundary item; be explicit that the clearer read is not an overall LEV upgrade.",
@@ -613,9 +641,11 @@
             "reviewed_by": "codex"
           },
           "human_approval": {
-            "status": "requested",
+            "status": "approved",
             "requested_at": "2026-06-14T16:45:00.000Z",
-            "notes": "Approve whether immune rejuvenation should be a named outlook-boundary item."
+            "resolved_at": "2026-06-14T17:41:09.000Z",
+            "approver": "tyler",
+            "notes": "Approved in packet review as current context and an outlook-boundary item; not an overall LEV upgrade."
           }
         },
         {
@@ -624,7 +654,7 @@
           "related_outlook_ids": [
             "track-rapalogs-outlook"
           ],
-          "decision": "needs_decision",
+          "decision": "include_as_current_context",
           "period_interpretation_changed": false,
           "rationale": "June missing-context update moved rapalogs to a tentative human functional read with mixed momentum because human functional endpoints have been tested, while durable disease, frailty, mortality, and broad healthy-aging benefit remain unproven.",
           "next_action": "Decide whether rapalogs should be the prominent June outlook-boundary item in what_changed.",
@@ -644,9 +674,11 @@
             "reviewed_by": "codex"
           },
           "human_approval": {
-            "status": "requested",
+            "status": "approved",
             "requested_at": "2026-06-14T16:45:00.000Z",
-            "notes": "Approve whether rapalogs should be the prominent June boundary item."
+            "resolved_at": "2026-06-14T17:37:56.000Z",
+            "approver": "tyler",
+            "notes": "Approved in packet review as the prominent June outlook-boundary context item, not as a field breakthrough."
           }
         }
       ],
@@ -671,7 +703,7 @@
         {
           "id": "classify-june-updates",
           "label": "Classify June public updates into what_changed, current_context, trial_horizon, or omitted process context.",
-          "status": "in_progress",
+          "status": "complete",
           "path": "ops/state-of-field-workflow.v1.json"
         },
         {

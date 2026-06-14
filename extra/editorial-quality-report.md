@@ -8,7 +8,7 @@ Overall: passed
 - Current LEV story status: current
 - Public copy warnings: 56
 - Reader-task audit: passed (14 passed, 0 issues, 0 warnings)
-- State of the Field workflow: draft (16 open decision(s), 0 untracked mismatch(es))
+- State of the Field workflow: draft (0 open decision(s), 0 untracked mismatch(es))
 - Hallmark insight freshness: 0 stale hallmark insight(s)
 - Top public-copy terms: durable: 14, translation: 9, functional benefit: 7, mechanistic: 6, coverage repair: 5, biomarker-heavy: 4, low confidence: 3, support map: 3
 
@@ -17,7 +17,7 @@ Overall: passed
 - PASS: Current LEV story is current
   Status is current.
 - PASS: State-of-field reconciliation mismatches are tracked
-  0 untracked mismatch(es), 16 open reconciliation decision(s).
+  0 untracked mismatch(es), 0 open reconciliation decision(s).
 - PASS: Reader-task audit has no issues
   0 issue(s), 0 warning(s).
 - PASS: Hallmark insight summaries are reviewed after affected outlook changes
@@ -57,29 +57,11 @@ Published-edition public updates: 9
 Missing from published edition: 5
 Tracked missing updates: 5
 Untracked missing updates: 0
-Open reconciliation decisions: 16
+Open reconciliation decisions: 0
 Decided without agent assessment: 0
-Required human approvals unresolved: 10
-Open checklist items: 4
+Required human approvals unresolved: 0
+Open checklist items: 3
 Next action: Keep the July edition internal until June closes, then finalize the provisional classifications for the 16 known June public updates and write the public 2026-07 edition from reviewed records.
-
-Open reconciliation items:
-- publish-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-2026-06-06t12-22-33-769z
-- publish-stem-cell-replacement-and-transplantation-surveillance-2026-06-06-2026-06-07t13-49-41-422z
-- publish-senomorphics-surveillance-2026-06-07-2026-06-07t16-41-34-635z
-- publish-nad-and-redox-restoration-coverage-repair-2026-06-08-2026-06-09t10-39-49-637z
-- publish-stem-cell-rejuvenation-coverage-repair-2026-06-09-2026-06-10t10-17-06-414z
-- publish-mitophagy-enhancers-coverage-repair-2026-06-10-2026-06-10t14-26-07-178z
-- publish-chaperone-and-heat-shock-support-coverage-repair-2026-06-10-2026-06-11t01-11-08-627z
-- publish-autophagy-induction-surveillance-2026-06-11-2026-06-11t10-25-04-657z
-- publish-senolytics-coverage-repair-2026-06-11-2026-06-12t00-05-23-406z
-- publish-partial-reprogramming-coverage-repair-2026-06-12-2026-06-12t13-29-16-586z
-- publish-microbiome-composition-modulation-surveillance-2026-06-03-2026-06-03t16-38-15-119z
-- publish-live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06-2026-06-06t13-25-18-048z
-- publish-dna-repair-enhancement-surveillance-2026-06-10-2026-06-10t17-34-21-637z
-- publish-autophagy-induction-coverage-repair-2026-06-11-2026-06-11t11-44-04-048z
-- publish-immune-rejuvenation-coverage-repair-2026-06-11-2026-06-11t13-12-57-339z
-- publish-rapalogs-coverage-repair-2026-06-11-2026-06-11t18-24-35-790z
 ```
 
 ### Public copy lint

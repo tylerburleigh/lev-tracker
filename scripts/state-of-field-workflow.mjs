@@ -287,9 +287,9 @@ function itemNeedsApprovalPacket(item, includeAll) {
   const approvalStatus = item.human_approval?.status;
   return (
     item.decision === "needs_decision" ||
-    item.agent_assessment?.human_review_required === true ||
     approvalStatus === "requested" ||
-    approvalStatus === "revise"
+    approvalStatus === "revise" ||
+    (item.agent_assessment?.human_review_required === true && approvalStatus !== "approved")
   );
 }
 

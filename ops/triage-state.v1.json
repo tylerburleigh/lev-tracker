@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-14T16:43:18.151Z",
+  "generated_at": "2026-06-14T17:41:53.147Z",
   "source_state": {
     "research_coverage_status_updated_at": "2026-06-13T14:55:48.399Z",
     "research_priority_queue_updated_at": "2026-06-13T14:55:48.399Z",
@@ -52,7 +52,7 @@
       "priority_tier": "now",
       "status": "active",
       "title": "Resolve State of the Field workflow for June 2026",
-      "rationale": "Internal draft opened while June is still in progress. The candidate public skeleton now accounts for the current-story June updates plus six additional June public updates, but all July reconciliation decisions stay open until the retrospective period closes. 16 reconciliation decision(s) and 4 checklist item(s) remain open.",
+      "rationale": "Internal draft opened while June is still in progress. The candidate public skeleton now accounts for the current-story June updates plus six additional June public updates, but all July reconciliation decisions stay open until the retrospective period closes. 0 reconciliation decision(s) and 3 checklist item(s) remain open.",
       "default_action": "Keep the July edition internal until June closes, then finalize the provisional classifications for the 16 known June public updates and write the public 2026-07 edition from reviewed records.",
       "runbook_path": "docs/editorial-rollup.md",
       "command": "npm run state-of-field:status -- --strict",
@@ -62,72 +62,7 @@
         "data/content/current-lev-story/current.json",
         "docs/editorial-rollup.md"
       ],
-      "references": [
-        {
-          "record_type": "publication_event",
-          "record_id": "publish-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-2026-06-06t12-22-33-769z"
-        },
-        {
-          "record_type": "publication_event",
-          "record_id": "publish-stem-cell-replacement-and-transplantation-surveillance-2026-06-06-2026-06-07t13-49-41-422z"
-        },
-        {
-          "record_type": "publication_event",
-          "record_id": "publish-senomorphics-surveillance-2026-06-07-2026-06-07t16-41-34-635z"
-        },
-        {
-          "record_type": "publication_event",
-          "record_id": "publish-nad-and-redox-restoration-coverage-repair-2026-06-08-2026-06-09t10-39-49-637z"
-        },
-        {
-          "record_type": "publication_event",
-          "record_id": "publish-stem-cell-rejuvenation-coverage-repair-2026-06-09-2026-06-10t10-17-06-414z"
-        },
-        {
-          "record_type": "publication_event",
-          "record_id": "publish-mitophagy-enhancers-coverage-repair-2026-06-10-2026-06-10t14-26-07-178z"
-        },
-        {
-          "record_type": "publication_event",
-          "record_id": "publish-chaperone-and-heat-shock-support-coverage-repair-2026-06-10-2026-06-11t01-11-08-627z"
-        },
-        {
-          "record_type": "publication_event",
-          "record_id": "publish-autophagy-induction-surveillance-2026-06-11-2026-06-11t10-25-04-657z"
-        },
-        {
-          "record_type": "publication_event",
-          "record_id": "publish-senolytics-coverage-repair-2026-06-11-2026-06-12t00-05-23-406z"
-        },
-        {
-          "record_type": "publication_event",
-          "record_id": "publish-partial-reprogramming-coverage-repair-2026-06-12-2026-06-12t13-29-16-586z"
-        },
-        {
-          "record_type": "publication_event",
-          "record_id": "publish-microbiome-composition-modulation-surveillance-2026-06-03-2026-06-03t16-38-15-119z"
-        },
-        {
-          "record_type": "publication_event",
-          "record_id": "publish-live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06-2026-06-06t13-25-18-048z"
-        },
-        {
-          "record_type": "publication_event",
-          "record_id": "publish-dna-repair-enhancement-surveillance-2026-06-10-2026-06-10t17-34-21-637z"
-        },
-        {
-          "record_type": "publication_event",
-          "record_id": "publish-autophagy-induction-coverage-repair-2026-06-11-2026-06-11t11-44-04-048z"
-        },
-        {
-          "record_type": "publication_event",
-          "record_id": "publish-immune-rejuvenation-coverage-repair-2026-06-11-2026-06-11t13-12-57-339z"
-        },
-        {
-          "record_type": "publication_event",
-          "record_id": "publish-rapalogs-coverage-repair-2026-06-11-2026-06-11t18-24-35-790z"
-        }
-      ],
+      "references": [],
       "signals": [
         {
           "name": "workflow_status",
@@ -135,11 +70,11 @@
         },
         {
           "name": "open_reconciliation_decision_count",
-          "value": 16
+          "value": 0
         },
         {
           "name": "open_checklist_item_count",
-          "value": 4
+          "value": 3
         },
         {
           "name": "latest_observed_public_update",
