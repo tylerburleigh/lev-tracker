@@ -1,0 +1,282 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-14-rapalogs-surveillance",
+  "name": "Rapalogs Trial-Horizon Surveillance",
+  "mode": "surveillance",
+  "started_at": "2026-06-14T18:10:27Z",
+  "completed_at": "2026-06-14T18:27:00Z",
+  "scope": {
+    "question": "Do current rapalog registry or same-window publication checks change the Rapalogs outlook or clear the stale Sirolimus in Older Adults trial-horizon record?",
+    "hallmark_ids": [
+      "deregulated_nutrient_sensing"
+    ],
+    "track_ids": [
+      "rapalogs"
+    ],
+    "intervention_ids": [
+      "sirolimus",
+      "everolimus",
+      "rtb101",
+      "fasting-mimicking-diet"
+    ]
+  },
+  "selected_via": "manual_override",
+  "outcome": "no_op",
+  "summary": "Ran a focused Rapalogs surveillance pass to clear the stale Sirolimus in Older Adults trial-horizon record before July State of the Field drafting. ClinicalTrials.gov still lists NCT05237687 as recruiting with no posted results; the latest registry update remains February 3, 2026, with estimated primary completion in September 2027 and estimated study completion in November 2027. The other scoped rapalog watch records remained consistent with the June 11 coverage-repair pass: PEARL and topical rapamycin have peer-reviewed result sources despite no registry results section; REVERSE, Everolimus Aging, RESTOR, Rapa/cMRI, and RAP PAC still have no posted registry results. Same-window PubMed searches returned no new result-bearing rapalog aging trial publication, and broader registry searches found no new material rapalog geroprotection trial beyond already-recorded or boundary records. No outlook, stage, momentum, confidence, or State of the Field interpretation change is warranted.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "none",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The stale NCT05237687 item was a local registry-check metadata gap, not a field delta. Current registry checks show no posted results, no status change, and no evidence that would alter the low-confidence human_functional_benefit Rapalogs read. The public source/study/finding metadata was refreshed only to record the June 14 check and structured completion timing."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial watch audit",
+      "query": "npm run audit:trials -- --track rapalogs --write",
+      "checked_at": "2026-06-14T18:10:27Z",
+      "summary": "Scoped report contained 8 registry-linked Rapalogs studies, 0 missing trial-detail records, 1 stale or missing registry check, and 1 open stale watch item. The stale item was NCT05237687."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "Direct checks for NCT04488601, NCT05237687, NCT07354620, NCT05835999, NCT06658093, NCT04742777, NCT05949658, and NCT03103893",
+      "checked_at": "2026-06-14T18:13:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT05237687",
+      "summary": "NCT05237687 remains RECRUITING with hasResults=false, estimated enrollment 10, estimated primary completion September 2027, estimated study completion November 2027, and last update posted February 3, 2026. The other direct rapalog registry checks showed no new posted registry results or material status change versus the June 11 coverage-repair pass."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "rapamycin aging older adult; sirolimus older adults aging; rapalog geroprotection; mTOR inhibitor older adults aging; rapamycin healthspan older adult",
+      "checked_at": "2026-06-14T18:16:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "The direct rapalog geroprotection query returned already-recorded RAP PAC. The rapamycin healthspan older-adult query returned already-recorded oral rapamycin and Rapa/cMRI plus boundary alpha-ketoglutarate and everolimus/exercise bone-loss records. Other broad queries mostly returned unrelated protein, ketone, exercise/nutrition, transplant, oncology, or stent records."
+    },
+    {
+      "source_name": "PubMed ESearch and ESummary",
+      "query": "(rapamycin OR sirolimus OR everolimus OR rapalog OR mTOR) AND (aging OR older adult OR geroprotection OR healthspan) AND 2026/06/11:2026/06/14[edat]",
+      "checked_at": "2026-06-14T18:15:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned PMIDs 42281177, 42280417, 42280293, 42279368, 42278490, 42276422, and 42274505. None were a new rapalog clinical trial result or material Rapalogs outlook source; the close records were review-level, diet/exercise/mitochondrial context, cancer context, or wrong-scope."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "query": "\"NCT05237687\"; (sirolimus OR rapamycin) AND (\"functional decline\" OR \"older adults\") AND 2026/06/11:2026/06/14[edat]",
+      "checked_at": "2026-06-14T18:20:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Exact NCT05237687 search returned zero PubMed records, and the focused same-window sirolimus/rapamycin older-adult query returned zero records. No linked publication was found for the Sirolimus in Older Adults trial."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT05237687",
+      "study_id": "sirolimus-older-adults-phase2",
+      "source_id": "nct05237687",
+      "registry_url": "https://clinicaltrials.gov/study/NCT05237687",
+      "checked_at": "2026-06-14T18:13:00Z",
+      "previous_local_status": "recruiting",
+      "current_registry_status": "recruiting",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2027-09-01",
+      "study_completion_date": "2027-11-01",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The stale local item remains a recruiting no-results phase 2 sirolimus trial in adults aged 65 to 80; local metadata was refreshed with a June 14 registry check and structured estimated completion months."
+    },
+    {
+      "registry_id": "NCT04488601",
+      "study_id": "pearl-rapamycin-healthspan-trial",
+      "source_id": "pmid-40188830",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04488601",
+      "checked_at": "2026-06-14T18:13:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2023-12-30",
+      "study_completion_date": "2023-12-30",
+      "completion_date_kind": "actual",
+      "results_changed": false,
+      "materiality": "unchanged",
+      "public_action": "none",
+      "summary": "ClinicalTrials.gov still has no registry results section, but the peer-reviewed PEARL result remains recorded locally as posted result evidence."
+    },
+    {
+      "registry_id": "NCT07354620",
+      "study_id": "reverse-rapamycin-prolon-registry",
+      "source_id": "nct-07354620",
+      "registry_url": "https://clinicaltrials.gov/study/NCT07354620",
+      "checked_at": "2026-06-14T18:13:00Z",
+      "previous_local_status": "active",
+      "current_registry_status": "active",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2026-02-01",
+      "study_completion_date": "2026-05-01",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "unchanged",
+      "public_action": "none",
+      "summary": "REVERSE remains active-not-recruiting no-results combination context for rapamycin and fasting-mimicking diet."
+    },
+    {
+      "registry_id": "NCT05835999",
+      "study_id": "everolimus-aging-geroprotection-registry",
+      "source_id": "nct-05835999",
+      "registry_url": "https://clinicaltrials.gov/study/NCT05835999",
+      "checked_at": "2026-06-14T18:13:00Z",
+      "previous_local_status": "active",
+      "current_registry_status": "active",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2026-09-01",
+      "study_completion_date": "2026-09-01",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "unchanged",
+      "public_action": "none",
+      "summary": "Everolimus Aging remains active-not-recruiting with no posted results."
+    },
+    {
+      "registry_id": "NCT06658093",
+      "study_id": "restor-mtori-older-adults-registry",
+      "source_id": "nct-06658093",
+      "registry_url": "https://clinicaltrials.gov/study/NCT06658093",
+      "checked_at": "2026-06-14T18:13:00Z",
+      "previous_local_status": "recruiting",
+      "current_registry_status": "recruiting",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2028-07-01",
+      "study_completion_date": "2028-07-01",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "unchanged",
+      "public_action": "none",
+      "summary": "RESTOR remains recruiting with no posted results."
+    },
+    {
+      "registry_id": "NCT04742777",
+      "study_id": "rapa-cmri-older-adults-registry",
+      "source_id": "nct-04742777",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04742777",
+      "checked_at": "2026-06-14T18:13:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2025-09-09",
+      "study_completion_date": "2025-09-09",
+      "completion_date_kind": "actual",
+      "results_changed": false,
+      "materiality": "unchanged",
+      "public_action": "none",
+      "summary": "Rapa/cMRI remains completed with no posted registry results."
+    },
+    {
+      "registry_id": "NCT05949658",
+      "study_id": "rap-pac-rapalog-pharmacology-registry",
+      "source_id": "nct-05949658",
+      "registry_url": "https://clinicaltrials.gov/study/NCT05949658",
+      "checked_at": "2026-06-14T18:13:00Z",
+      "previous_local_status": "recruiting",
+      "current_registry_status": "recruiting",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2027-03-01",
+      "study_completion_date": "2028-12-01",
+      "completion_date_kind": "estimated",
+      "results_changed": false,
+      "materiality": "unchanged",
+      "public_action": "none",
+      "summary": "RAP PAC remains recruiting with no posted results."
+    },
+    {
+      "registry_id": "NCT03103893",
+      "study_id": "topical-rapamycin-human-skin-aging",
+      "source_id": "pmid-31761958",
+      "registry_url": "https://clinicaltrials.gov/study/NCT03103893",
+      "checked_at": "2026-06-14T18:21:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2017-11-30",
+      "study_completion_date": "2017-11-30",
+      "completion_date_kind": "actual",
+      "results_changed": false,
+      "materiality": "unchanged",
+      "public_action": "none",
+      "summary": "ClinicalTrials.gov still has no registry results section, but the peer-reviewed topical rapamycin result remains recorded locally as posted result evidence."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "NCT06789900",
+      "title": "Everolimus and/or Exercise to Prevent Bone Loss in Postmenopausal Women",
+      "url": "https://clinicaltrials.gov/study/NCT06789900",
+      "decision": "context_only",
+      "reason": "Still boundary context for bone loss, exercise, and everolimus; not a new material Rapalogs field delta."
+    },
+    {
+      "reference": "NCT07191353",
+      "title": "Resistance Training and Rapamycin to Enhance Bone Formation in Postmenopausal Women",
+      "url": "https://clinicaltrials.gov/study/NCT07191353",
+      "decision": "context_only",
+      "reason": "Boundary context for resistance training, rapamycin, and bone formation; not a new material Rapalogs field delta."
+    },
+    {
+      "reference": "PMID 42276422",
+      "title": "Caloric restriction rejuvenates aged adult stem cells: From mechanisms to interventions.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42276422/",
+      "decision": "context_only",
+      "reason": "Review-level caloric-restriction and stem-cell context; adjacent to nutrient-sensing biology but not a new rapalog result."
+    },
+    {
+      "reference": "PMID 42281177",
+      "title": "Geroprotective Agents, Including Glucagon-Like Peptide-1 Receptor Agonists, for Ocular Health.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42281177/",
+      "decision": "context_only",
+      "reason": "Review-level ocular geroprotection context; not a direct rapalog trial result or broad Rapalogs outlook change."
+    }
+  ],
+  "source_ids": [
+    "nct05237687",
+    "pmid-40188830",
+    "nct-07354620",
+    "nct-05835999",
+    "nct-06658093",
+    "nct-04742777",
+    "nct-05949658",
+    "pmid-31761958"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT05237687",
+    "https://clinicaltrials.gov/api/v2/studies/NCT05237687",
+    "https://clinicaltrials.gov/study/NCT04488601",
+    "https://clinicaltrials.gov/study/NCT07354620",
+    "https://clinicaltrials.gov/study/NCT05835999",
+    "https://clinicaltrials.gov/study/NCT06658093",
+    "https://clinicaltrials.gov/study/NCT04742777",
+    "https://clinicaltrials.gov/study/NCT05949658",
+    "https://clinicaltrials.gov/study/NCT03103893",
+    "https://pubmed.ncbi.nlm.nih.gov/42276422/",
+    "https://pubmed.ncbi.nlm.nih.gov/42281177/"
+  ],
+  "notes": [
+    "The public Rapalogs outlook was not changed because the current low-confidence mixed interpretation already accounts for active no-results registries.",
+    "The NCT05237687 study, source, and finding wording were refreshed to record the June 14 registry check and structured estimated completion timing; this is metadata hygiene, not a new public evidence claim.",
+    "Regenerate the global trial-watch report after scoped checks so the State of the Field blocker reflects the remaining cross-track stale records."
+  ],
+  "next_actions": [
+    "Continue ordinary Rapalogs surveillance for posted results, linked publications, completion changes, and chronic safety signals.",
+    "Proceed to the next stale trial-horizon cleanup item after regenerating the global trial-watch report."
+  ]
+}

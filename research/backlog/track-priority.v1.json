@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-14T17:50:21.020Z",
+  "updated_at": "2026-06-14T18:51:53.988Z",
   "notes": [
     "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
@@ -95,13 +95,13 @@
       "hallmark_id": "deregulated_nutrient_sensing",
       "default_mode": "surveillance",
       "freshness_status": "recent",
-      "last_reviewed_at": "2026-06-11T13:40:34Z",
-      "next_due_at": "2026-06-25T13:40:34.000Z",
+      "last_reviewed_at": "2026-06-14T18:27:00Z",
+      "next_due_at": "2026-06-28T18:27:00.000Z",
       "cooldown_days": 14,
       "rationale": "High public interest and recurring trial context make this track worth regular delta checks.",
       "default_question": "What changed for Rapalogs since the last meaningful review or publication, and does any change justify a public update?",
       "priority_tier": "later",
-      "notes": "Recently handled; ordinary rotation is due after 2026-06-25."
+      "notes": "Recently handled; ordinary rotation is due after 2026-06-28."
     },
     {
       "rank": 3,
@@ -436,21 +436,6 @@
     {
       "rank": 25,
       "phase_id": "surveillance-rotation",
-      "track_id": "lysosomal-restoration",
-      "hallmark_id": "disabled_macroautophagy",
-      "default_mode": "surveillance",
-      "freshness_status": "recent",
-      "last_reviewed_at": "2026-06-07T21:06:47Z",
-      "next_due_at": "2026-06-21T21:06:47.000Z",
-      "cooldown_days": 14,
-      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
-      "default_question": "What changed for Lysosomal Restoration since the last meaningful review or publication, and does any change justify a public update?",
-      "priority_tier": "later",
-      "notes": "Recently handled; ordinary rotation is due after 2026-06-21."
-    },
-    {
-      "rank": 26,
-      "phase_id": "surveillance-rotation",
       "track_id": "proteasome-enhancement",
       "hallmark_id": "loss_of_proteostasis",
       "default_mode": "surveillance",
@@ -464,7 +449,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-21."
     },
     {
-      "rank": 27,
+      "rank": 26,
       "phase_id": "surveillance-rotation",
       "track_id": "dna-methylation-and-epigenome-restoration",
       "hallmark_id": "epigenetic_alterations",
@@ -479,7 +464,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-21."
     },
     {
-      "rank": 28,
+      "rank": 27,
       "phase_id": "surveillance-rotation",
       "track_id": "telomere-protection-and-capping",
       "hallmark_id": "telomere_attrition",
@@ -494,7 +479,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-21."
     },
     {
-      "rank": 29,
+      "rank": 28,
       "phase_id": "surveillance-rotation",
       "track_id": "genome-surveillance-and-chromosome-stability",
       "hallmark_id": "genomic_instability",
@@ -509,7 +494,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-21."
     },
     {
-      "rank": 30,
+      "rank": 29,
       "phase_id": "surveillance-rotation",
       "track_id": "cytokine-and-inflammasome-modulation",
       "hallmark_id": "chronic_inflammation",
@@ -524,7 +509,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-22."
     },
     {
-      "rank": 31,
+      "rank": 30,
       "phase_id": "surveillance-rotation",
       "track_id": "nad-and-redox-restoration",
       "hallmark_id": "mitochondrial_dysfunction",
@@ -539,7 +524,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-22."
     },
     {
-      "rank": 32,
+      "rank": 31,
       "phase_id": "surveillance-rotation",
       "track_id": "circulating-factor-modulation",
       "hallmark_id": "altered_intercellular_communication",
@@ -554,7 +539,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-23."
     },
     {
-      "rank": 33,
+      "rank": 32,
       "phase_id": "surveillance-rotation",
       "track_id": "dna-repair-enhancement",
       "hallmark_id": "genomic_instability",
@@ -569,7 +554,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-24."
     },
     {
-      "rank": 34,
+      "rank": 33,
       "phase_id": "surveillance-rotation",
       "track_id": "telomerase-restoration",
       "hallmark_id": "telomere_attrition",
@@ -584,7 +569,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-24."
     },
     {
-      "rank": 35,
+      "rank": 34,
       "phase_id": "surveillance-rotation",
       "track_id": "chaperone-and-heat-shock-support",
       "hallmark_id": "loss_of_proteostasis",
@@ -599,7 +584,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-24."
     },
     {
-      "rank": 36,
+      "rank": 35,
       "phase_id": "surveillance-rotation",
       "track_id": "autophagy-induction",
       "hallmark_id": "disabled_macroautophagy",
@@ -614,7 +599,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-25."
     },
     {
-      "rank": 37,
+      "rank": 36,
       "phase_id": "surveillance-rotation",
       "track_id": "partial-reprogramming",
       "hallmark_id": "epigenetic_alterations",
@@ -629,7 +614,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-26."
     },
     {
-      "rank": 38,
+      "rank": 37,
       "phase_id": "surveillance-rotation",
       "track_id": "stem-cell-rejuvenation",
       "hallmark_id": "stem_cell_exhaustion",
@@ -640,6 +625,21 @@
       "cooldown_days": 14,
       "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
       "default_question": "What changed for Stem Cell Rejuvenation since the last meaningful review or publication, and does any change justify a public update?",
+      "priority_tier": "later",
+      "notes": "Recently handled; ordinary rotation is due after 2026-06-28."
+    },
+    {
+      "rank": 38,
+      "phase_id": "surveillance-rotation",
+      "track_id": "lysosomal-restoration",
+      "hallmark_id": "disabled_macroautophagy",
+      "default_mode": "surveillance",
+      "freshness_status": "recent",
+      "last_reviewed_at": "2026-06-14T18:51:00Z",
+      "next_due_at": "2026-06-28T18:51:00.000Z",
+      "cooldown_days": 14,
+      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
+      "default_question": "What changed for Lysosomal Restoration since the last meaningful review or publication, and does any change justify a public update?",
       "priority_tier": "later",
       "notes": "Recently handled; ordinary rotation is due after 2026-06-28."
     }
