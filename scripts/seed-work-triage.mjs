@@ -1,6 +1,11 @@
 import { promises as fs } from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import {
+  computeHallmarkInsightFreshness,
+  datePart,
+  isAfterDate
+} from "./editorial-freshness.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
@@ -70,25 +75,6 @@ function compactObject(value) {
   );
 }
 
-function datePart(value) {
-  if (!value) {
-    return undefined;
-  }
-
-  const text = String(value);
-  const directDate = text.match(/^\d{4}-\d{2}-\d{2}/);
-  if (directDate) {
-    return directDate[0];
-  }
-
-  const parsedDate = new Date(text);
-  if (Number.isNaN(parsedDate.valueOf())) {
-    return undefined;
-  }
-
-  return parsedDate.toISOString().slice(0, 10);
-}
-
 function monthPart(value) {
   return datePart(value)?.slice(0, 7);
 }
@@ -96,21 +82,6 @@ function monthPart(value) {
 function timestampValue(value) {
   const parsed = Date.parse(value ?? "");
   return Number.isNaN(parsed) ? 0 : parsed;
-}
-
-function isAfterDate(left, right) {
-  const leftDate = datePart(left);
-  const rightDate = datePart(right);
-
-  if (!leftDate) {
-    return false;
-  }
-
-  if (!rightDate) {
-    return true;
-  }
-
-  return leftDate > rightDate;
 }
 
 function latestBy(records, accessor) {
@@ -194,43 +165,6 @@ function buildEditorialItems(activeBundles) {
   });
 }
 
-function setLatestHallmarkDate(latestDatesByHallmarkId, hallmarkId, eventDate) {
-  if (!hallmarkId || !eventDate) {
-    return;
-  }
-
-  const previousDate = latestDatesByHallmarkId.get(hallmarkId);
-  if (!previousDate || eventDate > previousDate) {
-    latestDatesByHallmarkId.set(hallmarkId, eventDate);
-  }
-}
-
-function affectedHallmarkDatesForEvents(events, outlookById, statusByTrack) {
-  const latestDatesByHallmarkId = new Map();
-
-  for (const event of events) {
-    const eventDate = datePart(event.published_at);
-
-    for (const outlookId of event.affected_outlook_ids ?? []) {
-      const outlook = outlookById.get(outlookId);
-      if (!outlook) {
-        continue;
-      }
-
-      if (outlook.subject_type === "hallmark") {
-        setLatestHallmarkDate(latestDatesByHallmarkId, outlook.subject_id, eventDate);
-      }
-
-      if (outlook.subject_type === "track") {
-        const trackStatus = statusByTrack.get(outlook.subject_id);
-        setLatestHallmarkDate(latestDatesByHallmarkId, trackStatus?.hallmark_id, eventDate);
-      }
-    }
-  }
-
-  return latestDatesByHallmarkId;
-}
-
 function buildEditorialRollupItem({
   publicationEvents,
   stateOfFieldEditions,
@@ -246,7 +180,6 @@ function buildEditorialRollupItem({
   const latestAffectedPublicationEvent = meaningfulPublicationEvents[0];
   const latestStateOfFieldEdition = latestBy(stateOfFieldEditions, (edition) => edition.date);
   const latestStateOfFieldDate = latestStateOfFieldEdition?.date;
-  const outlookById = new Map(outlooks.map((outlook) => [outlook.id, outlook]));
   const overallOutlook = outlooks.find((outlook) => outlook.subject_type === "overall");
   const latestNonOverallOutlook = latestBy(
     outlooks.filter((outlook) => outlook.subject_type !== "overall"),
@@ -259,22 +192,14 @@ function buildEditorialRollupItem({
   const hasCurrentMonthPublicationActivity = meaningfulPublicationEvents.some(
     (event) => monthPart(event.published_at) === currentMonth
   );
-  const eventsSinceLatestStateOfField = meaningfulPublicationEvents.filter((event) =>
-    isAfterDate(event.published_at, latestStateOfFieldDate)
-  );
-  const latestDatesByChangedHallmarkId = affectedHallmarkDatesForEvents(
-    eventsSinceLatestStateOfField,
-    outlookById,
-    statusByTrack
-  );
-  const insightsByHallmarkId = new Map(hallmarkInsights.map((insight) => [insight.hallmark_id, insight]));
-  const staleHallmarkInsightIds = [...latestDatesByChangedHallmarkId.entries()]
-    .filter(([hallmarkId, latestEventDate]) => {
-      const insight = insightsByHallmarkId.get(hallmarkId);
-      return !insight?.last_reviewed || isAfterDate(latestEventDate, insight.last_reviewed);
-    })
-    .map(([hallmarkId]) => hallmarkId)
-    .sort((left, right) => left.localeCompare(right));
+  const hallmarkInsightFreshness = computeHallmarkInsightFreshness({
+    hallmarkInsights,
+    outlooks,
+    publicationEvents,
+    statusByTrack,
+    afterDate: latestStateOfFieldDate
+  });
+  const staleHallmarkInsightIds = hallmarkInsightFreshness.stale.map((row) => row.hallmarkId);
   const outlookMethodSurfaceGap = siteShellText.includes('label: "Forecast"') && !hasOutlookRoute;
   const triggerMessages = [
     latestAffectedPublicationEvent &&

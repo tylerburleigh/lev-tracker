@@ -4,6 +4,11 @@ import { spawn } from "node:child_process";
 import { createHash } from "node:crypto";
 import { promises as fs } from "node:fs";
 import path from "node:path";
+import {
+  buildTrackHallmarkMap,
+  computeHallmarkInsightFreshness,
+  datePart
+} from "./editorial-freshness.mjs";
 
 const workspaceRoot = process.cwd();
 const reportPath = "extra/editorial-quality-report.md";
@@ -11,6 +16,8 @@ const currentLevStoryPath = "data/content/current-lev-story/current.json";
 const outlookRoot = "data/outlooks";
 const publicationEventRoot = "data/publication-events";
 const stateOfFieldRoot = "data/content/state-of-the-field";
+const hallmarkInsightsPath = "data/content/hallmark-insights.json";
+const trackTaxonomyPath = "taxonomies/track-taxonomy.v1.json";
 const publicCopyReportPath = "extra/public-copy-report.md";
 const readerTaskReportPath = "extra/reader-task-audit.md";
 
@@ -173,10 +180,6 @@ async function readJsonCollection(relativeDir) {
   return Promise.all(fileNames.map((fileName) => readJson(path.join(relativeDir, fileName))));
 }
 
-function datePart(value) {
-  return String(value ?? "").slice(0, 10);
-}
-
 function compact(value) {
   return Object.fromEntries(
     Object.entries(value).filter(([, entryValue]) => entryValue !== undefined && entryValue !== null)
@@ -185,6 +188,22 @@ function compact(value) {
 
 function unique(values) {
   return Array.from(new Set(values.filter(Boolean)));
+}
+
+async function computeWorkspaceHallmarkInsightFreshness() {
+  const [hallmarkInsights, outlooks, publicationEvents, trackTaxonomy] = await Promise.all([
+    readJson(hallmarkInsightsPath),
+    readJsonCollection(outlookRoot),
+    readJsonCollection(publicationEventRoot),
+    readJson(trackTaxonomyPath)
+  ]);
+
+  return computeHallmarkInsightFreshness({
+    hallmarkInsights,
+    outlooks,
+    publicationEvents,
+    trackHallmarkById: buildTrackHallmarkMap(trackTaxonomy)
+  });
 }
 
 function getOutlookSnapshotPayload(outlook) {
@@ -279,7 +298,16 @@ function formatCommandBlock(result) {
   return lines;
 }
 
-function formatReport({ results, checks, copyWarnings, topTerms, readerAudit, narrativeStatus, stateOfFieldWorkflow }) {
+function formatReport({
+  results,
+  checks,
+  copyWarnings,
+  topTerms,
+  readerAudit,
+  narrativeStatus,
+  stateOfFieldWorkflow,
+  hallmarkInsightFreshness
+}) {
   const failedChecks = checks.filter((check) => check.result === "fail");
   const lines = [
     "# Editorial Quality Report",
@@ -302,6 +330,11 @@ function formatReport({ results, checks, copyWarnings, topTerms, readerAudit, na
             stateOfFieldWorkflow.untrackedMissingUpdates ?? "unknown"
           } untracked mismatch(es))`
         : "unknown"
+    }`,
+    `- Hallmark insight freshness: ${
+      hallmarkInsightFreshness
+        ? `${hallmarkInsightFreshness.staleCount} stale hallmark insight(s)`
+        : "unknown"
     }`
   ];
 
@@ -317,6 +350,16 @@ function formatReport({ results, checks, copyWarnings, topTerms, readerAudit, na
     for (const check of checks) {
       lines.push(`- ${check.result === "pass" ? "PASS" : "FAIL"}: ${check.label}`);
       lines.push(`  ${check.detail}`);
+    }
+  }
+
+  if (hallmarkInsightFreshness?.stale?.length) {
+    lines.push("", "## Hallmark Insight Freshness", "");
+
+    for (const row of hallmarkInsightFreshness.stale) {
+      lines.push(
+        `- ${row.hallmarkId}: last reviewed ${row.lastReviewed}; latest affected update ${row.latestPublicationEventId} on ${row.latestEventDate}.`
+      );
     }
   }
 
@@ -373,6 +416,7 @@ async function main() {
   const topTerms = parseTopTerms(copyResult.stdout);
   const readerAudit = parseReaderAudit(readerResult.stdout) ?? (readerTaskReport ? parseReaderAuditReport(readerTaskReport) : undefined);
   const stateOfFieldWorkflow = parseStateOfFieldWorkflow(stateOfFieldResult.stdout);
+  const hallmarkInsightFreshness = await computeWorkspaceHallmarkInsightFreshness();
   const checks = [];
 
   checks.push({
@@ -399,6 +443,17 @@ async function main() {
       : "Reader audit output could not be parsed."
   });
 
+  checks.push({
+    label: "Hallmark insight summaries are reviewed after affected outlook changes",
+    result: hallmarkInsightFreshness.staleCount === 0 ? "pass" : "fail",
+    detail:
+      hallmarkInsightFreshness.staleCount === 0
+        ? "No hallmark insight summaries are older than their latest affected public update."
+        : `${hallmarkInsightFreshness.staleCount} stale hallmark insight(s): ${hallmarkInsightFreshness.stale
+            .map((row) => row.hallmarkId)
+            .join(", ")}.`
+  });
+
   if (options.maxCopyWarnings !== undefined) {
     checks.push({
       label: `Public copy warnings <= ${options.maxCopyWarnings}`,
@@ -422,7 +477,8 @@ async function main() {
     topTerms,
     readerAudit,
     narrativeStatus,
-    stateOfFieldWorkflow
+    stateOfFieldWorkflow,
+    hallmarkInsightFreshness
   });
   const failedChecks = checks.filter((check) => check.result === "fail");
 
@@ -431,7 +487,9 @@ async function main() {
       narrativeStatus ?? "unknown"
     }; state-of-field ${stateOfFieldWorkflow?.status ?? "unknown"}; copy warnings ${
       copyWarnings ?? "unknown"
-    }; reader issues ${readerAudit?.issues ?? "unknown"}.\n`
+    }; reader issues ${readerAudit?.issues ?? "unknown"}; stale hallmark insights ${
+      hallmarkInsightFreshness.staleCount
+    }.\n`
   );
 
   if (options.write) {

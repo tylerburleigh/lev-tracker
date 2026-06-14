@@ -54,6 +54,23 @@ State values:
 
 Run `npm run state-of-field:status` to see the active status. `npm run audit:editorial -- --write` also runs the status check in strict mode; it fails only when current-story/public-edition mismatches are not tracked in the workflow manifest. Tracked open decisions are allowed, but they remain visible in the report.
 
+Use `npm run state-of-field:reconcile -- --write` before status checks to keep `ops/state-of-field-workflow.v1.json` synced with current-story public update IDs and any `candidate_public_update_pool` in the matching internal draft under `extra/`. The command seeds missing entries as `needs_decision`; it does not classify updates or draft public copy. Use `--include-period-events` only when the curator wants a broader non-bootstrap sweep for the whole covered period.
+
+For agent-led reconciliation, use the `lev-reconciliation-orchestrator` skill before the specialist editorial skills. The agent should fill structured `agent_assessment` metadata for each candidate, render `npm run state-of-field:packet`, recommend a batch of decisions, and ask the curator to approve, revise, or hold only the meaningful decisions. The human loop is approval and revision, not raw classification.
+
+Each reconciliation item can carry:
+
+- `agent_assessment.recommended_decision`
+- `agent_assessment.confidence`
+- `agent_assessment.materiality`
+- `agent_assessment.affected_surfaces`
+- `agent_assessment.public_copy_action`
+- `agent_assessment.human_review_required`
+- `agent_assessment.escalation_reason`
+- `human_approval.status`
+
+Use `human_review_required: true` when the recommendation is low-confidence, high-materiality, affects top-level LEV framing, changes public outlook interpretation, touches clinical/safety/lifespan claims, needs surveillance or evidence review, or excludes an apparently relevant public update.
+
 ## Content Publish Path
 
 Curated content files are currently published directly through reviewed file edits rather than staged updates. Treat the rollup item, changed source paths, required review metadata, and this checklist as the audit trail.
@@ -67,7 +84,7 @@ When updating hallmark insight copy, set:
 
 When updating a state-of-field edition, set `last_reviewed`, `review_reason`, and any directly related publication or outlook IDs. Fill the reader brief fields (`period_start`, `period_end`, `period_label`, `lede`, `bottom_line`, `field_change_status`, `field_change_note`, `what_changed`, `current_context`, `what_did_not_change`, `why_it_matters`, `trial_horizon`, `signals_to_watch`, `evidence_gaps`, `track_examples`, and `reader_takeaways`) rather than relying on summary bullets alone. Leave `what_changed` empty when the covered period had no material field-changing result.
 
-When a state-of-field edition is not finished, update the workflow manifest instead of adding provisional fields to the public edition schema. Each reconciliation item should point to the public update being classified and record whether the likely action is no-op, deferral to the next edition, post-hoc context, or material correction.
+When a state-of-field edition is not finished, update the workflow manifest instead of adding provisional fields to the public edition schema. Each reconciliation item should point to the public update being classified and record the agent recommendation, approval state, and final decision. Current-period decisions should distinguish `include_as_field_signal`, `include_as_current_context`, `include_as_trial_horizon`, and `omit_process_context`; prior-period decisions should distinguish no-op, deferral, post-hoc context, and material correction.
 
 Before drafting `trial_horizon`, run `npm run audit:trials -- --write`. Use `trial_horizon` for registry-linked studies that could plausibly produce meaningful results. Include whether the covered month had a real result expectation, whether results were posted, and why a result would matter. Do not count a trial listing, a recruiting status, or a no-result registry check as field progress. If the report shows stale registry checks, run surveillance before making current claims about those trials.
 
@@ -107,6 +124,8 @@ After any rollup decision or edit, regenerate triage state and run the standard 
 
 ```bash
 npm run sync:work-triage
+npm run state-of-field:reconcile -- --write
+npm run state-of-field:packet
 npm run state-of-field:status -- --strict
 npm run audit:editorial -- --write
 npm run validate:records

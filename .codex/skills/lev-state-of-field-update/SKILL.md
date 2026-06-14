@@ -7,6 +7,8 @@ description: Use when creating or revising LEV State of the Field editions, espe
 
 Use this when adding or revising `data/content/state-of-the-field/<YYYY-MM>.json` or the State of the Field page experience.
 
+If the work involves deciding how reviewed public updates should be reconciled, use `lev-reconciliation-orchestrator` first to produce agent recommendations, approval state, and an approval packet.
+
 ## Read First
 
 - latest and previous `data/content/state-of-the-field/*.json`
@@ -14,6 +16,7 @@ Use this when adding or revising `data/content/state-of-the-field/<YYYY-MM>.json
 - `data/content/current-lev-story/current.json`
 - `data/outlooks/overall-lev-outlook.json`
 - `ops/state-of-field-workflow.v1.json`
+- `npm run state-of-field:packet` output when reconciliation decisions are open
 - public outlooks and publication events named by the edition
 - `docs/editorial-rollup.md`
 - `docs/editorial-quality-system.md`
@@ -56,6 +59,7 @@ Use this when adding or revising `data/content/state-of-the-field/<YYYY-MM>.json
 7. Keep field state separate from tracker state. Coverage or context improvements can be named, but only as context; do not frame them as stronger evidence.
 8. Update review metadata and related IDs to match the public records reviewed.
    - If reconciliation is not complete, update the workflow manifest with `draft`, `reconciling`, `needs_surveillance`, `in_review`, `blocked`, or `no_op`.
+   - For open reconciliation items, record `agent_assessment` and `human_approval` before finalizing public copy.
 9. Update `revision_history`:
    - `initial_publication` for a new edition.
    - `post_hoc_material_correction` when later-reviewed evidence from the covered period would have changed the period's public conclusion.
@@ -95,6 +99,7 @@ Run after edits:
 
 ```bash
 npm run validate:records
+npm run state-of-field:packet
 npm run state-of-field:status -- --strict
 npm run audit:editorial:ratchet
 npm run typecheck

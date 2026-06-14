@@ -7,6 +7,8 @@ description: Use when revising the public current LEV story, homepage State of L
 
 Use this after reviewed public records have changed, or when the curator asks whether the homepage story still matches the evidence map.
 
+If the task involves deciding which public updates to include, defer, omit, or escalate before revising public copy, use `lev-reconciliation-orchestrator` first and carry over its recorded recommendations and approvals.
+
 ## Read First
 
 - `data/content/current-lev-story/current.json`
@@ -17,6 +19,7 @@ Use this after reviewed public records have changed, or when the curator asks wh
 - `data/publication-events/` newer than `revision.last_reviewed`
 - `docs/editorial-rollup.md`
 - `docs/editorial-quality-system.md`
+- `npm run state-of-field:packet` output when State of the Field reconciliation affects the story
 - homepage rendering in `src/components/homepage.tsx`
 - `scripts/current-lev-story.mjs`
 

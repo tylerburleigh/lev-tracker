@@ -11,6 +11,30 @@ permissions:
   contents: read
 
 jobs:
+  editorial:
+    name: Editorial
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify editorial state
+        run: npm run verify:editorial
+
+      - name: Ensure generated files are current
+        run: git diff --exit-code
+
   data-sustainability:
     name: Data sustainability
     runs-on: ubuntu-latest

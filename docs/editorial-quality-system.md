@@ -50,6 +50,23 @@ npm run audit:editorial:ratchet
 
 It enforces the current warning ceiling while still allowing planned cleanup passes to lower that ceiling later.
 
+For CI-style editorial verification, run:
+
+```bash
+npm run verify:editorial
+```
+
+This reconciles the State of the Field workflow manifest, checks State of the Field status in strict mode, runs the editorial ratchet, validates records, audits live data integrity, and typechecks the app.
+
+For agent-led reconciliation, start with:
+
+```bash
+npm run state-of-field:reconcile -- --write
+npm run state-of-field:packet
+```
+
+The packet is the handoff between agent judgment and curator approval. Agents should recommend decisions before asking for input, record those recommendations in `agent_assessment`, mark which items require human review, and then ask for approval, revision, or hold. Curators should not need to discover or classify raw reconciliation candidates from scratch.
+
 ## Cadence
 
 Run the system when any of these happen:
@@ -57,6 +74,7 @@ Run the system when any of these happen:
 - a public update changes a public outlook
 - a state-of-the-field edition is added or revised
 - a State of the Field workflow item is opened, reconciled, blocked, or published
+- an agent approval packet has unresolved human-review items
 - the current LEV story review date is due
 - homepage, hallmark, track, methods, or state-of-field copy changes
 - the curator asks whether the story still works for readers
@@ -67,6 +85,7 @@ The combined audit fails when:
 
 - the current LEV story is stale
 - current-story/public-edition State of the Field mismatches are not tracked in `ops/state-of-field-workflow.v1.json`
+- reconciliation decisions required for publication lack recorded agent assessment or approval state
 - the reader-task audit has an issue
 - optional warning thresholds are exceeded
 

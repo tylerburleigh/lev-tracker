@@ -68,9 +68,75 @@
       "enum": [
         "needs_decision",
         "no_op",
+        "needs_surveillance",
         "defer_to_next_edition",
         "add_post_hoc_context_note",
-        "post_hoc_material_correction"
+        "post_hoc_material_correction",
+        "include_as_field_signal",
+        "include_as_current_context",
+        "include_as_trial_horizon",
+        "omit_process_context"
+      ]
+    },
+    "agentRecommendedDecision": {
+      "enum": [
+        "no_op",
+        "needs_surveillance",
+        "defer_to_next_edition",
+        "add_post_hoc_context_note",
+        "post_hoc_material_correction",
+        "include_as_field_signal",
+        "include_as_current_context",
+        "include_as_trial_horizon",
+        "omit_process_context"
+      ]
+    },
+    "agentConfidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "agentMateriality": {
+      "enum": [
+        "none",
+        "low",
+        "moderate",
+        "high"
+      ]
+    },
+    "affectedSurface": {
+      "enum": [
+        "workflow_manifest",
+        "state_of_field",
+        "current_lev_story",
+        "hallmark_insight",
+        "track_page",
+        "overall_outlook",
+        "trial_horizon",
+        "evidence_record"
+      ]
+    },
+    "publicCopyAction": {
+      "enum": [
+        "no_public_copy",
+        "metadata_only",
+        "draft_copy",
+        "revise_copy",
+        "hold_for_period_close",
+        "run_surveillance",
+        "run_evidence_review"
+      ]
+    },
+    "humanApprovalStatus": {
+      "enum": [
+        "not_requested",
+        "requested",
+        "approved",
+        "rejected",
+        "revise",
+        "not_required"
       ]
     },
     "checkStatus": {
@@ -261,6 +327,92 @@
           "minLength": 1
         },
         "next_action": {
+          "type": "string",
+          "minLength": 1
+        },
+        "agent_assessment": {
+          "$ref": "#/$defs/agentAssessment"
+        },
+        "human_approval": {
+          "$ref": "#/$defs/humanApproval"
+        }
+      }
+    },
+    "agentAssessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recommended_decision",
+        "confidence",
+        "materiality",
+        "affected_surfaces",
+        "public_copy_action",
+        "human_review_required",
+        "rationale",
+        "reviewed_at"
+      ],
+      "properties": {
+        "recommended_decision": {
+          "$ref": "#/$defs/agentRecommendedDecision"
+        },
+        "confidence": {
+          "$ref": "#/$defs/agentConfidence"
+        },
+        "materiality": {
+          "$ref": "#/$defs/agentMateriality"
+        },
+        "affected_surfaces": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/affectedSurface"
+          },
+          "uniqueItems": true
+        },
+        "public_copy_action": {
+          "$ref": "#/$defs/publicCopyAction"
+        },
+        "human_review_required": {
+          "type": "boolean"
+        },
+        "escalation_reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewed_at": {
+          "$ref": "./common.schema.json#/$defs/dateTime"
+        },
+        "reviewed_by": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "humanApproval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/humanApprovalStatus"
+        },
+        "requested_at": {
+          "$ref": "./common.schema.json#/$defs/dateTime"
+        },
+        "resolved_at": {
+          "$ref": "./common.schema.json#/$defs/dateTime"
+        },
+        "approver": {
+          "type": "string",
+          "minLength": 1
+        },
+        "notes": {
           "type": "string",
           "minLength": 1
         }

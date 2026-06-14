@@ -9,6 +9,7 @@ Overall: passed
 - Public copy warnings: 56
 - Reader-task audit: passed (14 passed, 0 issues, 0 warnings)
 - State of the Field workflow: draft (16 open decision(s), 0 untracked mismatch(es))
+- Hallmark insight freshness: 0 stale hallmark insight(s)
 - Top public-copy terms: durable: 14, translation: 9, functional benefit: 7, mechanistic: 6, coverage repair: 5, biomarker-heavy: 4, low confidence: 3, support map: 3
 
 ## Gates
@@ -19,6 +20,8 @@ Overall: passed
   0 untracked mismatch(es), 16 open reconciliation decision(s).
 - PASS: Reader-task audit has no issues
   0 issue(s), 0 warning(s).
+- PASS: Hallmark insight summaries are reviewed after affected outlook changes
+  No hallmark insight summaries are older than their latest affected public update.
 - PASS: Public copy warnings <= 269
   Current public copy warning count is 56.
 - PASS: Reader-task warnings <= 0
@@ -55,6 +58,8 @@ Missing from published edition: 5
 Tracked missing updates: 5
 Untracked missing updates: 0
 Open reconciliation decisions: 16
+Decided without agent assessment: 0
+Required human approvals unresolved: 10
 Open checklist items: 4
 Next action: Keep the July edition internal until June closes, then finalize the provisional classifications for the 16 known June public updates and write the public 2026-07 edition from reviewed records.
 
