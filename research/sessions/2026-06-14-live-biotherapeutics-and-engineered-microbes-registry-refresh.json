@@ -1,0 +1,258 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-14-live-biotherapeutics-and-engineered-microbes-registry-refresh",
+  "name": "Live Biotherapeutics and Engineered Microbes Registry Metadata Refresh",
+  "mode": "surveillance",
+  "started_at": "2026-06-14T20:00:00Z",
+  "completed_at": "2026-06-14T20:07:00Z",
+  "scope": {
+    "question": "Do current ClinicalTrials.gov and PubMed checks for stale Live Biotherapeutics and Engineered Microbes trial-watch records change the public outlook or only clear local registry metadata debt?",
+    "hallmark_ids": [
+      "dysbiosis"
+    ],
+    "track_ids": [
+      "live-biotherapeutics-and-engineered-microbes"
+    ],
+    "intervention_ids": [
+      "synb1618",
+      "lactiplantibacillus-plantarum-twk10",
+      "pasteurized-akkermansia-muct",
+      "akk-wst01",
+      "akkermansia-muciniphila",
+      "gi-102-gib-7"
+    ]
+  },
+  "selected_via": "manual_override",
+  "outcome": "no_op",
+  "summary": "Ran a bounded Live Biotherapeutics and Engineered Microbes registry metadata refresh after the scoped trial-watch audit showed five stale or missing registry checks, one missing expected-results window, and zero open stale watch items. Direct ClinicalTrials.gov API checks refreshed SYNB1618 NCT03516487, TWK10 NCT04893746, pasteurized Akkermansia MucT NCT05417360, AKK-WST01 NCT04797442, Akkermansia muciniphila NCT02637115, and the current GIANTS-1 NCT07363057 watchlist record. The completed local records remain represented by existing peer-reviewed results, GIANTS-1 remains recruiting with no posted results, and same-window PubMed plus narrow registry searches did not find a new result-bearing human aging-relevant live-biotherapeutic source. A close HB05P pasteurized-Akkermansia older-adult muscle-strength registry was found but has no posted results and is recorded as future coverage-repair context rather than a metadata-refresh public change.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "none",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "This pass cleared stale local trial-details metadata and the GIANTS-1 expected-results-window gap. The current registry and PubMed checks do not add new efficacy, safety, durability, disease, mortality, or broad aging evidence beyond already represented results. HB05P/NCT07402278 is relevant no-results trial-horizon context, but adding a new public trial-watch record should be handled as a separate coverage-repair or staged-source decision rather than folded into this metadata batch."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial watch audit",
+      "query": "npm run audit:trials -- --track live-biotherapeutics-and-engineered-microbes --write",
+      "checked_at": "2026-06-14T20:00:00Z",
+      "summary": "Scoped report contained 6 registry-linked studies, 0 missing trial-detail records, 5 stale or missing registry checks, 1 detail record missing expected_results_window, and 0 open stale watch items."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "Direct checks for NCT03516487, NCT04893746, NCT05417360, NCT04797442, NCT02637115, and NCT07363057",
+      "checked_at": "2026-06-14T20:02:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT07363057",
+      "summary": "The stale completed/post-result records were retrievable and unchanged in public interpretation. GIANTS-1 NCT07363057 remains recruiting with no posted results, last update posted January 26, 2026, primary completion estimated May 2026, and study completion estimated October 1, 2026."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "Akkermansia older adults trial; TWK10 frail older adults; SYNB1618 engineered E. coli; live biotherapeutic aging microbiome older adults; GIANTS-1 GIB-7 GI-102 immune aging",
+      "checked_at": "2026-06-14T20:03:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "Narrow registry searches returned the represented TWK10 and GIANTS-1 records, wrong-scope or pediatric/metabolic records, and one close new no-results registry: NCT07402278, a completed pasteurized Akkermansia muciniphila HB05P trial for muscle strength in older adults with no posted results."
+    },
+    {
+      "source_name": "PubMed ESearch and ESummary",
+      "query": "(Akkermansia OR Akkermansia muciniphila OR AKK-WST01 OR MucT) AND (aging OR elderly OR older OR frailty OR obesity OR diabetes OR metabolic OR trial) AND 2026/06/06:2026/06/14[edat]; TWK10, SYNB1618, PA53, GIANTS-1, GIB-7, and GI-102 same-window checks",
+      "checked_at": "2026-06-14T20:04:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Same-window PubMed checks found Akkermansia review, mechanistic, gut-liver, tumor-microbiome, polyphenol, postbiotic, and wrong-scope context, plus a living-drug-carrier review. More specific human older-adult/trial and SYNB1618/TWK10/PA53/GIANTS checks did not find a new result-bearing live-biotherapeutic human aging source."
+    },
+    {
+      "source_name": "PubMed ESearch and ESummary",
+      "query": "HB05P OR NCT07402278 OR pasteurized Akkermansia OR Akkermansia muciniphila HB05P",
+      "checked_at": "2026-06-14T20:05:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "The HB05P query returned Akkermansia mechanism, review, preclinical, postbiotic, and the already represented pasteurized Akkermansia MucT result context, but no NCT07402278 result publication."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT03516487",
+      "study_id": "synb1618-pku-phase1-2a",
+      "source_id": "pmid-34294923",
+      "registry_url": "https://clinicaltrials.gov/study/NCT03516487",
+      "checked_at": "2026-06-14T20:02:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2019-06-21",
+      "study_completion_date": "2019-06-21",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The SYNB1618 registry remains completed with no ClinicalTrials.gov results section; the peer-reviewed PMID 34294923 result remains the public evidence source."
+    },
+    {
+      "registry_id": "NCT04893746",
+      "study_id": "twk10-frail-older-adults-rct",
+      "source_id": "pmid-34361902",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04893746",
+      "checked_at": "2026-06-14T20:02:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2020-12-31",
+      "study_completion_date": "2021-04-30",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The TWK10 registry remains completed with no ClinicalTrials.gov results section; the peer-reviewed PMID 34361902 result remains the public evidence source."
+    },
+    {
+      "registry_id": "NCT05417360",
+      "study_id": "pasteurized-akkermansia-muct-weight-maintenance-rct",
+      "source_id": "pmid-42120725",
+      "registry_url": "https://clinicaltrials.gov/study/NCT05417360",
+      "checked_at": "2026-06-14T20:02:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2023-11-20",
+      "study_completion_date": "2023-11-20",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The pasteurized Akkermansia MucT registry remains completed with no ClinicalTrials.gov results section; the peer-reviewed PMID 42120725 result remains the public evidence source."
+    },
+    {
+      "registry_id": "NCT04797442",
+      "study_id": "akk-wst01-type2-diabetes-rct",
+      "source_id": "pmid-39879980",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04797442",
+      "checked_at": "2026-06-14T20:02:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "unknown",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2022-11-09",
+      "study_completion_date": "2024-03-31",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The AKK-WST01 registry remains unknown-status with no ClinicalTrials.gov results section; the peer-reviewed PMID 39879980 result remains the public evidence source, and local metadata now records the registry date-kind boundary."
+    },
+    {
+      "registry_id": "NCT02637115",
+      "study_id": "akkermansia-muciniphila-insulin-resistant-pilot",
+      "source_id": "pmid-31263284",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02637115",
+      "checked_at": "2026-06-14T20:02:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2018-02-20",
+      "study_completion_date": "2018-02-20",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The Akkermansia muciniphila pilot registry remains completed with no ClinicalTrials.gov results section; the peer-reviewed PMID 31263284 result remains the public evidence source."
+    },
+    {
+      "registry_id": "NCT07363057",
+      "study_id": "giants-1-immune-aging-biomarker-registry",
+      "source_id": "nct-07363057",
+      "registry_url": "https://clinicaltrials.gov/study/NCT07363057",
+      "checked_at": "2026-06-14T20:02:00Z",
+      "previous_local_status": "recruiting",
+      "current_registry_status": "recruiting",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2026-05-01",
+      "study_completion_date": "2026-10-01",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "GIANTS-1 remains recruiting with no ClinicalTrials.gov results section. Local metadata was refreshed with the June 14 check and an explicit expected-results boundary."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "NCT07402278",
+      "title": "Evaluation of HB05P for Muscle Strength Improvement in Older Adults",
+      "url": "https://clinicaltrials.gov/study/NCT07402278",
+      "decision": "no_results",
+      "reason": "Completed pasteurized Akkermansia muciniphila HB05P older-adult muscle-strength registry with no posted results. It is relevant trial-watch context, but staging a new public source/study should be handled in a separate coverage-repair or trial-watch pass."
+    },
+    {
+      "reference": "PMID 42264080",
+      "title": "Pharmaco-microdynamics (PMD): Redefining Dose, Exposure, and Control for Living Drug Carriers.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42264080/",
+      "decision": "context_only",
+      "reason": "Review-level living-drug-carrier framework; it does not report a new human aging-relevant live-biotherapeutic intervention result."
+    },
+    {
+      "reference": "PMID 42277386",
+      "title": "Modulating the Gut-Liver Axis: Anti-Inflammatory Mechanisms of Probiotics and Prebiotics in MASLD.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42277386/",
+      "decision": "context_only",
+      "reason": "Review-level probiotic/prebiotic MASLD context, not a new live-biotherapeutic or engineered-microbe aging trial result."
+    },
+    {
+      "reference": "PMID 42254009",
+      "title": "Pasteurized Akkermansia muciniphila alleviates high-fat diet-induced bone loss via Nr4a1-dependent Treg differentiation.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42254009/",
+      "decision": "context_only",
+      "reason": "Preclinical pasteurized Akkermansia mechanism context; it does not change the human live-biotherapeutic evidence map in this metadata pass."
+    }
+  ],
+  "source_ids": [
+    "pmid-34294923",
+    "pmid-34361902",
+    "pmid-42120725",
+    "pmid-39879980",
+    "pmid-31263284",
+    "nct-07363057"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT03516487",
+    "https://clinicaltrials.gov/study/NCT04893746",
+    "https://clinicaltrials.gov/study/NCT05417360",
+    "https://clinicaltrials.gov/study/NCT04797442",
+    "https://clinicaltrials.gov/study/NCT02637115",
+    "https://clinicaltrials.gov/study/NCT07363057",
+    "https://clinicaltrials.gov/study/NCT07402278",
+    "https://pubmed.ncbi.nlm.nih.gov/34294923/",
+    "https://pubmed.ncbi.nlm.nih.gov/34361902/",
+    "https://pubmed.ncbi.nlm.nih.gov/42120725/",
+    "https://pubmed.ncbi.nlm.nih.gov/39879980/",
+    "https://pubmed.ncbi.nlm.nih.gov/31263284/"
+  ],
+  "notes": [
+    "This pass was selected manually from the global stale registry-check report and kept to one track-level metadata batch.",
+    "The completed local studies remain posted-result context because their result-bearing peer-reviewed sources are already represented.",
+    "HB05P/NCT07402278 is relevant no-results trial-watch context but was not staged because this pass was explicitly scoped to refreshing existing local trial metadata."
+  ],
+  "next_actions": [
+    "Regenerate the scoped and global trial-watch reports so the State of the Field blocker reflects the refreshed live-biotherapeutics metadata.",
+    "Consider a separate live-biotherapeutics coverage-repair or trial-watch pass for HB05P/NCT07402278 if public trial-horizon completeness is prioritized.",
+    "Continue the stale registry metadata queue with the next coherent track-level batch rather than mixing unrelated tracks in one session."
+  ]
+}
