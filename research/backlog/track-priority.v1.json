@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-14T18:59:04.711Z",
+  "updated_at": "2026-06-14T19:42:48.925Z",
   "notes": [
     "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
@@ -511,21 +511,6 @@
     {
       "rank": 30,
       "phase_id": "surveillance-rotation",
-      "track_id": "nad-and-redox-restoration",
-      "hallmark_id": "mitochondrial_dysfunction",
-      "default_mode": "surveillance",
-      "freshness_status": "recent",
-      "last_reviewed_at": "2026-06-08T12:00:46Z",
-      "next_due_at": "2026-06-22T12:00:46.000Z",
-      "cooldown_days": 14,
-      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
-      "default_question": "What changed for NAD and Redox Restoration since the last meaningful review or publication, and does any change justify a public update?",
-      "priority_tier": "later",
-      "notes": "Recently handled; ordinary rotation is due after 2026-06-22."
-    },
-    {
-      "rank": 31,
-      "phase_id": "surveillance-rotation",
       "track_id": "circulating-factor-modulation",
       "hallmark_id": "altered_intercellular_communication",
       "default_mode": "surveillance",
@@ -539,7 +524,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-23."
     },
     {
-      "rank": 32,
+      "rank": 31,
       "phase_id": "surveillance-rotation",
       "track_id": "dna-repair-enhancement",
       "hallmark_id": "genomic_instability",
@@ -554,7 +539,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-24."
     },
     {
-      "rank": 33,
+      "rank": 32,
       "phase_id": "surveillance-rotation",
       "track_id": "chaperone-and-heat-shock-support",
       "hallmark_id": "loss_of_proteostasis",
@@ -569,7 +554,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-24."
     },
     {
-      "rank": 34,
+      "rank": 33,
       "phase_id": "surveillance-rotation",
       "track_id": "autophagy-induction",
       "hallmark_id": "disabled_macroautophagy",
@@ -584,7 +569,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-25."
     },
     {
-      "rank": 35,
+      "rank": 34,
       "phase_id": "surveillance-rotation",
       "track_id": "partial-reprogramming",
       "hallmark_id": "epigenetic_alterations",
@@ -599,7 +584,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-26."
     },
     {
-      "rank": 36,
+      "rank": 35,
       "phase_id": "surveillance-rotation",
       "track_id": "stem-cell-rejuvenation",
       "hallmark_id": "stem_cell_exhaustion",
@@ -614,7 +599,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-28."
     },
     {
-      "rank": 37,
+      "rank": 36,
       "phase_id": "surveillance-rotation",
       "track_id": "lysosomal-restoration",
       "hallmark_id": "disabled_macroautophagy",
@@ -629,7 +614,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-28."
     },
     {
-      "rank": 38,
+      "rank": 37,
       "phase_id": "surveillance-rotation",
       "track_id": "telomerase-restoration",
       "hallmark_id": "telomere_attrition",
@@ -640,6 +625,21 @@
       "cooldown_days": 14,
       "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
       "default_question": "What changed for Telomerase Restoration since the last meaningful review or publication, and does any change justify a public update?",
+      "priority_tier": "later",
+      "notes": "Recently handled; ordinary rotation is due after 2026-06-28."
+    },
+    {
+      "rank": 38,
+      "phase_id": "surveillance-rotation",
+      "track_id": "nad-and-redox-restoration",
+      "hallmark_id": "mitochondrial_dysfunction",
+      "default_mode": "surveillance",
+      "freshness_status": "recent",
+      "last_reviewed_at": "2026-06-14T19:39:00Z",
+      "next_due_at": "2026-06-28T19:39:00.000Z",
+      "cooldown_days": 14,
+      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
+      "default_question": "What changed for NAD and Redox Restoration since the last meaningful review or publication, and does any change justify a public update?",
       "priority_tier": "later",
       "notes": "Recently handled; ordinary rotation is due after 2026-06-28."
     }

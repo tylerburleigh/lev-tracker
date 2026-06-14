@@ -6,19 +6,18 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 ## Summary
 
 - Registry-linked interventional studies: 143
-- With `trial_details`: 142
-- Missing `trial_details`: 1
+- With `trial_details`: 143
+- Missing `trial_details`: 0
 - Completed or past-completion records with no posted results: 25
-- Registry checks missing or stale: 64
-- Open watchlist records with missing or stale registry checks: 1
-- Posted results recorded locally: 81
+- Registry checks missing or stale: 56
+- Open watchlist records with missing or stale registry checks: 0
+- Posted results recorded locally: 82
 
 ### Result Status
 
 - no posted results: 55
 - not expected yet: 6
-- posted results: 81
-- unknown result status: 1
+- posted results: 82
 
 ### Trial Status
 
@@ -127,15 +126,15 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 - [Fasting-mimicking diet autophagic flux pilot](https://pubmed.ncbi.nlm.nih.gov/41372565/) (NCT06115551): completed; posted results; completion not recorded; registry no local check date.
 - [Fasting-mimicking diet biological-age and disease-risk marker analysis](https://pubmed.ncbi.nlm.nih.gov/28202779/) (NCT02158897, NCT04150159): completed; posted results; completion not recorded; registry no local check date.
 - [Fasting-mimicking diet protein-content randomized study](https://pubmed.ncbi.nlm.nih.gov/40816210/) (NCT06560996): completed; posted results; completion not recorded; registry no local check date.
-- [GlyNAC dose-ranging redox trial in healthy older adults](https://pubmed.ncbi.nlm.nih.gov/35821844/) (NCT05041179): completed; posted results; completion not recorded; registry no local check date.
-- [GlyNAC in older adults aging-hallmarks randomized trial](https://pubmed.ncbi.nlm.nih.gov/35975308/) (NCT01870193): completed; posted results; completion not recorded; registry no local check date.
 - [HELIOS-B vutrisiran ATTR cardiomyopathy trial](https://pubmed.ncbi.nlm.nih.gov/39213194/) (NCT04153149): completed; posted results; completion not recorded; registry no local check date.
 - [High-purity spermidine older-men safety trial](https://pubmed.ncbi.nlm.nih.gov/39405978/) (NCT05459961): completed; posted results; completion not recorded; registry no local check date.
 - Lean-donor intestinal microbiota transfer in metabolic syndrome (NTR1776): completed; posted results; completion not recorded; registry no local check date.
+- [LoDoCo2 low-dose colchicine chronic coronary disease trial](https://pubmed.ncbi.nlm.nih.gov/32865380/) (ACTRN12614000093684): completed; posted results; completion not recorded; registry no local check date.
+- MET-PREVENT metformin physical-performance frailty trial (ISRCTN29932357): completed; posted results; completion not recorded; registry no local check date.
 
 ## Missing Trial Details
 
-- MIB-626 COVID-19 acute kidney injury randomized trial (NCT05038488): NAD and Redox Restoration.
+All scoped registry-linked interventional studies have trial details.
 
 ## Detail Quality
 
