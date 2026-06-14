@@ -1,0 +1,342 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-14-protein-aggregate-clearance-registry-refresh",
+  "name": "Protein Aggregate Clearance Registry Metadata Refresh",
+  "mode": "surveillance",
+  "started_at": "2026-06-14T20:20:00Z",
+  "completed_at": "2026-06-14T20:32:20Z",
+  "scope": {
+    "question": "Do current ClinicalTrials.gov and PubMed checks for stale Protein Aggregate Clearance trial-watch records change the public outlook or only clear local registry metadata debt?",
+    "hallmark_ids": [
+      "loss_of_proteostasis"
+    ],
+    "track_ids": [
+      "protein-aggregate-clearance"
+    ],
+    "intervention_ids": [
+      "lecanemab",
+      "donanemab",
+      "ni006",
+      "coramitug",
+      "patisiran",
+      "tafamidis",
+      "acoramidis",
+      "vutrisiran"
+    ]
+  },
+  "selected_via": "manual_override",
+  "outcome": "no_op",
+  "summary": "Ran a bounded Protein Aggregate Clearance registry metadata refresh after the scoped trial-watch audit showed eight registry-linked studies, eight stale or missing registry checks, and zero open stale watch items. Direct ClinicalTrials.gov API checks refreshed Clarity AD lecanemab NCT03887455, TRAILBLAZER-ALZ 2 donanemab NCT04437511, APOLLO-B patisiran NCT03997383, ATTR-ACT tafamidis NCT01994889, ATTRibute-CM acoramidis NCT03860935, coramitug NCT05442047, HELIOS-B vutrisiran NCT04153149, and NI006 NCT04360434. The completed local records remain represented by existing result-bearing peer-reviewed or registry sources, the Alzheimer and HELIOS-B registries retain long-term follow-up boundaries, and same-window PubMed plus broad registry searches did not find a new pivotal result that changes the public outlook.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "none",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "This pass cleared stale local trial-details metadata for existing scoped records. The current registry and PubMed checks do not add new efficacy, safety, durability, mortality, or broad aging evidence beyond already represented Alzheimer amyloid-antibody and ATTR amyloidosis baseline results. Close secondary analyses, diagnostic papers, preclinical papers, and no-results registry leads are source-completeness or trial-horizon context for future passes rather than same-window field movement."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial watch audit",
+      "query": "npm run audit:trials -- --track protein-aggregate-clearance --write",
+      "checked_at": "2026-06-14T20:20:00Z",
+      "summary": "Scoped report contained 8 registry-linked studies, 0 missing trial-detail records, 8 stale or missing registry checks, and 0 open stale watch items."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "Direct checks for NCT03887455, NCT04437511, NCT03997383, NCT01994889, NCT03860935, NCT05442047, NCT04153149, and NCT04360434",
+      "checked_at": "2026-06-14T20:23:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT03887455",
+      "summary": "Known registries were retrievable. Clarity AD, TRAILBLAZER-ALZ 2, and HELIOS-B remained active-not-recruiting because of follow-up extensions or active registry status, while APOLLO-B, ATTR-ACT, ATTRibute-CM, coramitug, and NI006 were completed. Registry results were posted for TRAILBLAZER-ALZ 2, APOLLO-B, ATTR-ACT, ATTRibute-CM, and HELIOS-B; Clarity AD, coramitug, and NI006 remain represented locally by peer-reviewed result publications rather than ClinicalTrials.gov result tables."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "(lecanemab OR donanemab OR aducanumab OR remternetug OR gantenerumab OR patisiran OR vutrisiran OR eplontersen OR tafamidis OR acoramidis OR coramitug OR NI006 OR amyloid clearance OR proteostasis) AND (aging OR older OR Alzheimer OR transthyretin OR ATTR OR trial), Entrez dates 2026/06/05 to 2026/06/14",
+      "checked_at": "2026-06-14T20:25:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Broad same-window PubMed searches returned reviews, diagnostics, case reports, secondary analyses, preclinical proteostasis papers, and wrong-scope treatment context. No new pivotal Alzheimer amyloid-antibody, ATTR amyloidosis, or broad aging-relevant protein-aggregate-clearance result changed the existing public read."
+    },
+    {
+      "source_name": "PubMed ESearch and ESummary",
+      "query": "NCT03887455 OR NCT04437511 OR NCT03997383 OR NCT01994889 OR NCT03860935 OR NCT05442047 OR NCT04153149 OR NCT04360434, all dates",
+      "checked_at": "2026-06-14T20:27:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=NCT03887455%20OR%20NCT04437511%20OR%20NCT03997383%20OR%20NCT01994889%20OR%20NCT03860935%20OR%20NCT05442047%20OR%20NCT04153149%20OR%20NCT04360434",
+      "summary": "Known-registry PubMed search surfaced close context including PMID 42273802, a TRAILBLAZER-ALZ 2 baseline tau burden and disease-severity analysis. It refines interpretation inside an already represented trial but does not supply a new pivotal result or broaden the aging relevance of the track."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "lecanemab OR donanemab OR aducanumab OR remternetug OR gantenerumab Alzheimer amyloid; transthyretin OR ATTR-CM OR tafamidis OR acoramidis OR patisiran OR vutrisiran OR eplontersen OR NI006 OR coramitug OR PRX004; amyloid clearance aggregate clearance protein aggregate proteostasis aging trial",
+      "checked_at": "2026-06-14T20:29:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "Broad registry searches returned represented trials, Alzheimer antibody and ATTR-CM future-trial context, and no-results leads such as NCT06194825, NCT06911944, NCT06602258, and NCT07589595. No newly posted result-bearing registry required a staged source, finding, or outlook update in this pass."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT03887455",
+      "study_id": "clarity-ad-lecanemab-early-alzheimers",
+      "source_id": "pmid-36449413",
+      "registry_url": "https://clinicaltrials.gov/study/NCT03887455",
+      "checked_at": "2026-06-14T20:23:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "active",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "Clarity AD remained active-not-recruiting in ClinicalTrials.gov because of long-term follow-up, with no posted registry results section and a last update posted April 7, 2026. The 18-month peer-reviewed PMID 36449413 result remains the public evidence source."
+    },
+    {
+      "registry_id": "NCT04437511",
+      "study_id": "trailblazer-alz2-donanemab-early-alzheimers",
+      "source_id": "pmid-37459141",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04437511",
+      "checked_at": "2026-06-14T20:23:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "active",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2023-04-14",
+      "results_first_posted_date": "2024-05-20",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "TRAILBLAZER-ALZ 2 remained active-not-recruiting for follow-up, with ClinicalTrials.gov results already posted and a last update posted August 29, 2025. Local metadata now records the actual primary completion date, registry first-posted results date, and June 14 registry check."
+    },
+    {
+      "registry_id": "NCT03997383",
+      "study_id": "apollo-b-patisiran-attr-cm",
+      "source_id": "pmid-37888916",
+      "registry_url": "https://clinicaltrials.gov/study/NCT03997383",
+      "checked_at": "2026-06-14T20:23:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2022-06-20",
+      "study_completion_date": "2025-12-24",
+      "completion_date_kind": "actual",
+      "results_first_posted_date": "2023-10-18",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "APOLLO-B remained completed with posted ClinicalTrials.gov results, actual study completion on December 24, 2025, and a last update posted April 20, 2026. The current registry metadata does not change the public ATTR-CM interpretation."
+    },
+    {
+      "registry_id": "NCT01994889",
+      "study_id": "attr-act-tafamidis-attr-cm",
+      "source_id": "pmid-30145929",
+      "registry_url": "https://clinicaltrials.gov/study/NCT01994889",
+      "checked_at": "2026-06-14T20:23:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2018-02-07",
+      "study_completion_date": "2018-02-07",
+      "completion_date_kind": "actual",
+      "results_first_posted_date": "2019-04-03",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "ATTR-ACT remained completed with posted ClinicalTrials.gov results and no current registry movement. Local metadata now records the registry last update, actual completion dates, and results first-posted date."
+    },
+    {
+      "registry_id": "NCT03860935",
+      "study_id": "attribute-cm-acoramidis",
+      "source_id": "pmid-38197816",
+      "registry_url": "https://clinicaltrials.gov/study/NCT03860935",
+      "checked_at": "2026-06-14T20:23:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2023-05-11",
+      "study_completion_date": "2023-05-11",
+      "completion_date_kind": "actual",
+      "results_first_posted_date": "2024-06-27",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "ATTRibute-CM remained completed with posted ClinicalTrials.gov results and no current registry movement. Local metadata now records the actual completion dates, results first-posted date, and June 14 registry check."
+    },
+    {
+      "registry_id": "NCT05442047",
+      "study_id": "coramitug-attr-cm-phase2",
+      "source_id": "pmid-41212997",
+      "registry_url": "https://clinicaltrials.gov/study/NCT05442047",
+      "checked_at": "2026-06-14T20:23:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2025-02-17",
+      "study_completion_date": "2025-05-13",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The coramitug registry remained completed with no ClinicalTrials.gov results section and a last update posted February 17, 2026. The peer-reviewed PMID 41212997 result remains the public evidence source."
+    },
+    {
+      "registry_id": "NCT04153149",
+      "study_id": "helios-b-vutrisiran-attr-cm",
+      "source_id": "pmid-39213194",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04153149",
+      "checked_at": "2026-06-14T20:23:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "active",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2024-05-08",
+      "study_completion_date": "2026-12-02",
+      "completion_date_kind": "estimated",
+      "results_first_posted_date": "2025-10-21",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "HELIOS-B remained active-not-recruiting for follow-up with posted ClinicalTrials.gov results and a last update posted January 12, 2026. The active follow-up boundary does not change the already represented vutrisiran ATTR-CM result."
+    },
+    {
+      "registry_id": "NCT04360434",
+      "study_id": "ni006-attr-cm-phase1",
+      "source_id": "pmid-37212440",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04360434",
+      "checked_at": "2026-06-14T20:23:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2023-07-26",
+      "study_completion_date": "2023-07-26",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The NI006 registry remained completed with no ClinicalTrials.gov results section and a last update posted November 3, 2023. The peer-reviewed PMID 37212440 result remains the public evidence source."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 42273802",
+      "title": "Donanemab treatment effect by baseline tau burden and disease severity: Observations from the TRAILBLAZER-ALZ 2 trial.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42273802/",
+      "decision": "context_only",
+      "reason": "Same-registry secondary analysis from an already represented donanemab trial. It refines subgroup interpretation but does not add a new pivotal result or change the broader aging boundary."
+    },
+    {
+      "reference": "PMID 42216490",
+      "title": "Worsening Heart Failure Requiring Outpatient Intravenous Diuretic Therapy in ATTRibute-CM.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42216490/",
+      "decision": "context_only",
+      "reason": "ATTRibute-CM post-hoc outpatient worsening-heart-failure analysis; useful context for a future source-completeness pass, but not a same-window public outlook change."
+    },
+    {
+      "reference": "PMID 42286391",
+      "title": "Utility of [18F] Florbetapir-PET and 123I-mIBG in The Diagnosis of Cardiac Transthyretin Amyloidosis.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42286391/",
+      "decision": "wrong_scope",
+      "reason": "Diagnostic imaging paper, not an intervention result for protein aggregate clearance."
+    },
+    {
+      "reference": "PMID 42286377",
+      "title": "Author Correction: Extracellular vesicles mediate the communication of exercise-induced clearance of amyloid-beta.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42286377/",
+      "decision": "context_only",
+      "reason": "Correction notice tied to preclinical exercise/extracellular-vesicle amyloid-beta context; it does not add a new human result."
+    },
+    {
+      "reference": "PMID 42285515",
+      "title": "A new UFMylation substrate network uncovered by proximity labeling and quantitative proteomics.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42285515/",
+      "decision": "wrong_scope",
+      "reason": "Proteostasis mechanism paper outside the represented human aggregate-clearance intervention evidence."
+    },
+    {
+      "reference": "NCT06194825",
+      "title": "A Study to Evaluate Eplontersen in Chinese Participants With Transthyretin-Mediated Amyloid Cardiomyopathy",
+      "url": "https://clinicaltrials.gov/study/NCT06194825",
+      "decision": "no_results",
+      "reason": "Active-not-recruiting ATTR-CM eplontersen registry with no posted results as of the June 14, 2026 check. It is future trial-horizon context, not result-bearing evidence."
+    },
+    {
+      "reference": "NCT06911944",
+      "title": "A Study of Donanemab in Participants With Down Syndrome and Alzheimer's Disease",
+      "url": "https://clinicaltrials.gov/study/NCT06911944",
+      "decision": "no_results",
+      "reason": "Not-yet-recruiting donanemab registry with no posted results. It does not alter the current public evidence map."
+    },
+    {
+      "reference": "NCT07589595",
+      "title": "TRAILBLAZER-ALZ 7",
+      "url": "https://clinicaltrials.gov/study/NCT07589595",
+      "decision": "no_results",
+      "reason": "Not-yet-recruiting Alzheimer antibody registry with no posted results. It is trial-horizon context rather than current evidence movement."
+    }
+  ],
+  "source_ids": [
+    "pmid-36449413",
+    "pmid-37459141",
+    "pmid-37212440",
+    "pmid-41212997",
+    "pmid-37888916",
+    "pmid-30145929",
+    "pmid-38197816",
+    "pmid-39213194"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT03887455",
+    "https://clinicaltrials.gov/study/NCT04437511",
+    "https://clinicaltrials.gov/study/NCT03997383",
+    "https://clinicaltrials.gov/study/NCT01994889",
+    "https://clinicaltrials.gov/study/NCT03860935",
+    "https://clinicaltrials.gov/study/NCT05442047",
+    "https://clinicaltrials.gov/study/NCT04153149",
+    "https://clinicaltrials.gov/study/NCT04360434",
+    "https://clinicaltrials.gov/study/NCT06194825",
+    "https://clinicaltrials.gov/study/NCT06911944",
+    "https://clinicaltrials.gov/study/NCT07589595",
+    "https://pubmed.ncbi.nlm.nih.gov/36449413/",
+    "https://pubmed.ncbi.nlm.nih.gov/37459141/",
+    "https://pubmed.ncbi.nlm.nih.gov/37888916/",
+    "https://pubmed.ncbi.nlm.nih.gov/30145929/",
+    "https://pubmed.ncbi.nlm.nih.gov/38197816/",
+    "https://pubmed.ncbi.nlm.nih.gov/41212997/",
+    "https://pubmed.ncbi.nlm.nih.gov/39213194/",
+    "https://pubmed.ncbi.nlm.nih.gov/37212440/",
+    "https://pubmed.ncbi.nlm.nih.gov/42273802/",
+    "https://pubmed.ncbi.nlm.nih.gov/42216490/",
+    "https://pubmed.ncbi.nlm.nih.gov/42286391/",
+    "https://pubmed.ncbi.nlm.nih.gov/42286377/",
+    "https://pubmed.ncbi.nlm.nih.gov/42285515/"
+  ],
+  "notes": [
+    "This pass was selected manually from the global stale registry-check report after the State of the Field packet showed no open approval items and the July edition remained date-blocked.",
+    "The completed local studies remain posted-result context because their result-bearing sources are already represented; a missing ClinicalTrials.gov results section does not make those public result records pending.",
+    "The Alzheimer and HELIOS-B registries have follow-up boundaries that can differ from the local published-result study framing, so local public records were refreshed for registry freshness without turning follow-up extensions into staged evidence changes."
+  ],
+  "next_actions": [
+    "Regenerate the scoped and global trial-watch reports so the State of the Field blocker reflects the refreshed protein-aggregate metadata.",
+    "Consider a future Protein Aggregate Clearance coverage-repair pass for secondary analyses such as PMID 42273802 and close no-results trial-horizon context if source completeness is prioritized.",
+    "Continue the stale registry metadata queue with the next coherent track-level batch rather than mixing unrelated tracks in one session."
+  ]
+}
