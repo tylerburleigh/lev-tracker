@@ -1,0 +1,601 @@
+{
+  "draft_status": "in_progress",
+  "created_at": "2026-06-14T13:00:26.000Z",
+  "as_of": "2026-06-14",
+  "do_not_publish_before": "2026-07-01",
+  "intended_public_path": "data/content/state-of-the-field/2026-07.json",
+  "period": {
+    "slug": "2026-07",
+    "period_start": "2026-06-01",
+    "period_end": "2026-06-30",
+    "period_label": "June 2026"
+  },
+  "status_note": "Internal draft only. June is still in progress, so this is a working rollup of reviewed public records through June 12 and should not be rendered publicly.",
+  "current_interpretation": {
+    "bottom_line": "Through June 12, LEV still does not look closer. The evidence picture is broader and better bounded, but the proof gap remains repeated human evidence that health or function improves for longer.",
+    "field_change_status_candidate": "mixed",
+    "field_change_note_candidate": "June added useful field signals and clearer boundaries in several tracks, but no reviewed update changed the overall stage, timing read, or central human proof gap."
+  },
+  "reader_brief_seed": {
+    "title": "June 2026 in review",
+    "summary": "Draft as of June 14: June broadened and clarified the field picture without changing the LEV outlook. Current reviewed updates added bounded signals in senomorphics, autophagy induction, microbiome-related tracks, DNA repair, immune and rapalog context, senolytics, and partial reprogramming, while keeping the overall proof gap intact.",
+    "lede": "Draft: June has made the evidence easier to judge, not obviously stronger in a way that moves LEV closer. The reviewed updates so far mostly added clearer boundaries, no-results registry context, safety context, and narrow signals rather than repeated long-lasting human health or function improvement.",
+    "bottom_line": "LEV has not looked closer so far in June. A stronger read would still require repeated human studies showing long-lasting improvements in health or function.",
+    "what_did_not_change": [
+      "The overall LEV outlook remains at an early human-signal stage with mixed momentum.",
+      "No June update resolved the need for repeated, long-lasting human health or function improvement.",
+      "Several useful signals remain narrow, preclinical, disease-specific, subgroup-limited, or mostly based on biomarkers.",
+      "Trial listings and no-results registry records remain context, not proof."
+    ],
+    "candidate_reader_takeaways": [
+      "June looks broader rather than decisively stronger.",
+      "Some tracks gained clearer boundaries or narrow signals.",
+      "No reviewed June update has yet changed the overall LEV outlook.",
+      "The final July edition should wait until June closes."
+    ]
+  },
+  "candidate_context_items": [
+    {
+      "label": "A broader but still early field picture",
+      "summary": "Early June baseline updates made it possible to compare more tracks across all hallmark areas. That is useful context, but it is not itself evidence that LEV is closer.",
+      "related_outlook_ids": [
+        "overall-lev-outlook"
+      ],
+      "change_kind_candidate": "context_only"
+    },
+    {
+      "label": "Senomorphics gained a preclinical signal",
+      "summary": "A June update added mianserin/Ca2+ animal lifespan and human-cell senescence support while keeping the track at an early human biomarker stage.",
+      "related_publication_event_ids": [
+        "publish-senomorphics-surveillance-2026-06-07-2026-06-07t16-41-34-635z"
+      ],
+      "related_outlook_ids": [
+        "track-senomorphics-outlook"
+      ],
+      "change_kind_candidate": "field_signal"
+    },
+    {
+      "label": "Autophagy induction gained a narrow human signal",
+      "summary": "A June update added an older-adult spermidine vaccine-response pilot, bounded as small and subgroup-limited rather than proof of lasting aging-relevant function.",
+      "related_publication_event_ids": [
+        "publish-autophagy-induction-surveillance-2026-06-11-2026-06-11t10-25-04-657z"
+      ],
+      "related_outlook_ids": [
+        "track-autophagy-induction-outlook"
+      ],
+      "change_kind_candidate": "field_signal"
+    },
+    {
+      "label": "Mitophagy, NAD/redox, and stem-cell rejuvenation gained clearer boundaries",
+      "summary": "June updates added safety, registry, review, and no-results context in mitochondrial and stem-cell-adjacent tracks without changing the central read.",
+      "related_publication_event_ids": [
+        "publish-nad-and-redox-restoration-coverage-repair-2026-06-08-2026-06-09t10-39-49-637z",
+        "publish-stem-cell-rejuvenation-coverage-repair-2026-06-09-2026-06-10t10-17-06-414z",
+        "publish-mitophagy-enhancers-coverage-repair-2026-06-10-2026-06-10t14-26-07-178z"
+      ],
+      "related_outlook_ids": [
+        "track-nad-and-redox-restoration-outlook",
+        "track-stem-cell-rejuvenation-outlook",
+        "track-mitophagy-enhancers-outlook"
+      ],
+      "change_kind_candidate": "context_only"
+    },
+    {
+      "label": "Senolytics gained clearer human boundaries",
+      "summary": "The June senolytics update added D+Q and fisetin biomarker, function, safety, animal, and no-results registry context while keeping the track at an early human biomarker stage.",
+      "related_publication_event_ids": [
+        "publish-senolytics-coverage-repair-2026-06-11-2026-06-12t00-05-23-406z"
+      ],
+      "related_outlook_ids": [
+        "track-senolytics-outlook"
+      ],
+      "change_kind_candidate": "context_only"
+    },
+    {
+      "label": "Partial reprogramming gained a clearer animal-to-human boundary",
+      "summary": "The June partial-reprogramming update strengthened the animal source map and added ER-100 as a no-results human registry boundary while keeping the track at an animal-signal stage.",
+      "related_publication_event_ids": [
+        "publish-partial-reprogramming-coverage-repair-2026-06-12-2026-06-12t13-29-16-586z"
+      ],
+      "related_outlook_ids": [
+        "track-partial-reprogramming-outlook"
+      ],
+      "change_kind_candidate": "context_only"
+    }
+  ],
+  "working_classification_matrix": [
+    {
+      "publication_event_id": "publish-microbiome-composition-modulation-surveillance-2026-06-03-2026-06-03t16-38-15-119z",
+      "happened_on": "2026-06-03",
+      "related_outlook_ids": [
+        "track-microbiome-composition-modulation-outlook"
+      ],
+      "provisional_change_kind": "field_signal",
+      "likely_public_placement": "what_changed",
+      "working_read": "A disease-specific synbiotic constipation RCT and a null healthy-older-adult exercise/microbiome RCT made the microbiome-composition read more concrete but not stronger for broad aging.",
+      "publish_gate": "Check whether the final edition should group this with live biotherapeutics rather than give it a standalone card."
+    },
+    {
+      "publication_event_id": "publish-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-2026-06-06t12-22-33-769z",
+      "happened_on": "2026-06-06",
+      "related_outlook_ids": [
+        "track-transposon-and-somatic-mutation-control-outlook"
+      ],
+      "provisional_change_kind": "context_only",
+      "likely_public_placement": "current_context",
+      "working_read": "Reverse-transcriptase, trial, program, DREAM, and CHIP boundaries became clearer without a controlled human aging-function result.",
+      "publish_gate": "Keep as claim-boundary context unless a final June event makes transposon control central."
+    },
+    {
+      "publication_event_id": "publish-live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06-2026-06-06t13-25-18-048z",
+      "happened_on": "2026-06-06",
+      "related_outlook_ids": [
+        "track-live-biotherapeutics-and-engineered-microbes-outlook"
+      ],
+      "provisional_change_kind": "field_signal",
+      "likely_public_placement": "what_changed",
+      "working_read": "A PA53 older-adult well-being and gut-health RCT added a bounded human signal while the track stayed tentative.",
+      "publish_gate": "Treat as narrow and strain-specific; do not generalize to broad microbiome or engineered-microbe efficacy."
+    },
+    {
+      "publication_event_id": "publish-stem-cell-replacement-and-transplantation-surveillance-2026-06-06-2026-06-07t13-49-41-422z",
+      "happened_on": "2026-06-07",
+      "related_outlook_ids": [
+        "track-stem-cell-replacement-and-transplantation-outlook"
+      ],
+      "provisional_change_kind": "activity_without_results",
+      "likely_public_placement": "trial_horizon_or_omit",
+      "working_read": "The exPDite-2 registry stayed visible but had no posted results and did not change the public read.",
+      "publish_gate": "Use only if the trial horizon needs a stem-cell replacement example."
+    },
+    {
+      "publication_event_id": "publish-senomorphics-surveillance-2026-06-07-2026-06-07t16-41-34-635z",
+      "happened_on": "2026-06-07",
+      "related_outlook_ids": [
+        "track-senomorphics-outlook"
+      ],
+      "provisional_change_kind": "field_signal",
+      "likely_public_placement": "what_changed",
+      "working_read": "Mianserin/Ca2+ added animal lifespan and human-cell senescence support without treated-human proof.",
+      "publish_gate": "Frame as preclinical and cell-system support, not as human senomorphics efficacy."
+    },
+    {
+      "publication_event_id": "publish-nad-and-redox-restoration-coverage-repair-2026-06-08-2026-06-09t10-39-49-637z",
+      "happened_on": "2026-06-09",
+      "related_outlook_ids": [
+        "track-nad-and-redox-restoration-outlook"
+      ],
+      "provisional_change_kind": "context_only",
+      "likely_public_placement": "current_context_or_trial_horizon",
+      "working_read": "MIB-626 records, NR/NMN/MIB-626/MitoQ no-results trials, and review context clarified the NAD/redox read without upgrading it.",
+      "publish_gate": "Avoid fresh trial-status claims unless the final trial audit is rerun."
+    },
+    {
+      "publication_event_id": "publish-stem-cell-rejuvenation-coverage-repair-2026-06-09-2026-06-10t10-17-06-414z",
+      "happened_on": "2026-06-10",
+      "related_outlook_ids": [
+        "track-stem-cell-rejuvenation-outlook"
+      ],
+      "provisional_change_kind": "context_only",
+      "likely_public_placement": "current_context_or_trial_horizon",
+      "working_read": "A no-results hDNAgr registry and HSC aging review clarified the boundary between ex vivo or biomarker evidence and treated-human benefit.",
+      "publish_gate": "Do not imply human stem-cell rejuvenation efficacy."
+    },
+    {
+      "publication_event_id": "publish-mitophagy-enhancers-coverage-repair-2026-06-10-2026-06-10t14-26-07-178z",
+      "happened_on": "2026-06-10",
+      "related_outlook_ids": [
+        "track-mitophagy-enhancers-outlook"
+      ],
+      "provisional_change_kind": "context_only",
+      "likely_public_placement": "current_context_or_trial_horizon",
+      "working_read": "Urolithin A safety, active or completed no-results registries, and limiting context made the mitophagy read better bounded.",
+      "publish_gate": "Keep frailty and safety claims tied to reviewed local records."
+    },
+    {
+      "publication_event_id": "publish-dna-repair-enhancement-surveillance-2026-06-10-2026-06-10t17-34-21-637z",
+      "happened_on": "2026-06-10",
+      "related_outlook_ids": [
+        "track-dna-repair-enhancement-outlook"
+      ],
+      "provisional_change_kind": "field_signal",
+      "likely_public_placement": "what_changed",
+      "working_read": "DREAM repression evidence added a broader repair-regulator anchor while the human evidence stayed skin- and biomarker-centered.",
+      "publish_gate": "Say it is mechanism support, not a tested systemic human repair-enhancement therapy."
+    },
+    {
+      "publication_event_id": "publish-chaperone-and-heat-shock-support-coverage-repair-2026-06-10-2026-06-11t01-11-08-627z",
+      "happened_on": "2026-06-11",
+      "related_outlook_ids": [
+        "track-chaperone-and-heat-shock-support-outlook"
+      ],
+      "provisional_change_kind": "context_only",
+      "likely_public_placement": "current_context",
+      "working_read": "NPC open-label extension and current Miplyffa label safety context narrowed the chaperone-support read without creating broad aging evidence.",
+      "publish_gate": "Keep disease-specific and safety boundaries explicit."
+    },
+    {
+      "publication_event_id": "publish-autophagy-induction-surveillance-2026-06-11-2026-06-11t10-25-04-657z",
+      "happened_on": "2026-06-11",
+      "related_outlook_ids": [
+        "track-autophagy-induction-outlook"
+      ],
+      "provisional_change_kind": "field_signal",
+      "likely_public_placement": "what_changed",
+      "working_read": "A small older-adult spermidine vaccine-response pilot added a narrow human signal in baseline non-responders.",
+      "publish_gate": "Frame as biomarker and immune-response context, not infection prevention, frailty improvement, or broad healthy-aging benefit."
+    },
+    {
+      "publication_event_id": "publish-autophagy-induction-coverage-repair-2026-06-11-2026-06-11t11-44-04-048z",
+      "happened_on": "2026-06-11",
+      "related_outlook_ids": [
+        "track-autophagy-induction-outlook"
+      ],
+      "provisional_change_kind": "context_only",
+      "likely_public_placement": "fold_into_autophagy_or_trial_horizon",
+      "working_read": "Registry and review boundaries clarify autophagy induction but should not be a separate public change if the spermidine pilot is already covered.",
+      "publish_gate": "Use as support for trial horizon and evidence gaps."
+    },
+    {
+      "publication_event_id": "publish-immune-rejuvenation-coverage-repair-2026-06-11-2026-06-11t13-12-57-339z",
+      "happened_on": "2026-06-11",
+      "related_outlook_ids": [
+        "track-immune-rejuvenation-outlook"
+      ],
+      "provisional_change_kind": "outlook_changed",
+      "likely_public_placement": "what_changed_or_current_context",
+      "working_read": "Immune rejuvenation stayed at human functional evidence, but the read became more bounded because mTOR/TORC1 evidence is branch-specific and RTB101 has a phase 3 miss.",
+      "publish_gate": "If included in what_changed, make clear this is not a reason LEV looks closer."
+    },
+    {
+      "publication_event_id": "publish-senolytics-coverage-repair-2026-06-11-2026-06-12t00-05-23-406z",
+      "happened_on": "2026-06-12",
+      "related_outlook_ids": [
+        "track-senolytics-outlook"
+      ],
+      "provisional_change_kind": "context_only",
+      "likely_public_placement": "current_context",
+      "working_read": "D+Q and fisetin biomarker, function, safety, animal, and no-results registry context made senolytics easier to judge while keeping human functional benefit unresolved.",
+      "publish_gate": "Use as a flagship boundary example only if the edition needs one senescence item."
+    },
+    {
+      "publication_event_id": "publish-rapalogs-coverage-repair-2026-06-11-2026-06-11t18-24-35-790z",
+      "happened_on": "2026-06-11",
+      "related_outlook_ids": [
+        "track-rapalogs-outlook"
+      ],
+      "provisional_change_kind": "outlook_changed",
+      "likely_public_placement": "what_changed",
+      "working_read": "Rapalogs moved to a tentative human functional read because human functional endpoints have been tested, but the evidence remains mixed and short of long-lasting broad healthy-aging benefit.",
+      "publish_gate": "Likely prominent, but final copy must stress mixed evidence and no broad durability."
+    },
+    {
+      "publication_event_id": "publish-partial-reprogramming-coverage-repair-2026-06-12-2026-06-12t13-29-16-586z",
+      "happened_on": "2026-06-12",
+      "related_outlook_ids": [
+        "track-partial-reprogramming-outlook"
+      ],
+      "provisional_change_kind": "context_only",
+      "likely_public_placement": "current_context",
+      "working_read": "The animal source map strengthened and ER-100 became a visible no-results human safety registry boundary, but no human outcomes are posted.",
+      "publish_gate": "Keep as frontier context unless final June evidence adds posted human data."
+    }
+  ],
+  "candidate_public_edition_seed": {
+    "slug": "2026-07",
+    "title": "June 2026 in review",
+    "date_candidate": "2026-07-01",
+    "publish_gate": "Do not copy to data/content/state-of-the-field/2026-07.json until June closes, the trial audit is rerun, and open workflow decisions are closed.",
+    "summary": "June made the longevity field broader and better bounded, with several narrow signals and clearer limits, but it did not make LEV look closer.",
+    "lede": "June made the evidence easier to judge without resolving the central proof gap. The month added narrow human or preclinical signals in microbiome-related tracks, senomorphics, DNA repair, and autophagy induction, while other updates mostly clarified safety, registry, disease-specific, and animal-to-human boundaries.",
+    "bottom_line": "LEV did not look closer after the reviewed June updates. A stronger read would still require repeated human studies showing long-lasting improvements in health or function.",
+    "field_change_status": "mixed",
+    "field_change_note": "June had real movement in several tracks, but the movement was bounded: narrow human signals, preclinical mechanism support, and clearer track reads rather than repeated long-lasting human benefits.",
+    "period_start": "2026-06-01",
+    "period_end": "2026-06-30",
+    "period_label": "June 2026",
+    "bullets": [
+      "Several June updates added bounded signals, especially in microbiome-related tracks, senomorphics, DNA repair, autophagy induction, and rapalogs.",
+      "Other updates mainly clarified boundaries around trials, safety, disease specificity, animal evidence, or no posted results.",
+      "No reviewed June update resolved the need for repeated human evidence that health or function improves for longer.",
+      "The final public edition should be written only after June closes and the trial horizon is refreshed."
+    ],
+    "what_changed": [
+      {
+        "change_kind": "field_signal",
+        "happened_on": "2026-06-06",
+        "title": "Microbiome-related tracks added bounded human signals",
+        "summary": "A synbiotic constipation RCT, a null healthy-older-adult exercise/microbiome RCT, and a PA53 older-adult well-being and gut-health RCT made this part of the field more concrete.",
+        "interpretation": "These are useful human signals, but they are disease-specific, strain-specific, product-specific, or short-term rather than broad proof that aging-relevant health or function improves for longer.",
+        "related_outlook_ids": [
+          "track-microbiome-composition-modulation-outlook",
+          "track-live-biotherapeutics-and-engineered-microbes-outlook"
+        ],
+        "related_publication_event_ids": [
+          "publish-microbiome-composition-modulation-surveillance-2026-06-03-2026-06-03t16-38-15-119z",
+          "publish-live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06-2026-06-06t13-25-18-048z"
+        ]
+      },
+      {
+        "change_kind": "field_signal",
+        "happened_on": "2026-06-07",
+        "title": "Senomorphics gained a preclinical signal",
+        "summary": "Mianserin/Ca2+ added animal lifespan and human-cell senescence support while the track stayed at an early human biomarker stage.",
+        "interpretation": "The signal is worth watching, but it did not test treated humans or show long-lasting aging-relevant benefit.",
+        "related_outlook_ids": [
+          "track-senomorphics-outlook"
+        ],
+        "related_publication_event_ids": [
+          "publish-senomorphics-surveillance-2026-06-07-2026-06-07t16-41-34-635z"
+        ]
+      },
+      {
+        "change_kind": "field_signal",
+        "happened_on": "2026-06-10",
+        "title": "DNA repair gained a stronger mechanism anchor",
+        "summary": "DREAM repression evidence broadened the DNA repair enhancement context while the human evidence remained mostly skin- and biomarker-centered.",
+        "interpretation": "This strengthens the biology to watch, not the human proof. A systemic repair-enhancement therapy still has not shown broad human aging benefit.",
+        "related_outlook_ids": [
+          "track-dna-repair-enhancement-outlook"
+        ],
+        "related_publication_event_ids": [
+          "publish-dna-repair-enhancement-surveillance-2026-06-10-2026-06-10t17-34-21-637z"
+        ]
+      },
+      {
+        "change_kind": "field_signal",
+        "happened_on": "2026-06-11",
+        "title": "Autophagy induction gained a narrow human signal",
+        "summary": "A small older-adult spermidine vaccine-response pilot linked autophagy-related B-cell signals with improved response markers in baseline non-responders.",
+        "interpretation": "The result is human and useful, but small, subgroup-limited, and not proof of infection prevention, frailty improvement, or broad healthy-aging benefit.",
+        "related_outlook_ids": [
+          "track-autophagy-induction-outlook"
+        ],
+        "related_publication_event_ids": [
+          "publish-autophagy-induction-surveillance-2026-06-11-2026-06-11t10-25-04-657z",
+          "publish-autophagy-induction-coverage-repair-2026-06-11-2026-06-11t11-44-04-048z"
+        ]
+      },
+      {
+        "change_kind": "outlook_changed",
+        "happened_on": "2026-06-11",
+        "title": "Rapalogs and immune rejuvenation got clearer but mixed human reads",
+        "summary": "Rapalogs moved to a tentative human functional read, while immune rejuvenation stayed human-functional but became more clearly branch-specific and mixed.",
+        "interpretation": "This is clearer evidence accounting, not an overall LEV upgrade. The useful human endpoints remain mixed, short of durable disease, frailty, mortality, or broad healthy-aging benefit.",
+        "related_outlook_ids": [
+          "track-rapalogs-outlook",
+          "track-immune-rejuvenation-outlook"
+        ],
+        "related_publication_event_ids": [
+          "publish-rapalogs-coverage-repair-2026-06-11-2026-06-11t18-24-35-790z",
+          "publish-immune-rejuvenation-coverage-repair-2026-06-11-2026-06-11t13-12-57-339z"
+        ]
+      }
+    ],
+    "current_context": [
+      {
+        "label": "A broader but still early field picture",
+        "summary": "Early June public outlook work made more tracks comparable across hallmark areas. That helps interpretation, but it is not itself evidence that LEV is closer.",
+        "related_outlook_ids": [
+          "overall-lev-outlook"
+        ]
+      },
+      {
+        "label": "Several mitochondrial and stem-cell-adjacent tracks became easier to judge",
+        "summary": "NAD/redox, stem-cell rejuvenation, and mitophagy gained MIB-626, NR/NMN/MitoQ, hDNAgr, urolithin A, safety, review, and no-results trial context without changing the central read.",
+        "related_outlook_ids": [
+          "track-nad-and-redox-restoration-outlook",
+          "track-stem-cell-rejuvenation-outlook",
+          "track-mitophagy-enhancers-outlook"
+        ],
+        "related_publication_event_ids": [
+          "publish-nad-and-redox-restoration-coverage-repair-2026-06-08-2026-06-09t10-39-49-637z",
+          "publish-stem-cell-rejuvenation-coverage-repair-2026-06-09-2026-06-10t10-17-06-414z",
+          "publish-mitophagy-enhancers-coverage-repair-2026-06-10-2026-06-10t14-26-07-178z"
+        ]
+      },
+      {
+        "label": "Senolytics became better bounded",
+        "summary": "D+Q and fisetin biomarker, function, safety, animal, and no-results trial context made the flagship senolytic read easier to inspect while leaving long-term human function and safety unresolved.",
+        "related_outlook_ids": [
+          "track-senolytics-outlook"
+        ],
+        "related_publication_event_ids": [
+          "publish-senolytics-coverage-repair-2026-06-11-2026-06-12t00-05-23-406z"
+        ]
+      },
+      {
+        "label": "Partial reprogramming remained an animal-to-human frontier",
+        "summary": "The source map for OSK or OSKM animal work became stronger, and ER-100 became visible as a no-results human ocular safety registry, but no posted human outcomes were added.",
+        "related_outlook_ids": [
+          "track-partial-reprogramming-outlook"
+        ],
+        "related_publication_event_ids": [
+          "publish-partial-reprogramming-coverage-repair-2026-06-12-2026-06-12t13-29-16-586z"
+        ]
+      },
+      {
+        "label": "Transposon control and chaperone support stayed bounded",
+        "summary": "Transposon-control context narrowed reverse-transcriptase, CHIP, program, and biology claims, while chaperone support added NPC extension and label safety context. Neither produced broad aging evidence.",
+        "related_outlook_ids": [
+          "track-transposon-and-somatic-mutation-control-outlook",
+          "track-chaperone-and-heat-shock-support-outlook"
+        ],
+        "related_publication_event_ids": [
+          "publish-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-2026-06-06t12-22-33-769z",
+          "publish-chaperone-and-heat-shock-support-coverage-repair-2026-06-10-2026-06-11t01-11-08-627z"
+        ]
+      }
+    ],
+    "what_did_not_change": [
+      "The overall LEV outlook still depends on repeated human studies showing long-lasting improvements in health or function.",
+      "No reviewed June update has yet shown broad, durable human aging benefit.",
+      "Several positive signals remain narrow, disease-specific, subgroup-limited, short-term, preclinical, or mostly based on biomarkers.",
+      "Trial activity and no-results registries remain context, not proof."
+    ],
+    "why_it_matters": "June made the field easier to judge and added several real but bounded signals. That is different from making LEV look closer: the central proof still has to come from durable human health or function gains.",
+    "trial_horizon": [
+      {
+        "label": "Rapalog trials",
+        "summary": "Sirolimus in Older Adults, REVERSE rapamycin/ProLon, Everolimus Aging, and Rapa/cMRI remain important watch items. The final edition should rerun registry checks before making current status claims.",
+        "href": "/studies/sirolimus-older-adults-phase2",
+        "study_id": "sirolimus-older-adults-phase2",
+        "related_outlook_ids": [
+          "track-rapalogs-outlook"
+        ]
+      },
+      {
+        "label": "Fisetin vascular function",
+        "summary": "The older-adult vascular-function trial is a concrete senolytics watch item with no posted results in the June 14 local trial audit.",
+        "href": "/studies/fisetin-vascular-function-older-adults-registry",
+        "study_id": "fisetin-vascular-function-older-adults-registry",
+        "related_outlook_ids": [
+          "track-senolytics-outlook"
+        ]
+      },
+      {
+        "label": "Urolithin A in frail older adults",
+        "summary": "This remains a useful mitophagy watch item because a frailty result would be more clinically legible than mitochondrial biomarkers alone.",
+        "href": "/studies/urolithin-a-frail-older-adults-registry",
+        "study_id": "urolithin-a-frail-older-adults-registry",
+        "related_outlook_ids": [
+          "track-mitophagy-enhancers-outlook"
+        ]
+      },
+      {
+        "label": "NAD/redox registries",
+        "summary": "MIB-626 plus exercise, nicotinamide riboside muscle, and NMN older-adult registries could sharpen the NAD/redox read, but no-result status must be refreshed before publication.",
+        "href": "/studies/mib-626-exercise-training-phase2-registry",
+        "study_id": "mib-626-exercise-training-phase2-registry",
+        "related_outlook_ids": [
+          "track-nad-and-redox-restoration-outlook"
+        ]
+      },
+      {
+        "label": "Spermidine in older coronary artery disease",
+        "summary": "The spermidine registry is relevant to autophagy induction, but the June draft should not imply results before posted outcomes or reviewed publications exist.",
+        "href": "/studies/spermidine-coronary-artery-disease-older-adults-registry",
+        "study_id": "spermidine-coronary-artery-disease-older-adults-registry",
+        "related_outlook_ids": [
+          "track-autophagy-induction-outlook"
+        ]
+      }
+    ],
+    "signals_to_watch": [
+      {
+        "label": "Human function that lasts",
+        "summary": "The most important signal would be older adults maintaining better function for longer, not only short-term marker movement."
+      },
+      {
+        "label": "Signals that survive replication",
+        "summary": "Small or subgroup-limited findings would matter more if independent trials reproduce them in aging-relevant populations."
+      },
+      {
+        "label": "Safety under realistic use",
+        "summary": "Rapalogs, senolytics, partial reprogramming, immune modulation, and systemic repair strategies need safety evidence that fits preventive or long-term use."
+      }
+    ],
+    "evidence_gaps": [
+      {
+        "label": "Durability",
+        "summary": "Most positive signals still need follow-up long enough to show whether benefits last."
+      },
+      {
+        "label": "General aging relevance",
+        "summary": "Disease-specific, tissue-specific, and product-specific results still need clearer links to aging itself."
+      },
+      {
+        "label": "Endpoint quality",
+        "summary": "Biomarkers matter more when they line up with mobility, immune function, cognition, frailty, disease progression, or another useful human outcome."
+      }
+    ],
+    "track_examples": [
+      {
+        "label": "Mixed human read",
+        "title": "Rapalogs",
+        "summary": "Human endpoints have been tested, but the read is still mixed and short of broad durable benefit.",
+        "href": "/tracks/rapalogs",
+        "related_outlook_ids": [
+          "track-rapalogs-outlook"
+        ]
+      },
+      {
+        "label": "Narrow human signal",
+        "title": "Autophagy induction",
+        "summary": "A spermidine vaccine-response pilot is useful but small and subgroup-limited.",
+        "href": "/tracks/autophagy-induction",
+        "related_outlook_ids": [
+          "track-autophagy-induction-outlook"
+        ]
+      },
+      {
+        "label": "Flagship boundary",
+        "title": "Senolytics",
+        "summary": "The intervention thesis is direct, but human functional benefit and long-term safety remain unresolved.",
+        "href": "/tracks/senolytics",
+        "related_outlook_ids": [
+          "track-senolytics-outlook"
+        ]
+      },
+      {
+        "label": "Fast-moving frontier",
+        "title": "Partial reprogramming",
+        "summary": "Animal evidence is stronger, but human outcomes are still absent.",
+        "href": "/tracks/partial-reprogramming",
+        "related_outlook_ids": [
+          "track-partial-reprogramming-outlook"
+        ]
+      }
+    ],
+    "reader_takeaways": [
+      "June added useful but bounded signals.",
+      "The field looks clearer, not decisively closer to LEV.",
+      "Trial listings and no-results records remain watch items.",
+      "The next meaningful change would be durable human health or function improvement."
+    ]
+  },
+  "trial_horizon_seed": {
+    "summary": "The June 14 trial audit found 143 registry-linked interventional studies, 24 completed or past-completion records with no posted results, 69 stale or missing registry checks, and 4 open stale watchlist records. The final July edition should avoid fresh trial-status claims unless a reviewed local record supports them or the stale status is explicitly named.",
+    "candidate_trials_to_review": [
+      "Spermidine elderly coronary artery disease registry",
+      "Everolimus Aging geroprotection registry",
+      "Sirolimus in Older Adults",
+      "REVERSE rapamycin and ProLon registry",
+      "Fisetin vascular function trial in older adults",
+      "Rapa and cMRI older-adults registry",
+      "Urolithin A frail older adult mitochondrial-quality registry study",
+      "MIB-626 plus exercise phase 2 registry",
+      "Nicotinamide riboside older Veterans muscle registry",
+      "NMN middle-aged and elderly registry"
+    ]
+  },
+  "candidate_public_update_pool": {
+    "current_story_events": [
+      "publish-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-2026-06-06t12-22-33-769z",
+      "publish-stem-cell-replacement-and-transplantation-surveillance-2026-06-06-2026-06-07t13-49-41-422z",
+      "publish-senomorphics-surveillance-2026-06-07-2026-06-07t16-41-34-635z",
+      "publish-nad-and-redox-restoration-coverage-repair-2026-06-08-2026-06-09t10-39-49-637z",
+      "publish-stem-cell-rejuvenation-coverage-repair-2026-06-09-2026-06-10t10-17-06-414z",
+      "publish-mitophagy-enhancers-coverage-repair-2026-06-10-2026-06-10t14-26-07-178z",
+      "publish-chaperone-and-heat-shock-support-coverage-repair-2026-06-10-2026-06-11t01-11-08-627z",
+      "publish-autophagy-induction-surveillance-2026-06-11-2026-06-11t10-25-04-657z",
+      "publish-senolytics-coverage-repair-2026-06-11-2026-06-12t00-05-23-406z",
+      "publish-partial-reprogramming-coverage-repair-2026-06-12-2026-06-12t13-29-16-586z"
+    ],
+    "additional_june_events_to_consider": [
+      "publish-live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06-2026-06-06t13-25-18-048z",
+      "publish-microbiome-composition-modulation-surveillance-2026-06-03-2026-06-03t16-38-15-119z",
+      "publish-dna-repair-enhancement-surveillance-2026-06-10-2026-06-10t17-34-21-637z",
+      "publish-immune-rejuvenation-coverage-repair-2026-06-11-2026-06-11t13-12-57-339z",
+      "publish-rapalogs-coverage-repair-2026-06-11-2026-06-11t18-24-35-790z",
+      "publish-autophagy-induction-coverage-repair-2026-06-11-2026-06-11t11-44-04-048z"
+    ],
+    "baseline_context": "Early June baseline public updates created first public outlooks across many tracks. Treat this as context about the evidence map becoming broader, not as proof of field progress."
+  },
+  "open_questions": [
+    "After June 30, decide which June public updates belong in what_changed versus current_context.",
+    "Decide whether rapalogs should be a prominent June item because the public read moved from activity-only human biomarker context to a source-backed tentative human functional read.",
+    "Re-check any stale registry claims before turning trial horizon seed items into public trial_horizon copy.",
+    "Run the narrative rollup after publishing the July edition if it becomes the current story's observed State of the Field edition."
+  ]
+}

@@ -9,6 +9,7 @@ This runbook reconciles public summary surfaces after reviewed publication activ
 - `data/outlooks/`
 - `data/content/current-lev-story/current.json`
 - `data/content/state-of-the-field/`
+- `ops/state-of-field-workflow.v1.json`
 - `data/content/hallmark-insights.json`
 - public navigation and summary surfaces in `src/components/site-shell.tsx` and `src/components/homepage.tsx`
 - `config/public-copy-rules.json`
@@ -39,6 +40,20 @@ Run the rollup before routine research when any of these are true:
 
 Use the `lev-state-of-field-update` skill for State of the Field editions. Each edition is retrospective: the June edition covers May, the July edition covers June, and so on. Separate actual field changes during the covered period from evidence context that the tracker reviewed or published later.
 
+Use `ops/state-of-field-workflow.v1.json` for in-progress State of the Field work. This is internal workflow state, not public reader copy. Drafts, reconciliation notes, and unresolved decisions stay there or under `extra/` until a completed edition is ready for `data/content/state-of-the-field/`.
+
+State values:
+
+- `draft`: period and scope are set, but the reader brief is not ready.
+- `reconciling`: published updates, outlooks, current story, and the edition are being compared.
+- `needs_surveillance`: trial or registry claims need a surveillance pass before current wording can be trusted.
+- `in_review`: copy is drafted and waiting on editorial checks.
+- `published`: the public edition is final for the current review state.
+- `blocked`: progress needs external input or a missing reviewed record.
+- `no_op`: reconciliation found no public edition change was needed.
+
+Run `npm run state-of-field:status` to see the active status. `npm run audit:editorial -- --write` also runs the status check in strict mode; it fails only when current-story/public-edition mismatches are not tracked in the workflow manifest. Tracked open decisions are allowed, but they remain visible in the report.
+
 ## Content Publish Path
 
 Curated content files are currently published directly through reviewed file edits rather than staged updates. Treat the rollup item, changed source paths, required review metadata, and this checklist as the audit trail.
@@ -51,6 +66,8 @@ When updating hallmark insight copy, set:
 - `related_publication_event_ids` when public update records directly prompted the review
 
 When updating a state-of-field edition, set `last_reviewed`, `review_reason`, and any directly related publication or outlook IDs. Fill the reader brief fields (`period_start`, `period_end`, `period_label`, `lede`, `bottom_line`, `field_change_status`, `field_change_note`, `what_changed`, `current_context`, `what_did_not_change`, `why_it_matters`, `trial_horizon`, `signals_to_watch`, `evidence_gaps`, `track_examples`, and `reader_takeaways`) rather than relying on summary bullets alone. Leave `what_changed` empty when the covered period had no material field-changing result.
+
+When a state-of-field edition is not finished, update the workflow manifest instead of adding provisional fields to the public edition schema. Each reconciliation item should point to the public update being classified and record whether the likely action is no-op, deferral to the next edition, post-hoc context, or material correction.
 
 Before drafting `trial_horizon`, run `npm run audit:trials -- --write`. Use `trial_horizon` for registry-linked studies that could plausibly produce meaningful results. Include whether the covered month had a real result expectation, whether results were posted, and why a result would matter. Do not count a trial listing, a recruiting status, or a no-result registry check as field progress. If the report shows stale registry checks, run surveillance before making current claims about those trials.
 
@@ -90,6 +107,7 @@ After any rollup decision or edit, regenerate triage state and run the standard 
 
 ```bash
 npm run sync:work-triage
+npm run state-of-field:status -- --strict
 npm run audit:editorial -- --write
 npm run validate:records
 npm run audit:data

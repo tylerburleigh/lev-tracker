@@ -13,6 +13,7 @@ Use this when adding or revising `data/content/state-of-the-field/<YYYY-MM>.json
 - `schemas/state-of-the-field-edition.schema.json`
 - `data/content/current-lev-story/current.json`
 - `data/outlooks/overall-lev-outlook.json`
+- `ops/state-of-field-workflow.v1.json`
 - public outlooks and publication events named by the edition
 - `docs/editorial-rollup.md`
 - `docs/editorial-quality-system.md`
@@ -23,6 +24,7 @@ Use this when adding or revising `data/content/state-of-the-field/<YYYY-MM>.json
 ## Workflow
 
 1. Define the assignment: new monthly edition, revision to an existing edition, or page-rendering improvement.
+   - Use `ops/state-of-field-workflow.v1.json` for internal in-progress status. Do not add provisional draft fields to public edition JSON.
 2. Use only reviewed public records. If the update needs new sources, findings, studies, stages, read-firmness/confidence changes, or outlook upgrades, stop and use the evidence-review or staged-update workflow first.
 3. Set the retrospective period before writing.
    - The June edition covers May.
@@ -53,6 +55,7 @@ Use this when adding or revising `data/content/state-of-the-field/<YYYY-MM>.json
    - `reader_takeaways`: short, scannable conclusions
 7. Keep field state separate from tracker state. Coverage or context improvements can be named, but only as context; do not frame them as stronger evidence.
 8. Update review metadata and related IDs to match the public records reviewed.
+   - If reconciliation is not complete, update the workflow manifest with `draft`, `reconciling`, `needs_surveillance`, `in_review`, `blocked`, or `no_op`.
 9. Update `revision_history`:
    - `initial_publication` for a new edition.
    - `post_hoc_material_correction` when later-reviewed evidence from the covered period would have changed the period's public conclusion.
@@ -92,6 +95,7 @@ Run after edits:
 
 ```bash
 npm run validate:records
+npm run state-of-field:status -- --strict
 npm run audit:editorial:ratchet
 npm run typecheck
 npm run build

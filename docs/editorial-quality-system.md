@@ -26,6 +26,7 @@ npm run audit:editorial -- --write
 This command runs:
 
 - `npm run story:current -- status`
+- `npm run state-of-field:status -- --strict`
 - `npm run lint:public-copy -- --write`
 - `npm run audit:reader-tasks -- --write`
 
@@ -55,6 +56,7 @@ Run the system when any of these happen:
 
 - a public update changes a public outlook
 - a state-of-the-field edition is added or revised
+- a State of the Field workflow item is opened, reconciled, blocked, or published
 - the current LEV story review date is due
 - homepage, hallmark, track, methods, or state-of-field copy changes
 - the curator asks whether the story still works for readers
@@ -64,6 +66,7 @@ Run the system when any of these happen:
 The combined audit fails when:
 
 - the current LEV story is stale
+- current-story/public-edition State of the Field mismatches are not tracked in `ops/state-of-field-workflow.v1.json`
 - the reader-task audit has an issue
 - optional warning thresholds are exceeded
 

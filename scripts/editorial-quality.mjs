@@ -127,6 +127,22 @@ function parseReaderAuditReport(output) {
   };
 }
 
+function parseStateOfFieldWorkflow(output) {
+  const status = output.match(/State of Field workflow status:\s*([a-z_]+)/)?.[1];
+  const untracked = output.match(/Untracked missing updates:\s*(\d+)/);
+  const openDecisions = output.match(/Open reconciliation decisions:\s*(\d+)/);
+
+  if (!status) {
+    return undefined;
+  }
+
+  return {
+    status,
+    untrackedMissingUpdates: untracked ? Number(untracked[1]) : undefined,
+    openReconciliationDecisions: openDecisions ? Number(openDecisions[1]) : undefined
+  };
+}
+
 function parseCopyReport(output) {
   const match = output.match(/Warnings:\s*(\d+)/);
   return match ? Number(match[1]) : undefined;
@@ -263,7 +279,7 @@ function formatCommandBlock(result) {
   return lines;
 }
 
-function formatReport({ results, checks, copyWarnings, topTerms, readerAudit, narrativeStatus }) {
+function formatReport({ results, checks, copyWarnings, topTerms, readerAudit, narrativeStatus, stateOfFieldWorkflow }) {
   const failedChecks = checks.filter((check) => check.result === "fail");
   const lines = [
     "# Editorial Quality Report",
@@ -278,6 +294,13 @@ function formatReport({ results, checks, copyWarnings, topTerms, readerAudit, na
     `- Reader-task audit: ${
       readerAudit
         ? `${readerAudit.status} (${readerAudit.passed} passed, ${readerAudit.issues} issues, ${readerAudit.warnings} warnings)`
+        : "unknown"
+    }`,
+    `- State of the Field workflow: ${
+      stateOfFieldWorkflow
+        ? `${stateOfFieldWorkflow.status} (${stateOfFieldWorkflow.openReconciliationDecisions ?? "unknown"} open decision(s), ${
+            stateOfFieldWorkflow.untrackedMissingUpdates ?? "unknown"
+          } untracked mismatch(es))`
         : "unknown"
     }`
   ];
@@ -330,24 +353,42 @@ async function main() {
 
   const results = await Promise.all([
     runCommand("Current LEV story status", ["node", "scripts/current-lev-story.mjs", "status"]),
+    runCommand("State of the Field workflow status", [
+      "node",
+      "scripts/state-of-field-workflow.mjs",
+      "status",
+      "--strict"
+    ]),
     runCommand("Public copy lint", publicCopyArgs),
     runCommand("Reader task audit", readerTaskArgs)
   ]);
   const narrativeResult = results[0];
-  const copyResult = results[1];
-  const readerResult = results[2];
+  const stateOfFieldResult = results[1];
+  const copyResult = results[2];
+  const readerResult = results[3];
   const publicCopyReport = options.write ? await readTextIfExists(publicCopyReportPath) : undefined;
   const readerTaskReport = options.write ? await readTextIfExists(readerTaskReportPath) : undefined;
   const narrativeStatus = parseNarrativeStatus(narrativeResult.stdout) ?? (await computeNarrativeStatus());
   const copyWarnings = parseCopyWarnings(copyResult.stdout) ?? (publicCopyReport ? parseCopyReport(publicCopyReport) : undefined);
   const topTerms = parseTopTerms(copyResult.stdout);
   const readerAudit = parseReaderAudit(readerResult.stdout) ?? (readerTaskReport ? parseReaderAuditReport(readerTaskReport) : undefined);
+  const stateOfFieldWorkflow = parseStateOfFieldWorkflow(stateOfFieldResult.stdout);
   const checks = [];
 
   checks.push({
     label: "Current LEV story is current",
     result: narrativeStatus === "current" && narrativeResult.exitCode === 0 ? "pass" : "fail",
     detail: `Status is ${narrativeStatus ?? "unknown"}.`
+  });
+
+  checks.push({
+    label: "State-of-field reconciliation mismatches are tracked",
+    result: stateOfFieldResult.exitCode === 0 ? "pass" : "fail",
+    detail: stateOfFieldWorkflow
+      ? `${stateOfFieldWorkflow.untrackedMissingUpdates ?? "unknown"} untracked mismatch(es), ${
+          stateOfFieldWorkflow.openReconciliationDecisions ?? "unknown"
+        } open reconciliation decision(s).`
+      : "State-of-field workflow output could not be parsed."
   });
 
   checks.push({
@@ -374,13 +415,23 @@ async function main() {
     });
   }
 
-  const report = formatReport({ results, checks, copyWarnings, topTerms, readerAudit, narrativeStatus });
+  const report = formatReport({
+    results,
+    checks,
+    copyWarnings,
+    topTerms,
+    readerAudit,
+    narrativeStatus,
+    stateOfFieldWorkflow
+  });
   const failedChecks = checks.filter((check) => check.result === "fail");
 
   process.stdout.write(
     `Editorial quality audit: ${failedChecks.length ? "needs attention" : "passed"}; current LEV story ${
       narrativeStatus ?? "unknown"
-    }; copy warnings ${copyWarnings ?? "unknown"}; reader issues ${readerAudit?.issues ?? "unknown"}.\n`
+    }; state-of-field ${stateOfFieldWorkflow?.status ?? "unknown"}; copy warnings ${
+      copyWarnings ?? "unknown"
+    }; reader issues ${readerAudit?.issues ?? "unknown"}.\n`
   );
 
   if (options.write) {

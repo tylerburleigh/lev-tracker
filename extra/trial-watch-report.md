@@ -1,12 +1,12 @@
 # Trial Watch Report
 
-Generated from reviewed local records on 2026-06-12.
+Generated from reviewed local records on 2026-06-14.
 Stale registry threshold: 90 days. This report does not fetch current registry data.
 
 ## Summary
 
-- Registry-linked interventional studies: 142
-- With `trial_details`: 141
+- Registry-linked interventional studies: 143
+- With `trial_details`: 142
 - Missing `trial_details`: 1
 - Completed or past-completion records with no posted results: 24
 - Registry checks missing or stale: 69
@@ -15,7 +15,7 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 
 ### Result Status
 
-- no posted results: 54
+- no posted results: 55
 - not expected yet: 6
 - posted results: 81
 - unknown result status: 1
@@ -25,69 +25,69 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 - active: 11
 - completed: 95
 - planned: 2
-- recruiting: 26
+- recruiting: 27
 - terminated: 1
 - unknown: 7
 
 ## Field-Review Watchlist
 
-- [Cycloastragenol retinal amyloid registry](https://clinicaltrials.gov/study/NCT02530255) (NCT02530255): completed; no posted results; completion 2018-10-31; registry 2026-06-10 (2 days old).
-- [Plasmapheresis aging-biomarker registry](https://clinicaltrials.gov/study/NCT04897113) (NCT04897113): unknown; no posted results; completion 2022-10-30; registry 2026-06-09 (3 days old).
-- [FMD immunosenescence prefrail elderly registry](https://clinicaltrials.gov/study/NCT04928963) (NCT04928963): unknown; no posted results; completion 2022-11-01; registry 2026-06-11 (1 days old).
-- [KH-1 autophagy prediabetes registry](https://clinicaltrials.gov/study/NCT06445569) (NCT06445569): completed; no posted results; completion 2023-06-08; registry 2026-06-11 (1 days old).
-- [EPA+DHA older-adult chronic venous leg ulcer randomized trial registry](https://clinicaltrials.gov/study/NCT03576989) (NCT03576989): completed; no posted results; completion 2024-12-18; registry 2026-06-02 (10 days old).
-- [ANTHEM metformin aging study](https://clinicaltrials.gov/study/NCT04264897) (NCT04264897): completed; no posted results; completion 2025-03-12; registry 2026-04-23 (50 days old).
-- [Urolithin A frail older adult mitochondrial-quality registry study](https://clinicaltrials.gov/study/NCT06556706) (NCT06556706): completed; no posted results; completion 2025-04-25; registry 2026-06-10 (2 days old).
-- [Urolithin A obesity vascular mitochondrial registry](https://clinicaltrials.gov/study/NCT05921266) (NCT05921266): completed; no posted results; completion 2025-05-14; registry 2026-06-10 (2 days old).
-- [Nicotinamide riboside arterial stiffness registry](https://clinicaltrials.gov/study/NCT03821623) (NCT03821623): recruiting; no posted results; completion 2025-06-01; registry 2026-06-08 (4 days old).
-- [MIB-626 plus exercise phase 2 registry](https://clinicaltrials.gov/study/NCT05878119) (NCT05878119): completed; no posted results; completion 2025-06-17; registry 2026-06-08 (4 days old).
-- [Rapa and cMRI older-adults registry](https://clinicaltrials.gov/study/NCT04742777) (NCT04742777): completed; no posted results; completion 2025-09-09; registry 2026-06-11 (1 days old).
-- [MitoQ vascular oxidative-stress registry](https://clinicaltrials.gov/study/NCT05561556) (NCT05561556): completed; no posted results; completion 2025-09-26; registry 2026-06-08 (4 days old).
-- [hDNAgr hematopoietic stem-cell aging registry](https://clinicaltrials.gov/study/NCT06877377) (NCT06877377): planned; no posted results; completion 2026-02-01; registry 2026-06-09 (3 days old).
-- [REVERSE rapamycin and ProLon registry](https://clinicaltrials.gov/study/NCT07354620) (NCT07354620): active; no posted results; completion 2026-02-01; registry 2026-06-11 (1 days old).
-- [Fisetin vascular function trial in older adults](https://clinicaltrials.gov/study/NCT06133634) (NCT06133634): active; no posted results; completion 2026-03-31; registry 2026-06-11 (1 days old).
-- [LINE-AD emtricitabine Alzheimer disease registry](https://clinicaltrials.gov/study/NCT04500847) (NCT04500847): recruiting; no posted results; completion 2026-03-31; registry 2026-06-06 (6 days old).
-- [Nicotinamide riboside older Veterans muscle registry](https://clinicaltrials.gov/study/NCT04691986) (NCT04691986): active; no posted results; completion 2026-03-31; registry 2026-06-08 (4 days old).
-- [GIANTS-1 immune-aging biomarker registry](https://clinicaltrials.gov/study/NCT07363057) (NCT07363057): recruiting; no posted results; completion 2026-05-01; registry 2026-06-11 (1 days old).
-- [Nicotinamide riboside MCI/Alzheimer bioenergetics registry](https://clinicaltrials.gov/study/NCT04430517) (NCT04430517): active; no posted results; completion 2026-05-15; registry 2026-06-08 (4 days old).
-- [NMN middle-aged and elderly registry](https://clinicaltrials.gov/study/NCT06592859) (NCT06592859): recruiting; no posted results; completion 2026-05-24; registry 2026-06-08 (4 days old).
-- [D+Q diabetic kidney disease senescent-cell biomarker pilot](https://pubmed.ncbi.nlm.nih.gov/31542391/) (NCT02848131): completed; no posted results; completion not recorded; registry 2026-06-11 (1 days old).
-- [D+Q first-in-human idiopathic pulmonary fibrosis open-label pilot](https://pubmed.ncbi.nlm.nih.gov/30616998/) (NCT02874989): completed; no posted results; completion not recorded; registry 2026-06-11 (1 days old).
-- [D+Q idiopathic pulmonary fibrosis randomized feasibility trial](https://pubmed.ncbi.nlm.nih.gov/30616998/) (NCT02874989): completed; no posted results; completion not recorded; registry 2026-06-11 (1 days old).
-- [TA-65 metabolic syndrome completed registry](https://clinicaltrials.gov/study/NCT02531334) (NCT02531334): completed; no posted results; completion not recorded; registry 2026-06-10 (2 days old).
+- [Cycloastragenol retinal amyloid registry](https://clinicaltrials.gov/study/NCT02530255) (NCT02530255): completed; no posted results; completion 2018-10-31; registry 2026-06-10 (4 days old).
+- [Plasmapheresis aging-biomarker registry](https://clinicaltrials.gov/study/NCT04897113) (NCT04897113): unknown; no posted results; completion 2022-10-30; registry 2026-06-09 (5 days old).
+- [FMD immunosenescence prefrail elderly registry](https://clinicaltrials.gov/study/NCT04928963) (NCT04928963): unknown; no posted results; completion 2022-11-01; registry 2026-06-11 (3 days old).
+- [KH-1 autophagy prediabetes registry](https://clinicaltrials.gov/study/NCT06445569) (NCT06445569): completed; no posted results; completion 2023-06-08; registry 2026-06-11 (3 days old).
+- [EPA+DHA older-adult chronic venous leg ulcer randomized trial registry](https://clinicaltrials.gov/study/NCT03576989) (NCT03576989): completed; no posted results; completion 2024-12-18; registry 2026-06-02 (12 days old).
+- [ANTHEM metformin aging study](https://clinicaltrials.gov/study/NCT04264897) (NCT04264897): completed; no posted results; completion 2025-03-12; registry 2026-04-23 (52 days old).
+- [Urolithin A frail older adult mitochondrial-quality registry study](https://clinicaltrials.gov/study/NCT06556706) (NCT06556706): completed; no posted results; completion 2025-04-25; registry 2026-06-10 (4 days old).
+- [Urolithin A obesity vascular mitochondrial registry](https://clinicaltrials.gov/study/NCT05921266) (NCT05921266): completed; no posted results; completion 2025-05-14; registry 2026-06-10 (4 days old).
+- [Nicotinamide riboside arterial stiffness registry](https://clinicaltrials.gov/study/NCT03821623) (NCT03821623): recruiting; no posted results; completion 2025-06-01; registry 2026-06-08 (6 days old).
+- [MIB-626 plus exercise phase 2 registry](https://clinicaltrials.gov/study/NCT05878119) (NCT05878119): completed; no posted results; completion 2025-06-17; registry 2026-06-08 (6 days old).
+- [Rapa and cMRI older-adults registry](https://clinicaltrials.gov/study/NCT04742777) (NCT04742777): completed; no posted results; completion 2025-09-09; registry 2026-06-11 (3 days old).
+- [MitoQ vascular oxidative-stress registry](https://clinicaltrials.gov/study/NCT05561556) (NCT05561556): completed; no posted results; completion 2025-09-26; registry 2026-06-08 (6 days old).
+- [hDNAgr hematopoietic stem-cell aging registry](https://clinicaltrials.gov/study/NCT06877377) (NCT06877377): planned; no posted results; completion 2026-02-01; registry 2026-06-09 (5 days old).
+- [REVERSE rapamycin and ProLon registry](https://clinicaltrials.gov/study/NCT07354620) (NCT07354620): active; no posted results; completion 2026-02-01; registry 2026-06-11 (3 days old).
+- [Fisetin vascular function trial in older adults](https://clinicaltrials.gov/study/NCT06133634) (NCT06133634): active; no posted results; completion 2026-03-31; registry 2026-06-11 (3 days old).
+- [LINE-AD emtricitabine Alzheimer disease registry](https://clinicaltrials.gov/study/NCT04500847) (NCT04500847): recruiting; no posted results; completion 2026-03-31; registry 2026-06-06 (8 days old).
+- [Nicotinamide riboside older Veterans muscle registry](https://clinicaltrials.gov/study/NCT04691986) (NCT04691986): active; no posted results; completion 2026-03-31; registry 2026-06-08 (6 days old).
+- [GIANTS-1 immune-aging biomarker registry](https://clinicaltrials.gov/study/NCT07363057) (NCT07363057): recruiting; no posted results; completion 2026-05-01; registry 2026-06-11 (3 days old).
+- [Nicotinamide riboside MCI/Alzheimer bioenergetics registry](https://clinicaltrials.gov/study/NCT04430517) (NCT04430517): active; no posted results; completion 2026-05-15; registry 2026-06-08 (6 days old).
+- [NMN middle-aged and elderly registry](https://clinicaltrials.gov/study/NCT06592859) (NCT06592859): recruiting; no posted results; completion 2026-05-24; registry 2026-06-08 (6 days old).
+- [D+Q diabetic kidney disease senescent-cell biomarker pilot](https://pubmed.ncbi.nlm.nih.gov/31542391/) (NCT02848131): completed; no posted results; completion not recorded; registry 2026-06-11 (3 days old).
+- [D+Q first-in-human idiopathic pulmonary fibrosis open-label pilot](https://pubmed.ncbi.nlm.nih.gov/30616998/) (NCT02874989): completed; no posted results; completion not recorded; registry 2026-06-11 (3 days old).
+- [D+Q idiopathic pulmonary fibrosis randomized feasibility trial](https://pubmed.ncbi.nlm.nih.gov/30616998/) (NCT02874989): completed; no posted results; completion not recorded; registry 2026-06-11 (3 days old).
+- [TA-65 metabolic syndrome completed registry](https://clinicaltrials.gov/study/NCT02531334) (NCT02531334): completed; no posted results; completion not recorded; registry 2026-06-10 (4 days old).
 - ASPro-PD phase 3 ambroxol trial (NCT05778617): active; not expected yet; completion not recorded; registry no local check date.
 - [Libella AAV-hTERT aging phase 1 registry study](https://clinicaltrials.gov/study/NCT04133649) (NCT04133649): unknown; no posted results; completion not recorded; registry no local check date.
-- [Sirolimus in Older Adults](https://clinicaltrials.gov/study/NCT05237687) (NCT05237687): recruiting; no posted results; completion not recorded; registry 2026-02-03 (129 days old).
-- [SHAPE elamipretide healthy-aging pilot](https://clinicaltrials.gov/study/NCT07275424) (NCT07275424): recruiting; not expected yet; completion 2026-04-15; registry 2026-06-02 (10 days old).
-- [Spermidine elderly coronary artery disease registry](https://clinicaltrials.gov/study/NCT06186102) (NCT06186102): active; no posted results; completion 2026-07-01; registry 2026-06-11 (1 days old).
-- [Everolimus Aging geroprotection registry](https://clinicaltrials.gov/study/NCT05835999) (NCT05835999): active; no posted results; completion 2026-09-01; registry 2026-06-11 (1 days old).
+- [Sirolimus in Older Adults](https://clinicaltrials.gov/study/NCT05237687) (NCT05237687): recruiting; no posted results; completion not recorded; registry 2026-02-03 (131 days old).
+- [SHAPE elamipretide healthy-aging pilot](https://clinicaltrials.gov/study/NCT07275424) (NCT07275424): recruiting; not expected yet; completion 2026-04-15; registry 2026-06-02 (12 days old).
+- [Spermidine elderly coronary artery disease registry](https://clinicaltrials.gov/study/NCT06186102) (NCT06186102): active; no posted results; completion 2026-07-01; registry 2026-06-11 (3 days old).
+- [Everolimus Aging geroprotection registry](https://clinicaltrials.gov/study/NCT05835999) (NCT05835999): active; no posted results; completion 2026-09-01; registry 2026-06-11 (3 days old).
 
 ## Completed Or Past-Completion With No Posted Results
 
-- [Cycloastragenol retinal amyloid registry](https://clinicaltrials.gov/study/NCT02530255) (NCT02530255): completed; no posted results; completion 2018-10-31; registry 2026-06-10 (2 days old).
-- [Plasmapheresis aging-biomarker registry](https://clinicaltrials.gov/study/NCT04897113) (NCT04897113): unknown; no posted results; completion 2022-10-30; registry 2026-06-09 (3 days old).
-- [FMD immunosenescence prefrail elderly registry](https://clinicaltrials.gov/study/NCT04928963) (NCT04928963): unknown; no posted results; completion 2022-11-01; registry 2026-06-11 (1 days old).
-- [KH-1 autophagy prediabetes registry](https://clinicaltrials.gov/study/NCT06445569) (NCT06445569): completed; no posted results; completion 2023-06-08; registry 2026-06-11 (1 days old).
-- [EPA+DHA older-adult chronic venous leg ulcer randomized trial registry](https://clinicaltrials.gov/study/NCT03576989) (NCT03576989): completed; no posted results; completion 2024-12-18; registry 2026-06-02 (10 days old).
-- [ANTHEM metformin aging study](https://clinicaltrials.gov/study/NCT04264897) (NCT04264897): completed; no posted results; completion 2025-03-12; registry 2026-04-23 (50 days old).
-- [Urolithin A frail older adult mitochondrial-quality registry study](https://clinicaltrials.gov/study/NCT06556706) (NCT06556706): completed; no posted results; completion 2025-04-25; registry 2026-06-10 (2 days old).
-- [Urolithin A obesity vascular mitochondrial registry](https://clinicaltrials.gov/study/NCT05921266) (NCT05921266): completed; no posted results; completion 2025-05-14; registry 2026-06-10 (2 days old).
-- [Nicotinamide riboside arterial stiffness registry](https://clinicaltrials.gov/study/NCT03821623) (NCT03821623): recruiting; no posted results; completion 2025-06-01; registry 2026-06-08 (4 days old).
-- [MIB-626 plus exercise phase 2 registry](https://clinicaltrials.gov/study/NCT05878119) (NCT05878119): completed; no posted results; completion 2025-06-17; registry 2026-06-08 (4 days old).
-- [Rapa and cMRI older-adults registry](https://clinicaltrials.gov/study/NCT04742777) (NCT04742777): completed; no posted results; completion 2025-09-09; registry 2026-06-11 (1 days old).
-- [MitoQ vascular oxidative-stress registry](https://clinicaltrials.gov/study/NCT05561556) (NCT05561556): completed; no posted results; completion 2025-09-26; registry 2026-06-08 (4 days old).
-- [hDNAgr hematopoietic stem-cell aging registry](https://clinicaltrials.gov/study/NCT06877377) (NCT06877377): planned; no posted results; completion 2026-02-01; registry 2026-06-09 (3 days old).
-- [REVERSE rapamycin and ProLon registry](https://clinicaltrials.gov/study/NCT07354620) (NCT07354620): active; no posted results; completion 2026-02-01; registry 2026-06-11 (1 days old).
-- [Fisetin vascular function trial in older adults](https://clinicaltrials.gov/study/NCT06133634) (NCT06133634): active; no posted results; completion 2026-03-31; registry 2026-06-11 (1 days old).
-- [LINE-AD emtricitabine Alzheimer disease registry](https://clinicaltrials.gov/study/NCT04500847) (NCT04500847): recruiting; no posted results; completion 2026-03-31; registry 2026-06-06 (6 days old).
-- [Nicotinamide riboside older Veterans muscle registry](https://clinicaltrials.gov/study/NCT04691986) (NCT04691986): active; no posted results; completion 2026-03-31; registry 2026-06-08 (4 days old).
-- [GIANTS-1 immune-aging biomarker registry](https://clinicaltrials.gov/study/NCT07363057) (NCT07363057): recruiting; no posted results; completion 2026-05-01; registry 2026-06-11 (1 days old).
-- [Nicotinamide riboside MCI/Alzheimer bioenergetics registry](https://clinicaltrials.gov/study/NCT04430517) (NCT04430517): active; no posted results; completion 2026-05-15; registry 2026-06-08 (4 days old).
-- [NMN middle-aged and elderly registry](https://clinicaltrials.gov/study/NCT06592859) (NCT06592859): recruiting; no posted results; completion 2026-05-24; registry 2026-06-08 (4 days old).
-- [D+Q diabetic kidney disease senescent-cell biomarker pilot](https://pubmed.ncbi.nlm.nih.gov/31542391/) (NCT02848131): completed; no posted results; completion not recorded; registry 2026-06-11 (1 days old).
-- [D+Q first-in-human idiopathic pulmonary fibrosis open-label pilot](https://pubmed.ncbi.nlm.nih.gov/30616998/) (NCT02874989): completed; no posted results; completion not recorded; registry 2026-06-11 (1 days old).
-- [D+Q idiopathic pulmonary fibrosis randomized feasibility trial](https://pubmed.ncbi.nlm.nih.gov/30616998/) (NCT02874989): completed; no posted results; completion not recorded; registry 2026-06-11 (1 days old).
-- [TA-65 metabolic syndrome completed registry](https://clinicaltrials.gov/study/NCT02531334) (NCT02531334): completed; no posted results; completion not recorded; registry 2026-06-10 (2 days old).
+- [Cycloastragenol retinal amyloid registry](https://clinicaltrials.gov/study/NCT02530255) (NCT02530255): completed; no posted results; completion 2018-10-31; registry 2026-06-10 (4 days old).
+- [Plasmapheresis aging-biomarker registry](https://clinicaltrials.gov/study/NCT04897113) (NCT04897113): unknown; no posted results; completion 2022-10-30; registry 2026-06-09 (5 days old).
+- [FMD immunosenescence prefrail elderly registry](https://clinicaltrials.gov/study/NCT04928963) (NCT04928963): unknown; no posted results; completion 2022-11-01; registry 2026-06-11 (3 days old).
+- [KH-1 autophagy prediabetes registry](https://clinicaltrials.gov/study/NCT06445569) (NCT06445569): completed; no posted results; completion 2023-06-08; registry 2026-06-11 (3 days old).
+- [EPA+DHA older-adult chronic venous leg ulcer randomized trial registry](https://clinicaltrials.gov/study/NCT03576989) (NCT03576989): completed; no posted results; completion 2024-12-18; registry 2026-06-02 (12 days old).
+- [ANTHEM metformin aging study](https://clinicaltrials.gov/study/NCT04264897) (NCT04264897): completed; no posted results; completion 2025-03-12; registry 2026-04-23 (52 days old).
+- [Urolithin A frail older adult mitochondrial-quality registry study](https://clinicaltrials.gov/study/NCT06556706) (NCT06556706): completed; no posted results; completion 2025-04-25; registry 2026-06-10 (4 days old).
+- [Urolithin A obesity vascular mitochondrial registry](https://clinicaltrials.gov/study/NCT05921266) (NCT05921266): completed; no posted results; completion 2025-05-14; registry 2026-06-10 (4 days old).
+- [Nicotinamide riboside arterial stiffness registry](https://clinicaltrials.gov/study/NCT03821623) (NCT03821623): recruiting; no posted results; completion 2025-06-01; registry 2026-06-08 (6 days old).
+- [MIB-626 plus exercise phase 2 registry](https://clinicaltrials.gov/study/NCT05878119) (NCT05878119): completed; no posted results; completion 2025-06-17; registry 2026-06-08 (6 days old).
+- [Rapa and cMRI older-adults registry](https://clinicaltrials.gov/study/NCT04742777) (NCT04742777): completed; no posted results; completion 2025-09-09; registry 2026-06-11 (3 days old).
+- [MitoQ vascular oxidative-stress registry](https://clinicaltrials.gov/study/NCT05561556) (NCT05561556): completed; no posted results; completion 2025-09-26; registry 2026-06-08 (6 days old).
+- [hDNAgr hematopoietic stem-cell aging registry](https://clinicaltrials.gov/study/NCT06877377) (NCT06877377): planned; no posted results; completion 2026-02-01; registry 2026-06-09 (5 days old).
+- [REVERSE rapamycin and ProLon registry](https://clinicaltrials.gov/study/NCT07354620) (NCT07354620): active; no posted results; completion 2026-02-01; registry 2026-06-11 (3 days old).
+- [Fisetin vascular function trial in older adults](https://clinicaltrials.gov/study/NCT06133634) (NCT06133634): active; no posted results; completion 2026-03-31; registry 2026-06-11 (3 days old).
+- [LINE-AD emtricitabine Alzheimer disease registry](https://clinicaltrials.gov/study/NCT04500847) (NCT04500847): recruiting; no posted results; completion 2026-03-31; registry 2026-06-06 (8 days old).
+- [Nicotinamide riboside older Veterans muscle registry](https://clinicaltrials.gov/study/NCT04691986) (NCT04691986): active; no posted results; completion 2026-03-31; registry 2026-06-08 (6 days old).
+- [GIANTS-1 immune-aging biomarker registry](https://clinicaltrials.gov/study/NCT07363057) (NCT07363057): recruiting; no posted results; completion 2026-05-01; registry 2026-06-11 (3 days old).
+- [Nicotinamide riboside MCI/Alzheimer bioenergetics registry](https://clinicaltrials.gov/study/NCT04430517) (NCT04430517): active; no posted results; completion 2026-05-15; registry 2026-06-08 (6 days old).
+- [NMN middle-aged and elderly registry](https://clinicaltrials.gov/study/NCT06592859) (NCT06592859): recruiting; no posted results; completion 2026-05-24; registry 2026-06-08 (6 days old).
+- [D+Q diabetic kidney disease senescent-cell biomarker pilot](https://pubmed.ncbi.nlm.nih.gov/31542391/) (NCT02848131): completed; no posted results; completion not recorded; registry 2026-06-11 (3 days old).
+- [D+Q first-in-human idiopathic pulmonary fibrosis open-label pilot](https://pubmed.ncbi.nlm.nih.gov/30616998/) (NCT02874989): completed; no posted results; completion not recorded; registry 2026-06-11 (3 days old).
+- [D+Q idiopathic pulmonary fibrosis randomized feasibility trial](https://pubmed.ncbi.nlm.nih.gov/30616998/) (NCT02874989): completed; no posted results; completion not recorded; registry 2026-06-11 (3 days old).
+- [TA-65 metabolic syndrome completed registry](https://clinicaltrials.gov/study/NCT02531334) (NCT02531334): completed; no posted results; completion not recorded; registry 2026-06-10 (4 days old).
 
 ## Stale Or Missing Registry Checks
 
@@ -97,7 +97,7 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 - [SYNB1618 phenylketonuria first-in-human phase 1/2a study](https://pubmed.ncbi.nlm.nih.gov/34294923/) (NCT03516487): completed; posted results; completion 2019-06-21; registry no local check date.
 - [SmartAge spermidine supplementation trial](https://pubmed.ncbi.nlm.nih.gov/35616942/) (NCT03094546): completed; posted results; completion 2020-05-31; registry no local check date.
 - [TWK10 frail older adults randomized trial](https://pubmed.ncbi.nlm.nih.gov/34361902/) (NCT04893746): completed; posted results; completion 2021-04-30; registry no local check date.
-- [SPM Active obesity bioavailability study](https://clinicaltrials.gov/study/NCT04701138) (NCT04701138): completed; posted results; completion 2021-06-18; registry 2022-06-15 (1458 days old).
+- [SPM Active obesity bioavailability study](https://clinicaltrials.gov/study/NCT04701138) (NCT04701138): completed; posted results; completion 2021-06-18; registry 2022-06-15 (1460 days old).
 - [Laromestrocel aging frailty phase 2b trial](https://pubmed.ncbi.nlm.nih.gov/41747733/) (NCT03169231): completed; posted results; completion 2021-09-30; registry no local check date.
 - [Allogenic adipose MSC exosomes Alzheimer's phase I/II trial](https://pubmed.ncbi.nlm.nih.gov/37859748/) (NCT04388982): completed; posted results; completion 2022-08-31; registry no local check date.
 - [Clarity AD lecanemab early Alzheimer's disease trial](https://pubmed.ncbi.nlm.nih.gov/36449413/) (NCT03887455): completed; posted results; completion 2022-11-29; registry no local check date.

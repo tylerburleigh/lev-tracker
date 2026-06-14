@@ -379,6 +379,62 @@ function buildEditorialRollupItem({
   });
 }
 
+function buildStateOfFieldWorkflowItems(stateOfFieldWorkflow) {
+  const activeStatuses = new Set(["draft", "reconciling", "needs_surveillance", "in_review", "blocked"]);
+
+  return (stateOfFieldWorkflow.editions ?? [])
+    .filter((edition) => activeStatuses.has(edition.status))
+    .map((edition) => {
+      const openReconciliationItems = (edition.reconciliation_items ?? []).filter(
+        (item) => item.decision === "needs_decision"
+      );
+      const openChecklistItems = (edition.checklist ?? []).filter((item) =>
+        ["pending", "in_progress", "blocked"].includes(item.status)
+      );
+
+      return compactObject({
+        item_id: `state-of-field-${edition.slug}`,
+        mode: "editorial_rollup",
+        domain: "editorial",
+        priority_tier: "now",
+        status: edition.status === "blocked" ? "blocked" : "active",
+        title: `Resolve State of the Field workflow for ${edition.period_label}`,
+        rationale: `${edition.status_note} ${openReconciliationItems.length} reconciliation decision(s) and ${openChecklistItems.length} checklist item(s) remain open.`,
+        default_action: edition.required_next_action,
+        runbook_path: "docs/editorial-rollup.md",
+        command: "npm run state-of-field:status -- --strict",
+        source_paths: [
+          "ops/state-of-field-workflow.v1.json",
+          edition.published_edition_path,
+          "data/content/current-lev-story/current.json",
+          "docs/editorial-rollup.md"
+        ],
+        references: openReconciliationItems.map((item) => ({
+          record_type: "publication_event",
+          record_id: item.publication_event_id
+        })),
+        signals: [
+          {
+            name: "workflow_status",
+            value: edition.status
+          },
+          {
+            name: "open_reconciliation_decision_count",
+            value: openReconciliationItems.length
+          },
+          {
+            name: "open_checklist_item_count",
+            value: openChecklistItems.length
+          },
+          {
+            name: "latest_observed_public_update",
+            value: edition.observed_public_story.latest_publication_event_id
+          }
+        ]
+      });
+    });
+}
+
 function buildBootstrapItems(bootstrapQueue, statusByTrack) {
   return bootstrapQueue.slice(0, 3).map((entry) =>
     compactObject({
@@ -645,6 +701,7 @@ async function main() {
     outlooks,
     publicationEvents,
     stateOfFieldEditions,
+    stateOfFieldWorkflow,
     hallmarkInsights,
     siteShellText,
     hasOutlookRoute
@@ -659,6 +716,7 @@ async function main() {
     readCollection("data/outlooks"),
     readCollection("data/publication-events"),
     readCollection("data/content/state-of-the-field"),
+    readJson("ops/state-of-field-workflow.v1.json"),
     readJson("data/content/hallmark-insights.json"),
     readTextIfExists("src/components/site-shell.tsx"),
     pathExists("src/app/outlook/page.tsx")
@@ -680,6 +738,7 @@ async function main() {
   ).length;
 
   const editorialItems = buildEditorialItems(activeBundles);
+  const stateOfFieldWorkflowItems = buildStateOfFieldWorkflowItems(stateOfFieldWorkflow);
   const editorialRollupItem = buildEditorialRollupItem({
     publicationEvents,
     stateOfFieldEditions,
@@ -700,6 +759,7 @@ async function main() {
 
   const workItems = rankWorkItems([
     ...editorialItems,
+    ...stateOfFieldWorkflowItems,
     editorialRollupItem,
     ...bootstrapItems,
     ...coverageRepairItems,
@@ -746,7 +806,7 @@ async function main() {
     summary: {
       top_work_item_id: topItem?.item_id ?? null,
       top_mode: topItem?.mode ?? null,
-      active_editorial_count: editorialItems.length,
+      active_editorial_count: editorialItems.length + stateOfFieldWorkflowItems.length + (editorialRollupItem ? 1 : 0),
       ready_research_count:
         priorityQueue.bootstrap_queue.length +
         priorityQueue.surveillance_queue.length +
