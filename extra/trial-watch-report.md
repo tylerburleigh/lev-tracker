@@ -9,7 +9,7 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 - With `trial_details`: 143
 - Missing `trial_details`: 0
 - Completed or past-completion records with no posted results: 25
-- Registry checks missing or stale: 46
+- Registry checks missing or stale: 44
 - Open watchlist records with missing or stale registry checks: 0
 - Posted results recorded locally: 82
 
@@ -55,7 +55,7 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 - [D+Q first-in-human idiopathic pulmonary fibrosis open-label pilot](https://pubmed.ncbi.nlm.nih.gov/30616998/) (NCT02874989): completed; no posted results; completion not recorded; registry 2026-06-11 (3 days old).
 - [D+Q idiopathic pulmonary fibrosis randomized feasibility trial](https://pubmed.ncbi.nlm.nih.gov/30616998/) (NCT02874989): completed; no posted results; completion not recorded; registry 2026-06-11 (3 days old).
 - [TA-65 metabolic syndrome completed registry](https://clinicaltrials.gov/study/NCT02531334) (NCT02531334): completed; no posted results; completion not recorded; registry 2026-06-10 (4 days old).
-- [SHAPE elamipretide healthy-aging pilot](https://clinicaltrials.gov/study/NCT07275424) (NCT07275424): recruiting; not expected yet; completion 2026-04-15; registry 2026-06-02 (12 days old).
+- [SHAPE elamipretide healthy-aging pilot](https://clinicaltrials.gov/study/NCT07275424) (NCT07275424): recruiting; not expected yet; completion 2026-03-15; registry 2026-06-14 (0 days old).
 - [Spermidine elderly coronary artery disease registry](https://clinicaltrials.gov/study/NCT06186102) (NCT06186102): active; no posted results; completion 2026-07-01; registry 2026-06-11 (3 days old).
 - [Everolimus Aging geroprotection registry](https://clinicaltrials.gov/study/NCT05835999) (NCT05835999): active; no posted results; completion 2026-09-01; registry 2026-06-11 (3 days old).
 - [AFFIRM fisetin frailty and inflammation registry in older women](https://clinicaltrials.gov/study/NCT03430037) (NCT03430037): recruiting; no posted results; completion 2026-11-01; registry 2026-06-11 (3 days old).
@@ -91,14 +91,12 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 
 ## Stale Or Missing Registry Checks
 
-- Exercise training modes in young and older humans (NCT01477164): completed; posted results; completion 2017-03-07; registry no local check date.
 - [SmartAge spermidine supplementation trial](https://pubmed.ncbi.nlm.nih.gov/35616942/) (NCT03094546): completed; posted results; completion 2020-05-31; registry no local check date.
 - [SPM Active obesity bioavailability study](https://clinicaltrials.gov/study/NCT04701138) (NCT04701138): completed; posted results; completion 2021-06-18; registry 2022-06-15 (1460 days old).
 - [Allogenic adipose MSC exosomes Alzheimer's phase I/II trial](https://pubmed.ncbi.nlm.nih.gov/37859748/) (NCT04388982): completed; posted results; completion 2022-08-31; registry no local check date.
 - [Clarity AD lecanemab early Alzheimer's disease trial](https://pubmed.ncbi.nlm.nih.gov/36449413/) (NCT03887455): completed; posted results; completion 2022-11-29; registry no local check date.
 - [TRAILBLAZER-ALZ 2 donanemab early Alzheimer's disease trial](https://pubmed.ncbi.nlm.nih.gov/37459141/) (NCT04437511): completed; posted results; completion 2023-04-28; registry no local check date.
 - [hUC-MSC exosome knee osteoarthritis dose-escalation pilot](https://pubmed.ncbi.nlm.nih.gov/40500748/) (MR-13-24-017929): completed; posted results; completion 2023-04-30; registry no local check date.
-- [STRIDE mavodelpar primary mitochondrial myopathy trial](https://clinicaltrials.gov/study/NCT04535609) (NCT04535609): completed; posted results; completion 2023-10-05; registry no local check date.
 - [ART-AD lamivudine early Alzheimer's trial](https://pubmed.ncbi.nlm.nih.gov/40104524/) (NCT04552795): completed; posted results; completion 2023-11-04; registry no local check date.
 - [AMBAR plasma exchange Alzheimer disease trial](https://pubmed.ncbi.nlm.nih.gov/32715623/) (NCT01561053): completed; posted results; completion not recorded; registry no local check date.
 - [APOLLO-B patisiran ATTR cardiac amyloidosis trial](https://pubmed.ncbi.nlm.nih.gov/37888916/) (NCT03997383): completed; posted results; completion not recorded; registry no local check date.
@@ -131,6 +129,8 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 - [ONTRANS nicotinamide transplant-recipient skin-cancer trial](https://pubmed.ncbi.nlm.nih.gov/36856616/) (ACTRN12617000599370): completed; posted results; completion not recorded; registry no local check date.
 - [Oral sodium butyrate overweight and type 2 diabetes trial](https://pubmed.ncbi.nlm.nih.gov/41880673/) (NCT07252609): completed; posted results; completion not recorded; registry no local check date.
 - [ORARIALS-01 arimoclomol ALS phase 3 trial](https://pubmed.ncbi.nlm.nih.gov/38782015/) (NCT03491462): completed; posted results; completion not recorded; registry no local check date.
+- [Placental MSC extracellular vesicle knee osteoarthritis randomized trial](https://pubmed.ncbi.nlm.nih.gov/39465400/) (IRCT20210423051054N1): completed; posted results; completion not recorded; registry no local check date.
+- [PLASMA young plasma Alzheimer disease trial](https://pubmed.ncbi.nlm.nih.gov/30383097/) (NCT02256306): completed; posted results; completion not recorded; registry no local check date.
 
 ## Missing Trial Details
 

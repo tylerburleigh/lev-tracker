@@ -1,0 +1,213 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-14-mitochondrial-biogenesis-and-dynamics-registry-refresh",
+  "name": "Mitochondrial Biogenesis and Dynamics Registry Metadata Refresh",
+  "mode": "surveillance",
+  "started_at": "2026-06-14T20:09:00Z",
+  "completed_at": "2026-06-14T20:19:23Z",
+  "scope": {
+    "question": "Do current ClinicalTrials.gov and PubMed checks for stale Mitochondrial Biogenesis and Dynamics trial-watch records change the public outlook or only clear local registry metadata debt?",
+    "hallmark_ids": [
+      "mitochondrial_dysfunction"
+    ],
+    "track_ids": [
+      "mitochondrial-biogenesis-and-dynamics"
+    ],
+    "intervention_ids": [
+      "structured-exercise-training",
+      "mavodelpar",
+      "elamipretide"
+    ]
+  },
+  "selected_via": "manual_override",
+  "outcome": "no_op",
+  "summary": "Ran a bounded Mitochondrial Biogenesis and Dynamics registry metadata refresh after the scoped trial-watch audit showed three registry-linked studies, two stale or missing registry checks, and zero open stale watch items. Direct ClinicalTrials.gov API checks refreshed the exercise-training registry NCT01477164, STRIDE mavodelpar NCT04535609, and the SHAPE elamipretide watchlist record NCT07275424. The completed local exercise and STRIDE records remain represented by existing result-bearing sources, SHAPE remains recruiting with no posted results, and same-window PubMed plus broad registry searches did not find a new older-adult functional or druglike mitochondrial-biogenesis/dynamics result that changes the public outlook. A 2025 same-registry exercise multi-omics paper and several close no-results or preclinical records are recorded as future coverage-repair context rather than a current metadata-refresh public change.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "none",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "This pass cleared stale local trial-details metadata for existing scoped records. The current registry and PubMed checks do not add new efficacy, safety, durability, disease, mortality, or broad aging evidence beyond already represented structured-exercise and STRIDE boundary results. The 2025 NCT01477164-linked phosphoproteome/acetylproteome publication and older no-results registry leads are source-completeness context for a future coverage-repair pass, not same-window field movement."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial watch audit",
+      "query": "npm run audit:trials -- --track mitochondrial-biogenesis-and-dynamics --write",
+      "checked_at": "2026-06-14T20:09:00Z",
+      "summary": "Scoped report contained 3 registry-linked studies, 0 missing trial-detail records, 2 stale or missing registry checks, 0 open stale watch items, and 1 pending SHAPE watchlist record."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "Direct checks for NCT01477164, NCT04535609, and NCT07275424",
+      "checked_at": "2026-06-14T20:12:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT07275424",
+      "summary": "NCT01477164 remains completed with no ClinicalTrials.gov results section and last update posted August 8, 2017; NCT04535609 remains completed with posted ClinicalTrials.gov results first posted April 3, 2024 and last update posted May 8, 2024; NCT07275424 remains recruiting with no posted results, last update posted December 10, 2025, estimated primary completion March 15, 2026, and estimated study completion April 15, 2026."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "(mitochondrial biogenesis OR mitochondrial dynamics OR PGC-1alpha OR PGC-1a OR elamipretide OR mavodelpar OR REN001) AND (aging OR older OR elderly OR frailty OR sarcopenia OR exercise), Entrez dates 2026/06/05 to 2026/06/14",
+      "checked_at": "2026-06-14T20:14:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Broad same-window PubMed search returned exercise, mitochondrial quality-control, sarcopenia, disease-model, review, and wrong-scope context. The close Pyr-Apelin-13 sarcopenia paper was aged-mouse preclinical delivery work rather than controlled older-human functional evidence; no elamipretide, mavodelpar, or older-adult mitochondrial-biogenesis/dynamics result changed the public read."
+    },
+    {
+      "source_name": "PubMed ESearch and ESummary",
+      "query": "NCT01477164 OR NCT04535609 OR NCT07275424, all dates",
+      "checked_at": "2026-06-14T20:15:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=NCT01477164%20OR%20NCT04535609%20OR%20NCT07275424",
+      "summary": "Known-registry PubMed search returned two NCT01477164-linked papers: PMID 40595512 from 2025 and PMID 36147777 from 2022. They predate this delta window and should be considered in a future coverage-repair or source-completeness pass rather than folded into this registry metadata refresh."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "elamipretide aging older adults physical function; mavodelpar REN001 PPAR-delta mitochondrial myopathy; mitochondrial biogenesis older adults exercise; mitochondrial dynamics older adults exercise; PGC-1alpha older adults trial; mitochondrial function sarcopenia older adults intervention",
+      "checked_at": "2026-06-14T20:16:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "Broad registry searches returned SHAPE, older or adjacent exercise/nutrition/disease registries, NAD/redox records, sarcopenia or cancer-exercise context, and no-results records such as NCT07479940, NCT07613619, NCT06539078, and NCT06420726. No newly posted result-bearing registry changed the mitochondrial biogenesis and dynamics outlook."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT01477164",
+      "study_id": "exercise-training-modes-young-old-humans",
+      "source_id": "pmid-28273480",
+      "registry_url": "https://clinicaltrials.gov/study/NCT01477164",
+      "checked_at": "2026-06-14T20:12:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2016-05-01",
+      "study_completion_date": "2017-03-01",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The exercise-training registry remains completed with no ClinicalTrials.gov results section. The peer-reviewed PMID 28273480 result remains the public evidence source, and month-only registry dates are metadata context rather than public interpretation changes."
+    },
+    {
+      "registry_id": "NCT04535609",
+      "study_id": "mavodelpar-stride-primary-mitochondrial-myopathy",
+      "source_id": "nct-04535609",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04535609",
+      "checked_at": "2026-06-14T20:12:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2023-09-12",
+      "study_completion_date": "2023-10-05",
+      "completion_date_kind": "actual",
+      "results_first_posted_date": "2024-04-03",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "STRIDE remains completed with posted ClinicalTrials.gov results and no current registry movement. Local metadata now records the actual primary completion date, results first-posted date, and June 14 registry check."
+    },
+    {
+      "registry_id": "NCT07275424",
+      "study_id": "elamipretide-shape-healthy-aging",
+      "source_id": "nct-07275424",
+      "registry_url": "https://clinicaltrials.gov/study/NCT07275424",
+      "checked_at": "2026-06-14T20:12:00Z",
+      "previous_local_status": "recruiting",
+      "current_registry_status": "recruiting",
+      "previous_results_status": "pending",
+      "current_results_status": "pending",
+      "primary_completion_date": "2026-03-15",
+      "study_completion_date": "2026-04-15",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "SHAPE remains recruiting with no ClinicalTrials.gov results section. The small open-label healthy-aging elamipretide pilot remains a watchlist item, not efficacy evidence."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 42259842",
+      "title": "Microneedle patch-based delivery of Pyr-Apelin-13 reverses functional and structural deficits in age-related sarcopenia.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42259842/",
+      "decision": "context_only",
+      "reason": "Same-window aged-mouse Pyr-Apelin-13 delivery study with mitochondrial-DNA and grip-strength signals. It is preclinical sarcopenia context and does not change the current older-human exercise-anchored public read."
+    },
+    {
+      "reference": "PMID 42274505",
+      "title": "Mechanisms by Which Exercise Delays Brain Aging Through Regulation of the Mitochondrial Quality Control System.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42274505/",
+      "decision": "context_only",
+      "reason": "Review-level exercise and mitochondrial-quality-control context; it does not provide a new controlled older-adult mitochondrial-biogenesis/dynamics intervention result."
+    },
+    {
+      "reference": "PMID 42281246",
+      "title": "Excessive training does not induce mitochondrial dysfunction or impair insulin signalling within skeletal muscle.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42281246/",
+      "decision": "wrong_scope",
+      "reason": "Same-window healthy trained-athlete overtraining study, not an older-adult, aging, frailty, sarcopenia, or druglike mitochondrial-biogenesis/dynamics result."
+    },
+    {
+      "reference": "PMID 42250789",
+      "title": "Endurance exercise improves age- and obesity-related cardiac dysfunction and locomotor impairment through muscle Ggamma1 gene in Drosophila.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42250789/",
+      "decision": "context_only",
+      "reason": "Drosophila exercise-aging study with mitochondrial-pathway language; it is preclinical and does not alter the current human exercise baseline."
+    },
+    {
+      "reference": "PMID 40595512",
+      "title": "Aerobic and resistance exercise-regulated phosphoproteome and acetylproteome modifications in human skeletal muscle.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40595512/",
+      "decision": "context_only",
+      "reason": "NCT01477164-linked 2025 human multi-omics paper that may matter for source completeness, but it predates the surveillance window and should be evaluated through a future coverage-repair/source-completeness pass rather than this registry metadata refresh."
+    },
+    {
+      "reference": "NCT06539078",
+      "title": "Skeletal Muscle Mitochondria in Ageing",
+      "url": "https://clinicaltrials.gov/study/NCT06539078",
+      "decision": "no_results",
+      "reason": "Recruiting no-results mitochondrial-aging registry returned by broad search; useful future coverage context, but not a same-window result-bearing public update."
+    },
+    {
+      "reference": "NCT07479940",
+      "title": "Obesity and Aging: Impacts of Nutritional Counseling and Physical Exercise on Telomeres and Senescence Parameters",
+      "url": "https://clinicaltrials.gov/study/NCT07479940",
+      "decision": "no_results",
+      "reason": "Active-not-recruiting no-results nutrition/exercise aging registry with telomere and senescence endpoints; not a result-bearing mitochondrial-biogenesis/dynamics update."
+    }
+  ],
+  "source_ids": [
+    "pmid-28273480",
+    "nct-04535609",
+    "nct-07275424"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT01477164",
+    "https://clinicaltrials.gov/study/NCT04535609",
+    "https://clinicaltrials.gov/study/NCT07275424",
+    "https://pubmed.ncbi.nlm.nih.gov/28273480/",
+    "https://pubmed.ncbi.nlm.nih.gov/40595512/",
+    "https://pubmed.ncbi.nlm.nih.gov/42259842/",
+    "https://pubmed.ncbi.nlm.nih.gov/42274505/",
+    "https://pubmed.ncbi.nlm.nih.gov/42281246/",
+    "https://pubmed.ncbi.nlm.nih.gov/42250789/",
+    "https://clinicaltrials.gov/study/NCT06539078",
+    "https://clinicaltrials.gov/study/NCT07479940"
+  ],
+  "notes": [
+    "This pass was selected manually from the global stale registry-check report after the State of the Field packet showed no open approval items and the July edition remained date-blocked.",
+    "The completed local studies remain posted-result context because their result-bearing sources are already represented; a missing ClinicalTrials.gov results section does not make those public result records pending.",
+    "PMID 40595512 is likely worth a separate source-completeness look because it is linked to NCT01477164, but it was not staged here because this pass was scoped to current registry metadata and same-window deltas."
+  ],
+  "next_actions": [
+    "Regenerate the scoped and global trial-watch reports so the State of the Field blocker reflects the refreshed mitochondrial-biogenesis metadata.",
+    "Consider a future Mitochondrial Biogenesis and Dynamics coverage-repair pass for NCT01477164-linked post-translational-modification papers and older no-results registry context if source completeness is prioritized.",
+    "Continue the stale registry metadata queue with the next coherent track-level batch rather than mixing unrelated tracks in one session."
+  ]
+}
