@@ -536,18 +536,7 @@ Current expected checks:
 
 ```bash
 npm run research:bundle -- validate --bundle <bundle-id>
-npm run validate:records
-npm run audit:data
-npm run audit:data:sustainability -- --write
-npm run audit:artifacts -- --write
-npm run manifest:staged-records -- --write
-npm run audit:staged-archive-readiness -- --write
-npm run archive:staged-records -- --write
-npm run verify:staged-archive -- --write
-npm run prune:staged-records -- --dry-run --write
-npm run audit:retained-staged-records -- --write
-npm run typecheck
-npm run build
+npm run verify:data-sustainability -- --write --include-build
 npm run research:bundle -- smoke --bundle <bundle-id> --base-url <local-url>
 ```
 

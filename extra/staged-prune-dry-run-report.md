@@ -1,6 +1,6 @@
 # Staged Prune Dry-Run Report
 
-Generated: 2026-06-13T22:40:54.033Z
+Generated: 2026-06-14T10:28:11.157Z
 
 This report lists terminal staged JSON files that can be removed because staged archive verification proves they can be reconstructed from current live records. Dry-run mode does not delete files; apply mode deletes only the safe-removal candidates after the same checks pass.
 

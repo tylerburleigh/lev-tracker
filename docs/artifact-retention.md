@@ -6,6 +6,7 @@ Use this document with:
 
 - `npm run audit:artifacts`
 - `npm run audit:data:sustainability`
+- `npm run verify:data-sustainability`
 - `npm run audit:staged-archive-readiness`
 - `npm run archive:staged-records`
 - `npm run manifest:staged-records`
@@ -238,6 +239,12 @@ These files are structure metadata, not evidence artifacts. They should be tiny 
 ## Default Pruning Direction
 
 Start with deletion-free reporting:
+
+```bash
+npm run verify:data-sustainability -- --write
+```
+
+The underlying staged-record checks are:
 
 ```bash
 npm run audit:artifacts -- --write

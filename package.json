@@ -8,6 +8,7 @@
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "validate:records": "node scripts/validate-records.mjs",
+    "verify:data-sustainability": "node scripts/verify-data-sustainability.mjs",
     "audit:data": "node scripts/audit-data-integrity.mjs",
     "audit:data:sustainability": "node scripts/data-sustainability-report.mjs",
     "audit:artifacts": "node scripts/artifact-retention-report.mjs",

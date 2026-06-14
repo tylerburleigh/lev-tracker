@@ -1,6 +1,6 @@
 # Retained Staged Records Report
 
-Generated: 2026-06-13T22:41:04.180Z
+Generated: 2026-06-14T10:28:11.293Z
 
 This report verifies that every remaining physical terminal staged JSON file is intentionally retained because it exactly matches a changed-body archive entry.
 

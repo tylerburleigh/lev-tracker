@@ -78,6 +78,8 @@ The first pass is intentionally small:
 
 - `npm run validate:records`
   Validates every JSON file under `data/`, `examples/`, `taxonomies/`, `research/`, and `ops/` against the repository JSON Schema contracts.
+- `npm run verify:data-sustainability`
+  Runs the full data sustainability verification chain without rewriting generated reports. Add `-- --write` to regenerate reports and `-- --include-build` to include the production build.
 - `npm run audit:data:sustainability`
   Reports data footprint, staged-history pressure, candidate-bundle lifecycle shape, and staged files that are not linked from bundle metadata.
 - `npm run audit:artifacts`

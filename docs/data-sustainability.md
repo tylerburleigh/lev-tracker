@@ -5,6 +5,7 @@ This repo is intentionally file-backed. That makes research work easy to inspect
 Use this document with:
 
 - `npm run validate:records`
+- `npm run verify:data-sustainability`
 - `npm run audit:data`
 - `npm run audit:data:sustainability`
 - `npm run audit:artifacts`
@@ -62,6 +63,12 @@ Reports under `extra/` are design or audit artifacts. They can guide implementat
 Run these before treating a data-maintenance pass as complete:
 
 ```bash
+npm run verify:data-sustainability -- --write
+```
+
+The command runs the maintenance chain in order:
+
+```bash
 npm run validate:records
 npm run audit:data
 npm run audit:data:sustainability -- --write
@@ -73,6 +80,8 @@ npm run verify:staged-archive -- --write
 npm run prune:staged-records -- --dry-run --write
 npm run audit:retained-staged-records -- --write
 ```
+
+Use `npm run verify:data-sustainability -- --write --include-build` when a maintenance pass should also prove the production app still builds.
 
 Use `npm run audit:data:sustainability -- --max-unreferenced-staged 0` to enforce staged-history hygiene after historical bundle metadata repair.
 
