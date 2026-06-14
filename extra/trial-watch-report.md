@@ -9,7 +9,7 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 - With `trial_details`: 143
 - Missing `trial_details`: 0
 - Completed or past-completion records with no posted results: 25
-- Registry checks missing or stale: 56
+- Registry checks missing or stale: 51
 - Open watchlist records with missing or stale registry checks: 0
 - Posted results recorded locally: 82
 
@@ -91,24 +91,19 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 
 ## Stale Or Missing Registry Checks
 
-- [hESC-derived RPE advanced dry AMD and Stargardt phase 1/2 studies](https://pubmed.ncbi.nlm.nih.gov/25458728/) (NCT01344993, NCT01345006): completed; posted results; completion 2015-08-19; registry no local check date.
-- [Nonmyeloablative HSCT relapsing-remitting multiple sclerosis RCT](https://pubmed.ncbi.nlm.nih.gov/30644983/) (NCT00273364): completed; posted results; completion 2017-01-05; registry no local check date.
 - Exercise training modes in young and older humans (NCT01477164): completed; posted results; completion 2017-03-07; registry no local check date.
 - [SYNB1618 phenylketonuria first-in-human phase 1/2a study](https://pubmed.ncbi.nlm.nih.gov/34294923/) (NCT03516487): completed; posted results; completion 2019-06-21; registry no local check date.
 - [SmartAge spermidine supplementation trial](https://pubmed.ncbi.nlm.nih.gov/35616942/) (NCT03094546): completed; posted results; completion 2020-05-31; registry no local check date.
 - [TWK10 frail older adults randomized trial](https://pubmed.ncbi.nlm.nih.gov/34361902/) (NCT04893746): completed; posted results; completion 2021-04-30; registry no local check date.
 - [SPM Active obesity bioavailability study](https://clinicaltrials.gov/study/NCT04701138) (NCT04701138): completed; posted results; completion 2021-06-18; registry 2022-06-15 (1460 days old).
-- [Laromestrocel aging frailty phase 2b trial](https://pubmed.ncbi.nlm.nih.gov/41747733/) (NCT03169231): completed; posted results; completion 2021-09-30; registry no local check date.
 - [Allogenic adipose MSC exosomes Alzheimer's phase I/II trial](https://pubmed.ncbi.nlm.nih.gov/37859748/) (NCT04388982): completed; posted results; completion 2022-08-31; registry no local check date.
 - [Clarity AD lecanemab early Alzheimer's disease trial](https://pubmed.ncbi.nlm.nih.gov/36449413/) (NCT03887455): completed; posted results; completion 2022-11-29; registry no local check date.
 - [TRAILBLAZER-ALZ 2 donanemab early Alzheimer's disease trial](https://pubmed.ncbi.nlm.nih.gov/37459141/) (NCT04437511): completed; posted results; completion 2023-04-28; registry no local check date.
 - [hUC-MSC exosome knee osteoarthritis dose-escalation pilot](https://pubmed.ncbi.nlm.nih.gov/40500748/) (MR-13-24-017929): completed; posted results; completion 2023-04-30; registry no local check date.
-- [Bemdaneprocel Parkinson disease phase 1 trial](https://pubmed.ncbi.nlm.nih.gov/40240592/) (NCT04802733): completed; posted results; completion 2023-05-18; registry no local check date.
 - [STRIDE mavodelpar primary mitochondrial myopathy trial](https://clinicaltrials.gov/study/NCT04535609) (NCT04535609): completed; posted results; completion 2023-10-05; registry no local check date.
 - [ART-AD lamivudine early Alzheimer's trial](https://pubmed.ncbi.nlm.nih.gov/40104524/) (NCT04552795): completed; posted results; completion 2023-11-04; registry no local check date.
 - [Pasteurized Akkermansia MucT weight-maintenance randomized trial](https://pubmed.ncbi.nlm.nih.gov/42120725/) (NCT05417360): completed; posted results; completion 2023-11-20; registry no local check date.
 - [AKK-WST01 overweight or obese type 2 diabetes randomized trial](https://pubmed.ncbi.nlm.nih.gov/39879980/) (NCT04797442): completed; posted results; completion 2024-03-31; registry no local check date.
-- [A9-DPC Parkinson disease phase 1/2a trial](https://pubmed.ncbi.nlm.nih.gov/41086804/) (NCT05887466): completed; posted results; completion 2025-12-10; registry no local check date.
 - [Akkermansia muciniphila insulin-resistant volunteer pilot study](https://pubmed.ncbi.nlm.nih.gov/31263284/) (NCT02637115): completed; posted results; completion not recorded; registry no local check date.
 - [AMBAR plasma exchange Alzheimer disease trial](https://pubmed.ncbi.nlm.nih.gov/32715623/) (NCT01561053): completed; posted results; completion not recorded; registry no local check date.
 - [APOLLO-B patisiran ATTR cardiac amyloidosis trial](https://pubmed.ncbi.nlm.nih.gov/37888916/) (NCT03997383): completed; posted results; completion not recorded; registry no local check date.
@@ -131,6 +126,11 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 - Lean-donor intestinal microbiota transfer in metabolic syndrome (NTR1776): completed; posted results; completion not recorded; registry no local check date.
 - [LoDoCo2 low-dose colchicine chronic coronary disease trial](https://pubmed.ncbi.nlm.nih.gov/32865380/) (ACTRN12614000093684): completed; posted results; completion not recorded; registry no local check date.
 - MET-PREVENT metformin physical-performance frailty trial (ISRCTN29932357): completed; posted results; completion not recorded; registry no local check date.
+- METFORAGING metformin epigenetic-age pilot trial (EudraCT 2021-003299-15): completed; posted results; completion not recorded; registry no local check date.
+- [Metformin frailty-prevention trial in high-risk older adults](https://clinicaltrials.gov/study/NCT02570672) (NCT02570672): completed; posted results; completion not recorded; registry 2025-08-06 (312 days old).
+- MILES metformin older-adult transcriptomics trial (NCT02432287): completed; posted results; completion not recorded; registry no local check date.
+- [NI006 ATTR cardiomyopathy phase 1 trial](https://pubmed.ncbi.nlm.nih.gov/37212440/) (NCT04360434): completed; posted results; completion not recorded; registry no local check date.
+- [Nicotinamide mononucleotide in healthy older men](https://pubmed.ncbi.nlm.nih.gov/35927255/) (UMIN000036321): completed; posted results; completion not recorded; registry no local check date.
 
 ## Missing Trial Details
 

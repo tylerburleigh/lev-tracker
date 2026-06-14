@@ -1,0 +1,271 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-14-stem-cell-replacement-and-transplantation-registry-refresh",
+  "name": "Stem Cell Replacement and Transplantation Registry Metadata Refresh",
+  "mode": "surveillance",
+  "started_at": "2026-06-14T19:45:00Z",
+  "completed_at": "2026-06-14T19:58:00Z",
+  "scope": {
+    "question": "Do current ClinicalTrials.gov checks for stale Stem Cell Replacement and Transplantation trial-watch records change the public outlook or only clear local registry metadata debt?",
+    "hallmark_ids": [
+      "stem_cell_exhaustion"
+    ],
+    "track_ids": [
+      "stem-cell-replacement-and-transplantation"
+    ],
+    "intervention_ids": [
+      "hesc-derived-rpe",
+      "nonmyeloablative-hsct",
+      "laromestrocel",
+      "bemdaneprocel",
+      "a9-dpc"
+    ]
+  },
+  "selected_via": "manual_override",
+  "outcome": "no_op",
+  "summary": "Ran a bounded Stem Cell Replacement and Transplantation registry metadata refresh after the scoped trial-watch audit showed five stale or missing registry checks and zero open stale watch items. Direct ClinicalTrials.gov API checks refreshed hESC-RPE NCT01344993/NCT01345006, nonmyeloablative HSCT NCT00273364, laromestrocel frailty NCT03169231, bemdaneprocel phase 1 NCT04802733, A9-DPC NCT05887466, and the active exPDite-2 watchlist trial NCT06944522. The completed/post-result local studies remain represented by existing peer-reviewed or registry-result evidence, exPDite-2 remains recruiting with no posted results, and same-window PubMed plus narrow registry searches did not find a new result-bearing human replacement or transplantation source. No outlook, stage, momentum, confidence, source, finding, activity, bundle, or coverage assessment update is warranted.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "none",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "This pass cleared stale local trial-details metadata and added structured completion timing. The current registry facts do not add new efficacy, safety, durability, disease, mortality, or broad aging evidence beyond already represented results. Adjacent no-results follow-up registries are pre-window source-completeness context for a future coverage-repair pass, not a same-window public update."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial watch audit",
+      "query": "npm run audit:trials -- --track stem-cell-replacement-and-transplantation --write",
+      "checked_at": "2026-06-14T19:45:00Z",
+      "summary": "Scoped report contained 6 registry-linked studies, 0 missing trial-detail records, 5 stale or missing registry checks, and 0 open stale watch items."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "Direct checks for NCT01344993, NCT01345006, NCT00273364, NCT03169231, NCT04802733, NCT05887466, and NCT06944522",
+      "checked_at": "2026-06-14T19:50:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT06944522",
+      "summary": "The stale completed/post-result records were retrievable and unchanged in public interpretation. NCT06944522 remains recruiting, has no posted results, last update posted June 5, 2026, primary completion estimated March 2027, and study completion estimated March 2032."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "laromestrocel frailty; bemdaneprocel Parkinson; A9-DPC Parkinson; hESC RPE Stargardt macular degeneration; nonmyeloablative hematopoietic stem cell transplantation multiple sclerosis",
+      "checked_at": "2026-06-14T19:52:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "Narrow registry searches returned the represented exPDite-2 and A9-DPC records plus older no-results follow-up or adjacent retinal registries. No newly posted result-bearing registry changed the public track read."
+    },
+    {
+      "source_name": "PubMed ESearch and ESummary",
+      "query": "(laromestrocel OR Lomecel-B OR bemdaneprocel OR A9-DPC OR hESC-derived RPE OR hematopoietic stem cell transplantation) AND (aging OR frailty OR Parkinson OR retina OR Stargardt OR multiple sclerosis) AND 2026/06/06:2026/06/14[edat]",
+      "checked_at": "2026-06-14T19:53:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned review, HSC-marker, pediatric-transplant, EBV/MS review, sarcopenia/transplant risk, and other adjacent context records rather than a new laromestrocel, bemdaneprocel, A9-DPC, hESC-RPE, or HSCT/MS result that changes the track interpretation."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT01344993",
+      "study_id": "hesc-rpe-advanced-dry-amd-stargardt-phase1-2",
+      "source_id": "pmid-25458728",
+      "registry_url": "https://clinicaltrials.gov/study/NCT01344993",
+      "checked_at": "2026-06-14T19:50:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2015-08-19",
+      "study_completion_date": "2015-08-19",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The advanced dry AMD hESC-RPE registry remains completed with no ClinicalTrials.gov results section; the peer-reviewed PMID 25458728 result remains the public evidence source."
+    },
+    {
+      "registry_id": "NCT01345006",
+      "study_id": "hesc-rpe-advanced-dry-amd-stargardt-phase1-2",
+      "source_id": "pmid-25458728",
+      "registry_url": "https://clinicaltrials.gov/study/NCT01345006",
+      "checked_at": "2026-06-14T19:50:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2015-08-10",
+      "study_completion_date": "2015-08-10",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The Stargardt hESC-RPE registry remains completed with no ClinicalTrials.gov results section; the peer-reviewed PMID 25458728 result remains the public evidence source."
+    },
+    {
+      "registry_id": "NCT00273364",
+      "study_id": "nonmyeloablative-hsct-relapsing-ms-rct",
+      "source_id": "pmid-30644983",
+      "registry_url": "https://clinicaltrials.gov/study/NCT00273364",
+      "checked_at": "2026-06-14T19:50:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2017-01-05",
+      "study_completion_date": "2019-08-30",
+      "completion_date_kind": "actual",
+      "results_first_posted_date": "2020-08-12",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": true,
+      "materiality": "completion_change",
+      "public_action": "record_no_op",
+      "summary": "The HSCT/MS registry remains completed with posted ClinicalTrials.gov results. The local metadata now records both actual primary completion and actual study completion without changing the disease-specific transplantation boundary."
+    },
+    {
+      "registry_id": "NCT03169231",
+      "study_id": "laromestrocel-aging-frailty-phase2b",
+      "source_id": "pmid-41747733",
+      "registry_url": "https://clinicaltrials.gov/study/NCT03169231",
+      "checked_at": "2026-06-14T19:50:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2021-09-30",
+      "study_completion_date": "2021-09-30",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The laromestrocel aging-frailty registry remains completed with no ClinicalTrials.gov results section; the peer-reviewed PMID 41747733 result remains the public evidence source."
+    },
+    {
+      "registry_id": "NCT04802733",
+      "study_id": "bemdaneprocel-parkinson-phase1",
+      "source_id": "pmid-40240592",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04802733",
+      "checked_at": "2026-06-14T19:50:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2023-05-18",
+      "study_completion_date": "2024-06-10",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": true,
+      "materiality": "completion_change",
+      "public_action": "record_no_op",
+      "summary": "The bemdaneprocel phase 1 registry remains completed with no ClinicalTrials.gov results section; the peer-reviewed PMID 40240592 result remains the public evidence source. Local metadata now distinguishes actual primary completion from actual study completion."
+    },
+    {
+      "registry_id": "NCT05887466",
+      "study_id": "a9-dpc-parkinson-phase1-2a",
+      "source_id": "pmid-41086804",
+      "registry_url": "https://clinicaltrials.gov/study/NCT05887466",
+      "checked_at": "2026-06-14T19:50:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2025-12-10",
+      "study_completion_date": "2025-12-10",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The A9-DPC Parkinson registry remains completed with no ClinicalTrials.gov results section; the peer-reviewed PMID 41086804 result remains the public evidence source."
+    },
+    {
+      "registry_id": "NCT06944522",
+      "study_id": "expdite2-bemdaneprocel-parkinson-phase3",
+      "source_id": "nct-06944522",
+      "registry_url": "https://clinicaltrials.gov/study/NCT06944522",
+      "checked_at": "2026-06-14T19:50:00Z",
+      "previous_local_status": "recruiting",
+      "current_registry_status": "recruiting",
+      "previous_results_status": "pending",
+      "current_results_status": "pending",
+      "primary_completion_date": "2027-03-01",
+      "study_completion_date": "2032-03-01",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": true,
+      "materiality": "completion_change",
+      "public_action": "record_no_op",
+      "summary": "exPDite-2 remains recruiting with no posted ClinicalTrials.gov results. Local trial-horizon metadata now records the estimated March 2027 primary completion and March 2032 study completion months."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "NCT06477744",
+      "title": "Long Term Follow-up of Patients With Parkinson's Disease Who Had Administered of A9-DPC in SB-PD-001 Study",
+      "url": "https://clinicaltrials.gov/study/NCT06477744",
+      "decision": "no_results",
+      "reason": "Active-not-recruiting A9-DPC long-term follow-up registry with no posted results. It is pre-window source-completeness context for a future coverage-repair pass, not a same-window evidence delta."
+    },
+    {
+      "reference": "hESC-RPE follow-up registry cluster",
+      "title": "Older hESC-RPE follow-up and retinal-degeneration registries returned by narrow ClinicalTrials.gov search",
+      "url": "https://clinicaltrials.gov/search?term=hESC%20RPE%20Stargardt%20macular%20degeneration",
+      "decision": "no_results",
+      "reason": "Returned older completed no-results follow-up or adjacent retinal registries including NCT02445612, NCT02941991, NCT02903576, and NCT01469832. They do not change the existing hESC-RPE result interpretation in this metadata refresh."
+    },
+    {
+      "reference": "PMID 42283246",
+      "title": "Histological and Tissue-Level Outcomes of Stem Cell Therapies in Neurodegenerative Disorders: A Systematic Review.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42283246/",
+      "decision": "context_only",
+      "reason": "Review-level neurodegenerative stem-cell therapy context; it is not a new controlled human result for the represented replacement or transplantation studies."
+    },
+    {
+      "reference": "PMID 42276065",
+      "title": "Multiome-based identification of molecular markers for prospective identification of platelet-biased HSCs.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42276065/",
+      "decision": "context_only",
+      "reason": "Mechanistic HSC marker paper, not a stem-cell replacement or transplantation intervention result."
+    }
+  ],
+  "source_ids": [
+    "pmid-25458728",
+    "pmid-30644983",
+    "pmid-41747733",
+    "pmid-40240592",
+    "pmid-41086804",
+    "nct-06944522"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT01344993",
+    "https://clinicaltrials.gov/study/NCT01345006",
+    "https://clinicaltrials.gov/study/NCT00273364",
+    "https://clinicaltrials.gov/study/NCT03169231",
+    "https://clinicaltrials.gov/study/NCT04802733",
+    "https://clinicaltrials.gov/study/NCT05887466",
+    "https://clinicaltrials.gov/study/NCT06944522",
+    "https://pubmed.ncbi.nlm.nih.gov/25458728/",
+    "https://pubmed.ncbi.nlm.nih.gov/30644983/",
+    "https://pubmed.ncbi.nlm.nih.gov/41747733/",
+    "https://pubmed.ncbi.nlm.nih.gov/40240592/",
+    "https://pubmed.ncbi.nlm.nih.gov/41086804/"
+  ],
+  "notes": [
+    "This pass was selected manually from the global stale registry-check report but kept to one track so the surveillance audit trail remains valid.",
+    "The completed local studies remain posted-result context because their result-bearing peer-reviewed or registry-result sources are already represented.",
+    "The A9-DPC and hESC-RPE adjacent follow-up registries should be considered only if a future coverage-repair pass revisits active-trial completeness."
+  ],
+  "next_actions": [
+    "Regenerate the scoped and global trial-watch reports so the State of the Field blocker reflects the refreshed stem-cell replacement metadata.",
+    "Continue the stale registry metadata queue with the next coherent track-level batch rather than mixing unrelated tracks in one session.",
+    "Do not change the public outlook unless future registry or publication checks add posted results, safety signals, or controlled functional data."
+  ]
+}
