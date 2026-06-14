@@ -92,6 +92,8 @@ The first pass is intentionally small:
   Verifies every terminal staged record can be reconstructed from live records plus the archive pack before pruning staged JSON.
 - `npm run prune:staged-records -- --dry-run`
   Reports terminal staged JSON prune state after archive verification. Use `--apply --confirm-prune-terminal-staged-records` only after reviewing the dry run.
+- `npm run audit:retained-staged-records`
+  Verifies every remaining physical terminal staged JSON file exactly matches a changed-body archive entry.
 
 ## Research Commands
 

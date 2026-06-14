@@ -1,13 +1,13 @@
 # Artifact Retention Report
 
-Generated: 2026-06-13T18:34:15.875Z
+Generated: 2026-06-13T22:40:53.938Z
 
 This report classifies file-backed artifacts by retention role. It is non-destructive: it identifies pruning and compression candidates but does not delete or rewrite files.
 
 ## Summary
 
 - Artifact roots scanned: data, research, ops, extra.
-- Artifact files classified: 1864.
+- Artifact files classified: 1865.
 - Artifact footprint: 8.8 MB.
 - Unclassified artifacts: 0.
 - Active staged intermediate files: 0.
@@ -25,7 +25,7 @@ This report classifies file-backed artifacts by retention role. It is non-destru
 | Staged Record Archives | retain_for_archive | 1 | 839 KB | Keep packed changed staged bodies required to reconstruct terminal staged records that differ from live records. |
 | Current Coverage Synthesis | retain | 38 | 670 KB | Keep as the latest source-completeness judgment for each track. |
 | Terminal Staged Intermediate | compress_candidate | 192 | 599 KB | Retain changed staged bodies; identical live-backed staged files have been pruned after archive verification. |
-| Generated Reports | prunable_regenerable | 11 | 412 KB | Safe to delete or overwrite when stale because commands can regenerate them. |
+| Generated Reports | prunable_regenerable | 12 | 475 KB | Safe to delete or overwrite when stale because commands can regenerate them. |
 | Superseded Coverage Synthesis | compress_candidate | 16 | 232 KB | Keep for now; later summarize into the latest assessment revision history. |
 | Generated Planning State | current_copy_only | 3 | 122 KB | Keep current files, but do not preserve old snapshots unless debugging a generation change. |
 | Handoff Artifacts | review | 1 | 2 KB | Keep only while they inform future implementation; promote into docs if durable. |
@@ -33,7 +33,7 @@ This report classifies file-backed artifacts by retention role. It is non-destru
 
 ## Prunable Now
 
-- 11 generated report file(s), 412 KB.
+- 12 generated report file(s), 475 KB.
 - Generated planning state should be overwritten in place, not preserved as dated snapshots.
 
 ## Compression Candidates
@@ -94,6 +94,7 @@ This report classifies file-backed artifacts by retention role. It is non-destru
 - extra/editorial-quality-report.md
 - extra/public-copy-report.md
 - extra/reader-task-audit.md
+- extra/retained-staged-records-report.md
 - extra/staged-archive-readiness-report.md
 - extra/staged-archive-verification-report.md
 - extra/staged-prune-dry-run-report.md

@@ -16,6 +16,7 @@
     "archive:staged-records": "node scripts/staged-records-archive.mjs",
     "verify:staged-archive": "node scripts/verify-staged-archive.mjs",
     "prune:staged-records": "node scripts/prune-staged-records.mjs",
+    "audit:retained-staged-records": "node scripts/retained-staged-records-audit.mjs",
     "sync:research-planning": "node scripts/seed-research-planning.mjs && node scripts/seed-work-triage.mjs",
     "sync:work-triage": "node scripts/seed-work-triage.mjs",
     "lint:public-copy": "node scripts/public-copy-lint.mjs",

@@ -8,6 +8,7 @@ This directory holds exploratory or handoff documentation that is related to the
 - [current-lev-story-draft.md](current-lev-story-draft.md): generated editorial draft from `npm run story:current -- draft --write --style plain`.
 - [public-copy-report.md](public-copy-report.md): generated public copy lint report from `npm run lint:public-copy -- --write`.
 - [reader-task-audit.md](reader-task-audit.md): generated reader-task audit from `npm run audit:reader-tasks -- --write`.
+- [retained-staged-records-report.md](retained-staged-records-report.md): generated retained physical staged JSON audit from `npm run audit:retained-staged-records -- --write`.
 - [editorial-quality-report.md](editorial-quality-report.md): generated combined quality report from `npm run audit:editorial -- --write`.
 - [data-sustainability-report.md](data-sustainability-report.md): generated data footprint and staged-history report from `npm run audit:data:sustainability -- --write`.
 - [artifact-retention-report.md](artifact-retention-report.md): generated artifact classification and retention report from `npm run audit:artifacts -- --write`.

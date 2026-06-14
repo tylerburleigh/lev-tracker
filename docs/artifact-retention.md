@@ -11,6 +11,7 @@ Use this document with:
 - `npm run manifest:staged-records`
 - `npm run verify:staged-archive`
 - `npm run prune:staged-records -- --dry-run`
+- `npm run audit:retained-staged-records`
 - `docs/data-sustainability.md`
 - `docs/research-ops-state.md`
 - `docs/publication-checklist.md`
@@ -156,6 +157,12 @@ npm run prune:staged-records -- --apply --confirm-prune-terminal-staged-records 
 
 Current prune result: 1008 identical live-backed terminal staged JSON files have been pruned from `data/staged-records/`; 192 changed staged JSON files remain physically present and are also retained in `data/staged-record-archives/changed-terminal-bodies.v1.json`.
 
+Use the retained-staged audit to verify that every remaining physical terminal staged file exactly matches the changed-body archive:
+
+```bash
+npm run audit:retained-staged-records -- --write
+```
+
 ### Research Session Logs
 
 Path:
@@ -239,6 +246,7 @@ npm run audit:staged-archive-readiness -- --write
 npm run archive:staged-records -- --write
 npm run verify:staged-archive -- --write
 npm run prune:staged-records -- --dry-run --write
+npm run audit:retained-staged-records -- --write
 ```
 
 Then handle candidates in this order:
@@ -247,7 +255,7 @@ Then handle candidates in this order:
 2. Drafts: apply or delete stale drafts.
 3. Generated state: overwrite in place; do not preserve dated copies.
 4. Superseded coverage assessments: summarize older versions into latest assessment revision notes before pruning.
-5. Terminal staged records: keep the reviewed manifest and changed-body archive; identical live-backed staged JSON has already been pruned, and the remaining 192 changed staged files should stay until a denser archive format is reviewed.
+5. Terminal staged records: keep the reviewed manifest and changed-body archive; identical live-backed staged JSON has already been pruned, and the remaining 192 changed staged files should stay while `npm run audit:retained-staged-records` confirms they match the archive exactly.
 
 ## What Not To Prune
 

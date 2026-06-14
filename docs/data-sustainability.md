@@ -13,6 +13,7 @@ Use this document with:
 - `npm run archive:staged-records`
 - `npm run verify:staged-archive`
 - `npm run prune:staged-records -- --dry-run`
+- `npm run audit:retained-staged-records`
 - `docs/artifact-retention.md`
 - `docs/source-ingestion-rules.md`
 - `docs/intervention-normalization.md`
@@ -70,6 +71,7 @@ npm run audit:staged-archive-readiness -- --write
 npm run archive:staged-records -- --write
 npm run verify:staged-archive -- --write
 npm run prune:staged-records -- --dry-run --write
+npm run audit:retained-staged-records -- --write
 ```
 
 Use `npm run audit:data:sustainability -- --max-unreferenced-staged 0` to enforce staged-history hygiene after historical bundle metadata repair.
@@ -107,4 +109,4 @@ These are signals, not automatic failures. Broken schemas, missing required refe
 
 ## Current State
 
-The staged-history metadata repair has eliminated unreferenced staged JSON files. Terminal staged records now have a reviewed manifest, a changed-body archive, archive reconstruction verification, and an explicit prune command. The identical live-backed staged JSON files have been pruned: the repo now keeps 192 physical staged JSON files, 1008 manifest-backed pruned staged paths, and 1200 logical staged references.
+The staged-history metadata repair has eliminated unreferenced staged JSON files. Terminal staged records now have a reviewed manifest, a changed-body archive, archive reconstruction verification, an explicit prune command, and a retained-staged audit. The identical live-backed staged JSON files have been pruned: the repo now keeps 192 physical staged JSON files, 1008 manifest-backed pruned staged paths, and 1200 logical staged references.

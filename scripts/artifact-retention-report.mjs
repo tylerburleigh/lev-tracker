@@ -348,6 +348,7 @@ async function classifyArtifacts() {
     "extra/editorial-quality-report.md",
     "extra/public-copy-report.md",
     "extra/reader-task-audit.md",
+    "extra/retained-staged-records-report.md",
     "extra/staged-archive-readiness-report.md",
     "extra/staged-archive-verification-report.md",
     "extra/staged-prune-dry-run-report.md",

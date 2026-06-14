@@ -510,6 +510,7 @@ Research runs should continue to follow `docs/research-ops-state.md`: one track 
    - Note: `npm run verify:staged-archive` verifies that every terminal staged file can be reconstructed from live records plus the archive pack before pruning staged JSON.
    - Note: `npm run prune:staged-records -- --dry-run --write` writes `extra/staged-prune-dry-run-report.md` with current prune state and any remaining safe-removal candidates.
    - Note: apply-mode pruning removed 1008 identical live-backed terminal staged JSON files; 192 changed staged files remain physically present and archived.
+   - Note: `npm run audit:retained-staged-records -- --write` verifies that the 192 remaining physical staged files exactly match the changed-body archive.
    - Remaining: decide whether the 192 changed staged files should eventually be compacted further after a denser archive format is reviewed.
 
 ## Priority 5: Documentation Cleanup
@@ -544,6 +545,7 @@ npm run audit:staged-archive-readiness -- --write
 npm run archive:staged-records -- --write
 npm run verify:staged-archive -- --write
 npm run prune:staged-records -- --dry-run --write
+npm run audit:retained-staged-records -- --write
 npm run typecheck
 npm run build
 npm run research:bundle -- smoke --bundle <bundle-id> --base-url <local-url>
