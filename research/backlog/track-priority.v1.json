@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "queue_type": "track_priority_queue",
   "track_taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-13T14:55:48.399Z",
+  "updated_at": "2026-06-14T17:50:21.020Z",
   "notes": [
     "Baseline-review priority is front-loaded toward one anchor track per uncovered hallmark.",
     "Field-change priority applies only to tracks that already have a public baseline and no active staged update.",
@@ -556,21 +556,6 @@
     {
       "rank": 33,
       "phase_id": "surveillance-rotation",
-      "track_id": "stem-cell-rejuvenation",
-      "hallmark_id": "stem_cell_exhaustion",
-      "default_mode": "surveillance",
-      "freshness_status": "recent",
-      "last_reviewed_at": "2026-06-09T23:02:41Z",
-      "next_due_at": "2026-06-23T23:02:41.000Z",
-      "cooldown_days": 14,
-      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
-      "default_question": "What changed for Stem Cell Rejuvenation since the last meaningful review or publication, and does any change justify a public update?",
-      "priority_tier": "later",
-      "notes": "Recently handled; ordinary rotation is due after 2026-06-23."
-    },
-    {
-      "rank": 34,
-      "phase_id": "surveillance-rotation",
       "track_id": "dna-repair-enhancement",
       "hallmark_id": "genomic_instability",
       "default_mode": "surveillance",
@@ -584,7 +569,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-24."
     },
     {
-      "rank": 35,
+      "rank": 34,
       "phase_id": "surveillance-rotation",
       "track_id": "telomerase-restoration",
       "hallmark_id": "telomere_attrition",
@@ -599,7 +584,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-24."
     },
     {
-      "rank": 36,
+      "rank": 35,
       "phase_id": "surveillance-rotation",
       "track_id": "chaperone-and-heat-shock-support",
       "hallmark_id": "loss_of_proteostasis",
@@ -614,7 +599,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-24."
     },
     {
-      "rank": 37,
+      "rank": 36,
       "phase_id": "surveillance-rotation",
       "track_id": "autophagy-induction",
       "hallmark_id": "disabled_macroautophagy",
@@ -629,7 +614,7 @@
       "notes": "Recently handled; ordinary rotation is due after 2026-06-25."
     },
     {
-      "rank": 38,
+      "rank": 37,
       "phase_id": "surveillance-rotation",
       "track_id": "partial-reprogramming",
       "hallmark_id": "epigenetic_alterations",
@@ -642,6 +627,21 @@
       "default_question": "What changed for Partial Reprogramming since the last meaningful review or publication, and does any change justify a public update?",
       "priority_tier": "later",
       "notes": "Recently handled; ordinary rotation is due after 2026-06-26."
+    },
+    {
+      "rank": 38,
+      "phase_id": "surveillance-rotation",
+      "track_id": "stem-cell-rejuvenation",
+      "hallmark_id": "stem_cell_exhaustion",
+      "default_mode": "surveillance",
+      "freshness_status": "recent",
+      "last_reviewed_at": "2026-06-14T17:55:00Z",
+      "next_due_at": "2026-06-28T17:55:00.000Z",
+      "cooldown_days": 14,
+      "rationale": "Established public baseline exists, so this track should be monitored for meaningful deltas.",
+      "default_question": "What changed for Stem Cell Rejuvenation since the last meaningful review or publication, and does any change justify a public update?",
+      "priority_tier": "later",
+      "notes": "Recently handled; ordinary rotation is due after 2026-06-28."
     }
   ],
   "coverage_repair_queue": []

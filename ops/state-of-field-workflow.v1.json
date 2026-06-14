@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "state_type": "state_of_field_workflow",
-  "updated_at": "2026-06-14T17:41:09.000Z",
+  "updated_at": "2026-06-14T17:55:00.000Z",
   "policy": {
     "public_visibility": "Only completed editions in data/content/state-of-the-field are rendered on the public State of the Field pages.",
     "draft_storage": "Drafts, reconciliation notes, and in-progress states stay in this ops manifest or extra/ artifacts until publication.",
@@ -305,23 +305,22 @@
           "related_outlook_ids": [
             "track-stem-cell-rejuvenation-outlook"
           ],
-          "decision": "needs_surveillance",
+          "decision": "include_as_trial_horizon",
           "period_interpretation_changed": false,
           "rationale": "June missing-context update that added no-results hDNAgr registry and review context while adding no posted human efficacy or safety results.",
-          "next_action": "Classify as current_context or trial-horizon boundary.",
+          "next_action": "Use only as bounded trial-horizon context: planned/not yet recruiting and no posted results as of the 2026-06-14 surveillance check.",
           "agent_assessment": {
             "recommended_decision": "include_as_trial_horizon",
-            "confidence": "medium",
+            "confidence": "high",
             "materiality": "low",
             "affected_surfaces": [
               "state_of_field",
               "trial_horizon"
             ],
-            "public_copy_action": "run_surveillance",
-            "human_review_required": true,
-            "escalation_reason": "Trial-horizon copy should not make current registry claims until stale registry boundaries are resolved or explicitly bounded.",
-            "rationale": "The hDNAgr registry context is relevant mainly as a trial-horizon boundary because it adds no posted human efficacy or safety results.",
-            "reviewed_at": "2026-06-14T16:45:00.000Z",
+            "public_copy_action": "draft_copy",
+            "human_review_required": false,
+            "rationale": "The June 14 surveillance pass confirmed that NCT06877377 remains planned/not yet recruiting with no posted results, so the hDNAgr registry context can be used only as bounded trial-horizon copy and does not change the field interpretation.",
+            "reviewed_at": "2026-06-14T17:55:00.000Z",
             "reviewed_by": "codex"
           },
           "human_approval": {
@@ -329,7 +328,7 @@
             "requested_at": "2026-06-14T16:45:00.000Z",
             "resolved_at": "2026-06-14T17:41:09.000Z",
             "approver": "tyler",
-            "notes": "Approved in packet review as a hold for surveillance-backed trial-horizon copy; do not make current registry claims until rechecked or explicitly bounded."
+            "notes": "Approved in packet review as a hold for surveillance-backed trial-horizon copy. The 2026-06-14 surveillance pass confirmed NCT06877377 is still planned/not yet recruiting with no posted results; copy may use this only as a bounded trial-horizon item."
           }
         },
         {

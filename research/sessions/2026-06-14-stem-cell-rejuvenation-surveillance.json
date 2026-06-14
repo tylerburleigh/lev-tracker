@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-14-stem-cell-rejuvenation-surveillance",
+  "name": "Stem Cell Rejuvenation Trial-Horizon Surveillance",
+  "mode": "surveillance",
+  "started_at": "2026-06-14T17:43:00Z",
+  "completed_at": "2026-06-14T17:55:00Z",
+  "scope": {
+    "question": "Has hDNAgr/NCT06877377 or same-window stem-cell-rejuvenation evidence changed enough to support fresh July State of the Field trial-horizon copy?",
+    "hallmark_ids": [
+      "stem_cell_exhaustion"
+    ],
+    "track_ids": [
+      "stem-cell-rejuvenation"
+    ],
+    "intervention_ids": [
+      "hdnagr-therapy"
+    ]
+  },
+  "selected_via": "manual_override",
+  "outcome": "no_op",
+  "summary": "Rechecked the hDNAgr/NCT06877377 trial-watch item and near-window stem-cell-rejuvenation sources for the July State of the Field packet. ClinicalTrials.gov still lists NCT06877377 as not yet recruiting, with no posted results, estimated February 2026 primary completion, estimated March 2026 study completion, and a 2025-07-20 last update. Targeted hDNAgr and Natural Genome Reconstruction registry searches returned only NCT06877377; broader hematopoietic-stem-cell-aging and stem-cell-rejuvenation-aging registry searches returned no result-bearing targeted aging HSC intervention that changes the public track read. PubMed same-window searches surfaced mechanistic HSC-aging, HSC-marker, pediatric-transplant, and mouse thymic-regeneration records, but none add posted hDNAgr results or in vivo human stem-cell-rejuvenation outcome evidence. No public evidence, study, finding, or outlook JSON change is warranted.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "none",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The only direct trial-watch item is unchanged from the local June 9 record: planned/not-yet-recruiting and no posted results. Same-window PubMed and broader registry searches do not provide result-bearing human stem-cell rejuvenation evidence, so the existing low-confidence human_biomarker_signal outlook remains adequate."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial watch audit",
+      "query": "npm run audit:trials -- --track stem-cell-rejuvenation --write",
+      "checked_at": "2026-06-14T17:43:00Z",
+      "summary": "Scoped trial-watch audit reported one stem-cell-rejuvenation trial, zero missing detail records, zero stale or missing registry checks, and zero open stale watch items for the track."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "NCT06877377 direct study lookup",
+      "checked_at": "2026-06-14T17:45:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT06877377",
+      "summary": "NCT06877377 remains NOT_YET_RECRUITING, hasResults=false, with estimated start 2025-09-01, estimated primary completion 2026-02-01, estimated completion 2026-03-01, first posted 2025-03-14, and last update posted 2025-07-20."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "hDNAgr; Natural Genome Reconstruction OR hDNAgr",
+      "checked_at": "2026-06-14T17:47:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies?query.term=hDNAgr",
+      "summary": "Targeted hDNAgr and Natural Genome Reconstruction searches returned only NCT06877377, still not yet recruiting and without posted results."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "\"hematopoietic stem cell\" aging; \"stem cell rejuvenation\" aging",
+      "checked_at": "2026-06-14T17:48:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "The stem-cell-rejuvenation-aging query returned no studies. The broader hematopoietic-stem-cell-aging query returned unrelated or non-result-bearing records, including childhood-cancer frailty, pediatric rehabilitation, leukemia induction therapy, refractory cancer immunotherapy, and diabetic cutaneous-ulcer nutrition records."
+    },
+    {
+      "source_name": "PubMed ESearch and ESummary",
+      "query": "(hDNAgr OR \"hematopoietic stem cell aging\" OR \"stem cell rejuvenation\") AND 2026/06/09:2026/06/14[edat]",
+      "checked_at": "2026-06-14T17:46:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28hDNAgr%20OR%20%22hematopoietic%20stem%20cell%20aging%22%20OR%20%22stem%20cell%20rejuvenation%22%29%20AND%202026%2F06%2F09%3A2026%2F06%2F14%5Bedat%5D",
+      "summary": "Returned PMID 42282599, a bioRxiv mechanistic HSC-aging preprint. It is relevant background context but not hDNAgr trial output or in vivo human stem-cell-rejuvenation outcome evidence."
+    },
+    {
+      "source_name": "PubMed ESearch and ESummary",
+      "query": "(CASIN OR Cdc42 OR \"stem cell rejuvenation\" OR \"hematopoietic stem cell\") AND aging AND 2026/06/09:2026/06/14[edat]",
+      "checked_at": "2026-06-14T17:47:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%28CASIN%20OR%20Cdc42%20OR%20%22stem%20cell%20rejuvenation%22%20OR%20%22hematopoietic%20stem%20cell%22%29%20AND%20aging%20AND%202026%2F06%2F09%3A2026%2F06%2F14%5Bedat%5D",
+      "summary": "Returned PMIDs 42282599, 42281857, 42276065, and 42260309. None provide result-bearing targeted human stem-cell-rejuvenation evidence for this track."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT06877377",
+      "study_id": "hdnagr-hsc-aging-registry",
+      "source_id": "nct-06877377",
+      "registry_url": "https://clinicaltrials.gov/study/NCT06877377",
+      "checked_at": "2026-06-14T17:45:00Z",
+      "previous_local_status": "planned",
+      "current_registry_status": "planned",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2026-02-01",
+      "study_completion_date": "2026-03-01",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "ClinicalTrials.gov still reports the planned hDNAgr aging HSC registry as not yet recruiting with no posted results and unchanged estimated completion dates; use only as bounded trial-horizon context."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "NCT06877377",
+      "title": "Study of the Safety and Efficacy of Natural Genome Reconstruction Technology of Hematopoietic Stem Cells in Adult Patients",
+      "url": "https://clinicaltrials.gov/study/NCT06877377",
+      "decision": "unchanged_registry",
+      "reason": "Directly relevant trial-watch item, but the registry is unchanged from the June 9 local record and still has no posted results."
+    },
+    {
+      "reference": "PMID 42282599",
+      "title": "Architectural fragility of gene regulatory networks underlies hematopoietic stem cell aging.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42282599/",
+      "decision": "context_only",
+      "reason": "Mechanistic HSC-aging preprint context; it does not report hDNAgr trial results or in vivo human stem-cell-rejuvenation outcomes."
+    },
+    {
+      "reference": "PMID 42276065",
+      "title": "Multiome-based identification of molecular markers for prospective identification of platelet-biased HSCs.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42276065/",
+      "decision": "context_only",
+      "reason": "HSC marker and lineage-bias context, not an aging intervention or public-track-changing rejuvenation result."
+    },
+    {
+      "reference": "PMID 42281857",
+      "title": "Immunosenescence and cancer predisposition in pediatric transplant recipients: An emerging paradigm.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42281857/",
+      "decision": "wrong_scope",
+      "reason": "Pediatric transplant and cancer-predisposition review context; not a targeted aging HSC rejuvenation intervention."
+    },
+    {
+      "reference": "PMID 42260309",
+      "title": "[Angelica sinensis promotes thymic cortical regeneration in mice with acute thymic involution induced by short-term rapamycin treatment].",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42260309/",
+      "decision": "wrong_scope",
+      "reason": "Mouse thymic-regeneration model and acute rapamycin context; not in scope for the stem-cell-rejuvenation trial-horizon question."
+    }
+  ],
+  "source_ids": [
+    "nct-06877377"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT06877377",
+    "https://clinicaltrials.gov/api/v2/studies/NCT06877377",
+    "https://clinicaltrials.gov/api/v2/studies?query.term=hDNAgr",
+    "https://pubmed.ncbi.nlm.nih.gov/42282599/",
+    "https://pubmed.ncbi.nlm.nih.gov/42276065/",
+    "https://pubmed.ncbi.nlm.nih.gov/42281857/",
+    "https://pubmed.ncbi.nlm.nih.gov/42260309/"
+  ],
+  "notes": [
+    "No public JSON was changed because the current evidence and outlook interpretation remain accurate.",
+    "For July State of the Field drafting, hDNAgr can be mentioned only as a trial-horizon boundary: planned/not yet recruiting and no posted results as of 2026-06-14.",
+    "This resolves the stem-cell-rejuvenation-specific surveillance hold; it does not clear the global trial-watch warning for unrelated stale registry records."
+  ],
+  "next_actions": [
+    "Keep NCT06877377 on the stem-cell-rejuvenation watchlist for recruitment, posted results, completion-date changes, or linked publications.",
+    "Use the hDNAgr item in State of the Field copy only if the sentence explicitly preserves the no-results boundary."
+  ]
+}
