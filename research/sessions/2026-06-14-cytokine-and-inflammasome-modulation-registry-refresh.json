@@ -1,0 +1,327 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-14-cytokine-and-inflammasome-modulation-registry-refresh",
+  "name": "Cytokine and Inflammasome Modulation Registry Metadata Refresh",
+  "mode": "surveillance",
+  "started_at": "2026-06-14T21:55:00Z",
+  "completed_at": "2026-06-14T22:12:17Z",
+  "scope": {
+    "question": "Do current ClinicalTrials.gov, ANZCTR, and PubMed checks for stale Cytokine and Inflammasome Modulation trial-watch records change the public outlook or only clear local registry metadata debt?",
+    "hallmark_ids": [
+      "chronic_inflammation"
+    ],
+    "track_ids": [
+      "cytokine-and-inflammasome-modulation"
+    ],
+    "intervention_ids": [
+      "canakinumab",
+      "colchicine",
+      "ziltivekimab",
+      "clazakizumab",
+      "dapansutrile"
+    ]
+  },
+  "selected_via": "manual_override",
+  "outcome": "no_op",
+  "summary": "Ran a bounded Cytokine and Inflammasome Modulation registry metadata refresh after the scoped trial-watch audit showed seven registry-linked studies, six stale or missing registry checks, and zero open stale watch items. Direct ClinicalTrials.gov API checks refreshed CANTOS canakinumab NCT01327846, COLCOT colchicine NCT02551094, RESCUE ziltivekimab NCT03926117, POSIBIL6ESKD/clazakizumab NCT05485961, dapansutrile HFrEF NCT03534297, and the ZEUS ziltivekimab watch item NCT05021835; ANZCTR review refreshed LoDoCo2 ACTRN12614000093684. No known registry posted a new result that changes the public outlook. Broad registry search surfaced the completed no-results RIGHT clazakizumab older-adult physical-function trial NCT05727384 and pre-window posted-result ziltivekimab Japan registry NCT04626505 as future coverage-repair context rather than current metadata-refresh public changes.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "none",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "This pass cleared stale local trial-details metadata for existing scoped records. Current registry and PubMed checks did not add new cardiovascular outcome, frailty, older-adult function, direct NLRP3 outcome, mortality, broad aging, correction, or retraction evidence beyond the already represented public baseline. The close RIGHT older-adult clazakizumab registry has no posted results, while the ziltivekimab Japan and CHIP/inflammasome registries are source-completeness or taxonomy-boundary context for a later coverage-repair pass."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial watch audit",
+      "query": "npm run audit:trials -- --track cytokine-and-inflammasome-modulation --write",
+      "checked_at": "2026-06-14T21:55:00Z",
+      "summary": "Scoped report contained 7 registry-linked studies, 0 missing trial-detail records, 6 stale or missing registry checks, 0 open stale watch items, and 1 active watch item."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "Direct checks for NCT01327846, NCT05485961, NCT02551094, NCT03534297, NCT03926117, and NCT05021835",
+      "checked_at": "2026-06-14T22:00:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT05021835",
+      "summary": "CANTOS, COLCOT, and RESCUE remained completed with posted ClinicalTrials.gov results. Dapansutrile HFrEF remained completed with no ClinicalTrials.gov results section and is still represented by its peer-reviewed source. NCT05485961 remained recruiting as the combined POSIBIL6ESKD phase 2b/3 clazakizumab outcomes study with no posted registry results. ZEUS remained active-not-recruiting with no posted results and estimated June 9, 2026 primary and study completion."
+    },
+    {
+      "source_name": "ANZCTR registry",
+      "query": "ACTRN12614000093684 LoDoCo2 trial registry",
+      "checked_at": "2026-06-14T22:01:00Z",
+      "url": "https://anzctr.org.au/Trial/Registration/TrialReview.aspx?ACTRN=12614000093684",
+      "summary": "LoDoCo2 remained completed in ANZCTR, with date last updated March 22, 2021, actual last data collection February 17, 2020, and final sample size 5522. The peer-reviewed NEJM result remains the public evidence source."
+    },
+    {
+      "source_name": "PubMed ESearch and ESummary",
+      "query": "ziltivekimab OR clazakizumab OR dapansutrile OR OLT1177 OR canakinumab OR colchicine, Entrez dates 2026/06/08 to 2026/06/14",
+      "checked_at": "2026-06-14T22:04:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Exact intervention-name PubMed search found no known-registry publication and no public-stage-changing result. Close hits included anti-IL-1 guideline updates, an OLT1177/dapansutrile macrophage preprint, a preclinical dapansutrile sepsis cardiac-injury paper, a clazakizumab transplant comment, colchicine case or adherence context, and wrong-scope inflammatory disease records."
+    },
+    {
+      "source_name": "PubMed ESearch and ESummary",
+      "query": "NCT01327846 OR NCT02551094 OR NCT03926117 OR NCT05485961 OR NCT03534297 OR NCT05021835 OR ACTRN12614000093684, Entrez dates 2026/06/08 to 2026/06/14; baseline PMIDs with retraction, erratum, corrected-and-republished, or expression-of-concern publication types",
+      "checked_at": "2026-06-14T22:05:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Known-registry same-window search returned zero PubMed records, and the correction/retraction screen returned zero records for the baseline supporting PMIDs."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "ziltivekimab; clazakizumab; dapansutrile OR OLT1177 OR NLRP3 inflammasome inhibitor; canakinumab colchicine cardiovascular inflammation aging frailty older adults; IL-6 inhibition cardiovascular chronic kidney inflammation phase 3; inflammasome inhibitor aging frailty older adults",
+      "checked_at": "2026-06-14T22:08:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "Broad registry searches returned represented studies plus no-results or boundary context. The closest same-window registry activity was RIGHT NCT05727384, a completed clazakizumab older-adult physical-function trial updated June 11, 2026 with no posted results. Other close context included ziltivekimab Japan NCT04626505 with posted results first posted May 6, 2026 and DFV890/MAS825 CHIP inflammation registry NCT06097663 with posted results first posted March 27, 2026; these predate the current delta window and belong in a future coverage-repair or taxonomy-boundary pass if prioritized."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT01327846",
+      "study_id": "cantos-canakinumab-atherosclerosis-trial",
+      "source_id": "pmid-28845751",
+      "registry_url": "https://clinicaltrials.gov/study/NCT01327846",
+      "checked_at": "2026-06-14T22:00:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2017-03-28",
+      "study_completion_date": "2019-04-14",
+      "completion_date_kind": "actual",
+      "results_first_posted_date": "2020-01-22",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "CANTOS remained completed with posted ClinicalTrials.gov results and no current registry movement. Local metadata now records registry freshness, actual completion dates, and results first-posted date."
+    },
+    {
+      "registry_id": "NCT05485961",
+      "study_id": "clazakizumab-dialysis-il6-phase2b",
+      "source_id": "pmid-38796655",
+      "registry_url": "https://clinicaltrials.gov/study/NCT05485961",
+      "checked_at": "2026-06-14T22:00:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "recruiting",
+      "previous_results_status": "posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2029-05-22",
+      "study_completion_date": "2029-05-22",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The peer-reviewed phase 2b biomarker paper remains the public evidence source, while ClinicalTrials.gov now carries the recruiting POSIBIL6ESKD phase 2b/3 cardiovascular outcomes study with no posted registry results and a last update posted June 8, 2026. This remains watch-context, not a public evidence change."
+    },
+    {
+      "registry_id": "NCT02551094",
+      "study_id": "colcot-colchicine-post-mi",
+      "source_id": "pmid-31733140",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02551094",
+      "checked_at": "2026-06-14T22:00:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2019-07-17",
+      "study_completion_date": "2019-07-17",
+      "completion_date_kind": "actual",
+      "results_first_posted_date": "2020-10-19",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "COLCOT remained completed with posted ClinicalTrials.gov results and no new registry outcome delta. Local metadata now records registry freshness, actual completion dates, and results first-posted date."
+    },
+    {
+      "registry_id": "NCT03534297",
+      "study_id": "dapansutrile-hfref-nlrp3-phase1b",
+      "source_id": "pmid-33235030",
+      "registry_url": "https://clinicaltrials.gov/study/NCT03534297",
+      "checked_at": "2026-06-14T22:00:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2019-11-21",
+      "study_completion_date": "2019-11-21",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The dapansutrile HFrEF registry remained completed with no ClinicalTrials.gov results section and a last update posted January 9, 2020. The peer-reviewed PMID 33235030 paper remains the public evidence source."
+    },
+    {
+      "registry_id": "ACTRN12614000093684",
+      "study_id": "lodoco2-colchicine-chronic-coronary-disease",
+      "source_id": "pmid-32865380",
+      "registry_url": "https://anzctr.org.au/Trial/Registration/TrialReview.aspx?ACTRN=12614000093684",
+      "checked_at": "2026-06-14T22:01:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "study_completion_date": "2020-02-17",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "LoDoCo2 remained completed in ANZCTR, with date last updated March 22, 2021, actual last data collection February 17, 2020, and final sample size 5522. The peer-reviewed NEJM result remains the public evidence source."
+    },
+    {
+      "registry_id": "NCT03926117",
+      "study_id": "rescue-ziltivekimab-ckd-inflammation",
+      "source_id": "pmid-34015342",
+      "registry_url": "https://clinicaltrials.gov/study/NCT03926117",
+      "checked_at": "2026-06-14T22:00:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2020-06-26",
+      "study_completion_date": "2020-06-26",
+      "completion_date_kind": "actual",
+      "results_first_posted_date": "2023-08-09",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "RESCUE remained completed with posted ClinicalTrials.gov results, actual completion on June 26, 2020, results first posted August 9, 2023, and a last update posted December 31, 2025. No public interpretation changed."
+    },
+    {
+      "registry_id": "NCT05021835",
+      "study_id": "zeus-ziltivekimab-cardiovascular-outcomes",
+      "source_id": "nct-05021835",
+      "registry_url": "https://clinicaltrials.gov/study/NCT05021835",
+      "checked_at": "2026-06-14T22:00:00Z",
+      "previous_local_status": "active",
+      "current_registry_status": "active",
+      "previous_results_status": "pending",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2026-06-09",
+      "study_completion_date": "2026-06-09",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "ZEUS remained active-not-recruiting with no ClinicalTrials.gov results section, a last update posted April 13, 2026, and estimated primary and study completion on June 9, 2026. It remains the main near-term IL-6 outcomes watch item."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "NCT05727384",
+      "title": "Improving Physical Function in Older Adults Using an Anti-inflammation Drug: The RIGHT Study",
+      "url": "https://clinicaltrials.gov/study/NCT05727384",
+      "decision": "no_results",
+      "reason": "Completed clazakizumab phase 2 older-adult physical-function registry, last update posted June 11, 2026, with no posted results. It is highly relevant trial-horizon context, but staging a new public source/study should be handled in a separate coverage-repair or trial-layer pass."
+    },
+    {
+      "reference": "NCT04626505",
+      "title": "Trial to Evaluate Reduction in Inflammation in Patients With Advanced Chronic Renal Disease Utilizing Antibody Mediated IL-6 Inhibition in Japan.",
+      "url": "https://clinicaltrials.gov/study/NCT04626505",
+      "decision": "context_only",
+      "reason": "Completed ziltivekimab Japan phase 2 registry with posted results first posted May 6, 2026. It predates this delta window and should be considered in a future source-completeness pass rather than this stale metadata refresh."
+    },
+    {
+      "reference": "NCT06097663",
+      "title": "DFV890 and MAS825 for inflammatory marker reduction in coronary heart disease and CHIP",
+      "url": "https://clinicaltrials.gov/study/NCT06097663",
+      "decision": "context_only",
+      "reason": "Completed inflammasome/IL-1 pathway registry in coronary heart disease with CHIP and posted results first posted March 27, 2026. It is taxonomy-boundary and source-completeness context rather than a same-window cytokine metadata-refresh public change."
+    },
+    {
+      "reference": "PMID 42282704",
+      "title": "OLT1177 (Dapansutrile) inhibits Gasdermin D-dependent IL-1beta Release and Pyroptotic Cell Death in Bone Marrow-derived Macrophages.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42282704/",
+      "decision": "context_only",
+      "reason": "Preprint/cell-mechanism dapansutrile context, not a human clinical or aging-functional result."
+    },
+    {
+      "reference": "PMID 42259094",
+      "title": "Dapansutrile alleviates sepsis-induced cardiac injury by modulating NF-kappaB-induced inflammatory response and TXNIP/NLRP3/GSDMD-mediated pyroptosis.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42259094/",
+      "decision": "wrong_scope",
+      "reason": "Preclinical sepsis-induced cardiac-injury paper; it does not change the human HFrEF or broad aging interpretation."
+    },
+    {
+      "reference": "PMID 42276158",
+      "title": "Club Rhumatismes et Inflammation guidelines for anti-interleukin-1 therapy: 2026 update.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42276158/",
+      "decision": "context_only",
+      "reason": "Guideline context for anti-IL-1 therapy, not a new result-bearing canakinumab, cardiovascular, frailty, or aging intervention source."
+    },
+    {
+      "reference": "PMID 42285605",
+      "title": "Cytokines as therapeutic targets: Insights from clinical interventions.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42285605/",
+      "decision": "context_only",
+      "reason": "Editorial-level cytokine-therapy context; it does not provide new primary evidence for the scoped public claim."
+    },
+    {
+      "reference": "PMID 42252027",
+      "title": "Comment on clazakizumab in chronic active antibody-mediated kidney transplant rejection.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42252027/",
+      "decision": "duplicate",
+      "reason": "Letter/comment on transplant clazakizumab evidence rather than a new result-bearing record for cytokine/inflammasome modulation in aging-relevant cardiovascular, frailty, CKD, or function contexts."
+    }
+  ],
+  "source_ids": [
+    "pmid-28845751",
+    "pmid-38796655",
+    "pmid-31733140",
+    "pmid-33235030",
+    "pmid-32865380",
+    "pmid-34015342",
+    "pmid-41369941",
+    "nct-05021835"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT01327846",
+    "https://clinicaltrials.gov/study/NCT05485961",
+    "https://clinicaltrials.gov/study/NCT02551094",
+    "https://clinicaltrials.gov/study/NCT03534297",
+    "https://clinicaltrials.gov/study/NCT03926117",
+    "https://clinicaltrials.gov/study/NCT05021835",
+    "https://clinicaltrials.gov/study/NCT05727384",
+    "https://clinicaltrials.gov/study/NCT04626505",
+    "https://clinicaltrials.gov/study/NCT06097663",
+    "https://anzctr.org.au/Trial/Registration/TrialReview.aspx?ACTRN=12614000093684",
+    "https://pubmed.ncbi.nlm.nih.gov/28845751/",
+    "https://pubmed.ncbi.nlm.nih.gov/38796655/",
+    "https://pubmed.ncbi.nlm.nih.gov/31733140/",
+    "https://pubmed.ncbi.nlm.nih.gov/33235030/",
+    "https://pubmed.ncbi.nlm.nih.gov/32865380/",
+    "https://pubmed.ncbi.nlm.nih.gov/34015342/",
+    "https://pubmed.ncbi.nlm.nih.gov/41369941/",
+    "https://pubmed.ncbi.nlm.nih.gov/42282704/",
+    "https://pubmed.ncbi.nlm.nih.gov/42259094/",
+    "https://pubmed.ncbi.nlm.nih.gov/42276158/",
+    "https://pubmed.ncbi.nlm.nih.gov/42285605/",
+    "https://pubmed.ncbi.nlm.nih.gov/42252027/"
+  ],
+  "notes": [
+    "This pass was selected manually from the global stale registry-check report after the State of the Field packet showed no open approval items and the July edition remained date-blocked.",
+    "The completed local studies remain posted-result context because their result-bearing peer-reviewed or registry sources are already represented.",
+    "NCT05485961 is a boundary case because the local study represents a published phase 2b biomarker paper, while the current ClinicalTrials.gov record also carries the recruiting POSIBIL6ESKD outcomes study. The local metadata was refreshed without treating that recruiting no-results extension as a new public evidence result.",
+    "RIGHT/NCT05727384 and ziltivekimab Japan/NCT04626505 are likely worth a future no-results or source-completeness pass, but were not staged here because this pass was scoped to current metadata and same-window deltas."
+  ],
+  "next_actions": [
+    "Regenerate the scoped and global trial-watch reports so the State of the Field blocker reflects the refreshed cytokine/inflammasome metadata.",
+    "Consider a future Cytokine and Inflammasome Modulation coverage-repair pass for RIGHT/NCT05727384, ziltivekimab Japan/NCT04626505, CHIP inflammasome-boundary records, and the no-results registry layer if source completeness is prioritized.",
+    "Continue the stale registry metadata queue with the next coherent track-level batch rather than mixing unrelated tracks in one session."
+  ]
+}

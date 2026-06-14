@@ -9,7 +9,7 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 - With `trial_details`: 143
 - Missing `trial_details`: 0
 - Completed or past-completion records with no posted results: 25
-- Registry checks missing or stale: 36
+- Registry checks missing or stale: 30
 - Open watchlist records with missing or stale registry checks: 0
 - Posted results recorded locally: 82
 
@@ -56,10 +56,10 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 - [D+Q idiopathic pulmonary fibrosis randomized feasibility trial](https://pubmed.ncbi.nlm.nih.gov/30616998/) (NCT02874989): completed; no posted results; completion not recorded; registry 2026-06-11 (3 days old).
 - [TA-65 metabolic syndrome completed registry](https://clinicaltrials.gov/study/NCT02531334) (NCT02531334): completed; no posted results; completion not recorded; registry 2026-06-10 (4 days old).
 - [SHAPE elamipretide healthy-aging pilot](https://clinicaltrials.gov/study/NCT07275424) (NCT07275424): recruiting; not expected yet; completion 2026-03-15; registry 2026-06-14 (0 days old).
+- [ZEUS ziltivekimab cardiovascular outcomes trial](https://clinicaltrials.gov/study/NCT05021835) (NCT05021835): active; not expected yet; completion 2026-06-09; registry 2026-06-14 (0 days old).
 - [Spermidine elderly coronary artery disease registry](https://clinicaltrials.gov/study/NCT06186102) (NCT06186102): active; no posted results; completion 2026-07-01; registry 2026-06-11 (3 days old).
 - [Everolimus Aging geroprotection registry](https://clinicaltrials.gov/study/NCT05835999) (NCT05835999): active; no posted results; completion 2026-09-01; registry 2026-06-11 (3 days old).
 - [AFFIRM fisetin frailty and inflammation registry in older women](https://clinicaltrials.gov/study/NCT03430037) (NCT03430037): recruiting; no posted results; completion 2026-11-01; registry 2026-06-11 (3 days old).
-- [AFFIRM-LITE fisetin frailty and inflammation registry](https://clinicaltrials.gov/study/NCT03675724) (NCT03675724): recruiting; no posted results; completion 2026-11-01; registry 2026-06-11 (3 days old).
 
 ## Completed Or Past-Completion With No Posted Results
 
@@ -98,19 +98,14 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 - [ART-AD lamivudine early Alzheimer's trial](https://pubmed.ncbi.nlm.nih.gov/40104524/) (NCT04552795): completed; posted results; completion 2023-11-04; registry no local check date.
 - [AMBAR plasma exchange Alzheimer disease trial](https://pubmed.ncbi.nlm.nih.gov/32715623/) (NCT01561053): completed; posted results; completion not recorded; registry no local check date.
 - [Arimoclomol inclusion body myositis randomized trial](https://pubmed.ncbi.nlm.nih.gov/37739573/) (NCT02753530): completed; posted results; completion not recorded; registry no local check date.
-- [CANTOS canakinumab atherosclerosis trial](https://pubmed.ncbi.nlm.nih.gov/28845751/) (NCT01327846): completed; posted results; completion not recorded; registry no local check date.
 - [CANTOS CHIP canakinumab cancer incidence analysis](https://pubmed.ncbi.nlm.nih.gov/28845751/) (NCT01327846): completed; posted results; completion not recorded; registry no local check date.
 - [CANTOS TET2 CHIP canakinumab substudy](https://pubmed.ncbi.nlm.nih.gov/28845751/) (NCT01327846): completed; posted results; completion not recorded; registry no local check date.
-- [Clazakizumab dialysis IL-6 phase 2b trial](https://pubmed.ncbi.nlm.nih.gov/38796655/) (NCT05485961): completed; posted results; completion not recorded; registry no local check date.
-- [COLCOT low-dose colchicine post-myocardial-infarction trial](https://pubmed.ncbi.nlm.nih.gov/31733140/) (NCT02551094): completed; posted results; completion not recorded; registry no local check date.
-- [Dapansutrile HFrEF NLRP3 phase 1B trial](https://pubmed.ncbi.nlm.nih.gov/33235030/) (NCT03534297): completed; posted results; completion not recorded; registry no local check date.
 - [Fasting-mimicking diet aging risk-factor randomized trial](https://pubmed.ncbi.nlm.nih.gov/28202779/) (NCT02158897): completed; posted results; completion not recorded; registry no local check date.
 - [Fasting-mimicking diet autophagic flux pilot](https://pubmed.ncbi.nlm.nih.gov/41372565/) (NCT06115551): completed; posted results; completion not recorded; registry no local check date.
 - [Fasting-mimicking diet biological-age and disease-risk marker analysis](https://pubmed.ncbi.nlm.nih.gov/28202779/) (NCT02158897, NCT04150159): completed; posted results; completion not recorded; registry no local check date.
 - [Fasting-mimicking diet protein-content randomized study](https://pubmed.ncbi.nlm.nih.gov/40816210/) (NCT06560996): completed; posted results; completion not recorded; registry no local check date.
 - [High-purity spermidine older-men safety trial](https://pubmed.ncbi.nlm.nih.gov/39405978/) (NCT05459961): completed; posted results; completion not recorded; registry no local check date.
 - Lean-donor intestinal microbiota transfer in metabolic syndrome (NTR1776): completed; posted results; completion not recorded; registry no local check date.
-- [LoDoCo2 low-dose colchicine chronic coronary disease trial](https://pubmed.ncbi.nlm.nih.gov/32865380/) (ACTRN12614000093684): completed; posted results; completion not recorded; registry no local check date.
 - MET-PREVENT metformin physical-performance frailty trial (ISRCTN29932357): completed; posted results; completion not recorded; registry no local check date.
 - METFORAGING metformin epigenetic-age pilot trial (EudraCT 2021-003299-15): completed; posted results; completion not recorded; registry no local check date.
 - [Metformin frailty-prevention trial in high-risk older adults](https://clinicaltrials.gov/study/NCT02570672) (NCT02570672): completed; posted results; completion not recorded; registry 2025-08-06 (312 days old).
@@ -125,7 +120,6 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 - [PLASMA young plasma Alzheimer disease trial](https://pubmed.ncbi.nlm.nih.gov/30383097/) (NCT02256306): completed; posted results; completion not recorded; registry no local check date.
 - [Plexoval II platelet extracellular vesicle wound-healing phase I trial](https://pubmed.ncbi.nlm.nih.gov/37353884/) (ACTRN12620000944932): completed; posted results; completion not recorded; registry no local check date.
 - [Polyphenol-rich diet indole-3-propionic acid older-adult trial](https://pubmed.ncbi.nlm.nih.gov/35315592/) (ISRCTN10214981): completed; posted results; completion not recorded; registry no local check date.
-- [RESCUE ziltivekimab chronic kidney disease inflammation trial](https://pubmed.ncbi.nlm.nih.gov/34015342/) (NCT03926117): completed; posted results; completion not recorded; registry no local check date.
 - [TBC169 synbiotic chronic constipation trial in middle-aged and elderly adults](https://pubmed.ncbi.nlm.nih.gov/42226670/) (ChiCTR2400085844): completed; posted results; completion not recorded; registry no local check date.
 
 ## Missing Trial Details
