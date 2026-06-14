@@ -216,6 +216,8 @@ Policy: prunable and regenerable.
 
 Reports under `extra/` are useful snapshots, not canonical data. They can be overwritten or removed when stale if the generating command remains available.
 
+Committed generated reports should avoid wall-clock timestamps so repeated verification runs do not create meaningless diffs.
+
 ### Draft Work
 
 Path:

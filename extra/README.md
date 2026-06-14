@@ -19,3 +19,5 @@ This directory holds exploratory or handoff documentation that is related to the
 ## Status
 
 Files in this directory are design artifacts. They may inform future implementation work, but they should not be treated as live product documentation unless promoted into `docs/`.
+
+Generated reports are committed snapshots. Report generators avoid wall-clock timestamps so rerunning a report only creates a diff when the underlying data, audit result, or report format changes.

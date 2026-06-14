@@ -58,6 +58,8 @@ A research run should usually produce one session record, zero or one staged bun
 
 Reports under `extra/` are design or audit artifacts. They can guide implementation and review, but they are not public product data unless promoted into `docs/` or `data/`.
 
+Committed generated reports should be stable snapshots: rerunning a report should not create a timestamp-only diff. If a report changes, the diff should reflect changed data, changed audit output, or changed report format.
+
 ## Sustainability Checks
 
 Run these before treating a data-maintenance pass as complete:
