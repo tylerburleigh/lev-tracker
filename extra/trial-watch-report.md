@@ -8,9 +8,9 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 - Registry-linked interventional studies: 143
 - With `trial_details`: 142
 - Missing `trial_details`: 1
-- Completed or past-completion records with no posted results: 24
-- Registry checks missing or stale: 65
-- Open watchlist records with missing or stale registry checks: 2
+- Completed or past-completion records with no posted results: 25
+- Registry checks missing or stale: 64
+- Open watchlist records with missing or stale registry checks: 1
 - Posted results recorded locally: 81
 
 ### Result Status
@@ -32,6 +32,7 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 ## Field-Review Watchlist
 
 - [Cycloastragenol retinal amyloid registry](https://clinicaltrials.gov/study/NCT02530255) (NCT02530255): completed; no posted results; completion 2018-10-31; registry 2026-06-10 (4 days old).
+- [Libella AAV-hTERT aging phase 1 registry study](https://clinicaltrials.gov/study/NCT04133649) (NCT04133649): unknown; no posted results; completion 2021-01-01; registry 2026-06-14 (0 days old).
 - [Plasmapheresis aging-biomarker registry](https://clinicaltrials.gov/study/NCT04897113) (NCT04897113): unknown; no posted results; completion 2022-10-30; registry 2026-06-09 (5 days old).
 - [FMD immunosenescence prefrail elderly registry](https://clinicaltrials.gov/study/NCT04928963) (NCT04928963): unknown; no posted results; completion 2022-11-01; registry 2026-06-11 (3 days old).
 - [KH-1 autophagy prediabetes registry](https://clinicaltrials.gov/study/NCT06445569) (NCT06445569): completed; no posted results; completion 2023-06-08; registry 2026-06-11 (3 days old).
@@ -55,7 +56,6 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 - [D+Q first-in-human idiopathic pulmonary fibrosis open-label pilot](https://pubmed.ncbi.nlm.nih.gov/30616998/) (NCT02874989): completed; no posted results; completion not recorded; registry 2026-06-11 (3 days old).
 - [D+Q idiopathic pulmonary fibrosis randomized feasibility trial](https://pubmed.ncbi.nlm.nih.gov/30616998/) (NCT02874989): completed; no posted results; completion not recorded; registry 2026-06-11 (3 days old).
 - [TA-65 metabolic syndrome completed registry](https://clinicaltrials.gov/study/NCT02531334) (NCT02531334): completed; no posted results; completion not recorded; registry 2026-06-10 (4 days old).
-- [Libella AAV-hTERT aging phase 1 registry study](https://clinicaltrials.gov/study/NCT04133649) (NCT04133649): unknown; no posted results; completion not recorded; registry no local check date.
 - [SHAPE elamipretide healthy-aging pilot](https://clinicaltrials.gov/study/NCT07275424) (NCT07275424): recruiting; not expected yet; completion 2026-04-15; registry 2026-06-02 (12 days old).
 - [Spermidine elderly coronary artery disease registry](https://clinicaltrials.gov/study/NCT06186102) (NCT06186102): active; no posted results; completion 2026-07-01; registry 2026-06-11 (3 days old).
 - [Everolimus Aging geroprotection registry](https://clinicaltrials.gov/study/NCT05835999) (NCT05835999): active; no posted results; completion 2026-09-01; registry 2026-06-11 (3 days old).
@@ -65,6 +65,7 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 ## Completed Or Past-Completion With No Posted Results
 
 - [Cycloastragenol retinal amyloid registry](https://clinicaltrials.gov/study/NCT02530255) (NCT02530255): completed; no posted results; completion 2018-10-31; registry 2026-06-10 (4 days old).
+- [Libella AAV-hTERT aging phase 1 registry study](https://clinicaltrials.gov/study/NCT04133649) (NCT04133649): unknown; no posted results; completion 2021-01-01; registry 2026-06-14 (0 days old).
 - [Plasmapheresis aging-biomarker registry](https://clinicaltrials.gov/study/NCT04897113) (NCT04897113): unknown; no posted results; completion 2022-10-30; registry 2026-06-09 (5 days old).
 - [FMD immunosenescence prefrail elderly registry](https://clinicaltrials.gov/study/NCT04928963) (NCT04928963): unknown; no posted results; completion 2022-11-01; registry 2026-06-11 (3 days old).
 - [KH-1 autophagy prediabetes registry](https://clinicaltrials.gov/study/NCT06445569) (NCT06445569): completed; no posted results; completion 2023-06-08; registry 2026-06-11 (3 days old).

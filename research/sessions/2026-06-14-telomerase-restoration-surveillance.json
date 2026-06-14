@@ -1,0 +1,318 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-14-telomerase-restoration-surveillance",
+  "name": "Telomerase Restoration Trial-Horizon Surveillance",
+  "mode": "surveillance",
+  "started_at": "2026-06-14T18:52:00Z",
+  "completed_at": "2026-06-14T18:56:00Z",
+  "scope": {
+    "question": "Do current Libella AAV-hTERT registry, same-window publication, or sponsor-web checks change the Telomerase Restoration outlook or clear stale local trial-watch metadata?",
+    "hallmark_ids": [
+      "telomere_attrition"
+    ],
+    "track_ids": [
+      "telomerase-restoration"
+    ],
+    "intervention_ids": [
+      "aav-htert",
+      "ta-65",
+      "tat2"
+    ]
+  },
+  "selected_via": "manual_override",
+  "outcome": "no_op",
+  "summary": "Ran a focused Telomerase Restoration surveillance pass to reconcile the stale Libella AAV-hTERT aging registry watch record. ClinicalTrials.gov still lists NCT04133649 with unknown overall status, last-known recruiting status, no posted results, estimated primary and study completion in January 2021, and last update posted December 10, 2019. The other seven scoped telomerase registry records remain no-results context consistent with the June 10 coverage repair: two Libella disease-context AAV-hTERT registries, three historical TA-65 registries, one cycloastragenol disease-boundary registry, and one planned TA-65 microvascular dysfunction registry. Same-window PubMed searches found no Libella, AAV-hTERT, TA-65, telomerase-restoration, correction, or safety result that changes the public outlook. Web search found registry mirrors, pipeline pages, and old news/context pages but no result-bearing Libella disclosure. No outlook, stage, momentum, confidence, source, finding, activity, bundle, or coverage assessment update is warranted.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "none",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The stale NCT04133649 item was a local registry-check metadata gap, not a field delta. Current registry checks show no posted results and no evidence that would alter the tentative human_biomarker_signal Telomerase Restoration read. The public study metadata was refreshed only to record the June 14 registry check and structured estimated completion timing."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial watch audit",
+      "query": "npm run audit:trials -- --track telomerase-restoration --write",
+      "checked_at": "2026-06-14T18:52:00Z",
+      "summary": "Scoped report contained 8 registry-linked Telomerase Restoration studies, 0 missing trial-detail records, 1 stale or missing registry check, and 1 open stale watch item. The stale item was NCT04133649."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "Direct checks for NCT04133649, NCT04133454, NCT04110964, NCT02530255, NCT02531334, NCT01753674, NCT05598359, and NCT02766790",
+      "checked_at": "2026-06-14T18:53:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT04133649",
+      "summary": "NCT04133649 remains UNKNOWN with last-known RECRUITING status, hasResults=false, five estimated participants, January 2021 estimated primary and study completion, and last update posted December 10, 2019. The other scoped telomerase records remained no-results context: NCT04133454 and NCT04110964 are unknown-status Libella disease-context AAV-hTERT registries; NCT02530255, NCT02531334, and NCT01753674 are completed or terminated no-results telomerase-activator records; NCT05598359 is not yet recruiting; and NCT02766790 remains unknown status with no posted results."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "AAV-hTERT hTERT Libella; AAV-hTERT OR hTERT aging; TA-65 telomerase activator aging",
+      "checked_at": "2026-06-14T18:54:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "The AAV-hTERT and Libella queries returned the same three Libella registries: NCT04133649, NCT04133454, and NCT04110964, all unknown status and no posted results. The focused TA-65/telomerase activator query returned the already-recorded retinal amyloid registry NCT02530255. No new result-bearing telomerase-restoration registry was found."
+    },
+    {
+      "source_name": "PubMed ESearch and ESummary",
+      "query": "(telomerase OR hTERT OR TA-65 OR \"telomerase activator\" OR AAV-hTERT OR telomere length) AND (aging OR ageing OR older OR senescence OR healthspan OR longevity) AND 2026/06/10:2026/06/14[edat]",
+      "checked_at": "2026-06-14T18:54:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned 10 records. Close hits were wrong-scope, review, observational, in vitro, non-telomerase-restoration intervention, oncology, wildlife, or general biomarker context rather than a Libella, AAV-hTERT, TA-65, or human telomerase-restoration result."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "query": "\"NCT04133649\" OR Libella OR AAV-hTERT",
+      "checked_at": "2026-06-14T18:54:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Returned no NCT04133649 or Libella trial result. The returned AAV/hTERT hits were old wrong-scope oncology vector papers, not aging or Libella AAV-hTERT clinical evidence."
+    },
+    {
+      "source_name": "Web and sponsor-program search",
+      "query": "Libella AAV-hTERT aging trial results NCT04133649 2026; Libella Gene Therapeutics AAV-hTERT results aging trial; NCT04133649 Libella results",
+      "checked_at": "2026-06-14T18:55:00Z",
+      "url": "https://clinicaltrials.gov/study/NCT04133649",
+      "summary": "Search results surfaced ClinicalTrials.gov, trial mirrors, pipeline pages, older news/context, and review pages. No current sponsor, registry, or publication page reported Libella AAV-hTERT aging trial results."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT04133649",
+      "study_id": "libella-aav-htert-aging-phase1-registry",
+      "source_id": "nct-04133649",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04133649",
+      "checked_at": "2026-06-14T18:53:00Z",
+      "previous_local_status": "unknown",
+      "current_registry_status": "unknown",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2021-01-01",
+      "study_completion_date": "2021-01-01",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The Libella AAV-hTERT aging phase 1 registry remains unknown status, last-known recruiting, no posted results, five planned participants, and estimated completion in January 2021. Local metadata was refreshed with the June 14 registry check and structured completion month."
+    },
+    {
+      "registry_id": "NCT04133454",
+      "study_id": "libella-aav-htert-alzheimer-registry",
+      "source_id": "nct-04133454",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04133454",
+      "checked_at": "2026-06-14T18:53:00Z",
+      "previous_local_status": "unknown",
+      "current_registry_status": "unknown",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2021-01-01",
+      "study_completion_date": "2021-01-01",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "none",
+      "summary": "The Libella Alzheimer disease AAV-hTERT registry remains unknown status with last-known recruiting status and no posted results."
+    },
+    {
+      "registry_id": "NCT04110964",
+      "study_id": "libella-aav-htert-critical-limb-ischemia-registry",
+      "source_id": "nct-04110964",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04110964",
+      "checked_at": "2026-06-14T18:53:00Z",
+      "previous_local_status": "unknown",
+      "current_registry_status": "unknown",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2020-12-01",
+      "study_completion_date": "2020-12-01",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "none",
+      "summary": "The Libella critical limb ischemia AAV-hTERT registry remains unknown status with last-known recruiting status and no posted results."
+    },
+    {
+      "registry_id": "NCT02530255",
+      "study_id": "cycloastragenol-retinal-amyloid-registry",
+      "source_id": "nct-02530255",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02530255",
+      "checked_at": "2026-06-14T18:53:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2018-10-31",
+      "study_completion_date": "2018-12-31",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "none",
+      "summary": "The cycloastragenol retinal amyloid registry remains completed with no posted results."
+    },
+    {
+      "registry_id": "NCT02531334",
+      "study_id": "ta65-metabolic-syndrome-completed-registry",
+      "source_id": "nct-02531334",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02531334",
+      "checked_at": "2026-06-14T18:53:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2017-12-01",
+      "study_completion_date": "2018-06-01",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "none",
+      "summary": "The completed TA-65 metabolic syndrome registry remains no-results context."
+    },
+    {
+      "registry_id": "NCT01753674",
+      "study_id": "ta65-metabolic-syndrome-terminated-registry",
+      "source_id": "nct-01753674",
+      "registry_url": "https://clinicaltrials.gov/study/NCT01753674",
+      "checked_at": "2026-06-14T18:53:00Z",
+      "previous_local_status": "terminated",
+      "current_registry_status": "terminated",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2014-06-01",
+      "study_completion_date": "2014-06-01",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "none",
+      "summary": "The terminated TA-65 metabolic syndrome registry remains no-results context."
+    },
+    {
+      "registry_id": "NCT05598359",
+      "study_id": "ta65-microvascular-dysfunction-registry",
+      "source_id": "nct-05598359",
+      "registry_url": "https://clinicaltrials.gov/study/NCT05598359",
+      "checked_at": "2026-06-14T18:53:00Z",
+      "previous_local_status": "planned",
+      "current_registry_status": "planned",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2028-12-31",
+      "study_completion_date": "2029-12-31",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "none",
+      "summary": "The TA-65 microvascular dysfunction registry remains not-yet-recruiting with no posted results."
+    },
+    {
+      "registry_id": "NCT02766790",
+      "study_id": "ta65md-healthy-volunteers-registry",
+      "source_id": "nct-02766790",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02766790",
+      "checked_at": "2026-06-14T18:53:00Z",
+      "previous_local_status": "unknown",
+      "current_registry_status": "unknown",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2017-05-01",
+      "study_completion_date": "2017-07-01",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "none",
+      "summary": "The TA-65MD healthy-volunteer registry remains unknown status with last-known recruiting status and no posted results."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 42277759",
+      "title": "Pistacia atlantica subsp. mutica essencial oil enhances proliferation and telomerase activity in senescent mesenchymal stem cells.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42277759/",
+      "decision": "context_only",
+      "reason": "Same-window in vitro senescent mesenchymal stem cell paper with telomerase-activity context, not a human telomerase-restoration intervention or Libella result."
+    },
+    {
+      "reference": "PMID 42280293",
+      "title": "Geroprotective Potential of Centella asiatica: Modulation of Cellular Aging.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42280293/",
+      "decision": "context_only",
+      "reason": "Review-level botanical geroprotection context, not a result-bearing TA-65, AAV-hTERT, or telomerase-restoration source."
+    },
+    {
+      "reference": "PMID 42265534",
+      "title": "Urate-Related Genetic Risk Modulates the Anti-Aging Effects of Exogenous Nucleotides: Multi-Omics Evidence From Older Adults.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42265534/",
+      "decision": "wrong_scope",
+      "reason": "Older-adult intervention context, but the intervention is exogenous nucleotides rather than telomerase restoration."
+    },
+    {
+      "reference": "PMID 42281947",
+      "title": "DNA methylation-estimated phenotypes, telomere length, aging and risk of intracranial aneurysms: Evidence from genetic studies.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42281947/",
+      "decision": "method_limit",
+      "reason": "Genetic and biomarker association context around telomere length, not a telomerase-restoration intervention."
+    },
+    {
+      "reference": "PMID 42268545",
+      "title": "Context-dependent telomere dynamics in wild fish populations under anthropogenic stress.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42268545/",
+      "decision": "wrong_scope",
+      "reason": "Wildlife telomere dynamics context, not human or translational telomerase-restoration evidence."
+    },
+    {
+      "reference": "ClinicalTrials.gov NCT04133649 mirrors and pipeline pages",
+      "title": "Libella AAV-hTERT trial mirrors and pipeline summaries",
+      "url": "https://clinicaltrials.gov/study/NCT04133649",
+      "decision": "duplicate",
+      "reason": "Search returned ClinicalTrials.gov mirrors, pipeline summaries, and old news about the same unknown-status no-results registry; none added result-bearing primary evidence beyond the registry."
+    }
+  ],
+  "source_ids": [
+    "nct-04133649",
+    "nct-04133454",
+    "nct-04110964",
+    "nct-02530255",
+    "nct-02531334",
+    "nct-01753674",
+    "nct-05598359",
+    "nct-02766790"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT04133649",
+    "https://clinicaltrials.gov/study/NCT04133454",
+    "https://clinicaltrials.gov/study/NCT04110964",
+    "https://clinicaltrials.gov/study/NCT02530255",
+    "https://clinicaltrials.gov/study/NCT02531334",
+    "https://clinicaltrials.gov/study/NCT01753674",
+    "https://clinicaltrials.gov/study/NCT05598359",
+    "https://clinicaltrials.gov/study/NCT02766790",
+    "https://pubmed.ncbi.nlm.nih.gov/42277759/",
+    "https://pubmed.ncbi.nlm.nih.gov/42280293/",
+    "https://pubmed.ncbi.nlm.nih.gov/42265534/",
+    "https://pubmed.ncbi.nlm.nih.gov/42281947/",
+    "https://pubmed.ncbi.nlm.nih.gov/42268545/"
+  ],
+  "notes": [
+    "This pass was selected manually after the global trial-watch audit showed two remaining open stale records and Libella AAV-hTERT aging was first in the report.",
+    "The delta window is anchored to the 2026-06-10 Telomerase Restoration coverage repair and the 2026-06-10 public outlook update.",
+    "No coverage assessment update is needed because the June 10 coverage repair already captured Libella AAV-hTERT and telomerase-activator no-results registry boundaries."
+  ],
+  "next_actions": [
+    "Continue ordinary surveillance for posted Libella AAV-hTERT, TA-65, telomerase-activator, or TERT mRNA results and long-term telomerase safety signals.",
+    "Create a public bundle only if future evidence changes stage, evidence weight, momentum, blockers, safety, durability, human target engagement, functional outcomes, or the telomerase-restoration translation boundary."
+  ]
+}
