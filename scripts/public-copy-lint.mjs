@@ -138,6 +138,12 @@ function collectStateOfField(records, source, edition) {
   addText(records, source, "$.why_it_matters", edition.why_it_matters);
   addTextArray(records, source, "$.what_did_not_change", edition.what_did_not_change);
   addTextArray(records, source, "$.reader_takeaways", edition.reader_takeaways);
+  addTextArray(records, source, "$.review_basis.caveats", edition.review_basis?.caveats);
+
+  for (const [index, item] of (edition.review_basis?.items ?? []).entries()) {
+    addText(records, source, `$.review_basis.items[${index}].label`, item.label);
+    addText(records, source, `$.review_basis.items[${index}].summary`, item.summary);
+  }
 
   for (const [index, change] of (edition.what_changed ?? []).entries()) {
     addText(records, source, `$.what_changed[${index}].title`, change.title);

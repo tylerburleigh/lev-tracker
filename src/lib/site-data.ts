@@ -530,6 +530,7 @@ export type StateOfFieldEdition = CuratedContentReviewMeta & {
   evidence_gaps: StateOfFieldLabeledTextItem[];
   track_examples: StateOfFieldTrackExample[];
   reader_takeaways: string[];
+  review_basis: StateOfFieldReviewBasis;
   revision_history: StateOfFieldRevisionHistoryItem[];
 };
 
@@ -540,6 +541,28 @@ export type StateOfFieldChangeKind =
   | "activity_without_results";
 
 export type StateOfFieldChangeStatus = "material_change" | "mixed" | "no_material_change";
+
+export type StateOfFieldReviewBasisKey =
+  | "public_updates"
+  | "outlooks"
+  | "trial_horizon"
+  | "current_context"
+  | "field_activity"
+  | "other";
+
+export type StateOfFieldReviewBasis = {
+  items: StateOfFieldReviewBasisItem[];
+  caveats: string[];
+};
+
+export type StateOfFieldReviewBasisItem = {
+  key: StateOfFieldReviewBasisKey;
+  label: string;
+  count: number;
+  unit_singular: string;
+  unit_plural?: string;
+  summary: string;
+};
 
 export type StateOfFieldChangeItem = {
   change_kind: StateOfFieldChangeKind;

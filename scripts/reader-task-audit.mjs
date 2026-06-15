@@ -342,12 +342,12 @@ async function main() {
   addCheck(
     checks,
     "State of the Field index previews monthly review status",
-    ["fieldChangeStatusLabels", "edition.field_change_status", "edition.trial_horizon.length"].every((marker) =>
+    ["fieldChangeStatusLabels", "edition.field_change_status", "edition.review_basis.items"].every((marker) =>
       stateOfFieldIndexSource.includes(marker)
     )
       ? "pass"
       : "fail",
-    "State of the Field index should preview status and trial-horizon scope for each monthly review."
+    "State of the Field index should preview status and audited review-basis counts for each monthly review."
   );
 
   addCheck(
@@ -363,13 +363,13 @@ async function main() {
       "edition.signals_to_watch",
       "edition.evidence_gaps",
       "edition.track_examples",
-      "edition.related_publication_event_ids",
-      "edition.related_outlook_ids"
+      "edition.review_basis.items",
+      "edition.review_basis.caveats"
     ].every((marker) => stateOfFieldDetailSource.includes(marker)) &&
       !stateOfFieldDetailSource.includes("isNoMaterialChange")
       ? "pass"
       : "fail",
-    "Detail page should render the monthly interpretation, unchanged boundaries, evidence gaps, examples, and review-basis inputs even when no material field change occurred."
+    "Detail page should render the monthly interpretation, unchanged boundaries, evidence gaps, examples, and durable review-basis inputs even when no material field change occurred."
   );
 
   const missingHallmarkOutlooks = Array.from(hallmarkIds).filter(

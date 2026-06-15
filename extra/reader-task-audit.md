@@ -32,9 +32,9 @@ Warnings: 0
 - PASS: Tracks index uses reader-facing coverage labels
   Homepage and tracks index should use research tracks / public outlook language.
 - PASS: State of the Field index previews monthly review status
-  State of the Field index should preview status and trial-horizon scope for each monthly review.
+  State of the Field index should preview status and audited review-basis counts for each monthly review.
 - PASS: State of the Field detail page surfaces required monthly review fields
-  Detail page should render the monthly interpretation, unchanged boundaries, evidence gaps, examples, and review-basis inputs even when no material field change occurred.
+  Detail page should render the monthly interpretation, unchanged boundaries, evidence gaps, examples, and durable review-basis inputs even when no material field change occurred.
 - PASS: Every hallmark has a readable top-level outlook
   12 hallmark outlook(s) have evidence-gap, strongest-evidence, and interpretation copy.
 - PASS: Current LEV story has a current review state

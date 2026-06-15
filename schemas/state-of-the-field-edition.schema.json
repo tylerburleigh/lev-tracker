@@ -26,6 +26,7 @@
     "evidence_gaps",
     "track_examples",
     "reader_takeaways",
+    "review_basis",
     "last_reviewed",
     "review_reason",
     "revision_history"
@@ -61,6 +62,78 @@
         "mixed",
         "no_material_change"
       ]
+    },
+    "reviewBasisKey": {
+      "type": "string",
+      "enum": [
+        "public_updates",
+        "outlooks",
+        "trial_horizon",
+        "current_context",
+        "field_activity",
+        "other"
+      ]
+    },
+    "reviewBasisItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "key",
+        "label",
+        "count",
+        "unit_singular",
+        "summary"
+      ],
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/reviewBasisKey"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unit_singular": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unit_plural": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "reviewBasis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "items",
+        "caveats"
+      ],
+      "properties": {
+        "items": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "$ref": "#/$defs/reviewBasisItem"
+          }
+        },
+        "caveats": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
     },
     "changeItem": {
       "type": "object",
@@ -332,6 +405,9 @@
         "type": "string",
         "minLength": 1
       }
+    },
+    "review_basis": {
+      "$ref": "#/$defs/reviewBasis"
     },
     "last_reviewed": {
       "$ref": "./common.schema.json#/$defs/isoDate"

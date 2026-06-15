@@ -4,6 +4,7 @@ import { PageHero } from "@/components/page-hero";
 import { SiteShell } from "@/components/site-shell";
 import { formatDate } from "@/lib/date";
 import { getOverallLastUpdated, getStateOfTheFieldEditions } from "@/lib/site-data";
+import type { StateOfFieldEdition, StateOfFieldReviewBasisKey } from "@/lib/site-data";
 
 const fieldChangeStatusLabels = {
   material_change: "Material field change",
@@ -13,6 +14,15 @@ const fieldChangeStatusLabels = {
 
 function formatCount(count: number, singular: string, plural = `${singular}s`) {
   return `${count} ${count === 1 ? singular : plural}`;
+}
+
+function findReviewBasisItem(edition: StateOfFieldEdition, key: StateOfFieldReviewBasisKey) {
+  return edition.review_basis.items.find((item) => item.key === key);
+}
+
+function formatReviewBasisCount(edition: StateOfFieldEdition, key: StateOfFieldReviewBasisKey) {
+  const item = findReviewBasisItem(edition, key);
+  return item ? formatCount(item.count, item.unit_singular, item.unit_plural) : undefined;
 }
 
 export default async function StateOfTheFieldIndexPage() {
@@ -38,8 +48,8 @@ export default async function StateOfTheFieldIndexPage() {
                 <span className={`state-status-pill state-status-pill--${edition.field_change_status}`}>
                   {fieldChangeStatusLabels[edition.field_change_status]}
                 </span>
-                <span>{formatCount(edition.trial_horizon.length, "trial watch item")}</span>
-                <span>{formatCount(edition.related_publication_event_ids?.length ?? 0, "linked update")}</span>
+                <span>{formatReviewBasisCount(edition, "trial_horizon")}</span>
+                <span>{formatReviewBasisCount(edition, "public_updates")}</span>
               </div>
               <p>{edition.lede}</p>
               <span className="editorial-card__bottom-line">{edition.bottom_line}</span>

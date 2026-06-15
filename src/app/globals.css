@@ -1804,7 +1804,7 @@ time {
 
 .state-review-basis {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 12px;
 }
 
@@ -1834,6 +1834,18 @@ time {
   color: var(--text-soft);
   font-size: 0.94rem;
   line-height: 1.5;
+}
+
+.state-review-basis__caveats {
+  max-width: 72rem;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: rgba(255, 253, 246, 0.54);
+}
+
+.state-review-basis__caveats li {
+  font-size: 0.96rem;
 }
 
 .state-change-card--outlook {

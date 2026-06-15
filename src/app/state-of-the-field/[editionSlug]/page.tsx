@@ -30,6 +30,10 @@ function formatCount(count: number, singular: string, plural = `${singular}s`) {
   return `${count} ${count === 1 ? singular : plural}`;
 }
 
+function formatReviewBasisCount(item: { count: number; unit_singular: string; unit_plural?: string }) {
+  return formatCount(item.count, item.unit_singular, item.unit_plural);
+}
+
 type EditionPageProps = {
   params: Promise<{
     editionSlug: string;
@@ -52,30 +56,6 @@ export default async function EditionPage({ params }: EditionPageProps) {
     edition.field_change_status === "no_material_change"
       ? `No field result from ${edition.period_label} met the threshold for a material change.`
       : edition.field_change_note;
-  const linkedPublicUpdateCount = edition.related_publication_event_ids?.length ?? 0;
-  const linkedOutlookCount = edition.related_outlook_ids?.length ?? 0;
-  const reviewBasisItems = [
-    {
-      label: "Field updates linked",
-      value: formatCount(linkedPublicUpdateCount, "update"),
-      summary: "Reviewed public updates connected to this monthly read."
-    },
-    {
-      label: "Outlooks connected",
-      value: formatCount(linkedOutlookCount, "outlook"),
-      summary: "Current outlook pages used to anchor the interpretation."
-    },
-    {
-      label: "Trial horizon",
-      value: formatCount(edition.trial_horizon.length, "item"),
-      summary: "Watched studies with result timing, no-result, or registry context."
-    },
-    {
-      label: "Evidence context",
-      value: formatCount(edition.current_context.length, "card"),
-      summary: "Track and hallmark context carried into the monthly review."
-    }
-  ];
 
   return (
     <SiteShell lastUpdated={formatDate(lastUpdated)}>
@@ -118,14 +98,19 @@ export default async function EditionPage({ params }: EditionPageProps) {
               <h2 id="review-basis">Inputs carried into this monthly read</h2>
             </div>
             <div className="state-review-basis">
-              {reviewBasisItems.map((item) => (
+              {edition.review_basis.items.map((item) => (
                 <article className="state-review-basis__item" key={item.label}>
                   <span>{item.label}</span>
-                  <strong>{item.value}</strong>
+                  <strong>{formatReviewBasisCount(item)}</strong>
                   <p>{item.summary}</p>
                 </article>
               ))}
             </div>
+            <ul className="state-review-basis__caveats state-plain-list">
+              {edition.review_basis.caveats.map((caveat) => (
+                <li key={caveat}>{caveat}</li>
+              ))}
+            </ul>
           </section>
 
           <section className="state-section" aria-labelledby="what-changed">

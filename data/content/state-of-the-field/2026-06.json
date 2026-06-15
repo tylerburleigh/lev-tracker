@@ -248,6 +248,54 @@
     "A recruiting trial listing is not proof.",
     "The next meaningful update would need actual human results that last."
   ],
+  "review_basis": {
+    "items": [
+      {
+        "key": "public_updates",
+        "label": "Field updates linked",
+        "count": 9,
+        "unit_singular": "linked update",
+        "unit_plural": "linked updates",
+        "summary": "Reviewed public updates connected to this monthly read."
+      },
+      {
+        "key": "outlooks",
+        "label": "Outlooks connected",
+        "count": 14,
+        "unit_singular": "outlook",
+        "unit_plural": "outlooks",
+        "summary": "Current outlook pages used to anchor the interpretation."
+      },
+      {
+        "key": "trial_horizon",
+        "label": "Trial horizon",
+        "count": 6,
+        "unit_singular": "trial watch item",
+        "unit_plural": "trial watch items",
+        "summary": "Watched studies with result timing, no-result, or registry context."
+      },
+      {
+        "key": "current_context",
+        "label": "Evidence context",
+        "count": 8,
+        "unit_singular": "context card",
+        "unit_plural": "context cards",
+        "summary": "Track and hallmark context carried into the monthly review."
+      },
+      {
+        "key": "field_activity",
+        "label": "Field activity",
+        "count": 0,
+        "unit_singular": "current-period item",
+        "unit_plural": "current-period items",
+        "summary": "No May company, funder, prize, or program activity was treated as field-moving evidence."
+      }
+    ],
+    "caveats": [
+      "Post-period June context is included only where it clarifies the May read; it is not counted as May field movement.",
+      "Trial-status statements reflect the registry/API views named in each trial card and should be refreshed before a later review makes new current-status claims."
+    ]
+  },
   "last_reviewed": "2026-06-12",
   "review_reason": "Post-publication editorial rollup after the June 12 senolytics update confirmed that the May 2026 retrospective conclusion remains unchanged; no result or outlook change was added to the covered period.",
   "revision_history": [

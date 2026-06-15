@@ -138,6 +138,12 @@ const publicTrialActivityPublishingKinds = new Set([
 ]);
 const directActivityPublicationRoute = "direct_activity_publish";
 const directActivityPublicationTargetTypes = new Set(["activity_item", "source"]);
+const requiredStateOfFieldReviewBasisKeys = new Set([
+  "public_updates",
+  "outlooks",
+  "trial_horizon",
+  "current_context"
+]);
 
 function getActivityText(value) {
   return [value.name, value.summary, value.significance_note].filter((item) => typeof item === "string").join(" ");
@@ -247,6 +253,49 @@ function validatePublicActivityPublicationEvents(publicActivityItems, publicatio
   }
 }
 
+function validateStateOfFieldEdition(relativePath, value, issues) {
+  if (!relativePath.startsWith("data/content/state-of-the-field/")) {
+    return;
+  }
+
+  const reviewBasisItems = Array.isArray(value.review_basis?.items) ? value.review_basis.items : [];
+  const reviewBasisItemsByKey = new Map();
+
+  for (const item of reviewBasisItems) {
+    if (!item || typeof item.key !== "string") {
+      continue;
+    }
+
+    if (reviewBasisItemsByKey.has(item.key)) {
+      issues.push(`${relativePath}: review_basis.items contains duplicate key "${item.key}".`);
+    }
+
+    reviewBasisItemsByKey.set(item.key, item);
+  }
+
+  for (const key of requiredStateOfFieldReviewBasisKeys) {
+    if (!reviewBasisItemsByKey.has(key)) {
+      issues.push(`${relativePath}: review_basis.items must include key "${key}".`);
+    }
+  }
+
+  const expectedCounts = new Map([
+    ["public_updates", value.related_publication_event_ids?.length ?? 0],
+    ["outlooks", value.related_outlook_ids?.length ?? 0],
+    ["trial_horizon", value.trial_horizon?.length ?? 0],
+    ["current_context", value.current_context?.length ?? 0]
+  ]);
+
+  for (const [key, expectedCount] of expectedCounts.entries()) {
+    const item = reviewBasisItemsByKey.get(key);
+    if (item && item.count !== expectedCount) {
+      issues.push(
+        `${relativePath}: review_basis item "${key}" count is ${item.count}, expected ${expectedCount}.`
+      );
+    }
+  }
+}
+
 async function main() {
   const ajv = new Ajv2020({
     allErrors: true,
@@ -305,6 +354,7 @@ async function main() {
 
     validatePublicActivityItem(relativePath, value, issues);
     validatePublicationEventRecord(relativePath, value, issues);
+    validateStateOfFieldEdition(relativePath, value, issues);
 
     if (relativePath.startsWith("data/activity-items/") && value?.record_type === "activity_item") {
       publicActivityItems.push({ relativePath, value });
