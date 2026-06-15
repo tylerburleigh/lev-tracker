@@ -261,6 +261,8 @@ time {
 .activity-map-card,
 .activity-card,
 .editorial-card,
+.state-readout-primary,
+.state-scan-card,
 .state-brief-panel,
 .state-review-basis__item,
 .state-change-card,
@@ -806,6 +808,8 @@ time {
 .review-card,
 .review-summary-card,
 .detail-panel,
+.state-readout-primary,
+.state-scan-card,
 .state-brief-panel,
 .state-review-basis__item,
 .state-change-card,
@@ -887,6 +891,8 @@ time {
 .evidence-card,
 .activity-card,
 .editorial-card,
+.state-readout-primary,
+.state-scan-card,
 .state-brief-panel,
 .state-review-basis__item,
 .state-change-card,
@@ -1676,6 +1682,128 @@ time {
 .state-article {
   display: grid;
   gap: 34px;
+}
+
+.state-readout {
+  display: grid;
+  gap: 16px;
+}
+
+.state-readout-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.45fr);
+  gap: 14px;
+  align-items: stretch;
+}
+
+.state-readout-primary {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  min-height: 100%;
+  border-left: 4px solid var(--mint);
+  background: rgba(255, 253, 246, 0.82);
+}
+
+.state-readout-primary__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.state-readout-primary__meta > span:not(.state-status-pill) {
+  padding: 5px 9px;
+  border: 1px solid rgba(24, 37, 30, 0.1);
+  border-radius: 999px;
+  color: var(--text-soft);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.state-readout-primary h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  line-height: 1.18;
+}
+
+.state-readout-primary p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.58;
+}
+
+.state-readout-primary__bottom-line {
+  color: var(--text) !important;
+  font-size: 1.08rem;
+  font-weight: 750;
+}
+
+.state-readout-takeaways {
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.state-scan-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.state-scan-card {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  min-height: 156px;
+  border-left: 3px solid var(--slate);
+  background: rgba(255, 253, 246, 0.78);
+  color: inherit;
+  transition:
+    border-color 160ms ease,
+    transform 160ms ease,
+    background 160ms ease;
+}
+
+.state-scan-card span {
+  color: var(--text-soft);
+  font-size: 0.76rem;
+  font-weight: 850;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.state-scan-card strong {
+  color: var(--text);
+  font-size: 1.04rem;
+  line-height: 1.25;
+}
+
+.state-scan-card p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  line-height: 1.48;
+}
+
+.state-scan-card--movement {
+  border-left-color: var(--mint);
+}
+
+.state-scan-card--change {
+  border-left-color: var(--coral);
+}
+
+.state-scan-card--activity,
+.state-scan-card--trial {
+  border-left-color: var(--blue);
+}
+
+.state-scan-card--boundary {
+  border-left-color: var(--gold);
+}
+
+.state-scan-card--signal {
+  border-left-color: var(--slate);
 }
 
 .state-brief-grid {
@@ -3207,6 +3335,7 @@ time {
 
 .trial-watch-card:hover,
 .trials-table__row:hover,
+.state-scan-card:hover,
 .state-watch-card:hover {
   border-color: rgba(168, 111, 32, 0.34);
   transform: translateY(-1px);
@@ -3715,6 +3844,7 @@ time {
   .hallmark-index-overview,
   .activity-list,
   .editorial-list,
+  .state-readout-grid,
   .state-brief-grid,
   .state-two-column,
   .state-change-grid,
@@ -3732,6 +3862,10 @@ time {
   }
 
   .activity-map {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .state-scan-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -3859,6 +3993,8 @@ time {
   .activity-map-card,
   .activity-card,
   .editorial-card,
+  .state-readout-primary,
+  .state-scan-card,
   .state-brief-panel,
   .state-review-basis__item,
   .state-change-card,
@@ -3878,6 +4014,8 @@ time {
   .activity-map,
   .activity-list,
   .editorial-list,
+  .state-readout-grid,
+  .state-scan-grid,
   .state-brief-grid,
   .state-two-column,
   .state-change-grid,

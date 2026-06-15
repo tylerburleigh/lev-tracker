@@ -29,6 +29,7 @@
     "state-of-field:status": "node scripts/state-of-field-workflow.mjs status",
     "state-of-field:reconcile": "node scripts/state-of-field-workflow.mjs reconcile",
     "state-of-field:packet": "node scripts/state-of-field-workflow.mjs packet",
+    "state-of-field:prep": "node scripts/state-of-field-workflow.mjs prep",
     "audit:reader-tasks": "node scripts/reader-task-audit.mjs",
     "audit:editorial": "node scripts/editorial-quality.mjs",
     "audit:editorial:ratchet": "node scripts/editorial-quality.mjs --write --max-copy-warnings 269 --max-reader-warnings 0",

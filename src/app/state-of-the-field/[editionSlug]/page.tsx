@@ -34,6 +34,14 @@ function formatReviewBasisCount(item: { count: number; unit_singular: string; un
   return formatCount(item.count, item.unit_singular, item.unit_plural);
 }
 
+function truncateSummary(summary: string, maxLength = 170) {
+  if (summary.length <= maxLength) {
+    return summary;
+  }
+
+  return `${summary.slice(0, maxLength - 1).trimEnd()}...`;
+}
+
 type EditionPageProps = {
   params: Promise<{
     editionSlug: string;
@@ -56,6 +64,54 @@ export default async function EditionPage({ params }: EditionPageProps) {
     edition.field_change_status === "no_material_change"
       ? `No field result from ${edition.period_label} met the threshold for a material change.`
       : edition.field_change_note;
+  const fieldActivityBasis = edition.review_basis.items.find((item) => item.key === "field_activity");
+  const firstBoundary = edition.what_did_not_change[0];
+  const firstTrial = edition.trial_horizon[0];
+  const firstSignal = edition.signals_to_watch[0];
+  const scanCards = [
+    {
+      label: "Field movement",
+      value: fieldChangeStatusLabels[edition.field_change_status],
+      summary: edition.field_change_note,
+      href: "#what-changed",
+      className: "state-scan-card--movement"
+    },
+    {
+      label: "What changed",
+      value: hasFieldChanges ? formatCount(edition.what_changed.length, "field item") : "No field-changing result",
+      summary: hasFieldChanges ? edition.what_changed[0].summary : noFieldChangeSummary,
+      href: "#what-changed",
+      className: "state-scan-card--change"
+    },
+    {
+      label: "Activity, not proof",
+      value: fieldActivityBasis ? formatReviewBasisCount(fieldActivityBasis) : "Not separated",
+      summary: fieldActivityBasis?.summary ?? "No separate field-activity review-basis item is recorded for this edition.",
+      href: "#review-basis",
+      className: "state-scan-card--activity"
+    },
+    {
+      label: "Trials waiting",
+      value: formatCount(edition.trial_horizon.length, "trial watch item"),
+      summary: firstTrial?.summary ?? "No trial-horizon items were carried into this monthly read.",
+      href: edition.trial_horizon.length ? "#trial-horizon" : "#monthly-readout",
+      className: "state-scan-card--trial"
+    },
+    {
+      label: "What did not change",
+      value: formatCount(edition.what_did_not_change.length, "boundary", "boundaries"),
+      summary: firstBoundary ?? "No unchanged boundaries were recorded for this edition.",
+      href: edition.what_did_not_change.length ? "#what-did-not-change" : "#monthly-readout",
+      className: "state-scan-card--boundary"
+    },
+    {
+      label: "What would matter",
+      value: formatCount(edition.signals_to_watch.length, "signal"),
+      summary: firstSignal?.summary ?? "No evidence-signal cards were recorded for this edition.",
+      href: edition.signals_to_watch.length ? "#signals-to-watch" : "#monthly-readout",
+      className: "state-scan-card--signal"
+    }
+  ];
 
   return (
     <SiteShell lastUpdated={formatDate(lastUpdated)}>
@@ -73,44 +129,34 @@ export default async function EditionPage({ params }: EditionPageProps) {
       </PageHero>
       <section className="band">
         <div className="page-shell state-article">
-          <div className="state-brief-grid" aria-label="Monthly review at a glance">
-            <article className="state-brief-panel state-brief-panel--matter">
-              <span className="section-kicker">Why it matters</span>
-              <p>{edition.why_it_matters}</p>
-            </article>
-            <article className="state-brief-panel">
-              <span className="section-kicker">{fieldChangeStatusLabels[edition.field_change_status]}</span>
-              <p>{edition.field_change_note}</p>
-            </article>
-            <article className="state-brief-panel">
-              <span className="section-kicker">Short read</span>
-              <ul className="state-plain-list">
-                {edition.reader_takeaways.map((takeaway) => (
-                  <li key={takeaway}>{takeaway}</li>
+          <section className="state-readout" aria-labelledby="monthly-readout">
+            <div className="state-readout-grid">
+              <article className="state-readout-primary">
+                <div className="state-readout-primary__meta">
+                  <span className={`state-status-pill state-status-pill--${edition.field_change_status}`}>
+                    {fieldChangeStatusLabels[edition.field_change_status]}
+                  </span>
+                  <span>{edition.period_label}</span>
+                </div>
+                <h2 id="monthly-readout">Monthly readout</h2>
+                <p className="state-readout-primary__bottom-line">{edition.bottom_line}</p>
+                <p>{edition.why_it_matters}</p>
+                <ul className="state-readout-takeaways state-plain-list">
+                  {edition.reader_takeaways.map((takeaway) => (
+                    <li key={takeaway}>{takeaway}</li>
+                  ))}
+                </ul>
+              </article>
+              <div className="state-scan-grid" aria-label="Monthly review scan">
+                {scanCards.map((card) => (
+                  <a className={`state-scan-card ${card.className}`} href={card.href} key={card.label}>
+                    <span>{card.label}</span>
+                    <strong>{card.value}</strong>
+                    <p>{truncateSummary(card.summary)}</p>
+                  </a>
                 ))}
-              </ul>
-            </article>
-          </div>
-
-          <section className="state-section" aria-labelledby="review-basis">
-            <div className="state-section__header">
-              <span className="section-kicker">Review basis</span>
-              <h2 id="review-basis">Inputs carried into this monthly read</h2>
+              </div>
             </div>
-            <div className="state-review-basis">
-              {edition.review_basis.items.map((item) => (
-                <article className="state-review-basis__item" key={item.label}>
-                  <span>{item.label}</span>
-                  <strong>{formatReviewBasisCount(item)}</strong>
-                  <p>{item.summary}</p>
-                </article>
-              ))}
-            </div>
-            <ul className="state-review-basis__caveats state-plain-list">
-              {edition.review_basis.caveats.map((caveat) => (
-                <li key={caveat}>{caveat}</li>
-              ))}
-            </ul>
           </section>
 
           <section className="state-section" aria-labelledby="what-changed">
@@ -141,20 +187,19 @@ export default async function EditionPage({ params }: EditionPageProps) {
             )}
           </section>
 
-          <section className="state-section" aria-labelledby="current-context">
-            <div className="state-section__header">
-              <span className="section-kicker">Context as of {edition.period_label}</span>
-              <h2 id="current-context">Evidence snapshot</h2>
-            </div>
-            <div className="state-card-list">
-              {edition.current_context.map((context) => (
-                <article className="state-watch-card state-watch-card--context" key={context.label}>
-                  <h3>{context.label}</h3>
-                  <p>{context.summary}</p>
-                </article>
-              ))}
-            </div>
-          </section>
+          {edition.what_did_not_change.length ? (
+            <section className="state-section state-section--split" aria-labelledby="what-did-not-change">
+              <div className="state-section__header">
+                <span className="section-kicker">Boundaries</span>
+                <h2 id="what-did-not-change">What did not change</h2>
+              </div>
+              <ul className="state-plain-list state-plain-list--panel">
+                {edition.what_did_not_change.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
 
           {edition.trial_horizon.length ? (
             <section className="state-section" aria-labelledby="trial-horizon">
@@ -180,19 +225,20 @@ export default async function EditionPage({ params }: EditionPageProps) {
             </section>
           ) : null}
 
-          {edition.what_did_not_change.length ? (
-            <section className="state-section state-section--split" aria-labelledby="what-did-not-change">
-              <div className="state-section__header">
-                <span className="section-kicker">Boundaries</span>
-                <h2 id="what-did-not-change">What did not change</h2>
-              </div>
-              <ul className="state-plain-list state-plain-list--panel">
-                {edition.what_did_not_change.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </section>
-          ) : null}
+          <section className="state-section" aria-labelledby="current-context">
+            <div className="state-section__header">
+              <span className="section-kicker">Context as of {edition.period_label}</span>
+              <h2 id="current-context">Evidence snapshot</h2>
+            </div>
+            <div className="state-card-list">
+              {edition.current_context.map((context) => (
+                <article className="state-watch-card state-watch-card--context" key={context.label}>
+                  <h3>{context.label}</h3>
+                  <p>{context.summary}</p>
+                </article>
+              ))}
+            </div>
+          </section>
 
           <div className="state-two-column">
             <section className="state-section" aria-labelledby="signals-to-watch">
@@ -243,6 +289,27 @@ export default async function EditionPage({ params }: EditionPageProps) {
               </div>
             </section>
           ) : null}
+
+          <section className="state-section" aria-labelledby="review-basis">
+            <div className="state-section__header">
+              <span className="section-kicker">Audit trail</span>
+              <h2 id="review-basis">Inputs carried into this monthly read</h2>
+            </div>
+            <div className="state-review-basis">
+              {edition.review_basis.items.map((item) => (
+                <article className="state-review-basis__item" key={item.label}>
+                  <span>{item.label}</span>
+                  <strong>{formatReviewBasisCount(item)}</strong>
+                  <p>{item.summary}</p>
+                </article>
+              ))}
+            </div>
+            <ul className="state-review-basis__caveats state-plain-list">
+              {edition.review_basis.caveats.map((caveat) => (
+                <li key={caveat}>{caveat}</li>
+              ))}
+            </ul>
+          </section>
         </div>
       </section>
     </SiteShell>

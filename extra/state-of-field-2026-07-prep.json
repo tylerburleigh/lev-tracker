@@ -1,0 +1,945 @@
+{
+  "generated_at": "2026-06-15T23:23:41.314Z",
+  "workflow_path": "ops/state-of-field-workflow.v1.json",
+  "edition_slug": "2026-07",
+  "edition_title": "June 2026 in review",
+  "status": "draft",
+  "period_label": "June 2026",
+  "period_start": "2026-06-01",
+  "period_end": "2026-06-30",
+  "required_next_action": "Keep the July edition internal until June closes, then finalize the provisional classifications for the 22 known June public updates and write the public 2026-07 edition from reviewed records.",
+  "blockers": [
+    "June 2026 has not ended yet; this cannot be a final retrospective edition before 2026-07-01.",
+    "The June 15 trial-watch report has 22 stale or missing registry checks and 0 open stale watchlist records; do not make fresh trial-status claims without surveillance or explicit stale-record boundaries."
+  ],
+  "open_checklist_items": [
+    {
+      "id": "review-field-activity-watchlist",
+      "label": "Review field-activity watchlist counts, public activity lens summary, and unresolved capture candidates before drafting field-change copy.",
+      "status": "pending",
+      "path": "research/backlog/field-activity-watchlist.v1.json"
+    },
+    {
+      "id": "wait-period-close",
+      "label": "Wait until the June 2026 retrospective period closes before publishing data/content/state-of-the-field/2026-07.json.",
+      "status": "blocked"
+    },
+    {
+      "id": "write-public-edition",
+      "label": "Write the public July edition from reviewed records after the period closes.",
+      "status": "pending",
+      "path": "data/content/state-of-the-field/2026-07.json"
+    },
+    {
+      "id": "run-final-checks",
+      "label": "Run validation, state-of-field status, editorial ratchet, typecheck, and build before publication.",
+      "status": "pending",
+      "command": "npm run validate:records && npm run state-of-field:status -- --strict && npm run audit:editorial:ratchet && npm run typecheck && npm run build"
+    }
+  ],
+  "publication_gate": {
+    "status": "not_ready",
+    "applies": false,
+    "issue_count": 7,
+    "issues": [
+      "Retrospective period June 2026 is still open through 2026-06-30.",
+      "2 workflow blocker(s) remain open.",
+      "4 checklist item(s) are still open.",
+      "Required checklist purpose \"field-activity review\" is pending (review-field-activity-watchlist).",
+      "Required checklist purpose \"public edition write or revision\" is pending (write-public-edition).",
+      "Required checklist purpose \"final validation checks\" is pending (run-final-checks).",
+      "No public edition JSON exists for 2026-07 at data/content/state-of-the-field/2026-07.json."
+    ]
+  },
+  "approval_packet_summary": {
+    "reconciliation_items_in_packet": 0,
+    "human_review_required": 0,
+    "missing_agent_assessments": 0,
+    "field_activity_items_in_packet": 0,
+    "field_activity_human_review_required": 0,
+    "field_activity_missing_agent_assessments": 0
+  },
+  "decision_sections": [
+    {
+      "decision": "include_as_field_signal",
+      "title": "Include as field signals",
+      "guidance": "Use for reviewed period events that changed the visible field read without resolving the overall LEV proof gap.",
+      "count": 4,
+      "items": [
+        {
+          "publication_event_id": "publish-senomorphics-surveillance-2026-06-07-2026-06-07t16-41-34-635z",
+          "event_name": "Published Senomorphics Field-Change Update for June 7, 2026",
+          "event_date": "2026-06-07",
+          "event_summary": "Staged update adding the June 2026 mianserin/calcium-homeostasis mouse lifespan source, refreshing two registry-linked human study records, and keeping the public stage unchanged.",
+          "event_change_note": "The staged outlook keeps evidence_stage human_biomarker_signal, momentum steady, and confidence low. The new mianserin source adds animal lifespan and human-cell senescence support but does not replace the need for treated-human trials.",
+          "decision": "include_as_field_signal",
+          "materiality": "moderate",
+          "confidence": "medium",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field"
+          ],
+          "human_review_required": true,
+          "human_approval_status": "approved",
+          "rationale": "June field-change update adding mianserin/Ca2+ animal lifespan and human-cell senescence support while preserving the track stage.",
+          "next_action": "Consider as a June field_signal, bounded as preclinical and not treated-human proof."
+        },
+        {
+          "publication_event_id": "publish-autophagy-induction-surveillance-2026-06-11-2026-06-11t10-25-04-657z",
+          "event_name": "Published Autophagy Induction Surveillance for June 11, 2026",
+          "event_date": "2026-06-11",
+          "event_summary": "Field-change update adding a 2026 older-adult spermidine vaccine-response pilot and refreshing the Autophagy Induction outlook while keeping the track at low-confidence human_biomarker_signal with mixed momentum.",
+          "event_change_note": "Add the older-adult spermidine vaccine-response pilot as the strongest new human signal, but preserve human_biomarker_signal, mixed momentum, and low read firmness because the result is small, subgroup-limited, and not broad healthy-aging benefit.",
+          "decision": "include_as_field_signal",
+          "materiality": "moderate",
+          "confidence": "medium",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field"
+          ],
+          "human_review_required": true,
+          "human_approval_status": "approved",
+          "rationale": "June field-change update adding a small older-adult spermidine vaccine-response pilot while preserving the early human biomarker stage.",
+          "next_action": "Consider as a June field_signal, bounded as small, subgroup-limited, and not proof of lasting aging-relevant function."
+        },
+        {
+          "publication_event_id": "publish-microbiome-composition-modulation-surveillance-2026-06-03-2026-06-03t16-38-15-119z",
+          "event_name": "Published Microbiome Composition Modulation Field Change Check for June 3, 2026",
+          "event_date": "2026-06-03",
+          "event_summary": "Field-change update for the microbiome-composition-modulation track, adding a new disease-specific synbiotic constipation RCT and a null healthy-older-adult exercise/microbiome RCT while keeping the public stage at a tentative human biomarker signal.",
+          "event_change_note": "Keep the stage at a tentative human biomarker signal, change momentum to mixed, and add support-map evidence for the new TBC169 RCT and null older-adult exercise/microbiome RCT.",
+          "decision": "include_as_field_signal",
+          "materiality": "moderate",
+          "confidence": "medium",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field"
+          ],
+          "human_review_required": true,
+          "human_approval_status": "approved",
+          "rationale": "June field-change update added a disease-specific synbiotic constipation RCT and a null healthy-older-adult exercise/microbiome RCT while keeping the track at a tentative human biomarker stage.",
+          "next_action": "Consider as a bounded June field_signal or as current_context for microbiome evidence boundaries."
+        },
+        {
+          "publication_event_id": "publish-live-biotherapeutics-and-engineered-microbes-surveillance-2026-06-06-2026-06-06t13-25-18-048z",
+          "event_name": "Published Live Biotherapeutics and Engineered Microbes Field Change Check for June 6, 2026",
+          "event_date": "2026-06-06",
+          "event_summary": "Field-change update adding a new Pediococcus acidilactici PA53 older-adult well-being and gut-health RCT while keeping the track at a tentative evidence that human function improves with no LEV-relevant timing upgrade.",
+          "event_change_note": "Add PA53 as a second bounded older-adult human signal while keeping the evidence stage at evidence that human function improves, momentum accelerating, the read tentative, and no LEV timing upgrade.",
+          "decision": "include_as_field_signal",
+          "materiality": "moderate",
+          "confidence": "medium",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field"
+          ],
+          "human_review_required": true,
+          "human_approval_status": "approved",
+          "rationale": "June field-change update added a Pediococcus acidilactici PA53 older-adult well-being and gut-health RCT while keeping the track tentative and without a LEV timing upgrade.",
+          "next_action": "Consider as a bounded June field_signal if the final edition needs a microbiome/live-biotherapeutic example."
+        }
+      ]
+    },
+    {
+      "decision": "include_as_current_context",
+      "title": "Include as current context",
+      "guidance": "Use for claim boundaries, clearer evidence accounting, or field context that helps readers interpret the month.",
+      "count": 14,
+      "items": [
+        {
+          "publication_event_id": "publish-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-2026-06-06t12-22-33-769z",
+          "event_name": "Published Transposon and Somatic Mutation Control missing-context update for June 6, 2026",
+          "event_date": "2026-06-06",
+          "event_summary": "missing-context bundle that stages missing reverse-transcriptase-inhibitor biomarker and trial records to watch, TPN-101/ARPA-H activity, DREAM/somatic-mutation biology, TET2 CHIP canakinumab trials to watch context, and recent TE review triangulation while keeping the track at a tentative human biomarker signal.",
+          "event_change_note": "Repair improves missing source context and public boundary wording for RTI biomarkers, trials to watch activity, TPN-101 program momentum, DREAM biology, and CHIP trials to watch context, but does not change stage, confidence, momentum, or LEV-relevant timing because controlled human intended-target and functional evidence remain absent.",
+          "decision": "include_as_current_context",
+          "materiality": "low",
+          "confidence": "high",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field"
+          ],
+          "human_review_required": false,
+          "human_approval_status": "approved",
+          "rationale": "June missing-context update that narrowed reverse-transcriptase-inhibitor, trial, program, DREAM, and CHIP boundaries without changing stage, momentum, read firmness, or LEV timing.",
+          "next_action": "Classify as June current-context unless the final edition needs it as a named example of better claim boundaries."
+        },
+        {
+          "publication_event_id": "publish-nad-and-redox-restoration-coverage-repair-2026-06-08-2026-06-09t10-39-49-637z",
+          "event_name": "Published NAD and Redox Restoration Missing-Context Update for June 8, 2026",
+          "event_date": "2026-06-09",
+          "event_summary": "Missing-context update that adds MIB-626 human NAD augmentation records, NR/NMN/MIB-626/MitoQ no-results trials to watch, and recent review context while keeping the track at a tentative human functional stage.",
+          "event_change_note": "The update improves source completeness and public watchlist boundaries, but does not change the track stage, momentum, or read firmness because the new MIB-626 and registry records remain short, no-results, disease-context, review-level, or not tied to long-lasting outcomes.",
+          "decision": "include_as_current_context",
+          "materiality": "low",
+          "confidence": "high",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field"
+          ],
+          "human_review_required": false,
+          "human_approval_status": "approved",
+          "rationale": "June missing-context update that improved MIB-626, registry, and review boundaries without changing stage, momentum, or read firmness.",
+          "next_action": "Classify as current_context unless a trial-horizon item needs explicit NAD/redox coverage."
+        },
+        {
+          "publication_event_id": "publish-mitophagy-enhancers-coverage-repair-2026-06-10-2026-06-10t14-26-07-178z",
+          "event_name": "Published Mitophagy Enhancers Missing-Context Update for June 10, 2026",
+          "event_date": "2026-06-10",
+          "event_summary": "Missing-context update that adds urolithin A safety and limiting-context sources, stages the most relevant active or completed no-results urolithin A registries, refreshes registry metadata for published trials, and updates the Mitophagy Enhancers outlook evidence map while keeping the track at tentative human_biomarker_signal.",
+          "event_change_note": "Keep human_biomarker_signal, steady momentum, and a tentative read. The staged repair improves safety, registry, limiting-context, and evidence-map coverage but adds no long-lasting improvement in older-human function.",
+          "decision": "include_as_current_context",
+          "materiality": "low",
+          "confidence": "medium",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field"
+          ],
+          "human_review_required": false,
+          "human_approval_status": "approved",
+          "rationale": "June missing-context update that added urolithin A safety, registry, and limiting context while preserving the track read.",
+          "next_action": "Classify as current_context, with possible trial_horizon support after stale registry boundaries are checked."
+        },
+        {
+          "publication_event_id": "publish-chaperone-and-heat-shock-support-coverage-repair-2026-06-10-2026-06-11t01-11-08-627z",
+          "event_name": "Published Chaperone and Heat-Shock Support update for June 10, 2026",
+          "event_date": "2026-06-11",
+          "event_summary": "Added arimoclomol NPC open-label extension and current Miplyffa label safety context while keeping Chaperone and Heat-Shock Support at low-confidence, NPC-specific human_functional_benefit with mixed momentum.",
+          "event_change_note": "Repair NPC durability and safety context, add current label boundaries, and preserve human_functional_benefit, mixed momentum, and low read firmness because the evidence remains NPC-specific.",
+          "decision": "include_as_current_context",
+          "materiality": "moderate",
+          "confidence": "medium",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field"
+          ],
+          "human_review_required": true,
+          "human_approval_status": "approved",
+          "rationale": "June context update added NPC open-label extension and current Miplyffa label safety context while preserving a disease-specific, mixed read.",
+          "next_action": "Classify as current_context if the July edition needs a proteostasis example."
+        },
+        {
+          "publication_event_id": "publish-senolytics-coverage-repair-2026-06-11-2026-06-12t00-05-23-406z",
+          "event_name": "Published Senolytics Coverage Repair for June 11, 2026",
+          "event_date": "2026-06-12",
+          "event_summary": "Coverage-repair bundle staging Senolytics source, study, finding, intervention, registry-watch, review, animal-anchor, and outlook-support records. The proposed outlook refresh keeps the track at moderate-confidence human_biomarker_signal with mixed momentum because human biomarker support is now auditable, while functional benefit remains preliminary, mixed, disease-specific, or no-results.",
+          "event_change_note": "Keep Senolytics at human_biomarker_signal with mixed momentum and moderate confidence. The support map is now adequate, but functional benefit remains preliminary and controlled human evidence includes null or limiting results.",
+          "decision": "include_as_current_context",
+          "materiality": "moderate",
+          "confidence": "medium",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field"
+          ],
+          "human_review_required": true,
+          "human_approval_status": "approved",
+          "rationale": "June missing-context update added D+Q and fisetin biomarker, function, safety, animal, and no-results registry context while keeping senolytics at an early human biomarker stage.",
+          "next_action": "Classify as current_context unless senolytics is chosen as a flagship boundary example."
+        },
+        {
+          "publication_event_id": "publish-partial-reprogramming-coverage-repair-2026-06-12-2026-06-12t13-29-16-586z",
+          "event_name": "Published Partial Reprogramming Coverage Repair for June 12, 2026",
+          "event_date": "2026-06-12",
+          "event_summary": "Coverage-repair bundle staging Partial Reprogramming source, study, finding, registry-watch, review, safety-boundary, seminal-anchor, and outlook-support records. The proposed outlook refresh keeps the track at low-confidence animal_signal with accelerating momentum, updates the human boundary to no human outcomes evidence, and adds ER-100 as a no-results phase 1 trial-watch item.",
+          "event_change_note": "Keep evidence_stage at low-confidence animal_signal and momentum accelerating. Update the human boundary from no direct human intervention evidence to no human outcomes evidence, with ER-100 recorded as a recruiting phase 1 no-results registry.",
+          "decision": "include_as_current_context",
+          "materiality": "moderate",
+          "confidence": "medium",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field",
+            "trial_horizon"
+          ],
+          "human_review_required": true,
+          "human_approval_status": "approved",
+          "rationale": "June missing-context update strengthened the animal source map and added ER-100 as a no-results human registry boundary while preserving animal_signal and accelerating momentum.",
+          "next_action": "Classify as current_context or a frontier boundary item; keep the absence of human outcomes explicit."
+        },
+        {
+          "publication_event_id": "publish-dna-repair-enhancement-surveillance-2026-06-10-2026-06-10t17-34-21-637z",
+          "event_name": "Published DNA Repair Enhancement Surveillance for June 10, 2026",
+          "event_date": "2026-06-10",
+          "event_summary": "Field-change update attaching the existing June 2026 Nat Aging DREAM repression evidence to DNA Repair Enhancement and refreshing the track outlook while keeping the track at tentative human_biomarker_signal with mixed momentum.",
+          "event_change_note": "Add a broader DREAM repair-regulator signal while keeping the track at human_biomarker_signal, mixed momentum, and a tentative read because the new result is preclinical/comparative rather than treated-human evidence.",
+          "decision": "include_as_current_context",
+          "materiality": "low",
+          "confidence": "high",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field"
+          ],
+          "human_review_required": false,
+          "human_approval_status": "approved",
+          "rationale": "June field-change update attached DREAM repression evidence to DNA repair enhancement and refreshed the track while keeping it at a tentative human biomarker stage.",
+          "next_action": "Classify as a mechanistic field_signal or current_context; avoid implying tested systemic human repair enhancement."
+        },
+        {
+          "publication_event_id": "publish-immune-rejuvenation-coverage-repair-2026-06-11-2026-06-11t13-12-57-339z",
+          "event_name": "Published Immune Rejuvenation Coverage Repair for June 11, 2026",
+          "event_date": "2026-06-11",
+          "event_summary": "Coverage-repair bundle staging mTOR/TORC1 older-adult immune-function anchors, an RTB101 phase 3 limiting record, a direct immune-aging recruiting registry, a recent review/taxonomy-boundary record, and a revised support-mapped Immune Rejuvenation outlook. The proposed outlook keeps the track at human_functional_benefit but changes momentum to mixed and confidence to low.",
+          "event_change_note": "Keep the human_functional_benefit stage because human immune-function endpoints exist, but downgrade confidence to low and momentum to mixed because support is branch-specific, RTB101 did not replicate in phase 3, active registries have no posted results, and durability/safety remain unresolved.",
+          "decision": "include_as_current_context",
+          "materiality": "moderate",
+          "confidence": "medium",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field",
+            "track_page"
+          ],
+          "human_review_required": true,
+          "human_approval_status": "approved",
+          "rationale": "June missing-context update added older-adult immune-function anchors, RTB101 limiting context, direct immune-aging registry context, and review boundaries while keeping the track at human functional benefit but lowering the read to mixed and tentative.",
+          "next_action": "Consider as a June outlook-boundary item; be explicit that the clearer read is not an overall LEV upgrade."
+        },
+        {
+          "publication_event_id": "publish-rapalogs-coverage-repair-2026-06-11-2026-06-11t18-24-35-790z",
+          "event_name": "Published Rapalogs Coverage Repair for June 11, 2026",
+          "event_date": "2026-06-11",
+          "event_summary": "Coverage-repair bundle staging Rapalogs source, study, finding, registry-watch, review, seminal-anchor, and outlook-support records. The proposed outlook refresh moves the track to low-confidence human_functional_benefit with mixed momentum because human functional endpoints have been tested, but the evidence remains branch-specific, mixed, and short of durable disease, frailty, mortality, or broad healthy-aging benefit.",
+          "event_change_note": "Replace the activity-only moderate human_biomarker_signal outlook with a source-backed low-confidence human_functional_benefit read. The stage changes because human functional endpoints have been tested; confidence lowers because PEARL is mixed, RTB101 has a phase 3 miss, and many registries remain no-results.",
+          "decision": "include_as_current_context",
+          "materiality": "high",
+          "confidence": "medium",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field",
+            "track_page"
+          ],
+          "human_review_required": true,
+          "human_approval_status": "approved",
+          "rationale": "June missing-context update moved rapalogs to a tentative human functional read with mixed momentum because human functional endpoints have been tested, while durable disease, frailty, mortality, and broad healthy-aging benefit remain unproven.",
+          "next_action": "Decide whether rapalogs should be the prominent June outlook-boundary item in what_changed."
+        },
+        {
+          "publication_event_id": "publish-extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15-2026-06-15t10-33-29-045z",
+          "event_name": "Published Extracellular Vesicle and Secretome Therapies Surveillance for June 15, 2026",
+          "event_date": "2026-06-15",
+          "event_summary": "Staged surveillance update adding the June 2026 Frontiers in Aging APRC-CM multimodal healthy-aging pilot, refreshing stale registry metadata for four published EV/secretome human study records, and keeping the public stage, momentum, and confidence unchanged.",
+          "event_change_note": "Keep evidence_stage human_biomarker_signal, momentum accelerating, and confidence low. The APRC-CM pilot adds a human biological-age biomarker signal but does not isolate conditioned media from lifestyle and supplement components or establish functional benefit.",
+          "decision": "include_as_current_context",
+          "materiality": "low",
+          "confidence": "high",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field",
+            "current_lev_story",
+            "hallmark_insight",
+            "track_page"
+          ],
+          "human_review_required": false,
+          "human_approval_status": "not_required",
+          "rationale": "June reviewed field context: the APRC-CM pilot adds a small human biological-age biomarker signal and registry-hygiene updates, while preserving the EV/secretome track's stage, momentum, read firmness, and no-functional-benefit boundary.",
+          "next_action": "Carry this as bounded June current context in the July edition if space permits; do not treat it as a field-moving result unless later controlled functional evidence changes the outlook."
+        },
+        {
+          "publication_event_id": "publish-field-activity-arpa-h-prospr-awardees-2026-2026-06-15",
+          "event_name": "ARPA-H PROSPR field activity published",
+          "event_date": "2026-06-15",
+          "event_summary": "Published source-backed public field activity for ARPA-H PROSPR healthspan awardees.",
+          "event_change_note": "Adds ARPA-H PROSPR as public field activity and routes it to State of the Field and trial-horizon review as program context, not evidence of intervention benefit.",
+          "decision": "include_as_current_context",
+          "materiality": "moderate",
+          "confidence": "high",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field",
+            "trial_horizon"
+          ],
+          "human_review_required": true,
+          "human_approval_status": "approved",
+          "rationale": "June direct field-activity publication added February 2026 ARPA-H PROSPR program context. It belongs as healthspan trial-infrastructure context, not as June field movement or evidence of intervention benefit.",
+          "next_action": "Use only as bounded State of the Field or trial-horizon background if the July edition needs program-context examples; do not count it as June progress or clinical evidence."
+        },
+        {
+          "publication_event_id": "publish-field-activity-hevolution-400m-healthspan-commitments-2024-2026-06-15",
+          "event_name": "Hevolution healthspan funding field activity published",
+          "event_date": "2026-06-15",
+          "event_summary": "Published source-backed public field activity for Hevolution's reported healthspan funding commitments.",
+          "event_change_note": "Adds Hevolution's healthspan funding commitments as public field-activity context, not evidence of intervention benefit.",
+          "decision": "include_as_current_context",
+          "materiality": "low",
+          "confidence": "high",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field"
+          ],
+          "human_review_required": false,
+          "human_approval_status": "approved",
+          "rationale": "June direct field-activity publication added historical Hevolution healthspan-funding context. It is relevant field infrastructure context, not June field movement or evidence of intervention benefit.",
+          "next_action": "Use only as bounded funder-infrastructure context if the July edition needs a field-activity example; do not count it as current-period progress."
+        },
+        {
+          "publication_event_id": "publish-field-activity-newlimit-series-c-2026-2026-06-15",
+          "event_name": "NewLimit Series C field activity published",
+          "event_date": "2026-06-15",
+          "event_summary": "Published source-backed public field activity for NewLimit's 2026 Series C financing.",
+          "event_change_note": "Adds NewLimit's Series C as current field-activity and trial-horizon context, not evidence of intervention benefit.",
+          "decision": "include_as_current_context",
+          "materiality": "moderate",
+          "confidence": "high",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field",
+            "trial_horizon"
+          ],
+          "human_review_required": false,
+          "human_approval_status": "approved",
+          "rationale": "June direct field-activity publication added NewLimit's June 2026 Series C and clinical-transition context. It is current field activity and trial-horizon context, not evidence of intervention benefit.",
+          "next_action": "Use as bounded State of the Field or trial-horizon context if the July edition needs current company-financing examples; do not treat it as clinical evidence or an outlook change."
+        },
+        {
+          "publication_event_id": "publish-field-activity-retro-biosciences-next-financing-2026-2026-06-15",
+          "event_name": "Retro Biosciences financing field activity published",
+          "event_date": "2026-06-15",
+          "event_summary": "Published source-backed public field activity for Retro Biosciences' 2026 financing.",
+          "event_change_note": "Adds Retro Biosciences' 2026 financing as current field-activity and trial-horizon context, not evidence of intervention benefit.",
+          "decision": "include_as_current_context",
+          "materiality": "moderate",
+          "confidence": "high",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field",
+            "trial_horizon"
+          ],
+          "human_review_required": false,
+          "human_approval_status": "approved",
+          "rationale": "June direct field-activity publication added Retro Biosciences' May 2026 financing and first-in-human progress context. It is current field activity and trial-horizon context, not evidence of intervention benefit.",
+          "next_action": "Use as bounded State of the Field or trial-horizon context if the July edition needs current company-financing examples; do not promote first-in-human language into evidence without registry or study review."
+        }
+      ]
+    },
+    {
+      "decision": "include_as_trial_horizon",
+      "title": "Use in trial horizon",
+      "guidance": "Use for registry-linked or trial-timing context, with result/no-result/status boundaries explicit.",
+      "count": 2,
+      "items": [
+        {
+          "publication_event_id": "publish-stem-cell-rejuvenation-coverage-repair-2026-06-09-2026-06-10t10-17-06-414z",
+          "event_name": "Published Stem Cell Rejuvenation Missing Context Update for June 9, 2026",
+          "event_date": "2026-06-10",
+          "event_summary": "Missing-context update that stages hDNAgr no-results registry context, direct HSC aging review context, and a staged outlook refresh while keeping Stem Cell Rejuvenation at a tentative human_biomarker_signal read.",
+          "event_change_note": "Keep human_biomarker_signal, steady momentum, and a tentative read. The staged update improves active-registry and review coverage but adds no posted human efficacy or safety results.",
+          "decision": "include_as_trial_horizon",
+          "materiality": "low",
+          "confidence": "high",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field",
+            "trial_horizon"
+          ],
+          "human_review_required": false,
+          "human_approval_status": "approved",
+          "rationale": "June missing-context update that added no-results hDNAgr registry and review context while adding no posted human efficacy or safety results.",
+          "next_action": "Use only as bounded trial-horizon context: planned/not yet recruiting and no posted results as of the 2026-06-14 surveillance check."
+        },
+        {
+          "publication_event_id": "publish-field-activity-healthspan-connect-registry-post-2025-2026-06-15",
+          "event_name": "Healthspan Connect field activity published",
+          "event_date": "2026-06-15",
+          "event_summary": "Published source-backed public field activity for Healthspan Connect's public registry entry.",
+          "event_change_note": "Adds Healthspan Connect as activity-only healthy-aging observational infrastructure and trial-horizon context, not evidence of intervention benefit.",
+          "decision": "include_as_trial_horizon",
+          "materiality": "low",
+          "confidence": "high",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field",
+            "trial_horizon"
+          ],
+          "human_review_required": false,
+          "human_approval_status": "approved",
+          "rationale": "June direct field-activity publication added Healthspan Connect as planned healthy-aging observational infrastructure. It belongs as bounded trial-horizon context because it is registry-linked and may shape what to watch next, but it is not yet recruiting, not interventional, and not evidence of intervention benefit.",
+          "next_action": "Use only as bounded trial-horizon or State of the Field background if the July edition needs observational healthspan-infrastructure examples; do not count it as a field signal, clinical evidence, or outlook change."
+        }
+      ]
+    },
+    {
+      "decision": "omit_process_context",
+      "title": "Omit or fold into another item",
+      "guidance": "Use when the update is process-like, duplicative, or too narrow for a separate public monthly item.",
+      "count": 2,
+      "items": [
+        {
+          "publication_event_id": "publish-stem-cell-replacement-and-transplantation-surveillance-2026-06-06-2026-06-07t13-49-41-422z",
+          "event_name": "Published Stem Cell Replacement and Transplantation Surveillance for June 6, 2026",
+          "event_date": "2026-06-07",
+          "event_summary": "Activity-only field-change update refreshing the exPDite-2 bemdaneprocel phase 3 registry date while keeping the public outlook, stage, momentum, confidence, and LEV-relevant interpretation unchanged.",
+          "event_change_note": "No outlook change is proposed. The registry update is activity-only: exPDite-2 remains recruiting, has no posted results, and continues to support momentum only.",
+          "decision": "omit_process_context",
+          "materiality": "low",
+          "confidence": "high",
+          "public_copy_action": "no_public_copy",
+          "affected_surfaces": [
+            "state_of_field"
+          ],
+          "human_review_required": false,
+          "human_approval_status": "approved",
+          "rationale": "Activity-only registry refresh: exPDite-2 remained recruiting with no posted results and did not change the outlook.",
+          "next_action": "Classify as activity_without_results or omit from public July copy if it is too process-like."
+        },
+        {
+          "publication_event_id": "publish-autophagy-induction-coverage-repair-2026-06-11-2026-06-11t11-44-04-048z",
+          "event_name": "Published Autophagy Induction Coverage Repair for June 11, 2026",
+          "event_date": "2026-06-11",
+          "event_summary": "Coverage-repair bundle staging active, completed, and stale no-results Autophagy Induction registry context plus a direct 2026 polyamine/autophagy review boundary. The proposed outlook refresh keeps the track at low-confidence human_biomarker_signal with mixed momentum.",
+          "event_change_note": "Add no-results registry watch context and a direct polyamine/autophagy review boundary while preserving human_biomarker_signal, mixed momentum, and low confidence because the repair does not add durable human functional benefit.",
+          "decision": "omit_process_context",
+          "materiality": "low",
+          "confidence": "high",
+          "public_copy_action": "no_public_copy",
+          "affected_surfaces": [
+            "state_of_field"
+          ],
+          "human_review_required": false,
+          "human_approval_status": "approved",
+          "rationale": "June missing-context update added autophagy registry and review boundaries while keeping the track at a tentative human biomarker stage with mixed momentum.",
+          "next_action": "Fold into the autophagy June field-signal item or trial-horizon boundaries rather than treating it as a separate public change."
+        }
+      ]
+    },
+    {
+      "decision": "add_post_hoc_context_note",
+      "title": "Historical or post-period context",
+      "guidance": "Use only when older activity prevents a misleading read; do not frame it as current-period progress.",
+      "count": 6,
+      "items": [
+        {
+          "publication_event_id": "publish-field-activity-calico-abbvie-aging-collaboration-2014-2026-06-15",
+          "event_name": "Calico-AbbVie field activity published",
+          "event_date": "2026-06-15",
+          "event_summary": "Published source-backed public field activity for Calico and AbbVie's age-related disease R&D collaboration.",
+          "event_change_note": "Adds Calico-AbbVie collaboration as historical field-activity context, not evidence of intervention benefit.",
+          "decision": "add_post_hoc_context_note",
+          "materiality": "low",
+          "confidence": "high",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field"
+          ],
+          "human_review_required": false,
+          "human_approval_status": "approved",
+          "rationale": "June direct field-activity publication backfilled a 2014 Calico-AbbVie collaboration. It is useful historical field-infrastructure context, not June field movement.",
+          "next_action": "Use only if the July edition needs a brief historical field-activity backfill note; do not treat it as a current-period change or evidence claim."
+        },
+        {
+          "publication_event_id": "publish-field-activity-calico-broad-neurodegeneration-extension-2024-2026-06-15",
+          "event_name": "Calico-Broad field activity published",
+          "event_date": "2026-06-15",
+          "event_summary": "Published source-backed public field activity for Calico and Broad's aging biology collaboration extension.",
+          "event_change_note": "Adds Calico-Broad collaboration extension as field-activity context, not evidence of intervention benefit.",
+          "decision": "add_post_hoc_context_note",
+          "materiality": "low",
+          "confidence": "high",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field"
+          ],
+          "human_review_required": false,
+          "human_approval_status": "approved",
+          "rationale": "June direct field-activity publication backfilled a May 2024 Calico-Broad collaboration extension. It is historical field-infrastructure context, not June field movement.",
+          "next_action": "Use only if the July edition needs a historical field-activity backfill note; do not treat it as current-period progress or evidence that the collaboration produced intervention benefit."
+        },
+        {
+          "publication_event_id": "publish-field-activity-google-calico-launch-2013-2026-06-15",
+          "event_name": "Google Calico launch field activity published",
+          "event_date": "2026-06-15",
+          "event_summary": "Published source-backed public field activity for Google's 2013 Calico announcement.",
+          "event_change_note": "Adds Calico's launch as historical field-activity context, not evidence of intervention benefit.",
+          "decision": "add_post_hoc_context_note",
+          "materiality": "low",
+          "confidence": "high",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field"
+          ],
+          "human_review_required": false,
+          "human_approval_status": "approved",
+          "rationale": "June direct field-activity publication backfilled Google's 2013 Calico launch. It is a historical field anchor, not June field movement.",
+          "next_action": "Use only as historical field-activity context if the final edition mentions backfilled field anchors; do not treat it as current-period progress or evidence of benefit."
+        },
+        {
+          "publication_event_id": "publish-field-activity-altos-labs-launch-2022-2026-06-15",
+          "event_name": "Altos Labs launch field activity published",
+          "event_date": "2026-06-15",
+          "event_summary": "Published source-backed public field activity for the Altos Labs launch.",
+          "event_change_note": "Adds Altos Labs' launch as historical field-activity context, not evidence of intervention benefit.",
+          "decision": "add_post_hoc_context_note",
+          "materiality": "low",
+          "confidence": "high",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field"
+          ],
+          "human_review_required": false,
+          "human_approval_status": "approved",
+          "rationale": "June direct field-activity publication backfilled Altos Labs' 2022 launch. It is a historical field anchor, not June field movement or evidence of intervention benefit.",
+          "next_action": "Use only as historical field-activity context if the final edition mentions backfilled field anchors; do not treat it as current-period progress or evidence of benefit."
+        },
+        {
+          "publication_event_id": "publish-field-activity-newlimit-formation-2021-2026-06-15",
+          "event_name": "NewLimit formation field activity published",
+          "event_date": "2026-06-15",
+          "event_summary": "Published source-backed public field activity for NewLimit's formation.",
+          "event_change_note": "Adds NewLimit's formation as historical field-activity context, not evidence of intervention benefit.",
+          "decision": "add_post_hoc_context_note",
+          "materiality": "low",
+          "confidence": "high",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field"
+          ],
+          "human_review_required": false,
+          "human_approval_status": "approved",
+          "rationale": "June direct field-activity publication backfilled NewLimit's 2021 formation. It is historical company-infrastructure context, not June field movement.",
+          "next_action": "Use only as historical field-activity context if the final edition mentions backfilled company anchors; do not treat it as current-period progress or evidence of benefit."
+        },
+        {
+          "publication_event_id": "publish-field-activity-xprize-healthspan-launch-2023-2026-06-15",
+          "event_name": "XPRIZE Healthspan launch field activity published",
+          "event_date": "2026-06-15",
+          "event_summary": "Published source-backed public field activity for the XPRIZE Healthspan launch.",
+          "event_change_note": "Adds XPRIZE Healthspan's launch as historical field-activity and trial-horizon context, not evidence of intervention benefit.",
+          "decision": "add_post_hoc_context_note",
+          "materiality": "low",
+          "confidence": "high",
+          "public_copy_action": "draft_copy",
+          "affected_surfaces": [
+            "state_of_field",
+            "trial_horizon"
+          ],
+          "human_review_required": false,
+          "human_approval_status": "approved",
+          "rationale": "June direct field-activity publication backfilled the 2023 XPRIZE Healthspan launch. It is historical prize-infrastructure context, not June field movement or evidence of intervention benefit.",
+          "next_action": "Use only as historical field-activity context if the final edition mentions backfilled healthspan prize infrastructure; do not treat it as current-period progress or evidence of benefit."
+        }
+      ]
+    },
+    {
+      "decision": "needs_surveillance",
+      "title": "Needs surveillance first",
+      "guidance": "Do not write current claims until external sources or registries are rechecked.",
+      "count": 0,
+      "items": []
+    },
+    {
+      "decision": "defer_to_next_edition",
+      "title": "Defer to a later edition",
+      "guidance": "Use when the event belongs outside the covered retrospective period.",
+      "count": 0,
+      "items": []
+    },
+    {
+      "decision": "post_hoc_material_correction",
+      "title": "Post-hoc material correction",
+      "guidance": "Use only when later-reviewed evidence would have changed the covered period's conclusion.",
+      "count": 0,
+      "items": []
+    },
+    {
+      "decision": "no_op",
+      "title": "No public copy action",
+      "guidance": "Use when no State of the Field or related public surface should change.",
+      "count": 0,
+      "items": []
+    }
+  ],
+  "public_activity_lenses": {
+    "public_activity_item_count": 16,
+    "activity_only_count": 15,
+    "assessment_changing_count": 1,
+    "field_anchor_count": 4,
+    "current_movement_count": 11,
+    "trial_horizon_count": 9,
+    "historical_context_count": 5,
+    "state_of_field_routed_count": 11,
+    "state_of_field_routed_field_anchor_count": 4,
+    "state_of_field_routed_current_movement_count": 6,
+    "state_of_field_routed_trial_horizon_count": 5,
+    "state_of_field_routed_historical_context_count": 5,
+    "state_of_field_routed_activity_only_count": 11,
+    "state_of_field_routed_activity_ids": [
+      "altos-labs-launch-2022",
+      "arpa-h-prospr-awardees-2026",
+      "calico-abbvie-aging-collaboration-2014",
+      "calico-broad-neurodegeneration-extension-2024",
+      "google-calico-launch-2013",
+      "healthspan-connect-registry-post-2025",
+      "hevolution-400m-healthspan-commitments-2024",
+      "newlimit-formation-2021",
+      "newlimit-series-c-2026",
+      "retro-biosciences-next-financing-2026",
+      "xprize-healthspan-launch-2023"
+    ]
+  },
+  "public_activity_items_for_state_of_field": [
+    {
+      "id": "google-calico-launch-2013",
+      "name": "Google announced Calico as an aging-focused company",
+      "occurred_on": "2013-09-18",
+      "activity_type": "company_update",
+      "activity_lane": "commercial",
+      "noteworthiness_tier": "field_anchor",
+      "affects_outlook": false,
+      "lenses": [
+        "field_anchor",
+        "historical_context",
+        "activity_only"
+      ],
+      "suggested_use": "Use only as historical field-map context if it prevents a misleading monthly read."
+    },
+    {
+      "id": "calico-abbvie-aging-collaboration-2014",
+      "name": "Calico and AbbVie launched an age-related disease R&D collaboration",
+      "occurred_on": "2014-09-03",
+      "activity_type": "partnership",
+      "activity_lane": "commercial",
+      "noteworthiness_tier": "material_program",
+      "affects_outlook": false,
+      "lenses": [
+        "historical_context",
+        "activity_only"
+      ],
+      "suggested_use": "Use only as historical field-map context if it prevents a misleading monthly read."
+    },
+    {
+      "id": "newlimit-formation-2021",
+      "name": "NewLimit announced formation to extend human healthspan",
+      "occurred_on": "2021-12-11",
+      "activity_type": "company_update",
+      "activity_lane": "commercial",
+      "noteworthiness_tier": "material_program",
+      "affects_outlook": false,
+      "lenses": [
+        "historical_context",
+        "activity_only"
+      ],
+      "suggested_use": "Use only as historical field-map context if it prevents a misleading monthly read."
+    },
+    {
+      "id": "altos-labs-launch-2022",
+      "name": "Altos Labs launched with cellular rejuvenation programming focus",
+      "occurred_on": "2022-01-19",
+      "activity_type": "company_update",
+      "activity_lane": "commercial",
+      "noteworthiness_tier": "field_anchor",
+      "affects_outlook": false,
+      "lenses": [
+        "field_anchor",
+        "historical_context",
+        "activity_only"
+      ],
+      "suggested_use": "Use only as historical field-map context if it prevents a misleading monthly read."
+    },
+    {
+      "id": "xprize-healthspan-launch-2023",
+      "name": "XPRIZE Healthspan launched",
+      "occurred_on": "2023-11-29",
+      "activity_type": "funding_event",
+      "activity_lane": "scientific",
+      "noteworthiness_tier": "material_program",
+      "affects_outlook": false,
+      "lenses": [
+        "historical_context",
+        "trial_horizon",
+        "activity_only"
+      ],
+      "suggested_use": "Use only as historical field-map context if it prevents a misleading monthly read."
+    },
+    {
+      "id": "calico-broad-neurodegeneration-extension-2024",
+      "name": "Calico and Broad extended aging biology collaboration",
+      "occurred_on": "2024-05-09",
+      "activity_type": "partnership",
+      "activity_lane": "scientific",
+      "noteworthiness_tier": "material_program",
+      "affects_outlook": false,
+      "lenses": [
+        "current_movement",
+        "activity_only"
+      ],
+      "suggested_use": "Use as field-activity context, not evidence of benefit or LEV progress."
+    },
+    {
+      "id": "hevolution-400m-healthspan-commitments-2024",
+      "name": "Hevolution announced more than $400M committed to healthspan science",
+      "occurred_on": "2024-06-10",
+      "activity_type": "funding_event",
+      "activity_lane": "scientific",
+      "noteworthiness_tier": "field_anchor",
+      "affects_outlook": false,
+      "lenses": [
+        "field_anchor",
+        "current_movement",
+        "activity_only"
+      ],
+      "suggested_use": "Use as field-activity context, not evidence of benefit or LEV progress."
+    },
+    {
+      "id": "healthspan-connect-registry-post-2025",
+      "name": "Healthspan Connect entered the public registry",
+      "occurred_on": "2025-10-07",
+      "activity_type": "other",
+      "activity_lane": "scientific",
+      "noteworthiness_tier": "material_program",
+      "affects_outlook": false,
+      "lenses": [
+        "current_movement",
+        "trial_horizon",
+        "activity_only"
+      ],
+      "suggested_use": "Use as trial-horizon or future-evidence context only when status/result boundaries are explicit."
+    },
+    {
+      "id": "arpa-h-prospr-awardees-2026",
+      "name": "ARPA-H announced PROSPR healthspan awardees",
+      "occurred_on": "2026-02-24",
+      "activity_type": "funding_event",
+      "activity_lane": "scientific",
+      "noteworthiness_tier": "field_anchor",
+      "affects_outlook": false,
+      "lenses": [
+        "field_anchor",
+        "current_movement",
+        "trial_horizon",
+        "activity_only"
+      ],
+      "suggested_use": "Use as trial-horizon or future-evidence context only when status/result boundaries are explicit."
+    },
+    {
+      "id": "retro-biosciences-next-financing-2026",
+      "name": "Retro announced next financing round and first-in-human progress",
+      "occurred_on": "2026-05-22",
+      "activity_type": "funding_event",
+      "activity_lane": "commercial",
+      "noteworthiness_tier": "material_program",
+      "affects_outlook": false,
+      "lenses": [
+        "current_movement",
+        "trial_horizon",
+        "activity_only"
+      ],
+      "suggested_use": "Use as trial-horizon or future-evidence context only when status/result boundaries are explicit."
+    },
+    {
+      "id": "newlimit-series-c-2026",
+      "name": "NewLimit raised Series C funding to bring longevity medicines to human trials",
+      "occurred_on": "2026-06-02",
+      "activity_type": "funding_event",
+      "activity_lane": "commercial",
+      "noteworthiness_tier": "material_program",
+      "affects_outlook": false,
+      "lenses": [
+        "current_movement",
+        "trial_horizon",
+        "activity_only"
+      ],
+      "suggested_use": "Use as trial-horizon or future-evidence context only when status/result boundaries are explicit."
+    }
+  ],
+  "field_activity_watchlist": {
+    "path": "research/backlog/field-activity-watchlist.v1.json",
+    "available": true,
+    "updated_at": "2026-06-15T20:01:01Z",
+    "entry_count": 8,
+    "discovery_channel_count": 6,
+    "blindspot_control_count": 7,
+    "capture_recommended_count": 0,
+    "needs_primary_source_count": 1,
+    "pending_field_anchor_count": 0,
+    "pending_material_program_count": 1,
+    "watch_only_count": 0,
+    "below_threshold_count": 0,
+    "consolidated_candidate_count": 2,
+    "approval_candidate_count": 1,
+    "human_review_required_candidate_count": 0,
+    "surface_routing_required_candidate_count": 7,
+    "source_work_candidate_count": 1,
+    "human_approval_required_count": 0,
+    "state_of_field_routed_item_count": 7,
+    "missing_surface_routing_count": 0,
+    "nonblocking_watch_item_count": 1,
+    "learning_phase": "stable",
+    "learning_cadence": "monthly",
+    "learning_completed_pilot_sweeps": 3,
+    "learning_minimum_pilot_sweeps": 3,
+    "learning_open_question_count": 0,
+    "learning_revision_trigger_count": 4
+  },
+  "draft_pool_path": "extra/state-of-field-2026-07-draft.json",
+  "draft_seed": {
+    "available": true,
+    "slug": "2026-07",
+    "title": "June 2026 in review",
+    "field_change_status": "mixed",
+    "bottom_line": "LEV did not look closer after the reviewed June updates. A stronger read would still require repeated human studies showing long-lasting improvements in health or function.",
+    "what_changed_count": 5,
+    "current_context_count": 5,
+    "trial_horizon_count": 5,
+    "signal_count": 3,
+    "evidence_gap_count": 3,
+    "track_example_count": 4,
+    "reader_takeaway_count": 4,
+    "open_questions": [
+      "After June 30, decide which June public updates belong in what_changed versus current_context.",
+      "Decide whether rapalogs should be a prominent June item because the public read moved from activity-only human biomarker context to a source-backed tentative human functional read.",
+      "Re-check any stale registry claims before turning trial horizon seed items into public trial_horizon copy.",
+      "Run the narrative rollup after publishing the July edition if it becomes the current story's observed State of the Field edition."
+    ],
+    "field_activity_guidance": [
+      "Use current field movement only as activity or context unless reviewed evidence changes an outlook.",
+      "Treat NewLimit Series C, Retro financing, and ARPA-H PROSPR as activity or trial-horizon context, not evidence of benefit.",
+      "Treat Calico, Altos, NewLimit formation, XPRIZE, Hevolution, and Calico collaboration records as historical field context, not June progress.",
+      "Keep activity-only and assessment-changing counts separate so the July edition does not imply that funding, launches, or prize infrastructure changed LEV timing."
+    ],
+    "do_not_publish_before": "2026-07-01"
+  },
+  "trial_watch_report": {
+    "available": true,
+    "path": "extra/trial-watch-report.md",
+    "generated_on": "2026-06-15",
+    "summary_lines": [
+      "Registry-linked interventional studies: 144",
+      "With `trial_details`: 144",
+      "Missing `trial_details`: 0",
+      "Active result-watch records: 47",
+      "Late no-results records: 7",
+      "Retirement candidates needing final sweep or explicit decision: 4",
+      "Retired no-results archive records: 2",
+      "Active/recruiting/planned records past local completion date: 11",
+      "Completed or past-completion records with unresolved no posted results: 25",
+      "Registry checks missing or stale: 18",
+      "Active result-watch records with missing or stale registry checks: 0",
+      "Results captured or posted locally: 87"
+    ],
+    "surveillance_use_lines": [
+      "Re-check every NCT in the active result watch before a scoped surveillance no-op.",
+      "Use late no-results records as low-priority watch context, not as public anticipation that results are still expected.",
+      "Do not mark a trial `retired_no_results` until the retirement sweep is recorded in a research session.",
+      "Treat unchanged no-result registries as surveillance facts, not field progress.",
+      "Treat status-only changes as activity unless they alter the public interpretation.",
+      "Send posted trial results through staged evidence review before changing an outlook."
+    ]
+  },
+  "source_artifacts": [
+    "ops/state-of-field-workflow.v1.json",
+    "data/content/current-lev-story/current.json",
+    "extra/state-of-field-2026-07-draft.json",
+    "research/backlog/field-activity-watchlist.v1.json",
+    "extra/trial-watch-report.md"
+  ],
+  "agent_recommendations": [
+    "Keep the edition internal until the publication gate passes; do not move it to in_review or published while gate issues remain.",
+    "Use the recorded agent decisions as the starting classification set; no raw reconciliation decisions are currently waiting for curator classification.",
+    "Do not ask for approval unless new evidence, surveillance, or field-activity candidates appear; the current approval packet is empty.",
+    "Keep source-work field-activity candidates out of public monthly copy unless a durable source is found or a curator approves an exception.",
+    "Review the State-of-Field-routed field activity lens before drafting; treat activity as context or trial horizon unless reviewed evidence changes an outlook.",
+    "Rerun the trial audit after the covered period closes and refresh any registry-status claims before final trial_horizon copy.",
+    "Use the draft seed as scaffolding only; final public JSON should be written from reviewed records after period close."
+  ],
+  "written_paths": [
+    "extra/state-of-field-2026-07-prep.json",
+    "extra/state-of-field-2026-07-prep.md"
+  ]
+}

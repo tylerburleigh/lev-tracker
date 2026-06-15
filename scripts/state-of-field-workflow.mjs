@@ -11,6 +11,7 @@ const stateOfFieldRoot = "data/content/state-of-the-field";
 const publicationEventRoot = "data/publication-events";
 const activityItemsRoot = "data/activity-items";
 const fieldActivityWatchlistPath = "research/backlog/field-activity-watchlist.v1.json";
+const trialWatchReportPath = "extra/trial-watch-report.md";
 const directActivityPublicationRoute = "direct_activity_publish";
 const fieldActivityPacketClassifications = new Set(["capture_now", "research_more"]);
 const fieldActivityOpenApprovalStatuses = new Set(["requested", "revise"]);
@@ -20,10 +21,12 @@ function usage() {
   npm run state-of-field:status [-- --strict] [--json]
   npm run state-of-field:reconcile [-- --write] [--edition YYYY-MM] [--draft-pool PATH] [--include-period-events] [--json]
   npm run state-of-field:packet [-- --edition YYYY-MM] [--all] [--json]
+  npm run state-of-field:prep [-- --edition YYYY-MM] [--draft-pool PATH] [--write] [--json]
 
 Options:
   --strict  Fail when current-story/public-edition publication-event mismatches are not tracked.
   --write   Update ${workflowPath} when reconciliation items or observed story metadata are missing.
+            With prep, write extra/state-of-field-<edition>-prep.{json,md}.
   --edition Reconcile a specific workflow edition slug. Defaults to the active workflow edition.
   --draft-pool PATH
             Read candidate_public_update_pool event IDs from an internal draft JSON.
@@ -81,10 +84,28 @@ async function readJsonIfExists(relativePath) {
   }
 }
 
+async function readTextIfExists(relativePath) {
+  try {
+    return await fs.readFile(path.join(workspaceRoot, relativePath), "utf8");
+  } catch (error) {
+    if (error.code === "ENOENT") {
+      return undefined;
+    }
+
+    throw error;
+  }
+}
+
 async function writeJson(relativePath, value) {
   const filePath = path.join(workspaceRoot, relativePath);
   await fs.mkdir(path.dirname(filePath), { recursive: true });
   await fs.writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`, "utf8");
+}
+
+async function writeText(relativePath, value) {
+  const filePath = path.join(workspaceRoot, relativePath);
+  await fs.mkdir(path.dirname(filePath), { recursive: true });
+  await fs.writeFile(filePath, value, "utf8");
 }
 
 async function readJsonCollection(relativeDir) {
@@ -431,11 +452,12 @@ function evaluatePublicationGate({ workflowEdition, publicEdition, openDecisions
   };
 }
 
-function summarizeWorkflow(workflow, currentStory, stateOfFieldEditions, fieldActivityWatchlist, activityItems) {
+function summarizeWorkflow(workflow, currentStory, stateOfFieldEditions, fieldActivityWatchlist, activityItems, editionSlug) {
   const { latestEdition, workflowEdition } = selectWorkflowEdition({
     workflow,
     currentStory,
-    stateOfFieldEditions
+    stateOfFieldEditions,
+    editionSlug
   });
   const publicEdition = stateOfFieldEditions.find((edition) => edition.slug === workflowEdition.slug);
 
@@ -895,6 +917,475 @@ function formatApprovalPacket(packet) {
   return `${lines.join("\n")}\n`;
 }
 
+const prepDecisionSections = [
+  {
+    decision: "include_as_field_signal",
+    title: "Include as field signals",
+    guidance: "Use for reviewed period events that changed the visible field read without resolving the overall LEV proof gap."
+  },
+  {
+    decision: "include_as_current_context",
+    title: "Include as current context",
+    guidance: "Use for claim boundaries, clearer evidence accounting, or field context that helps readers interpret the month."
+  },
+  {
+    decision: "include_as_trial_horizon",
+    title: "Use in trial horizon",
+    guidance: "Use for registry-linked or trial-timing context, with result/no-result/status boundaries explicit."
+  },
+  {
+    decision: "omit_process_context",
+    title: "Omit or fold into another item",
+    guidance: "Use when the update is process-like, duplicative, or too narrow for a separate public monthly item."
+  },
+  {
+    decision: "add_post_hoc_context_note",
+    title: "Historical or post-period context",
+    guidance: "Use only when older activity prevents a misleading read; do not frame it as current-period progress."
+  },
+  {
+    decision: "needs_surveillance",
+    title: "Needs surveillance first",
+    guidance: "Do not write current claims until external sources or registries are rechecked."
+  },
+  {
+    decision: "defer_to_next_edition",
+    title: "Defer to a later edition",
+    guidance: "Use when the event belongs outside the covered retrospective period."
+  },
+  {
+    decision: "post_hoc_material_correction",
+    title: "Post-hoc material correction",
+    guidance: "Use only when later-reviewed evidence would have changed the covered period's conclusion."
+  },
+  {
+    decision: "no_op",
+    title: "No public copy action",
+    guidance: "Use when no State of the Field or related public surface should change."
+  }
+];
+
+function compactLine(value) {
+  return String(value ?? "").replace(/\s+/g, " ").trim();
+}
+
+function sentencePreview(value, maxLength = 220) {
+  const text = compactLine(value);
+  if (text.length <= maxLength) {
+    return text;
+  }
+
+  return `${text.slice(0, maxLength - 1).trimEnd()}...`;
+}
+
+function groupBy(values, keyFn) {
+  const groups = new Map();
+  for (const value of values) {
+    const key = keyFn(value);
+    groups.set(key, [...(groups.get(key) ?? []), value]);
+  }
+  return groups;
+}
+
+function approvalStatus(item) {
+  return item.human_approval?.status ?? (item.agent_assessment?.human_review_required ? "missing" : "not_required");
+}
+
+function prepReconciliationItem(item, event) {
+  return {
+    publication_event_id: item.publication_event_id,
+    event_name: event?.name ?? item.publication_event_id,
+    event_date: item.event_date,
+    event_summary: event?.summary ?? null,
+    event_change_note: event?.change_note ?? null,
+    decision: item.decision,
+    materiality: item.agent_assessment?.materiality ?? null,
+    confidence: item.agent_assessment?.confidence ?? null,
+    public_copy_action: item.agent_assessment?.public_copy_action ?? null,
+    affected_surfaces: item.agent_assessment?.affected_surfaces ?? [],
+    human_review_required: item.agent_assessment?.human_review_required ?? false,
+    human_approval_status: approvalStatus(item),
+    rationale: item.rationale,
+    next_action: item.next_action
+  };
+}
+
+function activityLensLabels(activityItem) {
+  return [
+    activityItem.noteworthiness_tier === "field_anchor" ? "field_anchor" : null,
+    hasActivityTag(activityItem, "historical-backfill") ? "historical_context" : "current_movement",
+    isTrialHorizonActivity(activityItem) ? "trial_horizon" : null,
+    activityItem.affects_outlook ? "assessment_changing" : "activity_only"
+  ].filter(Boolean);
+}
+
+function suggestedActivityUse(activityItem) {
+  if (activityItem.affects_outlook) {
+    return "Review as possible evidence-context support, but do not treat activity alone as proof.";
+  }
+  if (hasActivityTag(activityItem, "historical-backfill")) {
+    return "Use only as historical field-map context if it prevents a misleading monthly read.";
+  }
+  if (isTrialHorizonActivity(activityItem)) {
+    return "Use as trial-horizon or future-evidence context only when status/result boundaries are explicit.";
+  }
+  return "Use as field-activity context, not evidence of benefit or LEV progress.";
+}
+
+function buildPublicActivityPrep(activityItems) {
+  return activityItems
+    .filter((item) => item.record_type === "activity_item")
+    .filter((item) => hasActivityRoute(item, "state_of_field") || item.surface_routing?.state_of_field_review_required)
+    .sort((left, right) => String(left.occurred_on ?? "").localeCompare(String(right.occurred_on ?? "")) || left.id.localeCompare(right.id))
+    .map((item) => ({
+      id: item.id,
+      name: item.name,
+      occurred_on: item.occurred_on ?? null,
+      activity_type: item.activity_type ?? null,
+      activity_lane: item.activity_lane ?? null,
+      noteworthiness_tier: item.noteworthiness_tier ?? null,
+      affects_outlook: Boolean(item.affects_outlook),
+      lenses: activityLensLabels(item),
+      suggested_use: suggestedActivityUse(item)
+    }));
+}
+
+function buildDraftSeedSummary(draftPool) {
+  const seed = draftPool?.candidate_public_edition_seed;
+  if (!seed || typeof seed !== "object") {
+    return {
+      available: false,
+      field_change_status: null,
+      what_changed_count: 0,
+      current_context_count: 0,
+      trial_horizon_count: 0,
+      signal_count: 0,
+      evidence_gap_count: 0,
+      track_example_count: 0,
+      reader_takeaway_count: 0,
+      open_questions: [],
+      field_activity_guidance: []
+    };
+  }
+
+  return {
+    available: true,
+    slug: seed.slug ?? null,
+    title: seed.title ?? null,
+    field_change_status: seed.field_change_status ?? null,
+    bottom_line: seed.bottom_line ?? null,
+    what_changed_count: seed.what_changed?.length ?? 0,
+    current_context_count: seed.current_context?.length ?? 0,
+    trial_horizon_count: seed.trial_horizon?.length ?? 0,
+    signal_count: seed.signals_to_watch?.length ?? 0,
+    evidence_gap_count: seed.evidence_gaps?.length ?? 0,
+    track_example_count: seed.track_examples?.length ?? 0,
+    reader_takeaway_count: seed.reader_takeaways?.length ?? 0,
+    open_questions: draftPool.open_questions ?? [],
+    field_activity_guidance: draftPool.field_activity_lens_review?.state_of_field_guidance ?? [],
+    do_not_publish_before: draftPool.do_not_publish_before ?? seed.publish_gate?.do_not_publish_before ?? null
+  };
+}
+
+function parseTrialWatchReportSummary(text) {
+  if (!text) {
+    return {
+      available: false,
+      path: trialWatchReportPath,
+      generated_on: null,
+      summary_lines: [],
+      surveillance_use_lines: []
+    };
+  }
+
+  const generatedOn = text.match(/Generated from reviewed local records on ([0-9-]+)\./)?.[1] ?? null;
+  const summaryMatch = text.match(/## Summary\n\n([\s\S]*?)(?:\n### |\n## |$)/);
+  const surveillanceUseMatch = text.match(/## Surveillance Use\n\n([\s\S]*?)(?:\n## |$)/);
+  const toBulletLines = (value) =>
+    (value ?? "")
+      .split("\n")
+      .map((line) => line.trim())
+      .filter((line) => line.startsWith("- "))
+      .map((line) => line.slice(2));
+
+  return {
+    available: true,
+    path: trialWatchReportPath,
+    generated_on: generatedOn,
+    summary_lines: toBulletLines(summaryMatch?.[1]),
+    surveillance_use_lines: toBulletLines(surveillanceUseMatch?.[1])
+  };
+}
+
+function buildPrepRecommendations({ summary, packet, draftSeedSummary, trialWatchReport }) {
+  const recommendations = [];
+
+  if (summary.publication_gate.status !== "pass") {
+    recommendations.push(
+      "Keep the edition internal until the publication gate passes; do not move it to in_review or published while gate issues remain."
+    );
+  }
+
+  if (summary.open_reconciliation_decision_count === 0 && packet.packet_item_count === 0) {
+    recommendations.push("Use the recorded agent decisions as the starting classification set; no raw reconciliation decisions are currently waiting for curator classification.");
+  }
+
+  if (packet.human_review_required_count === 0 && packet.field_activity_human_review_required_count === 0) {
+    recommendations.push("Do not ask for approval unless new evidence, surveillance, or field-activity candidates appear; the current approval packet is empty.");
+  }
+
+  if (summary.field_activity_watchlist.source_work_candidate_count > 0) {
+    recommendations.push("Keep source-work field-activity candidates out of public monthly copy unless a durable source is found or a curator approves an exception.");
+  }
+
+  if (summary.field_activity_watchlist.state_of_field_routed_item_count > 0) {
+    recommendations.push("Review the State-of-Field-routed field activity lens before drafting; treat activity as context or trial horizon unless reviewed evidence changes an outlook.");
+  }
+
+  if (trialWatchReport.available) {
+    recommendations.push("Rerun the trial audit after the covered period closes and refresh any registry-status claims before final trial_horizon copy.");
+  }
+
+  if (draftSeedSummary.available) {
+    recommendations.push("Use the draft seed as scaffolding only; final public JSON should be written from reviewed records after period close.");
+  }
+
+  return recommendations;
+}
+
+function buildPrepPacket({
+  workflow,
+  currentStory,
+  stateOfFieldEditions,
+  publicationEvents,
+  fieldActivityWatchlist,
+  activityItems,
+  draftPool,
+  draftPoolPath,
+  trialWatchReportText,
+  options
+}) {
+  const { workflowEdition } = selectWorkflowEdition({
+    workflow,
+    currentStory,
+    stateOfFieldEditions,
+    editionSlug: options.edition
+  });
+  const eventById = new Map(publicationEvents.map((event) => [event.id, event]));
+  const summary = summarizeWorkflow(workflow, currentStory, stateOfFieldEditions, fieldActivityWatchlist, activityItems, workflowEdition.slug);
+  const approvalPacket = buildApprovalPacket({
+    workflow,
+    currentStory,
+    stateOfFieldEditions,
+    publicationEvents,
+    fieldActivityWatchlist,
+    activityItems,
+    options: { ...options, edition: workflowEdition.slug }
+  });
+  const reconciliationItems = (workflowEdition.reconciliation_items ?? []).map((item) =>
+    prepReconciliationItem(item, eventById.get(item.publication_event_id))
+  );
+  const itemsByDecision = groupBy(reconciliationItems, (item) => item.decision);
+  const decision_sections = prepDecisionSections.map((section) => ({
+    ...section,
+    count: itemsByDecision.get(section.decision)?.length ?? 0,
+    items: itemsByDecision.get(section.decision) ?? []
+  }));
+  const draftSeedSummary = buildDraftSeedSummary(draftPool);
+  const trialWatchReport = parseTrialWatchReportSummary(trialWatchReportText);
+
+  const prep = {
+    generated_at: new Date().toISOString(),
+    workflow_path: workflowPath,
+    edition_slug: workflowEdition.slug,
+    edition_title: workflowEdition.title,
+    status: workflowEdition.status,
+    period_label: workflowEdition.period_label,
+    period_start: workflowEdition.period_start,
+    period_end: workflowEdition.period_end,
+    required_next_action: workflowEdition.required_next_action,
+    blockers: workflowEdition.blockers ?? [],
+    open_checklist_items: (workflowEdition.checklist ?? []).filter((item) =>
+      ["pending", "in_progress", "blocked"].includes(item.status)
+    ),
+    publication_gate: summary.publication_gate,
+    approval_packet_summary: {
+      reconciliation_items_in_packet: approvalPacket.packet_item_count,
+      human_review_required: approvalPacket.human_review_required_count,
+      missing_agent_assessments: approvalPacket.missing_agent_assessment_count,
+      field_activity_items_in_packet: approvalPacket.field_activity_packet_item_count,
+      field_activity_human_review_required: approvalPacket.field_activity_human_review_required_count,
+      field_activity_missing_agent_assessments: approvalPacket.field_activity_missing_agent_assessment_count
+    },
+    decision_sections,
+    public_activity_lenses: summary.public_activity_lenses,
+    public_activity_items_for_state_of_field: buildPublicActivityPrep(activityItems),
+    field_activity_watchlist: summary.field_activity_watchlist,
+    draft_pool_path: draftPool ? draftPoolPath : null,
+    draft_seed: draftSeedSummary,
+    trial_watch_report: trialWatchReport,
+    source_artifacts: [
+      workflowPath,
+      currentStoryPath,
+      draftPool ? draftPoolPath : null,
+      fieldActivityWatchlist ? fieldActivityWatchlistPath : null,
+      trialWatchReport.available ? trialWatchReportPath : null
+    ].filter(Boolean)
+  };
+
+  return {
+    ...prep,
+    agent_recommendations: buildPrepRecommendations({
+      summary,
+      packet: approvalPacket,
+      draftSeedSummary,
+      trialWatchReport
+    })
+  };
+}
+
+function formatDecisionItem(item) {
+  return [
+    `- ${item.event_name} (${item.event_date})`,
+    `  - Event ID: ${item.publication_event_id}`,
+    `  - Materiality: ${item.materiality ?? "unknown"}; approval: ${item.human_approval_status}`,
+    `  - Rationale: ${sentencePreview(item.rationale)}`,
+    `  - Next action: ${sentencePreview(item.next_action)}`
+  ].join("\n");
+}
+
+function formatPrepPacket(prep) {
+  const lines = [
+    "# State of the Field Prep Packet",
+    "",
+    `Edition: ${prep.edition_slug} (${prep.period_label})`,
+    `Status: ${prep.status}`,
+    `Period: ${prep.period_start} to ${prep.period_end}`,
+    `Generated: ${prep.generated_at}`,
+    `Next action: ${prep.required_next_action}`,
+    "",
+    "## Agent Recommendation",
+    "",
+    ...prep.agent_recommendations.map((recommendation) => `- ${recommendation}`),
+    "",
+    "## Publication Gate",
+    "",
+    `- Gate status: ${prep.publication_gate.status} (${prep.publication_gate.issue_count} issue(s))`,
+    `- Approval packet items: ${prep.approval_packet_summary.reconciliation_items_in_packet}`,
+    `- Human approvals needed: ${prep.approval_packet_summary.human_review_required}`,
+    `- Field-activity packet items: ${prep.approval_packet_summary.field_activity_items_in_packet}`,
+    `- Field-activity approvals needed: ${prep.approval_packet_summary.field_activity_human_review_required}`
+  ];
+
+  if (prep.publication_gate.issues.length > 0) {
+    lines.push("", "Gate issues:");
+    for (const issue of prep.publication_gate.issues) {
+      lines.push(`- ${issue}`);
+    }
+  }
+
+  if (prep.blockers.length > 0) {
+    lines.push("", "Workflow blockers:");
+    for (const blocker of prep.blockers) {
+      lines.push(`- ${blocker}`);
+    }
+  }
+
+  if (prep.open_checklist_items.length > 0) {
+    lines.push("", "Open checklist:");
+    for (const item of prep.open_checklist_items) {
+      lines.push(`- ${item.id}: ${item.status} - ${item.label}`);
+    }
+  }
+
+  lines.push("", "## Decision Buckets");
+
+  for (const section of prep.decision_sections.filter((item) => item.count > 0)) {
+    lines.push("", `### ${section.title} (${section.count})`, "", section.guidance, "");
+    for (const item of section.items) {
+      lines.push(formatDecisionItem(item), "");
+    }
+  }
+
+  lines.push(
+    "",
+    "## Field Activity",
+    "",
+    `- Watchlist entries: ${prep.field_activity_watchlist.entry_count}`,
+    `- Source-work candidates: ${prep.field_activity_watchlist.source_work_candidate_count}`,
+    `- State-of-Field-routed watchlist items: ${prep.field_activity_watchlist.state_of_field_routed_item_count}`,
+    `- Live public activity routed to State of Field: ${prep.public_activity_lenses.state_of_field_routed_count}`,
+    `- Public activity lenses: ${prep.public_activity_lenses.field_anchor_count} field anchors; ${prep.public_activity_lenses.current_movement_count} current movement; ${prep.public_activity_lenses.trial_horizon_count} trial horizon; ${prep.public_activity_lenses.historical_context_count} historical context`
+  );
+
+  if (prep.public_activity_items_for_state_of_field.length > 0) {
+    lines.push("", "Live activity items to reconcile:");
+    for (const item of prep.public_activity_items_for_state_of_field) {
+      lines.push(`- ${item.name} (${item.occurred_on ?? "date unknown"}): ${item.lenses.join(", ")}. ${item.suggested_use}`);
+    }
+  }
+
+  lines.push("", "## Draft Seed");
+  if (prep.draft_seed.available) {
+    lines.push(
+      "",
+      `- Draft pool: ${prep.draft_pool_path}`,
+      `- Seed status: ${prep.draft_seed.field_change_status ?? "unknown"}`,
+      `- Seed what_changed: ${prep.draft_seed.what_changed_count}`,
+      `- Seed current_context: ${prep.draft_seed.current_context_count}`,
+      `- Seed trial_horizon: ${prep.draft_seed.trial_horizon_count}`,
+      `- Seed signals_to_watch: ${prep.draft_seed.signal_count}`,
+      `- Do not publish before: ${prep.draft_seed.do_not_publish_before ?? "not specified"}`
+    );
+
+    if (prep.draft_seed.field_activity_guidance.length > 0) {
+      lines.push("", "Field-activity guidance from draft seed:");
+      for (const item of prep.draft_seed.field_activity_guidance) {
+        lines.push(`- ${item}`);
+      }
+    }
+
+    if (prep.draft_seed.open_questions.length > 0) {
+      lines.push("", "Open draft questions:");
+      for (const question of prep.draft_seed.open_questions) {
+        lines.push(`- ${question}`);
+      }
+    }
+  } else {
+    lines.push("", "- No draft seed artifact found.");
+  }
+
+  lines.push("", "## Trial Watch Input");
+  if (prep.trial_watch_report.available) {
+    lines.push("", `- Report: ${prep.trial_watch_report.path}`, `- Generated on: ${prep.trial_watch_report.generated_on ?? "unknown"}`);
+    for (const item of prep.trial_watch_report.summary_lines) {
+      lines.push(`- ${item}`);
+    }
+    if (prep.trial_watch_report.surveillance_use_lines.length > 0) {
+      lines.push("", "Surveillance use:");
+      for (const item of prep.trial_watch_report.surveillance_use_lines) {
+        lines.push(`- ${item}`);
+      }
+    }
+  } else {
+    lines.push("", `- No ${trialWatchReportPath} artifact found; run npm run audit:trials -- --write before final monthly copy.`);
+  }
+
+  lines.push("", "## Source Artifacts", "");
+  for (const artifact of prep.source_artifacts) {
+    lines.push(`- ${artifact}`);
+  }
+
+  if (prep.written_paths?.length > 0) {
+    lines.push("", "## Written Artifacts", "");
+    for (const artifact of prep.written_paths) {
+      lines.push(`- ${artifact}`);
+    }
+  }
+
+  return `${lines.join("\n")}\n`;
+}
+
 async function reconcileWorkflow({ workflow, currentStory, stateOfFieldEditions, publicationEvents, options }) {
   const { workflowEdition } = selectWorkflowEdition({
     workflow,
@@ -1025,7 +1516,7 @@ async function main() {
     return;
   }
 
-  if (!["status", "reconcile", "packet"].includes(options.command)) {
+  if (!["status", "reconcile", "packet", "prep"].includes(options.command)) {
     throw new Error(`Unknown command: ${options.command}`);
   }
 
@@ -1038,7 +1529,14 @@ async function main() {
   ]);
 
   if (options.command === "status") {
-    const summary = summarizeWorkflow(workflow, currentStory, stateOfFieldEditions, fieldActivityWatchlist, activityItems);
+    const summary = summarizeWorkflow(
+      workflow,
+      currentStory,
+      stateOfFieldEditions,
+      fieldActivityWatchlist,
+      activityItems,
+      options.edition
+    );
 
     process.stdout.write(options.json ? `${JSON.stringify(summary, null, 2)}\n` : formatTextSummary(summary));
 
@@ -1050,6 +1548,44 @@ async function main() {
   }
 
   const publicationEvents = await readJsonCollection(publicationEventRoot);
+
+  if (options.command === "prep") {
+    const { workflowEdition } = selectWorkflowEdition({
+      workflow,
+      currentStory,
+      stateOfFieldEditions,
+      editionSlug: options.edition
+    });
+    const defaultDraftPoolPath = `extra/state-of-field-${workflowEdition.slug}-draft.json`;
+    const draftPoolPath = options.draftPoolPath ?? defaultDraftPoolPath;
+    const [draftPool, trialWatchReportText] = await Promise.all([
+      readJsonIfExists(draftPoolPath),
+      readTextIfExists(trialWatchReportPath)
+    ]);
+    const prep = buildPrepPacket({
+      workflow,
+      currentStory,
+      stateOfFieldEditions,
+      publicationEvents,
+      fieldActivityWatchlist,
+      activityItems,
+      draftPool,
+      draftPoolPath,
+      trialWatchReportText,
+      options: { ...options, edition: workflowEdition.slug }
+    });
+
+    if (options.write) {
+      const jsonPath = `extra/state-of-field-${prep.edition_slug}-prep.json`;
+      const markdownPath = `extra/state-of-field-${prep.edition_slug}-prep.md`;
+      prep.written_paths = [jsonPath, markdownPath];
+      await writeJson(jsonPath, prep);
+      await writeText(markdownPath, formatPrepPacket(prep));
+    }
+
+    process.stdout.write(options.json ? `${JSON.stringify(prep, null, 2)}\n` : formatPrepPacket(prep));
+    return;
+  }
 
   if (options.command === "packet") {
     const packet = buildApprovalPacket({
