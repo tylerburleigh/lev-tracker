@@ -14,6 +14,7 @@ const activeStateOfFieldStatuses = new Set(["draft", "reconciling", "needs_surve
 const monthlyFieldActivitySweepTypes = new Set(["monthly_cross_field"]);
 const fieldActivityApprovalClassifications = new Set(["capture_now", "research_more"]);
 const fieldActivityOpenApprovalStatuses = new Set(["requested", "revise"]);
+const fieldActivityResolvedApprovalStatuses = new Set(["approved", "rejected", "not_required"]);
 
 async function readJson(relativePath) {
   const filePath = path.join(repoRoot, relativePath);
@@ -414,7 +415,7 @@ function buildStateOfFieldWorkflowItems(stateOfFieldWorkflow, fieldActivityWatch
           },
           {
             name: "field_activity_publication_ready_count",
-            value: fieldActivityWatchlistSummary.captureRecommendedCount
+            value: fieldActivityWatchlistSummary.publicationReadyCount
           },
           {
             name: "field_activity_human_approval_required_count",
@@ -620,6 +621,14 @@ function summarizeFieldActivityWatchlist(fieldActivityWatchlist) {
       fieldActivityOpenApprovalStatuses.has(event.human_approval?.status) ||
       (event.agent_assessment?.human_review_required === true && event.human_approval?.status !== "approved")
   );
+  const publicationReadyCandidates = candidateEvents.filter((event) => {
+    const approvalStatus = event.human_approval?.status;
+    return (
+      event.classification === "capture_now" &&
+      !humanApprovalRequiredCandidates.includes(event) &&
+      (fieldActivityResolvedApprovalStatuses.has(approvalStatus) || event.agent_assessment?.human_review_required === false)
+    );
+  });
   const sourceWorkCandidates = candidateEvents.filter(
     (event) =>
       event.classification === "research_more" &&
@@ -659,6 +668,7 @@ function summarizeFieldActivityWatchlist(fieldActivityWatchlist) {
     belowThresholdCount: candidateEvents.filter((event) => event.noteworthiness_tier === "below_threshold").length,
     consolidatedCandidateCount: candidateEvents.filter((event) => event.classification === "captured_by_related_item").length,
     approvalCandidateCount: approvalCandidates.length,
+    publicationReadyCount: publicationReadyCandidates.length,
     humanReviewRequiredCandidateCount: humanReviewRequiredCandidates.length,
     surfaceRoutingRequiredCandidateCount: surfaceRoutingRequiredCandidates.length,
     sourceWorkCandidateCount: sourceWorkCandidates.length,

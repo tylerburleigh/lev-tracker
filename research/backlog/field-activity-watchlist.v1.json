@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "queue_type": "field_activity_watchlist",
-  "updated_at": "2026-06-15T17:18:38Z",
+  "updated_at": "2026-06-15T19:45:45Z",
   "notes": [
     "This backlog is internal planning state for source-backed field activity discovery. It does not publish activity by itself.",
     "Use it to seed monthly field-activity sweeps and entity-scoped backfill recommendations."
@@ -587,7 +587,7 @@
       "priority_tier": "now",
       "status": "needs_primary_source",
       "review_cadence": "quarterly",
-      "last_reviewed_at": "2026-06-15T17:18:38Z",
+      "last_reviewed_at": "2026-06-15T19:45:45Z",
       "rationale": "Aging therapeutics company with official 2026 financing and first-in-human transition language.",
       "official_sources": [
         {
@@ -617,8 +617,8 @@
           ],
           "source_url": "https://www.biospace.com/retro-biosciences-launches-with-180-million-to-increase-healthy-human-lifespan-by-10-years",
           "source_quality": "secondary_dated",
-          "rationale": "The launch appears material, but the pilot did not find a durable official dated launch page. Do not publish from secondary coverage unless a better source is found or human approves a secondary-source exception.",
-          "recommended_public_action": "Keep in watchlist as needs-source backfill.",
+          "rationale": "The launch appears material, but a bounded 2026-06-15 recheck of Retro's official site, official blog, and targeted official-source searches still found no durable official dated 2022 launch page. BioSpace remains the best known dated lead and is secondary coverage.",
+          "recommended_public_action": "Keep in watchlist as needs-source backfill unless a durable official dated launch source is found or the human approves a secondary-source exception.",
           "surface_routing": {
             "affected_surfaces": [
               "no_public_surface"
@@ -638,8 +638,8 @@
             "public_copy_action": "hold_for_source",
             "human_review_required": false,
             "escalation_reason": "A secondary-source exception would be needed to publish this historical launch now.",
-            "rationale": "Retro's public launch likely clears material_program, but the sweep did not find a durable official dated source for the 2022 event. The curator approved holding it as a source-work item rather than publishing from secondary coverage.",
-            "reviewed_at": "2026-06-15T17:08:20Z",
+            "rationale": "Retro's public launch likely clears material_program, but the follow-up source-work pass again found only secondary dated launch coverage plus current official pages. Keep the item held; the already-published 2026 financing item remains the source-backed Retro public activity.",
+            "reviewed_at": "2026-06-15T19:45:45Z",
             "reviewed_by": "codex-agent"
           },
           "human_approval": {
@@ -922,22 +922,32 @@
       "name": "Healthspan Connect",
       "entity_type": "program",
       "priority_tier": "soon",
-      "status": "needs_primary_source",
+      "status": "capture_recommended",
       "review_cadence": "quarterly",
-      "last_reviewed_at": "2026-06-15T17:08:20Z",
-      "rationale": "Large registry-discovered healthy-aging research programme that may be field infrastructure, but it needs a durable programme source before public activity publication.",
+      "last_reviewed_at": "2026-06-15T19:45:45Z",
+      "rationale": "Large healthy-aging observational programme with a registry record and a dated official TwinsUK programme mention. It is still activity-only and not evidence, but it is now ready for human approval as a bounded field-infrastructure candidate.",
       "official_sources": [
         {
           "label": "ClinicalTrials.gov NCT07209774",
           "url": "https://clinicaltrials.gov/study/NCT07209774",
           "source_kind": "registry"
+        },
+        {
+          "label": "TwinsUK LARN Symposium Healthspan Connect news",
+          "url": "https://twinsuk.ac.uk/dr-rosiered-brownson-smith-represents-twinsuk-at-the-larn-symposium/",
+          "source_kind": "blog"
+        },
+        {
+          "label": "TwinsUK population health research area",
+          "url": "https://twinsuk.ac.uk/researches/population-health/",
+          "source_kind": "other"
         }
       ],
       "candidate_events": [
         {
           "event_id": "healthspan-connect-registry-post-2025",
-          "event_label": "Healthspan Connect programme posted to ClinicalTrials.gov",
-          "classification": "research_more",
+          "event_label": "Healthspan Connect programme entered the public registry as planned healthy-aging infrastructure",
+          "classification": "capture_now",
           "occurred_on": "2025-10-07",
           "activity_type": "other",
           "activity_lane": "scientific",
@@ -945,38 +955,42 @@
           "trial_activity_kind": "trial_watch_anchor",
           "noteworthiness_tier": "material_program",
           "threshold_basis": [
-            "field_infrastructure",
-            "source_quality_gap"
+            "field_infrastructure"
           ],
           "source_url": "https://clinicaltrials.gov/study/NCT07209774",
           "source_quality": "primary_dated",
-          "rationale": "ClinicalTrials.gov records a large planned healthy-aging observational programme, but it is not yet recruiting, is not an interventional efficacy signal, and no durable programme source was found during the monthly sweep.",
-          "recommended_public_action": "Keep as research_more and look for an official programme page or launch announcement before public activity publication.",
+          "rationale": "ClinicalTrials.gov records a planned 100,000-participant prospective observational programme posted on 2025-10-07, and a dated TwinsUK news item identifies Healthspan Connect as a Department of Twin Research programme with multiple sub-studies on biological, social, and environmental factors in healthy ageing and resilience. It remains not yet recruiting and should be treated as field infrastructure, not evidence.",
+          "recommended_public_action": "Ask the human to approve or revise a bounded activity-only item; do not publish as evidence or as an interventional trial result.",
           "surface_routing": {
             "affected_surfaces": [
-              "no_public_surface"
+              "activity_feed",
+              "state_of_field",
+              "trial_horizon"
             ],
-            "state_of_field_review_required": false,
+            "state_of_field_review_required": true,
             "current_story_review_required": false,
-            "no_surface_change_reason": "The registry lead may become field infrastructure context, but it should not enter public copy until a programme source or curator-approved registry-only rationale is available.",
-            "rationale": "This is a registry-discovered watch lead, not evidence and not yet a public activity recommendation."
+            "rationale": "The record can support activity and State-of-Field/trial-horizon context as planned observational infrastructure. It should not change evidence surfaces or imply an efficacy signal."
           },
           "agent_assessment": {
-            "recommended_classification": "research_more",
+            "recommended_classification": "capture_now",
             "confidence": "medium",
             "materiality": "moderate",
             "affected_surfaces": [
-              "no_public_surface"
+              "activity_feed",
+              "state_of_field",
+              "trial_horizon"
             ],
-            "public_copy_action": "hold_for_source",
-            "human_review_required": false,
-            "rationale": "The large planned cohort may be material field infrastructure, but the monthly sweep found only the registry record. Keep it on the watchlist and re-check for a durable programme source before asking for approval.",
-            "reviewed_at": "2026-06-15T17:08:20Z",
+            "public_copy_action": "add_activity_item",
+            "human_review_required": true,
+            "escalation_reason": "Human approval is needed because the candidate is registry-discovered, observational, and not yet recruiting; public copy must stay activity-only.",
+            "rationale": "The source-work pass found a dated official TwinsUK programme source in addition to the ClinicalTrials.gov record, resolving the original source-quality gap. The event now clears material_program as field infrastructure, but public wording should be bounded to planned cohort infrastructure and trial-watch context.",
+            "reviewed_at": "2026-06-15T19:45:45Z",
             "reviewed_by": "codex-agent"
           },
           "human_approval": {
-            "status": "not_requested",
-            "notes": "Agent recommends source work first; no public change is proposed in this packet."
+            "status": "requested",
+            "requested_at": "2026-06-15T19:45:45Z",
+            "notes": "Approve, reject, or revise a bounded activity-only Healthspan Connect field-infrastructure item. Recommended public framing: planned 100,000-participant healthy-aging observational programme; not yet recruiting; no evidence or intervention claim."
           }
         }
       ],

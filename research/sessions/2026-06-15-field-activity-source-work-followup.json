@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-15-field-activity-source-work-followup",
+  "name": "Field activity source-work follow-up",
+  "mode": "field_activity",
+  "field_activity_sweep_type": "other",
+  "started_at": "2026-06-15T19:35:00Z",
+  "completed_at": "2026-06-15T19:45:45Z",
+  "scope": {
+    "question": "Do the Retro Biosciences 2022 launch and Healthspan Connect source-work holds now have enough official source support to move out of source work?",
+    "scope_label": "Field activity source-work holds",
+    "entity_names": [
+      "Retro Biosciences",
+      "Healthspan Connect",
+      "TwinsUK",
+      "King's College London"
+    ],
+    "hallmark_ids": [],
+    "track_ids": []
+  },
+  "selected_via": "manual_override",
+  "outcome": "handoff_to_editorial",
+  "summary": "Ran a bounded source-work follow-up on the two open field-activity holds. Retro Biosciences' 2022 launch remains source-held: the current Retro homepage and official blog support company mission and the already-published 2026 financing item, but targeted official-source checks did not find a durable official dated 2022 launch or $180M source; BioSpace remains secondary dated coverage. Healthspan Connect moved out of source work: ClinicalTrials.gov records NCT07209774 as a planned 100,000-participant prospective observational healthy-aging programme first posted on 2025-10-07, and a dated TwinsUK news item independently identifies Healthspan Connect as a Department of Twin Research programme with recruitment due in spring 2026. The Healthspan item should go to human approval as activity-only field infrastructure, not evidence or an interventional trial result.",
+  "next_recommended_mode": "field_activity",
+  "materiality_decision": {
+    "material_delta": "activity_only",
+    "public_update_needed": true,
+    "activity_only": true,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "field_activity",
+    "rationale": "One watchlist item now has enough primary dated source context to enter the approval packet as activity-only field infrastructure. No source, study, finding, outlook, stage, momentum, or confidence change is warranted."
+  },
+  "search_log": [
+    {
+      "source_name": "Retro Biosciences homepage",
+      "checked_at": "2026-06-15T19:36:00Z",
+      "url": "https://www.retro.bio/",
+      "summary": "Official current site confirms Retro's healthy-lifespan mission and aging-therapeutics focus, but it does not provide a dated 2022 launch or initial-funding source."
+    },
+    {
+      "source_name": "Retro Biosciences official blog",
+      "query": "site:retro.bio 180 million launch 2022 Retro Biosciences",
+      "checked_at": "2026-06-15T19:38:00Z",
+      "url": "https://www.retro.bio/blog",
+      "summary": "Official blog and targeted official-site searches surfaced the May 22, 2026 financing post already captured in public activity. No durable official 2022 launch page or $180M source was found."
+    },
+    {
+      "source_name": "BioSpace Retro launch article",
+      "checked_at": "2026-06-15T19:39:00Z",
+      "url": "https://www.biospace.com/retro-biosciences-launches-with-180-million-to-increase-healthy-human-lifespan-by-10-years",
+      "summary": "Secondary dated coverage reports the April 6, 2022 Retro launch and $180M funding, pointing to Twitter and an older Retro page. This remains a useful lead but does not clear the default source-quality bar for publication."
+    },
+    {
+      "source_name": "ClinicalTrials.gov NCT07209774 API",
+      "checked_at": "2026-06-15T19:41:00Z",
+      "url": "https://clinicaltrials.gov/study/NCT07209774",
+      "summary": "Registry record lists Healthspan Connect Programme of Research as not yet recruiting, prospective observational cohort, 100,000 estimated enrollment, King's College London sponsor, estimated start 2026-01-05, estimated completion 2056-01-05, and first posted 2025-10-07."
+    },
+    {
+      "source_name": "TwinsUK LARN Symposium news",
+      "checked_at": "2026-06-15T19:42:00Z",
+      "url": "https://twinsuk.ac.uk/dr-rosiered-brownson-smith-represents-twinsuk-at-the-larn-symposium/",
+      "summary": "Dated November 27, 2025 official TwinsUK item says Healthspan Connect is a new Programme of Research based at the Department of Twin Research, will lead multiple sub-studies on biological, social, and environmental factors in healthy ageing and resilience, and had recruitment due in spring 2026."
+    },
+    {
+      "source_name": "TwinsUK population health research area",
+      "checked_at": "2026-06-15T19:43:00Z",
+      "url": "https://twinsuk.ac.uk/researches/population-health/",
+      "summary": "Official TwinsUK research-area page names Healthspan Connect as a related King's College London project in population-health and ageing context. This supports programme context but is not the main dated event source."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "Retro Biosciences 2022 official launch source",
+      "title": "Retro Biosciences public launch and initial funding",
+      "decision": "not_retrieved",
+      "reason": "No durable official dated 2022 launch or $180M funding source was found in the bounded recheck. Keep the watchlist candidate as research_more unless a primary dated source is found or the human approves a secondary-source exception."
+    }
+  ],
+  "source_urls": [
+    "https://www.retro.bio/",
+    "https://www.retro.bio/blog",
+    "https://www.retro.bio/blog/fundraise-2026",
+    "https://www.biospace.com/retro-biosciences-launches-with-180-million-to-increase-healthy-human-lifespan-by-10-years",
+    "https://clinicaltrials.gov/study/NCT07209774",
+    "https://twinsuk.ac.uk/dr-rosiered-brownson-smith-represents-twinsuk-at-the-larn-symposium/",
+    "https://twinsuk.ac.uk/researches/population-health/"
+  ],
+  "notes": [
+    "Healthspan Connect should be treated as planned observational field infrastructure and trial-watch context, not as an interventional trial launch, result, or evidence signal.",
+    "The Retro 2022 launch is probably material, but the default publication bar remains unmet because the durable source is secondary dated coverage."
+  ],
+  "next_actions": [
+    "Use the field-activity packet to ask the human whether to approve, reject, or revise the Healthspan Connect activity-only candidate.",
+    "Keep Retro Biosciences' 2022 launch as source work until a durable official dated source is found or a secondary-source exception is explicitly approved."
+  ]
+}
