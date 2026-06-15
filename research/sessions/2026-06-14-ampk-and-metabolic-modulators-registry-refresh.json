@@ -1,0 +1,305 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-14-ampk-and-metabolic-modulators-registry-refresh",
+  "name": "AMPK and metabolic modulators registry refresh for June 14, 2026",
+  "mode": "surveillance",
+  "started_at": "2026-06-14T21:50:00Z",
+  "completed_at": "2026-06-14T22:24:23Z",
+  "scope": {
+    "question": "Do current ClinicalTrials.gov, ISRCTN, EU register, and PubMed checks for stale AMPK and Metabolic Modulators trial-watch records change the public outlook or only clear local registry metadata debt?",
+    "hallmark_ids": [
+      "deregulated_nutrient_sensing"
+    ],
+    "track_ids": [
+      "ampk-and-metabolic-modulators"
+    ],
+    "intervention_ids": [
+      "metformin",
+      "berberine",
+      "acarbose"
+    ]
+  },
+  "selected_via": "manual_override",
+  "outcome": "no_op",
+  "summary": "Refreshed AMPK and Metabolic Modulators trial-watch metadata after the scoped audit found five registry-linked studies and four stale or missing registry checks. Current registry checks found ANTHEM still completed with no ClinicalTrials.gov results, NCT02570672 and MILES still completed with posted ClinicalTrials.gov results, MET-PREVENT still completed with ISRCTN results and a 2026-04-28 registry edit, and METFORAGING still listed as ongoing with no EU registry result while the peer-reviewed METFORAGING result remains the public evidence source. PubMed and broader registry discovery for the June 7-14 delta window found no new treated-human aging result, posted registry result, correction, or retraction that would change the public AMPK outlook. The closest new PubMed item, PMID 42265467, adds metformin nonhuman-primate and human-organoid intestinal-aging mechanism context, but it does not change the current metformin-led human biomarker stage or the null/mixed functional and tolerability boundaries.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "none",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The pass changed only local registry freshness metadata. Known trial results remained unchanged, ANTHEM and close no-results registries still lack posted results, and the closest new literature was preclinical or review context that reinforces existing biological plausibility without altering evidence stage, momentum, read firmness, safety framing, or the support map. The June 13 coverage assessment already flags non-metformin and registry-network source-completeness gaps, so no additional coverage assessment is needed for this metadata refresh."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial audit",
+      "query": "npm run audit:trials -- --track ampk-and-metabolic-modulators --write",
+      "checked_at": "2026-06-14T21:50:00Z",
+      "url": "https://clinicaltrials.gov/search?term=metformin%20aging",
+      "summary": "The scoped audit found five registry-linked studies, zero missing detail records, four stale or missing registry checks, and zero open stale watch items. It seeded direct checks for ANTHEM, NCT02570672, MILES, MET-PREVENT, and METFORAGING."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API",
+      "query": "Known NCT records NCT04264897, NCT02570672, NCT02432287, NCT04221750, and NCT07395960",
+      "checked_at": "2026-06-14T22:05:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT04264897",
+      "summary": "ANTHEM remains completed with 101 actual enrollment, 2025-03-12 actual completion, 2026-04-23 last update, and no registry results. NCT02570672 remains completed with 2024-02-07 actual completion and 2025-08-06 posted results. MILES remains completed with 2021-05-21 last update and 2018-05-31 posted results. DEMFOS/NCT04221750 remains completed with no posted results. NCT07395960 remains recruiting with no results."
+    },
+    {
+      "source_name": "ISRCTN PDF export",
+      "query": "ISRCTN29932357 MET-PREVENT registry re-check",
+      "checked_at": "2026-06-14T22:08:00Z",
+      "url": "https://www.isrctn.com/pdf/ISRCTN29932357",
+      "summary": "The PDF export lists MET-PREVENT as no longer recruiting and completed, with completion date 2023-08-31, final enrollment 72, results/protocol/basic-results outputs, and last edited 2026-04-28. This remains consistent with the public MET-PREVENT null/tolerability boundary."
+    },
+    {
+      "source_name": "EU Clinical Trials Register",
+      "query": "EudraCT 2021-003299-15 METFORAGING registry re-check",
+      "checked_at": "2026-06-14T22:08:00Z",
+      "url": "https://www.clinicaltrialsregister.eu/ctr-search/trial/2021-003299-15/ES",
+      "summary": "The EU register still lists EudraCT 2021-003299-15, sponsor protocol METFORAGING, as ongoing with an empty trial-results field and an ongoing end-of-trial status. The peer-reviewed METFORAGING result remains the public evidence source."
+    },
+    {
+      "source_name": "PubMed ESearch, ESummary, and EFetch",
+      "query": "metformin, berberine, acarbose, AMPK, and AMP-activated protein kinase aging/frailty/sarcopenia/geroscience/longevity/epigenetic-age terms; publication and entry dates 2026-06-07 to 2026-06-14",
+      "checked_at": "2026-06-14T22:13:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=metformin%20aging",
+      "summary": "The broad PubMed screen returned six publication-date hits and eight entry-date hits. The closest was PMID 42265467, a nonhuman-primate and human-organoid metformin intestinal-aging mechanism paper. Other hits were review, disease-model, in vitro, or wrong-intervention context. Known trial-name and registry-ID searches for ANTHEM, METFORAGING, MET-PREVENT, ISRCTN29932357, NCT04264897, NCT02570672, NCT02432287, NCT04221750, NCT07395960, and EudraCT 2021-003299-15 returned no same-window PubMed records."
+    },
+    {
+      "source_name": "PubMed correction and retraction screen",
+      "query": "metformin, berberine, acarbose, AMPK, and AMP-activated protein kinase aging terms with Published Erratum, Retraction of Publication, Retracted Publication, or Expression of Concern publication types; publication and entry dates 2026-06-07 to 2026-06-14",
+      "checked_at": "2026-06-14T22:18:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=metformin%20aging%20retraction%20correction",
+      "summary": "No same-window correction, retraction, or expression-of-concern records were found for the scoped AMPK/metabolic-modulator aging terms."
+    },
+    {
+      "source_name": "ClinicalTrials.gov broad registry search",
+      "query": "metformin aging; metformin frailty; metformin geroscience; metformin older adults aging; metformin epigenetic age; ANTHEM; DEMFOS; berberine aging; AMPK aging; acarbose aging",
+      "checked_at": "2026-06-14T22:20:00Z",
+      "url": "https://clinicaltrials.gov/search?term=metformin%20aging",
+      "summary": "The broad screen found known AMPK/metformin records plus older or no-results context: active/no-results metformin muscle, MCI, and geroscience-adjacent registries; DEMFOS and NCT07395960 no-results watch context; and small or terminated acarbose aging registries with historical posted results. These are source-completeness candidates for a later coverage-repair pass, not evidence-changing deltas for this metadata refresh."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT04264897",
+      "study_id": "anthem-metformin-aging-study",
+      "source_id": "nct-04264897",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04264897",
+      "checked_at": "2026-06-14T22:05:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2025-03-12",
+      "study_completion_date": "2025-03-12",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "ANTHEM remains completed with no ClinicalTrials.gov results after its 2026-04-23 registry update. This keeps the no-results watch item unchanged."
+    },
+    {
+      "registry_id": "NCT02570672",
+      "study_id": "metformin-frailty-prevention-high-risk-older-adults",
+      "source_id": "nct-02570672",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02570672",
+      "checked_at": "2026-06-14T22:05:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "primary_completion_date": "2024-02-07",
+      "study_completion_date": "2024-02-07",
+      "completion_date_kind": "actual",
+      "results_first_posted_date": "2025-08-06",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The frailty-prevention registry remains completed with posted ClinicalTrials.gov results and no update since 2025-08-06. No public change is needed."
+    },
+    {
+      "registry_id": "NCT02432287",
+      "study_id": "miles-metformin-older-adults-transcriptomics",
+      "source_id": "pmid-29383869",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02432287",
+      "checked_at": "2026-06-14T22:05:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "completion_date_kind": "actual",
+      "results_first_posted_date": "2018-05-31",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "MILES remains completed with ClinicalTrials.gov results posted and no recent registry movement. The registry provides only month-level completion dates, so local metadata records the exact last update and results-posted dates without inventing day-level completion dates."
+    },
+    {
+      "registry_id": "ISRCTN29932357",
+      "study_id": "met-prevent-metformin-sarcopenia-frailty",
+      "source_id": "pmid-40147475",
+      "registry_url": "https://www.isrctn.com/ISRCTN29932357",
+      "checked_at": "2026-06-14T22:08:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "posted",
+      "current_results_status": "posted",
+      "study_completion_date": "2023-08-31",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The ISRCTN export lists MET-PREVENT as completed with result outputs and a 2026-04-28 last edit. The result is already represented by PMID 40147475 and does not need a public refresh."
+    },
+    {
+      "registry_id": "EudraCT2021-003299-15",
+      "study_id": "metforaging-metformin-hiv-epigenetic-age",
+      "source_id": "pmid-42023167",
+      "registry_url": "https://www.clinicaltrialsregister.eu/ctr-search/trial/2021-003299-15/ES",
+      "checked_at": "2026-06-14T22:08:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "active",
+      "previous_results_status": "posted",
+      "current_results_status": "unknown",
+      "completion_date_kind": "unknown",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "The EU register still lists METFORAGING as ongoing with no registry result, while the peer-reviewed METFORAGING pilot result is already public as PMID 42023167. This registry discrepancy does not alter the track outlook."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "PMID 42265467",
+      "title": "Single-nucleus interrogation of primate small intestinal aging reveals NCoR1 decline as a conserved feature that is reversed by metformin.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42265467/",
+      "decision": "context_only",
+      "reason": "Nonhuman-primate and human-organoid mechanism context for metformin and intestinal aging. It reinforces existing metformin biological plausibility but does not add treated-human aging outcome evidence or change the current human biomarker/function boundary."
+    },
+    {
+      "reference": "PMID 42266508",
+      "title": "AMPK-mediated autophagy induction by bisdemethoxycurcumin attenuates senescence and amyloid pathology in 3xTg-AD mice.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42266508/",
+      "decision": "context_only",
+      "reason": "Disease-model mouse evidence for an AMPK-mediated compound outside the current metformin, berberine, and acarbose public support map. It has no treated-human aging result."
+    },
+    {
+      "reference": "PMID 42264187",
+      "title": "Nanodelivery strategies for caloric restriction mimetics in age-associated neurodegeneration.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42264187/",
+      "decision": "context_only",
+      "reason": "Review context mentioning caloric-restriction mimetics, including metformin, but it does not add a new primary AMPK/metabolic-modulator aging result."
+    },
+    {
+      "reference": "PMID 42281177",
+      "title": "Geroprotective Agents, Including Glucagon-Like Peptide-1 Receptor Agonists, for Ocular Health.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42281177/",
+      "decision": "wrong_scope",
+      "reason": "Ocular-health review of multiple geroprotective agents. It is not a primary AMPK/metabolic-modulator aging intervention result for the scoped track."
+    },
+    {
+      "reference": "PMID 42274789",
+      "title": "Repurposing niclosamide to mitigate inflammaging: a review of multi-target mechanisms in cellular senescence and age-related decline.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42274789/",
+      "decision": "wrong_scope",
+      "reason": "Niclosamide review context with indirect AMPK pathway discussion, but the intervention is outside the current AMPK/metabolic-modulator public support map."
+    },
+    {
+      "reference": "PMID 42282444",
+      "title": "Polygonati Rhizoma Attenuates Oxidative Stress-Induced Senescence in Periodontal Ligament Stem Cells.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42282444/",
+      "decision": "method_limit",
+      "reason": "In vitro periodontal stem-cell senescence work using metformin as a comparator, not a treated-human aging or public-stage-changing AMPK/metabolic-modulator result."
+    },
+    {
+      "reference": "NCT04221750",
+      "title": "Diet and Exercise Plus Metformin to Treat Frailty in Obese Seniors",
+      "url": "https://clinicaltrials.gov/study/NCT04221750",
+      "decision": "no_results",
+      "reason": "Completed DEMFOS registry with 114 actual enrollment, 2025-07-31 actual completion, 2026-01-05 last update, and no posted ClinicalTrials.gov results. It remains watch context only."
+    },
+    {
+      "reference": "NCT07395960",
+      "title": "The Efficacy and Safety of Metformin Intervention in Elderly Overweight or Obesity With Mild Cognitive Impairment",
+      "url": "https://clinicaltrials.gov/study/NCT07395960",
+      "decision": "no_results",
+      "reason": "Recruiting metformin MCI registry with no results and estimated 2026-09-30 completion. It is disease-specific watch context and does not change the current outlook."
+    },
+    {
+      "reference": "NCT03107884",
+      "title": "Role of Metformin on Muscle Health of Older Adults",
+      "url": "https://clinicaltrials.gov/study/NCT03107884",
+      "decision": "no_results",
+      "reason": "Active-not-recruiting metformin muscle-health registry in older adults with no posted results and estimated 2026-11-01 completion. It is relevant future watch context but has no current evidence result."
+    },
+    {
+      "reference": "NCT04098666",
+      "title": "Metformin in Alzheimer's Dementia Prevention",
+      "url": "https://clinicaltrials.gov/study/NCT04098666",
+      "decision": "no_results",
+      "reason": "Active-not-recruiting disease-specific metformin MCI/Alzheimer's prevention registry with no posted results and a 2026-06-05 update before this delta window."
+    },
+    {
+      "reference": "NCT02865499",
+      "title": "Acarbose Anti-aging Effects in Geriatric Subjects (Substudy B and C)",
+      "url": "https://clinicaltrials.gov/study/NCT02865499",
+      "decision": "not_material",
+      "reason": "Small historical acarbose aging registry with posted results and no recent update. It is a non-metformin source-completeness candidate for later coverage repair, not a current delta."
+    },
+    {
+      "reference": "NCT02953093",
+      "title": "Study of Acarbose in Longevity",
+      "url": "https://clinicaltrials.gov/study/NCT02953093",
+      "decision": "not_material",
+      "reason": "Terminated historical acarbose aging registry with posted results and no same-window update. It is a non-metformin source-completeness candidate for later coverage repair, not a current delta."
+    }
+  ],
+  "source_ids": [
+    "nct-04264897",
+    "nct-02570672",
+    "pmid-29383869",
+    "pmid-40147475",
+    "pmid-42023167"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT04264897",
+    "https://clinicaltrials.gov/study/NCT02570672",
+    "https://clinicaltrials.gov/study/NCT02432287",
+    "https://clinicaltrials.gov/study/NCT04221750",
+    "https://clinicaltrials.gov/study/NCT07395960",
+    "https://www.isrctn.com/ISRCTN29932357",
+    "https://www.isrctn.com/pdf/ISRCTN29932357",
+    "https://www.clinicaltrialsregister.eu/ctr-search/trial/2021-003299-15/ES",
+    "https://pubmed.ncbi.nlm.nih.gov/42265467/",
+    "https://pubmed.ncbi.nlm.nih.gov/42266508/",
+    "https://clinicaltrials.gov/study/NCT03107884",
+    "https://clinicaltrials.gov/study/NCT04098666",
+    "https://clinicaltrials.gov/study/NCT02865499",
+    "https://clinicaltrials.gov/study/NCT02953093"
+  ],
+  "notes": [
+    "No public outlook, finding, source, or activity record was staged because the live checks did not change the evidence interpretation.",
+    "The EU register exposes a first-entered date for METFORAGING but not a clear last-updated date in the checked page; local metadata records the June 14 check date without treating first-entered as last updated.",
+    "MILES registry completion dates are month-level in ClinicalTrials.gov, so local metadata records exact registry update and results-posted dates only.",
+    "Broad registry discovery surfaced older acarbose and additional active/no-results metformin registries that fit the June 13 coverage assessment's later source-completeness repair lane."
+  ],
+  "next_actions": [
+    "Continue watching ANTHEM for posted results because it remains completed with no ClinicalTrials.gov results.",
+    "Continue ordinary surveillance for DEMFOS/NCT04221750, NCT07395960, NCT03107884, NCT04098666, and METFORAGING registry reconciliation.",
+    "In a later coverage-repair pass, decide whether historical acarbose aging registries and additional metformin muscle/MCI registries need public source or study records."
+  ]
+}

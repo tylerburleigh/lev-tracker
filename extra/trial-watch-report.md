@@ -9,7 +9,7 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 - With `trial_details`: 143
 - Missing `trial_details`: 0
 - Completed or past-completion records with no posted results: 25
-- Registry checks missing or stale: 30
+- Registry checks missing or stale: 26
 - Open watchlist records with missing or stale registry checks: 0
 - Posted results recorded locally: 82
 
@@ -36,7 +36,7 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 - [FMD immunosenescence prefrail elderly registry](https://clinicaltrials.gov/study/NCT04928963) (NCT04928963): unknown; no posted results; completion 2022-11-01; registry 2026-06-11 (3 days old).
 - [KH-1 autophagy prediabetes registry](https://clinicaltrials.gov/study/NCT06445569) (NCT06445569): completed; no posted results; completion 2023-06-08; registry 2026-06-11 (3 days old).
 - [EPA+DHA older-adult chronic venous leg ulcer randomized trial registry](https://clinicaltrials.gov/study/NCT03576989) (NCT03576989): completed; no posted results; completion 2024-12-18; registry 2026-06-02 (12 days old).
-- [ANTHEM metformin aging study](https://clinicaltrials.gov/study/NCT04264897) (NCT04264897): completed; no posted results; completion 2025-03-12; registry 2026-04-23 (52 days old).
+- [ANTHEM metformin aging study](https://clinicaltrials.gov/study/NCT04264897) (NCT04264897): completed; no posted results; completion 2025-03-12; registry 2026-06-14 (0 days old).
 - [Urolithin A frail older adult mitochondrial-quality registry study](https://clinicaltrials.gov/study/NCT06556706) (NCT06556706): completed; no posted results; completion 2025-04-25; registry 2026-06-10 (4 days old).
 - [Urolithin A obesity vascular mitochondrial registry](https://clinicaltrials.gov/study/NCT05921266) (NCT05921266): completed; no posted results; completion 2025-05-14; registry 2026-06-10 (4 days old).
 - [Nicotinamide riboside arterial stiffness registry](https://clinicaltrials.gov/study/NCT03821623) (NCT03821623): recruiting; no posted results; completion 2025-06-01; registry 2026-06-08 (6 days old).
@@ -69,7 +69,7 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 - [FMD immunosenescence prefrail elderly registry](https://clinicaltrials.gov/study/NCT04928963) (NCT04928963): unknown; no posted results; completion 2022-11-01; registry 2026-06-11 (3 days old).
 - [KH-1 autophagy prediabetes registry](https://clinicaltrials.gov/study/NCT06445569) (NCT06445569): completed; no posted results; completion 2023-06-08; registry 2026-06-11 (3 days old).
 - [EPA+DHA older-adult chronic venous leg ulcer randomized trial registry](https://clinicaltrials.gov/study/NCT03576989) (NCT03576989): completed; no posted results; completion 2024-12-18; registry 2026-06-02 (12 days old).
-- [ANTHEM metformin aging study](https://clinicaltrials.gov/study/NCT04264897) (NCT04264897): completed; no posted results; completion 2025-03-12; registry 2026-04-23 (52 days old).
+- [ANTHEM metformin aging study](https://clinicaltrials.gov/study/NCT04264897) (NCT04264897): completed; no posted results; completion 2025-03-12; registry 2026-06-14 (0 days old).
 - [Urolithin A frail older adult mitochondrial-quality registry study](https://clinicaltrials.gov/study/NCT06556706) (NCT06556706): completed; no posted results; completion 2025-04-25; registry 2026-06-10 (4 days old).
 - [Urolithin A obesity vascular mitochondrial registry](https://clinicaltrials.gov/study/NCT05921266) (NCT05921266): completed; no posted results; completion 2025-05-14; registry 2026-06-10 (4 days old).
 - [Nicotinamide riboside arterial stiffness registry](https://clinicaltrials.gov/study/NCT03821623) (NCT03821623): recruiting; no posted results; completion 2025-06-01; registry 2026-06-08 (6 days old).
@@ -106,10 +106,6 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 - [Fasting-mimicking diet protein-content randomized study](https://pubmed.ncbi.nlm.nih.gov/40816210/) (NCT06560996): completed; posted results; completion not recorded; registry no local check date.
 - [High-purity spermidine older-men safety trial](https://pubmed.ncbi.nlm.nih.gov/39405978/) (NCT05459961): completed; posted results; completion not recorded; registry no local check date.
 - Lean-donor intestinal microbiota transfer in metabolic syndrome (NTR1776): completed; posted results; completion not recorded; registry no local check date.
-- MET-PREVENT metformin physical-performance frailty trial (ISRCTN29932357): completed; posted results; completion not recorded; registry no local check date.
-- METFORAGING metformin epigenetic-age pilot trial (EudraCT 2021-003299-15): completed; posted results; completion not recorded; registry no local check date.
-- [Metformin frailty-prevention trial in high-risk older adults](https://clinicaltrials.gov/study/NCT02570672) (NCT02570672): completed; posted results; completion not recorded; registry 2025-08-06 (312 days old).
-- MILES metformin older-adult transcriptomics trial (NCT02432287): completed; posted results; completion not recorded; registry no local check date.
 - [Nicotinamide mononucleotide in healthy older men](https://pubmed.ncbi.nlm.nih.gov/35927255/) (UMIN000036321): completed; posted results; completion not recorded; registry no local check date.
 - [Online-guided physical activity gut microbiome trial in healthy older adults](https://pubmed.ncbi.nlm.nih.gov/42168724/) (DRKS00028022): completed; posted results; completion not recorded; registry no local check date.
 - [ONTRAC nicotinamide skin-cancer chemoprevention trial](https://pubmed.ncbi.nlm.nih.gov/26488693/) (ACTRN12612000625875): completed; posted results; completion not recorded; registry no local check date.
