@@ -9,6 +9,7 @@
     "typecheck": "tsc --noEmit",
     "validate:records": "node scripts/validate-records.mjs",
     "verify:editorial": "node scripts/verify-editorial.mjs",
+    "verify:work-triage": "node scripts/verify-work-triage.mjs",
     "verify:data-sustainability": "node scripts/verify-data-sustainability.mjs",
     "audit:data": "node scripts/audit-data-integrity.mjs",
     "audit:data:sustainability": "node scripts/data-sustainability-report.mjs",

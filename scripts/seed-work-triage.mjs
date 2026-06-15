@@ -1,6 +1,6 @@
 import { promises as fs } from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
+import { fileURLToPath, pathToFileURL } from "url";
 import {
   computeHallmarkInsightFreshness,
   datePart,
@@ -174,6 +174,7 @@ function buildEditorialRollupItem({
   publicationEvents,
   stateOfFieldEditions,
   stateOfFieldWorkflow,
+  currentStory,
   hallmarkInsights,
   outlooks,
   statusByTrack,
@@ -207,11 +208,20 @@ function buildEditorialRollupItem({
   });
   const staleHallmarkInsightIds = hallmarkInsightFreshness.stale.map((row) => row.hallmarkId);
   const outlookMethodSurfaceGap = siteShellText.includes('label: "Forecast"') && !hasOutlookRoute;
+  const latestAffectedEventNeedsCurrentStoryReview =
+    latestAffectedPublicationEvent &&
+    isAfterDate(latestAffectedPublicationEvent.published_at, currentStory?.revision?.last_reviewed);
   const latestAffectedEventNeedsStateOfFieldReview =
     latestAffectedPublicationEvent &&
     isAfterDate(latestAffectedPublicationEvent.published_at, latestStateOfFieldDate) &&
-    !isPublicationEventResolvedInActiveStateOfFieldWorkflow(stateOfFieldWorkflow, latestAffectedPublicationEvent.id);
+    !isPublicationEventResolvedInActiveStateOfFieldWorkflow(
+      stateOfFieldWorkflow,
+      latestAffectedPublicationEvent
+    );
   const triggerMessages = [
+    latestAffectedEventNeedsCurrentStoryReview
+      ? `Latest affected public update ${latestAffectedPublicationEvent.id} is newer than the current LEV story review.`
+      : undefined,
     latestAffectedEventNeedsStateOfFieldReview
       ? `Latest affected public update ${latestAffectedPublicationEvent.id} is newer than the latest state-of-field edition.`
       : undefined,
@@ -286,6 +296,10 @@ function buildEditorialRollupItem({
         value: latestStateOfFieldDate ?? "none"
       },
       {
+        name: "current_story_last_reviewed",
+        value: currentStory?.revision?.last_reviewed ?? "none"
+      },
+      {
         name: "overall_outlook_last_updated",
         value: overallOutlook?.last_updated ?? "none"
       },
@@ -313,8 +327,46 @@ function buildEditorialRollupItem({
   });
 }
 
-function isPublicationEventResolvedInActiveStateOfFieldWorkflow(stateOfFieldWorkflow, publicationEventId) {
-  if (!publicationEventId) {
+function hasOpenReconciliationItems(edition) {
+  return (edition.reconciliation_items ?? []).some((item) => item.decision === "needs_decision");
+}
+
+function hasOpenHumanApprovals(edition) {
+  return (edition.reconciliation_items ?? []).some(
+    (item) =>
+      item.agent_assessment?.human_review_required === true &&
+      item.human_approval?.status !== "approved" &&
+      item.human_approval?.status !== "rejected" &&
+      item.human_approval?.status !== "not_required"
+  );
+}
+
+function isPeriodCloseBlocked(edition) {
+  return (edition.checklist ?? []).some((item) => item.id === "wait-period-close" && item.status === "blocked");
+}
+
+function isDateWithinEditionPeriod(value, edition) {
+  const eventDate = datePart(value);
+  return Boolean(
+    eventDate &&
+      edition.period_start &&
+      edition.period_end &&
+      eventDate >= edition.period_start &&
+      eventDate <= edition.period_end
+  );
+}
+
+function isStateOfFieldWorkDeferredUntilPeriodClose(edition, publicationEvent) {
+  return (
+    isDateWithinEditionPeriod(publicationEvent.published_at, edition) &&
+    isPeriodCloseBlocked(edition) &&
+    !hasOpenReconciliationItems(edition) &&
+    !hasOpenHumanApprovals(edition)
+  );
+}
+
+function isPublicationEventResolvedInActiveStateOfFieldWorkflow(stateOfFieldWorkflow, publicationEvent) {
+  if (!publicationEvent?.id) {
     return false;
   }
 
@@ -326,13 +378,13 @@ function isPublicationEventResolvedInActiveStateOfFieldWorkflow(stateOfFieldWork
         ...(edition.observed_public_story?.related_publication_event_ids ?? [])
       ].filter(Boolean));
       const reconciliationItem = (edition.reconciliation_items ?? []).find(
-        (item) => item.publication_event_id === publicationEventId
+        (item) => item.publication_event_id === publicationEvent.id
       );
 
       return (
-        observedIds.has(publicationEventId) &&
-        reconciliationItem &&
-        reconciliationItem.decision !== "needs_decision"
+        (reconciliationItem && reconciliationItem.decision !== "needs_decision" && !hasOpenHumanApprovals(edition)) ||
+        (observedIds.has(publicationEvent.id) && !hasOpenReconciliationItems(edition) && !hasOpenHumanApprovals(edition)) ||
+        isStateOfFieldWorkDeferredUntilPeriodClose(edition, publicationEvent)
       );
     });
 }
@@ -940,6 +992,7 @@ async function main() {
     publicationEvents,
     stateOfFieldEditions,
     stateOfFieldWorkflow,
+    currentStory,
     hallmarkInsights,
     siteShellText,
     hasOutlookRoute,
@@ -957,6 +1010,7 @@ async function main() {
     readCollection("data/publication-events"),
     readCollection("data/content/state-of-the-field"),
     readJson("ops/state-of-field-workflow.v1.json"),
+    readJson("data/content/current-lev-story/current.json"),
     readJson("data/content/hallmark-insights.json"),
     readTextIfExists("src/components/site-shell.tsx"),
     pathExists("src/app/outlook/page.tsx"),
@@ -985,6 +1039,7 @@ async function main() {
     publicationEvents,
     stateOfFieldEditions,
     stateOfFieldWorkflow,
+    currentStory,
     hallmarkInsights,
     outlooks,
     statusByTrack,
@@ -1101,4 +1156,11 @@ async function main() {
   await writeJson("ops/triage-state.v1.json", triageState);
 }
 
-await main();
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  await main();
+}
+
+export {
+  buildEditorialRollupItem,
+  isPublicationEventResolvedInActiveStateOfFieldWorkflow
+};

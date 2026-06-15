@@ -28,6 +28,8 @@ Run the rollup before routine research when any of these are true:
 - the current LEV story `revision.review_due` has passed
 - navigation or public explanatory copy implies an outlook surface that the app does not actually provide
 
+Work triage treats current-story, overall-outlook, hallmark-insight, and navigation-surface staleness as immediate editorial work. State-of-the-Field-only updates from the current retrospective period can be deferred when the active edition is blocked on period close and has no open reconciliation decisions or required human approvals; those updates are handled during the period-close sweep instead of remaining as a ready rollup item.
+
 ## Review Rules
 
 1. Start from public updates and public outlooks. Do not use this workflow to introduce unreviewed sources, findings, stages, confidence changes, or outlook upgrades.

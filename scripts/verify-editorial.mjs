@@ -42,6 +42,10 @@ function buildSteps(options) {
       args: npmRun("state-of-field:status", ["--strict"])
     },
     {
+      label: "Verify work triage regression rules",
+      args: npmRun("verify:work-triage")
+    },
+    {
       label: "Run editorial quality ratchet",
       args: npmRun("audit:editorial:ratchet")
     },
