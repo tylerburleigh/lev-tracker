@@ -7,7 +7,7 @@ Overall: passed
 
 - Current LEV story status: current
 - Public copy warnings: 65
-- Reader-task audit: passed (14 passed, 0 issues, 0 warnings)
+- Reader-task audit: passed (16 passed, 0 issues, 0 warnings)
 - State of the Field workflow: draft (0 open decision(s), 0 untracked mismatch(es))
 - Hallmark insight freshness: 0 stale hallmark insight(s)
 - Top public-copy terms: durable: 16, translation: 10, functional benefit: 9, mechanistic: 6, coverage repair: 5, low confidence: 5, biomarker-heavy: 4, support map: 3
@@ -97,7 +97,7 @@ Command: `node scripts/reader-task-audit.mjs --write`
 Exit code: 0
 
 ```text
-Reader task audit: passed (14 passed, 0 issue(s), 0 warning(s))
+Reader task audit: passed (16 passed, 0 issue(s), 0 warning(s))
 Wrote extra/reader-task-audit.md.
 ```
 

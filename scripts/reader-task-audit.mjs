@@ -180,7 +180,9 @@ async function main() {
     homepageSource,
     hallmarkDetailSource,
     trackDetailSource,
-    tracksIndexSource
+    tracksIndexSource,
+    stateOfFieldIndexSource,
+    stateOfFieldDetailSource
   ] = await Promise.all([
     readJson("data/content/current-lev-story/current.json"),
     readJson("taxonomies/track-taxonomy.v1.json"),
@@ -189,7 +191,9 @@ async function main() {
     readText("src/components/homepage.tsx"),
     readText("src/app/hallmarks/[hallmarkId]/page.tsx"),
     readText("src/app/tracks/[trackId]/page.tsx"),
-    readText("src/app/tracks/page.tsx")
+    readText("src/app/tracks/page.tsx"),
+    readText("src/app/state-of-the-field/page.tsx"),
+    readText("src/app/state-of-the-field/[editionSlug]/page.tsx")
   ]);
 
   const checks = [];
@@ -333,6 +337,39 @@ async function main() {
       ? "pass"
       : "fail",
     "Homepage and tracks index should use research tracks / public outlook language."
+  );
+
+  addCheck(
+    checks,
+    "State of the Field index previews monthly review status",
+    ["fieldChangeStatusLabels", "edition.field_change_status", "edition.trial_horizon.length"].every((marker) =>
+      stateOfFieldIndexSource.includes(marker)
+    )
+      ? "pass"
+      : "fail",
+    "State of the Field index should preview status and trial-horizon scope for each monthly review."
+  );
+
+  addCheck(
+    checks,
+    "State of the Field detail page surfaces required monthly review fields",
+    [
+      "edition.why_it_matters",
+      "edition.reader_takeaways",
+      "edition.what_changed",
+      "edition.current_context",
+      "edition.what_did_not_change",
+      "edition.trial_horizon",
+      "edition.signals_to_watch",
+      "edition.evidence_gaps",
+      "edition.track_examples",
+      "edition.related_publication_event_ids",
+      "edition.related_outlook_ids"
+    ].every((marker) => stateOfFieldDetailSource.includes(marker)) &&
+      !stateOfFieldDetailSource.includes("isNoMaterialChange")
+      ? "pass"
+      : "fail",
+    "Detail page should render the monthly interpretation, unchanged boundaries, evidence gaps, examples, and review-basis inputs even when no material field change occurred."
   );
 
   const missingHallmarkOutlooks = Array.from(hallmarkIds).filter(

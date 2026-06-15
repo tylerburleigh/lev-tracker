@@ -262,6 +262,7 @@ time {
 .activity-card,
 .editorial-card,
 .state-brief-panel,
+.state-review-basis__item,
 .state-change-card,
 .state-watch-card,
 .state-example-card,
@@ -806,6 +807,7 @@ time {
 .review-summary-card,
 .detail-panel,
 .state-brief-panel,
+.state-review-basis__item,
 .state-change-card,
 .state-watch-card,
 .state-example-card,
@@ -886,6 +888,7 @@ time {
 .activity-card,
 .editorial-card,
 .state-brief-panel,
+.state-review-basis__item,
 .state-change-card,
 .state-watch-card,
 .state-example-card,
@@ -1715,6 +1718,52 @@ time {
   line-height: 1.45;
 }
 
+.editorial-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  color: var(--text-soft);
+  font-size: 0.84rem;
+  font-weight: 750;
+}
+
+.editorial-card__meta > span:not(.state-status-pill) {
+  padding: 5px 9px;
+  border: 1px solid rgba(24, 37, 30, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 253, 246, 0.58);
+}
+
+.state-status-pill {
+  width: fit-content;
+  max-width: 100%;
+  padding: 5px 9px;
+  border: 1px solid rgba(24, 37, 30, 0.12);
+  border-radius: 999px;
+  background: rgba(237, 242, 234, 0.72);
+  color: var(--text-soft);
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.state-status-pill--material_change {
+  border-color: rgba(193, 89, 77, 0.24);
+  background: rgba(193, 89, 77, 0.1);
+}
+
+.state-status-pill--mixed {
+  border-color: rgba(169, 120, 42, 0.26);
+  background: rgba(230, 183, 82, 0.16);
+}
+
+.state-status-pill--no_material_change {
+  border-color: rgba(45, 128, 99, 0.22);
+  background: rgba(45, 128, 99, 0.1);
+}
+
 .state-section {
   display: grid;
   gap: 16px;
@@ -1751,6 +1800,40 @@ time {
 
 .state-change-card {
   border-top: 3px solid var(--slate);
+}
+
+.state-review-basis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.state-review-basis__item {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  min-height: 0;
+  background: rgba(255, 253, 246, 0.72);
+}
+
+.state-review-basis__item span {
+  color: var(--text-soft);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.state-review-basis__item strong {
+  color: var(--text);
+  font-size: 1.24rem;
+  line-height: 1.15;
+}
+
+.state-review-basis__item p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.94rem;
+  line-height: 1.5;
 }
 
 .state-change-card--outlook {
@@ -3623,6 +3706,7 @@ time {
   .state-brief-grid,
   .state-two-column,
   .state-change-grid,
+  .state-review-basis,
   .state-card-list--three,
   .state-example-grid,
   .story-grid,
@@ -3764,6 +3848,7 @@ time {
   .activity-card,
   .editorial-card,
   .state-brief-panel,
+  .state-review-basis__item,
   .state-change-card,
   .state-watch-card,
   .state-example-card,
@@ -3784,6 +3869,7 @@ time {
   .state-brief-grid,
   .state-two-column,
   .state-change-grid,
+  .state-review-basis,
   .state-card-list--three,
   .state-example-grid,
   .evidence-bridge,
