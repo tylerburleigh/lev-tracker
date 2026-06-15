@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-telomerase-restoration-ta65-metabolic-results-repair-2026-06-15-interpretation-forecast-r1",
+  "name": "Interpretation Forecast review for Telomerase Restoration TA-65 metabolic results repair bundle",
+  "candidate_bundle_id": "telomerase-restoration-ta65-metabolic-results-repair-2026-06-15",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "interpretation_forecast",
+  "reviewer_kind": "agent",
+  "skill_name": "lev-evidence-review",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged interpretation is conservative and does not use PMID 29546832 to upgrade Telomerase Restoration. The outlook remains human_biomarker_signal with mixed momentum and low confidence, and the new metabolic-syndrome result is repeatedly bounded as small, disease-context, surrogate-biomarker evidence. The support map also distinguishes the no-posted-registry-table fact from the publication result and preserves the existing functional-outcome, clinical-outcome, gene-therapy, long-term safety, and cancer-risk gaps.",
+  "reviewed_change_ids": [
+    "create-source-pmid-29546832",
+    "update-source-nct-02531334",
+    "update-study-ta65-metabolic-syndrome-completed-registry",
+    "create-finding-ta65-metabolic-syndrome-cardiometabolic-biomarker-signal",
+    "update-finding-ta65-metabolic-syndrome-completed-no-results",
+    "update-outlook-track-telomerase-restoration"
+  ],
+  "findings": [
+    {
+      "finding_id": "ta65-metabolic-stage-boundary-retained",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "applies_to_change_id": "update-outlook-track-telomerase-restoration",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-telomerase-restoration-outlook"
+      },
+      "claim_or_issue": "The staged outlook adds the NCT02531334 publication while preserving human_biomarker_signal, mixed momentum, low confidence, and no credible LEV-relevant timing window.",
+      "why_it_matters": "A small human biomarker RCT should not imply human functional benefit, clinical benefit, or a nearer LEV window.",
+      "recommended_action": "No revision needed; keep the stage and rating-change criteria unchanged.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ta65-metabolic-biomarker-function-gap-clear",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "applies_to_change_id": "create-finding-ta65-metabolic-syndrome-cardiometabolic-biomarker-signal",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "ta65-metabolic-syndrome-cardiometabolic-biomarker-signal"
+      },
+      "claim_or_issue": "The staged finding states favorable HDL-C, BMI, waist circumference, LDL/HDL ratio, and TNF-alpha movement but explicitly excludes broad aging, functional, disease-event, and survival conclusions.",
+      "why_it_matters": "The primary interpretation risk is turning cardiometabolic surrogate movement into an aging-efficacy claim.",
+      "recommended_action": "No revision needed; preserve the disease-context and surrogate-endpoint caveats.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ta65-metabolic-trial-watch-repair-not-field-progress",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "update-outlook-track-telomerase-restoration",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-telomerase-restoration-outlook"
+      },
+      "claim_or_issue": "The watchlist section treats this as a repair to a previously no-results registry row, not as a new field-progress event or a trial-launch signal.",
+      "why_it_matters": "The field activity and trial-watch systems should not count registry reconciliation as evidence that LEV is closer.",
+      "recommended_action": "No revision needed; keep the repaired result in evidence context and keep remaining no-results registries as watch context.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ta65-metabolic-strongest-evidence-caveated",
+      "severity": "note",
+      "category": "uncertainty",
+      "applies_to_change_id": "update-outlook-track-telomerase-restoration",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-telomerase-restoration-outlook"
+      },
+      "claim_or_issue": "The staged outlook includes the metabolic-syndrome RCT in strongest_current_evidence, but the same bullet and support-map limitations identify it as disease-context surrogate evidence.",
+      "why_it_matters": "The list should help readers inspect notable human evidence without overweighting a small biomarker trial.",
+      "recommended_action": "No revision needed; if future UI treats strongest_current_evidence as ranked proof, revisit placement or wording.",
+      "resolution_status": "closed"
+    }
+  ],
+  "created_at": "2026-06-15T21:14:07.984Z",
+  "updated_at": "2026-06-15T21:14:07.984Z"
+}

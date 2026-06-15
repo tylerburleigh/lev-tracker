@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-telomerase-restoration-ta65-metabolic-results-repair-2026-06-15-source-fidelity-r1",
+  "name": "Source Fidelity review for Telomerase Restoration TA-65 metabolic results repair bundle",
+  "candidate_bundle_id": "telomerase-restoration-ta65-metabolic-results-repair-2026-06-15",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "skill_name": "lev-evidence-review",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, study, finding, and outlook changes are source-faithful. ClinicalTrials.gov identifies NCT02531334 as the University of Connecticut H14-278 randomized double-masked crossover TA-65 metabolic-syndrome trial with estimated enrollment of 40, actual completion in June 2018, and hasResults=false. PubMed identifies PMID 29546832 as the 2018 Current Pharmaceutical Design randomized controlled TA-65 metabolic-syndrome article, and the full text explicitly links the study to H14-278 and ClinicalTrials.gov protocol NCT02531334. The staged result claims match the abstract/full-text biomarker results and correctly preserve the no-posted-registry-table boundary.",
+  "reviewed_change_ids": [
+    "create-source-pmid-29546832",
+    "update-source-nct-02531334",
+    "update-study-ta65-metabolic-syndrome-completed-registry",
+    "create-finding-ta65-metabolic-syndrome-cardiometabolic-biomarker-signal",
+    "update-finding-ta65-metabolic-syndrome-completed-no-results",
+    "update-outlook-track-telomerase-restoration"
+  ],
+  "findings": [
+    {
+      "finding_id": "ta65-metabolic-pmid-nct-match-confirmed",
+      "severity": "note",
+      "category": "source_mismatch",
+      "applies_to_change_id": "create-source-pmid-29546832",
+      "applies_to_record": {
+        "record_type": "source",
+        "record_id": "pmid-29546832"
+      },
+      "claim_or_issue": "PMID 29546832 is correctly matched to NCT02531334 through the full-text H14-278 and ClinicalTrials.gov protocol references, with matching title, sponsor context, 40-person enrollment, randomized crossover design, 16 mg/day TA-65 dosing, and 12-week treatment periods separated by washout.",
+      "why_it_matters": "The trial-watch state should change only if the publication is truly the registry-linked result source rather than a similar TA-65 study.",
+      "recommended_action": "No revision needed; treat PMID 29546832 as the result-bearing source for NCT02531334.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ta65-metabolic-registry-results-boundary-confirmed",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "update-study-ta65-metabolic-syndrome-completed-registry",
+      "applies_to_record": {
+        "record_type": "study",
+        "record_id": "ta65-metabolic-syndrome-completed-registry"
+      },
+      "claim_or_issue": "The registry still has hasResults=false while the publication carries outcome results, so the staged split between results_status not_posted and watch_status results_captured is faithful.",
+      "why_it_matters": "This preserves registry transparency without leaving the study in the misleading active late-no-results retirement queue.",
+      "recommended_action": "No revision needed; keep the registry no-posted-table finding separate from the publication result finding.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ta65-metabolic-company-role-caveat",
+      "severity": "minor",
+      "category": "missing_caveat",
+      "applies_to_change_id": "create-finding-ta65-metabolic-syndrome-cardiometabolic-biomarker-signal",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "ta65-metabolic-syndrome-cardiometabolic-biomarker-signal"
+      },
+      "claim_or_issue": "The full text states that TA-Sciences prepared the capsules and that randomization was done by the company, while the staged finding caveats do not mention this trial-specific company role.",
+      "why_it_matters": "Commercial involvement can affect confidence in a small supplement trial, especially when the result is being added to public support maps.",
+      "recommended_action": "This does not block approval because the staged claim is already low-confidence, disease-context, and biomarker-only; editorial may add a trial-specific company-role caveat if it wants the new finding to carry the conflict boundary directly.",
+      "resolution_status": "open"
+    }
+  ],
+  "created_at": "2026-06-15T21:13:22.584Z",
+  "updated_at": "2026-06-15T21:13:22.584Z"
+}

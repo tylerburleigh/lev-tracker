@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-15T21:06:07.580Z",
+  "generated_at": "2026-06-15T21:25:53.099Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-15T21:06:07.464Z",
-    "research_priority_queue_updated_at": "2026-06-15T21:06:07.464Z",
-    "active_candidate_bundle_count": 1,
+    "research_coverage_status_updated_at": "2026-06-15T21:23:04.000Z",
+    "research_priority_queue_updated_at": "2026-06-15T21:23:04.001Z",
+    "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
-    "surveillance_recent_queue_count": 37,
+    "surveillance_recent_queue_count": 38,
     "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 0,
     "field_activity_watchlist_updated_at": "2026-06-15T20:01:01Z",
@@ -56,50 +56,88 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "editorial_review-telomerase-restoration-ta65-metabolic-results-repair-2026-06-15",
-    "top_mode": "editorial_review",
+    "top_work_item_id": "editorial-rollup-public-summary-surfaces",
+    "top_mode": "editorial_rollup",
     "active_editorial_count": 1,
     "blocked_work_item_count": 1,
     "ready_research_count": 0,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
-      "37 surveillance track(s) are hidden from ordinary rotation until their cooldown expires.",
+      "38 surveillance track(s) are hidden from ordinary rotation until their cooldown expires.",
       "1 work item(s) are blocked by external state or calendar gates."
     ]
   },
   "work_items": [
     {
       "rank": 1,
-      "item_id": "editorial_review-telomerase-restoration-ta65-metabolic-results-repair-2026-06-15",
-      "mode": "editorial_review",
+      "item_id": "editorial-rollup-public-summary-surfaces",
+      "mode": "editorial_rollup",
       "domain": "editorial",
       "priority_tier": "now",
       "status": "ready",
-      "title": "Review active staged update telomerase-restoration-ta65-metabolic-results-repair-2026-06-15",
-      "rationale": "Staged update telomerase-restoration-ta65-metabolic-results-repair-2026-06-15 is submitted, so editorial work takes precedence over new research.",
-      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
-      "candidate_bundle_id": "telomerase-restoration-ta65-metabolic-results-repair-2026-06-15",
-      "runbook_path": "docs/admin-review.md",
-      "command": "npm run research:bundle -- validate --bundle telomerase-restoration-ta65-metabolic-results-repair-2026-06-15",
+      "title": "Review public editorial rollup surfaces",
+      "rationale": "Latest affected public update publish-telomerase-restoration-ta65-metabolic-results-repair-2026-06-15-2026-06-15t21-22-56-238z is newer than the latest state-of-field edition.",
+      "default_action": "Review overall outlook, state-of-field edition, hallmark insight copy, and outlook method links; update public content only when the reviewed record warrants it.",
+      "runbook_path": "docs/editorial-rollup.md",
       "source_paths": [
-        "data/candidate-bundles",
-        "docs/admin-review.md"
+        "data/publication-events",
+        "data/outlooks",
+        "data/content/state-of-the-field",
+        "data/content/hallmark-insights.json",
+        "src/components/site-shell.tsx",
+        "docs/editorial-rollup.md"
       ],
       "references": [
         {
-          "record_type": "candidate_bundle",
-          "record_id": "telomerase-restoration-ta65-metabolic-results-repair-2026-06-15"
+          "record_type": "publication_event",
+          "record_id": "publish-telomerase-restoration-ta65-metabolic-results-repair-2026-06-15-2026-06-15t21-22-56-238z"
+        },
+        {
+          "record_type": "outlook",
+          "record_id": "overall-lev-outlook"
         }
       ],
       "signals": [
         {
-          "name": "lifecycle_status",
-          "value": "submitted"
+          "name": "trigger_count",
+          "value": 1
         },
         {
-          "name": "proposed_change_count",
-          "value": 6
+          "name": "latest_affected_publication_event_id",
+          "value": "publish-telomerase-restoration-ta65-metabolic-results-repair-2026-06-15-2026-06-15t21-22-56-238z"
+        },
+        {
+          "name": "latest_affected_publication_event_date",
+          "value": "2026-06-15"
+        },
+        {
+          "name": "latest_state_of_field_date",
+          "value": "2026-06-12"
+        },
+        {
+          "name": "overall_outlook_last_updated",
+          "value": "2026-06-15"
+        },
+        {
+          "name": "latest_non_overall_outlook_updated",
+          "value": "2026-06-15"
+        },
+        {
+          "name": "stale_hallmark_insight_count",
+          "value": 0
+        },
+        {
+          "name": "first_stale_hallmark_insight_id",
+          "value": "none"
+        },
+        {
+          "name": "no_current_month_state_of_field",
+          "value": false
+        },
+        {
+          "name": "outlook_method_surface_gap",
+          "value": false
         }
       ]
     },

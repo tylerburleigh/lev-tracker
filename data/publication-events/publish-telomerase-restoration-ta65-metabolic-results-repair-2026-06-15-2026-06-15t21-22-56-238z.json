@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-telomerase-restoration-ta65-metabolic-results-repair-2026-06-15-2026-06-15t21-22-56-238z",
+  "name": "Published Telomerase Restoration TA-65 Metabolic Results Repair",
+  "summary": "Surveillance bundle resolving PMID 29546832 as the result-bearing publication for NCT02531334, moving the TA-65 metabolic-syndrome registry from late no-results to results-captured watch context while keeping the Telomerase Restoration outlook at human_biomarker_signal with mixed momentum and low confidence.",
+  "candidate_bundle_id": "telomerase-restoration-ta65-metabolic-results-repair-2026-06-15",
+  "event_type": "publish",
+  "published_at": "2026-06-15T21:22:56.238Z",
+  "published_by": "tyler",
+  "published_targets": [
+    {
+      "record_type": "source",
+      "record_id": "pmid-29546832",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "nct-02531334",
+      "action": "updated"
+    },
+    {
+      "record_type": "study",
+      "record_id": "ta65-metabolic-syndrome-completed-registry",
+      "action": "updated"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "ta65-metabolic-syndrome-cardiometabolic-biomarker-signal",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "ta65-metabolic-syndrome-completed-no-results",
+      "action": "updated"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-telomerase-restoration-outlook",
+      "action": "updated"
+    }
+  ],
+  "affected_outlook_ids": [
+    "track-telomerase-restoration-outlook"
+  ],
+  "approving_evidence_review_ids": [
+    "evidence-review-telomerase-restoration-ta65-metabolic-results-repair-2026-06-15-interpretation-forecast-r1",
+    "evidence-review-telomerase-restoration-ta65-metabolic-results-repair-2026-06-15-safety-limitations-r1",
+    "evidence-review-telomerase-restoration-ta65-metabolic-results-repair-2026-06-15-source-fidelity-r1",
+    "evidence-review-telomerase-restoration-ta65-metabolic-results-repair-2026-06-15-taxonomy-mapping-r1"
+  ],
+  "change_note": "Recognizes PMID 29546832 as the matched NCT02531334 result publication, adds a disease-context cardiometabolic biomarker signal, and keeps Telomerase Restoration at human_biomarker_signal with mixed momentum and low confidence."
+}

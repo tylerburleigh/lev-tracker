@@ -5,7 +5,7 @@
   "name": "Telomerase Restoration TA-65 Metabolic Results Repair",
   "summary": "Surveillance bundle resolving PMID 29546832 as the result-bearing publication for NCT02531334, moving the TA-65 metabolic-syndrome registry from late no-results to results-captured watch context while keeping the Telomerase Restoration outlook at human_biomarker_signal with mixed momentum and low confidence.",
   "intake_mode": "surveillance",
-  "lifecycle_status": "submitted",
+  "lifecycle_status": "published",
   "submitted_at": "2026-06-15T21:00:26Z",
   "submitted_by": "codex-agent",
   "revision_number": 1,
@@ -175,14 +175,21 @@
   },
   "session_reference": "research/sessions/2026-06-15-ta65-metabolic-results-repair.json",
   "next_actions": [
-    "Run source-fidelity review to confirm the NCT02531334/PMID 29546832 match and the abstract/full-text result claims.",
-    "Run interpretation, safety, and taxonomy reviews before publication because the repair changes a trial-watch state and public outlook support map.",
-    "After publication, rerun the global trial-watch audit and decide whether the remaining old TA-65 late no-results records need retirement sweeps."
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
   ],
   "tags": [
     "admin",
     "surveillance",
     "trial-watch",
     "telomerase-restoration"
+  ],
+  "evidence_review_ids": [
+    "evidence-review-telomerase-restoration-ta65-metabolic-results-repair-2026-06-15-source-fidelity-r1",
+    "evidence-review-telomerase-restoration-ta65-metabolic-results-repair-2026-06-15-interpretation-forecast-r1",
+    "evidence-review-telomerase-restoration-ta65-metabolic-results-repair-2026-06-15-safety-limitations-r1",
+    "evidence-review-telomerase-restoration-ta65-metabolic-results-repair-2026-06-15-taxonomy-mapping-r1"
+  ],
+  "publication_event_ids": [
+    "publish-telomerase-restoration-ta65-metabolic-results-repair-2026-06-15-2026-06-15t21-22-56-238z"
   ]
 }

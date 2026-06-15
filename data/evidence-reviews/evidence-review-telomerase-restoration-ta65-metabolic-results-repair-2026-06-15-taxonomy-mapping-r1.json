@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-telomerase-restoration-ta65-metabolic-results-repair-2026-06-15-taxonomy-mapping-r1",
+  "name": "Taxonomy Mapping review for Telomerase Restoration TA-65 metabolic results repair bundle",
+  "candidate_bundle_id": "telomerase-restoration-ta65-metabolic-results-repair-2026-06-15",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "taxonomy_mapping",
+  "reviewer_kind": "agent",
+  "skill_name": "lev-evidence-review",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged records use the correct taxonomy boundaries. The TA-65 publication result is mapped to Telomerase Restoration and telomere_attrition as human_biomarker evidence with a conservative mixed direction; the NCT02531334 registry-table fact remains a regulatory_or_program_update finding; and the study separates registry results_status not_posted from local watch_status results_captured. No staged record treats the metabolic-syndrome biomarker result as human function, clinical outcome, lifespan, or gene-therapy evidence.",
+  "reviewed_change_ids": [
+    "create-source-pmid-29546832",
+    "update-source-nct-02531334",
+    "update-study-ta65-metabolic-syndrome-completed-registry",
+    "create-finding-ta65-metabolic-syndrome-cardiometabolic-biomarker-signal",
+    "update-finding-ta65-metabolic-syndrome-completed-no-results",
+    "update-outlook-track-telomerase-restoration"
+  ],
+  "findings": [
+    {
+      "finding_id": "ta65-metabolic-human-biomarker-tier-correct",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "create-finding-ta65-metabolic-syndrome-cardiometabolic-biomarker-signal",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "ta65-metabolic-syndrome-cardiometabolic-biomarker-signal"
+      },
+      "claim_or_issue": "The result finding is correctly classified as endpoint_category biomarker and evidence_tier human_biomarker, with direction mixed and confidence low.",
+      "why_it_matters": "The evidence is a human randomized crossover result, but the endpoints are cardiometabolic and inflammatory biomarkers rather than aging function, clinical events, survival, or lifespan.",
+      "recommended_action": "No revision needed; keep this result in the biomarker tier.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ta65-metabolic-regulatory-finding-correct",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "update-finding-ta65-metabolic-syndrome-completed-no-results",
+      "applies_to_record": {
+        "record_type": "finding",
+        "record_id": "ta65-metabolic-syndrome-completed-no-results"
+      },
+      "claim_or_issue": "The no-posted-registry-table record is correctly kept as endpoint_category regulatory and evidence_tier regulatory_or_program_update.",
+      "why_it_matters": "Registry transparency is useful public context, but it should not be merged into the biomarker efficacy finding.",
+      "recommended_action": "No revision needed; keep registry-table transparency separate from publication outcome evidence.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ta65-metabolic-watch-status-taxonomy-correct",
+      "severity": "note",
+      "category": "activity_vs_evidence",
+      "applies_to_change_id": "update-study-ta65-metabolic-syndrome-completed-registry",
+      "applies_to_record": {
+        "record_type": "study",
+        "record_id": "ta65-metabolic-syndrome-completed-registry"
+      },
+      "claim_or_issue": "The staged study keeps results_status not_posted for the registry module while setting watch_status results_captured for the local trial-watch workflow.",
+      "why_it_matters": "This is the correct separation between external registry disclosure state and internal evidence-capture state.",
+      "recommended_action": "No revision needed.",
+      "resolution_status": "closed"
+    },
+    {
+      "finding_id": "ta65-metabolic-track-hallmark-scope-correct",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "applies_to_change_id": "update-outlook-track-telomerase-restoration",
+      "applies_to_record": {
+        "record_type": "outlook",
+        "record_id": "track-telomerase-restoration-outlook"
+      },
+      "claim_or_issue": "The staged source, study, findings, and outlook consistently map TA-65 to telomerase-restoration and telomere_attrition without reclassifying the disease-context metabolic-syndrome result as broad aging evidence.",
+      "why_it_matters": "TA-65 is relevant to the telomerase-restoration track, but the disease-context endpoint boundary must stay visible.",
+      "recommended_action": "No revision needed; preserve disease-boundary wording in the outlook support map.",
+      "resolution_status": "closed"
+    }
+  ],
+  "created_at": "2026-06-15T21:15:35.962Z",
+  "updated_at": "2026-06-15T21:15:35.962Z"
+}

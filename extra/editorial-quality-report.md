@@ -6,11 +6,11 @@ Overall: passed
 ## Summary
 
 - Current LEV story status: current
-- Public copy warnings: 61
+- Public copy warnings: 65
 - Reader-task audit: passed (14 passed, 0 issues, 0 warnings)
 - State of the Field workflow: draft (0 open decision(s), 0 untracked mismatch(es))
 - Hallmark insight freshness: 0 stale hallmark insight(s)
-- Top public-copy terms: durable: 15, translation: 10, functional benefit: 9, mechanistic: 6, coverage repair: 5, biomarker-heavy: 4, low confidence: 3, support map: 3
+- Top public-copy terms: durable: 16, translation: 10, functional benefit: 9, mechanistic: 6, coverage repair: 5, low confidence: 5, biomarker-heavy: 4, support map: 3
 
 ## Gates
 
@@ -23,7 +23,7 @@ Overall: passed
 - PASS: Hallmark insight summaries are reviewed after affected outlook changes
   No hallmark insight summaries are older than their latest affected public update.
 - PASS: Public copy warnings <= 269
-  Current public copy warning count is 61.
+  Current public copy warning count is 65.
 - PASS: Reader-task warnings <= 0
   Current reader-task warning count is 0.
 
@@ -86,8 +86,8 @@ Command: `node scripts/public-copy-lint.mjs --write`
 Exit code: 0
 
 ```text
-Public copy warnings: 61
-Top terms: durable: 15, translation: 10, functional benefit: 9, mechanistic: 6, coverage repair: 5, biomarker-heavy: 4, low confidence: 3, support map: 3
+Public copy warnings: 65
+Top terms: durable: 16, translation: 10, functional benefit: 9, mechanistic: 6, coverage repair: 5, low confidence: 5, biomarker-heavy: 4, support map: 3
 Wrote extra/public-copy-report.md.
 ```
 

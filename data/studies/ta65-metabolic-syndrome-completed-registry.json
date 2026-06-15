@@ -3,7 +3,7 @@
   "record_type": "study",
   "id": "ta65-metabolic-syndrome-completed-registry",
   "name": "TA-65 metabolic syndrome completed registry",
-  "summary": "Completed randomized double-masked crossover TA-65 registry in metabolic syndrome, with insulin resistance, oxidative stress, and inflammation endpoints.",
+  "summary": "Completed randomized double-masked crossover TA-65 trial in metabolic syndrome, registered as NCT02531334 and now matched to PMID 29546832 for published cardiometabolic and inflammatory biomarker results.",
   "study_type": "interventional",
   "status": "completed",
   "phase": "na",
@@ -23,7 +23,8 @@
     "safety"
   ],
   "source_ids": [
-    "nct-02531334"
+    "nct-02531334",
+    "pmid-29546832"
   ],
   "registry_ids": [
     "NCT02531334"
@@ -35,13 +36,12 @@
     "study_completion_date": "2018-06-01",
     "completion_date_kind": "actual",
     "results_status": "not_posted",
-    "watch_status": "late_no_results",
+    "watch_status": "results_captured",
     "watch_status_updated": "2026-06-15",
-    "watch_status_reason": "Registry text records actual primary completion in December 2017 and actual study completion in June 2018; the June 15, 2026 API check still found no posted registry results. PMID 29546832 appears title- and enrollment-matched and should be resolved before any retirement decision.",
-    "next_registry_check_due": "2026-12-15",
-    "expected_results_window": "ClinicalTrials.gov lists actual primary completion in December 2017 and actual study completion in June 2018, with no posted registry results in the June 15, 2026 API view.",
-    "horizon_note": "Completed no-results registry context, not evidence of benefit.",
-    "why_it_matters": "This record preserves a completed TA-65 metabolic registry as a future publication/results watch item; the likely PMID 29546832 publication match needs evidence review before the row is retired or converted to results_captured."
+    "watch_status_reason": "ClinicalTrials.gov still lacks a posted registry results table in the June 15, 2026 API view, but the full text of PMID 29546832 identifies the same ClinicalTrials.gov protocol NCT02531334 and University of Connecticut IRB protocol H14-278, so the result evidence is captured through the publication.",
+    "expected_results_window": "ClinicalTrials.gov lists actual primary completion in December 2017 and actual study completion in June 2018. Registry results remain unposted, but the matched publication was indexed in 2018.",
+    "horizon_note": "Results captured through publication; registry-table transparency remains incomplete.",
+    "why_it_matters": "This record should no longer sit in the active late-no-results retirement queue; the remaining interpretation question is how much weight to give a small disease-context biomarker result."
   },
   "tags": [
     "human",
@@ -49,7 +49,9 @@
     "trial-registry",
     "metabolic-syndrome",
     "completed",
-    "no-results",
+    "results-linked",
+    "results-captured",
+    "no-posted-registry-results",
     "coverage-repair"
   ]
 }

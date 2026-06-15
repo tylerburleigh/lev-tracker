@@ -9,8 +9,9 @@
   "momentum": "mixed",
   "confidence": "low",
   "main_evidence_gaps": [
-    "Human evidence is still mostly based on biomarkers: telomere length, immune subsets, inflammation markers, and vascular-function plans, not long-lasting functional, disease, or survival outcomes.",
+    "Human evidence is still mostly based on biomarkers: telomere length, immune subsets, inflammation markers, cardiometabolic markers, and vascular-function plans, not long-lasting functional, disease, or survival outcomes.",
     "A 2025 TA-65 systematic review and meta-analysis reported telomere-length movement but no significant frailty or inflammation improvement, so the biomarker-to-health gap remains open.",
+    "The matched NCT02531334 TA-65 metabolic-syndrome publication adds disease-context cardiometabolic and inflammation biomarker movement, but it does not close functional, disease-event, survival, or long-term safety gaps.",
     "Therapeutic telomerase activation has an intrinsic proliferation and cancer-risk concern that is not resolved by short or small human studies.",
     "Human gene-therapy evidence for aging remains registry-level only; the identified AAV-hTERT aging study and disease-context Libella registries have unknown status and no posted results.",
     "Commercial conflicts, small samples, and a non-monotonic TA-65 dose signal limit how much weight to put on the strongest human telomere-length trial.",
@@ -21,9 +22,10 @@
     "A one-year randomized human TA-65 study reported increased leukocyte telomere length at the lower dose.",
     "A 2025 TA-65 systematic review and meta-analysis reported telomere-length improvement across randomized trials, while also finding no significant frailty or inflammation improvement.",
     "A post-myocardial-infarction TA-65 pilot RCT reported higher lymphocyte counts and lower hsCRP, although its predefined CD8+ TEMRA endpoint was null.",
+    "A metabolic-syndrome TA-65 randomized crossover trial reported favorable HDL-C, anthropometric, LDL/HDL ratio, and TNF-alpha biomarker movement, but remains disease-context surrogate evidence.",
     "Inducible telomerase reactivation in telomerase-deficient mice reversed severe telomere-dysfunction phenotypes, supporting the biology but not direct evidence of useful human results."
   ],
-  "interpretation_note": "Telomerase restoration remains at human biomarker signal. The animal case is unusually direct for a hallmark track, and human TA-65 trials reach telomere or immune biomarker endpoints. The 2025 TA-65 synthesis strengthens the biomarker anchor but also makes the limiting read clearer: human health/function gains, long-term safety, gene-therapy results, and cancer-risk boundaries remain unresolved.",
+  "interpretation_note": "Telomerase restoration remains at human biomarker signal. The animal case is unusually direct for a hallmark track, and human TA-65 trials reach telomere, immune, inflammation, or cardiometabolic biomarker endpoints. The 2025 TA-65 synthesis strengthens the biomarker anchor, and the reconciled NCT02531334 publication adds a disease-context cardiometabolic biomarker trial, but the limiting read is unchanged: human health/function gains, long-term safety, gene-therapy results, and cancer-risk boundaries remain unresolved.",
   "what_would_change_the_rating": [
     "A stronger stage assignment would need repeated human studies showing long-lasting improvement in function or clinical outcomes tied to telomerase or telomere restoration, not only leukocyte telomere or immune-subset shifts.",
     "A gene-therapy upgrade would require transparent human safety data with telomerase activity, telomere-length, clonal expansion, and cancer-surveillance follow-up.",
@@ -38,6 +40,7 @@
     "ta65-low-dose-increased-human-telomere-length",
     "ta65-health-maintenance-short-telomere-immune-signal",
     "ta65-post-mi-immune-biomarkers-mixed",
+    "ta65-metabolic-syndrome-cardiometabolic-biomarker-signal",
     "tat2-ex-vivo-cd8-antiviral-function-positive",
     "libella-aav-htert-registry-no-results",
     "cmv-tert-lifespan-paper-retracted",
@@ -55,22 +58,25 @@
     {
       "label": "Stage assignment",
       "outlook_field": "evidence_stage",
-      "conclusion": "The track reaches human biomarker signal because randomized human TA-65 studies and the later review synthesis report leukocyte telomere-length or immune/inflammation biomarker changes.",
+      "conclusion": "The track reaches human biomarker signal because randomized human TA-65 studies and the later review synthesis report leukocyte telomere-length, immune/inflammation, or cardiometabolic biomarker changes.",
       "support_role": "supports",
-      "rationale": "The 2016 TA-65 RCT directly measured telomere length, the 2023 post-MI trial measured immune-aging and inflammation biomarkers, and the 2025 synthesis reports telomere-length movement across randomized trials. These are human signals, but they do not establish long-lasting improvement in human function.",
+      "rationale": "The 2016 TA-65 RCT directly measured telomere length, the 2023 post-MI trial measured immune-aging and inflammation biomarkers, the 2018 metabolic-syndrome trial reported cardiometabolic and inflammation biomarker movement, and the 2025 synthesis reports telomere-length movement across randomized trials. These are human signals, but they do not establish long-lasting improvement in human function.",
       "finding_ids": [
         "ta65-low-dose-increased-human-telomere-length",
         "ta65-post-mi-immune-biomarkers-mixed",
+        "ta65-metabolic-syndrome-cardiometabolic-biomarker-signal",
         "ta65-meta-analysis-telomere-function-disconnect"
       ],
       "source_ids": [
         "pmid-26950204",
         "pmid-37086366",
+        "pmid-29546832",
         "pmid-41286474"
       ],
       "limitations": [
         "The strongest direct telomere endpoint is a biomarker endpoint.",
         "The post-MI trial missed its predefined primary CD8+ TEMRA endpoint.",
+        "The metabolic-syndrome trial is disease-context surrogate biomarker evidence.",
         "The 2025 synthesis did not find significant frailty or inflammation improvement."
       ]
     },
@@ -101,35 +107,39 @@
       "outlook_field": "confidence",
       "conclusion": "TA-65 human evidence is enough for a biomarker baseline but not enough for a firm clinical claim.",
       "support_role": "limits",
-      "rationale": "The controlled telomere-length result has commercial conflicts and a non-monotonic dose pattern; the uncontrolled health-maintenance program is confounded; the post-MI study is mixed; and the review-level synthesis found telomere movement without clear frailty or inflammation improvement.",
+      "rationale": "The controlled telomere-length result has commercial conflicts and a non-monotonic dose pattern; the uncontrolled health-maintenance program is confounded; the post-MI study is mixed; the metabolic-syndrome RCT is disease-context biomarker evidence; and the review-level synthesis found telomere movement without clear frailty or inflammation improvement.",
       "finding_ids": [
         "ta65-low-dose-increased-human-telomere-length",
         "ta65-health-maintenance-short-telomere-immune-signal",
         "ta65-post-mi-immune-biomarkers-mixed",
+        "ta65-metabolic-syndrome-cardiometabolic-biomarker-signal",
         "ta65-meta-analysis-telomere-function-disconnect"
       ],
       "source_ids": [
         "pmid-26950204",
         "pmid-20822369",
         "pmid-37086366",
+        "pmid-29546832",
         "pmid-41286474"
       ],
       "limitations": [
         "Some authors in the telomere-length trial were employees or consultants of T.A. Sciences.",
         "The uncontrolled program cannot isolate TA-65 from supplements, counseling, and monitoring.",
+        "The metabolic-syndrome trial does not show broad aging efficacy.",
         "Review-level safety remained short term and did not resolve longer-term cancer risk."
       ]
     },
     {
       "label": "TA-65 trial watchlist",
       "outlook_field": "main_evidence_gaps",
-      "conclusion": "Additional TA-65 or telomerase-activator registries are visible, but they do not currently add results.",
+      "conclusion": "One previously no-results TA-65 metabolic registry is now matched to a publication, while the remaining TA-65 or telomerase-activator registries remain no-results or pending watch context.",
       "support_role": "limits",
-      "rationale": "The repaired watchlist includes unknown-status, terminated, completed-no-results, and planned TA-65 or cycloastragenol registry records. The most current TA-65 vascular registry is not yet recruiting.",
+      "rationale": "The repaired watchlist now distinguishes NCT02531334, where outcome evidence is captured through PMID 29546832 despite no posted registry table, from unknown-status, terminated, completed-no-results, and planned TA-65 or cycloastragenol registry records that still do not add result evidence. The most current TA-65 vascular registry is not yet recruiting.",
       "finding_ids": [
         "ta65md-healthy-volunteers-registry-unknown-no-results",
         "ta65-metabolic-syndrome-terminated-no-results",
         "ta65-metabolic-syndrome-completed-no-results",
+        "ta65-metabolic-syndrome-cardiometabolic-biomarker-signal",
         "cycloastragenol-retinal-amyloid-completed-no-results",
         "ta65-microvascular-planned-no-results"
       ],
@@ -137,12 +147,14 @@
         "nct-02766790",
         "nct-01753674",
         "nct-02531334",
+        "pmid-29546832",
         "nct-02530255",
         "nct-05598359"
       ],
       "limitations": [
-        "No posted registry results are available from these records.",
-        "Several records are stale, terminated, disease-specific, or not yet recruiting.",
+        "NCT02531334 still lacks a posted registry table, but no longer represents absence of publication results.",
+        "Remaining TA-65MD, terminated TA-65, cycloastragenol, and microvascular registry rows do not yet add results.",
+        "Metabolic-syndrome biomarkers do not show broad aging efficacy.",
         "Registry existence does not show efficacy."
       ]
     },
@@ -208,11 +220,12 @@
       "outlook_field": "confidence",
       "conclusion": "The read remains tentative because evidence is heterogeneous and human data do not yet show long-lasting function, disease, or survival benefit.",
       "support_role": "balances",
-      "rationale": "The track has direct hallmark biology and human biomarkers, but the same evidence set has meaningful safety, conflict-of-interest, dose-response, publication-integrity, registry, and human-use limitations.",
+      "rationale": "The track has direct hallmark biology and human biomarkers, including the matched NCT02531334 metabolic-syndrome result, but the same evidence set has meaningful safety, conflict-of-interest, dose-response, publication-integrity, registry, disease-context, and human-use limitations.",
       "finding_ids": [
         "aav9-mtert-extended-lifespan-adult-old-mice",
         "ta65-low-dose-increased-human-telomere-length",
         "ta65-post-mi-immune-biomarkers-mixed",
+        "ta65-metabolic-syndrome-cardiometabolic-biomarker-signal",
         "ta65-meta-analysis-telomere-function-disconnect",
         "libella-aav-htert-registry-no-results",
         "ta65-microvascular-planned-no-results",
@@ -222,6 +235,7 @@
         "pmid-22585399",
         "pmid-26950204",
         "pmid-37086366",
+        "pmid-29546832",
         "pmid-41286474",
         "nct-04133649",
         "nct-05598359",
@@ -249,12 +263,13 @@
     "nct-02766790",
     "nct-01753674",
     "nct-02531334",
+    "pmid-29546832",
     "nct-02530255",
     "nct-05598359",
     "nct-04110964",
     "nct-04133454"
   ],
-  "last_updated": "2026-06-10",
+  "last_updated": "2026-06-15",
   "tags": [
     "public",
     "track",
