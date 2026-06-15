@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-15T17:25:12.234Z",
+  "generated_at": "2026-06-15T17:37:02.588Z",
   "source_state": {
     "research_coverage_status_updated_at": "2026-06-15T17:25:12.112Z",
     "research_priority_queue_updated_at": "2026-06-15T17:25:12.112Z",
@@ -17,14 +17,16 @@
     "field_activity_blindspot_control_count": 7,
     "field_activity_capture_recommended_count": 0,
     "field_activity_needs_primary_source_count": 2,
+    "field_activity_source_work_candidate_count": 2,
     "field_activity_pending_field_anchor_count": 0,
     "field_activity_pending_material_program_count": 2,
     "field_activity_watch_only_count": 0,
     "field_activity_below_threshold_count": 0,
     "field_activity_consolidated_candidate_count": 2,
-    "field_activity_approval_candidate_count": 2,
-    "field_activity_human_review_required_candidate_count": 0,
-    "field_activity_surface_routing_required_candidate_count": 6,
+    "field_activity_human_approval_required_count": 0,
+    "field_activity_state_of_field_routed_item_count": 6,
+    "field_activity_missing_surface_routing_count": 0,
+    "field_activity_nonblocking_watch_item_count": 2,
     "field_activity_learning_phase": "stable",
     "field_activity_learning_cadence": "monthly",
     "field_activity_completed_pilot_sweeps": 3,
@@ -122,28 +124,28 @@
           "value": 0
         },
         {
-          "name": "field_activity_needs_primary_source_count",
+          "name": "field_activity_source_work_candidate_count",
           "value": 2
         },
         {
-          "name": "field_activity_pending_field_anchor_count",
+          "name": "field_activity_publication_ready_count",
           "value": 0
         },
         {
-          "name": "field_activity_pending_material_program_count",
-          "value": 2
-        },
-        {
-          "name": "field_activity_approval_candidate_count",
-          "value": 2
-        },
-        {
-          "name": "field_activity_human_review_required_candidate_count",
+          "name": "field_activity_human_approval_required_count",
           "value": 0
         },
         {
-          "name": "field_activity_surface_routing_required_candidate_count",
+          "name": "field_activity_state_of_field_routed_item_count",
           "value": 6
+        },
+        {
+          "name": "field_activity_missing_surface_routing_count",
+          "value": 0
+        },
+        {
+          "name": "field_activity_nonblocking_watch_item_count",
+          "value": 2
         },
         {
           "name": "field_activity_consolidated_candidate_count",

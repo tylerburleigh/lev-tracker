@@ -115,9 +115,9 @@ function fieldActivityCandidateNeedsApprovalPacket(event, includeAll) {
 
   const approvalStatus = event.human_approval?.status;
   return (
-    fieldActivityPacketClassifications.has(event.classification) ||
     fieldActivityOpenApprovalStatuses.has(approvalStatus) ||
-    (event.agent_assessment?.human_review_required === true && approvalStatus !== "approved")
+    (event.agent_assessment?.human_review_required === true && approvalStatus !== "approved") ||
+    (!event.agent_assessment && event.classification === "capture_now" && approvalStatus !== "approved")
   );
 }
 
@@ -192,11 +192,27 @@ function summarizeFieldActivityWatchlist(fieldActivityWatchlist) {
       fieldActivityCandidateNeedsApprovalPacket(event, false) &&
       (event.agent_assessment?.human_review_required ?? fieldActivityPacketClassifications.has(event.classification))
   );
+  const sourceWorkCandidates = candidateEvents.filter(
+    (event) =>
+      event.classification === "research_more" &&
+      (event.agent_assessment?.public_copy_action ?? fieldActivityPublicCopyAction(event)) === "hold_for_source"
+  );
+  const stateOfFieldRoutedItems = candidateEvents.filter(
+    (event) => event.surface_routing?.state_of_field_review_required || event.surface_routing?.current_story_review_required
+  );
   const surfaceRoutingRequiredCandidates = candidateEvents.filter(
     (event) =>
       (fieldActivityPacketClassifications.has(event.classification) && !event.surface_routing) ||
       event.surface_routing?.state_of_field_review_required ||
       event.surface_routing?.current_story_review_required
+  );
+  const missingSurfaceRoutingCandidates = candidateEvents.filter(
+    (event) => fieldActivityPacketClassifications.has(event.classification) && !event.surface_routing
+  );
+  const nonblockingWatchItems = candidateEvents.filter(
+    (event) =>
+      !fieldActivityCandidateNeedsApprovalPacket(event, false) &&
+      (sourceWorkCandidates.includes(event) || ["watch_only", "below_threshold"].includes(event.noteworthiness_tier))
   );
 
   return {
@@ -216,6 +232,11 @@ function summarizeFieldActivityWatchlist(fieldActivityWatchlist) {
     approval_candidate_count: approvalCandidates.length,
     human_review_required_candidate_count: humanReviewRequiredCandidates.length,
     surface_routing_required_candidate_count: surfaceRoutingRequiredCandidates.length,
+    source_work_candidate_count: sourceWorkCandidates.length,
+    human_approval_required_count: humanReviewRequiredCandidates.length,
+    state_of_field_routed_item_count: stateOfFieldRoutedItems.length,
+    missing_surface_routing_count: missingSurfaceRoutingCandidates.length,
+    nonblocking_watch_item_count: nonblockingWatchItems.length,
     learning_phase: learningLoop.phase ?? "unknown",
     learning_cadence: learningLoop.cadence ?? "unknown",
     learning_completed_pilot_sweeps: learningLoop.completed_pilot_sweeps ?? 0,
@@ -601,12 +622,13 @@ function formatApprovalPacket(packet) {
     `- Blockers recorded: ${packet.blocker_count}`,
     `- Field-activity watchlist entries: ${packet.field_activity_watchlist.entry_count}`,
     `- Field-activity capture recommended: ${packet.field_activity_watchlist.capture_recommended_count}`,
-    `- Field-activity needs primary source: ${packet.field_activity_watchlist.needs_primary_source_count}`,
-    `- Field-activity pending anchors/material programs: ${packet.field_activity_watchlist.pending_field_anchor_count}/${packet.field_activity_watchlist.pending_material_program_count}`,
-    `- Field-activity approval candidates: ${packet.field_activity_packet_item_count}`,
-    `- Field-activity human review required: ${packet.field_activity_human_review_required_count}`,
+    `- Field-activity source-work candidates: ${packet.field_activity_watchlist.source_work_candidate_count}`,
+    `- Field-activity publication-ready: ${packet.field_activity_watchlist.capture_recommended_count}`,
+    `- Field-activity human approval required: ${packet.field_activity_human_review_required_count}`,
     `- Field-activity missing agent assessments: ${packet.field_activity_missing_agent_assessment_count}`,
-    `- Field-activity surface routing required: ${packet.field_activity_watchlist.surface_routing_required_candidate_count}`,
+    `- Field-activity State-of-Field routed items: ${packet.field_activity_watchlist.state_of_field_routed_item_count}`,
+    `- Field-activity missing surface routing: ${packet.field_activity_watchlist.missing_surface_routing_count}`,
+    `- Field-activity nonblocking watch items: ${packet.field_activity_watchlist.nonblocking_watch_item_count}`,
     `- Field-activity consolidated candidates: ${packet.field_activity_watchlist.consolidated_candidate_count}`,
     `- Field-activity learning phase: ${packet.field_activity_watchlist.learning_phase} (${packet.field_activity_watchlist.learning_completed_pilot_sweeps}/${packet.field_activity_watchlist.learning_minimum_pilot_sweeps} pilot sweeps)`,
     `- Field-activity open learning questions: ${packet.field_activity_watchlist.learning_open_question_count}`
@@ -781,11 +803,12 @@ function formatTextSummary(summary) {
     `Field-activity discovery channels: ${summary.field_activity_watchlist.discovery_channel_count}`,
     `Field-activity blindspot controls: ${summary.field_activity_watchlist.blindspot_control_count}`,
     `Field-activity capture recommended: ${summary.field_activity_watchlist.capture_recommended_count}`,
-    `Field-activity needs primary source: ${summary.field_activity_watchlist.needs_primary_source_count}`,
-    `Field-activity pending anchors/material programs: ${summary.field_activity_watchlist.pending_field_anchor_count}/${summary.field_activity_watchlist.pending_material_program_count}`,
-    `Field-activity approval candidates: ${summary.field_activity_watchlist.approval_candidate_count}`,
-    `Field-activity human review required: ${summary.field_activity_watchlist.human_review_required_candidate_count}`,
-    `Field-activity surface routing required: ${summary.field_activity_watchlist.surface_routing_required_candidate_count}`,
+    `Field-activity source-work candidates: ${summary.field_activity_watchlist.source_work_candidate_count}`,
+    `Field-activity publication-ready: ${summary.field_activity_watchlist.capture_recommended_count}`,
+    `Field-activity human approval required: ${summary.field_activity_watchlist.human_approval_required_count}`,
+    `Field-activity State-of-Field routed items: ${summary.field_activity_watchlist.state_of_field_routed_item_count}`,
+    `Field-activity missing surface routing: ${summary.field_activity_watchlist.missing_surface_routing_count}`,
+    `Field-activity nonblocking watch items: ${summary.field_activity_watchlist.nonblocking_watch_item_count}`,
     `Field-activity consolidated candidates: ${summary.field_activity_watchlist.consolidated_candidate_count}`,
     `Field-activity learning phase: ${summary.field_activity_watchlist.learning_phase} (${summary.field_activity_watchlist.learning_completed_pilot_sweeps}/${summary.field_activity_watchlist.learning_minimum_pilot_sweeps} pilot sweeps)`,
     `Field-activity open learning questions: ${summary.field_activity_watchlist.learning_open_question_count}`,

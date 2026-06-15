@@ -23,6 +23,8 @@
     "sync:work-triage": "node scripts/seed-work-triage.mjs",
     "lint:public-copy": "node scripts/public-copy-lint.mjs",
     "audit:trials": "node scripts/trial-watch-report.mjs",
+    "field-activity:status": "node scripts/field-activity-workflow.mjs status",
+    "field-activity:packet": "node scripts/field-activity-workflow.mjs packet",
     "state-of-field:status": "node scripts/state-of-field-workflow.mjs status",
     "state-of-field:reconcile": "node scripts/state-of-field-workflow.mjs reconcile",
     "state-of-field:packet": "node scripts/state-of-field-workflow.mjs packet",

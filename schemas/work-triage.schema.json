@@ -41,14 +41,16 @@
         "field_activity_blindspot_control_count",
         "field_activity_capture_recommended_count",
         "field_activity_needs_primary_source_count",
+        "field_activity_source_work_candidate_count",
         "field_activity_pending_field_anchor_count",
         "field_activity_pending_material_program_count",
         "field_activity_watch_only_count",
         "field_activity_below_threshold_count",
         "field_activity_consolidated_candidate_count",
-        "field_activity_approval_candidate_count",
-        "field_activity_human_review_required_candidate_count",
-        "field_activity_surface_routing_required_candidate_count",
+        "field_activity_human_approval_required_count",
+        "field_activity_state_of_field_routed_item_count",
+        "field_activity_missing_surface_routing_count",
+        "field_activity_nonblocking_watch_item_count",
         "field_activity_learning_phase",
         "field_activity_learning_cadence",
         "field_activity_completed_pilot_sweeps",
@@ -112,6 +114,10 @@
           "type": "integer",
           "minimum": 0
         },
+        "field_activity_source_work_candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
         "field_activity_pending_field_anchor_count": {
           "type": "integer",
           "minimum": 0
@@ -132,15 +138,19 @@
           "type": "integer",
           "minimum": 0
         },
-        "field_activity_approval_candidate_count": {
+        "field_activity_human_approval_required_count": {
           "type": "integer",
           "minimum": 0
         },
-        "field_activity_human_review_required_candidate_count": {
+        "field_activity_state_of_field_routed_item_count": {
           "type": "integer",
           "minimum": 0
         },
-        "field_activity_surface_routing_required_candidate_count": {
+        "field_activity_missing_surface_routing_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "field_activity_nonblocking_watch_item_count": {
           "type": "integer",
           "minimum": 0
         },

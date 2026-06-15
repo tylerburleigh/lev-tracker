@@ -169,6 +169,15 @@ Secondary sources can be search leads, but publishing from them should be a huma
 
 ## Candidate Packet
 
+Use the dedicated commands before asking the human to resolve field-activity work:
+
+```bash
+npm run field-activity:status
+npm run field-activity:packet
+```
+
+`field-activity:status` separates publication-ready items, human approvals, source-work candidates, nonblocking watch items, consolidated items, State-of-Field-routed items, and the next monthly sweep due date. `field-activity:packet` is the approval/source-work packet; it should be preferred over State of the Field status when the question is field-activity workflow health.
+
 For each recommended event, give the human:
 
 - event label and date
@@ -205,6 +214,8 @@ For example, Google's 2013 Calico announcement is a field-wide commercial activi
 Run at least:
 
 ```bash
+npm run field-activity:status
+npm run field-activity:packet
 npm run validate:records
 npm run audit:data
 ```

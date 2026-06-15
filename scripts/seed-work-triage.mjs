@@ -13,6 +13,7 @@ const terminalBundleStatuses = new Set(["published", "rejected"]);
 const activeStateOfFieldStatuses = new Set(["draft", "reconciling", "needs_surveillance", "in_review", "blocked"]);
 const monthlyFieldActivitySweepTypes = new Set(["monthly_cross_field"]);
 const fieldActivityApprovalClassifications = new Set(["capture_now", "research_more"]);
+const fieldActivityOpenApprovalStatuses = new Set(["requested", "revise"]);
 
 async function readJson(relativePath) {
   const filePath = path.join(repoRoot, relativePath);
@@ -408,28 +409,28 @@ function buildStateOfFieldWorkflowItems(stateOfFieldWorkflow, fieldActivityWatch
             value: fieldActivityWatchlistSummary.captureRecommendedCount
           },
           {
-            name: "field_activity_needs_primary_source_count",
-            value: fieldActivityWatchlistSummary.needsPrimarySourceCount
+            name: "field_activity_source_work_candidate_count",
+            value: fieldActivityWatchlistSummary.sourceWorkCandidateCount
           },
           {
-            name: "field_activity_pending_field_anchor_count",
-            value: fieldActivityWatchlistSummary.pendingFieldAnchorCount
+            name: "field_activity_publication_ready_count",
+            value: fieldActivityWatchlistSummary.captureRecommendedCount
           },
           {
-            name: "field_activity_pending_material_program_count",
-            value: fieldActivityWatchlistSummary.pendingMaterialProgramCount
+            name: "field_activity_human_approval_required_count",
+            value: fieldActivityWatchlistSummary.humanApprovalRequiredCount
           },
           {
-            name: "field_activity_approval_candidate_count",
-            value: fieldActivityWatchlistSummary.approvalCandidateCount
+            name: "field_activity_state_of_field_routed_item_count",
+            value: fieldActivityWatchlistSummary.stateOfFieldRoutedItemCount
           },
           {
-            name: "field_activity_human_review_required_candidate_count",
-            value: fieldActivityWatchlistSummary.humanReviewRequiredCandidateCount
+            name: "field_activity_missing_surface_routing_count",
+            value: fieldActivityWatchlistSummary.missingSurfaceRoutingCount
           },
           {
-            name: "field_activity_surface_routing_required_candidate_count",
-            value: fieldActivityWatchlistSummary.surfaceRoutingRequiredCandidateCount
+            name: "field_activity_nonblocking_watch_item_count",
+            value: fieldActivityWatchlistSummary.nonblockingWatchItemCount
           },
           {
             name: "field_activity_consolidated_candidate_count",
@@ -614,11 +615,33 @@ function summarizeFieldActivityWatchlist(fieldActivityWatchlist) {
   const humanReviewRequiredCandidates = approvalCandidates.filter(
     (event) => event.agent_assessment?.human_review_required ?? true
   );
+  const humanApprovalRequiredCandidates = candidateEvents.filter(
+    (event) =>
+      fieldActivityOpenApprovalStatuses.has(event.human_approval?.status) ||
+      (event.agent_assessment?.human_review_required === true && event.human_approval?.status !== "approved")
+  );
+  const sourceWorkCandidates = candidateEvents.filter(
+    (event) =>
+      event.classification === "research_more" &&
+      (event.agent_assessment?.public_copy_action ?? (event.classification === "research_more" ? "hold_for_source" : "no_public_copy")) ===
+        "hold_for_source"
+  );
+  const stateOfFieldRoutedItems = candidateEvents.filter(
+    (event) => event.surface_routing?.state_of_field_review_required || event.surface_routing?.current_story_review_required
+  );
   const surfaceRoutingRequiredCandidates = candidateEvents.filter(
     (event) =>
       (fieldActivityApprovalClassifications.has(event.classification) && !event.surface_routing) ||
       event.surface_routing?.state_of_field_review_required ||
       event.surface_routing?.current_story_review_required
+  );
+  const missingSurfaceRoutingCandidates = candidateEvents.filter(
+    (event) => fieldActivityApprovalClassifications.has(event.classification) && !event.surface_routing
+  );
+  const nonblockingWatchItems = candidateEvents.filter(
+    (event) =>
+      !humanApprovalRequiredCandidates.includes(event) &&
+      (sourceWorkCandidates.includes(event) || ["watch_only", "below_threshold"].includes(event.noteworthiness_tier))
   );
   const learningLoop = fieldActivityWatchlist.learning_loop ?? {};
   const learningQuestions = learningLoop.current_learning_questions ?? [];
@@ -638,6 +661,11 @@ function summarizeFieldActivityWatchlist(fieldActivityWatchlist) {
     approvalCandidateCount: approvalCandidates.length,
     humanReviewRequiredCandidateCount: humanReviewRequiredCandidates.length,
     surfaceRoutingRequiredCandidateCount: surfaceRoutingRequiredCandidates.length,
+    sourceWorkCandidateCount: sourceWorkCandidates.length,
+    humanApprovalRequiredCount: humanApprovalRequiredCandidates.length,
+    stateOfFieldRoutedItemCount: stateOfFieldRoutedItems.length,
+    missingSurfaceRoutingCount: missingSurfaceRoutingCandidates.length,
+    nonblockingWatchItemCount: nonblockingWatchItems.length,
     learningPhase: learningLoop.phase ?? "unknown",
     learningCadence: learningLoop.cadence ?? "unknown",
     learningCompletedPilotSweeps: learningLoop.completed_pilot_sweeps ?? 0,
@@ -729,6 +757,10 @@ function buildFieldActivitySweepItem(sessions, activityItems, fieldActivityWatch
         value: watchlistSummary.needsPrimarySourceCount
       },
       {
+        name: "field_activity_source_work_candidate_count",
+        value: watchlistSummary.sourceWorkCandidateCount
+      },
+      {
         name: "field_activity_pending_field_anchor_count",
         value: watchlistSummary.pendingFieldAnchorCount
       },
@@ -737,16 +769,20 @@ function buildFieldActivitySweepItem(sessions, activityItems, fieldActivityWatch
         value: watchlistSummary.pendingMaterialProgramCount
       },
       {
-        name: "field_activity_approval_candidate_count",
-        value: watchlistSummary.approvalCandidateCount
+        name: "field_activity_human_approval_required_count",
+        value: watchlistSummary.humanApprovalRequiredCount
       },
       {
-        name: "field_activity_human_review_required_candidate_count",
-        value: watchlistSummary.humanReviewRequiredCandidateCount
+        name: "field_activity_state_of_field_routed_item_count",
+        value: watchlistSummary.stateOfFieldRoutedItemCount
       },
       {
-        name: "field_activity_surface_routing_required_candidate_count",
-        value: watchlistSummary.surfaceRoutingRequiredCandidateCount
+        name: "field_activity_missing_surface_routing_count",
+        value: watchlistSummary.missingSurfaceRoutingCount
+      },
+      {
+        name: "field_activity_nonblocking_watch_item_count",
+        value: watchlistSummary.nonblockingWatchItemCount
       },
       {
         name: "field_activity_consolidated_candidate_count",
@@ -988,14 +1024,16 @@ async function main() {
       field_activity_blindspot_control_count: fieldActivityWatchlistSummary.blindspotControlCount,
       field_activity_capture_recommended_count: fieldActivityWatchlistSummary.captureRecommendedCount,
       field_activity_needs_primary_source_count: fieldActivityWatchlistSummary.needsPrimarySourceCount,
+      field_activity_source_work_candidate_count: fieldActivityWatchlistSummary.sourceWorkCandidateCount,
       field_activity_pending_field_anchor_count: fieldActivityWatchlistSummary.pendingFieldAnchorCount,
       field_activity_pending_material_program_count: fieldActivityWatchlistSummary.pendingMaterialProgramCount,
       field_activity_watch_only_count: fieldActivityWatchlistSummary.watchOnlyCount,
       field_activity_below_threshold_count: fieldActivityWatchlistSummary.belowThresholdCount,
       field_activity_consolidated_candidate_count: fieldActivityWatchlistSummary.consolidatedCandidateCount,
-      field_activity_approval_candidate_count: fieldActivityWatchlistSummary.approvalCandidateCount,
-      field_activity_human_review_required_candidate_count: fieldActivityWatchlistSummary.humanReviewRequiredCandidateCount,
-      field_activity_surface_routing_required_candidate_count: fieldActivityWatchlistSummary.surfaceRoutingRequiredCandidateCount,
+      field_activity_human_approval_required_count: fieldActivityWatchlistSummary.humanApprovalRequiredCount,
+      field_activity_state_of_field_routed_item_count: fieldActivityWatchlistSummary.stateOfFieldRoutedItemCount,
+      field_activity_missing_surface_routing_count: fieldActivityWatchlistSummary.missingSurfaceRoutingCount,
+      field_activity_nonblocking_watch_item_count: fieldActivityWatchlistSummary.nonblockingWatchItemCount,
       field_activity_learning_phase: fieldActivityWatchlistSummary.learningPhase,
       field_activity_learning_cadence: fieldActivityWatchlistSummary.learningCadence,
       field_activity_completed_pilot_sweeps: fieldActivityWatchlistSummary.learningCompletedPilotSweeps,
