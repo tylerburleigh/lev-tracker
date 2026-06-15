@@ -22,6 +22,10 @@ Overall: passed
   0 issue(s), 0 warning(s).
 - PASS: Hallmark insight summaries are reviewed after affected outlook changes
   No hallmark insight summaries are older than their latest affected public update.
+- PASS: Public copy warnings <= 269
+  Current public copy warning count is 61.
+- PASS: Reader-task warnings <= 0
+  Current reader-task warning count is 0.
 
 ## Command Output
 
@@ -61,18 +65,18 @@ Field-activity watchlist entries: 8
 Field-activity discovery channels: 6
 Field-activity blindspot controls: 7
 Field-activity capture recommended: 0
-Field-activity source-work candidates: 2
+Field-activity source-work candidates: 1
 Field-activity publication-ready: 0
 Field-activity human approval required: 0
-Field-activity State-of-Field routed items: 6
+Field-activity State-of-Field routed items: 7
 Field-activity missing surface routing: 0
-Field-activity nonblocking watch items: 2
+Field-activity nonblocking watch items: 1
 Field-activity consolidated candidates: 2
 Field-activity learning phase: stable (3/3 pilot sweeps)
 Field-activity open learning questions: 0
-Public activity items: 15 (14 activity-only, 1 assessment-changing)
-Public activity lenses: 4 field anchors; 10 current movement; 8 trial horizon; 5 historical backfill
-Public activity routed to State of Field: 10 (4 field anchors; 5 current movement; 4 trial horizon; 5 historical backfill)
+Public activity items: 16 (15 activity-only, 1 assessment-changing)
+Public activity lenses: 4 field anchors; 11 current movement; 9 trial horizon; 5 historical backfill
+Public activity routed to State of Field: 11 (4 field anchors; 6 current movement; 5 trial horizon; 5 historical backfill)
 Next action: Keep the July edition internal until June closes, then finalize the provisional classifications for the 22 known June public updates and write the public 2026-07 edition from reviewed records.
 ```
 

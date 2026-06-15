@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-15T19:48:42.116Z",
+  "generated_at": "2026-06-15T20:05:56.547Z",
   "source_state": {
     "research_coverage_status_updated_at": "2026-06-15T17:25:12.112Z",
     "research_priority_queue_updated_at": "2026-06-15T17:25:12.112Z",
@@ -11,19 +11,19 @@
     "surveillance_recent_queue_count": 38,
     "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 0,
-    "field_activity_watchlist_updated_at": "2026-06-15T19:45:45Z",
+    "field_activity_watchlist_updated_at": "2026-06-15T20:01:01Z",
     "field_activity_watchlist_entry_count": 8,
     "field_activity_discovery_channel_count": 6,
     "field_activity_blindspot_control_count": 7,
-    "field_activity_capture_recommended_count": 1,
+    "field_activity_capture_recommended_count": 0,
     "field_activity_needs_primary_source_count": 1,
     "field_activity_source_work_candidate_count": 1,
     "field_activity_pending_field_anchor_count": 0,
-    "field_activity_pending_material_program_count": 2,
+    "field_activity_pending_material_program_count": 1,
     "field_activity_watch_only_count": 0,
     "field_activity_below_threshold_count": 0,
     "field_activity_consolidated_candidate_count": 2,
-    "field_activity_human_approval_required_count": 1,
+    "field_activity_human_approval_required_count": 0,
     "field_activity_state_of_field_routed_item_count": 7,
     "field_activity_missing_surface_routing_count": 0,
     "field_activity_nonblocking_watch_item_count": 1,
@@ -78,7 +78,7 @@
       "priority_tier": "now",
       "status": "blocked",
       "title": "Resolve State of the Field workflow for June 2026",
-      "rationale": "Internal draft opened while June is still in progress. The candidate public skeleton now accounts for the current-story June updates, six additional June public updates, and five direct field-activity publication events, but final July copy stays open until the retrospective period closes. 0 reconciliation decision(s) and 4 checklist item(s) remain open.",
+      "rationale": "Internal draft opened while June is still in progress. The candidate public skeleton now accounts for the current-story June updates, six additional June public updates, and six direct field-activity publication events, but final July copy stays open until the retrospective period closes. 0 reconciliation decision(s) and 4 checklist item(s) remain open.",
       "default_action": "Keep the July edition internal until June closes, then finalize the provisional classifications for the 22 known June public updates and write the public 2026-07 edition from reviewed records.",
       "runbook_path": "docs/editorial-rollup.md",
       "command": "npm run state-of-field:status -- --strict",
@@ -121,7 +121,7 @@
         },
         {
           "name": "field_activity_capture_recommended_count",
-          "value": 1
+          "value": 0
         },
         {
           "name": "field_activity_source_work_candidate_count",
@@ -133,7 +133,7 @@
         },
         {
           "name": "field_activity_human_approval_required_count",
-          "value": 1
+          "value": 0
         },
         {
           "name": "field_activity_state_of_field_routed_item_count",

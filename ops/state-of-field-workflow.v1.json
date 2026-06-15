@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "state_type": "state_of_field_workflow",
-  "updated_at": "2026-06-15T17:23:37.713Z",
+  "updated_at": "2026-06-15T20:05:03Z",
   "policy": {
     "public_visibility": "Only completed editions in data/content/state-of-the-field are rendered on the public State of the Field pages.",
     "draft_storage": "Drafts, reconciliation notes, and in-progress states stay in this ops manifest or extra/ artifacts until publication.",
@@ -148,7 +148,7 @@
       "period_label": "June 2026",
       "status": "draft",
       "status_updated_at": "2026-06-14T13:33:44.000Z",
-      "status_note": "Internal draft opened while June is still in progress. The candidate public skeleton now accounts for the current-story June updates, six additional June public updates, and five direct field-activity publication events, but final July copy stays open until the retrospective period closes.",
+      "status_note": "Internal draft opened while June is still in progress. The candidate public skeleton now accounts for the current-story June updates, six additional June public updates, and six direct field-activity publication events, but final July copy stays open until the retrospective period closes.",
       "published_edition_path": "data/content/state-of-the-field/2026-07.json",
       "draft_artifact_paths": [
         "extra/state-of-field-2026-07-draft.json",
@@ -992,6 +992,35 @@
             "resolved_at": "2026-06-15T17:18:38Z",
             "approver": "tyler",
             "notes": "Approved in chat as part of the field-activity packet; keep as historical context only."
+          }
+        },
+        {
+          "publication_event_id": "publish-field-activity-healthspan-connect-registry-post-2025-2026-06-15",
+          "event_date": "2026-06-15",
+          "related_outlook_ids": [],
+          "decision": "include_as_trial_horizon",
+          "period_interpretation_changed": false,
+          "rationale": "June direct field-activity publication added Healthspan Connect as planned healthy-aging observational infrastructure. It belongs as bounded trial-horizon context because it is registry-linked and may shape what to watch next, but it is not yet recruiting, not interventional, and not evidence of intervention benefit.",
+          "next_action": "Use only as bounded trial-horizon or State of the Field background if the July edition needs observational healthspan-infrastructure examples; do not count it as a field signal, clinical evidence, or outlook change.",
+          "agent_assessment": {
+            "recommended_decision": "include_as_trial_horizon",
+            "confidence": "high",
+            "materiality": "low",
+            "affected_surfaces": [
+              "state_of_field",
+              "trial_horizon"
+            ],
+            "public_copy_action": "draft_copy",
+            "human_review_required": false,
+            "rationale": "Healthspan Connect is source-backed public activity with registry and programme context, but the record is observational, planned/not yet recruiting, and contains no result or intervention claim. Trial-horizon treatment preserves the useful watch context without implying June field progress.",
+            "reviewed_at": "2026-06-15T20:05:03Z",
+            "reviewed_by": "codex"
+          },
+          "human_approval": {
+            "status": "approved",
+            "resolved_at": "2026-06-15T20:05:03Z",
+            "approver": "tyler",
+            "notes": "Approved in chat after the agent recommended bounded trial-horizon classification; keep as observational infrastructure context, not evidence or field progress."
           }
         }
       ],

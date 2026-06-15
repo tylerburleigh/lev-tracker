@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "queue_type": "field_activity_watchlist",
-  "updated_at": "2026-06-15T19:45:45Z",
+  "updated_at": "2026-06-15T20:01:01Z",
   "notes": [
     "This backlog is internal planning state for source-backed field activity discovery. It does not publish activity by itself.",
     "Use it to seed monthly field-activity sweeps and entity-scoped backfill recommendations."
@@ -922,10 +922,10 @@
       "name": "Healthspan Connect",
       "entity_type": "program",
       "priority_tier": "soon",
-      "status": "capture_recommended",
+      "status": "captured",
       "review_cadence": "quarterly",
-      "last_reviewed_at": "2026-06-15T19:45:45Z",
-      "rationale": "Large healthy-aging observational programme with a registry record and a dated official TwinsUK programme mention. It is still activity-only and not evidence, but it is now ready for human approval as a bounded field-infrastructure candidate.",
+      "last_reviewed_at": "2026-06-15T20:01:01Z",
+      "rationale": "Large healthy-aging observational programme with a registry record and a dated official TwinsUK programme mention. Published as bounded activity-only field infrastructure, not evidence.",
       "official_sources": [
         {
           "label": "ClinicalTrials.gov NCT07209774",
@@ -947,12 +947,11 @@
         {
           "event_id": "healthspan-connect-registry-post-2025",
           "event_label": "Healthspan Connect programme entered the public registry as planned healthy-aging infrastructure",
-          "classification": "capture_now",
+          "classification": "captured",
           "occurred_on": "2025-10-07",
           "activity_type": "other",
           "activity_lane": "scientific",
           "scope_label": "Healthy-aging observational research infrastructure",
-          "trial_activity_kind": "trial_watch_anchor",
           "noteworthiness_tier": "material_program",
           "threshold_basis": [
             "field_infrastructure"
@@ -960,7 +959,7 @@
           "source_url": "https://clinicaltrials.gov/study/NCT07209774",
           "source_quality": "primary_dated",
           "rationale": "ClinicalTrials.gov records a planned 100,000-participant prospective observational programme posted on 2025-10-07, and a dated TwinsUK news item identifies Healthspan Connect as a Department of Twin Research programme with multiple sub-studies on biological, social, and environmental factors in healthy ageing and resilience. It remains not yet recruiting and should be treated as field infrastructure, not evidence.",
-          "recommended_public_action": "Ask the human to approve or revise a bounded activity-only item; do not publish as evidence or as an interventional trial result.",
+          "recommended_public_action": "None; live activity item exists. Keep public framing activity-only and do not treat it as evidence or an interventional trial result.",
           "surface_routing": {
             "affected_surfaces": [
               "activity_feed",
@@ -972,7 +971,7 @@
             "rationale": "The record can support activity and State-of-Field/trial-horizon context as planned observational infrastructure. It should not change evidence surfaces or imply an efficacy signal."
           },
           "agent_assessment": {
-            "recommended_classification": "capture_now",
+            "recommended_classification": "captured",
             "confidence": "medium",
             "materiality": "moderate",
             "affected_surfaces": [
@@ -980,17 +979,19 @@
               "state_of_field",
               "trial_horizon"
             ],
-            "public_copy_action": "add_activity_item",
-            "human_review_required": true,
-            "escalation_reason": "Human approval is needed because the candidate is registry-discovered, observational, and not yet recruiting; public copy must stay activity-only.",
-            "rationale": "The source-work pass found a dated official TwinsUK programme source in addition to the ClinicalTrials.gov record, resolving the original source-quality gap. The event now clears material_program as field infrastructure, but public wording should be bounded to planned cohort infrastructure and trial-watch context.",
-            "reviewed_at": "2026-06-15T19:45:45Z",
+            "public_copy_action": "create_publication_event",
+            "human_review_required": false,
+            "escalation_reason": "The human approved bounded activity-only publication; future evidence claims still require separate source/study/finding/outlook review.",
+            "rationale": "The source-work pass found a dated official TwinsUK programme source in addition to the ClinicalTrials.gov record, resolving the original source-quality gap. The event cleared material_program as field infrastructure and has now been published as bounded activity-only context.",
+            "reviewed_at": "2026-06-15T20:01:01Z",
             "reviewed_by": "codex-agent"
           },
           "human_approval": {
-            "status": "requested",
+            "status": "approved",
             "requested_at": "2026-06-15T19:45:45Z",
-            "notes": "Approve, reject, or revise a bounded activity-only Healthspan Connect field-infrastructure item. Recommended public framing: planned 100,000-participant healthy-aging observational programme; not yet recruiting; no evidence or intervention claim."
+            "resolved_at": "2026-06-15T20:01:01Z",
+            "approver": "tyler",
+            "notes": "Approved bounded activity-only Healthspan Connect field-infrastructure item: planned 100,000-participant healthy-aging observational programme; not yet recruiting; no evidence or intervention claim."
           }
         }
       ],
