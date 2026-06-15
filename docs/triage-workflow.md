@@ -59,7 +59,7 @@ The dispatcher ranks modes in this order:
 
 The generated surveillance queue contains tracks due for ordinary rotation. Tracks with a successful surveillance or coverage-repair pass inside the current cooldown window stay visible in `surveillance_recent_queue`, but they are not selected by default unless the user explicitly asks for a rapid follow-up.
 
-The generated `field_activity` item is a monthly cross-field sweep. It is suppressed for the current month once a `research_session` with `mode: "field_activity"` has been recorded. When it appears, start from `research/backlog/field-activity-watchlist.v1.json` and report the discovery-channel, blindspot-control, capture-recommended, needs-primary-source, pending field-anchor, and pending material-program counts before broad discovery.
+The generated `field_activity` item is a monthly cross-field sweep. It is suppressed for the current month only after a `research_session` with `mode: "field_activity"` and `field_activity_sweep_type: "monthly_cross_field"` has been recorded. Entity, funder/prize, government-program, registry/regulatory, threshold-audit, and trial-policy sessions do not close the monthly sweep. When the item appears, start from `research/backlog/field-activity-watchlist.v1.json` and report the discovery-channel, blindspot-control, capture-recommended, needs-primary-source, pending field-anchor, pending material-program, approval-candidate, and surface-routing counts before broad discovery.
 
 ## Work Item Fields
 

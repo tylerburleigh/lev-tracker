@@ -11,6 +11,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
 const terminalBundleStatuses = new Set(["published", "rejected"]);
 const activeStateOfFieldStatuses = new Set(["draft", "reconciling", "needs_surveillance", "in_review", "blocked"]);
+const monthlyFieldActivitySweepTypes = new Set(["monthly_cross_field"]);
+const fieldActivityApprovalClassifications = new Set(["capture_now", "research_more"]);
 
 async function readJson(relativePath) {
   const filePath = path.join(repoRoot, relativePath);
@@ -418,6 +420,18 @@ function buildStateOfFieldWorkflowItems(stateOfFieldWorkflow, fieldActivityWatch
             value: fieldActivityWatchlistSummary.pendingMaterialProgramCount
           },
           {
+            name: "field_activity_approval_candidate_count",
+            value: fieldActivityWatchlistSummary.approvalCandidateCount
+          },
+          {
+            name: "field_activity_human_review_required_candidate_count",
+            value: fieldActivityWatchlistSummary.humanReviewRequiredCandidateCount
+          },
+          {
+            name: "field_activity_surface_routing_required_candidate_count",
+            value: fieldActivityWatchlistSummary.surfaceRoutingRequiredCandidateCount
+          },
+          {
             name: "field_activity_consolidated_candidate_count",
             value: fieldActivityWatchlistSummary.consolidatedCandidateCount
           },
@@ -596,6 +610,16 @@ function summarizeFieldActivityWatchlist(fieldActivityWatchlist) {
   const entries = fieldActivityWatchlist.entries ?? [];
   const candidateEvents = entries.flatMap((entry) => entry.candidate_events ?? []);
   const pendingEvents = candidateEvents.filter((event) => ["capture_now", "research_more"].includes(event.classification));
+  const approvalCandidates = candidateEvents.filter((event) => fieldActivityApprovalClassifications.has(event.classification));
+  const humanReviewRequiredCandidates = approvalCandidates.filter(
+    (event) => event.agent_assessment?.human_review_required ?? true
+  );
+  const surfaceRoutingRequiredCandidates = candidateEvents.filter(
+    (event) =>
+      (fieldActivityApprovalClassifications.has(event.classification) && !event.surface_routing) ||
+      event.surface_routing?.state_of_field_review_required ||
+      event.surface_routing?.current_story_review_required
+  );
   const learningLoop = fieldActivityWatchlist.learning_loop ?? {};
   const learningQuestions = learningLoop.current_learning_questions ?? [];
   const revisionTriggers = learningLoop.revision_triggers ?? [];
@@ -611,6 +635,9 @@ function summarizeFieldActivityWatchlist(fieldActivityWatchlist) {
     watchOnlyCount: candidateEvents.filter((event) => event.noteworthiness_tier === "watch_only").length,
     belowThresholdCount: candidateEvents.filter((event) => event.noteworthiness_tier === "below_threshold").length,
     consolidatedCandidateCount: candidateEvents.filter((event) => event.classification === "captured_by_related_item").length,
+    approvalCandidateCount: approvalCandidates.length,
+    humanReviewRequiredCandidateCount: humanReviewRequiredCandidates.length,
+    surfaceRoutingRequiredCandidateCount: surfaceRoutingRequiredCandidates.length,
     learningPhase: learningLoop.phase ?? "unknown",
     learningCadence: learningLoop.cadence ?? "unknown",
     learningCompletedPilotSweeps: learningLoop.completed_pilot_sweeps ?? 0,
@@ -621,14 +648,16 @@ function summarizeFieldActivityWatchlist(fieldActivityWatchlist) {
 }
 
 function buildFieldActivitySweepItem(sessions, activityItems, fieldActivityWatchlist) {
-  const latestFieldActivitySession = latestBy(
-    sessions.filter((session) => session.mode === "field_activity"),
+  const fieldActivitySessions = sessions.filter((session) => session.mode === "field_activity");
+  const latestFieldActivitySession = latestBy(fieldActivitySessions, (session) => session.completed_at);
+  const latestMonthlySweepSession = latestBy(
+    fieldActivitySessions.filter((session) => monthlyFieldActivitySweepTypes.has(session.field_activity_sweep_type)),
     (session) => session.completed_at
   );
   const currentMonth = new Date().toISOString().slice(0, 7);
   const watchlistSummary = summarizeFieldActivityWatchlist(fieldActivityWatchlist);
 
-  if (monthPart(latestFieldActivitySession?.completed_at) === currentMonth) {
+  if (monthPart(latestMonthlySweepSession?.completed_at) === currentMonth) {
     return undefined;
   }
 
@@ -639,9 +668,11 @@ function buildFieldActivitySweepItem(sessions, activityItems, fieldActivityWatch
     priority_tier: "soon",
     status: "ready",
     title: "Run monthly field activity sweep",
-    rationale: latestFieldActivitySession
-      ? `Last field-activity session completed ${datePart(latestFieldActivitySession.completed_at)}; no sweep is recorded for ${currentMonth}.`
-      : "No field-activity session has been recorded yet, so company, funder, partnership, regulatory, and field-wide activity can be missed by track-only rotation.",
+    rationale: latestMonthlySweepSession
+      ? `Last monthly cross-field activity sweep completed ${datePart(latestMonthlySweepSession.completed_at)}; no monthly sweep is recorded for ${currentMonth}.`
+      : latestFieldActivitySession
+        ? `Last field-activity session completed ${datePart(latestFieldActivitySession.completed_at)} with sweep type ${latestFieldActivitySession.field_activity_sweep_type ?? "unspecified"}; no monthly cross-field sweep is recorded for ${currentMonth}.`
+        : "No field-activity session has been recorded yet, so company, funder, partnership, regulatory, and field-wide activity can be missed by track-only rotation.",
     default_action:
       "Run one bounded field-activity sweep, classify candidates, ask for approval on material additions, and publish only source-backed activity records.",
     runbook_path: "docs/field-activity-workflow.md",
@@ -664,6 +695,14 @@ function buildFieldActivitySweepItem(sessions, activityItems, fieldActivityWatch
       {
         name: "latest_field_activity_session_at",
         value: latestFieldActivitySession?.completed_at ?? "never"
+      },
+      {
+        name: "latest_field_activity_sweep_type",
+        value: latestFieldActivitySession?.field_activity_sweep_type ?? "unspecified"
+      },
+      {
+        name: "latest_monthly_cross_field_sweep_at",
+        value: latestMonthlySweepSession?.completed_at ?? "never"
       },
       {
         name: "activity_item_count",
@@ -696,6 +735,18 @@ function buildFieldActivitySweepItem(sessions, activityItems, fieldActivityWatch
       {
         name: "field_activity_pending_material_program_count",
         value: watchlistSummary.pendingMaterialProgramCount
+      },
+      {
+        name: "field_activity_approval_candidate_count",
+        value: watchlistSummary.approvalCandidateCount
+      },
+      {
+        name: "field_activity_human_review_required_candidate_count",
+        value: watchlistSummary.humanReviewRequiredCandidateCount
+      },
+      {
+        name: "field_activity_surface_routing_required_candidate_count",
+        value: watchlistSummary.surfaceRoutingRequiredCandidateCount
       },
       {
         name: "field_activity_consolidated_candidate_count",
@@ -942,6 +993,9 @@ async function main() {
       field_activity_watch_only_count: fieldActivityWatchlistSummary.watchOnlyCount,
       field_activity_below_threshold_count: fieldActivityWatchlistSummary.belowThresholdCount,
       field_activity_consolidated_candidate_count: fieldActivityWatchlistSummary.consolidatedCandidateCount,
+      field_activity_approval_candidate_count: fieldActivityWatchlistSummary.approvalCandidateCount,
+      field_activity_human_review_required_candidate_count: fieldActivityWatchlistSummary.humanReviewRequiredCandidateCount,
+      field_activity_surface_routing_required_candidate_count: fieldActivityWatchlistSummary.surfaceRoutingRequiredCandidateCount,
       field_activity_learning_phase: fieldActivityWatchlistSummary.learningPhase,
       field_activity_learning_cadence: fieldActivityWatchlistSummary.learningCadence,
       field_activity_completed_pilot_sweeps: fieldActivityWatchlistSummary.learningCompletedPilotSweeps,

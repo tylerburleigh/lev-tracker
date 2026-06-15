@@ -114,6 +114,7 @@ These are signals, not automatic failures. Broken schemas, missing required refe
 - Add a `study` only when the source supports a distinct trial, experiment, observational cohort, or model-system study.
 - Add a `finding` only for an atomic, source-backed claim that public pages or outlooks need.
 - Add an `activity_item` only for an external field event, not tracker process.
+- When an `activity_item` is published directly rather than through a candidate bundle, add a matching `publication_event` with `publication_route: "direct_activity_publish"` and a published target for the activity item.
 - For prize, funder, company, and program news, add an `activity_item` only when the event clears the `field_anchor` or `material_program` threshold in `docs/field-activity-workflow.md`.
 - For trial news, add an `activity_item` only when it has a public `trial_activity_kind`; keep routine registry checks and unchanged no-results status in `/trials`, `trial_details`, `trial_watch_checks[]`, or research sessions.
 - Use `scope_label` for field-wide activity that should not be forced into a weak hallmark or track mapping.

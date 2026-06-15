@@ -9,7 +9,6 @@
     "record_type",
     "id",
     "name",
-    "candidate_bundle_id",
     "event_type",
     "published_at",
     "published_by",
@@ -49,6 +48,14 @@
     },
     "candidate_bundle_id": {
       "$ref": "./common.schema.json#/$defs/candidateBundleRef"
+    },
+    "publication_route": {
+      "enum": [
+        "candidate_bundle",
+        "direct_activity_publish",
+        "direct_editorial_update"
+      ],
+      "description": "Optional route marker for public updates that are intentionally not owned by a candidate bundle."
     },
     "event_type": {
       "$ref": "./common.schema.json#/$defs/publicationEventType"

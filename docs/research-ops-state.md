@@ -66,7 +66,7 @@ No-op sessions are successful surveillance work. They keep the review clock visi
 
 The rotation queue has a recency gate. `surveillance_queue` contains tracks that are due for ordinary field-change review, while `surveillance_recent_queue` preserves recently handled tracks with their last review date and next due date. The default cooldown is generated into `research/backlog/track-priority.v1.json`.
 
-Field-activity sessions use `mode: "field_activity"` and may be entity- or program-scoped rather than track-scoped. The monthly field-activity dispatcher item is suppressed after one completed field-activity session in the current month.
+Field-activity sessions use `mode: "field_activity"` and may be entity- or program-scoped rather than track-scoped. Set `field_activity_sweep_type` on every field-activity session. The monthly field-activity dispatcher item is suppressed only after a completed `field_activity_sweep_type: "monthly_cross_field"` session in the current month; narrower entity, funder/prize, government-program, registry/regulatory, threshold-audit, and trial-policy passes do not satisfy the monthly sweep.
 
 Field-activity sweeps should start from `research/backlog/field-activity-watchlist.v1.json`. The watchlist is allowed to contain capture candidates, already captured events, and events that need better primary sources; it is not public evidence.
 

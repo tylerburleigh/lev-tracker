@@ -136,6 +136,8 @@ const publicTrialActivityPublishingKinds = new Set([
   "major_phase_or_program_transition",
   "trial_watch_anchor"
 ]);
+const directActivityPublicationRoute = "direct_activity_publish";
+const directActivityPublicationTargetTypes = new Set(["activity_item", "source"]);
 
 function getActivityText(value) {
   return [value.name, value.summary, value.significance_note].filter((item) => typeof item === "string").join(" ");
@@ -192,6 +194,59 @@ function validatePublicActivityItem(relativePath, value, issues) {
   }
 }
 
+function validatePublicationEventRecord(relativePath, value, issues) {
+  if (!relativePath.startsWith("data/publication-events/") || value?.record_type !== "publication_event") {
+    return;
+  }
+
+  if (!value.candidate_bundle_id && value.publication_route !== directActivityPublicationRoute) {
+    issues.push(
+      `${relativePath}: publication events without candidate_bundle_id must declare publication_route "${directActivityPublicationRoute}".`
+    );
+  }
+
+  if (value.publication_route === directActivityPublicationRoute) {
+    const targets = value.published_targets ?? [];
+    const activityTargets = targets.filter((target) => target.record_type === "activity_item");
+
+    if (activityTargets.length === 0) {
+      issues.push(`${relativePath}: direct activity publication events must target at least one activity_item.`);
+    }
+
+    for (const [index, target] of targets.entries()) {
+      if (!directActivityPublicationTargetTypes.has(target.record_type)) {
+        issues.push(
+          `${relativePath}: direct activity publication target ${index} uses ${target.record_type}; only activity_item and source targets belong on this route.`
+        );
+      }
+    }
+  }
+}
+
+function validatePublicActivityPublicationEvents(publicActivityItems, publicationEvents, issues) {
+  const publicationEventIdsByActivityId = new Map();
+
+  for (const { value: event } of publicationEvents) {
+    for (const target of event.published_targets ?? []) {
+      if (target.record_type !== "activity_item") {
+        continue;
+      }
+
+      const eventIds = publicationEventIdsByActivityId.get(target.record_id) ?? [];
+      eventIds.push(event.id);
+      publicationEventIdsByActivityId.set(target.record_id, eventIds);
+    }
+  }
+
+  for (const { relativePath, value: activityItem } of publicActivityItems) {
+    if (!publicationEventIdsByActivityId.has(activityItem.id)) {
+      issues.push(
+        `${relativePath}: live public activity items must be targeted by a publication_event so State of the Field and current-story reconciliation can detect the publish.`
+      );
+    }
+  }
+}
+
 async function main() {
   const ajv = new Ajv2020({
     allErrors: true,
@@ -214,6 +269,8 @@ async function main() {
 
   const issues = [];
   const usedSchemaIds = new Set();
+  const publicActivityItems = [];
+  const publicationEvents = [];
 
   for (const filePath of files) {
     const relativePath = toPosixRelative(filePath);
@@ -247,7 +304,18 @@ async function main() {
     }
 
     validatePublicActivityItem(relativePath, value, issues);
+    validatePublicationEventRecord(relativePath, value, issues);
+
+    if (relativePath.startsWith("data/activity-items/") && value?.record_type === "activity_item") {
+      publicActivityItems.push({ relativePath, value });
+    }
+
+    if (relativePath.startsWith("data/publication-events/") && value?.record_type === "publication_event") {
+      publicationEvents.push({ relativePath, value });
+    }
   }
+
+  validatePublicActivityPublicationEvents(publicActivityItems, publicationEvents, issues);
 
   if (issues.length > 0) {
     process.stderr.write(`Record validation failed with ${issues.length} issue(s):\n`);

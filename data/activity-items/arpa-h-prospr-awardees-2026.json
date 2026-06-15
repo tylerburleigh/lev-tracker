@@ -22,6 +22,16 @@
     "clinical_transition"
   ],
   "significance_note": "Marks a major public-program investment in healthspan biomarkers, clinical-trial design, and therapeutic testing. It is program activity, not evidence that any funded intervention improves aging outcomes.",
+  "surface_routing": {
+    "affected_surfaces": [
+      "activity_feed",
+      "state_of_field",
+      "trial_horizon"
+    ],
+    "state_of_field_review_required": true,
+    "current_story_review_required": false,
+    "rationale": "Government healthspan program activity should be considered during State of the Field and trial-horizon review, without changing evidence or outlook surfaces."
+  },
   "affects_outlook": false,
   "tags": [
     "public",

@@ -38,6 +38,19 @@
         "field_activity"
       ]
     },
+    "field_activity_sweep_type": {
+      "enum": [
+        "entity",
+        "funder_prize",
+        "government_program",
+        "registry_regulatory",
+        "monthly_cross_field",
+        "threshold_audit",
+        "trial_activity_policy",
+        "other"
+      ],
+      "description": "For mode=field_activity, distinguishes a full monthly cross-field sweep from narrower pilots or scoped passes."
+    },
     "started_at": {
       "$ref": "./common.schema.json#/$defs/dateTime"
     },

@@ -46,6 +46,9 @@
         "field_activity_watch_only_count",
         "field_activity_below_threshold_count",
         "field_activity_consolidated_candidate_count",
+        "field_activity_approval_candidate_count",
+        "field_activity_human_review_required_candidate_count",
+        "field_activity_surface_routing_required_candidate_count",
         "field_activity_learning_phase",
         "field_activity_learning_cadence",
         "field_activity_completed_pilot_sweeps",
@@ -126,6 +129,18 @@
           "minimum": 0
         },
         "field_activity_consolidated_candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "field_activity_approval_candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "field_activity_human_review_required_candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "field_activity_surface_routing_required_candidate_count": {
           "type": "integer",
           "minimum": 0
         },

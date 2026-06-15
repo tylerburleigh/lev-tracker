@@ -97,14 +97,14 @@ Live trial activity records must carry `trial_activity_kind`. Validation rejects
 2. Pull current local context: existing sources, studies, findings, outlooks, activity items, coverage assessments, and research sessions.
 3. Start with `research/backlog/field-activity-watchlist.v1.json`, then search primary sources: registries, FDA/EMA, sponsor press pages, funder award pages, company news pages, conference pages, official blogs, competition guidelines, and PubMed only when a publication event is being treated as activity.
 4. Classify each candidate as `capture_now`, `research_more`, `exclude`, `evidence_path`, `captured`, or `captured_by_related_item`.
-5. Recommend the candidate list to the human only when the choice is meaningful. Include the proposed activity type, lane, scope label, date, source, and whether it affects the outlook.
-6. After approval, add the smallest public records needed: usually one `source` plus one `activity_item`.
+5. Recommend the candidate list to the human only when the choice is meaningful. Include the proposed activity type, lane, scope label, date, source, surface routing, and whether it affects the outlook.
+6. After approval, add the smallest public records needed: usually one `source`, one `activity_item`, and one `publication_event` with `publication_route: "direct_activity_publish"` when the activity is published outside a candidate bundle.
 7. Record excluded near-misses in the research session when they are likely to be rediscovered.
 8. Run validation and data audits before considering the pass complete.
 
 After publishing approved activity records, run a residual-queue check for the same entity, funder, program, competition, or source family. Mark remaining candidates as still-needed, `research_more`, `exclude`, or `captured_by_related_item`. Do not leave a narrower `capture_now` item open when a broader approved field-anchor record already carries the public significance.
 
-Use a `research_session` with `mode: "field_activity"` for entity, funder, program, or monthly cross-field sweeps. Use `scope.scope_label` and `scope.entity_names` when the scope is broader than one hallmark or track.
+Use a `research_session` with `mode: "field_activity"` for entity, funder, program, or monthly cross-field sweeps. Set `field_activity_sweep_type` so the dispatcher can distinguish `entity`, `funder_prize`, `government_program`, `registry_regulatory`, and `monthly_cross_field` passes. Only a completed `monthly_cross_field` session satisfies the monthly dispatcher item. Use `scope.scope_label` and `scope.entity_names` when the scope is broader than one hallmark or track.
 
 ## Discovery Inputs
 
@@ -152,6 +152,8 @@ If the answer exposes a process weakness, update the system artifact that should
 
 During the pilot phase, the agent should recommend system edits when learning signals repeat. The human should be asked to approve the concrete change, not to classify raw leads from scratch.
 
+After the pilot questions are answered, move the watchlist `learning_loop.phase` to `stable`. Keep revision triggers as ongoing controls, but close active learning questions unless a new source type, threshold problem, approval-loop burden, or schema/runbook gap appears. Stable monthly sweeps should record a learning note only when a trigger fires, the human requests a revision, or broad discovery exposes a blindspot that the watchlist did not cover.
+
 ## Source Quality
 
 Prefer a primary dated source. Officially syndicated company releases, official blogs, funder award pages, competition guidelines, registry records, and regulatory pages can count as primary sources.
@@ -176,6 +178,8 @@ For each recommended event, give the human:
 - why the event is field activity rather than evidence
 - whether the event should affect outlook, usually `false`
 - recommended public action: add now, research more, exclude, or route to evidence review
+- surface routing: affected public surfaces, State of the Field review need, Current LEV Story review need, and the no-surface-change reason when applicable
+- agent assessment and approval state when the decision should enter an approval packet
 
 Add a short learning summary when the packet closes: candidates reviewed, capture-now count, research-more count, watch-only or below-threshold count, source-quality exceptions, new watchlist entries, new blindspot controls, human revisions, and any schema or workflow edits made.
 

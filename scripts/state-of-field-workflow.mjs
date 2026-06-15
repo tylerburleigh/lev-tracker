@@ -10,6 +10,9 @@ const currentStoryPath = "data/content/current-lev-story/current.json";
 const stateOfFieldRoot = "data/content/state-of-the-field";
 const publicationEventRoot = "data/publication-events";
 const fieldActivityWatchlistPath = "research/backlog/field-activity-watchlist.v1.json";
+const directActivityPublicationRoute = "direct_activity_publish";
+const fieldActivityPacketClassifications = new Set(["capture_now", "research_more"]);
+const fieldActivityOpenApprovalStatuses = new Set(["requested", "revise"]);
 
 function usage() {
   return `Usage:
@@ -96,6 +99,57 @@ function unique(values) {
   return Array.from(new Set(values.filter(Boolean)));
 }
 
+function flattenFieldActivityCandidateEvents(fieldActivityWatchlist) {
+  return (fieldActivityWatchlist?.entries ?? []).flatMap((entry) =>
+    (entry.candidate_events ?? []).map((event) => ({
+      entry,
+      event
+    }))
+  );
+}
+
+function fieldActivityCandidateNeedsApprovalPacket(event, includeAll) {
+  if (includeAll) {
+    return true;
+  }
+
+  const approvalStatus = event.human_approval?.status;
+  return (
+    fieldActivityPacketClassifications.has(event.classification) ||
+    fieldActivityOpenApprovalStatuses.has(approvalStatus) ||
+    (event.agent_assessment?.human_review_required === true && approvalStatus !== "approved")
+  );
+}
+
+function fieldActivityMateriality(event) {
+  if (event.noteworthiness_tier === "field_anchor") {
+    return "high";
+  }
+  if (event.noteworthiness_tier === "material_program") {
+    return "moderate";
+  }
+  if (event.noteworthiness_tier === "watch_only") {
+    return "low";
+  }
+  return "none";
+}
+
+function fieldActivityPublicCopyAction(event) {
+  if (event.agent_assessment?.public_copy_action) {
+    return event.agent_assessment.public_copy_action;
+  }
+  if (event.classification === "capture_now") {
+    return "add_activity_item";
+  }
+  if (event.classification === "research_more") {
+    return "hold_for_source";
+  }
+  if (event.classification === "captured_by_related_item") {
+    return "consolidate_with_related_item";
+  }
+  return "no_public_copy";
+}
+
 function latestByDate(records) {
   return [...records].sort((left, right) => String(right.date ?? "").localeCompare(String(left.date ?? "")))[0];
 }
@@ -115,6 +169,9 @@ function summarizeFieldActivityWatchlist(fieldActivityWatchlist) {
       watch_only_count: 0,
       below_threshold_count: 0,
       consolidated_candidate_count: 0,
+      approval_candidate_count: 0,
+      human_review_required_candidate_count: 0,
+      surface_routing_required_candidate_count: 0,
       learning_phase: "unknown",
       learning_cadence: "unknown",
       learning_completed_pilot_sweeps: 0,
@@ -124,11 +181,23 @@ function summarizeFieldActivityWatchlist(fieldActivityWatchlist) {
     };
   }
 
-  const candidateEvents = (fieldActivityWatchlist.entries ?? []).flatMap((entry) => entry.candidate_events ?? []);
+  const candidateEvents = flattenFieldActivityCandidateEvents(fieldActivityWatchlist).map(({ event }) => event);
   const pendingEvents = candidateEvents.filter((event) => ["capture_now", "research_more"].includes(event.classification));
   const learningLoop = fieldActivityWatchlist.learning_loop ?? {};
   const learningQuestions = learningLoop.current_learning_questions ?? [];
   const revisionTriggers = learningLoop.revision_triggers ?? [];
+  const approvalCandidates = candidateEvents.filter((event) => fieldActivityPacketClassifications.has(event.classification));
+  const humanReviewRequiredCandidates = candidateEvents.filter(
+    (event) =>
+      fieldActivityCandidateNeedsApprovalPacket(event, false) &&
+      (event.agent_assessment?.human_review_required ?? fieldActivityPacketClassifications.has(event.classification))
+  );
+  const surfaceRoutingRequiredCandidates = candidateEvents.filter(
+    (event) =>
+      (fieldActivityPacketClassifications.has(event.classification) && !event.surface_routing) ||
+      event.surface_routing?.state_of_field_review_required ||
+      event.surface_routing?.current_story_review_required
+  );
 
   return {
     path: fieldActivityWatchlistPath,
@@ -144,6 +213,9 @@ function summarizeFieldActivityWatchlist(fieldActivityWatchlist) {
     watch_only_count: candidateEvents.filter((event) => event.noteworthiness_tier === "watch_only").length,
     below_threshold_count: candidateEvents.filter((event) => event.noteworthiness_tier === "below_threshold").length,
     consolidated_candidate_count: candidateEvents.filter((event) => event.classification === "captured_by_related_item").length,
+    approval_candidate_count: approvalCandidates.length,
+    human_review_required_candidate_count: humanReviewRequiredCandidates.length,
+    surface_routing_required_candidate_count: surfaceRoutingRequiredCandidates.length,
     learning_phase: learningLoop.phase ?? "unknown",
     learning_cadence: learningLoop.cadence ?? "unknown",
     learning_completed_pilot_sweeps: learningLoop.completed_pilot_sweeps ?? 0,
@@ -310,6 +382,21 @@ function periodEventIds(publicationEvents, workflowEdition, includePeriodEvents)
     .map((event) => event.id);
 }
 
+function directFieldActivityEventIds(publicationEvents, workflowEdition) {
+  return publicationEvents
+    .filter((event) => {
+      const eventDate = datePart(event.published_at);
+      return (
+        eventDate &&
+        eventDate >= workflowEdition.period_start &&
+        eventDate <= workflowEdition.period_end &&
+        event.publication_route === directActivityPublicationRoute
+      );
+    })
+    .sort(compareEventDate)
+    .map((event) => event.id);
+}
+
 function addCandidateIds(candidateIds, ids, source) {
   for (const id of ids) {
     if (!candidateIds.has(id)) {
@@ -348,6 +435,53 @@ function itemNeedsApprovalPacket(item, includeAll) {
   );
 }
 
+function buildFieldActivityPacketItems(fieldActivityWatchlist, options) {
+  return flattenFieldActivityCandidateEvents(fieldActivityWatchlist)
+    .filter(({ event }) => fieldActivityCandidateNeedsApprovalPacket(event, options.all))
+    .map(({ entry, event }, index) => {
+      const humanReviewRequired =
+        event.agent_assessment?.human_review_required ?? fieldActivityPacketClassifications.has(event.classification);
+
+      return {
+        index: index + 1,
+        watch_entry_id: entry.id,
+        watch_entry_name: entry.name,
+        event_id: event.event_id,
+        event_label: event.event_label,
+        classification: event.classification,
+        occurred_on: event.occurred_on ?? null,
+        activity_type: event.activity_type,
+        activity_lane: event.activity_lane,
+        scope_label: event.scope_label ?? null,
+        noteworthiness_tier: event.noteworthiness_tier,
+        threshold_basis: event.threshold_basis ?? [],
+        source_quality: event.source_quality,
+        source_url: event.source_url ?? null,
+        recommended_public_action: event.recommended_public_action ?? null,
+        rationale: event.rationale,
+        surface_routing: event.surface_routing ?? null,
+        agent_assessment: event.agent_assessment ?? null,
+        derived_recommendation: {
+          recommended_classification: event.classification,
+          materiality: fieldActivityMateriality(event),
+          affected_surfaces: event.surface_routing?.affected_surfaces ?? ["activity_feed"],
+          public_copy_action: fieldActivityPublicCopyAction(event),
+          human_review_required: humanReviewRequired,
+          rationale: event.rationale
+        },
+        human_approval: event.human_approval ?? null,
+        human_review_required: humanReviewRequired,
+        escalation_reason:
+          event.agent_assessment?.escalation_reason ??
+          (event.classification === "capture_now"
+            ? "Candidate would add or update public field activity."
+            : event.classification === "research_more"
+              ? "Candidate may be material but needs better source support before publication."
+              : null)
+      };
+    });
+}
+
 function buildApprovalPacket({ workflow, currentStory, stateOfFieldEditions, publicationEvents, fieldActivityWatchlist, options }) {
   const { workflowEdition } = selectWorkflowEdition({
     workflow,
@@ -384,6 +518,9 @@ function buildApprovalPacket({ workflow, currentStory, stateOfFieldEditions, pub
   });
   const itemsRequiringHumanReview = packetItems.filter((item) => item.human_review_required);
   const itemsWithoutAgentAssessment = packetItems.filter((item) => !item.agent_assessment);
+  const fieldActivityItems = buildFieldActivityPacketItems(fieldActivityWatchlist, options);
+  const fieldActivityItemsRequiringHumanReview = fieldActivityItems.filter((item) => item.human_review_required);
+  const fieldActivityItemsWithoutAgentAssessment = fieldActivityItems.filter((item) => !item.agent_assessment);
 
   return {
     generated_at: new Date().toISOString(),
@@ -400,8 +537,12 @@ function buildApprovalPacket({ workflow, currentStory, stateOfFieldEditions, pub
     packet_item_count: packetItems.length,
     human_review_required_count: itemsRequiringHumanReview.length,
     missing_agent_assessment_count: itemsWithoutAgentAssessment.length,
+    field_activity_packet_item_count: fieldActivityItems.length,
+    field_activity_human_review_required_count: fieldActivityItemsRequiringHumanReview.length,
+    field_activity_missing_agent_assessment_count: fieldActivityItemsWithoutAgentAssessment.length,
     field_activity_watchlist: summarizeFieldActivityWatchlist(fieldActivityWatchlist),
-    items: packetItems
+    items: packetItems,
+    field_activity_items: fieldActivityItems
   };
 }
 
@@ -426,6 +567,22 @@ function formatAssessment(assessment) {
   ];
 }
 
+function formatFieldActivityAssessment(item) {
+  const assessment = item.agent_assessment;
+  const recommendation = assessment ?? item.derived_recommendation;
+
+  return [
+    `- Agent recommendation: ${recommendation.recommended_classification}`,
+    `- Materiality: ${recommendation.materiality}`,
+    `- Affected surfaces: ${(recommendation.affected_surfaces ?? []).join(", ") || "none"}`,
+    `- Public copy action: ${recommendation.public_copy_action}`,
+    `- Human review: ${recommendation.human_review_required ? "required" : "not required"}`,
+    ...(item.escalation_reason ? [`- Escalation: ${item.escalation_reason}`] : []),
+    `- Agent rationale: ${recommendation.rationale}`,
+    ...(assessment ? [] : ["- Agent assessment: derived from watchlist classification; record explicit agent_assessment before closing the candidate."])
+  ];
+}
+
 function formatApprovalPacket(packet) {
   const lines = [
     "# State of the Field Reconciliation Approval Packet",
@@ -446,45 +603,95 @@ function formatApprovalPacket(packet) {
     `- Field-activity capture recommended: ${packet.field_activity_watchlist.capture_recommended_count}`,
     `- Field-activity needs primary source: ${packet.field_activity_watchlist.needs_primary_source_count}`,
     `- Field-activity pending anchors/material programs: ${packet.field_activity_watchlist.pending_field_anchor_count}/${packet.field_activity_watchlist.pending_material_program_count}`,
+    `- Field-activity approval candidates: ${packet.field_activity_packet_item_count}`,
+    `- Field-activity human review required: ${packet.field_activity_human_review_required_count}`,
+    `- Field-activity missing agent assessments: ${packet.field_activity_missing_agent_assessment_count}`,
+    `- Field-activity surface routing required: ${packet.field_activity_watchlist.surface_routing_required_candidate_count}`,
     `- Field-activity consolidated candidates: ${packet.field_activity_watchlist.consolidated_candidate_count}`,
     `- Field-activity learning phase: ${packet.field_activity_watchlist.learning_phase} (${packet.field_activity_watchlist.learning_completed_pilot_sweeps}/${packet.field_activity_watchlist.learning_minimum_pilot_sweeps} pilot sweeps)`,
     `- Field-activity open learning questions: ${packet.field_activity_watchlist.learning_open_question_count}`
   ];
 
-  if (packet.items.length === 0) {
+  if (packet.items.length === 0 && packet.field_activity_items.length === 0) {
     lines.push("", "No reconciliation items need approval packet review.");
     return `${lines.join("\n")}\n`;
   }
 
-  lines.push("", "## Items");
+  if (packet.items.length > 0) {
+    lines.push("", "## Reconciliation Items");
 
-  for (const item of packet.items) {
-    lines.push(
-      "",
-      `### ${item.index}. ${item.event_name ?? item.publication_event_id}`,
-      "",
-      `- Event ID: ${item.publication_event_id}`,
-      `- Event date: ${item.event_date}`,
-      `- Candidate bundle: ${item.candidate_bundle_id ?? "unknown"}`,
-      `- Affected outlooks: ${item.affected_outlook_ids.join(", ") || "none"}`,
-      `- Current decision: ${item.current_decision}`,
-      ...formatAssessment(item.agent_assessment),
-      `- Current rationale: ${item.current_rationale}`,
-      `- Proposed next action: ${item.next_action}`
-    );
+    for (const item of packet.items) {
+      lines.push(
+        "",
+        `### ${item.index}. ${item.event_name ?? item.publication_event_id}`,
+        "",
+        `- Event ID: ${item.publication_event_id}`,
+        `- Event date: ${item.event_date}`,
+        `- Candidate bundle: ${item.candidate_bundle_id ?? "unknown"}`,
+        `- Affected outlooks: ${item.affected_outlook_ids.join(", ") || "none"}`,
+        `- Current decision: ${item.current_decision}`,
+        ...formatAssessment(item.agent_assessment),
+        `- Current rationale: ${item.current_rationale}`,
+        `- Proposed next action: ${item.next_action}`
+      );
 
-    if (item.event_summary) {
-      lines.push(`- Event summary: ${item.event_summary}`);
+      if (item.event_summary) {
+        lines.push(`- Event summary: ${item.event_summary}`);
+      }
+
+      if (item.event_change_note) {
+        lines.push(`- Event change note: ${item.event_change_note}`);
+      }
+
+      if (item.human_approval) {
+        lines.push(`- Human approval status: ${item.human_approval.status}`);
+        if (item.human_approval.notes) {
+          lines.push(`- Human approval notes: ${item.human_approval.notes}`);
+        }
+      }
     }
+  }
 
-    if (item.event_change_note) {
-      lines.push(`- Event change note: ${item.event_change_note}`);
-    }
+  if (packet.field_activity_items.length > 0) {
+    lines.push("", "## Field Activity Candidates");
 
-    if (item.human_approval) {
-      lines.push(`- Human approval status: ${item.human_approval.status}`);
-      if (item.human_approval.notes) {
-        lines.push(`- Human approval notes: ${item.human_approval.notes}`);
+    for (const item of packet.field_activity_items) {
+      lines.push(
+        "",
+        `### ${item.index}. ${item.event_label}`,
+        "",
+        `- Watch entry: ${item.watch_entry_name} (${item.watch_entry_id})`,
+        `- Candidate event ID: ${item.event_id}`,
+        `- Event date: ${item.occurred_on ?? "unknown"}`,
+        `- Classification: ${item.classification}`,
+        `- Activity: ${item.activity_type} / ${item.activity_lane}`,
+        `- Scope: ${item.scope_label ?? "unspecified"}`,
+        `- Noteworthiness: ${item.noteworthiness_tier}`,
+        `- Threshold basis: ${item.threshold_basis.join(", ") || "none"}`,
+        `- Source quality: ${item.source_quality}`,
+        ...formatFieldActivityAssessment(item),
+        `- Watchlist rationale: ${item.rationale}`
+      );
+
+      if (item.source_url) {
+        lines.push(`- Source URL: ${item.source_url}`);
+      }
+
+      if (item.recommended_public_action) {
+        lines.push(`- Recommended public action: ${item.recommended_public_action}`);
+      }
+
+      if (item.surface_routing) {
+        lines.push(
+          `- Surface routing: ${(item.surface_routing.affected_surfaces ?? []).join(", ") || "none"}; State of Field review ${item.surface_routing.state_of_field_review_required ? "required" : "not required"}; Current story review ${item.surface_routing.current_story_review_required ? "required" : "not required"}`
+        );
+      }
+
+      if (item.human_approval) {
+        lines.push(`- Human approval status: ${item.human_approval.status}`);
+        if (item.human_approval.notes) {
+          lines.push(`- Human approval notes: ${item.human_approval.notes}`);
+        }
       }
     }
   }
@@ -509,6 +716,7 @@ async function reconcileWorkflow({ workflow, currentStory, stateOfFieldEditions,
   const draftPoolPath = options.draftPoolPath ?? defaultDraftPoolPath;
   const draftPool = await readJsonIfExists(draftPoolPath);
   addCandidateIds(candidateIds, flattenDraftPoolEventIds(draftPool), draftPool ? `draft pool ${draftPoolPath}` : "draft pool");
+  addCandidateIds(candidateIds, directFieldActivityEventIds(publicationEvents, workflowEdition), "direct field-activity publication");
   addCandidateIds(
     candidateIds,
     periodEventIds(publicationEvents, workflowEdition, options.includePeriodEvents),
@@ -575,6 +783,9 @@ function formatTextSummary(summary) {
     `Field-activity capture recommended: ${summary.field_activity_watchlist.capture_recommended_count}`,
     `Field-activity needs primary source: ${summary.field_activity_watchlist.needs_primary_source_count}`,
     `Field-activity pending anchors/material programs: ${summary.field_activity_watchlist.pending_field_anchor_count}/${summary.field_activity_watchlist.pending_material_program_count}`,
+    `Field-activity approval candidates: ${summary.field_activity_watchlist.approval_candidate_count}`,
+    `Field-activity human review required: ${summary.field_activity_watchlist.human_review_required_candidate_count}`,
+    `Field-activity surface routing required: ${summary.field_activity_watchlist.surface_routing_required_candidate_count}`,
     `Field-activity consolidated candidates: ${summary.field_activity_watchlist.consolidated_candidate_count}`,
     `Field-activity learning phase: ${summary.field_activity_watchlist.learning_phase} (${summary.field_activity_watchlist.learning_completed_pilot_sweeps}/${summary.field_activity_watchlist.learning_minimum_pilot_sweeps} pilot sweeps)`,
     `Field-activity open learning questions: ${summary.field_activity_watchlist.learning_open_question_count}`,

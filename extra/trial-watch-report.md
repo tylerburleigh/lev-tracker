@@ -5,24 +5,24 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 
 ## Summary
 
-- Registry-linked interventional studies: 143
-- With `trial_details`: 143
+- Registry-linked interventional studies: 144
+- With `trial_details`: 144
 - Missing `trial_details`: 0
 - Completed or past-completion records with no posted results: 25
-- Registry checks missing or stale: 22
+- Registry checks missing or stale: 18
 - Open watchlist records with missing or stale registry checks: 0
-- Posted results recorded locally: 82
+- Posted results recorded locally: 83
 
 ### Result Status
 
 - no posted results: 55
 - not expected yet: 6
-- posted results: 82
+- posted results: 83
 
 ### Trial Status
 
 - active: 10
-- completed: 95
+- completed: 96
 - planned: 2
 - recruiting: 28
 - terminated: 1
@@ -92,8 +92,6 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 ## Stale Or Missing Registry Checks
 
 - [SPM Active obesity bioavailability study](https://clinicaltrials.gov/study/NCT04701138) (NCT04701138): completed; posted results; completion 2021-06-18; registry 2022-06-15 (1461 days old).
-- [Allogenic adipose MSC exosomes Alzheimer's phase I/II trial](https://pubmed.ncbi.nlm.nih.gov/37859748/) (NCT04388982): completed; posted results; completion 2022-08-31; registry no local check date.
-- [hUC-MSC exosome knee osteoarthritis dose-escalation pilot](https://pubmed.ncbi.nlm.nih.gov/40500748/) (MR-13-24-017929): completed; posted results; completion 2023-04-30; registry no local check date.
 - [ART-AD lamivudine early Alzheimer's trial](https://pubmed.ncbi.nlm.nih.gov/40104524/) (NCT04552795): completed; posted results; completion 2023-11-04; registry no local check date.
 - [AMBAR plasma exchange Alzheimer disease trial](https://pubmed.ncbi.nlm.nih.gov/32715623/) (NCT01561053): completed; posted results; completion not recorded; registry no local check date.
 - [Arimoclomol inclusion body myositis randomized trial](https://pubmed.ncbi.nlm.nih.gov/37739573/) (NCT02753530): completed; posted results; completion not recorded; registry no local check date.
@@ -108,9 +106,7 @@ Stale registry threshold: 90 days. This report does not fetch current registry d
 - [ONTRANS nicotinamide transplant-recipient skin-cancer trial](https://pubmed.ncbi.nlm.nih.gov/36856616/) (ACTRN12617000599370): completed; posted results; completion not recorded; registry no local check date.
 - [Oral sodium butyrate overweight and type 2 diabetes trial](https://pubmed.ncbi.nlm.nih.gov/41880673/) (NCT07252609): completed; posted results; completion not recorded; registry no local check date.
 - [ORARIALS-01 arimoclomol ALS phase 3 trial](https://pubmed.ncbi.nlm.nih.gov/38782015/) (NCT03491462): completed; posted results; completion not recorded; registry no local check date.
-- [Placental MSC extracellular vesicle knee osteoarthritis randomized trial](https://pubmed.ncbi.nlm.nih.gov/39465400/) (IRCT20210423051054N1): completed; posted results; completion not recorded; registry no local check date.
 - [PLASMA young plasma Alzheimer disease trial](https://pubmed.ncbi.nlm.nih.gov/30383097/) (NCT02256306): completed; posted results; completion not recorded; registry no local check date.
-- [Plexoval II platelet extracellular vesicle wound-healing phase I trial](https://pubmed.ncbi.nlm.nih.gov/37353884/) (ACTRN12620000944932): completed; posted results; completion not recorded; registry no local check date.
 - [Polyphenol-rich diet indole-3-propionic acid older-adult trial](https://pubmed.ncbi.nlm.nih.gov/35315592/) (ISRCTN10214981): completed; posted results; completion not recorded; registry no local check date.
 - [TBC169 synbiotic chronic constipation trial in middle-aged and elderly adults](https://pubmed.ncbi.nlm.nih.gov/42226670/) (ChiCTR2400085844): completed; posted results; completion not recorded; registry no local check date.
 

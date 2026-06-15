@@ -566,6 +566,15 @@
         "recommended_public_action": {
           "type": "string"
         },
+        "surface_routing": {
+          "$ref": "#/$defs/surfaceRouting"
+        },
+        "agent_assessment": {
+          "$ref": "#/$defs/fieldActivityAgentAssessment"
+        },
+        "human_approval": {
+          "$ref": "#/$defs/humanApproval"
+        },
         "related_activity_item_ids": {
           "type": "array",
           "items": {
@@ -577,6 +586,157 @@
           "type": "string"
         }
       }
+    },
+    "fieldActivityAgentAssessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recommended_classification",
+        "confidence",
+        "materiality",
+        "affected_surfaces",
+        "public_copy_action",
+        "human_review_required",
+        "rationale",
+        "reviewed_at"
+      ],
+      "properties": {
+        "recommended_classification": {
+          "enum": [
+            "capture_now",
+            "research_more",
+            "exclude",
+            "evidence_path",
+            "captured",
+            "captured_by_related_item"
+          ]
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "materiality": {
+          "enum": [
+            "none",
+            "low",
+            "moderate",
+            "high"
+          ]
+        },
+        "affected_surfaces": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/fieldActivitySurface"
+          },
+          "uniqueItems": true
+        },
+        "public_copy_action": {
+          "enum": [
+            "no_public_copy",
+            "add_activity_item",
+            "update_activity_item",
+            "create_publication_event",
+            "route_to_evidence_review",
+            "hold_for_source",
+            "consolidate_with_related_item"
+          ]
+        },
+        "human_review_required": {
+          "type": "boolean"
+        },
+        "escalation_reason": {
+          "type": "string"
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "reviewed_at": {
+          "$ref": "./common.schema.json#/$defs/dateTime"
+        },
+        "reviewed_by": {
+          "type": "string"
+        }
+      }
+    },
+    "humanApproval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "not_requested",
+            "requested",
+            "approved",
+            "rejected",
+            "revise",
+            "not_required"
+          ]
+        },
+        "requested_at": {
+          "$ref": "./common.schema.json#/$defs/dateTime"
+        },
+        "resolved_at": {
+          "$ref": "./common.schema.json#/$defs/dateTime"
+        },
+        "approver": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "surfaceRouting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "affected_surfaces",
+        "state_of_field_review_required",
+        "current_story_review_required",
+        "rationale"
+      ],
+      "properties": {
+        "affected_surfaces": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/fieldActivitySurface"
+          },
+          "uniqueItems": true
+        },
+        "state_of_field_review_required": {
+          "type": "boolean"
+        },
+        "current_story_review_required": {
+          "type": "boolean"
+        },
+        "no_surface_change_reason": {
+          "type": "string"
+        },
+        "rationale": {
+          "type": "string"
+        }
+      }
+    },
+    "fieldActivitySurface": {
+      "enum": [
+        "activity_feed",
+        "state_of_field",
+        "current_lev_story",
+        "hallmark_insight",
+        "track_page",
+        "overall_outlook",
+        "trial_horizon",
+        "evidence_record",
+        "no_public_surface"
+      ]
     }
   }
 }

@@ -149,8 +149,55 @@
     "significance_note": {
       "type": "string"
     },
+    "surface_routing": {
+      "$ref": "#/$defs/surfaceRouting"
+    },
     "affects_outlook": {
       "type": "boolean"
+    }
+  },
+  "$defs": {
+    "surfaceRouting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "affected_surfaces",
+        "state_of_field_review_required",
+        "current_story_review_required",
+        "rationale"
+      ],
+      "properties": {
+        "affected_surfaces": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "activity_feed",
+              "state_of_field",
+              "current_lev_story",
+              "hallmark_insight",
+              "track_page",
+              "overall_outlook",
+              "trial_horizon",
+              "evidence_record",
+              "no_public_surface"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "state_of_field_review_required": {
+          "type": "boolean"
+        },
+        "current_story_review_required": {
+          "type": "boolean"
+        },
+        "no_surface_change_reason": {
+          "type": "string"
+        },
+        "rationale": {
+          "type": "string"
+        }
+      }
     }
   }
 }

@@ -4,6 +4,7 @@ import path from "node:path";
 
 const workspaceRoot = process.cwd();
 const terminalBundleStatuses = new Set(["published", "rejected"]);
+const directActivityPublicationRoute = "direct_activity_publish";
 
 const recordDirectories = {
   activity_item: "data/activity-items",
@@ -341,7 +342,27 @@ function auditOutlook(record, filePath, sets) {
 }
 
 function auditPublicationEvent(record, filePath, sets) {
-  checkRef(filePath, "candidate_bundle_id", record.candidate_bundle_id, sets.candidateBundleIds, "candidate_bundle");
+  if (record.candidate_bundle_id) {
+    checkRef(filePath, "candidate_bundle_id", record.candidate_bundle_id, sets.candidateBundleIds, "candidate_bundle");
+  } else if (record.publication_route !== directActivityPublicationRoute) {
+    issues.push(
+      `${filePath}: publication_event without candidate_bundle_id must declare publication_route "${directActivityPublicationRoute}"`,
+    );
+  }
+  if (record.publication_route === directActivityPublicationRoute) {
+    const directTargetSets = {
+      activity_item: sets.activityItemIds,
+      source: sets.sourceIds,
+    };
+    for (const [index, target] of (record.published_targets ?? []).entries()) {
+      const allowedSet = directTargetSets[target.record_type];
+      if (!allowedSet) {
+        issues.push(`${filePath}: published_targets[${index}] uses ${target.record_type}, which is not valid for direct activity publication`);
+        continue;
+      }
+      checkRef(filePath, `published_targets[${index}].record_id`, target.record_id, allowedSet, target.record_type);
+    }
+  }
   checkRefArray(filePath, "affected_outlook_ids[]", record.affected_outlook_ids, sets.outlookIds, "outlook");
   checkRefArray(
     filePath,

@@ -1,32 +1,35 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-15T16:25:48.145Z",
+  "generated_at": "2026-06-15T17:25:12.234Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-15T16:25:48.016Z",
-    "research_priority_queue_updated_at": "2026-06-15T16:25:48.016Z",
+    "research_coverage_status_updated_at": "2026-06-15T17:25:12.112Z",
+    "research_priority_queue_updated_at": "2026-06-15T17:25:12.112Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
     "surveillance_recent_queue_count": 38,
     "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 0,
-    "field_activity_watchlist_updated_at": "2026-06-15T16:23:52Z",
-    "field_activity_watchlist_entry_count": 7,
+    "field_activity_watchlist_updated_at": "2026-06-15T17:18:38Z",
+    "field_activity_watchlist_entry_count": 8,
     "field_activity_discovery_channel_count": 6,
     "field_activity_blindspot_control_count": 7,
-    "field_activity_capture_recommended_count": 6,
-    "field_activity_needs_primary_source_count": 1,
-    "field_activity_pending_field_anchor_count": 1,
-    "field_activity_pending_material_program_count": 6,
+    "field_activity_capture_recommended_count": 0,
+    "field_activity_needs_primary_source_count": 2,
+    "field_activity_pending_field_anchor_count": 0,
+    "field_activity_pending_material_program_count": 2,
     "field_activity_watch_only_count": 0,
     "field_activity_below_threshold_count": 0,
-    "field_activity_consolidated_candidate_count": 1,
-    "field_activity_learning_phase": "pilot",
-    "field_activity_learning_cadence": "after_each_sweep",
-    "field_activity_completed_pilot_sweeps": 2,
+    "field_activity_consolidated_candidate_count": 2,
+    "field_activity_approval_candidate_count": 2,
+    "field_activity_human_review_required_candidate_count": 0,
+    "field_activity_surface_routing_required_candidate_count": 6,
+    "field_activity_learning_phase": "stable",
+    "field_activity_learning_cadence": "monthly",
+    "field_activity_completed_pilot_sweeps": 3,
     "field_activity_minimum_pilot_sweeps": 3,
-    "field_activity_open_learning_question_count": 4,
+    "field_activity_open_learning_question_count": 0,
     "field_activity_revision_trigger_count": 4,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
@@ -73,8 +76,8 @@
       "priority_tier": "now",
       "status": "blocked",
       "title": "Resolve State of the Field workflow for June 2026",
-      "rationale": "Internal draft opened while June is still in progress. The candidate public skeleton now accounts for the current-story June updates plus six additional June public updates, but final July copy stays open until the retrospective period closes. 0 reconciliation decision(s) and 4 checklist item(s) remain open.",
-      "default_action": "Keep the July edition internal until June closes, then finalize the provisional classifications for the 17 known June public updates and write the public 2026-07 edition from reviewed records.",
+      "rationale": "Internal draft opened while June is still in progress. The candidate public skeleton now accounts for the current-story June updates, six additional June public updates, and five direct field-activity publication events, but final July copy stays open until the retrospective period closes. 0 reconciliation decision(s) and 4 checklist item(s) remain open.",
+      "default_action": "Keep the July edition internal until June closes, then finalize the provisional classifications for the 22 known June public updates and write the public 2026-07 edition from reviewed records.",
       "runbook_path": "docs/editorial-rollup.md",
       "command": "npm run state-of-field:status -- --strict",
       "source_paths": [
@@ -112,35 +115,47 @@
         },
         {
           "name": "field_activity_watchlist_entry_count",
-          "value": 7
+          "value": 8
         },
         {
           "name": "field_activity_capture_recommended_count",
-          "value": 6
+          "value": 0
         },
         {
           "name": "field_activity_needs_primary_source_count",
-          "value": 1
+          "value": 2
         },
         {
           "name": "field_activity_pending_field_anchor_count",
-          "value": 1
+          "value": 0
         },
         {
           "name": "field_activity_pending_material_program_count",
+          "value": 2
+        },
+        {
+          "name": "field_activity_approval_candidate_count",
+          "value": 2
+        },
+        {
+          "name": "field_activity_human_review_required_candidate_count",
+          "value": 0
+        },
+        {
+          "name": "field_activity_surface_routing_required_candidate_count",
           "value": 6
         },
         {
           "name": "field_activity_consolidated_candidate_count",
-          "value": 1
+          "value": 2
         },
         {
           "name": "field_activity_learning_phase",
-          "value": "pilot"
+          "value": "stable"
         },
         {
           "name": "field_activity_learning_open_question_count",
-          "value": 4
+          "value": 0
         }
       ]
     }

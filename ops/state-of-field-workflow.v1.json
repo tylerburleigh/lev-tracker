@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "state_type": "state_of_field_workflow",
-  "updated_at": "2026-06-15T10:38:24.763Z",
+  "updated_at": "2026-06-15T17:23:37.713Z",
   "policy": {
     "public_visibility": "Only completed editions in data/content/state-of-the-field are rendered on the public State of the Field pages.",
     "draft_storage": "Drafts, reconciliation notes, and in-progress states stay in this ops manifest or extra/ artifacts until publication.",
@@ -148,7 +148,7 @@
       "period_label": "June 2026",
       "status": "draft",
       "status_updated_at": "2026-06-14T13:33:44.000Z",
-      "status_note": "Internal draft opened while June is still in progress. The candidate public skeleton now accounts for the current-story June updates plus six additional June public updates, but final July copy stays open until the retrospective period closes.",
+      "status_note": "Internal draft opened while June is still in progress. The candidate public skeleton now accounts for the current-story June updates, six additional June public updates, and five direct field-activity publication events, but final July copy stays open until the retrospective period closes.",
       "published_edition_path": "data/content/state-of-the-field/2026-07.json",
       "draft_artifact_paths": [
         "extra/state-of-field-2026-07-draft.json",
@@ -172,7 +172,7 @@
           "publish-extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15-2026-06-15t10-33-29-045z"
         ]
       },
-      "required_next_action": "Keep the July edition internal until June closes, then finalize the provisional classifications for the 17 known June public updates and write the public 2026-07 edition from reviewed records.",
+      "required_next_action": "Keep the July edition internal until June closes, then finalize the provisional classifications for the 22 known June public updates and write the public 2026-07 edition from reviewed records.",
       "blockers": [
         "June 2026 has not ended yet; this cannot be a final retrospective edition before 2026-07-01.",
         "The June 15 trial-watch report has 22 stale or missing registry checks and 0 open stale watchlist records; do not make fresh trial-status claims without surveillance or explicit stale-record boundaries."
@@ -706,6 +706,292 @@
             "rationale": "The update is reviewed and public, but it did not change stage, momentum, read firmness, or LEV timing. It is useful context for the June retrospective because it adds a biological-age marker signal while preserving the single-arm, multimodal, no-component-isolation boundary.",
             "reviewed_at": "2026-06-15T10:40:00.000Z",
             "reviewed_by": "codex"
+          }
+        },
+        {
+          "publication_event_id": "publish-field-activity-arpa-h-prospr-awardees-2026-2026-06-15",
+          "event_date": "2026-06-15",
+          "related_outlook_ids": [],
+          "decision": "include_as_current_context",
+          "period_interpretation_changed": false,
+          "rationale": "June direct field-activity publication added February 2026 ARPA-H PROSPR program context. It belongs as healthspan trial-infrastructure context, not as June field movement or evidence of intervention benefit.",
+          "next_action": "Use only as bounded State of the Field or trial-horizon background if the July edition needs program-context examples; do not count it as June progress or clinical evidence.",
+          "agent_assessment": {
+            "recommended_decision": "include_as_current_context",
+            "confidence": "high",
+            "materiality": "moderate",
+            "affected_surfaces": [
+              "state_of_field",
+              "trial_horizon"
+            ],
+            "public_copy_action": "draft_copy",
+            "human_review_required": true,
+            "escalation_reason": "Trial-horizon-facing program context should stay explicitly bounded as infrastructure activity, not clinical evidence or a registry-linked result.",
+            "rationale": "PROSPR is a major healthspan program and should be visible to retrospective context, but the underlying event predates June and does not report intervention results or change an outlook.",
+            "reviewed_at": "2026-06-15T16:48:57Z",
+            "reviewed_by": "codex"
+          },
+          "human_approval": {
+            "status": "approved",
+            "requested_at": "2026-06-15T16:48:57Z",
+            "resolved_at": "2026-06-15T16:48:57Z",
+            "approver": "tyler",
+            "notes": "Approved in chat after the agent recommended resolving the direct field-activity publication events; keep as context, not June field progress."
+          }
+        },
+        {
+          "publication_event_id": "publish-field-activity-calico-abbvie-aging-collaboration-2014-2026-06-15",
+          "event_date": "2026-06-15",
+          "related_outlook_ids": [],
+          "decision": "add_post_hoc_context_note",
+          "period_interpretation_changed": false,
+          "rationale": "June direct field-activity publication backfilled a 2014 Calico-AbbVie collaboration. It is useful historical field-infrastructure context, not June field movement.",
+          "next_action": "Use only if the July edition needs a brief historical field-activity backfill note; do not treat it as a current-period change or evidence claim.",
+          "agent_assessment": {
+            "recommended_decision": "add_post_hoc_context_note",
+            "confidence": "high",
+            "materiality": "low",
+            "affected_surfaces": [
+              "state_of_field"
+            ],
+            "public_copy_action": "draft_copy",
+            "human_review_required": false,
+            "rationale": "The activity is source-backed and notable, but the underlying event is historical and does not change the June retrospective conclusion or any outlook.",
+            "reviewed_at": "2026-06-15T16:48:57Z",
+            "reviewed_by": "codex"
+          },
+          "human_approval": {
+            "status": "approved",
+            "resolved_at": "2026-06-15T16:48:57Z",
+            "approver": "tyler",
+            "notes": "Approved in chat after the agent recommended resolving the direct field-activity publication events; keep as historical context only."
+          }
+        },
+        {
+          "publication_event_id": "publish-field-activity-calico-broad-neurodegeneration-extension-2024-2026-06-15",
+          "event_date": "2026-06-15",
+          "related_outlook_ids": [],
+          "decision": "add_post_hoc_context_note",
+          "period_interpretation_changed": false,
+          "rationale": "June direct field-activity publication backfilled a May 2024 Calico-Broad collaboration extension. It is historical field-infrastructure context, not June field movement.",
+          "next_action": "Use only if the July edition needs a historical field-activity backfill note; do not treat it as current-period progress or evidence that the collaboration produced intervention benefit.",
+          "agent_assessment": {
+            "recommended_decision": "add_post_hoc_context_note",
+            "confidence": "high",
+            "materiality": "low",
+            "affected_surfaces": [
+              "state_of_field"
+            ],
+            "public_copy_action": "draft_copy",
+            "human_review_required": false,
+            "rationale": "The collaboration extension is useful context about aging-biology infrastructure, but it predates the covered period and does not alter public interpretation.",
+            "reviewed_at": "2026-06-15T16:48:57Z",
+            "reviewed_by": "codex"
+          },
+          "human_approval": {
+            "status": "approved",
+            "resolved_at": "2026-06-15T16:48:57Z",
+            "approver": "tyler",
+            "notes": "Approved in chat after the agent recommended resolving the direct field-activity publication events; keep as historical context only."
+          }
+        },
+        {
+          "publication_event_id": "publish-field-activity-google-calico-launch-2013-2026-06-15",
+          "event_date": "2026-06-15",
+          "related_outlook_ids": [],
+          "decision": "add_post_hoc_context_note",
+          "period_interpretation_changed": false,
+          "rationale": "June direct field-activity publication backfilled Google's 2013 Calico launch. It is a historical field anchor, not June field movement.",
+          "next_action": "Use only as historical field-activity context if the final edition mentions backfilled field anchors; do not treat it as current-period progress or evidence of benefit.",
+          "agent_assessment": {
+            "recommended_decision": "add_post_hoc_context_note",
+            "confidence": "high",
+            "materiality": "low",
+            "affected_surfaces": [
+              "state_of_field"
+            ],
+            "public_copy_action": "draft_copy",
+            "human_review_required": false,
+            "rationale": "Calico's launch is a major field anchor, but the event is historical and the June action was publication/backfill, so it should not alter the June field-change conclusion.",
+            "reviewed_at": "2026-06-15T16:48:57Z",
+            "reviewed_by": "codex"
+          },
+          "human_approval": {
+            "status": "approved",
+            "resolved_at": "2026-06-15T16:48:57Z",
+            "approver": "tyler",
+            "notes": "Approved in chat after the agent recommended resolving the direct field-activity publication events; keep as historical context only."
+          }
+        },
+        {
+          "publication_event_id": "publish-field-activity-hevolution-400m-healthspan-commitments-2024-2026-06-15",
+          "event_date": "2026-06-15",
+          "related_outlook_ids": [],
+          "decision": "include_as_current_context",
+          "period_interpretation_changed": false,
+          "rationale": "June direct field-activity publication added historical Hevolution healthspan-funding context. It is relevant field infrastructure context, not June field movement or evidence of intervention benefit.",
+          "next_action": "Use only as bounded funder-infrastructure context if the July edition needs a field-activity example; do not count it as current-period progress.",
+          "agent_assessment": {
+            "recommended_decision": "include_as_current_context",
+            "confidence": "high",
+            "materiality": "low",
+            "affected_surfaces": [
+              "state_of_field"
+            ],
+            "public_copy_action": "draft_copy",
+            "human_review_required": false,
+            "rationale": "The Hevolution record helps readers understand healthspan funding infrastructure, but the external event predates June and does not change evidence, outlook, or LEV timing.",
+            "reviewed_at": "2026-06-15T16:48:57Z",
+            "reviewed_by": "codex"
+          },
+          "human_approval": {
+            "status": "approved",
+            "resolved_at": "2026-06-15T16:48:57Z",
+            "approver": "tyler",
+            "notes": "Approved in chat after the agent recommended resolving the direct field-activity publication events; keep as context, not June field progress."
+          }
+        },
+        {
+          "publication_event_id": "publish-field-activity-altos-labs-launch-2022-2026-06-15",
+          "event_date": "2026-06-15",
+          "related_outlook_ids": [],
+          "decision": "add_post_hoc_context_note",
+          "period_interpretation_changed": false,
+          "rationale": "June direct field-activity publication backfilled Altos Labs' 2022 launch. It is a historical field anchor, not June field movement or evidence of intervention benefit.",
+          "next_action": "Use only as historical field-activity context if the final edition mentions backfilled field anchors; do not treat it as current-period progress or evidence of benefit.",
+          "agent_assessment": {
+            "recommended_decision": "add_post_hoc_context_note",
+            "confidence": "high",
+            "materiality": "low",
+            "affected_surfaces": [
+              "state_of_field"
+            ],
+            "public_copy_action": "draft_copy",
+            "human_review_required": false,
+            "rationale": "Altos is a major field anchor, but the underlying event is historical and the June action was publication/backfill, so it should not alter the June field-change conclusion.",
+            "reviewed_at": "2026-06-15T17:18:38Z",
+            "reviewed_by": "codex"
+          },
+          "human_approval": {
+            "status": "approved",
+            "resolved_at": "2026-06-15T17:18:38Z",
+            "approver": "tyler",
+            "notes": "Approved in chat as part of the field-activity packet; keep as historical context only."
+          }
+        },
+        {
+          "publication_event_id": "publish-field-activity-newlimit-formation-2021-2026-06-15",
+          "event_date": "2026-06-15",
+          "related_outlook_ids": [],
+          "decision": "add_post_hoc_context_note",
+          "period_interpretation_changed": false,
+          "rationale": "June direct field-activity publication backfilled NewLimit's 2021 formation. It is historical company-infrastructure context, not June field movement.",
+          "next_action": "Use only as historical field-activity context if the final edition mentions backfilled company anchors; do not treat it as current-period progress or evidence of benefit.",
+          "agent_assessment": {
+            "recommended_decision": "add_post_hoc_context_note",
+            "confidence": "high",
+            "materiality": "low",
+            "affected_surfaces": [
+              "state_of_field"
+            ],
+            "public_copy_action": "draft_copy",
+            "human_review_required": false,
+            "rationale": "NewLimit formation is relevant field infrastructure, but it predates the period and does not change evidence, outlook, or LEV timing.",
+            "reviewed_at": "2026-06-15T17:18:38Z",
+            "reviewed_by": "codex"
+          },
+          "human_approval": {
+            "status": "approved",
+            "resolved_at": "2026-06-15T17:18:38Z",
+            "approver": "tyler",
+            "notes": "Approved in chat as part of the field-activity packet; keep as historical context only."
+          }
+        },
+        {
+          "publication_event_id": "publish-field-activity-newlimit-series-c-2026-2026-06-15",
+          "event_date": "2026-06-15",
+          "related_outlook_ids": [],
+          "decision": "include_as_current_context",
+          "period_interpretation_changed": false,
+          "rationale": "June direct field-activity publication added NewLimit's June 2026 Series C and clinical-transition context. It is current field activity and trial-horizon context, not evidence of intervention benefit.",
+          "next_action": "Use as bounded State of the Field or trial-horizon context if the July edition needs current company-financing examples; do not treat it as clinical evidence or an outlook change.",
+          "agent_assessment": {
+            "recommended_decision": "include_as_current_context",
+            "confidence": "high",
+            "materiality": "moderate",
+            "affected_surfaces": [
+              "state_of_field",
+              "trial_horizon"
+            ],
+            "public_copy_action": "draft_copy",
+            "human_review_required": false,
+            "rationale": "The financing is current, source-backed field activity with clinical-transition relevance, but it does not report trial results or change any public evidence interpretation.",
+            "reviewed_at": "2026-06-15T17:18:38Z",
+            "reviewed_by": "codex"
+          },
+          "human_approval": {
+            "status": "approved",
+            "resolved_at": "2026-06-15T17:18:38Z",
+            "approver": "tyler",
+            "notes": "Approved in chat as part of the field-activity packet; keep as current context, not evidence."
+          }
+        },
+        {
+          "publication_event_id": "publish-field-activity-retro-biosciences-next-financing-2026-2026-06-15",
+          "event_date": "2026-06-15",
+          "related_outlook_ids": [],
+          "decision": "include_as_current_context",
+          "period_interpretation_changed": false,
+          "rationale": "June direct field-activity publication added Retro Biosciences' May 2026 financing and first-in-human progress context. It is current field activity and trial-horizon context, not evidence of intervention benefit.",
+          "next_action": "Use as bounded State of the Field or trial-horizon context if the July edition needs current company-financing examples; do not promote first-in-human language into evidence without registry or study review.",
+          "agent_assessment": {
+            "recommended_decision": "include_as_current_context",
+            "confidence": "high",
+            "materiality": "moderate",
+            "affected_surfaces": [
+              "state_of_field",
+              "trial_horizon"
+            ],
+            "public_copy_action": "draft_copy",
+            "human_review_required": false,
+            "rationale": "The financing and clinical-transition language are source-backed field activity, but they do not report trial results or change any public evidence interpretation.",
+            "reviewed_at": "2026-06-15T17:18:38Z",
+            "reviewed_by": "codex"
+          },
+          "human_approval": {
+            "status": "approved",
+            "resolved_at": "2026-06-15T17:18:38Z",
+            "approver": "tyler",
+            "notes": "Approved in chat as part of the field-activity packet; keep as current context, not evidence."
+          }
+        },
+        {
+          "publication_event_id": "publish-field-activity-xprize-healthspan-launch-2023-2026-06-15",
+          "event_date": "2026-06-15",
+          "related_outlook_ids": [],
+          "decision": "add_post_hoc_context_note",
+          "period_interpretation_changed": false,
+          "rationale": "June direct field-activity publication backfilled the 2023 XPRIZE Healthspan launch. It is historical prize-infrastructure context, not June field movement or evidence of intervention benefit.",
+          "next_action": "Use only as historical field-activity context if the final edition mentions backfilled healthspan prize infrastructure; do not treat it as current-period progress or evidence of benefit.",
+          "agent_assessment": {
+            "recommended_decision": "add_post_hoc_context_note",
+            "confidence": "high",
+            "materiality": "low",
+            "affected_surfaces": [
+              "state_of_field",
+              "trial_horizon"
+            ],
+            "public_copy_action": "draft_copy",
+            "human_review_required": false,
+            "rationale": "The XPRIZE launch is relevant healthspan infrastructure, but the underlying event is historical and the June action was publication/backfill, so it should not alter the June field-change conclusion.",
+            "reviewed_at": "2026-06-15T17:18:38Z",
+            "reviewed_by": "codex"
+          },
+          "human_approval": {
+            "status": "approved",
+            "resolved_at": "2026-06-15T17:18:38Z",
+            "approver": "tyler",
+            "notes": "Approved in chat as part of the field-activity packet; keep as historical context only."
           }
         }
       ],

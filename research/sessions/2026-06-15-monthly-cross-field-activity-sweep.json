@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-15-monthly-cross-field-activity-sweep",
+  "name": "Monthly cross-field activity sweep",
+  "mode": "field_activity",
+  "field_activity_sweep_type": "monthly_cross_field",
+  "started_at": "2026-06-15T16:45:00Z",
+  "completed_at": "2026-06-15T17:08:20Z",
+  "scope": {
+    "question": "What field activity should be captured, held, consolidated, or excluded in the June 2026 monthly cross-field sweep?",
+    "scope_label": "Monthly field-activity sweep",
+    "entity_names": [
+      "Altos Labs",
+      "NewLimit",
+      "Retro Biosciences",
+      "XPRIZE Healthspan",
+      "Healthspan Connect",
+      "ClinicalTrials.gov",
+      "FDA",
+      "EMA"
+    ],
+    "hallmark_ids": [],
+    "track_ids": []
+  },
+  "selected_via": "queue_default",
+  "outcome": "handoff_to_editorial",
+  "summary": "Completed the monthly cross-field activity sweep from the field-activity watchlist plus bounded registry and regulatory discovery. Watchlist-first review produced a human approval packet: add Altos Labs 2022 launch, NewLimit 2021 formation, NewLimit 2026 Series C, Retro Biosciences 2026 financing, and XPRIZE Healthspan 2023 launch as activity-only public records; keep Retro's 2022 launch on source hold unless a secondary-source exception is approved; and consolidate the 2025 XPRIZE milestone-winner announcement into the launch item unless the curator wants a separate milestone entry. Broad ClinicalTrials.gov discovery found one new source-work lead, Healthspan Connect, but it should stay internal because it is observational, not yet recruiting, and not backed by a durable programme source beyond the registry record. FDA and EMA checks did not find a threshold-clearing regulatory field-activity item for this monthly packet.",
+  "next_recommended_mode": "field_activity",
+  "materiality_decision": {
+    "material_delta": "activity_only",
+    "public_update_needed": true,
+    "activity_only": true,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "field_activity",
+    "rationale": "The recommended public changes are field-infrastructure, funding, launch, or competition activity. They do not move evidence stages or outlooks and should publish only after human approval."
+  },
+  "search_log": [
+    {
+      "source_name": "Field activity watchlist",
+      "checked_at": "2026-06-15T16:45:00Z",
+      "url": "https://github.com/local/lev-tracker/blob/main/research/backlog/field-activity-watchlist.v1.json",
+      "summary": "Started from the watchlist. Pending capture recommendations were Altos Labs, NewLimit, Retro Biosciences, and XPRIZE Healthspan; Calico, Hevolution, and ARPA-H PROSPR were already captured or consolidated."
+    },
+    {
+      "source_name": "Altos Labs launch release",
+      "checked_at": "2026-06-15T16:50:00Z",
+      "url": "https://www.prnewswire.com/news-releases/altos-labs-launches-with-the-goal-to-transform-medicine-through-cellular-rejuvenation-programming-301463541.html",
+      "summary": "Confirmed the official syndicated January 19, 2022 launch release with cellular rejuvenation focus, research leadership, global institutes, and committed funding. Recommended capture as field_anchor activity-only backfill."
+    },
+    {
+      "source_name": "NewLimit official blog",
+      "checked_at": "2026-06-15T16:52:00Z",
+      "url": "https://blog.newlimit.com/",
+      "summary": "Confirmed the official December 11, 2021 formation post and June 2, 2026 Series C post. Recommended both as activity-only material_program records, with the 2026 financing routed to trial-horizon context but not evidence."
+    },
+    {
+      "source_name": "Retro Biosciences official blog",
+      "checked_at": "2026-06-15T16:54:00Z",
+      "url": "https://www.retro.bio/blog/fundraise-2026",
+      "summary": "Confirmed the May 22, 2026 official financing post. Recommended the financing as activity-only and held the 2022 launch because no durable official dated launch source was found."
+    },
+    {
+      "source_name": "XPRIZE Healthspan competition sources",
+      "checked_at": "2026-06-15T16:56:00Z",
+      "url": "https://www.xprize.org/competitions/healthspan",
+      "summary": "Confirmed the official competition page, guideline source for the November 29, 2023 launch, and the May 12, 2025 milestone-winner release. Recommended publishing the launch and consolidating milestone-winner scale context unless the curator requests a separate item."
+    },
+    {
+      "source_name": "ClinicalTrials.gov broad healthspan and longevity search",
+      "query": "healthspan aging longevity healthy aging geroscience; checked close records NCT07209774, NCT07451496, NCT06734468, and NCT05706389",
+      "checked_at": "2026-06-15T17:00:00Z",
+      "url": "https://clinicaltrials.gov/",
+      "summary": "Broad registry discovery found one new watchlist lead, Healthspan Connect (NCT07209774), and several close but below-threshold intervention records. No new registry result or material status milestone was found that should publish directly during this monthly sweep."
+    },
+    {
+      "source_name": "FDA official site regulatory search",
+      "query": "aging healthspan longevity anti-aging regenerative medicine warning approval FDA 2026",
+      "checked_at": "2026-06-15T17:03:00Z",
+      "url": "https://www.fda.gov/",
+      "summary": "Checked FDA official search results for aging, longevity, anti-aging, regenerative medicine, and warning-letter activity. No field-level regulatory action cleared the public activity threshold for this packet."
+    },
+    {
+      "source_name": "EMA official site regulatory search",
+      "query": "aging healthspan longevity anti-aging regenerative medicine EMA 2026",
+      "checked_at": "2026-06-15T17:04:00Z",
+      "url": "https://www.ema.europa.eu/",
+      "summary": "Checked EMA official search results for aging, healthspan, longevity, regenerative-medicine, and anti-aging regulatory activity. No threshold-clearing field activity item was found."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "Retro Biosciences 2022 launch official source",
+      "title": "Retro Biosciences public launch and initial funding",
+      "decision": "not_retrieved",
+      "reason": "The event appears material, but the sweep found only secondary dated coverage for the 2022 launch. Keep as research_more unless a durable official dated source is found or the curator approves a secondary-source exception."
+    },
+    {
+      "reference": "NCT07451496",
+      "title": "PRecision gerOMedicinE: Tailored Healthy agEing With Lifestyle, sUpplements and drugS (PROMETHEUS)",
+      "url": "https://clinicaltrials.gov/study/NCT07451496",
+      "decision": "not_material",
+      "reason": "Directly aging-relevant but small, individualized, lifestyle/supplement intervention activity with no posted results. Keep out of the cross-field public activity packet unless a track-specific surveillance pass decides it is material."
+    },
+    {
+      "reference": "NCT06734468",
+      "title": "Personalized Approach to Promote Healthy Aging",
+      "url": "https://clinicaltrials.gov/study/NCT06734468",
+      "decision": "not_material",
+      "reason": "Small personalized lifestyle intervention, active but without posted results. It does not clear the cross-field noteworthiness threshold."
+    },
+    {
+      "reference": "NCT05706389",
+      "title": "Does Alpha-ketoglutarate Supplementation Lower BiologicaL agE in Middle- Aged Adults?",
+      "url": "https://clinicaltrials.gov/study/NCT05706389",
+      "decision": "context_only",
+      "reason": "Potentially relevant to a supplement or nutrient-sensing track, but not new cross-field infrastructure and no results were found in this monthly sweep."
+    },
+    {
+      "reference": "FDA menopausal hormone therapy communications",
+      "title": "FDA hormone-therapy and longevity-related search results",
+      "url": "https://www.fda.gov/",
+      "decision": "wrong_scope",
+      "reason": "Regulatory communications around menopausal hormone therapy may matter for women's health but did not map cleanly to a current LEV activity, track, or evidence record in this sweep."
+    },
+    {
+      "reference": "FDA Dynamic Stem Cell Therapy warning letter",
+      "title": "Warning Letter to Dynamic Stem Cell Therapy, May 15, 2026",
+      "url": "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/dynamic-stem-cell-therapy-707398-05152026",
+      "decision": "not_material",
+      "reason": "Official regulatory enforcement touching anti-aging claims, but this appears clinic-specific rather than field-shaping activity. Record as a close regulatory near-miss rather than public activity."
+    },
+    {
+      "reference": "EMA healthspan/longevity/regenerative medicine search",
+      "title": "EMA regulatory search for aging, longevity, and regenerative medicine terms",
+      "url": "https://www.ema.europa.eu/",
+      "decision": "no_results",
+      "reason": "No material EMA regulatory event was found that should affect the activity feed, State of the Field, Current LEV Story, or evidence records."
+    }
+  ],
+  "source_urls": [
+    "https://www.prnewswire.com/news-releases/altos-labs-launches-with-the-goal-to-transform-medicine-through-cellular-rejuvenation-programming-301463541.html",
+    "https://blog.newlimit.com/p/announcing-newlimit-a-company-built",
+    "https://blog.newlimit.com/p/newlimit-raises-435m-led-by-founders",
+    "https://www.retro.bio/blog/fundraise-2026",
+    "https://www.xprize.org/competitions/healthspan",
+    "https://assets-us-01.kc-usercontent.com/9bc15d1f-8a5c-007d-b507-e3496e85af86/6ac665ad-aa6e-4c74-915b-dea51773312d/XPRIZE%20Healthspan%20Competition%20Guidelines_V2.2_FINAL.pdf",
+    "https://www.xprize.org/news/101m-xprize-healthspan-awards-first-milestone-winners-driving-toward-revolutionary-healthy-aging-advances",
+    "https://clinicaltrials.gov/study/NCT07209774",
+    "https://clinicaltrials.gov/study/NCT07451496",
+    "https://clinicaltrials.gov/study/NCT06734468",
+    "https://clinicaltrials.gov/study/NCT05706389",
+    "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/dynamic-stem-cell-therapy-707398-05152026",
+    "https://www.ema.europa.eu/"
+  ],
+  "notes": [
+    "Learning result: the watchlist found the main approval candidates before broad search, which supports keeping watchlist-first discovery as the default monthly process.",
+    "Learning result: source-type coverage now has one entity/company sweep, one funder/prize/government-program sweep, and one registry/regulatory sweep, so the learning loop can move from pilot to stabilizing.",
+    "Learning result: broad registry search can add useful watchlist leads, but direct trial or programme registry records need threshold review so routine or small trial activity does not crowd the public activity feed.",
+    "No schema or workflow edit was needed in this pass; the existing watchlist, candidate assessment, surface routing, and approval fields were sufficient.",
+    "Follow-up completed on 2026-06-15T17:18:38Z: the human approved the packet as recommended. Five direct field-activity items were published, Retro's 2022 launch was held for a primary source, and the XPRIZE 2025 milestone winner announcement was consolidated into the XPRIZE launch item.",
+    "Learning cleanup completed on 2026-06-15T17:18:38Z: pilot learning questions were closed, the watchlist learning loop moved to stable monthly cadence, and revision triggers remain as ongoing controls."
+  ],
+  "next_actions": [
+    "Re-check Healthspan Connect during the next quarterly registry or programme sweep for an official programme source before proposing public activity.",
+    "Keep Retro Biosciences' 2022 launch as source work until a durable official dated source is found or a future human-approved secondary-source exception is recorded.",
+    "During the next monthly cross-field sweep, record new learning only if a revision trigger fires, the human revises the packet, or broad discovery exposes a new blindspot."
+  ]
+}
