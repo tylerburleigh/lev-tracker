@@ -159,6 +159,7 @@ time {
 .track-card:hover,
 .hallmark-module-card:hover,
 .hallmark-activity-card:hover,
+.activity-map-card:hover,
 .evidence-ladder-stage:hover,
 .related-record-link:hover,
 .tracks-table__row:hover,
@@ -257,6 +258,7 @@ time {
 .hallmark-activity-card,
 .hallmark-empty-module,
 .evidence-ladder-stage,
+.activity-map-card,
 .activity-card,
 .editorial-card,
 .state-brief-panel,
@@ -795,6 +797,7 @@ time {
 .hallmark-activity-card,
 .hallmark-empty-module,
 .evidence-ladder-stage,
+.activity-map-card,
 .evidence-card,
 .feed-item,
 .activity-card,
@@ -907,11 +910,101 @@ time {
   display: grid;
   gap: 12px;
   align-content: start;
+  border-top: 3px solid var(--slate);
+}
+
+.activity-map {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.activity-map-card {
+  display: grid;
+  gap: 12px;
+  min-height: 172px;
+  align-content: start;
+  padding: 18px;
+  border-top: 3px solid var(--blue);
+  transition:
+    border-color 160ms ease,
+    transform 160ms ease,
+    background 160ms ease;
+}
+
+.activity-map-card--selected {
+  border-color: rgba(45, 128, 99, 0.34);
+  border-top-color: var(--mint);
+  background: rgba(255, 253, 246, 0.94);
+}
+
+.activity-map-card__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.activity-map-card__top span {
+  color: var(--text-soft);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.activity-map-card__top strong {
+  color: var(--text);
+  font-size: 1.65rem;
+  line-height: 1;
+}
+
+.activity-map-card p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+
+.activity-section__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-end;
+  padding-bottom: 16px;
+}
+
+.activity-section__header h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  line-height: 1.18;
+}
+
+.activity-section__header p {
+  max-width: 62rem;
+  margin: 5px 0 0;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.activity-card--anchor {
+  border-top-color: var(--gold);
+}
+
+.activity-card--current {
+  border-top-color: var(--mint);
+}
+
+.activity-card--trial {
+  border-top-color: var(--blue);
+}
+
+.activity-card--historical {
+  border-top-color: var(--slate);
 }
 
 .activity-card__badges,
 .activity-card__meta,
-.activity-card__links {
+.activity-card__links,
+.activity-card__routing {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
@@ -944,6 +1037,35 @@ time {
   font-size: 0.78rem;
   letter-spacing: 0;
   text-transform: uppercase;
+}
+
+.activity-card__threshold {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.activity-card__threshold strong {
+  color: var(--text);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.activity-card__routing span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 9px;
+  border: 1px solid rgba(24, 37, 30, 0.12);
+  border-radius: 999px;
+  background: rgba(237, 242, 234, 0.72);
+  color: var(--text-soft);
+  font-size: 0.78rem;
+  font-weight: 750;
 }
 
 .activity-card__links {
@@ -3507,6 +3629,10 @@ time {
     grid-template-columns: 1fr;
   }
 
+  .activity-map {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .site-header__inner {
     grid-template-columns: 1fr;
   }
@@ -3628,6 +3754,7 @@ time {
   .hallmark-activity-card,
   .hallmark-empty-module,
   .evidence-ladder-stage,
+  .activity-map-card,
   .activity-card,
   .editorial-card,
   .state-brief-panel,
@@ -3645,6 +3772,7 @@ time {
   }
 
   .hero-card__columns,
+  .activity-map,
   .activity-list,
   .editorial-list,
   .state-brief-grid,

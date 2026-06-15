@@ -283,8 +283,16 @@ export type ActivityItemRecord = {
   hallmark_ids?: string[];
   track_ids?: string[];
   study_ids?: string[];
+  intervention_ids?: string[];
+  surface_routing?: {
+    affected_surfaces?: string[];
+    state_of_field_review_required?: boolean;
+    current_story_review_required?: boolean;
+    rationale?: string;
+  };
   affects_outlook?: boolean;
   significance_note?: string;
+  tags?: string[];
 };
 
 export type ActivityLink = {
@@ -305,6 +313,18 @@ export type ActivityFeedItem = {
   significanceNote?: string;
   affectsOutlook: boolean;
   scopeLabel: string;
+  noteworthinessTier: string;
+  noteworthinessLabel: string;
+  thresholdBasis: string[];
+  thresholdBasisLabels: string[];
+  trialActivityKind?: string;
+  trialActivityKindLabel?: string;
+  surfaceRoutes: string[];
+  surfaceRouteLabels: string[];
+  isFieldActivity: boolean;
+  isHistoricalBackfill: boolean;
+  isStateOfFieldRelevant: boolean;
+  isTrialHorizon: boolean;
   hallmarkId: string;
   trackIds: string[];
   trackNames: string[];
@@ -1408,6 +1428,10 @@ function normalizeActivityItem(item: ActivityItemRecord): ActivityFeedItem {
   const hallmarkId = item.hallmark_ids?.[0] ?? "";
   const hallmarkLabel = hallmarkId ? getHallmarkById(hallmarkId)?.name ?? titleizeIdentifier(hallmarkId) : undefined;
   const scopeLabel = item.scope_label ?? hallmarkLabel ?? "Field-wide";
+  const tags = item.tags ?? [];
+  const thresholdBasis = item.threshold_basis ?? [];
+  const surfaceRoutes = item.surface_routing?.affected_surfaces ?? ["activity_feed"];
+  const trialActivityKindLabel = item.trial_activity_kind ? getReadableDataLabel(item.trial_activity_kind) : undefined;
 
   return {
     id: item.id,
@@ -1420,6 +1444,19 @@ function normalizeActivityItem(item: ActivityItemRecord): ActivityFeedItem {
     significanceNote: item.significance_note,
     affectsOutlook: Boolean(item.affects_outlook),
     scopeLabel,
+    noteworthinessTier: item.noteworthiness_tier ?? "uncategorized",
+    noteworthinessLabel: getReadableDataLabel(item.noteworthiness_tier ?? "uncategorized"),
+    thresholdBasis,
+    thresholdBasisLabels: thresholdBasis.map(getReadableDataLabel),
+    trialActivityKind: item.trial_activity_kind,
+    trialActivityKindLabel,
+    surfaceRoutes,
+    surfaceRouteLabels: surfaceRoutes.map(getReadableDataLabel),
+    isFieldActivity: tags.includes("field-activity"),
+    isHistoricalBackfill: tags.includes("historical-backfill"),
+    isStateOfFieldRelevant:
+      Boolean(item.surface_routing?.state_of_field_review_required) || surfaceRoutes.includes("state_of_field"),
+    isTrialHorizon: surfaceRoutes.includes("trial_horizon") || Boolean(item.trial_activity_kind),
     hallmarkId,
     trackIds,
     trackNames: trackIds.map((trackId) => getTrackById(trackId)?.name ?? titleizeIdentifier(trackId)),
