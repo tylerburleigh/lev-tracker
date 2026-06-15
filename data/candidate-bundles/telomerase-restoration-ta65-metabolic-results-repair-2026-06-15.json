@@ -1,0 +1,188 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "telomerase-restoration-ta65-metabolic-results-repair-2026-06-15",
+  "name": "Telomerase Restoration TA-65 Metabolic Results Repair",
+  "summary": "Surveillance bundle resolving PMID 29546832 as the result-bearing publication for NCT02531334, moving the TA-65 metabolic-syndrome registry from late no-results to results-captured watch context while keeping the Telomerase Restoration outlook at human_biomarker_signal with mixed momentum and low confidence.",
+  "intake_mode": "surveillance",
+  "lifecycle_status": "submitted",
+  "submitted_at": "2026-06-15T21:00:26Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "question": "Does PMID 29546832 resolve the NCT02531334 TA-65 metabolic-syndrome trial-watch item, and how should that affect Telomerase Restoration public evidence?",
+    "hallmark_ids": [
+      "telomere_attrition"
+    ],
+    "track_ids": [
+      "telomerase-restoration"
+    ],
+    "intervention_ids": [
+      "ta-65"
+    ]
+  },
+  "source_ids": [
+    "nct-02531334",
+    "pmid-29546832"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT02531334",
+    "https://clinicaltrials.gov/api/v2/studies/NCT02531334",
+    "https://pubmed.ncbi.nlm.nih.gov/29546832/",
+    "https://doi.org/10.2174/1381612824666180316114832",
+    "https://www.telomerescience.com/assets/pdf/selected-studies/TA-65%20and%20Metabolic%20Syndrome.pdf",
+    "https://digitalcommons.lib.uconn.edu/cgi/viewcontent.cgi?article=2428&context=gs_theses"
+  ],
+  "related_records": [
+    {
+      "record_type": "track",
+      "record_id": "telomerase-restoration"
+    },
+    {
+      "record_type": "outlook",
+      "record_id": "track-telomerase-restoration-outlook"
+    },
+    {
+      "record_type": "study",
+      "record_id": "ta65-metabolic-syndrome-completed-registry"
+    },
+    {
+      "record_type": "source",
+      "record_id": "nct-02531334"
+    },
+    {
+      "record_type": "source",
+      "record_id": "pmid-29546832"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "ta65-metabolic-syndrome-completed-no-results"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "ta65-metabolic-syndrome-cardiometabolic-biomarker-signal"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-source-pmid-29546832",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pmid-29546832",
+      "file_path": "data/sources/pmid-29546832.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-ta65-metabolic-results-repair-2026-06-15/pmid-29546832.json",
+      "summary": "Add the 2018 TA-65 metabolic-syndrome randomized crossover publication.",
+      "rationale": "The full text explicitly identifies ClinicalTrials.gov protocol NCT02531334 and UConn protocol H14-278, resolving the previously likely publication match.",
+      "uncertainty_flags": [
+        "small-human-trial",
+        "disease-context",
+        "biomarker-only"
+      ]
+    },
+    {
+      "change_id": "update-source-nct-02531334",
+      "change_type": "update_record",
+      "target_record_type": "source",
+      "target_record_id": "nct-02531334",
+      "file_path": "data/sources/nct-02531334.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-ta65-metabolic-results-repair-2026-06-15/nct-02531334.json",
+      "summary": "Clarify that the registry lacks a posted results table but is publication-matched.",
+      "rationale": "ClinicalTrials.gov still reports hasResults=false, so the registry source should preserve transparency while avoiding the misleading implication that no outcome evidence exists.",
+      "uncertainty_flags": [
+        "no-posted-registry-results",
+        "publication-linked"
+      ]
+    },
+    {
+      "change_id": "update-study-ta65-metabolic-syndrome-completed-registry",
+      "change_type": "update_record",
+      "target_record_type": "study",
+      "target_record_id": "ta65-metabolic-syndrome-completed-registry",
+      "file_path": "data/studies/ta65-metabolic-syndrome-completed-registry.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-ta65-metabolic-results-repair-2026-06-15/ta65-metabolic-syndrome-completed-registry.json",
+      "summary": "Move the NCT02531334 study watch status from late_no_results to results_captured.",
+      "rationale": "The registry result module remains empty, but the matched publication captures outcome results and should remove the study from the active late no-results retirement queue.",
+      "uncertainty_flags": [
+        "results-captured-through-publication",
+        "registry-results-not-posted",
+        "disease-context"
+      ]
+    },
+    {
+      "change_id": "create-finding-ta65-metabolic-syndrome-cardiometabolic-biomarker-signal",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ta65-metabolic-syndrome-cardiometabolic-biomarker-signal",
+      "file_path": "data/findings/ta65-metabolic-syndrome-cardiometabolic-biomarker-signal.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-ta65-metabolic-results-repair-2026-06-15/ta65-metabolic-syndrome-cardiometabolic-biomarker-signal.json",
+      "summary": "Add the cardiometabolic and inflammatory biomarker finding from PMID 29546832.",
+      "rationale": "The trial reported favorable surrogate biomarker movement, but the finding needs caveats because it does not establish broad aging, functional, disease-event, survival, or long-term safety benefit.",
+      "uncertainty_flags": [
+        "surrogate-biomarkers",
+        "primary-outcome-boundary",
+        "long-term-safety-unresolved"
+      ]
+    },
+    {
+      "change_id": "update-finding-ta65-metabolic-syndrome-completed-no-results",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "ta65-metabolic-syndrome-completed-no-results",
+      "file_path": "data/findings/ta65-metabolic-syndrome-completed-no-results.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-ta65-metabolic-results-repair-2026-06-15/ta65-metabolic-syndrome-completed-no-results.json",
+      "summary": "Reframe the existing no-results finding as no posted registry table rather than no outcome data.",
+      "rationale": "PMID 29546832 carries outcome evidence, while the registry still lacks a posted results module; both facts need to remain visible.",
+      "uncertainty_flags": [
+        "registry-transparency",
+        "publication-linked"
+      ]
+    },
+    {
+      "change_id": "update-outlook-track-telomerase-restoration",
+      "change_type": "update_record",
+      "target_record_type": "outlook",
+      "target_record_id": "track-telomerase-restoration-outlook",
+      "file_path": "data/outlooks/track-telomerase-restoration-outlook.json",
+      "staged_file_path": "data/staged-records/telomerase-restoration-ta65-metabolic-results-repair-2026-06-15/track-telomerase-restoration-outlook.json",
+      "summary": "Refresh the Telomerase Restoration outlook support map with the matched TA-65 metabolic-syndrome result.",
+      "rationale": "The publication adds a human disease-context biomarker signal and repairs the trial-watch support map, but it does not change stage, momentum, confidence, or the long-term safety and functional-outcome gaps.",
+      "uncertainty_flags": [
+        "stage-unchanged",
+        "biomarker-only",
+        "disease-context",
+        "long-term-safety-unresolved"
+      ]
+    }
+  ],
+  "proposed_outlook_implications": [
+    {
+      "subject_type": "track",
+      "subject_id": "telomerase-restoration",
+      "note": "Recognizes PMID 29546832 as the matched NCT02531334 result publication, adds a disease-context cardiometabolic biomarker signal, and keeps Telomerase Restoration at human_biomarker_signal with mixed momentum and low confidence.",
+      "confidence": "low"
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "interpretation_forecast",
+    "safety_limitations",
+    "taxonomy_mapping"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "session_reference": "research/sessions/2026-06-15-ta65-metabolic-results-repair.json",
+  "next_actions": [
+    "Run source-fidelity review to confirm the NCT02531334/PMID 29546832 match and the abstract/full-text result claims.",
+    "Run interpretation, safety, and taxonomy reviews before publication because the repair changes a trial-watch state and public outlook support map.",
+    "After publication, rerun the global trial-watch audit and decide whether the remaining old TA-65 late no-results records need retirement sweeps."
+  ],
+  "tags": [
+    "admin",
+    "surveillance",
+    "trial-watch",
+    "telomerase-restoration"
+  ]
+}

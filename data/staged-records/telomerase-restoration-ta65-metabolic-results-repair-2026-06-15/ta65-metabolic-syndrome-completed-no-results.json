@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "ta65-metabolic-syndrome-completed-no-results",
+  "name": "Completed TA-65 metabolic syndrome registry has no posted registry table",
+  "summary": "ClinicalTrials.gov still lacks a posted results table for NCT02531334, but PMID 29546832 is matched to the trial and carries outcome results.",
+  "source_id": "nct-02531334",
+  "study_id": "ta65-metabolic-syndrome-completed-registry",
+  "intervention_ids": [
+    "ta-65"
+  ],
+  "track_ids": [
+    "telomerase-restoration"
+  ],
+  "hallmark_ids": [
+    "telomere_attrition"
+  ],
+  "endpoint_category": "regulatory",
+  "direction": "inconclusive",
+  "evidence_tier": "regulatory_or_program_update",
+  "confidence": "low",
+  "statement": "ClinicalTrials.gov lists NCT02531334 as completed with no posted registry results in the June 15, 2026 API view; the matched publication PMID 29546832 identifies the same ClinicalTrials.gov protocol, so the registry entry should be treated as no-posted-registry-table context rather than absence of publication results.",
+  "population_or_model": "Adults aged 32 to 70 years with metabolic syndrome",
+  "time_horizon": "Actual study completion listed in June 2018; publication indexed in 2018; no posted registry table as of June 15, 2026.",
+  "quantitative_note": "Registry estimated enrollment was 40; full text identifies protocol H14-278/NCT02531334; publication reports 40 recruited and 37 completed the whole intervention.",
+  "caveats": [
+    "No posted registry table still limits registry-level transparency.",
+    "The outcome evidence belongs to PMID 29546832, not the ClinicalTrials.gov results module.",
+    "The metabolic-syndrome scope is disease-context biomarker evidence, not broad aging evidence."
+  ],
+  "tags": [
+    "human",
+    "ta-65",
+    "trial-registry",
+    "completed",
+    "no-posted-registry-results",
+    "results-linked",
+    "coverage-repair"
+  ]
+}

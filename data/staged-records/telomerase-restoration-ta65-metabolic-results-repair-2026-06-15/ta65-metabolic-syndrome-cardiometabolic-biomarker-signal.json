@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "ta65-metabolic-syndrome-cardiometabolic-biomarker-signal",
+  "name": "TA-65 metabolic syndrome trial reported cardiometabolic biomarker movement",
+  "summary": "In a small randomized crossover metabolic-syndrome trial matched to NCT02531334, TA-65 was associated with favorable movement in HDL-C, BMI, waist circumference, LDL/HDL ratio, and TNF-alpha, but not broad aging, functional, disease-event, or survival endpoints.",
+  "source_id": "pmid-29546832",
+  "study_id": "ta65-metabolic-syndrome-completed-registry",
+  "intervention_ids": [
+    "ta-65"
+  ],
+  "track_ids": [
+    "telomerase-restoration"
+  ],
+  "hallmark_ids": [
+    "telomere_attrition"
+  ],
+  "endpoint_category": "biomarker",
+  "direction": "mixed",
+  "evidence_tier": "human_biomarker",
+  "confidence": "low",
+  "statement": "In a 40-person metabolic-syndrome randomized crossover trial registered as NCT02531334, TA-65 was associated with higher HDL-C and lower BMI, waist circumference, LDL/HDL ratio, and TNF-alpha versus placebo, but the result remains disease-context biomarker evidence rather than broad aging, functional, or survival evidence.",
+  "population_or_model": "Adults aged 32 to 70 years with metabolic syndrome",
+  "time_horizon": "Two 12-week treatment periods separated by a 3-week washout",
+  "quantitative_note": "Abstract reports p < 0.05 for HDL-C, BMI, waist circumference, LDL/HDL ratio, and TNF-alpha changes; HDL-C changes correlated with CRP (r = -0.511, p < 0.01), ALT (r = -0.61, p < 0.001), and TNF-alpha (r = -0.550, p < 0.001).",
+  "caveats": [
+    "Metabolic-syndrome cardiometabolic biomarkers are disease-context surrogate endpoints, not LEV-relevant functional, disease-event, or survival outcomes.",
+    "ClinicalTrials.gov's primary outcome was plasma insulin; the abstract's positive result emphasis is on HDL-C, anthropometrics, LDL/HDL ratio, TNF-alpha, and correlated inflammation markers.",
+    "The publication does not resolve long-term telomerase activation safety or cancer-risk uncertainty.",
+    "The ClinicalTrials.gov registry still lacks a posted results table, so registry-level transparency remains incomplete."
+  ],
+  "tags": [
+    "human",
+    "ta-65",
+    "randomized-trial",
+    "metabolic-syndrome",
+    "biomarker",
+    "results-linked",
+    "disease-boundary"
+  ]
+}

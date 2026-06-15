@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-15-ta65-metabolic-results-repair",
+  "name": "TA-65 Metabolic Results Repair",
+  "mode": "surveillance",
+  "started_at": "2026-06-15T20:50:00Z",
+  "completed_at": "2026-06-15T21:00:26Z",
+  "scope": {
+    "question": "Does PMID 29546832 resolve the NCT02531334 TA-65 metabolic-syndrome trial-watch item, and what public repair should be staged?",
+    "hallmark_ids": [
+      "telomere_attrition"
+    ],
+    "track_ids": [
+      "telomerase-restoration"
+    ],
+    "intervention_ids": [
+      "ta-65"
+    ]
+  },
+  "selected_via": "manual_override",
+  "outcome": "candidate_bundle_submitted",
+  "candidate_bundle_id": "telomerase-restoration-ta65-metabolic-results-repair-2026-06-15",
+  "summary": "Resolved the prior NCT02531334 publication-match question. ClinicalTrials.gov still lists the TA-65 metabolic-syndrome trial as completed with actual December 2017 primary completion, actual June 2018 study completion, and no posted registry results in the June 15, 2026 API view. PubMed and full-text checks identify PMID 29546832 as the result-bearing publication: the article title matches the registry topic, the design matches the randomized double-blind crossover registry, and the full text explicitly states ClinicalTrials.gov protocol NCT02531334 and University of Connecticut IRB protocol H14-278. Staged a surveillance candidate bundle that adds the publication source, adds a disease-context cardiometabolic biomarker finding, reframes the existing no-results finding as no posted registry table, moves the study watch status to results_captured, and refreshes the Telomerase Restoration outlook without changing evidence stage, momentum, or confidence.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "outlook_refresh",
+    "public_update_needed": true,
+    "activity_only": false,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The finding changes public evidence interpretation enough to require a candidate bundle and outlook support-map refresh, but it is a small disease-context biomarker result and does not change the track rating or require a new coverage assessment."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial watch audit",
+      "checked_at": "2026-06-15T20:50:00Z",
+      "query": "npm run audit:trials -- --track telomerase-restoration --today 2026-06-15 --write",
+      "summary": "A scoped Telomerase Restoration audit identified NCT02531334 as an old late_no_results record with a likely publication match that should be resolved before any retirement decision."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "checked_at": "2026-06-15T20:52:00Z",
+      "query": "Direct registry check for NCT02531334",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT02531334",
+      "summary": "The registry lists NCT02531334 as completed, sponsored by University of Connecticut, with org study ID H14-278, estimated enrollment 40, randomized double-masked crossover design, TA-65/placebo 12-week periods separated by a 3-week washout, actual primary completion in December 2017, actual study completion in June 2018, and hasResults=false."
+    },
+    {
+      "source_name": "PubMed ESearch and EFetch",
+      "checked_at": "2026-06-15T20:54:00Z",
+      "query": "NCT02531334; \"Effects of TA-65, a Telomerase Activator on Metabolic Syndrome\"; \"TA-65\" \"metabolic syndrome\" Fernandez",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29546832/",
+      "summary": "Exact NCT-ID search returned no PubMed records, but exact title/intervention searches returned PMID 29546832. PubMed identifies the article as a 2018 randomized controlled trial in Current Pharmaceutical Design with DOI 10.2174/1381612824666180316114832."
+    },
+    {
+      "source_name": "Full article PDF",
+      "checked_at": "2026-06-15T20:56:00Z",
+      "url": "https://www.telomerescience.com/assets/pdf/selected-studies/TA-65%20and%20Metabolic%20Syndrome.pdf",
+      "summary": "The full text states that the study was approved by the University of Connecticut IRB under protocol H14-278 and registered at ClinicalTrials.gov under protocol NCT02531334. It reports a randomized crossover TA-65/placebo study in 40 recruited metabolic-syndrome participants, with 37 completing the full intervention."
+    },
+    {
+      "source_name": "UConn thesis repository",
+      "checked_at": "2026-06-15T20:57:00Z",
+      "url": "https://digitalcommons.lib.uconn.edu/cgi/viewcontent.cgi?article=2428&context=gs_theses",
+      "summary": "The thesis corroborates the protocol linkage by identifying NCT02531334 and citing the Fernandez 2018 publication, but it was treated as contextual support rather than the primary result source."
+    },
+    {
+      "source_name": "Local Telomerase Restoration records",
+      "checked_at": "2026-06-15T20:59:00Z",
+      "summary": "Reviewed the live NCT02531334 source, TA-65 metabolic-syndrome study, no-results finding, and Telomerase Restoration outlook. The staged bundle updates those records and adds PMID 29546832 without publishing directly."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT02531334",
+      "study_id": "ta65-metabolic-syndrome-completed-registry",
+      "source_id": "nct-02531334",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02531334",
+      "checked_at": "2026-06-15T20:52:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2017-12-01",
+      "study_completion_date": "2018-06-01",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": true,
+      "completion_date_changed": false,
+      "materiality": "results_posted",
+      "public_action": "stage_finding_and_outlook_review",
+      "summary": "Registry status and registry result module are unchanged, but a matched result publication was confirmed through full-text NCT02531334/H14-278 linkage. The study should move to results_captured while preserving no-posted-registry-table caveats."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "UConn thesis",
+      "title": "Effects of a Telomerase Activator on Cardiovascular Risk Factors in Patients with Metabolic Syndrome",
+      "url": "https://digitalcommons.lib.uconn.edu/cgi/viewcontent.cgi?article=2428&context=gs_theses",
+      "decision": "context_only",
+      "reason": "Useful for corroborating the NCT02531334/PMID 29546832 linkage, but the candidate bundle uses the peer-reviewed article as the result-bearing source."
+    }
+  ],
+  "source_ids": [
+    "nct-02531334",
+    "pmid-29546832"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT02531334",
+    "https://clinicaltrials.gov/api/v2/studies/NCT02531334",
+    "https://pubmed.ncbi.nlm.nih.gov/29546832/",
+    "https://doi.org/10.2174/1381612824666180316114832",
+    "https://www.telomerescience.com/assets/pdf/selected-studies/TA-65%20and%20Metabolic%20Syndrome.pdf",
+    "https://digitalcommons.lib.uconn.edu/cgi/viewcontent.cgi?article=2428&context=gs_theses"
+  ],
+  "notes": [
+    "Treat NCT02531334 as no posted registry table, not no results.",
+    "Treat PMID 29546832 as disease-context human biomarker evidence with low confidence for LEV relevance.",
+    "No rating change is warranted because the result does not demonstrate durable human function, disease-event, mortality, or long-term safety benefit."
+  ],
+  "next_actions": [
+    "Run required evidence-review lanes for the submitted candidate bundle.",
+    "If approved and published, rerun the global trial-watch audit so NCT02531334 leaves the late no-results retirement-candidate list.",
+    "After this repair, sweep remaining old TA-65 late no-results records for possible retirement decisions."
+  ]
+}
