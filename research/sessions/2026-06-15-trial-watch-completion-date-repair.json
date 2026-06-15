@@ -1,0 +1,195 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-15-trial-watch-completion-date-repair",
+  "name": "Trial Watch Completion-Date Repair",
+  "mode": "surveillance",
+  "started_at": "2026-06-15T20:35:00Z",
+  "completed_at": "2026-06-15T20:49:00Z",
+  "scope": {
+    "question": "Can the late no-results trial-watch records whose completion windows lived only in prose be repaired with structured completion dates?",
+    "hallmark_ids": [
+      "telomere_attrition"
+    ],
+    "track_ids": [
+      "telomerase-restoration"
+    ],
+    "intervention_ids": [
+      "aav-htert",
+      "ta-65"
+    ]
+  },
+  "selected_via": "manual_override",
+  "outcome": "activity_only",
+  "summary": "Rechecked the five late no-results Telomerase Restoration watch records that had completion windows in expected_results_window prose but no structured completion dates. ClinicalTrials.gov API v2 still lists NCT04133454, NCT04110964, NCT02531334, NCT01753674, and NCT02766790 without posted registry results. The pass added structured primary and study completion dates, refreshed the local registry check date to June 15, 2026, and updated source/study prose to remove the completion-date repair caveat. ClinicalTrials.gov returned month-level dates for all five records, so the local ISO fields normalize each month to the first day while the prose preserves month-level precision. The repair also surfaced a possible publication match for NCT02531334: PubMed title search found PMID 29546832, a 2018 TA-65 metabolic-syndrome randomized crossover study with matching title, population, and 40-participant enrollment. That record should not be retired until the publication match is resolved through the evidence workflow.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "activity_only",
+    "public_update_needed": true,
+    "activity_only": true,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The completed work repairs trial-watch metadata and public registry-source descriptions without changing the Telomerase Restoration stage, momentum, confidence, or evidence interpretation. The possible NCT02531334 publication match is evidence-relevant, but this pass only records it as a follow-up because resolving it requires source/finding/outlook review."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial watch audit",
+      "checked_at": "2026-06-15T20:35:00Z",
+      "query": "npm run audit:trials -- --today 2026-06-15 --write",
+      "summary": "The audit still showed five late no-results records missing structured completion dates: NCT04133454, NCT04110964, NCT02531334, NCT01753674, and NCT02766790."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "checked_at": "2026-06-15T20:39:00Z",
+      "query": "Direct checks for NCT04133454, NCT04110964, NCT02531334, NCT01753674, and NCT02766790",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT04133454",
+      "summary": "All five known registries were retrieved. NCT04133454 remains UNKNOWN with estimated January 2021 primary and study completion and hasResults=false. NCT04110964 remains UNKNOWN with estimated December 2020 primary and study completion and hasResults=false. NCT02531334 remains COMPLETED with actual December 2017 primary completion, actual June 2018 study completion, and hasResults=false. NCT01753674 remains TERMINATED with actual June 2014 primary and study completion and hasResults=false. NCT02766790 remains UNKNOWN with estimated May 2017 primary completion, estimated July 2017 study completion, and hasResults=false."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "checked_at": "2026-06-15T20:44:00Z",
+      "query": "NCT04133454; NCT04110964; NCT02531334; NCT01753674; NCT02766790",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Exact NCT-ID searches returned no indexed PubMed records for the five registry IDs."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "checked_at": "2026-06-15T20:45:00Z",
+      "query": "\"TA-65, A Telomerase Activator improves Cardiovascular Markers\"; \"Effect of TA-65MD on Healthy Volunteers\"",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29546832/",
+      "summary": "Title search found PMID 29546832, a 2018 TA-65 randomized crossover metabolic-syndrome publication that appears to match NCT02531334 by title, sponsor context, enrollment, intervention, and population. The exact TA-65MD healthy-volunteer title search returned no result-bearing publication for NCT02766790."
+    },
+    {
+      "source_name": "Local source and outlook records",
+      "checked_at": "2026-06-15T20:47:00Z",
+      "summary": "Reviewed Telomerase Restoration sources, studies, findings, and outlook support. The current support map already includes the 2025 TA-65 meta-analysis and several no-results registry findings, but does not include PMID 29546832 as a direct source. The NCT02531334 no-results finding should be reviewed before retirement or conversion to results_captured."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT04133454",
+      "study_id": "libella-aav-htert-alzheimer-registry",
+      "source_id": "nct-04133454",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04133454",
+      "checked_at": "2026-06-15T20:39:00Z",
+      "previous_local_status": "unknown",
+      "current_registry_status": "unknown",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2021-01-01",
+      "study_completion_date": "2021-01-01",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": true,
+      "materiality": "completion_change",
+      "public_action": "record_no_op",
+      "summary": "Structured completion dates were added from the registry's month-level January 2021 estimated primary and study completion dates; the registry still has no posted results."
+    },
+    {
+      "registry_id": "NCT04110964",
+      "study_id": "libella-aav-htert-critical-limb-ischemia-registry",
+      "source_id": "nct-04110964",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04110964",
+      "checked_at": "2026-06-15T20:39:00Z",
+      "previous_local_status": "unknown",
+      "current_registry_status": "unknown",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2020-12-01",
+      "study_completion_date": "2020-12-01",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": true,
+      "materiality": "completion_change",
+      "public_action": "record_no_op",
+      "summary": "Structured completion dates were added from the registry's month-level December 2020 estimated primary and study completion dates; the registry still has no posted results."
+    },
+    {
+      "registry_id": "NCT02531334",
+      "study_id": "ta65-metabolic-syndrome-completed-registry",
+      "source_id": "nct-02531334",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02531334",
+      "checked_at": "2026-06-15T20:39:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2017-12-01",
+      "study_completion_date": "2018-06-01",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": true,
+      "materiality": "completion_change",
+      "public_action": "stage_source_or_study",
+      "summary": "Structured completion dates were added from the registry's month-level actual completion dates. The registry still has no posted registry results, but PMID 29546832 appears to match the trial and should be resolved before any no-results retirement decision."
+    },
+    {
+      "registry_id": "NCT01753674",
+      "study_id": "ta65-metabolic-syndrome-terminated-registry",
+      "source_id": "nct-01753674",
+      "registry_url": "https://clinicaltrials.gov/study/NCT01753674",
+      "checked_at": "2026-06-15T20:39:00Z",
+      "previous_local_status": "terminated",
+      "current_registry_status": "terminated",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2014-06-01",
+      "study_completion_date": "2014-06-01",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": true,
+      "materiality": "completion_change",
+      "public_action": "record_no_op",
+      "summary": "Structured completion dates were added from the registry's month-level actual June 2014 primary and study completion dates; the terminated registry still has no posted results."
+    },
+    {
+      "registry_id": "NCT02766790",
+      "study_id": "ta65md-healthy-volunteers-registry",
+      "source_id": "nct-02766790",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02766790",
+      "checked_at": "2026-06-15T20:39:00Z",
+      "previous_local_status": "unknown",
+      "current_registry_status": "unknown",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2017-05-01",
+      "study_completion_date": "2017-07-01",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": true,
+      "materiality": "completion_change",
+      "public_action": "record_no_op",
+      "summary": "Structured completion dates were added from the registry's month-level estimated May 2017 primary completion and July 2017 study completion dates; the registry still has no posted results and no exact-title PubMed result was found."
+    }
+  ],
+  "source_ids": [
+    "nct-04133454",
+    "nct-04110964",
+    "nct-02531334",
+    "nct-01753674",
+    "nct-02766790"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT04133454",
+    "https://clinicaltrials.gov/study/NCT04110964",
+    "https://clinicaltrials.gov/study/NCT02531334",
+    "https://clinicaltrials.gov/study/NCT01753674",
+    "https://clinicaltrials.gov/study/NCT02766790",
+    "https://pubmed.ncbi.nlm.nih.gov/29546832/"
+  ],
+  "notes": [
+    "ClinicalTrials.gov API v2 returned month-level completion dates for all five records. Local study records store the first day of the month to satisfy the ISO date schema while retaining month-level precision in expected_results_window prose.",
+    "Adding structured dates moves these records into retirement-candidate age bands, but no record was marked retired_no_results in this pass.",
+    "NCT02531334 is not safe to retire as no-results until PMID 29546832 is reconciled against the registry and, if matched, represented through source/finding/outlook review."
+  ],
+  "next_actions": [
+    "Resolve whether PMID 29546832 is the result publication for NCT02531334; if yes, stage a Telomerase Restoration evidence repair that adds the publication source and converts the trial watch state to results_captured.",
+    "After NCT02531334 is resolved, run final retirement sweeps for the remaining old late_no_results Telomerase Restoration records before moving any to retired_no_results.",
+    "Rerun the global trial-watch audit after the next repair so retirement candidates and active watch counts stay current."
+  ]
+}

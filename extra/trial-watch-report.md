@@ -11,10 +11,10 @@ Watch-state thresholds: active through 24 months after actual completion or 36 m
 - Missing `trial_details`: 0
 - Active result-watch records: 47
 - Late no-results records: 8
-- Retirement candidates needing final sweep or explicit decision: 0
+- Retirement candidates needing final sweep or explicit decision: 5
 - Retired no-results archive records: 2
 - Active/recruiting/planned records past local completion date: 11
-- Completed or past-completion records with unresolved no posted results: 23
+- Completed or past-completion records with unresolved no posted results: 26
 - Registry checks missing or stale: 18
 - Active result-watch records with missing or stale registry checks: 0
 - Results captured or posted locally: 86
@@ -77,18 +77,22 @@ Watch-state thresholds: active through 24 months after actual completion or 36 m
 
 ## Late No-Results Records
 
+- [TA-65 metabolic syndrome terminated registry](https://clinicaltrials.gov/study/NCT01753674) (NCT01753674): terminated; no posted results; late no-results; completion 2014-06-01 (144 months ago); registry 2026-06-15 (0 days old). Retirement sweep due.
+- [TA-65MD healthy-volunteer registry](https://clinicaltrials.gov/study/NCT02766790) (NCT02766790): unknown; no posted results; late no-results; completion 2017-05-01 (109 months ago); registry 2026-06-15 (0 days old). Retirement sweep due.
+- [TA-65 metabolic syndrome completed registry](https://clinicaltrials.gov/study/NCT02531334) (NCT02531334): completed; no posted results; late no-results; completion 2017-12-01 (102 months ago); registry 2026-06-15 (0 days old). Retirement sweep due.
+- [Libella AAV-hTERT critical limb ischemia phase 1 registry](https://clinicaltrials.gov/study/NCT04110964) (NCT04110964): unknown; no posted results; late no-results; completion 2020-12-01 (66 months ago); registry 2026-06-15 (0 days old). Retirement sweep due.
+- [Libella AAV-hTERT Alzheimer disease phase 1 registry](https://clinicaltrials.gov/study/NCT04133454) (NCT04133454): unknown; no posted results; late no-results; completion 2021-01-01 (65 months ago); registry 2026-06-15 (0 days old). Retirement sweep due.
 - [Plasmapheresis aging-biomarker registry](https://clinicaltrials.gov/study/NCT04897113) (NCT04897113): unknown; no posted results; late no-results; completion 2022-10-30 (43 months ago); registry 2026-06-09 (6 days old).
 - [FMD immunosenescence prefrail elderly registry](https://clinicaltrials.gov/study/NCT04928963) (NCT04928963): unknown; no posted results; late no-results; completion 2022-11-01 (43 months ago); registry 2026-06-15 (0 days old).
 - [KH-1 autophagy prediabetes registry](https://clinicaltrials.gov/study/NCT06445569) (NCT06445569): completed; no posted results; late no-results; completion 2023-06-08 (36 months ago); registry 2026-06-15 (0 days old).
-- [Libella AAV-hTERT Alzheimer disease phase 1 registry](https://clinicaltrials.gov/study/NCT04133454) (NCT04133454): unknown; no posted results; late no-results; completion not recorded; registry 2026-06-10 (5 days old).
-- [Libella AAV-hTERT critical limb ischemia phase 1 registry](https://clinicaltrials.gov/study/NCT04110964) (NCT04110964): unknown; no posted results; late no-results; completion not recorded; registry 2026-06-10 (5 days old).
-- [TA-65 metabolic syndrome completed registry](https://clinicaltrials.gov/study/NCT02531334) (NCT02531334): completed; no posted results; late no-results; completion not recorded; registry 2026-06-10 (5 days old).
-- [TA-65 metabolic syndrome terminated registry](https://clinicaltrials.gov/study/NCT01753674) (NCT01753674): terminated; no posted results; late no-results; completion not recorded; registry 2026-06-10 (5 days old).
-- [TA-65MD healthy-volunteer registry](https://clinicaltrials.gov/study/NCT02766790) (NCT02766790): unknown; no posted results; late no-results; completion not recorded; registry 2026-06-10 (5 days old).
 
 ## Retirement Candidates
 
-No local trial records have crossed the retirement threshold without an archive decision.
+- [TA-65 metabolic syndrome terminated registry](https://clinicaltrials.gov/study/NCT01753674) (NCT01753674): terminated; no posted results; late no-results; completion 2014-06-01 (144 months ago); registry 2026-06-15 (0 days old). Retirement sweep due.
+- [TA-65MD healthy-volunteer registry](https://clinicaltrials.gov/study/NCT02766790) (NCT02766790): unknown; no posted results; late no-results; completion 2017-05-01 (109 months ago); registry 2026-06-15 (0 days old). Retirement sweep due.
+- [TA-65 metabolic syndrome completed registry](https://clinicaltrials.gov/study/NCT02531334) (NCT02531334): completed; no posted results; late no-results; completion 2017-12-01 (102 months ago); registry 2026-06-15 (0 days old). Retirement sweep due.
+- [Libella AAV-hTERT critical limb ischemia phase 1 registry](https://clinicaltrials.gov/study/NCT04110964) (NCT04110964): unknown; no posted results; late no-results; completion 2020-12-01 (66 months ago); registry 2026-06-15 (0 days old). Retirement sweep due.
+- [Libella AAV-hTERT Alzheimer disease phase 1 registry](https://clinicaltrials.gov/study/NCT04133454) (NCT04133454): unknown; no posted results; late no-results; completion 2021-01-01 (65 months ago); registry 2026-06-15 (0 days old). Retirement sweep due.
 
 ## Status Repair Candidates
 
@@ -111,6 +115,11 @@ No local trial records have crossed the retirement threshold without an archive 
 
 ## Completed Or Past-Completion With Unresolved No Posted Results
 
+- [TA-65 metabolic syndrome terminated registry](https://clinicaltrials.gov/study/NCT01753674) (NCT01753674): terminated; no posted results; late no-results; completion 2014-06-01 (144 months ago); registry 2026-06-15 (0 days old). Retirement sweep due.
+- [TA-65MD healthy-volunteer registry](https://clinicaltrials.gov/study/NCT02766790) (NCT02766790): unknown; no posted results; late no-results; completion 2017-05-01 (109 months ago); registry 2026-06-15 (0 days old). Retirement sweep due.
+- [TA-65 metabolic syndrome completed registry](https://clinicaltrials.gov/study/NCT02531334) (NCT02531334): completed; no posted results; late no-results; completion 2017-12-01 (102 months ago); registry 2026-06-15 (0 days old). Retirement sweep due.
+- [Libella AAV-hTERT critical limb ischemia phase 1 registry](https://clinicaltrials.gov/study/NCT04110964) (NCT04110964): unknown; no posted results; late no-results; completion 2020-12-01 (66 months ago); registry 2026-06-15 (0 days old). Retirement sweep due.
+- [Libella AAV-hTERT Alzheimer disease phase 1 registry](https://clinicaltrials.gov/study/NCT04133454) (NCT04133454): unknown; no posted results; late no-results; completion 2021-01-01 (65 months ago); registry 2026-06-15 (0 days old). Retirement sweep due.
 - [EPA+DHA older-adult chronic venous leg ulcer randomized trial registry](https://clinicaltrials.gov/study/NCT03576989) (NCT03576989): completed; no posted results; active watch; completion 2024-12-18 (17 months ago); registry 2026-06-02 (13 days old).
 - [ANTHEM metformin aging study](https://clinicaltrials.gov/study/NCT04264897) (NCT04264897): completed; no posted results; active watch; completion 2025-03-12 (15 months ago); registry 2026-06-14 (1 day old).
 - [Urolithin A frail older adult mitochondrial-quality registry study](https://clinicaltrials.gov/study/NCT06556706) (NCT06556706): completed; no posted results; active watch; completion 2025-04-25 (13 months ago); registry 2026-06-10 (5 days old).
@@ -130,8 +139,6 @@ No local trial records have crossed the retirement threshold without an archive 
 - [Plasmapheresis aging-biomarker registry](https://clinicaltrials.gov/study/NCT04897113) (NCT04897113): unknown; no posted results; late no-results; completion 2022-10-30 (43 months ago); registry 2026-06-09 (6 days old).
 - [FMD immunosenescence prefrail elderly registry](https://clinicaltrials.gov/study/NCT04928963) (NCT04928963): unknown; no posted results; late no-results; completion 2022-11-01 (43 months ago); registry 2026-06-15 (0 days old).
 - [KH-1 autophagy prediabetes registry](https://clinicaltrials.gov/study/NCT06445569) (NCT06445569): completed; no posted results; late no-results; completion 2023-06-08 (36 months ago); registry 2026-06-15 (0 days old).
-- [TA-65 metabolic syndrome completed registry](https://clinicaltrials.gov/study/NCT02531334) (NCT02531334): completed; no posted results; late no-results; completion not recorded; registry 2026-06-10 (5 days old).
-- [TA-65 metabolic syndrome terminated registry](https://clinicaltrials.gov/study/NCT01753674) (NCT01753674): terminated; no posted results; late no-results; completion not recorded; registry 2026-06-10 (5 days old).
 - [Cycloastragenol retinal amyloid registry](https://clinicaltrials.gov/study/NCT02530255) (NCT02530255): completed; no posted results; retired no-results archive; completion 2018-10-31 (91 months ago); registry 2026-06-15 (0 days old).
 - [Libella AAV-hTERT aging phase 1 registry study](https://clinicaltrials.gov/study/NCT04133649) (NCT04133649): unknown; no posted results; retired no-results archive; completion 2021-01-01 (65 months ago); registry 2026-06-15 (0 days old).
 
@@ -164,7 +171,7 @@ All scoped registry-linked interventional studies have trial details.
 
 - With `trial_details` but missing `why_it_matters`: 0
 - With `trial_details` but missing `expected_results_window` and not posted: 4
-- Late no-results records missing structured completion date: 5
+- Late no-results records missing structured completion date: 0
 
 ## Surveillance Use
 
