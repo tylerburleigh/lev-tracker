@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "queue_type": "field_activity_watchlist",
-  "updated_at": "2026-06-15T12:45:00Z",
+  "updated_at": "2026-06-15T16:23:52Z",
   "notes": [
     "This backlog is internal planning state for source-backed field activity discovery. It does not publish activity by itself.",
     "Use it to seed monthly field-activity sweeps and entity-scoped backfill recommendations."
@@ -15,6 +15,102 @@
     "capture_now": "Use when a primary or official syndication source gives a concrete event and date.",
     "research_more": "Use when the event is likely material but the current source is undated, secondary, social-only, or too ambiguous for public activity.",
     "exclude": "Use when the item is promotional noise, evidence-path material, or not materially relevant to field activity."
+  },
+  "learning_loop": {
+    "phase": "pilot",
+    "cadence": "after_each_sweep",
+    "minimum_pilot_sweeps": 3,
+    "completed_pilot_sweeps": 2,
+    "next_review_trigger": "After the next registry/regulatory field-activity sweep, record what the process found, missed, downgraded, and changed.",
+    "current_learning_questions": [
+      {
+        "id": "watchlist-recall",
+        "question": "Does starting from the watchlist find Calico-like entities and programs before broad search does?",
+        "why_it_matters": "The process should reduce dependence on a human remembering major field actors.",
+        "success_signal": "Each sweep records whether material candidates came from the watchlist, a discovery channel, or an unanticipated search lead.",
+        "status": "open"
+      },
+      {
+        "id": "source-type-coverage",
+        "question": "Do the discovery channels catch prize, funder, registry, regulatory, and program activity, not just company press releases?",
+        "why_it_matters": "Field activity can be material even when it is not tied to a company announcement or track surveillance pass.",
+        "success_signal": "At least one pilot sweep exercises a funder/prize source and one exercises a registry or regulatory source.",
+        "status": "open"
+      },
+      {
+        "id": "threshold-calibration",
+        "question": "Are field_anchor and material_program thresholds filtering ordinary news churn without excluding genuinely field-shaping activity?",
+        "why_it_matters": "The public activity feed should stay curated while still capturing events like Calico, Altos Labs, and major prize or funder activity.",
+        "success_signal": "Rejected or downgraded candidates are logged with a threshold reason, and repeated borderline cases lead to policy edits.",
+        "status": "open"
+      },
+      {
+        "id": "human-loop-load",
+        "question": "Is the agent recommending a small enough packet that the human can approve, reject, or revise without classifying raw search results?",
+        "why_it_matters": "The desired workflow is agent judgment with human approval on meaningful choices.",
+        "success_signal": "Candidate packets include an agent recommendation, rationale, confidence, and the specific approval question.",
+        "status": "open"
+      }
+    ],
+    "metrics_to_record": [
+      "candidate_count",
+      "capture_now_count",
+      "research_more_count",
+      "watch_only_count",
+      "below_threshold_count",
+      "captured_by_related_item_count",
+      "source_quality_exception_count",
+      "new_watchlist_entry_count",
+      "new_blindspot_control_count",
+      "human_revision_count",
+      "schema_or_workflow_change_count"
+    ],
+    "revision_triggers": [
+      {
+        "id": "missed-field-anchor",
+        "trigger": "A field_anchor event is discovered only because a human named it or because broad search found it outside the watchlist.",
+        "action": "Add the entity or source family to the watchlist, then add or revise the blindspot control that failed.",
+        "status": "watching"
+      },
+      {
+        "id": "false-positive-pressure",
+        "trigger": "Multiple capture_now recommendations are downgraded to watch_only or below_threshold in the same sweep.",
+        "action": "Tighten the noteworthiness threshold or add examples that distinguish field infrastructure from ordinary news churn.",
+        "status": "watching"
+      },
+      {
+        "id": "source-quality-drift",
+        "trigger": "A public activity recommendation relies on secondary, undated, social-only, or ambiguous sources without explicit exception handling.",
+        "action": "Downgrade the event to research_more or document the human-approved source-quality exception.",
+        "status": "watching"
+      },
+      {
+        "id": "human-review-overload",
+        "trigger": "The human is asked to classify raw leads instead of approving or revising agent recommendations.",
+        "action": "Revise the candidate packet template so the agent pre-classifies candidates and asks one bounded approval question.",
+        "status": "watching"
+      }
+    ],
+    "learning_notes": [
+      {
+        "recorded_at": "2026-06-15T15:56:30Z",
+        "related_session_id": "2026-06-15-field-activity-process-pilot",
+        "observation": "The first Calico-centered pilot exposed that field activity discovery needs explicit recall, threshold, source-type, and human-loop checks.",
+        "action_taken": "Started a three-sweep pilot learning phase and made learning questions, metrics, and revision triggers required watchlist state."
+      },
+      {
+        "recorded_at": "2026-06-15T16:02:00Z",
+        "related_session_id": "2026-06-15-funder-prize-field-activity-pilot",
+        "observation": "The funder/prize pilot confirmed the existing Hevolution and XPRIZE candidates, but broad official-source search also surfaced ARPA-H PROSPR as a major government healthspan program that was not in the watchlist.",
+        "action_taken": "Added a government program and award discovery channel, a government-program-recall blindspot control, and an ARPA-H PROSPR watchlist entry with a capture-now program-award candidate."
+      },
+      {
+        "recorded_at": "2026-06-15T16:23:52Z",
+        "related_session_id": "2026-06-15-funder-prize-field-activity-pilot",
+        "observation": "Publishing Hevolution's broad $400M healthspan commitments left the narrower HF-GRO $115M candidate technically open even though the broader item covers the public field-level significance.",
+        "action_taken": "Added a captured_by_related_item candidate classification and marked the HF-GRO candidate as consolidated into the Hevolution $400M public activity item."
+      }
+    ]
   },
   "discovery_channels": [
     {
@@ -59,6 +155,27 @@
       "example_urls": [
         "https://hevolution.com/press-releases",
         "https://www.xprize.org/competitions/healthspan",
+        "https://arpa-h.gov/explore-funding/awards"
+      ]
+    },
+    {
+      "id": "government-program-awards",
+      "label": "Government program and award directories",
+      "cadence": "quarterly",
+      "source_kinds": [
+        "grant_database",
+        "regulatory_database",
+        "press_release",
+        "other"
+      ],
+      "blindspots_covered": [
+        "government-program-recall",
+        "source-type-gap",
+        "activity-evidence-boundary"
+      ],
+      "search_guidance": "Check public agency program pages, award directories, solicitations, and awardee announcements for aging, geroscience, healthspan, and older-adult clinical-trial infrastructure.",
+      "example_urls": [
+        "https://arpa-h.gov/explore-funding/programs/prospr",
         "https://arpa-h.gov/explore-funding/awards"
       ]
     },
@@ -112,6 +229,13 @@
       "mitigation": "Maintain the field-activity watchlist and review watched company, institute, prize, and funder pages during monthly sweeps.",
       "cadence": "monthly",
       "success_signal": "The sweep starts from the watchlist and records newly discovered entities or source pages before broad web search."
+    },
+    {
+      "id": "government-program-recall",
+      "risk": "Government healthspan programs can be missed when field-activity discovery checks only company, foundation, and prize pages.",
+      "mitigation": "Review public agency program pages and award directories during quarterly field-activity sweeps, then add major aging or healthspan programs to the watchlist.",
+      "cadence": "quarterly",
+      "success_signal": "Funder/prize sweeps log at least one government program or award-directory check and record whether any major public program belongs in the candidate queue."
     },
     {
       "id": "source-type-gap",
@@ -241,7 +365,7 @@
       "priority_tier": "now",
       "status": "capture_recommended",
       "review_cadence": "quarterly",
-      "last_reviewed_at": "2026-06-15T12:45:00Z",
+      "last_reviewed_at": "2026-06-15T16:02:00Z",
       "rationale": "Large cellular rejuvenation company launch is directly analogous to Calico-like field infrastructure.",
       "official_sources": [
         {
@@ -290,7 +414,7 @@
       "priority_tier": "now",
       "status": "capture_recommended",
       "review_cadence": "quarterly",
-      "last_reviewed_at": "2026-06-15T12:45:00Z",
+      "last_reviewed_at": "2026-06-15T16:02:00Z",
       "rationale": "Company and financing activity around epigenetic reprogramming is a direct field-infrastructure signal.",
       "official_sources": [
         {
@@ -421,22 +545,46 @@
       "name": "Hevolution Foundation",
       "entity_type": "funder",
       "priority_tier": "now",
-      "status": "capture_recommended",
+      "status": "captured",
       "review_cadence": "quarterly",
-      "last_reviewed_at": "2026-06-15T12:45:00Z",
+      "last_reviewed_at": "2026-06-15T16:23:52Z",
       "rationale": "Major funder and ecosystem builder for healthspan science.",
       "official_sources": [
         {
           "label": "Hevolution press releases",
           "url": "https://hevolution.com/press-releases",
           "source_kind": "press_page"
+        },
+        {
+          "label": "Hevolution $400M funding surge release",
+          "url": "https://hevolution.com/en/web/guest/w/hevolution-foundation-transforming-healthspan-science-with-unprecedented-400m-funding-surge",
+          "source_kind": "press_release"
         }
       ],
       "candidate_events": [
         {
+          "event_id": "hevolution-400m-healthspan-commitments-2024",
+          "event_label": "Hevolution announced more than $400M committed to healthspan science",
+          "classification": "captured",
+          "occurred_on": "2024-06-10",
+          "activity_type": "funding_event",
+          "activity_lane": "scientific",
+          "scope_label": "Healthspan science funding infrastructure",
+          "noteworthiness_tier": "field_anchor",
+          "threshold_basis": [
+            "major_prize_or_funder_program",
+            "major_dedicated_funding",
+            "field_infrastructure"
+          ],
+          "source_url": "https://hevolution.com/en/web/guest/w/hevolution-foundation-transforming-healthspan-science-with-unprecedented-400m-funding-surge",
+          "source_quality": "primary_dated",
+          "rationale": "Official Hevolution release reports more than $400M committed to healthspan sciences within 21 months, including large aging biology awards and a claim to be the world's largest philanthropic funder of geroscience.",
+          "recommended_public_action": "None; live activity item exists."
+        },
+        {
           "event_id": "hevolution-hf-gro-awards-2024",
           "event_label": "Hevolution announced first HF-GRO healthspan research awards",
-          "classification": "capture_now",
+          "classification": "captured_by_related_item",
           "occurred_on": "2024-02-12",
           "activity_type": "funding_event",
           "activity_lane": "scientific",
@@ -450,7 +598,11 @@
           "source_url": "https://hevolution.com/press-releases/-/asset_publisher/mdxo/content/hevolution-announces-49-awards-to-catalyze-discovery-in-healthspan-science-through-innovative-115-million-grants-progr-1",
           "source_quality": "primary_dated",
           "rationale": "Official press release reports 49 awards and up to $115M over five years for preclinical aging biology and geroscience.",
-          "recommended_public_action": "Ask whether to add one source and one field-wide funding activity item."
+          "recommended_public_action": "None; consolidated into the broader Hevolution $400M healthspan commitments activity item.",
+          "related_activity_item_ids": [
+            "hevolution-400m-healthspan-commitments-2024"
+          ],
+          "consolidation_note": "The HF-GRO awards are relevant supporting context, but the approved Hevolution $400M field-anchor item already carries the public field-level significance."
         }
       ],
       "tags": [
@@ -525,6 +677,62 @@
         "healthspan",
         "competition",
         "field-infrastructure"
+      ]
+    },
+    {
+      "id": "arpa-h-prospr",
+      "name": "ARPA-H PROSPR",
+      "entity_type": "program",
+      "priority_tier": "now",
+      "status": "captured",
+      "review_cadence": "quarterly",
+      "last_reviewed_at": "2026-06-15T16:02:00Z",
+      "rationale": "Major U.S. government healthspan program funding biomarkers, clinical-trial infrastructure, and therapeutics aimed at aging-related outcomes.",
+      "official_sources": [
+        {
+          "label": "ARPA-H PROSPR program page",
+          "url": "https://arpa-h.gov/explore-funding/programs/prospr",
+          "source_kind": "other"
+        },
+        {
+          "label": "ARPA-H PROSPR awardee announcement",
+          "url": "https://arpa-h.gov/news-and-events/research-teams-add-more-healthy-years-americans-lives-they-age",
+          "source_kind": "press_release"
+        },
+        {
+          "label": "ARPA-H award directory",
+          "url": "https://arpa-h.gov/explore-funding/awards",
+          "source_kind": "grant_database"
+        }
+      ],
+      "candidate_events": [
+        {
+          "event_id": "arpa-h-prospr-awardees-2026",
+          "event_label": "ARPA-H announced PROSPR healthspan awardees",
+          "classification": "captured",
+          "occurred_on": "2026-02-24",
+          "activity_type": "funding_event",
+          "activity_lane": "scientific",
+          "scope_label": "Government healthspan clinical-trial infrastructure",
+          "noteworthiness_tier": "field_anchor",
+          "threshold_basis": [
+            "major_prize_or_funder_program",
+            "major_dedicated_funding",
+            "field_infrastructure",
+            "clinical_transition"
+          ],
+          "source_url": "https://arpa-h.gov/news-and-events/research-teams-add-more-healthy-years-americans-lives-they-age",
+          "source_quality": "primary_dated",
+          "rationale": "Official ARPA-H announcement reports seven PROSPR performer teams and up to $144M over five years for biomarkers, decentralized trials, and therapeutics intended to extend healthspan.",
+          "recommended_public_action": "None; live activity item exists."
+        }
+      ],
+      "tags": [
+        "arpa-h",
+        "prospr",
+        "government-program",
+        "healthspan",
+        "clinical-trial-infrastructure"
       ]
     }
   ]

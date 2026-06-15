@@ -113,12 +113,22 @@ function summarizeFieldActivityWatchlist(fieldActivityWatchlist) {
       pending_field_anchor_count: 0,
       pending_material_program_count: 0,
       watch_only_count: 0,
-      below_threshold_count: 0
+      below_threshold_count: 0,
+      consolidated_candidate_count: 0,
+      learning_phase: "unknown",
+      learning_cadence: "unknown",
+      learning_completed_pilot_sweeps: 0,
+      learning_minimum_pilot_sweeps: 0,
+      learning_open_question_count: 0,
+      learning_revision_trigger_count: 0
     };
   }
 
   const candidateEvents = (fieldActivityWatchlist.entries ?? []).flatMap((entry) => entry.candidate_events ?? []);
   const pendingEvents = candidateEvents.filter((event) => ["capture_now", "research_more"].includes(event.classification));
+  const learningLoop = fieldActivityWatchlist.learning_loop ?? {};
+  const learningQuestions = learningLoop.current_learning_questions ?? [];
+  const revisionTriggers = learningLoop.revision_triggers ?? [];
 
   return {
     path: fieldActivityWatchlistPath,
@@ -132,7 +142,14 @@ function summarizeFieldActivityWatchlist(fieldActivityWatchlist) {
     pending_field_anchor_count: pendingEvents.filter((event) => event.noteworthiness_tier === "field_anchor").length,
     pending_material_program_count: pendingEvents.filter((event) => event.noteworthiness_tier === "material_program").length,
     watch_only_count: candidateEvents.filter((event) => event.noteworthiness_tier === "watch_only").length,
-    below_threshold_count: candidateEvents.filter((event) => event.noteworthiness_tier === "below_threshold").length
+    below_threshold_count: candidateEvents.filter((event) => event.noteworthiness_tier === "below_threshold").length,
+    consolidated_candidate_count: candidateEvents.filter((event) => event.classification === "captured_by_related_item").length,
+    learning_phase: learningLoop.phase ?? "unknown",
+    learning_cadence: learningLoop.cadence ?? "unknown",
+    learning_completed_pilot_sweeps: learningLoop.completed_pilot_sweeps ?? 0,
+    learning_minimum_pilot_sweeps: learningLoop.minimum_pilot_sweeps ?? 0,
+    learning_open_question_count: learningQuestions.filter((question) => question.status === "open").length,
+    learning_revision_trigger_count: revisionTriggers.filter((trigger) => trigger.status !== "resolved").length
   };
 }
 
@@ -428,7 +445,10 @@ function formatApprovalPacket(packet) {
     `- Field-activity watchlist entries: ${packet.field_activity_watchlist.entry_count}`,
     `- Field-activity capture recommended: ${packet.field_activity_watchlist.capture_recommended_count}`,
     `- Field-activity needs primary source: ${packet.field_activity_watchlist.needs_primary_source_count}`,
-    `- Field-activity pending anchors/material programs: ${packet.field_activity_watchlist.pending_field_anchor_count}/${packet.field_activity_watchlist.pending_material_program_count}`
+    `- Field-activity pending anchors/material programs: ${packet.field_activity_watchlist.pending_field_anchor_count}/${packet.field_activity_watchlist.pending_material_program_count}`,
+    `- Field-activity consolidated candidates: ${packet.field_activity_watchlist.consolidated_candidate_count}`,
+    `- Field-activity learning phase: ${packet.field_activity_watchlist.learning_phase} (${packet.field_activity_watchlist.learning_completed_pilot_sweeps}/${packet.field_activity_watchlist.learning_minimum_pilot_sweeps} pilot sweeps)`,
+    `- Field-activity open learning questions: ${packet.field_activity_watchlist.learning_open_question_count}`
   ];
 
   if (packet.items.length === 0) {
@@ -555,6 +575,9 @@ function formatTextSummary(summary) {
     `Field-activity capture recommended: ${summary.field_activity_watchlist.capture_recommended_count}`,
     `Field-activity needs primary source: ${summary.field_activity_watchlist.needs_primary_source_count}`,
     `Field-activity pending anchors/material programs: ${summary.field_activity_watchlist.pending_field_anchor_count}/${summary.field_activity_watchlist.pending_material_program_count}`,
+    `Field-activity consolidated candidates: ${summary.field_activity_watchlist.consolidated_candidate_count}`,
+    `Field-activity learning phase: ${summary.field_activity_watchlist.learning_phase} (${summary.field_activity_watchlist.learning_completed_pilot_sweeps}/${summary.field_activity_watchlist.learning_minimum_pilot_sweeps} pilot sweeps)`,
+    `Field-activity open learning questions: ${summary.field_activity_watchlist.learning_open_question_count}`,
     `Next action: ${summary.required_next_action}`
   ];
 

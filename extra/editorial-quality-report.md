@@ -61,12 +61,15 @@ Open reconciliation decisions: 0
 Decided without agent assessment: 0
 Required human approvals unresolved: 0
 Open checklist items: 4
-Field-activity watchlist entries: 6
-Field-activity discovery channels: 5
-Field-activity blindspot controls: 6
-Field-activity capture recommended: 7
+Field-activity watchlist entries: 7
+Field-activity discovery channels: 6
+Field-activity blindspot controls: 7
+Field-activity capture recommended: 6
 Field-activity needs primary source: 1
-Field-activity pending anchors/material programs: 1/7
+Field-activity pending anchors/material programs: 1/6
+Field-activity consolidated candidates: 1
+Field-activity learning phase: pilot (2/3 pilot sweeps)
+Field-activity open learning questions: 4
 Next action: Keep the July edition internal until June closes, then finalize the provisional classifications for the 17 known June public updates and write the public 2026-07 edition from reviewed records.
 ```
 

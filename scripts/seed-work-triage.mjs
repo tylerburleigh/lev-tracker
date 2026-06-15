@@ -416,6 +416,18 @@ function buildStateOfFieldWorkflowItems(stateOfFieldWorkflow, fieldActivityWatch
           {
             name: "field_activity_pending_material_program_count",
             value: fieldActivityWatchlistSummary.pendingMaterialProgramCount
+          },
+          {
+            name: "field_activity_consolidated_candidate_count",
+            value: fieldActivityWatchlistSummary.consolidatedCandidateCount
+          },
+          {
+            name: "field_activity_learning_phase",
+            value: fieldActivityWatchlistSummary.learningPhase
+          },
+          {
+            name: "field_activity_learning_open_question_count",
+            value: fieldActivityWatchlistSummary.learningOpenQuestionCount
           }
         ]
       });
@@ -584,6 +596,9 @@ function summarizeFieldActivityWatchlist(fieldActivityWatchlist) {
   const entries = fieldActivityWatchlist.entries ?? [];
   const candidateEvents = entries.flatMap((entry) => entry.candidate_events ?? []);
   const pendingEvents = candidateEvents.filter((event) => ["capture_now", "research_more"].includes(event.classification));
+  const learningLoop = fieldActivityWatchlist.learning_loop ?? {};
+  const learningQuestions = learningLoop.current_learning_questions ?? [];
+  const revisionTriggers = learningLoop.revision_triggers ?? [];
 
   return {
     entryCount: entries.length,
@@ -594,7 +609,14 @@ function summarizeFieldActivityWatchlist(fieldActivityWatchlist) {
     pendingFieldAnchorCount: pendingEvents.filter((event) => event.noteworthiness_tier === "field_anchor").length,
     pendingMaterialProgramCount: pendingEvents.filter((event) => event.noteworthiness_tier === "material_program").length,
     watchOnlyCount: candidateEvents.filter((event) => event.noteworthiness_tier === "watch_only").length,
-    belowThresholdCount: candidateEvents.filter((event) => event.noteworthiness_tier === "below_threshold").length
+    belowThresholdCount: candidateEvents.filter((event) => event.noteworthiness_tier === "below_threshold").length,
+    consolidatedCandidateCount: candidateEvents.filter((event) => event.classification === "captured_by_related_item").length,
+    learningPhase: learningLoop.phase ?? "unknown",
+    learningCadence: learningLoop.cadence ?? "unknown",
+    learningCompletedPilotSweeps: learningLoop.completed_pilot_sweeps ?? 0,
+    learningMinimumPilotSweeps: learningLoop.minimum_pilot_sweeps ?? 0,
+    learningOpenQuestionCount: learningQuestions.filter((question) => question.status === "open").length,
+    learningRevisionTriggerCount: revisionTriggers.filter((trigger) => trigger.status !== "resolved").length
   };
 }
 
@@ -674,6 +696,30 @@ function buildFieldActivitySweepItem(sessions, activityItems, fieldActivityWatch
       {
         name: "field_activity_pending_material_program_count",
         value: watchlistSummary.pendingMaterialProgramCount
+      },
+      {
+        name: "field_activity_consolidated_candidate_count",
+        value: watchlistSummary.consolidatedCandidateCount
+      },
+      {
+        name: "field_activity_learning_phase",
+        value: watchlistSummary.learningPhase
+      },
+      {
+        name: "field_activity_completed_pilot_sweeps",
+        value: watchlistSummary.learningCompletedPilotSweeps
+      },
+      {
+        name: "field_activity_minimum_pilot_sweeps",
+        value: watchlistSummary.learningMinimumPilotSweeps
+      },
+      {
+        name: "field_activity_learning_open_question_count",
+        value: watchlistSummary.learningOpenQuestionCount
+      },
+      {
+        name: "field_activity_revision_trigger_count",
+        value: watchlistSummary.learningRevisionTriggerCount
       }
     ]
   });
@@ -895,6 +941,13 @@ async function main() {
       field_activity_pending_material_program_count: fieldActivityWatchlistSummary.pendingMaterialProgramCount,
       field_activity_watch_only_count: fieldActivityWatchlistSummary.watchOnlyCount,
       field_activity_below_threshold_count: fieldActivityWatchlistSummary.belowThresholdCount,
+      field_activity_consolidated_candidate_count: fieldActivityWatchlistSummary.consolidatedCandidateCount,
+      field_activity_learning_phase: fieldActivityWatchlistSummary.learningPhase,
+      field_activity_learning_cadence: fieldActivityWatchlistSummary.learningCadence,
+      field_activity_completed_pilot_sweeps: fieldActivityWatchlistSummary.learningCompletedPilotSweeps,
+      field_activity_minimum_pilot_sweeps: fieldActivityWatchlistSummary.learningMinimumPilotSweeps,
+      field_activity_open_learning_question_count: fieldActivityWatchlistSummary.learningOpenQuestionCount,
+      field_activity_revision_trigger_count: fieldActivityWatchlistSummary.learningRevisionTriggerCount,
       unnormalized_intervention_id_count: missingInterventions.missingIdCount,
       unnormalized_intervention_reference_count: missingInterventions.missingReferenceCount
     },

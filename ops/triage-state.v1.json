@@ -1,26 +1,33 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-15T15:39:27.041Z",
+  "generated_at": "2026-06-15T16:25:48.145Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-15T15:39:26.909Z",
-    "research_priority_queue_updated_at": "2026-06-15T15:39:26.909Z",
+    "research_coverage_status_updated_at": "2026-06-15T16:25:48.016Z",
+    "research_priority_queue_updated_at": "2026-06-15T16:25:48.016Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
     "surveillance_recent_queue_count": 38,
     "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 0,
-    "field_activity_watchlist_updated_at": "2026-06-15T12:45:00Z",
-    "field_activity_watchlist_entry_count": 6,
-    "field_activity_discovery_channel_count": 5,
-    "field_activity_blindspot_control_count": 6,
-    "field_activity_capture_recommended_count": 7,
+    "field_activity_watchlist_updated_at": "2026-06-15T16:23:52Z",
+    "field_activity_watchlist_entry_count": 7,
+    "field_activity_discovery_channel_count": 6,
+    "field_activity_blindspot_control_count": 7,
+    "field_activity_capture_recommended_count": 6,
     "field_activity_needs_primary_source_count": 1,
     "field_activity_pending_field_anchor_count": 1,
-    "field_activity_pending_material_program_count": 7,
+    "field_activity_pending_material_program_count": 6,
     "field_activity_watch_only_count": 0,
     "field_activity_below_threshold_count": 0,
+    "field_activity_consolidated_candidate_count": 1,
+    "field_activity_learning_phase": "pilot",
+    "field_activity_learning_cadence": "after_each_sweep",
+    "field_activity_completed_pilot_sweeps": 2,
+    "field_activity_minimum_pilot_sweeps": 3,
+    "field_activity_open_learning_question_count": 4,
+    "field_activity_revision_trigger_count": 4,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
   },
@@ -105,11 +112,11 @@
         },
         {
           "name": "field_activity_watchlist_entry_count",
-          "value": 6
+          "value": 7
         },
         {
           "name": "field_activity_capture_recommended_count",
-          "value": 7
+          "value": 6
         },
         {
           "name": "field_activity_needs_primary_source_count",
@@ -121,7 +128,19 @@
         },
         {
           "name": "field_activity_pending_material_program_count",
-          "value": 7
+          "value": 6
+        },
+        {
+          "name": "field_activity_consolidated_candidate_count",
+          "value": 1
+        },
+        {
+          "name": "field_activity_learning_phase",
+          "value": "pilot"
+        },
+        {
+          "name": "field_activity_learning_open_question_count",
+          "value": 4
         }
       ]
     }

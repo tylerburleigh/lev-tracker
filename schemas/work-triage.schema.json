@@ -45,6 +45,13 @@
         "field_activity_pending_material_program_count",
         "field_activity_watch_only_count",
         "field_activity_below_threshold_count",
+        "field_activity_consolidated_candidate_count",
+        "field_activity_learning_phase",
+        "field_activity_learning_cadence",
+        "field_activity_completed_pilot_sweeps",
+        "field_activity_minimum_pilot_sweeps",
+        "field_activity_open_learning_question_count",
+        "field_activity_revision_trigger_count",
         "unnormalized_intervention_id_count",
         "unnormalized_intervention_reference_count"
       ],
@@ -115,6 +122,32 @@
           "minimum": 0
         },
         "field_activity_below_threshold_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "field_activity_consolidated_candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "field_activity_learning_phase": {
+          "type": "string"
+        },
+        "field_activity_learning_cadence": {
+          "type": "string"
+        },
+        "field_activity_completed_pilot_sweeps": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "field_activity_minimum_pilot_sweeps": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "field_activity_open_learning_question_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "field_activity_revision_trigger_count": {
           "type": "integer",
           "minimum": 0
         },

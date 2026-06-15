@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-15-funder-prize-field-activity-pilot",
+  "name": "Funder and prize field activity pilot",
+  "mode": "field_activity",
+  "started_at": "2026-06-15T15:57:00Z",
+  "completed_at": "2026-06-15T16:02:00Z",
+  "scope": {
+    "question": "Does the field-activity process catch material funder, prize, and government program activity without flooding the public activity feed with routine grant news?",
+    "scope_label": "Funder, prize, and government healthspan program activity",
+    "entity_names": [
+      "Hevolution Foundation",
+      "XPRIZE Healthspan",
+      "ARPA-H PROSPR"
+    ],
+    "hallmark_ids": [],
+    "track_ids": []
+  },
+  "selected_via": "manual_override",
+  "outcome": "handoff_to_editorial",
+  "summary": "Piloted the funder/prize discovery path against official Hevolution, XPRIZE, and ARPA-H sources. The sweep confirmed existing capture recommendations for Hevolution HF-GRO 2024 awards, XPRIZE Healthspan launch, and XPRIZE 2025 milestone winners. It added two capture recommendations: Hevolution's June 10, 2024 announcement of more than $400M committed to healthspan science and ARPA-H's February 24, 2026 PROSPR awardee announcement for up to $144M across seven healthspan performer teams. The pilot also showed a process blindspot: ARPA-H PROSPR was discoverable through government program and award pages, not through the existing company/foundation/prize watchlist entries. Smaller grant-cohort announcements were kept out of the public queue as threshold-calibration near-misses.",
+  "next_recommended_mode": "field_activity",
+  "materiality_decision": {
+    "material_delta": "activity_only",
+    "public_update_needed": true,
+    "activity_only": true,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "field_activity",
+    "rationale": "The material items are source-backed field infrastructure and funding signals, not evidence that any intervention improves aging outcomes. Public activity additions should go through human approval as activity-only records."
+  },
+  "search_log": [
+    {
+      "source_name": "Hevolution press releases",
+      "checked_at": "2026-06-15T15:58:00Z",
+      "url": "https://hevolution.com/press-releases",
+      "summary": "Reviewed official Hevolution press-release index for healthspan grants, investments, reports, XPRIZE activity, and program announcements. The index exposed both high-threshold items and smaller routine grant-cohort items."
+    },
+    {
+      "source_name": "Hevolution HF-GRO awards release",
+      "checked_at": "2026-06-15T15:58:00Z",
+      "url": "https://hevolution.com/en/web/guest/w/hevolution-announces-49-awards-to-catalyze-discovery-in-healthspan-science-through-innovative-115-million-grants-program",
+      "summary": "Confirmed the February 12, 2024 official announcement of 49 HF-GRO awards and up to $115M over five years for aging biology and geroscience."
+    },
+    {
+      "source_name": "Hevolution $400M funding surge release",
+      "checked_at": "2026-06-15T15:58:00Z",
+      "url": "https://hevolution.com/en/web/guest/w/hevolution-foundation-transforming-healthspan-science-with-unprecedented-400m-funding-surge",
+      "summary": "Confirmed the June 10, 2024 official announcement that Hevolution had committed more than $400M to healthspan science within 21 months, including large awards to aging biology programs."
+    },
+    {
+      "source_name": "XPRIZE Healthspan competition page",
+      "checked_at": "2026-06-15T15:59:00Z",
+      "url": "https://www.xprize.org/competitions/healthspan",
+      "summary": "Confirmed XPRIZE Healthspan remains active for 2023-2030 with a $101M prize purse, Hevolution as co-title sponsor, and healthspan endpoints around muscle, cognitive, and immune function."
+    },
+    {
+      "source_name": "XPRIZE Healthspan milestone winners release",
+      "checked_at": "2026-06-15T15:59:00Z",
+      "url": "https://www.xprize.org/news/101m-xprize-healthspan-awards-first-milestone-winners-driving-toward-revolutionary-healthy-aging-advances",
+      "summary": "Confirmed the May 12, 2025 official milestone-winner announcement, including over 600 registered teams, top 100 semifinalists, and top 40 Healthspan teams selected as Milestone 1 awardees."
+    },
+    {
+      "source_name": "XPRIZE Healthspan 2025 qualified teams book page",
+      "checked_at": "2026-06-15T15:59:00Z",
+      "url": "https://www.xprize.org/news/xprize-healthspan-qualified-teams-book-2025",
+      "summary": "Confirmed the 2025 qualified-teams context and that the Milestone 2 submission deadline was expected for April 2026, with no official finalist announcement found before the June 15, 2026 sweep date."
+    },
+    {
+      "source_name": "ARPA-H PROSPR launch and program pages",
+      "checked_at": "2026-06-15T16:00:00Z",
+      "url": "https://arpa-h.gov/explore-funding/programs/prospr",
+      "summary": "Confirmed PROSPR is an ARPA-H program focused on healthspan, biomarkers, in-home data collection, and clinical-trial protocols for aging-related outcomes."
+    },
+    {
+      "source_name": "ARPA-H PROSPR awardee announcement and award directory",
+      "checked_at": "2026-06-15T16:00:00Z",
+      "url": "https://arpa-h.gov/news-and-events/research-teams-add-more-healthy-years-americans-lives-they-age",
+      "summary": "Confirmed the February 24, 2026 official announcement of seven PROSPR performer teams and up to $144M over five years, including therapeutic and trial-infrastructure programs aimed at extending healthspan."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "Hevolution Saudi aging research grants, January 5, 2025",
+      "title": "Hevolution Foundation Grows Saudi Aging Research, Funding 13 New Scientists with 6.5 Million SAR in grants",
+      "url": "https://hevolution.com/en/web/guest/w/hevolution-foundation-grows-saudi-aging-research-funding-13-new-scientists-with-6.5-million-sar-in-grants",
+      "decision": "context_only",
+      "reason": "Official and relevant, but the smaller local grant cohort is below the public field-activity threshold compared with Hevolution's larger field-shaping program and funding announcements."
+    },
+    {
+      "reference": "Hevolution/AFAR second cohort, April 24, 2024",
+      "title": "Announcing the Second Cohort of Hevolution/AFAR New Investigator Awards Recipients in Aging Biology and Geroscience Research",
+      "url": "https://hevolution.com/en/web/guest/w/announcing-the-second-cohort-of-hevolution/afar-new-investigator-awards-recipients-in-aging-biology-and-geroscience-research",
+      "decision": "context_only",
+      "reason": "Official and aging-relevant, but this is a routine cohort announcement relative to the public threshold; keep as source context unless a broader funder-program record needs supporting detail."
+    },
+    {
+      "reference": "Hevolution/Vandria Series A extension, August 21, 2024",
+      "title": "Hevolution Foundation and Dolby Family Ventures join Vandria's 2nd Series A closing",
+      "url": "https://hevolution.com/en/web/guest/w/hevolution-foundation-and-dolby-family-ventures-join-vandria-s-2nd-series-a-closing-bringing-the-total-round-to-30.7m-chf-28.3m-to-progress-the-mitophagy-inducer-vna-318-into-cns-clinical-development",
+      "decision": "context_only",
+      "reason": "Relevant to mitophagy program activity, but it is narrower and should be handled through track surveillance if needed; this funder/prize pilot kept the public queue focused on field-wide funding infrastructure."
+    }
+  ],
+  "source_urls": [
+    "https://hevolution.com/press-releases",
+    "https://hevolution.com/en/web/guest/w/hevolution-announces-49-awards-to-catalyze-discovery-in-healthspan-science-through-innovative-115-million-grants-program",
+    "https://hevolution.com/en/web/guest/w/hevolution-foundation-transforming-healthspan-science-with-unprecedented-400m-funding-surge",
+    "https://www.xprize.org/competitions/healthspan",
+    "https://www.xprize.org/news/101m-xprize-healthspan-awards-first-milestone-winners-driving-toward-revolutionary-healthy-aging-advances",
+    "https://www.xprize.org/news/xprize-healthspan-qualified-teams-book-2025",
+    "https://arpa-h.gov/news-and-events/arpa-h-launches-new-program-aimed-extending-healthspan-americans",
+    "https://arpa-h.gov/explore-funding/programs/prospr",
+    "https://arpa-h.gov/news-and-events/research-teams-add-more-healthy-years-americans-lives-they-age",
+    "https://arpa-h.gov/explore-funding/awards"
+  ],
+  "notes": [
+    "Learning-loop result: funder/prize coverage should explicitly include government program and award-directory checks.",
+    "Threshold result: small or routine grant cohorts should be logged as context unless they create or redirect meaningful field infrastructure.",
+    "Boundary result: PROSPR and XPRIZE are field activity, not evidence of benefit; finalist/team progress should route to trial or evidence review only when primary trial records or result sources exist.",
+    "Follow-up completed on 2026-06-15T16:09:11Z: public activity records were added for Hevolution's $400M healthspan commitments and ARPA-H PROSPR's 2026 awardee announcement after human approval.",
+    "System lesson recorded on 2026-06-15T16:23:52Z: approved broad field-anchor activity can absorb narrower same-entity candidates, so the watchlist now uses captured_by_related_item instead of leaving covered candidates in capture_now."
+  ],
+  "next_actions": [
+    "Ask whether the already queued XPRIZE Healthspan launch and milestone-winner items should be captured as separate public activity items or consolidated around one broader field-anchor event.",
+    "Run the remaining registry/regulatory pilot sweep before moving the field-activity process out of pilot."
+  ]
+}

@@ -12,6 +12,7 @@
     "source_quality_policy",
     "discovery_channels",
     "blindspot_controls",
+    "learning_loop",
     "entries"
   ],
   "properties": {
@@ -92,6 +93,9 @@
       "items": {
         "$ref": "#/$defs/blindspotControl"
       }
+    },
+    "learning_loop": {
+      "$ref": "#/$defs/learningLoop"
     }
   },
   "$defs": {
@@ -192,6 +196,160 @@
           ]
         },
         "success_signal": {
+          "type": "string"
+        }
+      }
+    },
+    "learningLoop": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "phase",
+        "cadence",
+        "minimum_pilot_sweeps",
+        "completed_pilot_sweeps",
+        "next_review_trigger",
+        "current_learning_questions",
+        "metrics_to_record",
+        "revision_triggers",
+        "learning_notes"
+      ],
+      "properties": {
+        "phase": {
+          "enum": [
+            "pilot",
+            "stabilizing",
+            "stable"
+          ]
+        },
+        "cadence": {
+          "enum": [
+            "after_each_sweep",
+            "monthly",
+            "quarterly"
+          ]
+        },
+        "minimum_pilot_sweeps": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "completed_pilot_sweeps": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "next_review_trigger": {
+          "type": "string"
+        },
+        "current_learning_questions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/learningQuestion"
+          }
+        },
+        "metrics_to_record": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "revision_triggers": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/revisionTrigger"
+          }
+        },
+        "learning_notes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/learningNote"
+          }
+        }
+      }
+    },
+    "learningQuestion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "question",
+        "why_it_matters",
+        "success_signal",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "./common.schema.json#/$defs/identifier"
+        },
+        "question": {
+          "type": "string"
+        },
+        "why_it_matters": {
+          "type": "string"
+        },
+        "success_signal": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "open",
+            "answered",
+            "deferred"
+          ]
+        }
+      }
+    },
+    "revisionTrigger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "trigger",
+        "action",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "./common.schema.json#/$defs/identifier"
+        },
+        "trigger": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "watching",
+            "triggered",
+            "resolved"
+          ]
+        }
+      }
+    },
+    "learningNote": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recorded_at",
+        "observation",
+        "action_taken"
+      ],
+      "properties": {
+        "recorded_at": {
+          "$ref": "./common.schema.json#/$defs/dateTime"
+        },
+        "related_session_id": {
+          "$ref": "./common.schema.json#/$defs/identifier"
+        },
+        "observation": {
+          "type": "string"
+        },
+        "action_taken": {
           "type": "string"
         }
       }
@@ -335,7 +493,8 @@
             "research_more",
             "exclude",
             "evidence_path",
-            "captured"
+            "captured",
+            "captured_by_related_item"
           ]
         },
         "occurred_on": {
@@ -405,6 +564,16 @@
           "type": "string"
         },
         "recommended_public_action": {
+          "type": "string"
+        },
+        "related_activity_item_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "./common.schema.json#/$defs/activityItemRef"
+          },
+          "uniqueItems": true
+        },
+        "consolidation_note": {
           "type": "string"
         }
       }

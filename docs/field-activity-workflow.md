@@ -96,11 +96,13 @@ Live trial activity records must carry `trial_activity_kind`. Validation rejects
 1. Define the scope: one track, one intervention family, one entity, one funding program, one regulator, or one recurring field sweep.
 2. Pull current local context: existing sources, studies, findings, outlooks, activity items, coverage assessments, and research sessions.
 3. Start with `research/backlog/field-activity-watchlist.v1.json`, then search primary sources: registries, FDA/EMA, sponsor press pages, funder award pages, company news pages, conference pages, official blogs, competition guidelines, and PubMed only when a publication event is being treated as activity.
-4. Classify each candidate as `capture_now`, `research_more`, `exclude`, or `evidence_path`.
+4. Classify each candidate as `capture_now`, `research_more`, `exclude`, `evidence_path`, `captured`, or `captured_by_related_item`.
 5. Recommend the candidate list to the human only when the choice is meaningful. Include the proposed activity type, lane, scope label, date, source, and whether it affects the outlook.
 6. After approval, add the smallest public records needed: usually one `source` plus one `activity_item`.
 7. Record excluded near-misses in the research session when they are likely to be rediscovered.
 8. Run validation and data audits before considering the pass complete.
+
+After publishing approved activity records, run a residual-queue check for the same entity, funder, program, competition, or source family. Mark remaining candidates as still-needed, `research_more`, `exclude`, or `captured_by_related_item`. Do not leave a narrower `capture_now` item open when a broader approved field-anchor record already carries the public significance.
 
 Use a `research_session` with `mode: "field_activity"` for entity, funder, program, or monthly cross-field sweeps. Use `scope.scope_label` and `scope.entity_names` when the scope is broader than one hallmark or track.
 
@@ -112,11 +114,13 @@ Use a watchlist because broad web search alone has poor recall and inconsistent 
 - blindspot controls that state the risk, mitigation, cadence, and success signal
 - company, nonprofit, funder, prize, regulator, and program entities
 - official home pages, press pages, blogs, award databases, competition pages, guidelines, registries, and regulatory databases
-- candidate events classified as `capture_now`, `research_more`, `exclude`, `evidence_path`, or `captured`
+- candidate events classified as `capture_now`, `research_more`, `exclude`, `evidence_path`, `captured`, or `captured_by_related_item`
 - candidate noteworthiness tiers: `field_anchor`, `material_program`, `watch_only`, or `below_threshold`
 - source quality labels: `primary_dated`, `primary_undated`, `secondary_dated`, `secondary_undated`, or `not_found`
 
 During a sweep, review `capture_now` plus `field_anchor` or `material_program` first, then `research_more`, then new broad-search leads. Do not let broad search replace the watchlist; use it to add new watchlist entries or source URLs.
+
+Use `captured_by_related_item` when a relevant narrower event is intentionally consolidated into a broader public activity item. Include `related_activity_item_ids` and a short `consolidation_note`. This is not an exclusion: it records that the candidate mattered, but a separate public item would duplicate the field read.
 
 ## Blindspot Mitigation
 
@@ -130,6 +134,23 @@ Every monthly sweep should explicitly cover these failure modes:
 - track tunnel vision: field-wide events forced into weak hallmark or track mappings
 
 The controls for these risks live in `research/backlog/field-activity-watchlist.v1.json`. If a sweep finds a new blindspot, update the watchlist controls before adding more public activity records.
+
+## Learning Loop
+
+Treat the field-activity process as a pilot until it has completed at least three different sweeps: one entity/company sweep, one funder or prize sweep, and one registry or regulatory sweep. The pilot state, open learning questions, required metrics, and revision triggers live in `research/backlog/field-activity-watchlist.v1.json`.
+
+After every `mode: "field_activity"` sweep, record what the process learned before calling the pass complete:
+
+- What did the watchlist find before broad search?
+- What did broad search find that the watchlist or discovery channels missed?
+- Which candidates were downgraded to `watch_only`, `below_threshold`, or `research_more`, and why?
+- Which source-quality problems prevented publication?
+- Did the human approve the recommendation packet, reject it, or request revisions?
+- Did the sweep expose a new blindspot, source type, threshold problem, schema gap, or runbook gap?
+
+If the answer exposes a process weakness, update the system artifact that should prevent the weakness from recurring: the watchlist entry, discovery channel, blindspot control, threshold guidance, schema, triage script, or runbook. Do not leave the learning only in chat.
+
+During the pilot phase, the agent should recommend system edits when learning signals repeat. The human should be asked to approve the concrete change, not to classify raw leads from scratch.
 
 ## Source Quality
 
@@ -156,12 +177,18 @@ For each recommended event, give the human:
 - whether the event should affect outlook, usually `false`
 - recommended public action: add now, research more, exclude, or route to evidence review
 
+Add a short learning summary when the packet closes: candidates reviewed, capture-now count, research-more count, watch-only or below-threshold count, source-quality exceptions, new watchlist entries, new blindspot controls, human revisions, and any schema or workflow edits made.
+
+When the human approves a broader field-anchor item, explicitly ask whether narrower same-entity candidates should remain separate, be deferred for source work, or be marked `captured_by_related_item`. If the agent has high confidence that the broader item covers the narrower one, recommend consolidation rather than asking the human to classify it from scratch.
+
 ## Cadence
 
 - Track surveillance: check activity while reviewing a track, but do not let track surveillance be the only discovery route.
 - Monthly State of the Field prep: run a short cross-field activity sweep from the watchlist for major company, funder, partnership, regulatory, and trial-watch changes.
 - Quarterly backfill: pick one entity, funder, or program family from the watchlist and add selected historical anchor events only after checking enough of that scope to make the timeline defensible.
 - Event-triggered: when a source or user names a missing entity, run an entity-scoped sweep before adding a single isolated item.
+
+When the monthly State of the Field workflow reviews the field-activity watchlist, also check the learning-loop state. If open learning questions or revision triggers remain, include them in the agent recommendation packet rather than waiting for a separate human prompt.
 
 ## Historical Backfill
 
