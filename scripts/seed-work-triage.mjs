@@ -10,6 +10,7 @@ import {
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
 const terminalBundleStatuses = new Set(["published", "rejected"]);
+const activeStateOfFieldStatuses = new Set(["draft", "reconciling", "needs_surveillance", "in_review", "blocked"]);
 
 async function readJson(relativePath) {
   const filePath = path.join(repoRoot, relativePath);
@@ -168,6 +169,7 @@ function buildEditorialItems(activeBundles) {
 function buildEditorialRollupItem({
   publicationEvents,
   stateOfFieldEditions,
+  stateOfFieldWorkflow,
   hallmarkInsights,
   outlooks,
   statusByTrack,
@@ -201,9 +203,12 @@ function buildEditorialRollupItem({
   });
   const staleHallmarkInsightIds = hallmarkInsightFreshness.stale.map((row) => row.hallmarkId);
   const outlookMethodSurfaceGap = siteShellText.includes('label: "Forecast"') && !hasOutlookRoute;
-  const triggerMessages = [
+  const latestAffectedEventNeedsStateOfFieldReview =
     latestAffectedPublicationEvent &&
-    isAfterDate(latestAffectedPublicationEvent.published_at, latestStateOfFieldDate)
+    isAfterDate(latestAffectedPublicationEvent.published_at, latestStateOfFieldDate) &&
+    !isPublicationEventResolvedInActiveStateOfFieldWorkflow(stateOfFieldWorkflow, latestAffectedPublicationEvent.id);
+  const triggerMessages = [
+    latestAffectedEventNeedsStateOfFieldReview
       ? `Latest affected public update ${latestAffectedPublicationEvent.id} is newer than the latest state-of-field edition.`
       : undefined,
     overallOutlook &&
@@ -304,11 +309,33 @@ function buildEditorialRollupItem({
   });
 }
 
-function buildStateOfFieldWorkflowItems(stateOfFieldWorkflow) {
-  const activeStatuses = new Set(["draft", "reconciling", "needs_surveillance", "in_review", "blocked"]);
+function isPublicationEventResolvedInActiveStateOfFieldWorkflow(stateOfFieldWorkflow, publicationEventId) {
+  if (!publicationEventId) {
+    return false;
+  }
 
   return (stateOfFieldWorkflow.editions ?? [])
-    .filter((edition) => activeStatuses.has(edition.status))
+    .filter((edition) => activeStateOfFieldStatuses.has(edition.status))
+    .some((edition) => {
+      const observedIds = new Set([
+        edition.observed_public_story?.latest_publication_event_id,
+        ...(edition.observed_public_story?.related_publication_event_ids ?? [])
+      ].filter(Boolean));
+      const reconciliationItem = (edition.reconciliation_items ?? []).find(
+        (item) => item.publication_event_id === publicationEventId
+      );
+
+      return (
+        observedIds.has(publicationEventId) &&
+        reconciliationItem &&
+        reconciliationItem.decision !== "needs_decision"
+      );
+    });
+}
+
+function buildStateOfFieldWorkflowItems(stateOfFieldWorkflow) {
+  return (stateOfFieldWorkflow.editions ?? [])
+    .filter((edition) => activeStateOfFieldStatuses.has(edition.status))
     .map((edition) => {
       const openReconciliationItems = (edition.reconciliation_items ?? []).filter(
         (item) => item.decision === "needs_decision"
@@ -667,6 +694,7 @@ async function main() {
   const editorialRollupItem = buildEditorialRollupItem({
     publicationEvents,
     stateOfFieldEditions,
+    stateOfFieldWorkflow,
     hallmarkInsights,
     outlooks,
     statusByTrack,
