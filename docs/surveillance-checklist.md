@@ -21,6 +21,28 @@ Use this checklist for track-level field change checks after baseline review. A 
 
 Run `npm run audit:trials -- --track <track-id> --write` before source discovery when the scoped track has human interventional records. Use the report to seed known-trial registry checks and to identify stale registry checks.
 
+## Trial Watch State
+
+Do not let old no-result trials remain active anticipation records indefinitely. Treat the trial watchlist as a maintained state machine, not a permanent queue.
+
+Use `trial_details.watch_status` when the record needs an explicit public or workflow state:
+
+- `active_watch`: results are still reasonably anticipated, usually because the study is recruiting, active, not yet complete, recently complete, or otherwise has a documented pending-results signal.
+- `late_no_results`: the study is complete or past the expected results window, no results have been found, and it should not appear in the default active-result watch view.
+- `retired_no_results`: the study has aged past the retirement threshold, a final retirement sweep found no results, and it should remain only as archived no-results context.
+- `results_captured`: results are already represented by a publication, registry result, or reviewed source, even if the registry itself has no posted results.
+- `not_watchlisted`: the registry record is kept for source completeness but should not drive result-watch surfaces.
+
+Thresholds:
+
+- Actual completion date: keep active through 24 months after completion; classify as `late_no_results` from 24 through 48 months; classify as `retired_no_results` after 48 months only after a final retirement sweep.
+- Estimated, unknown, or stale completion date: keep active through 36 months after the recorded completion date; classify as `late_no_results` from 36 through 60 months; classify as `retired_no_results` after 60 months only after a final retirement sweep.
+- Missing structured completion date: do not retire automatically. First repair the completion-date fields or add an explicit `watch_status_reason` explaining why the local record can be classified from registry text.
+- Recruiting, active, or planned records with past estimated completion dates are status-repair candidates, not automatic retirement candidates. Re-check the registry before changing watch state.
+- Keep a record active beyond these thresholds when a durable source says results are pending, the study is a first-in-human or first older-adult milestone, the intervention is a flagship field-anchor program, or the human reviewer approves a specific exception.
+
+Before setting `retired_no_results`, complete and record a retirement sweep: current registry check, PubMed or equivalent literature search by registry ID/title/intervention/sponsor, sponsor or program source check when relevant, and a research-session note with the search terms and date. Retired records are not deleted; they remain available to broad surveillance and can be reopened if results later appear.
+
 ## Watch Sources
 
 Check only sources that can plausibly change the public state for the scoped track:
@@ -58,6 +80,7 @@ Use `docs/field-activity-workflow.md` when a surveillance pass finds company, fu
 Treat trial changes conservatively:
 
 - unchanged registry or no posted result: `no_op`, unless the public source/study record needs a factual refresh
+- old no-result trial crossing an age threshold: update `trial_details.watch_status` and the trial-watch report; use `activity_only` only if the status change itself is a notable public field event
 - recruiting, active, completed, terminated, suspended, or withdrawn status change without results: usually `activity_only`
 - newly posted registry results or linked publication results: usually `outlook_refresh` and evidence review
 - discovery of relevant missing active-trial context: usually `coverage_repair` or a staged source/study update, depending on whether it changes the public layer

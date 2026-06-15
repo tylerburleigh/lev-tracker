@@ -437,6 +437,8 @@ Track curated field events without implying efficacy.
 
 `/trials` is the standing registry-linked human-study index. It should retain original registry dates, study design, population, endpoints, result status, and timing.
 
+The default `/trials` scope should be active result anticipation. Late no-results and retired no-results records should stay accessible as explicit scopes or archive context, but they should not make the default view imply that very old trials are still expected to report soon.
+
 `/activity` is the dated external field-event feed. It should include material field events such as trial launches, trial completions, registry status changes, newly posted results, noteworthy prize or funder activity, funding, company or program updates, regulatory actions, corrections, retractions, and publication or conference events. Activity dates should be the actual event dates when known, not the date the tracker noticed or published the record.
 
 Prize, funder, company, and program news should clear the field-activity noteworthiness threshold before appearing publicly. Field anchors and material program events belong here; routine grants, hires, commentary, conference attendance, and low-signal promotional copy should stay in research notes or the internal watchlist.

@@ -1,0 +1,161 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-15-telomerase-restoration-retirement-sweep",
+  "name": "Telomerase Restoration Trial Retirement Sweep",
+  "mode": "surveillance",
+  "started_at": "2026-06-15T20:22:00Z",
+  "completed_at": "2026-06-15T20:29:00Z",
+  "scope": {
+    "question": "Do the two Telomerase Restoration retirement-candidate trials have posted registry results, indexed publications, or sponsor disclosures that should keep them out of retired no-results archive?",
+    "hallmark_ids": [
+      "telomere_attrition"
+    ],
+    "track_ids": [
+      "telomerase-restoration"
+    ],
+    "intervention_ids": [
+      "aav-htert"
+    ]
+  },
+  "selected_via": "manual_override",
+  "outcome": "activity_only",
+  "summary": "Ran the final retirement sweep for the two structured-date Telomerase Restoration retirement candidates from the trial-watch audit: NCT02530255 and NCT04133649. ClinicalTrials.gov API v2 still shows NCT02530255 completed with actual completion in 2018 and hasResults=false, and NCT04133649 unknown status with estimated January 2021 completion and hasResults=false. PubMed exact-NCT searches returned no indexed result for either registry; PubMed Libella search returned no records; broader AAV/hTERT hits were older wrong-scope vector or oncology records rather than Libella aging trial results. ClinicalTrials.gov broad queries returned the same known Libella AAV-hTERT registries and the same cycloastragenol retinal amyloid registry, all without posted results. Web and sponsor-result searches surfaced registry mirrors, database pages, and old launch/context items but no result-bearing primary disclosure. Both retirement candidates were moved from late_no_results to retired_no_results; no outlook, stage, momentum, confidence, activity item, candidate bundle, or coverage assessment update is warranted.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "activity_only",
+    "public_update_needed": true,
+    "activity_only": true,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The only public change is trial-watch presentation and archive maintenance. The external field state did not change, and no new evidence or activity item was found."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial watch audit",
+      "query": "npm run audit:trials -- --track telomerase-restoration --today 2026-06-15 --write",
+      "checked_at": "2026-06-15T20:22:00Z",
+      "summary": "Scoped report contained 8 registry-linked Telomerase Restoration studies, 2 retirement candidates, 7 late no-results records, 1 active watch record, and no stale registry checks."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "Direct checks for NCT02530255 and NCT04133649",
+      "checked_at": "2026-06-15T20:24:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT02530255",
+      "summary": "NCT02530255 remains COMPLETED with actual primary completion on 2018-10-31, actual study completion on 2018-12-31, last update posted 2019-07-05, actual enrollment 48, and hasResults=false. NCT04133649 remains UNKNOWN with last-known RECRUITING status, estimated primary and study completion in January 2021, last update posted 2019-12-10, estimated enrollment 5, and hasResults=false."
+    },
+    {
+      "source_name": "ClinicalTrials.gov API v2",
+      "query": "Libella AAV-hTERT; Telomerase Activator cycloastragenol",
+      "checked_at": "2026-06-15T20:25:00Z",
+      "url": "https://clinicaltrials.gov/api/v2/studies",
+      "summary": "The Libella query returned the same three known unknown-status Libella AAV-hTERT registries, all hasResults=false. The telomerase-activator cycloastragenol query returned NCT02530255, still completed with hasResults=false."
+    },
+    {
+      "source_name": "PubMed ESearch",
+      "query": "\"NCT02530255\"; \"NCT04133649\"; Libella[All Fields]; NCT/title/intervention/sponsor terms for cycloastragenol retinal amyloid and Libella AAV-hTERT",
+      "checked_at": "2026-06-15T20:26:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "summary": "Exact NCT searches for NCT02530255 and NCT04133649 returned no records. PubMed Libella search returned no records. The cycloastragenol retinal-amyloid result query returned no result-bearing publication for NCT02530255."
+    },
+    {
+      "source_name": "Web and sponsor-result search",
+      "query": "NCT02530255 results; NCT04133649 results; Libella AAV-hTERT aging trial results; Libella Gene Therapeutics AAV-hTERT results; site:libellagt.com NCT04133649",
+      "checked_at": "2026-06-15T20:27:00Z",
+      "url": "https://clinicaltrials.gov/study/NCT04133649",
+      "summary": "Search surfaced ClinicalTrials.gov, registry mirrors, industry/database pages, review/context pages, and old launch/news items. No sponsor, registry, publication, or durable primary page disclosed results for either retirement candidate."
+    }
+  ],
+  "trial_watch_checks": [
+    {
+      "registry_id": "NCT02530255",
+      "study_id": "cycloastragenol-retinal-amyloid-registry",
+      "source_id": "nct-02530255",
+      "registry_url": "https://clinicaltrials.gov/study/NCT02530255",
+      "checked_at": "2026-06-15T20:24:00Z",
+      "previous_local_status": "completed",
+      "current_registry_status": "completed",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2018-10-31",
+      "study_completion_date": "2018-12-31",
+      "completion_date_kind": "actual",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "Final retirement sweep found the registry still completed with no posted results and no indexed or sponsor-disclosed result. The study was moved to retired_no_results archive."
+    },
+    {
+      "registry_id": "NCT04133649",
+      "study_id": "libella-aav-htert-aging-phase1-registry",
+      "source_id": "nct-04133649",
+      "registry_url": "https://clinicaltrials.gov/study/NCT04133649",
+      "checked_at": "2026-06-15T20:24:00Z",
+      "previous_local_status": "unknown",
+      "current_registry_status": "unknown",
+      "previous_results_status": "not_posted",
+      "current_results_status": "not_posted",
+      "primary_completion_date": "2021-01-01",
+      "study_completion_date": "2021-01-01",
+      "completion_date_kind": "estimated",
+      "status_changed": false,
+      "results_changed": false,
+      "completion_date_changed": false,
+      "materiality": "unchanged",
+      "public_action": "record_no_op",
+      "summary": "Final retirement sweep found the registry still unknown status with no posted results and no indexed or sponsor-disclosed Libella AAV-hTERT aging result. The study was moved to retired_no_results archive."
+    }
+  ],
+  "excluded_sources": [
+    {
+      "reference": "ClinicalTrials.gov mirrors for NCT04133649",
+      "title": "SmartPatients, ICH GCP, CenterWatch, and other NCT04133649 mirror pages",
+      "url": "https://clinicaltrials.gov/study/NCT04133649",
+      "decision": "duplicate",
+      "reason": "Mirror pages repeated registry metadata for the Libella AAV-hTERT aging trial and did not disclose results."
+    },
+    {
+      "reference": "Industry/database pages for AAV-hTERT and Libella",
+      "title": "Pharmaceutical Technology and Synapse AAV-hTERT/Libella pages",
+      "url": "https://www.pharmaceutical-technology.com/data-insights/aav-htert-libella-gene-therapeutics-ageing-likelihood-of-approval/",
+      "decision": "context_only",
+      "reason": "The pages describe development status or database listings but do not provide primary trial results."
+    },
+    {
+      "reference": "Old Libella launch and context articles",
+      "title": "ClinicalTrialsArena, BioSpace, Fight Aging, and related Libella launch/context articles",
+      "url": "https://www.clinicaltrialsarena.com/news/libella-ageing-gene-therapy-trial/",
+      "decision": "context_only",
+      "reason": "Older news/context pages explain the trial launch or concept but do not report outcomes."
+    },
+    {
+      "reference": "PubMed broad AAV/hTERT hits",
+      "title": "PMIDs 20815258, 20213096, 18851780, 18338833, and 15248024",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "decision": "wrong_scope",
+      "reason": "The broad AAV/hTERT result set consisted of older vector, oncology, or non-Libella records rather than AAV-hTERT aging trial results."
+    }
+  ],
+  "source_ids": [
+    "nct-02530255",
+    "nct-04133649"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT02530255",
+    "https://clinicaltrials.gov/study/NCT04133649",
+    "https://clinicaltrials.gov/api/v2/studies/NCT02530255",
+    "https://clinicaltrials.gov/api/v2/studies/NCT04133649",
+    "https://pubmed.ncbi.nlm.nih.gov/"
+  ],
+  "notes": [
+    "This pass applies the trial-watch pruning policy created earlier on 2026-06-15.",
+    "Retired no-results records remain in the data and can be reopened if future registry results, linked publications, or sponsor disclosures appear.",
+    "No coverage assessment update is needed because the June 10 coverage repair already represented these records as no-results registry limitations."
+  ],
+  "next_actions": [
+    "Repair structured completion dates for the remaining late no-results Telomerase Restoration records whose dates are currently embedded in prose.",
+    "Continue ordinary surveillance for posted Libella AAV-hTERT, TA-65, telomerase-activator, or TERT mRNA results and long-term telomerase safety signals."
+  ]
+}

@@ -115,9 +115,19 @@ export default async function StudyDetailPage({ params }: StudyDetailPageProps) 
                     <p>{trial.resultsStatusLabel}</p>
                   </div>
                   <div>
+                    <strong>Watch status</strong>
+                    <p>{trial.watchStatusLabel}</p>
+                  </div>
+                  <div>
                     <strong>Result timing</strong>
                     <p>{getTrialTimingSummary(trial)}</p>
                   </div>
+                  {trial.watchStatusReason ? (
+                    <div>
+                      <strong>Watch-state note</strong>
+                      <p>{trial.watchStatusReason}</p>
+                    </div>
+                  ) : null}
                   {trial.horizonNote ? (
                     <div>
                       <strong>Why it is on watch</strong>

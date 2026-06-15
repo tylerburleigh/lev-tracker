@@ -102,6 +102,12 @@ export type SourceRecord = {
 export type TrialCompletionDateKind = "actual" | "estimated" | "unknown";
 export type TrialResultsStatus = "posted" | "not_posted" | "pending" | "unknown";
 export type TrialResultsTone = "mint" | "gold" | "blue" | "slate";
+export type TrialWatchStatus =
+  | "active_watch"
+  | "late_no_results"
+  | "retired_no_results"
+  | "results_captured"
+  | "not_watchlisted";
 
 export type TrialDetails = {
   registry_last_updated?: string;
@@ -112,6 +118,12 @@ export type TrialDetails = {
   results_status?: TrialResultsStatus;
   results_first_posted_date?: string;
   results_due_date?: string;
+  watch_status?: TrialWatchStatus;
+  watch_status_updated?: string;
+  watch_status_reason?: string;
+  retired_from_active_watch_on?: string;
+  retirement_sweep_completed?: boolean;
+  next_registry_check_due?: string;
   expected_results_window?: string;
   horizon_note?: string;
   why_it_matters?: string;
@@ -161,6 +173,11 @@ export type TrialSummary = {
   resultsStatus: TrialResultsStatus;
   resultsStatusLabel: string;
   resultsStatusTone: TrialResultsTone;
+  watchStatus: TrialWatchStatus;
+  watchStatusLabel: string;
+  watchStatusTone: TrialResultsTone;
+  watchStatusReason?: string;
+  nextRegistryCheckDue?: string;
   completionDate?: string;
   completionDateKind?: TrialCompletionDateKind;
   registryLastUpdated?: string;
@@ -796,6 +813,30 @@ const trialResultsStatusRank: Record<TrialResultsStatus, number> = {
   posted: 3
 };
 
+const trialWatchStatusLabels: Record<TrialWatchStatus, string> = {
+  active_watch: "Active watch",
+  late_no_results: "Late no-results",
+  retired_no_results: "Retired archive",
+  results_captured: "Results captured",
+  not_watchlisted: "Not watchlisted"
+};
+
+const trialWatchStatusTones: Record<TrialWatchStatus, TrialResultsTone> = {
+  active_watch: "blue",
+  late_no_results: "gold",
+  retired_no_results: "slate",
+  results_captured: "mint",
+  not_watchlisted: "slate"
+};
+
+const trialWatchStatusRank: Record<TrialWatchStatus, number> = {
+  active_watch: 0,
+  late_no_results: 1,
+  not_watchlisted: 2,
+  results_captured: 3,
+  retired_no_results: 4
+};
+
 const evidenceTierRank: Record<string, number> = {
   mortality_or_lifespan: 6,
   human_clinical_outcome: 5,
@@ -1296,8 +1337,31 @@ function getTrialResultsStatus(study: StudyRecord): TrialResultsStatus {
   return "unknown";
 }
 
+function getTrialWatchStatus(study: StudyRecord, resultsStatus: TrialResultsStatus): TrialWatchStatus {
+  if (study.trial_details?.watch_status) {
+    return study.trial_details.watch_status;
+  }
+
+  if (resultsStatus === "posted") {
+    return "results_captured";
+  }
+
+  if (resultsStatus === "pending" || ["planned", "recruiting", "active"].includes(study.status)) {
+    return "active_watch";
+  }
+
+  if (resultsStatus === "not_posted") {
+    return ["completed", "terminated", "withdrawn", "suspended"].includes(study.status)
+      ? "late_no_results"
+      : "active_watch";
+  }
+
+  return "not_watchlisted";
+}
+
 function normalizeTrial(study: StudyRecord): TrialSummary {
   const resultsStatus = getTrialResultsStatus(study);
+  const watchStatus = getTrialWatchStatus(study, resultsStatus);
   const trackNames = (study.track_ids ?? []).map((trackId) => getTrackById(trackId)?.name ?? titleizeIdentifier(trackId));
   const endpointCategories = study.endpoint_categories ?? [];
 
@@ -1321,6 +1385,11 @@ function normalizeTrial(study: StudyRecord): TrialSummary {
     resultsStatus,
     resultsStatusLabel: trialResultsStatusLabels[resultsStatus],
     resultsStatusTone: trialResultsStatusTones[resultsStatus],
+    watchStatus,
+    watchStatusLabel: trialWatchStatusLabels[watchStatus],
+    watchStatusTone: trialWatchStatusTones[watchStatus],
+    watchStatusReason: study.trial_details?.watch_status_reason,
+    nextRegistryCheckDue: study.trial_details?.next_registry_check_due,
     completionDate: getTrialCompletionDate(study),
     completionDateKind: study.trial_details?.completion_date_kind,
     registryLastUpdated: study.trial_details?.registry_last_updated,
@@ -1332,6 +1401,11 @@ function normalizeTrial(study: StudyRecord): TrialSummary {
 }
 
 function compareTrials(left: TrialSummary, right: TrialSummary) {
+  const watchOrder = trialWatchStatusRank[left.watchStatus] - trialWatchStatusRank[right.watchStatus];
+  if (watchOrder !== 0) {
+    return watchOrder;
+  }
+
   const statusOrder = trialResultsStatusRank[left.resultsStatus] - trialResultsStatusRank[right.resultsStatus];
   if (statusOrder !== 0) {
     return statusOrder;

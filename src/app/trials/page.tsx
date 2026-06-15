@@ -22,7 +22,7 @@ type TrialsIndexPageProps = {
   searchParams?: Promise<TrialSearchParams>;
 };
 
-type TrialScope = "watchlist" | "all";
+type TrialScope = "active" | "late" | "archive" | "all";
 
 const resultStatusOptions: Array<{ value: TrialResultsStatus; label: string }> = [
   { value: "not_posted", label: "No posted results" },
@@ -44,11 +44,23 @@ function isResultStatus(value: string): value is TrialResultsStatus {
 }
 
 function isTrialScope(value: string): value is TrialScope {
-  return value === "watchlist" || value === "all";
+  return value === "active" || value === "late" || value === "archive" || value === "all";
 }
 
-function isWatchRelevantTrial(trial: TrialSummary) {
-  return trial.resultsStatus === "not_posted" || trial.resultsStatus === "pending";
+function getTrialScope(trials: TrialSummary[], scope: TrialScope) {
+  if (scope === "active") {
+    return trials.filter((trial) => trial.watchStatus === "active_watch");
+  }
+
+  if (scope === "late") {
+    return trials.filter((trial) => trial.watchStatus === "late_no_results");
+  }
+
+  if (scope === "archive") {
+    return trials.filter((trial) => trial.watchStatus === "retired_no_results");
+  }
+
+  return trials;
 }
 
 function getCompletionQualifier(trial: TrialSummary) {
@@ -91,9 +103,11 @@ function getSearchableTrialText(trial: TrialSummary) {
     trial.statusLabel,
     trial.phaseLabel,
     trial.resultsStatusLabel,
+    trial.watchStatusLabel,
     trial.expectedResultsWindow,
     trial.horizonNote,
     trial.whyItMatters,
+    trial.watchStatusReason,
     ...trial.registryIds,
     ...trial.trackNames,
     ...trial.endpointLabels
@@ -108,7 +122,9 @@ export default async function TrialsIndexPage({ searchParams }: TrialsIndexPageP
   const selectedResultValue = getSingleSearchParam(resolvedSearchParams.result);
   const selectedScopeValue = getSingleSearchParam(resolvedSearchParams.scope);
   const trials = await getTrials();
-  const watchlistTrials = trials.filter(isWatchRelevantTrial);
+  const activeWatchTrials = trials.filter((trial) => trial.watchStatus === "active_watch");
+  const lateNoResultsTrials = trials.filter((trial) => trial.watchStatus === "late_no_results");
+  const retiredArchiveTrials = trials.filter((trial) => trial.watchStatus === "retired_no_results");
   const statusOptions = Array.from(new Set(trials.map((trial) => trial.status)))
     .sort((left, right) => left.localeCompare(right))
     .map((status) => ({
@@ -119,10 +135,10 @@ export default async function TrialsIndexPage({ searchParams }: TrialsIndexPageP
     query: getSingleSearchParam(resolvedSearchParams.q).trim(),
     result: isResultStatus(selectedResultValue) ? selectedResultValue : "",
     status: getSingleSearchParam(resolvedSearchParams.status),
-    scope: isTrialScope(selectedScopeValue) ? selectedScopeValue : "watchlist"
+    scope: isTrialScope(selectedScopeValue) ? selectedScopeValue : "active"
   };
   const queryNeedle = normalizeNeedle(selected.query);
-  const scopedTrials = selected.scope === "all" ? trials : watchlistTrials;
+  const scopedTrials = getTrialScope(trials, selected.scope);
   const filteredTrials = scopedTrials.filter((trial) => {
     return (
       (!queryNeedle || getSearchableTrialText(trial).includes(queryNeedle)) &&
@@ -135,8 +151,8 @@ export default async function TrialsIndexPage({ searchParams }: TrialsIndexPageP
     (trial) => trial.resultsStatus === "not_posted" || trial.resultsStatus === "pending"
   ).length;
   const postedResultsCount = trials.filter((trial) => trial.resultsStatus === "posted").length;
-  const highlightedTrials = watchlistTrials
-    .filter((trial) => trial.resultsStatus !== "posted" && Boolean(trial.whyItMatters))
+  const highlightedTrials = activeWatchTrials
+    .filter((trial) => Boolean(trial.whyItMatters))
     .slice(0, 4);
 
   return (
@@ -144,11 +160,13 @@ export default async function TrialsIndexPage({ searchParams }: TrialsIndexPageP
       <PageHero
         kicker="Trials"
         title="Human trials to watch"
-        summary="Registry-linked human studies that could change the evidence picture if results appear. The default view focuses on watchlist trials rather than every study record."
+        summary="Registry-linked human studies that could change the evidence picture if results appear. The default view focuses on active result-watch records, with late no-results and retired archive records separated."
       >
         <div className="page-hero__stats">
           <span>{trials.length} registry-linked trials</span>
-          <span>{watchlistTrials.length} on the watchlist</span>
+          <span>{activeWatchTrials.length} active watch</span>
+          <span>{lateNoResultsTrials.length} late no-results</span>
+          <span>{retiredArchiveTrials.length} retired archive</span>
           <span>{withoutPostedResultsCount} without posted results</span>
           <span>{postedResultsCount} with posted results</span>
         </div>
@@ -190,7 +208,9 @@ export default async function TrialsIndexPage({ searchParams }: TrialsIndexPageP
             <label className="track-search__field">
               <span>Scope</span>
               <select name="scope" defaultValue={selected.scope}>
-                <option value="watchlist">Watchlist</option>
+                <option value="active">Active watch</option>
+                <option value="late">Late no-results</option>
+                <option value="archive">Retired archive</option>
                 <option value="all">All registry-linked</option>
               </select>
             </label>
@@ -229,7 +249,7 @@ export default async function TrialsIndexPage({ searchParams }: TrialsIndexPageP
           </form>
           <div className="track-search__summary" aria-live="polite">
             <strong>{filteredTrials.length}</strong>
-            <span>of {scopedTrials.length} {selected.scope === "all" ? "trials" : "watchlist trials"}</span>
+            <span>of {scopedTrials.length} {selected.scope === "all" ? "trials" : "scoped trials"}</span>
           </div>
         </div>
 
@@ -261,8 +281,13 @@ export default async function TrialsIndexPage({ searchParams }: TrialsIndexPageP
               <span>{trial.population ?? "Not specified"}</span>
               <span>{trial.endpointLabels.slice(0, 3).join(" / ") || "Not specified"}</span>
               <span>
-                <span className={`trial-result-pill trial-result-pill--${trial.resultsStatusTone}`}>
-                  {trial.resultsStatusLabel}
+                <span className="trial-pill-stack">
+                  <span className={`trial-result-pill trial-result-pill--${trial.resultsStatusTone}`}>
+                    {trial.resultsStatusLabel}
+                  </span>
+                  <span className={`trial-result-pill trial-result-pill--${trial.watchStatusTone}`}>
+                    {trial.watchStatusLabel}
+                  </span>
                 </span>
               </span>
               <span>{getTrialTimingSummary(trial)}</span>

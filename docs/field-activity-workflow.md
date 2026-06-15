@@ -84,12 +84,15 @@ Use `/activity` only for notable trial field movement:
 Do not publish ordinary trial maintenance as `/activity`:
 
 - a registry was rechecked and still has no posted results
+- a no-result trial moved from active watch to late/no-results or retired/no-results because it crossed the aging threshold
 - the registry `last_updated` date changed without a meaningful status, milestone, or result change
 - completion dates shifted modestly
 - enrollment estimates changed slightly
 - a site opened or closed without changing the broader field read
 
 Live trial activity records must carry `trial_activity_kind`. Validation rejects `routine_registry_maintenance` from `/activity`. Put routine maintenance in `trial_details`, `trial_watch_checks[]`, research sessions, or `/trials` instead.
+
+Use `docs/surveillance-checklist.md#trial-watch-state` for the active, late, and retired trial-watch thresholds. `/trials` should separate active result anticipation from late no-results and retired archive records. Do not let a trial remain in active-result watch solely because no results have ever appeared.
 
 ## Agent-Led Process
 

@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-15-trial-watch-pruning-pilot",
+  "name": "Trial watch pruning pilot",
+  "mode": "field_activity",
+  "field_activity_sweep_type": "trial_activity_policy",
+  "started_at": "2026-06-15T20:05:00Z",
+  "completed_at": "2026-06-15T20:20:00Z",
+  "scope": {
+    "question": "How should old no-result trials be removed from active result anticipation without losing later result discovery?",
+    "scope_label": "Trial watch pruning",
+    "entity_names": [
+      "ClinicalTrials.gov watched trials"
+    ],
+    "hallmark_ids": [],
+    "track_ids": []
+  },
+  "selected_via": "manual_override",
+  "outcome": "activity_only",
+  "summary": "Added explicit trial watch-state support and piloted it on the current registry-linked trial inventory. The policy keeps active result anticipation separate from late no-results and retired no-results archive records. The generated audit now reports active watch, late no-results, retirement candidates, status-repair candidates, and records with captured results despite absent registry-posted results. The pilot moved ten old no-result records out of active anticipation as late_no_results, marked three published D+Q records as results_captured, and found two retirement candidates that still need a recorded final retirement sweep before archive.",
+  "next_recommended_mode": "field_activity",
+  "materiality_decision": {
+    "material_delta": "activity_only",
+    "public_update_needed": true,
+    "activity_only": true,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "field_activity",
+    "rationale": "The work changes trial-watch presentation and maintenance workflow but does not add external evidence, revise efficacy interpretation, or create public activity items."
+  },
+  "search_log": [
+    {
+      "source_name": "Local trial watch audit",
+      "checked_at": "2026-06-15T20:12:00Z",
+      "query": "npm run audit:trials -- --today 2026-06-15 --write",
+      "summary": "Generated the local trial watch report after adding watch-state classification. The report found 47 active result-watch records, 10 late no-results records, 2 retirement candidates, 0 retired archive records, 11 status-repair candidates, and 5 late no-results records missing structured completion dates."
+    },
+    {
+      "source_name": "Local study records",
+      "checked_at": "2026-06-15T20:16:00Z",
+      "summary": "Reviewed existing trial_details, registry_last_checked dates, completion dates, expected-results text, and source IDs. No external result sweep was performed in this policy pass, so no record was marked retired_no_results."
+    }
+  ],
+  "notes": [
+    "Retirement is intentionally a stricter state than late_no_results. It requires a recorded final sweep before setting retired_no_results.",
+    "The active /trials default should no longer include late_no_results or retired_no_results records.",
+    "The pilot exposed a data-quality queue: five late no-results records have old completion windows in prose but no structured completion date.",
+    "Records with published PMID evidence can be results_captured even when the registry itself has no posted results."
+  ],
+  "next_actions": [
+    "Run retirement sweeps for cycloastragenol-retinal-amyloid-registry and libella-aav-htert-aging-phase1-registry before deciding whether to set retired_no_results.",
+    "Repair structured completion dates for late no-results records whose completion windows currently live only in expected_results_window prose.",
+    "During future scoped surveillance, use the retirement-candidate and status-repair sections of extra/trial-watch-report.md before treating a no-result registry as active anticipation."
+  ]
+}

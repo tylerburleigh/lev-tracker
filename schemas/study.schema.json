@@ -158,6 +158,32 @@
         "results_due_date": {
           "$ref": "./common.schema.json#/$defs/isoDate"
         },
+        "watch_status": {
+          "type": "string",
+          "enum": [
+            "active_watch",
+            "late_no_results",
+            "retired_no_results",
+            "results_captured",
+            "not_watchlisted"
+          ]
+        },
+        "watch_status_updated": {
+          "$ref": "./common.schema.json#/$defs/isoDate"
+        },
+        "watch_status_reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "retired_from_active_watch_on": {
+          "$ref": "./common.schema.json#/$defs/isoDate"
+        },
+        "retirement_sweep_completed": {
+          "type": "boolean"
+        },
+        "next_registry_check_due": {
+          "$ref": "./common.schema.json#/$defs/isoDate"
+        },
         "expected_results_window": {
           "type": "string",
           "minLength": 1

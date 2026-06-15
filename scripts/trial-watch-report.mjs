@@ -27,6 +27,17 @@ const studyStatusLabels = {
   unknown: "unknown"
 };
 
+const watchStatusLabels = {
+  active_watch: "active watch",
+  late_no_results: "late no-results",
+  retired_no_results: "retired no-results archive",
+  results_captured: "results captured",
+  not_watchlisted: "not watchlisted"
+};
+
+const activeOperationalStatuses = new Set(["planned", "recruiting", "active"]);
+const closedOperationalStatuses = new Set(["completed", "terminated", "withdrawn", "suspended"]);
+
 function usage() {
   return `Usage:
   npm run audit:trials [-- --write] [-- --track TRACK_ID] [-- --today YYYY-MM-DD] [-- --stale-days N]
@@ -121,6 +132,15 @@ function daysBetween(leftIsoDate, rightIsoDate) {
   return Math.floor((right - left) / 86_400_000);
 }
 
+function monthsBetween(leftIsoDate, rightIsoDate) {
+  const days = daysBetween(leftIsoDate, rightIsoDate);
+  if (days === undefined) {
+    return undefined;
+  }
+
+  return Math.floor(days / 30.4375);
+}
+
 function normalizeResultStatus(study) {
   if (study.trial_details?.results_status) {
     return study.trial_details.results_status;
@@ -158,6 +178,57 @@ function latestRegistryDate(study) {
   return study.trial_details?.registry_last_checked ?? study.trial_details?.registry_last_updated;
 }
 
+function isClosedOrPastCompletion(study, date, today) {
+  return closedOperationalStatuses.has(study.status) || (date ? date <= today : false);
+}
+
+function getRetirementThresholds(study) {
+  const completionKind = study.trial_details?.completion_date_kind;
+
+  if (completionKind === "actual") {
+    return {
+      activeMonths: 24,
+      retireMonths: 48,
+      thresholdKind: "actual completion"
+    };
+  }
+
+  return {
+    activeMonths: 36,
+    retireMonths: 60,
+    thresholdKind: completionKind === "estimated" ? "estimated completion" : "unknown completion"
+  };
+}
+
+function inferWatchStatus({ study, resultStatus, completionDate: date, monthsSinceCompletion, completeOrPastCompletion }) {
+  if (study.trial_details?.watch_status) {
+    return study.trial_details.watch_status;
+  }
+
+  if (resultStatus === "posted") {
+    return "results_captured";
+  }
+
+  if (activeOperationalStatuses.has(study.status)) {
+    return "active_watch";
+  }
+
+  if (resultStatus === "not_posted" && completeOrPastCompletion) {
+    if (monthsSinceCompletion === undefined) {
+      return "late_no_results";
+    }
+
+    const thresholds = getRetirementThresholds(study);
+    return monthsSinceCompletion >= thresholds.activeMonths ? "late_no_results" : "active_watch";
+  }
+
+  if (resultStatus === "pending") {
+    return "active_watch";
+  }
+
+  return "not_watchlisted";
+}
+
 function buildTrackNames(trackTaxonomy) {
   const namesById = new Map();
 
@@ -192,16 +263,35 @@ function decorateTrial({ study, filePath, sourceRecords, options }) {
   const staleRegistryCheck =
     registryAgeDays === undefined || registryAgeDays > options.staleDays;
   const date = completionDate(study);
-  const completeOrPastCompletion =
-    study.status === "completed" || (date ? date <= options.today : false);
-  const completedNoResults = completeOrPastCompletion && resultStatus === "not_posted";
+  const completeOrPastCompletion = isClosedOrPastCompletion(study, date, options.today);
+  const monthsSinceCompletion = date ? monthsBetween(date, options.today) : undefined;
+  const thresholds = getRetirementThresholds(study);
   const resultsPosted = resultStatus === "posted";
-  const horizonCandidate =
-    !resultsPosted &&
-    (completedNoResults ||
-      study.trial_details?.expected_results_window ||
-      study.trial_details?.horizon_note ||
-      ["recruiting", "active", "planned"].includes(study.status));
+  const watchStatus = inferWatchStatus({
+    study,
+    resultStatus,
+    completionDate: date,
+    monthsSinceCompletion,
+    completeOrPastCompletion
+  });
+  const completedNoResults =
+    completeOrPastCompletion && resultStatus === "not_posted" && watchStatus !== "results_captured";
+  const statusRepairCandidate =
+    activeOperationalStatuses.has(study.status) &&
+    date !== undefined &&
+    date <= options.today &&
+    resultStatus !== "posted";
+  const retirementCandidate =
+    watchStatus !== "retired_no_results" &&
+    watchStatus !== "results_captured" &&
+    resultStatus === "not_posted" &&
+    completeOrPastCompletion &&
+    monthsSinceCompletion !== undefined &&
+    monthsSinceCompletion >= thresholds.retireMonths &&
+    !statusRepairCandidate;
+  const finalSweepDue =
+    retirementCandidate && study.trial_details?.retirement_sweep_completed !== true;
+  const horizonCandidate = watchStatus === "active_watch";
 
   return {
     study,
@@ -214,6 +304,12 @@ function decorateTrial({ study, filePath, sourceRecords, options }) {
     staleRegistryCheck,
     completedNoResults,
     resultsPosted,
+    watchStatus,
+    monthsSinceCompletion,
+    thresholds,
+    statusRepairCandidate,
+    retirementCandidate,
+    finalSweepDue,
     horizonCandidate,
     missingTrialDetails: !study.trial_details,
     missingWhyItMatters: !study.trial_details?.why_it_matters,
@@ -237,8 +333,23 @@ function countBy(items, getKey) {
 }
 
 function trialSort(left, right) {
-  const leftStatus = left.completedNoResults ? 0 : left.staleRegistryCheck ? 1 : 2;
-  const rightStatus = right.completedNoResults ? 0 : right.staleRegistryCheck ? 1 : 2;
+  const watchStatusRank = {
+    active_watch: 0,
+    late_no_results: 1,
+    retired_no_results: 2,
+    results_captured: 3,
+    not_watchlisted: 4
+  };
+  const leftStatus = left.retirementCandidate
+    ? 0
+    : left.finalSweepDue
+      ? 1
+      : watchStatusRank[left.watchStatus] ?? 5;
+  const rightStatus = right.retirementCandidate
+    ? 0
+    : right.finalSweepDue
+      ? 1
+      : watchStatusRank[right.watchStatus] ?? 5;
   if (leftStatus !== rightStatus) {
     return leftStatus - rightStatus;
   }
@@ -270,7 +381,20 @@ function formatRegistryAge(trial) {
     return trial.registryDate;
   }
 
-  return `${trial.registryDate} (${trial.registryAgeDays} days old)`;
+  return `${trial.registryDate} (${trial.registryAgeDays} ${trial.registryAgeDays === 1 ? "day" : "days"} old)`;
+}
+
+function formatCompletionAge(trial) {
+  if (!trial.completionDate || trial.monthsSinceCompletion === undefined) {
+    return formatDate(trial.completionDate);
+  }
+
+  if (trial.monthsSinceCompletion < 0) {
+    const months = Math.abs(trial.monthsSinceCompletion);
+    return `${trial.completionDate} (in ${months} ${months === 1 ? "month" : "months"})`;
+  }
+
+  return `${trial.completionDate} (${trial.monthsSinceCompletion} ${trial.monthsSinceCompletion === 1 ? "month" : "months"} ago)`;
 }
 
 function trialLine(trial) {
@@ -278,12 +402,14 @@ function trialLine(trial) {
   const ncts = (study.registry_ids ?? []).join(", ");
   const status = studyStatusLabels[study.status] ?? study.status;
   const result = resultStatusLabels[trial.resultStatus] ?? trial.resultStatus;
-  const completion = formatDate(trial.completionDate);
+  const watch = watchStatusLabels[trial.watchStatus] ?? trial.watchStatus;
+  const completion = formatCompletionAge(trial);
   const registry = formatRegistryAge(trial);
   const href = registryUrl(trial);
   const name = href ? `[${study.name}](${href})` : study.name;
+  const due = trial.finalSweepDue ? " Retirement sweep due." : "";
 
-  return `- ${name} (${ncts}): ${status}; ${result}; completion ${completion}; registry ${registry}.`;
+  return `- ${name} (${ncts}): ${status}; ${result}; ${watch}; completion ${completion}; registry ${registry}.${due}`;
 }
 
 function trackLabel(trackId, trackNames) {
@@ -303,10 +429,16 @@ function renderReport(trials, options, trackNames) {
   const scopedLabel = options.track ? ` for ${trackLabel(options.track, trackNames)}` : "";
   const missingDetails = trials.filter((trial) => trial.missingTrialDetails);
   const staleChecks = trials.filter((trial) => trial.staleRegistryCheck);
-  const openStaleChecks = staleChecks.filter((trial) => trial.resultStatus !== "posted");
+  const activeStaleChecks = staleChecks.filter((trial) => trial.watchStatus === "active_watch");
   const completedNoResults = trials.filter((trial) => trial.completedNoResults);
   const horizonCandidates = trials.filter((trial) => trial.horizonCandidate);
-  const postedResults = trials.filter((trial) => trial.resultsPosted);
+  const lateNoResults = trials.filter((trial) => trial.watchStatus === "late_no_results");
+  const retiredNoResults = trials.filter((trial) => trial.watchStatus === "retired_no_results");
+  const retirementCandidates = trials.filter((trial) => trial.retirementCandidate);
+  const statusRepairCandidates = trials.filter((trial) => trial.statusRepairCandidate);
+  const resultsCaptured = trials.filter(
+    (trial) => trial.resultsPosted || trial.watchStatus === "results_captured"
+  );
 
   lines.push(`# Trial Watch Report${scopedLabel}`);
   lines.push("");
@@ -314,16 +446,30 @@ function renderReport(trials, options, trackNames) {
   lines.push(
     `Stale registry threshold: ${options.staleDays} days. This report does not fetch current registry data.`
   );
+  lines.push(
+    "Watch-state thresholds: active through 24 months after actual completion or 36 months after estimated/unknown completion; retirement candidates after 48 or 60 months, respectively."
+  );
   lines.push("");
   lines.push("## Summary");
   lines.push("");
   lines.push(`- Registry-linked interventional studies: ${trials.length}`);
   lines.push(`- With \`trial_details\`: ${trials.length - missingDetails.length}`);
   lines.push(`- Missing \`trial_details\`: ${missingDetails.length}`);
-  lines.push(`- Completed or past-completion records with no posted results: ${completedNoResults.length}`);
+  lines.push(`- Active result-watch records: ${horizonCandidates.length}`);
+  lines.push(`- Late no-results records: ${lateNoResults.length}`);
+  lines.push(`- Retirement candidates needing final sweep or explicit decision: ${retirementCandidates.length}`);
+  lines.push(`- Retired no-results archive records: ${retiredNoResults.length}`);
+  lines.push(`- Active/recruiting/planned records past local completion date: ${statusRepairCandidates.length}`);
+  lines.push(`- Completed or past-completion records with unresolved no posted results: ${completedNoResults.length}`);
   lines.push(`- Registry checks missing or stale: ${staleChecks.length}`);
-  lines.push(`- Open watchlist records with missing or stale registry checks: ${openStaleChecks.length}`);
-  lines.push(`- Posted results recorded locally: ${postedResults.length}`);
+  lines.push(`- Active result-watch records with missing or stale registry checks: ${activeStaleChecks.length}`);
+  lines.push(`- Results captured or posted locally: ${resultsCaptured.length}`);
+  lines.push("");
+  lines.push("### Watch State");
+  lines.push("");
+  for (const [status, count] of countBy(trials, (trial) => trial.watchStatus)) {
+    lines.push(`- ${watchStatusLabels[status] ?? status}: ${count}`);
+  }
   lines.push("");
   lines.push("### Result Status");
   lines.push("");
@@ -340,15 +486,47 @@ function renderReport(trials, options, trackNames) {
 
   lines.push(
     renderSection(
-      "Field-Review Watchlist",
+      "Active Result Watch",
       horizonCandidates.sort(trialSort).slice(0, 30).map(trialLine),
-      "No current local trial watch candidates."
+      "No current local active-result watch candidates."
     )
   );
 
   lines.push(
     renderSection(
-      "Completed Or Past-Completion With No Posted Results",
+      "Late No-Results Records",
+      lateNoResults.sort(trialSort).slice(0, 40).map(trialLine),
+      "No local trial records are classified as late no-results."
+    )
+  );
+
+  lines.push(
+    renderSection(
+      "Retirement Candidates",
+      retirementCandidates.sort(trialSort).slice(0, 40).map(trialLine),
+      "No local trial records have crossed the retirement threshold without an archive decision."
+    )
+  );
+
+  lines.push(
+    renderSection(
+      "Status Repair Candidates",
+      statusRepairCandidates.sort(trialSort).slice(0, 40).map(trialLine),
+      "No active, recruiting, or planned local records are past their local completion date."
+    )
+  );
+
+  lines.push(
+    renderSection(
+      "Retired No-Results Archive",
+      retiredNoResults.sort(trialSort).slice(0, 40).map(trialLine),
+      "No local trial records are retired from active result watch."
+    )
+  );
+
+  lines.push(
+    renderSection(
+      "Completed Or Past-Completion With Unresolved No Posted Results",
       completedNoResults.sort(trialSort).map(trialLine),
       "No completed or past-completion local trial records are marked as no posted results."
     )
@@ -380,7 +558,14 @@ function renderReport(trials, options, trackNames) {
 
   const missingWhy = trials.filter((trial) => !trial.missingTrialDetails && trial.missingWhyItMatters);
   const missingWindow = trials.filter(
-    (trial) => !trial.missingTrialDetails && trial.missingExpectedWindow && !trial.resultsPosted
+    (trial) =>
+      !trial.missingTrialDetails &&
+      trial.missingExpectedWindow &&
+      !trial.resultsPosted &&
+      trial.watchStatus !== "results_captured"
+  );
+  const lateMissingCompletionDate = trials.filter(
+    (trial) => trial.watchStatus === "late_no_results" && !trial.completionDate
   );
 
   lines.push("## Detail Quality");
@@ -389,11 +574,14 @@ function renderReport(trials, options, trackNames) {
   lines.push(
     `- With \`trial_details\` but missing \`expected_results_window\` and not posted: ${missingWindow.length}`
   );
+  lines.push(`- Late no-results records missing structured completion date: ${lateMissingCompletionDate.length}`);
   lines.push("");
 
   lines.push("## Surveillance Use");
   lines.push("");
-  lines.push("- Re-check every NCT in the field-review watchlist before a scoped surveillance no-op.");
+  lines.push("- Re-check every NCT in the active result watch before a scoped surveillance no-op.");
+  lines.push("- Use late no-results records as low-priority watch context, not as public anticipation that results are still expected.");
+  lines.push("- Do not mark a trial `retired_no_results` until the retirement sweep is recorded in a research session.");
   lines.push("- Treat unchanged no-result registries as surveillance facts, not field progress.");
   lines.push("- Treat status-only changes as activity unless they alter the public interpretation.");
   lines.push("- Send posted trial results through staged evidence review before changing an outlook.");
@@ -454,7 +642,7 @@ async function main() {
   }
 
   process.stdout.write(
-    `Trial watch report: ${trials.length} trial(s), ${trials.filter((trial) => trial.missingTrialDetails).length} missing detail record(s), ${trials.filter((trial) => trial.staleRegistryCheck).length} stale or missing registry check(s), ${trials.filter((trial) => trial.staleRegistryCheck && trial.resultStatus !== "posted").length} open stale watch item(s).\n`
+    `Trial watch report: ${trials.length} trial(s), ${trials.filter((trial) => trial.missingTrialDetails).length} missing detail record(s), ${trials.filter((trial) => trial.staleRegistryCheck).length} stale or missing registry check(s), ${trials.filter((trial) => trial.staleRegistryCheck && trial.watchStatus === "active_watch").length} active stale watch item(s).\n`
   );
 }
 
