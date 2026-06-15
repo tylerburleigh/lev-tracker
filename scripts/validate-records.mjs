@@ -144,6 +144,8 @@ const requiredStateOfFieldReviewBasisKeys = new Set([
   "trial_horizon",
   "current_context"
 ]);
+const stateOfFieldTrialBoundaryPattern =
+  /\b(no posted results?|posted results?|no results?|not expected|waiting|registry|completion|completed|recruiting|active|planned|terminated|ended|trial status)\b/i;
 
 function getActivityText(value) {
   return [value.name, value.summary, value.significance_note].filter((item) => typeof item === "string").join(" ");
@@ -256,6 +258,30 @@ function validatePublicActivityPublicationEvents(publicActivityItems, publicatio
 function validateStateOfFieldEdition(relativePath, value, issues) {
   if (!relativePath.startsWith("data/content/state-of-the-field/")) {
     return;
+  }
+
+  if (value.field_change_status === "no_material_change" && (value.what_changed?.length ?? 0) > 0) {
+    issues.push(`${relativePath}: no_material_change editions must leave what_changed empty.`);
+  }
+
+  if (value.field_change_status === "material_change" && (value.what_changed?.length ?? 0) === 0) {
+    issues.push(`${relativePath}: material_change editions must include at least one what_changed item.`);
+  }
+
+  for (const [index, change] of (value.what_changed ?? []).entries()) {
+    if (change.happened_on < value.period_start || change.happened_on > value.period_end) {
+      issues.push(
+        `${relativePath}: what_changed[${index}].happened_on ${change.happened_on} falls outside ${value.period_start} to ${value.period_end}.`
+      );
+    }
+  }
+
+  for (const [index, item] of (value.trial_horizon ?? []).entries()) {
+    if (!stateOfFieldTrialBoundaryPattern.test(`${item.label} ${item.summary}`)) {
+      issues.push(
+        `${relativePath}: trial_horizon[${index}] must state a result, no-result, registry, completion, or current-status boundary.`
+      );
+    }
   }
 
   const reviewBasisItems = Array.isArray(value.review_basis?.items) ? value.review_basis.items : [];

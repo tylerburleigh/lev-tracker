@@ -337,12 +337,107 @@ function selectWorkflowEdition({ workflow, currentStory, stateOfFieldEditions, e
   };
 }
 
+const classificationChecklistIdPattern = /^classify-[a-z0-9-]+-updates$/;
+const requiredPublicationChecklistChecks = [
+  {
+    purpose: "trial audit",
+    matches: (item) => item.id === "run-trial-audit"
+  },
+  {
+    purpose: "field-activity review",
+    matches: (item) => item.id === "review-field-activity-watchlist"
+  },
+  {
+    purpose: "period update classification",
+    matches: (item) => item.id === "classify-missing-events" || classificationChecklistIdPattern.test(item.id)
+  },
+  {
+    purpose: "public edition write or revision",
+    matches: (item) => item.id === "write-public-edition" || item.id === "revise-edition-if-needed"
+  },
+  {
+    purpose: "final validation checks",
+    matches: (item) => item.id === "run-final-checks" || item.id === "run-editorial-checks"
+  }
+];
+
+function findChecklistItem(workflowEdition, matches) {
+  return (workflowEdition.checklist ?? []).find(matches);
+}
+
+function isChecklistStatusClosed(status) {
+  return ["complete", "not_applicable"].includes(status);
+}
+
+function evaluatePublicationGate({ workflowEdition, publicEdition, openDecisions, decidedItemsMissingAgentAssessment, unresolvedRequiredHumanApprovals, openChecklist }) {
+  const gateApplies = ["in_review", "published"].includes(workflowEdition.status);
+  const issues = [];
+  const today = new Date().toISOString().slice(0, 10);
+
+  if (today <= workflowEdition.period_end) {
+    issues.push(
+      `Retrospective period ${workflowEdition.period_label} is still open through ${workflowEdition.period_end}.`
+    );
+  }
+
+  if ((workflowEdition.blockers ?? []).length > 0) {
+    issues.push(`${workflowEdition.blockers.length} workflow blocker(s) remain open.`);
+  }
+
+  if (openDecisions.length > 0) {
+    issues.push(`${openDecisions.length} reconciliation item(s) still need decisions.`);
+  }
+
+  if (decidedItemsMissingAgentAssessment.length > 0) {
+    issues.push(`${decidedItemsMissingAgentAssessment.length} decided reconciliation item(s) lack agent assessment metadata.`);
+  }
+
+  if (unresolvedRequiredHumanApprovals.length > 0) {
+    issues.push(`${unresolvedRequiredHumanApprovals.length} reconciliation item(s) require unresolved human approval.`);
+  }
+
+  if (openChecklist.length > 0) {
+    issues.push(`${openChecklist.length} checklist item(s) are still open.`);
+  }
+
+  for (const check of requiredPublicationChecklistChecks) {
+    const item = findChecklistItem(workflowEdition, check.matches);
+    const status = item?.status;
+    if (!isChecklistStatusClosed(status)) {
+      const suffix = item ? ` (${item.id})` : "";
+      issues.push(`Required checklist purpose "${check.purpose}" is ${status ?? "missing"}${suffix}.`);
+    }
+  }
+
+  if (!publicEdition) {
+    issues.push(`No public edition JSON exists for ${workflowEdition.slug} at ${workflowEdition.published_edition_path}.`);
+  } else {
+    for (const field of ["period_start", "period_end", "period_label"]) {
+      if (publicEdition[field] !== workflowEdition[field]) {
+        issues.push(`Public edition ${field} (${publicEdition[field]}) does not match workflow (${workflowEdition[field]}).`);
+      }
+    }
+
+    if (!publicEdition.review_basis) {
+      issues.push("Public edition is missing review_basis.");
+    }
+  }
+
+  return {
+    status: issues.length === 0 ? "pass" : gateApplies ? "blocked" : "not_ready",
+    applies: gateApplies,
+    issue_count: issues.length,
+    issues
+  };
+}
+
 function summarizeWorkflow(workflow, currentStory, stateOfFieldEditions, fieldActivityWatchlist, activityItems) {
   const { latestEdition, workflowEdition } = selectWorkflowEdition({
     workflow,
     currentStory,
     stateOfFieldEditions
   });
+  const publicEdition = stateOfFieldEditions.find((edition) => edition.slug === workflowEdition.slug);
 
   const currentStoryEventIds = collectCurrentStoryEventIds(currentStory);
   const editionEventIds = new Set(latestEdition.related_publication_event_ids ?? []);
@@ -359,6 +454,14 @@ function summarizeWorkflow(workflow, currentStory, stateOfFieldEditions, fieldAc
     ["pending", "in_progress", "blocked"].includes(item.status)
   );
   const strictIssues = [];
+  const publicationGate = evaluatePublicationGate({
+    workflowEdition,
+    publicEdition,
+    openDecisions,
+    decidedItemsMissingAgentAssessment,
+    unresolvedRequiredHumanApprovals,
+    openChecklist
+  });
 
   if (untrackedMissing.length > 0) {
     strictIssues.push(
@@ -371,6 +474,12 @@ function summarizeWorkflow(workflow, currentStory, stateOfFieldEditions, fieldAc
   }
 
   if (["in_review", "published"].includes(workflowEdition.status)) {
+    if (publicationGate.issue_count > 0) {
+      strictIssues.push(
+        `Publication gate is ${publicationGate.status}: ${publicationGate.issues.join(" ")}`
+      );
+    }
+
     if (openDecisions.length > 0) {
       strictIssues.push(
         `${openDecisions.length} reconciliation item(s) still need decisions before the edition can be treated as in review.`
@@ -419,6 +528,7 @@ function summarizeWorkflow(workflow, currentStory, stateOfFieldEditions, fieldAc
     ),
     field_activity_watchlist: summarizeFieldActivityWatchlist(fieldActivityWatchlist),
     public_activity_lenses: summarizePublicActivityLenses(activityItems),
+    publication_gate: publicationGate,
     required_next_action: workflowEdition.required_next_action,
     strict_issues: strictIssues
   };
@@ -879,6 +989,7 @@ function formatTextSummary(summary) {
     `Public activity items: ${summary.public_activity_lenses.public_activity_item_count} (${summary.public_activity_lenses.activity_only_count} activity-only, ${summary.public_activity_lenses.assessment_changing_count} assessment-changing)`,
     `Public activity lenses: ${summary.public_activity_lenses.field_anchor_count} field anchors; ${summary.public_activity_lenses.current_movement_count} current movement; ${summary.public_activity_lenses.trial_horizon_count} trial horizon; ${summary.public_activity_lenses.historical_context_count} historical context`,
     `Public activity routed to State of Field: ${summary.public_activity_lenses.state_of_field_routed_count} (${summary.public_activity_lenses.state_of_field_routed_field_anchor_count} field anchors; ${summary.public_activity_lenses.state_of_field_routed_current_movement_count} current movement; ${summary.public_activity_lenses.state_of_field_routed_trial_horizon_count} trial horizon; ${summary.public_activity_lenses.state_of_field_routed_historical_context_count} historical context)`,
+    `Publication gate: ${summary.publication_gate.status} (${summary.publication_gate.issue_count} issue(s))`,
     `Next action: ${summary.required_next_action}`
   ];
 
@@ -892,6 +1003,13 @@ function formatTextSummary(summary) {
   if (summary.strict_issues.length > 0) {
     lines.push("", "Strict issues:");
     for (const issue of summary.strict_issues) {
+      lines.push(`- ${issue}`);
+    }
+  }
+
+  if (summary.publication_gate.issues.length > 0) {
+    lines.push("", "Publication gate issues:");
+    for (const issue of summary.publication_gate.issues) {
       lines.push(`- ${issue}`);
     }
   }
