@@ -27,16 +27,16 @@ Use `npm run sync:work-triage` only when research planning state is already curr
 
 ## Selection Rule
 
-Default to `ops/triage-state.v1.json` item rank 1.
+Default to `ops/triage-state.v1.json` `summary.top_work_item_id` when it is set. If it is null, the dispatcher found no actionable operational work; report the blocked items and do not force work through an external gate.
 
 Before acting, state the assumption if the user was vague. Example:
 
 > I’ll take the top triage item: run surveillance for ecosystem replacement.
 
-Only override rank 1 when:
+Only override the top work item when:
 
 - the user names a mode, track, bundle, or priority
-- rank 1 is blocked by external input
+- the ranked item is blocked by external input or a calendar gate
 - rank 1 conflicts with an active user instruction
 - an active editorial or publication blocker appears after triage was generated
 
@@ -46,14 +46,15 @@ The dispatcher ranks modes in this order:
 
 1. `publish`
 2. `editorial_review`
-3. `bootstrap`
-4. `coverage_repair`
-5. `surveillance`
-6. `coverage_assessment_backfill`
-7. `data_normalization`
-8. `schema_hardening`
-9. `docs_sync`
-10. `app_surface_check`
+3. `editorial_rollup`
+4. `bootstrap`
+5. `coverage_repair`
+6. `surveillance`
+7. `coverage_assessment_backfill`
+8. `data_normalization`
+9. `schema_hardening`
+10. `docs_sync`
+11. `app_surface_check`
 
 The generated surveillance queue contains tracks due for ordinary rotation. Tracks with a successful surveillance or coverage-repair pass inside the current cooldown window stay visible in `surveillance_recent_queue`, but they are not selected by default unless the user explicitly asks for a rapid follow-up.
 

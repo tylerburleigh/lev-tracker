@@ -114,6 +114,7 @@
         "top_work_item_id",
         "top_mode",
         "active_editorial_count",
+        "blocked_work_item_count",
         "ready_research_count",
         "data_hardening_count"
       ],
@@ -139,6 +140,10 @@
           ]
         },
         "active_editorial_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "blocked_work_item_count": {
           "type": "integer",
           "minimum": 0
         },

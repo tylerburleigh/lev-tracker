@@ -343,13 +343,19 @@ function buildStateOfFieldWorkflowItems(stateOfFieldWorkflow) {
       const openChecklistItems = (edition.checklist ?? []).filter((item) =>
         ["pending", "in_progress", "blocked"].includes(item.status)
       );
+      const blockedChecklistItems = openChecklistItems.filter((item) => item.status === "blocked");
+      const pendingChecklistItems = openChecklistItems.filter((item) => item.status !== "blocked");
+      const isBlockedByPeriodClose =
+        openReconciliationItems.length === 0 &&
+        blockedChecklistItems.some((item) => item.id === "wait-period-close");
+      const status = edition.status === "blocked" || isBlockedByPeriodClose ? "blocked" : "active";
 
       return compactObject({
         item_id: `state-of-field-${edition.slug}`,
         mode: "editorial_rollup",
         domain: "editorial",
         priority_tier: "now",
-        status: edition.status === "blocked" ? "blocked" : "active",
+        status,
         title: `Resolve State of the Field workflow for ${edition.period_label}`,
         rationale: `${edition.status_note} ${openReconciliationItems.length} reconciliation decision(s) and ${openChecklistItems.length} checklist item(s) remain open.`,
         default_action: edition.required_next_action,
@@ -377,6 +383,14 @@ function buildStateOfFieldWorkflowItems(stateOfFieldWorkflow) {
           {
             name: "open_checklist_item_count",
             value: openChecklistItems.length
+          },
+          {
+            name: "blocked_checklist_item_count",
+            value: blockedChecklistItems.length
+          },
+          {
+            name: "pending_checklist_item_count",
+            value: pendingChecklistItems.length
           },
           {
             name: "latest_observed_public_update",
@@ -632,9 +646,17 @@ function buildDataNormalizationItem(missingInterventions) {
   };
 }
 
+function isActionableWorkItem(item) {
+  return item.status !== "blocked";
+}
+
 function rankWorkItems(items) {
-  return items
-    .filter(Boolean)
+  const presentItems = items.filter(Boolean);
+
+  return [
+    ...presentItems.filter(isActionableWorkItem),
+    ...presentItems.filter((item) => !isActionableWorkItem(item))
+  ]
     .map((item, index) => ({
       rank: index + 1,
       ...item
@@ -720,7 +742,8 @@ async function main() {
     coverageBackfillItem,
     dataNormalizationItem
   ]);
-  const topItem = workItems[0];
+  const topItem = workItems.find(isActionableWorkItem);
+  const blockedWorkItems = workItems.filter((item) => !isActionableWorkItem(item));
 
   const triageState = {
     schema_version: "1.0.0",
@@ -759,7 +782,11 @@ async function main() {
     summary: {
       top_work_item_id: topItem?.item_id ?? null,
       top_mode: topItem?.mode ?? null,
-      active_editorial_count: editorialItems.length + stateOfFieldWorkflowItems.length + (editorialRollupItem ? 1 : 0),
+      active_editorial_count:
+        editorialItems.length +
+        stateOfFieldWorkflowItems.filter(isActionableWorkItem).length +
+        (editorialRollupItem ? 1 : 0),
+      blocked_work_item_count: blockedWorkItems.length,
       ready_research_count:
         priorityQueue.bootstrap_queue.length +
         priorityQueue.surveillance_queue.length +
@@ -768,6 +795,9 @@ async function main() {
       notes: [
         "Roadmap remains narrative context; this file is the operational dispatcher.",
         `${priorityQueue.surveillance_recent_queue?.length ?? 0} surveillance track(s) are hidden from ordinary rotation until their cooldown expires.`,
+        ...(blockedWorkItems.length > 0
+          ? [`${blockedWorkItems.length} work item(s) are blocked by external state or calendar gates.`]
+          : []),
         ...(topItem ? [] : ["No ready operational work items are currently queued."])
       ]
     },

@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-15T11:15:28.112Z",
+  "generated_at": "2026-06-15T11:56:16.887Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-15T10:33:36.246Z",
-    "research_priority_queue_updated_at": "2026-06-15T10:33:36.246Z",
+    "research_coverage_status_updated_at": "2026-06-15T11:56:16.758Z",
+    "research_priority_queue_updated_at": "2026-06-15T11:56:16.758Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
@@ -33,14 +33,17 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "state-of-field-2026-07",
-    "top_mode": "editorial_rollup",
-    "active_editorial_count": 1,
+    "top_work_item_id": null,
+    "top_mode": null,
+    "active_editorial_count": 0,
+    "blocked_work_item_count": 1,
     "ready_research_count": 0,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
-      "38 surveillance track(s) are hidden from ordinary rotation until their cooldown expires."
+      "38 surveillance track(s) are hidden from ordinary rotation until their cooldown expires.",
+      "1 work item(s) are blocked by external state or calendar gates.",
+      "No ready operational work items are currently queued."
     ]
   },
   "work_items": [
@@ -50,7 +53,7 @@
       "mode": "editorial_rollup",
       "domain": "editorial",
       "priority_tier": "now",
-      "status": "active",
+      "status": "blocked",
       "title": "Resolve State of the Field workflow for June 2026",
       "rationale": "Internal draft opened while June is still in progress. The candidate public skeleton now accounts for the current-story June updates plus six additional June public updates, but final July copy stays open until the retrospective period closes. 0 reconciliation decision(s) and 3 checklist item(s) remain open.",
       "default_action": "Keep the July edition internal until June closes, then finalize the provisional classifications for the 17 known June public updates and write the public 2026-07 edition from reviewed records.",
@@ -75,6 +78,14 @@
         {
           "name": "open_checklist_item_count",
           "value": 3
+        },
+        {
+          "name": "blocked_checklist_item_count",
+          "value": 1
+        },
+        {
+          "name": "pending_checklist_item_count",
+          "value": 2
         },
         {
           "name": "latest_observed_public_update",
