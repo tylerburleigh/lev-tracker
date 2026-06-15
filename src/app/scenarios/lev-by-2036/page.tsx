@@ -27,13 +27,13 @@ const scenarioChapters = [
     period: "2026",
     title: "The baseline is broad, not decisive",
     summary:
-      "The field has early human signals in more places, but LEV still does not look close. The useful shift is that the map becomes easier to judge: which claims are biomarker-only, which are disease-specific, and which might become aging-relevant if they replicate."
+      "The field has early human signals in more places, but LEV still does not look close. The useful shift is that the map becomes easier to judge: which claims are biomarker-only, component-confounded, disease-specific, or narrow functional signals, and which might become aging-relevant if they replicate."
   },
   {
     period: "2027-2028",
     title: "Functional endpoints become the first filter",
     summary:
-      "The scenario starts to work only if several watched programs report older-adult function, not just cleaner biomarkers. Rapalogs, nutrient-sensing programs, mitophagy or selective-autophagy approaches, repair trials, and microbiome programs either produce mobility, frailty, wound, cognition, or immune-function signals, or they fall back into the pile of interesting but non-decisive biology."
+      "The scenario starts to work only if several watched programs report older-adult function, not just cleaner biomarkers. Rapalogs, NAD/redox and nutrient-sensing programs, mitophagy or autophagy approaches, repair trials, senescence programs, and microbiome programs either produce mobility, frailty, wound, cognition, or immune-function signals, or they fall back into the pile of interesting but non-decisive biology."
   },
   {
     period: "2029-2030",
@@ -45,7 +45,7 @@ const scenarioChapters = [
     period: "2030-2032",
     title: "Repair and clearance have to replicate",
     summary:
-      "Stem-cell replacement, senescence clearance or suppression, tissue-repair biology, extracellular-vesicle approaches, and microbiome restoration need to show repeatable benefit in older adults or disease-adjacent aging settings. This is where delivery, manufacturing, immune risk, cancer risk, and long-lasting effects become more important than biological excitement."
+      "Stem-cell replacement, senescence clearance or suppression, tissue-repair biology, extracellular-vesicle and secretome approaches, and microbiome restoration need to show repeatable benefit in older adults or disease-adjacent aging settings. This is where delivery, manufacturing, product characterization, immune risk, cancer risk, and long-lasting effects become more important than biological excitement."
   },
   {
     period: "2032-2034",
@@ -118,6 +118,14 @@ const trackMilestones = [
       "The wins stay confined to narrow amyloid diseases or precursor suppression, with no broader proteostasis lesson."
   },
   {
+    trackId: "senolytics",
+    window: "2028-2031",
+    scenarioMilestone:
+      "Senolytic programs move beyond early biomarker and mixed functional signals into replicated older-adult function, disease progression, or durability benefits with usable safety.",
+    breakCondition:
+      "D+Q, fisetin, or adjacent programs keep producing mixed, subgroup-limited, short-course, or biomarker-only reads without a clear preventive-use safety case."
+  },
+  {
     trackId: "stem-cell-replacement-and-transplantation",
     window: "2029-2031",
     scenarioMilestone:
@@ -134,6 +142,14 @@ const trackMilestones = [
       "Effects remain supplement-sized, short-lived, subjective, or hard to separate from diet and baseline health."
   },
   {
+    trackId: "extracellular-vesicle-and-secretome-therapies",
+    window: "2029-2032",
+    scenarioMilestone:
+      "EV or secretome programs isolate product-defined effects from lifestyle, supplement, microneedling, or other combination protocols and show controlled functional or durability benefits.",
+    breakCondition:
+      "Signals remain cosmetic, biological-age-only, product-heterogeneous, or component-confounded, while disease trials stay small, uncontrolled, mixed, or null."
+  },
+  {
     trackId: "immune-clearance-of-senescent-cells",
     window: "2030-2032",
     scenarioMilestone:
@@ -145,7 +161,7 @@ const trackMilestones = [
     trackId: "partial-reprogramming",
     window: "2032-2034",
     scenarioMilestone:
-      "Partial reprogramming reaches bounded human evidence: localized delivery, measurable epigenetic or tissue restoration, no major safety surprise, and a plausible route to function.",
+      "Partial reprogramming moves beyond today's no-results human registry boundary into bounded human evidence: localized delivery, measurable epigenetic or tissue restoration, no major safety surprise, and a plausible route to function.",
     breakCondition:
       "Delivery, cancer risk, loss of cell identity, immune response, or weak durability keeps it preclinical."
   },
@@ -161,6 +177,7 @@ const trackMilestones = [
 
 const failureModes = [
   "Most positive results are short biomarker movements that never become long-lasting function.",
+  "Biological-age, skin, or other attractive near-aging signals stay component-confounded or product-heterogeneous.",
   "Disease-specific wins do not generalize to aging-relevant populations.",
   "Delivery and manufacturing make the strongest biological ideas too hard to use repeatedly.",
   "Safety limits appear when interventions move from severe disease into prevention or maintenance.",
@@ -298,8 +315,8 @@ export default async function LevBy2036ScenarioPage() {
             <p>
               In the successful version, older adults can receive a small set of evidence-backed maintenance
               interventions: one or two for metabolic and inflammatory risk, one for mitochondrial or proteostasis
-              resilience, one for repair or cell replacement in vulnerable tissues, and one frontier therapy that
-              resets a localized aging program without major safety cost.
+              resilience, one for senescence, repair, or cell replacement in vulnerable tissues, and one frontier
+              therapy that resets a localized aging program without major safety cost.
             </p>
             <p>
               LEV would still be a live question, not a settled fact. The difference is that the debate would move
