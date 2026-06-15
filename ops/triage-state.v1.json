@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-15T10:12:56.927Z",
+  "generated_at": "2026-06-15T10:39:50.488Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-15T10:12:56.796Z",
-    "research_priority_queue_updated_at": "2026-06-15T10:12:56.796Z",
-    "active_candidate_bundle_count": 1,
+    "research_coverage_status_updated_at": "2026-06-15T10:33:36.246Z",
+    "research_priority_queue_updated_at": "2026-06-15T10:33:36.246Z",
+    "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
-    "surveillance_recent_queue_count": 37,
+    "surveillance_recent_queue_count": 38,
     "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 0,
     "unnormalized_intervention_id_count": 0,
@@ -33,61 +33,27 @@
     ]
   },
   "summary": {
-    "top_work_item_id": "editorial_review-extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15",
-    "top_mode": "editorial_review",
+    "top_work_item_id": "state-of-field-2026-07",
+    "top_mode": "editorial_rollup",
     "active_editorial_count": 2,
     "ready_research_count": 0,
     "data_hardening_count": 0,
     "notes": [
       "Roadmap remains narrative context; this file is the operational dispatcher.",
-      "37 surveillance track(s) are hidden from ordinary rotation until their cooldown expires."
+      "38 surveillance track(s) are hidden from ordinary rotation until their cooldown expires."
     ]
   },
   "work_items": [
     {
       "rank": 1,
-      "item_id": "editorial_review-extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15",
-      "mode": "editorial_review",
-      "domain": "editorial",
-      "priority_tier": "now",
-      "status": "ready",
-      "title": "Review active staged update extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15",
-      "rationale": "Staged update extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15 is submitted, so editorial work takes precedence over new research.",
-      "default_action": "Open the admin review workflow, inspect evidence reviews and staged records, then approve, revise, or reject.",
-      "candidate_bundle_id": "extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15",
-      "runbook_path": "docs/admin-review.md",
-      "command": "npm run research:bundle -- validate --bundle extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15",
-      "source_paths": [
-        "data/candidate-bundles",
-        "docs/admin-review.md"
-      ],
-      "references": [
-        {
-          "record_type": "candidate_bundle",
-          "record_id": "extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15"
-        }
-      ],
-      "signals": [
-        {
-          "name": "lifecycle_status",
-          "value": "submitted"
-        },
-        {
-          "name": "proposed_change_count",
-          "value": 9
-        }
-      ]
-    },
-    {
-      "rank": 2,
       "item_id": "state-of-field-2026-07",
       "mode": "editorial_rollup",
       "domain": "editorial",
       "priority_tier": "now",
       "status": "active",
       "title": "Resolve State of the Field workflow for June 2026",
-      "rationale": "Internal draft opened while June is still in progress. The candidate public skeleton now accounts for the current-story June updates plus six additional June public updates, but all July reconciliation decisions stay open until the retrospective period closes. 0 reconciliation decision(s) and 3 checklist item(s) remain open.",
-      "default_action": "Keep the July edition internal until June closes, then finalize the provisional classifications for the 16 known June public updates and write the public 2026-07 edition from reviewed records.",
+      "rationale": "Internal draft opened while June is still in progress. The candidate public skeleton now accounts for the current-story June updates plus six additional June public updates, but final July copy stays open until the retrospective period closes. 0 reconciliation decision(s) and 3 checklist item(s) remain open.",
+      "default_action": "Keep the July edition internal until June closes, then finalize the provisional classifications for the 17 known June public updates and write the public 2026-07 edition from reviewed records.",
       "runbook_path": "docs/editorial-rollup.md",
       "command": "npm run state-of-field:status -- --strict",
       "source_paths": [
@@ -112,7 +78,79 @@
         },
         {
           "name": "latest_observed_public_update",
-          "value": "publish-partial-reprogramming-coverage-repair-2026-06-12-2026-06-12t13-29-16-586z"
+          "value": "publish-extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15-2026-06-15t10-33-29-045z"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "item_id": "editorial-rollup-public-summary-surfaces",
+      "mode": "editorial_rollup",
+      "domain": "editorial",
+      "priority_tier": "now",
+      "status": "ready",
+      "title": "Review public editorial rollup surfaces",
+      "rationale": "Latest affected public update publish-extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15-2026-06-15t10-33-29-045z is newer than the latest state-of-field edition. Overall outlook last_updated 2026-06-12 is older than the latest hallmark or track outlook change 2026-06-15.",
+      "default_action": "Review overall outlook, state-of-field edition, hallmark insight copy, and outlook method links; update public content only when the reviewed record warrants it.",
+      "runbook_path": "docs/editorial-rollup.md",
+      "source_paths": [
+        "data/publication-events",
+        "data/outlooks",
+        "data/content/state-of-the-field",
+        "data/content/hallmark-insights.json",
+        "src/components/site-shell.tsx",
+        "docs/editorial-rollup.md"
+      ],
+      "references": [
+        {
+          "record_type": "publication_event",
+          "record_id": "publish-extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15-2026-06-15t10-33-29-045z"
+        },
+        {
+          "record_type": "outlook",
+          "record_id": "overall-lev-outlook"
+        }
+      ],
+      "signals": [
+        {
+          "name": "trigger_count",
+          "value": 2
+        },
+        {
+          "name": "latest_affected_publication_event_id",
+          "value": "publish-extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15-2026-06-15t10-33-29-045z"
+        },
+        {
+          "name": "latest_affected_publication_event_date",
+          "value": "2026-06-15"
+        },
+        {
+          "name": "latest_state_of_field_date",
+          "value": "2026-06-12"
+        },
+        {
+          "name": "overall_outlook_last_updated",
+          "value": "2026-06-12"
+        },
+        {
+          "name": "latest_non_overall_outlook_updated",
+          "value": "2026-06-15"
+        },
+        {
+          "name": "stale_hallmark_insight_count",
+          "value": 0
+        },
+        {
+          "name": "first_stale_hallmark_insight_id",
+          "value": "none"
+        },
+        {
+          "name": "no_current_month_state_of_field",
+          "value": false
+        },
+        {
+          "name": "outlook_method_surface_gap",
+          "value": false
         }
       ]
     }

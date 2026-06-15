@@ -6,11 +6,11 @@ Overall: passed
 ## Summary
 
 - Current LEV story status: current
-- Public copy warnings: 56
+- Public copy warnings: 59
 - Reader-task audit: passed (14 passed, 0 issues, 0 warnings)
 - State of the Field workflow: draft (0 open decision(s), 0 untracked mismatch(es))
 - Hallmark insight freshness: 0 stale hallmark insight(s)
-- Top public-copy terms: durable: 14, translation: 9, functional benefit: 7, mechanistic: 6, coverage repair: 5, biomarker-heavy: 4, low confidence: 3, support map: 3
+- Top public-copy terms: durable: 15, functional benefit: 9, translation: 9, mechanistic: 6, coverage repair: 5, biomarker-heavy: 4, low confidence: 3, support map: 3
 
 ## Gates
 
@@ -23,7 +23,7 @@ Overall: passed
 - PASS: Hallmark insight summaries are reviewed after affected outlook changes
   No hallmark insight summaries are older than their latest affected public update.
 - PASS: Public copy warnings <= 269
-  Current public copy warning count is 56.
+  Current public copy warning count is 59.
 - PASS: Reader-task warnings <= 0
   Current reader-task warning count is 0.
 
@@ -36,8 +36,8 @@ Exit code: 0
 
 ```text
 Current LEV story status: current
-Last reviewed: 2026-06-12
-Review due: 2026-07-12
+Last reviewed: 2026-06-15
+Review due: 2026-07-15
 Watched outlooks: 18
 Changed or missing snapshots: 0
 New outlook-changing public updates: 0
@@ -51,17 +51,17 @@ Exit code: 0
 ```text
 State of Field workflow status: draft
 Edition: 2026-07 (June 2026)
-Current story latest public update: publish-partial-reprogramming-coverage-repair-2026-06-12-2026-06-12t13-29-16-586z
-Current-story public updates: 10
+Current story latest public update: publish-extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15-2026-06-15t10-33-29-045z
+Current-story public updates: 11
 Published-edition public updates: 9
-Missing from published edition: 5
-Tracked missing updates: 5
+Missing from published edition: 6
+Tracked missing updates: 6
 Untracked missing updates: 0
 Open reconciliation decisions: 0
 Decided without agent assessment: 0
 Required human approvals unresolved: 0
 Open checklist items: 3
-Next action: Keep the July edition internal until June closes, then finalize the provisional classifications for the 16 known June public updates and write the public 2026-07 edition from reviewed records.
+Next action: Keep the July edition internal until June closes, then finalize the provisional classifications for the 17 known June public updates and write the public 2026-07 edition from reviewed records.
 ```
 
 ### Public copy lint
@@ -70,8 +70,8 @@ Command: `node scripts/public-copy-lint.mjs --write`
 Exit code: 0
 
 ```text
-Public copy warnings: 56
-Top terms: durable: 14, translation: 9, functional benefit: 7, mechanistic: 6, coverage repair: 5, biomarker-heavy: 4, low confidence: 3, support map: 3
+Public copy warnings: 59
+Top terms: durable: 15, functional benefit: 9, translation: 9, mechanistic: 6, coverage repair: 5, biomarker-heavy: 4, low confidence: 3, support map: 3
 Wrote extra/public-copy-report.md.
 ```
 

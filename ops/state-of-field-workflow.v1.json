@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "state_type": "state_of_field_workflow",
-  "updated_at": "2026-06-14T22:12:17.000Z",
+  "updated_at": "2026-06-15T10:38:24.763Z",
   "policy": {
     "public_visibility": "Only completed editions in data/content/state-of-the-field are rendered on the public State of the Field pages.",
     "draft_storage": "Drafts, reconciliation notes, and in-progress states stay in this ops manifest or extra/ artifacts until publication.",
@@ -148,7 +148,7 @@
       "period_label": "June 2026",
       "status": "draft",
       "status_updated_at": "2026-06-14T13:33:44.000Z",
-      "status_note": "Internal draft opened while June is still in progress. The candidate public skeleton now accounts for the current-story June updates plus six additional June public updates, but all July reconciliation decisions stay open until the retrospective period closes.",
+      "status_note": "Internal draft opened while June is still in progress. The candidate public skeleton now accounts for the current-story June updates plus six additional June public updates, but final July copy stays open until the retrospective period closes.",
       "published_edition_path": "data/content/state-of-the-field/2026-07.json",
       "draft_artifact_paths": [
         "extra/state-of-field-2026-07-draft.json",
@@ -156,8 +156,8 @@
       ],
       "observed_public_story": {
         "path": "data/content/current-lev-story/current.json",
-        "last_reviewed": "2026-06-12",
-        "latest_publication_event_id": "publish-partial-reprogramming-coverage-repair-2026-06-12-2026-06-12t13-29-16-586z",
+        "last_reviewed": "2026-06-15",
+        "latest_publication_event_id": "publish-extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15-2026-06-15t10-33-29-045z",
         "related_publication_event_ids": [
           "publish-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-2026-06-06t12-22-33-769z",
           "publish-stem-cell-replacement-and-transplantation-surveillance-2026-06-06-2026-06-07t13-49-41-422z",
@@ -168,10 +168,11 @@
           "publish-chaperone-and-heat-shock-support-coverage-repair-2026-06-10-2026-06-11t01-11-08-627z",
           "publish-autophagy-induction-surveillance-2026-06-11-2026-06-11t10-25-04-657z",
           "publish-senolytics-coverage-repair-2026-06-11-2026-06-12t00-05-23-406z",
-          "publish-partial-reprogramming-coverage-repair-2026-06-12-2026-06-12t13-29-16-586z"
+          "publish-partial-reprogramming-coverage-repair-2026-06-12-2026-06-12t13-29-16-586z",
+          "publish-extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15-2026-06-15t10-33-29-045z"
         ]
       },
-      "required_next_action": "Keep the July edition internal until June closes, then finalize the provisional classifications for the 16 known June public updates and write the public 2026-07 edition from reviewed records.",
+      "required_next_action": "Keep the July edition internal until June closes, then finalize the provisional classifications for the 17 known June public updates and write the public 2026-07 edition from reviewed records.",
       "blockers": [
         "June 2026 has not ended yet; this cannot be a final retrospective edition before 2026-07-01.",
         "The June 15 trial-watch report has 22 stale or missing registry checks and 0 open stale watchlist records; do not make fresh trial-status claims without surveillance or explicit stale-record boundaries."
@@ -678,6 +679,33 @@
             "resolved_at": "2026-06-14T17:37:56.000Z",
             "approver": "tyler",
             "notes": "Approved in packet review as the prominent June outlook-boundary context item, not as a field breakthrough."
+          }
+        },
+        {
+          "publication_event_id": "publish-extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15-2026-06-15t10-33-29-045z",
+          "event_date": "2026-06-15",
+          "related_outlook_ids": [
+            "track-extracellular-vesicle-and-secretome-therapies-outlook"
+          ],
+          "decision": "include_as_current_context",
+          "period_interpretation_changed": false,
+          "rationale": "June reviewed field context: the APRC-CM pilot adds a small human biological-age biomarker signal and registry-hygiene updates, while preserving the EV/secretome track's stage, momentum, read firmness, and no-functional-benefit boundary.",
+          "next_action": "Carry this as bounded June current context in the July edition if space permits; do not treat it as a field-moving result unless later controlled functional evidence changes the outlook.",
+          "agent_assessment": {
+            "recommended_decision": "include_as_current_context",
+            "confidence": "high",
+            "materiality": "low",
+            "affected_surfaces": [
+              "state_of_field",
+              "current_lev_story",
+              "hallmark_insight",
+              "track_page"
+            ],
+            "public_copy_action": "draft_copy",
+            "human_review_required": false,
+            "rationale": "The update is reviewed and public, but it did not change stage, momentum, read firmness, or LEV timing. It is useful context for the June retrospective because it adds a biological-age marker signal while preserving the single-arm, multimodal, no-component-isolation boundary.",
+            "reviewed_at": "2026-06-15T10:40:00.000Z",
+            "reviewed_by": "codex"
           }
         }
       ],

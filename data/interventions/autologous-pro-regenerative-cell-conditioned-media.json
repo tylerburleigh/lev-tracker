@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "intervention",
+  "id": "autologous-pro-regenerative-cell-conditioned-media",
+  "name": "Autologous pro-regenerative cell conditioned media",
+  "short_name": "APRC-CM",
+  "summary": "Autologous pro-regenerative cell-derived conditioned media is normalized for a single-arm multimodal healthy-aging pilot that combined lifestyle, supplements, and intravenous conditioned-media infusions.",
+  "created_at": "2026-06-15T10:05:00Z",
+  "updated_at": "2026-06-15T10:05:00Z",
+  "tags": [
+    "altered_intercellular_communication",
+    "biologic",
+    "conditioned-media",
+    "extracellular-vesicle-and-secretome-therapies",
+    "secretome"
+  ],
+  "aliases": [
+    "APRC-CM",
+    "autologous cell-free conditioned media",
+    "pro-regenerative cell-derived conditioned media"
+  ],
+  "modalities": [
+    "biologic",
+    "combination"
+  ],
+  "target_hallmark_ids": [
+    "altered_intercellular_communication"
+  ],
+  "track_ids": [
+    "extracellular-vesicle-and-secretome-therapies"
+  ],
+  "mechanism_summary": "Uses autologous peripheral-blood-derived pro-regenerative cells cultured ex vivo to produce a cell-free conditioned-media mixture that may contain soluble factors and extracellular vesicles, but the current human signal is confounded by a broader lifestyle and supplement protocol.",
+  "development_stage": "clinical",
+  "linked_study_ids": [
+    "multimodal-longevity-aprc-cm-pilot"
+  ],
+  "linked_finding_ids": [
+    "aprc-cm-multimodal-longevity-biological-age-signal"
+  ],
+  "risk_flags": [
+    "single-arm",
+    "multimodal-protocol",
+    "component-attribution-confounding",
+    "secretome-composition-uncertainty",
+    "small-sample"
+  ],
+  "evidence_snapshot": {
+    "best_evidence_tier": "human_biomarker",
+    "human_data": true,
+    "open_questions": [
+      "Whether conditioned media contributed independently from lifestyle optimization, supplements, regression to the mean, expectancy effects, or measurement variability.",
+      "Whether extracellular-vesicle cargo, soluble factors, dose, route, and potency can be characterized enough to compare this preparation with other secretome products.",
+      "Whether larger controlled trials can replicate biological-age marker movement and connect it to durable functional outcomes."
+    ]
+  }
+}
