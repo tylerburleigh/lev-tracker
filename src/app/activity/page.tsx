@@ -161,7 +161,7 @@ export default async function ActivityPage({ searchParams }: ActivityPageProps) 
       id: "all",
       title: "All activity",
       count: activity.length,
-      summary: "Every public activity item, newest first."
+      summary: "Every field activity item, newest first."
     },
     {
       id: "field-anchors",
@@ -179,7 +179,7 @@ export default async function ActivityPage({ searchParams }: ActivityPageProps) 
       id: "trial-horizon",
       title: "Trial horizon",
       count: trialHorizon.length,
-      summary: "Trial launches, clinical-transition signals, or programs routed to trial watch."
+      summary: "Trial starts, clinical-transition signals, or programs routed to trial watch."
     },
     {
       id: "historical-backfill",

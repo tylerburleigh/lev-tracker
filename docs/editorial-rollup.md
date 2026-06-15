@@ -88,7 +88,14 @@ When a state-of-field edition is not finished, update the workflow manifest inst
 
 Before drafting `trial_horizon`, run `npm run audit:trials -- --write`. Use `trial_horizon` for registry-linked studies that could plausibly produce meaningful results. Include whether the covered month had a real result expectation, whether results were posted, and why a result would matter. Do not count a trial listing, a recruiting status, or a no-result registry check as field progress. If the report shows stale registry checks, run surveillance before making current claims about those trials.
 
-Before drafting `what_changed` or `field_change_note`, review `research/backlog/field-activity-watchlist.v1.json`, the field-activity counts printed by `npm run state-of-field:status`, and the field-activity candidate section in `npm run state-of-field:packet`. Resolve or explicitly defer `capture_now`, `research_more`, pending `field_anchor`, pending `material_program`, and surface-routing-required candidates for the covered period. If new company, funder, prize, partnership, regulator, or trial-watch activity is found, use `docs/field-activity-workflow.md` before adding public activity records.
+Before drafting `what_changed` or `field_change_note`, review `research/backlog/field-activity-watchlist.v1.json`, the field-activity counts printed by `npm run state-of-field:status`, the public activity lens summary printed by `npm run state-of-field:packet`, and the field-activity candidate section in `npm run state-of-field:packet`. Resolve or explicitly defer `capture_now`, `research_more`, pending `field_anchor`, pending `material_program`, and surface-routing-required candidates for the covered period. Also decide how State of the Field copy should treat live public activity lenses:
+
+- field anchors: field-shaping entities, programs, prizes, or funders
+- current movement: non-backfill activity surfaced by surveillance or monthly review
+- trial horizon: activity that can affect what to watch next in human studies
+- historical backfill: older field activity added for context, not current-period progress
+
+If new company, funder, prize, partnership, regulator, or trial-watch activity is found, use `docs/field-activity-workflow.md` before adding public activity records.
 
 Keep `signals_to_watch` distinct from `trial_horizon`. `trial_horizon` names concrete registry-linked trials and their result timing. `signals_to_watch` should describe the evidence thresholds that would change interpretation, such as functional outcomes, durability, replication, safety, or generality across settings. Do not repeat a named trial in both sections unless the signal card explains the broader threshold rather than the trial status.
 

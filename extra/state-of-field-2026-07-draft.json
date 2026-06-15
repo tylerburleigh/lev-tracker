@@ -34,6 +34,31 @@
       "The final July edition should wait until June closes."
     ]
   },
+  "field_activity_lens_review": {
+    "status": "integrated_after_activity_presentation_update",
+    "reviewed_on": "2026-06-15",
+    "source_command": "npm run state-of-field:status",
+    "public_activity_lenses": {
+      "public_activity_item_count": 15,
+      "activity_only_count": 14,
+      "assessment_changing_count": 1,
+      "field_anchor_count": 4,
+      "current_movement_count": 10,
+      "trial_horizon_count": 8,
+      "historical_backfill_count": 5,
+      "state_of_field_routed_count": 10,
+      "state_of_field_routed_field_anchor_count": 4,
+      "state_of_field_routed_current_movement_count": 5,
+      "state_of_field_routed_trial_horizon_count": 4,
+      "state_of_field_routed_historical_backfill_count": 5
+    },
+    "state_of_field_guidance": [
+      "Use current field movement only as activity or context unless reviewed evidence changes an outlook.",
+      "Treat NewLimit Series C, Retro financing, and ARPA-H PROSPR as activity or trial-horizon context, not evidence of benefit.",
+      "Treat Calico, Altos, NewLimit formation, XPRIZE, Hevolution, and Calico collaboration backfill as field-map context, not June progress.",
+      "Keep activity-only and assessment-changing counts separate so the July edition does not imply that funding, launches, or prize infrastructure changed LEV timing."
+    ]
+  },
   "candidate_context_items": [
     {
       "label": "A broader but still early field picture",

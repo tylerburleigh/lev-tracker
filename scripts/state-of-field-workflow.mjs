@@ -9,6 +9,7 @@ const workflowPath = "ops/state-of-field-workflow.v1.json";
 const currentStoryPath = "data/content/current-lev-story/current.json";
 const stateOfFieldRoot = "data/content/state-of-the-field";
 const publicationEventRoot = "data/publication-events";
+const activityItemsRoot = "data/activity-items";
 const fieldActivityWatchlistPath = "research/backlog/field-activity-watchlist.v1.json";
 const directActivityPublicationRoute = "direct_activity_publish";
 const fieldActivityPacketClassifications = new Set(["capture_now", "research_more"]);
@@ -246,6 +247,56 @@ function summarizeFieldActivityWatchlist(fieldActivityWatchlist) {
   };
 }
 
+function hasActivityRoute(activityItem, route) {
+  return (activityItem.surface_routing?.affected_surfaces ?? []).includes(route);
+}
+
+function hasActivityTag(activityItem, tag) {
+  return (activityItem.tags ?? []).includes(tag);
+}
+
+function isTrialHorizonActivity(activityItem) {
+  return hasActivityRoute(activityItem, "trial_horizon") || Boolean(activityItem.trial_activity_kind);
+}
+
+function summarizePublicActivityLenses(activityItems) {
+  const publicActivityItems = activityItems.filter((item) => item.record_type === "activity_item");
+  const stateOfFieldRoutedItems = publicActivityItems.filter(
+    (item) => hasActivityRoute(item, "state_of_field") || item.surface_routing?.state_of_field_review_required
+  );
+  const activityOnlyItems = publicActivityItems.filter((item) => !item.affects_outlook);
+  const assessmentChangingItems = publicActivityItems.filter((item) => item.affects_outlook);
+  const fieldAnchorItems = publicActivityItems.filter((item) => item.noteworthiness_tier === "field_anchor");
+  const currentMovementItems = publicActivityItems.filter((item) => !hasActivityTag(item, "historical-backfill"));
+  const trialHorizonItems = publicActivityItems.filter(isTrialHorizonActivity);
+  const historicalBackfillItems = publicActivityItems.filter((item) => hasActivityTag(item, "historical-backfill"));
+
+  return {
+    public_activity_item_count: publicActivityItems.length,
+    activity_only_count: activityOnlyItems.length,
+    assessment_changing_count: assessmentChangingItems.length,
+    field_anchor_count: fieldAnchorItems.length,
+    current_movement_count: currentMovementItems.length,
+    trial_horizon_count: trialHorizonItems.length,
+    historical_backfill_count: historicalBackfillItems.length,
+    state_of_field_routed_count: stateOfFieldRoutedItems.length,
+    state_of_field_routed_field_anchor_count: stateOfFieldRoutedItems.filter(
+      (item) => item.noteworthiness_tier === "field_anchor"
+    ).length,
+    state_of_field_routed_current_movement_count: stateOfFieldRoutedItems.filter(
+      (item) => !hasActivityTag(item, "historical-backfill")
+    ).length,
+    state_of_field_routed_trial_horizon_count: stateOfFieldRoutedItems.filter(isTrialHorizonActivity).length,
+    state_of_field_routed_historical_backfill_count: stateOfFieldRoutedItems.filter((item) =>
+      hasActivityTag(item, "historical-backfill")
+    ).length,
+    state_of_field_routed_activity_only_count: stateOfFieldRoutedItems.filter((item) => !item.affects_outlook).length,
+    state_of_field_routed_activity_ids: stateOfFieldRoutedItems
+      .map((item) => item.id)
+      .sort((left, right) => left.localeCompare(right))
+  };
+}
+
 function compareEventDate(left, right) {
   const leftDate = datePart(left.published_at) ?? "";
   const rightDate = datePart(right.published_at) ?? "";
@@ -286,7 +337,7 @@ function selectWorkflowEdition({ workflow, currentStory, stateOfFieldEditions, e
   };
 }
 
-function summarizeWorkflow(workflow, currentStory, stateOfFieldEditions, fieldActivityWatchlist) {
+function summarizeWorkflow(workflow, currentStory, stateOfFieldEditions, fieldActivityWatchlist, activityItems) {
   const { latestEdition, workflowEdition } = selectWorkflowEdition({
     workflow,
     currentStory,
@@ -367,6 +418,7 @@ function summarizeWorkflow(workflow, currentStory, stateOfFieldEditions, fieldAc
       (item) => item.publication_event_id
     ),
     field_activity_watchlist: summarizeFieldActivityWatchlist(fieldActivityWatchlist),
+    public_activity_lenses: summarizePublicActivityLenses(activityItems),
     required_next_action: workflowEdition.required_next_action,
     strict_issues: strictIssues
   };
@@ -503,7 +555,15 @@ function buildFieldActivityPacketItems(fieldActivityWatchlist, options) {
     });
 }
 
-function buildApprovalPacket({ workflow, currentStory, stateOfFieldEditions, publicationEvents, fieldActivityWatchlist, options }) {
+function buildApprovalPacket({
+  workflow,
+  currentStory,
+  stateOfFieldEditions,
+  publicationEvents,
+  fieldActivityWatchlist,
+  activityItems,
+  options
+}) {
   const { workflowEdition } = selectWorkflowEdition({
     workflow,
     currentStory,
@@ -562,6 +622,7 @@ function buildApprovalPacket({ workflow, currentStory, stateOfFieldEditions, pub
     field_activity_human_review_required_count: fieldActivityItemsRequiringHumanReview.length,
     field_activity_missing_agent_assessment_count: fieldActivityItemsWithoutAgentAssessment.length,
     field_activity_watchlist: summarizeFieldActivityWatchlist(fieldActivityWatchlist),
+    public_activity_lenses: summarizePublicActivityLenses(activityItems),
     items: packetItems,
     field_activity_items: fieldActivityItems
   };
@@ -631,7 +692,10 @@ function formatApprovalPacket(packet) {
     `- Field-activity nonblocking watch items: ${packet.field_activity_watchlist.nonblocking_watch_item_count}`,
     `- Field-activity consolidated candidates: ${packet.field_activity_watchlist.consolidated_candidate_count}`,
     `- Field-activity learning phase: ${packet.field_activity_watchlist.learning_phase} (${packet.field_activity_watchlist.learning_completed_pilot_sweeps}/${packet.field_activity_watchlist.learning_minimum_pilot_sweeps} pilot sweeps)`,
-    `- Field-activity open learning questions: ${packet.field_activity_watchlist.learning_open_question_count}`
+    `- Field-activity open learning questions: ${packet.field_activity_watchlist.learning_open_question_count}`,
+    `- Public activity items: ${packet.public_activity_lenses.public_activity_item_count} (${packet.public_activity_lenses.activity_only_count} activity-only, ${packet.public_activity_lenses.assessment_changing_count} assessment-changing)`,
+    `- Public activity lenses: ${packet.public_activity_lenses.field_anchor_count} field anchors; ${packet.public_activity_lenses.current_movement_count} current movement; ${packet.public_activity_lenses.trial_horizon_count} trial horizon; ${packet.public_activity_lenses.historical_backfill_count} historical backfill`,
+    `- Public activity routed to State of Field: ${packet.public_activity_lenses.state_of_field_routed_count} (${packet.public_activity_lenses.state_of_field_routed_field_anchor_count} field anchors; ${packet.public_activity_lenses.state_of_field_routed_current_movement_count} current movement; ${packet.public_activity_lenses.state_of_field_routed_trial_horizon_count} trial horizon; ${packet.public_activity_lenses.state_of_field_routed_historical_backfill_count} historical backfill)`
   ];
 
   if (packet.items.length === 0 && packet.field_activity_items.length === 0) {
@@ -812,6 +876,9 @@ function formatTextSummary(summary) {
     `Field-activity consolidated candidates: ${summary.field_activity_watchlist.consolidated_candidate_count}`,
     `Field-activity learning phase: ${summary.field_activity_watchlist.learning_phase} (${summary.field_activity_watchlist.learning_completed_pilot_sweeps}/${summary.field_activity_watchlist.learning_minimum_pilot_sweeps} pilot sweeps)`,
     `Field-activity open learning questions: ${summary.field_activity_watchlist.learning_open_question_count}`,
+    `Public activity items: ${summary.public_activity_lenses.public_activity_item_count} (${summary.public_activity_lenses.activity_only_count} activity-only, ${summary.public_activity_lenses.assessment_changing_count} assessment-changing)`,
+    `Public activity lenses: ${summary.public_activity_lenses.field_anchor_count} field anchors; ${summary.public_activity_lenses.current_movement_count} current movement; ${summary.public_activity_lenses.trial_horizon_count} trial horizon; ${summary.public_activity_lenses.historical_backfill_count} historical backfill`,
+    `Public activity routed to State of Field: ${summary.public_activity_lenses.state_of_field_routed_count} (${summary.public_activity_lenses.state_of_field_routed_field_anchor_count} field anchors; ${summary.public_activity_lenses.state_of_field_routed_current_movement_count} current movement; ${summary.public_activity_lenses.state_of_field_routed_trial_horizon_count} trial horizon; ${summary.public_activity_lenses.state_of_field_routed_historical_backfill_count} historical backfill)`,
     `Next action: ${summary.required_next_action}`
   ];
 
@@ -844,15 +911,16 @@ async function main() {
     throw new Error(`Unknown command: ${options.command}`);
   }
 
-  const [workflow, currentStory, stateOfFieldEditions, fieldActivityWatchlist] = await Promise.all([
+  const [workflow, currentStory, stateOfFieldEditions, fieldActivityWatchlist, activityItems] = await Promise.all([
     readJson(workflowPath),
     readJson(currentStoryPath),
     readJsonCollection(stateOfFieldRoot),
-    readJsonIfExists(fieldActivityWatchlistPath)
+    readJsonIfExists(fieldActivityWatchlistPath),
+    readJsonCollection(activityItemsRoot)
   ]);
 
   if (options.command === "status") {
-    const summary = summarizeWorkflow(workflow, currentStory, stateOfFieldEditions, fieldActivityWatchlist);
+    const summary = summarizeWorkflow(workflow, currentStory, stateOfFieldEditions, fieldActivityWatchlist, activityItems);
 
     process.stdout.write(options.json ? `${JSON.stringify(summary, null, 2)}\n` : formatTextSummary(summary));
 
@@ -872,6 +940,7 @@ async function main() {
       stateOfFieldEditions,
       publicationEvents,
       fieldActivityWatchlist,
+      activityItems,
       options
     });
 

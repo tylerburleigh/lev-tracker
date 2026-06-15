@@ -203,6 +203,15 @@ When the human approves a broader field-anchor item, explicitly ask whether narr
 
 When the monthly State of the Field workflow reviews the field-activity watchlist, also check the learning-loop state. If open learning questions or revision triggers remain, include them in the agent recommendation packet rather than waiting for a separate human prompt.
 
+The State of the Field workflow also prints a live public-activity lens summary. Use that summary to reconcile `/activity` with monthly editorial copy:
+
+- field anchors can provide field-map context, but they are not automatically current-period progress
+- current movement can be considered for `what_changed` or `current_context`
+- trial horizon items can support `trial_horizon` copy only when the registry or program boundary is explicit
+- historical backfill should usually be `add_post_hoc_context_note` or omitted from the monthly narrative unless it prevents a misleading field read
+
+Keep the watchlist queue health separate from the public activity lens summary: the watchlist tells the agent what still needs work, while the public lens summary tells the agent what already-public activity the State of the Field edition may need to explain.
+
 ## Historical Backfill
 
 Historical activity should be labeled with the `historical-backfill` tag. It should capture selected anchor events, not every news item. The source and significance note should make clear why the old event matters now.
