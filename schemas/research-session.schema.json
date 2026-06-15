@@ -34,7 +34,8 @@
       "enum": [
         "bootstrap",
         "surveillance",
-        "coverage_repair"
+        "coverage_repair",
+        "field_activity"
       ]
     },
     "started_at": {
@@ -47,17 +48,24 @@
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "question",
-        "hallmark_ids",
-        "track_ids"
+        "question"
       ],
       "properties": {
         "question": {
           "type": "string"
         },
+        "scope_label": {
+          "type": "string"
+        },
+        "entity_names": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
         "hallmark_ids": {
           "type": "array",
-          "minItems": 1,
           "maxItems": 1,
           "items": {
             "$ref": "./common.schema.json#/$defs/hallmarkRef"
@@ -66,7 +74,6 @@
         },
         "track_ids": {
           "type": "array",
-          "minItems": 1,
           "maxItems": 1,
           "items": {
             "$ref": "./common.schema.json#/$defs/trackRef"
@@ -111,7 +118,8 @@
       "enum": [
         "bootstrap",
         "surveillance",
-        "coverage_repair"
+        "coverage_repair",
+        "field_activity"
       ]
     },
     "materiality_decision": {
@@ -148,7 +156,8 @@
           "enum": [
             "bootstrap",
             "surveillance",
-            "coverage_repair"
+            "coverage_repair",
+            "field_activity"
           ]
         },
         "rationale": {

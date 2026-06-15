@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-15-field-activity-process-pilot",
+  "name": "Field activity discovery process pilot",
+  "mode": "field_activity",
+  "started_at": "2026-06-15T12:40:00Z",
+  "completed_at": "2026-06-15T13:05:00Z",
+  "scope": {
+    "question": "Can the field-activity workflow discover Calico-like institutional activity and expose process blindspots before public records are added?",
+    "scope_label": "Calico-like field activity process pilot",
+    "entity_names": [
+      "Altos Labs",
+      "NewLimit",
+      "Retro Biosciences",
+      "Hevolution Foundation",
+      "XPRIZE Healthspan"
+    ],
+    "hallmark_ids": [],
+    "track_ids": []
+  },
+  "selected_via": "manual_override",
+  "outcome": "handoff_to_editorial",
+  "summary": "Piloted the field-activity workflow on five Calico-like entities covering company launches, funders, financing, clinical-transition updates, and prize infrastructure. The workflow identified multiple source-backed capture candidates that are not yet public activity items: Altos Labs 2022 launch, NewLimit 2021 formation, NewLimit 2026 Series C, Retro Biosciences 2026 financing and first-in-human progress, Hevolution HF-GRO 2024 awards, XPRIZE Healthspan 2023 launch, and XPRIZE 2025 milestone winners. The pilot also found that broad search alone is too inconsistent: some material entities have primary dated announcements, others only have current undated pages or secondary launch coverage. A validated field-activity watchlist was added so future sweeps start from known entities and source pages.",
+  "next_recommended_mode": "field_activity",
+  "materiality_decision": {
+    "material_delta": "activity_only",
+    "public_update_needed": true,
+    "activity_only": true,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "field_activity",
+    "rationale": "The pilot found source-backed field-infrastructure events likely worth public activity records, but they should be presented to the human as an approval packet before publication. None of the reviewed sources should be treated as evidence of benefit without separate evidence-path review."
+  },
+  "search_log": [
+    {
+      "source_name": "Altos Labs homepage and launch release",
+      "checked_at": "2026-06-15T12:45:00Z",
+      "url": "https://www.altoslabs.com/",
+      "summary": "Confirmed Altos as a cellular rejuvenation company and located the officially syndicated January 19, 2022 launch release."
+    },
+    {
+      "source_name": "NewLimit official blog",
+      "checked_at": "2026-06-15T12:45:00Z",
+      "url": "https://blog.newlimit.com/",
+      "summary": "Confirmed NewLimit's December 11, 2021 formation post, May 2025 Series B post, and June 2, 2026 Series C post about bringing longevity medicines to human trials."
+    },
+    {
+      "source_name": "Retro Biosciences homepage and blog",
+      "checked_at": "2026-06-15T12:50:00Z",
+      "url": "https://www.retro.bio/blog/fundraise-2026",
+      "summary": "Confirmed Retro's current mission framing and May 22, 2026 official post announcing the initial close of a next financing round, Phase I progress for RTR242, and broader aging-biology pipeline infrastructure."
+    },
+    {
+      "source_name": "Hevolution Foundation press releases",
+      "checked_at": "2026-06-15T12:55:00Z",
+      "url": "https://hevolution.com/press-releases",
+      "summary": "Confirmed official Hevolution press-release source pages and the February 12, 2024 HF-GRO awards announcement."
+    },
+    {
+      "source_name": "XPRIZE Healthspan competition page and guidelines",
+      "checked_at": "2026-06-15T13:00:00Z",
+      "url": "https://www.xprize.org/competitions/healthspan",
+      "summary": "Confirmed the XPRIZE Healthspan competition page, guidelines, November 29, 2023 official launch date, and May 12, 2025 milestone-winner announcement."
+    }
+  ],
+  "source_urls": [
+    "https://www.altoslabs.com/",
+    "https://www.prnewswire.com/news-releases/altos-labs-launches-with-the-goal-to-transform-medicine-through-cellular-rejuvenation-programming-301463541.html",
+    "https://blog.newlimit.com/p/announcing-newlimit-a-company-built",
+    "https://blog.newlimit.com/p/newlimit-raises-435m-led-by-founders",
+    "https://www.retro.bio/",
+    "https://www.retro.bio/blog/fundraise-2026",
+    "https://hevolution.com/press-releases/-/asset_publisher/mdxo/content/hevolution-announces-49-awards-to-catalyze-discovery-in-healthspan-science-through-innovative-115-million-grants-progr-1",
+    "https://www.xprize.org/competitions/healthspan",
+    "https://assets-us-01.kc-usercontent.com/9bc15d1f-8a5c-007d-b507-e3496e85af86/6ac665ad-aa6e-4c74-915b-dea51773312d/XPRIZE%20Healthspan%20Competition%20Guidelines_V2.2_FINAL.pdf",
+    "https://www.xprize.org/news/101m-xprize-healthspan-awards-first-milestone-winners-driving-toward-revolutionary-healthy-aging-advances"
+  ],
+  "notes": [
+    "Weakness found: the workflow did not previously name durable discovery inputs, so an agent could miss entities without a current track tie.",
+    "Weakness found: source quality varies by entity; current home pages can confirm mission but not event dates.",
+    "Weakness found: financing posts often mix field activity with translational claims, so the public action must stay activity-only unless a registry or study review is separately performed.",
+    "Weakness found: competition and funder activity may use guidelines or award databases rather than press releases, so source patterns need to include those document types."
+  ],
+  "next_actions": [
+    "Ask the human which capture-recommended watchlist events should become public source and activity records.",
+    "During the next monthly field-activity sweep, start from research/backlog/field-activity-watchlist.v1.json before broad discovery.",
+    "Keep Retro's 2022 launch as research_more until a durable official dated source or an approved secondary-source exception is available."
+  ]
+}

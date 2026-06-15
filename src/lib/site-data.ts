@@ -276,6 +276,10 @@ export type ActivityItemRecord = {
   occurred_on: string;
   source_ids?: string[];
   external_urls?: string[];
+  scope_label?: string;
+  noteworthiness_tier?: string;
+  threshold_basis?: string[];
+  trial_activity_kind?: string;
   hallmark_ids?: string[];
   track_ids?: string[];
   study_ids?: string[];
@@ -300,6 +304,7 @@ export type ActivityFeedItem = {
   summary: string;
   significanceNote?: string;
   affectsOutlook: boolean;
+  scopeLabel: string;
   hallmarkId: string;
   trackIds: string[];
   trackNames: string[];
@@ -1400,6 +1405,9 @@ function buildActivityLinks(item: ActivityItemRecord): ActivityLink[] {
 
 function normalizeActivityItem(item: ActivityItemRecord): ActivityFeedItem {
   const trackIds = item.track_ids ?? [];
+  const hallmarkId = item.hallmark_ids?.[0] ?? "";
+  const hallmarkLabel = hallmarkId ? getHallmarkById(hallmarkId)?.name ?? titleizeIdentifier(hallmarkId) : undefined;
+  const scopeLabel = item.scope_label ?? hallmarkLabel ?? "Field-wide";
 
   return {
     id: item.id,
@@ -1411,7 +1419,8 @@ function normalizeActivityItem(item: ActivityItemRecord): ActivityFeedItem {
     summary: item.summary ?? item.significance_note ?? "",
     significanceNote: item.significance_note,
     affectsOutlook: Boolean(item.affects_outlook),
-    hallmarkId: item.hallmark_ids?.[0] ?? "genomic_instability",
+    scopeLabel,
+    hallmarkId,
     trackIds,
     trackNames: trackIds.map((trackId) => getTrackById(trackId)?.name ?? titleizeIdentifier(trackId)),
     links: buildActivityLinks(item),
@@ -1420,7 +1429,9 @@ function normalizeActivityItem(item: ActivityItemRecord): ActivityFeedItem {
 }
 
 function buildActivityFeed(items: ActivityItemRecord[]): ActivityFeedItem[] {
-  return items.map(normalizeActivityItem);
+  return items
+    .map(normalizeActivityItem)
+    .sort((left, right) => right.date.localeCompare(left.date) || left.title.localeCompare(right.title));
 }
 
 function buildCurrentLevStoryStatus(
@@ -1929,18 +1940,14 @@ export async function getLeadingInterventionsForHallmark(
 
 export async function getActivityForHallmark(hallmarkId: string, limit = 4): Promise<ActivityFeedItem[]> {
   noStore();
-  const items = (await loadActivityItems())
-    .filter((item) => item.hallmark_ids?.includes(hallmarkId))
-    .slice(0, limit);
-  return buildActivityFeed(items);
+  const items = (await loadActivityItems()).filter((item) => item.hallmark_ids?.includes(hallmarkId));
+  return buildActivityFeed(items).slice(0, limit);
 }
 
 export async function getActivityForTrack(trackId: string, limit = 4): Promise<ActivityFeedItem[]> {
   noStore();
-  const items = (await loadActivityItems())
-    .filter((item) => item.track_ids?.includes(trackId))
-    .slice(0, limit);
-  return buildActivityFeed(items);
+  const items = (await loadActivityItems()).filter((item) => item.track_ids?.includes(trackId));
+  return buildActivityFeed(items).slice(0, limit);
 }
 
 export async function getActivityFeed(): Promise<ActivityFeedItem[]> {

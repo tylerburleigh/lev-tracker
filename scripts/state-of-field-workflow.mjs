@@ -9,6 +9,7 @@ const workflowPath = "ops/state-of-field-workflow.v1.json";
 const currentStoryPath = "data/content/current-lev-story/current.json";
 const stateOfFieldRoot = "data/content/state-of-the-field";
 const publicationEventRoot = "data/publication-events";
+const fieldActivityWatchlistPath = "research/backlog/field-activity-watchlist.v1.json";
 
 function usage() {
   return `Usage:
@@ -99,6 +100,42 @@ function latestByDate(records) {
   return [...records].sort((left, right) => String(right.date ?? "").localeCompare(String(left.date ?? "")))[0];
 }
 
+function summarizeFieldActivityWatchlist(fieldActivityWatchlist) {
+  if (!fieldActivityWatchlist) {
+    return {
+      path: fieldActivityWatchlistPath,
+      available: false,
+      entry_count: 0,
+      discovery_channel_count: 0,
+      blindspot_control_count: 0,
+      capture_recommended_count: 0,
+      needs_primary_source_count: 0,
+      pending_field_anchor_count: 0,
+      pending_material_program_count: 0,
+      watch_only_count: 0,
+      below_threshold_count: 0
+    };
+  }
+
+  const candidateEvents = (fieldActivityWatchlist.entries ?? []).flatMap((entry) => entry.candidate_events ?? []);
+  const pendingEvents = candidateEvents.filter((event) => ["capture_now", "research_more"].includes(event.classification));
+
+  return {
+    path: fieldActivityWatchlistPath,
+    available: true,
+    updated_at: fieldActivityWatchlist.updated_at,
+    entry_count: fieldActivityWatchlist.entries?.length ?? 0,
+    discovery_channel_count: fieldActivityWatchlist.discovery_channels?.length ?? 0,
+    blindspot_control_count: fieldActivityWatchlist.blindspot_controls?.length ?? 0,
+    capture_recommended_count: candidateEvents.filter((event) => event.classification === "capture_now").length,
+    needs_primary_source_count: candidateEvents.filter((event) => event.classification === "research_more").length,
+    pending_field_anchor_count: pendingEvents.filter((event) => event.noteworthiness_tier === "field_anchor").length,
+    pending_material_program_count: pendingEvents.filter((event) => event.noteworthiness_tier === "material_program").length,
+    watch_only_count: candidateEvents.filter((event) => event.noteworthiness_tier === "watch_only").length,
+    below_threshold_count: candidateEvents.filter((event) => event.noteworthiness_tier === "below_threshold").length
+  };
+}
+
 function compareEventDate(left, right) {
   const leftDate = datePart(left.published_at) ?? "";
   const rightDate = datePart(right.published_at) ?? "";
@@ -139,7 +176,7 @@ function selectWorkflowEdition({ workflow, currentStory, stateOfFieldEditions, e
   };
 }
 
-function summarizeWorkflow(workflow, currentStory, stateOfFieldEditions) {
+function summarizeWorkflow(workflow, currentStory, stateOfFieldEditions, fieldActivityWatchlist) {
   const { latestEdition, workflowEdition } = selectWorkflowEdition({
     workflow,
     currentStory,
@@ -219,6 +256,7 @@ function summarizeWorkflow(workflow, currentStory, stateOfFieldEditions) {
     unresolved_required_human_approval_publication_event_ids: unresolvedRequiredHumanApprovals.map(
       (item) => item.publication_event_id
     ),
+    field_activity_watchlist: summarizeFieldActivityWatchlist(fieldActivityWatchlist),
     required_next_action: workflowEdition.required_next_action,
     strict_issues: strictIssues
   };
@@ -293,7 +331,7 @@ function itemNeedsApprovalPacket(item, includeAll) {
   );
 }
 
-function buildApprovalPacket({ workflow, currentStory, stateOfFieldEditions, publicationEvents, options }) {
+function buildApprovalPacket({ workflow, currentStory, stateOfFieldEditions, publicationEvents, fieldActivityWatchlist, options }) {
   const { workflowEdition } = selectWorkflowEdition({
     workflow,
     currentStory,
@@ -345,6 +383,7 @@ function buildApprovalPacket({ workflow, currentStory, stateOfFieldEditions, pub
     packet_item_count: packetItems.length,
     human_review_required_count: itemsRequiringHumanReview.length,
     missing_agent_assessment_count: itemsWithoutAgentAssessment.length,
+    field_activity_watchlist: summarizeFieldActivityWatchlist(fieldActivityWatchlist),
     items: packetItems
   };
 }
@@ -385,7 +424,11 @@ function formatApprovalPacket(packet) {
     `- Items in packet: ${packet.packet_item_count}`,
     `- Human review required: ${packet.human_review_required_count}`,
     `- Missing agent assessments: ${packet.missing_agent_assessment_count}`,
-    `- Blockers recorded: ${packet.blocker_count}`
+    `- Blockers recorded: ${packet.blocker_count}`,
+    `- Field-activity watchlist entries: ${packet.field_activity_watchlist.entry_count}`,
+    `- Field-activity capture recommended: ${packet.field_activity_watchlist.capture_recommended_count}`,
+    `- Field-activity needs primary source: ${packet.field_activity_watchlist.needs_primary_source_count}`,
+    `- Field-activity pending anchors/material programs: ${packet.field_activity_watchlist.pending_field_anchor_count}/${packet.field_activity_watchlist.pending_material_program_count}`
   ];
 
   if (packet.items.length === 0) {
@@ -506,6 +549,12 @@ function formatTextSummary(summary) {
     `Decided without agent assessment: ${summary.decided_without_agent_assessment_count}`,
     `Required human approvals unresolved: ${summary.unresolved_required_human_approval_count}`,
     `Open checklist items: ${summary.open_checklist_item_count}`,
+    `Field-activity watchlist entries: ${summary.field_activity_watchlist.entry_count}`,
+    `Field-activity discovery channels: ${summary.field_activity_watchlist.discovery_channel_count}`,
+    `Field-activity blindspot controls: ${summary.field_activity_watchlist.blindspot_control_count}`,
+    `Field-activity capture recommended: ${summary.field_activity_watchlist.capture_recommended_count}`,
+    `Field-activity needs primary source: ${summary.field_activity_watchlist.needs_primary_source_count}`,
+    `Field-activity pending anchors/material programs: ${summary.field_activity_watchlist.pending_field_anchor_count}/${summary.field_activity_watchlist.pending_material_program_count}`,
     `Next action: ${summary.required_next_action}`
   ];
 
@@ -538,14 +587,15 @@ async function main() {
     throw new Error(`Unknown command: ${options.command}`);
   }
 
-  const [workflow, currentStory, stateOfFieldEditions] = await Promise.all([
+  const [workflow, currentStory, stateOfFieldEditions, fieldActivityWatchlist] = await Promise.all([
     readJson(workflowPath),
     readJson(currentStoryPath),
-    readJsonCollection(stateOfFieldRoot)
+    readJsonCollection(stateOfFieldRoot),
+    readJsonIfExists(fieldActivityWatchlistPath)
   ]);
 
   if (options.command === "status") {
-    const summary = summarizeWorkflow(workflow, currentStory, stateOfFieldEditions);
+    const summary = summarizeWorkflow(workflow, currentStory, stateOfFieldEditions, fieldActivityWatchlist);
 
     process.stdout.write(options.json ? `${JSON.stringify(summary, null, 2)}\n` : formatTextSummary(summary));
 
@@ -564,6 +614,7 @@ async function main() {
       currentStory,
       stateOfFieldEditions,
       publicationEvents,
+      fieldActivityWatchlist,
       options
     });
 

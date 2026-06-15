@@ -437,7 +437,13 @@ Track curated field events without implying efficacy.
 
 `/trials` is the standing registry-linked human-study index. It should retain original registry dates, study design, population, endpoints, result status, and timing.
 
-`/activity` is the dated external field-event feed. It should include material field events such as trial launches, trial completions, registry status changes, newly posted results, funding, company or program updates, regulatory actions, corrections, retractions, and publication or conference events. Activity dates should be the actual event dates when known, not the date the tracker noticed or published the record.
+`/activity` is the dated external field-event feed. It should include material field events such as trial launches, trial completions, registry status changes, newly posted results, noteworthy prize or funder activity, funding, company or program updates, regulatory actions, corrections, retractions, and publication or conference events. Activity dates should be the actual event dates when known, not the date the tracker noticed or published the record.
+
+Prize, funder, company, and program news should clear the field-activity noteworthiness threshold before appearing publicly. Field anchors and material program events belong here; routine grants, hires, commentary, conference attendance, and low-signal promotional copy should stay in research notes or the internal watchlist.
+
+Trial activity should appear on `/activity` only when it is a notable field event: a new directly relevant human trial, a first-in-human or first older-adult milestone, a material status change, posted results, completion or termination, or a major phase/program transition. Routine registry rechecks, unchanged no-results status, modest date changes, and ordinary maintenance belong on `/trials`, in `trial_details`, or in research sessions.
+
+Field-wide activity should have a visible scope label and should not be forced into a hallmark or track when the mapping is weak. Hallmark, track, intervention, study, and finding links are for activity that genuinely belongs to those public records.
 
 Do not use `/activity` for tracker/editorial meta-events: adding something to a watchlist, changing our wording, expanding coverage, completing a review, deciding that commercial activity should be tracked, or otherwise describing how the site changed. Those belong in `publication_event`, the relevant `outlook`, research sessions, or editorial notes.
 

@@ -50,7 +50,7 @@ Do not use published staged directories as backlog. Do not quietly delete histor
 
 ### Research State
 
-`research/sessions`, `research/coverage-assessments`, `research/state`, and `research/backlog` are internal operating records. They should capture search logs, materiality decisions, source-completeness gaps, and generated queue state without becoming public evidence records.
+`research/sessions`, `research/coverage-assessments`, `research/state`, and `research/backlog` are internal operating records. They should capture search logs, materiality decisions, source-completeness gaps, field-activity watchlists, and generated queue state without becoming public evidence records.
 
 A research run should usually produce one session record, zero or one staged bundle, and at most one coverage assessment update.
 
@@ -114,6 +114,9 @@ These are signals, not automatic failures. Broken schemas, missing required refe
 - Add a `study` only when the source supports a distinct trial, experiment, observational cohort, or model-system study.
 - Add a `finding` only for an atomic, source-backed claim that public pages or outlooks need.
 - Add an `activity_item` only for an external field event, not tracker process.
+- For prize, funder, company, and program news, add an `activity_item` only when the event clears the `field_anchor` or `material_program` threshold in `docs/field-activity-workflow.md`.
+- For trial news, add an `activity_item` only when it has a public `trial_activity_kind`; keep routine registry checks and unchanged no-results status in `/trials`, `trial_details`, `trial_watch_checks[]`, or research sessions.
+- Use `scope_label` for field-wide activity that should not be forced into a weak hallmark or track mapping.
 - Add an `intervention` when a promoted record references the intervention or the page needs normalized naming.
 - Add an `outlook` update only when interpretation changes or public evidence framing needs repair.
 - Put close-but-excluded material in `research/sessions[].excluded_sources`, not in public records.

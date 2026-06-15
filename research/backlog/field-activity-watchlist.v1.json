@@ -1,0 +1,531 @@
+{
+  "schema_version": "1.0.0",
+  "queue_type": "field_activity_watchlist",
+  "updated_at": "2026-06-15T12:45:00Z",
+  "notes": [
+    "This backlog is internal planning state for source-backed field activity discovery. It does not publish activity by itself.",
+    "Use it to seed monthly field-activity sweeps and entity-scoped backfill recommendations."
+  ],
+  "selection_policy": {
+    "default_unit": "entity",
+    "when_request_is_vague": "Review capture_recommended entries before broad web discovery, then ask the human which public activity records to add.",
+    "review_cadence": "Review capture_recommended and needs_primary_source entries during the monthly field-activity sweep; review watch entries at least quarterly."
+  },
+  "source_quality_policy": {
+    "capture_now": "Use when a primary or official syndication source gives a concrete event and date.",
+    "research_more": "Use when the event is likely material but the current source is undated, secondary, social-only, or too ambiguous for public activity.",
+    "exclude": "Use when the item is promotional noise, evidence-path material, or not materially relevant to field activity."
+  },
+  "discovery_channels": [
+    {
+      "id": "entity-official-pages",
+      "label": "Entity official pages",
+      "cadence": "monthly",
+      "source_kinds": [
+        "homepage",
+        "press_page",
+        "press_release",
+        "blog"
+      ],
+      "blindspots_covered": [
+        "entity-recall",
+        "source-quality",
+        "track-tunnel-vision"
+      ],
+      "search_guidance": "Check official news, press, blog, and about pages for watched companies, institutes, and nonprofits before broad web search.",
+      "example_urls": [
+        "https://www.altoslabs.com/",
+        "https://blog.newlimit.com/",
+        "https://www.retro.bio/blog",
+        "https://www.calicolabs.com/press/"
+      ]
+    },
+    {
+      "id": "funder-prize-programs",
+      "label": "Funder and prize program pages",
+      "cadence": "monthly",
+      "source_kinds": [
+        "grant_database",
+        "competition_page",
+        "guidelines",
+        "press_release"
+      ],
+      "blindspots_covered": [
+        "source-type-gap",
+        "entity-recall",
+        "threshold-noise"
+      ],
+      "search_guidance": "Check funder award pages, prize guidelines, program announcements, and first milestone cohorts. Do not capture every ordinary grant or team announcement.",
+      "example_urls": [
+        "https://hevolution.com/press-releases",
+        "https://www.xprize.org/competitions/healthspan",
+        "https://arpa-h.gov/explore-funding/awards"
+      ]
+    },
+    {
+      "id": "registries-regulators",
+      "label": "Registries and regulators",
+      "cadence": "monthly",
+      "source_kinds": [
+        "registry",
+        "regulatory_database"
+      ],
+      "blindspots_covered": [
+        "trial-status",
+        "regulatory-safety",
+        "activity-evidence-boundary"
+      ],
+      "search_guidance": "Check known trial registries first, then regulatory or safety databases for status changes, posted results, warnings, holds, approvals, or other concrete dated events."
+    },
+    {
+      "id": "publication-conference-corrections",
+      "label": "Publication, conference, correction, and retraction sources",
+      "cadence": "monthly",
+      "source_kinds": [
+        "publication_database",
+        "conference_page"
+      ],
+      "blindspots_covered": [
+        "publication-event",
+        "activity-evidence-boundary"
+      ],
+      "search_guidance": "Use PubMed, publisher pages, conference pages, and correction/retraction notices when the event is publication activity or a public limitation signal. Route result claims to the evidence path."
+    },
+    {
+      "id": "secondary-leads",
+      "label": "Secondary leads for entity discovery",
+      "cadence": "quarterly",
+      "source_kinds": [
+        "secondary_lead"
+      ],
+      "blindspots_covered": [
+        "entity-recall",
+        "source-quality"
+      ],
+      "search_guidance": "Use reputable secondary coverage only to discover missing entities, dates, or source pages. Do not publish from secondary leads unless a human approves an exception."
+    }
+  ],
+  "blindspot_controls": [
+    {
+      "id": "entity-recall",
+      "risk": "Major Calico-like entities can be missed when discovery starts only from track surveillance.",
+      "mitigation": "Maintain the field-activity watchlist and review watched company, institute, prize, and funder pages during monthly sweeps.",
+      "cadence": "monthly",
+      "success_signal": "The sweep starts from the watchlist and records newly discovered entities or source pages before broad web search."
+    },
+    {
+      "id": "source-type-gap",
+      "risk": "Prize and funder activity may live in guidelines, award databases, or program pages rather than company press releases.",
+      "mitigation": "Use dedicated funder/prize discovery channels and allow guidelines, award pages, and competition pages as primary sources when dated.",
+      "cadence": "monthly",
+      "success_signal": "Candidate packets include source_kind and source_quality for non-press-release official sources."
+    },
+    {
+      "id": "threshold-noise",
+      "risk": "Routine grants, hiring, investor commentary, or promotional updates can crowd out genuinely notable field activity.",
+      "mitigation": "Classify every candidate with noteworthiness_tier and threshold_basis; publish only field_anchor or material_program events.",
+      "cadence": "monthly",
+      "success_signal": "Live activity items validate with field_anchor or material_program, while watch_only and below_threshold items stay internal."
+    },
+    {
+      "id": "source-quality",
+      "risk": "Secondary or undated sources can make event dates and funding details unreliable.",
+      "mitigation": "Mark such candidates research_more until a primary dated source is found or the human approves an exception.",
+      "cadence": "monthly",
+      "success_signal": "Capture-now events use primary_dated sources; source gaps are visible in the watchlist."
+    },
+    {
+      "id": "activity-evidence-boundary",
+      "risk": "Financing, launch, and partnership posts often include claims that sound like efficacy evidence.",
+      "mitigation": "Keep concrete field events in activity and route result-bearing claims to source/study/finding/outlook review.",
+      "cadence": "monthly",
+      "success_signal": "Activity significance notes explicitly say why the event does not establish intervention benefit."
+    },
+    {
+      "id": "track-tunnel-vision",
+      "risk": "Field-wide entities can be forced into weak hallmark or track mappings.",
+      "mitigation": "Use scope_label for field-wide records and add hallmark or track IDs only when the event genuinely belongs there.",
+      "cadence": "monthly",
+      "success_signal": "Field-wide public activity records use scope_label and avoid fake taxonomy links."
+    }
+  ],
+  "entries": [
+    {
+      "id": "calico",
+      "name": "Calico",
+      "entity_type": "company",
+      "priority_tier": "soon",
+      "status": "captured",
+      "review_cadence": "quarterly",
+      "last_reviewed_at": "2026-06-15T00:00:00Z",
+      "rationale": "Major technology-backed aging biology company and partnership hub.",
+      "official_sources": [
+        {
+          "label": "Google Calico announcement",
+          "url": "https://googlepress.blogspot.com/2013/09/calico-announcement.html",
+          "source_kind": "press_release"
+        },
+        {
+          "label": "Calico press releases",
+          "url": "https://www.calicolabs.com/press/",
+          "source_kind": "press_page"
+        }
+      ],
+      "candidate_events": [
+        {
+          "event_id": "google-calico-launch-2013",
+          "event_label": "Google announced Calico as an aging-focused company",
+          "classification": "captured",
+          "occurred_on": "2013-09-18",
+          "activity_type": "company_update",
+          "activity_lane": "commercial",
+          "scope_label": "Field-wide commercial activity",
+          "noteworthiness_tier": "field_anchor",
+          "threshold_basis": [
+            "new_major_entity",
+            "field_infrastructure"
+          ],
+          "source_url": "https://googlepress.blogspot.com/2013/09/calico-announcement.html",
+          "source_quality": "primary_dated",
+          "rationale": "Already captured as public field activity.",
+          "recommended_public_action": "None; live activity item exists."
+        },
+        {
+          "event_id": "calico-abbvie-aging-collaboration-2014",
+          "event_label": "Calico and AbbVie launched an age-related disease R&D collaboration",
+          "classification": "captured",
+          "occurred_on": "2014-09-03",
+          "activity_type": "partnership",
+          "activity_lane": "commercial",
+          "scope_label": "Age-related disease R&D infrastructure",
+          "noteworthiness_tier": "material_program",
+          "threshold_basis": [
+            "major_dedicated_funding",
+            "field_infrastructure",
+            "major_partnership"
+          ],
+          "source_url": "https://www.calicolabs.com/press/abbvie-and-calico-announce-a-novel-collaboration-to-accelerate-the-discovery-development-and-commercialization-of-new-therapies/",
+          "source_quality": "primary_dated",
+          "rationale": "Already captured as public field activity.",
+          "recommended_public_action": "None; live activity item exists."
+        },
+        {
+          "event_id": "calico-broad-neurodegeneration-extension-2024",
+          "event_label": "Calico and Broad extended aging biology collaboration",
+          "classification": "captured",
+          "occurred_on": "2024-05-09",
+          "activity_type": "partnership",
+          "activity_lane": "scientific",
+          "scope_label": "Aging biology collaboration",
+          "noteworthiness_tier": "material_program",
+          "threshold_basis": [
+            "field_infrastructure",
+            "major_partnership"
+          ],
+          "source_url": "https://www.calicolabs.com/press/calico-and-broad-institute-extend-collaboration-adding-focus-on-age-related-neurodegeneration/",
+          "source_quality": "primary_dated",
+          "rationale": "Already captured as public field activity.",
+          "recommended_public_action": "None; live activity item exists."
+        }
+      ],
+      "tags": [
+        "calico",
+        "aging-biology",
+        "company"
+      ]
+    },
+    {
+      "id": "altos-labs",
+      "name": "Altos Labs",
+      "entity_type": "company",
+      "priority_tier": "now",
+      "status": "capture_recommended",
+      "review_cadence": "quarterly",
+      "last_reviewed_at": "2026-06-15T12:45:00Z",
+      "rationale": "Large cellular rejuvenation company launch is directly analogous to Calico-like field infrastructure.",
+      "official_sources": [
+        {
+          "label": "Altos Labs homepage",
+          "url": "https://www.altoslabs.com/",
+          "source_kind": "homepage"
+        },
+        {
+          "label": "Altos launch press release",
+          "url": "https://www.prnewswire.com/news-releases/altos-labs-launches-with-the-goal-to-transform-medicine-through-cellular-rejuvenation-programming-301463541.html",
+          "source_kind": "press_release"
+        }
+      ],
+      "candidate_events": [
+        {
+          "event_id": "altos-labs-launch-2022",
+          "event_label": "Altos Labs launched with cellular rejuvenation programming focus",
+          "classification": "capture_now",
+          "occurred_on": "2022-01-19",
+          "activity_type": "company_update",
+          "activity_lane": "commercial",
+          "scope_label": "Cellular rejuvenation company launch",
+          "noteworthiness_tier": "field_anchor",
+          "threshold_basis": [
+            "new_major_entity",
+            "major_dedicated_funding",
+            "field_infrastructure"
+          ],
+          "source_url": "https://www.prnewswire.com/news-releases/altos-labs-launches-with-the-goal-to-transform-medicine-through-cellular-rejuvenation-programming-301463541.html",
+          "source_quality": "primary_dated",
+          "rationale": "Officially syndicated launch announcement gives a concrete date, mission, locations, scientific leadership, and $3B committed funding.",
+          "recommended_public_action": "Ask whether to add one source and one historical-backfill activity item."
+        }
+      ],
+      "tags": [
+        "altos-labs",
+        "cellular-rejuvenation",
+        "partial-reprogramming",
+        "company"
+      ]
+    },
+    {
+      "id": "newlimit",
+      "name": "NewLimit",
+      "entity_type": "company",
+      "priority_tier": "now",
+      "status": "capture_recommended",
+      "review_cadence": "quarterly",
+      "last_reviewed_at": "2026-06-15T12:45:00Z",
+      "rationale": "Company and financing activity around epigenetic reprogramming is a direct field-infrastructure signal.",
+      "official_sources": [
+        {
+          "label": "NewLimit blog",
+          "url": "https://blog.newlimit.com/",
+          "source_kind": "blog"
+        },
+        {
+          "label": "NewLimit homepage",
+          "url": "https://www.newlimit.com/",
+          "source_kind": "homepage"
+        }
+      ],
+      "candidate_events": [
+        {
+          "event_id": "newlimit-formation-2021",
+          "event_label": "NewLimit announced formation to extend human healthspan",
+          "classification": "capture_now",
+          "occurred_on": "2021-12-11",
+          "activity_type": "company_update",
+          "activity_lane": "commercial",
+          "scope_label": "Epigenetic reprogramming company launch",
+          "noteworthiness_tier": "material_program",
+          "threshold_basis": [
+            "new_major_entity",
+            "field_infrastructure"
+          ],
+          "source_url": "https://blog.newlimit.com/p/announcing-newlimit-a-company-built",
+          "source_quality": "primary_dated",
+          "rationale": "Official founder post gives a concrete date and mission centered on human healthspan and epigenetic drivers of aging.",
+          "recommended_public_action": "Ask whether to add one source and one historical-backfill activity item."
+        },
+        {
+          "event_id": "newlimit-series-c-2026",
+          "event_label": "NewLimit raised Series C funding to bring longevity medicines to human trials",
+          "classification": "capture_now",
+          "occurred_on": "2026-06-02",
+          "activity_type": "funding_event",
+          "activity_lane": "commercial",
+          "scope_label": "Epigenetic reprogramming clinical-transition financing",
+          "noteworthiness_tier": "material_program",
+          "threshold_basis": [
+            "major_dedicated_funding",
+            "clinical_transition",
+            "field_infrastructure"
+          ],
+          "source_url": "https://blog.newlimit.com/p/newlimit-raises-435m-led-by-founders",
+          "source_quality": "primary_dated",
+          "rationale": "Official company post reports $435M Series C and intent to bring the first aging reprogramming medicine to human clinical trials next year.",
+          "recommended_public_action": "Ask whether to add one source and one current activity item; keep as activity-only unless trial or result records are verified separately."
+        }
+      ],
+      "tags": [
+        "newlimit",
+        "epigenetic-reprogramming",
+        "company"
+      ]
+    },
+    {
+      "id": "retro-biosciences",
+      "name": "Retro Biosciences",
+      "entity_type": "company",
+      "priority_tier": "now",
+      "status": "capture_recommended",
+      "review_cadence": "quarterly",
+      "last_reviewed_at": "2026-06-15T12:45:00Z",
+      "rationale": "Aging therapeutics company with official 2026 financing and first-in-human transition language.",
+      "official_sources": [
+        {
+          "label": "Retro homepage",
+          "url": "https://www.retro.bio/",
+          "source_kind": "homepage"
+        },
+        {
+          "label": "Retro blog",
+          "url": "https://www.retro.bio/blog",
+          "source_kind": "blog"
+        }
+      ],
+      "candidate_events": [
+        {
+          "event_id": "retro-biosciences-launch-2022",
+          "event_label": "Retro Biosciences public launch and initial funding",
+          "classification": "research_more",
+          "activity_type": "company_update",
+          "activity_lane": "commercial",
+          "scope_label": "Aging therapeutics company launch",
+          "noteworthiness_tier": "material_program",
+          "threshold_basis": [
+            "new_major_entity",
+            "field_infrastructure",
+            "source_quality_gap"
+          ],
+          "source_url": "https://www.biospace.com/retro-biosciences-launches-with-180-million-to-increase-healthy-human-lifespan-by-10-years",
+          "source_quality": "secondary_dated",
+          "rationale": "The launch appears material, but the pilot did not find a durable official dated launch page. Do not publish from secondary coverage unless a better source is found or human approves a secondary-source exception.",
+          "recommended_public_action": "Keep in watchlist as needs-source backfill."
+        },
+        {
+          "event_id": "retro-biosciences-next-financing-2026",
+          "event_label": "Retro announced next financing round and first-in-human progress",
+          "classification": "capture_now",
+          "occurred_on": "2026-05-22",
+          "activity_type": "funding_event",
+          "activity_lane": "commercial",
+          "scope_label": "Aging therapeutics clinical-transition financing",
+          "noteworthiness_tier": "material_program",
+          "threshold_basis": [
+            "major_dedicated_funding",
+            "clinical_transition",
+            "field_infrastructure"
+          ],
+          "source_url": "https://www.retro.bio/blog/fundraise-2026",
+          "source_quality": "primary_dated",
+          "rationale": "Official company post reports the initial close of a new financing round, Phase I progress for RTR242, cGMP manufacturing, and a pipeline focused on aging biology.",
+          "recommended_public_action": "Ask whether to add one source and one current activity item; keep any clinical claims activity-only until registry/study records are separately checked."
+        }
+      ],
+      "tags": [
+        "retro-biosciences",
+        "autophagy",
+        "reprogramming",
+        "company"
+      ]
+    },
+    {
+      "id": "hevolution-foundation",
+      "name": "Hevolution Foundation",
+      "entity_type": "funder",
+      "priority_tier": "now",
+      "status": "capture_recommended",
+      "review_cadence": "quarterly",
+      "last_reviewed_at": "2026-06-15T12:45:00Z",
+      "rationale": "Major funder and ecosystem builder for healthspan science.",
+      "official_sources": [
+        {
+          "label": "Hevolution press releases",
+          "url": "https://hevolution.com/press-releases",
+          "source_kind": "press_page"
+        }
+      ],
+      "candidate_events": [
+        {
+          "event_id": "hevolution-hf-gro-awards-2024",
+          "event_label": "Hevolution announced first HF-GRO healthspan research awards",
+          "classification": "capture_now",
+          "occurred_on": "2024-02-12",
+          "activity_type": "funding_event",
+          "activity_lane": "scientific",
+          "scope_label": "Healthspan science funding infrastructure",
+          "noteworthiness_tier": "material_program",
+          "threshold_basis": [
+            "major_prize_or_funder_program",
+            "major_dedicated_funding",
+            "field_infrastructure"
+          ],
+          "source_url": "https://hevolution.com/press-releases/-/asset_publisher/mdxo/content/hevolution-announces-49-awards-to-catalyze-discovery-in-healthspan-science-through-innovative-115-million-grants-progr-1",
+          "source_quality": "primary_dated",
+          "rationale": "Official press release reports 49 awards and up to $115M over five years for preclinical aging biology and geroscience.",
+          "recommended_public_action": "Ask whether to add one source and one field-wide funding activity item."
+        }
+      ],
+      "tags": [
+        "hevolution",
+        "funder",
+        "geroscience",
+        "healthspan"
+      ]
+    },
+    {
+      "id": "xprize-healthspan",
+      "name": "XPRIZE Healthspan",
+      "entity_type": "competition",
+      "priority_tier": "now",
+      "status": "capture_recommended",
+      "review_cadence": "quarterly",
+      "last_reviewed_at": "2026-06-15T12:45:00Z",
+      "rationale": "Large field-infrastructure competition for functional healthspan interventions in older adults.",
+      "official_sources": [
+        {
+          "label": "XPRIZE Healthspan competition page",
+          "url": "https://www.xprize.org/competitions/healthspan",
+          "source_kind": "competition_page"
+        },
+        {
+          "label": "XPRIZE Healthspan competition guidelines v2.2",
+          "url": "https://assets-us-01.kc-usercontent.com/9bc15d1f-8a5c-007d-b507-e3496e85af86/6ac665ad-aa6e-4c74-915b-dea51773312d/XPRIZE%20Healthspan%20Competition%20Guidelines_V2.2_FINAL.pdf",
+          "source_kind": "guidelines"
+        }
+      ],
+      "candidate_events": [
+        {
+          "event_id": "xprize-healthspan-launch-2023",
+          "event_label": "XPRIZE Healthspan launched",
+          "classification": "capture_now",
+          "occurred_on": "2023-11-29",
+          "activity_type": "funding_event",
+          "activity_lane": "scientific",
+          "scope_label": "Healthspan competition infrastructure",
+          "noteworthiness_tier": "material_program",
+          "threshold_basis": [
+            "major_prize_or_funder_program",
+            "major_dedicated_funding",
+            "field_infrastructure"
+          ],
+          "source_url": "https://assets-us-01.kc-usercontent.com/9bc15d1f-8a5c-007d-b507-e3496e85af86/6ac665ad-aa6e-4c74-915b-dea51773312d/XPRIZE%20Healthspan%20Competition%20Guidelines_V2.2_FINAL.pdf",
+          "source_quality": "primary_dated",
+          "rationale": "Official guidelines identify November 29, 2023 as the competition launch date and describe the $101M global competition around muscle, cognitive, and immune function.",
+          "recommended_public_action": "Ask whether to add one source and one field-wide activity item."
+        },
+        {
+          "event_id": "xprize-healthspan-milestone-winners-2025",
+          "event_label": "XPRIZE Healthspan announced first milestone winners",
+          "classification": "capture_now",
+          "occurred_on": "2025-05-12",
+          "activity_type": "funding_event",
+          "activity_lane": "scientific",
+          "scope_label": "Healthspan competition milestone",
+          "noteworthiness_tier": "material_program",
+          "threshold_basis": [
+            "major_prize_or_funder_program",
+            "field_infrastructure"
+          ],
+          "source_url": "https://www.xprize.org/news/101m-xprize-healthspan-awards-first-milestone-winners-driving-toward-revolutionary-healthy-aging-advances",
+          "source_quality": "primary_dated",
+          "rationale": "Official XPRIZE news reports the first milestone winners and over 600 competing teams from 58 countries.",
+          "recommended_public_action": "Ask whether the launch alone is enough, or whether milestone winners should also be captured as a separate activity item."
+        }
+      ],
+      "tags": [
+        "xprize",
+        "healthspan",
+        "competition",
+        "field-infrastructure"
+      ]
+    }
+  ]
+}

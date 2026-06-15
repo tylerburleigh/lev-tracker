@@ -50,13 +50,16 @@ The dispatcher ranks modes in this order:
 4. `bootstrap`
 5. `coverage_repair`
 6. `surveillance`
-7. `coverage_assessment_backfill`
-8. `data_normalization`
-9. `schema_hardening`
-10. `docs_sync`
-11. `app_surface_check`
+7. `field_activity`
+8. `coverage_assessment_backfill`
+9. `data_normalization`
+10. `schema_hardening`
+11. `docs_sync`
+12. `app_surface_check`
 
 The generated surveillance queue contains tracks due for ordinary rotation. Tracks with a successful surveillance or coverage-repair pass inside the current cooldown window stay visible in `surveillance_recent_queue`, but they are not selected by default unless the user explicitly asks for a rapid follow-up.
+
+The generated `field_activity` item is a monthly cross-field sweep. It is suppressed for the current month once a `research_session` with `mode: "field_activity"` has been recorded. When it appears, start from `research/backlog/field-activity-watchlist.v1.json` and report the discovery-channel, blindspot-control, capture-recommended, needs-primary-source, pending field-anchor, and pending material-program counts before broad discovery.
 
 ## Work Item Fields
 

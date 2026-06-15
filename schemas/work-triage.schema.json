@@ -35,6 +35,16 @@
         "surveillance_recent_queue_count",
         "coverage_repair_queue_count",
         "coverage_assessment_backlog_count",
+        "field_activity_watchlist_updated_at",
+        "field_activity_watchlist_entry_count",
+        "field_activity_discovery_channel_count",
+        "field_activity_blindspot_control_count",
+        "field_activity_capture_recommended_count",
+        "field_activity_needs_primary_source_count",
+        "field_activity_pending_field_anchor_count",
+        "field_activity_pending_material_program_count",
+        "field_activity_watch_only_count",
+        "field_activity_below_threshold_count",
         "unnormalized_intervention_id_count",
         "unnormalized_intervention_reference_count"
       ],
@@ -66,6 +76,45 @@
           "minimum": 0
         },
         "coverage_assessment_backlog_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "field_activity_watchlist_updated_at": {
+          "$ref": "./common.schema.json#/$defs/dateTime"
+        },
+        "field_activity_watchlist_entry_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "field_activity_discovery_channel_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "field_activity_blindspot_control_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "field_activity_capture_recommended_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "field_activity_needs_primary_source_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "field_activity_pending_field_anchor_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "field_activity_pending_material_program_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "field_activity_watch_only_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "field_activity_below_threshold_count": {
           "type": "integer",
           "minimum": 0
         },
@@ -302,6 +351,7 @@
         "editorial_rollup",
         "bootstrap",
         "surveillance",
+        "field_activity",
         "coverage_repair",
         "coverage_assessment_backfill",
         "data_normalization",

@@ -53,6 +53,8 @@ Keep `/activity` as a curated external field-event feed, not an accidental list 
 
 Do not stage `activity_item` records for tracker/editorial meta-events: adding something to a watchlist, changing our wording, expanding coverage, completing a review, deciding that company activity should be tracked, or otherwise describing the site's workflow. Put those in the research session, `publication_event.change_note`, outlook wording, or an editorial note. A public activity item must point to a concrete external source, study, finding, or URL.
 
+Use `docs/field-activity-workflow.md` when a surveillance pass finds company, funder, partnership, regulatory, conference, or field-wide activity. That workflow defines the activity/evidence boundary, the candidate classification step, the `research/backlog/field-activity-watchlist.v1.json` discovery input, and the cadence for activity sweeps outside ordinary track surveillance.
+
 Treat trial changes conservatively:
 
 - unchanged registry or no posted result: `no_op`, unless the public source/study record needs a factual refresh

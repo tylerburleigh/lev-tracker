@@ -333,7 +333,7 @@ function isPublicationEventResolvedInActiveStateOfFieldWorkflow(stateOfFieldWork
     });
 }
 
-function buildStateOfFieldWorkflowItems(stateOfFieldWorkflow) {
+function buildStateOfFieldWorkflowItems(stateOfFieldWorkflow, fieldActivityWatchlistSummary) {
   return (stateOfFieldWorkflow.editions ?? [])
     .filter((edition) => activeStateOfFieldStatuses.has(edition.status))
     .map((edition) => {
@@ -365,6 +365,7 @@ function buildStateOfFieldWorkflowItems(stateOfFieldWorkflow) {
           "ops/state-of-field-workflow.v1.json",
           edition.published_edition_path,
           "data/content/current-lev-story/current.json",
+          "research/backlog/field-activity-watchlist.v1.json",
           "docs/editorial-rollup.md"
         ],
         references: openReconciliationItems.map((item) => ({
@@ -395,6 +396,26 @@ function buildStateOfFieldWorkflowItems(stateOfFieldWorkflow) {
           {
             name: "latest_observed_public_update",
             value: edition.observed_public_story.latest_publication_event_id
+          },
+          {
+            name: "field_activity_watchlist_entry_count",
+            value: fieldActivityWatchlistSummary.entryCount
+          },
+          {
+            name: "field_activity_capture_recommended_count",
+            value: fieldActivityWatchlistSummary.captureRecommendedCount
+          },
+          {
+            name: "field_activity_needs_primary_source_count",
+            value: fieldActivityWatchlistSummary.needsPrimarySourceCount
+          },
+          {
+            name: "field_activity_pending_field_anchor_count",
+            value: fieldActivityWatchlistSummary.pendingFieldAnchorCount
+          },
+          {
+            name: "field_activity_pending_material_program_count",
+            value: fieldActivityWatchlistSummary.pendingMaterialProgramCount
           }
         ]
       });
@@ -559,6 +580,105 @@ function buildCoverageBackfillItem(surveillanceQueue, statusByTrack) {
   });
 }
 
+function summarizeFieldActivityWatchlist(fieldActivityWatchlist) {
+  const entries = fieldActivityWatchlist.entries ?? [];
+  const candidateEvents = entries.flatMap((entry) => entry.candidate_events ?? []);
+  const pendingEvents = candidateEvents.filter((event) => ["capture_now", "research_more"].includes(event.classification));
+
+  return {
+    entryCount: entries.length,
+    discoveryChannelCount: fieldActivityWatchlist.discovery_channels?.length ?? 0,
+    blindspotControlCount: fieldActivityWatchlist.blindspot_controls?.length ?? 0,
+    captureRecommendedCount: candidateEvents.filter((event) => event.classification === "capture_now").length,
+    needsPrimarySourceCount: candidateEvents.filter((event) => event.classification === "research_more").length,
+    pendingFieldAnchorCount: pendingEvents.filter((event) => event.noteworthiness_tier === "field_anchor").length,
+    pendingMaterialProgramCount: pendingEvents.filter((event) => event.noteworthiness_tier === "material_program").length,
+    watchOnlyCount: candidateEvents.filter((event) => event.noteworthiness_tier === "watch_only").length,
+    belowThresholdCount: candidateEvents.filter((event) => event.noteworthiness_tier === "below_threshold").length
+  };
+}
+
+function buildFieldActivitySweepItem(sessions, activityItems, fieldActivityWatchlist) {
+  const latestFieldActivitySession = latestBy(
+    sessions.filter((session) => session.mode === "field_activity"),
+    (session) => session.completed_at
+  );
+  const currentMonth = new Date().toISOString().slice(0, 7);
+  const watchlistSummary = summarizeFieldActivityWatchlist(fieldActivityWatchlist);
+
+  if (monthPart(latestFieldActivitySession?.completed_at) === currentMonth) {
+    return undefined;
+  }
+
+  return compactObject({
+    item_id: "field-activity-monthly-sweep",
+    mode: "field_activity",
+    domain: "research",
+    priority_tier: "soon",
+    status: "ready",
+    title: "Run monthly field activity sweep",
+    rationale: latestFieldActivitySession
+      ? `Last field-activity session completed ${datePart(latestFieldActivitySession.completed_at)}; no sweep is recorded for ${currentMonth}.`
+      : "No field-activity session has been recorded yet, so company, funder, partnership, regulatory, and field-wide activity can be missed by track-only rotation.",
+    default_action:
+      "Run one bounded field-activity sweep, classify candidates, ask for approval on material additions, and publish only source-backed activity records.",
+    runbook_path: "docs/field-activity-workflow.md",
+    source_paths: [
+      "docs/field-activity-workflow.md",
+      "research/backlog/field-activity-watchlist.v1.json",
+      "data/activity-items",
+      "data/sources",
+      "research/sessions"
+    ],
+    references: latestFieldActivitySession
+      ? [
+          {
+            record_type: "research_session",
+            record_id: latestFieldActivitySession.id
+          }
+        ]
+      : undefined,
+    signals: [
+      {
+        name: "latest_field_activity_session_at",
+        value: latestFieldActivitySession?.completed_at ?? "never"
+      },
+      {
+        name: "activity_item_count",
+        value: activityItems.length
+      },
+      {
+        name: "field_activity_watchlist_entry_count",
+        value: watchlistSummary.entryCount
+      },
+      {
+        name: "field_activity_discovery_channel_count",
+        value: watchlistSummary.discoveryChannelCount
+      },
+      {
+        name: "field_activity_blindspot_control_count",
+        value: watchlistSummary.blindspotControlCount
+      },
+      {
+        name: "field_activity_capture_recommended_count",
+        value: watchlistSummary.captureRecommendedCount
+      },
+      {
+        name: "field_activity_needs_primary_source_count",
+        value: watchlistSummary.needsPrimarySourceCount
+      },
+      {
+        name: "field_activity_pending_field_anchor_count",
+        value: watchlistSummary.pendingFieldAnchorCount
+      },
+      {
+        name: "field_activity_pending_material_program_count",
+        value: watchlistSummary.pendingMaterialProgramCount
+      }
+    ]
+  });
+}
+
 function collectReferencedInterventions(recordsByType) {
   const refs = new Map();
   const addRef = (interventionId) => {
@@ -667,6 +787,7 @@ async function main() {
   const [
     coverageStatus,
     priorityQueue,
+    fieldActivityWatchlist,
     bundles,
     interventions,
     findings,
@@ -678,10 +799,12 @@ async function main() {
     stateOfFieldWorkflow,
     hallmarkInsights,
     siteShellText,
-    hasOutlookRoute
+    hasOutlookRoute,
+    sessions
   ] = await Promise.all([
     readJson("research/state/coverage-status.v1.json"),
     readJson("research/backlog/track-priority.v1.json"),
+    readJson("research/backlog/field-activity-watchlist.v1.json"),
     readCollection("data/candidate-bundles"),
     readCollection("data/interventions"),
     readCollection("data/findings"),
@@ -693,10 +816,12 @@ async function main() {
     readJson("ops/state-of-field-workflow.v1.json"),
     readJson("data/content/hallmark-insights.json"),
     readTextIfExists("src/components/site-shell.tsx"),
-    pathExists("src/app/outlook/page.tsx")
+    pathExists("src/app/outlook/page.tsx"),
+    readCollection("research/sessions")
   ]);
 
   const statusByTrack = buildStatusByTrack(coverageStatus);
+  const fieldActivityWatchlistSummary = summarizeFieldActivityWatchlist(fieldActivityWatchlist);
   const activeBundles = bundles
     .filter((bundle) => !terminalBundleStatuses.has(bundle.lifecycle_status))
     .sort((left, right) => left.submitted_at.localeCompare(right.submitted_at));
@@ -712,7 +837,7 @@ async function main() {
   ).length;
 
   const editorialItems = buildEditorialItems(activeBundles);
-  const stateOfFieldWorkflowItems = buildStateOfFieldWorkflowItems(stateOfFieldWorkflow);
+  const stateOfFieldWorkflowItems = buildStateOfFieldWorkflowItems(stateOfFieldWorkflow, fieldActivityWatchlistSummary);
   const editorialRollupItem = buildEditorialRollupItem({
     publicationEvents,
     stateOfFieldEditions,
@@ -730,6 +855,7 @@ async function main() {
     [...priorityQueue.surveillance_queue, ...(priorityQueue.surveillance_recent_queue ?? [])],
     statusByTrack
   );
+  const fieldActivitySweepItem = buildFieldActivitySweepItem(sessions, activityItems, fieldActivityWatchlist);
   const dataNormalizationItem = buildDataNormalizationItem(missingInterventions);
 
   const workItems = rankWorkItems([
@@ -739,6 +865,7 @@ async function main() {
     ...bootstrapItems,
     ...coverageRepairItems,
     surveillanceItem,
+    fieldActivitySweepItem,
     coverageBackfillItem,
     dataNormalizationItem
   ]);
@@ -758,6 +885,16 @@ async function main() {
       surveillance_recent_queue_count: priorityQueue.surveillance_recent_queue?.length ?? 0,
       coverage_repair_queue_count: priorityQueue.coverage_repair_queue.length,
       coverage_assessment_backlog_count: coverageAssessmentBacklogCount,
+      field_activity_watchlist_updated_at: fieldActivityWatchlist.updated_at,
+      field_activity_watchlist_entry_count: fieldActivityWatchlistSummary.entryCount,
+      field_activity_discovery_channel_count: fieldActivityWatchlistSummary.discoveryChannelCount,
+      field_activity_blindspot_control_count: fieldActivityWatchlistSummary.blindspotControlCount,
+      field_activity_capture_recommended_count: fieldActivityWatchlistSummary.captureRecommendedCount,
+      field_activity_needs_primary_source_count: fieldActivityWatchlistSummary.needsPrimarySourceCount,
+      field_activity_pending_field_anchor_count: fieldActivityWatchlistSummary.pendingFieldAnchorCount,
+      field_activity_pending_material_program_count: fieldActivityWatchlistSummary.pendingMaterialProgramCount,
+      field_activity_watch_only_count: fieldActivityWatchlistSummary.watchOnlyCount,
+      field_activity_below_threshold_count: fieldActivityWatchlistSummary.belowThresholdCount,
       unnormalized_intervention_id_count: missingInterventions.missingIdCount,
       unnormalized_intervention_reference_count: missingInterventions.missingReferenceCount
     },
@@ -772,6 +909,7 @@ async function main() {
         "bootstrap",
         "coverage_repair",
         "surveillance",
+        "field_activity",
         "coverage_assessment_backfill",
         "data_normalization",
         "schema_hardening",
@@ -790,7 +928,8 @@ async function main() {
       ready_research_count:
         priorityQueue.bootstrap_queue.length +
         priorityQueue.surveillance_queue.length +
-        priorityQueue.coverage_repair_queue.length,
+        priorityQueue.coverage_repair_queue.length +
+        (fieldActivitySweepItem && isActionableWorkItem(fieldActivitySweepItem) ? 1 : 0),
       data_hardening_count: missingInterventions.missingIdCount > 0 ? 1 : 0,
       notes: [
         "Roadmap remains narrative context; this file is the operational dispatcher.",

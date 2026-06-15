@@ -31,6 +31,7 @@ const schemaByExactPath = {
   "data/staged-record-archives/changed-terminal-bodies.v1.json": "./staged-records-archive.schema.json",
   "data/staged-record-manifests/terminal-bundles.v1.json": "./staged-records-manifest.schema.json",
   "ops/state-of-field-workflow.v1.json": "./state-of-field-workflow.schema.json",
+  "research/backlog/field-activity-watchlist.v1.json": "./field-activity-watchlist.schema.json",
   "research/backlog/track-priority.v1.json": "./research-priority-queue.schema.json",
   "research/state/coverage-status.v1.json": "./research-coverage-status.schema.json",
   "ops/triage-state.v1.json": "./work-triage.schema.json",
@@ -113,6 +114,28 @@ function formatError(error) {
 
 const publicActivityMetaPattern =
   /\b(tracker|activity lane|watch lane|public watchlist|watchlist expanded|added to watchlist|tracked separately|contextual movement|contextual activity|field signal|evidence-weighted)\b/i;
+const publicActivityAllowedNoteworthinessTiers = new Set([
+  "field_anchor",
+  "material_program",
+  "watch_only",
+  "below_threshold"
+]);
+const publicActivityPublishingTiers = new Set(["field_anchor", "material_program"]);
+const publicTrialActivityTypes = new Set([
+  "trial_launch",
+  "trial_status_update",
+  "trial_completion",
+  "results_posted"
+]);
+const publicTrialActivityPublishingKinds = new Set([
+  "new_direct_human_trial",
+  "first_in_human_or_older_adult",
+  "material_status_change",
+  "completion_or_termination",
+  "results_posted_or_published",
+  "major_phase_or_program_transition",
+  "trial_watch_anchor"
+]);
 
 function getActivityText(value) {
   return [value.name, value.summary, value.significance_note].filter((item) => typeof item === "string").join(" ");
@@ -140,6 +163,32 @@ function validatePublicActivityItem(relativePath, value, issues) {
     issues.push(
       `${relativePath}: public activity copy appears to describe tracker/editorial process rather than an external field event. Use /activity only for field events with actual event dates.`
     );
+  }
+
+  if (!value.noteworthiness_tier) {
+    issues.push(`${relativePath}: live public activity items must include noteworthiness_tier.`);
+  } else if (!publicActivityAllowedNoteworthinessTiers.has(value.noteworthiness_tier)) {
+    issues.push(`${relativePath}: noteworthiness_tier is not recognized: ${value.noteworthiness_tier}.`);
+  } else if (!publicActivityPublishingTiers.has(value.noteworthiness_tier)) {
+    issues.push(
+      `${relativePath}: live public activity items must clear the field_anchor or material_program threshold; ${value.noteworthiness_tier} belongs in the watchlist or a research session.`
+    );
+  }
+
+  if (!Array.isArray(value.threshold_basis) || value.threshold_basis.length === 0) {
+    issues.push(`${relativePath}: live public activity items must include threshold_basis.`);
+  }
+
+  if (publicTrialActivityTypes.has(value.activity_type)) {
+    if (!value.trial_activity_kind) {
+      issues.push(`${relativePath}: live trial activity items must include trial_activity_kind.`);
+    } else if (!publicTrialActivityPublishingKinds.has(value.trial_activity_kind)) {
+      issues.push(
+        `${relativePath}: trial_activity_kind ${value.trial_activity_kind} does not clear the public /activity threshold; put routine registry maintenance in trial details or research sessions.`
+      );
+    }
+  } else if (value.trial_activity_kind) {
+    issues.push(`${relativePath}: trial_activity_kind should only be set on trial activity records.`);
   }
 }
 

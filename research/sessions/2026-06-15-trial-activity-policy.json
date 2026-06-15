@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-15-trial-activity-policy",
+  "name": "Trial activity policy systematization",
+  "mode": "field_activity",
+  "started_at": "2026-06-15T14:45:00Z",
+  "completed_at": "2026-06-15T15:00:00Z",
+  "scope": {
+    "question": "How should new trial launches and watched-trial milestones be systematized for /activity without admitting routine registry maintenance?",
+    "scope_label": "Trial activity policy",
+    "entity_names": [
+      "ClinicalTrials.gov watched trials"
+    ],
+    "hallmark_ids": [],
+    "track_ids": []
+  },
+  "selected_via": "manual_override",
+  "outcome": "activity_only",
+  "summary": "Systematized trial activity policy. /trials remains the comprehensive surface for registry maintenance, stale checks, completion dates, result status, and no-results context. /activity is reserved for notable field movement: new directly relevant human trials, first-in-human or first older-adult milestones, material status changes, completions, terminations, posted results, publications, and major phase or clinical-program transitions. Added trial_activity_kind to live trial activity records and validation to reject routine_registry_maintenance from /activity. Reframed the sirolimus older-adults item as a 2022 direct older-adult rapalog trial-watch anchor rather than a February 2026 routine registry-update event.",
+  "next_recommended_mode": "field_activity",
+  "materiality_decision": {
+    "material_delta": "activity_only",
+    "public_update_needed": true,
+    "activity_only": true,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "field_activity",
+    "rationale": "The change clarifies existing activity classification and keeps routine registry maintenance out of the public activity feed. No evidence interpretation changes."
+  },
+  "search_log": [
+    {
+      "source_name": "Local activity records",
+      "checked_at": "2026-06-15T14:50:00Z",
+      "summary": "Reviewed all live trial-related activity items and assigned trial_activity_kind."
+    },
+    {
+      "source_name": "ClinicalTrials.gov sirolimus source record",
+      "checked_at": "2026-06-15T14:55:00Z",
+      "url": "https://clinicaltrials.gov/study/NCT05237687",
+      "summary": "Used the local source published_on date to reframe the sirolimus record as a trial-launch/watch-anchor item rather than a routine registry update."
+    }
+  ],
+  "source_ids": [
+    "nct-02851758",
+    "nct-04998357",
+    "nct-07275424",
+    "nct05237687"
+  ],
+  "source_urls": [
+    "https://clinicaltrials.gov/study/NCT02851758",
+    "https://clinicaltrials.gov/study/NCT04998357",
+    "https://clinicaltrials.gov/study/NCT07275424",
+    "https://clinicaltrials.gov/study/NCT05237687"
+  ],
+  "notes": [
+    "Routine registry rechecks belong in trial_details or trial_watch_checks, not /activity.",
+    "Public trial activity items now validate only when trial_activity_kind is a public-threshold kind."
+  ],
+  "next_actions": [
+    "When adding future trial activity, ask whether the event is a new direct trial, material milestone, result, completion, termination, or phase/program transition.",
+    "If the answer is only registry maintenance, update /trials metadata and research-session trial_watch_checks instead of creating an activity item."
+  ]
+}

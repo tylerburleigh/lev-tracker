@@ -12,12 +12,16 @@ That is deliberate. A language model can usually do one bounded track pass well 
   Persistent state about what has baseline coverage, what is in active review, and what mode comes next.
 - `research/backlog/track-priority.v1.json`
   The ordered queue that bootstrap and surveillance should consult when the user is vague.
+- `research/backlog/field-activity-watchlist.v1.json`
+  The entity and program watchlist that monthly field-activity sweeps consult before broad discovery.
 - `research/sessions/*.json`
   One structured record per research pass, including no-op passes that do not produce a bundle.
 - `research/coverage-assessments/*.json`
   Internal track-level assessments of source-landscape completeness, category coverage, known gaps, and the next coverage action.
 - `docs/surveillance-checklist.md`
   The operating checklist for field change checks after baseline review.
+- `docs/field-activity-workflow.md`
+  The operating checklist for activity-specific discovery, candidate classification, cadence, and activity/evidence boundary decisions.
 - `docs/coverage-assessment.md`
   The rubric for judging whether a track is thin, adequate, or strong from a coverage standpoint.
 - `docs/triage-workflow.md`
@@ -31,6 +35,7 @@ That is deliberate. A language model can usually do one bounded track pass well 
 - If the user says something too broad like `go find research`, decompose to one track-level pass.
 - If the user is vague but clearly wants `bootstrap` or `surveillance`, choose the top ready item from the matching queue and state the assumption.
 - If the user is vague but the selected track's latest coverage assessment recommends `coverage_repair`, run coverage repair before ordinary surveillance.
+- If the dispatcher selects `field_activity`, run the monthly cross-field activity sweep from `docs/field-activity-workflow.md`; do not force it into a track unless the sweep identifies a track-specific follow-up.
 
 ## What One Research Run Should Produce
 
@@ -60,6 +65,10 @@ Surveillance is a sorting pass. It has four valid outcomes:
 No-op sessions are successful surveillance work. They keep the review clock visible without growing the candidate-bundle backlog.
 
 The rotation queue has a recency gate. `surveillance_queue` contains tracks that are due for ordinary field-change review, while `surveillance_recent_queue` preserves recently handled tracks with their last review date and next due date. The default cooldown is generated into `research/backlog/track-priority.v1.json`.
+
+Field-activity sessions use `mode: "field_activity"` and may be entity- or program-scoped rather than track-scoped. The monthly field-activity dispatcher item is suppressed after one completed field-activity session in the current month.
+
+Field-activity sweeps should start from `research/backlog/field-activity-watchlist.v1.json`. The watchlist is allowed to contain capture candidates, already captured events, and events that need better primary sources; it is not public evidence.
 
 Research session records should make the sorting decision explicit with `materiality_decision`, `search_log`, and `excluded_sources` when relevant. Reviewed-but-excluded sources are part of the audit trail, not clutter.
 

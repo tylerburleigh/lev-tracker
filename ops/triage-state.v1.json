@@ -1,16 +1,26 @@
 {
   "schema_version": "1.0.0",
   "state_type": "work_triage",
-  "generated_at": "2026-06-15T11:56:16.887Z",
+  "generated_at": "2026-06-15T15:39:27.041Z",
   "source_state": {
-    "research_coverage_status_updated_at": "2026-06-15T11:56:16.758Z",
-    "research_priority_queue_updated_at": "2026-06-15T11:56:16.758Z",
+    "research_coverage_status_updated_at": "2026-06-15T15:39:26.909Z",
+    "research_priority_queue_updated_at": "2026-06-15T15:39:26.909Z",
     "active_candidate_bundle_count": 0,
     "bootstrap_queue_count": 0,
     "surveillance_queue_count": 0,
     "surveillance_recent_queue_count": 38,
     "coverage_repair_queue_count": 0,
     "coverage_assessment_backlog_count": 0,
+    "field_activity_watchlist_updated_at": "2026-06-15T12:45:00Z",
+    "field_activity_watchlist_entry_count": 6,
+    "field_activity_discovery_channel_count": 5,
+    "field_activity_blindspot_control_count": 6,
+    "field_activity_capture_recommended_count": 7,
+    "field_activity_needs_primary_source_count": 1,
+    "field_activity_pending_field_anchor_count": 1,
+    "field_activity_pending_material_program_count": 7,
+    "field_activity_watch_only_count": 0,
+    "field_activity_below_threshold_count": 0,
     "unnormalized_intervention_id_count": 0,
     "unnormalized_intervention_reference_count": 0
   },
@@ -25,6 +35,7 @@
       "bootstrap",
       "coverage_repair",
       "surveillance",
+      "field_activity",
       "coverage_assessment_backfill",
       "data_normalization",
       "schema_hardening",
@@ -55,7 +66,7 @@
       "priority_tier": "now",
       "status": "blocked",
       "title": "Resolve State of the Field workflow for June 2026",
-      "rationale": "Internal draft opened while June is still in progress. The candidate public skeleton now accounts for the current-story June updates plus six additional June public updates, but final July copy stays open until the retrospective period closes. 0 reconciliation decision(s) and 3 checklist item(s) remain open.",
+      "rationale": "Internal draft opened while June is still in progress. The candidate public skeleton now accounts for the current-story June updates plus six additional June public updates, but final July copy stays open until the retrospective period closes. 0 reconciliation decision(s) and 4 checklist item(s) remain open.",
       "default_action": "Keep the July edition internal until June closes, then finalize the provisional classifications for the 17 known June public updates and write the public 2026-07 edition from reviewed records.",
       "runbook_path": "docs/editorial-rollup.md",
       "command": "npm run state-of-field:status -- --strict",
@@ -63,6 +74,7 @@
         "ops/state-of-field-workflow.v1.json",
         "data/content/state-of-the-field/2026-07.json",
         "data/content/current-lev-story/current.json",
+        "research/backlog/field-activity-watchlist.v1.json",
         "docs/editorial-rollup.md"
       ],
       "references": [],
@@ -77,7 +89,7 @@
         },
         {
           "name": "open_checklist_item_count",
-          "value": 3
+          "value": 4
         },
         {
           "name": "blocked_checklist_item_count",
@@ -85,11 +97,31 @@
         },
         {
           "name": "pending_checklist_item_count",
-          "value": 2
+          "value": 3
         },
         {
           "name": "latest_observed_public_update",
           "value": "publish-extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15-2026-06-15t10-33-29-045z"
+        },
+        {
+          "name": "field_activity_watchlist_entry_count",
+          "value": 6
+        },
+        {
+          "name": "field_activity_capture_recommended_count",
+          "value": 7
+        },
+        {
+          "name": "field_activity_needs_primary_source_count",
+          "value": 1
+        },
+        {
+          "name": "field_activity_pending_field_anchor_count",
+          "value": 1
+        },
+        {
+          "name": "field_activity_pending_material_program_count",
+          "value": 7
         }
       ]
     }

@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-15-calico-field-activity",
+  "name": "Calico field activity backfill",
+  "mode": "field_activity",
+  "started_at": "2026-06-15T00:00:00Z",
+  "completed_at": "2026-06-15T00:00:00Z",
+  "scope": {
+    "question": "Which selected Calico field-activity anchors should be captured separately from evidence findings?",
+    "scope_label": "Calico entity-level field activity",
+    "entity_names": [
+      "Calico",
+      "Google",
+      "AbbVie",
+      "Broad Institute"
+    ],
+    "hallmark_ids": [],
+    "track_ids": []
+  },
+  "selected_via": "manual_override",
+  "outcome": "activity_only",
+  "summary": "Reviewed official Google and Calico sources for Calico field activity. Added source-backed activity records for the 2013 Google Calico launch, the 2014 Calico-AbbVie aging R&D collaboration, and the 2024 Calico-Broad collaboration extension. These are field infrastructure and partnership events, not evidence that an intervention improves aging outcomes, so no finding or outlook update is warranted.",
+  "next_recommended_mode": "surveillance",
+  "materiality_decision": {
+    "material_delta": "activity_only",
+    "public_update_needed": true,
+    "activity_only": true,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "surveillance",
+    "rationale": "The events are concrete, dated, primary-source-backed, and relevant to field infrastructure around aging biology. They do not report intervention results or change the current evidence assessment."
+  },
+  "search_log": [
+    {
+      "source_name": "Google press announcement",
+      "checked_at": "2026-06-15T00:00:00Z",
+      "url": "https://googlepress.blogspot.com/2013/09/calico-announcement.html",
+      "summary": "Confirmed Google's September 18, 2013 announcement of Calico as a health and well-being company focused on aging and associated diseases."
+    },
+    {
+      "source_name": "Calico press release",
+      "checked_at": "2026-06-15T00:00:00Z",
+      "url": "https://www.calicolabs.com/press/abbvie-and-calico-announce-a-novel-collaboration-to-accelerate-the-discovery-development-and-commercialization-of-new-therapies/",
+      "summary": "Confirmed the September 3, 2014 Calico-AbbVie R&D collaboration for age-related diseases, including the planned Bay Area R&D facility and potential co-investment."
+    },
+    {
+      "source_name": "Calico press release",
+      "checked_at": "2026-06-15T00:00:00Z",
+      "url": "https://www.calicolabs.com/press/calico-and-broad-institute-extend-collaboration-adding-focus-on-age-related-neurodegeneration/",
+      "summary": "Confirmed the May 9, 2024 Calico-Broad extension through September 2029, with added focus on age-related neurodegeneration."
+    },
+    {
+      "source_name": "Calico home page",
+      "checked_at": "2026-06-15T00:00:00Z",
+      "url": "https://www.calicolabs.com/",
+      "summary": "Confirmed Calico's current public mission framing around aging biology, lifespan, and interventions for longer, healthier lives."
+    }
+  ],
+  "source_ids": [
+    "google-calico-announcement-2013",
+    "calico-abbvie-aging-collaboration-2014",
+    "calico-broad-neurodegeneration-extension-2024"
+  ],
+  "source_urls": [
+    "https://googlepress.blogspot.com/2013/09/calico-announcement.html",
+    "https://www.calicolabs.com/press/abbvie-and-calico-announce-a-novel-collaboration-to-accelerate-the-discovery-development-and-commercialization-of-new-therapies/",
+    "https://www.calicolabs.com/press/calico-and-broad-institute-extend-collaboration-adding-focus-on-age-related-neurodegeneration/",
+    "https://www.calicolabs.com/"
+  ],
+  "notes": [
+    "Used activity scope labels because these are field-wide institutional events rather than one hallmark or track.",
+    "No evidence findings were added because the reviewed sources are company and partnership activity, not result-bearing intervention evidence."
+  ],
+  "next_actions": [
+    "Use the monthly field-activity sweep to look for comparable company, funder, partnership, regulatory, and field-wide activity outside track-level surveillance."
+  ]
+}

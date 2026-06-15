@@ -6,11 +6,11 @@ Overall: passed
 ## Summary
 
 - Current LEV story status: current
-- Public copy warnings: 59
+- Public copy warnings: 61
 - Reader-task audit: passed (14 passed, 0 issues, 0 warnings)
 - State of the Field workflow: draft (0 open decision(s), 0 untracked mismatch(es))
 - Hallmark insight freshness: 0 stale hallmark insight(s)
-- Top public-copy terms: durable: 15, functional benefit: 9, translation: 9, mechanistic: 6, coverage repair: 5, biomarker-heavy: 4, low confidence: 3, support map: 3
+- Top public-copy terms: durable: 15, translation: 10, functional benefit: 9, mechanistic: 6, coverage repair: 5, biomarker-heavy: 4, low confidence: 3, support map: 3
 
 ## Gates
 
@@ -23,7 +23,7 @@ Overall: passed
 - PASS: Hallmark insight summaries are reviewed after affected outlook changes
   No hallmark insight summaries are older than their latest affected public update.
 - PASS: Public copy warnings <= 269
-  Current public copy warning count is 59.
+  Current public copy warning count is 61.
 - PASS: Reader-task warnings <= 0
   Current reader-task warning count is 0.
 
@@ -60,7 +60,13 @@ Untracked missing updates: 0
 Open reconciliation decisions: 0
 Decided without agent assessment: 0
 Required human approvals unresolved: 0
-Open checklist items: 3
+Open checklist items: 4
+Field-activity watchlist entries: 6
+Field-activity discovery channels: 5
+Field-activity blindspot controls: 6
+Field-activity capture recommended: 7
+Field-activity needs primary source: 1
+Field-activity pending anchors/material programs: 1/7
 Next action: Keep the July edition internal until June closes, then finalize the provisional classifications for the 17 known June public updates and write the public 2026-07 edition from reviewed records.
 ```
 
@@ -70,8 +76,8 @@ Command: `node scripts/public-copy-lint.mjs --write`
 Exit code: 0
 
 ```text
-Public copy warnings: 59
-Top terms: durable: 15, functional benefit: 9, translation: 9, mechanistic: 6, coverage repair: 5, biomarker-heavy: 4, low confidence: 3, support map: 3
+Public copy warnings: 61
+Top terms: durable: 15, translation: 10, functional benefit: 9, mechanistic: 6, coverage repair: 5, biomarker-heavy: 4, low confidence: 3, support map: 3
 Wrote extra/public-copy-report.md.
 ```
 

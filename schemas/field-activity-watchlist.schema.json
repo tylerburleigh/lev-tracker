@@ -1,0 +1,413 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./field-activity-watchlist.schema.json",
+  "title": "Field activity watchlist",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "queue_type",
+    "updated_at",
+    "selection_policy",
+    "source_quality_policy",
+    "discovery_channels",
+    "blindspot_controls",
+    "entries"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "queue_type": {
+      "const": "field_activity_watchlist"
+    },
+    "updated_at": {
+      "$ref": "./common.schema.json#/$defs/dateTime"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "selection_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "default_unit",
+        "when_request_is_vague",
+        "review_cadence"
+      ],
+      "properties": {
+        "default_unit": {
+          "enum": [
+            "entity",
+            "program"
+          ]
+        },
+        "when_request_is_vague": {
+          "type": "string"
+        },
+        "review_cadence": {
+          "type": "string"
+        }
+      }
+    },
+    "source_quality_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "capture_now",
+        "research_more",
+        "exclude"
+      ],
+      "properties": {
+        "capture_now": {
+          "type": "string"
+        },
+        "research_more": {
+          "type": "string"
+        },
+        "exclude": {
+          "type": "string"
+        }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/watchEntry"
+      }
+    },
+    "discovery_channels": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/discoveryChannel"
+      }
+    },
+    "blindspot_controls": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/blindspotControl"
+      }
+    }
+  },
+  "$defs": {
+    "discoveryChannel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "cadence",
+        "source_kinds",
+        "blindspots_covered",
+        "search_guidance"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "./common.schema.json#/$defs/identifier"
+        },
+        "label": {
+          "type": "string"
+        },
+        "cadence": {
+          "enum": [
+            "monthly",
+            "quarterly",
+            "semiannual",
+            "event_triggered"
+          ]
+        },
+        "source_kinds": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "homepage",
+              "press_page",
+              "press_release",
+              "blog",
+              "grant_database",
+              "competition_page",
+              "guidelines",
+              "registry",
+              "regulatory_database",
+              "conference_page",
+              "publication_database",
+              "secondary_lead",
+              "other"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "blindspots_covered": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "./common.schema.json#/$defs/identifier"
+          },
+          "uniqueItems": true
+        },
+        "search_guidance": {
+          "type": "string"
+        },
+        "example_urls": {
+          "type": "array",
+          "items": {
+            "$ref": "./common.schema.json#/$defs/url"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "blindspotControl": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "risk",
+        "mitigation",
+        "cadence",
+        "success_signal"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "./common.schema.json#/$defs/identifier"
+        },
+        "risk": {
+          "type": "string"
+        },
+        "mitigation": {
+          "type": "string"
+        },
+        "cadence": {
+          "enum": [
+            "monthly",
+            "quarterly",
+            "semiannual",
+            "event_triggered"
+          ]
+        },
+        "success_signal": {
+          "type": "string"
+        }
+      }
+    },
+    "watchEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "entity_type",
+        "priority_tier",
+        "status",
+        "review_cadence",
+        "rationale",
+        "official_sources",
+        "candidate_events"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "./common.schema.json#/$defs/identifier"
+        },
+        "name": {
+          "type": "string"
+        },
+        "entity_type": {
+          "enum": [
+            "company",
+            "funder",
+            "competition",
+            "program",
+            "regulator",
+            "research_institute",
+            "other"
+          ]
+        },
+        "priority_tier": {
+          "enum": [
+            "now",
+            "soon",
+            "later"
+          ]
+        },
+        "status": {
+          "enum": [
+            "watch",
+            "capture_recommended",
+            "captured",
+            "needs_primary_source",
+            "excluded"
+          ]
+        },
+        "review_cadence": {
+          "enum": [
+            "monthly",
+            "quarterly",
+            "semiannual",
+            "event_triggered"
+          ]
+        },
+        "last_reviewed_at": {
+          "$ref": "./common.schema.json#/$defs/dateTime"
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "official_sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "url",
+              "source_kind"
+            ],
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "url": {
+                "$ref": "./common.schema.json#/$defs/url"
+              },
+              "source_kind": {
+                "enum": [
+                  "homepage",
+                  "press_page",
+                  "press_release",
+                  "blog",
+                  "grant_database",
+                  "competition_page",
+                  "guidelines",
+                  "registry",
+                  "regulatory_database",
+                  "other"
+                ]
+              }
+            }
+          }
+        },
+        "candidate_events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/candidateEvent"
+          }
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "candidateEvent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "event_id",
+        "event_label",
+        "classification",
+        "activity_type",
+        "activity_lane",
+        "noteworthiness_tier",
+        "threshold_basis",
+        "source_quality",
+        "rationale"
+      ],
+      "properties": {
+        "event_id": {
+          "$ref": "./common.schema.json#/$defs/identifier"
+        },
+        "event_label": {
+          "type": "string"
+        },
+        "classification": {
+          "enum": [
+            "capture_now",
+            "research_more",
+            "exclude",
+            "evidence_path",
+            "captured"
+          ]
+        },
+        "occurred_on": {
+          "$ref": "./common.schema.json#/$defs/isoDate"
+        },
+        "activity_type": {
+          "$ref": "./common.schema.json#/$defs/activityType"
+        },
+        "activity_lane": {
+          "$ref": "./common.schema.json#/$defs/activityLane"
+        },
+        "scope_label": {
+          "type": "string"
+        },
+        "trial_activity_kind": {
+          "enum": [
+            "new_direct_human_trial",
+            "first_in_human_or_older_adult",
+            "material_status_change",
+            "completion_or_termination",
+            "results_posted_or_published",
+            "major_phase_or_program_transition",
+            "trial_watch_anchor",
+            "routine_registry_maintenance"
+          ]
+        },
+        "noteworthiness_tier": {
+          "enum": [
+            "field_anchor",
+            "material_program",
+            "watch_only",
+            "below_threshold"
+          ]
+        },
+        "threshold_basis": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "new_major_entity",
+              "major_dedicated_funding",
+              "major_prize_or_funder_program",
+              "field_infrastructure",
+              "clinical_transition",
+              "major_partnership",
+              "regulatory_or_safety_signal",
+              "direct_track_relevance",
+              "source_quality_gap",
+              "routine_or_minor"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "source_url": {
+          "$ref": "./common.schema.json#/$defs/url"
+        },
+        "source_quality": {
+          "enum": [
+            "primary_dated",
+            "primary_undated",
+            "secondary_dated",
+            "secondary_undated",
+            "not_found"
+          ]
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "recommended_public_action": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

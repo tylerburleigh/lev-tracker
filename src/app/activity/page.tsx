@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
 import { SiteShell } from "@/components/site-shell";
 import { formatDate } from "@/lib/date";
-import { getActivityFeed, getHallmarkById, getOverallLastUpdated } from "@/lib/site-data";
+import { getActivityFeed, getOverallLastUpdated } from "@/lib/site-data";
 
 function isExternalHref(href: string) {
   return href.startsWith("http://") || href.startsWith("https://");
@@ -47,7 +47,7 @@ export default async function ActivityPage() {
                 </p>
               ) : null}
               <div className="activity-card__meta">
-                <span>{getHallmarkById(item.hallmarkId)?.name ?? item.hallmarkId}</span>
+                <span>{item.scopeLabel}</span>
                 {item.trackNames.length ? <span>{item.trackNames.slice(0, 2).join(" / ")}</span> : null}
               </div>
               <div className="activity-card__footer">

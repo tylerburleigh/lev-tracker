@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "2026-06-15-activity-threshold-audit",
+  "name": "Live activity noteworthiness threshold audit",
+  "mode": "field_activity",
+  "started_at": "2026-06-15T14:20:00Z",
+  "completed_at": "2026-06-15T14:35:00Z",
+  "scope": {
+    "question": "Do all current live /activity records clear the new field-activity noteworthiness threshold and remain consistent with activity/evidence boundary guidance?",
+    "scope_label": "Live activity feed threshold audit",
+    "entity_names": [
+      "Calico",
+      "AbbVie",
+      "Broad Institute",
+      "ARPA-H",
+      "Brown University",
+      "ClinicalTrials.gov trial sponsors"
+    ],
+    "hallmark_ids": [],
+    "track_ids": []
+  },
+  "selected_via": "manual_override",
+  "outcome": "no_op",
+  "summary": "Audited the eight live /activity records against the new field_anchor/material_program threshold. All current items clear the public threshold after explicit threshold metadata was added. Calico launch is a field_anchor. Calico-AbbVie, Calico-Broad, TPN-101 ARPA-H funding, elamipretide SHAPE recruiting, autologous mitochondrial transplantation human trial launches, and sirolimus older-adult trial-watch context are material_program items. The sirolimus item is the closest call: it should be kept because it is a direct older-adult rapalog trial-watch item in a visible track, not because a routine registry-update date is inherently notable.",
+  "next_recommended_mode": "field_activity",
+  "materiality_decision": {
+    "material_delta": "none",
+    "public_update_needed": false,
+    "activity_only": false,
+    "coverage_assessment_needed": false,
+    "recommended_next_mode": "field_activity",
+    "rationale": "The audit changed internal noteworthiness metadata and validation policy but did not identify a live public activity item that should be removed or reclassified below the public threshold."
+  },
+  "search_log": [
+    {
+      "source_name": "Local live activity records",
+      "checked_at": "2026-06-15T14:25:00Z",
+      "summary": "Reviewed every JSON file under data/activity-items for event type, source anchoring, scope label, track linkage, and activity/evidence boundary copy."
+    },
+    {
+      "source_name": "Sirolimus older-adults local source and study records",
+      "checked_at": "2026-06-15T14:30:00Z",
+      "url": "https://clinicaltrials.gov/study/NCT05237687",
+      "summary": "Confirmed the sirolimus item remains recruiting no-results trial-watch context for a direct older-adult rapalog trial. It clears the threshold as direct track-relevant clinical-transition activity, not as routine registry churn."
+    }
+  ],
+  "source_ids": [
+    "google-calico-announcement-2013",
+    "calico-abbvie-aging-collaboration-2014",
+    "calico-broad-neurodegeneration-extension-2024",
+    "nct-02851758",
+    "nct-04998357",
+    "nct-07275424",
+    "nct05237687",
+    "arpa-h-award-4201",
+    "brown-arpa-h-tpn101-aging-award"
+  ],
+  "source_urls": [
+    "https://googlepress.blogspot.com/2013/09/calico-announcement.html",
+    "https://www.calicolabs.com/press/abbvie-and-calico-announce-a-novel-collaboration-to-accelerate-the-discovery-development-and-commercialization-of-new-therapies/",
+    "https://www.calicolabs.com/press/calico-and-broad-institute-extend-collaboration-adding-focus-on-age-related-neurodegeneration/",
+    "https://clinicaltrials.gov/study/NCT02851758",
+    "https://clinicaltrials.gov/study/NCT04998357",
+    "https://clinicaltrials.gov/study/NCT07275424",
+    "https://clinicaltrials.gov/study/NCT05237687",
+    "https://arpa-h.gov/explore-funding/awards/4201",
+    "https://www.brown.edu/news/2026-02-24/aging-research-arpa"
+  ],
+  "notes": [
+    "Added noteworthiness_tier and threshold_basis to each live activity item.",
+    "Added validation so future live activity items must be field_anchor or material_program and must include threshold_basis.",
+    "No live item was moved to watch_only or below_threshold during this audit."
+  ],
+  "next_actions": [
+    "When the next field-activity packet is presented to the human, include threshold tier and threshold basis for every candidate.",
+    "If future registry-only items are routine metadata checks rather than direct trial-watch anchors, keep them in research sessions or trial records instead of /activity."
+  ]
+}
