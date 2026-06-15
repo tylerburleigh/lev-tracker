@@ -60,7 +60,7 @@ Untracked missing updates: 0
 Open reconciliation decisions: 0
 Decided without agent assessment: 0
 Required human approvals unresolved: 0
-Open checklist items: 4
+Open checklist items: 3
 Field-activity watchlist entries: 8
 Field-activity discovery channels: 6
 Field-activity blindspot controls: 7
@@ -77,14 +77,13 @@ Field-activity open learning questions: 0
 Public activity items: 16 (15 activity-only, 1 assessment-changing)
 Public activity lenses: 4 field anchors; 11 current movement; 9 trial horizon; 5 historical context
 Public activity routed to State of Field: 11 (4 field anchors; 6 current movement; 5 trial horizon; 5 historical context)
-Publication gate: not_ready (7 issue(s))
+Publication gate: not_ready (6 issue(s))
 Next action: Keep the July edition internal until June closes, then finalize the provisional classifications for the 22 known June public updates and write the public 2026-07 edition from reviewed records.
 
 Publication gate issues:
 - Retrospective period June 2026 is still open through 2026-06-30.
 - 2 workflow blocker(s) remain open.
-- 4 checklist item(s) are still open.
-- Required checklist purpose "field-activity review" is pending (review-field-activity-watchlist).
+- 3 checklist item(s) are still open.
 - Required checklist purpose "public edition write or revision" is pending (write-public-edition).
 - Required checklist purpose "final validation checks" is pending (run-final-checks).
 - No public edition JSON exists for 2026-07 at data/content/state-of-the-field/2026-07.json.

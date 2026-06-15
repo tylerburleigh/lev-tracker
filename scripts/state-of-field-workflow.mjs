@@ -1117,7 +1117,7 @@ function parseTrialWatchReportSummary(text) {
   };
 }
 
-function buildPrepRecommendations({ summary, packet, draftSeedSummary, trialWatchReport }) {
+function buildPrepRecommendations({ summary, packet, draftSeedSummary, trialWatchReport, fieldActivityReviewComplete }) {
   const recommendations = [];
 
   if (summary.publication_gate.status !== "pass") {
@@ -1139,7 +1139,11 @@ function buildPrepRecommendations({ summary, packet, draftSeedSummary, trialWatc
   }
 
   if (summary.field_activity_watchlist.state_of_field_routed_item_count > 0) {
-    recommendations.push("Review the State-of-Field-routed field activity lens before drafting; treat activity as context or trial horizon unless reviewed evidence changes an outlook.");
+    recommendations.push(
+      fieldActivityReviewComplete
+        ? "Use the completed State-of-Field-routed field activity lens when drafting; treat activity as context or trial horizon unless reviewed evidence changes an outlook."
+        : "Review the State-of-Field-routed field activity lens before drafting; treat activity as context or trial horizon unless reviewed evidence changes an outlook."
+    );
   }
 
   if (trialWatchReport.available) {
@@ -1191,6 +1195,9 @@ function buildPrepPacket({
     count: itemsByDecision.get(section.decision)?.length ?? 0,
     items: itemsByDecision.get(section.decision) ?? []
   }));
+  const fieldActivityReviewComplete = (workflowEdition.checklist ?? []).some(
+    (item) => item.id === "review-field-activity-watchlist" && item.status === "complete"
+  );
   const draftSeedSummary = buildDraftSeedSummary(draftPool);
   const trialWatchReport = parseTrialWatchReportSummary(trialWatchReportText);
 
@@ -1239,7 +1246,8 @@ function buildPrepPacket({
       summary,
       packet: approvalPacket,
       draftSeedSummary,
-      trialWatchReport
+      trialWatchReport,
+      fieldActivityReviewComplete
     })
   };
 }

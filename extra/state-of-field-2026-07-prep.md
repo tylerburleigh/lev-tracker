@@ -3,7 +3,7 @@
 Edition: 2026-07 (June 2026)
 Status: draft
 Period: 2026-06-01 to 2026-06-30
-Generated: 2026-06-15T23:23:41.314Z
+Generated: 2026-06-15T23:51:46.992Z
 Next action: Keep the July edition internal until June closes, then finalize the provisional classifications for the 22 known June public updates and write the public 2026-07 edition from reviewed records.
 
 ## Agent Recommendation
@@ -12,13 +12,13 @@ Next action: Keep the July edition internal until June closes, then finalize the
 - Use the recorded agent decisions as the starting classification set; no raw reconciliation decisions are currently waiting for curator classification.
 - Do not ask for approval unless new evidence, surveillance, or field-activity candidates appear; the current approval packet is empty.
 - Keep source-work field-activity candidates out of public monthly copy unless a durable source is found or a curator approves an exception.
-- Review the State-of-Field-routed field activity lens before drafting; treat activity as context or trial horizon unless reviewed evidence changes an outlook.
+- Use the completed State-of-Field-routed field activity lens when drafting; treat activity as context or trial horizon unless reviewed evidence changes an outlook.
 - Rerun the trial audit after the covered period closes and refresh any registry-status claims before final trial_horizon copy.
 - Use the draft seed as scaffolding only; final public JSON should be written from reviewed records after period close.
 
 ## Publication Gate
 
-- Gate status: not_ready (7 issue(s))
+- Gate status: not_ready (6 issue(s))
 - Approval packet items: 0
 - Human approvals needed: 0
 - Field-activity packet items: 0
@@ -27,8 +27,7 @@ Next action: Keep the July edition internal until June closes, then finalize the
 Gate issues:
 - Retrospective period June 2026 is still open through 2026-06-30.
 - 2 workflow blocker(s) remain open.
-- 4 checklist item(s) are still open.
-- Required checklist purpose "field-activity review" is pending (review-field-activity-watchlist).
+- 3 checklist item(s) are still open.
 - Required checklist purpose "public edition write or revision" is pending (write-public-edition).
 - Required checklist purpose "final validation checks" is pending (run-final-checks).
 - No public edition JSON exists for 2026-07 at data/content/state-of-the-field/2026-07.json.
@@ -38,7 +37,6 @@ Workflow blockers:
 - The June 15 trial-watch report has 22 stale or missing registry checks and 0 open stale watchlist records; do not make fresh trial-status claims without surveillance or explicit stale-record boundaries.
 
 Open checklist:
-- review-field-activity-watchlist: pending - Review field-activity watchlist counts, public activity lens summary, and unresolved capture candidates before drafting field-change copy.
 - wait-period-close: blocked - Wait until the June 2026 retrospective period closes before publishing data/content/state-of-the-field/2026-07.json.
 - write-public-edition: pending - Write the public July edition from reviewed records after the period closes.
 - run-final-checks: pending - Run validation, state-of-field status, editorial ratchet, typecheck, and build before publication.

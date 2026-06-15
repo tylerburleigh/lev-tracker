@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T23:23:41.314Z",
+  "generated_at": "2026-06-15T23:51:46.992Z",
   "workflow_path": "ops/state-of-field-workflow.v1.json",
   "edition_slug": "2026-07",
   "edition_title": "June 2026 in review",
@@ -13,12 +13,6 @@
     "The June 15 trial-watch report has 22 stale or missing registry checks and 0 open stale watchlist records; do not make fresh trial-status claims without surveillance or explicit stale-record boundaries."
   ],
   "open_checklist_items": [
-    {
-      "id": "review-field-activity-watchlist",
-      "label": "Review field-activity watchlist counts, public activity lens summary, and unresolved capture candidates before drafting field-change copy.",
-      "status": "pending",
-      "path": "research/backlog/field-activity-watchlist.v1.json"
-    },
     {
       "id": "wait-period-close",
       "label": "Wait until the June 2026 retrospective period closes before publishing data/content/state-of-the-field/2026-07.json.",
@@ -40,12 +34,11 @@
   "publication_gate": {
     "status": "not_ready",
     "applies": false,
-    "issue_count": 7,
+    "issue_count": 6,
     "issues": [
       "Retrospective period June 2026 is still open through 2026-06-30.",
       "2 workflow blocker(s) remain open.",
-      "4 checklist item(s) are still open.",
-      "Required checklist purpose \"field-activity review\" is pending (review-field-activity-watchlist).",
+      "3 checklist item(s) are still open.",
       "Required checklist purpose \"public edition write or revision\" is pending (write-public-edition).",
       "Required checklist purpose \"final validation checks\" is pending (run-final-checks).",
       "No public edition JSON exists for 2026-07 at data/content/state-of-the-field/2026-07.json."
@@ -934,7 +927,7 @@
     "Use the recorded agent decisions as the starting classification set; no raw reconciliation decisions are currently waiting for curator classification.",
     "Do not ask for approval unless new evidence, surveillance, or field-activity candidates appear; the current approval packet is empty.",
     "Keep source-work field-activity candidates out of public monthly copy unless a durable source is found or a curator approves an exception.",
-    "Review the State-of-Field-routed field activity lens before drafting; treat activity as context or trial horizon unless reviewed evidence changes an outlook.",
+    "Use the completed State-of-Field-routed field activity lens when drafting; treat activity as context or trial horizon unless reviewed evidence changes an outlook.",
     "Rerun the trial audit after the covered period closes and refresh any registry-status claims before final trial_horizon copy.",
     "Use the draft seed as scaffolding only; final public JSON should be written from reviewed records after period close."
   ],
