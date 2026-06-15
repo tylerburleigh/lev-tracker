@@ -211,13 +211,13 @@ The State of the Field workflow also prints a live public-activity lens summary.
 - field anchors can provide field-map context, but they are not automatically current-period progress
 - current movement can be considered for `what_changed` or `current_context`
 - trial horizon items can support `trial_horizon` copy only when the registry or program boundary is explicit
-- historical backfill should usually be `add_post_hoc_context_note` or omitted from the monthly narrative unless it prevents a misleading field read
+- historical context should usually be `add_post_hoc_context_note` or omitted from the monthly narrative unless it prevents a misleading field read
 
 Keep the watchlist queue health separate from the public activity lens summary: the watchlist tells the agent what still needs work, while the public lens summary tells the agent what already-public activity the State of the Field edition may need to explain.
 
-## Historical Backfill
+## Historical Context
 
-Historical activity should be labeled with the `historical-backfill` tag. It should capture selected anchor events, not every news item. The source and significance note should make clear why the old event matters now.
+Older context activity uses the internal `historical-backfill` tag, but public labels should call it historical context. It should capture selected anchor events, not every old news item. The source and significance note should make clear why the old event matters now.
 
 For example, Google's 2013 Calico announcement is a field-wide commercial activity item because it marks a major technology-company entry into aging biology. It is not a finding and it does not change the evidence assessment.
 

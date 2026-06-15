@@ -5,7 +5,7 @@ import { SiteShell } from "@/components/site-shell";
 import { formatDate } from "@/lib/date";
 import { type ActivityFeedItem, getActivityFeed, getOverallLastUpdated } from "@/lib/site-data";
 
-type ActivityLensId = "all" | "field-anchors" | "current-movement" | "trial-horizon" | "historical-backfill";
+type ActivityLensId = "all" | "field-anchors" | "current-movement" | "trial-horizon" | "historical-context";
 
 type ActivitySearchParams = {
   lens?: string | string[];
@@ -23,8 +23,14 @@ function getSingleSearchParam(value: string | string[] | undefined) {
   return Array.isArray(value) ? value[0] ?? "" : value ?? "";
 }
 
-function isActivityLensId(value: string): value is ActivityLensId {
-  return ["all", "field-anchors", "current-movement", "trial-horizon", "historical-backfill"].includes(value);
+function normalizeActivityLensId(value: string): ActivityLensId {
+  if (value === "historical-backfill") {
+    return "historical-context";
+  }
+
+  return ["all", "field-anchors", "current-movement", "trial-horizon", "historical-context"].includes(value)
+    ? (value as ActivityLensId)
+    : "all";
 }
 
 function getActivityLensHref(lensId: ActivityLensId) {
@@ -37,15 +43,15 @@ function getActivityForLens(lensId: ActivityLensId, activity: ActivityFeedItem[]
   }
 
   if (lensId === "current-movement") {
-    return activity.filter((item) => !item.isHistoricalBackfill);
+    return activity.filter((item) => !item.isHistoricalContext);
   }
 
   if (lensId === "trial-horizon") {
     return activity.filter((item) => item.isTrialHorizon);
   }
 
-  if (lensId === "historical-backfill") {
-    return activity.filter((item) => item.isHistoricalBackfill);
+  if (lensId === "historical-context") {
+    return activity.filter((item) => item.isHistoricalContext);
   }
 
   return activity;
@@ -64,7 +70,7 @@ function getNoteworthinessClass(item: ActivityFeedItem) {
 }
 
 function getActivityCardClass(item: ActivityFeedItem) {
-  if (item.isHistoricalBackfill) {
+  if (item.isHistoricalContext) {
     return "activity-card--historical";
   }
 
@@ -85,7 +91,7 @@ function getActivityRoutingBadges(item: ActivityFeedItem) {
     item.isFieldActivity ? "Field activity" : "",
     item.isStateOfFieldRelevant ? "State of Field" : "",
     item.isTrialHorizon ? "Trial horizon" : "",
-    item.isHistoricalBackfill ? "Historical backfill" : ""
+    item.isHistoricalContext ? "Historical context" : ""
   ].filter(Boolean);
 }
 
@@ -148,14 +154,14 @@ function ActivityCard({ item }: { item: ActivityFeedItem }) {
 export default async function ActivityPage({ searchParams }: ActivityPageProps) {
   const resolvedSearchParams = (await searchParams) ?? {};
   const selectedLensValue = getSingleSearchParam(resolvedSearchParams.lens);
-  const selectedLens = isActivityLensId(selectedLensValue) ? selectedLensValue : "all";
+  const selectedLens = normalizeActivityLensId(selectedLensValue);
   const [activity, lastUpdated] = await Promise.all([getActivityFeed(), getOverallLastUpdated()]);
   const assessmentChangingCount = activity.filter((item) => item.affectsOutlook).length;
   const evidenceUnchangedCount = activity.length - assessmentChangingCount;
   const fieldAnchors = activity.filter((item) => item.noteworthinessTier === "field_anchor");
-  const currentFieldMovement = activity.filter((item) => !item.isHistoricalBackfill);
+  const currentFieldMovement = activity.filter((item) => !item.isHistoricalContext);
   const trialHorizon = activity.filter((item) => item.isTrialHorizon);
-  const historicalBackfill = activity.filter((item) => item.isHistoricalBackfill);
+  const historicalContext = activity.filter((item) => item.isHistoricalContext);
   const activityLenses: Array<{ id: ActivityLensId; title: string; count: number; summary: string }> = [
     {
       id: "all",
@@ -173,7 +179,7 @@ export default async function ActivityPage({ searchParams }: ActivityPageProps) 
       id: "current-movement",
       title: "Current movement",
       count: currentFieldMovement.length,
-      summary: "Non-backfill activity surfaced through surveillance or monthly review."
+      summary: "Recent activity surfaced through surveillance or monthly review."
     },
     {
       id: "trial-horizon",
@@ -182,10 +188,10 @@ export default async function ActivityPage({ searchParams }: ActivityPageProps) 
       summary: "Trial starts, clinical-transition signals, or programs routed to trial watch."
     },
     {
-      id: "historical-backfill",
-      title: "Historical backfill",
-      count: historicalBackfill.length,
-      summary: "Older field activity added so the current page has the right context."
+      id: "historical-context",
+      title: "Historical context",
+      count: historicalContext.length,
+      summary: "Older field-shaping activity included to explain why a track, entity, or program matters now."
     }
   ];
   const visibleActivity = getActivityForLens(selectedLens, activity);

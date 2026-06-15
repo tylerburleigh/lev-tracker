@@ -75,8 +75,8 @@ Field-activity consolidated candidates: 2
 Field-activity learning phase: stable (3/3 pilot sweeps)
 Field-activity open learning questions: 0
 Public activity items: 16 (15 activity-only, 1 assessment-changing)
-Public activity lenses: 4 field anchors; 11 current movement; 9 trial horizon; 5 historical backfill
-Public activity routed to State of Field: 11 (4 field anchors; 6 current movement; 5 trial horizon; 5 historical backfill)
+Public activity lenses: 4 field anchors; 11 current movement; 9 trial horizon; 5 historical context
+Public activity routed to State of Field: 11 (4 field anchors; 6 current movement; 5 trial horizon; 5 historical context)
 Next action: Keep the July edition internal until June closes, then finalize the provisional classifications for the 22 known June public updates and write the public 2026-07 edition from reviewed records.
 ```
 

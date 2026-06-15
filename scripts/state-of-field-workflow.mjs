@@ -269,7 +269,7 @@ function summarizePublicActivityLenses(activityItems) {
   const fieldAnchorItems = publicActivityItems.filter((item) => item.noteworthiness_tier === "field_anchor");
   const currentMovementItems = publicActivityItems.filter((item) => !hasActivityTag(item, "historical-backfill"));
   const trialHorizonItems = publicActivityItems.filter(isTrialHorizonActivity);
-  const historicalBackfillItems = publicActivityItems.filter((item) => hasActivityTag(item, "historical-backfill"));
+  const historicalContextItems = publicActivityItems.filter((item) => hasActivityTag(item, "historical-backfill"));
 
   return {
     public_activity_item_count: publicActivityItems.length,
@@ -278,7 +278,7 @@ function summarizePublicActivityLenses(activityItems) {
     field_anchor_count: fieldAnchorItems.length,
     current_movement_count: currentMovementItems.length,
     trial_horizon_count: trialHorizonItems.length,
-    historical_backfill_count: historicalBackfillItems.length,
+    historical_context_count: historicalContextItems.length,
     state_of_field_routed_count: stateOfFieldRoutedItems.length,
     state_of_field_routed_field_anchor_count: stateOfFieldRoutedItems.filter(
       (item) => item.noteworthiness_tier === "field_anchor"
@@ -287,7 +287,7 @@ function summarizePublicActivityLenses(activityItems) {
       (item) => !hasActivityTag(item, "historical-backfill")
     ).length,
     state_of_field_routed_trial_horizon_count: stateOfFieldRoutedItems.filter(isTrialHorizonActivity).length,
-    state_of_field_routed_historical_backfill_count: stateOfFieldRoutedItems.filter((item) =>
+    state_of_field_routed_historical_context_count: stateOfFieldRoutedItems.filter((item) =>
       hasActivityTag(item, "historical-backfill")
     ).length,
     state_of_field_routed_activity_only_count: stateOfFieldRoutedItems.filter((item) => !item.affects_outlook).length,
@@ -694,8 +694,8 @@ function formatApprovalPacket(packet) {
     `- Field-activity learning phase: ${packet.field_activity_watchlist.learning_phase} (${packet.field_activity_watchlist.learning_completed_pilot_sweeps}/${packet.field_activity_watchlist.learning_minimum_pilot_sweeps} pilot sweeps)`,
     `- Field-activity open learning questions: ${packet.field_activity_watchlist.learning_open_question_count}`,
     `- Public activity items: ${packet.public_activity_lenses.public_activity_item_count} (${packet.public_activity_lenses.activity_only_count} activity-only, ${packet.public_activity_lenses.assessment_changing_count} assessment-changing)`,
-    `- Public activity lenses: ${packet.public_activity_lenses.field_anchor_count} field anchors; ${packet.public_activity_lenses.current_movement_count} current movement; ${packet.public_activity_lenses.trial_horizon_count} trial horizon; ${packet.public_activity_lenses.historical_backfill_count} historical backfill`,
-    `- Public activity routed to State of Field: ${packet.public_activity_lenses.state_of_field_routed_count} (${packet.public_activity_lenses.state_of_field_routed_field_anchor_count} field anchors; ${packet.public_activity_lenses.state_of_field_routed_current_movement_count} current movement; ${packet.public_activity_lenses.state_of_field_routed_trial_horizon_count} trial horizon; ${packet.public_activity_lenses.state_of_field_routed_historical_backfill_count} historical backfill)`
+    `- Public activity lenses: ${packet.public_activity_lenses.field_anchor_count} field anchors; ${packet.public_activity_lenses.current_movement_count} current movement; ${packet.public_activity_lenses.trial_horizon_count} trial horizon; ${packet.public_activity_lenses.historical_context_count} historical context`,
+    `- Public activity routed to State of Field: ${packet.public_activity_lenses.state_of_field_routed_count} (${packet.public_activity_lenses.state_of_field_routed_field_anchor_count} field anchors; ${packet.public_activity_lenses.state_of_field_routed_current_movement_count} current movement; ${packet.public_activity_lenses.state_of_field_routed_trial_horizon_count} trial horizon; ${packet.public_activity_lenses.state_of_field_routed_historical_context_count} historical context)`
   ];
 
   if (packet.items.length === 0 && packet.field_activity_items.length === 0) {
@@ -877,8 +877,8 @@ function formatTextSummary(summary) {
     `Field-activity learning phase: ${summary.field_activity_watchlist.learning_phase} (${summary.field_activity_watchlist.learning_completed_pilot_sweeps}/${summary.field_activity_watchlist.learning_minimum_pilot_sweeps} pilot sweeps)`,
     `Field-activity open learning questions: ${summary.field_activity_watchlist.learning_open_question_count}`,
     `Public activity items: ${summary.public_activity_lenses.public_activity_item_count} (${summary.public_activity_lenses.activity_only_count} activity-only, ${summary.public_activity_lenses.assessment_changing_count} assessment-changing)`,
-    `Public activity lenses: ${summary.public_activity_lenses.field_anchor_count} field anchors; ${summary.public_activity_lenses.current_movement_count} current movement; ${summary.public_activity_lenses.trial_horizon_count} trial horizon; ${summary.public_activity_lenses.historical_backfill_count} historical backfill`,
-    `Public activity routed to State of Field: ${summary.public_activity_lenses.state_of_field_routed_count} (${summary.public_activity_lenses.state_of_field_routed_field_anchor_count} field anchors; ${summary.public_activity_lenses.state_of_field_routed_current_movement_count} current movement; ${summary.public_activity_lenses.state_of_field_routed_trial_horizon_count} trial horizon; ${summary.public_activity_lenses.state_of_field_routed_historical_backfill_count} historical backfill)`,
+    `Public activity lenses: ${summary.public_activity_lenses.field_anchor_count} field anchors; ${summary.public_activity_lenses.current_movement_count} current movement; ${summary.public_activity_lenses.trial_horizon_count} trial horizon; ${summary.public_activity_lenses.historical_context_count} historical context`,
+    `Public activity routed to State of Field: ${summary.public_activity_lenses.state_of_field_routed_count} (${summary.public_activity_lenses.state_of_field_routed_field_anchor_count} field anchors; ${summary.public_activity_lenses.state_of_field_routed_current_movement_count} current movement; ${summary.public_activity_lenses.state_of_field_routed_trial_horizon_count} trial horizon; ${summary.public_activity_lenses.state_of_field_routed_historical_context_count} historical context)`,
     `Next action: ${summary.required_next_action}`
   ];
 

@@ -339,7 +339,7 @@ export type ActivityFeedItem = {
   surfaceRoutes: string[];
   surfaceRouteLabels: string[];
   isFieldActivity: boolean;
-  isHistoricalBackfill: boolean;
+  isHistoricalContext: boolean;
   isStateOfFieldRelevant: boolean;
   isTrialHorizon: boolean;
   hallmarkId: string;
@@ -1527,7 +1527,7 @@ function normalizeActivityItem(item: ActivityItemRecord): ActivityFeedItem {
     surfaceRoutes,
     surfaceRouteLabels: surfaceRoutes.map(getReadableDataLabel),
     isFieldActivity: tags.includes("field-activity"),
-    isHistoricalBackfill: tags.includes("historical-backfill"),
+    isHistoricalContext: tags.includes("historical-backfill"),
     isStateOfFieldRelevant:
       Boolean(item.surface_routing?.state_of_field_review_required) || surfaceRoutes.includes("state_of_field"),
     isTrialHorizon: surfaceRoutes.includes("trial_horizon") || Boolean(item.trial_activity_kind),

@@ -95,7 +95,7 @@ Before drafting `what_changed` or `field_change_note`, review `research/backlog/
 - field anchors: field-shaping entities, programs, prizes, or funders
 - current movement: non-backfill activity surfaced by surveillance or monthly review
 - trial horizon: activity that can affect what to watch next in human studies
-- historical backfill: older field activity added for context, not current-period progress
+- historical context: older field activity included for context, not current-period progress
 
 If new company, funder, prize, partnership, regulator, or trial-watch activity is found, use `docs/field-activity-workflow.md` before adding public activity records.
 

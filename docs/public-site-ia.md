@@ -449,7 +449,7 @@ Field-wide activity should have a visible scope label and should not be forced i
 
 Do not use `/activity` for tracker/editorial meta-events: adding something to a watchlist, changing our wording, expanding coverage, completing a review, deciding that commercial activity should be tracked, or otherwise describing how the site changed. Those belong in `publication_event`, the relevant `outlook`, research sessions, or editorial notes.
 
-Historical backfill is allowed, but it should be deliberate. If the site includes older activity, the relevant scope should be scoured enough that the feed is not a misleading handful of old events. Routine old no-results registries can stay on `/trials`; activity backfill should focus on external field events that are decision-relevant or explain why a track is on watch.
+Historical context is allowed, but it should be deliberate. If the site includes older activity, the relevant scope should be scoured enough that the feed is not a misleading handful of old events. Routine old no-results registries can stay on `/trials`; older activity context should focus on external field events that are decision-relevant or explain why a track is on watch.
 
 ### Controls
 

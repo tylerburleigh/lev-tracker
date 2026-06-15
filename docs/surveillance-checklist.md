@@ -71,7 +71,7 @@ Choose one outcome:
 
 Avoid staging records for contextual noise, duplicate sources, unchanged registries, or speculative implications.
 
-Keep `/activity` as a curated external field-event feed, not an accidental list of whatever the tracker happened to notice. Activity item dates should be the actual event dates when known, not the review or publication date. Historical backfill is allowed only when the scope has been checked enough that the activity layer is not a misleading partial timeline; otherwise keep old trial history on `/trials` and in source/study records.
+Keep `/activity` as a curated external field-event feed, not an accidental list of whatever the tracker happened to notice. Activity item dates should be the actual event dates when known, not the review or publication date. Historical context is allowed only when the scope has been checked enough that the activity layer is not a misleading partial timeline; otherwise keep old trial history on `/trials` and in source/study records.
 
 Do not stage `activity_item` records for tracker/editorial meta-events: adding something to a watchlist, changing our wording, expanding coverage, completing a review, deciding that company activity should be tracked, or otherwise describing the site's workflow. Put those in the research session, `publication_event.change_note`, outlook wording, or an editorial note. A public activity item must point to a concrete external source, study, finding, or URL.
 
