@@ -4870,11 +4870,24 @@ textarea {
 .state-plain-list--panel,
 .state-no-change,
 .state-review-basis__caveats {
+  border-radius: 0;
   border-color: var(--paper-rule);
-  background: var(--paper);
+  box-shadow: none;
+  background: transparent;
+}
+
+.state-plain-list--panel {
+  max-width: none;
+  padding: 16px 0;
+  border: 0;
+  border-top: 1px solid var(--paper-rule);
+  border-bottom: 1px solid var(--paper-rule);
 }
 
 .state-no-change {
+  max-width: none;
+  padding: 14px 0 14px 16px;
+  border: 0;
   border-left: 4px solid var(--mint);
 }
 
@@ -4904,6 +4917,13 @@ textarea {
 .state-review-basis__item strong {
   font-family: var(--font-sans);
   font-size: 1.15rem;
+}
+
+.state-review-basis__caveats {
+  max-width: none;
+  padding: 12px 0 0;
+  border: 0;
+  border-top: 1px solid var(--paper-rule);
 }
 
 .state-two-column {
@@ -5020,6 +5040,10 @@ textarea {
 
   .state-article {
     gap: 38px;
+  }
+
+  .state-readout-primary {
+    padding: 2px 0 2px 16px;
   }
 
   .state-scan-card {
