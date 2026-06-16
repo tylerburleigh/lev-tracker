@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, Space_Grotesk } from "next/font/google";
+import { IBM_Plex_Sans, Source_Serif_4 } from "next/font/google";
 
 import "./globals.css";
 
-const bodyFont = IBM_Plex_Sans({
+const uiFont = IBM_Plex_Sans({
   subsets: ["latin"],
-  variable: "--font-body",
+  variable: "--font-ui",
   weight: ["400", "500", "600", "700"]
 });
 
-const displayFont = Space_Grotesk({
+const reportFont = Source_Serif_4({
   subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["400", "500", "600", "700"]
+  variable: "--font-report",
+  weight: "variable",
+  axes: ["opsz"]
 });
 
 export const metadata: Metadata = {
@@ -28,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${bodyFont.variable} ${displayFont.variable}`}>
+      <body className={`${uiFont.variable} ${reportFont.variable}`}>
         {children}
       </body>
     </html>
