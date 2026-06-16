@@ -5645,6 +5645,66 @@ textarea {
   border-radius: 0;
 }
 
+.trials-table {
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-top: 1px solid var(--text);
+  border-bottom: 1px solid var(--paper-rule);
+  background: transparent;
+}
+
+.trials-table__head,
+.trials-table__row {
+  grid-template-columns:
+    minmax(0, 1.55fr)
+    minmax(0, 0.68fr)
+    minmax(0, 0.72fr)
+    minmax(0, 0.9fr)
+    minmax(0, 0.64fr)
+    minmax(0, 0.62fr)
+    minmax(0, 0.88fr);
+  gap: 16px;
+  min-width: 0;
+  padding: 16px 0;
+}
+
+.trials-table__head {
+  border-bottom: 1px solid var(--paper-rule);
+}
+
+.trials-table__head > *,
+.trials-table__row > * {
+  min-width: 0;
+}
+
+.trials-table__row {
+  border: 0;
+  border-top: 1px solid var(--paper-rule);
+  background: transparent;
+}
+
+.trials-table__row:hover strong {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.trials-table__row > span,
+.trials-table__row p,
+.trials-table .tracks-table__aliases {
+  overflow-wrap: anywhere;
+}
+
+.trial-pill-stack {
+  min-width: 0;
+}
+
+.trial-result-pill {
+  max-width: 100%;
+}
+
 .activity-report-row .activity-card__note {
   padding: 10px 0 0;
   border: 0;
@@ -5892,6 +5952,14 @@ textarea {
     gap: 8px;
   }
 
+  .trials-table__row {
+    grid-template-columns: 1fr;
+  }
+
+  .trials-table__head {
+    display: none;
+  }
+
   .report-duo {
     gap: 32px;
   }
@@ -5936,6 +6004,7 @@ textarea {
   .hallmark-report-row,
   .activity-report-row,
   .activity-lens-row,
+  .trials-table__row,
   .tracks-table__row {
     gap: 10px;
   }
