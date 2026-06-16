@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T00:16:55.217Z",
+  "generated_at": "2026-06-16T10:03:39.850Z",
   "workflow_path": "ops/state-of-field-workflow.v1.json",
   "edition_slug": "2026-07",
   "edition_title": "June 2026 in review",
@@ -52,6 +52,751 @@
     "field_activity_human_review_required": 0,
     "field_activity_missing_agent_assessments": 0
   },
+  "date_basis_review": {
+    "reviewed_item_count": 28,
+    "use_tracker_publication_date_count": 13,
+    "use_underlying_field_date_count": 12,
+    "needs_agent_date_judgment_count": 3,
+    "attention_required_count": 3,
+    "mixed_target_date_count": 14,
+    "older_target_date_signal_count": 25,
+    "no_target_date_signal_count": 0,
+    "attention_items": [
+      {
+        "publication_event_id": "publish-senomorphics-surveillance-2026-06-07-2026-06-07t16-41-34-635z",
+        "event_name": "Published Senomorphics Field-Change Update for June 7, 2026",
+        "event_date": "2026-06-07",
+        "event_date_basis": "publication_event.published_at",
+        "event_summary": "Staged update adding the June 2026 mianserin/calcium-homeostasis mouse lifespan source, refreshing two registry-linked human study records, and keeping the public stage unchanged.",
+        "event_change_note": "The staged outlook keeps evidence_stage human_biomarker_signal, momentum steady, and confidence low. The new mianserin source adds animal lifespan and human-cell senescence support but does not replace the need for treated-human trials.",
+        "decision": "include_as_field_signal",
+        "materiality": "moderate",
+        "confidence": "medium",
+        "public_copy_action": "draft_copy",
+        "affected_surfaces": [
+          "state_of_field"
+        ],
+        "related_activity_item_ids": [],
+        "date_basis_review": {
+          "recommendation": "needs_surveillance_or_date_judgment",
+          "recommended_event_date_basis": "mixed_target_dates",
+          "confidence": "medium",
+          "target_date_signal_count": 10,
+          "distinct_target_date_count": 6,
+          "earliest_target_date_signal": "2017-09-25",
+          "latest_target_date_signal": "2026-11-01",
+          "date_signal_bases": [
+            "source.published_on",
+            "study.dates.end_date",
+            "study.dates.start_date",
+            "study.trial_details.primary_completion_date",
+            "study.trial_details.registry_last_updated",
+            "study.trial_details.study_completion_date"
+          ],
+          "target_date_signals_before_tracker_month": 6,
+          "requires_agent_attention": true,
+          "rationale": "This item is treated as a field signal or still needs a decision, and its target date signals are mixed or outside the tracker month; final monthly copy needs explicit date-basis judgment.",
+          "reviewed_by": "codex"
+        },
+        "human_review_required": true,
+        "human_approval_status": "approved",
+        "rationale": "June field-change update adding mianserin/Ca2+ animal lifespan and human-cell senescence support while preserving the track stage.",
+        "next_action": "Consider as a June field_signal, bounded as preclinical and not treated-human proof."
+      },
+      {
+        "publication_event_id": "publish-autophagy-induction-surveillance-2026-06-11-2026-06-11t10-25-04-657z",
+        "event_name": "Published Autophagy Induction Surveillance for June 11, 2026",
+        "event_date": "2026-06-11",
+        "event_date_basis": "publication_event.published_at",
+        "event_summary": "Field-change update adding a 2026 older-adult spermidine vaccine-response pilot and refreshing the Autophagy Induction outlook while keeping the track at low-confidence human_biomarker_signal with mixed momentum.",
+        "event_change_note": "Add the older-adult spermidine vaccine-response pilot as the strongest new human signal, but preserve human_biomarker_signal, mixed momentum, and low read firmness because the result is small, subgroup-limited, and not broad healthy-aging benefit.",
+        "decision": "include_as_field_signal",
+        "materiality": "moderate",
+        "confidence": "medium",
+        "public_copy_action": "draft_copy",
+        "affected_surfaces": [
+          "state_of_field"
+        ],
+        "related_activity_item_ids": [],
+        "date_basis_review": {
+          "recommendation": "needs_surveillance_or_date_judgment",
+          "recommended_event_date_basis": "mixed_target_dates",
+          "confidence": "medium",
+          "target_date_signal_count": 18,
+          "distinct_target_date_count": 5,
+          "earliest_target_date_signal": "2022-08-01",
+          "latest_target_date_signal": "2026-06-01",
+          "date_signal_bases": [
+            "source.published_on",
+            "study.dates.end_date",
+            "study.dates.start_date",
+            "study.trial_details.primary_completion_date",
+            "study.trial_details.registry_last_updated",
+            "study.trial_details.study_completion_date"
+          ],
+          "target_date_signals_before_tracker_month": 15,
+          "requires_agent_attention": true,
+          "rationale": "This item is treated as a field signal or still needs a decision, and its target date signals are mixed or outside the tracker month; final monthly copy needs explicit date-basis judgment.",
+          "reviewed_by": "codex"
+        },
+        "human_review_required": true,
+        "human_approval_status": "approved",
+        "rationale": "June field-change update adding a small older-adult spermidine vaccine-response pilot while preserving the early human biomarker stage.",
+        "next_action": "Consider as a June field_signal, bounded as small, subgroup-limited, and not proof of lasting aging-relevant function."
+      },
+      {
+        "publication_event_id": "publish-microbiome-composition-modulation-surveillance-2026-06-03-2026-06-03t16-38-15-119z",
+        "event_name": "Published Microbiome Composition Modulation Field Change Check for June 3, 2026",
+        "event_date": "2026-06-03",
+        "event_date_basis": "publication_event.published_at",
+        "event_summary": "Field-change update for the microbiome-composition-modulation track, adding a new disease-specific synbiotic constipation RCT and a null healthy-older-adult exercise/microbiome RCT while keeping the public stage at a tentative human biomarker signal.",
+        "event_change_note": "Keep the stage at a tentative human biomarker signal, change momentum to mixed, and add support-map evidence for the new TBC169 RCT and null older-adult exercise/microbiome RCT.",
+        "decision": "include_as_field_signal",
+        "materiality": "moderate",
+        "confidence": "medium",
+        "public_copy_action": "draft_copy",
+        "affected_surfaces": [
+          "state_of_field"
+        ],
+        "related_activity_item_ids": [],
+        "date_basis_review": {
+          "recommendation": "needs_surveillance_or_date_judgment",
+          "recommended_event_date_basis": "source.published_on",
+          "confidence": "medium",
+          "target_date_signal_count": 2,
+          "distinct_target_date_count": 1,
+          "earliest_target_date_signal": "2026-05-21",
+          "latest_target_date_signal": "2026-05-21",
+          "date_signal_bases": [
+            "source.published_on"
+          ],
+          "target_date_signals_before_tracker_month": 2,
+          "requires_agent_attention": true,
+          "rationale": "This item is treated as a field signal or still needs a decision, and its target date signals are mixed or outside the tracker month; final monthly copy needs explicit date-basis judgment.",
+          "reviewed_by": "codex"
+        },
+        "human_review_required": true,
+        "human_approval_status": "approved",
+        "rationale": "June field-change update added a disease-specific synbiotic constipation RCT and a null healthy-older-adult exercise/microbiome RCT while keeping the track at a tentative human biomarker stage.",
+        "next_action": "Consider as a bounded June field_signal or as current_context for microbiome evidence boundaries."
+      }
+    ],
+    "flagged_items": [
+      {
+        "publication_event_id": "publish-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-2026-06-06t12-22-33-769z",
+        "event_name": "Published Transposon and Somatic Mutation Control missing-context update for June 6, 2026",
+        "event_date": "2026-06-06",
+        "event_date_basis": "publication_event.published_at",
+        "event_summary": "missing-context bundle that stages missing reverse-transcriptase-inhibitor biomarker and trial records to watch, TPN-101/ARPA-H activity, DREAM/somatic-mutation biology, TET2 CHIP canakinumab trials to watch context, and recent TE review triangulation while keeping the track at a tentative human biomarker signal.",
+        "event_change_note": "Repair improves missing source context and public boundary wording for RTI biomarkers, trials to watch activity, TPN-101 program momentum, DREAM biology, and CHIP trials to watch context, but does not change stage, confidence, momentum, or LEV-relevant timing because controlled human intended-target and functional evidence remain absent.",
+        "decision": "include_as_current_context",
+        "materiality": "low",
+        "confidence": "high",
+        "public_copy_action": "draft_copy",
+        "affected_surfaces": [
+          "state_of_field"
+        ],
+        "related_activity_item_ids": [],
+        "date_basis_review": {
+          "recommendation": "use_tracker_publication_date_as_reviewed_context",
+          "recommended_event_date_basis": "publication_event.published_at",
+          "confidence": "high",
+          "target_date_signal_count": 29,
+          "distinct_target_date_count": 12,
+          "earliest_target_date_signal": "2020-08-05",
+          "latest_target_date_signal": "2030-04-01",
+          "date_signal_bases": [
+            "activity_item.occurred_on",
+            "source.published_on",
+            "study.dates.end_date",
+            "study.dates.start_date",
+            "study.trial_details.study_completion_date"
+          ],
+          "target_date_signals_before_tracker_month": 23,
+          "requires_agent_attention": false,
+          "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+          "reviewed_by": "codex"
+        },
+        "human_review_required": false,
+        "human_approval_status": "approved",
+        "rationale": "June missing-context update that narrowed reverse-transcriptase-inhibitor, trial, program, DREAM, and CHIP boundaries without changing stage, momentum, read firmness, or LEV timing.",
+        "next_action": "Classify as June current-context unless the final edition needs it as a named example of better claim boundaries."
+      },
+      {
+        "publication_event_id": "publish-stem-cell-replacement-and-transplantation-surveillance-2026-06-06-2026-06-07t13-49-41-422z",
+        "event_name": "Published Stem Cell Replacement and Transplantation Surveillance for June 6, 2026",
+        "event_date": "2026-06-07",
+        "event_date_basis": "publication_event.published_at",
+        "event_summary": "Activity-only field-change update refreshing the exPDite-2 bemdaneprocel phase 3 registry date while keeping the public outlook, stage, momentum, confidence, and LEV-relevant interpretation unchanged.",
+        "event_change_note": "No outlook change is proposed. The registry update is activity-only: exPDite-2 remains recruiting, has no posted results, and continues to support momentum only.",
+        "decision": "omit_process_context",
+        "materiality": "low",
+        "confidence": "high",
+        "public_copy_action": "no_public_copy",
+        "affected_surfaces": [
+          "state_of_field"
+        ],
+        "related_activity_item_ids": [],
+        "date_basis_review": {
+          "recommendation": "use_tracker_publication_date_as_reviewed_context",
+          "recommended_event_date_basis": "publication_event.published_at",
+          "confidence": "high",
+          "target_date_signal_count": 6,
+          "distinct_target_date_count": 5,
+          "earliest_target_date_signal": "2025-04-25",
+          "latest_target_date_signal": "2032-03-01",
+          "date_signal_bases": [
+            "source.published_on",
+            "study.dates.start_date",
+            "study.trial_details.primary_completion_date",
+            "study.trial_details.registry_last_updated",
+            "study.trial_details.study_completion_date"
+          ],
+          "target_date_signals_before_tracker_month": 3,
+          "requires_agent_attention": false,
+          "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+          "reviewed_by": "codex"
+        },
+        "human_review_required": false,
+        "human_approval_status": "approved",
+        "rationale": "Activity-only registry refresh: exPDite-2 remained recruiting with no posted results and did not change the outlook.",
+        "next_action": "Classify as activity_without_results or omit from public July copy if it is too process-like."
+      },
+      {
+        "publication_event_id": "publish-senomorphics-surveillance-2026-06-07-2026-06-07t16-41-34-635z",
+        "event_name": "Published Senomorphics Field-Change Update for June 7, 2026",
+        "event_date": "2026-06-07",
+        "event_date_basis": "publication_event.published_at",
+        "event_summary": "Staged update adding the June 2026 mianserin/calcium-homeostasis mouse lifespan source, refreshing two registry-linked human study records, and keeping the public stage unchanged.",
+        "event_change_note": "The staged outlook keeps evidence_stage human_biomarker_signal, momentum steady, and confidence low. The new mianserin source adds animal lifespan and human-cell senescence support but does not replace the need for treated-human trials.",
+        "decision": "include_as_field_signal",
+        "materiality": "moderate",
+        "confidence": "medium",
+        "public_copy_action": "draft_copy",
+        "affected_surfaces": [
+          "state_of_field"
+        ],
+        "related_activity_item_ids": [],
+        "date_basis_review": {
+          "recommendation": "needs_surveillance_or_date_judgment",
+          "recommended_event_date_basis": "mixed_target_dates",
+          "confidence": "medium",
+          "target_date_signal_count": 10,
+          "distinct_target_date_count": 6,
+          "earliest_target_date_signal": "2017-09-25",
+          "latest_target_date_signal": "2026-11-01",
+          "date_signal_bases": [
+            "source.published_on",
+            "study.dates.end_date",
+            "study.dates.start_date",
+            "study.trial_details.primary_completion_date",
+            "study.trial_details.registry_last_updated",
+            "study.trial_details.study_completion_date"
+          ],
+          "target_date_signals_before_tracker_month": 6,
+          "requires_agent_attention": true,
+          "rationale": "This item is treated as a field signal or still needs a decision, and its target date signals are mixed or outside the tracker month; final monthly copy needs explicit date-basis judgment.",
+          "reviewed_by": "codex"
+        },
+        "human_review_required": true,
+        "human_approval_status": "approved",
+        "rationale": "June field-change update adding mianserin/Ca2+ animal lifespan and human-cell senescence support while preserving the track stage.",
+        "next_action": "Consider as a June field_signal, bounded as preclinical and not treated-human proof."
+      },
+      {
+        "publication_event_id": "publish-nad-and-redox-restoration-coverage-repair-2026-06-08-2026-06-09t10-39-49-637z",
+        "event_name": "Published NAD and Redox Restoration Missing-Context Update for June 8, 2026",
+        "event_date": "2026-06-09",
+        "event_date_basis": "publication_event.published_at",
+        "event_summary": "Missing-context update that adds MIB-626 human NAD augmentation records, NR/NMN/MIB-626/MitoQ no-results trials to watch, and recent review context while keeping the track at a tentative human functional stage.",
+        "event_change_note": "The update improves source completeness and public watchlist boundaries, but does not change the track stage, momentum, or read firmness because the new MIB-626 and registry records remain short, no-results, disease-context, review-level, or not tied to long-lasting outcomes.",
+        "decision": "include_as_current_context",
+        "materiality": "low",
+        "confidence": "high",
+        "public_copy_action": "draft_copy",
+        "affected_surfaces": [
+          "state_of_field"
+        ],
+        "related_activity_item_ids": [],
+        "date_basis_review": {
+          "recommendation": "use_tracker_publication_date_as_reviewed_context",
+          "recommended_event_date_basis": "publication_event.published_at",
+          "confidence": "high",
+          "target_date_signal_count": 106,
+          "distinct_target_date_count": 47,
+          "earliest_target_date_signal": "2019-01-30",
+          "latest_target_date_signal": "2028-02-01",
+          "date_signal_bases": [
+            "source.published_on",
+            "study.trial_details.primary_completion_date",
+            "study.trial_details.registry_last_updated",
+            "study.trial_details.study_completion_date"
+          ],
+          "target_date_signals_before_tracker_month": 80,
+          "requires_agent_attention": false,
+          "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+          "reviewed_by": "codex"
+        },
+        "human_review_required": false,
+        "human_approval_status": "approved",
+        "rationale": "June missing-context update that improved MIB-626, registry, and review boundaries without changing stage, momentum, or read firmness.",
+        "next_action": "Classify as current_context unless a trial-horizon item needs explicit NAD/redox coverage."
+      },
+      {
+        "publication_event_id": "publish-stem-cell-rejuvenation-coverage-repair-2026-06-09-2026-06-10t10-17-06-414z",
+        "event_name": "Published Stem Cell Rejuvenation Missing Context Update for June 9, 2026",
+        "event_date": "2026-06-10",
+        "event_date_basis": "publication_event.published_at",
+        "event_summary": "Missing-context update that stages hDNAgr no-results registry context, direct HSC aging review context, and a staged outlook refresh while keeping Stem Cell Rejuvenation at a tentative human_biomarker_signal read.",
+        "event_change_note": "Keep human_biomarker_signal, steady momentum, and a tentative read. The staged update improves active-registry and review coverage but adds no posted human efficacy or safety results.",
+        "decision": "include_as_trial_horizon",
+        "materiality": "low",
+        "confidence": "high",
+        "public_copy_action": "draft_copy",
+        "affected_surfaces": [
+          "state_of_field",
+          "trial_horizon"
+        ],
+        "related_activity_item_ids": [],
+        "date_basis_review": {
+          "recommendation": "use_tracker_publication_date_as_reviewed_context",
+          "recommended_event_date_basis": "publication_event.published_at",
+          "confidence": "high",
+          "target_date_signal_count": 14,
+          "distinct_target_date_count": 5,
+          "earliest_target_date_signal": "2025-07-20",
+          "latest_target_date_signal": "2026-05-29",
+          "date_signal_bases": [
+            "source.published_on",
+            "study.dates.end_date",
+            "study.dates.start_date",
+            "study.trial_details.primary_completion_date",
+            "study.trial_details.registry_last_updated",
+            "study.trial_details.study_completion_date"
+          ],
+          "target_date_signals_before_tracker_month": 14,
+          "requires_agent_attention": false,
+          "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+          "reviewed_by": "codex"
+        },
+        "human_review_required": false,
+        "human_approval_status": "approved",
+        "rationale": "June missing-context update that added no-results hDNAgr registry and review context while adding no posted human efficacy or safety results.",
+        "next_action": "Use only as bounded trial-horizon context: planned/not yet recruiting and no posted results as of the 2026-06-14 surveillance check."
+      },
+      {
+        "publication_event_id": "publish-mitophagy-enhancers-coverage-repair-2026-06-10-2026-06-10t14-26-07-178z",
+        "event_name": "Published Mitophagy Enhancers Missing-Context Update for June 10, 2026",
+        "event_date": "2026-06-10",
+        "event_date_basis": "publication_event.published_at",
+        "event_summary": "Missing-context update that adds urolithin A safety and limiting-context sources, stages the most relevant active or completed no-results urolithin A registries, refreshes registry metadata for published trials, and updates the Mitophagy Enhancers outlook evidence map while keeping the track at tentative human_biomarker_signal.",
+        "event_change_note": "Keep human_biomarker_signal, steady momentum, and a tentative read. The staged repair improves safety, registry, limiting-context, and evidence-map coverage but adds no long-lasting improvement in older-human function.",
+        "decision": "include_as_current_context",
+        "materiality": "low",
+        "confidence": "medium",
+        "public_copy_action": "draft_copy",
+        "affected_surfaces": [
+          "state_of_field"
+        ],
+        "related_activity_item_ids": [],
+        "date_basis_review": {
+          "recommendation": "use_tracker_publication_date_as_reviewed_context",
+          "recommended_event_date_basis": "publication_event.published_at",
+          "confidence": "high",
+          "target_date_signal_count": 77,
+          "distinct_target_date_count": 29,
+          "earliest_target_date_signal": "2018-02-15",
+          "latest_target_date_signal": "2027-10-31",
+          "date_signal_bases": [
+            "source.published_on",
+            "study.dates.end_date",
+            "study.dates.start_date",
+            "study.trial_details.primary_completion_date",
+            "study.trial_details.registry_last_updated",
+            "study.trial_details.study_completion_date"
+          ],
+          "target_date_signals_before_tracker_month": 59,
+          "requires_agent_attention": false,
+          "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+          "reviewed_by": "codex"
+        },
+        "human_review_required": false,
+        "human_approval_status": "approved",
+        "rationale": "June missing-context update that added urolithin A safety, registry, and limiting context while preserving the track read.",
+        "next_action": "Classify as current_context, with possible trial_horizon support after stale registry boundaries are checked."
+      },
+      {
+        "publication_event_id": "publish-chaperone-and-heat-shock-support-coverage-repair-2026-06-10-2026-06-11t01-11-08-627z",
+        "event_name": "Published Chaperone and Heat-Shock Support update for June 10, 2026",
+        "event_date": "2026-06-11",
+        "event_date_basis": "publication_event.published_at",
+        "event_summary": "Added arimoclomol NPC open-label extension and current Miplyffa label safety context while keeping Chaperone and Heat-Shock Support at low-confidence, NPC-specific human_functional_benefit with mixed momentum.",
+        "event_change_note": "Repair NPC durability and safety context, add current label boundaries, and preserve human_functional_benefit, mixed momentum, and low read firmness because the evidence remains NPC-specific.",
+        "decision": "include_as_current_context",
+        "materiality": "moderate",
+        "confidence": "medium",
+        "public_copy_action": "draft_copy",
+        "affected_surfaces": [
+          "state_of_field"
+        ],
+        "related_activity_item_ids": [],
+        "date_basis_review": {
+          "recommendation": "use_tracker_publication_date_as_reviewed_context",
+          "recommended_event_date_basis": "publication_event.published_at",
+          "confidence": "high",
+          "target_date_signal_count": 19,
+          "distinct_target_date_count": 6,
+          "earliest_target_date_signal": "2016-06-14",
+          "latest_target_date_signal": "2026-03-20",
+          "date_signal_bases": [
+            "source.published_on",
+            "study.dates.end_date",
+            "study.dates.start_date",
+            "study.trial_details.primary_completion_date",
+            "study.trial_details.registry_last_updated",
+            "study.trial_details.study_completion_date"
+          ],
+          "target_date_signals_before_tracker_month": 19,
+          "requires_agent_attention": false,
+          "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+          "reviewed_by": "codex"
+        },
+        "human_review_required": true,
+        "human_approval_status": "approved",
+        "rationale": "June context update added NPC open-label extension and current Miplyffa label safety context while preserving a disease-specific, mixed read.",
+        "next_action": "Classify as current_context if the July edition needs a proteostasis example."
+      },
+      {
+        "publication_event_id": "publish-autophagy-induction-surveillance-2026-06-11-2026-06-11t10-25-04-657z",
+        "event_name": "Published Autophagy Induction Surveillance for June 11, 2026",
+        "event_date": "2026-06-11",
+        "event_date_basis": "publication_event.published_at",
+        "event_summary": "Field-change update adding a 2026 older-adult spermidine vaccine-response pilot and refreshing the Autophagy Induction outlook while keeping the track at low-confidence human_biomarker_signal with mixed momentum.",
+        "event_change_note": "Add the older-adult spermidine vaccine-response pilot as the strongest new human signal, but preserve human_biomarker_signal, mixed momentum, and low read firmness because the result is small, subgroup-limited, and not broad healthy-aging benefit.",
+        "decision": "include_as_field_signal",
+        "materiality": "moderate",
+        "confidence": "medium",
+        "public_copy_action": "draft_copy",
+        "affected_surfaces": [
+          "state_of_field"
+        ],
+        "related_activity_item_ids": [],
+        "date_basis_review": {
+          "recommendation": "needs_surveillance_or_date_judgment",
+          "recommended_event_date_basis": "mixed_target_dates",
+          "confidence": "medium",
+          "target_date_signal_count": 18,
+          "distinct_target_date_count": 5,
+          "earliest_target_date_signal": "2022-08-01",
+          "latest_target_date_signal": "2026-06-01",
+          "date_signal_bases": [
+            "source.published_on",
+            "study.dates.end_date",
+            "study.dates.start_date",
+            "study.trial_details.primary_completion_date",
+            "study.trial_details.registry_last_updated",
+            "study.trial_details.study_completion_date"
+          ],
+          "target_date_signals_before_tracker_month": 15,
+          "requires_agent_attention": true,
+          "rationale": "This item is treated as a field signal or still needs a decision, and its target date signals are mixed or outside the tracker month; final monthly copy needs explicit date-basis judgment.",
+          "reviewed_by": "codex"
+        },
+        "human_review_required": true,
+        "human_approval_status": "approved",
+        "rationale": "June field-change update adding a small older-adult spermidine vaccine-response pilot while preserving the early human biomarker stage.",
+        "next_action": "Consider as a June field_signal, bounded as small, subgroup-limited, and not proof of lasting aging-relevant function."
+      },
+      {
+        "publication_event_id": "publish-senolytics-coverage-repair-2026-06-11-2026-06-12t00-05-23-406z",
+        "event_name": "Published Senolytics Coverage Repair for June 11, 2026",
+        "event_date": "2026-06-12",
+        "event_date_basis": "publication_event.published_at",
+        "event_summary": "Coverage-repair bundle staging Senolytics source, study, finding, intervention, registry-watch, review, animal-anchor, and outlook-support records. The proposed outlook refresh keeps the track at moderate-confidence human_biomarker_signal with mixed momentum because human biomarker support is now auditable, while functional benefit remains preliminary, mixed, disease-specific, or no-results.",
+        "event_change_note": "Keep Senolytics at human_biomarker_signal with mixed momentum and moderate confidence. The support map is now adequate, but functional benefit remains preliminary and controlled human evidence includes null or limiting results.",
+        "decision": "include_as_current_context",
+        "materiality": "moderate",
+        "confidence": "medium",
+        "public_copy_action": "draft_copy",
+        "affected_surfaces": [
+          "state_of_field"
+        ],
+        "related_activity_item_ids": [],
+        "date_basis_review": {
+          "recommendation": "use_tracker_publication_date_as_reviewed_context",
+          "recommended_event_date_basis": "publication_event.published_at",
+          "confidence": "high",
+          "target_date_signal_count": 85,
+          "distinct_target_date_count": 28,
+          "earliest_target_date_signal": "2015-04-22",
+          "latest_target_date_signal": "2029-01-01",
+          "date_signal_bases": [
+            "source.published_on",
+            "study.dates.end_date",
+            "study.dates.start_date",
+            "study.trial_details.primary_completion_date",
+            "study.trial_details.registry_last_updated",
+            "study.trial_details.results_first_posted_date",
+            "study.trial_details.study_completion_date"
+          ],
+          "target_date_signals_before_tracker_month": 63,
+          "requires_agent_attention": false,
+          "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+          "reviewed_by": "codex"
+        },
+        "human_review_required": true,
+        "human_approval_status": "approved",
+        "rationale": "June missing-context update added D+Q and fisetin biomarker, function, safety, animal, and no-results registry context while keeping senolytics at an early human biomarker stage.",
+        "next_action": "Classify as current_context unless senolytics is chosen as a flagship boundary example."
+      },
+      {
+        "publication_event_id": "publish-partial-reprogramming-coverage-repair-2026-06-12-2026-06-12t13-29-16-586z",
+        "event_name": "Published Partial Reprogramming Coverage Repair for June 12, 2026",
+        "event_date": "2026-06-12",
+        "event_date_basis": "publication_event.published_at",
+        "event_summary": "Coverage-repair bundle staging Partial Reprogramming source, study, finding, registry-watch, review, safety-boundary, seminal-anchor, and outlook-support records. The proposed outlook refresh keeps the track at low-confidence animal_signal with accelerating momentum, updates the human boundary to no human outcomes evidence, and adds ER-100 as a no-results phase 1 trial-watch item.",
+        "event_change_note": "Keep evidence_stage at low-confidence animal_signal and momentum accelerating. Update the human boundary from no direct human intervention evidence to no human outcomes evidence, with ER-100 recorded as a recruiting phase 1 no-results registry.",
+        "decision": "include_as_current_context",
+        "materiality": "moderate",
+        "confidence": "medium",
+        "public_copy_action": "draft_copy",
+        "affected_surfaces": [
+          "state_of_field",
+          "trial_horizon"
+        ],
+        "related_activity_item_ids": [],
+        "date_basis_review": {
+          "recommendation": "use_tracker_publication_date_as_reviewed_context",
+          "recommended_event_date_basis": "publication_event.published_at",
+          "confidence": "high",
+          "target_date_signal_count": 20,
+          "distinct_target_date_count": 10,
+          "earliest_target_date_signal": "2013-09-11",
+          "latest_target_date_signal": "2026-05-19",
+          "date_signal_bases": [
+            "source.published_on",
+            "study.dates.start_date",
+            "study.trial_details.registry_last_updated"
+          ],
+          "target_date_signals_before_tracker_month": 20,
+          "requires_agent_attention": false,
+          "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+          "reviewed_by": "codex"
+        },
+        "human_review_required": true,
+        "human_approval_status": "approved",
+        "rationale": "June missing-context update strengthened the animal source map and added ER-100 as a no-results human registry boundary while preserving animal_signal and accelerating momentum.",
+        "next_action": "Classify as current_context or a frontier boundary item; keep the absence of human outcomes explicit."
+      },
+      {
+        "publication_event_id": "publish-microbiome-composition-modulation-surveillance-2026-06-03-2026-06-03t16-38-15-119z",
+        "event_name": "Published Microbiome Composition Modulation Field Change Check for June 3, 2026",
+        "event_date": "2026-06-03",
+        "event_date_basis": "publication_event.published_at",
+        "event_summary": "Field-change update for the microbiome-composition-modulation track, adding a new disease-specific synbiotic constipation RCT and a null healthy-older-adult exercise/microbiome RCT while keeping the public stage at a tentative human biomarker signal.",
+        "event_change_note": "Keep the stage at a tentative human biomarker signal, change momentum to mixed, and add support-map evidence for the new TBC169 RCT and null older-adult exercise/microbiome RCT.",
+        "decision": "include_as_field_signal",
+        "materiality": "moderate",
+        "confidence": "medium",
+        "public_copy_action": "draft_copy",
+        "affected_surfaces": [
+          "state_of_field"
+        ],
+        "related_activity_item_ids": [],
+        "date_basis_review": {
+          "recommendation": "needs_surveillance_or_date_judgment",
+          "recommended_event_date_basis": "source.published_on",
+          "confidence": "medium",
+          "target_date_signal_count": 2,
+          "distinct_target_date_count": 1,
+          "earliest_target_date_signal": "2026-05-21",
+          "latest_target_date_signal": "2026-05-21",
+          "date_signal_bases": [
+            "source.published_on"
+          ],
+          "target_date_signals_before_tracker_month": 2,
+          "requires_agent_attention": true,
+          "rationale": "This item is treated as a field signal or still needs a decision, and its target date signals are mixed or outside the tracker month; final monthly copy needs explicit date-basis judgment.",
+          "reviewed_by": "codex"
+        },
+        "human_review_required": true,
+        "human_approval_status": "approved",
+        "rationale": "June field-change update added a disease-specific synbiotic constipation RCT and a null healthy-older-adult exercise/microbiome RCT while keeping the track at a tentative human biomarker stage.",
+        "next_action": "Consider as a bounded June field_signal or as current_context for microbiome evidence boundaries."
+      },
+      {
+        "publication_event_id": "publish-autophagy-induction-coverage-repair-2026-06-11-2026-06-11t11-44-04-048z",
+        "event_name": "Published Autophagy Induction Coverage Repair for June 11, 2026",
+        "event_date": "2026-06-11",
+        "event_date_basis": "publication_event.published_at",
+        "event_summary": "Coverage-repair bundle staging active, completed, and stale no-results Autophagy Induction registry context plus a direct 2026 polyamine/autophagy review boundary. The proposed outlook refresh keeps the track at low-confidence human_biomarker_signal with mixed momentum.",
+        "event_change_note": "Add no-results registry watch context and a direct polyamine/autophagy review boundary while preserving human_biomarker_signal, mixed momentum, and low confidence because the repair does not add durable human functional benefit.",
+        "decision": "omit_process_context",
+        "materiality": "low",
+        "confidence": "high",
+        "public_copy_action": "no_public_copy",
+        "affected_surfaces": [
+          "state_of_field"
+        ],
+        "related_activity_item_ids": [],
+        "date_basis_review": {
+          "recommendation": "use_tracker_publication_date_as_reviewed_context",
+          "recommended_event_date_basis": "publication_event.published_at",
+          "confidence": "high",
+          "target_date_signal_count": 64,
+          "distinct_target_date_count": 20,
+          "earliest_target_date_signal": "2020-09-15",
+          "latest_target_date_signal": "2029-12-31",
+          "date_signal_bases": [
+            "source.published_on",
+            "study.dates.end_date",
+            "study.dates.start_date",
+            "study.trial_details.primary_completion_date",
+            "study.trial_details.registry_last_updated",
+            "study.trial_details.study_completion_date"
+          ],
+          "target_date_signals_before_tracker_month": 46,
+          "requires_agent_attention": false,
+          "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+          "reviewed_by": "codex"
+        },
+        "human_review_required": false,
+        "human_approval_status": "approved",
+        "rationale": "June missing-context update added autophagy registry and review boundaries while keeping the track at a tentative human biomarker stage with mixed momentum.",
+        "next_action": "Fold into the autophagy June field-signal item or trial-horizon boundaries rather than treating it as a separate public change."
+      },
+      {
+        "publication_event_id": "publish-immune-rejuvenation-coverage-repair-2026-06-11-2026-06-11t13-12-57-339z",
+        "event_name": "Published Immune Rejuvenation Coverage Repair for June 11, 2026",
+        "event_date": "2026-06-11",
+        "event_date_basis": "publication_event.published_at",
+        "event_summary": "Coverage-repair bundle staging mTOR/TORC1 older-adult immune-function anchors, an RTB101 phase 3 limiting record, a direct immune-aging recruiting registry, a recent review/taxonomy-boundary record, and a revised support-mapped Immune Rejuvenation outlook. The proposed outlook keeps the track at human_functional_benefit but changes momentum to mixed and confidence to low.",
+        "event_change_note": "Keep the human_functional_benefit stage because human immune-function endpoints exist, but downgrade confidence to low and momentum to mixed because support is branch-specific, RTB101 did not replicate in phase 3, active registries have no posted results, and durability/safety remain unresolved.",
+        "decision": "include_as_current_context",
+        "materiality": "moderate",
+        "confidence": "medium",
+        "public_copy_action": "draft_copy",
+        "affected_surfaces": [
+          "state_of_field",
+          "track_page"
+        ],
+        "related_activity_item_ids": [],
+        "date_basis_review": {
+          "recommendation": "use_tracker_publication_date_as_reviewed_context",
+          "recommended_event_date_basis": "publication_event.published_at",
+          "confidence": "high",
+          "target_date_signal_count": 20,
+          "distinct_target_date_count": 9,
+          "earliest_target_date_signal": "2014-12-24",
+          "latest_target_date_signal": "2026-10-01",
+          "date_signal_bases": [
+            "source.published_on",
+            "study.dates.end_date",
+            "study.dates.start_date",
+            "study.trial_details.primary_completion_date",
+            "study.trial_details.registry_last_updated",
+            "study.trial_details.study_completion_date"
+          ],
+          "target_date_signals_before_tracker_month": 14,
+          "requires_agent_attention": false,
+          "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+          "reviewed_by": "codex"
+        },
+        "human_review_required": true,
+        "human_approval_status": "approved",
+        "rationale": "June missing-context update added older-adult immune-function anchors, RTB101 limiting context, direct immune-aging registry context, and review boundaries while keeping the track at human functional benefit but lowering the read to mixed and tentative.",
+        "next_action": "Consider as a June outlook-boundary item; be explicit that the clearer read is not an overall LEV upgrade."
+      },
+      {
+        "publication_event_id": "publish-rapalogs-coverage-repair-2026-06-11-2026-06-11t18-24-35-790z",
+        "event_name": "Published Rapalogs Coverage Repair for June 11, 2026",
+        "event_date": "2026-06-11",
+        "event_date_basis": "publication_event.published_at",
+        "event_summary": "Coverage-repair bundle staging Rapalogs source, study, finding, registry-watch, review, seminal-anchor, and outlook-support records. The proposed outlook refresh moves the track to low-confidence human_functional_benefit with mixed momentum because human functional endpoints have been tested, but the evidence remains branch-specific, mixed, and short of durable disease, frailty, mortality, or broad healthy-aging benefit.",
+        "event_change_note": "Replace the activity-only moderate human_biomarker_signal outlook with a source-backed low-confidence human_functional_benefit read. The stage changes because human functional endpoints have been tested; confidence lowers because PEARL is mixed, RTB101 has a phase 3 miss, and many registries remain no-results.",
+        "decision": "include_as_current_context",
+        "materiality": "high",
+        "confidence": "medium",
+        "public_copy_action": "draft_copy",
+        "affected_surfaces": [
+          "state_of_field",
+          "track_page"
+        ],
+        "related_activity_item_ids": [],
+        "date_basis_review": {
+          "recommendation": "use_tracker_publication_date_as_reviewed_context",
+          "recommended_event_date_basis": "publication_event.published_at",
+          "confidence": "high",
+          "target_date_signal_count": 88,
+          "distinct_target_date_count": 37,
+          "earliest_target_date_signal": "2009-07-16",
+          "latest_target_date_signal": "2028-12-01",
+          "date_signal_bases": [
+            "source.published_on",
+            "study.dates.end_date",
+            "study.dates.start_date",
+            "study.trial_details.primary_completion_date",
+            "study.trial_details.registry_last_updated",
+            "study.trial_details.results_first_posted_date",
+            "study.trial_details.study_completion_date"
+          ],
+          "target_date_signals_before_tracker_month": 70,
+          "requires_agent_attention": false,
+          "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+          "reviewed_by": "codex"
+        },
+        "human_review_required": true,
+        "human_approval_status": "approved",
+        "rationale": "June missing-context update moved rapalogs to a tentative human functional read with mixed momentum because human functional endpoints have been tested, while durable disease, frailty, mortality, and broad healthy-aging benefit remain unproven.",
+        "next_action": "Decide whether rapalogs should be the prominent June outlook-boundary item in what_changed."
+      },
+      {
+        "publication_event_id": "publish-extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15-2026-06-15t10-33-29-045z",
+        "event_name": "Published Extracellular Vesicle and Secretome Therapies Surveillance for June 15, 2026",
+        "event_date": "2026-06-15",
+        "event_date_basis": "publication_event.published_at",
+        "event_summary": "Staged surveillance update adding the June 2026 Frontiers in Aging APRC-CM multimodal healthy-aging pilot, refreshing stale registry metadata for four published EV/secretome human study records, and keeping the public stage, momentum, and confidence unchanged.",
+        "event_change_note": "Keep evidence_stage human_biomarker_signal, momentum accelerating, and confidence low. The APRC-CM pilot adds a human biological-age biomarker signal but does not isolate conditioned media from lifestyle and supplement components or establish functional benefit.",
+        "decision": "include_as_current_context",
+        "materiality": "low",
+        "confidence": "high",
+        "public_copy_action": "draft_copy",
+        "affected_surfaces": [
+          "state_of_field",
+          "current_lev_story",
+          "hallmark_insight",
+          "track_page"
+        ],
+        "related_activity_item_ids": [],
+        "date_basis_review": {
+          "recommendation": "use_tracker_publication_date_as_reviewed_context",
+          "recommended_event_date_basis": "publication_event.published_at",
+          "confidence": "high",
+          "target_date_signal_count": 25,
+          "distinct_target_date_count": 13,
+          "earliest_target_date_signal": "2020-07-01",
+          "latest_target_date_signal": "2026-06-09",
+          "date_signal_bases": [
+            "source.published_on",
+            "study.dates.end_date",
+            "study.dates.start_date",
+            "study.trial_details.primary_completion_date",
+            "study.trial_details.registry_last_updated",
+            "study.trial_details.results_first_posted_date",
+            "study.trial_details.study_completion_date"
+          ],
+          "target_date_signals_before_tracker_month": 23,
+          "requires_agent_attention": false,
+          "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+          "reviewed_by": "codex"
+        },
+        "human_review_required": false,
+        "human_approval_status": "not_required",
+        "rationale": "June reviewed field context: the APRC-CM pilot adds a small human biological-age biomarker signal and registry-hygiene updates, while preserving the EV/secretome track's stage, momentum, read firmness, and no-functional-benefit boundary.",
+        "next_action": "Carry this as bounded June current context in the July edition if space permits; do not treat it as a field-moving result unless later controlled functional evidence changes the outlook."
+      }
+    ]
+  },
   "decision_sections": [
     {
       "decision": "include_as_field_signal",
@@ -74,6 +819,27 @@
             "state_of_field"
           ],
           "related_activity_item_ids": [],
+          "date_basis_review": {
+            "recommendation": "needs_surveillance_or_date_judgment",
+            "recommended_event_date_basis": "mixed_target_dates",
+            "confidence": "medium",
+            "target_date_signal_count": 10,
+            "distinct_target_date_count": 6,
+            "earliest_target_date_signal": "2017-09-25",
+            "latest_target_date_signal": "2026-11-01",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.end_date",
+              "study.dates.start_date",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 6,
+            "requires_agent_attention": true,
+            "rationale": "This item is treated as a field signal or still needs a decision, and its target date signals are mixed or outside the tracker month; final monthly copy needs explicit date-basis judgment.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": true,
           "human_approval_status": "approved",
           "rationale": "June field-change update adding mianserin/Ca2+ animal lifespan and human-cell senescence support while preserving the track stage.",
@@ -94,6 +860,27 @@
             "state_of_field"
           ],
           "related_activity_item_ids": [],
+          "date_basis_review": {
+            "recommendation": "needs_surveillance_or_date_judgment",
+            "recommended_event_date_basis": "mixed_target_dates",
+            "confidence": "medium",
+            "target_date_signal_count": 18,
+            "distinct_target_date_count": 5,
+            "earliest_target_date_signal": "2022-08-01",
+            "latest_target_date_signal": "2026-06-01",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.end_date",
+              "study.dates.start_date",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 15,
+            "requires_agent_attention": true,
+            "rationale": "This item is treated as a field signal or still needs a decision, and its target date signals are mixed or outside the tracker month; final monthly copy needs explicit date-basis judgment.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": true,
           "human_approval_status": "approved",
           "rationale": "June field-change update adding a small older-adult spermidine vaccine-response pilot while preserving the early human biomarker stage.",
@@ -114,6 +901,22 @@
             "state_of_field"
           ],
           "related_activity_item_ids": [],
+          "date_basis_review": {
+            "recommendation": "needs_surveillance_or_date_judgment",
+            "recommended_event_date_basis": "source.published_on",
+            "confidence": "medium",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2026-05-21",
+            "latest_target_date_signal": "2026-05-21",
+            "date_signal_bases": [
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 2,
+            "requires_agent_attention": true,
+            "rationale": "This item is treated as a field signal or still needs a decision, and its target date signals are mixed or outside the tracker month; final monthly copy needs explicit date-basis judgment.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": true,
           "human_approval_status": "approved",
           "rationale": "June field-change update added a disease-specific synbiotic constipation RCT and a null healthy-older-adult exercise/microbiome RCT while keeping the track at a tentative human biomarker stage.",
@@ -134,6 +937,22 @@
             "state_of_field"
           ],
           "related_activity_item_ids": [],
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "source.published_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2026-06-02",
+            "latest_target_date_signal": "2026-06-02",
+            "date_signal_bases": [
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 0,
+            "requires_agent_attention": false,
+            "rationale": "This field-signal item has one clear target date signal inside the tracker month, so monthly copy should treat that underlying date as the field-event date.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": true,
           "human_approval_status": "approved",
           "rationale": "June field-change update added a Pediococcus acidilactici PA53 older-adult well-being and gut-health RCT while keeping the track tentative and without a LEV timing upgrade.",
@@ -162,6 +981,26 @@
             "state_of_field"
           ],
           "related_activity_item_ids": [],
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 29,
+            "distinct_target_date_count": 12,
+            "earliest_target_date_signal": "2020-08-05",
+            "latest_target_date_signal": "2030-04-01",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on",
+              "study.dates.end_date",
+              "study.dates.start_date",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 23,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": false,
           "human_approval_status": "approved",
           "rationale": "June missing-context update that narrowed reverse-transcriptase-inhibitor, trial, program, DREAM, and CHIP boundaries without changing stage, momentum, read firmness, or LEV timing.",
@@ -182,6 +1021,25 @@
             "state_of_field"
           ],
           "related_activity_item_ids": [],
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 106,
+            "distinct_target_date_count": 47,
+            "earliest_target_date_signal": "2019-01-30",
+            "latest_target_date_signal": "2028-02-01",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 80,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": false,
           "human_approval_status": "approved",
           "rationale": "June missing-context update that improved MIB-626, registry, and review boundaries without changing stage, momentum, or read firmness.",
@@ -202,6 +1060,27 @@
             "state_of_field"
           ],
           "related_activity_item_ids": [],
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 77,
+            "distinct_target_date_count": 29,
+            "earliest_target_date_signal": "2018-02-15",
+            "latest_target_date_signal": "2027-10-31",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.end_date",
+              "study.dates.start_date",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 59,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": false,
           "human_approval_status": "approved",
           "rationale": "June missing-context update that added urolithin A safety, registry, and limiting context while preserving the track read.",
@@ -222,6 +1101,27 @@
             "state_of_field"
           ],
           "related_activity_item_ids": [],
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 19,
+            "distinct_target_date_count": 6,
+            "earliest_target_date_signal": "2016-06-14",
+            "latest_target_date_signal": "2026-03-20",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.end_date",
+              "study.dates.start_date",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 19,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": true,
           "human_approval_status": "approved",
           "rationale": "June context update added NPC open-label extension and current Miplyffa label safety context while preserving a disease-specific, mixed read.",
@@ -242,6 +1142,28 @@
             "state_of_field"
           ],
           "related_activity_item_ids": [],
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 85,
+            "distinct_target_date_count": 28,
+            "earliest_target_date_signal": "2015-04-22",
+            "latest_target_date_signal": "2029-01-01",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.end_date",
+              "study.dates.start_date",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.results_first_posted_date",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 63,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": true,
           "human_approval_status": "approved",
           "rationale": "June missing-context update added D+Q and fisetin biomarker, function, safety, animal, and no-results registry context while keeping senolytics at an early human biomarker stage.",
@@ -263,6 +1185,24 @@
             "trial_horizon"
           ],
           "related_activity_item_ids": [],
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 20,
+            "distinct_target_date_count": 10,
+            "earliest_target_date_signal": "2013-09-11",
+            "latest_target_date_signal": "2026-05-19",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.start_date",
+              "study.trial_details.registry_last_updated"
+            ],
+            "target_date_signals_before_tracker_month": 20,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": true,
           "human_approval_status": "approved",
           "rationale": "June missing-context update strengthened the animal source map and added ER-100 as a no-results human registry boundary while preserving animal_signal and accelerating momentum.",
@@ -283,6 +1223,22 @@
             "state_of_field"
           ],
           "related_activity_item_ids": [],
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 1,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2026-06-02",
+            "latest_target_date_signal": "2026-06-02",
+            "date_signal_bases": [
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 0,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": false,
           "human_approval_status": "approved",
           "rationale": "June field-change update attached DREAM repression evidence to DNA repair enhancement and refreshed the track while keeping it at a tentative human biomarker stage.",
@@ -304,6 +1260,27 @@
             "track_page"
           ],
           "related_activity_item_ids": [],
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 20,
+            "distinct_target_date_count": 9,
+            "earliest_target_date_signal": "2014-12-24",
+            "latest_target_date_signal": "2026-10-01",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.end_date",
+              "study.dates.start_date",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 14,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": true,
           "human_approval_status": "approved",
           "rationale": "June missing-context update added older-adult immune-function anchors, RTB101 limiting context, direct immune-aging registry context, and review boundaries while keeping the track at human functional benefit but lowering the read to mixed and tentative.",
@@ -325,6 +1302,28 @@
             "track_page"
           ],
           "related_activity_item_ids": [],
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 88,
+            "distinct_target_date_count": 37,
+            "earliest_target_date_signal": "2009-07-16",
+            "latest_target_date_signal": "2028-12-01",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.end_date",
+              "study.dates.start_date",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.results_first_posted_date",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 70,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": true,
           "human_approval_status": "approved",
           "rationale": "June missing-context update moved rapalogs to a tentative human functional read with mixed momentum because human functional endpoints have been tested, while durable disease, frailty, mortality, and broad healthy-aging benefit remain unproven.",
@@ -348,6 +1347,28 @@
             "track_page"
           ],
           "related_activity_item_ids": [],
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 25,
+            "distinct_target_date_count": 13,
+            "earliest_target_date_signal": "2020-07-01",
+            "latest_target_date_signal": "2026-06-09",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.end_date",
+              "study.dates.start_date",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.results_first_posted_date",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 23,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": false,
           "human_approval_status": "not_required",
           "rationale": "June reviewed field context: the APRC-CM pilot adds a small human biological-age biomarker signal and registry-hygiene updates, while preserving the EV/secretome track's stage, momentum, read firmness, and no-functional-benefit boundary.",
@@ -371,6 +1392,23 @@
           "related_activity_item_ids": [
             "arpa-h-prospr-awardees-2026"
           ],
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "activity_item.occurred_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2026-02-24",
+            "latest_target_date_signal": "2026-02-24",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 2,
+            "requires_agent_attention": false,
+            "rationale": "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": true,
           "human_approval_status": "approved",
           "rationale": "June direct field-activity publication added February 2026 ARPA-H PROSPR program context. It belongs as healthspan trial-infrastructure context, not as June field movement or evidence of intervention benefit.",
@@ -393,6 +1431,23 @@
           "related_activity_item_ids": [
             "hevolution-400m-healthspan-commitments-2024"
           ],
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "activity_item.occurred_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2024-06-10",
+            "latest_target_date_signal": "2024-06-10",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 2,
+            "requires_agent_attention": false,
+            "rationale": "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": false,
           "human_approval_status": "approved",
           "rationale": "June direct field-activity publication added historical Hevolution healthspan-funding context. It is relevant field infrastructure context, not June field movement or evidence of intervention benefit.",
@@ -416,6 +1471,23 @@
           "related_activity_item_ids": [
             "newlimit-series-c-2026"
           ],
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "activity_item.occurred_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2026-06-02",
+            "latest_target_date_signal": "2026-06-02",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 0,
+            "requires_agent_attention": false,
+            "rationale": "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": false,
           "human_approval_status": "approved",
           "rationale": "June direct field-activity publication added NewLimit's June 2026 Series C and clinical-transition context. It is current field activity and trial-horizon context, not evidence of intervention benefit.",
@@ -445,6 +1517,27 @@
             "trial_horizon"
           ],
           "related_activity_item_ids": [],
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 14,
+            "distinct_target_date_count": 5,
+            "earliest_target_date_signal": "2025-07-20",
+            "latest_target_date_signal": "2026-05-29",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.end_date",
+              "study.dates.start_date",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 14,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": false,
           "human_approval_status": "approved",
           "rationale": "June missing-context update that added no-results hDNAgr registry and review context while adding no posted human efficacy or safety results.",
@@ -468,6 +1561,23 @@
           "related_activity_item_ids": [
             "healthspan-connect-registry-post-2025"
           ],
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "activity_item.occurred_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2025-10-07",
+            "latest_target_date_signal": "2025-10-07",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 2,
+            "requires_agent_attention": false,
+            "rationale": "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": false,
           "human_approval_status": "approved",
           "rationale": "June direct field-activity publication added Healthspan Connect as planned healthy-aging observational infrastructure. It belongs as bounded trial-horizon context because it is registry-linked and may shape what to watch next, but it is not yet recruiting, not interventional, and not evidence of intervention benefit.",
@@ -496,6 +1606,26 @@
             "state_of_field"
           ],
           "related_activity_item_ids": [],
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 6,
+            "distinct_target_date_count": 5,
+            "earliest_target_date_signal": "2025-04-25",
+            "latest_target_date_signal": "2032-03-01",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.start_date",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 3,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": false,
           "human_approval_status": "approved",
           "rationale": "Activity-only registry refresh: exPDite-2 remained recruiting with no posted results and did not change the outlook.",
@@ -516,6 +1646,27 @@
             "state_of_field"
           ],
           "related_activity_item_ids": [],
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 64,
+            "distinct_target_date_count": 20,
+            "earliest_target_date_signal": "2020-09-15",
+            "latest_target_date_signal": "2029-12-31",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.end_date",
+              "study.dates.start_date",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 46,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": false,
           "human_approval_status": "approved",
           "rationale": "June missing-context update added autophagy registry and review boundaries while keeping the track at a tentative human biomarker stage with mixed momentum.",
@@ -546,6 +1697,23 @@
           "related_activity_item_ids": [
             "calico-abbvie-aging-collaboration-2014"
           ],
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "activity_item.occurred_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2014-09-03",
+            "latest_target_date_signal": "2014-09-03",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 2,
+            "requires_agent_attention": false,
+            "rationale": "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": false,
           "human_approval_status": "approved",
           "rationale": "June direct field-activity publication backfilled a 2014 Calico-AbbVie collaboration. It is useful historical field-infrastructure context, not June field movement.",
@@ -568,6 +1736,23 @@
           "related_activity_item_ids": [
             "calico-broad-neurodegeneration-extension-2024"
           ],
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "activity_item.occurred_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2024-05-09",
+            "latest_target_date_signal": "2024-05-09",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 2,
+            "requires_agent_attention": false,
+            "rationale": "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": false,
           "human_approval_status": "approved",
           "rationale": "June direct field-activity publication backfilled a May 2024 Calico-Broad collaboration extension. It is historical field-infrastructure context, not June field movement.",
@@ -590,6 +1775,23 @@
           "related_activity_item_ids": [
             "google-calico-launch-2013"
           ],
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "activity_item.occurred_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2013-09-18",
+            "latest_target_date_signal": "2013-09-18",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 2,
+            "requires_agent_attention": false,
+            "rationale": "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": false,
           "human_approval_status": "approved",
           "rationale": "June direct field-activity publication backfilled Google's 2013 Calico launch. It is a historical field anchor, not June field movement.",
@@ -612,6 +1814,23 @@
           "related_activity_item_ids": [
             "altos-labs-launch-2022"
           ],
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "activity_item.occurred_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2022-01-19",
+            "latest_target_date_signal": "2022-01-19",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 2,
+            "requires_agent_attention": false,
+            "rationale": "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": false,
           "human_approval_status": "approved",
           "rationale": "June direct field-activity publication backfilled Altos Labs' 2022 launch. It is a historical field anchor, not June field movement or evidence of intervention benefit.",
@@ -634,6 +1853,23 @@
           "related_activity_item_ids": [
             "newlimit-formation-2021"
           ],
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "activity_item.occurred_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2021-12-11",
+            "latest_target_date_signal": "2021-12-11",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 2,
+            "requires_agent_attention": false,
+            "rationale": "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": false,
           "human_approval_status": "approved",
           "rationale": "June direct field-activity publication backfilled NewLimit's 2021 formation. It is historical company-infrastructure context, not June field movement.",
@@ -657,6 +1893,23 @@
           "related_activity_item_ids": [
             "retro-biosciences-next-financing-2026"
           ],
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "activity_item.occurred_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2026-05-22",
+            "latest_target_date_signal": "2026-05-22",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 2,
+            "requires_agent_attention": false,
+            "rationale": "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": false,
           "human_approval_status": "approved",
           "rationale": "Late-reviewed field-activity reconciliation attached Retro Biosciences' May 22, 2026 financing and first-in-human progress context to the May period. It is activity and trial-horizon context, not evidence of intervention benefit.",
@@ -680,6 +1933,23 @@
           "related_activity_item_ids": [
             "xprize-healthspan-launch-2023"
           ],
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "activity_item.occurred_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2023-11-29",
+            "latest_target_date_signal": "2023-11-29",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 2,
+            "requires_agent_attention": false,
+            "rationale": "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+            "reviewed_by": "codex"
+          },
           "human_review_required": false,
           "human_approval_status": "approved",
           "rationale": "June direct field-activity publication backfilled the 2023 XPRIZE Healthspan launch. It is historical prize-infrastructure context, not June field movement or evidence of intervention benefit.",
@@ -1006,6 +2276,7 @@
     "Do not ask for approval unless new evidence, surveillance, or field-activity candidates appear; the current approval packet is empty.",
     "Keep source-work field-activity candidates out of public monthly copy unless a durable source is found or a curator approves an exception.",
     "Use the completed State-of-Field-routed field activity lens when drafting; treat activity as context or trial horizon unless reviewed evidence changes an outlook.",
+    "Resolve 3 date-basis review item(s) before final monthly copy; these are likely field signals or undecided updates with mixed or missing target dates.",
     "Rerun the trial audit after the covered period closes and refresh any registry-status claims before final trial_horizon copy.",
     "Use the draft seed as scaffolding only; final public JSON should be written from reviewed records after period close."
   ],

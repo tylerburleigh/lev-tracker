@@ -10,6 +10,9 @@ const currentStoryPath = "data/content/current-lev-story/current.json";
 const stateOfFieldRoot = "data/content/state-of-the-field";
 const publicationEventRoot = "data/publication-events";
 const activityItemsRoot = "data/activity-items";
+const sourcesRoot = "data/sources";
+const studiesRoot = "data/studies";
+const findingsRoot = "data/findings";
 const fieldActivityWatchlistPath = "research/backlog/field-activity-watchlist.v1.json";
 const trialWatchReportPath = "extra/trial-watch-report.md";
 const directActivityPublicationRoute = "direct_activity_publish";
@@ -119,6 +122,20 @@ async function readJsonCollection(relativeDir) {
 
 function unique(values) {
   return Array.from(new Set(values.filter(Boolean)));
+}
+
+function recordMap(records) {
+  return new Map(records.map((record) => [record.id, record]));
+}
+
+function monthKey(value) {
+  return value?.slice(0, 7) ?? null;
+}
+
+function isBeforeMonth(leftDate, rightDate) {
+  const leftMonth = monthKey(leftDate);
+  const rightMonth = monthKey(rightDate);
+  return Boolean(leftMonth && rightMonth && leftMonth < rightMonth);
 }
 
 function flattenFieldActivityCandidateEvents(fieldActivityWatchlist) {
@@ -313,6 +330,191 @@ function effectiveEventDate(event, activityItemsById) {
   return {
     date: datePart(event.published_at),
     basis: "publication_event.published_at"
+  };
+}
+
+function collectDateSignalsFromTarget(target, maps) {
+  if (target.record_type === "activity_item") {
+    const activityItem = maps.activityItemsById.get(target.record_id);
+    return activityItem?.occurred_on
+      ? [
+          {
+            record_type: "activity_item",
+            record_id: target.record_id,
+            date: activityItem.occurred_on,
+            basis: "activity_item.occurred_on"
+          }
+        ]
+      : [];
+  }
+
+  if (target.record_type === "source") {
+    const source = maps.sourcesById.get(target.record_id);
+    return source?.published_on
+      ? [
+          {
+            record_type: "source",
+            record_id: target.record_id,
+            date: source.published_on,
+            basis: "source.published_on"
+          }
+        ]
+      : [];
+  }
+
+  if (target.record_type === "study") {
+    const study = maps.studiesById.get(target.record_id);
+    if (!study) {
+      return [];
+    }
+
+    return [
+      ["study.trial_details.results_first_posted_date", study.trial_details?.results_first_posted_date],
+      ["study.trial_details.registry_last_updated", study.trial_details?.registry_last_updated],
+      ["study.trial_details.primary_completion_date", study.trial_details?.primary_completion_date],
+      ["study.trial_details.study_completion_date", study.trial_details?.study_completion_date],
+      ["study.dates.end_date", study.dates?.end_date],
+      ["study.dates.start_date", study.dates?.start_date]
+    ]
+      .filter(([, value]) => Boolean(value))
+      .map(([basis, date]) => ({
+        record_type: "study",
+        record_id: target.record_id,
+        date,
+        basis
+      }));
+  }
+
+  if (target.record_type === "finding") {
+    const finding = maps.findingsById.get(target.record_id);
+    if (!finding) {
+      return [];
+    }
+
+    return [
+      ...collectDateSignalsFromTarget({ record_type: "source", record_id: finding.source_id }, maps),
+      ...(finding.study_id ? collectDateSignalsFromTarget({ record_type: "study", record_id: finding.study_id }, maps) : [])
+    ].map((signal) => ({
+      ...signal,
+      via_record_type: "finding",
+      via_record_id: target.record_id
+    }));
+  }
+
+  return [];
+}
+
+function collectDateSignalsFromEvent(event, dateSignalMaps) {
+  return (event.published_targets ?? []).flatMap((target) => collectDateSignalsFromTarget(target, dateSignalMaps));
+}
+
+function summarizeDateSignals(signals) {
+  const dates = unique(signals.map((signal) => signal.date)).sort((left, right) => left.localeCompare(right));
+  return {
+    target_date_signal_count: signals.length,
+    distinct_target_date_count: dates.length,
+    earliest_target_date_signal: dates[0] ?? undefined,
+    latest_target_date_signal: dates.at(-1) ?? undefined,
+    date_signal_bases: unique(signals.map((signal) => signal.basis)).sort((left, right) => left.localeCompare(right))
+  };
+}
+
+function recommendationNeedsDateJudgment(item, summary, trackerDate) {
+  if (item.decision === "needs_decision") {
+    return true;
+  }
+  if (item.decision !== "include_as_field_signal") {
+    return false;
+  }
+  if (summary.distinct_target_date_count !== 1) {
+    return true;
+  }
+
+  return monthKey(summary.earliest_target_date_signal) !== monthKey(trackerDate);
+}
+
+function buildDateBasisReview(item, event, dateSignalMaps) {
+  if (!event) {
+    return undefined;
+  }
+
+  const trackerDate = datePart(event.published_at);
+  const signals = collectDateSignalsFromEvent(event, dateSignalMaps);
+  const summary = summarizeDateSignals(signals);
+  const signalsBeforeTrackerMonth = signals.filter((signal) => isBeforeMonth(signal.date, trackerDate)).length;
+  const eventDateBasis = item.event_date_basis ?? "publication_event.published_at";
+
+  if (eventDateBasis === "activity_item.occurred_on") {
+    return {
+      recommendation: "use_underlying_field_date",
+      recommended_event_date_basis: "activity_item.occurred_on",
+      confidence: "high",
+      ...summary,
+      target_date_signals_before_tracker_month: signalsBeforeTrackerMonth,
+      requires_agent_attention: false,
+      rationale:
+        "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+      reviewed_by: "codex"
+    };
+  }
+
+  const needsJudgment = recommendationNeedsDateJudgment(item, summary, trackerDate);
+  if (needsJudgment) {
+    return {
+      recommendation: "needs_surveillance_or_date_judgment",
+      recommended_event_date_basis:
+        summary.distinct_target_date_count === 1
+          ? summary.date_signal_bases[0]
+          : summary.target_date_signal_count === 0
+            ? "unknown"
+            : "mixed_target_dates",
+      confidence: item.decision === "needs_decision" ? "low" : "medium",
+      ...summary,
+      target_date_signals_before_tracker_month: signalsBeforeTrackerMonth,
+      requires_agent_attention: true,
+      rationale:
+        summary.target_date_signal_count === 0
+          ? "No source, study, finding, or activity date signal was found; an agent should decide whether tracker publication date is the only defensible monthly basis."
+          : "This item is treated as a field signal or still needs a decision, and its target date signals are mixed or outside the tracker month; final monthly copy needs explicit date-basis judgment.",
+      reviewed_by: "codex"
+    };
+  }
+
+  if (item.decision === "include_as_field_signal" && summary.distinct_target_date_count === 1) {
+    return {
+      recommendation: "use_underlying_field_date",
+      recommended_event_date_basis: summary.date_signal_bases[0],
+      confidence: "high",
+      ...summary,
+      target_date_signals_before_tracker_month: signalsBeforeTrackerMonth,
+      requires_agent_attention: false,
+      rationale:
+        "This field-signal item has one clear target date signal inside the tracker month, so monthly copy should treat that underlying date as the field-event date.",
+      reviewed_by: "codex"
+    };
+  }
+
+  return {
+    recommendation: "use_tracker_publication_date_as_reviewed_context",
+    recommended_event_date_basis: "publication_event.published_at",
+    confidence: summary.target_date_signal_count === 0 ? "medium" : "high",
+    ...summary,
+    target_date_signals_before_tracker_month: signalsBeforeTrackerMonth,
+    requires_agent_attention: false,
+    rationale:
+      summary.target_date_signal_count === 0
+        ? "No target date signal was found; keep tracker publication date as reviewed-context timing unless an agent records a better basis."
+        : "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+    reviewed_by: "codex"
+  };
+}
+
+function buildDateSignalMaps({ activityItems, sources, studies, findings }) {
+  return {
+    activityItemsById: recordMap(activityItems),
+    sourcesById: recordMap(sources),
+    studiesById: recordMap(studies),
+    findingsById: recordMap(findings)
   };
 }
 
@@ -680,6 +882,25 @@ function sameJson(left, right) {
   return JSON.stringify(left) === JSON.stringify(right);
 }
 
+function syncDateBasisReviews(reconciliationItems, eventById, dateSignalMaps) {
+  let updatedCount = 0;
+
+  for (const item of reconciliationItems) {
+    const event = eventById.get(item.publication_event_id);
+    const nextReview = buildDateBasisReview(item, event, dateSignalMaps);
+    if (!nextReview) {
+      continue;
+    }
+
+    if (!sameJson(item.date_basis_review, nextReview)) {
+      item.date_basis_review = nextReview;
+      updatedCount += 1;
+    }
+  }
+
+  return updatedCount;
+}
+
 function itemNeedsApprovalPacket(item, includeAll) {
   if (includeAll) {
     return true;
@@ -771,6 +992,7 @@ function buildApprovalPacket({
       event_date: item.event_date,
       event_date_basis: item.event_date_basis ?? "publication_event.published_at",
       related_activity_item_ids: item.related_activity_item_ids ?? [],
+      date_basis_review: item.date_basis_review ?? null,
       event_name: event?.name ?? null,
       event_summary: event?.summary ?? null,
       event_change_note: event?.change_note ?? null,
@@ -1061,6 +1283,7 @@ function prepReconciliationItem(item, event) {
     public_copy_action: item.agent_assessment?.public_copy_action ?? null,
     affected_surfaces: item.agent_assessment?.affected_surfaces ?? [],
     related_activity_item_ids: item.related_activity_item_ids ?? [],
+    date_basis_review: item.date_basis_review ?? null,
     human_review_required: item.agent_assessment?.human_review_required ?? false,
     human_approval_status: approvalStatus(item),
     rationale: item.rationale,
@@ -1145,6 +1368,45 @@ function buildDraftSeedSummary(draftPool) {
   };
 }
 
+function shouldShowDateBasisReviewItem(item) {
+  const review = item.date_basis_review;
+  if (!review) {
+    return false;
+  }
+  if (review.recommendation === "use_underlying_field_date") {
+    return false;
+  }
+
+  return (
+    review.requires_agent_attention ||
+    review.target_date_signals_before_tracker_month > 0 ||
+    review.distinct_target_date_count > 1 ||
+    review.target_date_signal_count === 0
+  );
+}
+
+function buildDateBasisReviewSummary(reconciliationItems) {
+  const reviewedItems = reconciliationItems.filter((item) => item.date_basis_review);
+  const recommendationCount = (recommendation) =>
+    reviewedItems.filter((item) => item.date_basis_review?.recommendation === recommendation).length;
+  const attentionItems = reviewedItems.filter((item) => item.date_basis_review?.requires_agent_attention);
+  const flaggedItems = reviewedItems.filter(shouldShowDateBasisReviewItem);
+
+  return {
+    reviewed_item_count: reviewedItems.length,
+    use_tracker_publication_date_count: recommendationCount("use_tracker_publication_date_as_reviewed_context"),
+    use_underlying_field_date_count: recommendationCount("use_underlying_field_date"),
+    needs_agent_date_judgment_count: recommendationCount("needs_surveillance_or_date_judgment"),
+    attention_required_count: attentionItems.length,
+    mixed_target_date_count: reviewedItems.filter((item) => (item.date_basis_review?.distinct_target_date_count ?? 0) > 1).length,
+    older_target_date_signal_count: reviewedItems.filter((item) => (item.date_basis_review?.target_date_signals_before_tracker_month ?? 0) > 0)
+      .length,
+    no_target_date_signal_count: reviewedItems.filter((item) => item.date_basis_review?.target_date_signal_count === 0).length,
+    attention_items: attentionItems,
+    flagged_items: flaggedItems
+  };
+}
+
 function parseTrialWatchReportSummary(text) {
   if (!text) {
     return {
@@ -1175,7 +1437,7 @@ function parseTrialWatchReportSummary(text) {
   };
 }
 
-function buildPrepRecommendations({ summary, packet, draftSeedSummary, trialWatchReport, fieldActivityReviewComplete }) {
+function buildPrepRecommendations({ summary, packet, draftSeedSummary, trialWatchReport, fieldActivityReviewComplete, dateBasisReviewSummary }) {
   const recommendations = [];
 
   if (summary.publication_gate.status !== "pass") {
@@ -1201,6 +1463,16 @@ function buildPrepRecommendations({ summary, packet, draftSeedSummary, trialWatc
       fieldActivityReviewComplete
         ? "Use the completed State-of-Field-routed field activity lens when drafting; treat activity as context or trial horizon unless reviewed evidence changes an outlook."
         : "Review the State-of-Field-routed field activity lens before drafting; treat activity as context or trial horizon unless reviewed evidence changes an outlook."
+    );
+  }
+
+  if (dateBasisReviewSummary.attention_required_count > 0) {
+    recommendations.push(
+      `Resolve ${dateBasisReviewSummary.attention_required_count} date-basis review item(s) before final monthly copy; these are likely field signals or undecided updates with mixed or missing target dates.`
+    );
+  } else if (dateBasisReviewSummary.flagged_items.length > 0) {
+    recommendations.push(
+      "Use the date-basis review section to preserve reviewed-context boundaries for mixed or older target dates; no extra curator approval is needed unless final copy treats them as field movement."
     );
   }
 
@@ -1247,6 +1519,7 @@ function buildPrepPacket({
   const reconciliationItems = (workflowEdition.reconciliation_items ?? []).map((item) =>
     prepReconciliationItem(item, eventById.get(item.publication_event_id))
   );
+  const dateBasisReviewSummary = buildDateBasisReviewSummary(reconciliationItems);
   const itemsByDecision = groupBy(reconciliationItems, (item) => item.decision);
   const decision_sections = prepDecisionSections.map((section) => ({
     ...section,
@@ -1282,6 +1555,7 @@ function buildPrepPacket({
       field_activity_human_review_required: approvalPacket.field_activity_human_review_required_count,
       field_activity_missing_agent_assessments: approvalPacket.field_activity_missing_agent_assessment_count
     },
+    date_basis_review: dateBasisReviewSummary,
     decision_sections,
     public_activity_lenses: summary.public_activity_lenses,
     public_activity_items_for_state_of_field: buildPublicActivityPrep(activityItems),
@@ -1305,7 +1579,8 @@ function buildPrepPacket({
       packet: approvalPacket,
       draftSeedSummary,
       trialWatchReport,
-      fieldActivityReviewComplete
+      fieldActivityReviewComplete,
+      dateBasisReviewSummary
     })
   };
 }
@@ -1318,6 +1593,33 @@ function formatDecisionItem(item) {
     `  - Materiality: ${item.materiality ?? "unknown"}; approval: ${item.human_approval_status}`,
     `  - Rationale: ${sentencePreview(item.rationale)}`,
     `  - Next action: ${sentencePreview(item.next_action)}`
+  ].join("\n");
+}
+
+function formatDateBasisRecommendation(value) {
+  if (value === "use_tracker_publication_date_as_reviewed_context") {
+    return "use tracker publication date as reviewed-context timing";
+  }
+  if (value === "use_underlying_field_date") {
+    return "use underlying field date";
+  }
+  if (value === "needs_surveillance_or_date_judgment") {
+    return "needs surveillance or date judgment";
+  }
+  return value ?? "unknown";
+}
+
+function formatDateBasisReviewItem(item) {
+  const review = item.date_basis_review;
+  return [
+    `- ${item.event_name} (${item.event_date})`,
+    `  - Event ID: ${item.publication_event_id}`,
+    `  - Recommendation: ${formatDateBasisRecommendation(review?.recommendation)}`,
+    `  - Recommended basis: ${review?.recommended_event_date_basis ?? "unknown"}; confidence: ${review?.confidence ?? "unknown"}`,
+    `  - Signals: ${review?.target_date_signal_count ?? 0} signal(s), ${review?.distinct_target_date_count ?? 0} distinct date(s), ${review?.target_date_signals_before_tracker_month ?? 0} before tracker month`,
+    `  - Range: ${review?.earliest_target_date_signal ?? "none"} to ${review?.latest_target_date_signal ?? "none"}`,
+    `  - Basis signals: ${review?.date_signal_bases?.join(", ") || "none"}`,
+    `  - Rationale: ${sentencePreview(review?.rationale)}`
   ].join("\n");
 }
 
@@ -1371,6 +1673,26 @@ function formatPrepPacket(prep) {
     lines.push("", `### ${section.title} (${section.count})`, "", section.guidance, "");
     for (const item of section.items) {
       lines.push(formatDecisionItem(item), "");
+    }
+  }
+
+  lines.push(
+    "",
+    "## Date-Basis Review",
+    "",
+    `- Reconciliation items reviewed: ${prep.date_basis_review.reviewed_item_count}`,
+    `- Use tracker publication date as reviewed context: ${prep.date_basis_review.use_tracker_publication_date_count}`,
+    `- Use underlying field date: ${prep.date_basis_review.use_underlying_field_date_count}`,
+    `- Needs surveillance or date judgment: ${prep.date_basis_review.needs_agent_date_judgment_count}`,
+    `- Mixed target-date items: ${prep.date_basis_review.mixed_target_date_count}`,
+    `- Items with older target-date signals: ${prep.date_basis_review.older_target_date_signal_count}`,
+    `- Items with no target-date signal: ${prep.date_basis_review.no_target_date_signal_count}`
+  );
+
+  if (prep.date_basis_review.flagged_items.length > 0) {
+    lines.push("", "Items to keep date-basis-aware:");
+    for (const item of prep.date_basis_review.flagged_items) {
+      lines.push(formatDateBasisReviewItem(item), "");
     }
   }
 
@@ -1453,7 +1775,7 @@ function formatPrepPacket(prep) {
   return `${lines.join("\n")}\n`;
 }
 
-async function reconcileWorkflow({ workflow, currentStory, stateOfFieldEditions, publicationEvents, activityItems, options }) {
+async function reconcileWorkflow({ workflow, currentStory, stateOfFieldEditions, publicationEvents, activityItems, dateSignalMaps, options }) {
   const { workflowEdition } = selectWorkflowEdition({
     workflow,
     currentStory,
@@ -1497,6 +1819,8 @@ async function reconcileWorkflow({ workflow, currentStory, stateOfFieldEditions,
     })
     .filter(Boolean)
     .sort((left, right) => left.event_date.localeCompare(right.event_date) || left.publication_event_id.localeCompare(right.publication_event_id));
+  const reconciliationItems = [...(workflowEdition.reconciliation_items ?? []), ...addedItems];
+  const dateBasisReviewUpdatedCount = syncDateBasisReviews(reconciliationItems, eventById, dateSignalMaps);
 
   const observedPublicStory = {
     path: currentStoryPath,
@@ -1505,10 +1829,10 @@ async function reconcileWorkflow({ workflow, currentStory, stateOfFieldEditions,
     related_publication_event_ids: collectCurrentStoryEventIds(currentStory)
   };
   const observedStoryChanged = !sameJson(workflowEdition.observed_public_story, observedPublicStory);
-  const changed = addedItems.length > 0 || observedStoryChanged;
+  const changed = addedItems.length > 0 || observedStoryChanged || dateBasisReviewUpdatedCount > 0;
 
   if (changed) {
-    workflowEdition.reconciliation_items = [...(workflowEdition.reconciliation_items ?? []), ...addedItems];
+    workflowEdition.reconciliation_items = reconciliationItems;
     workflowEdition.observed_public_story = observedPublicStory;
     workflow.updated_at = new Date().toISOString();
   }
@@ -1520,6 +1844,7 @@ async function reconcileWorkflow({ workflow, currentStory, stateOfFieldEditions,
     draft_pool_path: draftPool ? draftPoolPath : null,
     candidate_event_count: candidateIds.size,
     added_reconciliation_item_count: addedItems.length,
+    date_basis_review_updated_count: dateBasisReviewUpdatedCount,
     added_publication_event_ids: addedItems.map((item) => item.publication_event_id),
     observed_public_story_updated: observedStoryChanged,
     include_period_events: options.includePeriodEvents
@@ -1678,12 +2003,20 @@ async function main() {
     return;
   }
 
+  const [sources, studies, findings] = await Promise.all([
+    readJsonCollection(sourcesRoot),
+    readJsonCollection(studiesRoot),
+    readJsonCollection(findingsRoot)
+  ]);
+  const dateSignalMaps = buildDateSignalMaps({ activityItems, sources, studies, findings });
+
   const reconciliation = await reconcileWorkflow({
     workflow,
     currentStory,
     stateOfFieldEditions,
     publicationEvents,
     activityItems,
+    dateSignalMaps,
     options
   });
 
@@ -1702,6 +2035,7 @@ async function main() {
       `Edition: ${reconciliation.edition_slug}`,
       `Candidate public updates: ${reconciliation.candidate_event_count}`,
       `Added reconciliation items: ${reconciliation.added_reconciliation_item_count}`,
+      `Date-basis reviews updated: ${reconciliation.date_basis_review_updated_count}`,
       `Observed public story updated: ${reconciliation.observed_public_story_updated}`,
       `Draft pool: ${reconciliation.draft_pool_path ?? "none"}`,
       `Period event sweep: ${reconciliation.include_period_events ? "enabled" : "disabled"}`,

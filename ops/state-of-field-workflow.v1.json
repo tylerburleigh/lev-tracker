@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "state_type": "state_of_field_workflow",
-  "updated_at": "2026-06-16T00:14:39.788Z",
+  "updated_at": "2026-06-16T10:01:42.023Z",
   "policy": {
     "public_visibility": "Only completed editions in data/content/state-of-the-field are rendered on the public State of the Field pages.",
     "draft_storage": "Drafts, reconciliation notes, and in-progress states stay in this ops manifest or extra/ artifacts until publication.",
@@ -243,6 +243,26 @@
             "resolved_at": "2026-06-14T17:35:14.000Z",
             "approver": "tyler",
             "notes": "Approved in packet review as part of the low-risk default slate; no top-level public interpretation change."
+          },
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 29,
+            "distinct_target_date_count": 12,
+            "earliest_target_date_signal": "2020-08-05",
+            "latest_target_date_signal": "2030-04-01",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on",
+              "study.dates.end_date",
+              "study.dates.start_date",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 23,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -273,6 +293,26 @@
             "resolved_at": "2026-06-14T17:35:14.000Z",
             "approver": "tyler",
             "notes": "Approved in packet review as part of the low-risk default slate; omit activity-only process context."
+          },
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 6,
+            "distinct_target_date_count": 5,
+            "earliest_target_date_signal": "2025-04-25",
+            "latest_target_date_signal": "2032-03-01",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.start_date",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 3,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -305,6 +345,27 @@
             "resolved_at": "2026-06-14T17:41:09.000Z",
             "approver": "tyler",
             "notes": "Approved in packet review as an optional secondary June field signal; keep it bounded as preclinical and not treated-human proof."
+          },
+          "date_basis_review": {
+            "recommendation": "needs_surveillance_or_date_judgment",
+            "recommended_event_date_basis": "mixed_target_dates",
+            "confidence": "medium",
+            "target_date_signal_count": 10,
+            "distinct_target_date_count": 6,
+            "earliest_target_date_signal": "2017-09-25",
+            "latest_target_date_signal": "2026-11-01",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.end_date",
+              "study.dates.start_date",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 6,
+            "requires_agent_attention": true,
+            "rationale": "This item is treated as a field signal or still needs a decision, and its target date signals are mixed or outside the tracker month; final monthly copy needs explicit date-basis judgment.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -335,6 +396,25 @@
             "resolved_at": "2026-06-14T17:35:14.000Z",
             "approver": "tyler",
             "notes": "Approved in packet review as part of the low-risk default slate."
+          },
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 106,
+            "distinct_target_date_count": 47,
+            "earliest_target_date_signal": "2019-01-30",
+            "latest_target_date_signal": "2028-02-01",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 80,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -367,6 +447,27 @@
             "resolved_at": "2026-06-14T17:41:09.000Z",
             "approver": "tyler",
             "notes": "Approved in packet review as a hold for surveillance-backed trial-horizon copy. The 2026-06-14 surveillance pass confirmed NCT06877377 is still planned/not yet recruiting with no posted results; copy may use this only as a bounded trial-horizon item."
+          },
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 14,
+            "distinct_target_date_count": 5,
+            "earliest_target_date_signal": "2025-07-20",
+            "latest_target_date_signal": "2026-05-29",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.end_date",
+              "study.dates.start_date",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 14,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -397,6 +498,27 @@
             "resolved_at": "2026-06-14T17:35:14.000Z",
             "approver": "tyler",
             "notes": "Approved in packet review as part of the low-risk default slate; no fresh trial-status claim should be made without surveillance."
+          },
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 77,
+            "distinct_target_date_count": 29,
+            "earliest_target_date_signal": "2018-02-15",
+            "latest_target_date_signal": "2027-10-31",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.end_date",
+              "study.dates.start_date",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 59,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -429,6 +551,27 @@
             "resolved_at": "2026-06-14T17:41:09.000Z",
             "approver": "tyler",
             "notes": "Approved in packet review as optional current context; keep the NPC-specific safety and disease-boundary limitation prominent."
+          },
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 19,
+            "distinct_target_date_count": 6,
+            "earliest_target_date_signal": "2016-06-14",
+            "latest_target_date_signal": "2026-03-20",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.end_date",
+              "study.dates.start_date",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 19,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -461,6 +604,27 @@
             "resolved_at": "2026-06-14T17:37:56.000Z",
             "approver": "tyler",
             "notes": "Approved in packet review as a named bounded human biomarker field signal."
+          },
+          "date_basis_review": {
+            "recommendation": "needs_surveillance_or_date_judgment",
+            "recommended_event_date_basis": "mixed_target_dates",
+            "confidence": "medium",
+            "target_date_signal_count": 18,
+            "distinct_target_date_count": 5,
+            "earliest_target_date_signal": "2022-08-01",
+            "latest_target_date_signal": "2026-06-01",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.end_date",
+              "study.dates.start_date",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 15,
+            "requires_agent_attention": true,
+            "rationale": "This item is treated as a field signal or still needs a decision, and its target date signals are mixed or outside the tracker month; final monthly copy needs explicit date-basis judgment.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -493,6 +657,28 @@
             "resolved_at": "2026-06-14T17:41:09.000Z",
             "approver": "tyler",
             "notes": "Approved in packet review as current context and a possible boundary example; keep the human biomarker stage and mixed functional evidence explicit."
+          },
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 85,
+            "distinct_target_date_count": 28,
+            "earliest_target_date_signal": "2015-04-22",
+            "latest_target_date_signal": "2029-01-01",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.end_date",
+              "study.dates.start_date",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.results_first_posted_date",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 63,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -526,6 +712,24 @@
             "resolved_at": "2026-06-14T17:37:56.000Z",
             "approver": "tyler",
             "notes": "Approved in packet review as frontier context and trial-boundary context; keep absence of human outcomes explicit."
+          },
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 20,
+            "distinct_target_date_count": 10,
+            "earliest_target_date_signal": "2013-09-11",
+            "latest_target_date_signal": "2026-05-19",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.start_date",
+              "study.trial_details.registry_last_updated"
+            ],
+            "target_date_signals_before_tracker_month": 20,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -558,6 +762,22 @@
             "resolved_at": "2026-06-14T17:37:56.000Z",
             "approver": "tyler",
             "notes": "Approved in packet review as a bounded mixed human RCT field signal."
+          },
+          "date_basis_review": {
+            "recommendation": "needs_surveillance_or_date_judgment",
+            "recommended_event_date_basis": "source.published_on",
+            "confidence": "medium",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2026-05-21",
+            "latest_target_date_signal": "2026-05-21",
+            "date_signal_bases": [
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 2,
+            "requires_agent_attention": true,
+            "rationale": "This item is treated as a field signal or still needs a decision, and its target date signals are mixed or outside the tracker month; final monthly copy needs explicit date-basis judgment.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -590,6 +810,22 @@
             "resolved_at": "2026-06-14T17:37:56.000Z",
             "approver": "tyler",
             "notes": "Approved in packet review as a secondary or folded bounded older-adult RCT field signal."
+          },
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "source.published_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2026-06-02",
+            "latest_target_date_signal": "2026-06-02",
+            "date_signal_bases": [
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 0,
+            "requires_agent_attention": false,
+            "rationale": "This field-signal item has one clear target date signal inside the tracker month, so monthly copy should treat that underlying date as the field-event date.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -620,6 +856,22 @@
             "resolved_at": "2026-06-14T17:35:14.000Z",
             "approver": "tyler",
             "notes": "Approved in packet review as part of the low-risk default slate with explicit boundary against systemic human repair claims."
+          },
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 1,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2026-06-02",
+            "latest_target_date_signal": "2026-06-02",
+            "date_signal_bases": [
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 0,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -650,6 +902,27 @@
             "resolved_at": "2026-06-14T17:35:14.000Z",
             "approver": "tyler",
             "notes": "Approved in packet review as part of the low-risk default slate; fold into the separate autophagy signal if needed."
+          },
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 64,
+            "distinct_target_date_count": 20,
+            "earliest_target_date_signal": "2020-09-15",
+            "latest_target_date_signal": "2029-12-31",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.end_date",
+              "study.dates.start_date",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 46,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -683,6 +956,27 @@
             "resolved_at": "2026-06-14T17:41:09.000Z",
             "approver": "tyler",
             "notes": "Approved in packet review as current context and an outlook-boundary item; not an overall LEV upgrade."
+          },
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 20,
+            "distinct_target_date_count": 9,
+            "earliest_target_date_signal": "2014-12-24",
+            "latest_target_date_signal": "2026-10-01",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.end_date",
+              "study.dates.start_date",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 14,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -716,6 +1010,28 @@
             "resolved_at": "2026-06-14T17:37:56.000Z",
             "approver": "tyler",
             "notes": "Approved in packet review as the prominent June outlook-boundary context item, not as a field breakthrough."
+          },
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 88,
+            "distinct_target_date_count": 37,
+            "earliest_target_date_signal": "2009-07-16",
+            "latest_target_date_signal": "2028-12-01",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.end_date",
+              "study.dates.start_date",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.results_first_posted_date",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 70,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -742,6 +1058,28 @@
             "human_review_required": false,
             "rationale": "The update is reviewed and public, but it did not change stage, momentum, read firmness, or LEV timing. It is useful context for the June retrospective because it adds a biological-age marker signal while preserving the single-arm, multimodal, no-component-isolation boundary.",
             "reviewed_at": "2026-06-15T10:40:00.000Z",
+            "reviewed_by": "codex"
+          },
+          "date_basis_review": {
+            "recommendation": "use_tracker_publication_date_as_reviewed_context",
+            "recommended_event_date_basis": "publication_event.published_at",
+            "confidence": "high",
+            "target_date_signal_count": 25,
+            "distinct_target_date_count": 13,
+            "earliest_target_date_signal": "2020-07-01",
+            "latest_target_date_signal": "2026-06-09",
+            "date_signal_bases": [
+              "source.published_on",
+              "study.dates.end_date",
+              "study.dates.start_date",
+              "study.trial_details.primary_completion_date",
+              "study.trial_details.registry_last_updated",
+              "study.trial_details.results_first_posted_date",
+              "study.trial_details.study_completion_date"
+            ],
+            "target_date_signals_before_tracker_month": 23,
+            "requires_agent_attention": false,
+            "rationale": "The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.",
             "reviewed_by": "codex"
           }
         },
@@ -778,6 +1116,23 @@
             "resolved_at": "2026-06-15T16:48:57Z",
             "approver": "tyler",
             "notes": "Approved in chat after the agent recommended resolving the direct field-activity publication events; keep as context, not June field progress."
+          },
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "activity_item.occurred_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2026-02-24",
+            "latest_target_date_signal": "2026-02-24",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 2,
+            "requires_agent_attention": false,
+            "rationale": "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -810,6 +1165,23 @@
             "resolved_at": "2026-06-15T16:48:57Z",
             "approver": "tyler",
             "notes": "Approved in chat after the agent recommended resolving the direct field-activity publication events; keep as historical context only."
+          },
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "activity_item.occurred_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2014-09-03",
+            "latest_target_date_signal": "2014-09-03",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 2,
+            "requires_agent_attention": false,
+            "rationale": "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -842,6 +1214,23 @@
             "resolved_at": "2026-06-15T16:48:57Z",
             "approver": "tyler",
             "notes": "Approved in chat after the agent recommended resolving the direct field-activity publication events; keep as historical context only."
+          },
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "activity_item.occurred_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2024-05-09",
+            "latest_target_date_signal": "2024-05-09",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 2,
+            "requires_agent_attention": false,
+            "rationale": "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -874,6 +1263,23 @@
             "resolved_at": "2026-06-15T16:48:57Z",
             "approver": "tyler",
             "notes": "Approved in chat after the agent recommended resolving the direct field-activity publication events; keep as historical context only."
+          },
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "activity_item.occurred_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2013-09-18",
+            "latest_target_date_signal": "2013-09-18",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 2,
+            "requires_agent_attention": false,
+            "rationale": "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -906,6 +1312,23 @@
             "resolved_at": "2026-06-15T16:48:57Z",
             "approver": "tyler",
             "notes": "Approved in chat after the agent recommended resolving the direct field-activity publication events; keep as context, not June field progress."
+          },
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "activity_item.occurred_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2024-06-10",
+            "latest_target_date_signal": "2024-06-10",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 2,
+            "requires_agent_attention": false,
+            "rationale": "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -938,6 +1361,23 @@
             "resolved_at": "2026-06-15T17:18:38Z",
             "approver": "tyler",
             "notes": "Approved in chat as part of the field-activity packet; keep as historical context only."
+          },
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "activity_item.occurred_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2022-01-19",
+            "latest_target_date_signal": "2022-01-19",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 2,
+            "requires_agent_attention": false,
+            "rationale": "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -970,6 +1410,23 @@
             "resolved_at": "2026-06-15T17:18:38Z",
             "approver": "tyler",
             "notes": "Approved in chat as part of the field-activity packet; keep as historical context only."
+          },
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "activity_item.occurred_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2021-12-11",
+            "latest_target_date_signal": "2021-12-11",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 2,
+            "requires_agent_attention": false,
+            "rationale": "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -1003,6 +1460,23 @@
             "resolved_at": "2026-06-15T17:18:38Z",
             "approver": "tyler",
             "notes": "Approved in chat as part of the field-activity packet; keep as current context, not evidence."
+          },
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "activity_item.occurred_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2026-06-02",
+            "latest_target_date_signal": "2026-06-02",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 0,
+            "requires_agent_attention": false,
+            "rationale": "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -1036,6 +1510,23 @@
             "resolved_at": "2026-06-15T17:18:38Z",
             "approver": "tyler",
             "notes": "Approved in chat as part of the field-activity packet; later reconciled by event date so May carries the current-period activity and July treats it only as cumulative context if needed."
+          },
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "activity_item.occurred_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2026-05-22",
+            "latest_target_date_signal": "2026-05-22",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 2,
+            "requires_agent_attention": false,
+            "rationale": "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -1069,6 +1560,23 @@
             "resolved_at": "2026-06-15T17:18:38Z",
             "approver": "tyler",
             "notes": "Approved in chat as part of the field-activity packet; keep as historical context only."
+          },
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "activity_item.occurred_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2023-11-29",
+            "latest_target_date_signal": "2023-11-29",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 2,
+            "requires_agent_attention": false,
+            "rationale": "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+            "reviewed_by": "codex"
           }
         },
         {
@@ -1102,6 +1610,23 @@
             "resolved_at": "2026-06-15T20:05:03Z",
             "approver": "tyler",
             "notes": "Approved in chat after the agent recommended bounded trial-horizon classification; keep as observational infrastructure context, not evidence or field progress."
+          },
+          "date_basis_review": {
+            "recommendation": "use_underlying_field_date",
+            "recommended_event_date_basis": "activity_item.occurred_on",
+            "confidence": "high",
+            "target_date_signal_count": 2,
+            "distinct_target_date_count": 1,
+            "earliest_target_date_signal": "2025-10-07",
+            "latest_target_date_signal": "2025-10-07",
+            "date_signal_bases": [
+              "activity_item.occurred_on",
+              "source.published_on"
+            ],
+            "target_date_signals_before_tracker_month": 2,
+            "requires_agent_attention": false,
+            "rationale": "Direct field activity has activity-item dates, so monthly placement should use activity_item.occurred_on and treat tracker publication date as audit metadata.",
+            "reviewed_by": "codex"
           }
         }
       ],

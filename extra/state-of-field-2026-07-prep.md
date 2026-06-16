@@ -3,7 +3,7 @@
 Edition: 2026-07 (June 2026)
 Status: draft
 Period: 2026-06-01 to 2026-06-30
-Generated: 2026-06-16T00:16:55.217Z
+Generated: 2026-06-16T10:03:39.850Z
 Next action: Keep the July edition internal until June closes, then finalize the provisional classifications for the 22 known June public updates and write the public 2026-07 edition from reviewed records.
 
 ## Agent Recommendation
@@ -13,6 +13,7 @@ Next action: Keep the July edition internal until June closes, then finalize the
 - Do not ask for approval unless new evidence, surveillance, or field-activity candidates appear; the current approval packet is empty.
 - Keep source-work field-activity candidates out of public monthly copy unless a durable source is found or a curator approves an exception.
 - Use the completed State-of-Field-routed field activity lens when drafting; treat activity as context or trial horizon unless reviewed evidence changes an outlook.
+- Resolve 3 date-basis review item(s) before final monthly copy; these are likely field signals or undecided updates with mixed or missing target dates.
 - Rerun the trial audit after the covered period closes and refresh any registry-status claims before final trial_horizon copy.
 - Use the draft seed as scaffolding only; final public JSON should be written from reviewed records after period close.
 
@@ -262,6 +263,153 @@ Use only when older activity prevents a misleading read; do not frame it as curr
   - Materiality: low; approval: approved
   - Rationale: June direct field-activity publication backfilled the 2023 XPRIZE Healthspan launch. It is historical prize-infrastructure context, not June field movement or evidence of intervention benefit.
   - Next action: Use only as historical field-activity context if the final edition mentions backfilled healthspan prize infrastructure; do not treat it as current-period progress or evidence of benefit.
+
+
+## Date-Basis Review
+
+- Reconciliation items reviewed: 28
+- Use tracker publication date as reviewed context: 13
+- Use underlying field date: 12
+- Needs surveillance or date judgment: 3
+- Mixed target-date items: 14
+- Items with older target-date signals: 25
+- Items with no target-date signal: 0
+
+Items to keep date-basis-aware:
+- Published Transposon and Somatic Mutation Control missing-context update for June 6, 2026 (2026-06-06)
+  - Event ID: publish-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-2026-06-06t12-22-33-769z
+  - Recommendation: use tracker publication date as reviewed-context timing
+  - Recommended basis: publication_event.published_at; confidence: high
+  - Signals: 29 signal(s), 12 distinct date(s), 23 before tracker month
+  - Range: 2020-08-05 to 2030-04-01
+  - Basis signals: activity_item.occurred_on, source.published_on, study.dates.end_date, study.dates.start_date, study.trial_details.study_completion_date
+  - Rationale: The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.
+
+- Published Stem Cell Replacement and Transplantation Surveillance for June 6, 2026 (2026-06-07)
+  - Event ID: publish-stem-cell-replacement-and-transplantation-surveillance-2026-06-06-2026-06-07t13-49-41-422z
+  - Recommendation: use tracker publication date as reviewed-context timing
+  - Recommended basis: publication_event.published_at; confidence: high
+  - Signals: 6 signal(s), 5 distinct date(s), 3 before tracker month
+  - Range: 2025-04-25 to 2032-03-01
+  - Basis signals: source.published_on, study.dates.start_date, study.trial_details.primary_completion_date, study.trial_details.registry_last_updated, study.trial_details.study_completion_date
+  - Rationale: The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.
+
+- Published Senomorphics Field-Change Update for June 7, 2026 (2026-06-07)
+  - Event ID: publish-senomorphics-surveillance-2026-06-07-2026-06-07t16-41-34-635z
+  - Recommendation: needs surveillance or date judgment
+  - Recommended basis: mixed_target_dates; confidence: medium
+  - Signals: 10 signal(s), 6 distinct date(s), 6 before tracker month
+  - Range: 2017-09-25 to 2026-11-01
+  - Basis signals: source.published_on, study.dates.end_date, study.dates.start_date, study.trial_details.primary_completion_date, study.trial_details.registry_last_updated, study.trial_details.study_completion_date
+  - Rationale: This item is treated as a field signal or still needs a decision, and its target date signals are mixed or outside the tracker month; final monthly copy needs explicit date-basis judgment.
+
+- Published NAD and Redox Restoration Missing-Context Update for June 8, 2026 (2026-06-09)
+  - Event ID: publish-nad-and-redox-restoration-coverage-repair-2026-06-08-2026-06-09t10-39-49-637z
+  - Recommendation: use tracker publication date as reviewed-context timing
+  - Recommended basis: publication_event.published_at; confidence: high
+  - Signals: 106 signal(s), 47 distinct date(s), 80 before tracker month
+  - Range: 2019-01-30 to 2028-02-01
+  - Basis signals: source.published_on, study.trial_details.primary_completion_date, study.trial_details.registry_last_updated, study.trial_details.study_completion_date
+  - Rationale: The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.
+
+- Published Stem Cell Rejuvenation Missing Context Update for June 9, 2026 (2026-06-10)
+  - Event ID: publish-stem-cell-rejuvenation-coverage-repair-2026-06-09-2026-06-10t10-17-06-414z
+  - Recommendation: use tracker publication date as reviewed-context timing
+  - Recommended basis: publication_event.published_at; confidence: high
+  - Signals: 14 signal(s), 5 distinct date(s), 14 before tracker month
+  - Range: 2025-07-20 to 2026-05-29
+  - Basis signals: source.published_on, study.dates.end_date, study.dates.start_date, study.trial_details.primary_completion_date, study.trial_details.registry_last_updated, study.trial_details.study_completion_date
+  - Rationale: The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.
+
+- Published Mitophagy Enhancers Missing-Context Update for June 10, 2026 (2026-06-10)
+  - Event ID: publish-mitophagy-enhancers-coverage-repair-2026-06-10-2026-06-10t14-26-07-178z
+  - Recommendation: use tracker publication date as reviewed-context timing
+  - Recommended basis: publication_event.published_at; confidence: high
+  - Signals: 77 signal(s), 29 distinct date(s), 59 before tracker month
+  - Range: 2018-02-15 to 2027-10-31
+  - Basis signals: source.published_on, study.dates.end_date, study.dates.start_date, study.trial_details.primary_completion_date, study.trial_details.registry_last_updated, study.trial_details.study_completion_date
+  - Rationale: The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.
+
+- Published Chaperone and Heat-Shock Support update for June 10, 2026 (2026-06-11)
+  - Event ID: publish-chaperone-and-heat-shock-support-coverage-repair-2026-06-10-2026-06-11t01-11-08-627z
+  - Recommendation: use tracker publication date as reviewed-context timing
+  - Recommended basis: publication_event.published_at; confidence: high
+  - Signals: 19 signal(s), 6 distinct date(s), 19 before tracker month
+  - Range: 2016-06-14 to 2026-03-20
+  - Basis signals: source.published_on, study.dates.end_date, study.dates.start_date, study.trial_details.primary_completion_date, study.trial_details.registry_last_updated, study.trial_details.study_completion_date
+  - Rationale: The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.
+
+- Published Autophagy Induction Surveillance for June 11, 2026 (2026-06-11)
+  - Event ID: publish-autophagy-induction-surveillance-2026-06-11-2026-06-11t10-25-04-657z
+  - Recommendation: needs surveillance or date judgment
+  - Recommended basis: mixed_target_dates; confidence: medium
+  - Signals: 18 signal(s), 5 distinct date(s), 15 before tracker month
+  - Range: 2022-08-01 to 2026-06-01
+  - Basis signals: source.published_on, study.dates.end_date, study.dates.start_date, study.trial_details.primary_completion_date, study.trial_details.registry_last_updated, study.trial_details.study_completion_date
+  - Rationale: This item is treated as a field signal or still needs a decision, and its target date signals are mixed or outside the tracker month; final monthly copy needs explicit date-basis judgment.
+
+- Published Senolytics Coverage Repair for June 11, 2026 (2026-06-12)
+  - Event ID: publish-senolytics-coverage-repair-2026-06-11-2026-06-12t00-05-23-406z
+  - Recommendation: use tracker publication date as reviewed-context timing
+  - Recommended basis: publication_event.published_at; confidence: high
+  - Signals: 85 signal(s), 28 distinct date(s), 63 before tracker month
+  - Range: 2015-04-22 to 2029-01-01
+  - Basis signals: source.published_on, study.dates.end_date, study.dates.start_date, study.trial_details.primary_completion_date, study.trial_details.registry_last_updated, study.trial_details.results_first_posted_date, study.trial_details.study_completion_date
+  - Rationale: The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.
+
+- Published Partial Reprogramming Coverage Repair for June 12, 2026 (2026-06-12)
+  - Event ID: publish-partial-reprogramming-coverage-repair-2026-06-12-2026-06-12t13-29-16-586z
+  - Recommendation: use tracker publication date as reviewed-context timing
+  - Recommended basis: publication_event.published_at; confidence: high
+  - Signals: 20 signal(s), 10 distinct date(s), 20 before tracker month
+  - Range: 2013-09-11 to 2026-05-19
+  - Basis signals: source.published_on, study.dates.start_date, study.trial_details.registry_last_updated
+  - Rationale: The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.
+
+- Published Microbiome Composition Modulation Field Change Check for June 3, 2026 (2026-06-03)
+  - Event ID: publish-microbiome-composition-modulation-surveillance-2026-06-03-2026-06-03t16-38-15-119z
+  - Recommendation: needs surveillance or date judgment
+  - Recommended basis: source.published_on; confidence: medium
+  - Signals: 2 signal(s), 1 distinct date(s), 2 before tracker month
+  - Range: 2026-05-21 to 2026-05-21
+  - Basis signals: source.published_on
+  - Rationale: This item is treated as a field signal or still needs a decision, and its target date signals are mixed or outside the tracker month; final monthly copy needs explicit date-basis judgment.
+
+- Published Autophagy Induction Coverage Repair for June 11, 2026 (2026-06-11)
+  - Event ID: publish-autophagy-induction-coverage-repair-2026-06-11-2026-06-11t11-44-04-048z
+  - Recommendation: use tracker publication date as reviewed-context timing
+  - Recommended basis: publication_event.published_at; confidence: high
+  - Signals: 64 signal(s), 20 distinct date(s), 46 before tracker month
+  - Range: 2020-09-15 to 2029-12-31
+  - Basis signals: source.published_on, study.dates.end_date, study.dates.start_date, study.trial_details.primary_completion_date, study.trial_details.registry_last_updated, study.trial_details.study_completion_date
+  - Rationale: The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.
+
+- Published Immune Rejuvenation Coverage Repair for June 11, 2026 (2026-06-11)
+  - Event ID: publish-immune-rejuvenation-coverage-repair-2026-06-11-2026-06-11t13-12-57-339z
+  - Recommendation: use tracker publication date as reviewed-context timing
+  - Recommended basis: publication_event.published_at; confidence: high
+  - Signals: 20 signal(s), 9 distinct date(s), 14 before tracker month
+  - Range: 2014-12-24 to 2026-10-01
+  - Basis signals: source.published_on, study.dates.end_date, study.dates.start_date, study.trial_details.primary_completion_date, study.trial_details.registry_last_updated, study.trial_details.study_completion_date
+  - Rationale: The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.
+
+- Published Rapalogs Coverage Repair for June 11, 2026 (2026-06-11)
+  - Event ID: publish-rapalogs-coverage-repair-2026-06-11-2026-06-11t18-24-35-790z
+  - Recommendation: use tracker publication date as reviewed-context timing
+  - Recommended basis: publication_event.published_at; confidence: high
+  - Signals: 88 signal(s), 37 distinct date(s), 70 before tracker month
+  - Range: 2009-07-16 to 2028-12-01
+  - Basis signals: source.published_on, study.dates.end_date, study.dates.start_date, study.trial_details.primary_completion_date, study.trial_details.registry_last_updated, study.trial_details.results_first_posted_date, study.trial_details.study_completion_date
+  - Rationale: The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.
+
+- Published Extracellular Vesicle and Secretome Therapies Surveillance for June 15, 2026 (2026-06-15)
+  - Event ID: publish-extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15-2026-06-15t10-33-29-045z
+  - Recommendation: use tracker publication date as reviewed-context timing
+  - Recommended basis: publication_event.published_at; confidence: high
+  - Signals: 25 signal(s), 13 distinct date(s), 23 before tracker month
+  - Range: 2020-07-01 to 2026-06-09
+  - Basis signals: source.published_on, study.dates.end_date, study.dates.start_date, study.trial_details.primary_completion_date, study.trial_details.registry_last_updated, study.trial_details.results_first_posted_date, study.trial_details.study_completion_date
+  - Rationale: The item is classified as context, trial horizon, omission, or deferral rather than current-period field movement, so tracker publication date can remain the reviewed-context timing while underlying dates stay caveated.
 
 
 ## Field Activity

@@ -330,6 +330,9 @@
           },
           "uniqueItems": true
         },
+        "date_basis_review": {
+          "$ref": "#/$defs/dateBasisReview"
+        },
         "decision": {
           "$ref": "#/$defs/decision"
         },
@@ -349,6 +352,88 @@
         },
         "human_approval": {
           "$ref": "#/$defs/humanApproval"
+        }
+      }
+    },
+    "dateBasisReview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recommendation",
+        "recommended_event_date_basis",
+        "confidence",
+        "target_date_signal_count",
+        "distinct_target_date_count",
+        "target_date_signals_before_tracker_month",
+        "date_signal_bases",
+        "requires_agent_attention",
+        "rationale",
+        "reviewed_by"
+      ],
+      "properties": {
+        "recommendation": {
+          "type": "string",
+          "enum": [
+            "use_tracker_publication_date_as_reviewed_context",
+            "use_underlying_field_date",
+            "needs_surveillance_or_date_judgment"
+          ]
+        },
+        "recommended_event_date_basis": {
+          "type": "string",
+          "enum": [
+            "publication_event.published_at",
+            "activity_item.occurred_on",
+            "source.published_on",
+            "study.trial_details.results_first_posted_date",
+            "study.trial_details.registry_last_updated",
+            "study.trial_details.primary_completion_date",
+            "study.trial_details.study_completion_date",
+            "study.dates.end_date",
+            "study.dates.start_date",
+            "mixed_target_dates",
+            "unknown"
+          ]
+        },
+        "confidence": {
+          "$ref": "#/$defs/agentConfidence"
+        },
+        "target_date_signal_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "distinct_target_date_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "earliest_target_date_signal": {
+          "$ref": "./common.schema.json#/$defs/isoDate"
+        },
+        "latest_target_date_signal": {
+          "$ref": "./common.schema.json#/$defs/isoDate"
+        },
+        "target_date_signals_before_tracker_month": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "date_signal_bases": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "requires_agent_attention": {
+          "type": "boolean"
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewed_by": {
+          "type": "string",
+          "minLength": 1
         }
       }
     },
