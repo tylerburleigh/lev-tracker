@@ -30,7 +30,7 @@ The public `/activity` page now separates all activity, field anchors, current m
 - Public activity items: 15 total; 14 activity-only and 1 assessment-changing.
 - Public activity lenses: 4 field anchors, 10 current-movement items, 8 trial-horizon items, and 5 historical-context items.
 - State-of-Field-routed public activity: 10 items; 4 field anchors, 5 current-movement items, 4 trial-horizon items, and 5 historical-context items.
-- Current field activity to consider for July context: NewLimit Series C, Retro financing, and ARPA-H PROSPR. These are activity or trial-horizon context, not evidence of benefit.
+- Current field activity to consider for July context: NewLimit Series C. ARPA-H PROSPR and Retro financing can be used only as cumulative trial-horizon or field-infrastructure context because their real-world event dates fall before June. None are evidence of benefit.
 - Historical context to keep bounded: Calico, Altos, NewLimit formation, XPRIZE, Hevolution, and Calico collaboration records. Use only as field-map context if needed, not June progress.
 
 ## Rewrite Process

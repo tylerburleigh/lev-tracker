@@ -53,7 +53,7 @@ State of Field workflow status: draft
 Edition: 2026-07 (June 2026)
 Current story latest public update: publish-extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15-2026-06-15t10-33-29-045z
 Current-story public updates: 11
-Published-edition public updates: 9
+Published-edition public updates: 10
 Missing from published edition: 6
 Tracked missing updates: 6
 Untracked missing updates: 0

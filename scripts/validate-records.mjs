@@ -276,6 +276,14 @@ function validateStateOfFieldEdition(relativePath, value, issues) {
     }
   }
 
+  for (const [index, item] of (value.field_activity ?? []).entries()) {
+    if (item.happened_on < value.period_start || item.happened_on > value.period_end) {
+      issues.push(
+        `${relativePath}: field_activity[${index}].happened_on ${item.happened_on} falls outside ${value.period_start} to ${value.period_end}.`
+      );
+    }
+  }
+
   for (const [index, item] of (value.trial_horizon ?? []).entries()) {
     if (!stateOfFieldTrialBoundaryPattern.test(`${item.label} ${item.summary}`)) {
       issues.push(
@@ -309,7 +317,8 @@ function validateStateOfFieldEdition(relativePath, value, issues) {
     ["public_updates", value.related_publication_event_ids?.length ?? 0],
     ["outlooks", value.related_outlook_ids?.length ?? 0],
     ["trial_horizon", value.trial_horizon?.length ?? 0],
-    ["current_context", value.current_context?.length ?? 0]
+    ["current_context", value.current_context?.length ?? 0],
+    ["field_activity", value.field_activity?.length ?? 0]
   ]);
 
   for (const [key, expectedCount] of expectedCounts.entries()) {
@@ -319,6 +328,10 @@ function validateStateOfFieldEdition(relativePath, value, issues) {
         `${relativePath}: review_basis item "${key}" count is ${item.count}, expected ${expectedCount}.`
       );
     }
+  }
+
+  if ((value.field_activity?.length ?? 0) > 0 && !reviewBasisItemsByKey.has("field_activity")) {
+    issues.push(`${relativePath}: review_basis.items must include key "field_activity" when field_activity cards are present.`);
   }
 }
 

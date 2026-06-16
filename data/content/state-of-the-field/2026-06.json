@@ -162,6 +162,19 @@
       ]
     }
   ],
+  "field_activity": [
+    {
+      "happened_on": "2026-05-22",
+      "label": "Retro Biosciences financing",
+      "summary": "Retro announced the initial close of a new financing round and described first-in-human and manufacturing progress for its aging-biology pipeline. This was material field activity and trial-horizon context, but it did not report trial results or change the evidence read.",
+      "related_activity_item_ids": [
+        "retro-biosciences-next-financing-2026"
+      ],
+      "related_publication_event_ids": [
+        "publish-field-activity-retro-biosciences-next-financing-2026-2026-06-15"
+      ]
+    }
+  ],
   "signals_to_watch": [
     {
       "label": "Function from older-adult studies",
@@ -253,7 +266,7 @@
       {
         "key": "public_updates",
         "label": "Field updates linked",
-        "count": 9,
+        "count": 10,
         "unit_singular": "linked update",
         "unit_plural": "linked updates",
         "summary": "Reviewed public updates connected to this monthly read."
@@ -285,10 +298,10 @@
       {
         "key": "field_activity",
         "label": "Field activity",
-        "count": 0,
+        "count": 1,
         "unit_singular": "current-period item",
         "unit_plural": "current-period items",
-        "summary": "No May company, funder, prize, or program activity was treated as field-moving evidence."
+        "summary": "One May company financing and clinical-transition item was carried as activity and trial-horizon context, not evidence of benefit."
       }
     ],
     "caveats": [
@@ -296,8 +309,8 @@
       "Trial-status statements reflect the registry/API views named in each trial card and should be refreshed before a later review makes new current-status claims."
     ]
   },
-  "last_reviewed": "2026-06-12",
-  "review_reason": "Post-publication editorial rollup after the June 12 senolytics update confirmed that the May 2026 retrospective conclusion remains unchanged; no result or outlook change was added to the covered period.",
+  "last_reviewed": "2026-06-15",
+  "review_reason": "Late-reviewed field-activity rollup added a May 22 Retro Biosciences financing item as field activity and trial-horizon context. It did not report trial results or change the May 2026 conclusion.",
   "revision_history": [
     {
       "reviewed_on": "2026-06-06",
@@ -381,6 +394,15 @@
       "related_publication_event_ids": [
         "publish-senolytics-coverage-repair-2026-06-11-2026-06-12t00-05-23-406z"
       ]
+    },
+    {
+      "reviewed_on": "2026-06-15",
+      "revision_kind": "post_hoc_context_note",
+      "period_interpretation_changed": false,
+      "summary": "Added the May 22 Retro Biosciences financing item as late-reviewed field activity. It is company financing and clinical-transition context, not trial-result evidence, and did not change the May conclusion.",
+      "related_publication_event_ids": [
+        "publish-field-activity-retro-biosciences-next-financing-2026-2026-06-15"
+      ]
     }
   ],
   "related_publication_event_ids": [
@@ -392,7 +414,8 @@
     "publish-nad-and-redox-restoration-coverage-repair-2026-06-08-2026-06-09t10-39-49-637z",
     "publish-stem-cell-rejuvenation-coverage-repair-2026-06-09-2026-06-10t10-17-06-414z",
     "publish-chaperone-and-heat-shock-support-coverage-repair-2026-06-10-2026-06-11t01-11-08-627z",
-    "publish-senolytics-coverage-repair-2026-06-11-2026-06-12t00-05-23-406z"
+    "publish-senolytics-coverage-repair-2026-06-11-2026-06-12t00-05-23-406z",
+    "publish-field-activity-retro-biosciences-next-financing-2026-2026-06-15"
   ],
   "related_outlook_ids": [
     "track-mitophagy-enhancers-outlook",

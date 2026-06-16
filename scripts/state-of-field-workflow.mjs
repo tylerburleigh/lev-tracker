@@ -280,6 +280,42 @@ function isTrialHorizonActivity(activityItem) {
   return hasActivityRoute(activityItem, "trial_horizon") || Boolean(activityItem.trial_activity_kind);
 }
 
+function activityItemById(activityItems) {
+  return new Map(activityItems.map((item) => [item.id, item]));
+}
+
+function directActivityTargets(event, activityItemsById) {
+  return (event.published_targets ?? [])
+    .filter((target) => target.record_type === "activity_item")
+    .map((target) => activityItemsById.get(target.record_id))
+    .filter(Boolean);
+}
+
+function isStateOfFieldActivity(activityItem) {
+  return hasActivityRoute(activityItem, "state_of_field") || activityItem.surface_routing?.state_of_field_review_required;
+}
+
+function effectiveEventDate(event, activityItemsById) {
+  if (event.publication_route === directActivityPublicationRoute) {
+    const activityDates = directActivityTargets(event, activityItemsById)
+      .map((item) => item.occurred_on)
+      .filter(Boolean)
+      .sort((left, right) => left.localeCompare(right));
+
+    if (activityDates.length > 0) {
+      return {
+        date: activityDates[0],
+        basis: "activity_item.occurred_on"
+      };
+    }
+  }
+
+  return {
+    date: datePart(event.published_at),
+    basis: "publication_event.published_at"
+  };
+}
+
 function summarizePublicActivityLenses(activityItems) {
   const publicActivityItems = activityItems.filter((item) => item.record_type === "activity_item");
   const stateOfFieldRoutedItems = publicActivityItems.filter(
@@ -587,19 +623,33 @@ function periodEventIds(publicationEvents, workflowEdition, includePeriodEvents)
     .map((event) => event.id);
 }
 
-function directFieldActivityEventIds(publicationEvents, workflowEdition) {
+function directFieldActivityEventIds(publicationEvents, workflowEdition, activityItemsById) {
   return publicationEvents
     .filter((event) => {
-      const eventDate = datePart(event.published_at);
+      const eventDate = effectiveEventDate(event, activityItemsById).date;
+      const activityTargets = directActivityTargets(event, activityItemsById);
       return (
         eventDate &&
         eventDate >= workflowEdition.period_start &&
         eventDate <= workflowEdition.period_end &&
-        event.publication_route === directActivityPublicationRoute
+        event.publication_route === directActivityPublicationRoute &&
+        activityTargets.some(isStateOfFieldActivity)
       );
     })
     .sort(compareEventDate)
     .map((event) => event.id);
+}
+
+function eventIdsInEditionPeriod(eventIds, eventById, workflowEdition, activityItemsById) {
+  return eventIds.filter((eventId) => {
+    const event = eventById.get(eventId);
+    if (!event) {
+      return false;
+    }
+
+    const eventDate = effectiveEventDate(event, activityItemsById).date;
+    return eventDate && eventDate >= workflowEdition.period_start && eventDate <= workflowEdition.period_end;
+  });
 }
 
 function addCandidateIds(candidateIds, ids, source) {
@@ -610,15 +660,19 @@ function addCandidateIds(candidateIds, ids, source) {
   }
 }
 
-function buildSeededReconciliationItem(event, source) {
+function buildSeededReconciliationItem(event, source, activityItemsById) {
+  const effectiveDate = effectiveEventDate(event, activityItemsById);
+  const relatedActivityItemIds = directActivityTargets(event, activityItemsById).map((item) => item.id);
   return {
     publication_event_id: event.id,
-    event_date: datePart(event.published_at),
+    event_date: effectiveDate.date,
+    event_date_basis: effectiveDate.basis,
     related_outlook_ids: event.affected_outlook_ids ?? [],
+    ...(relatedActivityItemIds.length > 0 ? { related_activity_item_ids: unique(relatedActivityItemIds) } : {}),
     decision: "needs_decision",
     rationale: `Auto-seeded from ${source}; classify this reviewed public update before finalizing the State of the Field edition.`,
     next_action:
-      "Decide whether this update is a field signal, context only, activity without results, post-hoc context, material correction, or no-op for the covered period."
+      "Decide whether this update is a field signal, context only, activity without results, late-reviewed context, material correction, or no-op for the covered period."
   };
 }
 
@@ -715,6 +769,8 @@ function buildApprovalPacket({
       index: index + 1,
       publication_event_id: item.publication_event_id,
       event_date: item.event_date,
+      event_date_basis: item.event_date_basis ?? "publication_event.published_at",
+      related_activity_item_ids: item.related_activity_item_ids ?? [],
       event_name: event?.name ?? null,
       event_summary: event?.summary ?? null,
       event_change_note: event?.change_note ?? null,
@@ -955,7 +1011,7 @@ const prepDecisionSections = [
   },
   {
     decision: "post_hoc_material_correction",
-    title: "Post-hoc material correction",
+    title: "Late-reviewed material correction",
     guidance: "Use only when later-reviewed evidence would have changed the covered period's conclusion."
   },
   {
@@ -996,6 +1052,7 @@ function prepReconciliationItem(item, event) {
     publication_event_id: item.publication_event_id,
     event_name: event?.name ?? item.publication_event_id,
     event_date: item.event_date,
+    event_date_basis: item.event_date_basis ?? "publication_event.published_at",
     event_summary: event?.summary ?? null,
     event_change_note: event?.change_note ?? null,
     decision: item.decision,
@@ -1003,6 +1060,7 @@ function prepReconciliationItem(item, event) {
     confidence: item.agent_assessment?.confidence ?? null,
     public_copy_action: item.agent_assessment?.public_copy_action ?? null,
     affected_surfaces: item.agent_assessment?.affected_surfaces ?? [],
+    related_activity_item_ids: item.related_activity_item_ids ?? [],
     human_review_required: item.agent_assessment?.human_review_required ?? false,
     human_approval_status: approvalStatus(item),
     rationale: item.rationale,
@@ -1256,6 +1314,7 @@ function formatDecisionItem(item) {
   return [
     `- ${item.event_name} (${item.event_date})`,
     `  - Event ID: ${item.publication_event_id}`,
+    `  - Date basis: ${item.event_date_basis}`,
     `  - Materiality: ${item.materiality ?? "unknown"}; approval: ${item.human_approval_status}`,
     `  - Rationale: ${sentencePreview(item.rationale)}`,
     `  - Next action: ${sentencePreview(item.next_action)}`
@@ -1394,7 +1453,7 @@ function formatPrepPacket(prep) {
   return `${lines.join("\n")}\n`;
 }
 
-async function reconcileWorkflow({ workflow, currentStory, stateOfFieldEditions, publicationEvents, options }) {
+async function reconcileWorkflow({ workflow, currentStory, stateOfFieldEditions, publicationEvents, activityItems, options }) {
   const { workflowEdition } = selectWorkflowEdition({
     workflow,
     currentStory,
@@ -1402,16 +1461,25 @@ async function reconcileWorkflow({ workflow, currentStory, stateOfFieldEditions,
     editionSlug: options.edition
   });
   const eventById = new Map(publicationEvents.map((event) => [event.id, event]));
+  const activityItemsById = activityItemById(activityItems);
   const existingIds = new Set((workflowEdition.reconciliation_items ?? []).map((item) => item.publication_event_id));
   const candidateIds = new Map();
 
-  addCandidateIds(candidateIds, collectCurrentStoryEventIds(currentStory), "current story");
+  addCandidateIds(
+    candidateIds,
+    eventIdsInEditionPeriod(collectCurrentStoryEventIds(currentStory), eventById, workflowEdition, activityItemsById),
+    "current story period event"
+  );
 
   const defaultDraftPoolPath = `extra/state-of-field-${workflowEdition.slug}-draft.json`;
   const draftPoolPath = options.draftPoolPath ?? defaultDraftPoolPath;
   const draftPool = await readJsonIfExists(draftPoolPath);
   addCandidateIds(candidateIds, flattenDraftPoolEventIds(draftPool), draftPool ? `draft pool ${draftPoolPath}` : "draft pool");
-  addCandidateIds(candidateIds, directFieldActivityEventIds(publicationEvents, workflowEdition), "direct field-activity publication");
+  addCandidateIds(
+    candidateIds,
+    directFieldActivityEventIds(publicationEvents, workflowEdition, activityItemsById),
+    "direct field-activity publication"
+  );
   addCandidateIds(
     candidateIds,
     periodEventIds(publicationEvents, workflowEdition, options.includePeriodEvents),
@@ -1425,7 +1493,7 @@ async function reconcileWorkflow({ workflow, currentStory, stateOfFieldEditions,
       if (!event) {
         return undefined;
       }
-      return buildSeededReconciliationItem(event, source);
+      return buildSeededReconciliationItem(event, source, activityItemsById);
     })
     .filter(Boolean)
     .sort((left, right) => left.event_date.localeCompare(right.event_date) || left.publication_event_id.localeCompare(right.publication_event_id));
@@ -1615,6 +1683,7 @@ async function main() {
     currentStory,
     stateOfFieldEditions,
     publicationEvents,
+    activityItems,
     options
   });
 

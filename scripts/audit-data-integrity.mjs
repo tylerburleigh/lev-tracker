@@ -435,6 +435,66 @@ async function auditContentReviewMetadata(sets) {
       sets.publicationEventIds,
       "publication_event",
     );
+    for (const [index, item] of (edition.field_activity ?? []).entries()) {
+      checkRefArray(
+        filePath,
+        `field_activity[${index}].related_activity_item_ids[]`,
+        item.related_activity_item_ids,
+        sets.activityItemIds,
+        "activity_item",
+      );
+      checkRefArray(
+        filePath,
+        `field_activity[${index}].related_publication_event_ids[]`,
+        item.related_publication_event_ids,
+        sets.publicationEventIds,
+        "publication_event",
+      );
+    }
+  }
+
+  const workflowPath = "ops/state-of-field-workflow.v1.json";
+  const workflow = await readJson(workflowPath);
+  for (const [editionIndex, edition] of (workflow?.editions ?? []).entries()) {
+    const editionPath = `editions[${editionIndex}]`;
+    checkRefArray(
+      workflowPath,
+      `${editionPath}.observed_public_story.related_publication_event_ids[]`,
+      edition.observed_public_story?.related_publication_event_ids,
+      sets.publicationEventIds,
+      "publication_event",
+    );
+    checkRefArray(
+      workflowPath,
+      `${editionPath}.observed_published_edition.related_publication_event_ids[]`,
+      edition.observed_published_edition?.related_publication_event_ids,
+      sets.publicationEventIds,
+      "publication_event",
+    );
+    for (const [itemIndex, item] of (edition.reconciliation_items ?? []).entries()) {
+      const itemPath = `${editionPath}.reconciliation_items[${itemIndex}]`;
+      checkRef(
+        workflowPath,
+        `${itemPath}.publication_event_id`,
+        item.publication_event_id,
+        sets.publicationEventIds,
+        "publication_event",
+      );
+      checkRefArray(
+        workflowPath,
+        `${itemPath}.related_outlook_ids[]`,
+        item.related_outlook_ids,
+        sets.outlookIds,
+        "outlook",
+      );
+      checkRefArray(
+        workflowPath,
+        `${itemPath}.related_activity_item_ids[]`,
+        item.related_activity_item_ids,
+        sets.activityItemIds,
+        "activity_item",
+      );
+    }
   }
 }
 

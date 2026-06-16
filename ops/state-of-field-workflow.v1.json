@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "state_type": "state_of_field_workflow",
-  "updated_at": "2026-06-15T20:05:03Z",
+  "updated_at": "2026-06-16T00:14:39.788Z",
   "policy": {
     "public_visibility": "Only completed editions in data/content/state-of-the-field are rendered on the public State of the Field pages.",
     "draft_storage": "Drafts, reconciliation notes, and in-progress states stay in this ops manifest or extra/ artifacts until publication.",
@@ -21,8 +21,8 @@
       "draft_artifact_paths": [],
       "observed_public_story": {
         "path": "data/content/current-lev-story/current.json",
-        "last_reviewed": "2026-06-12",
-        "latest_publication_event_id": "publish-partial-reprogramming-coverage-repair-2026-06-12-2026-06-12t13-29-16-586z",
+        "last_reviewed": "2026-06-15",
+        "latest_publication_event_id": "publish-extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15-2026-06-15t10-33-29-045z",
         "related_publication_event_ids": [
           "publish-transposon-and-somatic-mutation-control-coverage-repair-2026-06-06-2026-06-06t12-22-33-769z",
           "publish-stem-cell-replacement-and-transplantation-surveillance-2026-06-06-2026-06-07t13-49-41-422z",
@@ -33,13 +33,14 @@
           "publish-chaperone-and-heat-shock-support-coverage-repair-2026-06-10-2026-06-11t01-11-08-627z",
           "publish-autophagy-induction-surveillance-2026-06-11-2026-06-11t10-25-04-657z",
           "publish-senolytics-coverage-repair-2026-06-11-2026-06-12t00-05-23-406z",
-          "publish-partial-reprogramming-coverage-repair-2026-06-12-2026-06-12t13-29-16-586z"
+          "publish-partial-reprogramming-coverage-repair-2026-06-12-2026-06-12t13-29-16-586z",
+          "publish-extracellular-vesicle-and-secretome-therapies-surveillance-2026-06-15-2026-06-15t10-33-29-045z"
         ]
       },
       "observed_published_edition": {
         "path": "data/content/state-of-the-field/2026-06.json",
-        "last_reviewed": "2026-06-12",
-        "review_reason": "Post-publication editorial rollup after the June 12 senolytics update confirmed that the May 2026 retrospective conclusion remains unchanged; no result or outlook change was added to the covered period.",
+        "last_reviewed": "2026-06-15",
+        "review_reason": "Late-reviewed field-activity rollup added a May 22 Retro Biosciences financing item as field activity and trial-horizon context. It did not report trial results or change the May 2026 conclusion.",
         "related_publication_event_ids": [
           "publish-mitophagy-track-scan-2026-05-24",
           "publish-senescence-watch-update-2026-05-25",
@@ -49,7 +50,8 @@
           "publish-nad-and-redox-restoration-coverage-repair-2026-06-08-2026-06-09t10-39-49-637z",
           "publish-stem-cell-rejuvenation-coverage-repair-2026-06-09-2026-06-10t10-17-06-414z",
           "publish-chaperone-and-heat-shock-support-coverage-repair-2026-06-10-2026-06-11t01-11-08-627z",
-          "publish-senolytics-coverage-repair-2026-06-11-2026-06-12t00-05-23-406z"
+          "publish-senolytics-coverage-repair-2026-06-11-2026-06-12t00-05-23-406z",
+          "publish-field-activity-retro-biosciences-next-financing-2026-2026-06-15"
         ]
       },
       "required_next_action": "Start the July State of the Field edition for June 2026 and carry the deferred June updates there as June context or field signals, not as May field movement.",
@@ -111,6 +113,39 @@
           "period_interpretation_changed": false,
           "rationale": "This was a June 12 missing-context update that strengthened the partial-reprogramming animal map and added the ER-100 no-results human registry boundary while preserving animal_signal and accelerating momentum. It did not change the May conclusion.",
           "next_action": "Use this as a June frontier-context item in the July edition, with the human-outcomes boundary explicit."
+        },
+        {
+          "publication_event_id": "publish-field-activity-retro-biosciences-next-financing-2026-2026-06-15",
+          "event_date": "2026-05-22",
+          "event_date_basis": "activity_item.occurred_on",
+          "related_outlook_ids": [],
+          "related_activity_item_ids": [
+            "retro-biosciences-next-financing-2026"
+          ],
+          "decision": "add_post_hoc_context_note",
+          "period_interpretation_changed": false,
+          "rationale": "Retro Biosciences' financing and first-in-human progress happened during May but was added to the tracker on June 15. It is field activity and trial-horizon context, not evidence of intervention benefit.",
+          "next_action": "Keep it in the May field-activity section as activity, not proof; do not treat it as June field movement.",
+          "agent_assessment": {
+            "recommended_decision": "add_post_hoc_context_note",
+            "confidence": "high",
+            "materiality": "moderate",
+            "affected_surfaces": [
+              "state_of_field",
+              "trial_horizon"
+            ],
+            "public_copy_action": "revise_copy",
+            "human_review_required": false,
+            "rationale": "The real-world event date falls inside May, but the item reports financing and clinical-transition activity rather than trial results or evidence of benefit.",
+            "reviewed_at": "2026-06-15T23:59:00Z",
+            "reviewed_by": "codex"
+          },
+          "human_approval": {
+            "status": "approved",
+            "resolved_at": "2026-06-15T23:59:00Z",
+            "approver": "tyler",
+            "notes": "Approved in chat: monthly reviews should use field-event dates, not tracker publication dates."
+          }
         }
       ],
       "checklist": [
@@ -128,7 +163,7 @@
         },
         {
           "id": "revise-edition-if-needed",
-          "label": "Revise the May edition only for post-hoc context or material correction decisions.",
+          "label": "Revise the May edition only for late-reviewed context or material correction decisions.",
           "status": "not_applicable",
           "path": "data/content/state-of-the-field/2026-06.json"
         },
@@ -712,8 +747,12 @@
         },
         {
           "publication_event_id": "publish-field-activity-arpa-h-prospr-awardees-2026-2026-06-15",
-          "event_date": "2026-06-15",
+          "event_date": "2026-02-24",
+          "event_date_basis": "activity_item.occurred_on",
           "related_outlook_ids": [],
+          "related_activity_item_ids": [
+            "arpa-h-prospr-awardees-2026"
+          ],
           "decision": "include_as_current_context",
           "period_interpretation_changed": false,
           "rationale": "June direct field-activity publication added February 2026 ARPA-H PROSPR program context. It belongs as healthspan trial-infrastructure context, not as June field movement or evidence of intervention benefit.",
@@ -743,8 +782,12 @@
         },
         {
           "publication_event_id": "publish-field-activity-calico-abbvie-aging-collaboration-2014-2026-06-15",
-          "event_date": "2026-06-15",
+          "event_date": "2014-09-03",
+          "event_date_basis": "activity_item.occurred_on",
           "related_outlook_ids": [],
+          "related_activity_item_ids": [
+            "calico-abbvie-aging-collaboration-2014"
+          ],
           "decision": "add_post_hoc_context_note",
           "period_interpretation_changed": false,
           "rationale": "June direct field-activity publication backfilled a 2014 Calico-AbbVie collaboration. It is useful historical field-infrastructure context, not June field movement.",
@@ -771,8 +814,12 @@
         },
         {
           "publication_event_id": "publish-field-activity-calico-broad-neurodegeneration-extension-2024-2026-06-15",
-          "event_date": "2026-06-15",
+          "event_date": "2024-05-09",
+          "event_date_basis": "activity_item.occurred_on",
           "related_outlook_ids": [],
+          "related_activity_item_ids": [
+            "calico-broad-neurodegeneration-extension-2024"
+          ],
           "decision": "add_post_hoc_context_note",
           "period_interpretation_changed": false,
           "rationale": "June direct field-activity publication backfilled a May 2024 Calico-Broad collaboration extension. It is historical field-infrastructure context, not June field movement.",
@@ -799,8 +846,12 @@
         },
         {
           "publication_event_id": "publish-field-activity-google-calico-launch-2013-2026-06-15",
-          "event_date": "2026-06-15",
+          "event_date": "2013-09-18",
+          "event_date_basis": "activity_item.occurred_on",
           "related_outlook_ids": [],
+          "related_activity_item_ids": [
+            "google-calico-launch-2013"
+          ],
           "decision": "add_post_hoc_context_note",
           "period_interpretation_changed": false,
           "rationale": "June direct field-activity publication backfilled Google's 2013 Calico launch. It is a historical field anchor, not June field movement.",
@@ -827,8 +878,12 @@
         },
         {
           "publication_event_id": "publish-field-activity-hevolution-400m-healthspan-commitments-2024-2026-06-15",
-          "event_date": "2026-06-15",
+          "event_date": "2024-06-10",
+          "event_date_basis": "activity_item.occurred_on",
           "related_outlook_ids": [],
+          "related_activity_item_ids": [
+            "hevolution-400m-healthspan-commitments-2024"
+          ],
           "decision": "include_as_current_context",
           "period_interpretation_changed": false,
           "rationale": "June direct field-activity publication added historical Hevolution healthspan-funding context. It is relevant field infrastructure context, not June field movement or evidence of intervention benefit.",
@@ -855,8 +910,12 @@
         },
         {
           "publication_event_id": "publish-field-activity-altos-labs-launch-2022-2026-06-15",
-          "event_date": "2026-06-15",
+          "event_date": "2022-01-19",
+          "event_date_basis": "activity_item.occurred_on",
           "related_outlook_ids": [],
+          "related_activity_item_ids": [
+            "altos-labs-launch-2022"
+          ],
           "decision": "add_post_hoc_context_note",
           "period_interpretation_changed": false,
           "rationale": "June direct field-activity publication backfilled Altos Labs' 2022 launch. It is a historical field anchor, not June field movement or evidence of intervention benefit.",
@@ -883,8 +942,12 @@
         },
         {
           "publication_event_id": "publish-field-activity-newlimit-formation-2021-2026-06-15",
-          "event_date": "2026-06-15",
+          "event_date": "2021-12-11",
+          "event_date_basis": "activity_item.occurred_on",
           "related_outlook_ids": [],
+          "related_activity_item_ids": [
+            "newlimit-formation-2021"
+          ],
           "decision": "add_post_hoc_context_note",
           "period_interpretation_changed": false,
           "rationale": "June direct field-activity publication backfilled NewLimit's 2021 formation. It is historical company-infrastructure context, not June field movement.",
@@ -911,8 +974,12 @@
         },
         {
           "publication_event_id": "publish-field-activity-newlimit-series-c-2026-2026-06-15",
-          "event_date": "2026-06-15",
+          "event_date": "2026-06-02",
+          "event_date_basis": "activity_item.occurred_on",
           "related_outlook_ids": [],
+          "related_activity_item_ids": [
+            "newlimit-series-c-2026"
+          ],
           "decision": "include_as_current_context",
           "period_interpretation_changed": false,
           "rationale": "June direct field-activity publication added NewLimit's June 2026 Series C and clinical-transition context. It is current field activity and trial-horizon context, not evidence of intervention benefit.",
@@ -940,14 +1007,18 @@
         },
         {
           "publication_event_id": "publish-field-activity-retro-biosciences-next-financing-2026-2026-06-15",
-          "event_date": "2026-06-15",
+          "event_date": "2026-05-22",
+          "event_date_basis": "activity_item.occurred_on",
           "related_outlook_ids": [],
-          "decision": "include_as_current_context",
+          "related_activity_item_ids": [
+            "retro-biosciences-next-financing-2026"
+          ],
+          "decision": "add_post_hoc_context_note",
           "period_interpretation_changed": false,
-          "rationale": "June direct field-activity publication added Retro Biosciences' May 2026 financing and first-in-human progress context. It is current field activity and trial-horizon context, not evidence of intervention benefit.",
-          "next_action": "Use as bounded State of the Field or trial-horizon context if the July edition needs current company-financing examples; do not promote first-in-human language into evidence without registry or study review.",
+          "rationale": "Late-reviewed field-activity reconciliation attached Retro Biosciences' May 22, 2026 financing and first-in-human progress context to the May period. It is activity and trial-horizon context, not evidence of intervention benefit.",
+          "next_action": "Use as bounded cumulative State of the Field or trial-horizon context only if the July edition needs it; the May review now carries it as the current-period field-activity item.",
           "agent_assessment": {
-            "recommended_decision": "include_as_current_context",
+            "recommended_decision": "add_post_hoc_context_note",
             "confidence": "high",
             "materiality": "moderate",
             "affected_surfaces": [
@@ -956,7 +1027,7 @@
             ],
             "public_copy_action": "draft_copy",
             "human_review_required": false,
-            "rationale": "The financing and clinical-transition language are source-backed field activity, but they do not report trial results or change any public evidence interpretation.",
+            "rationale": "The financing and clinical-transition language are source-backed field activity, but the real-world event date falls in May and the item does not report trial results or change any public evidence interpretation.",
             "reviewed_at": "2026-06-15T17:18:38Z",
             "reviewed_by": "codex"
           },
@@ -964,13 +1035,17 @@
             "status": "approved",
             "resolved_at": "2026-06-15T17:18:38Z",
             "approver": "tyler",
-            "notes": "Approved in chat as part of the field-activity packet; keep as current context, not evidence."
+            "notes": "Approved in chat as part of the field-activity packet; later reconciled by event date so May carries the current-period activity and July treats it only as cumulative context if needed."
           }
         },
         {
           "publication_event_id": "publish-field-activity-xprize-healthspan-launch-2023-2026-06-15",
-          "event_date": "2026-06-15",
+          "event_date": "2023-11-29",
+          "event_date_basis": "activity_item.occurred_on",
           "related_outlook_ids": [],
+          "related_activity_item_ids": [
+            "xprize-healthspan-launch-2023"
+          ],
           "decision": "add_post_hoc_context_note",
           "period_interpretation_changed": false,
           "rationale": "June direct field-activity publication backfilled the 2023 XPRIZE Healthspan launch. It is historical prize-infrastructure context, not June field movement or evidence of intervention benefit.",
@@ -998,8 +1073,12 @@
         },
         {
           "publication_event_id": "publish-field-activity-healthspan-connect-registry-post-2025-2026-06-15",
-          "event_date": "2026-06-15",
+          "event_date": "2025-10-07",
+          "event_date_basis": "activity_item.occurred_on",
           "related_outlook_ids": [],
+          "related_activity_item_ids": [
+            "healthspan-connect-registry-post-2025"
+          ],
           "decision": "include_as_trial_horizon",
           "period_interpretation_changed": false,
           "rationale": "June direct field-activity publication added Healthspan Connect as planned healthy-aging observational infrastructure. It belongs as bounded trial-horizon context because it is registry-linked and may shape what to watch next, but it is not yet recruiting, not interventional, and not evidence of intervention benefit.",

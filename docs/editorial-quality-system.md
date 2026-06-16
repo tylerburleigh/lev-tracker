@@ -62,11 +62,12 @@ For agent-led reconciliation, start with:
 
 ```bash
 npm run state-of-field:reconcile -- --write
+npm run state-of-field:dates -- --write
 npm run state-of-field:prep -- --write
 npm run state-of-field:packet
 ```
 
-The prep packet is the agent's monthly synthesis before public copy: it combines recorded reconciliation decisions, publication-gate status, field-activity lenses, watchlist queue health, draft-seed counts, trial-watch report inputs, blockers, and recommended next actions. The approval packet is the narrower handoff for unresolved curator decisions. Agents should recommend decisions before asking for input, record those recommendations in `agent_assessment`, mark which items require human review, and then ask for approval, revision, or hold. Curators should not need to discover or classify raw reconciliation candidates from scratch.
+The date audit keeps monthly placement tied to when field events happened, not when the tracker added them. The prep packet is the agent's monthly synthesis before public copy: it combines recorded reconciliation decisions, publication-gate status, field-activity lenses, watchlist queue health, draft-seed counts, trial-watch report inputs, blockers, and recommended next actions. The approval packet is the narrower handoff for unresolved curator decisions. Agents should recommend decisions before asking for input, record those recommendations in `agent_assessment`, mark which items require human review, and then ask for approval, revision, or hold. Curators should not need to discover or classify raw reconciliation candidates from scratch.
 
 ## Cadence
 

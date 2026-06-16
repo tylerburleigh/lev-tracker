@@ -46,6 +46,13 @@
       },
       "uniqueItems": true
     },
+    "relatedActivityItemIds": {
+      "type": "array",
+      "items": {
+        "$ref": "./common.schema.json#/$defs/activityItemRef"
+      },
+      "uniqueItems": true
+    },
     "changeKind": {
       "type": "string",
       "enum": [
@@ -226,6 +233,34 @@
         }
       }
     },
+    "fieldActivityItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "happened_on",
+        "label",
+        "summary"
+      ],
+      "properties": {
+        "happened_on": {
+          "$ref": "./common.schema.json#/$defs/isoDate"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "related_activity_item_ids": {
+          "$ref": "#/$defs/relatedActivityItemIds"
+        },
+        "related_publication_event_ids": {
+          "$ref": "#/$defs/relatedPublicationEventIds"
+        }
+      }
+    },
     "trackExample": {
       "type": "object",
       "additionalProperties": false,
@@ -375,6 +410,12 @@
       "type": "array",
       "items": {
         "$ref": "#/$defs/trialHorizonItem"
+      }
+    },
+    "field_activity": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fieldActivityItem"
       }
     },
     "signals_to_watch": {

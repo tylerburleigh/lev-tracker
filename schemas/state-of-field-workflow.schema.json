@@ -309,10 +309,24 @@
         "event_date": {
           "$ref": "./common.schema.json#/$defs/isoDate"
         },
+        "event_date_basis": {
+          "type": "string",
+          "enum": [
+            "publication_event.published_at",
+            "activity_item.occurred_on"
+          ]
+        },
         "related_outlook_ids": {
           "type": "array",
           "items": {
             "$ref": "./common.schema.json#/$defs/outlookRef"
+          },
+          "uniqueItems": true
+        },
+        "related_activity_item_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "./common.schema.json#/$defs/activityItemRef"
           },
           "uniqueItems": true
         },

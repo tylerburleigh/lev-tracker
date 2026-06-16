@@ -526,6 +526,7 @@ export type StateOfFieldEdition = CuratedContentReviewMeta & {
   what_did_not_change: string[];
   why_it_matters: string;
   trial_horizon: StateOfFieldTrialHorizonItem[];
+  field_activity?: StateOfFieldActivityItem[];
   signals_to_watch: StateOfFieldLabeledTextItem[];
   evidence_gaps: StateOfFieldLabeledTextItem[];
   track_examples: StateOfFieldTrackExample[];
@@ -595,6 +596,14 @@ export type StateOfFieldTrialHorizonItem = {
   href?: string;
   study_id?: string;
   related_outlook_ids?: string[];
+  related_publication_event_ids?: string[];
+};
+
+export type StateOfFieldActivityItem = {
+  happened_on: string;
+  label: string;
+  summary: string;
+  related_activity_item_ids?: string[];
   related_publication_event_ids?: string[];
 };
 

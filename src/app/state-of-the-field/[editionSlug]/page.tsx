@@ -64,6 +64,7 @@ export default async function EditionPage({ params }: EditionPageProps) {
     edition.field_change_status === "no_material_change"
       ? `No field result from ${edition.period_label} met the threshold for a material change.`
       : edition.field_change_note;
+  const fieldActivityItems = edition.field_activity ?? [];
   const fieldActivityBasis = edition.review_basis.items.find((item) => item.key === "field_activity");
   const firstBoundary = edition.what_did_not_change[0];
   const firstTrial = edition.trial_horizon[0];
@@ -87,7 +88,7 @@ export default async function EditionPage({ params }: EditionPageProps) {
       label: "Activity, not proof",
       value: fieldActivityBasis ? formatReviewBasisCount(fieldActivityBasis) : "Not separated",
       summary: fieldActivityBasis?.summary ?? "No separate field-activity review-basis item is recorded for this edition.",
-      href: "#review-basis",
+      href: fieldActivityItems.length ? "#field-activity" : "#review-basis",
       className: "state-scan-card--activity"
     },
     {
@@ -221,6 +222,24 @@ export default async function EditionPage({ params }: EditionPageProps) {
                     </article>
                   )
                 )}
+              </div>
+            </section>
+          ) : null}
+
+          {fieldActivityItems.length ? (
+            <section className="state-section" aria-labelledby="field-activity">
+              <div className="state-section__header">
+                <span className="section-kicker">Activity, not proof</span>
+                <h2 id="field-activity">Field activity that did not change the evidence read</h2>
+              </div>
+              <div className="state-card-list state-card-list--three">
+                {fieldActivityItems.map((item) => (
+                  <article className="state-watch-card state-watch-card--activity" key={`${item.happened_on}-${item.label}`}>
+                    <time dateTime={item.happened_on}>{formatDate(item.happened_on)}</time>
+                    <h3>{item.label}</h3>
+                    <p>{item.summary}</p>
+                  </article>
+                ))}
               </div>
             </section>
           ) : null}
