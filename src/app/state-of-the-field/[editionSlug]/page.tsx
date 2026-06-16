@@ -14,10 +14,10 @@ const changeKindLabels = {
 };
 
 const changeKindClassNames = {
-  outlook_changed: "state-change-card--outlook",
-  field_signal: "state-change-card--field",
-  context_only: "state-change-card--context",
-  activity_without_results: "state-change-card--activity"
+  outlook_changed: "state-change-row--outlook",
+  field_signal: "state-change-row--field",
+  context_only: "state-change-row--context",
+  activity_without_results: "state-change-row--activity"
 };
 
 const fieldChangeStatusLabels = {
@@ -166,17 +166,23 @@ export default async function EditionPage({ params }: EditionPageProps) {
               <h2 id="what-changed">What changed in the field</h2>
             </div>
             {hasFieldChanges ? (
-              <div className="state-change-grid">
+              <div className="state-report-list state-report-list--changes">
                 {edition.what_changed.map((change) => (
                   <article
-                    className={`state-change-card ${changeKindClassNames[change.change_kind]}`}
+                    className={`state-report-row state-report-row--change ${changeKindClassNames[change.change_kind]}`}
                     key={`${change.change_kind}-${change.title}`}
                   >
-                    <span className="state-kind-pill">{changeKindLabels[change.change_kind]}</span>
-                    <time dateTime={change.happened_on}>{formatDate(change.happened_on)}</time>
-                    <h3>{change.title}</h3>
-                    <p>{change.summary}</p>
-                    {change.interpretation ? <p className="state-change-card__interpretation">{change.interpretation}</p> : null}
+                    <div className="state-report-row__meta">
+                      <span className="state-kind-pill">{changeKindLabels[change.change_kind]}</span>
+                      <time dateTime={change.happened_on}>{formatDate(change.happened_on)}</time>
+                    </div>
+                    <div className="state-report-row__body">
+                      <h3>{change.title}</h3>
+                      <p>{change.summary}</p>
+                      {change.interpretation ? (
+                        <p className="state-report-row__interpretation">{change.interpretation}</p>
+                      ) : null}
+                    </div>
                   </article>
                 ))}
               </div>
@@ -208,17 +214,27 @@ export default async function EditionPage({ params }: EditionPageProps) {
                 <span className="section-kicker">Trial horizon</span>
                 <h2 id="trial-horizon">Trials waiting on results</h2>
               </div>
-              <div className="state-card-list state-card-list--three">
+              <div className="state-report-list">
                 {edition.trial_horizon.map((item) =>
                   item.href ? (
-                    <Link className="state-watch-card state-watch-card--trial" href={item.href} key={item.href}>
-                      <h3>{item.label}</h3>
-                      <p>{item.summary}</p>
+                    <Link className="state-report-row state-report-row--linked" href={item.href} key={item.href}>
+                      <div className="state-report-row__meta">
+                        <span>Trial watch</span>
+                      </div>
+                      <div className="state-report-row__body">
+                        <h3>{item.label}</h3>
+                        <p>{item.summary}</p>
+                      </div>
                     </Link>
                   ) : (
-                    <article className="state-watch-card state-watch-card--trial" key={item.label}>
-                      <h3>{item.label}</h3>
-                      <p>{item.summary}</p>
+                    <article className="state-report-row" key={item.label}>
+                      <div className="state-report-row__meta">
+                        <span>Trial watch</span>
+                      </div>
+                      <div className="state-report-row__body">
+                        <h3>{item.label}</h3>
+                        <p>{item.summary}</p>
+                      </div>
                     </article>
                   )
                 )}
@@ -232,12 +248,17 @@ export default async function EditionPage({ params }: EditionPageProps) {
                 <span className="section-kicker">Activity, not proof</span>
                 <h2 id="field-activity">Field activity that did not change the evidence read</h2>
               </div>
-              <div className="state-card-list state-card-list--three">
+              <div className="state-report-list">
                 {fieldActivityItems.map((item) => (
-                  <article className="state-watch-card state-watch-card--activity" key={`${item.happened_on}-${item.label}`}>
-                    <time dateTime={item.happened_on}>{formatDate(item.happened_on)}</time>
-                    <h3>{item.label}</h3>
-                    <p>{item.summary}</p>
+                  <article className="state-report-row" key={`${item.happened_on}-${item.label}`}>
+                    <div className="state-report-row__meta">
+                      <span>Field activity</span>
+                      <time dateTime={item.happened_on}>{formatDate(item.happened_on)}</time>
+                    </div>
+                    <div className="state-report-row__body">
+                      <h3>{item.label}</h3>
+                      <p>{item.summary}</p>
+                    </div>
                   </article>
                 ))}
               </div>
@@ -249,11 +270,16 @@ export default async function EditionPage({ params }: EditionPageProps) {
               <span className="section-kicker">Context as of {edition.period_label}</span>
               <h2 id="current-context">Evidence snapshot</h2>
             </div>
-            <div className="state-card-list">
+            <div className="state-report-list">
               {edition.current_context.map((context) => (
-                <article className="state-watch-card state-watch-card--context" key={context.label}>
-                  <h3>{context.label}</h3>
-                  <p>{context.summary}</p>
+                <article className="state-report-row" key={context.label}>
+                  <div className="state-report-row__meta">
+                    <span>Context</span>
+                  </div>
+                  <div className="state-report-row__body">
+                    <h3>{context.label}</h3>
+                    <p>{context.summary}</p>
+                  </div>
                 </article>
               ))}
             </div>
@@ -265,11 +291,13 @@ export default async function EditionPage({ params }: EditionPageProps) {
                 <span className="section-kicker">Evidence signals</span>
                 <h2 id="signals-to-watch">What would matter next</h2>
               </div>
-              <div className="state-card-list">
+              <div className="state-report-list state-report-list--compact">
                 {edition.signals_to_watch.map((signal) => (
-                  <article className="state-watch-card" key={signal.label}>
-                    <h3>{signal.label}</h3>
-                    <p>{signal.summary}</p>
+                  <article className="state-report-row" key={signal.label}>
+                    <div className="state-report-row__body">
+                      <h3>{signal.label}</h3>
+                      <p>{signal.summary}</p>
+                    </div>
                   </article>
                 ))}
               </div>
@@ -280,11 +308,13 @@ export default async function EditionPage({ params }: EditionPageProps) {
                 <span className="section-kicker">Evidence still needed</span>
                 <h2 id="evidence-gaps">What still blocks a stronger read</h2>
               </div>
-              <div className="state-card-list">
+              <div className="state-report-list state-report-list--compact">
                 {edition.evidence_gaps.map((gap) => (
-                  <article className="state-watch-card state-watch-card--gap" key={gap.label}>
-                    <h3>{gap.label}</h3>
-                    <p>{gap.summary}</p>
+                  <article className="state-report-row state-report-row--gap" key={gap.label}>
+                    <div className="state-report-row__body">
+                      <h3>{gap.label}</h3>
+                      <p>{gap.summary}</p>
+                    </div>
                   </article>
                 ))}
               </div>
@@ -297,11 +327,11 @@ export default async function EditionPage({ params }: EditionPageProps) {
                 <span className="section-kicker">Examples</span>
                 <h2 id="track-examples">Tracks behind the summary</h2>
               </div>
-              <div className="state-example-grid">
+              <div className="state-reference-list">
                 {edition.track_examples.map((example) => (
-                  <Link className="state-example-card" href={example.href} key={example.href}>
+                  <Link className="state-reference-row" href={example.href} key={example.href}>
                     <span>{example.label}</span>
-                    <h3>{example.title}</h3>
+                    <strong>{example.title}</strong>
                     <p>{example.summary}</p>
                   </Link>
                 ))}

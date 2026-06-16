@@ -213,44 +213,49 @@ export async function Homepage() {
             <ArrowRight aria-hidden="true" size={16} />
           </Link>
         </div>
-        <div className="page-shell movement-summary-grid">
-          <article className="movement-summary-card movement-summary-card--changed">
-            <span className="movement-summary-card__label">Trial read</span>
-            <h3>Results are still missing</h3>
-            <p>{trialHorizonText}</p>
+        <div className="page-shell report-ledger report-ledger--field-review">
+          <article className="report-ledger-row">
+            <span>Trial read</span>
+            <div>
+              <h3>Results are still missing</h3>
+              <p>{trialHorizonText}</p>
+            </div>
           </article>
-          <article className="movement-summary-card movement-summary-card--blocks">
-            <span className="movement-summary-card__label">What still blocks the outlook</span>
-            <h3>{primaryFieldReviewGap?.label ?? primaryEvidenceNeed?.label ?? "The proof gap remains"}</h3>
-            <p>{primaryFieldReviewGap?.summary ?? primaryEvidenceNeed?.rationale ?? overview.evidenceGap}</p>
+          <article className="report-ledger-row">
+            <span>What still blocks the outlook</span>
+            <div>
+              <h3>{primaryFieldReviewGap?.label ?? primaryEvidenceNeed?.label ?? "The proof gap remains"}</h3>
+              <p>{primaryFieldReviewGap?.summary ?? primaryEvidenceNeed?.rationale ?? overview.evidenceGap}</p>
+            </div>
           </article>
-          <article className="movement-summary-card movement-summary-card--watch">
-            <span className="movement-summary-card__label">What would matter next</span>
-            <h3>{primaryFieldReviewSignal?.label ?? primaryWatchItem?.label ?? "Human results that last"}</h3>
-            <p>
-              {primaryFieldReviewSignal?.summary ??
-                primaryWatchItem?.what_to_look_for ??
-                "Look for repeated human evidence that changes the outlook."}
-            </p>
+          <article className="report-ledger-row">
+            <span>What would matter next</span>
+            <div>
+              <h3>{primaryFieldReviewSignal?.label ?? primaryWatchItem?.label ?? "Human results that last"}</h3>
+              <p>
+                {primaryFieldReviewSignal?.summary ??
+                  primaryWatchItem?.what_to_look_for ??
+                  "Look for repeated human evidence that changes the outlook."}
+              </p>
+            </div>
           </article>
         </div>
       </section>
 
       <section className="band band--reader">
-        <div className="page-shell before-now-next-grid">
-          {beforeNowNextSteps.map((step, index) => (
-            <article className="before-now-next-step" key={step.label}>
-              <span className="before-now-next-step__label">{step.label}</span>
-              <h3>{step.title}</h3>
-              <p>{step.summary}</p>
-              {index < beforeNowNextSteps.length - 1 ? (
-                <ArrowRight className="before-now-next-step__arrow" aria-hidden="true" size={18} />
-              ) : null}
+        <div className="page-shell report-timeline">
+          {beforeNowNextSteps.map((step) => (
+            <article className="report-timeline-step" key={step.label}>
+              <span>{step.label}</span>
+              <div>
+                <h3>{step.title}</h3>
+                <p>{step.summary}</p>
+              </div>
             </article>
           ))}
         </div>
-        <div className="page-shell reader-grid">
-          <article className="reader-panel">
+        <div className="page-shell report-duo">
+          <section className="report-section-block">
             <span className="section-kicker">Outlook criteria</span>
             <h2>What would change our mind?</h2>
             <div className="outlook-change-list">
@@ -279,8 +284,8 @@ export async function Homepage() {
                 );
               })}
             </div>
-          </article>
-          <article className="reader-panel">
+          </section>
+          <section className="report-section-block">
             <div className="evidence-path__header">
               <div className="evidence-path__title">
                 <Compass aria-hidden="true" size={18} />
@@ -310,7 +315,7 @@ export async function Homepage() {
                 </Link>
               ))}
             </div>
-          </article>
+          </section>
         </div>
       </section>
 
@@ -337,21 +342,21 @@ export async function Homepage() {
                 : `${durableOutcomeHallmarkCount} hallmark(s) currently sit at long-lasting human outcome evidence.`}
             </p>
           </div>
-          <div className="hallmark-stage-ladder" aria-label="Hallmark evidence tiers">
+          <div className="hallmark-stage-table" aria-label="Hallmark evidence tiers">
             {hallmarkStageColumns.map((column) => {
               const columnRows = hallmarkRows.filter(({ outlook }) => outlook.stage === column.stage);
 
               return (
-                <div className="hallmark-stage-column" key={column.stage}>
-                  <div className="hallmark-stage-column__header">
+                <section className="hallmark-stage-row" key={column.stage}>
+                  <div className="hallmark-stage-row__header">
                     <span>{column.label}</span>
                     <strong>{columnRows.length}</strong>
                   </div>
-                  <div className="hallmark-stage-column__items">
+                  <div className="hallmark-stage-row__items">
                     {columnRows.length ? (
                       columnRows.map(({ hallmark, outlook }) => (
                         <Link
-                          className="hallmark-stage-pill"
+                          className="hallmark-stage-link"
                           href={`/hallmarks/${outlook.subjectId}`}
                           key={outlook.subjectId}
                           aria-label={`${hallmark.name}: ${getStageLabel(outlook.stage)}, ${getMomentumLabel(
@@ -368,7 +373,7 @@ export async function Homepage() {
                       <span className="hallmark-stage-empty">No hallmark here</span>
                     )}
                   </div>
-                </div>
+                </section>
               );
             })}
           </div>
@@ -377,7 +382,7 @@ export async function Homepage() {
 
       <section className="band band--split">
         <div className="page-shell">
-          <article className="feed-panel">
+          <section className="report-section-block report-section-block--wide">
             <div className="panel-header">
               <div>
                 <span className="section-kicker">Recent changes</span>
@@ -390,7 +395,7 @@ export async function Homepage() {
             </div>
             <div className="feed-list">
               {visibleRecentChanges.map((change) => (
-                <Link className="feed-item" key={change.id} href={change.href}>
+                <Link className="feed-row" key={change.id} href={change.href}>
                   <div className="feed-item__top">
                     <span className="feed-item__title">{change.title}</span>
                     <time dateTime={change.date}>{formatDate(change.date)}</time>
@@ -403,7 +408,7 @@ export async function Homepage() {
                 </Link>
               ))}
             </div>
-          </article>
+          </section>
         </div>
       </section>
 
