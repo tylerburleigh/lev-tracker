@@ -5379,11 +5379,494 @@ textarea {
   font-size: 1.08rem;
 }
 
+.trial-watch-ledger {
+  max-width: var(--page-width);
+}
+
+.trial-watch-ledger .state-report-row__meta {
+  gap: 7px;
+}
+
+.hallmark-tier-ledger,
+.hallmark-report-list,
+.activity-lens-ledger,
+.activity-report-list,
+.taxonomy-ledger {
+  border-top: 1px solid var(--text);
+  border-bottom: 1px solid var(--paper-rule);
+}
+
+.hallmark-tier-ledger {
+  display: grid;
+  align-content: start;
+}
+
+.hallmark-tier-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: baseline;
+  padding: 13px 0;
+  border-top: 1px solid var(--paper-rule);
+}
+
+.hallmark-tier-row:first-child {
+  border-top: 0;
+}
+
+.hallmark-tier-row span,
+.hallmark-report-row__meta,
+.activity-lens-row > span,
+.activity-report-row__meta,
+.taxonomy-ledger .report-ledger-row > span {
+  color: var(--text-soft);
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 750;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.hallmark-tier-row strong {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+}
+
+.hallmark-report-list,
+.activity-report-list {
+  display: grid;
+  gap: 0;
+}
+
+.hallmark-report-row {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.24fr) minmax(0, 1fr) minmax(15rem, 0.34fr);
+  gap: 24px;
+  padding: 19px 0;
+  border-top: 1px solid var(--paper-rule);
+  color: inherit;
+}
+
+.hallmark-report-row:first-child {
+  border-top: 0;
+}
+
+.hallmark-report-row:hover h2 {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.hallmark-report-row__meta {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+}
+
+.hallmark-report-row__meta time {
+  text-transform: none;
+}
+
+.hallmark-report-row__body {
+  display: grid;
+  gap: 7px;
+}
+
+.hallmark-report-row__body h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.hallmark-report-row__description,
+.hallmark-report-row__interpretation {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.58;
+}
+
+.hallmark-report-row__description {
+  color: #26382f;
+  font-weight: 500;
+}
+
+.hallmark-report-row__signals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-content: flex-start;
+}
+
+.activity-lens-ledger {
+  display: grid;
+  gap: 0;
+}
+
+.activity-lens-row {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.25fr) minmax(0, 1fr) auto;
+  gap: 20px;
+  align-items: baseline;
+  padding: 15px 0;
+  border-top: 1px solid var(--paper-rule);
+  color: inherit;
+}
+
+.activity-lens-row:first-child {
+  border-top: 0;
+}
+
+.activity-lens-row--selected {
+  padding-left: 12px;
+  border-left: 3px solid var(--mint);
+}
+
+.activity-lens-row:hover > span {
+  color: var(--text);
+}
+
+.activity-lens-row p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+.activity-lens-row strong {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+}
+
+.activity-report-row {
+  --activity-accent: var(--paper-rule);
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.28fr) minmax(0, 1fr);
+  gap: 24px;
+  padding: 18px 0 18px 14px;
+  border-top: 1px solid var(--paper-rule);
+  border-left: 3px solid var(--activity-accent);
+}
+
+.activity-report-row:first-child {
+  border-top: 0;
+}
+
+.activity-report-row--anchor {
+  --activity-accent: var(--gold);
+}
+
+.activity-report-row--current {
+  --activity-accent: var(--mint);
+}
+
+.activity-report-row--trial {
+  --activity-accent: var(--blue);
+}
+
+.activity-report-row--historical {
+  --activity-accent: var(--slate);
+}
+
+.activity-report-row__meta {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+.activity-report-row__meta time {
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.activity-report-row__body {
+  display: grid;
+  gap: 10px;
+}
+
+.activity-report-row__body h2 {
+  margin: 0;
+  font-size: 1.24rem;
+  line-height: 1.25;
+}
+
+.activity-report-row__body > p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.62;
+}
+
+.activity-report-row .activity-card__links {
+  justify-content: flex-start;
+}
+
+.taxonomy-ledger .report-ledger-row > span {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.taxonomy-ledger .report-ledger-row > span svg {
+  color: var(--mint);
+}
+
+.tracks-table {
+  gap: 0;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid var(--text);
+  border-bottom: 1px solid var(--paper-rule);
+  background: transparent;
+}
+
+.tracks-table__head {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--paper-rule);
+}
+
+.tracks-table__row {
+  grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.32fr);
+  gap: 24px;
+  padding: 18px 0;
+  border: 0;
+  border-top: 1px solid var(--paper-rule);
+  background: transparent;
+}
+
+.tracks-table__row:hover strong {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.tracks-table__topline .micro-badge,
+.tracks-table__aliases span {
+  border-radius: 0;
+}
+
+.activity-report-row .activity-card__note {
+  padding: 10px 0 0;
+  border: 0;
+  border-top: 1px solid var(--paper-rule);
+  border-radius: 0;
+  background: transparent;
+}
+
+.activity-report-row .activity-card__routing span {
+  border-radius: 0;
+}
+
+.hallmark-outlook-grid {
+  gap: 0;
+  border-top: 1px solid var(--text);
+  border-bottom: 1px solid var(--paper-rule);
+}
+
+.hallmark-outlook-grid > .detail-panel {
+  border: 0;
+  border-left: 1px solid var(--paper-rule);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.hallmark-outlook-grid > .detail-panel:first-child {
+  border-left: 0;
+}
+
+.detail-panel--muted {
+  background: transparent;
+}
+
+/* Detail pages: convert repeated modules from cards into report rows. */
+.track-card-grid,
+.hallmark-module-grid,
+.hallmark-activity-grid,
+.evidence-ladder,
+.evidence-bridge,
+.related-record-grid {
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 1px solid var(--text);
+  border-bottom: 1px solid var(--paper-rule);
+}
+
+.track-card,
+.hallmark-module-card,
+.hallmark-activity-card,
+.evidence-ladder-stage,
+.evidence-card,
+.evidence-next-card,
+.related-record-column {
+  min-height: 0;
+  padding: 18px 0;
+  border: 0;
+  border-top: 1px solid var(--paper-rule);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.track-card:first-child,
+.hallmark-module-card:first-child,
+.hallmark-activity-card:first-child,
+.evidence-ladder-stage:first-child,
+.evidence-card:first-child,
+.evidence-next-card:first-child,
+.related-record-column:first-child {
+  border-top: 0;
+}
+
+.track-card {
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.32fr);
+  gap: 20px;
+}
+
+.track-card__top,
+.track-card > p,
+.track-card__footer {
+  grid-column: 1;
+}
+
+.track-card__meta {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  align-content: start;
+  justify-content: flex-end;
+}
+
+.track-card__footer {
+  justify-content: flex-start;
+  margin-top: 0;
+}
+
+.hallmark-module-card,
+.hallmark-activity-card {
+  grid-template-columns: minmax(7rem, 0.22fr) minmax(0, 1fr);
+  gap: 24px;
+}
+
+.hallmark-module-card__icon {
+  width: auto;
+  height: auto;
+  border: 0;
+  background: transparent;
+  justify-content: flex-start;
+}
+
+.hallmark-module-card__body,
+.hallmark-activity-card > div:last-child {
+  min-width: 0;
+}
+
+.evidence-ladder-stage {
+  grid-template-columns: minmax(12rem, 0.28fr) minmax(0, 1fr);
+  gap: 22px;
+}
+
+.evidence-ladder-stage::before {
+  display: none;
+}
+
+.evidence-ladder-stage--active {
+  padding-left: 12px;
+  border-left: 3px solid var(--mint);
+  background: transparent;
+}
+
+.evidence-ladder-stage__header {
+  display: grid;
+  align-content: start;
+}
+
+.evidence-ladder-stage__header span {
+  justify-self: start;
+  border-radius: 0;
+}
+
+.evidence-ladder-stage__body {
+  min-width: 0;
+}
+
+.evidence-ladder-finding,
+.related-record-link {
+  padding: 10px 0;
+  border: 0;
+  border-top: 1px solid var(--paper-rule);
+  border-radius: 0;
+  background: transparent;
+}
+
+.evidence-ladder-finding:first-child,
+.related-record-link:first-child {
+  border-top: 0;
+}
+
+.evidence-card::before {
+  display: none;
+}
+
+.evidence-card {
+  --evidence-accent: var(--paper-rule);
+  padding-left: 14px;
+  border-left: 3px solid var(--evidence-accent);
+}
+
+.evidence-card--supports {
+  --evidence-accent: var(--mint);
+}
+
+.evidence-card--limits {
+  --evidence-accent: var(--coral);
+}
+
+.evidence-card--balances,
+.evidence-card--contextualizes {
+  --evidence-accent: var(--gold);
+}
+
+.evidence-next-card {
+  grid-template-columns: minmax(12rem, 0.28fr) minmax(0, 1fr);
+}
+
+.related-record-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 36px;
+  border: 0;
+}
+
+.related-record-column {
+  border-top: 1px solid var(--text);
+}
+
+.stage-list {
+  gap: 0;
+  border-top: 1px solid var(--paper-rule);
+}
+
+.stage-list__item {
+  padding: 10px 0;
+  border: 0;
+  border-bottom: 1px solid var(--paper-rule);
+  border-radius: 0;
+  background: transparent;
+}
+
+.stage-list__item--active {
+  padding-left: 10px;
+  border-left: 3px solid var(--mint);
+  background: transparent;
+}
+
 @media (max-width: 1180px) {
   .report-duo,
   .report-timeline,
   .hallmark-stage-row,
-  .state-reference-row {
+  .state-reference-row,
+  .hallmark-report-row,
+  .activity-lens-row,
+  .activity-report-row {
     grid-template-columns: 1fr;
   }
 
@@ -5448,5 +5931,47 @@ textarea {
 
   .state-reference-row {
     gap: 5px;
+  }
+
+  .hallmark-report-row,
+  .activity-report-row,
+  .activity-lens-row,
+  .tracks-table__row {
+    gap: 10px;
+  }
+
+  .hallmark-report-row__signals {
+    justify-content: flex-start;
+  }
+
+  .track-card,
+  .hallmark-module-card,
+  .hallmark-activity-card,
+  .evidence-ladder-stage,
+  .evidence-next-card,
+  .related-record-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .track-card__top,
+  .track-card > p,
+  .track-card__footer,
+  .track-card__meta {
+    grid-column: auto;
+    grid-row: auto;
+    justify-content: flex-start;
+  }
+
+  .hallmark-outlook-grid {
+    border-bottom: 0;
+  }
+
+  .hallmark-outlook-grid > .detail-panel {
+    border-left: 0;
+    border-top: 1px solid var(--paper-rule);
+  }
+
+  .hallmark-outlook-grid > .detail-panel:first-child {
+    border-top: 0;
   }
 }

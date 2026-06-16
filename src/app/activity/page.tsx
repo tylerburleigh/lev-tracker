@@ -69,20 +69,20 @@ function getNoteworthinessClass(item: ActivityFeedItem) {
   return "micro-badge--muted";
 }
 
-function getActivityCardClass(item: ActivityFeedItem) {
+function getActivityRowClass(item: ActivityFeedItem) {
   if (item.isHistoricalContext) {
-    return "activity-card--historical";
+    return "activity-report-row--historical";
   }
 
   if (item.noteworthinessTier === "field_anchor") {
-    return "activity-card--anchor";
+    return "activity-report-row--anchor";
   }
 
   if (item.isTrialHorizon) {
-    return "activity-card--trial";
+    return "activity-report-row--trial";
   }
 
-  return "activity-card--current";
+  return "activity-report-row--current";
 }
 
 function getActivityRoutingBadges(item: ActivityFeedItem) {
@@ -95,58 +95,60 @@ function getActivityRoutingBadges(item: ActivityFeedItem) {
   ].filter(Boolean);
 }
 
-function ActivityCard({ item }: { item: ActivityFeedItem }) {
+function ActivityRow({ item }: { item: ActivityFeedItem }) {
   const routingBadges = getActivityRoutingBadges(item);
 
   return (
-    <article className={`activity-card ${getActivityCardClass(item)}`} key={item.id}>
-      <div className="activity-card__top">
+    <article className={`activity-report-row ${getActivityRowClass(item)}`} key={item.id}>
+      <div className="activity-report-row__meta">
+        <time dateTime={item.date}>{formatDate(item.date)}</time>
         <div className="activity-card__badges">
           <span className="micro-badge micro-badge--outline">{item.lane}</span>
           <span className="micro-badge micro-badge--muted">{item.activityTypeLabel}</span>
           <span className={`micro-badge ${getNoteworthinessClass(item)}`}>{item.noteworthinessLabel}</span>
         </div>
-        <time dateTime={item.date}>{formatDate(item.date)}</time>
       </div>
-      <h2>{item.title}</h2>
-      <p>{item.summary}</p>
-      <div className="activity-card__routing" aria-label="Activity routing">
-        {routingBadges.map((badge) => (
-          <span key={badge}>{badge}</span>
-        ))}
-      </div>
-      {item.significanceNote ? (
-        <p className="activity-card__note">
-          <strong>Why it matters</strong>
-          {item.significanceNote}
-        </p>
-      ) : null}
-      {item.thresholdBasisLabels.length ? (
-        <p className="activity-card__threshold">
-          <strong>Threshold</strong>
-          {item.thresholdBasisLabels.join(" / ")}
-        </p>
-      ) : null}
-      <div className="activity-card__meta">
-        <span>{item.scopeLabel}</span>
-        {item.trackNames.length ? <span>{item.trackNames.slice(0, 2).join(" / ")}</span> : null}
-        {item.trialActivityKindLabel ? <span>{item.trialActivityKindLabel}</span> : null}
-      </div>
-      {item.links.length ? (
-        <div className="activity-card__links">
-          {item.links.slice(0, 3).map((link) =>
-            isExternalHref(link.href) ? (
-              <a href={link.href} target="_blank" rel="noreferrer" key={`${link.kind}-${link.id}`}>
-                {link.label}
-              </a>
-            ) : (
-              <Link href={link.href} key={`${link.kind}-${link.id}`}>
-                {link.label}
-              </Link>
-            )
-          )}
+      <div className="activity-report-row__body">
+        <h2>{item.title}</h2>
+        <p>{item.summary}</p>
+        <div className="activity-card__routing" aria-label="Activity routing">
+          {routingBadges.map((badge) => (
+            <span key={badge}>{badge}</span>
+          ))}
         </div>
-      ) : null}
+        {item.significanceNote ? (
+          <p className="activity-card__note">
+            <strong>Why it matters</strong>
+            {item.significanceNote}
+          </p>
+        ) : null}
+        {item.thresholdBasisLabels.length ? (
+          <p className="activity-card__threshold">
+            <strong>Threshold</strong>
+            {item.thresholdBasisLabels.join(" / ")}
+          </p>
+        ) : null}
+        <div className="activity-card__meta">
+          <span>{item.scopeLabel}</span>
+          {item.trackNames.length ? <span>{item.trackNames.slice(0, 2).join(" / ")}</span> : null}
+          {item.trialActivityKindLabel ? <span>{item.trialActivityKindLabel}</span> : null}
+        </div>
+        {item.links.length ? (
+          <div className="activity-card__links">
+            {item.links.slice(0, 3).map((link) =>
+              isExternalHref(link.href) ? (
+                <a href={link.href} target="_blank" rel="noreferrer" key={`${link.kind}-${link.id}`}>
+                  {link.label}
+                </a>
+              ) : (
+                <Link href={link.href} key={`${link.kind}-${link.id}`}>
+                  {link.label}
+                </Link>
+              )
+            )}
+          </div>
+        ) : null}
+      </div>
     </article>
   );
 }
@@ -213,19 +215,17 @@ export default async function ActivityPage({ searchParams }: ActivityPageProps) 
       </PageHero>
 
       <section className="band">
-        <div className="page-shell activity-map">
+        <div className="page-shell activity-lens-ledger">
           {activityLenses.map((lens) => (
             <Link
-              className={`activity-map-card ${selectedLens === lens.id ? "activity-map-card--selected" : ""}`}
+              className={`activity-lens-row ${selectedLens === lens.id ? "activity-lens-row--selected" : ""}`}
               href={getActivityLensHref(lens.id)}
               aria-current={selectedLens === lens.id ? "page" : undefined}
               key={lens.id}
             >
-              <div className="activity-map-card__top">
-                <span>{lens.title}</span>
-                <strong>{lens.count}</strong>
-              </div>
+              <span>{lens.title}</span>
               <p>{lens.summary}</p>
+              <strong>{lens.count}</strong>
             </Link>
           ))}
         </div>
@@ -240,9 +240,9 @@ export default async function ActivityPage({ searchParams }: ActivityPageProps) 
           </div>
           <span className="section-link section-link--static">{visibleActivity.length} items</span>
         </div>
-        <div className="page-shell activity-list">
+        <div className="page-shell activity-report-list">
           {visibleActivity.map((item) => (
-            <ActivityCard item={item} key={item.id} />
+            <ActivityRow item={item} key={item.id} />
           ))}
         </div>
       </section>

@@ -1,9 +1,7 @@
 import Link from "next/link";
 import {
   ArrowRight,
-  BookOpenText,
   GitBranch,
-  ListChecks,
   Search,
   ShieldCheck,
   Waypoints,
@@ -302,19 +300,23 @@ export default async function TracksIndexPage({ searchParams }: TracksIndexPageP
             </p>
           </div>
 
-          <div className="explainer-grid explainer-grid--three">
+          <div className="report-ledger taxonomy-ledger">
             {taxonomyRationaleCards.map(({ title, summary, icon: Icon }) => (
-              <article className="explainer-card" key={title}>
-                <Icon aria-hidden="true" size={19} />
-                <h3>{title}</h3>
-                <p>{summary}</p>
+              <article className="report-ledger-row" key={title}>
+                <span>
+                  <Icon aria-hidden="true" size={15} />
+                  {title}
+                </span>
+                <div>
+                  <h3>{title}</h3>
+                  <p>{summary}</p>
+                </div>
               </article>
             ))}
           </div>
 
-          <div className="explainer-split">
-            <article className="explainer-panel explainer-panel--lead">
-              <ListChecks aria-hidden="true" size={21} />
+          <div className="report-duo">
+            <section className="report-section-block">
               <span className="section-kicker">Governance</span>
               <h2>How a track change would happen</h2>
               <ul className="state-plain-list">
@@ -322,9 +324,8 @@ export default async function TracksIndexPage({ searchParams }: TracksIndexPageP
                   <li key={step}>{step}</li>
                 ))}
               </ul>
-            </article>
-            <article className="explainer-panel">
-              <BookOpenText aria-hidden="true" size={21} />
+            </section>
+            <section className="report-section-block">
               <span className="section-kicker">Framework boundary</span>
               <h2>Hallmarks are the source framework</h2>
               <p>
@@ -335,7 +336,7 @@ export default async function TracksIndexPage({ searchParams }: TracksIndexPageP
                 <span>Read the Hallmarks guide</span>
                 <ArrowRight aria-hidden="true" size={16} />
               </Link>
-            </article>
+            </section>
           </div>
         </div>
       </section>

@@ -173,18 +173,20 @@ export default async function TrialsIndexPage({ searchParams }: TrialsIndexPageP
       </PageHero>
 
       <section className="band">
-        <div className="page-shell trial-watch-grid">
+        <div className="page-shell state-report-list trial-watch-ledger">
           {highlightedTrials.map((trial) => (
-            <Link className="trial-watch-card" href={trial.href} key={trial.id}>
-              <div className="trial-watch-card__top">
+            <Link className="state-report-row state-report-row--linked" href={trial.href} key={trial.id}>
+              <div className="state-report-row__meta">
                 <span className={`trial-result-pill trial-result-pill--${trial.resultsStatusTone}`}>
                   {trial.resultsStatusLabel}
                 </span>
                 <span>{trial.primaryTrackName}</span>
               </div>
-              <h2>{trial.name}</h2>
-              <p>{trial.whyItMatters}</p>
-              <span className="trial-watch-card__timing">{getTrialTimingSummary(trial)}</span>
+              <div className="state-report-row__body">
+                <h3>{trial.name}</h3>
+                <p>{trial.whyItMatters}</p>
+                <p className="state-report-row__interpretation">{getTrialTimingSummary(trial)}</p>
+              </div>
             </Link>
           ))}
         </div>

@@ -30,14 +30,6 @@ const humanEvidenceStages = new Set<Stage>([
   "durable_disease_or_mortality_relevance"
 ]);
 
-const stageCardClasses: Record<Stage, string> = {
-  mechanistic_plausibility: "hallmark-index-card--mechanistic",
-  animal_signal: "hallmark-index-card--animal",
-  human_biomarker_signal: "hallmark-index-card--biomarker",
-  human_functional_benefit: "hallmark-index-card--functional",
-  durable_disease_or_mortality_relevance: "hallmark-index-card--durable"
-};
-
 function getMomentumTone(momentum: Momentum) {
   switch (momentum) {
     case "accelerating":
@@ -83,7 +75,7 @@ export default async function HallmarksIndexPage() {
 
       <section className="band band--hallmark-index-overview">
         <div className="page-shell hallmark-index-overview">
-          <div className="hallmark-index-overview__copy">
+          <div className="report-section-block">
             <span className="section-kicker">Evidence tiers</span>
             <h2>Human evidence is visible, long-lasting outcomes are not</h2>
             <p>
@@ -93,9 +85,9 @@ export default async function HallmarksIndexPage() {
                 : `${durableOutcomeCount} have reached long-lasting disease or mortality relevance.`}
             </p>
           </div>
-          <div className="hallmark-index-tier-list" aria-label="Hallmarks by current evidence tier">
+          <div className="hallmark-tier-ledger" aria-label="Hallmarks by current evidence tier">
             {stageCounts.map(({ stage, count }) => (
-              <div className={`hallmark-index-tier ${stageCardClasses[stage]}`} key={stage}>
+              <div className="hallmark-tier-row" key={stage}>
                 <span>{getStageLabel(stage)}</span>
                 <strong>{count}</strong>
               </div>
@@ -105,34 +97,31 @@ export default async function HallmarksIndexPage() {
       </section>
 
       <section className="band band--hallmark-index-list">
-        <div className="page-shell hallmark-index-grid">
+        <div className="page-shell hallmark-report-list">
           {outlooks.map((outlook) => {
             const hallmark = hallmarks.find((item) => item.id === outlook.subjectId);
             if (!hallmark) return null;
 
             return (
               <Link
-                className={`hallmark-index-card ${stageCardClasses[outlook.stage]}`}
+                className="hallmark-report-row"
                 href={`/hallmarks/${hallmark.id}`}
                 key={hallmark.id}
               >
-                <div className="hallmark-index-card__header">
-                  <h2>{hallmark.name}</h2>
-                  <span className="micro-badge micro-badge--outline hallmark-index-card__track-count">
-                    {getTrackCountForHallmark(hallmark.id)} tracks
-                  </span>
+                <div className="hallmark-report-row__meta">
+                  <span>{getTrackCountForHallmark(hallmark.id)} tracks</span>
+                  <time dateTime={outlook.lastUpdated}>Updated {formatDate(outlook.lastUpdated)}</time>
                 </div>
-                <p className="hallmark-index-card__description">{hallmark.description}</p>
-                <div className="hallmark-index-card__metrics">
+                <div className="hallmark-report-row__body">
+                  <h2>{hallmark.name}</h2>
+                  <p className="hallmark-report-row__description">{hallmark.description}</p>
+                  <p className="hallmark-report-row__interpretation">{outlook.interpretation}</p>
+                </div>
+                <div className="hallmark-report-row__signals">
                   <StageBadge stage={outlook.stage} />
                   <span className={`micro-badge ${getMomentumTone(outlook.momentum)}`}>
                     {getMomentumLabel(outlook.momentum)}
                   </span>
-                </div>
-                <p className="hallmark-index-card__interpretation">{outlook.interpretation}</p>
-                <div className="hallmark-index-card__footer">
-                  <span>Outlook updated</span>
-                  <time dateTime={outlook.lastUpdated}>{formatDate(outlook.lastUpdated)}</time>
                 </div>
               </Link>
             );
