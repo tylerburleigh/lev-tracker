@@ -58,6 +58,18 @@ npm run verify:editorial
 
 This reconciles the State of the Field workflow manifest, checks State of the Field status in strict mode, runs the editorial ratchet, validates records, audits live data integrity, and typechecks the app.
 
+For route or layout changes, capture Firefox headless screenshots:
+
+```bash
+npm run screenshot:page -- --path /state-of-the-field/2026-06
+```
+
+This runs `npm run build`, starts the local production server, captures desktop and mobile PNGs under `extra/screenshots/`, and stops the server. If a server is already running, pass a full URL and skip server startup:
+
+```bash
+npm run screenshot:page -- --url http://127.0.0.1:3002/state-of-the-field/2026-06 --no-server
+```
+
 For agent-led reconciliation, start with:
 
 ```bash

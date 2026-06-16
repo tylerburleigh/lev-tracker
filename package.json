@@ -31,6 +31,7 @@
     "state-of-field:packet": "node scripts/state-of-field-workflow.mjs packet",
     "state-of-field:prep": "node scripts/state-of-field-workflow.mjs prep",
     "state-of-field:dates": "node scripts/state-of-field-event-date-audit.mjs",
+    "screenshot:page": "node scripts/capture-page-screenshots.mjs",
     "audit:reader-tasks": "node scripts/reader-task-audit.mjs",
     "audit:editorial": "node scripts/editorial-quality.mjs",
     "audit:editorial:ratchet": "node scripts/editorial-quality.mjs --write --max-copy-warnings 269 --max-reader-warnings 0",
