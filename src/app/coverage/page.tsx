@@ -144,6 +144,10 @@ export default async function CoveragePage() {
               answers whether the checked field appears small, emerging, active, or dense. Evidence strength is a third
               question handled by the outlook stage and supporting findings.
             </p>
+            <Link className="section-link section-link--block" href="/guide">
+              <span>Open reader guide</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </Link>
           </article>
           {bucketOrder.map((bucket) => {
             const item = bucketConfig[bucket];

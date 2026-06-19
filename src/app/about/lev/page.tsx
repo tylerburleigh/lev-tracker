@@ -179,6 +179,10 @@ export default async function LevExplainerPage() {
             <span className="section-kicker">Read next</span>
             <h2>Where the concept meets the map</h2>
             <div className="source-link-list">
+              <Link className="source-link" href="/guide">
+                <span>How to read the tracker</span>
+                <ArrowRight aria-hidden="true" size={16} />
+              </Link>
               <Link className="source-link" href="/hallmarks/paper">
                 <span>The Hallmarks of Aging paper</span>
                 <ArrowRight aria-hidden="true" size={16} />

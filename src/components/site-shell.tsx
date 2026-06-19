@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   Activity,
   BookOpenText,
+  CircleHelp,
   ClipboardCheck,
   ClipboardList,
   Compass,
@@ -13,6 +14,7 @@ import {
 
 const navItems = [
   { href: "/", label: "Overview", icon: Compass },
+  { href: "/guide", label: "Guide", icon: CircleHelp },
   { href: "/hallmarks", label: "Hallmarks", icon: Sigma },
   { href: "/tracks", label: "Tracks", icon: Waypoints },
   { href: "/trials", label: "Trials", icon: ClipboardList },

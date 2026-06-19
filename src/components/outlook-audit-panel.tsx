@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
 import {
   type EvidenceSupportCard,
   type TrackCoverage,
@@ -70,6 +73,10 @@ export function OutlookAuditPanel({ coverage, evidenceSupport }: OutlookAuditPan
             <p>{getStagePlainMeaning(coverage.stage)}</p>
           </div>
         ) : null}
+        <Link className="mini-link outlook-audit-guide-link" href="/guide">
+          <span>How to read these labels</span>
+          <ArrowRight aria-hidden="true" size={15} />
+        </Link>
         <div className="detail-list outlook-audit-metrics">
           <div>
             <strong>Momentum</strong>
