@@ -88,9 +88,9 @@ export default async function DataAccessPage() {
             <Download aria-hidden="true" size={16} />
             <span>Open JSON export</span>
           </a>
-          <Link className="action-button action-button--secondary" href="/tracks">
+          <Link className="action-button action-button--secondary" href="/coverage">
             <Database aria-hidden="true" size={16} />
-            <span>Compare tracks</span>
+            <span>Coverage dashboard</span>
           </Link>
         </div>
       </PageHero>
@@ -120,6 +120,10 @@ export default async function DataAccessPage() {
               <span>{evidenceMap.canonical_path}</span>
               <ArrowRight aria-hidden="true" size={16} />
             </a>
+            <Link className="section-link" href="/coverage">
+              <span>Open coverage dashboard</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </Link>
           </div>
           <div className="data-stat-grid" aria-label="Evidence-map export counts">
             {statItems.map((item) => (

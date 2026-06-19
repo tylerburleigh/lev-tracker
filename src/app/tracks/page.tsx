@@ -206,6 +206,10 @@ export default async function TracksIndexPage({ searchParams }: TracksIndexPageP
             <span>How tracks change</span>
             <ArrowRight aria-hidden="true" size={15} />
           </Link>
+          <Link className="mini-link" href="/coverage">
+            <span>Coverage dashboard</span>
+            <ArrowRight aria-hidden="true" size={15} />
+          </Link>
         </div>
       </PageHero>
       <section className="band">
