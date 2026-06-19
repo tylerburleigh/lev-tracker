@@ -883,6 +883,14 @@ const evidenceNeedReasonLabels: Record<EvidenceNeedReason, string> = {
   blocking_gap: "Blocking gap"
 };
 
+const humanEvidenceTiers = new Set([
+  "human_biomarker",
+  "human_function",
+  "human_clinical_outcome",
+  "mortality_or_lifespan",
+  "durable_disease_or_mortality"
+]);
+
 const trialResultsStatusLabels: Record<TrialResultsStatus, string> = {
   posted: "Results posted",
   not_posted: "No posted results",
@@ -1395,6 +1403,16 @@ function getReadableDataLabel(value: string) {
     .split("_")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
+}
+
+function uniqueSorted(values: Array<string | undefined>) {
+  return Array.from(new Set(values.filter((value): value is string => Boolean(value)))).sort((left, right) =>
+    left.localeCompare(right)
+  );
+}
+
+function isHumanEvidenceTier(evidenceTier: string) {
+  return humanEvidenceTiers.has(evidenceTier);
 }
 
 function getTrialCompletionDate(study: StudyRecord) {
@@ -2316,6 +2334,328 @@ export function getFindingWeightLabel(confidence: Confidence) {
 
 export function getEvidenceNeedReasonLabel(reason: EvidenceNeedReason) {
   return evidenceNeedReasonLabels[reason];
+}
+
+export async function getEvidenceMapExport() {
+  noStore();
+  const [outlooks, sources, studies, findings, interventions, trials, publicationEvents, coverageStatus] =
+    await Promise.all([
+      loadOutlooks(),
+      loadSources(),
+      loadStudies(),
+      loadFindings(),
+      loadInterventions(),
+      getTrials(),
+      loadPublicationEvents(),
+      loadCoverageStatus()
+    ]);
+  const latestOutlook = [...outlooks].sort((left, right) =>
+    compareDateTimesDescending(left.last_updated, right.last_updated)
+  )[0];
+  const lastUpdated = publicationEvents[0]?.published_at ?? latestOutlook?.last_updated ?? new Date().toISOString();
+  const tracks = getTracks();
+  const hallmarks = getHallmarks();
+  const findingById = new Map(findings.map((finding) => [finding.id, finding]));
+  const trackOutlookById = new Map(
+    outlooks
+      .filter((outlook) => outlook.subject_type === "track")
+      .map((outlook) => [outlook.subject_id, outlook])
+  );
+  const hallmarkOutlookById = new Map(
+    outlooks
+      .filter((outlook) => outlook.subject_type === "hallmark")
+      .map((outlook) => [outlook.subject_id, outlook])
+  );
+  const coverageByTrackId = new Map((coverageStatus?.tracks ?? []).map((entry) => [entry.track_id, entry]));
+  const studyByTrackId = new Map<string, StudyRecord[]>();
+  const findingByTrackId = new Map<string, FindingRecord[]>();
+  const interventionByTrackId = new Map<string, InterventionRecord[]>();
+  const trialByTrackId = new Map<string, TrialSummary[]>();
+
+  for (const study of studies) {
+    for (const trackId of study.track_ids ?? []) {
+      studyByTrackId.set(trackId, [...(studyByTrackId.get(trackId) ?? []), study]);
+    }
+  }
+
+  for (const finding of findings) {
+    for (const trackId of finding.track_ids ?? []) {
+      findingByTrackId.set(trackId, [...(findingByTrackId.get(trackId) ?? []), finding]);
+    }
+  }
+
+  for (const intervention of interventions) {
+    for (const trackId of intervention.track_ids ?? []) {
+      interventionByTrackId.set(trackId, [...(interventionByTrackId.get(trackId) ?? []), intervention]);
+    }
+  }
+
+  for (const trial of trials) {
+    for (const trackId of trial.trackIds) {
+      trialByTrackId.set(trackId, [...(trialByTrackId.get(trackId) ?? []), trial]);
+    }
+  }
+
+  const trackEntries = tracks.map((track) => {
+    const outlook = trackOutlookById.get(track.id);
+    const coverage = coverageByTrackId.get(track.id);
+    const trackFindings = findingByTrackId.get(track.id) ?? [];
+    const trackStudies = studyByTrackId.get(track.id) ?? [];
+    const trackInterventions = interventionByTrackId.get(track.id) ?? [];
+    const trackTrials = trialByTrackId.get(track.id) ?? [];
+    const supportingFindingIds = outlook?.supporting_finding_ids ?? [];
+    const supportingSourceIds = uniqueSorted([
+      ...(outlook?.supporting_source_ids ?? []),
+      ...(outlook?.supporting_evidence?.flatMap((item) => item.source_ids ?? []) ?? []),
+      ...supportingFindingIds.map((findingId) => findingById.get(findingId)?.source_id)
+    ]);
+    const trackSourceIds = uniqueSorted([
+      ...trackFindings.map((finding) => finding.source_id),
+      ...trackStudies.flatMap((study) => study.source_ids),
+      ...supportingSourceIds
+    ]);
+
+    return {
+      id: track.id,
+      name: track.name,
+      href: `/tracks/${track.id}`,
+      summary: track.summary,
+      primary_hallmark_id: track.primaryHallmarkId,
+      primary_hallmark_name: getHallmarkById(track.primaryHallmarkId)?.name ?? track.primaryHallmarkId,
+      secondary_hallmark_ids: track.secondary_hallmark_ids ?? [],
+      search_aliases: track.search_aliases ?? [],
+      exemplar_interventions: track.exemplar_interventions ?? [],
+      outlook: outlook
+        ? {
+            outlook_id: outlook.id,
+            stage: outlook.evidence_stage,
+            stage_label: getStageLabel(outlook.evidence_stage),
+            momentum: outlook.momentum,
+            momentum_label: getMomentumLabel(outlook.momentum),
+            confidence: outlook.confidence,
+            read_firmness_label: getReadFirmnessLabel(outlook.confidence),
+            interpretation: outlook.interpretation_note,
+            main_evidence_gaps: outlook.main_evidence_gaps ?? [],
+            strongest_current_evidence: outlook.strongest_current_evidence ?? [],
+            what_would_change_the_rating: outlook.what_would_change_the_rating ?? [],
+            supporting_finding_ids: supportingFindingIds,
+            supporting_source_ids: supportingSourceIds,
+            last_updated: outlook.last_updated
+          }
+        : null,
+      coverage: coverage
+        ? {
+            coverage_verdict: coverage.coverage_verdict,
+            coverage_verdict_label: coverage.coverage_verdict
+              ? getCoverageVerdictLabel(coverage.coverage_verdict)
+              : undefined,
+            coverage_confidence: coverage.coverage_confidence,
+            coverage_confidence_label: coverage.coverage_confidence
+              ? getCoverageConfidenceLabel(coverage.coverage_confidence)
+              : undefined,
+            observed_research_density: coverage.observed_research_density,
+            observed_research_density_label: coverage.observed_research_density
+              ? getResearchDensityLabel(coverage.observed_research_density)
+              : undefined,
+            known_gap_count: coverage.known_gap_count ?? 0,
+            high_priority_gap_count: coverage.high_priority_gap_count ?? 0,
+            last_coverage_assessment_id: coverage.last_coverage_assessment_id,
+            last_coverage_assessed_at: coverage.last_coverage_assessed_at
+          }
+        : null,
+      evidence_counts: {
+        finding_count: trackFindings.length,
+        human_finding_count: trackFindings.filter((finding) => isHumanEvidenceTier(finding.evidence_tier)).length,
+        positive_finding_count: trackFindings.filter((finding) => finding.direction === "positive").length,
+        null_or_negative_finding_count: trackFindings.filter(
+          (finding) => finding.direction === "null" || finding.direction === "negative"
+        ).length,
+        source_count: trackSourceIds.length,
+        study_count: trackStudies.length,
+        intervention_count: trackInterventions.length,
+        registry_linked_trial_count: trackTrials.length,
+        active_watch_trial_count: trackTrials.filter((trial) => trial.watchStatus === "active_watch").length,
+        late_no_results_trial_count: trackTrials.filter((trial) => trial.watchStatus === "late_no_results").length,
+        posted_result_trial_count: trackTrials.filter((trial) => trial.resultsStatus === "posted").length
+      },
+      source_ids: trackSourceIds,
+      supporting_evidence:
+        outlook?.supporting_evidence?.map((item) => ({
+          label: item.label,
+          outlook_field: item.outlook_field,
+          support_role: item.support_role,
+          conclusion: item.conclusion,
+          rationale: item.rationale,
+          finding_ids: item.finding_ids,
+          source_ids: uniqueSorted([
+            ...(item.source_ids ?? []),
+            ...item.finding_ids.map((findingId) => findingById.get(findingId)?.source_id)
+          ]),
+          limitations: item.limitations ?? []
+        })) ?? []
+    };
+  });
+
+  return {
+    schema_version: "1.0.0",
+    export_type: "lev_tracker_evidence_map",
+    generated_at: new Date().toISOString(),
+    last_public_update: lastUpdated,
+    canonical_path: "/data/evidence-map.json",
+    caveats: [
+      "This is an evidence-map export, not medical advice or a claim that an intervention extends human life.",
+      "Coverage confidence describes how complete the tracker map appears, not how strong the underlying scientific evidence is.",
+      "Observed research density separates sparse fields from areas where the tracker may still need deeper source discovery.",
+      "Use source, study, finding, outlook, and track IDs for provenance; labels are editorial summaries and may change."
+    ],
+    legends: {
+      evidence_stage: Object.entries(stageLabels).map(([value, label]) => ({
+        value,
+        label,
+        plain_meaning: stagePlainMeanings[value as Stage]
+      })),
+      momentum: Object.entries(momentumLabels).map(([value, label]) => ({
+        value,
+        label,
+        plain_meaning: momentumPlainMeanings[value as Momentum]
+      })),
+      read_firmness: Object.entries(readFirmnessLabels).map(([value, label]) => ({
+        value,
+        label,
+        plain_meaning: readFirmnessPlainMeanings[value as Confidence]
+      })),
+      coverage_verdict: Object.entries(coverageVerdictLabels).map(([value, label]) => ({
+        value,
+        label,
+        plain_meaning: coverageVerdictPlainMeanings[value as CoverageVerdict]
+      })),
+      observed_research_density: Object.entries(researchDensityLabels).map(([value, label]) => ({
+        value,
+        label,
+        plain_meaning: researchDensityPlainMeanings[value as ObservedResearchDensity]
+      }))
+    },
+    summary: {
+      hallmark_count: hallmarks.length,
+      track_count: tracks.length,
+      track_outlook_count: trackEntries.filter((track) => track.outlook).length,
+      coverage_assessed_track_count: trackEntries.filter((track) => track.coverage).length,
+      adequate_or_strong_map_count: trackEntries.filter((track) =>
+        ["adequate", "strong"].includes(track.coverage?.coverage_verdict ?? "")
+      ).length,
+      active_or_dense_research_count: trackEntries.filter((track) =>
+        ["active", "dense"].includes(track.coverage?.observed_research_density ?? "")
+      ).length,
+      source_count: sources.length,
+      study_count: studies.length,
+      finding_count: findings.length,
+      intervention_count: interventions.length,
+      registry_linked_trial_count: trials.length,
+      active_watch_trial_count: trials.filter((trial) => trial.watchStatus === "active_watch").length,
+      late_no_results_trial_count: trials.filter((trial) => trial.watchStatus === "late_no_results").length,
+      posted_result_trial_count: trials.filter((trial) => trial.resultsStatus === "posted").length
+    },
+    hallmarks: hallmarks.map((hallmark) => {
+      const outlook = hallmarkOutlookById.get(hallmark.id);
+      const hallmarkTracks = tracks.filter((track) => track.primaryHallmarkId === hallmark.id);
+
+      return {
+        id: hallmark.id,
+        name: hallmark.name,
+        href: `/hallmarks/${hallmark.id}`,
+        canonical_order: hallmark.canonical_order,
+        description: hallmark.description,
+        track_ids: hallmarkTracks.map((track) => track.id),
+        outlook: outlook
+          ? {
+              outlook_id: outlook.id,
+              stage: outlook.evidence_stage,
+              stage_label: getStageLabel(outlook.evidence_stage),
+              momentum: outlook.momentum,
+              momentum_label: getMomentumLabel(outlook.momentum),
+              confidence: outlook.confidence,
+              read_firmness_label: getReadFirmnessLabel(outlook.confidence),
+              interpretation: outlook.interpretation_note,
+              main_evidence_gaps: outlook.main_evidence_gaps ?? [],
+              strongest_current_evidence: outlook.strongest_current_evidence ?? [],
+              last_updated: outlook.last_updated
+            }
+          : null
+      };
+    }),
+    tracks: trackEntries,
+    findings: findings.map((finding) => ({
+      id: finding.id,
+      name: finding.name,
+      statement: finding.statement,
+      summary: finding.summary,
+      source_id: finding.source_id,
+      study_id: finding.study_id,
+      intervention_ids: finding.intervention_ids ?? [],
+      track_ids: finding.track_ids ?? [],
+      hallmark_ids: finding.hallmark_ids,
+      endpoint_category: finding.endpoint_category,
+      direction: finding.direction,
+      evidence_tier: finding.evidence_tier,
+      is_human_evidence: isHumanEvidenceTier(finding.evidence_tier),
+      confidence: finding.confidence,
+      population_or_model: finding.population_or_model,
+      time_horizon: finding.time_horizon,
+      quantitative_note: finding.quantitative_note,
+      caveats: finding.caveats ?? []
+    })),
+    sources: sources.map((source) => ({
+      id: source.id,
+      name: source.name,
+      short_name: source.short_name,
+      summary: source.summary,
+      source_type: source.source_type,
+      authors: source.authors ?? [],
+      venue: source.venue,
+      year: source.year,
+      published_on: source.published_on,
+      doi: source.doi,
+      pmid: source.pmid,
+      registry_ids: source.registry_ids ?? [],
+      urls: source.urls ?? []
+    })),
+    trials: trials.map((trial) => ({
+      id: trial.id,
+      name: trial.name,
+      href: trial.href,
+      status: trial.status,
+      status_label: trial.statusLabel,
+      phase: trial.phase,
+      phase_label: trial.phaseLabel,
+      population: trial.population,
+      sample_size: trial.sampleSize,
+      registry_ids: trial.registryIds,
+      endpoint_categories: trial.endpointCategories,
+      track_ids: trial.trackIds,
+      results_status: trial.resultsStatus,
+      results_status_label: trial.resultsStatusLabel,
+      watch_status: trial.watchStatus,
+      watch_status_label: trial.watchStatusLabel,
+      completion_date: trial.completionDate,
+      completion_date_kind: trial.completionDateKind,
+      registry_last_updated: trial.registryLastUpdated,
+      registry_last_checked: trial.registryLastChecked,
+      expected_results_window: trial.expectedResultsWindow,
+      horizon_note: trial.horizonNote,
+      why_it_matters: trial.whyItMatters
+    })),
+    source_file_patterns: {
+      taxonomy: ["taxonomies/hallmarks-of-aging.v1.json", "taxonomies/track-taxonomy.v1.json"],
+      public_records: [
+        "data/outlooks/*.json",
+        "data/sources/*.json",
+        "data/studies/*.json",
+        "data/findings/*.json",
+        "data/interventions/*.json"
+      ],
+      planning_records: ["research/state/coverage-status.v1.json", "research/coverage-assessments/*.json"]
+    }
+  };
 }
 
 export async function getOverallSnapshot() {

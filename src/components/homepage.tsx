@@ -133,6 +133,10 @@ export async function Homepage() {
                 <span>What LEV means</span>
                 <ArrowRight aria-hidden="true" size={14} />
               </Link>
+              <Link className="status-chip status-chip--outline" href="/data">
+                <span>Data export</span>
+                <ArrowRight aria-hidden="true" size={14} />
+              </Link>
             </div>
             <div className="plain-meaning plain-meaning--hero">
               <CircleHelp aria-hidden="true" size={18} />
