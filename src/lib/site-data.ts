@@ -151,6 +151,22 @@ export type EvidenceIndexFilters = {
   limit?: number;
 };
 
+export type EvidenceGapSeverity = "high_priority" | "human_endpoint" | "trial_sensitive" | "sparse_checked" | "map_work_needed";
+export type EvidenceGapResearchDensityFilter = ObservedResearchDensity | "active_or_dense" | "sparse_or_emerging";
+export type EvidenceGapSort = "severity" | "high_priority" | "density" | "track" | "stage";
+
+export type EvidenceGapFilters = {
+  q?: string;
+  hallmark?: string;
+  track?: string;
+  stage?: Stage | "";
+  coverage_confidence?: CoverageConfidence | "";
+  research_density?: EvidenceGapResearchDensityFilter | "";
+  severity?: EvidenceGapSeverity | "";
+  sort?: EvidenceGapSort | "";
+  limit?: number;
+};
+
 export type TrialCompletionDateKind = "actual" | "estimated" | "unknown";
 export type TrialResultsStatus = "posted" | "not_posted" | "pending" | "unknown";
 export type TrialResultsTone = "mint" | "gold" | "blue" | "slate";
@@ -3523,6 +3539,654 @@ export async function getEvidenceIndexExport(filters: EvidenceIndexFilters = {})
     },
     saved_views: savedViews,
     findings: exportedRows
+  };
+}
+
+function cleanEvidenceGapFilters(filters: EvidenceGapFilters = {}) {
+  const limit = filters.limit && Number.isFinite(filters.limit) ? Math.max(1, Math.min(200, filters.limit)) : undefined;
+
+  return {
+    q: filters.q?.trim() ?? "",
+    hallmark: filters.hallmark ?? "",
+    track: filters.track ?? "",
+    stage: filters.stage ?? "",
+    coverage_confidence: filters.coverage_confidence ?? "",
+    research_density: filters.research_density ?? "",
+    severity: filters.severity ?? "",
+    sort: filters.sort || "severity",
+    limit
+  };
+}
+
+function getEvidenceGapQueryPath(path: string, filters: EvidenceGapFilters) {
+  const params = new URLSearchParams();
+  const cleaned = cleanEvidenceGapFilters(filters);
+
+  for (const [key, value] of Object.entries(cleaned)) {
+    if (!value || key === "sort" && value === "severity") {
+      continue;
+    }
+
+    params.set(key, String(value));
+  }
+
+  const query = params.toString();
+  return query ? `${path}?${query}` : path;
+}
+
+function getAppliedEvidenceGapFilters(filters: ReturnType<typeof cleanEvidenceGapFilters>) {
+  return Object.fromEntries(
+    Object.entries(filters)
+      .filter(([key, value]) => Boolean(value) && !(key === "sort" && value === "severity"))
+      .map(([key, value]) => [key, String(value)])
+  );
+}
+
+function hasUsableGapMap(track: {
+  coverage: {
+    coverage_verdict?: CoverageVerdict;
+    coverage_confidence?: CoverageConfidence;
+  } | null;
+}) {
+  return (
+    Boolean(track.coverage) &&
+    (track.coverage?.coverage_verdict === "adequate" || track.coverage?.coverage_verdict === "strong") &&
+    track.coverage?.coverage_confidence !== "low"
+  );
+}
+
+function isActiveOrDenseGapDensity(density?: string) {
+  return density === "active" || density === "dense";
+}
+
+function isSparseOrEmergingGapDensity(density?: string) {
+  return density === "sparse" || density === "emerging";
+}
+
+function getGapTextMatchesHumanEndpoint(text: string) {
+  return /\b(clinical outcome|clinical outcomes|older adult|older adults|patient|patients|functional|function|frailty|disability|morbidity|mortality|disease|healthspan|lifespan|physical function|cognitive|cardiovascular|age-related disease|age-related diseases)\b/i.test(
+    text
+  );
+}
+
+function getOutlookRecordPath(outlookId?: string) {
+  return outlookId ? `data/outlooks/${outlookId}.json` : undefined;
+}
+
+function getCoverageAssessmentPath(coverageAssessmentId?: string) {
+  return coverageAssessmentId ? `research/coverage-assessments/${coverageAssessmentId}.json` : undefined;
+}
+
+function getFindingRecordPath(findingId: string) {
+  return `data/findings/${findingId}.json`;
+}
+
+function getSourceRecordPath(sourceId: string) {
+  return `data/sources/${sourceId}.json`;
+}
+
+function getEvidenceGapSourceRefs(
+  sourceIds: string[],
+  sourceById: Map<
+    string,
+    {
+      id: string;
+      name: string;
+      short_name?: string;
+      source_type: string;
+      year?: number;
+      published_on?: string;
+    }
+  >
+) {
+  return uniqueSorted(sourceIds)
+    .map((sourceId) => {
+      const source = sourceById.get(sourceId);
+
+      return {
+        id: sourceId,
+        name: source?.name ?? titleizeIdentifier(sourceId),
+        short_name: source?.short_name,
+        href: getSourcePagePath(sourceId),
+        json_path: getSourceJsonPath(sourceId),
+        record_path: getSourceRecordPath(sourceId),
+        source_type: source?.source_type,
+        year: source?.year,
+        published_on: source?.published_on
+      };
+    })
+    .sort((left, right) => (left.short_name ?? left.name).localeCompare(right.short_name ?? right.name));
+}
+
+function getEvidenceGapFindingRefs(
+  findingIds: string[],
+  findingById: Map<
+    string,
+    {
+      id: string;
+      name: string;
+      source_id: string;
+    }
+  >
+) {
+  return uniqueSorted(findingIds)
+    .map((findingId) => {
+      const finding = findingById.get(findingId);
+
+      return {
+        id: findingId,
+        name: finding?.name ?? titleizeIdentifier(findingId),
+        href: `/findings/${findingId}`,
+        record_path: getFindingRecordPath(findingId),
+        source_id: finding?.source_id,
+        source_json_path: finding?.source_id ? getSourceJsonPath(finding.source_id) : undefined
+      };
+    })
+    .sort((left, right) => left.name.localeCompare(right.name));
+}
+
+function getEvidenceGapItemProvenance({
+  recordType,
+  recordId,
+  recordPath,
+  outlookField,
+  itemIndex,
+  coverageFields,
+  coverageAssessmentId,
+  trialIds,
+  supportingEvidenceScope
+}: {
+  recordType: "outlook" | "coverage_status" | "trial_watch";
+  recordId?: string;
+  recordPath?: string;
+  outlookField?: string;
+  itemIndex?: number;
+  coverageFields?: string[];
+  coverageAssessmentId?: string;
+  trialIds?: string[];
+  supportingEvidenceScope?: "field_specific" | "track_outlook";
+}) {
+  return {
+    record_type: recordType,
+    record_id: recordId,
+    record_path: recordPath,
+    outlook_field: outlookField,
+    item_index: itemIndex,
+    coverage_fields: coverageFields,
+    coverage_assessment_id: coverageAssessmentId,
+    coverage_assessment_path: getCoverageAssessmentPath(coverageAssessmentId),
+    trial_ids: trialIds,
+    supporting_evidence_scope: supportingEvidenceScope
+  };
+}
+
+function getEvidenceGapSearchText(row: {
+  id: string;
+  name: string;
+  summary: string;
+  primary_hallmark_name: string;
+  stage_label?: string;
+  read_firmness_label?: string;
+  coverage_confidence_label?: string;
+  observed_research_density_label?: string;
+  gap_items: Array<{ text: string; category_label: string; severity_label: string }>;
+}) {
+  return [
+    row.id,
+    row.name,
+    row.summary,
+    row.primary_hallmark_name,
+    row.stage_label,
+    row.read_firmness_label,
+    row.coverage_confidence_label,
+    row.observed_research_density_label,
+    ...row.gap_items.flatMap((item) => [item.text, item.category_label, item.severity_label])
+  ]
+    .filter((value): value is string => Boolean(value))
+    .join(" ")
+    .toLocaleLowerCase();
+}
+
+function applyEvidenceGapFilters<
+  T extends {
+    searchable_text: string;
+    primary_hallmark_id: string;
+    secondary_hallmark_ids: string[];
+    id: string;
+    stage?: Stage;
+    coverage_confidence?: CoverageConfidence;
+    observed_research_density?: ObservedResearchDensity;
+    severity_tags: EvidenceGapSeverity[];
+  }
+>(rows: T[], filters: EvidenceGapFilters) {
+  const selected = cleanEvidenceGapFilters(filters);
+  const queryNeedle = selected.q.toLocaleLowerCase();
+
+  return rows.filter((row) => {
+    const hallmarkIds = [row.primary_hallmark_id, ...row.secondary_hallmark_ids];
+    const matchesDensity =
+      !selected.research_density ||
+      row.observed_research_density === selected.research_density ||
+      (selected.research_density === "active_or_dense" && isActiveOrDenseGapDensity(row.observed_research_density)) ||
+      (selected.research_density === "sparse_or_emerging" &&
+        isSparseOrEmergingGapDensity(row.observed_research_density));
+
+    return (
+      (!queryNeedle || row.searchable_text.includes(queryNeedle)) &&
+      (!selected.hallmark || hallmarkIds.includes(selected.hallmark)) &&
+      (!selected.track || row.id === selected.track) &&
+      (!selected.stage || row.stage === selected.stage) &&
+      (!selected.coverage_confidence || row.coverage_confidence === selected.coverage_confidence) &&
+      matchesDensity &&
+      (!selected.severity || row.severity_tags.includes(selected.severity))
+    );
+  });
+}
+
+const gapSeverityRank: Record<EvidenceGapSeverity, number> = {
+  high_priority: 5,
+  trial_sensitive: 4,
+  human_endpoint: 3,
+  map_work_needed: 2,
+  sparse_checked: 1
+};
+
+function getMaxGapSeverityRank(tags: EvidenceGapSeverity[]) {
+  return tags.reduce((rank, tag) => Math.max(rank, gapSeverityRank[tag] ?? 0), 0);
+}
+
+function sortEvidenceGapRows<
+  T extends {
+    name: string;
+    stage?: Stage;
+    observed_research_density?: ObservedResearchDensity;
+    high_priority_gap_count: number;
+    severity_tags: EvidenceGapSeverity[];
+  }
+>(rows: T[], sort: EvidenceGapSort) {
+  return [...rows].sort((left, right) => {
+    if (sort === "high_priority") {
+      const highPriorityOrder = right.high_priority_gap_count - left.high_priority_gap_count;
+      if (highPriorityOrder !== 0) {
+        return highPriorityOrder;
+      }
+    }
+
+    if (sort === "density") {
+      const densityOrder = (right.observed_research_density ?? "").localeCompare(left.observed_research_density ?? "");
+      if (densityOrder !== 0) {
+        return densityOrder;
+      }
+    }
+
+    if (sort === "stage") {
+      const stageOrder = (right.stage ?? "").localeCompare(left.stage ?? "");
+      if (stageOrder !== 0) {
+        return stageOrder;
+      }
+    }
+
+    if (sort === "track") {
+      return left.name.localeCompare(right.name);
+    }
+
+    const severityOrder = getMaxGapSeverityRank(right.severity_tags) - getMaxGapSeverityRank(left.severity_tags);
+    if (severityOrder !== 0) {
+      return severityOrder;
+    }
+
+    return left.name.localeCompare(right.name);
+  });
+}
+
+export async function getEvidenceGapsExport(filters: EvidenceGapFilters = {}) {
+  noStore();
+  const selected = cleanEvidenceGapFilters(filters);
+  const evidenceMap = await getEvidenceMapExport();
+  const trialsByTrackId = new Map<string, typeof evidenceMap.trials>();
+  const sourceById = new Map(evidenceMap.sources.map((source) => [source.id, source]));
+  const findingById = new Map(evidenceMap.findings.map((finding) => [finding.id, finding]));
+
+  for (const trial of evidenceMap.trials) {
+    for (const trackId of trial.track_ids) {
+      trialsByTrackId.set(trackId, [...(trialsByTrackId.get(trackId) ?? []), trial]);
+    }
+  }
+
+  const allRows = evidenceMap.tracks.map((track) => {
+    const trackTrials = trialsByTrackId.get(track.id) ?? [];
+    const supportingFindingIds = uniqueSorted([
+      ...(track.outlook?.supporting_finding_ids ?? []),
+      ...track.supporting_evidence.flatMap((item) => item.finding_ids)
+    ]);
+    const supportingSourceIds = uniqueSorted([
+      ...(track.outlook?.supporting_source_ids ?? []),
+      ...track.supporting_evidence.flatMap((item) => item.source_ids),
+      ...supportingFindingIds.map((findingId) => findingById.get(findingId)?.source_id)
+    ]);
+    const sourceRefs = getEvidenceGapSourceRefs(
+      supportingSourceIds.length ? supportingSourceIds : track.source_ids,
+      sourceById
+    );
+    const findingRefs = getEvidenceGapFindingRefs(supportingFindingIds, findingById);
+    const supportingEvidenceRefs = track.supporting_evidence.map((item, index) => ({
+      id: `${track.id}-supporting-evidence-${index + 1}`,
+      label: item.label,
+      outlook_field: item.outlook_field,
+      support_role: item.support_role,
+      conclusion: item.conclusion,
+      rationale: item.rationale,
+      finding_ids: item.finding_ids,
+      source_ids: item.source_ids,
+      source_json_paths: item.source_ids.map(getSourceJsonPath),
+      limitations: item.limitations
+    }));
+    const gapTexts = [
+      ...(track.outlook?.main_evidence_gaps ?? []),
+      ...(track.outlook?.what_would_change_the_rating ?? []),
+      track.outlook?.interpretation ?? ""
+    ].join(" ");
+    const usableMap = hasUsableGapMap(track);
+    const highPriorityGapCount = track.coverage?.high_priority_gap_count ?? 0;
+    const knownGapCount = track.coverage?.known_gap_count ?? 0;
+    const trialSensitive =
+      track.evidence_counts.active_watch_trial_count > 0 &&
+      (track.evidence_counts.posted_result_trial_count === 0 ||
+        /\b(trial|result|endpoint|readout|clinical|human)\b/i.test(gapTexts));
+    const severityTags = new Set<EvidenceGapSeverity>();
+
+    if (highPriorityGapCount > 0) {
+      severityTags.add("high_priority");
+    }
+
+    if (getGapTextMatchesHumanEndpoint(gapTexts)) {
+      severityTags.add("human_endpoint");
+    }
+
+    if (trialSensitive) {
+      severityTags.add("trial_sensitive");
+    }
+
+    if (usableMap && isSparseOrEmergingGapDensity(track.coverage?.observed_research_density)) {
+      severityTags.add("sparse_checked");
+    }
+
+    if (!usableMap) {
+      severityTags.add("map_work_needed");
+    }
+
+    const severityTagList = Array.from(severityTags).sort(
+      (left, right) => gapSeverityRank[right] - gapSeverityRank[left] || left.localeCompare(right)
+    );
+    const outlookRecordPath = getOutlookRecordPath(track.outlook?.outlook_id);
+    const coverageAssessmentId = track.coverage?.last_coverage_assessment_id;
+    const gapItems = [
+      ...(track.outlook?.main_evidence_gaps ?? []).map((text, index) => ({
+        id: `${track.id}-main-gap-${index + 1}`,
+        category: "main_evidence_gap",
+        category_label: "Main evidence gap",
+        severity: getGapTextMatchesHumanEndpoint(text) ? "human_endpoint" : highPriorityGapCount > 0 ? "high_priority" : "map_work_needed",
+        severity_label: getReadableDataLabel(
+          getGapTextMatchesHumanEndpoint(text) ? "human_endpoint" : highPriorityGapCount > 0 ? "high_priority" : "map_work_needed"
+        ),
+        provenance: getEvidenceGapItemProvenance({
+          recordType: "outlook",
+          recordId: track.outlook?.outlook_id,
+          recordPath: outlookRecordPath,
+          outlookField: "main_evidence_gaps",
+          itemIndex: index,
+          supportingEvidenceScope: track.supporting_evidence.some(
+            (item) => item.outlook_field === "main_evidence_gaps"
+          )
+            ? "field_specific"
+            : "track_outlook"
+        }),
+        text
+      })),
+      ...(track.outlook?.what_would_change_the_rating ?? []).map((text, index) => ({
+        id: `${track.id}-rating-change-${index + 1}`,
+        category: "rating_change_criterion",
+        category_label: "Rating-change criterion",
+        severity: getGapTextMatchesHumanEndpoint(text) ? "human_endpoint" : trialSensitive ? "trial_sensitive" : "high_priority",
+        severity_label: getReadableDataLabel(
+          getGapTextMatchesHumanEndpoint(text) ? "human_endpoint" : trialSensitive ? "trial_sensitive" : "high_priority"
+        ),
+        provenance: getEvidenceGapItemProvenance({
+          recordType: "outlook",
+          recordId: track.outlook?.outlook_id,
+          recordPath: outlookRecordPath,
+          outlookField: "what_would_change_the_rating",
+          itemIndex: index,
+          supportingEvidenceScope: "track_outlook"
+        }),
+        text
+      }))
+    ];
+
+    if (knownGapCount > 0 || highPriorityGapCount > 0) {
+      gapItems.push({
+        id: `${track.id}-coverage-gap-summary`,
+        category: "coverage_gap_summary",
+        category_label: "Coverage gap summary",
+        severity: highPriorityGapCount > 0 ? "high_priority" : "map_work_needed",
+        severity_label: getReadableDataLabel(highPriorityGapCount > 0 ? "high_priority" : "map_work_needed"),
+        provenance: getEvidenceGapItemProvenance({
+          recordType: "coverage_status",
+          recordId: "coverage-status.v1",
+          recordPath: "research/state/coverage-status.v1.json",
+          coverageFields: ["known_gap_count", "high_priority_gap_count"],
+          coverageAssessmentId
+        }),
+        text: `${knownGapCount} known coverage gaps; ${highPriorityGapCount} marked high priority.`
+      });
+    }
+
+    if (trialSensitive) {
+      gapItems.push({
+        id: `${track.id}-trial-horizon`,
+        category: "trial_result_horizon",
+        category_label: "Trial result horizon",
+        severity: "trial_sensitive",
+        severity_label: getReadableDataLabel("trial_sensitive"),
+        provenance: getEvidenceGapItemProvenance({
+          recordType: "trial_watch",
+          recordId: track.id,
+          recordPath: `/data/evidence-map.json?track=${encodeURIComponent(track.id)}`,
+          trialIds: trackTrials.filter((trial) => trial.watch_status === "active_watch").map((trial) => trial.id)
+        }),
+        text: `${track.evidence_counts.active_watch_trial_count} active-watch trial records could change interpretation if interpretable results appear.`
+      });
+    }
+
+    const row = {
+      id: track.id,
+      name: track.name,
+      href: track.href,
+      summary: track.summary,
+      primary_hallmark_id: track.primary_hallmark_id,
+      primary_hallmark_name: track.primary_hallmark_name,
+      secondary_hallmark_ids: track.secondary_hallmark_ids,
+      stage: track.outlook?.stage,
+      stage_label: track.outlook?.stage_label,
+      read_firmness: track.outlook?.confidence,
+      read_firmness_label: track.outlook?.read_firmness_label,
+      interpretation: track.outlook?.interpretation,
+      last_updated: track.outlook?.last_updated,
+      coverage_verdict: track.coverage?.coverage_verdict,
+      coverage_verdict_label: track.coverage?.coverage_verdict_label,
+      coverage_confidence: track.coverage?.coverage_confidence,
+      coverage_confidence_label: track.coverage?.coverage_confidence_label,
+      observed_research_density: track.coverage?.observed_research_density,
+      observed_research_density_label: track.coverage?.observed_research_density_label,
+      known_gap_count: knownGapCount,
+      high_priority_gap_count: highPriorityGapCount,
+      usable_map: usableMap,
+      severity_tags: severityTagList,
+      severity_labels: severityTagList.map(getReadableDataLabel),
+      gap_items: gapItems,
+      evidence_counts: track.evidence_counts,
+      provenance: {
+        track_page_path: track.href,
+        track_json_path: `/data/tracks/${encodeURIComponent(track.id)}.json`,
+        gap_json_path: `/data/evidence-gaps.json?track=${encodeURIComponent(track.id)}`,
+        evidence_map_path: `/data/evidence-map.json?track=${encodeURIComponent(track.id)}`,
+        outlook_id: track.outlook?.outlook_id,
+        outlook_record_path: outlookRecordPath,
+        coverage_status_path: "research/state/coverage-status.v1.json",
+        coverage_assessment_id: coverageAssessmentId,
+        coverage_assessment_path: getCoverageAssessmentPath(coverageAssessmentId),
+        supporting_evidence_count: supportingEvidenceRefs.length,
+        supporting_finding_count: findingRefs.length,
+        supporting_source_count: sourceRefs.length,
+        supporting_finding_ids: supportingFindingIds,
+        supporting_source_ids: supportingSourceIds,
+        source_audit_paths: sourceRefs.map((source) => source.json_path),
+        supporting_evidence: supportingEvidenceRefs,
+        finding_refs: findingRefs,
+        source_refs: sourceRefs,
+        trial_ids: trackTrials.map((trial) => trial.id),
+        active_watch_trial_ids: trackTrials
+          .filter((trial) => trial.watch_status === "active_watch")
+          .map((trial) => trial.id)
+      },
+      trial_horizon: {
+        active_watch_trial_count: track.evidence_counts.active_watch_trial_count,
+        late_no_results_trial_count: track.evidence_counts.late_no_results_trial_count,
+        posted_result_trial_count: track.evidence_counts.posted_result_trial_count,
+        trial_ids: trackTrials.map((trial) => trial.id),
+        active_watch_trial_ids: trackTrials
+          .filter((trial) => trial.watch_status === "active_watch")
+          .map((trial) => trial.id)
+      }
+    };
+
+    return {
+      ...row,
+      searchable_text: getEvidenceGapSearchText(row)
+    };
+  });
+  const filteredRows = sortEvidenceGapRows(applyEvidenceGapFilters(allRows, selected), selected.sort as EvidenceGapSort);
+  const visibleRows = selected.limit ? filteredRows.slice(0, selected.limit) : filteredRows;
+  const exportedRows = visibleRows.map(({ searchable_text: _searchableText, ...row }) => row);
+  const savedViewDefinitions: Array<{
+    id: string;
+    label: string;
+    summary: string;
+    filters: EvidenceGapFilters;
+  }> = [
+    {
+      id: "high-priority-active-fields",
+      label: "High-priority gaps in active fields",
+      summary: "Tracks with high-priority gaps where observed research density is active or dense.",
+      filters: { severity: "high_priority", research_density: "active_or_dense", sort: "high_priority" }
+    },
+    {
+      id: "sparse-adequately-mapped",
+      label: "Sparse but adequately mapped",
+      summary: "Tracks where low counts are more likely field scarcity than missing map work.",
+      filters: { severity: "sparse_checked", sort: "density" }
+    },
+    {
+      id: "trial-sensitive-sparse-fields",
+      label: "Trial-sensitive sparse fields",
+      summary: "Sparse or emerging tracks where active-watch trials could clarify whether low counts reflect field infancy.",
+      filters: { severity: "trial_sensitive", research_density: "sparse_or_emerging" }
+    },
+    {
+      id: "trial-sensitive-tracks",
+      label: "Trial-sensitive tracks",
+      summary: "Tracks where active-watch trial readouts could change interpretation.",
+      filters: { severity: "trial_sensitive" }
+    }
+  ];
+  const savedViews = savedViewDefinitions.map((view) => ({
+    ...view,
+    path: getEvidenceGapQueryPath("/gaps", view.filters),
+    data_path: getEvidenceGapQueryPath("/data/evidence-gaps.json", view.filters),
+    count: applyEvidenceGapFilters(allRows, view.filters).length
+  }));
+
+  return {
+    schema_version: "1.0.0",
+    schema_url: "/data/evidence-gaps.schema.json",
+    export_type: "lev_tracker_evidence_gaps",
+    generated_at: new Date().toISOString(),
+    last_public_update: evidenceMap.last_public_update,
+    canonical_path: getEvidenceGapQueryPath("/data/evidence-gaps.json", selected),
+    page_path: getEvidenceGapQueryPath("/gaps", selected),
+    applied_filters: getAppliedEvidenceGapFilters(selected),
+    caveats: [
+      "This export summarizes tracker gap records and rating-change criteria; it is not a claim that a field is scientifically empty.",
+      "Coverage confidence describes tracker map completeness, while observed research density describes how much relevant public work appears to exist.",
+      "Trial-sensitive means a tracked trial result could affect interpretation; trial existence alone is not evidence of benefit."
+    ],
+    summary: {
+      total_track_count: allRows.length,
+      filtered_track_count: filteredRows.length,
+      returned_track_count: exportedRows.length,
+      high_priority_gap_track_count: exportedRows.filter((row) => row.severity_tags.includes("high_priority")).length,
+      human_endpoint_gap_track_count: exportedRows.filter((row) => row.severity_tags.includes("human_endpoint")).length,
+      trial_sensitive_track_count: exportedRows.filter((row) => row.severity_tags.includes("trial_sensitive")).length,
+      sparse_checked_track_count: exportedRows.filter((row) => row.severity_tags.includes("sparse_checked")).length,
+      map_work_needed_track_count: exportedRows.filter((row) => row.severity_tags.includes("map_work_needed")).length,
+      total_known_gap_count: exportedRows.reduce((sum, row) => sum + row.known_gap_count, 0),
+      total_high_priority_gap_count: exportedRows.reduce((sum, row) => sum + row.high_priority_gap_count, 0),
+      rating_change_criterion_count: exportedRows.reduce(
+        (sum, row) => sum + row.gap_items.filter((item) => item.category === "rating_change_criterion").length,
+        0
+      ),
+      source_provenance_track_count: exportedRows.filter((row) => row.provenance.supporting_source_count > 0).length,
+      supporting_evidence_link_count: exportedRows.reduce(
+        (sum, row) => sum + row.provenance.supporting_evidence_count,
+        0
+      ),
+      supporting_finding_ref_count: exportedRows.reduce(
+        (sum, row) => sum + row.provenance.supporting_finding_count,
+        0
+      ),
+      supporting_source_ref_count: exportedRows.reduce((sum, row) => sum + row.provenance.supporting_source_count, 0)
+    },
+    facet_options: {
+      hallmarks: evidenceMap.hallmarks.map((hallmark) => ({ value: hallmark.id, label: hallmark.name })),
+      tracks: evidenceMap.tracks.map((track) => ({ value: track.id, label: track.name })),
+      stages: [
+        "mechanistic_plausibility",
+        "animal_signal",
+        "human_biomarker_signal",
+        "human_functional_benefit",
+        "durable_disease_or_mortality_relevance"
+      ].map((stage) => ({ value: stage, label: getStageLabel(stage as Stage) })),
+      coverage_confidences: [
+        { value: "low", label: getCoverageConfidenceLabel("low") },
+        { value: "moderate", label: getCoverageConfidenceLabel("moderate") },
+        { value: "high", label: getCoverageConfidenceLabel("high") }
+      ],
+      research_densities: [
+        { value: "active_or_dense", label: "Active or dense" },
+        { value: "sparse_or_emerging", label: "Sparse or emerging" },
+        { value: "unknown", label: getResearchDensityLabel("unknown") },
+        { value: "sparse", label: getResearchDensityLabel("sparse") },
+        { value: "emerging", label: getResearchDensityLabel("emerging") },
+        { value: "active", label: getResearchDensityLabel("active") },
+        { value: "dense", label: getResearchDensityLabel("dense") }
+      ],
+      severities: [
+        { value: "high_priority", label: "High priority" },
+        { value: "human_endpoint", label: "Human endpoint" },
+        { value: "trial_sensitive", label: "Trial sensitive" },
+        { value: "sparse_checked", label: "Sparse but checked" },
+        { value: "map_work_needed", label: "Map work needed" }
+      ],
+      sorts: [
+        { value: "severity", label: "Severity" },
+        { value: "high_priority", label: "High-priority gaps" },
+        { value: "density", label: "Research density" },
+        { value: "track", label: "Track" },
+        { value: "stage", label: "Evidence stage" }
+      ]
+    },
+    saved_views: savedViews,
+    tracks: exportedRows
   };
 }
 

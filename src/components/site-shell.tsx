@@ -10,6 +10,7 @@ import {
   Radar,
   Search,
   Sigma,
+  TriangleAlert,
   Waypoints
 } from "lucide-react";
 
@@ -19,6 +20,7 @@ const navItems = [
   { href: "/hallmarks", label: "Hallmarks", icon: Sigma },
   { href: "/tracks", label: "Tracks", icon: Waypoints },
   { href: "/evidence", label: "Evidence", icon: FlaskConical },
+  { href: "/gaps", label: "Gaps", icon: TriangleAlert },
   { href: "/trials", label: "Trials", icon: ClipboardList },
   { href: "/activity", label: "Activity", icon: Activity },
   { href: "/state-of-the-field", label: "Field Reviews", icon: BookOpenText },

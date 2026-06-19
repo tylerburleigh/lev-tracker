@@ -3395,15 +3395,18 @@ time {
   line-height: 1.35;
 }
 
-.evidence-index-table {
+.evidence-index-table,
+.evidence-gaps-table {
   min-width: 1120px;
 }
 
-.evidence-index-table tbody th {
+.evidence-index-table tbody th,
+.evidence-gaps-table tbody th {
   width: 31rem;
 }
 
-.evidence-index-table th p {
+.evidence-index-table th p,
+.evidence-gaps-table th p {
   margin: 8px 0 0;
   color: var(--text-soft);
   font-weight: 500;
@@ -3424,6 +3427,37 @@ time {
 
 .evidence-index-caveats li + li {
   margin-top: 5px;
+}
+
+.evidence-gap-trace,
+.evidence-gap-source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  margin-bottom: 8px;
+}
+
+.evidence-gap-trace {
+  margin-top: 10px;
+}
+
+.evidence-gap-trace a,
+.evidence-gap-source-links a {
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.evidence-gap-source-links a {
+  color: var(--text-soft);
+  font-weight: 700;
+}
+
+.evidence-gap-source-links span {
+  margin-top: 0;
 }
 
 .data-hero-actions {
@@ -5014,11 +5048,13 @@ time {
     display: none;
   }
 
-  .evidence-index-table {
+  .evidence-index-table,
+  .evidence-gaps-table {
     min-width: 0;
   }
 
-  .evidence-index-table thead {
+  .evidence-index-table thead,
+  .evidence-gaps-table thead {
     display: none;
   }
 
@@ -5026,22 +5062,31 @@ time {
   .evidence-index-table tbody,
   .evidence-index-table tr,
   .evidence-index-table th,
-  .evidence-index-table td {
+  .evidence-index-table td,
+  .evidence-gaps-table,
+  .evidence-gaps-table tbody,
+  .evidence-gaps-table tr,
+  .evidence-gaps-table th,
+  .evidence-gaps-table td {
     display: block;
     width: 100%;
   }
 
-  .evidence-index-table tr {
+  .evidence-index-table tr,
+  .evidence-gaps-table tr {
     padding: 14px 0;
   }
 
   .evidence-index-table th,
-  .evidence-index-table td {
+  .evidence-index-table td,
+  .evidence-gaps-table th,
+  .evidence-gaps-table td {
     padding: 8px 0;
     border-top: 0;
   }
 
-  .evidence-index-table tbody th {
+  .evidence-index-table tbody th,
+  .evidence-gaps-table tbody th {
     width: 100%;
   }
 

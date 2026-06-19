@@ -95,7 +95,8 @@ const workflowSteps = [
   "Inspect track.outlook and track.coverage together.",
   "Follow track.supporting_evidence[].finding_ids into findings.",
   "Resolve findings[].source_id in sources before citing or summarizing.",
-  "Open sources[].json_path when you need the source-level provenance graph."
+  "Open sources[].json_path when you need the source-level provenance graph.",
+  "Use gaps.tracks[].provenance.source_refs when auditing what could change a public rating."
 ] as const;
 
 const fieldPathRows = [
@@ -118,6 +119,14 @@ const fieldPathRows = [
   {
     field: "/data/evidence-index.json",
     meaning: "Filterable finding-level index enriched with source, study, intervention, track, and coverage context."
+  },
+  {
+    field: "/data/evidence-gaps.json",
+    meaning: "Track-level gap ledger with outlook gaps, rating-change criteria, coverage gaps, density, and trial horizons."
+  },
+  {
+    field: "gaps.tracks[].provenance",
+    meaning: "Trace paths from each gap row to outlook records, coverage assessments, scoped track exports, findings, source audits, and trial IDs."
   },
   {
     field: "sources[].json_path",
@@ -199,8 +208,16 @@ export default async function DataAccessPage() {
               <span>Open evidence explorer</span>
               <ArrowRight aria-hidden="true" size={16} />
             </Link>
+            <Link className="section-link" href="/gaps">
+              <span>Open gap ledger</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </Link>
             <a className="section-link" href="/data/evidence-index.json">
               <span>Evidence index JSON</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
+            <a className="section-link" href="/data/evidence-gaps.json">
+              <span>Evidence gaps JSON</span>
               <ArrowRight aria-hidden="true" size={16} />
             </a>
             <a className="section-link" href={evidenceMap.schema_url}>
@@ -213,6 +230,10 @@ export default async function DataAccessPage() {
             </a>
             <a className="section-link" href="/data/evidence-index.schema.json">
               <span>Evidence index schema</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
+            <a className="section-link" href="/data/evidence-gaps.schema.json">
+              <span>Evidence gaps schema</span>
               <ArrowRight aria-hidden="true" size={16} />
             </a>
             <a className="section-link" href={datasetCard.schema_urls.source_audit}>
