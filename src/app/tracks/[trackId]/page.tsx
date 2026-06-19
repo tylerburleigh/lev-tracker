@@ -2,28 +2,20 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ExternalLink, FlaskConical, Scale, ShieldCheck, TriangleAlert } from "lucide-react";
 
+import { OutlookAuditPanel } from "@/components/outlook-audit-panel";
 import { PageHero } from "@/components/page-hero";
 import { SiteShell } from "@/components/site-shell";
 import { formatDate } from "@/lib/date";
 import {
   getActivityForTrack,
-  getCoverageConfidenceLabel,
-  getCoverageVerdictLabel,
-  getCoverageVerdictPlainMeaning,
   getFindingWeightLabel,
   getFindingsForTrack,
   getHallmarkById,
   getInterventionsByIds,
-  getMomentumLabel,
-  getMomentumPlainMeaning,
   getOverallLastUpdated,
   getRecentChangesForSubject,
   getReadFirmnessLabel,
-  getReadFirmnessPlainMeaning,
-  getResearchDensityLabel,
-  getResearchDensityPlainMeaning,
   getStageLabel,
-  getStagePlainMeaning,
   getStudiesForTrack,
   getTrackEvidenceSupport,
   getTrackById,
@@ -221,88 +213,12 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
       </PageHero>
 
       <section className="band">
-        <div className="page-shell hallmark-outlook-grid">
-          <article className="detail-panel">
-            <div className="panel-header panel-header--stacked">
-              <span className="section-kicker">Interpretation note</span>
-              <h2>{coverage.stage ? getStageLabel(coverage.stage) : "Not rated yet"}</h2>
-            </div>
-            <p>{coverage.interpretation}</p>
-            {coverage.stage ? (
-              <div className="plain-meaning">
-                <strong>Plain meaning</strong>
-                <p>{getStagePlainMeaning(coverage.stage)}</p>
-              </div>
-            ) : null}
-            <div className="detail-list">
-              <div>
-                <strong>Momentum</strong>
-                <p>{coverage.momentum ? getMomentumLabel(coverage.momentum) : "Uncertain"}</p>
-                {coverage.momentum ? <span>{getMomentumPlainMeaning(coverage.momentum)}</span> : null}
-              </div>
-              <div>
-                <strong>How firm is this read?</strong>
-                <p>{coverage.confidence ? getReadFirmnessLabel(coverage.confidence) : "Not rated yet"}</p>
-                {coverage.confidence ? <span>{getReadFirmnessPlainMeaning(coverage.confidence)}</span> : null}
-              </div>
-              <div>
-                <strong>Map completeness</strong>
-                <p>{coverage.coverageVerdict ? getCoverageVerdictLabel(coverage.coverageVerdict) : "Not assessed yet"}</p>
-                {coverage.coverageVerdict ? <span>{getCoverageVerdictPlainMeaning(coverage.coverageVerdict)}</span> : null}
-              </div>
-              <div>
-                <strong>Research density</strong>
-                <p>
-                  {coverage.observedResearchDensity
-                    ? getResearchDensityLabel(coverage.observedResearchDensity)
-                    : "Not assessed yet"}
-                </p>
-                {coverage.observedResearchDensity ? (
-                  <span>{getResearchDensityPlainMeaning(coverage.observedResearchDensity)}</span>
-                ) : null}
-              </div>
-            </div>
-          </article>
-          <article className="detail-panel detail-panel--muted">
-            <div className="panel-header panel-header--stacked">
-              <span className="section-kicker">Evidence gaps and questions</span>
-              <h2>What would change this?</h2>
-            </div>
-            <div className="detail-list">
-              <div>
-                <strong>Main evidence gap</strong>
-                <p>{coverage.evidenceGap ?? "Not enough promoted evidence has been summarized for this track yet."}</p>
-              </div>
-              <div>
-                <strong>Strongest current evidence</strong>
-                <p>{coverage.strongestEvidence ?? "No strongest evidence summary has been promoted yet."}</p>
-              </div>
-              <div>
-                <strong>Open rating questions</strong>
-                {coverage.whatWouldChangeTheRating?.length ? (
-                  <ul className="bullet-list">
-                    {coverage.whatWouldChangeTheRating.slice(0, 3).map((criterion) => (
-                      <li key={criterion}>{criterion}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p>No explicit rating-change criteria have been promoted yet.</p>
-                )}
-              </div>
-              {coverage.coverageConfidence || coverage.knownGapCount !== undefined ? (
-                <div>
-                  <strong>Coverage read</strong>
-                  <p>
-                    {coverage.coverageConfidence ? getCoverageConfidenceLabel(coverage.coverageConfidence) : "Map confidence not recorded"}
-                    {coverage.knownGapCount !== undefined ? ` with ${coverage.knownGapCount} known gap${coverage.knownGapCount === 1 ? "" : "s"}` : ""}
-                    {coverage.highPriorityGapCount ? `, including ${coverage.highPriorityGapCount} high-priority gap${coverage.highPriorityGapCount === 1 ? "" : "s"}` : ""}
-                    .
-                  </p>
-                </div>
-              ) : null}
-            </div>
-          </article>
-          <aside className="detail-panel detail-panel--muted">
+        <OutlookAuditPanel coverage={coverage} evidenceSupport={evidenceSupport} />
+      </section>
+
+      <section className="band band--compact">
+        <div className="page-shell track-scope-strip">
+          <aside className="detail-panel detail-panel--muted track-scope-panel">
             <div className="panel-header panel-header--stacked">
               <span className="section-kicker">Track scope</span>
               <h2>{taxonomyTrack.exemplar_interventions?.length ?? 0} examples</h2>

@@ -198,6 +198,10 @@ time {
   padding: 32px 0;
 }
 
+.band--compact {
+  padding-top: 0;
+}
+
 .band--hero {
   padding-top: 32px;
 }
@@ -3319,6 +3323,74 @@ time {
   color: var(--text-soft);
 }
 
+.expert-track-scan {
+  display: grid;
+  gap: 14px;
+}
+
+.expert-track-table-wrap {
+  overflow-x: auto;
+  border-top: 1px solid var(--text);
+  border-bottom: 1px solid var(--paper-rule);
+}
+
+.expert-track-table {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: collapse;
+}
+
+.expert-track-table th,
+.expert-track-table td {
+  padding: 12px 10px;
+  border-top: 1px solid var(--paper-rule);
+  text-align: left;
+  vertical-align: top;
+  font-size: 0.9rem;
+  line-height: 1.42;
+}
+
+.expert-track-table thead th {
+  border-top: 0;
+  color: var(--text-soft);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.expert-track-table tbody th {
+  width: 19rem;
+  font-weight: 500;
+}
+
+.expert-track-table tbody tr:hover {
+  background: rgba(255, 253, 246, 0.64);
+}
+
+.expert-track-table a,
+.expert-track-table td {
+  color: var(--text);
+}
+
+.expert-track-table a {
+  display: grid;
+  gap: 2px;
+}
+
+.expert-track-table strong {
+  font-size: 0.98rem;
+  line-height: 1.25;
+}
+
+.expert-track-table span {
+  display: block;
+  margin-top: 3px;
+  color: var(--text-soft);
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
 .trial-watch-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -5785,6 +5857,14 @@ textarea {
   border-bottom: 1px solid var(--paper-rule);
 }
 
+.outlook-audit-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) minmax(0, 0.95fr);
+  gap: 0;
+  border-top: 1px solid var(--text);
+  border-bottom: 1px solid var(--paper-rule);
+}
+
 .hallmark-outlook-grid > .detail-panel {
   border: 0;
   border-left: 1px solid var(--paper-rule);
@@ -5795,6 +5875,104 @@ textarea {
 
 .hallmark-outlook-grid > .detail-panel:first-child {
   border-left: 0;
+}
+
+.outlook-audit-grid > .detail-panel {
+  border: 0;
+  border-left: 1px solid var(--paper-rule);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.outlook-audit-grid > .detail-panel:first-child {
+  border-left: 0;
+}
+
+.outlook-audit-panel {
+  display: grid;
+  align-content: start;
+  gap: 18px;
+}
+
+.outlook-audit-panel--primary {
+  padding-right: 22px;
+}
+
+.outlook-audit-metrics {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 18px;
+}
+
+.outlook-audit-criteria {
+  display: grid;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid var(--paper-rule);
+}
+
+.outlook-audit-criteria ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-soft);
+}
+
+.outlook-audit-limit-list {
+  display: grid;
+  gap: 14px;
+}
+
+.outlook-audit-limit {
+  display: grid;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--paper-rule);
+}
+
+.outlook-audit-limit:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.outlook-audit-limit > div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.outlook-audit-limit p {
+  color: var(--text);
+}
+
+.outlook-audit-limit span:not(.micro-badge) {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+.track-scope-strip {
+  border-top: 1px solid var(--paper-rule);
+}
+
+.track-scope-panel {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.28fr) minmax(0, 1fr);
+  gap: 22px;
+  padding: 18px 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.track-scope-panel .bullet-list {
+  margin: 0;
+}
+
+.track-scope-panel .evidence-scope-note {
+  grid-column: 2;
 }
 
 .detail-panel--muted {
@@ -5982,6 +6160,27 @@ textarea {
 }
 
 @media (max-width: 1180px) {
+  .outlook-audit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .outlook-audit-grid > .detail-panel {
+    border-left: 0;
+    border-top: 1px solid var(--paper-rule);
+  }
+
+  .outlook-audit-grid > .detail-panel:first-child {
+    border-top: 0;
+  }
+
+  .track-scope-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .track-scope-panel .evidence-scope-note {
+    grid-column: auto;
+  }
+
   .report-duo,
   .report-timeline,
   .hallmark-stage-row,
@@ -6069,6 +6268,23 @@ textarea {
   .trials-table__row,
   .tracks-table__row {
     gap: 10px;
+  }
+
+  .tracks-table__head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .tracks-table__row {
+    grid-template-columns: 1fr;
+  }
+
+  .tracks-table__signals {
+    justify-items: start;
+  }
+
+  .tracks-table__badges {
+    justify-content: flex-start;
   }
 
   .hallmark-report-row__signals {

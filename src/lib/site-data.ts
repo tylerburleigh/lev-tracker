@@ -262,7 +262,6 @@ export type TrackCoverage = {
   thinCoverage?: boolean;
   knownGapCount?: number;
   highPriorityGapCount?: number;
-  nextCoverageAction?: string;
   lastCoverageAssessmentId?: string;
   lastCoverageAssessedAt?: string;
   outlookId?: string;
@@ -279,7 +278,6 @@ type CoverageStatusTrack = {
   observed_research_density?: ObservedResearchDensity;
   known_gap_count?: number;
   high_priority_gap_count?: number;
-  next_coverage_action?: string;
   last_coverage_assessment_id?: string;
   last_coverage_assessed_at?: string;
 };
@@ -1912,7 +1910,6 @@ export async function getTrackCoverage(trackId: string): Promise<TrackCoverage> 
       observedResearchDensity: planningCoverage?.observed_research_density,
       knownGapCount: planningCoverage?.known_gap_count,
       highPriorityGapCount: planningCoverage?.high_priority_gap_count,
-      nextCoverageAction: planningCoverage?.next_coverage_action,
       lastCoverageAssessmentId: planningCoverage?.last_coverage_assessment_id,
       lastCoverageAssessedAt: planningCoverage?.last_coverage_assessed_at
     };
@@ -1934,7 +1931,6 @@ export async function getTrackCoverage(trackId: string): Promise<TrackCoverage> 
     thinCoverage: trackOutlook.tags?.includes("thin_coverage"),
     knownGapCount: planningCoverage?.known_gap_count,
     highPriorityGapCount: planningCoverage?.high_priority_gap_count,
-    nextCoverageAction: planningCoverage?.next_coverage_action,
     lastCoverageAssessmentId: planningCoverage?.last_coverage_assessment_id,
     lastCoverageAssessedAt: planningCoverage?.last_coverage_assessed_at,
     supportingFindingIds: trackOutlook.supporting_finding_ids,

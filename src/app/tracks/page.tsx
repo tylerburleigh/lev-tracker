@@ -15,11 +15,17 @@ import { formatDate } from "@/lib/date";
 import {
   type Momentum,
   type Stage,
+  getCoverageConfidenceLabel,
+  getCoverageVerdictLabel,
   getHallmarkById,
   getHallmarks,
+  getFindingsForTrack,
   getMomentumLabel,
   getOverallLastUpdated,
+  getReadFirmnessLabel,
+  getResearchDensityLabel,
   getStageLabel,
+  getTrials,
   getTracks,
   getTrackCoverage
 } from "@/lib/site-data";
@@ -95,6 +101,20 @@ function getMomentumTone(momentum?: Momentum) {
   }
 }
 
+function isHumanEvidenceTier(evidenceTier: string) {
+  return [
+    "human_biomarker",
+    "human_function",
+    "human_clinical_outcome",
+    "mortality_or_lifespan",
+    "durable_disease_or_mortality"
+  ].includes(evidenceTier);
+}
+
+function getLimitingFindingCount(findings: Awaited<ReturnType<typeof getFindingsForTrack>>) {
+  return findings.filter((finding) => finding.direction === "null" || finding.direction === "negative").length;
+}
+
 export default async function TracksIndexPage({ searchParams }: TracksIndexPageProps) {
   const resolvedSearchParams = (await searchParams) ?? {};
   const selected = {
@@ -106,11 +126,14 @@ export default async function TracksIndexPage({ searchParams }: TracksIndexPageP
   const queryNeedle = normalizeNeedle(selected.query);
   const tracks = getTracks();
   const hallmarks = getHallmarks();
-  const [lastUpdated, coverageEntries] = await Promise.all([
+  const [lastUpdated, coverageEntries, trials, findingEntries] = await Promise.all([
     getOverallLastUpdated(),
-    Promise.all(tracks.map(async (track) => [track.id, await getTrackCoverage(track.id)] as const))
+    Promise.all(tracks.map(async (track) => [track.id, await getTrackCoverage(track.id)] as const)),
+    getTrials(),
+    Promise.all(tracks.map(async (track) => [track.id, await getFindingsForTrack(track.id)] as const))
   ]);
   const coverageByTrackId = new Map(coverageEntries);
+  const findingsByTrackId = new Map(findingEntries);
   const filteredTracks = tracks.filter((track) => {
     const coverage = coverageByTrackId.get(track.id);
     if (!coverage) return false;
@@ -146,6 +169,21 @@ export default async function TracksIndexPage({ searchParams }: TracksIndexPageP
       (!selected.stage || coverage.stage === selected.stage) &&
       (!selected.momentum || coverage.momentum === selected.momentum)
     );
+  });
+  const expertRows = filteredTracks.map((track) => {
+    const findings = findingsByTrackId.get(track.id) ?? [];
+    const trackTrials = trials.filter((trial) => trial.trackIds.includes(track.id));
+
+    return {
+      track,
+      hallmark: getHallmarkById(track.primaryHallmarkId),
+      coverage: coverageByTrackId.get(track.id),
+      humanFindingCount: findings.filter((finding) => isHumanEvidenceTier(finding.evidence_tier)).length,
+      limitingFindingCount: getLimitingFindingCount(findings),
+      activeWatchCount: trackTrials.filter((trial) => trial.watchStatus === "active_watch").length,
+      lateNoResultsCount: trackTrials.filter((trial) => trial.watchStatus === "late_no_results").length,
+      postedResultsCount: trackTrials.filter((trial) => trial.resultsStatus === "posted").length
+    };
   });
 
   return (
@@ -286,6 +324,74 @@ export default async function TracksIndexPage({ searchParams }: TracksIndexPageP
               </Link>
             </div>
           ) : null}
+        </div>
+      </section>
+
+      <section className="band band--alt">
+        <div className="page-shell expert-track-scan">
+          <div className="tracks-table__head">
+            <div>
+              <span className="section-kicker">Expert scan</span>
+              <h2>Compare evidence and map quality</h2>
+            </div>
+            <span>{expertRows.length} filtered tracks</span>
+          </div>
+          <div className="expert-track-table-wrap">
+            <table className="expert-track-table">
+              <thead>
+                <tr>
+                  <th scope="col">Track</th>
+                  <th scope="col">Stage</th>
+                  <th scope="col">Read</th>
+                  <th scope="col">Map</th>
+                  <th scope="col">Density</th>
+                  <th scope="col">Gaps</th>
+                  <th scope="col">Human</th>
+                  <th scope="col">Trials</th>
+                </tr>
+              </thead>
+              <tbody>
+                {expertRows.map(({ track, hallmark, coverage, humanFindingCount, limitingFindingCount, activeWatchCount, lateNoResultsCount, postedResultsCount }) => {
+                  if (!coverage) return null;
+
+                  return (
+                    <tr key={track.id}>
+                      <th scope="row">
+                        <Link href={`/tracks/${track.id}`}>
+                          <strong>{track.name}</strong>
+                          <span>{hallmark?.name ?? track.primaryHallmarkId}</span>
+                        </Link>
+                      </th>
+                      <td>{coverage.stage ? getStageLabel(coverage.stage) : "Not rated"}</td>
+                      <td>
+                        {coverage.confidence ? getReadFirmnessLabel(coverage.confidence) : "Not rated"}
+                        {coverage.momentum ? <span>{getMomentumLabel(coverage.momentum)}</span> : null}
+                      </td>
+                      <td>
+                        {coverage.coverageVerdict ? getCoverageVerdictLabel(coverage.coverageVerdict) : "Not assessed"}
+                        {coverage.coverageConfidence ? <span>{getCoverageConfidenceLabel(coverage.coverageConfidence)}</span> : null}
+                      </td>
+                      <td>{coverage.observedResearchDensity ? getResearchDensityLabel(coverage.observedResearchDensity) : "Not assessed"}</td>
+                      <td>
+                        {coverage.knownGapCount ?? 0}
+                        {coverage.highPriorityGapCount ? <span>{coverage.highPriorityGapCount} high priority</span> : null}
+                      </td>
+                      <td>
+                        {humanFindingCount}
+                        {limitingFindingCount ? <span>{limitingFindingCount} null/negative</span> : null}
+                      </td>
+                      <td>
+                        {activeWatchCount} active
+                        <span>
+                          {postedResultsCount} posted / {lateNoResultsCount} late
+                        </span>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
