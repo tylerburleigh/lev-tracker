@@ -20,6 +20,10 @@ import { getEvidenceMapExport, getOverallLastUpdated } from "@/lib/site-data";
 
 const exportContractRows = [
   {
+    field: "schema_url",
+    meaning: "Stable public JSON Schema URL for validating the export shape."
+  },
+  {
     field: "dataset_card",
     meaning:
       "Machine-readable guidance for intended uses, unsuitable uses, interpretation rules, provenance, retrieval order, and limitations."
@@ -178,6 +182,14 @@ export default async function DataAccessPage() {
               <span>Open coverage dashboard</span>
               <ArrowRight aria-hidden="true" size={16} />
             </Link>
+            <a className="section-link" href={evidenceMap.schema_url}>
+              <span>Full export schema</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
+            <a className="section-link" href={datasetCard.schema_urls.scoped_track_export}>
+              <span>Scoped export schema</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
           </div>
           <div className="data-stat-grid" aria-label="Evidence-map export counts">
             {statItems.map((item) => (

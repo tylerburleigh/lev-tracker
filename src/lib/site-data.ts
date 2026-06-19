@@ -2498,7 +2498,11 @@ export async function getEvidenceMapExport() {
 
   const datasetCard = {
     name: "LEV Tracker evidence map",
-    version: "1.1.0",
+    version: "1.2.0",
+    schema_urls: {
+      full_export: "/data/evidence-map.schema.json",
+      scoped_track_export: "/data/scoped-evidence-map.schema.json"
+    },
     unit_of_analysis:
       "Hallmarks organize aging biology, tracks organize intervention families, and findings are the atomic evidence statements linked to sources, studies, and trials.",
     update_cadence:
@@ -2566,6 +2570,7 @@ export async function getEvidenceMapExport() {
 
   return {
     schema_version: datasetCard.version,
+    schema_url: datasetCard.schema_urls.full_export,
     export_type: "lev_tracker_evidence_map",
     generated_at: new Date().toISOString(),
     last_public_update: lastUpdated,
@@ -2832,7 +2837,8 @@ export async function getScopedEvidenceMapExport(trackId: string) {
     .sort((left, right) => left.canonical_order - right.canonical_order);
 
   return {
-    schema_version: "1.0.0",
+    schema_version: "1.1.0",
+    schema_url: evidenceMap.dataset_card.schema_urls.scoped_track_export,
     export_type: "lev_tracker_scoped_evidence_map",
     generated_at: evidenceMap.generated_at,
     last_public_update: evidenceMap.last_public_update,

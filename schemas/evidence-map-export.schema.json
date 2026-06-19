@@ -1,0 +1,1068 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "/data/evidence-map.schema.json",
+  "title": "LEV Tracker full evidence-map export",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "schema_url",
+    "export_type",
+    "generated_at",
+    "last_public_update",
+    "canonical_path",
+    "dataset_card",
+    "caveats",
+    "legends",
+    "summary",
+    "hallmarks",
+    "tracks",
+    "findings",
+    "sources",
+    "trials",
+    "source_file_patterns"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.2.0"
+    },
+    "schema_url": {
+      "const": "/data/evidence-map.schema.json"
+    },
+    "export_type": {
+      "const": "lev_tracker_evidence_map"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_public_update": {
+      "type": "string"
+    },
+    "canonical_path": {
+      "const": "/data/evidence-map.json"
+    },
+    "dataset_card": {
+      "$ref": "#/$defs/datasetCard"
+    },
+    "caveats": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "legends": {
+      "$ref": "#/$defs/legends"
+    },
+    "summary": {
+      "$ref": "#/$defs/fullSummary"
+    },
+    "hallmarks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/hallmark"
+      }
+    },
+    "tracks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/track"
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/finding"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "trials": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/trial"
+      }
+    },
+    "source_file_patterns": {
+      "$ref": "#/$defs/sourceFilePatterns"
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "stringMap": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "datasetCard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "version",
+        "schema_urls",
+        "unit_of_analysis",
+        "update_cadence",
+        "intended_uses",
+        "unsuitable_uses",
+        "interpretation_rules",
+        "provenance_model",
+        "recommended_retrieval_order",
+        "example_requests",
+        "known_limitations"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "const": "1.2.0"
+        },
+        "schema_urls": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "full_export",
+            "scoped_track_export"
+          ],
+          "properties": {
+            "full_export": {
+              "const": "/data/evidence-map.schema.json"
+            },
+            "scoped_track_export": {
+              "const": "/data/scoped-evidence-map.schema.json"
+            }
+          }
+        },
+        "unit_of_analysis": {
+          "type": "string"
+        },
+        "update_cadence": {
+          "type": "string"
+        },
+        "intended_uses": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "unsuitable_uses": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "interpretation_rules": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "provenance_model": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "recommended_retrieval_order": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "example_requests": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/exampleRequest"
+          }
+        },
+        "known_limitations": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    },
+    "exampleRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "method",
+        "path",
+        "returns"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "method": {
+          "const": "GET"
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^/data/"
+        },
+        "returns": {
+          "type": "string"
+        }
+      }
+    },
+    "legendItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "label",
+        "plain_meaning"
+      ],
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "plain_meaning": {
+          "type": "string"
+        }
+      }
+    },
+    "legends": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_stage",
+        "momentum",
+        "read_firmness",
+        "coverage_verdict",
+        "observed_research_density"
+      ],
+      "properties": {
+        "evidence_stage": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/legendItem"
+          }
+        },
+        "momentum": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/legendItem"
+          }
+        },
+        "read_firmness": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/legendItem"
+          }
+        },
+        "coverage_verdict": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/legendItem"
+          }
+        },
+        "observed_research_density": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/legendItem"
+          }
+        }
+      }
+    },
+    "fullSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hallmark_count",
+        "track_count",
+        "track_outlook_count",
+        "coverage_assessed_track_count",
+        "adequate_or_strong_map_count",
+        "active_or_dense_research_count",
+        "source_count",
+        "study_count",
+        "finding_count",
+        "intervention_count",
+        "registry_linked_trial_count",
+        "active_watch_trial_count",
+        "late_no_results_trial_count",
+        "posted_result_trial_count"
+      ],
+      "properties": {
+        "hallmark_count": {
+          "$ref": "#/$defs/count"
+        },
+        "track_count": {
+          "$ref": "#/$defs/count"
+        },
+        "track_outlook_count": {
+          "$ref": "#/$defs/count"
+        },
+        "coverage_assessed_track_count": {
+          "$ref": "#/$defs/count"
+        },
+        "adequate_or_strong_map_count": {
+          "$ref": "#/$defs/count"
+        },
+        "active_or_dense_research_count": {
+          "$ref": "#/$defs/count"
+        },
+        "source_count": {
+          "$ref": "#/$defs/count"
+        },
+        "study_count": {
+          "$ref": "#/$defs/count"
+        },
+        "finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "intervention_count": {
+          "$ref": "#/$defs/count"
+        },
+        "registry_linked_trial_count": {
+          "$ref": "#/$defs/count"
+        },
+        "active_watch_trial_count": {
+          "$ref": "#/$defs/count"
+        },
+        "late_no_results_trial_count": {
+          "$ref": "#/$defs/count"
+        },
+        "posted_result_trial_count": {
+          "$ref": "#/$defs/count"
+        }
+      }
+    },
+    "scopedSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hallmark_count",
+        "finding_count",
+        "study_count",
+        "source_count",
+        "intervention_count",
+        "registry_linked_trial_count",
+        "active_watch_trial_count",
+        "posted_result_trial_count"
+      ],
+      "properties": {
+        "hallmark_count": {
+          "$ref": "#/$defs/count"
+        },
+        "finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "study_count": {
+          "$ref": "#/$defs/count"
+        },
+        "source_count": {
+          "$ref": "#/$defs/count"
+        },
+        "intervention_count": {
+          "$ref": "#/$defs/count"
+        },
+        "registry_linked_trial_count": {
+          "$ref": "#/$defs/count"
+        },
+        "active_watch_trial_count": {
+          "$ref": "#/$defs/count"
+        },
+        "posted_result_trial_count": {
+          "$ref": "#/$defs/count"
+        }
+      }
+    },
+    "outlook": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "outlook_id",
+        "stage",
+        "stage_label",
+        "momentum",
+        "momentum_label",
+        "confidence",
+        "read_firmness_label",
+        "interpretation",
+        "main_evidence_gaps",
+        "strongest_current_evidence",
+        "last_updated"
+      ],
+      "properties": {
+        "outlook_id": {
+          "type": "string"
+        },
+        "stage": {
+          "type": "string"
+        },
+        "stage_label": {
+          "type": "string"
+        },
+        "momentum": {
+          "type": "string"
+        },
+        "momentum_label": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "string"
+        },
+        "read_firmness_label": {
+          "type": "string"
+        },
+        "interpretation": {
+          "type": "string"
+        },
+        "main_evidence_gaps": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "strongest_current_evidence": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "what_would_change_the_rating": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "supporting_finding_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "supporting_source_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "last_updated": {
+          "type": "string"
+        }
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "known_gap_count",
+        "high_priority_gap_count"
+      ],
+      "properties": {
+        "coverage_verdict": {
+          "type": "string"
+        },
+        "coverage_verdict_label": {
+          "type": "string"
+        },
+        "coverage_confidence": {
+          "type": "string"
+        },
+        "coverage_confidence_label": {
+          "type": "string"
+        },
+        "observed_research_density": {
+          "type": "string"
+        },
+        "observed_research_density_label": {
+          "type": "string"
+        },
+        "known_gap_count": {
+          "$ref": "#/$defs/count"
+        },
+        "high_priority_gap_count": {
+          "$ref": "#/$defs/count"
+        },
+        "last_coverage_assessment_id": {
+          "type": "string"
+        },
+        "last_coverage_assessed_at": {
+          "type": "string"
+        }
+      }
+    },
+    "hallmark": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "href",
+        "canonical_order",
+        "description",
+        "track_ids",
+        "outlook"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        },
+        "canonical_order": {
+          "type": "integer"
+        },
+        "description": {
+          "type": "string"
+        },
+        "track_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "outlook": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/outlook"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "track": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "href",
+        "summary",
+        "primary_hallmark_id",
+        "primary_hallmark_name",
+        "secondary_hallmark_ids",
+        "search_aliases",
+        "exemplar_interventions",
+        "outlook",
+        "coverage",
+        "evidence_counts",
+        "source_ids",
+        "supporting_evidence"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "primary_hallmark_id": {
+          "type": "string"
+        },
+        "primary_hallmark_name": {
+          "type": "string"
+        },
+        "secondary_hallmark_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "search_aliases": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "exemplar_interventions": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "outlook": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/outlook"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "coverage": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/coverage"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidence_counts": {
+          "$ref": "#/$defs/evidenceCounts"
+        },
+        "source_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "supporting_evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/supportingEvidence"
+          }
+        }
+      }
+    },
+    "evidenceCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finding_count",
+        "human_finding_count",
+        "positive_finding_count",
+        "null_or_negative_finding_count",
+        "source_count",
+        "study_count",
+        "intervention_count",
+        "registry_linked_trial_count",
+        "active_watch_trial_count",
+        "late_no_results_trial_count",
+        "posted_result_trial_count"
+      ],
+      "properties": {
+        "finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "human_finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "positive_finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "null_or_negative_finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "source_count": {
+          "$ref": "#/$defs/count"
+        },
+        "study_count": {
+          "$ref": "#/$defs/count"
+        },
+        "intervention_count": {
+          "$ref": "#/$defs/count"
+        },
+        "registry_linked_trial_count": {
+          "$ref": "#/$defs/count"
+        },
+        "active_watch_trial_count": {
+          "$ref": "#/$defs/count"
+        },
+        "late_no_results_trial_count": {
+          "$ref": "#/$defs/count"
+        },
+        "posted_result_trial_count": {
+          "$ref": "#/$defs/count"
+        }
+      }
+    },
+    "supportingEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "support_role",
+        "conclusion",
+        "rationale",
+        "finding_ids",
+        "source_ids",
+        "limitations"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "outlook_field": {
+          "type": "string"
+        },
+        "support_role": {
+          "type": "string"
+        },
+        "conclusion": {
+          "type": "string"
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "finding_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "source_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "limitations": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "statement",
+        "source_id",
+        "intervention_ids",
+        "track_ids",
+        "hallmark_ids",
+        "endpoint_category",
+        "direction",
+        "evidence_tier",
+        "is_human_evidence",
+        "confidence",
+        "caveats"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "statement": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "source_id": {
+          "type": "string"
+        },
+        "study_id": {
+          "type": "string"
+        },
+        "intervention_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "track_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "hallmark_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "endpoint_category": {
+          "type": "string"
+        },
+        "direction": {
+          "type": "string"
+        },
+        "evidence_tier": {
+          "type": "string"
+        },
+        "is_human_evidence": {
+          "type": "boolean"
+        },
+        "confidence": {
+          "type": "string"
+        },
+        "population_or_model": {
+          "type": "string"
+        },
+        "time_horizon": {
+          "type": "string"
+        },
+        "quantitative_note": {
+          "type": "string"
+        },
+        "caveats": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "source_type",
+        "authors",
+        "registry_ids",
+        "urls"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "short_name": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "source_type": {
+          "type": "string"
+        },
+        "authors": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "venue": {
+          "type": "string"
+        },
+        "year": {
+          "type": "integer"
+        },
+        "published_on": {
+          "type": "string"
+        },
+        "doi": {
+          "type": "string"
+        },
+        "pmid": {
+          "type": "string"
+        },
+        "registry_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "urls": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    },
+    "trial": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "href",
+        "status",
+        "status_label",
+        "registry_ids",
+        "endpoint_categories",
+        "track_ids",
+        "results_status",
+        "results_status_label",
+        "watch_status",
+        "watch_status_label"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "status_label": {
+          "type": "string"
+        },
+        "phase": {
+          "type": "string"
+        },
+        "phase_label": {
+          "type": "string"
+        },
+        "population": {
+          "type": "string"
+        },
+        "sample_size": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "registry_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "endpoint_categories": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "track_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "results_status": {
+          "type": "string"
+        },
+        "results_status_label": {
+          "type": "string"
+        },
+        "watch_status": {
+          "type": "string"
+        },
+        "watch_status_label": {
+          "type": "string"
+        },
+        "completion_date": {
+          "type": "string"
+        },
+        "completion_date_kind": {
+          "type": "string"
+        },
+        "registry_last_updated": {
+          "type": "string"
+        },
+        "registry_last_checked": {
+          "type": "string"
+        },
+        "expected_results_window": {
+          "type": "string"
+        },
+        "horizon_note": {
+          "type": "string"
+        },
+        "why_it_matters": {
+          "type": "string"
+        }
+      }
+    },
+    "study": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "study_type",
+        "status",
+        "intervention_ids",
+        "hallmark_ids",
+        "track_ids",
+        "endpoint_categories",
+        "source_ids",
+        "registry_ids"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "study_type": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "phase": {
+          "type": "string"
+        },
+        "population": {
+          "type": "string"
+        },
+        "model_system": {
+          "type": "string"
+        },
+        "sample_size": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "intervention_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "hallmark_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "track_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "endpoint_categories": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "source_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "registry_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "dates": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "trial_details": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+    "intervention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "aliases",
+        "modalities",
+        "target_hallmark_ids",
+        "secondary_hallmark_ids",
+        "track_ids",
+        "development_stage",
+        "linked_study_ids",
+        "linked_finding_ids",
+        "risk_flags"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "short_name": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "aliases": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "modalities": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "target_hallmark_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "secondary_hallmark_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "track_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "mechanism_summary": {
+          "type": "string"
+        },
+        "development_stage": {
+          "type": "string"
+        },
+        "linked_study_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "linked_finding_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "risk_flags": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "evidence_snapshot": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+    "sourceFilePatterns": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "taxonomy",
+        "public_records",
+        "planning_records"
+      ],
+      "properties": {
+        "taxonomy": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "public_records": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "planning_records": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    }
+  }
+}

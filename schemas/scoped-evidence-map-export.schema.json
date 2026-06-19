@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "/data/scoped-evidence-map.schema.json",
+  "title": "LEV Tracker scoped track evidence-map export",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "schema_url",
+    "export_type",
+    "generated_at",
+    "last_public_update",
+    "scope",
+    "dataset_card",
+    "caveats",
+    "legends",
+    "summary",
+    "track",
+    "hallmarks",
+    "findings",
+    "studies",
+    "sources",
+    "interventions",
+    "trials",
+    "source_file_patterns"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.1.0"
+    },
+    "schema_url": {
+      "const": "/data/scoped-evidence-map.schema.json"
+    },
+    "export_type": {
+      "const": "lev_tracker_scoped_evidence_map"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_public_update": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "track_id",
+        "track_name",
+        "canonical_path",
+        "query_path",
+        "full_export_path"
+      ],
+      "properties": {
+        "type": {
+          "const": "track"
+        },
+        "track_id": {
+          "type": "string"
+        },
+        "track_name": {
+          "type": "string"
+        },
+        "canonical_path": {
+          "type": "string",
+          "pattern": "^/data/tracks/.+\\.json$"
+        },
+        "query_path": {
+          "type": "string",
+          "pattern": "^/data/evidence-map\\.json\\?track=.+"
+        },
+        "full_export_path": {
+          "const": "/data/evidence-map.json"
+        }
+      }
+    },
+    "dataset_card": {
+      "$ref": "/data/evidence-map.schema.json#/$defs/datasetCard"
+    },
+    "caveats": {
+      "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+    },
+    "legends": {
+      "$ref": "/data/evidence-map.schema.json#/$defs/legends"
+    },
+    "summary": {
+      "$ref": "/data/evidence-map.schema.json#/$defs/scopedSummary"
+    },
+    "track": {
+      "$ref": "/data/evidence-map.schema.json#/$defs/track"
+    },
+    "hallmarks": {
+      "type": "array",
+      "items": {
+        "$ref": "/data/evidence-map.schema.json#/$defs/hallmark"
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "$ref": "/data/evidence-map.schema.json#/$defs/finding"
+      }
+    },
+    "studies": {
+      "type": "array",
+      "items": {
+        "$ref": "/data/evidence-map.schema.json#/$defs/study"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "/data/evidence-map.schema.json#/$defs/source"
+      }
+    },
+    "interventions": {
+      "type": "array",
+      "items": {
+        "$ref": "/data/evidence-map.schema.json#/$defs/intervention"
+      }
+    },
+    "trials": {
+      "type": "array",
+      "items": {
+        "$ref": "/data/evidence-map.schema.json#/$defs/trial"
+      }
+    },
+    "source_file_patterns": {
+      "$ref": "/data/evidence-map.schema.json#/$defs/sourceFilePatterns"
+    }
+  }
+}
