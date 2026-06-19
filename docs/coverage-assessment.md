@@ -21,6 +21,25 @@ The goal is not to count every paper. The goal is to document whether the curren
 - `adequate`: enough exists to support the current public claim with clear boundaries, but some important source-completeness gaps remain.
 - `strong`: major positive, limiting, human, preclinical, safety, trial, review, and seminal-anchor categories are represented or explicitly ruled out.
 
+## Coverage Confidence And Research Density
+
+Coverage assessments should separate "how well we checked" from "how much relevant research exists."
+
+Use `coverage_confidence` for confidence in the source map itself:
+
+- `low`: the assessment still has major source-search or category gaps, so absence of evidence should not be interpreted strongly.
+- `moderate`: the main categories needed for the current public claim were checked, but meaningful completeness gaps remain.
+- `high`: major positive, limiting, human, preclinical, safety, trial, review, and taxonomy-boundary categories were checked or explicitly ruled out.
+
+Use `observed_research_density` for how much relevant research was found after the coverage pass:
+
+- `sparse`: the checked literature appears small for this aging-relevant claim.
+- `emerging`: several relevant sources exist, but the area is still early or uneven.
+- `active`: enough relevant work exists to compare branches, limits, and human or registry signals.
+- `dense`: the evidence base is large enough that interpretation, not discovery of basic sources, is the main task.
+
+Do not use `sparse` just because the current public claim is weak. A field can be active or dense and still have weak aging-relevant evidence if the work is mostly mechanistic, animal-stage, disease-specific, biomarker-heavy, short-term, null, or safety-limited. If coverage is still `thin`, leave density unset unless the research pass directly established that the field itself is sparse.
+
 ## Evidence Categories
 
 Each assessment records category-level coverage:
@@ -67,9 +86,10 @@ Do not update it for every small source or activity record. The artifact should 
 3. Assign category-level coverage based on what the current public claim depends on.
 4. List `covered_source_ids[]` and `covered_finding_ids[]` that anchor the assessment.
 5. Record known coverage, evidence, or operational gaps.
-6. Set `next_coverage_action` to the smallest useful next step.
-7. Set `next_recommended_mode` to `surveillance` when normal delta monitoring should continue, or `coverage_repair` when source-completeness gaps should be repaired before ordinary surveillance.
-8. Run `npm run validate:records`.
+6. Set `coverage_confidence` and `observed_research_density` when the pass has enough search context to distinguish incomplete coverage from a genuinely sparse field.
+7. Set `next_coverage_action` to the smallest useful next step.
+8. Set `next_recommended_mode` to `surveillance` when normal delta monitoring should continue, or `coverage_repair` when source-completeness gaps should be repaired before ordinary surveillance.
+9. Run `npm run validate:records`.
 
 ## Planning Integration
 
@@ -77,6 +97,8 @@ Coverage assessments are validated internal artifacts. `npm run sync:research-pl
 
 - latest coverage assessment ID
 - coverage verdict
+- coverage confidence
+- observed research density
 - known gap count
 - high-priority known gap count
 - next coverage action

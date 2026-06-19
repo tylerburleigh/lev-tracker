@@ -17,6 +17,9 @@ export type Stage =
 
 export type Momentum = "accelerating" | "steady" | "mixed" | "stalled" | "uncertain";
 export type Confidence = "low" | "moderate" | "high";
+export type CoverageVerdict = "thin" | "adequate" | "strong";
+export type CoverageConfidence = "low" | "moderate" | "high";
+export type ObservedResearchDensity = "unknown" | "sparse" | "emerging" | "active" | "dense";
 export type SubjectType = "overall" | "hallmark" | "track" | "intervention";
 export type EvidenceReviewLane =
   | "source_fidelity"
@@ -248,17 +251,41 @@ export type TrackCoverage = {
   stage?: Stage;
   momentum?: Momentum;
   confidence?: Confidence;
+  coverageVerdict?: CoverageVerdict;
+  coverageConfidence?: CoverageConfidence;
+  observedResearchDensity?: ObservedResearchDensity;
   evidenceGap?: string;
   strongestEvidence?: string;
   whatWouldChangeTheRating?: string[];
   interpretation: string;
   lastUpdated: string;
   thinCoverage?: boolean;
+  knownGapCount?: number;
+  highPriorityGapCount?: number;
+  nextCoverageAction?: string;
+  lastCoverageAssessmentId?: string;
+  lastCoverageAssessedAt?: string;
   outlookId?: string;
   supportingFindingIds?: string[];
   supportingEvidence?: OutlookEvidenceLinkFile[];
   supportingSourceIds?: string[];
   supportingSources?: SourceRecord[];
+};
+
+type CoverageStatusTrack = {
+  track_id: string;
+  coverage_verdict?: CoverageVerdict;
+  coverage_confidence?: CoverageConfidence;
+  observed_research_density?: ObservedResearchDensity;
+  known_gap_count?: number;
+  high_priority_gap_count?: number;
+  next_coverage_action?: string;
+  last_coverage_assessment_id?: string;
+  last_coverage_assessed_at?: string;
+};
+
+type CoverageStatusFile = {
+  tracks: CoverageStatusTrack[];
 };
 
 export type EvidenceSupportCard = {
@@ -811,6 +838,40 @@ const readFirmnessPlainMeanings: Record<Confidence, string> = {
   high: "The public evidence is consistent enough that this read is less likely to move quickly."
 };
 
+const coverageVerdictLabels: Record<CoverageVerdict, string> = {
+  thin: "Needs more checking",
+  adequate: "Adequate map",
+  strong: "Strong map"
+};
+
+const coverageVerdictPlainMeanings: Record<CoverageVerdict, string> = {
+  thin: "Important evidence categories have not been checked deeply enough yet.",
+  adequate: "The map is good enough to support the current public claim, with known gaps still visible.",
+  strong: "Major supporting, limiting, safety, trial, review, and boundary categories have been checked or explicitly ruled out."
+};
+
+const coverageConfidenceLabels: Record<CoverageConfidence, string> = {
+  low: "Low map confidence",
+  moderate: "Moderate map confidence",
+  high: "High map confidence"
+};
+
+const researchDensityLabels: Record<ObservedResearchDensity, string> = {
+  unknown: "Density unclear",
+  sparse: "Sparse field",
+  emerging: "Emerging field",
+  active: "Active field",
+  dense: "Dense field"
+};
+
+const researchDensityPlainMeanings: Record<ObservedResearchDensity, string> = {
+  unknown: "Coverage is not yet good enough to tell whether little evidence exists or the tracker has not looked enough.",
+  sparse: "The checked literature appears small for this aging-relevant claim.",
+  emerging: "Several relevant sources exist, but the area is still early or uneven.",
+  active: "There is enough relevant work to compare branches, limits, and human or registry signals.",
+  dense: "The area has a large enough evidence base that interpretation, not discovery of basic sources, is the main task."
+};
+
 const findingWeightLabels: Record<Confidence, string> = {
   low: "Limited weight",
   moderate: "Moderate weight",
@@ -900,9 +961,11 @@ const candidateStatusTransitions: Record<CandidateStatus, CandidateStatus[]> = {
 };
 
 const dataRoot = path.join(process.cwd(), "data");
+const researchRoot = path.join(process.cwd(), "research");
 const hallmarkInsightsPath = path.join(dataRoot, "content", "hallmark-insights.json");
 const editionsRoot = path.join(dataRoot, "content", "state-of-the-field");
 const currentLevStoryPath = path.join(dataRoot, "content", "current-lev-story", "current.json");
+const coverageStatusPath = path.join(researchRoot, "state", "coverage-status.v1.json");
 
 async function readJsonFile<T>(filePath: string): Promise<T> {
   return JSON.parse(await fs.readFile(filePath, "utf8")) as T;
@@ -1737,6 +1800,18 @@ const loadStateOfFieldEditions = cache(async () => {
 
 const loadCurrentLevStory = cache(async () => readJsonFile<CurrentLevStory>(currentLevStoryPath));
 
+const loadCoverageStatus = cache(async () => {
+  try {
+    return await readJsonFile<CoverageStatusFile>(coverageStatusPath);
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      return undefined;
+    }
+
+    throw error;
+  }
+});
+
 export function getHallmarks(): Hallmark[] {
   return hallmarksTaxonomy.hallmarks;
 }
@@ -1817,7 +1892,12 @@ export async function getHallmarkOutlooks(): Promise<OutlookRecord[]> {
 
 export async function getTrackCoverage(trackId: string): Promise<TrackCoverage> {
   noStore();
-  const [outlooks, sources] = await Promise.all([loadOutlooks(), loadSources()]);
+  const [outlooks, sources, coverageStatus] = await Promise.all([
+    loadOutlooks(),
+    loadSources(),
+    loadCoverageStatus()
+  ]);
+  const planningCoverage = coverageStatus?.tracks.find((item) => item.track_id === trackId);
   const trackOutlook = outlooks.find(
     (item) => item.subject_type === "track" && item.subject_id === trackId
   );
@@ -1826,7 +1906,15 @@ export async function getTrackCoverage(trackId: string): Promise<TrackCoverage> 
     return {
       interpretation: "This track is listed because it is part of the aging biology map, but the site has not yet published a track-level evidence summary for it.",
       lastUpdated: "2026-05-01",
-      thinCoverage: true
+      thinCoverage: true,
+      coverageVerdict: planningCoverage?.coverage_verdict,
+      coverageConfidence: planningCoverage?.coverage_confidence,
+      observedResearchDensity: planningCoverage?.observed_research_density,
+      knownGapCount: planningCoverage?.known_gap_count,
+      highPriorityGapCount: planningCoverage?.high_priority_gap_count,
+      nextCoverageAction: planningCoverage?.next_coverage_action,
+      lastCoverageAssessmentId: planningCoverage?.last_coverage_assessment_id,
+      lastCoverageAssessedAt: planningCoverage?.last_coverage_assessed_at
     };
   }
 
@@ -1835,12 +1923,20 @@ export async function getTrackCoverage(trackId: string): Promise<TrackCoverage> 
     stage: trackOutlook.evidence_stage,
     momentum: trackOutlook.momentum,
     confidence: trackOutlook.confidence,
+    coverageVerdict: planningCoverage?.coverage_verdict,
+    coverageConfidence: planningCoverage?.coverage_confidence,
+    observedResearchDensity: planningCoverage?.observed_research_density,
     evidenceGap: trackOutlook.main_evidence_gaps?.[0],
     strongestEvidence: trackOutlook.strongest_current_evidence?.[0],
     whatWouldChangeTheRating: trackOutlook.what_would_change_the_rating,
     interpretation: trackOutlook.interpretation_note,
     lastUpdated: trackOutlook.last_updated,
     thinCoverage: trackOutlook.tags?.includes("thin_coverage"),
+    knownGapCount: planningCoverage?.known_gap_count,
+    highPriorityGapCount: planningCoverage?.high_priority_gap_count,
+    nextCoverageAction: planningCoverage?.next_coverage_action,
+    lastCoverageAssessmentId: planningCoverage?.last_coverage_assessment_id,
+    lastCoverageAssessedAt: planningCoverage?.last_coverage_assessed_at,
     supportingFindingIds: trackOutlook.supporting_finding_ids,
     supportingEvidence: trackOutlook.supporting_evidence,
     supportingSourceIds: trackOutlook.supporting_source_ids,
@@ -2196,6 +2292,26 @@ export function getReadFirmnessLabel(confidence: Confidence) {
 
 export function getReadFirmnessPlainMeaning(confidence: Confidence) {
   return readFirmnessPlainMeanings[confidence];
+}
+
+export function getCoverageVerdictLabel(verdict: CoverageVerdict) {
+  return coverageVerdictLabels[verdict];
+}
+
+export function getCoverageVerdictPlainMeaning(verdict: CoverageVerdict) {
+  return coverageVerdictPlainMeanings[verdict];
+}
+
+export function getCoverageConfidenceLabel(confidence: CoverageConfidence) {
+  return coverageConfidenceLabels[confidence];
+}
+
+export function getResearchDensityLabel(density: ObservedResearchDensity) {
+  return researchDensityLabels[density];
+}
+
+export function getResearchDensityPlainMeaning(density: ObservedResearchDensity) {
+  return researchDensityPlainMeanings[density];
 }
 
 export function getFindingWeightLabel(confidence: Confidence) {

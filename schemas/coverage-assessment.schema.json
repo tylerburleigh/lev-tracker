@@ -79,6 +79,23 @@
         "strong"
       ]
     },
+    "coverage_confidence": {
+      "description": "How confident the curator is that source-map coverage is good enough to interpret weak or absent evidence, independent of the scientific evidence strength.",
+      "enum": [
+        "low",
+        "moderate",
+        "high"
+      ]
+    },
+    "observed_research_density": {
+      "description": "How much relevant research was found after the coverage pass, independent of whether that research is strong enough to support a better public rating.",
+      "enum": [
+        "sparse",
+        "emerging",
+        "active",
+        "dense"
+      ]
+    },
     "summary": {
       "type": "string"
     },

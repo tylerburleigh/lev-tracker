@@ -7,6 +7,9 @@ import { SiteShell } from "@/components/site-shell";
 import { formatDate } from "@/lib/date";
 import {
   getActivityForTrack,
+  getCoverageConfidenceLabel,
+  getCoverageVerdictLabel,
+  getCoverageVerdictPlainMeaning,
   getFindingWeightLabel,
   getFindingsForTrack,
   getHallmarkById,
@@ -17,6 +20,8 @@ import {
   getRecentChangesForSubject,
   getReadFirmnessLabel,
   getReadFirmnessPlainMeaning,
+  getResearchDensityLabel,
+  getResearchDensityPlainMeaning,
   getStageLabel,
   getStagePlainMeaning,
   getStudiesForTrack,
@@ -240,6 +245,22 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
                 <p>{coverage.confidence ? getReadFirmnessLabel(coverage.confidence) : "Not rated yet"}</p>
                 {coverage.confidence ? <span>{getReadFirmnessPlainMeaning(coverage.confidence)}</span> : null}
               </div>
+              <div>
+                <strong>Map completeness</strong>
+                <p>{coverage.coverageVerdict ? getCoverageVerdictLabel(coverage.coverageVerdict) : "Not assessed yet"}</p>
+                {coverage.coverageVerdict ? <span>{getCoverageVerdictPlainMeaning(coverage.coverageVerdict)}</span> : null}
+              </div>
+              <div>
+                <strong>Research density</strong>
+                <p>
+                  {coverage.observedResearchDensity
+                    ? getResearchDensityLabel(coverage.observedResearchDensity)
+                    : "Not assessed yet"}
+                </p>
+                {coverage.observedResearchDensity ? (
+                  <span>{getResearchDensityPlainMeaning(coverage.observedResearchDensity)}</span>
+                ) : null}
+              </div>
             </div>
           </article>
           <article className="detail-panel detail-panel--muted">
@@ -268,6 +289,17 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
                   <p>No explicit rating-change criteria have been promoted yet.</p>
                 )}
               </div>
+              {coverage.coverageConfidence || coverage.knownGapCount !== undefined ? (
+                <div>
+                  <strong>Coverage read</strong>
+                  <p>
+                    {coverage.coverageConfidence ? getCoverageConfidenceLabel(coverage.coverageConfidence) : "Map confidence not recorded"}
+                    {coverage.knownGapCount !== undefined ? ` with ${coverage.knownGapCount} known gap${coverage.knownGapCount === 1 ? "" : "s"}` : ""}
+                    {coverage.highPriorityGapCount ? `, including ${coverage.highPriorityGapCount} high-priority gap${coverage.highPriorityGapCount === 1 ? "" : "s"}` : ""}
+                    .
+                  </p>
+                </div>
+              ) : null}
             </div>
           </article>
           <aside className="detail-panel detail-panel--muted">

@@ -145,6 +145,68 @@ function chooseNextMode(latestSession, latestCoverageAssessment, hasPublishedBas
   return coverageMode ?? sessionMode ?? fallbackMode;
 }
 
+function deriveCoverageConfidence(assessment) {
+  if (!assessment) {
+    return undefined;
+  }
+
+  if (assessment.coverage_confidence) {
+    return assessment.coverage_confidence;
+  }
+
+  if (assessment.coverage_verdict === "strong") {
+    return "high";
+  }
+
+  if (assessment.coverage_verdict === "adequate") {
+    return "moderate";
+  }
+
+  return "low";
+}
+
+function hasMeaningfulCoverage(category) {
+  return category.coverage_level === "adequate" || category.coverage_level === "strong";
+}
+
+function deriveObservedResearchDensity(assessment) {
+  if (!assessment) {
+    return undefined;
+  }
+
+  if (assessment.observed_research_density) {
+    return assessment.observed_research_density;
+  }
+
+  if (assessment.coverage_verdict === "thin") {
+    return "unknown";
+  }
+
+  const sourceCount = assessment.covered_source_ids?.length ?? 0;
+  const findingCount = assessment.covered_finding_ids?.length ?? 0;
+  const meaningfulCategoryCount = (assessment.evidence_categories ?? []).filter(hasMeaningfulCoverage).length;
+  const hasHumanCoverage = (assessment.evidence_categories ?? []).some(
+    (category) => category.category === "human_interventional" && hasMeaningfulCoverage(category)
+  );
+  const hasRegistryCoverage = (assessment.evidence_categories ?? []).some(
+    (category) => category.category === "active_trials_registries" && hasMeaningfulCoverage(category)
+  );
+
+  if (sourceCount <= 4 && findingCount <= 4 && meaningfulCategoryCount <= 4) {
+    return "sparse";
+  }
+
+  if (sourceCount <= 9 || meaningfulCategoryCount <= 5) {
+    return "emerging";
+  }
+
+  if (sourceCount >= 20 && findingCount >= 20 && meaningfulCategoryCount >= 8 && hasHumanCoverage && hasRegistryCoverage) {
+    return "dense";
+  }
+
+  return "active";
+}
+
 async function main() {
   const now = new Date();
   const hallmarksTaxonomy = await readJson("taxonomies/hallmarks-of-aging.v1.json");
@@ -278,6 +340,8 @@ async function main() {
         last_coverage_assessment_id: latestCoverageAssessment?.id,
         last_coverage_assessed_at: latestCoverageAssessment?.assessed_at,
         coverage_verdict: latestCoverageAssessment?.coverage_verdict,
+        coverage_confidence: deriveCoverageConfidence(latestCoverageAssessment),
+        observed_research_density: deriveObservedResearchDensity(latestCoverageAssessment),
         known_gap_count: latestCoverageAssessment?.known_gaps?.length,
         high_priority_gap_count: latestCoverageAssessment?.known_gaps?.filter((gap) => gap.priority === "high").length,
         next_coverage_action: latestCoverageAssessment?.next_coverage_action,

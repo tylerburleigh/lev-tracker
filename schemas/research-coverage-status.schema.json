@@ -248,6 +248,22 @@
               "strong"
             ]
           },
+          "coverage_confidence": {
+            "enum": [
+              "low",
+              "moderate",
+              "high"
+            ]
+          },
+          "observed_research_density": {
+            "enum": [
+              "unknown",
+              "sparse",
+              "emerging",
+              "active",
+              "dense"
+            ]
+          },
           "known_gap_count": {
             "type": "integer",
             "minimum": 0
