@@ -116,6 +116,10 @@ const fieldPathRows = [
     meaning: "Source-level provenance for each evidence statement."
   },
   {
+    field: "/data/evidence-index.json",
+    meaning: "Filterable finding-level index enriched with source, study, intervention, track, and coverage context."
+  },
+  {
     field: "sources[].json_path",
     meaning: "Focused source audit export with linked findings, studies, track outlook links, and retrieval URLs."
   },
@@ -191,12 +195,24 @@ export default async function DataAccessPage() {
               <span>Open coverage dashboard</span>
               <ArrowRight aria-hidden="true" size={16} />
             </Link>
+            <Link className="section-link" href="/evidence">
+              <span>Open evidence explorer</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </Link>
+            <a className="section-link" href="/data/evidence-index.json">
+              <span>Evidence index JSON</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
             <a className="section-link" href={evidenceMap.schema_url}>
               <span>Full export schema</span>
               <ArrowRight aria-hidden="true" size={16} />
             </a>
             <a className="section-link" href={datasetCard.schema_urls.scoped_track_export}>
               <span>Scoped export schema</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
+            <a className="section-link" href="/data/evidence-index.schema.json">
+              <span>Evidence index schema</span>
               <ArrowRight aria-hidden="true" size={16} />
             </a>
             <a className="section-link" href={datasetCard.schema_urls.source_audit}>

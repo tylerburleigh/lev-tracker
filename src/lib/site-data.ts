@@ -130,6 +130,27 @@ export type SourceAuditOutlookLink = {
   limitations: string[];
 };
 
+export type EvidenceIndexSort = "strength" | "newest" | "source_reuse" | "track" | "confidence";
+export type EvidenceIndexSpeciesFilter = "human" | "animal" | "nonhuman";
+export type EvidenceIndexSourceReuseFilter = "multi_track" | "single_track";
+
+export type EvidenceIndexFilters = {
+  q?: string;
+  hallmark?: string;
+  track?: string;
+  intervention?: string;
+  tier?: string;
+  direction?: string;
+  confidence?: Confidence | "";
+  endpoint?: string;
+  source_type?: string;
+  species?: EvidenceIndexSpeciesFilter | "";
+  source_reuse?: EvidenceIndexSourceReuseFilter | "";
+  coverage_confidence?: CoverageConfidence | "";
+  sort?: EvidenceIndexSort | "";
+  limit?: number;
+};
+
 export type TrialCompletionDateKind = "actual" | "estimated" | "unknown";
 export type TrialResultsStatus = "posted" | "not_posted" | "pending" | "unknown";
 export type TrialResultsTone = "mint" | "gold" | "blue" | "slate";
@@ -2906,6 +2927,204 @@ function formatTrialForEvidenceMap(trial: TrialSummary) {
   };
 }
 
+function getEvidenceSpecies(finding: Pick<FindingRecord, "evidence_tier" | "population_or_model">) {
+  if (
+    finding.evidence_tier === "animal" ||
+    /\b(animal|mouse|mice|murine|rat|rats|worm|worms|drosophila|fly|flies|macaque|monkey|primate)\b/i.test(
+      finding.population_or_model ?? ""
+    )
+  ) {
+    return "animal";
+  }
+
+  if (isHumanEvidenceTier(finding.evidence_tier)) {
+    return "human";
+  }
+
+  return "nonhuman";
+}
+
+function cleanEvidenceIndexFilters(filters: EvidenceIndexFilters = {}) {
+  const limit = filters.limit && Number.isFinite(filters.limit) ? Math.max(1, Math.min(1000, filters.limit)) : undefined;
+
+  return {
+    q: filters.q?.trim() ?? "",
+    hallmark: filters.hallmark ?? "",
+    track: filters.track ?? "",
+    intervention: filters.intervention ?? "",
+    tier: filters.tier ?? "",
+    direction: filters.direction ?? "",
+    confidence: filters.confidence ?? "",
+    endpoint: filters.endpoint ?? "",
+    source_type: filters.source_type ?? "",
+    species: filters.species ?? "",
+    source_reuse: filters.source_reuse ?? "",
+    coverage_confidence: filters.coverage_confidence ?? "",
+    sort: filters.sort || "strength",
+    limit
+  };
+}
+
+function getEvidenceIndexQueryPath(path: string, filters: EvidenceIndexFilters) {
+  const params = new URLSearchParams();
+  const cleaned = cleanEvidenceIndexFilters(filters);
+
+  for (const [key, value] of Object.entries(cleaned)) {
+    if (!value || key === "sort" && value === "strength") {
+      continue;
+    }
+
+    params.set(key, String(value));
+  }
+
+  const query = params.toString();
+  return query ? `${path}?${query}` : path;
+}
+
+function getEvidenceIndexSearchText(row: {
+  id: string;
+  name: string;
+  statement: string;
+  summary?: string;
+  endpoint_category: string;
+  direction: string;
+  evidence_tier: string;
+  confidence: string;
+  population_or_model?: string;
+  time_horizon?: string;
+  quantitative_note?: string;
+  caveats: string[];
+  source?: { id: string; name: string; short_name?: string; source_type: string; venue?: string; year?: number };
+  study?: { id: string; name: string; summary?: string; population?: string; model_system?: string };
+  interventions: Array<{ id: string; name: string; short_name?: string }>;
+  track_contexts: Array<{ id: string; name: string; primary_hallmark_name: string }>;
+  hallmarks: Array<{ id: string; name: string }>;
+}) {
+  return [
+    row.id,
+    row.name,
+    row.statement,
+    row.summary,
+    row.endpoint_category,
+    row.direction,
+    row.evidence_tier,
+    row.confidence,
+    row.population_or_model,
+    row.time_horizon,
+    row.quantitative_note,
+    row.source?.id,
+    row.source?.name,
+    row.source?.short_name,
+    row.source?.source_type,
+    row.source?.venue,
+    row.source?.year?.toString(),
+    row.study?.id,
+    row.study?.name,
+    row.study?.summary,
+    row.study?.population,
+    row.study?.model_system,
+    ...row.interventions.flatMap((intervention) => [intervention.id, intervention.name, intervention.short_name]),
+    ...row.track_contexts.flatMap((track) => [track.id, track.name, track.primary_hallmark_name]),
+    ...row.hallmarks.flatMap((hallmark) => [hallmark.id, hallmark.name]),
+    ...row.caveats
+  ]
+    .filter((value): value is string => Boolean(value))
+    .join(" ")
+    .toLocaleLowerCase();
+}
+
+function applyEvidenceIndexFilters<
+  T extends {
+    searchable_text: string;
+    hallmark_ids: string[];
+    track_ids: string[];
+    intervention_ids: string[];
+    evidence_tier: string;
+    direction: string;
+    confidence: Confidence;
+    endpoint_category: string;
+    source_type?: string;
+    species: string;
+    source_reuse_track_count: number;
+    track_contexts: Array<{ coverage_confidence?: CoverageConfidence }>;
+  }
+>(rows: T[], filters: EvidenceIndexFilters) {
+  const selected = cleanEvidenceIndexFilters(filters);
+  const queryNeedle = selected.q.toLocaleLowerCase();
+
+  return rows.filter((row) => {
+    return (
+      (!queryNeedle || row.searchable_text.includes(queryNeedle)) &&
+      (!selected.hallmark || row.hallmark_ids.includes(selected.hallmark)) &&
+      (!selected.track || row.track_ids.includes(selected.track)) &&
+      (!selected.intervention || row.intervention_ids.includes(selected.intervention)) &&
+      (!selected.tier || row.evidence_tier === selected.tier) &&
+      (!selected.direction || row.direction === selected.direction) &&
+      (!selected.confidence || row.confidence === selected.confidence) &&
+      (!selected.endpoint || row.endpoint_category === selected.endpoint) &&
+      (!selected.source_type || row.source_type === selected.source_type) &&
+      (!selected.species || row.species === selected.species) &&
+      (!selected.coverage_confidence ||
+        row.track_contexts.some((track) => track.coverage_confidence === selected.coverage_confidence)) &&
+      (!selected.source_reuse ||
+        (selected.source_reuse === "multi_track"
+          ? row.source_reuse_track_count > 1
+          : row.source_reuse_track_count <= 1))
+    );
+  });
+}
+
+function sortEvidenceIndexRows<
+  T extends {
+    name: string;
+    evidence_strength_score: number;
+    confidence: Confidence;
+    source_year?: number;
+    source_published_on?: string;
+    source_reuse_track_count: number;
+    track_contexts: Array<{ name: string }>;
+  }
+>(rows: T[], sort: EvidenceIndexSort) {
+  return [...rows].sort((left, right) => {
+    if (sort === "newest") {
+      const leftDate = left.source_published_on ?? left.source_year?.toString() ?? "";
+      const rightDate = right.source_published_on ?? right.source_year?.toString() ?? "";
+      const dateOrder = rightDate.localeCompare(leftDate);
+      if (dateOrder !== 0) {
+        return dateOrder;
+      }
+    }
+
+    if (sort === "source_reuse") {
+      const reuseOrder = right.source_reuse_track_count - left.source_reuse_track_count;
+      if (reuseOrder !== 0) {
+        return reuseOrder;
+      }
+    }
+
+    if (sort === "track") {
+      const trackOrder = (left.track_contexts[0]?.name ?? "").localeCompare(right.track_contexts[0]?.name ?? "");
+      if (trackOrder !== 0) {
+        return trackOrder;
+      }
+    }
+
+    if (sort === "confidence") {
+      const confidenceOrder = confidenceRank[right.confidence] - confidenceRank[left.confidence];
+      if (confidenceOrder !== 0) {
+        return confidenceOrder;
+      }
+    }
+
+    const strengthOrder = right.evidence_strength_score - left.evidence_strength_score;
+    if (strengthOrder !== 0) {
+      return strengthOrder;
+    }
+
+    return left.name.localeCompare(right.name);
+  });
+}
+
 export async function getScopedEvidenceMapExport(trackId: string) {
   noStore();
   const normalizedTrackId = normalizeScopedTrackId(trackId);
@@ -2999,6 +3218,311 @@ export async function getScopedEvidenceMapExport(trackId: string) {
     interventions: trackInterventions.map(formatInterventionForEvidenceMap),
     trials: trackTrials,
     source_file_patterns: evidenceMap.source_file_patterns
+  };
+}
+
+function getEvidenceFilterOption(value: string, label?: string) {
+  return {
+    value,
+    label: label ?? getReadableDataLabel(value)
+  };
+}
+
+function uniqueEvidenceFilterOptions(values: Array<{ value: string; label?: string }>) {
+  return Array.from(new Map(values.filter((item) => item.value).map((item) => [item.value, getEvidenceFilterOption(item.value, item.label)])).values()).sort(
+    (left, right) => left.label.localeCompare(right.label)
+  );
+}
+
+function getAppliedEvidenceFilters(filters: ReturnType<typeof cleanEvidenceIndexFilters>) {
+  return Object.fromEntries(
+    Object.entries(filters)
+      .filter(([key, value]) => Boolean(value) && !(key === "sort" && value === "strength"))
+      .map(([key, value]) => [key, String(value)])
+  );
+}
+
+export async function getEvidenceIndexExport(filters: EvidenceIndexFilters = {}) {
+  noStore();
+  const selected = cleanEvidenceIndexFilters(filters);
+  const [evidenceMap, studies, interventions] = await Promise.all([
+    getEvidenceMapExport(),
+    loadStudies(),
+    loadInterventions()
+  ]);
+  const studyById = new Map(studies.map((study) => [study.id, study]));
+  const interventionById = new Map(interventions.map((intervention) => [intervention.id, intervention]));
+  const sourceById = new Map(evidenceMap.sources.map((source) => [source.id, source]));
+  const trackById = new Map(evidenceMap.tracks.map((track) => [track.id, track]));
+  const hallmarkById = new Map(evidenceMap.hallmarks.map((hallmark) => [hallmark.id, hallmark]));
+  const sourceTrackIds = new Map<string, Set<string>>();
+
+  const addSourceTrackIds = (sourceId: string | undefined, trackIds: string[]) => {
+    if (!sourceId) {
+      return;
+    }
+
+    const existing = sourceTrackIds.get(sourceId) ?? new Set<string>();
+    trackIds.forEach((trackId) => existing.add(trackId));
+    sourceTrackIds.set(sourceId, existing);
+  };
+
+  for (const finding of evidenceMap.findings) {
+    addSourceTrackIds(finding.source_id, finding.track_ids);
+  }
+
+  for (const study of studies) {
+    for (const sourceId of study.source_ids) {
+      addSourceTrackIds(sourceId, study.track_ids ?? []);
+    }
+  }
+
+  const allRows = evidenceMap.findings.map((finding) => {
+    const source = sourceById.get(finding.source_id);
+    const study = finding.study_id ? studyById.get(finding.study_id) : undefined;
+    const rowInterventions = (finding.intervention_ids ?? [])
+      .map((interventionId) => interventionById.get(interventionId))
+      .filter((intervention): intervention is InterventionRecord => Boolean(intervention))
+      .map(formatInterventionForEvidenceMap);
+    const trackContexts = (finding.track_ids ?? [])
+      .map((trackId) => trackById.get(trackId))
+      .filter((track): track is NonNullable<typeof track> => Boolean(track))
+      .map((track) => ({
+        id: track.id,
+        name: track.name,
+        href: track.href,
+        primary_hallmark_id: track.primary_hallmark_id,
+        primary_hallmark_name: track.primary_hallmark_name,
+        stage: track.outlook?.stage,
+        stage_label: track.outlook?.stage_label,
+        confidence: track.outlook?.confidence,
+        read_firmness_label: track.outlook?.read_firmness_label,
+        coverage_verdict: track.coverage?.coverage_verdict,
+        coverage_verdict_label: track.coverage?.coverage_verdict_label,
+        coverage_confidence: track.coverage?.coverage_confidence,
+        coverage_confidence_label: track.coverage?.coverage_confidence_label,
+        observed_research_density: track.coverage?.observed_research_density,
+        observed_research_density_label: track.coverage?.observed_research_density_label
+      }));
+    const hallmarks = finding.hallmark_ids
+      .map((hallmarkId) => hallmarkById.get(hallmarkId))
+      .filter((hallmark): hallmark is NonNullable<typeof hallmark> => Boolean(hallmark))
+      .map((hallmark) => ({
+        id: hallmark.id,
+        name: hallmark.name,
+        href: hallmark.href
+      }));
+    const sourceReuseTrackIds = Array.from(sourceTrackIds.get(finding.source_id) ?? []).sort((left, right) =>
+      left.localeCompare(right)
+    );
+    const species = getEvidenceSpecies(finding);
+    const row = {
+      ...finding,
+      href: `/findings/${finding.id}`,
+      evidence_tier_label: getReadableDataLabel(finding.evidence_tier),
+      direction_label: getReadableDataLabel(finding.direction),
+      endpoint_category_label: getReadableDataLabel(finding.endpoint_category),
+      read_firmness_label: getFindingWeightLabel(finding.confidence),
+      evidence_strength_score: getFindingStrength(finding),
+      species,
+      species_label: getReadableDataLabel(species),
+      source_type: source?.source_type,
+      source_type_label: source?.source_type ? getReadableDataLabel(source.source_type) : undefined,
+      source_year: source?.year,
+      source_published_on: source?.published_on,
+      source_reuse_track_count: sourceReuseTrackIds.length,
+      source_reuse_track_ids: sourceReuseTrackIds,
+      source: source ?? null,
+      study: study ? formatStudyForEvidenceMap(study) : null,
+      interventions: rowInterventions,
+      track_contexts: trackContexts,
+      hallmarks
+    };
+
+    return {
+      ...row,
+      searchable_text: getEvidenceIndexSearchText({
+        ...row,
+        source: source
+          ? {
+              id: source.id,
+              name: source.name,
+              short_name: source.short_name,
+              source_type: source.source_type,
+              venue: source.venue,
+              year: source.year
+            }
+          : undefined,
+        study: study
+          ? {
+              id: study.id,
+              name: study.name,
+              summary: study.summary,
+              population: study.population,
+              model_system: study.model_system
+            }
+          : undefined
+      })
+    };
+  });
+  const filteredRows = sortEvidenceIndexRows(
+    applyEvidenceIndexFilters(allRows, selected),
+    selected.sort as EvidenceIndexSort
+  );
+  const visibleRows = selected.limit ? filteredRows.slice(0, selected.limit) : filteredRows;
+  const exportedRows = visibleRows.map(({ searchable_text: _searchableText, ...row }) => row);
+  const savedViewDefinitions: Array<{
+    id: string;
+    label: string;
+    summary: string;
+    kind: "evidence" | "trials";
+    filters?: EvidenceIndexFilters;
+    path?: string;
+  }> = [
+    {
+      id: "human-biomarker-signals",
+      label: "Human biomarker signals",
+      summary: "Evidence statements where the strongest direct signal is a human biomarker.",
+      kind: "evidence",
+      filters: { tier: "human_biomarker" }
+    },
+    {
+      id: "positive-animal-lifespan",
+      label: "Positive animal lifespan",
+      summary: "Positive lifespan or mortality findings that are still animal evidence.",
+      kind: "evidence",
+      filters: { tier: "mortality_or_lifespan", direction: "positive", species: "animal" }
+    },
+    {
+      id: "active-trials-no-results",
+      label: "Active trials without posted results",
+      summary: "Registry-linked trial watch records that have not posted results.",
+      kind: "trials",
+      path: "/trials?scope=active&result=not_posted"
+    },
+    {
+      id: "low-confidence-high-coverage",
+      label: "Low-confidence claims in well-mapped areas",
+      summary: "Low-confidence findings attached to at least one high-confidence coverage map.",
+      kind: "evidence",
+      filters: { confidence: "low", coverage_confidence: "high" }
+    },
+    {
+      id: "multi-track-sources",
+      label: "Sources reused across tracks",
+      summary: "Findings whose source appears in more than one track context.",
+      kind: "evidence",
+      filters: { source_reuse: "multi_track", sort: "source_reuse" }
+    }
+  ];
+  const savedViews = savedViewDefinitions.map((view) => ({
+    id: view.id,
+    label: view.label,
+    summary: view.summary,
+    kind: view.kind,
+    path:
+      view.path ??
+      getEvidenceIndexQueryPath("/evidence", {
+        ...view.filters
+      }),
+    data_path:
+      view.kind === "evidence"
+        ? getEvidenceIndexQueryPath("/data/evidence-index.json", {
+            ...view.filters
+          })
+        : undefined,
+    count:
+      view.kind === "evidence"
+        ? applyEvidenceIndexFilters(allRows, view.filters ?? {}).length
+        : evidenceMap.trials.filter(
+            (trial) => trial.watch_status === "active_watch" && trial.results_status === "not_posted"
+          ).length
+  }));
+  const sourceIds = new Set(exportedRows.map((row) => row.source_id));
+  const trackIds = new Set(exportedRows.flatMap((row) => row.track_ids));
+  const interventionIds = new Set(exportedRows.flatMap((row) => row.intervention_ids));
+  const multiTrackSourceIds = new Set(
+    exportedRows.filter((row) => row.source_reuse_track_count > 1).map((row) => row.source_id)
+  );
+
+  return {
+    schema_version: "1.0.0",
+    schema_url: "/data/evidence-index.schema.json",
+    export_type: "lev_tracker_evidence_index",
+    generated_at: new Date().toISOString(),
+    last_public_update: evidenceMap.last_public_update,
+    canonical_path: getEvidenceIndexQueryPath("/data/evidence-index.json", selected),
+    page_path: getEvidenceIndexQueryPath("/evidence", selected),
+    applied_filters: getAppliedEvidenceFilters(selected),
+    caveats: [
+      "This is an index of promoted tracker findings, not a comprehensive literature search.",
+      "Evidence-tier labels and confidence labels are tracker summaries; inspect source and study records before citing a claim.",
+      "Source reuse means the same source is mapped to more than one tracker track, not that it independently validates multiple claims."
+    ],
+    summary: {
+      total_finding_count: allRows.length,
+      filtered_finding_count: filteredRows.length,
+      returned_finding_count: exportedRows.length,
+      human_finding_count: exportedRows.filter((row) => row.species === "human").length,
+      animal_finding_count: exportedRows.filter((row) => row.species === "animal").length,
+      positive_finding_count: exportedRows.filter((row) => row.direction === "positive").length,
+      null_or_negative_finding_count: exportedRows.filter(
+        (row) => row.direction === "null" || row.direction === "negative"
+      ).length,
+      source_count: sourceIds.size,
+      multi_track_source_count: multiTrackSourceIds.size,
+      track_count: trackIds.size,
+      intervention_count: interventionIds.size
+    },
+    facet_options: {
+      hallmarks: evidenceMap.hallmarks.map((hallmark) => ({ value: hallmark.id, label: hallmark.name })),
+      tracks: evidenceMap.tracks.map((track) => ({ value: track.id, label: track.name })),
+      interventions: interventions
+        .map((intervention) => ({ value: intervention.id, label: intervention.name }))
+        .sort((left, right) => left.label.localeCompare(right.label)),
+      evidence_tiers: uniqueEvidenceFilterOptions(
+        allRows.map((row) => ({ value: row.evidence_tier, label: row.evidence_tier_label }))
+      ),
+      directions: uniqueEvidenceFilterOptions(
+        allRows.map((row) => ({ value: row.direction, label: row.direction_label }))
+      ),
+      confidences: [
+        { value: "low", label: getFindingWeightLabel("low") },
+        { value: "moderate", label: getFindingWeightLabel("moderate") },
+        { value: "high", label: getFindingWeightLabel("high") }
+      ],
+      endpoints: uniqueEvidenceFilterOptions(
+        allRows.map((row) => ({ value: row.endpoint_category, label: row.endpoint_category_label }))
+      ),
+      source_types: uniqueEvidenceFilterOptions(
+        allRows
+          .filter((row) => row.source_type)
+          .map((row) => ({ value: row.source_type ?? "", label: row.source_type_label }))
+      ),
+      coverage_confidences: [
+        { value: "low", label: getCoverageConfidenceLabel("low") },
+        { value: "moderate", label: getCoverageConfidenceLabel("moderate") },
+        { value: "high", label: getCoverageConfidenceLabel("high") }
+      ],
+      species: [
+        { value: "human", label: "Human" },
+        { value: "animal", label: "Animal" },
+        { value: "nonhuman", label: "Nonhuman mechanistic" }
+      ],
+      source_reuse: [
+        { value: "multi_track", label: "Multi-track sources" },
+        { value: "single_track", label: "Single-track sources" }
+      ],
+      sorts: [
+        { value: "strength", label: "Evidence strength" },
+        { value: "newest", label: "Newest source" },
+        { value: "source_reuse", label: "Source reuse" },
+        { value: "track", label: "Track" },
+        { value: "confidence", label: "Finding confidence" }
+      ]
+    },
+    saved_views: savedViews,
+    findings: exportedRows
   };
 }
 

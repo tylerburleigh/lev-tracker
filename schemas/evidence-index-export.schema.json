@@ -1,0 +1,504 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "/data/evidence-index.schema.json",
+  "title": "LEV Tracker evidence index export",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "schema_url",
+    "export_type",
+    "generated_at",
+    "last_public_update",
+    "canonical_path",
+    "page_path",
+    "applied_filters",
+    "caveats",
+    "summary",
+    "facet_options",
+    "saved_views",
+    "findings"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "schema_url": {
+      "const": "/data/evidence-index.schema.json"
+    },
+    "export_type": {
+      "const": "lev_tracker_evidence_index"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_public_update": {
+      "type": "string"
+    },
+    "canonical_path": {
+      "type": "string",
+      "pattern": "^/data/evidence-index\\.json"
+    },
+    "page_path": {
+      "type": "string",
+      "pattern": "^/evidence"
+    },
+    "applied_filters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "caveats": {
+      "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+    },
+    "summary": {
+      "$ref": "#/$defs/summary"
+    },
+    "facet_options": {
+      "$ref": "#/$defs/facetOptions"
+    },
+    "saved_views": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/savedView"
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidenceFinding"
+      }
+    }
+  },
+  "$defs": {
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "filterOption": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "label"
+      ],
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total_finding_count",
+        "filtered_finding_count",
+        "returned_finding_count",
+        "human_finding_count",
+        "animal_finding_count",
+        "positive_finding_count",
+        "null_or_negative_finding_count",
+        "source_count",
+        "multi_track_source_count",
+        "track_count",
+        "intervention_count"
+      ],
+      "properties": {
+        "total_finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "filtered_finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "returned_finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "human_finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "animal_finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "positive_finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "null_or_negative_finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "source_count": {
+          "$ref": "#/$defs/count"
+        },
+        "multi_track_source_count": {
+          "$ref": "#/$defs/count"
+        },
+        "track_count": {
+          "$ref": "#/$defs/count"
+        },
+        "intervention_count": {
+          "$ref": "#/$defs/count"
+        }
+      }
+    },
+    "facetOptions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hallmarks",
+        "tracks",
+        "interventions",
+        "evidence_tiers",
+        "directions",
+        "confidences",
+        "endpoints",
+        "source_types",
+        "coverage_confidences",
+        "species",
+        "source_reuse",
+        "sorts"
+      ],
+      "properties": {
+        "hallmarks": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "tracks": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "interventions": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "evidence_tiers": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "directions": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "confidences": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "endpoints": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "source_types": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "coverage_confidences": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "species": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "source_reuse": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "sorts": {
+          "$ref": "#/$defs/filterOptionArray"
+        }
+      }
+    },
+    "filterOptionArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/filterOption"
+      }
+    },
+    "savedView": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "summary",
+        "kind",
+        "path",
+        "count"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "evidence",
+            "trials"
+          ]
+        },
+        "path": {
+          "type": "string"
+        },
+        "data_path": {
+          "type": "string"
+        },
+        "count": {
+          "$ref": "#/$defs/count"
+        }
+      }
+    },
+    "linkedHallmark": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "href"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string",
+          "pattern": "^/hallmarks/"
+        }
+      }
+    },
+    "trackContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "href",
+        "primary_hallmark_id",
+        "primary_hallmark_name"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string",
+          "pattern": "^/tracks/"
+        },
+        "primary_hallmark_id": {
+          "type": "string"
+        },
+        "primary_hallmark_name": {
+          "type": "string"
+        },
+        "stage": {
+          "type": "string"
+        },
+        "stage_label": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "string"
+        },
+        "read_firmness_label": {
+          "type": "string"
+        },
+        "coverage_verdict": {
+          "type": "string"
+        },
+        "coverage_verdict_label": {
+          "type": "string"
+        },
+        "coverage_confidence": {
+          "type": "string"
+        },
+        "coverage_confidence_label": {
+          "type": "string"
+        },
+        "observed_research_density": {
+          "type": "string"
+        },
+        "observed_research_density_label": {
+          "type": "string"
+        }
+      }
+    },
+    "evidenceFinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "href",
+        "statement",
+        "source_id",
+        "intervention_ids",
+        "track_ids",
+        "hallmark_ids",
+        "endpoint_category",
+        "endpoint_category_label",
+        "direction",
+        "direction_label",
+        "evidence_tier",
+        "evidence_tier_label",
+        "is_human_evidence",
+        "confidence",
+        "read_firmness_label",
+        "evidence_strength_score",
+        "species",
+        "species_label",
+        "source_reuse_track_count",
+        "source_reuse_track_ids",
+        "source",
+        "study",
+        "interventions",
+        "track_contexts",
+        "hallmarks",
+        "caveats"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string",
+          "pattern": "^/findings/"
+        },
+        "statement": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "source_id": {
+          "type": "string"
+        },
+        "study_id": {
+          "type": "string"
+        },
+        "intervention_ids": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "track_ids": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "hallmark_ids": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "endpoint_category": {
+          "type": "string"
+        },
+        "endpoint_category_label": {
+          "type": "string"
+        },
+        "direction": {
+          "type": "string"
+        },
+        "direction_label": {
+          "type": "string"
+        },
+        "evidence_tier": {
+          "type": "string"
+        },
+        "evidence_tier_label": {
+          "type": "string"
+        },
+        "is_human_evidence": {
+          "type": "boolean"
+        },
+        "confidence": {
+          "type": "string"
+        },
+        "read_firmness_label": {
+          "type": "string"
+        },
+        "evidence_strength_score": {
+          "type": "number"
+        },
+        "species": {
+          "enum": [
+            "human",
+            "animal",
+            "nonhuman"
+          ]
+        },
+        "species_label": {
+          "type": "string"
+        },
+        "source_type": {
+          "type": "string"
+        },
+        "source_type_label": {
+          "type": "string"
+        },
+        "source_year": {
+          "type": "integer"
+        },
+        "source_published_on": {
+          "type": "string"
+        },
+        "source_reuse_track_count": {
+          "$ref": "#/$defs/count"
+        },
+        "source_reuse_track_ids": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "population_or_model": {
+          "type": "string"
+        },
+        "time_horizon": {
+          "type": "string"
+        },
+        "quantitative_note": {
+          "type": "string"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "$ref": "/data/evidence-map.schema.json#/$defs/source"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "study": {
+          "anyOf": [
+            {
+              "$ref": "/data/evidence-map.schema.json#/$defs/study"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "interventions": {
+          "type": "array",
+          "items": {
+            "$ref": "/data/evidence-map.schema.json#/$defs/intervention"
+          }
+        },
+        "track_contexts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/trackContext"
+          }
+        },
+        "hallmarks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/linkedHallmark"
+          }
+        },
+        "caveats": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        }
+      }
+    }
+  }
+}
