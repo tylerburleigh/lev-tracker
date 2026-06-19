@@ -78,10 +78,15 @@ function formatNumber(value: number) {
   return value.toLocaleString("en-US");
 }
 
+const scopedExampleIds = ["senolytics", "rapalogs", "partial-reprogramming"] as const;
+
 export default async function DataAccessPage() {
   const [lastUpdated, evidenceMap] = await Promise.all([getOverallLastUpdated(), getEvidenceMapExport()]);
   const { summary } = evidenceMap;
   const datasetCard = evidenceMap.dataset_card;
+  const scopedExamples = scopedExampleIds
+    .map((trackId) => evidenceMap.tracks.find((track) => track.id === trackId))
+    .filter((track): track is NonNullable<typeof track> => Boolean(track));
   const statItems = [
     { label: "Hallmarks", value: summary.hallmark_count },
     { label: "Tracks", value: summary.track_count },
@@ -148,6 +153,46 @@ export default async function DataAccessPage() {
                 <span>{item.label}</span>
                 <strong>{formatNumber(item.value)}</strong>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="band">
+        <div className="page-shell data-scoped-layout">
+          <div className="data-scoped-main">
+            <span className="section-kicker">Scoped exports</span>
+            <h2>Load one track with its evidence context</h2>
+            <p>
+              Scoped exports keep the global legends and caveats, then return one track plus linked findings, studies,
+              sources, interventions, and registry trials. They are meant for retrieval pipelines and focused expert
+              audits that do not need the full dataset in memory.
+            </p>
+            <div className="data-endpoint-list">
+              <a href="/data/evidence-map.json?track=senolytics">
+                <strong>Query filter</strong>
+                <span>/data/evidence-map.json?track=senolytics</span>
+              </a>
+              <a href="/data/tracks/senolytics.json">
+                <strong>Track file URL</strong>
+                <span>/data/tracks/senolytics.json</span>
+              </a>
+            </div>
+          </div>
+          <div className="data-scoped-grid">
+            {scopedExamples.map((track) => (
+              <a className="data-scoped-card" href={`/data/tracks/${track.id}.json`} key={track.id}>
+                <strong>{track.name}</strong>
+                <span>
+                  {track.outlook?.stage_label ?? "Not rated"} /{" "}
+                  {track.coverage?.coverage_verdict_label ?? "Map not assessed"}
+                </span>
+                <p>
+                  {formatNumber(track.evidence_counts.finding_count)} findings,{" "}
+                  {formatNumber(track.evidence_counts.study_count)} studies,{" "}
+                  {formatNumber(track.evidence_counts.registry_linked_trial_count)} trials
+                </p>
+              </a>
             ))}
           </div>
         </div>

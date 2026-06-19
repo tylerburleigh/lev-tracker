@@ -2707,6 +2707,147 @@ export async function getEvidenceMapExport() {
   };
 }
 
+function normalizeScopedTrackId(trackId: string) {
+  return decodeURIComponent(trackId).trim().replace(/\.json$/i, "");
+}
+
+function formatStudyForEvidenceMap(study: StudyRecord) {
+  return {
+    id: study.id,
+    name: study.name,
+    summary: study.summary,
+    study_type: study.study_type,
+    status: study.status,
+    phase: study.phase,
+    population: study.population,
+    model_system: study.model_system,
+    sample_size: study.sample_size,
+    intervention_ids: study.intervention_ids ?? [],
+    hallmark_ids: study.hallmark_ids ?? [],
+    track_ids: study.track_ids ?? [],
+    endpoint_categories: study.endpoint_categories ?? [],
+    source_ids: study.source_ids,
+    registry_ids: study.registry_ids ?? [],
+    dates: study.dates,
+    trial_details: study.trial_details
+  };
+}
+
+function formatInterventionForEvidenceMap(intervention: InterventionRecord) {
+  return {
+    id: intervention.id,
+    name: intervention.name,
+    short_name: intervention.short_name,
+    summary: intervention.summary,
+    aliases: intervention.aliases ?? [],
+    modalities: intervention.modalities,
+    target_hallmark_ids: intervention.target_hallmark_ids,
+    secondary_hallmark_ids: intervention.secondary_hallmark_ids ?? [],
+    track_ids: intervention.track_ids ?? [],
+    mechanism_summary: intervention.mechanism_summary,
+    development_stage: intervention.development_stage,
+    linked_study_ids: intervention.linked_study_ids ?? [],
+    linked_finding_ids: intervention.linked_finding_ids ?? [],
+    risk_flags: intervention.risk_flags ?? [],
+    evidence_snapshot: intervention.evidence_snapshot
+  };
+}
+
+export async function getScopedEvidenceMapExport(trackId: string) {
+  noStore();
+  const normalizedTrackId = normalizeScopedTrackId(trackId);
+  const [evidenceMap, studies, interventions] = await Promise.all([
+    getEvidenceMapExport(),
+    loadStudies(),
+    loadInterventions()
+  ]);
+  const track = evidenceMap.tracks.find((item) => item.id === normalizedTrackId);
+
+  if (!track) {
+    return undefined;
+  }
+
+  const supportingFindingIds = new Set([
+    ...(track.outlook?.supporting_finding_ids ?? []),
+    ...track.supporting_evidence.flatMap((item) => item.finding_ids)
+  ]);
+  const trackFindings = evidenceMap.findings
+    .filter((finding) => finding.track_ids.includes(track.id) || supportingFindingIds.has(finding.id))
+    .sort((left, right) => left.id.localeCompare(right.id));
+  const studyIds = new Set([
+    ...trackFindings.map((finding) => finding.study_id).filter((value): value is string => Boolean(value)),
+    ...studies.filter((study) => study.track_ids?.includes(track.id)).map((study) => study.id)
+  ]);
+  const trackStudies = studies
+    .filter((study) => studyIds.has(study.id))
+    .sort((left, right) => left.id.localeCompare(right.id));
+  const interventionIds = new Set([
+    ...trackFindings.flatMap((finding) => finding.intervention_ids),
+    ...trackStudies.flatMap((study) => study.intervention_ids ?? []),
+    ...interventions.filter((intervention) => intervention.track_ids?.includes(track.id)).map((intervention) => intervention.id)
+  ]);
+  const trackInterventions = interventions
+    .filter((intervention) => interventionIds.has(intervention.id))
+    .sort((left, right) => left.id.localeCompare(right.id));
+  const sourceIds = new Set([
+    ...track.source_ids,
+    ...(track.outlook?.supporting_source_ids ?? []),
+    ...track.supporting_evidence.flatMap((item) => item.source_ids),
+    ...trackFindings.map((finding) => finding.source_id),
+    ...trackStudies.flatMap((study) => study.source_ids)
+  ]);
+  const trackSources = evidenceMap.sources
+    .filter((source) => sourceIds.has(source.id))
+    .sort((left, right) => left.id.localeCompare(right.id));
+  const trackTrials = evidenceMap.trials
+    .filter((trial) => trial.track_ids.includes(track.id))
+    .sort((left, right) => left.id.localeCompare(right.id));
+  const hallmarkIds = new Set([
+    track.primary_hallmark_id,
+    ...track.secondary_hallmark_ids,
+    ...trackFindings.flatMap((finding) => finding.hallmark_ids)
+  ]);
+  const scopedHallmarks = evidenceMap.hallmarks
+    .filter((hallmark) => hallmarkIds.has(hallmark.id))
+    .sort((left, right) => left.canonical_order - right.canonical_order);
+
+  return {
+    schema_version: "1.0.0",
+    export_type: "lev_tracker_scoped_evidence_map",
+    generated_at: evidenceMap.generated_at,
+    last_public_update: evidenceMap.last_public_update,
+    scope: {
+      type: "track",
+      track_id: track.id,
+      track_name: track.name,
+      canonical_path: `/data/tracks/${track.id}.json`,
+      query_path: `${evidenceMap.canonical_path}?track=${track.id}`,
+      full_export_path: evidenceMap.canonical_path
+    },
+    dataset_card: evidenceMap.dataset_card,
+    caveats: evidenceMap.caveats,
+    legends: evidenceMap.legends,
+    summary: {
+      hallmark_count: scopedHallmarks.length,
+      finding_count: trackFindings.length,
+      study_count: trackStudies.length,
+      source_count: trackSources.length,
+      intervention_count: trackInterventions.length,
+      registry_linked_trial_count: trackTrials.length,
+      active_watch_trial_count: trackTrials.filter((trial) => trial.watch_status === "active_watch").length,
+      posted_result_trial_count: trackTrials.filter((trial) => trial.results_status === "posted").length
+    },
+    track,
+    hallmarks: scopedHallmarks,
+    findings: trackFindings,
+    studies: trackStudies.map(formatStudyForEvidenceMap),
+    sources: trackSources,
+    interventions: trackInterventions.map(formatInterventionForEvidenceMap),
+    trials: trackTrials,
+    source_file_patterns: evidenceMap.source_file_patterns
+  };
+}
+
 export async function getOverallSnapshot() {
   noStore();
   const [recentChanges, overallOutlook] = await Promise.all([getRecentChanges(), getOverallOutlook()]);
