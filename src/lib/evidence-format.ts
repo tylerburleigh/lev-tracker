@@ -42,6 +42,11 @@ export function getSourceHref(source: Pick<SourceRecord, "id" | "urls"> | string
   return undefined;
 }
 
+export function getSourceAuditHref(source: Pick<SourceRecord, "id"> | string) {
+  const sourceId = typeof source === "string" ? source : source.id;
+  return `/sources/${encodeURIComponent(sourceId)}`;
+}
+
 export function getSourceDisplayName(source: Pick<SourceRecord, "id" | "short_name" | "name" | "year">) {
   return source.short_name ? `${source.short_name}${source.year ? ` (${source.year})` : ""}` : source.name;
 }

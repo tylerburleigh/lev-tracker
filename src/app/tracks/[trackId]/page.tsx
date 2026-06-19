@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ExternalLink, FlaskConical, Scale, ShieldCheck, TriangleAlert } from "lucide-react";
+import { FlaskConical, Scale, ShieldCheck, TriangleAlert } from "lucide-react";
 
 import { OutlookAuditPanel } from "@/components/outlook-audit-panel";
 import { PageHero } from "@/components/page-hero";
 import { SiteShell } from "@/components/site-shell";
 import { formatDate } from "@/lib/date";
+import { getSourceAuditHref, getSourceDisplayName } from "@/lib/evidence-format";
 import {
   getActivityForTrack,
   getFindingWeightLabel,
@@ -28,24 +29,6 @@ type TrackDetailPageProps = {
     trackId: string;
   }>;
 };
-
-function getSourceHref(sourceId: string) {
-  const pubmedMatch = sourceId.match(/^pmid-([0-9]+)$/i);
-  if (pubmedMatch) {
-    return `https://pubmed.ncbi.nlm.nih.gov/${pubmedMatch[1]}/`;
-  }
-
-  const nctMatch = sourceId.match(/^(nct[0-9]+)$/i);
-  if (nctMatch) {
-    return `https://clinicaltrials.gov/study/${nctMatch[1].toUpperCase()}`;
-  }
-
-  return undefined;
-}
-
-function getSourceDisplayName(source: { id: string; short_name?: string; name: string; year?: number }) {
-  return source.short_name ? `${source.short_name}${source.year ? ` (${source.year})` : ""}` : source.name;
-}
 
 function getEvidenceLabel(value: string) {
   return value.replace(/_/g, " ");
@@ -362,20 +345,11 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
                     </div>
                   ) : null}
                   <div className="evidence-source-row">
-                    {item.sources.map((source) => {
-                      const href = source.urls?.[0] ?? getSourceHref(source.id);
-
-                      return href ? (
-                        <a className="mini-link" href={href} key={source.id} rel="noreferrer" target="_blank">
-                          <span>{getSourceDisplayName(source)}</span>
-                          <ExternalLink aria-hidden="true" size={14} />
-                        </a>
-                      ) : (
-                        <span className="mini-link" key={source.id}>
-                          {getSourceDisplayName(source)}
-                        </span>
-                      );
-                    })}
+                    {item.sources.map((source) => (
+                      <Link className="mini-link" href={getSourceAuditHref(source)} key={source.id}>
+                        {getSourceDisplayName(source)}
+                      </Link>
+                    ))}
                   </div>
                 </article>
               );
@@ -423,15 +397,9 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
                         </div>
                       ) : null}
                       {finding.source ? (
-                        <a
-                          className="mini-link"
-                          href={finding.source.urls?.[0] ?? getSourceHref(finding.source.id)}
-                          rel="noreferrer"
-                          target="_blank"
-                        >
-                          <span>{getSourceDisplayName(finding.source)}</span>
-                          <ExternalLink aria-hidden="true" size={14} />
-                        </a>
+                        <Link className="mini-link" href={getSourceAuditHref(finding.source)}>
+                          {getSourceDisplayName(finding.source)}
+                        </Link>
                       ) : null}
                     </div>
                   </div>
@@ -456,20 +424,11 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
                 <p>These are the papers linked from the rating audit and finding inventory above.</p>
               </div>
               <div className="citation-list">
-                {uniqueSources.map((source) => {
-                  const href = source.urls?.[0] ?? getSourceHref(source.id);
-
-                  return href ? (
-                    <a className="mini-link" href={href} key={source.id} rel="noreferrer" target="_blank">
-                      <span>{getSourceDisplayName(source)}</span>
-                      <ExternalLink aria-hidden="true" size={14} />
-                    </a>
-                  ) : (
-                    <span className="mini-link" key={source.id}>
-                      {getSourceDisplayName(source)}
-                    </span>
-                  );
-                })}
+                {uniqueSources.map((source) => (
+                  <Link className="mini-link" href={getSourceAuditHref(source)} key={source.id}>
+                    {getSourceDisplayName(source)}
+                  </Link>
+                ))}
               </div>
             </div>
           ) : null}

@@ -53,6 +53,10 @@ const exportContractRows = [
     meaning: "Bibliographic and registry source metadata used for provenance and source-level retrieval."
   },
   {
+    field: "sources[].href / sources[].json_path",
+    meaning: "Internal source audit page and source-level JSON graph for each cited paper, registry, or source record."
+  },
+  {
     field: "trials",
     meaning: "Registry-linked human trial summaries with watch status, result status, timing, and mapped tracks."
   }
@@ -90,7 +94,8 @@ const workflowSteps = [
   "Read legends and caveats before interpreting labels.",
   "Inspect track.outlook and track.coverage together.",
   "Follow track.supporting_evidence[].finding_ids into findings.",
-  "Resolve findings[].source_id in sources before citing or summarizing."
+  "Resolve findings[].source_id in sources before citing or summarizing.",
+  "Open sources[].json_path when you need the source-level provenance graph."
 ] as const;
 
 const fieldPathRows = [
@@ -109,6 +114,10 @@ const fieldPathRows = [
   {
     field: "findings[].source_id",
     meaning: "Source-level provenance for each evidence statement."
+  },
+  {
+    field: "sources[].json_path",
+    meaning: "Focused source audit export with linked findings, studies, track outlook links, and retrieval URLs."
   },
   {
     field: "trials[]",
@@ -188,6 +197,10 @@ export default async function DataAccessPage() {
             </a>
             <a className="section-link" href={datasetCard.schema_urls.scoped_track_export}>
               <span>Scoped export schema</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
+            <a className="section-link" href={datasetCard.schema_urls.source_audit}>
+              <span>Source audit schema</span>
               <ArrowRight aria-hidden="true" size={16} />
             </a>
           </div>

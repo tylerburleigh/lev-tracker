@@ -102,6 +102,34 @@ export type SourceRecord = {
   urls?: string[];
 };
 
+export type SourceExternalLink = {
+  kind: "url" | "doi" | "pubmed" | "registry";
+  label: string;
+  id?: string;
+  url: string;
+};
+
+export type SourceAuditOutlookLink = {
+  outlook_id: string;
+  track_id: string;
+  track_name: string;
+  href: string;
+  stage: Stage;
+  stage_label: string;
+  confidence: Confidence;
+  read_firmness_label: string;
+  last_updated: string;
+  source_link_type: "supporting_source" | "supporting_evidence_source" | "finding_source";
+  label: string;
+  outlook_field?: string;
+  support_role: string;
+  conclusion: string;
+  rationale: string;
+  finding_ids: string[];
+  source_ids: string[];
+  limitations: string[];
+};
+
 export type TrialCompletionDateKind = "actual" | "estimated" | "unknown";
 export type TrialResultsStatus = "posted" | "not_posted" | "pending" | "unknown";
 export type TrialResultsTone = "mint" | "gold" | "blue" | "slate";
@@ -1561,6 +1589,105 @@ function getClinicalTrialsUrl(sourceId: string) {
   return `https://clinicaltrials.gov/study/NCT${sourceId.replace(/\D/g, "")}`;
 }
 
+function getPubMedUrl(pmid: string) {
+  return `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`;
+}
+
+function getDoiUrl(doi: string) {
+  return `https://doi.org/${doi}`;
+}
+
+function normalizeRoutedSourceId(sourceId: string) {
+  return decodeURIComponent(sourceId).trim().replace(/\.json$/i, "");
+}
+
+function getSourcePagePath(sourceId: string) {
+  return `/sources/${encodeURIComponent(sourceId)}`;
+}
+
+function getSourceJsonPath(sourceId: string) {
+  return `/data/sources/${encodeURIComponent(sourceId)}.json`;
+}
+
+function getSourceExternalLinks(source: SourceRecord): SourceExternalLink[] {
+  const links: SourceExternalLink[] = [];
+  const seenUrls = new Set<string>();
+  const addLink = (link: SourceExternalLink) => {
+    if (seenUrls.has(link.url)) {
+      return;
+    }
+
+    links.push(link);
+    seenUrls.add(link.url);
+  };
+
+  for (const url of source.urls ?? []) {
+    addLink({
+      kind: "url",
+      label: getExternalLinkLabel(url),
+      url
+    });
+  }
+
+  if (source.doi) {
+    addLink({
+      kind: "doi",
+      label: "DOI",
+      id: source.doi,
+      url: getDoiUrl(source.doi)
+    });
+  }
+
+  const sourceIdPmid = source.id.match(/^pmid-([0-9]+)$/i)?.[1];
+  const pmid = source.pmid ?? sourceIdPmid;
+  if (pmid) {
+    addLink({
+      kind: "pubmed",
+      label: "PubMed",
+      id: pmid,
+      url: getPubMedUrl(pmid)
+    });
+  }
+
+  const registryIds = uniqueSorted([
+    ...(source.registry_ids ?? []),
+    /^nct-?\d+$/i.test(source.id) ? source.id : undefined
+  ]);
+  for (const registryId of registryIds) {
+    const registryUrl = getClinicalTrialsUrl(registryId);
+    if (registryUrl) {
+      addLink({
+        kind: "registry",
+        label: registryId.replace(/^nct-?/i, "NCT").toUpperCase(),
+        id: registryId,
+        url: registryUrl
+      });
+    }
+  }
+
+  return links;
+}
+
+function formatSourceForEvidenceMap(source: SourceRecord) {
+  return {
+    id: source.id,
+    href: getSourcePagePath(source.id),
+    json_path: getSourceJsonPath(source.id),
+    name: source.name,
+    short_name: source.short_name,
+    summary: source.summary,
+    source_type: source.source_type,
+    authors: source.authors ?? [],
+    venue: source.venue,
+    year: source.year,
+    published_on: source.published_on,
+    doi: source.doi,
+    pmid: source.pmid,
+    registry_ids: source.registry_ids ?? [],
+    urls: source.urls ?? []
+  };
+}
+
 function buildActivityLinks(item: ActivityItemRecord): ActivityLink[] {
   const links: ActivityLink[] = [];
   const seenHrefs = new Set<string>();
@@ -2498,10 +2625,11 @@ export async function getEvidenceMapExport() {
 
   const datasetCard = {
     name: "LEV Tracker evidence map",
-    version: "1.2.0",
+    version: "1.3.0",
     schema_urls: {
       full_export: "/data/evidence-map.schema.json",
-      scoped_track_export: "/data/scoped-evidence-map.schema.json"
+      scoped_track_export: "/data/scoped-evidence-map.schema.json",
+      source_audit: "/data/source-audit.schema.json"
     },
     unit_of_analysis:
       "Hallmarks organize aging biology, tracks organize intervention families, and findings are the atomic evidence statements linked to sources, studies, and trials.",
@@ -2558,6 +2686,12 @@ export async function getEvidenceMapExport() {
         method: "GET",
         path: "/data/tracks/senolytics.json",
         returns: "Track-scoped evidence map for Senolytics using the direct per-track route."
+      },
+      {
+        label: "Source audit",
+        method: "GET",
+        path: "/data/sources/pmid-19587680.json",
+        returns: "Source-level provenance graph showing how one source is used across findings, studies, track outlooks, and public pages."
       }
     ],
     known_limitations: [
@@ -2658,66 +2792,9 @@ export async function getEvidenceMapExport() {
       };
     }),
     tracks: trackEntries,
-    findings: findings.map((finding) => ({
-      id: finding.id,
-      name: finding.name,
-      statement: finding.statement,
-      summary: finding.summary,
-      source_id: finding.source_id,
-      study_id: finding.study_id,
-      intervention_ids: finding.intervention_ids ?? [],
-      track_ids: finding.track_ids ?? [],
-      hallmark_ids: finding.hallmark_ids,
-      endpoint_category: finding.endpoint_category,
-      direction: finding.direction,
-      evidence_tier: finding.evidence_tier,
-      is_human_evidence: isHumanEvidenceTier(finding.evidence_tier),
-      confidence: finding.confidence,
-      population_or_model: finding.population_or_model,
-      time_horizon: finding.time_horizon,
-      quantitative_note: finding.quantitative_note,
-      caveats: finding.caveats ?? []
-    })),
-    sources: sources.map((source) => ({
-      id: source.id,
-      name: source.name,
-      short_name: source.short_name,
-      summary: source.summary,
-      source_type: source.source_type,
-      authors: source.authors ?? [],
-      venue: source.venue,
-      year: source.year,
-      published_on: source.published_on,
-      doi: source.doi,
-      pmid: source.pmid,
-      registry_ids: source.registry_ids ?? [],
-      urls: source.urls ?? []
-    })),
-    trials: trials.map((trial) => ({
-      id: trial.id,
-      name: trial.name,
-      href: trial.href,
-      status: trial.status,
-      status_label: trial.statusLabel,
-      phase: trial.phase,
-      phase_label: trial.phaseLabel,
-      population: trial.population,
-      sample_size: trial.sampleSize,
-      registry_ids: trial.registryIds,
-      endpoint_categories: trial.endpointCategories,
-      track_ids: trial.trackIds,
-      results_status: trial.resultsStatus,
-      results_status_label: trial.resultsStatusLabel,
-      watch_status: trial.watchStatus,
-      watch_status_label: trial.watchStatusLabel,
-      completion_date: trial.completionDate,
-      completion_date_kind: trial.completionDateKind,
-      registry_last_updated: trial.registryLastUpdated,
-      registry_last_checked: trial.registryLastChecked,
-      expected_results_window: trial.expectedResultsWindow,
-      horizon_note: trial.horizonNote,
-      why_it_matters: trial.whyItMatters
-    })),
+    findings: findings.map(formatFindingForEvidenceMap),
+    sources: sources.map(formatSourceForEvidenceMap),
+    trials: trials.map(formatTrialForEvidenceMap),
     source_file_patterns: {
       taxonomy: ["taxonomies/hallmarks-of-aging.v1.json", "taxonomies/track-taxonomy.v1.json"],
       public_records: [
@@ -2758,6 +2835,29 @@ function formatStudyForEvidenceMap(study: StudyRecord) {
   };
 }
 
+function formatFindingForEvidenceMap(finding: FindingRecord) {
+  return {
+    id: finding.id,
+    name: finding.name,
+    statement: finding.statement,
+    summary: finding.summary,
+    source_id: finding.source_id,
+    study_id: finding.study_id,
+    intervention_ids: finding.intervention_ids ?? [],
+    track_ids: finding.track_ids ?? [],
+    hallmark_ids: finding.hallmark_ids,
+    endpoint_category: finding.endpoint_category,
+    direction: finding.direction,
+    evidence_tier: finding.evidence_tier,
+    is_human_evidence: isHumanEvidenceTier(finding.evidence_tier),
+    confidence: finding.confidence,
+    population_or_model: finding.population_or_model,
+    time_horizon: finding.time_horizon,
+    quantitative_note: finding.quantitative_note,
+    caveats: finding.caveats ?? []
+  };
+}
+
 function formatInterventionForEvidenceMap(intervention: InterventionRecord) {
   return {
     id: intervention.id,
@@ -2775,6 +2875,34 @@ function formatInterventionForEvidenceMap(intervention: InterventionRecord) {
     linked_finding_ids: intervention.linked_finding_ids ?? [],
     risk_flags: intervention.risk_flags ?? [],
     evidence_snapshot: intervention.evidence_snapshot
+  };
+}
+
+function formatTrialForEvidenceMap(trial: TrialSummary) {
+  return {
+    id: trial.id,
+    name: trial.name,
+    href: trial.href,
+    status: trial.status,
+    status_label: trial.statusLabel,
+    phase: trial.phase,
+    phase_label: trial.phaseLabel,
+    population: trial.population,
+    sample_size: trial.sampleSize,
+    registry_ids: trial.registryIds,
+    endpoint_categories: trial.endpointCategories,
+    track_ids: trial.trackIds,
+    results_status: trial.resultsStatus,
+    results_status_label: trial.resultsStatusLabel,
+    watch_status: trial.watchStatus,
+    watch_status_label: trial.watchStatusLabel,
+    completion_date: trial.completionDate,
+    completion_date_kind: trial.completionDateKind,
+    registry_last_updated: trial.registryLastUpdated,
+    registry_last_checked: trial.registryLastChecked,
+    expected_results_window: trial.expectedResultsWindow,
+    horizon_note: trial.horizonNote,
+    why_it_matters: trial.whyItMatters
   };
 }
 
@@ -2837,7 +2965,7 @@ export async function getScopedEvidenceMapExport(trackId: string) {
     .sort((left, right) => left.canonical_order - right.canonical_order);
 
   return {
-    schema_version: "1.1.0",
+    schema_version: "1.2.0",
     schema_url: evidenceMap.dataset_card.schema_urls.scoped_track_export,
     export_type: "lev_tracker_scoped_evidence_map",
     generated_at: evidenceMap.generated_at,
@@ -2871,6 +2999,228 @@ export async function getScopedEvidenceMapExport(trackId: string) {
     interventions: trackInterventions.map(formatInterventionForEvidenceMap),
     trials: trackTrials,
     source_file_patterns: evidenceMap.source_file_patterns
+  };
+}
+
+function normalizeRegistryLookupId(value: string) {
+  return value.replace(/[^a-z0-9]/gi, "").toLowerCase();
+}
+
+export async function getSourceAuditById(sourceId: string) {
+  noStore();
+  const normalizedSourceId = normalizeRoutedSourceId(sourceId);
+  const [outlooks, sources, studies, findings, interventions, trials, activityItems, publicationEvents] =
+    await Promise.all([
+      loadOutlooks(),
+      loadSources(),
+      loadStudies(),
+      loadFindings(),
+      loadInterventions(),
+      getTrials(),
+      loadActivityItems(),
+      loadPublicationEvents()
+    ]);
+  const source = sources.find((item) => item.id === normalizedSourceId);
+
+  if (!source) {
+    return undefined;
+  }
+
+  const latestOutlook = [...outlooks].sort((left, right) =>
+    compareDateTimesDescending(left.last_updated, right.last_updated)
+  )[0];
+  const lastUpdated = publicationEvents[0]?.published_at ?? latestOutlook?.last_updated ?? new Date().toISOString();
+  const sourceFindings = findings
+    .filter((finding) => finding.source_id === source.id)
+    .sort(compareFindingsByStrength);
+  const findingById = new Map(findings.map((finding) => [finding.id, finding]));
+  const sourceFindingIds = new Set(sourceFindings.map((finding) => finding.id));
+  const directStudyIds = new Set([
+    ...sourceFindings.map((finding) => finding.study_id).filter((value): value is string => Boolean(value)),
+    ...studies.filter((study) => study.source_ids.includes(source.id)).map((study) => study.id)
+  ]);
+  const sourceStudies = studies
+    .filter((study) => directStudyIds.has(study.id))
+    .sort((left, right) => left.name.localeCompare(right.name));
+  const sourceStudyIds = new Set(sourceStudies.map((study) => study.id));
+  const outlookLinks: SourceAuditOutlookLink[] = outlooks
+    .filter((outlook) => outlook.subject_type === "track")
+    .flatMap((outlook): SourceAuditOutlookLink[] => {
+      const track = getTrackById(outlook.subject_id);
+      const supportingLinks = (outlook.supporting_evidence ?? []).filter(
+        (item) =>
+          item.source_ids?.includes(source.id) ||
+          item.finding_ids.some((findingId) => sourceFindingIds.has(findingId))
+      );
+      const isDirectSource = outlook.supporting_source_ids?.includes(source.id) ?? false;
+
+      if (!supportingLinks.length && !isDirectSource) {
+        return [];
+      }
+
+      const common = {
+        outlook_id: outlook.id,
+        track_id: outlook.subject_id,
+        track_name: track?.name ?? titleizeIdentifier(outlook.subject_id),
+        href: `/tracks/${outlook.subject_id}`,
+        stage: outlook.evidence_stage,
+        stage_label: getStageLabel(outlook.evidence_stage),
+        confidence: outlook.confidence,
+        read_firmness_label: getReadFirmnessLabel(outlook.confidence),
+        last_updated: outlook.last_updated
+      };
+
+      if (!supportingLinks.length) {
+        return [
+          {
+            ...common,
+            source_link_type: "supporting_source",
+            label: "Supporting source",
+            outlook_field: undefined,
+            support_role: "contextualizes",
+            conclusion: "Listed as a supporting source for the public track read.",
+            rationale: outlook.interpretation_note,
+            finding_ids: [],
+            source_ids: [source.id],
+            limitations: []
+          }
+        ];
+      }
+
+      return supportingLinks.map((link) => ({
+        ...common,
+        source_link_type: link.source_ids?.includes(source.id) ? "supporting_evidence_source" : "finding_source",
+        label: link.label,
+        outlook_field: link.outlook_field,
+        support_role: link.support_role,
+        conclusion: link.conclusion,
+        rationale: link.rationale,
+        finding_ids: link.finding_ids,
+        source_ids: uniqueSorted([
+          ...(link.source_ids ?? []),
+          ...link.finding_ids.map((id) => findingById.get(id)?.source_id)
+        ]),
+        limitations: link.limitations ?? []
+      }));
+    })
+    .sort((left, right) => left.track_name.localeCompare(right.track_name) || left.label.localeCompare(right.label));
+  const trackIds = uniqueSorted([
+    ...sourceFindings.flatMap((finding) => finding.track_ids ?? []),
+    ...sourceStudies.flatMap((study) => study.track_ids ?? []),
+    ...outlookLinks.map((link) => link.track_id)
+  ]);
+  const trackWithGroupById = new Map(getTracks().map((track) => [track.id, track]));
+  const sourceTracks = trackIds.map((trackId) => {
+    const track = getTrackById(trackId);
+    const primaryHallmarkId = trackWithGroupById.get(trackId)?.primaryHallmarkId ?? "";
+
+    return {
+      id: trackId,
+      name: track?.name ?? titleizeIdentifier(trackId),
+      href: `/tracks/${trackId}`,
+      primary_hallmark_id: primaryHallmarkId,
+      primary_hallmark_name: primaryHallmarkId
+        ? getHallmarkById(primaryHallmarkId)?.name ?? primaryHallmarkId
+        : undefined
+    };
+  });
+  const interventionIds = uniqueSorted([
+    ...sourceFindings.flatMap((finding) => finding.intervention_ids ?? []),
+    ...sourceStudies.flatMap((study) => study.intervention_ids ?? [])
+  ]);
+  const sourceInterventions = interventions
+    .filter((intervention) => interventionIds.includes(intervention.id))
+    .sort((left, right) => left.name.localeCompare(right.name));
+  const hallmarkIds = uniqueSorted([
+    ...sourceFindings.flatMap((finding) => finding.hallmark_ids),
+    ...sourceStudies.flatMap((study) => study.hallmark_ids ?? []),
+    ...sourceTracks.flatMap((track) => [
+      track.primary_hallmark_id,
+      ...(getTrackById(track.id)?.secondary_hallmark_ids ?? [])
+    ])
+  ]);
+  const sourceRegistryLookupIds = new Set(
+    [source.id, ...(source.registry_ids ?? [])].map(normalizeRegistryLookupId)
+  );
+  const sourceTrials = trials
+    .filter(
+      (trial) =>
+        sourceStudyIds.has(trial.id) ||
+        trial.registryIds.some((registryId) => sourceRegistryLookupIds.has(normalizeRegistryLookupId(registryId)))
+    )
+    .sort((left, right) => left.name.localeCompare(right.name));
+  const directActivityItems = activityItems
+    .filter((item) => item.source_ids?.includes(source.id))
+    .map((item) => ({
+      id: item.id,
+      name: item.name,
+      summary: item.summary,
+      occurred_on: item.occurred_on,
+      activity_type: item.activity_type,
+      activity_lane: item.activity_lane,
+      source_ids: item.source_ids ?? [],
+      study_ids: item.study_ids ?? [],
+      track_ids: item.track_ids ?? [],
+      href: "/activity"
+    }));
+
+  return {
+    schema_version: "1.0.0",
+    schema_url: "/data/source-audit.schema.json",
+    export_type: "lev_tracker_source_audit",
+    generated_at: new Date().toISOString(),
+    last_public_update: lastUpdated,
+    scope: {
+      type: "source",
+      source_id: source.id,
+      canonical_path: getSourceJsonPath(source.id),
+      page_path: getSourcePagePath(source.id),
+      full_export_path: "/data/evidence-map.json"
+    },
+    caveats: [
+      "This endpoint shows how the tracker uses a source; it is not a full paper annotation or substitute for the source itself.",
+      "Findings are promoted evidence statements and may not include every result in the source.",
+      "Track outlook links show rating rationale connections, not independent confirmation that an intervention works."
+    ],
+    source: formatSourceForEvidenceMap(source),
+    external_links: getSourceExternalLinks(source),
+    summary: {
+      finding_count: sourceFindings.length,
+      study_count: sourceStudies.length,
+      track_count: sourceTracks.length,
+      hallmark_count: hallmarkIds.length,
+      intervention_count: sourceInterventions.length,
+      outlook_link_count: outlookLinks.length,
+      registry_linked_trial_count: sourceTrials.length,
+      activity_item_count: directActivityItems.length
+    },
+    findings: sourceFindings.map(formatFindingForEvidenceMap),
+    studies: sourceStudies.map(formatStudyForEvidenceMap),
+    tracks: sourceTracks,
+    hallmarks: hallmarkIds.map((hallmarkId) => {
+      const hallmark = getHallmarkById(hallmarkId);
+
+      return {
+        id: hallmarkId,
+        name: hallmark?.name ?? titleizeIdentifier(hallmarkId),
+        href: `/hallmarks/${hallmarkId}`
+      };
+    }),
+    interventions: sourceInterventions.map(formatInterventionForEvidenceMap),
+    trials: sourceTrials.map(formatTrialForEvidenceMap),
+    outlook_links: outlookLinks,
+    activity_items: directActivityItems,
+    source_file_patterns: {
+      source: [`data/sources/${source.id}.json`],
+      linked_records: Array.from(
+        new Set([
+          ...sourceFindings.map((finding) => `data/findings/${finding.id}.json`),
+          ...sourceStudies.map((study) => `data/studies/${study.id}.json`),
+          ...sourceInterventions.map((intervention) => `data/interventions/${intervention.id}.json`),
+          ...outlookLinks.map((link) => `data/outlooks/${link.outlook_id}.json`)
+        ])
+      ).sort((left, right) => left.localeCompare(right))
+    }
   };
 }
 

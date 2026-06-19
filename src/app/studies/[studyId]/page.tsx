@@ -1,14 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ExternalLink } from "lucide-react";
 
 import { PageHero } from "@/components/page-hero";
 import { SiteShell } from "@/components/site-shell";
 import {
   getDirectionTone,
   getReadableLabel,
+  getSourceAuditHref,
   getSourceDisplayName,
-  getSourceHref,
   getTitleFromIdentifier
 } from "@/lib/evidence-format";
 import { formatDate } from "@/lib/date";
@@ -245,20 +244,11 @@ export default async function StudyDetailPage({ params }: StudyDetailPageProps) 
               <p>Bibliographic and registry sources linked to this study.</p>
             </div>
             <div className="citation-list">
-              {sources.map((source) => {
-                const href = getSourceHref(source);
-
-                return href ? (
-                  <a className="mini-link" href={href} key={source.id} rel="noreferrer" target="_blank">
-                    <span>{getSourceDisplayName(source)}</span>
-                    <ExternalLink aria-hidden="true" size={14} />
-                  </a>
-                ) : (
-                  <span className="mini-link" key={source.id}>
-                    {getSourceDisplayName(source)}
-                  </span>
-                );
-              })}
+              {sources.map((source) => (
+                <Link className="mini-link" href={getSourceAuditHref(source)} key={source.id}>
+                  {getSourceDisplayName(source)}
+                </Link>
+              ))}
             </div>
           </div>
         </section>

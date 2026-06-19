@@ -1,14 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ExternalLink } from "lucide-react";
 
 import { PageHero } from "@/components/page-hero";
 import { SiteShell } from "@/components/site-shell";
 import {
   getDirectionTone,
   getReadableLabel,
+  getSourceAuditHref,
   getSourceDisplayName,
-  getSourceHref,
   getTitleFromIdentifier
 } from "@/lib/evidence-format";
 import { formatDate } from "@/lib/date";
@@ -44,7 +43,6 @@ export default async function FindingDetailPage({ params }: FindingDetailPagePro
     getOverallLastUpdated()
   ]);
   const interventionNameById = new Map(interventions.map((intervention) => [intervention.id, intervention.name]));
-  const sourceHref = source ? getSourceHref(source) : undefined;
 
   return (
     <SiteShell lastUpdated={formatDate(lastUpdated)}>
@@ -98,13 +96,12 @@ export default async function FindingDetailPage({ params }: FindingDetailPagePro
               <div>
                 <strong>Source</strong>
                 <p>
-                  {source && sourceHref ? (
-                    <a className="mini-link" href={sourceHref} rel="noreferrer" target="_blank">
-                      <span>{getSourceDisplayName(source)}</span>
-                      <ExternalLink aria-hidden="true" size={14} />
-                    </a>
+                  {source ? (
+                    <Link className="mini-link" href={getSourceAuditHref(source)}>
+                      {getSourceDisplayName(source)}
+                    </Link>
                   ) : (
-                    source?.name ?? finding.source_id
+                    finding.source_id
                   )}
                 </p>
               </div>

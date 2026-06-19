@@ -1,0 +1,416 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "/data/source-audit.schema.json",
+  "title": "LEV Tracker source audit export",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "schema_url",
+    "export_type",
+    "generated_at",
+    "last_public_update",
+    "scope",
+    "caveats",
+    "source",
+    "external_links",
+    "summary",
+    "findings",
+    "studies",
+    "tracks",
+    "hallmarks",
+    "interventions",
+    "trials",
+    "outlook_links",
+    "activity_items",
+    "source_file_patterns"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "schema_url": {
+      "const": "/data/source-audit.schema.json"
+    },
+    "export_type": {
+      "const": "lev_tracker_source_audit"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_public_update": {
+      "type": "string"
+    },
+    "scope": {
+      "$ref": "#/$defs/scope"
+    },
+    "caveats": {
+      "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+    },
+    "source": {
+      "$ref": "/data/evidence-map.schema.json#/$defs/source"
+    },
+    "external_links": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/externalLink"
+      }
+    },
+    "summary": {
+      "$ref": "#/$defs/summary"
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "$ref": "/data/evidence-map.schema.json#/$defs/finding"
+      }
+    },
+    "studies": {
+      "type": "array",
+      "items": {
+        "$ref": "/data/evidence-map.schema.json#/$defs/study"
+      }
+    },
+    "tracks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/linkedTrack"
+      }
+    },
+    "hallmarks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/linkedHallmark"
+      }
+    },
+    "interventions": {
+      "type": "array",
+      "items": {
+        "$ref": "/data/evidence-map.schema.json#/$defs/intervention"
+      }
+    },
+    "trials": {
+      "type": "array",
+      "items": {
+        "$ref": "/data/evidence-map.schema.json#/$defs/trial"
+      }
+    },
+    "outlook_links": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/outlookLink"
+      }
+    },
+    "activity_items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/activityItem"
+      }
+    },
+    "source_file_patterns": {
+      "$ref": "#/$defs/sourceFilePatterns"
+    }
+  },
+  "$defs": {
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "source_id",
+        "canonical_path",
+        "page_path",
+        "full_export_path"
+      ],
+      "properties": {
+        "type": {
+          "const": "source"
+        },
+        "source_id": {
+          "type": "string"
+        },
+        "canonical_path": {
+          "type": "string",
+          "pattern": "^/data/sources/.+\\.json$"
+        },
+        "page_path": {
+          "type": "string",
+          "pattern": "^/sources/"
+        },
+        "full_export_path": {
+          "const": "/data/evidence-map.json"
+        }
+      }
+    },
+    "externalLink": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "label",
+        "url"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "url",
+            "doi",
+            "pubmed",
+            "registry"
+          ]
+        },
+        "label": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finding_count",
+        "study_count",
+        "track_count",
+        "hallmark_count",
+        "intervention_count",
+        "outlook_link_count",
+        "registry_linked_trial_count",
+        "activity_item_count"
+      ],
+      "properties": {
+        "finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "study_count": {
+          "$ref": "#/$defs/count"
+        },
+        "track_count": {
+          "$ref": "#/$defs/count"
+        },
+        "hallmark_count": {
+          "$ref": "#/$defs/count"
+        },
+        "intervention_count": {
+          "$ref": "#/$defs/count"
+        },
+        "outlook_link_count": {
+          "$ref": "#/$defs/count"
+        },
+        "registry_linked_trial_count": {
+          "$ref": "#/$defs/count"
+        },
+        "activity_item_count": {
+          "$ref": "#/$defs/count"
+        }
+      }
+    },
+    "linkedTrack": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "href",
+        "primary_hallmark_id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string",
+          "pattern": "^/tracks/"
+        },
+        "primary_hallmark_id": {
+          "type": "string"
+        },
+        "primary_hallmark_name": {
+          "type": "string"
+        }
+      }
+    },
+    "linkedHallmark": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "href"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string",
+          "pattern": "^/hallmarks/"
+        }
+      }
+    },
+    "outlookLink": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "outlook_id",
+        "track_id",
+        "track_name",
+        "href",
+        "stage",
+        "stage_label",
+        "confidence",
+        "read_firmness_label",
+        "last_updated",
+        "source_link_type",
+        "label",
+        "support_role",
+        "conclusion",
+        "rationale",
+        "finding_ids",
+        "source_ids",
+        "limitations"
+      ],
+      "properties": {
+        "outlook_id": {
+          "type": "string"
+        },
+        "track_id": {
+          "type": "string"
+        },
+        "track_name": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string",
+          "pattern": "^/tracks/"
+        },
+        "stage": {
+          "type": "string"
+        },
+        "stage_label": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "string"
+        },
+        "read_firmness_label": {
+          "type": "string"
+        },
+        "last_updated": {
+          "type": "string"
+        },
+        "source_link_type": {
+          "enum": [
+            "supporting_source",
+            "supporting_evidence_source",
+            "finding_source"
+          ]
+        },
+        "label": {
+          "type": "string"
+        },
+        "outlook_field": {
+          "type": "string"
+        },
+        "support_role": {
+          "type": "string"
+        },
+        "conclusion": {
+          "type": "string"
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "finding_ids": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "source_ids": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "limitations": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        }
+      }
+    },
+    "activityItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "summary",
+        "occurred_on",
+        "activity_type",
+        "activity_lane",
+        "source_ids",
+        "study_ids",
+        "track_ids",
+        "href"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "occurred_on": {
+          "type": "string"
+        },
+        "activity_type": {
+          "type": "string"
+        },
+        "activity_lane": {
+          "type": "string"
+        },
+        "source_ids": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "study_ids": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "track_ids": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "href": {
+          "const": "/activity"
+        }
+      }
+    },
+    "sourceFilePatterns": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "linked_records"
+      ],
+      "properties": {
+        "source": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "linked_records": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        }
+      }
+    }
+  }
+}
