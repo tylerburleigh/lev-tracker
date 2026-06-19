@@ -2536,6 +2536,26 @@ export async function getEvidenceMapExport() {
       "Check trials for registry status, result status, and watch rationale.",
       "Use source_file_patterns when a workflow needs the repository source of truth rather than the compact export."
     ],
+    example_requests: [
+      {
+        label: "Full evidence map",
+        method: "GET",
+        path: "/data/evidence-map.json",
+        returns: "Complete evidence-map export with all tracks, findings, sources, trials, legends, caveats, and dataset-card metadata."
+      },
+      {
+        label: "Scoped track query",
+        method: "GET",
+        path: "/data/evidence-map.json?track=senolytics",
+        returns: "Track-scoped evidence map for Senolytics using the query-filter route."
+      },
+      {
+        label: "Scoped track URL",
+        method: "GET",
+        path: "/data/tracks/senolytics.json",
+        returns: "Track-scoped evidence map for Senolytics using the direct per-track route."
+      }
+    ],
     known_limitations: [
       "The export reflects public tracker records and coverage-state summaries, not every paper in longevity science.",
       "Coverage assessments are editorial map-quality records and may lag newly published literature.",

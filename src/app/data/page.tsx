@@ -4,6 +4,7 @@ import {
   BookOpenCheck,
   Braces,
   CircleAlert,
+  ClipboardList,
   Database,
   Download,
   FileJson,
@@ -79,6 +80,37 @@ function formatNumber(value: number) {
 }
 
 const scopedExampleIds = ["senolytics", "rapalogs", "partial-reprogramming"] as const;
+
+const workflowSteps = [
+  "Fetch the scoped track export.",
+  "Read legends and caveats before interpreting labels.",
+  "Inspect track.outlook and track.coverage together.",
+  "Follow track.supporting_evidence[].finding_ids into findings.",
+  "Resolve findings[].source_id in sources before citing or summarizing."
+] as const;
+
+const fieldPathRows = [
+  {
+    field: "track.outlook",
+    meaning: "Current public read, stage, read firmness, evidence gaps, and rating-change criteria."
+  },
+  {
+    field: "track.coverage",
+    meaning: "Map completeness, map confidence, observed research density, and known gap counts."
+  },
+  {
+    field: "track.supporting_evidence[].finding_ids",
+    meaning: "IDs for the findings that support, limit, balance, or contextualize the public track read."
+  },
+  {
+    field: "findings[].source_id",
+    meaning: "Source-level provenance for each evidence statement."
+  },
+  {
+    field: "trials[]",
+    meaning: "Registry-linked trial context, watch status, result status, timing, and why it matters."
+  }
+] as const;
 
 export default async function DataAccessPage() {
   const [lastUpdated, evidenceMap] = await Promise.all([getOverallLastUpdated(), getEvidenceMapExport()]);
@@ -194,6 +226,51 @@ export default async function DataAccessPage() {
                 </p>
               </a>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="band band--alt">
+        <div className="page-shell data-usage-layout">
+          <div className="data-usage-main">
+            <span className="section-kicker">Usage examples</span>
+            <h2>Follow labels back to evidence</h2>
+            <p>
+              The safest workflow is to retrieve a focused track package, interpret labels through the legends, then
+              follow finding IDs to sources before using a claim in a summary, notebook, or retrieval pipeline.
+            </p>
+            <div className="data-command-list">
+              {datasetCard.example_requests.map((request) => (
+                <a href={request.path} key={request.path}>
+                  <span>{request.label}</span>
+                  <code>{`curl -s "$BASE_URL${request.path}"`}</code>
+                  <p>{request.returns}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+          <div className="data-usage-panel">
+            <article>
+              <ClipboardList aria-hidden="true" size={18} />
+              <h3>Retrieval workflow</h3>
+              <ol>
+                {workflowSteps.map((step) => (
+                  <li key={step}>{step}</li>
+                ))}
+              </ol>
+            </article>
+            <article>
+              <ListChecks aria-hidden="true" size={18} />
+              <h3>Field paths to follow</h3>
+              <div className="data-field-path-list">
+                {fieldPathRows.map((row) => (
+                  <div key={row.field}>
+                    <code>{row.field}</code>
+                    <p>{row.meaning}</p>
+                  </div>
+                ))}
+              </div>
+            </article>
           </div>
         </div>
       </section>
