@@ -1,5 +1,16 @@
 import Link from "next/link";
-import { ArrowRight, Braces, Database, Download, FileJson, ShieldCheck } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpenCheck,
+  Braces,
+  CircleAlert,
+  Database,
+  Download,
+  FileJson,
+  GitBranch,
+  ListChecks,
+  ShieldCheck
+} from "lucide-react";
 
 import { PageHero } from "@/components/page-hero";
 import { SiteShell } from "@/components/site-shell";
@@ -7,6 +18,11 @@ import { formatDate } from "@/lib/date";
 import { getEvidenceMapExport, getOverallLastUpdated } from "@/lib/site-data";
 
 const exportContractRows = [
+  {
+    field: "dataset_card",
+    meaning:
+      "Machine-readable guidance for intended uses, unsuitable uses, interpretation rules, provenance, retrieval order, and limitations."
+  },
   {
     field: "summary",
     meaning: "Top-level counts for hallmarks, tracks, sources, studies, findings, trials, and map coverage."
@@ -65,6 +81,7 @@ function formatNumber(value: number) {
 export default async function DataAccessPage() {
   const [lastUpdated, evidenceMap] = await Promise.all([getOverallLastUpdated(), getEvidenceMapExport()]);
   const { summary } = evidenceMap;
+  const datasetCard = evidenceMap.dataset_card;
   const statItems = [
     { label: "Hallmarks", value: summary.hallmark_count },
     { label: "Tracks", value: summary.track_count },
@@ -132,6 +149,82 @@ export default async function DataAccessPage() {
                 <strong>{formatNumber(item.value)}</strong>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="band">
+        <div className="page-shell data-card-layout">
+          <div className="data-card-main">
+            <span className="section-kicker">Dataset card</span>
+            <h2>{datasetCard.name}</h2>
+            <p>{datasetCard.unit_of_analysis}</p>
+            <div className="data-card-meta">
+              <div>
+                <span>Schema</span>
+                <strong>{datasetCard.version}</strong>
+              </div>
+              <div>
+                <span>Update cadence</span>
+                <strong>{datasetCard.update_cadence}</strong>
+              </div>
+            </div>
+          </div>
+          <div className="data-card-grid">
+            <article className="data-card-panel">
+              <BookOpenCheck aria-hidden="true" size={18} />
+              <h3>Intended uses</h3>
+              <ul>
+                {datasetCard.intended_uses.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+            <article className="data-card-panel">
+              <CircleAlert aria-hidden="true" size={18} />
+              <h3>Do not use it for</h3>
+              <ul>
+                {datasetCard.unsuitable_uses.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+            <article className="data-card-panel">
+              <ListChecks aria-hidden="true" size={18} />
+              <h3>Interpretation rules</h3>
+              <ul>
+                {datasetCard.interpretation_rules.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+            <article className="data-card-panel">
+              <GitBranch aria-hidden="true" size={18} />
+              <h3>Provenance model</h3>
+              <ul>
+                {datasetCard.provenance_model.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+            <article className="data-card-panel">
+              <Braces aria-hidden="true" size={18} />
+              <h3>Retrieval order</h3>
+              <ul>
+                {datasetCard.recommended_retrieval_order.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+            <article className="data-card-panel">
+              <FileJson aria-hidden="true" size={18} />
+              <h3>Known limitations</h3>
+              <ul>
+                {datasetCard.known_limitations.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
           </div>
         </div>
       </section>

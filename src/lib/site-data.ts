@@ -2496,12 +2496,61 @@ export async function getEvidenceMapExport() {
     };
   });
 
+  const datasetCard = {
+    name: "LEV Tracker evidence map",
+    version: "1.1.0",
+    unit_of_analysis:
+      "Hallmarks organize aging biology, tracks organize intervention families, and findings are the atomic evidence statements linked to sources, studies, and trials.",
+    update_cadence:
+      "Generated dynamically from repository records; last_public_update identifies the latest public publication event or outlook update represented in the export.",
+    intended_uses: [
+      "Retrieval-augmented context for longevity-science question answering.",
+      "Expert audit of how public track reads connect to findings, studies, sources, trials, and coverage state.",
+      "Training or evaluation examples that need structured distinctions between evidence stage, read firmness, map completeness, and research density.",
+      "Gap analysis for deciding whether a field appears sparse or whether the tracker still needs source-discovery work."
+    ],
+    unsuitable_uses: [
+      "Medical advice, treatment selection, dosing, or individual risk assessment.",
+      "A leaderboard of interventions ranked by likelihood of extending human life.",
+      "A substitute for reading the cited papers, trial records, and caveats.",
+      "A complete corpus of longevity science outside the tracker scope and public review queue."
+    ],
+    interpretation_rules: [
+      "Evidence stage describes the strongest public evidence claim; it is not the same as clinical readiness.",
+      "Read firmness describes how likely the current interpretation is to move as better evidence arrives.",
+      "Coverage verdict and coverage confidence describe tracker map completeness, not whether the intervention works.",
+      "Observed research density describes how much relevant public work appears to exist after coverage checking.",
+      "Trial watch status records why a registry matters; trial existence alone is not evidence of benefit."
+    ],
+    provenance_model: [
+      "Track outlooks expose supporting_finding_ids and supporting_source_ids for the public rating rationale.",
+      "Findings carry source_id, optional study_id, track_ids, hallmark_ids, evidence_tier, direction, confidence, and caveats.",
+      "Sources carry bibliographic, registry, DOI, PMID, and URL metadata for retrieval and citation.",
+      "Trials are registry-linked summaries mapped back to tracks with result and watch status.",
+      "source_file_patterns identify the repository record families behind the compact export."
+    ],
+    recommended_retrieval_order: [
+      "Start with legends and caveats so labels are interpreted correctly.",
+      "Retrieve the relevant track outlook and coverage block.",
+      "Follow supporting_finding_ids to findings, then source_id and study_id for provenance.",
+      "Check trials for registry status, result status, and watch rationale.",
+      "Use source_file_patterns when a workflow needs the repository source of truth rather than the compact export."
+    ],
+    known_limitations: [
+      "The export reflects public tracker records and coverage-state summaries, not every paper in longevity science.",
+      "Coverage assessments are editorial map-quality records and may lag newly published literature.",
+      "Labels are intentionally conservative summaries and should be read with caveats and source links.",
+      "Generated timestamps change on request; last_public_update is the field to use for public content freshness."
+    ]
+  };
+
   return {
-    schema_version: "1.0.0",
+    schema_version: datasetCard.version,
     export_type: "lev_tracker_evidence_map",
     generated_at: new Date().toISOString(),
     last_public_update: lastUpdated,
     canonical_path: "/data/evidence-map.json",
+    dataset_card: datasetCard,
     caveats: [
       "This is an evidence-map export, not medical advice or a claim that an intervention extends human life.",
       "Coverage confidence describes how complete the tracker map appears, not how strong the underlying scientific evidence is.",
