@@ -133,6 +133,48 @@ export type SourceAuditOutlookLink = {
 export type EvidenceIndexSort = "strength" | "newest" | "source_reuse" | "track" | "confidence";
 export type EvidenceIndexSpeciesFilter = "human" | "animal" | "nonhuman";
 export type EvidenceIndexSourceReuseFilter = "multi_track" | "single_track";
+export type EvidenceQualityClass =
+  | "stronger_human_signal"
+  | "human_biomarker_or_limited_function"
+  | "preclinical_or_mechanistic"
+  | "review_or_context"
+  | "registry_or_no_results"
+  | "limiting_or_null";
+export type EvidenceStudyDesignFlag =
+  | "randomized"
+  | "controlled"
+  | "registry_linked"
+  | "result_posted"
+  | "no_results_registry"
+  | "review_or_meta_analysis"
+  | "preclinical"
+  | "human_interventional"
+  | "observational_or_real_world"
+  | "animal_or_model"
+  | "mechanistic_or_in_vitro";
+export type EvidenceHumanRelevanceFlag =
+  | "older_adults"
+  | "healthy_adults"
+  | "disease_cohort"
+  | "human_biomarker"
+  | "functional_endpoint"
+  | "clinical_or_healthspan_endpoint"
+  | "safety_endpoint"
+  | "animal_only"
+  | "nonhuman_model";
+export type EvidenceLimitationTag =
+  | "low_confidence"
+  | "surrogate_or_biomarker_endpoint"
+  | "animal_only"
+  | "short_duration"
+  | "small_sample"
+  | "underpowered_or_exploratory"
+  | "confounded_or_observational"
+  | "mixed_or_null_direction"
+  | "no_posted_results"
+  | "safety_unresolved"
+  | "review_not_primary_evidence"
+  | "industry_or_conflict_caveat";
 
 export type EvidenceIndexFilters = {
   q?: string;
@@ -147,6 +189,9 @@ export type EvidenceIndexFilters = {
   species?: EvidenceIndexSpeciesFilter | "";
   source_reuse?: EvidenceIndexSourceReuseFilter | "";
   coverage_confidence?: CoverageConfidence | "";
+  quality_class?: EvidenceQualityClass | "";
+  limitation?: EvidenceLimitationTag | "";
+  human_relevance?: EvidenceHumanRelevanceFlag | "";
   sort?: EvidenceIndexSort | "";
   limit?: number;
 };
@@ -176,6 +221,15 @@ export type EvidenceGapFilters = {
 export type CoverageAuditFilters = {
   track?: string;
   method_class?: CoverageMethodClass | "";
+  limit?: number;
+};
+
+export type EvidenceQualityFilters = {
+  track?: string;
+  quality_class?: EvidenceQualityClass | "";
+  limitation?: EvidenceLimitationTag | "";
+  human_relevance?: EvidenceHumanRelevanceFlag | "";
+  source_type?: string;
   limit?: number;
 };
 
@@ -1042,6 +1096,121 @@ const coverageMethodClassPlainMeanings: Record<CoverageMethodClass, string> = {
   active_mapped:
     "The map is usable and the field is active or dense enough that interpretation, not basic source discovery, is the main task."
 };
+
+const evidenceQualityClassLabels: Record<EvidenceQualityClass, string> = {
+  stronger_human_signal: "Stronger human signal",
+  human_biomarker_or_limited_function: "Human biomarker or limited function",
+  preclinical_or_mechanistic: "Preclinical or mechanistic",
+  review_or_context: "Review or context",
+  registry_or_no_results: "Registry or no-results",
+  limiting_or_null: "Limiting or null"
+};
+
+const evidenceQualityClasses: EvidenceQualityClass[] = [
+  "stronger_human_signal",
+  "human_biomarker_or_limited_function",
+  "preclinical_or_mechanistic",
+  "review_or_context",
+  "registry_or_no_results",
+  "limiting_or_null"
+];
+
+const evidenceQualityClassPlainMeanings: Record<EvidenceQualityClass, string> = {
+  stronger_human_signal:
+    "Human evidence with functional, clinical, healthspan, mortality, or safety relevance and no dominant limiting/null classification.",
+  human_biomarker_or_limited_function:
+    "Human evidence where interpretation still depends heavily on biomarkers, short duration, small samples, or other limits.",
+  preclinical_or_mechanistic:
+    "Animal, in vitro, or mechanism-heavy evidence that should not be treated as direct human aging evidence.",
+  review_or_context:
+    "Review, meta-analysis, regulatory, company, or other context source rather than a direct primary-result record.",
+  registry_or_no_results:
+    "Registry-linked or trial-watch evidence where posted results are absent, pending, or central to interpretation.",
+  limiting_or_null:
+    "A finding whose direction or caveats primarily limit, balance, or weaken the claim."
+};
+
+const evidenceStudyDesignFlagLabels: Record<EvidenceStudyDesignFlag, string> = {
+  randomized: "Randomized",
+  controlled: "Controlled",
+  registry_linked: "Registry linked",
+  result_posted: "Result posted",
+  no_results_registry: "No posted registry results",
+  review_or_meta_analysis: "Review or meta-analysis",
+  preclinical: "Preclinical",
+  human_interventional: "Human interventional",
+  observational_or_real_world: "Observational or real-world",
+  animal_or_model: "Animal or model system",
+  mechanistic_or_in_vitro: "Mechanistic or in vitro"
+};
+
+const evidenceStudyDesignFlags: EvidenceStudyDesignFlag[] = [
+  "randomized",
+  "controlled",
+  "registry_linked",
+  "result_posted",
+  "no_results_registry",
+  "review_or_meta_analysis",
+  "preclinical",
+  "human_interventional",
+  "observational_or_real_world",
+  "animal_or_model",
+  "mechanistic_or_in_vitro"
+];
+
+const evidenceHumanRelevanceFlagLabels: Record<EvidenceHumanRelevanceFlag, string> = {
+  older_adults: "Older adults",
+  healthy_adults: "Healthy adults",
+  disease_cohort: "Disease cohort",
+  human_biomarker: "Human biomarker",
+  functional_endpoint: "Functional endpoint",
+  clinical_or_healthspan_endpoint: "Clinical or healthspan endpoint",
+  safety_endpoint: "Safety endpoint",
+  animal_only: "Animal only",
+  nonhuman_model: "Nonhuman model"
+};
+
+const evidenceHumanRelevanceFlags: EvidenceHumanRelevanceFlag[] = [
+  "older_adults",
+  "healthy_adults",
+  "disease_cohort",
+  "human_biomarker",
+  "functional_endpoint",
+  "clinical_or_healthspan_endpoint",
+  "safety_endpoint",
+  "animal_only",
+  "nonhuman_model"
+];
+
+const evidenceLimitationTagLabels: Record<EvidenceLimitationTag, string> = {
+  low_confidence: "Low confidence",
+  surrogate_or_biomarker_endpoint: "Surrogate or biomarker endpoint",
+  animal_only: "Animal only",
+  short_duration: "Short duration",
+  small_sample: "Small sample",
+  underpowered_or_exploratory: "Underpowered or exploratory",
+  confounded_or_observational: "Confounded or observational",
+  mixed_or_null_direction: "Mixed, null, or negative direction",
+  no_posted_results: "No posted results",
+  safety_unresolved: "Safety unresolved",
+  review_not_primary_evidence: "Review is not primary evidence",
+  industry_or_conflict_caveat: "Industry or conflict caveat"
+};
+
+const evidenceLimitationTags: EvidenceLimitationTag[] = [
+  "low_confidence",
+  "surrogate_or_biomarker_endpoint",
+  "animal_only",
+  "short_duration",
+  "small_sample",
+  "underpowered_or_exploratory",
+  "confounded_or_observational",
+  "mixed_or_null_direction",
+  "no_posted_results",
+  "safety_unresolved",
+  "review_not_primary_evidence",
+  "industry_or_conflict_caveat"
+];
 
 const findingWeightLabels: Record<Confidence, string> = {
   low: "Limited weight",
@@ -2624,6 +2793,22 @@ export function getCoverageMethodClassPlainMeaning(methodClass: CoverageMethodCl
   return coverageMethodClassPlainMeanings[methodClass];
 }
 
+export function getEvidenceQualityClassLabel(qualityClass: EvidenceQualityClass) {
+  return evidenceQualityClassLabels[qualityClass];
+}
+
+export function getEvidenceQualityClassPlainMeaning(qualityClass: EvidenceQualityClass) {
+  return evidenceQualityClassPlainMeanings[qualityClass];
+}
+
+export function getEvidenceLimitationTagLabel(limitation: EvidenceLimitationTag) {
+  return evidenceLimitationTagLabels[limitation];
+}
+
+export function getEvidenceHumanRelevanceFlagLabel(flag: EvidenceHumanRelevanceFlag) {
+  return evidenceHumanRelevanceFlagLabels[flag];
+}
+
 export function getFindingWeightLabel(confidence: Confidence) {
   return findingWeightLabels[confidence];
 }
@@ -3092,6 +3277,452 @@ function getEvidenceSpecies(finding: Pick<FindingRecord, "evidence_tier" | "popu
   return "nonhuman";
 }
 
+type EvidenceQualityFindingInput = Pick<
+  FindingRecord,
+  | "id"
+  | "name"
+  | "summary"
+  | "source_id"
+  | "study_id"
+  | "endpoint_category"
+  | "direction"
+  | "evidence_tier"
+  | "confidence"
+  | "statement"
+  | "population_or_model"
+  | "time_horizon"
+  | "quantitative_note"
+  | "caveats"
+>;
+
+type EvidenceQualitySourceInput = Pick<
+  SourceRecord,
+  "id" | "name" | "summary" | "source_type" | "venue" | "year" | "published_on" | "doi" | "pmid" | "registry_ids"
+>;
+
+type EvidenceQualityStudyInput = Pick<
+  StudyRecord,
+  | "id"
+  | "name"
+  | "summary"
+  | "tags"
+  | "study_type"
+  | "status"
+  | "phase"
+  | "population"
+  | "model_system"
+  | "sample_size"
+  | "registry_ids"
+  | "trial_details"
+>;
+
+function getEvidenceQualityHaystack({
+  finding,
+  source,
+  study
+}: {
+  finding: EvidenceQualityFindingInput;
+  source?: EvidenceQualitySourceInput;
+  study?: EvidenceQualityStudyInput;
+}) {
+  return [
+    finding.name,
+    finding.summary,
+    finding.statement,
+    finding.endpoint_category,
+    finding.direction,
+    finding.evidence_tier,
+    finding.population_or_model,
+    finding.time_horizon,
+    finding.quantitative_note,
+    ...(finding.caveats ?? []),
+    source?.name,
+    source?.summary,
+    source?.source_type,
+    source?.venue,
+    study?.name,
+    study?.summary,
+    study?.study_type,
+    study?.status,
+    study?.phase,
+    study?.population,
+    study?.model_system,
+    ...(study?.tags ?? []),
+    study?.trial_details?.watch_status_reason,
+    study?.trial_details?.horizon_note,
+    study?.trial_details?.why_it_matters
+  ]
+    .filter((value): value is string => Boolean(value))
+    .join(" ")
+    .toLocaleLowerCase();
+}
+
+function getOrderedEvidenceValues<T extends string>(values: Set<T>, order: T[]) {
+  return order.filter((value) => values.has(value));
+}
+
+function hasShortEvidenceDuration(finding: EvidenceQualityFindingInput, haystack: string) {
+  const durationText = [finding.time_horizon, ...(finding.caveats ?? [])].filter(Boolean).join(" ").toLocaleLowerCase();
+  const monthMatch = /\b(\d+(?:\.\d+)?)\s*(?:month|months|mo)\b/.exec(durationText);
+  const weekMatch = /\b(\d+(?:\.\d+)?)\s*(?:week|weeks|wk|wks)\b/.exec(durationText);
+  const dayMatch = /\b(\d+(?:\.\d+)?)\s*(?:day|days)\b/.exec(durationText);
+
+  return (
+    Boolean(monthMatch && Number(monthMatch[1]) < 12) ||
+    Boolean(weekMatch && Number(weekMatch[1]) <= 52) ||
+    Boolean(dayMatch && Number(dayMatch[1]) <= 365) ||
+    /\b(short|short-term|acute|transient|single-dose|single dose|brief)\b/.test(durationText || haystack)
+  );
+}
+
+function hasSmallSample(study: EvidenceQualityStudyInput | undefined, haystack: string) {
+  return Boolean(
+    (study?.sample_size !== undefined && study.sample_size > 0 && study.sample_size < 100) ||
+      /\b(pilot|small sample|small cohort|underpowered|n\s*=\s*\d{1,2}\b)\b/.test(haystack)
+  );
+}
+
+function isEvidenceReviewOrContext({
+  finding,
+  source,
+  study,
+  haystack
+}: {
+  finding: EvidenceQualityFindingInput;
+  source?: EvidenceQualitySourceInput;
+  study?: EvidenceQualityStudyInput;
+  haystack: string;
+}) {
+  return (
+    finding.evidence_tier === "review_or_meta_analysis" ||
+    finding.evidence_tier === "regulatory_or_program_update" ||
+    source?.source_type === "review" ||
+    source?.source_type === "company_update" ||
+    source?.source_type === "regulatory_filing" ||
+    study?.study_type === "review" ||
+    study?.study_type === "meta_analysis" ||
+    /\b(systematic review|meta-analysis|meta analysis|narrative review|regulatory|company update)\b/.test(haystack)
+  );
+}
+
+function getEvidenceQualityClass({
+  finding,
+  studyDesignFlags,
+  humanRelevanceFlags,
+  limitationTags,
+  haystack
+}: {
+  finding: EvidenceQualityFindingInput;
+  studyDesignFlags: EvidenceStudyDesignFlag[];
+  humanRelevanceFlags: EvidenceHumanRelevanceFlag[];
+  limitationTags: EvidenceLimitationTag[];
+  haystack: string;
+}): EvidenceQualityClass {
+  if (limitationTags.includes("no_posted_results") || studyDesignFlags.includes("no_results_registry")) {
+    return "registry_or_no_results";
+  }
+
+  if (limitationTags.includes("mixed_or_null_direction")) {
+    return "limiting_or_null";
+  }
+
+  if (studyDesignFlags.includes("review_or_meta_analysis") || finding.evidence_tier === "regulatory_or_program_update") {
+    return "review_or_context";
+  }
+
+  if (
+    studyDesignFlags.includes("preclinical") ||
+    studyDesignFlags.includes("mechanistic_or_in_vitro") ||
+    humanRelevanceFlags.includes("animal_only") ||
+    humanRelevanceFlags.includes("nonhuman_model")
+  ) {
+    return "preclinical_or_mechanistic";
+  }
+
+  if (
+    finding.evidence_tier === "human_biomarker" ||
+    limitationTags.some((tag) =>
+      [
+        "surrogate_or_biomarker_endpoint",
+        "short_duration",
+        "small_sample",
+        "underpowered_or_exploratory",
+        "confounded_or_observational",
+        "safety_unresolved"
+      ].includes(tag)
+    )
+  ) {
+    return "human_biomarker_or_limited_function";
+  }
+
+  if (
+    isHumanEvidenceTier(finding.evidence_tier) ||
+    humanRelevanceFlags.some((flag) =>
+      ["functional_endpoint", "clinical_or_healthspan_endpoint", "safety_endpoint"].includes(flag)
+    ) ||
+    /\b(human|patient|participant|adult|trial)\b/.test(haystack)
+  ) {
+    return "stronger_human_signal";
+  }
+
+  return "preclinical_or_mechanistic";
+}
+
+function getEvidenceQualityReason({
+  qualityClass,
+  studyDesignFlags,
+  humanRelevanceFlags,
+  limitationTags
+}: {
+  qualityClass: EvidenceQualityClass;
+  studyDesignFlags: EvidenceStudyDesignFlag[];
+  humanRelevanceFlags: EvidenceHumanRelevanceFlag[];
+  limitationTags: EvidenceLimitationTag[];
+}) {
+  const designLabels = studyDesignFlags.slice(0, 2).map((flag) => evidenceStudyDesignFlagLabels[flag]);
+  const relevanceLabels = humanRelevanceFlags.slice(0, 2).map((flag) => evidenceHumanRelevanceFlagLabels[flag]);
+  const limitationLabels = limitationTags.slice(0, 2).map((tag) => evidenceLimitationTagLabels[tag]);
+  const parts = [
+    designLabels.length ? `Design: ${designLabels.join(", ")}` : undefined,
+    relevanceLabels.length ? `Relevance: ${relevanceLabels.join(", ")}` : undefined,
+    limitationLabels.length ? `Limitations: ${limitationLabels.join(", ")}` : undefined
+  ].filter((value): value is string => Boolean(value));
+
+  return parts.length
+    ? `${evidenceQualityClassLabels[qualityClass]}. ${parts.join(". ")}.`
+    : evidenceQualityClassPlainMeanings[qualityClass];
+}
+
+function buildEvidenceQualityProfile({
+  finding,
+  source,
+  study
+}: {
+  finding: EvidenceQualityFindingInput;
+  source?: EvidenceQualitySourceInput;
+  study?: EvidenceQualityStudyInput;
+}) {
+  const haystack = getEvidenceQualityHaystack({ finding, source, study });
+  const species = getEvidenceSpecies(finding);
+  const studyDesignFlags = new Set<EvidenceStudyDesignFlag>();
+  const humanRelevanceFlags = new Set<EvidenceHumanRelevanceFlag>();
+  const limitationTags = new Set<EvidenceLimitationTag>();
+  const reviewOrContext = isEvidenceReviewOrContext({ finding, source, study, haystack });
+  const trialResultsStatus = study ? getTrialResultsStatus(study as StudyRecord) : undefined;
+  const trialWatchStatus = study && trialResultsStatus ? getTrialWatchStatus(study as StudyRecord, trialResultsStatus) : undefined;
+  const registryLinked = Boolean(
+    (study?.registry_ids?.length ?? 0) > 0 ||
+      (source?.registry_ids?.length ?? 0) > 0 ||
+      source?.source_type === "trial_registry"
+  );
+  const noPostedResults = Boolean(
+    source?.source_type === "trial_registry" ||
+      trialResultsStatus === "not_posted" ||
+      trialWatchStatus === "late_no_results" ||
+      /\b(no posted results?|without posted results?|results not posted|late no-results)\b/.test(haystack)
+  );
+  const shortDuration = hasShortEvidenceDuration(finding, haystack);
+  const smallSample = hasSmallSample(study, haystack);
+  const observational = Boolean(
+    study?.study_type === "observational" || /\b(observational|real-world|real world|retrospective|cohort)\b/.test(haystack)
+  );
+  const mechanisticOrInVitro = Boolean(
+    study?.study_type === "in_vitro" ||
+      finding.evidence_tier === "in_vitro" ||
+      finding.endpoint_category === "mechanistic" ||
+      /\b(in vitro|cell culture|mechanistic|assay)\b/.test(haystack)
+  );
+  const animalOrModel = Boolean(
+    species === "animal" ||
+      study?.study_type === "animal" ||
+      Boolean(study?.model_system) ||
+      /\b(mouse|mice|murine|rat|rats|worm|worms|drosophila|macaque|monkey|model system)\b/.test(haystack)
+  );
+
+  if (/\b(randomi[sz]ed|rct)\b/.test(haystack)) {
+    studyDesignFlags.add("randomized");
+  }
+
+  if (/\b(controlled|placebo|control group|vehicle-controlled|active comparator)\b/.test(haystack)) {
+    studyDesignFlags.add("controlled");
+  }
+
+  if (registryLinked) {
+    studyDesignFlags.add("registry_linked");
+  }
+
+  if (trialResultsStatus === "posted" || /\b(results posted|published results|journal_article)\b/.test(haystack)) {
+    studyDesignFlags.add("result_posted");
+  }
+
+  if (noPostedResults) {
+    studyDesignFlags.add("no_results_registry");
+    limitationTags.add("no_posted_results");
+  }
+
+  if (reviewOrContext) {
+    studyDesignFlags.add("review_or_meta_analysis");
+    limitationTags.add("review_not_primary_evidence");
+  }
+
+  if (animalOrModel || species === "nonhuman") {
+    studyDesignFlags.add("preclinical");
+  }
+
+  if (isHumanEvidenceTier(finding.evidence_tier) && study?.study_type === "interventional") {
+    studyDesignFlags.add("human_interventional");
+  }
+
+  if (observational) {
+    studyDesignFlags.add("observational_or_real_world");
+    limitationTags.add("confounded_or_observational");
+  }
+
+  if (animalOrModel) {
+    studyDesignFlags.add("animal_or_model");
+  }
+
+  if (mechanisticOrInVitro) {
+    studyDesignFlags.add("mechanistic_or_in_vitro");
+  }
+
+  if (/\b(older adult|older adults|elderly|aged human|aged adults|frail older|middle-aged|middle aged)\b/.test(haystack)) {
+    humanRelevanceFlags.add("older_adults");
+  }
+
+  if (/\b(healthy adult|healthy adults|healthy volunteer|healthy participants|community-dwelling)\b/.test(haystack)) {
+    humanRelevanceFlags.add("healthy_adults");
+  }
+
+  if (
+    /\b(patient|patients|disease|cancer|diabetes|alzheimer|parkinson|als|heart failure|sarcopenia|frailty|dialysis|stroke|npc|attr)\b/.test(
+      haystack
+    )
+  ) {
+    humanRelevanceFlags.add("disease_cohort");
+  }
+
+  if (finding.evidence_tier === "human_biomarker" || finding.endpoint_category === "biomarker") {
+    humanRelevanceFlags.add("human_biomarker");
+    limitationTags.add("surrogate_or_biomarker_endpoint");
+  }
+
+  if (
+    finding.endpoint_category === "functional" ||
+    /\b(function|functional|frailty|walk|walking|strength|grip|physical performance|cognitive|memory)\b/.test(haystack)
+  ) {
+    humanRelevanceFlags.add("functional_endpoint");
+  }
+
+  if (
+    ["healthspan", "lifespan"].includes(finding.endpoint_category) ||
+    ["human_clinical_outcome", "mortality_or_lifespan"].includes(finding.evidence_tier) ||
+    /\b(clinical|healthspan|mortality|lifespan|survival|hospital|disease outcome)\b/.test(haystack)
+  ) {
+    humanRelevanceFlags.add("clinical_or_healthspan_endpoint");
+  }
+
+  if (finding.endpoint_category === "safety" || /\b(safety|adverse|toxicity|tolerability|side effect)\b/.test(haystack)) {
+    humanRelevanceFlags.add("safety_endpoint");
+  }
+
+  if (species === "animal") {
+    humanRelevanceFlags.add("animal_only");
+    limitationTags.add("animal_only");
+  } else if (species === "nonhuman") {
+    humanRelevanceFlags.add("nonhuman_model");
+  }
+
+  if (finding.confidence === "low") {
+    limitationTags.add("low_confidence");
+  }
+
+  if (shortDuration) {
+    limitationTags.add("short_duration");
+  }
+
+  if (smallSample) {
+    limitationTags.add("small_sample");
+  }
+
+  if (/\b(underpowered|exploratory|pilot|hypothesis-generating|hypothesis generating)\b/.test(haystack)) {
+    limitationTags.add("underpowered_or_exploratory");
+  }
+
+  if (["mixed", "null", "negative", "inconclusive"].includes(finding.direction)) {
+    limitationTags.add("mixed_or_null_direction");
+  }
+
+  if (/\b(safety unresolved|safety remains|toxicity|tolerability|adverse event|adverse events|risk unresolved)\b/.test(haystack)) {
+    limitationTags.add("safety_unresolved");
+  }
+
+  if (/\b(industry|sponsor|company|conflict|shareholder|employee|employees|commercial)\b/.test(haystack)) {
+    limitationTags.add("industry_or_conflict_caveat");
+  }
+
+  const orderedStudyDesignFlags = getOrderedEvidenceValues(studyDesignFlags, evidenceStudyDesignFlags);
+  const orderedHumanRelevanceFlags = getOrderedEvidenceValues(humanRelevanceFlags, evidenceHumanRelevanceFlags);
+  const orderedLimitationTags = getOrderedEvidenceValues(limitationTags, evidenceLimitationTags);
+  const qualityClass = getEvidenceQualityClass({
+    finding,
+    studyDesignFlags: orderedStudyDesignFlags,
+    humanRelevanceFlags: orderedHumanRelevanceFlags,
+    limitationTags: orderedLimitationTags,
+    haystack
+  });
+
+  return {
+    quality_class: qualityClass,
+    quality_class_label: evidenceQualityClassLabels[qualityClass],
+    quality_class_meaning: evidenceQualityClassPlainMeanings[qualityClass],
+    quality_class_reason: getEvidenceQualityReason({
+      qualityClass,
+      studyDesignFlags: orderedStudyDesignFlags,
+      humanRelevanceFlags: orderedHumanRelevanceFlags,
+      limitationTags: orderedLimitationTags
+    }),
+    evidence_strength_score: getFindingStrength(finding),
+    study_design_flags: orderedStudyDesignFlags,
+    study_design_flag_labels: orderedStudyDesignFlags.map((flag) => evidenceStudyDesignFlagLabels[flag]),
+    human_relevance_flags: orderedHumanRelevanceFlags,
+    human_relevance_flag_labels: orderedHumanRelevanceFlags.map((flag) => evidenceHumanRelevanceFlagLabels[flag]),
+    limitation_tags: orderedLimitationTags,
+    limitation_labels: orderedLimitationTags.map((tag) => evidenceLimitationTagLabels[tag]),
+    source_quality: source
+      ? {
+          source_id: source.id,
+          source_type: source.source_type,
+          source_type_label: getReadableDataLabel(source.source_type),
+          year: source.year,
+          published_on: source.published_on,
+          registry_ids: source.registry_ids ?? [],
+          doi: source.doi,
+          pmid: source.pmid
+        }
+      : null,
+    study_quality: study
+      ? {
+          study_id: study.id,
+          study_type: study.study_type,
+          study_type_label: getReadableDataLabel(study.study_type),
+          status: study.status,
+          status_label: getReadableDataLabel(study.status),
+          phase: study.phase,
+          phase_label: study.phase ? getReadableDataLabel(study.phase) : undefined,
+          population: study.population,
+          model_system: study.model_system,
+          sample_size: study.sample_size,
+          registry_ids: study.registry_ids ?? [],
+          results_status: trialResultsStatus,
+          results_status_label: trialResultsStatus ? trialResultsStatusLabels[trialResultsStatus] : undefined,
+          watch_status: trialWatchStatus,
+          watch_status_label: trialWatchStatus ? trialWatchStatusLabels[trialWatchStatus] : undefined
+        }
+      : null
+  };
+}
+
 function cleanEvidenceIndexFilters(filters: EvidenceIndexFilters = {}) {
   const limit = filters.limit && Number.isFinite(filters.limit) ? Math.max(1, Math.min(1000, filters.limit)) : undefined;
 
@@ -3108,6 +3739,9 @@ function cleanEvidenceIndexFilters(filters: EvidenceIndexFilters = {}) {
     species: filters.species ?? "",
     source_reuse: filters.source_reuse ?? "",
     coverage_confidence: filters.coverage_confidence ?? "",
+    quality_class: filters.quality_class ?? "",
+    limitation: filters.limitation ?? "",
+    human_relevance: filters.human_relevance ?? "",
     sort: filters.sort || "strength",
     limit
   };
@@ -3147,6 +3781,16 @@ function getEvidenceIndexSearchText(row: {
   interventions: Array<{ id: string; name: string; short_name?: string }>;
   track_contexts: Array<{ id: string; name: string; primary_hallmark_name: string }>;
   hallmarks: Array<{ id: string; name: string }>;
+  quality?: {
+    quality_class: string;
+    quality_class_label: string;
+    study_design_flags: string[];
+    study_design_flag_labels: string[];
+    human_relevance_flags: string[];
+    human_relevance_flag_labels: string[];
+    limitation_tags: string[];
+    limitation_labels: string[];
+  };
 }) {
   return [
     row.id,
@@ -3174,6 +3818,14 @@ function getEvidenceIndexSearchText(row: {
     ...row.interventions.flatMap((intervention) => [intervention.id, intervention.name, intervention.short_name]),
     ...row.track_contexts.flatMap((track) => [track.id, track.name, track.primary_hallmark_name]),
     ...row.hallmarks.flatMap((hallmark) => [hallmark.id, hallmark.name]),
+    row.quality?.quality_class,
+    row.quality?.quality_class_label,
+    ...(row.quality?.study_design_flags ?? []),
+    ...(row.quality?.study_design_flag_labels ?? []),
+    ...(row.quality?.human_relevance_flags ?? []),
+    ...(row.quality?.human_relevance_flag_labels ?? []),
+    ...(row.quality?.limitation_tags ?? []),
+    ...(row.quality?.limitation_labels ?? []),
     ...row.caveats
   ]
     .filter((value): value is string => Boolean(value))
@@ -3195,6 +3847,11 @@ function applyEvidenceIndexFilters<
     species: string;
     source_reuse_track_count: number;
     track_contexts: Array<{ coverage_confidence?: CoverageConfidence }>;
+    quality: {
+      quality_class: EvidenceQualityClass;
+      limitation_tags: EvidenceLimitationTag[];
+      human_relevance_flags: EvidenceHumanRelevanceFlag[];
+    };
   }
 >(rows: T[], filters: EvidenceIndexFilters) {
   const selected = cleanEvidenceIndexFilters(filters);
@@ -3214,6 +3871,9 @@ function applyEvidenceIndexFilters<
       (!selected.species || row.species === selected.species) &&
       (!selected.coverage_confidence ||
         row.track_contexts.some((track) => track.coverage_confidence === selected.coverage_confidence)) &&
+      (!selected.quality_class || row.quality.quality_class === selected.quality_class) &&
+      (!selected.limitation || row.quality.limitation_tags.includes(selected.limitation)) &&
+      (!selected.human_relevance || row.quality.human_relevance_flags.includes(selected.human_relevance)) &&
       (!selected.source_reuse ||
         (selected.source_reuse === "multi_track"
           ? row.source_reuse_track_count > 1
@@ -3271,6 +3931,35 @@ function sortEvidenceIndexRows<
 
     return left.name.localeCompare(right.name);
   });
+}
+
+function getEvidenceQualityClassCounts(rows: Array<{ quality: { quality_class: EvidenceQualityClass } }>) {
+  return Object.fromEntries(
+    evidenceQualityClasses.map((qualityClass) => [
+      qualityClass,
+      rows.filter((row) => row.quality.quality_class === qualityClass).length
+    ])
+  ) as Record<EvidenceQualityClass, number>;
+}
+
+function getEvidenceQualityTagCountRows<T extends string, R extends { quality: unknown }>({
+  rows,
+  order,
+  labels,
+  getValues
+}: {
+  rows: R[];
+  order: T[];
+  labels: Record<T, string>;
+  getValues: (row: R) => T[];
+}) {
+  return order
+    .map((value) => ({
+      value,
+      label: labels[value],
+      count: rows.filter((row) => getValues(row).includes(value)).length
+    }))
+    .filter((item) => item.count > 0);
 }
 
 export async function getScopedEvidenceMapExport(trackId: string) {
@@ -3841,6 +4530,7 @@ export async function getEvidenceIndexExport(filters: EvidenceIndexFilters = {})
       left.localeCompare(right)
     );
     const species = getEvidenceSpecies(finding);
+    const quality = buildEvidenceQualityProfile({ finding, source, study });
     const row = {
       ...finding,
       href: `/findings/${finding.id}`,
@@ -3861,7 +4551,8 @@ export async function getEvidenceIndexExport(filters: EvidenceIndexFilters = {})
       study: study ? formatStudyForEvidenceMap(study) : null,
       interventions: rowInterventions,
       track_contexts: trackContexts,
-      hallmarks
+      hallmarks,
+      quality
     };
 
     return {
@@ -3933,6 +4624,20 @@ export async function getEvidenceIndexExport(filters: EvidenceIndexFilters = {})
       filters: { confidence: "low", coverage_confidence: "high" }
     },
     {
+      id: "human-signals-with-limits",
+      label: "Human signals with limits",
+      summary: "Human biomarker or limited-function signals where design or endpoint limitations should stay visible.",
+      kind: "evidence",
+      filters: { quality_class: "human_biomarker_or_limited_function" }
+    },
+    {
+      id: "no-results-registry-evidence",
+      label: "No-results registry evidence",
+      summary: "Registry-linked findings where absent or pending results are central to interpretation.",
+      kind: "evidence",
+      filters: { quality_class: "registry_or_no_results" }
+    },
+    {
       id: "multi-track-sources",
       label: "Sources reused across tracks",
       summary: "Findings whose source appears in more than one track context.",
@@ -3994,6 +4699,7 @@ export async function getEvidenceIndexExport(filters: EvidenceIndexFilters = {})
       null_or_negative_finding_count: exportedRows.filter(
         (row) => row.direction === "null" || row.direction === "negative"
       ).length,
+      quality_class_counts: getEvidenceQualityClassCounts(exportedRows),
       source_count: sourceIds.size,
       multi_track_source_count: multiTrackSourceIds.size,
       track_count: trackIds.size,
@@ -4029,6 +4735,18 @@ export async function getEvidenceIndexExport(filters: EvidenceIndexFilters = {})
         { value: "moderate", label: getCoverageConfidenceLabel("moderate") },
         { value: "high", label: getCoverageConfidenceLabel("high") }
       ],
+      quality_classes: evidenceQualityClasses.map((qualityClass) => ({
+        value: qualityClass,
+        label: evidenceQualityClassLabels[qualityClass]
+      })),
+      limitations: evidenceLimitationTags.map((limitation) => ({
+        value: limitation,
+        label: evidenceLimitationTagLabels[limitation]
+      })),
+      human_relevance: evidenceHumanRelevanceFlags.map((flag) => ({
+        value: flag,
+        label: evidenceHumanRelevanceFlagLabels[flag]
+      })),
       species: [
         { value: "human", label: "Human" },
         { value: "animal", label: "Animal" },
@@ -4048,6 +4766,188 @@ export async function getEvidenceIndexExport(filters: EvidenceIndexFilters = {})
     },
     saved_views: savedViews,
     findings: exportedRows
+  };
+}
+
+function cleanEvidenceQualityFilters(filters: EvidenceQualityFilters = {}) {
+  const limit = filters.limit && Number.isFinite(filters.limit) ? Math.max(1, Math.min(1000, filters.limit)) : undefined;
+
+  return {
+    track: filters.track ?? "",
+    quality_class: filters.quality_class ?? "",
+    limitation: filters.limitation ?? "",
+    human_relevance: filters.human_relevance ?? "",
+    source_type: filters.source_type ?? "",
+    limit
+  };
+}
+
+function getEvidenceQualityQueryPath(path: string, filters: EvidenceQualityFilters) {
+  const params = new URLSearchParams();
+  const cleaned = cleanEvidenceQualityFilters(filters);
+
+  for (const [key, value] of Object.entries(cleaned)) {
+    if (!value) {
+      continue;
+    }
+
+    params.set(key, String(value));
+  }
+
+  const query = params.toString();
+  return query ? `${path}?${query}` : path;
+}
+
+function getAppliedEvidenceQualityFilters(filters: ReturnType<typeof cleanEvidenceQualityFilters>) {
+  return Object.fromEntries(
+    Object.entries(filters)
+      .filter(([, value]) => Boolean(value))
+      .map(([key, value]) => [key, String(value)])
+  );
+}
+
+function getEvidenceQualityLegend() {
+  return evidenceQualityClasses.map((qualityClass) => ({
+    value: qualityClass,
+    label: evidenceQualityClassLabels[qualityClass],
+    plain_meaning: evidenceQualityClassPlainMeanings[qualityClass]
+  }));
+}
+
+export async function getEvidenceQualityExport(filters: EvidenceQualityFilters = {}) {
+  noStore();
+  const selected = cleanEvidenceQualityFilters(filters);
+  const baseIndex = await getEvidenceIndexExport({
+    track: selected.track,
+    source_type: selected.source_type,
+    sort: "strength"
+  });
+  const qualityFilteredRows = baseIndex.findings.filter(
+    (row) =>
+      (!selected.quality_class || row.quality.quality_class === selected.quality_class) &&
+      (!selected.limitation || row.quality.limitation_tags.includes(selected.limitation)) &&
+      (!selected.human_relevance || row.quality.human_relevance_flags.includes(selected.human_relevance))
+  );
+  const exportedRows = selected.limit ? qualityFilteredRows.slice(0, selected.limit) : qualityFilteredRows;
+  const sourceIds = new Set(exportedRows.map((row) => row.source_id));
+  const studyIds = new Set(exportedRows.map((row) => row.study_id).filter((value): value is string => Boolean(value)));
+  const trackIds = new Set(exportedRows.flatMap((row) => row.track_ids));
+
+  return {
+    schema_version: "1.0.0",
+    schema_url: "/data/evidence-quality.schema.json",
+    export_type: "lev_tracker_evidence_quality",
+    generated_at: new Date().toISOString(),
+    last_public_update: baseIndex.last_public_update,
+    canonical_path: getEvidenceQualityQueryPath("/data/evidence-quality.json", selected),
+    page_path: getEvidenceQualityQueryPath("/evidence", {
+      track: selected.track,
+      source_type: selected.source_type,
+      quality_class: selected.quality_class,
+      limitation: selected.limitation,
+      human_relevance: selected.human_relevance
+    }),
+    applied_filters: getAppliedEvidenceQualityFilters(selected),
+    methodology: {
+      classification_basis:
+        "Quality classes and limitation tags are derived from structured tracker metadata, source type, study type, registry status, endpoint category, direction, confidence, and explicit caveat text.",
+      not_risk_of_bias:
+        "This is not a formal Cochrane, GRADE, or trial-level risk-of-bias adjudication; use it as a triage and retrieval layer before reading source records.",
+      primary_uses: [
+        "Find findings whose interpretation depends on biomarker, sample-size, duration, registry, or review-context limits.",
+        "Audit whether expert-facing summaries keep source and study limitations visible.",
+        "Give language-model workflows compact labels that prevent treating all evidence tiers as equally strong."
+      ]
+    },
+    caveats: [
+      "Quality labels are heuristic tracker metadata, not independent peer review or clinical guidance.",
+      "A stronger human signal label does not mean an intervention extends human lifespan or is appropriate for use.",
+      "Limitation tags intentionally over-surface caution signals so expert and AI workflows can inspect the underlying source and study records."
+    ],
+    quality_class_legend: getEvidenceQualityLegend(),
+    study_design_flag_legend: evidenceStudyDesignFlags.map((flag) => ({
+      value: flag,
+      label: evidenceStudyDesignFlagLabels[flag]
+    })),
+    human_relevance_legend: evidenceHumanRelevanceFlags.map((flag) => ({
+      value: flag,
+      label: evidenceHumanRelevanceFlagLabels[flag]
+    })),
+    limitation_legend: evidenceLimitationTags.map((tag) => ({
+      value: tag,
+      label: evidenceLimitationTagLabels[tag]
+    })),
+    summary: {
+      total_finding_count: baseIndex.summary.total_finding_count,
+      scoped_finding_count: baseIndex.findings.length,
+      filtered_finding_count: qualityFilteredRows.length,
+      returned_finding_count: exportedRows.length,
+      source_count: sourceIds.size,
+      study_count: studyIds.size,
+      track_count: trackIds.size,
+      quality_class_counts: getEvidenceQualityClassCounts(qualityFilteredRows),
+      limitation_tag_counts: getEvidenceQualityTagCountRows({
+        rows: qualityFilteredRows,
+        order: evidenceLimitationTags,
+        labels: evidenceLimitationTagLabels,
+        getValues: (row) => row.quality.limitation_tags
+      }),
+      human_relevance_counts: getEvidenceQualityTagCountRows({
+        rows: qualityFilteredRows,
+        order: evidenceHumanRelevanceFlags,
+        labels: evidenceHumanRelevanceFlagLabels,
+        getValues: (row) => row.quality.human_relevance_flags
+      }),
+      study_design_flag_counts: getEvidenceQualityTagCountRows({
+        rows: qualityFilteredRows,
+        order: evidenceStudyDesignFlags,
+        labels: evidenceStudyDesignFlagLabels,
+        getValues: (row) => row.quality.study_design_flags
+      })
+    },
+    facet_options: {
+      tracks: baseIndex.facet_options.tracks,
+      source_types: baseIndex.facet_options.source_types,
+      quality_classes: evidenceQualityClasses.map((qualityClass) => ({
+        value: qualityClass,
+        label: evidenceQualityClassLabels[qualityClass]
+      })),
+      limitations: evidenceLimitationTags.map((tag) => ({
+        value: tag,
+        label: evidenceLimitationTagLabels[tag]
+      })),
+      human_relevance: evidenceHumanRelevanceFlags.map((flag) => ({
+        value: flag,
+        label: evidenceHumanRelevanceFlagLabels[flag]
+      }))
+    },
+    source_file_patterns: {
+      public_records: ["data/sources/*.json", "data/studies/*.json", "data/findings/*.json"],
+      derived_from: ["/data/evidence-index.json", "/data/evidence-map.json"]
+    },
+    findings: exportedRows
+  };
+}
+
+export async function getTrackEvidenceQualityProfile(trackId: string) {
+  noStore();
+  const qualityExport = await getEvidenceQualityExport({ track: trackId });
+
+  return {
+    track_id: trackId,
+    finding_count: qualityExport.summary.filtered_finding_count,
+    quality_classes: evidenceQualityClasses
+      .map((qualityClass) => ({
+        value: qualityClass,
+        label: evidenceQualityClassLabels[qualityClass],
+        count: qualityExport.summary.quality_class_counts[qualityClass],
+        plain_meaning: evidenceQualityClassPlainMeanings[qualityClass]
+      }))
+      .filter((item) => item.count > 0),
+    limitations: qualityExport.summary.limitation_tag_counts.slice(0, 6),
+    human_relevance: qualityExport.summary.human_relevance_counts.slice(0, 6),
+    data_path: `/data/evidence-quality.json?track=${encodeURIComponent(trackId)}`,
+    page_path: `/evidence?track=${encodeURIComponent(trackId)}`
   };
 }
 

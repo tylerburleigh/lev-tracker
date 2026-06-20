@@ -19,6 +19,9 @@ type EvidenceSearchParams = {
   species?: string | string[];
   source_reuse?: string | string[];
   coverage_confidence?: string | string[];
+  quality_class?: string | string[];
+  limitation?: string | string[];
+  human_relevance?: string | string[];
   sort?: string | string[];
 };
 
@@ -46,6 +49,9 @@ function getEvidenceFilters(searchParams: EvidenceSearchParams): EvidenceIndexFi
     coverage_confidence: getSingleSearchParam(
       searchParams.coverage_confidence
     ) as EvidenceIndexFilters["coverage_confidence"],
+    quality_class: getSingleSearchParam(searchParams.quality_class) as EvidenceIndexFilters["quality_class"],
+    limitation: getSingleSearchParam(searchParams.limitation) as EvidenceIndexFilters["limitation"],
+    human_relevance: getSingleSearchParam(searchParams.human_relevance) as EvidenceIndexFilters["human_relevance"],
     sort: getSingleSearchParam(searchParams.sort) as EvidenceIndexFilters["sort"]
   };
 }
@@ -235,6 +241,39 @@ export default async function EvidenceExplorerPage({ searchParams }: EvidenceExp
               </select>
             </label>
             <label className="track-search__field">
+              <span>Quality</span>
+              <select name="quality_class" defaultValue={selected.quality_class}>
+                <option value="">All quality classes</option>
+                {facets.quality_classes.map((option) => (
+                  <option value={option.value} key={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="track-search__field">
+              <span>Limitation</span>
+              <select name="limitation" defaultValue={selected.limitation}>
+                <option value="">All limitation tags</option>
+                {facets.limitations.map((option) => (
+                  <option value={option.value} key={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="track-search__field">
+              <span>Human relevance</span>
+              <select name="human_relevance" defaultValue={selected.human_relevance}>
+                <option value="">All relevance flags</option>
+                {facets.human_relevance.map((option) => (
+                  <option value={option.value} key={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="track-search__field">
               <span>Reuse</span>
               <select name="source_reuse" defaultValue={selected.source_reuse}>
                 <option value="">All source reuse</option>
@@ -291,6 +330,7 @@ export default async function EvidenceExplorerPage({ searchParams }: EvidenceExp
                   <th scope="col">Evidence</th>
                   <th scope="col">Biology</th>
                   <th scope="col">Source</th>
+                  <th scope="col">Quality</th>
                   <th scope="col">Caveats</th>
                 </tr>
               </thead>
@@ -344,6 +384,21 @@ export default async function EvidenceExplorerPage({ searchParams }: EvidenceExp
                       {finding.source_reuse_track_count > 1 ? (
                         <span>{finding.source_reuse_track_count} track source</span>
                       ) : null}
+                    </td>
+                    <td className="evidence-quality-cell">
+                      <strong>{finding.quality.quality_class_label}</strong>
+                      <span>{finding.quality.quality_class_reason}</span>
+                      {finding.quality.limitation_labels.length ? (
+                        <div className="evidence-quality-tags">
+                          {finding.quality.limitation_labels.slice(0, 3).map((label) => (
+                            <span className="evidence-chip evidence-chip--gold" key={label}>
+                              {label}
+                            </span>
+                          ))}
+                        </div>
+                      ) : (
+                        <span>No limitation tag</span>
+                      )}
                     </td>
                     <td>
                       {finding.caveats.length ? (

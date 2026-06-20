@@ -1,0 +1,288 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "/data/evidence-quality.schema.json",
+  "title": "LEV Tracker evidence quality export",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "schema_url",
+    "export_type",
+    "generated_at",
+    "last_public_update",
+    "canonical_path",
+    "page_path",
+    "applied_filters",
+    "methodology",
+    "caveats",
+    "quality_class_legend",
+    "study_design_flag_legend",
+    "human_relevance_legend",
+    "limitation_legend",
+    "summary",
+    "facet_options",
+    "source_file_patterns",
+    "findings"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "schema_url": {
+      "const": "/data/evidence-quality.schema.json"
+    },
+    "export_type": {
+      "const": "lev_tracker_evidence_quality"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_public_update": {
+      "type": "string"
+    },
+    "canonical_path": {
+      "type": "string",
+      "pattern": "^/data/evidence-quality\\.json"
+    },
+    "page_path": {
+      "type": "string",
+      "pattern": "^/evidence"
+    },
+    "applied_filters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "methodology": {
+      "$ref": "#/$defs/methodology"
+    },
+    "caveats": {
+      "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+    },
+    "quality_class_legend": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/plainLegendItem"
+      }
+    },
+    "study_design_flag_legend": {
+      "$ref": "#/$defs/filterOptionArray"
+    },
+    "human_relevance_legend": {
+      "$ref": "#/$defs/filterOptionArray"
+    },
+    "limitation_legend": {
+      "$ref": "#/$defs/filterOptionArray"
+    },
+    "summary": {
+      "$ref": "#/$defs/summary"
+    },
+    "facet_options": {
+      "$ref": "#/$defs/facetOptions"
+    },
+    "source_file_patterns": {
+      "$ref": "#/$defs/sourceFilePatterns"
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "$ref": "/data/evidence-index.schema.json#/$defs/evidenceFinding"
+      }
+    }
+  },
+  "$defs": {
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "methodology": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "classification_basis",
+        "not_risk_of_bias",
+        "primary_uses"
+      ],
+      "properties": {
+        "classification_basis": {
+          "type": "string"
+        },
+        "not_risk_of_bias": {
+          "type": "string"
+        },
+        "primary_uses": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        }
+      }
+    },
+    "filterOption": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "label"
+      ],
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      }
+    },
+    "filterOptionArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/filterOption"
+      }
+    },
+    "plainLegendItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "label",
+        "plain_meaning"
+      ],
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "plain_meaning": {
+          "type": "string"
+        }
+      }
+    },
+    "countRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "label",
+        "count"
+      ],
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "count": {
+          "$ref": "#/$defs/count"
+        }
+      }
+    },
+    "qualityClassCounts": {
+      "$ref": "/data/evidence-index.schema.json#/$defs/qualityClassCounts"
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total_finding_count",
+        "scoped_finding_count",
+        "filtered_finding_count",
+        "returned_finding_count",
+        "source_count",
+        "study_count",
+        "track_count",
+        "quality_class_counts",
+        "limitation_tag_counts",
+        "human_relevance_counts",
+        "study_design_flag_counts"
+      ],
+      "properties": {
+        "total_finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "scoped_finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "filtered_finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "returned_finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "source_count": {
+          "$ref": "#/$defs/count"
+        },
+        "study_count": {
+          "$ref": "#/$defs/count"
+        },
+        "track_count": {
+          "$ref": "#/$defs/count"
+        },
+        "quality_class_counts": {
+          "$ref": "#/$defs/qualityClassCounts"
+        },
+        "limitation_tag_counts": {
+          "$ref": "#/$defs/countRowArray"
+        },
+        "human_relevance_counts": {
+          "$ref": "#/$defs/countRowArray"
+        },
+        "study_design_flag_counts": {
+          "$ref": "#/$defs/countRowArray"
+        }
+      }
+    },
+    "countRowArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/countRow"
+      }
+    },
+    "facetOptions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tracks",
+        "source_types",
+        "quality_classes",
+        "limitations",
+        "human_relevance"
+      ],
+      "properties": {
+        "tracks": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "source_types": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "quality_classes": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "limitations": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "human_relevance": {
+          "$ref": "#/$defs/filterOptionArray"
+        }
+      }
+    },
+    "sourceFilePatterns": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "public_records",
+        "derived_from"
+      ],
+      "properties": {
+        "public_records": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "derived_from": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        }
+      }
+    }
+  }
+}

@@ -18,6 +18,7 @@ import {
   getReadFirmnessLabel,
   getStageLabel,
   getStudiesForTrack,
+  getTrackEvidenceQualityProfile,
   getTrackEvidenceSupport,
   getTrackById,
   getTrackCoverage,
@@ -151,7 +152,16 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
   const { trackId } = await params;
   const trackWithGroup = getTracks().find((item) => item.id === trackId);
   const taxonomyTrack = getTrackById(trackId);
-  const [coverage, evidenceSupport, trackFindings, trackStudies, recentChanges, trackActivity, lastUpdated] =
+  const [
+    coverage,
+    evidenceSupport,
+    trackFindings,
+    trackStudies,
+    recentChanges,
+    trackActivity,
+    trackQualityProfile,
+    lastUpdated
+  ] =
     await Promise.all([
       getTrackCoverage(trackId),
       getTrackEvidenceSupport(trackId),
@@ -159,6 +169,7 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
       getStudiesForTrack(trackId),
       getRecentChangesForSubject("track", trackId),
       getActivityForTrack(trackId),
+      getTrackEvidenceQualityProfile(trackId),
       getOverallLastUpdated()
     ]);
 
@@ -226,6 +237,72 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
           </aside>
         </div>
       </section>
+
+      {trackQualityProfile.finding_count ? (
+        <section className="band band--compact">
+          <div className="page-shell evidence-quality-profile">
+            <div className="evidence-quality-profile__main">
+              <span className="section-kicker">Evidence quality</span>
+              <h2>Limitation profile</h2>
+              <p>
+                Derived from the promoted finding records for this track: source type, study design, endpoint category,
+                registry status, direction, confidence, and recorded caveats.
+              </p>
+              <div className="evidence-source-row">
+                <Link className="mini-link" href={trackQualityProfile.page_path}>
+                  Open filtered evidence
+                </Link>
+                <a className="mini-link" href={trackQualityProfile.data_path}>
+                  Quality JSON
+                </a>
+              </div>
+            </div>
+            <div className="evidence-quality-profile__grid">
+              <article>
+                <h3>Quality classes</h3>
+                <div className="evidence-quality-profile__rows">
+                  {trackQualityProfile.quality_classes.map((item) => (
+                    <div key={item.value}>
+                      <strong>{item.label}</strong>
+                      <span>{item.count}</span>
+                    </div>
+                  ))}
+                </div>
+              </article>
+              <article>
+                <h3>Top limitations</h3>
+                <div className="evidence-quality-profile__rows">
+                  {trackQualityProfile.limitations.length ? (
+                    trackQualityProfile.limitations.map((item) => (
+                      <div key={item.value}>
+                        <strong>{item.label}</strong>
+                        <span>{item.count}</span>
+                      </div>
+                    ))
+                  ) : (
+                    <p>No limitation tags are currently derived.</p>
+                  )}
+                </div>
+              </article>
+              <article>
+                <h3>Human relevance</h3>
+                <div className="evidence-quality-profile__rows">
+                  {trackQualityProfile.human_relevance.length ? (
+                    trackQualityProfile.human_relevance.map((item) => (
+                      <div key={item.value}>
+                        <strong>{item.label}</strong>
+                        <span>{item.count}</span>
+                      </div>
+                    ))
+                  ) : (
+                    <p>No human-relevance flags are currently derived.</p>
+                  )}
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="band band--alt">
         <div className="page-shell section-header evidence-section-header">

@@ -104,6 +104,7 @@
         "animal_finding_count",
         "positive_finding_count",
         "null_or_negative_finding_count",
+        "quality_class_counts",
         "source_count",
         "multi_track_source_count",
         "track_count",
@@ -130,6 +131,9 @@
         },
         "null_or_negative_finding_count": {
           "$ref": "#/$defs/count"
+        },
+        "quality_class_counts": {
+          "$ref": "#/$defs/qualityClassCounts"
         },
         "source_count": {
           "$ref": "#/$defs/count"
@@ -158,6 +162,9 @@
         "endpoints",
         "source_types",
         "coverage_confidences",
+        "quality_classes",
+        "limitations",
+        "human_relevance",
         "species",
         "source_reuse",
         "sorts"
@@ -190,6 +197,15 @@
         "coverage_confidences": {
           "$ref": "#/$defs/filterOptionArray"
         },
+        "quality_classes": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "limitations": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "human_relevance": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
         "species": {
           "$ref": "#/$defs/filterOptionArray"
         },
@@ -205,6 +221,271 @@
       "type": "array",
       "items": {
         "$ref": "#/$defs/filterOption"
+      }
+    },
+    "qualityClass": {
+      "enum": [
+        "stronger_human_signal",
+        "human_biomarker_or_limited_function",
+        "preclinical_or_mechanistic",
+        "review_or_context",
+        "registry_or_no_results",
+        "limiting_or_null"
+      ]
+    },
+    "studyDesignFlag": {
+      "enum": [
+        "randomized",
+        "controlled",
+        "registry_linked",
+        "result_posted",
+        "no_results_registry",
+        "review_or_meta_analysis",
+        "preclinical",
+        "human_interventional",
+        "observational_or_real_world",
+        "animal_or_model",
+        "mechanistic_or_in_vitro"
+      ]
+    },
+    "humanRelevanceFlag": {
+      "enum": [
+        "older_adults",
+        "healthy_adults",
+        "disease_cohort",
+        "human_biomarker",
+        "functional_endpoint",
+        "clinical_or_healthspan_endpoint",
+        "safety_endpoint",
+        "animal_only",
+        "nonhuman_model"
+      ]
+    },
+    "limitationTag": {
+      "enum": [
+        "low_confidence",
+        "surrogate_or_biomarker_endpoint",
+        "animal_only",
+        "short_duration",
+        "small_sample",
+        "underpowered_or_exploratory",
+        "confounded_or_observational",
+        "mixed_or_null_direction",
+        "no_posted_results",
+        "safety_unresolved",
+        "review_not_primary_evidence",
+        "industry_or_conflict_caveat"
+      ]
+    },
+    "qualityClassCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stronger_human_signal",
+        "human_biomarker_or_limited_function",
+        "preclinical_or_mechanistic",
+        "review_or_context",
+        "registry_or_no_results",
+        "limiting_or_null"
+      ],
+      "properties": {
+        "stronger_human_signal": {
+          "$ref": "#/$defs/count"
+        },
+        "human_biomarker_or_limited_function": {
+          "$ref": "#/$defs/count"
+        },
+        "preclinical_or_mechanistic": {
+          "$ref": "#/$defs/count"
+        },
+        "review_or_context": {
+          "$ref": "#/$defs/count"
+        },
+        "registry_or_no_results": {
+          "$ref": "#/$defs/count"
+        },
+        "limiting_or_null": {
+          "$ref": "#/$defs/count"
+        }
+      }
+    },
+    "sourceQuality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "source_type",
+        "source_type_label",
+        "registry_ids"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string"
+        },
+        "source_type": {
+          "type": "string"
+        },
+        "source_type_label": {
+          "type": "string"
+        },
+        "year": {
+          "type": "integer"
+        },
+        "published_on": {
+          "type": "string"
+        },
+        "registry_ids": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "doi": {
+          "type": "string"
+        },
+        "pmid": {
+          "type": "string"
+        }
+      }
+    },
+    "studyQuality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "study_id",
+        "study_type",
+        "study_type_label",
+        "status",
+        "status_label",
+        "registry_ids"
+      ],
+      "properties": {
+        "study_id": {
+          "type": "string"
+        },
+        "study_type": {
+          "type": "string"
+        },
+        "study_type_label": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "status_label": {
+          "type": "string"
+        },
+        "phase": {
+          "type": "string"
+        },
+        "phase_label": {
+          "type": "string"
+        },
+        "population": {
+          "type": "string"
+        },
+        "model_system": {
+          "type": "string"
+        },
+        "sample_size": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "registry_ids": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "results_status": {
+          "type": "string"
+        },
+        "results_status_label": {
+          "type": "string"
+        },
+        "watch_status": {
+          "type": "string"
+        },
+        "watch_status_label": {
+          "type": "string"
+        }
+      }
+    },
+    "evidenceQualityProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "quality_class",
+        "quality_class_label",
+        "quality_class_meaning",
+        "quality_class_reason",
+        "evidence_strength_score",
+        "study_design_flags",
+        "study_design_flag_labels",
+        "human_relevance_flags",
+        "human_relevance_flag_labels",
+        "limitation_tags",
+        "limitation_labels",
+        "source_quality",
+        "study_quality"
+      ],
+      "properties": {
+        "quality_class": {
+          "$ref": "#/$defs/qualityClass"
+        },
+        "quality_class_label": {
+          "type": "string"
+        },
+        "quality_class_meaning": {
+          "type": "string"
+        },
+        "quality_class_reason": {
+          "type": "string"
+        },
+        "evidence_strength_score": {
+          "type": "number"
+        },
+        "study_design_flags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/studyDesignFlag"
+          }
+        },
+        "study_design_flag_labels": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "human_relevance_flags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/humanRelevanceFlag"
+          }
+        },
+        "human_relevance_flag_labels": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "limitation_tags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/limitationTag"
+          }
+        },
+        "limitation_labels": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "source_quality": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/sourceQuality"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "study_quality": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/studyQuality"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
       }
     },
     "savedView": {
@@ -356,6 +637,7 @@
         "interventions",
         "track_contexts",
         "hallmarks",
+        "quality",
         "caveats"
       ],
       "properties": {
@@ -494,6 +776,9 @@
           "items": {
             "$ref": "#/$defs/linkedHallmark"
           }
+        },
+        "quality": {
+          "$ref": "#/$defs/evidenceQualityProfile"
         },
         "caveats": {
           "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
