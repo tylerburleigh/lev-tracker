@@ -7706,7 +7706,7 @@ function getClaimConsistencyReviewPacketGroups(
         evidence_page_path: first.paths.evidence_page_path,
         resolution_path: first.resolution.resolution_path
       },
-      suggested_resolution_entries: sortedRows.slice(0, 10).map((row) => ({
+      suggested_resolution_entries: sortedRows.map((row) => ({
         fingerprint: row.fingerprint,
         review_status: "accepted" as const,
         reviewed_at: generatedAt,

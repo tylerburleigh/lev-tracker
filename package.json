@@ -23,6 +23,7 @@
     "sync:research-planning": "node scripts/seed-research-planning.mjs && node scripts/seed-work-triage.mjs",
     "sync:work-triage": "node scripts/seed-work-triage.mjs",
     "lint:public-copy": "node scripts/public-copy-lint.mjs",
+    "claim-review:packet": "node scripts/claim-review-packet.mjs",
     "audit:trials": "node scripts/trial-watch-report.mjs",
     "field-activity:status": "node scripts/field-activity-workflow.mjs status",
     "field-activity:packet": "node scripts/field-activity-workflow.mjs packet",
