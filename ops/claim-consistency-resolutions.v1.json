@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "state_type": "claim_consistency_resolutions",
+  "updated_at": "2026-06-20T00:00:00Z",
+  "source_export": "/data/claim-consistency-audit.json",
+  "policy": {
+    "default_status": "open",
+    "fingerprint_basis": [
+      "track_id",
+      "issue_type",
+      "source_kind",
+      "source_record_path",
+      "field_path",
+      "boundary_class",
+      "normalized_text"
+    ],
+    "status_definitions": [
+      {
+        "value": "open",
+        "label": "Open",
+        "meaning": "Default status for active issue rows that have not been reviewed.",
+        "suppresses_unresolved_count": false
+      },
+      {
+        "value": "accepted",
+        "label": "Accepted issue",
+        "meaning": "Reviewer agrees the row is a real copy-risk issue and should remain in the active work queue.",
+        "suppresses_unresolved_count": false
+      },
+      {
+        "value": "deferred",
+        "label": "Deferred",
+        "meaning": "Reviewer agrees the row needs follow-up, but the fix is intentionally delayed.",
+        "suppresses_unresolved_count": false
+      },
+      {
+        "value": "fixed",
+        "label": "Fixed",
+        "meaning": "Reviewer believes the source copy has been fixed; if the fingerprint remains active, it should be rechecked.",
+        "suppresses_unresolved_count": true
+      },
+      {
+        "value": "false_positive",
+        "label": "False positive",
+        "meaning": "Reviewer believes the row is acceptable because the required caveat is supplied nearby or the heuristic over-fired.",
+        "suppresses_unresolved_count": true
+      }
+    ]
+  },
+  "resolutions": []
+}

@@ -16,6 +16,8 @@ type ClaimAuditSearchParams = {
   issue_type?: string | string[];
   severity?: string | string[];
   source_kind?: string | string[];
+  review_status?: string | string[];
+  lifecycle_state?: string | string[];
   limit?: string | string[];
 };
 
@@ -37,6 +39,10 @@ function getClaimAuditFilters(searchParams: ClaimAuditSearchParams): ClaimConsis
     issue_type: getSingleSearchParam(searchParams.issue_type) as ClaimConsistencyAuditFilters["issue_type"],
     severity: getSingleSearchParam(searchParams.severity) as ClaimConsistencyAuditFilters["severity"],
     source_kind: getSingleSearchParam(searchParams.source_kind) as ClaimConsistencyAuditFilters["source_kind"],
+    review_status: getSingleSearchParam(searchParams.review_status) as ClaimConsistencyAuditFilters["review_status"],
+    lifecycle_state: getSingleSearchParam(
+      searchParams.lifecycle_state
+    ) as ClaimConsistencyAuditFilters["lifecycle_state"],
     limit: Number.isFinite(limit) ? limit : undefined
   };
 }
@@ -67,6 +73,19 @@ function getSeverityTone(severity: string) {
   }
 }
 
+function getReviewStatusTone(status: string) {
+  switch (status) {
+    case "fixed":
+    case "false_positive":
+      return "micro-badge--mint";
+    case "accepted":
+    case "deferred":
+      return "micro-badge--gold";
+    default:
+      return "micro-badge--outline";
+  }
+}
+
 function formatNumber(value: number) {
   return value.toLocaleString("en-US");
 }
@@ -84,8 +103,35 @@ export default async function ClaimsAuditPage({ searchParams }: ClaimsAuditPageP
     getClaimConsistencyAuditExport(tableFilters)
   ]);
   const { facet_options: facets, summary } = claimAudit;
-  const severityRows = claimAudit.summary.severity_counts;
+  const reviewRows = claimAudit.summary.review_status_counts;
+  const lifecycleRows = claimAudit.summary.lifecycle_state_counts;
   const sourceRows = claimAudit.summary.source_kind_counts;
+  const summaryRows = [
+    ...reviewRows.map((row) => ({
+      ...row,
+      href: getClaimAuditPath({
+        ...selected,
+        review_status: row.value as ClaimConsistencyAuditFilters["review_status"]
+      }),
+      summary: "Review-status issue rows"
+    })),
+    ...lifecycleRows.map((row) => ({
+      ...row,
+      href: getClaimAuditPath({
+        ...selected,
+        lifecycle_state: row.value as ClaimConsistencyAuditFilters["lifecycle_state"]
+      }),
+      summary: "Lifecycle issue rows"
+    })),
+    ...sourceRows.map((row) => ({
+      ...row,
+      href: getClaimAuditPath({
+        ...selected,
+        source_kind: row.value as ClaimConsistencyAuditFilters["source_kind"]
+      }),
+      summary: "Source-linked issue rows"
+    }))
+  ].slice(0, 6);
 
   return (
     <SiteShell lastUpdated={formatDate(lastUpdated)}>
@@ -97,9 +143,10 @@ export default async function ClaimsAuditPage({ searchParams }: ClaimsAuditPageP
         <div className="page-hero__stats">
           <span>{formatNumber(summary.scanned_context_count)} text contexts scanned</span>
           <span>{formatNumber(summary.filtered_issue_count)} matching issues</span>
+          <span>{formatNumber(summary.unresolved_issue_count)} unresolved</span>
           <span>{formatNumber(summary.affected_track_count)} affected tracks</span>
-          <span>{formatNumber(summary.critical_issue_count)} critical</span>
-          <span>{formatNumber(summary.warning_issue_count)} warning</span>
+          <span>{formatNumber(summary.new_issue_count)} new</span>
+          <span>{formatNumber(summary.recurring_issue_count)} recurring</span>
         </div>
       </PageHero>
 
@@ -112,7 +159,7 @@ export default async function ClaimsAuditPage({ searchParams }: ClaimsAuditPageP
             <p>
               Each issue links the flagged text excerpt, the public source page, the backing record path, the track
               guardrail, and the evidence explorer so reviewers can decide whether the caveat is missing or supplied
-              nearby.
+              nearby. Resolution metadata comes from a file-backed reviewer ledger.
             </p>
             <a className="section-link section-link--block" href={claimAudit.canonical_path}>
               <Database aria-hidden="true" size={16} />
@@ -125,32 +172,11 @@ export default async function ClaimsAuditPage({ searchParams }: ClaimsAuditPageP
             </a>
           </div>
           <div className="data-scoped-grid claim-audit-summary-grid">
-            {severityRows.map((row) => (
-              <Link
-                className="data-scoped-card"
-                href={getClaimAuditPath({
-                  ...selected,
-                  severity: row.value as ClaimConsistencyAuditFilters["severity"]
-                })}
-                key={row.value}
-              >
+            {summaryRows.map((row) => (
+              <Link className="data-scoped-card" href={row.href} key={`${row.summary}:${row.value}`}>
                 <strong>{formatNumber(row.count)}</strong>
                 <span>{row.label}</span>
-                <p>Severity-filtered issue rows</p>
-              </Link>
-            ))}
-            {sourceRows.slice(0, Math.max(0, 6 - severityRows.length)).map((row) => (
-              <Link
-                className="data-scoped-card"
-                href={getClaimAuditPath({
-                  ...selected,
-                  source_kind: row.value as ClaimConsistencyAuditFilters["source_kind"]
-                })}
-                key={row.value}
-              >
-                <strong>{formatNumber(row.count)}</strong>
-                <span>{row.label}</span>
-                <p>Source-linked issue rows</p>
+                <p>{row.summary}</p>
               </Link>
             ))}
           </div>
@@ -216,6 +242,28 @@ export default async function ClaimsAuditPage({ searchParams }: ClaimsAuditPageP
                 ))}
               </select>
             </label>
+            <label className="track-search__field">
+              <span>Review</span>
+              <select name="review_status" defaultValue={selected.review_status}>
+                <option value="">All review states</option>
+                {facets.review_statuses.map((option) => (
+                  <option value={option.value} key={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="track-search__field">
+              <span>Lifecycle</span>
+              <select name="lifecycle_state" defaultValue={selected.lifecycle_state}>
+                <option value="">All lifecycle states</option>
+                {facets.lifecycle_states.map((option) => (
+                  <option value={option.value} key={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </label>
             <div className="track-search__actions">
               <button className="action-button" type="submit">
                 <Search aria-hidden="true" size={16} />
@@ -241,6 +289,10 @@ export default async function ClaimsAuditPage({ searchParams }: ClaimsAuditPageP
                 Showing {formatNumber(summary.returned_issue_count)} of{" "}
                 {formatNumber(summary.filtered_issue_count)} issue rows
               </h2>
+              <p className="claim-audit-subhead">
+                {formatNumber(summary.unresolved_issue_count)} unresolved /{" "}
+                {formatNumber(summary.new_issue_count)} new / {formatNumber(summary.recurring_issue_count)} recurring
+              </p>
             </div>
             <a className="section-link" href={claimAudit.canonical_path}>
               <span>Filtered JSON</span>
@@ -271,9 +323,16 @@ export default async function ClaimsAuditPage({ searchParams }: ClaimsAuditPageP
                     </th>
                     <td>
                       <span className={`micro-badge ${getSeverityTone(issue.severity)}`}>{issue.severity_label}</span>
+                      <span className={`micro-badge ${getReviewStatusTone(issue.resolution.review_status)}`}>
+                        {issue.resolution.review_status_label}
+                      </span>
+                      <span className="micro-badge micro-badge--muted">
+                        {issue.resolution.lifecycle_state_label}
+                      </span>
                       <strong>{issue.issue_type_label}</strong>
                       <span>{issue.source_kind_label}</span>
                       <span>{issue.source_label}</span>
+                      {issue.resolution.note ? <p className="claim-audit-note">{issue.resolution.note}</p> : null}
                     </td>
                     <td>
                       <p className="claim-audit-text">{issue.text_excerpt}</p>
@@ -322,6 +381,7 @@ export default async function ClaimsAuditPage({ searchParams }: ClaimsAuditPageP
                         <Link href={issue.paths.evidence_page_path}>Explorer</Link>
                         <Link href={issue.paths.track_page_path}>Track</Link>
                       </div>
+                      <code className="claim-audit-path">{issue.fingerprint}</code>
                       <code className="claim-audit-path">{issue.paths.source_record_path}</code>
                     </td>
                   </tr>

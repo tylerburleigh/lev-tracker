@@ -1,5 +1,6 @@
 import "server-only";
 
+import { createHash } from "crypto";
 import { promises as fs } from "fs";
 import path from "path";
 import { unstable_noStore as noStore } from "next/cache";
@@ -228,6 +229,8 @@ export type ClaimConsistencySourceKind =
   | "track_taxonomy"
   | "current_story"
   | "state_of_field";
+export type ClaimConsistencyReviewStatus = "open" | "accepted" | "false_positive" | "fixed" | "deferred";
+export type ClaimConsistencyLifecycleState = "new" | "recurring" | "resolved";
 
 export type EvidenceIndexFilters = {
   q?: string;
@@ -308,6 +311,8 @@ export type ClaimConsistencyAuditFilters = {
   issue_type?: ClaimConsistencyIssueType | "";
   severity?: ClaimConsistencySeverity | "";
   source_kind?: ClaimConsistencySourceKind | "";
+  review_status?: ClaimConsistencyReviewStatus | "";
+  lifecycle_state?: ClaimConsistencyLifecycleState | "";
   limit?: number;
 };
 
@@ -1460,6 +1465,30 @@ const claimConsistencySourceKinds: ClaimConsistencySourceKind[] = [
   "state_of_field"
 ];
 
+const claimConsistencyReviewStatusLabels: Record<ClaimConsistencyReviewStatus, string> = {
+  open: "Open",
+  accepted: "Accepted issue",
+  false_positive: "False positive",
+  fixed: "Fixed",
+  deferred: "Deferred"
+};
+
+const claimConsistencyReviewStatuses: ClaimConsistencyReviewStatus[] = [
+  "open",
+  "accepted",
+  "deferred",
+  "fixed",
+  "false_positive"
+];
+
+const claimConsistencyLifecycleStateLabels: Record<ClaimConsistencyLifecycleState, string> = {
+  new: "New",
+  recurring: "Recurring",
+  resolved: "Resolved"
+};
+
+const claimConsistencyLifecycleStates: ClaimConsistencyLifecycleState[] = ["new", "recurring", "resolved"];
+
 const findingWeightLabels: Record<Confidence, string> = {
   low: "Limited weight",
   moderate: "Moderate weight",
@@ -1557,14 +1586,28 @@ const candidateStatusTransitions: Record<CandidateStatus, CandidateStatus[]> = {
 };
 
 const dataRoot = path.join(process.cwd(), "data");
+const opsRoot = path.join(process.cwd(), "ops");
 const researchRoot = path.join(process.cwd(), "research");
 const hallmarkInsightsPath = path.join(dataRoot, "content", "hallmark-insights.json");
 const editionsRoot = path.join(dataRoot, "content", "state-of-the-field");
 const currentLevStoryPath = path.join(dataRoot, "content", "current-lev-story", "current.json");
 const coverageStatusPath = path.join(researchRoot, "state", "coverage-status.v1.json");
+const claimConsistencyResolutionsPath = path.join(opsRoot, "claim-consistency-resolutions.v1.json");
 
 async function readJsonFile<T>(filePath: string): Promise<T> {
   return JSON.parse(await fs.readFile(filePath, "utf8")) as T;
+}
+
+async function readOptionalJsonFile<T>(filePath: string, fallback: T): Promise<T> {
+  try {
+    return await readJsonFile<T>(filePath);
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      return fallback;
+    }
+
+    throw error;
+  }
 }
 
 async function writeJsonFile(filePath: string, value: unknown) {
@@ -6466,9 +6509,101 @@ type ClaimConsistencyContextRow = {
   href: string;
   record_path: string;
 };
+type ClaimConsistencyResolutionEntry = {
+  fingerprint: string;
+  review_status: ClaimConsistencyReviewStatus;
+  reviewed_at?: string;
+  reviewer_role?: string;
+  note?: string;
+  action_required?: string;
+  last_seen_at?: string;
+  applies_to?: {
+    track_id?: string;
+    issue_type?: ClaimConsistencyIssueType;
+    source_record_path?: string;
+    field_path?: string;
+  };
+};
+type ClaimConsistencyResolutionLedger = {
+  schema_version: "1.0.0";
+  state_type: "claim_consistency_resolutions";
+  updated_at: string;
+  source_export: string;
+  policy: {
+    default_status: ClaimConsistencyReviewStatus;
+    fingerprint_basis: string[];
+    status_definitions: Array<{
+      value: ClaimConsistencyReviewStatus;
+      label: string;
+      meaning: string;
+      suppresses_unresolved_count: boolean;
+    }>;
+  };
+  resolutions: ClaimConsistencyResolutionEntry[];
+};
+
+function getEmptyClaimConsistencyResolutionLedger(): ClaimConsistencyResolutionLedger {
+  return {
+    schema_version: "1.0.0",
+    state_type: "claim_consistency_resolutions",
+    updated_at: new Date(0).toISOString(),
+    source_export: "/data/claim-consistency-audit.json",
+    policy: {
+      default_status: "open",
+      fingerprint_basis: [
+        "track_id",
+        "issue_type",
+        "source_kind",
+        "source_record_path",
+        "field_path",
+        "boundary_class",
+        "normalized_text"
+      ],
+      status_definitions: []
+    },
+    resolutions: []
+  };
+}
+
+async function loadClaimConsistencyResolutionLedger() {
+  return readOptionalJsonFile<ClaimConsistencyResolutionLedger>(
+    claimConsistencyResolutionsPath,
+    getEmptyClaimConsistencyResolutionLedger()
+  );
+}
 
 function normalizeClaimAuditText(text: string) {
   return text.toLocaleLowerCase().replace(/\s+/g, " ").trim();
+}
+
+function createClaimConsistencyFingerprint({
+  trackId,
+  issueType,
+  sourceKind,
+  sourceRecordPath,
+  fieldPath,
+  boundaryClass,
+  text
+}: {
+  trackId: string;
+  issueType: ClaimConsistencyIssueType;
+  sourceKind: ClaimConsistencySourceKind;
+  sourceRecordPath: string;
+  fieldPath: string;
+  boundaryClass: ClaimBoundaryClass;
+  text: string;
+}) {
+  const basis = [
+    trackId,
+    issueType,
+    sourceKind,
+    sourceRecordPath,
+    fieldPath,
+    boundaryClass,
+    normalizeClaimAuditText(text)
+  ].join("\u001f");
+
+  return `cca_${createHash("sha256").update(basis).digest("hex").slice(0, 20)}`;
 }
 
 function hasClaimAuditTerm(text: string, terms: string[]) {
@@ -6970,42 +7105,55 @@ function getClaimConsistencyIssueRows({
     }
   }
 
-  return issues.map((issue, index) => ({
-    id: `${context.id}:${issue.issue_type}:${index + 1}`,
-    track_id: context.track_id,
-    track_name: context.track_name,
-    track_href: `/tracks/${context.track_id}`,
-    issue_type: issue.issue_type,
-    issue_type_label: claimConsistencyIssueTypeLabels[issue.issue_type],
-    severity: issue.severity,
-    severity_label: claimConsistencySeverityLabels[issue.severity],
-    source_kind: context.source_kind,
-    source_kind_label: context.source_kind_label,
-    source_label: context.source_label,
-    field_path: context.field_path,
-    text_excerpt: context.text.length > 520 ? `${context.text.slice(0, 517)}...` : context.text,
-    matched_terms: issue.matched_terms,
-    missing_terms: issue.missing_terms,
-    recommendation: issue.recommendation,
-    guardrail: {
-      boundary_class: guardrail.boundary_class,
-      boundary_class_label: guardrail.boundary_class_label,
-      guardrail_summary: guardrail.guardrail_summary,
-      required_caveats: guardrail.required_caveats.slice(0, 4),
-      unsupported_claims: guardrail.unsupported_claims.slice(0, 3),
-      overclaim_risks: guardrail.overclaim_risks.map((risk) => ({
-        value: risk.value,
-        label: risk.label
-      }))
-    },
-    paths: {
-      source_page_path: context.href,
-      source_record_path: context.record_path,
-      track_page_path: `/tracks/${context.track_id}`,
-      claim_guardrails_path: guardrail.paths.claim_guardrails_path,
-      evidence_page_path: guardrail.paths.evidence_page_path
-    }
-  }));
+  return issues.map((issue) => {
+    const fingerprint = createClaimConsistencyFingerprint({
+      trackId: context.track_id,
+      issueType: issue.issue_type,
+      sourceKind: context.source_kind,
+      sourceRecordPath: context.record_path,
+      fieldPath: context.field_path,
+      boundaryClass: guardrail.boundary_class,
+      text: context.text
+    });
+
+    return {
+      id: fingerprint,
+      fingerprint,
+      track_id: context.track_id,
+      track_name: context.track_name,
+      track_href: `/tracks/${context.track_id}`,
+      issue_type: issue.issue_type,
+      issue_type_label: claimConsistencyIssueTypeLabels[issue.issue_type],
+      severity: issue.severity,
+      severity_label: claimConsistencySeverityLabels[issue.severity],
+      source_kind: context.source_kind,
+      source_kind_label: context.source_kind_label,
+      source_label: context.source_label,
+      field_path: context.field_path,
+      text_excerpt: context.text.length > 520 ? `${context.text.slice(0, 517)}...` : context.text,
+      matched_terms: issue.matched_terms,
+      missing_terms: issue.missing_terms,
+      recommendation: issue.recommendation,
+      guardrail: {
+        boundary_class: guardrail.boundary_class,
+        boundary_class_label: guardrail.boundary_class_label,
+        guardrail_summary: guardrail.guardrail_summary,
+        required_caveats: guardrail.required_caveats.slice(0, 4),
+        unsupported_claims: guardrail.unsupported_claims.slice(0, 3),
+        overclaim_risks: guardrail.overclaim_risks.map((risk) => ({
+          value: risk.value,
+          label: risk.label
+        }))
+      },
+      paths: {
+        source_page_path: context.href,
+        source_record_path: context.record_path,
+        track_page_path: `/tracks/${context.track_id}`,
+        claim_guardrails_path: guardrail.paths.claim_guardrails_path,
+        evidence_page_path: guardrail.paths.evidence_page_path
+      }
+    };
+  });
 }
 
 function getClaimConsistencyIssueTypeCounts(rows: Array<{ issue_type: ClaimConsistencyIssueType }>) {
@@ -7038,6 +7186,113 @@ function getClaimConsistencySourceKindCounts(rows: Array<{ source_kind: ClaimCon
     .filter((item) => item.count > 0);
 }
 
+function isClaimConsistencyUnresolvedStatus(status: ClaimConsistencyReviewStatus) {
+  return !["fixed", "false_positive"].includes(status);
+}
+
+function getClaimConsistencyReviewStatusCounts(
+  rows: Array<{ resolution: { review_status: ClaimConsistencyReviewStatus } }>
+) {
+  return claimConsistencyReviewStatuses
+    .map((status) => ({
+      value: status,
+      label: claimConsistencyReviewStatusLabels[status],
+      count: rows.filter((row) => row.resolution.review_status === status).length
+    }))
+    .filter((item) => item.count > 0);
+}
+
+function getClaimConsistencyLifecycleStateCounts(
+  rows: Array<{ resolution: { lifecycle_state: ClaimConsistencyLifecycleState } }>,
+  resolvedIssueCount = 0
+) {
+  return claimConsistencyLifecycleStates
+    .map((state) => ({
+      value: state,
+      label: claimConsistencyLifecycleStateLabels[state],
+      count:
+        state === "resolved"
+          ? resolvedIssueCount
+          : rows.filter((row) => row.resolution.lifecycle_state === state).length
+    }))
+    .filter((item) => item.count > 0);
+}
+
+function enrichClaimConsistencyRowsWithResolution<
+  T extends {
+    fingerprint: string;
+    track_id: string;
+    issue_type: ClaimConsistencyIssueType;
+    paths: {
+      source_record_path: string;
+    };
+    field_path: string;
+  }
+>(rows: T[], ledger: ClaimConsistencyResolutionLedger) {
+  const resolutionByFingerprint = new Map(ledger.resolutions.map((entry) => [entry.fingerprint, entry]));
+
+  return rows.map((row) => {
+    const entry = resolutionByFingerprint.get(row.fingerprint);
+    const reviewStatus = entry?.review_status ?? ledger.policy.default_status;
+    const lifecycleState: ClaimConsistencyLifecycleState = entry ? "recurring" : "new";
+
+    return {
+      ...row,
+      resolution: {
+        fingerprint: row.fingerprint,
+        review_status: reviewStatus,
+        review_status_label: claimConsistencyReviewStatusLabels[reviewStatus],
+        lifecycle_state: lifecycleState,
+        lifecycle_state_label: claimConsistencyLifecycleStateLabels[lifecycleState],
+        unresolved: isClaimConsistencyUnresolvedStatus(reviewStatus),
+        ledger_entry_present: Boolean(entry),
+        reviewed_at: entry?.reviewed_at,
+        reviewer_role: entry?.reviewer_role,
+        note: entry?.note,
+        action_required: entry?.action_required,
+        last_seen_at: entry?.last_seen_at,
+        resolution_path: toWorkspaceRelativePath(claimConsistencyResolutionsPath)
+      }
+    };
+  });
+}
+
+function getResolvedClaimConsistencyRecords({
+  ledger,
+  currentFingerprints,
+  filters
+}: {
+  ledger: ClaimConsistencyResolutionLedger;
+  currentFingerprints: Set<string>;
+  filters: ReturnType<typeof cleanClaimConsistencyAuditFilters>;
+}) {
+  return ledger.resolutions
+    .filter((entry) => !currentFingerprints.has(entry.fingerprint))
+    .filter((entry) => {
+      const appliesTo = entry.applies_to;
+      return (
+        (!filters.track || appliesTo?.track_id === filters.track) &&
+        (!filters.issue_type || appliesTo?.issue_type === filters.issue_type) &&
+        (!filters.review_status || entry.review_status === filters.review_status) &&
+        (!filters.lifecycle_state || filters.lifecycle_state === "resolved")
+      );
+    })
+    .map((entry) => ({
+      fingerprint: entry.fingerprint,
+      review_status: entry.review_status,
+      review_status_label: claimConsistencyReviewStatusLabels[entry.review_status],
+      lifecycle_state: "resolved" as const,
+      lifecycle_state_label: claimConsistencyLifecycleStateLabels.resolved,
+      reviewed_at: entry.reviewed_at,
+      reviewer_role: entry.reviewer_role,
+      note: entry.note,
+      action_required: entry.action_required,
+      last_seen_at: entry.last_seen_at,
+      applies_to: entry.applies_to,
+      resolution_path: toWorkspaceRelativePath(claimConsistencyResolutionsPath)
+    }));
+}
+
 function cleanClaimConsistencyAuditFilters(filters: ClaimConsistencyAuditFilters = {}) {
   const limit = filters.limit && Number.isFinite(filters.limit) ? Math.max(1, Math.min(500, filters.limit)) : undefined;
 
@@ -7047,6 +7302,8 @@ function cleanClaimConsistencyAuditFilters(filters: ClaimConsistencyAuditFilters
     issue_type: filters.issue_type ?? "",
     severity: filters.severity ?? "",
     source_kind: filters.source_kind ?? "",
+    review_status: filters.review_status ?? "",
+    lifecycle_state: filters.lifecycle_state ?? "",
     limit
   };
 }
@@ -7089,6 +7346,15 @@ function applyClaimConsistencyAuditFilters<
     field_path: string;
     text_excerpt: string;
     recommendation: string;
+    resolution: {
+      fingerprint: string;
+      review_status: ClaimConsistencyReviewStatus;
+      review_status_label: string;
+      lifecycle_state: ClaimConsistencyLifecycleState;
+      lifecycle_state_label: string;
+      note?: string;
+      action_required?: string;
+    };
   }
 >(rows: T[], filters: ClaimConsistencyAuditFilters) {
   const selected = cleanClaimConsistencyAuditFilters(filters);
@@ -7107,8 +7373,16 @@ function applyClaimConsistencyAuditFilters<
       row.source_label,
       row.field_path,
       row.text_excerpt,
-      row.recommendation
+      row.recommendation,
+      row.resolution.fingerprint,
+      row.resolution.review_status,
+      row.resolution.review_status_label,
+      row.resolution.lifecycle_state,
+      row.resolution.lifecycle_state_label,
+      row.resolution.note,
+      row.resolution.action_required
     ]
+      .filter((value): value is string => Boolean(value))
       .join(" ")
       .toLocaleLowerCase();
 
@@ -7117,7 +7391,9 @@ function applyClaimConsistencyAuditFilters<
       (!selected.track || row.track_id === selected.track) &&
       (!selected.issue_type || row.issue_type === selected.issue_type) &&
       (!selected.severity || row.severity === selected.severity) &&
-      (!selected.source_kind || row.source_kind === selected.source_kind)
+      (!selected.source_kind || row.source_kind === selected.source_kind) &&
+      (!selected.review_status || row.resolution.review_status === selected.review_status) &&
+      (!selected.lifecycle_state || row.resolution.lifecycle_state === selected.lifecycle_state)
     );
   });
 }
@@ -7125,11 +7401,12 @@ function applyClaimConsistencyAuditFilters<
 export async function getClaimConsistencyAuditExport(filters: ClaimConsistencyAuditFilters = {}) {
   noStore();
   const selected = cleanClaimConsistencyAuditFilters(filters);
-  const [guardrails, evidenceMap, currentLevStory, stateOfFieldEditions] = await Promise.all([
+  const [guardrails, evidenceMap, currentLevStory, stateOfFieldEditions, resolutionLedger] = await Promise.all([
     getClaimGuardrailsExport(),
     getEvidenceMapExport(),
     loadCurrentLevStory(),
-    loadStateOfFieldEditions()
+    loadStateOfFieldEditions(),
+    loadClaimConsistencyResolutionLedger()
   ]);
   const guardrailByTrackId = new Map(guardrails.tracks.map((track) => [track.id, track]));
   const contexts = collectClaimConsistencyContexts({
@@ -7142,13 +7419,23 @@ export async function getClaimConsistencyAuditExport(filters: ClaimConsistencyAu
     const guardrail = guardrailByTrackId.get(context.track_id);
     return guardrail ? getClaimConsistencyIssueRows({ context, guardrail }) : [];
   });
+  const enrichedRows = enrichClaimConsistencyRowsWithResolution(allRows, resolutionLedger);
   const severityRank = new Map<ClaimConsistencySeverity, number>([
     ["critical", 0],
     ["warning", 1],
     ["review", 2]
   ]);
-  const sortedRows = allRows.sort(
+  const reviewStatusRank = new Map<ClaimConsistencyReviewStatus, number>([
+    ["open", 0],
+    ["accepted", 1],
+    ["deferred", 2],
+    ["fixed", 3],
+    ["false_positive", 4]
+  ]);
+  const sortedRows = enrichedRows.sort(
     (left, right) =>
+      (reviewStatusRank.get(left.resolution.review_status) ?? 99) -
+        (reviewStatusRank.get(right.resolution.review_status) ?? 99) ||
       (severityRank.get(left.severity) ?? 99) - (severityRank.get(right.severity) ?? 99) ||
       left.track_name.localeCompare(right.track_name) ||
       left.source_kind.localeCompare(right.source_kind)
@@ -7156,6 +7443,13 @@ export async function getClaimConsistencyAuditExport(filters: ClaimConsistencyAu
   const filteredRows = applyClaimConsistencyAuditFilters(sortedRows, selected);
   const exportedRows = selected.limit ? filteredRows.slice(0, selected.limit) : filteredRows;
   const affectedTrackIds = new Set(filteredRows.map((row) => row.track_id));
+  const currentFingerprints = new Set(enrichedRows.map((row) => row.fingerprint));
+  const resolvedIssueRecords = getResolvedClaimConsistencyRecords({
+    ledger: resolutionLedger,
+    currentFingerprints,
+    filters: selected
+  });
+  const unresolvedRows = filteredRows.filter((row) => row.resolution.unresolved);
 
   return {
     schema_version: "1.0.0",
@@ -7180,7 +7474,8 @@ export async function getClaimConsistencyAuditExport(filters: ClaimConsistencyAu
     caveats: [
       "A flagged row is a review prompt, not proof that the public copy is wrong.",
       "Short copy can be acceptable when a nearby page section supplies the caveat; editors should inspect the source page and record path.",
-      "The audit intentionally favors conservative recall over precision for expert and AI-safety review."
+      "The audit intentionally favors conservative recall over precision for expert and AI-safety review.",
+      "Resolution statuses are curator workflow metadata from the ledger file; they do not change source-level evidence strength."
     ],
     summary: {
       scanned_context_count: contexts.length,
@@ -7191,9 +7486,21 @@ export async function getClaimConsistencyAuditExport(filters: ClaimConsistencyAu
       critical_issue_count: filteredRows.filter((row) => row.severity === "critical").length,
       warning_issue_count: filteredRows.filter((row) => row.severity === "warning").length,
       review_issue_count: filteredRows.filter((row) => row.severity === "review").length,
+      unresolved_issue_count: unresolvedRows.length,
+      new_issue_count: filteredRows.filter((row) => row.resolution.lifecycle_state === "new").length,
+      recurring_issue_count: filteredRows.filter((row) => row.resolution.lifecycle_state === "recurring").length,
+      resolved_issue_count: resolvedIssueRecords.length,
+      open_issue_count: filteredRows.filter((row) => row.resolution.review_status === "open").length,
+      accepted_issue_count: filteredRows.filter((row) => row.resolution.review_status === "accepted").length,
+      deferred_issue_count: filteredRows.filter((row) => row.resolution.review_status === "deferred").length,
+      fixed_issue_count: filteredRows.filter((row) => row.resolution.review_status === "fixed").length,
+      false_positive_issue_count: filteredRows.filter((row) => row.resolution.review_status === "false_positive").length,
+      resolution_entry_count: resolutionLedger.resolutions.length,
       issue_type_counts: getClaimConsistencyIssueTypeCounts(filteredRows),
       severity_counts: getClaimConsistencySeverityCounts(filteredRows),
-      source_kind_counts: getClaimConsistencySourceKindCounts(filteredRows)
+      source_kind_counts: getClaimConsistencySourceKindCounts(filteredRows),
+      review_status_counts: getClaimConsistencyReviewStatusCounts(filteredRows),
+      lifecycle_state_counts: getClaimConsistencyLifecycleStateCounts(filteredRows, resolvedIssueRecords.length)
     },
     facet_options: {
       tracks: guardrails.facet_options.tracks,
@@ -7208,6 +7515,14 @@ export async function getClaimConsistencyAuditExport(filters: ClaimConsistencyAu
       source_kinds: claimConsistencySourceKinds.map((sourceKind) => ({
         value: sourceKind,
         label: claimConsistencySourceKindLabels[sourceKind]
+      })),
+      review_statuses: claimConsistencyReviewStatuses.map((status) => ({
+        value: status,
+        label: claimConsistencyReviewStatusLabels[status]
+      })),
+      lifecycle_states: claimConsistencyLifecycleStates.map((state) => ({
+        value: state,
+        label: claimConsistencyLifecycleStateLabels[state]
       }))
     },
     source_file_patterns: {
@@ -7217,8 +7532,17 @@ export async function getClaimConsistencyAuditExport(filters: ClaimConsistencyAu
         "data/content/current-lev-story/current.json",
         "data/content/state-of-the-field/*.json"
       ],
+      resolution_state: [toWorkspaceRelativePath(claimConsistencyResolutionsPath)],
       derived_from: ["/data/claim-guardrails.json", "/data/evidence-map.json"]
     },
+    resolution_policy: {
+      path: toWorkspaceRelativePath(claimConsistencyResolutionsPath),
+      updated_at: resolutionLedger.updated_at,
+      default_status: resolutionLedger.policy.default_status,
+      fingerprint_basis: resolutionLedger.policy.fingerprint_basis,
+      status_definitions: resolutionLedger.policy.status_definitions
+    },
+    resolved_issues: resolvedIssueRecords,
     issues: exportedRows
   };
 }

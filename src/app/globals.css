@@ -3726,6 +3726,18 @@ time {
   line-height: 1.5;
 }
 
+.claim-audit-subhead,
+.claim-audit-note {
+  margin: 6px 0 0;
+  color: var(--text-soft);
+  line-height: 1.45;
+}
+
+.claim-audit-note {
+  padding-top: 6px;
+  border-top: 1px solid var(--paper-rule);
+}
+
 .expert-track-table .claim-audit-path {
   display: inline-block;
   max-width: 100%;

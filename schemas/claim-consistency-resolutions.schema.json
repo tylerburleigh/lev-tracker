@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "./claim-consistency-resolutions.schema.json",
+  "title": "Claim consistency resolution ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "state_type",
+    "updated_at",
+    "source_export",
+    "policy",
+    "resolutions"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "state_type": {
+      "const": "claim_consistency_resolutions"
+    },
+    "updated_at": {
+      "$ref": "./common.schema.json#/$defs/dateTime"
+    },
+    "source_export": {
+      "const": "/data/claim-consistency-audit.json"
+    },
+    "policy": {
+      "$ref": "#/$defs/policy"
+    },
+    "resolutions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/resolution"
+      }
+    }
+  },
+  "$defs": {
+    "claimConsistencyIssueType": {
+      "enum": [
+        "possible_unsupported_inference",
+        "medical_advice_language",
+        "missing_registry_boundary",
+        "missing_conflict_boundary",
+        "missing_biomarker_boundary",
+        "missing_preclinical_boundary",
+        "missing_coverage_boundary",
+        "missing_safety_or_durability_boundary"
+      ]
+    },
+    "reviewStatus": {
+      "enum": [
+        "open",
+        "accepted",
+        "false_positive",
+        "fixed",
+        "deferred"
+      ]
+    },
+    "fingerprint": {
+      "type": "string",
+      "pattern": "^cca_[a-f0-9]{20}$"
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "default_status",
+        "fingerprint_basis",
+        "status_definitions"
+      ],
+      "properties": {
+        "default_status": {
+          "$ref": "#/$defs/reviewStatus"
+        },
+        "fingerprint_basis": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "status_definitions": {
+          "type": "array",
+          "minItems": 5,
+          "items": {
+            "$ref": "#/$defs/statusDefinition"
+          }
+        }
+      }
+    },
+    "statusDefinition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "label",
+        "meaning",
+        "suppresses_unresolved_count"
+      ],
+      "properties": {
+        "value": {
+          "$ref": "#/$defs/reviewStatus"
+        },
+        "label": {
+          "type": "string"
+        },
+        "meaning": {
+          "type": "string"
+        },
+        "suppresses_unresolved_count": {
+          "type": "boolean"
+        }
+      }
+    },
+    "appliesTo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "track_id": {
+          "$ref": "./common.schema.json#/$defs/trackRef"
+        },
+        "issue_type": {
+          "$ref": "#/$defs/claimConsistencyIssueType"
+        },
+        "source_record_path": {
+          "type": "string"
+        },
+        "field_path": {
+          "type": "string"
+        }
+      }
+    },
+    "resolution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fingerprint",
+        "review_status"
+      ],
+      "properties": {
+        "fingerprint": {
+          "$ref": "#/$defs/fingerprint"
+        },
+        "review_status": {
+          "$ref": "#/$defs/reviewStatus"
+        },
+        "reviewed_at": {
+          "$ref": "./common.schema.json#/$defs/dateTime"
+        },
+        "reviewer_role": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "action_required": {
+          "type": "string"
+        },
+        "last_seen_at": {
+          "$ref": "./common.schema.json#/$defs/dateTime"
+        },
+        "applies_to": {
+          "$ref": "#/$defs/appliesTo"
+        }
+      }
+    }
+  }
+}

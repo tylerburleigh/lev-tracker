@@ -101,7 +101,8 @@ const workflowSteps = [
   "Use findings[].quality when a workflow needs limitation, study-design, or human-relevance labels before summarizing.",
   "Use conflicts.tracks[].patterns to avoid treating one positive result as field consensus.",
   "Use claim_guardrails.tracks[] before generating final summaries or training examples.",
-  "Use claim_consistency_audit.issues[] to review public-copy drift against guardrails."
+  "Use claim_consistency_audit.issues[] to review public-copy drift against guardrails.",
+  "Use claim_consistency_audit.issues[].resolution to separate new, recurring, fixed, and false-positive audit rows."
 ] as const;
 
 const fieldPathRows = [
@@ -143,7 +144,7 @@ const fieldPathRows = [
   {
     field: "/data/claim-consistency-audit.json",
     meaning:
-      "Editorial review queue that links potentially drifting public copy to track guardrails, source pages, and backing record paths."
+      "Editorial review queue that links potentially drifting public copy to track guardrails, source pages, backing record paths, and resolution metadata."
   },
   {
     field: "/data/evidence-gaps.json",
@@ -179,6 +180,11 @@ const fieldPathRows = [
     field: "claim_consistency_audit.issues[]",
     meaning:
       "Flagged source text, missing boundary terms, recommended edits, guardrail snapshots, and trace links for review or model-evaluation examples."
+  },
+  {
+    field: "claim_consistency_audit.issues[].fingerprint / resolution",
+    meaning:
+      "Stable issue key and reviewer-ledger status for tracking whether audit rows are new, recurring, fixed, accepted, deferred, or false positives."
   },
   {
     field: "sources[].json_path",

@@ -30,6 +30,7 @@ const schemaByExactPath = {
   "data/content/hallmark-insights.json": "./hallmark-insights.schema.json",
   "data/staged-record-archives/changed-terminal-bodies.v1.json": "./staged-records-archive.schema.json",
   "data/staged-record-manifests/terminal-bundles.v1.json": "./staged-records-manifest.schema.json",
+  "ops/claim-consistency-resolutions.v1.json": "./claim-consistency-resolutions.schema.json",
   "ops/state-of-field-workflow.v1.json": "./state-of-field-workflow.schema.json",
   "research/backlog/field-activity-watchlist.v1.json": "./field-activity-watchlist.schema.json",
   "research/backlog/track-priority.v1.json": "./research-priority-queue.schema.json",
