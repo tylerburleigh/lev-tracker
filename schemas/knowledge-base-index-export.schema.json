@@ -1,0 +1,603 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "/data/knowledge-base-index.schema.json",
+  "title": "LEV Tracker knowledge-base index export",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "schema_url",
+    "export_type",
+    "generated_at",
+    "last_public_update",
+    "canonical_path",
+    "purpose",
+    "caveats",
+    "retrieval_guidance",
+    "manifest",
+    "summary",
+    "review_state",
+    "entity_indexes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "schema_url": {
+      "const": "/data/knowledge-base-index.schema.json"
+    },
+    "export_type": {
+      "const": "lev_tracker_knowledge_base_index"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_public_update": {
+      "type": "string"
+    },
+    "canonical_path": {
+      "const": "/data/knowledge-base-index.json"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "caveats": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "retrieval_guidance": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "manifest": {
+      "$ref": "#/$defs/manifest"
+    },
+    "summary": {
+      "$ref": "#/$defs/summary"
+    },
+    "review_state": {
+      "$ref": "#/$defs/reviewState"
+    },
+    "entity_indexes": {
+      "$ref": "#/$defs/entityIndexes"
+    }
+  },
+  "$defs": {
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "ratio": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pathMap": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "countRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "label",
+        "count"
+      ],
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "count": {
+          "$ref": "#/$defs/count"
+        }
+      }
+    },
+    "countRowArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/countRow"
+      }
+    },
+    "riskRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "label"
+      ],
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      }
+    },
+    "manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_endpoint",
+        "schema_path",
+        "endpoints"
+      ],
+      "properties": {
+        "primary_endpoint": {
+          "const": "/data/knowledge-base-index.json"
+        },
+        "schema_path": {
+          "const": "/data/knowledge-base-index.schema.json"
+        },
+        "endpoints": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/endpoint"
+          }
+        }
+      }
+    },
+    "endpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "path",
+        "schema_path",
+        "entity_scope",
+        "description"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "schema_path": {
+          "type": "string"
+        },
+        "entity_scope": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hallmark_count",
+        "track_count",
+        "intervention_count",
+        "study_count",
+        "source_count",
+        "finding_count",
+        "trial_count",
+        "claim_guardrail_count",
+        "evidence_gap_profile_count",
+        "claim_review_issue_count",
+        "current_review_count",
+        "changed_since_review_count",
+        "unreviewed_claim_issue_count"
+      ],
+      "properties": {
+        "hallmark_count": {
+          "$ref": "#/$defs/count"
+        },
+        "track_count": {
+          "$ref": "#/$defs/count"
+        },
+        "intervention_count": {
+          "$ref": "#/$defs/count"
+        },
+        "study_count": {
+          "$ref": "#/$defs/count"
+        },
+        "source_count": {
+          "$ref": "#/$defs/count"
+        },
+        "finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "trial_count": {
+          "$ref": "#/$defs/count"
+        },
+        "claim_guardrail_count": {
+          "$ref": "#/$defs/count"
+        },
+        "evidence_gap_profile_count": {
+          "$ref": "#/$defs/count"
+        },
+        "claim_review_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "current_review_count": {
+          "$ref": "#/$defs/count"
+        },
+        "changed_since_review_count": {
+          "$ref": "#/$defs/count"
+        },
+        "unreviewed_claim_issue_count": {
+          "$ref": "#/$defs/count"
+        }
+      }
+    },
+    "reviewState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_audit_path",
+        "review_packet_path",
+        "resolution_ledger_path",
+        "review_status_counts",
+        "review_freshness_counts",
+        "priority_track_queue"
+      ],
+      "properties": {
+        "claim_audit_path": {
+          "const": "/data/claim-consistency-audit.json"
+        },
+        "review_packet_path": {
+          "const": "/data/claim-consistency-review-packet.json"
+        },
+        "resolution_ledger_path": {
+          "const": "ops/claim-consistency-resolutions.v1.json"
+        },
+        "review_status_counts": {
+          "$ref": "#/$defs/countRowArray"
+        },
+        "review_freshness_counts": {
+          "$ref": "#/$defs/countRowArray"
+        },
+        "priority_track_queue": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/priorityTrack"
+          }
+        }
+      }
+    },
+    "priorityTrack": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "track_id",
+        "track_name",
+        "track_href",
+        "priority_score",
+        "total_issue_count",
+        "unresolved_issue_count",
+        "open_issue_count",
+        "reviewed_issue_count",
+        "recurring_issue_count",
+        "changed_since_review_count",
+        "critical_issue_count",
+        "warning_issue_count",
+        "review_issue_count",
+        "audit_path",
+        "review_packet_path"
+      ],
+      "properties": {
+        "track_id": {
+          "type": "string"
+        },
+        "track_name": {
+          "type": "string"
+        },
+        "track_href": {
+          "type": "string"
+        },
+        "priority_score": {
+          "$ref": "#/$defs/count"
+        },
+        "total_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "unresolved_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "open_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "reviewed_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "recurring_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "changed_since_review_count": {
+          "$ref": "#/$defs/count"
+        },
+        "critical_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "warning_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "review_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "top_issue_type": {
+          "$ref": "#/$defs/countRow"
+        },
+        "top_source_kind": {
+          "$ref": "#/$defs/countRow"
+        },
+        "audit_path": {
+          "type": "string"
+        },
+        "review_packet_path": {
+          "type": "string"
+        }
+      }
+    },
+    "entityIndexes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hallmarks",
+        "tracks",
+        "interventions",
+        "studies",
+        "sources",
+        "findings",
+        "trials",
+        "claim_guardrails",
+        "evidence_gap_profiles"
+      ],
+      "properties": {
+        "hallmarks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entity"
+          }
+        },
+        "tracks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entity"
+          }
+        },
+        "interventions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entity"
+          }
+        },
+        "studies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entity"
+          }
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entity"
+          }
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entity"
+          }
+        },
+        "trials": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entity"
+          }
+        },
+        "claim_guardrails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entity"
+          }
+        },
+        "evidence_gap_profiles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entity"
+          }
+        }
+      }
+    },
+    "entity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entity_type",
+        "id",
+        "label",
+        "paths"
+      ],
+      "properties": {
+        "entity_type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "aliases": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "paths": {
+          "$ref": "#/$defs/pathMap"
+        },
+        "hallmark_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "track_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "source_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "study_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "finding_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "intervention_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "trial_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "registry_ids": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "outlook": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/metadataObject"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "coverage": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/metadataObject"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidence_counts": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/count"
+          }
+        },
+        "claim_boundary": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/metadataObject"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "gap_profile": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/metadataObject"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source_type": {
+          "type": "string"
+        },
+        "year": {
+          "$ref": "#/$defs/count"
+        },
+        "doi": {
+          "type": "string"
+        },
+        "pmid": {
+          "type": "string"
+        },
+        "evidence_tier": {
+          "type": "string"
+        },
+        "direction": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "string"
+        },
+        "is_human_evidence": {
+          "type": "boolean"
+        },
+        "status": {
+          "type": "string"
+        },
+        "phase": {
+          "type": "string"
+        },
+        "results_status": {
+          "type": "string"
+        },
+        "watch_status": {
+          "type": "string"
+        },
+        "completion_date": {
+          "type": "string"
+        },
+        "registry_last_checked": {
+          "type": "string"
+        },
+        "boundary_class": {
+          "type": "string"
+        },
+        "boundary_class_label": {
+          "type": "string"
+        },
+        "overclaim_risks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/riskRef"
+          }
+        },
+        "required_caveat_count": {
+          "$ref": "#/$defs/count"
+        },
+        "unsupported_claim_count": {
+          "$ref": "#/$defs/count"
+        },
+        "severity_tags": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "severity_labels": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "known_gap_count": {
+          "$ref": "#/$defs/count"
+        },
+        "high_priority_gap_count": {
+          "$ref": "#/$defs/count"
+        },
+        "gap_item_count": {
+          "$ref": "#/$defs/count"
+        }
+      }
+    },
+    "metadataObject": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

@@ -213,7 +213,7 @@ export default async function ClaimsAuditPage({ searchParams }: ClaimsAuditPageP
       <PageHero
         kicker="Claim audit"
         title="Where public copy may drift from guardrails"
-        summary="A review queue that compares track-linked public text against the tracker claim guardrails, with source paths for editors, researchers, and language-model workflows."
+        summary="A review queue that compares track-linked public text against the tracker claim guardrails, with source paths for editors, researchers, and retrieval workflows."
       >
         <div className="page-hero__stats">
           <span>{formatNumber(summary.scanned_context_count)} text contexts scanned</span>
@@ -230,7 +230,7 @@ export default async function ClaimsAuditPage({ searchParams }: ClaimsAuditPageP
           <div className="data-scoped-main">
             <ClipboardCheck aria-hidden="true" size={18} />
             <span className="section-kicker">Editorial QA layer</span>
-            <h2>Review copy before it becomes training signal</h2>
+            <h2>Review copy before it becomes knowledge-base context</h2>
             <p>
               Each issue links the flagged text excerpt, the public source page, the backing record path, the track
               guardrail, and the evidence explorer so reviewers can decide whether the caveat is missing or supplied

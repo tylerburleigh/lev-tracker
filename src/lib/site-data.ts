@@ -3316,7 +3316,7 @@ export async function getEvidenceMapExport() {
     intended_uses: [
       "Retrieval-augmented context for longevity-science question answering.",
       "Expert audit of how public track reads connect to findings, studies, sources, trials, and coverage state.",
-      "Training or evaluation examples that need structured distinctions between evidence stage, read firmness, map completeness, and research density.",
+      "Knowledge-base retrieval that needs structured distinctions between evidence stage, read firmness, map completeness, and research density.",
       "Gap analysis for deciding whether a field appears sparse or whether the tracker still needs source-discovery work."
     ],
     unsuitable_uses: [
@@ -5575,7 +5575,7 @@ export async function getEvidenceQualityExport(filters: EvidenceQualityFilters =
       primary_uses: [
         "Find findings whose interpretation depends on biomarker, sample-size, duration, registry, or review-context limits.",
         "Audit whether expert-facing summaries keep source and study limitations visible.",
-        "Give language-model workflows compact labels that prevent treating all evidence tiers as equally strong."
+        "Give retrieval and summarization workflows compact labels that prevent treating all evidence tiers as equally strong."
       ]
     },
     caveats: [
@@ -5763,7 +5763,7 @@ export async function getEvidenceConflictsExport(filters: EvidenceConflictFilter
       primary_uses: [
         "Find tracks where positive signals coexist with null, negative, mixed, or no-results evidence.",
         "Identify animal-positive or biomarker-positive areas that lack aligned human functional or clinical replication.",
-        "Give expert and language-model workflows explicit guardrails against cherry-picking a single positive finding."
+        "Give expert review and retrieval workflows explicit guardrails against cherry-picking a single positive finding."
       ]
     },
     caveats: [
@@ -6440,7 +6440,7 @@ export async function getClaimGuardrailsExport(filters: ClaimGuardrailFilters = 
         "This export is a phrasing and interpretation guardrail layer. It is not medical advice, a formal guideline, or a systematic-review certainty grade.",
       primary_uses: [
         "Keep expert-facing summaries attached to the evidence boundary that the tracker can actually support.",
-        "Give language-model workflows explicit supported-claim and unsupported-claim lists before generating prose.",
+        "Give retrieval and summarization workflows explicit supported-claim and unsupported-claim lists before drafting prose.",
         "Audit whether track pages, data exports, and downstream summaries overstate biomarker, preclinical, registry, safety, durability, or lifespan claims."
       ]
     },
@@ -7758,13 +7758,13 @@ export async function getClaimConsistencyAuditExport(filters: ClaimConsistencyAu
       primary_uses: [
         "Find public summaries that may need registry, conflict, biomarker, preclinical, coverage, safety, or durability caveats.",
         "Give editors a track-by-track QA queue before publishing new summaries.",
-        "Give language-model workflows negative examples and boundary checks before final prose generation."
+        "Give knowledge-base consumers boundary checks before reusing public-copy summaries."
       ]
     },
     caveats: [
       "A flagged row is a review prompt, not proof that the public copy is wrong.",
       "Short copy can be acceptable when a nearby page section supplies the caveat; editors should inspect the source page and record path.",
-      "The audit intentionally favors conservative recall over precision for expert and AI-safety review.",
+      "The audit intentionally favors conservative recall over precision for expert review.",
       "Resolution statuses are curator workflow metadata from the ledger file; they do not change source-level evidence strength."
     ],
     summary: {
@@ -8088,7 +8088,7 @@ export async function getClaimConsistencyReviewPacketExport(filters: ClaimConsis
       primary_uses: [
         "Review a smaller set of editorial decisions before editing public copy.",
         "Prepare ledger entries for recurring accepted issues, deferrals, fixes, or false-positive decisions.",
-        "Give language-model workflows group-level negative examples instead of thousands of near-duplicate rows."
+        "Give knowledge-base consumers group-level claim-boundary review units instead of thousands of near-duplicate rows."
       ]
     },
     caveats: [
@@ -8126,6 +8126,543 @@ export async function getClaimConsistencyReviewPacketExport(filters: ClaimConsis
       resolution_ledger: audit.resolution_policy.path
     },
     groups: exportedGroups
+  };
+}
+
+function getKnowledgeBaseQueryPath(pathName: string, filters: Record<string, string | number | undefined>) {
+  const params = new URLSearchParams();
+
+  for (const [key, value] of Object.entries(filters)) {
+    if (value === undefined || value === "") {
+      continue;
+    }
+
+    params.set(key, String(value));
+  }
+
+  const query = params.toString();
+  return query ? `${pathName}?${query}` : pathName;
+}
+
+function getKnowledgeBaseEndpointManifest() {
+  return [
+    {
+      id: "knowledge-base-index",
+      label: "Knowledge-base index",
+      path: "/data/knowledge-base-index.json",
+      schema_path: "/data/knowledge-base-index.schema.json",
+      entity_scope: ["hallmarks", "tracks", "interventions", "studies", "sources", "findings", "trials", "claims", "gaps"],
+      description: "Manifest and compact entity directory for discovering tracker records and their retrieval paths."
+    },
+    {
+      id: "evidence-map",
+      label: "Evidence map",
+      path: "/data/evidence-map.json",
+      schema_path: "/data/evidence-map.schema.json",
+      entity_scope: ["hallmarks", "tracks", "findings", "sources", "trials"],
+      description: "Full public evidence-map export with legends, caveats, track outlooks, findings, sources, and trials."
+    },
+    {
+      id: "scoped-track",
+      label: "Scoped track export",
+      path: "/data/tracks/{track_id}.json",
+      schema_path: "/data/scoped-evidence-map.schema.json",
+      entity_scope: ["track", "linked_findings", "linked_sources", "linked_studies", "linked_trials"],
+      description: "One track plus linked evidence context for focused retrieval."
+    },
+    {
+      id: "source-audit",
+      label: "Source audit",
+      path: "/data/sources/{source_id}.json",
+      schema_path: "/data/source-audit.schema.json",
+      entity_scope: ["source", "linked_findings", "linked_studies", "linked_tracks"],
+      description: "Source-level provenance graph for citation and source-use review."
+    },
+    {
+      id: "evidence-index",
+      label: "Evidence index",
+      path: "/data/evidence-index.json",
+      schema_path: "/data/evidence-index.schema.json",
+      entity_scope: ["findings", "sources", "studies", "interventions", "quality_context"],
+      description: "Filterable finding-level index enriched with source, study, quality, and consistency context."
+    },
+    {
+      id: "evidence-quality",
+      label: "Evidence quality",
+      path: "/data/evidence-quality.json",
+      schema_path: "/data/evidence-quality.schema.json",
+      entity_scope: ["findings", "quality_flags", "limitation_tags"],
+      description: "Finding-level quality and limitation labels for cautious interpretation."
+    },
+    {
+      id: "evidence-conflicts",
+      label: "Evidence conflicts",
+      path: "/data/evidence-conflicts.json",
+      schema_path: "/data/evidence-conflicts.schema.json",
+      entity_scope: ["tracks", "consistency_patterns", "finding_clusters"],
+      description: "Track-level consistency and conflict map for avoiding cherry-picked readings."
+    },
+    {
+      id: "claim-guardrails",
+      label: "Claim guardrails",
+      path: "/data/claim-guardrails.json",
+      schema_path: "/data/claim-guardrails.schema.json",
+      entity_scope: ["tracks", "supported_claims", "unsupported_claims", "required_caveats"],
+      description: "Track-level claim boundaries and overclaim-risk metadata."
+    },
+    {
+      id: "claim-consistency-audit",
+      label: "Claim consistency audit",
+      path: "/data/claim-consistency-audit.json",
+      schema_path: "/data/claim-consistency-audit.schema.json",
+      entity_scope: ["public_copy", "claims", "review_status", "review_freshness"],
+      description: "Review queue linking public-copy claim drift to guardrails and reviewer state."
+    },
+    {
+      id: "claim-review-packet",
+      label: "Claim review packet",
+      path: "/data/claim-consistency-review-packet.json",
+      schema_path: "/data/claim-consistency-review-packet.schema.json",
+      entity_scope: ["review_groups", "claims", "suggested_resolution_entries"],
+      description: "Grouped claim-audit decisions for curator review."
+    },
+    {
+      id: "evidence-gaps",
+      label: "Evidence gaps",
+      path: "/data/evidence-gaps.json",
+      schema_path: "/data/evidence-gaps.schema.json",
+      entity_scope: ["tracks", "gaps", "rating_change_criteria", "trial_horizon"],
+      description: "Track-level gap ledger with provenance and trial-sensitive review context."
+    },
+    {
+      id: "coverage-audit",
+      label: "Coverage audit",
+      path: "/data/coverage-audit.json",
+      schema_path: "/data/coverage-audit.schema.json",
+      entity_scope: ["tracks", "coverage_methods", "search_logs", "source_selection"],
+      description: "Coverage-method provenance for distinguishing field scarcity from map incompleteness."
+    }
+  ];
+}
+
+export async function getKnowledgeBaseIndexExport() {
+  noStore();
+  const [evidenceMap, studies, interventions, guardrails, gaps, claimAudit] = await Promise.all([
+    getEvidenceMapExport(),
+    loadStudies(),
+    loadInterventions(),
+    getClaimGuardrailsExport(),
+    getEvidenceGapsExport(),
+    getClaimConsistencyAuditExport({ limit: 1 })
+  ]);
+  const trackById = new Map(evidenceMap.tracks.map((track) => [track.id, track]));
+  const sourceById = new Map(evidenceMap.sources.map((source) => [source.id, source]));
+  const guardrailByTrackId = new Map(guardrails.tracks.map((track) => [track.id, track]));
+  const gapsByTrackId = new Map(gaps.tracks.map((track) => [track.id, track]));
+  const findingIdsByTrackId = new Map<string, Set<string>>();
+  const findingIdsByHallmarkId = new Map<string, Set<string>>();
+  const findingIdsBySourceId = new Map<string, Set<string>>();
+  const findingIdsByStudyId = new Map<string, Set<string>>();
+  const findingIdsByInterventionId = new Map<string, Set<string>>();
+  const studyIdsByTrackId = new Map<string, Set<string>>();
+  const studyIdsBySourceId = new Map<string, Set<string>>();
+  const trialIdsByTrackId = new Map<string, Set<string>>();
+
+  const addToSet = (map: Map<string, Set<string>>, key: string | undefined, value: string | undefined) => {
+    if (!key || !value) {
+      return;
+    }
+
+    const next = map.get(key) ?? new Set<string>();
+    next.add(value);
+    map.set(key, next);
+  };
+  const sortedSetValues = (map: Map<string, Set<string>>, key: string) => Array.from(map.get(key) ?? []).sort();
+
+  for (const finding of evidenceMap.findings) {
+    for (const trackId of finding.track_ids) {
+      addToSet(findingIdsByTrackId, trackId, finding.id);
+    }
+
+    for (const hallmarkId of finding.hallmark_ids) {
+      addToSet(findingIdsByHallmarkId, hallmarkId, finding.id);
+    }
+
+    for (const interventionId of finding.intervention_ids) {
+      addToSet(findingIdsByInterventionId, interventionId, finding.id);
+    }
+
+    addToSet(findingIdsBySourceId, finding.source_id, finding.id);
+    addToSet(findingIdsByStudyId, finding.study_id, finding.id);
+  }
+
+  for (const study of studies) {
+    for (const trackId of study.track_ids ?? []) {
+      addToSet(studyIdsByTrackId, trackId, study.id);
+    }
+
+    for (const sourceId of study.source_ids) {
+      addToSet(studyIdsBySourceId, sourceId, study.id);
+    }
+  }
+
+  for (const trial of evidenceMap.trials) {
+    for (const trackId of trial.track_ids) {
+      addToSet(trialIdsByTrackId, trackId, trial.id);
+    }
+  }
+
+  const makeEntityPaths = ({
+    page,
+    primary_data,
+    evidence_map,
+    evidence_index,
+    source_audit,
+    scoped_track,
+    claim_guardrails,
+    claim_audit,
+    review_packet,
+    evidence_gaps,
+    coverage_audit
+  }: {
+    page?: string;
+    primary_data?: string;
+    evidence_map?: string;
+    evidence_index?: string;
+    source_audit?: string;
+    scoped_track?: string;
+    claim_guardrails?: string;
+    claim_audit?: string;
+    review_packet?: string;
+    evidence_gaps?: string;
+    coverage_audit?: string;
+  }) =>
+    Object.fromEntries(
+      Object.entries({
+        page,
+        primary_data,
+        evidence_map,
+        evidence_index,
+        source_audit,
+        scoped_track,
+        claim_guardrails,
+        claim_audit,
+        review_packet,
+        evidence_gaps,
+        coverage_audit
+      }).filter(([, value]) => Boolean(value))
+    );
+
+  const trackEntityPaths = (trackId: string, href: string) =>
+    makeEntityPaths({
+      page: href,
+      primary_data: `/data/tracks/${encodeURIComponent(trackId)}.json`,
+      scoped_track: `/data/tracks/${encodeURIComponent(trackId)}.json`,
+      evidence_map: getKnowledgeBaseQueryPath("/data/evidence-map.json", { track: trackId }),
+      evidence_index: getKnowledgeBaseQueryPath("/data/evidence-index.json", { track: trackId }),
+      claim_guardrails: getKnowledgeBaseQueryPath("/data/claim-guardrails.json", { track: trackId }),
+      claim_audit: getKnowledgeBaseQueryPath("/data/claim-consistency-audit.json", { track: trackId }),
+      review_packet: getKnowledgeBaseQueryPath("/data/claim-consistency-review-packet.json", { track: trackId }),
+      evidence_gaps: getKnowledgeBaseQueryPath("/data/evidence-gaps.json", { track: trackId }),
+      coverage_audit: getKnowledgeBaseQueryPath("/data/coverage-audit.json", { track: trackId })
+    });
+
+  const hallmarks = evidenceMap.hallmarks.map((hallmark) => ({
+    entity_type: "hallmark",
+    id: hallmark.id,
+    label: hallmark.name,
+    summary: hallmark.description,
+    paths: makeEntityPaths({
+      page: hallmark.href,
+      primary_data: "/data/evidence-map.json",
+      evidence_map: "/data/evidence-map.json"
+    }),
+    track_ids: hallmark.track_ids,
+    finding_ids: sortedSetValues(findingIdsByHallmarkId, hallmark.id),
+    outlook: hallmark.outlook
+      ? {
+          stage: hallmark.outlook.stage,
+          stage_label: hallmark.outlook.stage_label,
+          confidence: hallmark.outlook.confidence,
+          read_firmness_label: hallmark.outlook.read_firmness_label,
+          last_updated: hallmark.outlook.last_updated
+        }
+      : null
+  }));
+  const tracks = evidenceMap.tracks.map((track) => {
+    const guardrail = guardrailByTrackId.get(track.id);
+    const gap = gapsByTrackId.get(track.id);
+
+    return {
+      entity_type: "track",
+      id: track.id,
+      label: track.name,
+      summary: track.summary,
+      paths: trackEntityPaths(track.id, track.href),
+      hallmark_ids: uniqueSorted([track.primary_hallmark_id, ...track.secondary_hallmark_ids]),
+      source_ids: track.source_ids,
+      finding_ids: sortedSetValues(findingIdsByTrackId, track.id),
+      study_ids: sortedSetValues(studyIdsByTrackId, track.id),
+      intervention_ids: track.evidence_counts.intervention_count
+        ? interventions.filter((intervention) => (intervention.track_ids ?? []).includes(track.id)).map((item) => item.id).sort()
+        : [],
+      trial_ids: sortedSetValues(trialIdsByTrackId, track.id),
+      outlook: track.outlook
+        ? {
+            stage: track.outlook.stage,
+            stage_label: track.outlook.stage_label,
+            momentum: track.outlook.momentum,
+            momentum_label: track.outlook.momentum_label,
+            confidence: track.outlook.confidence,
+            read_firmness_label: track.outlook.read_firmness_label,
+            last_updated: track.outlook.last_updated
+          }
+        : null,
+      coverage: track.coverage
+        ? {
+            coverage_verdict: track.coverage.coverage_verdict,
+            coverage_verdict_label: track.coverage.coverage_verdict_label,
+            coverage_confidence: track.coverage.coverage_confidence,
+            coverage_confidence_label: track.coverage.coverage_confidence_label,
+            observed_research_density: track.coverage.observed_research_density,
+            observed_research_density_label: track.coverage.observed_research_density_label,
+            last_coverage_assessed_at: track.coverage.last_coverage_assessed_at
+          }
+        : null,
+      evidence_counts: track.evidence_counts,
+      claim_boundary: guardrail
+        ? {
+            boundary_class: guardrail.boundary_class,
+            boundary_class_label: guardrail.boundary_class_label,
+            overclaim_risks: guardrail.overclaim_risks.map((risk) => ({
+              value: risk.value,
+              label: risk.label
+            }))
+          }
+        : null,
+      gap_profile: gap
+        ? {
+            severity_tags: gap.severity_tags,
+            severity_labels: gap.severity_labels,
+            known_gap_count: gap.known_gap_count,
+            high_priority_gap_count: gap.high_priority_gap_count,
+            trial_sensitive: gap.severity_tags.includes("trial_sensitive")
+          }
+        : null
+    };
+  });
+  const interventionIndex = interventions
+    .map((intervention) => ({
+      entity_type: "intervention",
+      id: intervention.id,
+      label: intervention.name,
+      summary: intervention.summary,
+      aliases: intervention.aliases ?? [],
+      paths: makeEntityPaths({
+        page: `/interventions/${intervention.id}`,
+        primary_data: getKnowledgeBaseQueryPath("/data/evidence-index.json", { intervention: intervention.id }),
+        evidence_index: getKnowledgeBaseQueryPath("/data/evidence-index.json", { intervention: intervention.id })
+      }),
+      hallmark_ids: uniqueSorted([...(intervention.target_hallmark_ids ?? []), ...(intervention.secondary_hallmark_ids ?? [])]),
+      track_ids: intervention.track_ids ?? [],
+      study_ids: intervention.linked_study_ids ?? [],
+      finding_ids: uniqueSorted([...(intervention.linked_finding_ids ?? []), ...sortedSetValues(findingIdsByInterventionId, intervention.id)])
+    }))
+    .sort((left, right) => left.label.localeCompare(right.label));
+  const studyIndex = studies
+    .map((study) => ({
+      entity_type: "study",
+      id: study.id,
+      label: study.name,
+      summary: study.summary,
+      paths: makeEntityPaths({
+        page: `/studies/${study.id}`,
+        primary_data: getKnowledgeBaseQueryPath("/data/evidence-index.json", { q: study.id }),
+        evidence_index: getKnowledgeBaseQueryPath("/data/evidence-index.json", { q: study.id })
+      }),
+      hallmark_ids: study.hallmark_ids ?? [],
+      track_ids: study.track_ids ?? [],
+      source_ids: study.source_ids,
+      intervention_ids: study.intervention_ids ?? [],
+      finding_ids: sortedSetValues(findingIdsByStudyId, study.id),
+      registry_ids: study.registry_ids ?? []
+    }))
+    .sort((left, right) => left.label.localeCompare(right.label));
+  const sourceIndex = evidenceMap.sources.map((source) => ({
+    entity_type: "source",
+    id: source.id,
+    label: source.short_name ?? source.name,
+    summary: source.summary,
+    paths: makeEntityPaths({
+      page: source.href,
+      primary_data: source.json_path,
+      source_audit: source.json_path,
+      evidence_index: getKnowledgeBaseQueryPath("/data/evidence-index.json", { q: source.id })
+    }),
+    source_type: source.source_type,
+    year: source.year,
+    doi: source.doi,
+    pmid: source.pmid,
+    registry_ids: source.registry_ids,
+    finding_ids: sortedSetValues(findingIdsBySourceId, source.id),
+    study_ids: sortedSetValues(studyIdsBySourceId, source.id),
+    track_ids: uniqueSorted([
+      ...sortedSetValues(findingIdsBySourceId, source.id).flatMap(
+        (findingId) => evidenceMap.findings.find((finding) => finding.id === findingId)?.track_ids ?? []
+      ),
+      ...sortedSetValues(studyIdsBySourceId, source.id).flatMap(
+        (studyId) => studies.find((study) => study.id === studyId)?.track_ids ?? []
+      )
+    ])
+  }));
+  const findingIndex = evidenceMap.findings.map((finding) => {
+    const source = sourceById.get(finding.source_id);
+
+    return {
+      entity_type: "finding",
+      id: finding.id,
+      label: finding.name,
+      summary: finding.summary,
+      paths: makeEntityPaths({
+        page: `/findings/${finding.id}`,
+        primary_data: getKnowledgeBaseQueryPath("/data/evidence-index.json", { q: finding.id }),
+        evidence_index: getKnowledgeBaseQueryPath("/data/evidence-index.json", { q: finding.id }),
+        source_audit: source?.json_path
+      }),
+      hallmark_ids: finding.hallmark_ids,
+      track_ids: finding.track_ids,
+      source_ids: [finding.source_id],
+      study_ids: finding.study_id ? [finding.study_id] : [],
+      intervention_ids: finding.intervention_ids,
+      evidence_tier: finding.evidence_tier,
+      direction: finding.direction,
+      confidence: finding.confidence,
+      is_human_evidence: finding.is_human_evidence
+    };
+  });
+  const trialIndex = evidenceMap.trials.map((trial) => ({
+    entity_type: "trial",
+    id: trial.id,
+    label: trial.name,
+    summary: trial.why_it_matters,
+    paths: makeEntityPaths({
+      page: trial.href,
+      primary_data: "/data/evidence-map.json",
+      evidence_map: "/data/evidence-map.json"
+    }),
+    track_ids: trial.track_ids,
+    registry_ids: trial.registry_ids,
+    status: trial.status,
+    phase: trial.phase,
+    results_status: trial.results_status,
+    watch_status: trial.watch_status,
+    completion_date: trial.completion_date,
+    registry_last_checked: trial.registry_last_checked
+  }));
+  const claimGuardrailIndex = guardrails.tracks.map((track) => ({
+    entity_type: "claim_guardrail",
+    id: track.id,
+    label: track.name,
+    summary: track.guardrail_summary,
+    paths: makeEntityPaths({
+      page: track.href,
+      primary_data: track.paths.claim_guardrails_path,
+      claim_guardrails: track.paths.claim_guardrails_path,
+      claim_audit: getKnowledgeBaseQueryPath("/data/claim-consistency-audit.json", { track: track.id }),
+      review_packet: getKnowledgeBaseQueryPath("/data/claim-consistency-review-packet.json", { track: track.id })
+    }),
+    track_ids: [track.id],
+    boundary_class: track.boundary_class,
+    boundary_class_label: track.boundary_class_label,
+    overclaim_risks: track.overclaim_risks.map((risk) => ({
+      value: risk.value,
+      label: risk.label
+    })),
+    required_caveat_count: track.required_caveats.length,
+    unsupported_claim_count: track.unsupported_claims.length
+  }));
+  const gapIndex = gaps.tracks.map((track) => ({
+    entity_type: "evidence_gap_profile",
+    id: track.id,
+    label: track.name,
+    summary: track.interpretation,
+    paths: makeEntityPaths({
+      page: track.href,
+      primary_data: track.provenance.gap_json_path,
+      evidence_gaps: track.provenance.gap_json_path,
+      scoped_track: track.provenance.track_json_path,
+      evidence_map: track.provenance.evidence_map_path
+    }),
+    track_ids: [track.id],
+    source_ids: track.provenance.supporting_source_ids,
+    finding_ids: track.provenance.supporting_finding_ids,
+    trial_ids: track.provenance.trial_ids,
+    severity_tags: track.severity_tags,
+    severity_labels: track.severity_labels,
+    known_gap_count: track.known_gap_count,
+    high_priority_gap_count: track.high_priority_gap_count,
+    gap_item_count: track.gap_items.length
+  }));
+
+  return {
+    schema_version: "1.0.0",
+    schema_url: "/data/knowledge-base-index.schema.json",
+    export_type: "lev_tracker_knowledge_base_index",
+    generated_at: new Date().toISOString(),
+    last_public_update: evidenceMap.last_public_update,
+    canonical_path: "/data/knowledge-base-index.json",
+    purpose:
+      "A compact manifest and entity directory for using LEV Tracker as a source-grounded longevity science knowledge base.",
+    caveats: [
+      "This index is a discovery layer. Follow the linked detailed exports and source records before citing or summarizing a claim.",
+      "Counts and labels reflect tracker records, not a comprehensive census of longevity science.",
+      "Claim guardrails and review freshness are interpretation-safety metadata; they do not change source-level evidence strength."
+    ],
+    retrieval_guidance: [
+      "Start from entity_indexes.tracks when answering track-level questions.",
+      "Use entity paths to move from track to scoped export, evidence index, source audits, claim guardrails, gaps, and coverage records.",
+      "Use finding, source, and study IDs as provenance anchors before presenting a source-grounded answer.",
+      "Check claim_guardrails and review_state before reusing public-copy summaries or high-level claims."
+    ],
+    manifest: {
+      primary_endpoint: "/data/knowledge-base-index.json",
+      schema_path: "/data/knowledge-base-index.schema.json",
+      endpoints: getKnowledgeBaseEndpointManifest()
+    },
+    summary: {
+      hallmark_count: hallmarks.length,
+      track_count: tracks.length,
+      intervention_count: interventionIndex.length,
+      study_count: studyIndex.length,
+      source_count: sourceIndex.length,
+      finding_count: findingIndex.length,
+      trial_count: trialIndex.length,
+      claim_guardrail_count: claimGuardrailIndex.length,
+      evidence_gap_profile_count: gapIndex.length,
+      claim_review_issue_count: claimAudit.summary.total_issue_count,
+      current_review_count: claimAudit.summary.current_review_count,
+      changed_since_review_count: claimAudit.summary.changed_since_review_count,
+      unreviewed_claim_issue_count: claimAudit.summary.unreviewed_freshness_count
+    },
+    review_state: {
+      claim_audit_path: "/data/claim-consistency-audit.json",
+      review_packet_path: "/data/claim-consistency-review-packet.json",
+      resolution_ledger_path: claimAudit.resolution_policy.path,
+      review_status_counts: claimAudit.summary.review_status_counts,
+      review_freshness_counts: claimAudit.summary.review_freshness_counts,
+      priority_track_queue: claimAudit.summary.priority_track_queue
+    },
+    entity_indexes: {
+      hallmarks,
+      tracks,
+      interventions: interventionIndex,
+      studies: studyIndex,
+      sources: sourceIndex,
+      findings: findingIndex,
+      trials: trialIndex,
+      claim_guardrails: claimGuardrailIndex,
+      evidence_gap_profiles: gapIndex
+    }
   };
 }
 

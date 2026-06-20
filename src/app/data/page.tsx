@@ -64,9 +64,9 @@ const exportContractRows = [
 
 const useCards = [
   {
-    title: "Model-readable context",
+    title: "Knowledge-base context",
     summary:
-      "Use the export to teach systems the difference between outlook ratings, evidence strength, research density, and map completeness.",
+      "Use the exports to retrieve the difference between outlook ratings, evidence strength, research density, and map completeness.",
     icon: Braces
   },
   {
@@ -90,6 +90,7 @@ function formatNumber(value: number) {
 const scopedExampleIds = ["senolytics", "rapalogs", "partial-reprogramming"] as const;
 
 const workflowSteps = [
+  "Start with the knowledge-base index to discover entity IDs and retrieval paths.",
   "Fetch the scoped track export.",
   "Read legends and caveats before interpreting labels.",
   "Inspect track.outlook and track.coverage together.",
@@ -100,13 +101,18 @@ const workflowSteps = [
   "Use coverage_audit.tracks[].assessment to inspect how map coverage was judged.",
   "Use findings[].quality when a workflow needs limitation, study-design, or human-relevance labels before summarizing.",
   "Use conflicts.tracks[].patterns to avoid treating one positive result as field consensus.",
-  "Use claim_guardrails.tracks[] before generating final summaries or training examples.",
+  "Use claim_guardrails.tracks[] before reusing high-level public summaries.",
   "Use claim_consistency_audit.issues[] to review public-copy drift against guardrails.",
   "Use claim_consistency_audit.issues[].resolution to separate new, recurring, fixed, and false-positive audit rows.",
   "Use claim_consistency_review_packet.groups[] when reviewers need grouped decisions instead of individual audit rows."
 ] as const;
 
 const fieldPathRows = [
+  {
+    field: "/data/knowledge-base-index.json",
+    meaning:
+      "Manifest and entity directory for discovering hallmarks, tracks, interventions, studies, sources, findings, trials, claims, gaps, and review state."
+  },
   {
     field: "track.outlook",
     meaning: "Current public read, stage, read firmness, evidence gaps, and rating-change criteria."
@@ -140,7 +146,7 @@ const fieldPathRows = [
   {
     field: "/data/claim-guardrails.json",
     meaning:
-      "Track-level supported claims, unsupported claims, required caveats, and overclaim-risk labels for expert and AI summaries."
+      "Track-level supported claims, unsupported claims, required caveats, and overclaim-risk labels for source-grounded summaries."
   },
   {
     field: "/data/claim-consistency-audit.json",
@@ -185,7 +191,7 @@ const fieldPathRows = [
   {
     field: "claim_consistency_audit.issues[]",
     meaning:
-      "Flagged source text, missing boundary terms, recommended edits, guardrail snapshots, and trace links for review or model-evaluation examples."
+      "Flagged source text, missing boundary terms, recommended edits, guardrail snapshots, and trace links for knowledge-base review."
   },
   {
     field: "claim_consistency_audit.issues[].fingerprint / resolution",
@@ -229,8 +235,8 @@ export default async function DataAccessPage() {
     <SiteShell lastUpdated={formatDate(lastUpdated)}>
       <PageHero
         kicker="Data"
-        title="Machine-readable evidence map"
-        summary="A compact JSON export for researchers, auditors, and language-model workflows that need the tracker as structured evidence-map context rather than page text."
+        title="Knowledge-base data exports"
+        summary="Compact JSON exports for researchers, auditors, and retrieval workflows that need the tracker as structured evidence-map context rather than page text."
       >
         <div className="data-hero-actions">
           <a className="action-button" href={evidenceMap.canonical_path}>
@@ -267,6 +273,10 @@ export default async function DataAccessPage() {
             </p>
             <a className="section-link" href={evidenceMap.canonical_path}>
               <span>{evidenceMap.canonical_path}</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
+            <a className="section-link" href="/data/knowledge-base-index.json">
+              <span>Knowledge-base index JSON</span>
               <ArrowRight aria-hidden="true" size={16} />
             </a>
             <Link className="section-link" href="/coverage">
@@ -315,6 +325,10 @@ export default async function DataAccessPage() {
             </a>
             <a className="section-link" href={evidenceMap.schema_url}>
               <span>Full export schema</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
+            <a className="section-link" href="/data/knowledge-base-index.schema.json">
+              <span>Knowledge-base index schema</span>
               <ArrowRight aria-hidden="true" size={16} />
             </a>
             <a className="section-link" href={datasetCard.schema_urls.scoped_track_export}>
