@@ -3995,6 +3995,29 @@ time {
   min-width: 1120px;
 }
 
+.coverage-audit-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  margin-top: 9px;
+}
+
+.coverage-audit-link-row a,
+.coverage-audit-link-row span {
+  display: inline;
+  margin-top: 0;
+  color: var(--text-soft);
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.coverage-audit-link-row a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .coverage-method-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -5049,12 +5072,14 @@ time {
   }
 
   .evidence-index-table,
-  .evidence-gaps-table {
+  .evidence-gaps-table,
+  .coverage-track-table {
     min-width: 0;
   }
 
   .evidence-index-table thead,
-  .evidence-gaps-table thead {
+  .evidence-gaps-table thead,
+  .coverage-track-table thead {
     display: none;
   }
 
@@ -5067,26 +5092,35 @@ time {
   .evidence-gaps-table tbody,
   .evidence-gaps-table tr,
   .evidence-gaps-table th,
-  .evidence-gaps-table td {
+  .evidence-gaps-table td,
+  .coverage-track-table,
+  .coverage-track-table tbody,
+  .coverage-track-table tr,
+  .coverage-track-table th,
+  .coverage-track-table td {
     display: block;
     width: 100%;
   }
 
   .evidence-index-table tr,
-  .evidence-gaps-table tr {
+  .evidence-gaps-table tr,
+  .coverage-track-table tr {
     padding: 14px 0;
   }
 
   .evidence-index-table th,
   .evidence-index-table td,
   .evidence-gaps-table th,
-  .evidence-gaps-table td {
+  .evidence-gaps-table td,
+  .coverage-track-table th,
+  .coverage-track-table td {
     padding: 8px 0;
     border-top: 0;
   }
 
   .evidence-index-table tbody th,
-  .evidence-gaps-table tbody th {
+  .evidence-gaps-table tbody th,
+  .coverage-track-table tbody th {
     width: 100%;
   }
 

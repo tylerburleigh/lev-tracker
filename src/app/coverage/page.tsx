@@ -4,10 +4,12 @@ import { ArrowRight, CheckCircle2, ListChecks, SearchCheck, Signal, TriangleAler
 import { PageHero } from "@/components/page-hero";
 import { SiteShell } from "@/components/site-shell";
 import { formatDate } from "@/lib/date";
-import { getEvidenceMapExport, getOverallLastUpdated } from "@/lib/site-data";
+import { getCoverageAuditExport, getEvidenceMapExport, getOverallLastUpdated } from "@/lib/site-data";
 
 type EvidenceMapExport = Awaited<ReturnType<typeof getEvidenceMapExport>>;
 type EvidenceMapTrack = EvidenceMapExport["tracks"][number];
+type CoverageAuditExport = Awaited<ReturnType<typeof getCoverageAuditExport>>;
+type CoverageAuditTrack = CoverageAuditExport["tracks"][number];
 type CoverageBucket = "active_mapped" | "sparse_checked" | "needs_map_work" | "gap_heavy";
 
 const bucketConfig: Record<
@@ -91,16 +93,28 @@ function getTrackSortValue(track: EvidenceMapTrack) {
     .padStart(3, "0")}:${sourceCount.toString().padStart(4, "0")}:${track.name}`;
 }
 
-function getShortTrackMetric(track: EvidenceMapTrack) {
-  return `${formatNumber(track.evidence_counts.finding_count)} findings / ${formatNumber(
-    track.evidence_counts.source_count
-  )} sources`;
+function getAuditTrackMetric(track: CoverageAuditTrack) {
+  return `${track.assessment?.covered_source_count ?? 0} sources / ${
+    track.assessment?.covered_finding_count ?? 0
+  } findings`;
 }
 
 export default async function CoveragePage() {
-  const [lastUpdated, evidenceMap] = await Promise.all([getOverallLastUpdated(), getEvidenceMapExport()]);
+  const [lastUpdated, evidenceMap, coverageAudit] = await Promise.all([
+    getOverallLastUpdated(),
+    getEvidenceMapExport(),
+    getCoverageAuditExport()
+  ]);
   const tracks = [...evidenceMap.tracks].sort((left, right) =>
     getTrackSortValue(left).localeCompare(getTrackSortValue(right))
+  );
+  const auditByTrackId = new Map(coverageAudit.tracks.map((track) => [track.id, track]));
+  const likelyFieldScarcityTracks = coverageAudit.tracks.filter(
+    (track) => track.method_class === "likely_field_scarcity"
+  );
+  const registryWatchTracks = coverageAudit.tracks.filter((track) => track.method_class === "needs_registry_check");
+  const reviewDueTracks = coverageAudit.tracks.filter(
+    (track) => track.method_class === "recent_activity_review_due" || track.method_class === "needs_source_discovery"
   );
   const activeOrDenseTracks = tracks.filter((track) => isActiveOrDense(track.coverage?.observed_research_density));
   const sparseCheckedTracks = tracks.filter(
@@ -130,6 +144,7 @@ export default async function CoveragePage() {
           <span>{evidenceMap.summary.track_count} tracks</span>
           <span>{evidenceMap.summary.coverage_assessed_track_count} assessed maps</span>
           <span>{activeOrDenseTracks.length} active or dense fields</span>
+          <span>{coverageAudit.summary.due_or_never_surveillance_track_count} review due</span>
           <span>{totalHighPriorityGaps} high-priority gaps</span>
         </div>
       </PageHero>
@@ -144,6 +159,10 @@ export default async function CoveragePage() {
               answers whether the checked field appears small, emerging, active, or dense. Evidence strength is a third
               question handled by the outlook stage and supporting findings.
             </p>
+            <a className="section-link section-link--block" href="/data/coverage-audit.json">
+              <span>Coverage audit JSON</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
             <Link className="section-link section-link--block" href="/guide">
               <span>Open reader guide</span>
               <ArrowRight aria-hidden="true" size={16} />
@@ -170,55 +189,59 @@ export default async function CoveragePage() {
               <span className="section-kicker">Likely field scarcity</span>
               <h2>Sparse but checked</h2>
             </div>
-            {sparseCheckedTracks.length ? (
+            {likelyFieldScarcityTracks.length ? (
               <div className="coverage-mini-list">
-                {sparseCheckedTracks.slice(0, 5).map((track) => (
+                {likelyFieldScarcityTracks.slice(0, 5).map((track) => (
                   <Link href={track.href} key={track.id}>
                     <strong>{track.name}</strong>
-                    <span>{getShortTrackMetric(track)}</span>
+                    <span>{getAuditTrackMetric(track)}</span>
                   </Link>
                 ))}
               </div>
             ) : (
-              <p>No track is currently classified as sparse with a usable map.</p>
+              <p>No track is currently classified as sparse after a usable, current method audit.</p>
             )}
           </section>
 
           <section className="coverage-diagnostic-panel">
             <div className="panel-header panel-header--stacked">
-              <span className="section-kicker">Tracker caution</span>
-              <h2>Map work needed</h2>
+              <span className="section-kicker">Registry watch</span>
+              <h2>Results could move the map</h2>
             </div>
-            {needsMapWorkTracks.length ? (
+            {registryWatchTracks.length ? (
               <div className="coverage-mini-list">
-                {needsMapWorkTracks.slice(0, 5).map((track) => (
+                {registryWatchTracks.slice(0, 5).map((track) => (
                   <Link href={track.href} key={track.id}>
                     <strong>{track.name}</strong>
-                    <span>{track.coverage?.coverage_confidence_label ?? "Map confidence not recorded"}</span>
+                    <span>
+                      {track.evidence_counts.active_watch_trial_count
+                        ? `${track.evidence_counts.active_watch_trial_count} active-watch trials`
+                        : "registry/no-results watch"}
+                    </span>
                   </Link>
                 ))}
               </div>
             ) : (
-              <p>No track is currently flagged as thin, low-confidence, or missing coverage assessment.</p>
+              <p>No track is currently classified as registry-sensitive by the method audit.</p>
             )}
           </section>
 
           <section className="coverage-diagnostic-panel">
             <div className="panel-header panel-header--stacked">
-              <span className="section-kicker">Known evidence gaps</span>
-              <h2>Covered but caveated</h2>
+              <span className="section-kicker">Refresh needed</span>
+              <h2>Review due or source discovery</h2>
             </div>
-            {highPriorityGapTracks.length ? (
+            {reviewDueTracks.length ? (
               <div className="coverage-mini-list">
-                {highPriorityGapTracks.slice(0, 5).map((track) => (
+                {reviewDueTracks.slice(0, 5).map((track) => (
                   <Link href={track.href} key={track.id}>
                     <strong>{track.name}</strong>
-                    <span>{track.coverage?.high_priority_gap_count ?? 0} high-priority gaps</span>
+                    <span>{track.method_class_label}</span>
                   </Link>
                 ))}
               </div>
             ) : (
-              <p>No high-priority coverage gaps are currently exposed in the public map.</p>
+              <p>No track currently needs source discovery, and no method audit is overdue.</p>
             )}
           </section>
         </div>
@@ -235,6 +258,10 @@ export default async function CoveragePage() {
               <span>JSON export</span>
               <ArrowRight aria-hidden="true" size={16} />
             </Link>
+            <a className="section-link" href="/data/coverage-audit.json">
+              <span>Coverage audit JSON</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
           </div>
           <div className="expert-track-table-wrap">
             <table className="expert-track-table coverage-track-table">
@@ -254,6 +281,7 @@ export default async function CoveragePage() {
                 {tracks.map((track) => {
                   const bucket = getCoverageBucket(track);
                   const bucketItem = bucketConfig[bucket];
+                  const audit = auditByTrackId.get(track.id);
 
                   return (
                     <tr key={track.id}>
@@ -262,6 +290,12 @@ export default async function CoveragePage() {
                           <strong>{track.name}</strong>
                           <span>{track.primary_hallmark_name}</span>
                         </Link>
+                        {audit ? (
+                          <div className="coverage-audit-link-row">
+                            <a href={audit.paths.coverage_audit_path}>Audit JSON</a>
+                            {audit.assessment?.assessment_path ? <span>{audit.assessment.assessment_path}</span> : null}
+                          </div>
+                        ) : null}
                       </th>
                       <td>
                         {track.outlook?.stage_label ?? "Not rated"}
@@ -273,8 +307,8 @@ export default async function CoveragePage() {
                       </td>
                       <td>{track.coverage?.observed_research_density_label ?? "Not assessed"}</td>
                       <td>
-                        {bucketItem.title}
-                        <span>{bucketItem.label}</span>
+                        {audit?.method_class_label ?? bucketItem.title}
+                        <span>{audit?.method_class_reason ?? bucketItem.label}</span>
                       </td>
                       <td>
                         {formatNumber(track.coverage?.known_gap_count ?? 0)}
@@ -283,6 +317,9 @@ export default async function CoveragePage() {
                       <td>
                         {formatNumber(track.evidence_counts.finding_count)} findings
                         <span>{formatNumber(track.evidence_counts.human_finding_count)} human</span>
+                        {audit?.assessment ? (
+                          <span>{formatNumber(audit.assessment.covered_source_count)} audited sources</span>
+                        ) : null}
                       </td>
                       <td>
                         {formatNumber(track.evidence_counts.active_watch_trial_count)} active

@@ -96,7 +96,8 @@ const workflowSteps = [
   "Follow track.supporting_evidence[].finding_ids into findings.",
   "Resolve findings[].source_id in sources before citing or summarizing.",
   "Open sources[].json_path when you need the source-level provenance graph.",
-  "Use gaps.tracks[].provenance.source_refs when auditing what could change a public rating."
+  "Use gaps.tracks[].provenance.source_refs when auditing what could change a public rating.",
+  "Use coverage_audit.tracks[].assessment to inspect how map coverage was judged."
 ] as const;
 
 const fieldPathRows = [
@@ -125,8 +126,16 @@ const fieldPathRows = [
     meaning: "Track-level gap ledger with outlook gaps, rating-change criteria, coverage gaps, density, and trial horizons."
   },
   {
+    field: "/data/coverage-audit.json",
+    meaning: "Coverage-method provenance with assessment windows, search logs, reviewed artifacts, category coverage levels, and source-selection notes."
+  },
+  {
     field: "gaps.tracks[].provenance",
     meaning: "Trace paths from each gap row to outlook records, coverage assessments, scoped track exports, findings, source audits, and trial IDs."
+  },
+  {
+    field: "coverage_audit.tracks[].method_class",
+    meaning: "Clear distinction between source-discovery needs, review-due tracks, registry-watch tracks, likely field scarcity, and active mapped fields."
   },
   {
     field: "sources[].json_path",
@@ -220,6 +229,10 @@ export default async function DataAccessPage() {
               <span>Evidence gaps JSON</span>
               <ArrowRight aria-hidden="true" size={16} />
             </a>
+            <a className="section-link" href="/data/coverage-audit.json">
+              <span>Coverage audit JSON</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
             <a className="section-link" href={evidenceMap.schema_url}>
               <span>Full export schema</span>
               <ArrowRight aria-hidden="true" size={16} />
@@ -234,6 +247,10 @@ export default async function DataAccessPage() {
             </a>
             <a className="section-link" href="/data/evidence-gaps.schema.json">
               <span>Evidence gaps schema</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
+            <a className="section-link" href="/data/coverage-audit.schema.json">
+              <span>Coverage audit schema</span>
               <ArrowRight aria-hidden="true" size={16} />
             </a>
             <a className="section-link" href={datasetCard.schema_urls.source_audit}>

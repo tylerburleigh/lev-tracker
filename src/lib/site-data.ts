@@ -154,6 +154,12 @@ export type EvidenceIndexFilters = {
 export type EvidenceGapSeverity = "high_priority" | "human_endpoint" | "trial_sensitive" | "sparse_checked" | "map_work_needed";
 export type EvidenceGapResearchDensityFilter = ObservedResearchDensity | "active_or_dense" | "sparse_or_emerging";
 export type EvidenceGapSort = "severity" | "high_priority" | "density" | "track" | "stage";
+export type CoverageMethodClass =
+  | "needs_source_discovery"
+  | "recent_activity_review_due"
+  | "needs_registry_check"
+  | "likely_field_scarcity"
+  | "active_mapped";
 
 export type EvidenceGapFilters = {
   q?: string;
@@ -164,6 +170,12 @@ export type EvidenceGapFilters = {
   research_density?: EvidenceGapResearchDensityFilter | "";
   severity?: EvidenceGapSeverity | "";
   sort?: EvidenceGapSort | "";
+  limit?: number;
+};
+
+export type CoverageAuditFilters = {
+  track?: string;
+  method_class?: CoverageMethodClass | "";
   limit?: number;
 };
 
@@ -338,6 +350,26 @@ export type TrackCoverage = {
 
 type CoverageStatusTrack = {
   track_id: string;
+  hallmark_id?: string;
+  name?: string;
+  coverage_status?: "not_started" | "stubbed" | "baseline" | "deepened";
+  next_mode?: "bootstrap" | "surveillance" | "coverage_repair";
+  queue_state?: "ready" | "active_review" | "deferred";
+  last_session_id?: string;
+  last_session_at?: string;
+  last_session_mode?: "bootstrap" | "surveillance" | "coverage_repair";
+  last_session_outcome?: string;
+  last_surveillance_session_id?: string;
+  last_surveillance_at?: string;
+  last_surveillance_mode?: "surveillance" | "coverage_repair";
+  last_surveillance_outcome?: string;
+  surveillance_freshness_status?: "never_checked" | "due" | "recent";
+  surveillance_due_at?: string;
+  surveillance_age_days?: number;
+  last_candidate_bundle_id?: string;
+  last_candidate_bundle_status?: CandidateStatus;
+  last_publication_event_id?: string;
+  last_published_at?: string;
   coverage_verdict?: CoverageVerdict;
   coverage_confidence?: CoverageConfidence;
   observed_research_density?: ObservedResearchDensity;
@@ -345,10 +377,65 @@ type CoverageStatusTrack = {
   high_priority_gap_count?: number;
   last_coverage_assessment_id?: string;
   last_coverage_assessed_at?: string;
+  next_coverage_action?: string;
+  last_coverage_recommended_mode?: "bootstrap" | "surveillance" | "coverage_repair";
+  default_research_question?: string;
+  notes?: string;
 };
 
 type CoverageStatusFile = {
+  updated_at?: string;
+  notes?: string[];
   tracks: CoverageStatusTrack[];
+};
+
+type CoverageAssessmentFile = {
+  id: string;
+  name: string;
+  short_name?: string;
+  track_id: string;
+  hallmark_id: string;
+  assessment_type: "bootstrap" | "surveillance" | "coverage_repair" | "manual";
+  assessed_at: string;
+  assessment_window?: {
+    from?: string;
+    to?: string;
+    basis: string;
+  };
+  coverage_verdict: CoverageVerdict;
+  coverage_confidence?: CoverageConfidence;
+  observed_research_density?: Exclude<ObservedResearchDensity, "unknown">;
+  summary: string;
+  reviewed_artifacts?: {
+    research_session_ids?: string[];
+    candidate_bundle_ids?: string[];
+    evidence_review_ids?: string[];
+    publication_event_ids?: string[];
+    outlook_ids?: string[];
+  };
+  evidence_categories: Array<{
+    category: string;
+    coverage_level: "not_checked" | "thin" | "adequate" | "strong" | "not_applicable";
+    rationale: string;
+    source_ids?: string[];
+    finding_ids?: string[];
+    gap_note?: string;
+  }>;
+  covered_source_ids: string[];
+  covered_finding_ids?: string[];
+  search_log_summary?: string;
+  source_selection_notes?: string[];
+  known_gaps: Array<{
+    gap_id: string;
+    gap_type: "coverage_gap" | "evidence_gap" | "operational_gap";
+    category: string;
+    description: string;
+    priority: "low" | "medium" | "high";
+    suggested_action: string;
+  }>;
+  next_coverage_action: string;
+  next_recommended_mode: "bootstrap" | "surveillance" | "coverage_repair";
+  tags?: string[];
 };
 
 export type EvidenceSupportCard = {
@@ -935,6 +1022,27 @@ const researchDensityPlainMeanings: Record<ObservedResearchDensity, string> = {
   dense: "The area has a large enough evidence base that interpretation, not discovery of basic sources, is the main task."
 };
 
+const coverageMethodClassLabels: Record<CoverageMethodClass, string> = {
+  needs_source_discovery: "Needs source discovery",
+  recent_activity_review_due: "Review due",
+  needs_registry_check: "Registry watch",
+  likely_field_scarcity: "Likely field scarcity",
+  active_mapped: "Active mapped field"
+};
+
+const coverageMethodClassPlainMeanings: Record<CoverageMethodClass, string> = {
+  needs_source_discovery:
+    "Coverage is thin, low-confidence, or missing, so sparse evidence should not be interpreted as a sparse field yet.",
+  recent_activity_review_due:
+    "The map is usable, but surveillance is due or has not been checked recently enough for a confident current read.",
+  needs_registry_check:
+    "The map is usable, but active or no-results registry records are a live source of possible rating changes.",
+  likely_field_scarcity:
+    "The map is usable and the observed research density is sparse or emerging, so low counts more likely reflect field scarcity.",
+  active_mapped:
+    "The map is usable and the field is active or dense enough that interpretation, not basic source discovery, is the main task."
+};
+
 const findingWeightLabels: Record<Confidence, string> = {
   low: "Limited weight",
   moderate: "Moderate weight",
@@ -1101,6 +1209,10 @@ function getFindingsRoot() {
 
 function getActivityItemsRoot() {
   return path.join(dataRoot, "activity-items");
+}
+
+function getCoverageAssessmentsRoot() {
+  return path.join(researchRoot, "coverage-assessments");
 }
 
 function getCandidateBundlesRoot() {
@@ -1992,6 +2104,18 @@ const loadCoverageStatus = cache(async () => {
   }
 });
 
+const loadCoverageAssessments = cache(async () => {
+  try {
+    return await readCollection<CoverageAssessmentFile>(getCoverageAssessmentsRoot());
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      return [];
+    }
+
+    throw error;
+  }
+});
+
 export function getHallmarks(): Hallmark[] {
   return hallmarksTaxonomy.hallmarks;
 }
@@ -2490,6 +2614,14 @@ export function getResearchDensityLabel(density: ObservedResearchDensity) {
 
 export function getResearchDensityPlainMeaning(density: ObservedResearchDensity) {
   return researchDensityPlainMeanings[density];
+}
+
+export function getCoverageMethodClassLabel(methodClass: CoverageMethodClass) {
+  return coverageMethodClassLabels[methodClass];
+}
+
+export function getCoverageMethodClassPlainMeaning(methodClass: CoverageMethodClass) {
+  return coverageMethodClassPlainMeanings[methodClass];
 }
 
 export function getFindingWeightLabel(confidence: Confidence) {
@@ -3234,6 +3366,383 @@ export async function getScopedEvidenceMapExport(trackId: string) {
     interventions: trackInterventions.map(formatInterventionForEvidenceMap),
     trials: trackTrials,
     source_file_patterns: evidenceMap.source_file_patterns
+  };
+}
+
+function cleanCoverageAuditFilters(filters: CoverageAuditFilters = {}) {
+  const limit = filters.limit && Number.isFinite(filters.limit) ? Math.max(1, Math.min(200, filters.limit)) : undefined;
+
+  return {
+    track: filters.track ?? "",
+    method_class: filters.method_class ?? "",
+    limit
+  };
+}
+
+function getCoverageAuditQueryPath(path: string, filters: CoverageAuditFilters) {
+  const params = new URLSearchParams();
+  const cleaned = cleanCoverageAuditFilters(filters);
+
+  for (const [key, value] of Object.entries(cleaned)) {
+    if (!value) {
+      continue;
+    }
+
+    params.set(key, String(value));
+  }
+
+  const query = params.toString();
+  return query ? `${path}?${query}` : path;
+}
+
+function getAppliedCoverageAuditFilters(filters: ReturnType<typeof cleanCoverageAuditFilters>) {
+  return Object.fromEntries(
+    Object.entries(filters)
+      .filter(([, value]) => Boolean(value))
+      .map(([key, value]) => [key, String(value)])
+  );
+}
+
+function hasUsableCoverageAuditMap(track: {
+  coverage: {
+    coverage_verdict?: CoverageVerdict;
+    coverage_confidence?: CoverageConfidence;
+  } | null;
+}) {
+  return (
+    Boolean(track.coverage) &&
+    (track.coverage?.coverage_verdict === "adequate" || track.coverage?.coverage_verdict === "strong") &&
+    track.coverage?.coverage_confidence !== "low"
+  );
+}
+
+function getReviewedArtifactPaths(reviewedArtifacts?: CoverageAssessmentFile["reviewed_artifacts"]) {
+  return {
+    research_sessions: (reviewedArtifacts?.research_session_ids ?? []).map((id) => `research/sessions/${id}.json`),
+    candidate_bundles: (reviewedArtifacts?.candidate_bundle_ids ?? []).map((id) => `data/candidate-bundles/${id}.json`),
+    evidence_reviews: (reviewedArtifacts?.evidence_review_ids ?? []).map((id) => `data/evidence-reviews/${id}.json`),
+    publication_events: (reviewedArtifacts?.publication_event_ids ?? []).map(
+      (id) => `data/publication-events/${id}.json`
+    ),
+    outlooks: (reviewedArtifacts?.outlook_ids ?? []).map((id) => getOutlookRecordPath(id) ?? "")
+  };
+}
+
+function getCoverageAuditMethodClass({
+  track,
+  status,
+  assessment
+}: {
+  track: Awaited<ReturnType<typeof getEvidenceMapExport>>["tracks"][number];
+  status?: CoverageStatusTrack;
+  assessment?: CoverageAssessmentFile;
+}): CoverageMethodClass {
+  const registryCategory = assessment?.evidence_categories.find((item) => item.category === "active_trials_registries");
+  const hasRegistryGap = assessment?.known_gaps.some(
+    (gap) => gap.category === "active_trials_registries" && gap.priority !== "low"
+  );
+
+  if (!hasUsableCoverageAuditMap(track)) {
+    return "needs_source_discovery";
+  }
+
+  if (
+    status?.surveillance_freshness_status === "due" ||
+    status?.surveillance_freshness_status === "never_checked"
+  ) {
+    return "recent_activity_review_due";
+  }
+
+  if (
+    track.evidence_counts.active_watch_trial_count > 0 ||
+    hasRegistryGap ||
+    registryCategory?.coverage_level === "thin" ||
+    registryCategory?.coverage_level === "not_checked"
+  ) {
+    return "needs_registry_check";
+  }
+
+  if (isSparseOrEmergingGapDensity(track.coverage?.observed_research_density)) {
+    return "likely_field_scarcity";
+  }
+
+  return "active_mapped";
+}
+
+function getCoverageAuditMethodReason({
+  methodClass,
+  track,
+  status
+}: {
+  methodClass: CoverageMethodClass;
+  track: Awaited<ReturnType<typeof getEvidenceMapExport>>["tracks"][number];
+  status?: CoverageStatusTrack;
+}) {
+  if (methodClass === "needs_source_discovery") {
+    return "The tracker should not treat low source counts as field scarcity until coverage confidence improves.";
+  }
+
+  if (methodClass === "recent_activity_review_due") {
+    return status?.surveillance_due_at
+      ? `Surveillance is due as of ${status.surveillance_due_at}; refresh recent activity before relying on the current coverage read.`
+      : "Surveillance freshness is not recent enough to treat the current coverage read as fully current.";
+  }
+
+  if (methodClass === "needs_registry_check") {
+    return track.evidence_counts.active_watch_trial_count > 0
+      ? `${track.evidence_counts.active_watch_trial_count} active-watch trial record(s) could change the map if status, results, or linked publications move.`
+      : "Registry or no-results watch items remain important enough that status, results, or linked publications could change the map.";
+  }
+
+  if (methodClass === "likely_field_scarcity") {
+    return "Coverage is usable and observed density is sparse or emerging, so low counts are more likely about the field than missing map work.";
+  }
+
+  return "Coverage is usable and observed density is active or dense, so interpretation and limitations matter more than basic source discovery.";
+}
+
+function getCoverageAuditTrackRows({
+  evidenceMap,
+  coverageStatus,
+  coverageAssessments
+}: {
+  evidenceMap: Awaited<ReturnType<typeof getEvidenceMapExport>>;
+  coverageStatus?: CoverageStatusFile;
+  coverageAssessments: CoverageAssessmentFile[];
+}) {
+  const statusByTrackId = new Map((coverageStatus?.tracks ?? []).map((entry) => [entry.track_id, entry]));
+  const latestAssessmentByTrackId = new Map<string, CoverageAssessmentFile>();
+  const sourceById = new Map(evidenceMap.sources.map((source) => [source.id, source]));
+  const findingById = new Map(evidenceMap.findings.map((finding) => [finding.id, finding]));
+
+  for (const assessment of [...coverageAssessments].sort((left, right) =>
+    compareDateTimesDescending(left.assessed_at, right.assessed_at)
+  )) {
+    if (!latestAssessmentByTrackId.has(assessment.track_id)) {
+      latestAssessmentByTrackId.set(assessment.track_id, assessment);
+    }
+  }
+
+  return evidenceMap.tracks.map((track) => {
+    const status = statusByTrackId.get(track.id);
+    const assessment = latestAssessmentByTrackId.get(track.id);
+    const methodClass = getCoverageAuditMethodClass({ track, status, assessment });
+    const coveredSourceIds = uniqueSorted([
+      ...(assessment?.covered_source_ids ?? []),
+      ...(assessment?.evidence_categories.flatMap((item) => item.source_ids ?? []) ?? [])
+    ]);
+    const coveredFindingIds = uniqueSorted([
+      ...(assessment?.covered_finding_ids ?? []),
+      ...(assessment?.evidence_categories.flatMap((item) => item.finding_ids ?? []) ?? [])
+    ]);
+
+    return {
+      id: track.id,
+      name: track.name,
+      href: track.href,
+      primary_hallmark_id: track.primary_hallmark_id,
+      primary_hallmark_name: track.primary_hallmark_name,
+      secondary_hallmark_ids: track.secondary_hallmark_ids,
+      stage: track.outlook?.stage,
+      stage_label: track.outlook?.stage_label,
+      read_firmness: track.outlook?.confidence,
+      read_firmness_label: track.outlook?.read_firmness_label,
+      coverage_verdict: track.coverage?.coverage_verdict,
+      coverage_verdict_label: track.coverage?.coverage_verdict_label,
+      coverage_confidence: track.coverage?.coverage_confidence,
+      coverage_confidence_label: track.coverage?.coverage_confidence_label,
+      observed_research_density: track.coverage?.observed_research_density,
+      observed_research_density_label: track.coverage?.observed_research_density_label,
+      known_gap_count: track.coverage?.known_gap_count ?? 0,
+      high_priority_gap_count: track.coverage?.high_priority_gap_count ?? 0,
+      evidence_counts: track.evidence_counts,
+      method_class: methodClass,
+      method_class_label: getCoverageMethodClassLabel(methodClass),
+      method_class_meaning: getCoverageMethodClassPlainMeaning(methodClass),
+      method_class_reason: getCoverageAuditMethodReason({ methodClass, track, status }),
+      status: {
+        coverage_status: status?.coverage_status,
+        queue_state: status?.queue_state,
+        next_mode: status?.next_mode,
+        last_session_id: status?.last_session_id,
+        last_session_at: status?.last_session_at,
+        last_session_mode: status?.last_session_mode,
+        last_session_outcome: status?.last_session_outcome,
+        last_surveillance_session_id: status?.last_surveillance_session_id,
+        last_surveillance_at: status?.last_surveillance_at,
+        last_surveillance_mode: status?.last_surveillance_mode,
+        last_surveillance_outcome: status?.last_surveillance_outcome,
+        surveillance_freshness_status: status?.surveillance_freshness_status,
+        surveillance_due_at: status?.surveillance_due_at,
+        surveillance_age_days: status?.surveillance_age_days,
+        last_candidate_bundle_id: status?.last_candidate_bundle_id,
+        last_candidate_bundle_status: status?.last_candidate_bundle_status,
+        last_publication_event_id: status?.last_publication_event_id,
+        last_published_at: status?.last_published_at,
+        default_research_question: status?.default_research_question,
+        notes: status?.notes
+      },
+      assessment: assessment
+        ? {
+            id: assessment.id,
+            name: assessment.name,
+            short_name: assessment.short_name,
+            assessment_type: assessment.assessment_type,
+            assessed_at: assessment.assessed_at,
+            assessment_path: getCoverageAssessmentPath(assessment.id),
+            assessment_window: assessment.assessment_window,
+            coverage_verdict: assessment.coverage_verdict,
+            coverage_confidence: assessment.coverage_confidence ?? track.coverage?.coverage_confidence,
+            observed_research_density:
+              assessment.observed_research_density ?? track.coverage?.observed_research_density,
+            summary: assessment.summary,
+            search_log_summary: assessment.search_log_summary,
+            source_selection_notes: assessment.source_selection_notes ?? [],
+            reviewed_artifacts: assessment.reviewed_artifacts ?? {},
+            reviewed_artifact_paths: getReviewedArtifactPaths(assessment.reviewed_artifacts),
+            evidence_categories: assessment.evidence_categories.map((category) => ({
+              category: category.category,
+              category_label: getReadableDataLabel(category.category),
+              coverage_level: category.coverage_level,
+              coverage_level_label: getReadableDataLabel(category.coverage_level),
+              rationale: category.rationale,
+              source_count: category.source_ids?.length ?? 0,
+              finding_count: category.finding_ids?.length ?? 0,
+              source_ids: category.source_ids ?? [],
+              finding_ids: category.finding_ids ?? [],
+              gap_note: category.gap_note
+            })),
+            covered_source_count: coveredSourceIds.length,
+            covered_finding_count: coveredFindingIds.length,
+            covered_source_ids: coveredSourceIds,
+            covered_finding_ids: coveredFindingIds,
+            covered_source_refs: getEvidenceGapSourceRefs(coveredSourceIds, sourceById),
+            covered_finding_refs: getEvidenceGapFindingRefs(coveredFindingIds, findingById),
+            known_gaps: assessment.known_gaps,
+            high_priority_gap_count: assessment.known_gaps.filter((gap) => gap.priority === "high").length,
+            next_coverage_action: assessment.next_coverage_action,
+            next_recommended_mode: assessment.next_recommended_mode,
+            tags: assessment.tags ?? []
+          }
+        : null,
+      paths: {
+        track_page_path: track.href,
+        track_json_path: `/data/tracks/${encodeURIComponent(track.id)}.json`,
+        coverage_audit_path: `/data/coverage-audit.json?track=${encodeURIComponent(track.id)}`,
+        evidence_map_path: `/data/evidence-map.json?track=${encodeURIComponent(track.id)}`,
+        coverage_status_path: "research/state/coverage-status.v1.json",
+        coverage_assessment_path: getCoverageAssessmentPath(assessment?.id),
+        last_session_path: status?.last_session_id ? `research/sessions/${status.last_session_id}.json` : undefined,
+        last_surveillance_session_path: status?.last_surveillance_session_id
+          ? `research/sessions/${status.last_surveillance_session_id}.json`
+          : undefined,
+        last_candidate_bundle_path: status?.last_candidate_bundle_id
+          ? `data/candidate-bundles/${status.last_candidate_bundle_id}.json`
+          : undefined,
+        last_publication_event_path: status?.last_publication_event_id
+          ? `data/publication-events/${status.last_publication_event_id}.json`
+          : undefined
+      }
+    };
+  });
+}
+
+function applyCoverageAuditFilters<
+  T extends {
+    id: string;
+    method_class: CoverageMethodClass;
+  }
+>(rows: T[], filters: CoverageAuditFilters) {
+  const selected = cleanCoverageAuditFilters(filters);
+
+  return rows.filter(
+    (row) =>
+      (!selected.track || row.id === selected.track) &&
+      (!selected.method_class || row.method_class === selected.method_class)
+  );
+}
+
+export async function getCoverageAuditExport(filters: CoverageAuditFilters = {}) {
+  noStore();
+  const selected = cleanCoverageAuditFilters(filters);
+  const [evidenceMap, coverageStatus, coverageAssessments] = await Promise.all([
+    getEvidenceMapExport(),
+    loadCoverageStatus(),
+    loadCoverageAssessments()
+  ]);
+  const allRows = getCoverageAuditTrackRows({ evidenceMap, coverageStatus, coverageAssessments }).sort(
+    (left, right) =>
+      left.method_class.localeCompare(right.method_class) ||
+      right.high_priority_gap_count - left.high_priority_gap_count ||
+      left.name.localeCompare(right.name)
+  );
+  const filteredRows = applyCoverageAuditFilters(allRows, selected);
+  const exportedRows = selected.limit ? filteredRows.slice(0, selected.limit) : filteredRows;
+  const methodClassCounts = Object.fromEntries(
+    (Object.keys(coverageMethodClassLabels) as CoverageMethodClass[]).map((methodClass) => [
+      methodClass,
+      exportedRows.filter((row) => row.method_class === methodClass).length
+    ])
+  ) as Record<CoverageMethodClass, number>;
+
+  return {
+    schema_version: "1.0.0",
+    schema_url: "/data/coverage-audit.schema.json",
+    export_type: "lev_tracker_coverage_audit",
+    generated_at: new Date().toISOString(),
+    last_public_update: evidenceMap.last_public_update,
+    canonical_path: getCoverageAuditQueryPath("/data/coverage-audit.json", selected),
+    page_path: "/coverage",
+    applied_filters: getAppliedCoverageAuditFilters(selected),
+    caveats: [
+      "Coverage audit records describe tracker map methods and reviewed artifacts; they are not claims that an intervention works.",
+      "A sparse or emerging field label is only meaningful when the coverage map is usable.",
+      "Recent activity and registry-watch labels can change without changing the current evidence-stage rating."
+    ],
+    summary: {
+      total_track_count: allRows.length,
+      filtered_track_count: filteredRows.length,
+      returned_track_count: exportedRows.length,
+      coverage_assessed_track_count: exportedRows.filter((row) => row.assessment).length,
+      coverage_status_updated_at: coverageStatus?.updated_at,
+      source_provenance_track_count: exportedRows.filter((row) => (row.assessment?.covered_source_count ?? 0) > 0)
+        .length,
+      finding_provenance_track_count: exportedRows.filter((row) => (row.assessment?.covered_finding_count ?? 0) > 0)
+        .length,
+      due_or_never_surveillance_track_count: exportedRows.filter((row) =>
+        ["due", "never_checked"].includes(row.status.surveillance_freshness_status ?? "")
+      ).length,
+      active_watch_trial_track_count: exportedRows.filter(
+        (row) => row.evidence_counts.active_watch_trial_count > 0
+      ).length,
+      high_priority_gap_count: exportedRows.reduce((sum, row) => sum + row.high_priority_gap_count, 0),
+      method_class_counts: methodClassCounts
+    },
+    method_class_legend: (Object.keys(coverageMethodClassLabels) as CoverageMethodClass[]).map((methodClass) => ({
+      value: methodClass,
+      label: getCoverageMethodClassLabel(methodClass),
+      plain_meaning: getCoverageMethodClassPlainMeaning(methodClass)
+    })),
+    facet_options: {
+      method_classes: (Object.keys(coverageMethodClassLabels) as CoverageMethodClass[]).map((methodClass) => ({
+        value: methodClass,
+        label: getCoverageMethodClassLabel(methodClass)
+      })),
+      tracks: evidenceMap.tracks.map((track) => ({ value: track.id, label: track.name }))
+    },
+    source_file_patterns: {
+      coverage_status: ["research/state/coverage-status.v1.json"],
+      coverage_assessments: ["research/coverage-assessments/*.json"],
+      linked_public_records: [
+        "data/outlooks/*.json",
+        "data/findings/*.json",
+        "data/sources/*.json",
+        "data/candidate-bundles/*.json",
+        "data/publication-events/*.json",
+        "data/evidence-reviews/*.json"
+      ]
+    },
+    tracks: exportedRows
   };
 }
 
