@@ -155,6 +155,14 @@
         "resolved"
       ]
     },
+    "claimConsistencyReviewFreshness": {
+      "enum": [
+        "unreviewed",
+        "current",
+        "changed_since_review",
+        "resolved"
+      ]
+    },
     "methodology": {
       "type": "object",
       "additionalProperties": false,
@@ -288,7 +296,8 @@
         "severities",
         "source_kinds",
         "review_statuses",
-        "lifecycle_states"
+        "lifecycle_states",
+        "review_freshnesses"
       ],
       "properties": {
         "tracks": {
@@ -307,6 +316,9 @@
           "$ref": "#/$defs/filterOptionArray"
         },
         "lifecycle_states": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "review_freshnesses": {
           "$ref": "#/$defs/filterOptionArray"
         }
       }
@@ -421,7 +433,9 @@
         "review_status",
         "review_status_label",
         "lifecycle_state",
-        "lifecycle_state_label"
+        "lifecycle_state_label",
+        "review_freshness",
+        "review_freshness_label"
       ],
       "properties": {
         "fingerprint": {
@@ -455,6 +469,12 @@
           "$ref": "#/$defs/claimConsistencyLifecycleState"
         },
         "lifecycle_state_label": {
+          "type": "string"
+        },
+        "review_freshness": {
+          "$ref": "#/$defs/claimConsistencyReviewFreshness"
+        },
+        "review_freshness_label": {
           "type": "string"
         }
       }
@@ -576,6 +596,7 @@
         "highest_severity_label",
         "review_statuses",
         "lifecycle_states",
+        "review_freshnesses",
         "issue_count",
         "unresolved_issue_count",
         "affected_field_count",
@@ -633,6 +654,9 @@
           "$ref": "#/$defs/countRowArray"
         },
         "lifecycle_states": {
+          "$ref": "#/$defs/countRowArray"
+        },
+        "review_freshnesses": {
           "$ref": "#/$defs/countRowArray"
         },
         "issue_count": {

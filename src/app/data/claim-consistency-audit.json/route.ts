@@ -16,6 +16,7 @@ function getClaimConsistencyAuditFilters(searchParams: URLSearchParams): ClaimCo
     source_kind: (searchParams.get("source_kind") ?? undefined) as ClaimConsistencyAuditFilters["source_kind"],
     review_status: (searchParams.get("review_status") ?? undefined) as ClaimConsistencyAuditFilters["review_status"],
     lifecycle_state: (searchParams.get("lifecycle_state") ?? undefined) as ClaimConsistencyAuditFilters["lifecycle_state"],
+    review_freshness: (searchParams.get("review_freshness") ?? undefined) as ClaimConsistencyAuditFilters["review_freshness"],
     limit: Number.isFinite(limit) ? limit : undefined
   };
 }

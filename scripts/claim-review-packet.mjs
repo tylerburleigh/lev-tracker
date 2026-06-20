@@ -21,6 +21,7 @@ Packet filters:
   --source-kind KIND
   --review-status STATUS
   --lifecycle-state STATE
+  --review-freshness unreviewed|current|changed_since_review|resolved
   --limit N
 
 Packet source:
@@ -80,6 +81,7 @@ function packetFilters(values) {
     source_kind: values["source-kind"],
     review_status: values["review-status"],
     lifecycle_state: values["lifecycle-state"],
+    review_freshness: values["review-freshness"],
     limit: values.limit
   };
 }

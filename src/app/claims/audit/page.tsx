@@ -19,6 +19,7 @@ type ClaimAuditSearchParams = {
   source_kind?: string | string[];
   review_status?: string | string[];
   lifecycle_state?: string | string[];
+  review_freshness?: string | string[];
   limit?: string | string[];
 };
 
@@ -44,6 +45,9 @@ function getClaimAuditFilters(searchParams: ClaimAuditSearchParams): ClaimConsis
     lifecycle_state: getSingleSearchParam(
       searchParams.lifecycle_state
     ) as ClaimConsistencyAuditFilters["lifecycle_state"],
+    review_freshness: getSingleSearchParam(
+      searchParams.review_freshness
+    ) as ClaimConsistencyAuditFilters["review_freshness"],
     limit: Number.isFinite(limit) ? limit : undefined
   };
 }
@@ -102,6 +106,19 @@ function getReviewStatusTone(status: string) {
   }
 }
 
+function getReviewFreshnessTone(freshness: string) {
+  switch (freshness) {
+    case "changed_since_review":
+      return "micro-badge--red";
+    case "current":
+      return "micro-badge--mint";
+    case "resolved":
+      return "micro-badge--muted";
+    default:
+      return "micro-badge--outline";
+  }
+}
+
 function formatNumber(value: number) {
   return value.toLocaleString("en-US");
 }
@@ -144,6 +161,12 @@ export default async function ClaimsAuditPage({ searchParams }: ClaimsAuditPageP
       value: formatNumber(progress.unreviewed_issue_count),
       count: `${formatNumber(progress.unresolved_issue_count)} unresolved rows still visible`,
       ratio: progress.current_issue_count ? progress.unreviewed_issue_count / progress.current_issue_count : 0
+    },
+    {
+      label: "Needs re-check",
+      value: formatNumber(progress.changed_since_review_count),
+      count: `${formatNumber(progress.current_review_count)} current reviewed rows`,
+      ratio: progress.current_issue_count ? progress.changed_since_review_count / progress.current_issue_count : 0
     },
     {
       label: "Suppressed",
@@ -244,6 +267,7 @@ export default async function ClaimsAuditPage({ searchParams }: ClaimsAuditPageP
               <h2>{formatPercent(progress.reviewed_ratio)} of matching rows have reviewer state</h2>
               <p className="claim-audit-subhead">
                 {formatNumber(progress.unreviewed_issue_count)} open rows /{" "}
+                {formatNumber(progress.changed_since_review_count)} changed since review /{" "}
                 {formatNumber(progress.recurring_issue_count)} recurring rows /{" "}
                 {formatNumber(progress.resolved_issue_count)} ledger-only resolved rows
               </p>
@@ -281,6 +305,11 @@ export default async function ClaimsAuditPage({ searchParams }: ClaimsAuditPageP
                   <span className="micro-badge micro-badge--gold">
                     {formatNumber(track.unresolved_issue_count)} unresolved
                   </span>
+                  {track.changed_since_review_count ? (
+                    <span className="micro-badge micro-badge--red">
+                      {formatNumber(track.changed_since_review_count)} changed
+                    </span>
+                  ) : null}
                   <span className="micro-badge micro-badge--outline">
                     {formatNumber(track.warning_issue_count)} warning
                   </span>
@@ -444,6 +473,17 @@ export default async function ClaimsAuditPage({ searchParams }: ClaimsAuditPageP
                 ))}
               </select>
             </label>
+            <label className="track-search__field">
+              <span>Freshness</span>
+              <select name="review_freshness" defaultValue={selected.review_freshness}>
+                <option value="">All freshness states</option>
+                {facets.review_freshnesses.map((option) => (
+                  <option value={option.value} key={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </label>
             <div className="track-search__actions">
               <button className="action-button" type="submit">
                 <Search aria-hidden="true" size={16} />
@@ -509,10 +549,19 @@ export default async function ClaimsAuditPage({ searchParams }: ClaimsAuditPageP
                       <span className="micro-badge micro-badge--muted">
                         {issue.resolution.lifecycle_state_label}
                       </span>
+                      <span className={`micro-badge ${getReviewFreshnessTone(issue.resolution.review_freshness)}`}>
+                        {issue.resolution.review_freshness_label}
+                      </span>
                       <strong>{issue.issue_type_label}</strong>
                       <span>{issue.source_kind_label}</span>
                       <span>{issue.source_label}</span>
                       {issue.resolution.note ? <p className="claim-audit-note">{issue.resolution.note}</p> : null}
+                      {issue.resolution.previous_review ? (
+                        <p className="claim-audit-note">
+                          Previous review: {issue.resolution.previous_review.review_status_label} (
+                          {issue.resolution.previous_review.fingerprint})
+                        </p>
+                      ) : null}
                     </td>
                     <td>
                       <p className="claim-audit-text">{issue.text_excerpt}</p>

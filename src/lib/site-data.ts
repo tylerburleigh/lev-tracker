@@ -231,6 +231,7 @@ export type ClaimConsistencySourceKind =
   | "state_of_field";
 export type ClaimConsistencyReviewStatus = "open" | "accepted" | "false_positive" | "fixed" | "deferred";
 export type ClaimConsistencyLifecycleState = "new" | "recurring" | "resolved";
+export type ClaimConsistencyReviewFreshness = "unreviewed" | "current" | "changed_since_review" | "resolved";
 
 export type EvidenceIndexFilters = {
   q?: string;
@@ -313,6 +314,7 @@ export type ClaimConsistencyAuditFilters = {
   source_kind?: ClaimConsistencySourceKind | "";
   review_status?: ClaimConsistencyReviewStatus | "";
   lifecycle_state?: ClaimConsistencyLifecycleState | "";
+  review_freshness?: ClaimConsistencyReviewFreshness | "";
   limit?: number;
 };
 export type ClaimConsistencyReviewPacketFilters = ClaimConsistencyAuditFilters;
@@ -1489,6 +1491,20 @@ const claimConsistencyLifecycleStateLabels: Record<ClaimConsistencyLifecycleStat
 };
 
 const claimConsistencyLifecycleStates: ClaimConsistencyLifecycleState[] = ["new", "recurring", "resolved"];
+
+const claimConsistencyReviewFreshnessLabels: Record<ClaimConsistencyReviewFreshness, string> = {
+  unreviewed: "Unreviewed",
+  current: "Review current",
+  changed_since_review: "Changed since review",
+  resolved: "Resolved drift"
+};
+
+const claimConsistencyReviewFreshnesses: ClaimConsistencyReviewFreshness[] = [
+  "unreviewed",
+  "changed_since_review",
+  "current",
+  "resolved"
+];
 
 const findingWeightLabels: Record<Confidence, string> = {
   low: "Limited weight",
@@ -7219,6 +7235,22 @@ function getClaimConsistencyLifecycleStateCounts(
     .filter((item) => item.count > 0);
 }
 
+function getClaimConsistencyReviewFreshnessCounts(
+  rows: Array<{ resolution: { review_freshness: ClaimConsistencyReviewFreshness } }>,
+  resolvedIssueCount = 0
+) {
+  return claimConsistencyReviewFreshnesses
+    .map((freshness) => ({
+      value: freshness,
+      label: claimConsistencyReviewFreshnessLabels[freshness],
+      count:
+        freshness === "resolved"
+          ? resolvedIssueCount
+          : rows.filter((row) => row.resolution.review_freshness === freshness).length
+    }))
+    .filter((item) => item.count > 0);
+}
+
 function getClaimConsistencyRatio(count: number, total: number) {
   return total > 0 ? Number((count / total).toFixed(3)) : 0;
 }
@@ -7228,6 +7260,7 @@ function getClaimConsistencyReviewProgress(
     resolution: {
       review_status: ClaimConsistencyReviewStatus;
       lifecycle_state: ClaimConsistencyLifecycleState;
+      review_freshness: ClaimConsistencyReviewFreshness;
       unresolved: boolean;
     };
   }>,
@@ -7241,12 +7274,20 @@ function getClaimConsistencyReviewProgress(
   const reviewedIssueCount = currentIssueCount - openIssueCount;
   const unresolvedIssueCount = rows.filter((row) => row.resolution.unresolved).length;
   const suppressedIssueCount = fixedIssueCount + falsePositiveIssueCount;
+  const currentReviewCount = rows.filter((row) => row.resolution.review_freshness === "current").length;
+  const changedSinceReviewCount = rows.filter(
+    (row) => row.resolution.review_freshness === "changed_since_review"
+  ).length;
+  const unreviewedFreshnessCount = rows.filter((row) => row.resolution.review_freshness === "unreviewed").length;
 
   return {
     scope: "applied_filters",
     current_issue_count: currentIssueCount,
     reviewed_issue_count: reviewedIssueCount,
     unreviewed_issue_count: openIssueCount,
+    current_review_count: currentReviewCount,
+    changed_since_review_count: changedSinceReviewCount,
+    unreviewed_freshness_count: unreviewedFreshnessCount,
     unresolved_issue_count: unresolvedIssueCount,
     suppressed_issue_count: suppressedIssueCount,
     recurring_issue_count: rows.filter((row) => row.resolution.lifecycle_state === "recurring").length,
@@ -7293,6 +7334,7 @@ function getClaimConsistencyPriorityTrackQueue(
     resolution: {
       review_status: ClaimConsistencyReviewStatus;
       lifecycle_state: ClaimConsistencyLifecycleState;
+      review_freshness: ClaimConsistencyReviewFreshness;
       unresolved: boolean;
     };
   }>
@@ -7312,6 +7354,9 @@ function getClaimConsistencyPriorityTrackQueue(
       const openIssueCount = trackRows.filter((row) => row.resolution.review_status === "open").length;
       const unresolvedIssueCount = trackRows.filter((row) => row.resolution.unresolved).length;
       const recurringIssueCount = trackRows.filter((row) => row.resolution.lifecycle_state === "recurring").length;
+      const changedSinceReviewCount = trackRows.filter(
+        (row) => row.resolution.review_freshness === "changed_since_review"
+      ).length;
       const reviewedIssueCount = trackRows.length - openIssueCount;
       const topIssueType = getClaimConsistencyTopCount(
         trackRows.map((row) => row.issue_type),
@@ -7330,6 +7375,7 @@ function getClaimConsistencyPriorityTrackQueue(
           criticalIssueCount * 1000 +
           warningIssueCount * 120 +
           reviewIssueCount * 30 +
+          changedSinceReviewCount * 45 +
           openIssueCount * 8 +
           recurringIssueCount * 5,
         total_issue_count: trackRows.length,
@@ -7337,6 +7383,7 @@ function getClaimConsistencyPriorityTrackQueue(
         open_issue_count: openIssueCount,
         reviewed_issue_count: reviewedIssueCount,
         recurring_issue_count: recurringIssueCount,
+        changed_since_review_count: changedSinceReviewCount,
         critical_issue_count: criticalIssueCount,
         warning_issue_count: warningIssueCount,
         review_issue_count: reviewIssueCount,
@@ -7359,6 +7406,63 @@ function getClaimConsistencyPriorityTrackQueue(
     .slice(0, 10);
 }
 
+function getClaimConsistencyResolutionScopeKey(
+  scope: {
+    track_id?: string;
+    issue_type?: ClaimConsistencyIssueType;
+    source_record_path?: string;
+    field_path?: string;
+  } = {}
+) {
+  if (!scope.track_id || !scope.issue_type || !scope.source_record_path || !scope.field_path) {
+    return "";
+  }
+
+  return [scope.track_id, scope.issue_type, scope.source_record_path, scope.field_path].join("\u001f");
+}
+
+function getClaimConsistencyEntryScopeKey(entry: ClaimConsistencyResolutionEntry) {
+  return getClaimConsistencyResolutionScopeKey({
+    track_id: entry.applies_to?.track_id,
+    issue_type: entry.applies_to?.issue_type,
+    source_record_path: entry.applies_to?.source_record_path,
+    field_path: entry.applies_to?.field_path
+  });
+}
+
+function getClaimConsistencyRowScopeKey(row: {
+  track_id: string;
+  issue_type: ClaimConsistencyIssueType;
+  paths: {
+    source_record_path: string;
+  };
+  field_path: string;
+}) {
+  return getClaimConsistencyResolutionScopeKey({
+    track_id: row.track_id,
+    issue_type: row.issue_type,
+    source_record_path: row.paths.source_record_path,
+    field_path: row.field_path
+  });
+}
+
+function getClaimConsistencyEntryTime(entry: ClaimConsistencyResolutionEntry) {
+  return Date.parse(entry.reviewed_at ?? entry.last_seen_at ?? "") || 0;
+}
+
+function getClaimConsistencyPreviousReview(entry: ClaimConsistencyResolutionEntry) {
+  return {
+    fingerprint: entry.fingerprint,
+    review_status: entry.review_status,
+    review_status_label: claimConsistencyReviewStatusLabels[entry.review_status],
+    reviewed_at: entry.reviewed_at,
+    reviewer_role: entry.reviewer_role,
+    note: entry.note,
+    action_required: entry.action_required,
+    last_seen_at: entry.last_seen_at
+  };
+}
+
 function enrichClaimConsistencyRowsWithResolution<
   T extends {
     fingerprint: string;
@@ -7371,11 +7475,27 @@ function enrichClaimConsistencyRowsWithResolution<
   }
 >(rows: T[], ledger: ClaimConsistencyResolutionLedger) {
   const resolutionByFingerprint = new Map(ledger.resolutions.map((entry) => [entry.fingerprint, entry]));
+  const latestResolutionByScope = new Map<string, ClaimConsistencyResolutionEntry>();
+
+  for (const entry of ledger.resolutions) {
+    const scopeKey = getClaimConsistencyEntryScopeKey(entry);
+    const existing = scopeKey ? latestResolutionByScope.get(scopeKey) : undefined;
+
+    if (scopeKey && (!existing || getClaimConsistencyEntryTime(entry) >= getClaimConsistencyEntryTime(existing))) {
+      latestResolutionByScope.set(scopeKey, entry);
+    }
+  }
 
   return rows.map((row) => {
     const entry = resolutionByFingerprint.get(row.fingerprint);
+    const previousEntry = entry ? undefined : latestResolutionByScope.get(getClaimConsistencyRowScopeKey(row));
     const reviewStatus = entry?.review_status ?? ledger.policy.default_status;
-    const lifecycleState: ClaimConsistencyLifecycleState = entry ? "recurring" : "new";
+    const lifecycleState: ClaimConsistencyLifecycleState = entry || previousEntry ? "recurring" : "new";
+    const reviewFreshness: ClaimConsistencyReviewFreshness = entry
+      ? "current"
+      : previousEntry
+        ? "changed_since_review"
+        : "unreviewed";
 
     return {
       ...row,
@@ -7385,8 +7505,12 @@ function enrichClaimConsistencyRowsWithResolution<
         review_status_label: claimConsistencyReviewStatusLabels[reviewStatus],
         lifecycle_state: lifecycleState,
         lifecycle_state_label: claimConsistencyLifecycleStateLabels[lifecycleState],
+        review_freshness: reviewFreshness,
+        review_freshness_label: claimConsistencyReviewFreshnessLabels[reviewFreshness],
+        changed_since_review: reviewFreshness === "changed_since_review",
         unresolved: isClaimConsistencyUnresolvedStatus(reviewStatus),
         ledger_entry_present: Boolean(entry),
+        previous_review: previousEntry ? getClaimConsistencyPreviousReview(previousEntry) : undefined,
         reviewed_at: entry?.reviewed_at,
         reviewer_role: entry?.reviewer_role,
         note: entry?.note,
@@ -7400,13 +7524,24 @@ function enrichClaimConsistencyRowsWithResolution<
 
 function getResolvedClaimConsistencyRecords({
   ledger,
-  currentFingerprints,
+  currentRows,
   filters
 }: {
   ledger: ClaimConsistencyResolutionLedger;
-  currentFingerprints: Set<string>;
+  currentRows: Array<{
+    fingerprint: string;
+    track_id: string;
+    issue_type: ClaimConsistencyIssueType;
+    paths: {
+      source_record_path: string;
+    };
+    field_path: string;
+  }>;
   filters: ReturnType<typeof cleanClaimConsistencyAuditFilters>;
 }) {
+  const currentFingerprints = new Set(currentRows.map((row) => row.fingerprint));
+  const currentFingerprintByScope = new Map(currentRows.map((row) => [getClaimConsistencyRowScopeKey(row), row.fingerprint]));
+
   return ledger.resolutions
     .filter((entry) => !currentFingerprints.has(entry.fingerprint))
     .filter((entry) => {
@@ -7415,23 +7550,32 @@ function getResolvedClaimConsistencyRecords({
         (!filters.track || appliesTo?.track_id === filters.track) &&
         (!filters.issue_type || appliesTo?.issue_type === filters.issue_type) &&
         (!filters.review_status || entry.review_status === filters.review_status) &&
-        (!filters.lifecycle_state || filters.lifecycle_state === "resolved")
+        (!filters.lifecycle_state || filters.lifecycle_state === "resolved") &&
+        (!filters.review_freshness || filters.review_freshness === "resolved")
       );
     })
-    .map((entry) => ({
-      fingerprint: entry.fingerprint,
-      review_status: entry.review_status,
-      review_status_label: claimConsistencyReviewStatusLabels[entry.review_status],
-      lifecycle_state: "resolved" as const,
-      lifecycle_state_label: claimConsistencyLifecycleStateLabels.resolved,
-      reviewed_at: entry.reviewed_at,
-      reviewer_role: entry.reviewer_role,
-      note: entry.note,
-      action_required: entry.action_required,
-      last_seen_at: entry.last_seen_at,
-      applies_to: entry.applies_to,
-      resolution_path: toWorkspaceRelativePath(claimConsistencyResolutionsPath)
-    }));
+    .map((entry) => {
+      const currentFingerprint = currentFingerprintByScope.get(getClaimConsistencyEntryScopeKey(entry));
+
+      return {
+        fingerprint: entry.fingerprint,
+        review_status: entry.review_status,
+        review_status_label: claimConsistencyReviewStatusLabels[entry.review_status],
+        lifecycle_state: "resolved" as const,
+        lifecycle_state_label: claimConsistencyLifecycleStateLabels.resolved,
+        review_freshness: "resolved" as const,
+        review_freshness_label: claimConsistencyReviewFreshnessLabels.resolved,
+        superseded_by_current_issue: Boolean(currentFingerprint),
+        current_fingerprint: currentFingerprint,
+        reviewed_at: entry.reviewed_at,
+        reviewer_role: entry.reviewer_role,
+        note: entry.note,
+        action_required: entry.action_required,
+        last_seen_at: entry.last_seen_at,
+        applies_to: entry.applies_to,
+        resolution_path: toWorkspaceRelativePath(claimConsistencyResolutionsPath)
+      };
+    });
 }
 
 function cleanClaimConsistencyAuditFilters(filters: ClaimConsistencyAuditFilters = {}) {
@@ -7445,6 +7589,7 @@ function cleanClaimConsistencyAuditFilters(filters: ClaimConsistencyAuditFilters
     source_kind: filters.source_kind ?? "",
     review_status: filters.review_status ?? "",
     lifecycle_state: filters.lifecycle_state ?? "",
+    review_freshness: filters.review_freshness ?? "",
     limit
   };
 }
@@ -7493,6 +7638,8 @@ function applyClaimConsistencyAuditFilters<
       review_status_label: string;
       lifecycle_state: ClaimConsistencyLifecycleState;
       lifecycle_state_label: string;
+      review_freshness: ClaimConsistencyReviewFreshness;
+      review_freshness_label: string;
       note?: string;
       action_required?: string;
     };
@@ -7520,6 +7667,8 @@ function applyClaimConsistencyAuditFilters<
       row.resolution.review_status_label,
       row.resolution.lifecycle_state,
       row.resolution.lifecycle_state_label,
+      row.resolution.review_freshness,
+      row.resolution.review_freshness_label,
       row.resolution.note,
       row.resolution.action_required
     ]
@@ -7534,7 +7683,8 @@ function applyClaimConsistencyAuditFilters<
       (!selected.severity || row.severity === selected.severity) &&
       (!selected.source_kind || row.source_kind === selected.source_kind) &&
       (!selected.review_status || row.resolution.review_status === selected.review_status) &&
-      (!selected.lifecycle_state || row.resolution.lifecycle_state === selected.lifecycle_state)
+      (!selected.lifecycle_state || row.resolution.lifecycle_state === selected.lifecycle_state) &&
+      (!selected.review_freshness || row.resolution.review_freshness === selected.review_freshness)
     );
   });
 }
@@ -7584,10 +7734,9 @@ export async function getClaimConsistencyAuditExport(filters: ClaimConsistencyAu
   const filteredRows = applyClaimConsistencyAuditFilters(sortedRows, selected);
   const exportedRows = selected.limit ? filteredRows.slice(0, selected.limit) : filteredRows;
   const affectedTrackIds = new Set(filteredRows.map((row) => row.track_id));
-  const currentFingerprints = new Set(enrichedRows.map((row) => row.fingerprint));
   const resolvedIssueRecords = getResolvedClaimConsistencyRecords({
     ledger: resolutionLedger,
-    currentFingerprints,
+    currentRows: enrichedRows,
     filters: selected
   });
   const unresolvedRows = filteredRows.filter((row) => row.resolution.unresolved);
@@ -7636,6 +7785,12 @@ export async function getClaimConsistencyAuditExport(filters: ClaimConsistencyAu
       deferred_issue_count: filteredRows.filter((row) => row.resolution.review_status === "deferred").length,
       fixed_issue_count: filteredRows.filter((row) => row.resolution.review_status === "fixed").length,
       false_positive_issue_count: filteredRows.filter((row) => row.resolution.review_status === "false_positive").length,
+      current_review_count: filteredRows.filter((row) => row.resolution.review_freshness === "current").length,
+      changed_since_review_count: filteredRows.filter(
+        (row) => row.resolution.review_freshness === "changed_since_review"
+      ).length,
+      unreviewed_freshness_count: filteredRows.filter((row) => row.resolution.review_freshness === "unreviewed")
+        .length,
       resolution_entry_count: resolutionLedger.resolutions.length,
       review_progress: getClaimConsistencyReviewProgress(
         filteredRows,
@@ -7647,7 +7802,8 @@ export async function getClaimConsistencyAuditExport(filters: ClaimConsistencyAu
       severity_counts: getClaimConsistencySeverityCounts(filteredRows),
       source_kind_counts: getClaimConsistencySourceKindCounts(filteredRows),
       review_status_counts: getClaimConsistencyReviewStatusCounts(filteredRows),
-      lifecycle_state_counts: getClaimConsistencyLifecycleStateCounts(filteredRows, resolvedIssueRecords.length)
+      lifecycle_state_counts: getClaimConsistencyLifecycleStateCounts(filteredRows, resolvedIssueRecords.length),
+      review_freshness_counts: getClaimConsistencyReviewFreshnessCounts(filteredRows, resolvedIssueRecords.length)
     },
     facet_options: {
       tracks: guardrails.facet_options.tracks,
@@ -7670,6 +7826,10 @@ export async function getClaimConsistencyAuditExport(filters: ClaimConsistencyAu
       lifecycle_states: claimConsistencyLifecycleStates.map((state) => ({
         value: state,
         label: claimConsistencyLifecycleStateLabels[state]
+      })),
+      review_freshnesses: claimConsistencyReviewFreshnesses.map((freshness) => ({
+        value: freshness,
+        label: claimConsistencyReviewFreshnessLabels[freshness]
       }))
     },
     source_file_patterns: {
@@ -7813,6 +7973,13 @@ function getClaimConsistencyReviewPacketGroups(
           count: sortedRows.filter((row) => row.resolution.lifecycle_state === state).length
         }))
         .filter((item) => item.count > 0),
+      review_freshnesses: claimConsistencyReviewFreshnesses
+        .map((freshness) => ({
+          value: freshness,
+          label: claimConsistencyReviewFreshnessLabels[freshness],
+          count: sortedRows.filter((row) => row.resolution.review_freshness === freshness).length
+        }))
+        .filter((item) => item.count > 0),
       issue_count: sortedRows.length,
       unresolved_issue_count: unresolvedRows.length,
       affected_field_count: fieldPaths.length,
@@ -7842,7 +8009,9 @@ function getClaimConsistencyReviewPacketGroups(
         review_status: row.resolution.review_status,
         review_status_label: row.resolution.review_status_label,
         lifecycle_state: row.resolution.lifecycle_state,
-        lifecycle_state_label: row.resolution.lifecycle_state_label
+        lifecycle_state_label: row.resolution.lifecycle_state_label,
+        review_freshness: row.resolution.review_freshness,
+        review_freshness_label: row.resolution.review_freshness_label
       })),
       trace_paths: {
         source_page_paths: sourcePagePaths,
@@ -7888,7 +8057,7 @@ export async function getClaimConsistencyReviewPacketExport(filters: ClaimConsis
   const audit = await getClaimConsistencyAuditExport(auditFilters);
   const generatedAt = new Date().toISOString();
   const rowsForGrouping =
-    selected.review_status || selected.lifecycle_state
+    selected.review_status || selected.lifecycle_state || selected.review_freshness
       ? audit.issues
       : audit.issues.filter((row) => row.resolution.unresolved);
   const allGroups = getClaimConsistencyReviewPacketGroups(rowsForGrouping, generatedAt).sort(

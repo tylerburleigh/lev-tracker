@@ -16,6 +16,7 @@ function getClaimConsistencyReviewPacketFilters(searchParams: URLSearchParams): 
     source_kind: (searchParams.get("source_kind") ?? undefined) as ClaimConsistencyReviewPacketFilters["source_kind"],
     review_status: (searchParams.get("review_status") ?? undefined) as ClaimConsistencyReviewPacketFilters["review_status"],
     lifecycle_state: (searchParams.get("lifecycle_state") ?? undefined) as ClaimConsistencyReviewPacketFilters["lifecycle_state"],
+    review_freshness: (searchParams.get("review_freshness") ?? undefined) as ClaimConsistencyReviewPacketFilters["review_freshness"],
     limit: Number.isFinite(limit) ? limit : undefined
   };
 }

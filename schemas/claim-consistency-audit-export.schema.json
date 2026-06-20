@@ -158,6 +158,14 @@
         "resolved"
       ]
     },
+    "claimConsistencyReviewFreshness": {
+      "enum": [
+        "unreviewed",
+        "current",
+        "changed_since_review",
+        "resolved"
+      ]
+    },
     "fingerprint": {
       "type": "string",
       "pattern": "^cca_[a-f0-9]{20}$"
@@ -420,6 +428,9 @@
         "deferred_issue_count",
         "fixed_issue_count",
         "false_positive_issue_count",
+        "current_review_count",
+        "changed_since_review_count",
+        "unreviewed_freshness_count",
         "resolution_entry_count",
         "review_progress",
         "priority_track_queue",
@@ -427,7 +438,8 @@
         "severity_counts",
         "source_kind_counts",
         "review_status_counts",
-        "lifecycle_state_counts"
+        "lifecycle_state_counts",
+        "review_freshness_counts"
       ],
       "properties": {
         "scanned_context_count": {
@@ -481,6 +493,15 @@
         "false_positive_issue_count": {
           "$ref": "#/$defs/count"
         },
+        "current_review_count": {
+          "$ref": "#/$defs/count"
+        },
+        "changed_since_review_count": {
+          "$ref": "#/$defs/count"
+        },
+        "unreviewed_freshness_count": {
+          "$ref": "#/$defs/count"
+        },
         "resolution_entry_count": {
           "$ref": "#/$defs/count"
         },
@@ -507,6 +528,9 @@
         },
         "lifecycle_state_counts": {
           "$ref": "#/$defs/countRowArray"
+        },
+        "review_freshness_counts": {
+          "$ref": "#/$defs/countRowArray"
         }
       }
     },
@@ -518,6 +542,9 @@
         "current_issue_count",
         "reviewed_issue_count",
         "unreviewed_issue_count",
+        "current_review_count",
+        "changed_since_review_count",
+        "unreviewed_freshness_count",
         "unresolved_issue_count",
         "suppressed_issue_count",
         "recurring_issue_count",
@@ -538,6 +565,15 @@
           "$ref": "#/$defs/count"
         },
         "unreviewed_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "current_review_count": {
+          "$ref": "#/$defs/count"
+        },
+        "changed_since_review_count": {
+          "$ref": "#/$defs/count"
+        },
+        "unreviewed_freshness_count": {
           "$ref": "#/$defs/count"
         },
         "unresolved_issue_count": {
@@ -585,6 +621,7 @@
         "open_issue_count",
         "reviewed_issue_count",
         "recurring_issue_count",
+        "changed_since_review_count",
         "critical_issue_count",
         "warning_issue_count",
         "review_issue_count",
@@ -618,6 +655,9 @@
           "$ref": "#/$defs/count"
         },
         "recurring_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "changed_since_review_count": {
           "$ref": "#/$defs/count"
         },
         "critical_issue_count": {
@@ -654,7 +694,8 @@
         "severities",
         "source_kinds",
         "review_statuses",
-        "lifecycle_states"
+        "lifecycle_states",
+        "review_freshnesses"
       ],
       "properties": {
         "tracks": {
@@ -673,6 +714,9 @@
           "$ref": "#/$defs/filterOptionArray"
         },
         "lifecycle_states": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "review_freshnesses": {
           "$ref": "#/$defs/filterOptionArray"
         }
       }
@@ -706,6 +750,9 @@
         "review_status_label",
         "lifecycle_state",
         "lifecycle_state_label",
+        "review_freshness",
+        "review_freshness_label",
+        "changed_since_review",
         "unresolved",
         "ledger_entry_present",
         "resolution_path"
@@ -726,11 +773,23 @@
         "lifecycle_state_label": {
           "type": "string"
         },
+        "review_freshness": {
+          "$ref": "#/$defs/claimConsistencyReviewFreshness"
+        },
+        "review_freshness_label": {
+          "type": "string"
+        },
+        "changed_since_review": {
+          "type": "boolean"
+        },
         "unresolved": {
           "type": "boolean"
         },
         "ledger_entry_present": {
           "type": "boolean"
+        },
+        "previous_review": {
+          "$ref": "#/$defs/previousReview"
         },
         "reviewed_at": {
           "type": "string",
@@ -754,6 +813,43 @@
         }
       }
     },
+    "previousReview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fingerprint",
+        "review_status",
+        "review_status_label"
+      ],
+      "properties": {
+        "fingerprint": {
+          "$ref": "#/$defs/fingerprint"
+        },
+        "review_status": {
+          "$ref": "#/$defs/claimConsistencyReviewStatus"
+        },
+        "review_status_label": {
+          "type": "string"
+        },
+        "reviewed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "reviewer_role": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "action_required": {
+          "type": "string"
+        },
+        "last_seen_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
     "resolvedIssue": {
       "type": "object",
       "additionalProperties": false,
@@ -763,6 +859,9 @@
         "review_status_label",
         "lifecycle_state",
         "lifecycle_state_label",
+        "review_freshness",
+        "review_freshness_label",
+        "superseded_by_current_issue",
         "resolution_path"
       ],
       "properties": {
@@ -780,6 +879,18 @@
         },
         "lifecycle_state_label": {
           "type": "string"
+        },
+        "review_freshness": {
+          "const": "resolved"
+        },
+        "review_freshness_label": {
+          "type": "string"
+        },
+        "superseded_by_current_issue": {
+          "type": "boolean"
+        },
+        "current_fingerprint": {
+          "$ref": "#/$defs/fingerprint"
         },
         "reviewed_at": {
           "type": "string",
