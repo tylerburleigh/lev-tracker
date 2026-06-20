@@ -3706,6 +3706,45 @@ time {
   display: inline-flex;
 }
 
+.claim-audit-table {
+  min-width: 1180px;
+}
+
+.claim-audit-table tbody th {
+  width: 20rem;
+}
+
+.claim-audit-table .micro-badge {
+  display: inline-flex;
+  width: fit-content;
+  margin: 0 0 8px;
+}
+
+.claim-audit-text {
+  margin: 0 0 8px;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+
+.expert-track-table .claim-audit-path {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 8px;
+  padding: 3px 6px;
+  border: 1px solid var(--paper-rule);
+  color: var(--text-soft);
+  font-size: 0.72rem;
+  overflow-wrap: anywhere;
+}
+
+.claim-audit-token-list {
+  margin-top: 8px;
+}
+
+.claim-audit-summary-grid .data-scoped-card strong {
+  font-size: 1.6rem;
+}
+
 .evidence-gap-trace,
 .evidence-gap-source-links {
   display: flex;

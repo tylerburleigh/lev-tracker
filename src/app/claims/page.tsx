@@ -113,6 +113,14 @@ export default async function ClaimsPage({ searchParams }: ClaimsPageProps) {
               <span>Open schema</span>
               <ArrowRight aria-hidden="true" size={16} />
             </a>
+            <Link className="section-link section-link--block" href="/claims/audit">
+              <span>Open consistency audit</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </Link>
+            <a className="section-link section-link--block" href="/data/claim-consistency-audit.json">
+              <span>Audit JSON</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
           </div>
           <div className="data-scoped-grid claims-boundary-grid">
             {claimGuardrails.boundary_class_legend.map((item) => (

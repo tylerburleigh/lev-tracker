@@ -100,7 +100,8 @@ const workflowSteps = [
   "Use coverage_audit.tracks[].assessment to inspect how map coverage was judged.",
   "Use findings[].quality when a workflow needs limitation, study-design, or human-relevance labels before summarizing.",
   "Use conflicts.tracks[].patterns to avoid treating one positive result as field consensus.",
-  "Use claim_guardrails.tracks[] before generating final summaries or training examples."
+  "Use claim_guardrails.tracks[] before generating final summaries or training examples.",
+  "Use claim_consistency_audit.issues[] to review public-copy drift against guardrails."
 ] as const;
 
 const fieldPathRows = [
@@ -140,6 +141,11 @@ const fieldPathRows = [
       "Track-level supported claims, unsupported claims, required caveats, and overclaim-risk labels for expert and AI summaries."
   },
   {
+    field: "/data/claim-consistency-audit.json",
+    meaning:
+      "Editorial review queue that links potentially drifting public copy to track guardrails, source pages, and backing record paths."
+  },
+  {
     field: "/data/evidence-gaps.json",
     meaning: "Track-level gap ledger with outlook gaps, rating-change criteria, coverage gaps, density, and trial horizons."
   },
@@ -168,6 +174,11 @@ const fieldPathRows = [
   {
     field: "claim_guardrails.tracks[].supported_claims / unsupported_claims",
     meaning: "Boundaries for what a downstream summary may say and what it must not imply."
+  },
+  {
+    field: "claim_consistency_audit.issues[]",
+    meaning:
+      "Flagged source text, missing boundary terms, recommended edits, guardrail snapshots, and trace links for review or model-evaluation examples."
   },
   {
     field: "sources[].json_path",
@@ -269,6 +280,10 @@ export default async function DataAccessPage() {
               <span>Claim guardrails JSON</span>
               <ArrowRight aria-hidden="true" size={16} />
             </a>
+            <a className="section-link" href="/data/claim-consistency-audit.json">
+              <span>Claim consistency audit JSON</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
             <a className="section-link" href="/data/evidence-gaps.json">
               <span>Evidence gaps JSON</span>
               <ArrowRight aria-hidden="true" size={16} />
@@ -299,6 +314,10 @@ export default async function DataAccessPage() {
             </a>
             <a className="section-link" href="/data/claim-guardrails.schema.json">
               <span>Claim guardrails schema</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
+            <a className="section-link" href="/data/claim-consistency-audit.schema.json">
+              <span>Claim consistency audit schema</span>
               <ArrowRight aria-hidden="true" size={16} />
             </a>
             <a className="section-link" href="/data/evidence-gaps.schema.json">

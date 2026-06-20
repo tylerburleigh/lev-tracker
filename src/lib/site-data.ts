@@ -212,6 +212,22 @@ export type ClaimOverclaimRisk =
   | "safety_or_durability_overclaim"
   | "registry_results_absent"
   | "coverage_completeness_overclaim";
+export type ClaimConsistencyIssueType =
+  | "possible_unsupported_inference"
+  | "medical_advice_language"
+  | "missing_registry_boundary"
+  | "missing_conflict_boundary"
+  | "missing_biomarker_boundary"
+  | "missing_preclinical_boundary"
+  | "missing_coverage_boundary"
+  | "missing_safety_or_durability_boundary";
+export type ClaimConsistencySeverity = "critical" | "warning" | "review";
+export type ClaimConsistencySourceKind =
+  | "track_outlook"
+  | "track_supporting_evidence"
+  | "track_taxonomy"
+  | "current_story"
+  | "state_of_field";
 
 export type EvidenceIndexFilters = {
   q?: string;
@@ -283,6 +299,15 @@ export type ClaimGuardrailFilters = {
   track?: string;
   boundary_class?: ClaimBoundaryClass | "";
   overclaim_risk?: ClaimOverclaimRisk | "";
+  limit?: number;
+};
+
+export type ClaimConsistencyAuditFilters = {
+  q?: string;
+  track?: string;
+  issue_type?: ClaimConsistencyIssueType | "";
+  severity?: ClaimConsistencySeverity | "";
+  source_kind?: ClaimConsistencySourceKind | "";
   limit?: number;
 };
 
@@ -1387,6 +1412,52 @@ const claimOverclaimRisks: ClaimOverclaimRisk[] = [
   "safety_or_durability_overclaim",
   "registry_results_absent",
   "coverage_completeness_overclaim"
+];
+
+const claimConsistencyIssueTypeLabels: Record<ClaimConsistencyIssueType, string> = {
+  possible_unsupported_inference: "Possible unsupported inference",
+  medical_advice_language: "Medical-advice language",
+  missing_registry_boundary: "Missing registry boundary",
+  missing_conflict_boundary: "Missing conflict boundary",
+  missing_biomarker_boundary: "Missing biomarker boundary",
+  missing_preclinical_boundary: "Missing preclinical boundary",
+  missing_coverage_boundary: "Missing coverage boundary",
+  missing_safety_or_durability_boundary: "Missing safety or durability boundary"
+};
+
+const claimConsistencyIssueTypes: ClaimConsistencyIssueType[] = [
+  "possible_unsupported_inference",
+  "medical_advice_language",
+  "missing_registry_boundary",
+  "missing_conflict_boundary",
+  "missing_biomarker_boundary",
+  "missing_preclinical_boundary",
+  "missing_coverage_boundary",
+  "missing_safety_or_durability_boundary"
+];
+
+const claimConsistencySeverityLabels: Record<ClaimConsistencySeverity, string> = {
+  critical: "Critical",
+  warning: "Warning",
+  review: "Review"
+};
+
+const claimConsistencySeverities: ClaimConsistencySeverity[] = ["critical", "warning", "review"];
+
+const claimConsistencySourceKindLabels: Record<ClaimConsistencySourceKind, string> = {
+  track_outlook: "Track outlook",
+  track_supporting_evidence: "Track supporting evidence",
+  track_taxonomy: "Track taxonomy",
+  current_story: "Current LEV story",
+  state_of_field: "State of the Field"
+};
+
+const claimConsistencySourceKinds: ClaimConsistencySourceKind[] = [
+  "track_outlook",
+  "track_supporting_evidence",
+  "track_taxonomy",
+  "current_story",
+  "state_of_field"
 ];
 
 const findingWeightLabels: Record<Confidence, string> = {
@@ -6379,6 +6450,776 @@ export async function getTrackClaimGuardrailProfile(trackId: string) {
     overclaim_risks: track.overclaim_risks,
     data_path: track.paths.claim_guardrails_path,
     page_path: track.paths.evidence_page_path
+  };
+}
+
+type ClaimConsistencyGuardrailTrack = Awaited<ReturnType<typeof getClaimGuardrailsExport>>["tracks"][number];
+type ClaimConsistencyContextRow = {
+  id: string;
+  track_id: string;
+  track_name: string;
+  source_kind: ClaimConsistencySourceKind;
+  source_kind_label: string;
+  source_label: string;
+  field_path: string;
+  text: string;
+  href: string;
+  record_path: string;
+};
+
+function normalizeClaimAuditText(text: string) {
+  return text.toLocaleLowerCase().replace(/\s+/g, " ").trim();
+}
+
+function hasClaimAuditTerm(text: string, terms: string[]) {
+  return terms.some((term) => text.includes(term));
+}
+
+function getClaimAuditMatchedTerms(text: string, terms: string[]) {
+  return terms.filter((term) => text.includes(term));
+}
+
+function hasNegatedClaimLanguage(text: string) {
+  return /\b(does not|did not|doesn't|isn't|aren't|wasn't|not|no|without|lacks?|still lacked|short of|not proof|not enough|not established|cannot|should not|must not|none|unproven)\b/.test(
+    text
+  );
+}
+
+function hasClaimBearingText(text: string) {
+  return (
+    text.length >= 70 &&
+    /\b(evidence|signal|benefit|improve|improved|improves|supports?|show|shows|showing|claim|read|rating|outlook|result|results|trial|human|biomarker|function|disease|safety|lifespan|healthspan|LEV)\b/i.test(
+      text
+    )
+  );
+}
+
+function addClaimConsistencyContext(
+  contexts: ClaimConsistencyContextRow[],
+  input: {
+    trackId: string;
+    trackName: string;
+    sourceKind: ClaimConsistencySourceKind;
+    sourceLabel: string;
+    fieldPath: string;
+    text?: string;
+    href: string;
+    recordPath: string;
+  }
+) {
+  const text = input.text?.trim();
+
+  if (!text || !hasClaimBearingText(text)) {
+    return;
+  }
+
+  contexts.push({
+    id: `${input.trackId}:${input.sourceKind}:${contexts.length + 1}`,
+    track_id: input.trackId,
+    track_name: input.trackName,
+    source_kind: input.sourceKind,
+    source_kind_label: claimConsistencySourceKindLabels[input.sourceKind],
+    source_label: input.sourceLabel,
+    field_path: input.fieldPath,
+    text,
+    href: input.href,
+    record_path: input.recordPath
+  });
+}
+
+function getTrackIdsFromStoryRefs({
+  subjectType,
+  subjectId,
+  relatedOutlookIds,
+  trackIdByOutlookId
+}: {
+  subjectType?: SubjectType;
+  subjectId?: string;
+  relatedOutlookIds?: string[];
+  trackIdByOutlookId: Map<string, string>;
+}) {
+  const trackIds = new Set<string>();
+
+  if (subjectType === "track" && subjectId) {
+    trackIds.add(subjectId);
+  }
+
+  for (const outlookId of relatedOutlookIds ?? []) {
+    const trackId = trackIdByOutlookId.get(outlookId);
+    if (trackId) {
+      trackIds.add(trackId);
+    }
+  }
+
+  return Array.from(trackIds);
+}
+
+function addClaimConsistencyStoryContext(
+  contexts: ClaimConsistencyContextRow[],
+  input: {
+    trackIds: string[];
+    trackNameById: Map<string, string>;
+    sourceKind: ClaimConsistencySourceKind;
+    sourceLabel: string;
+    fieldPath: string;
+    text?: string;
+    href: string;
+    recordPath: string;
+  }
+) {
+  for (const trackId of input.trackIds) {
+    addClaimConsistencyContext(contexts, {
+      trackId,
+      trackName: input.trackNameById.get(trackId) ?? titleizeIdentifier(trackId),
+      sourceKind: input.sourceKind,
+      sourceLabel: input.sourceLabel,
+      fieldPath: input.fieldPath,
+      text: input.text,
+      href: input.href,
+      recordPath: input.recordPath
+    });
+  }
+}
+
+function collectClaimConsistencyContexts({
+  guardrails,
+  evidenceMap,
+  currentLevStory,
+  stateOfFieldEditions
+}: {
+  guardrails: Awaited<ReturnType<typeof getClaimGuardrailsExport>>;
+  evidenceMap: Awaited<ReturnType<typeof getEvidenceMapExport>>;
+  currentLevStory: CurrentLevStory;
+  stateOfFieldEditions: StateOfFieldEdition[];
+}) {
+  const contexts: ClaimConsistencyContextRow[] = [];
+  const trackNameById = new Map(guardrails.facet_options.tracks.map((track) => [track.value, track.label]));
+  const trackIdByOutlookId = new Map(
+    evidenceMap.tracks
+      .map((track) => [track.outlook?.outlook_id, track.id] as const)
+      .filter((entry): entry is [string, string] => Boolean(entry[0]))
+  );
+
+  for (const track of evidenceMap.tracks) {
+    addClaimConsistencyContext(contexts, {
+      trackId: track.id,
+      trackName: track.name,
+      sourceKind: "track_taxonomy",
+      sourceLabel: "Track summary",
+      fieldPath: "track.summary",
+      text: track.summary,
+      href: track.href,
+      recordPath: "taxonomies/track-taxonomy.v1.json"
+    });
+
+    if (track.outlook) {
+      const outlookPath = `data/outlooks/${track.outlook.outlook_id}.json`;
+      addClaimConsistencyContext(contexts, {
+        trackId: track.id,
+        trackName: track.name,
+        sourceKind: "track_outlook",
+        sourceLabel: "Interpretation note",
+        fieldPath: "track.outlook.interpretation",
+        text: track.outlook.interpretation,
+        href: track.href,
+        recordPath: outlookPath
+      });
+
+      for (const [index, text] of track.outlook.main_evidence_gaps.entries()) {
+        addClaimConsistencyContext(contexts, {
+          trackId: track.id,
+          trackName: track.name,
+          sourceKind: "track_outlook",
+          sourceLabel: "Main evidence gap",
+          fieldPath: `track.outlook.main_evidence_gaps[${index}]`,
+          text,
+          href: track.href,
+          recordPath: outlookPath
+        });
+      }
+
+      for (const [index, text] of track.outlook.strongest_current_evidence.entries()) {
+        addClaimConsistencyContext(contexts, {
+          trackId: track.id,
+          trackName: track.name,
+          sourceKind: "track_outlook",
+          sourceLabel: "Strongest current evidence",
+          fieldPath: `track.outlook.strongest_current_evidence[${index}]`,
+          text,
+          href: track.href,
+          recordPath: outlookPath
+        });
+      }
+
+      for (const [index, text] of track.outlook.what_would_change_the_rating.entries()) {
+        addClaimConsistencyContext(contexts, {
+          trackId: track.id,
+          trackName: track.name,
+          sourceKind: "track_outlook",
+          sourceLabel: "Rating-change condition",
+          fieldPath: `track.outlook.what_would_change_the_rating[${index}]`,
+          text,
+          href: track.href,
+          recordPath: outlookPath
+        });
+      }
+    }
+
+    for (const [index, evidence] of track.supporting_evidence.entries()) {
+      const baseField = `track.supporting_evidence[${index}]`;
+      for (const field of ["conclusion", "rationale"] as const) {
+        addClaimConsistencyContext(contexts, {
+          trackId: track.id,
+          trackName: track.name,
+          sourceKind: "track_supporting_evidence",
+          sourceLabel: evidence.label,
+          fieldPath: `${baseField}.${field}`,
+          text: evidence[field],
+          href: track.href,
+          recordPath: track.outlook ? `data/outlooks/${track.outlook.outlook_id}.json` : "data/outlooks/*.json"
+        });
+      }
+
+      for (const [limitationIndex, text] of evidence.limitations.entries()) {
+        addClaimConsistencyContext(contexts, {
+          trackId: track.id,
+          trackName: track.name,
+          sourceKind: "track_supporting_evidence",
+          sourceLabel: evidence.label,
+          fieldPath: `${baseField}.limitations[${limitationIndex}]`,
+          text,
+          href: track.href,
+          recordPath: track.outlook ? `data/outlooks/${track.outlook.outlook_id}.json` : "data/outlooks/*.json"
+        });
+      }
+    }
+  }
+
+  for (const [index, item] of currentLevStory.recent_developments.entries()) {
+    const trackIds = getTrackIdsFromStoryRefs({
+      subjectType: item.subject_type,
+      subjectId: item.subject_id,
+      relatedOutlookIds: item.related_outlook_ids,
+      trackIdByOutlookId
+    });
+    addClaimConsistencyStoryContext(contexts, {
+      trackIds,
+      trackNameById,
+      sourceKind: "current_story",
+      sourceLabel: item.label,
+      fieldPath: `recent_developments[${index}].summary`,
+      text: item.summary,
+      href: "/",
+      recordPath: "data/content/current-lev-story/current.json"
+    });
+    addClaimConsistencyStoryContext(contexts, {
+      trackIds,
+      trackNameById,
+      sourceKind: "current_story",
+      sourceLabel: item.label,
+      fieldPath: `recent_developments[${index}].impact_on_outlook`,
+      text: item.impact_on_outlook,
+      href: "/",
+      recordPath: "data/content/current-lev-story/current.json"
+    });
+  }
+
+  for (const [index, item] of currentLevStory.what_to_watch_next.entries()) {
+    const trackIds = getTrackIdsFromStoryRefs({
+      subjectType: item.subject_type,
+      subjectId: item.subject_id,
+      relatedOutlookIds: item.related_outlook_ids,
+      trackIdByOutlookId
+    });
+    addClaimConsistencyStoryContext(contexts, {
+      trackIds,
+      trackNameById,
+      sourceKind: "current_story",
+      sourceLabel: item.label,
+      fieldPath: `what_to_watch_next[${index}].summary`,
+      text: item.summary,
+      href: "/",
+      recordPath: "data/content/current-lev-story/current.json"
+    });
+    addClaimConsistencyStoryContext(contexts, {
+      trackIds,
+      trackNameById,
+      sourceKind: "current_story",
+      sourceLabel: item.label,
+      fieldPath: `what_to_watch_next[${index}].what_to_look_for`,
+      text: item.what_to_look_for,
+      href: "/",
+      recordPath: "data/content/current-lev-story/current.json"
+    });
+  }
+
+  for (const [index, item] of currentLevStory.where_better_evidence_is_needed.entries()) {
+    const trackIds = getTrackIdsFromStoryRefs({
+      subjectType: item.subject_type,
+      subjectId: item.subject_id,
+      relatedOutlookIds: item.related_outlook_ids,
+      trackIdByOutlookId
+    });
+    addClaimConsistencyStoryContext(contexts, {
+      trackIds,
+      trackNameById,
+      sourceKind: "current_story",
+      sourceLabel: item.label,
+      fieldPath: `where_better_evidence_is_needed[${index}].rationale`,
+      text: item.rationale,
+      href: "/",
+      recordPath: "data/content/current-lev-story/current.json"
+    });
+  }
+
+  for (const edition of stateOfFieldEditions) {
+    const editionHref = `/state-of-the-field/${edition.slug}`;
+    const recordPath = `data/content/state-of-the-field/${edition.slug}.json`;
+    const addEditionItem = ({
+      items,
+      fieldName
+    }: {
+      items: Array<{
+        label?: string;
+        title?: string;
+        summary?: string;
+        interpretation?: string;
+        related_outlook_ids?: string[];
+      }>;
+      fieldName: string;
+    }) => {
+      for (const [index, item] of items.entries()) {
+        const trackIds = getTrackIdsFromStoryRefs({
+          relatedOutlookIds: item.related_outlook_ids,
+          trackIdByOutlookId
+        });
+        const sourceLabel = item.title ?? item.label ?? `${edition.title} item`;
+        for (const field of ["summary", "interpretation"] as const) {
+          addClaimConsistencyStoryContext(contexts, {
+            trackIds,
+            trackNameById,
+            sourceKind: "state_of_field",
+            sourceLabel,
+            fieldPath: `${fieldName}[${index}].${field}`,
+            text: item[field],
+            href: editionHref,
+            recordPath
+          });
+        }
+      }
+    };
+
+    addEditionItem({ items: edition.what_changed, fieldName: "what_changed" });
+    addEditionItem({ items: edition.current_context, fieldName: "current_context" });
+    addEditionItem({ items: edition.signals_to_watch, fieldName: "signals_to_watch" });
+    addEditionItem({ items: edition.evidence_gaps, fieldName: "evidence_gaps" });
+    addEditionItem({ items: edition.track_examples, fieldName: "track_examples" });
+    addEditionItem({ items: edition.trial_horizon, fieldName: "trial_horizon" });
+  }
+
+  return contexts;
+}
+
+function getClaimConsistencyIssueRows({
+  context,
+  guardrail
+}: {
+  context: ClaimConsistencyContextRow;
+  guardrail: ClaimConsistencyGuardrailTrack;
+}) {
+  const text = normalizeClaimAuditText(context.text);
+  const issues: Array<{
+    issue_type: ClaimConsistencyIssueType;
+    severity: ClaimConsistencySeverity;
+    recommendation: string;
+    matched_terms: string[];
+    missing_terms: string[];
+  }> = [];
+  const addIssue = (
+    issue_type: ClaimConsistencyIssueType,
+    severity: ClaimConsistencySeverity,
+    recommendation: string,
+    matched_terms: string[],
+    missing_terms: string[]
+  ) => {
+    issues.push({ issue_type, severity, recommendation, matched_terms, missing_terms });
+  };
+  const overclaimTerms = [
+    "human lifespan extension",
+    "extends human lifespan",
+    "extend human lifespan",
+    "reverses aging",
+    "reversed aging",
+    "aging reversal",
+    "broad aging reversal",
+    "make lev look closer",
+    "lev looks close",
+    "safe and effective"
+  ];
+  const matchedOverclaimTerms = getClaimAuditMatchedTerms(text, overclaimTerms);
+
+  if (matchedOverclaimTerms.length && !hasNegatedClaimLanguage(text)) {
+    addIssue(
+      "possible_unsupported_inference",
+      "critical",
+      "Reword this context so it does not imply human lifespan extension, LEV progress, broad aging reversal, or clinical readiness beyond the guardrail-supported claims.",
+      matchedOverclaimTerms,
+      guardrail.unsupported_claims.slice(0, 3)
+    );
+  }
+
+  const medicalAdviceTerms = [
+    "recommended for",
+    "should take",
+    "should use",
+    "dosing guidance",
+    "treatment recommendation",
+    "prescribe",
+    "prescribed",
+    "personal use"
+  ];
+  const matchedMedicalAdviceTerms = getClaimAuditMatchedTerms(text, medicalAdviceTerms);
+  if (matchedMedicalAdviceTerms.length && !hasNegatedClaimLanguage(text)) {
+    addIssue(
+      "medical_advice_language",
+      "critical",
+      "Remove treatment, dosing, or personal-use implications; the tracker must remain an evidence map, not clinical guidance.",
+      matchedMedicalAdviceTerms,
+      ["not medical advice", "no dosing guidance", "not a treatment recommendation"]
+    );
+  }
+
+  if (guardrail.boundary_class === "registry_pending_claim") {
+    const requiredTerms = ["registry", "trial", "posted result", "posted outcome", "no posted", "pending", "recruiting", "results gap"];
+    if (!hasClaimAuditTerm(text, requiredTerms)) {
+      addIssue(
+        "missing_registry_boundary",
+        "warning",
+        "Mention unresolved or absent registry results before summarizing this track as settled or positive.",
+        [],
+        requiredTerms.slice(0, 5)
+      );
+    }
+  }
+
+  if (guardrail.boundary_class === "conflicted_or_mixed_claim") {
+    const requiredTerms = ["mixed", "null", "negative", "limiting", "uneven", "failed", "missed", "unresolved", "uncertain", "not enough"];
+    if (!hasClaimAuditTerm(text, requiredTerms)) {
+      addIssue(
+        "missing_conflict_boundary",
+        "warning",
+        "Attach the mixed, null, limiting, or unreplicated evidence boundary to this public copy.",
+        [],
+        requiredTerms.slice(0, 5)
+      );
+    }
+  }
+
+  if (guardrail.boundary_class === "coverage_limited_claim") {
+    const requiredTerms = ["coverage", "map", "checked", "source discovery", "field scarcity", "thin", "sparse", "missing review"];
+    if (!hasClaimAuditTerm(text, requiredTerms)) {
+      addIssue(
+        "missing_coverage_boundary",
+        "warning",
+        "Qualify the copy so sparse mapped evidence is not treated as proof that the research field is empty.",
+        [],
+        requiredTerms.slice(0, 5)
+      );
+    }
+  }
+
+  if (
+    guardrail.boundary_class === "preclinical_or_mechanistic_only" ||
+    guardrail.overclaim_risks.some((risk) => risk.value === "preclinical_translation_leap")
+  ) {
+    const requiredTerms = ["animal", "mouse", "mice", "preclinical", "mechanistic", "nonhuman", "no human", "human-cell"];
+    if (!hasClaimAuditTerm(text, requiredTerms)) {
+      addIssue(
+        "missing_preclinical_boundary",
+        "review",
+        "Make the animal, preclinical, or mechanistic boundary explicit before this copy is reused as a human-evidence summary.",
+        [],
+        requiredTerms.slice(0, 5)
+      );
+    }
+  }
+
+  if (guardrail.overclaim_risks.some((risk) => risk.value === "biomarker_surrogate_leap")) {
+    const requiredTerms = ["biomarker", "marker", "surrogate", "target engagement", "functional", "clinical", "durable", "long-lasting", "limited"];
+    if (!hasClaimAuditTerm(text, requiredTerms)) {
+      addIssue(
+        "missing_biomarker_boundary",
+        "review",
+        "Mention that biomarker or target-engagement evidence does not establish durable functional or clinical benefit.",
+        [],
+        requiredTerms.slice(0, 5)
+      );
+    }
+  }
+
+  if (guardrail.overclaim_risks.some((risk) => risk.value === "safety_or_durability_overclaim")) {
+    const requiredTerms = ["safety", "durability", "durable", "long-term", "long-lasting", "risk", "adverse", "tolerability"];
+    if (!hasClaimAuditTerm(text, requiredTerms)) {
+      addIssue(
+        "missing_safety_or_durability_boundary",
+        "review",
+        "Keep safety or durability uncertainty visible when summarizing this track.",
+        [],
+        requiredTerms.slice(0, 5)
+      );
+    }
+  }
+
+  return issues.map((issue, index) => ({
+    id: `${context.id}:${issue.issue_type}:${index + 1}`,
+    track_id: context.track_id,
+    track_name: context.track_name,
+    track_href: `/tracks/${context.track_id}`,
+    issue_type: issue.issue_type,
+    issue_type_label: claimConsistencyIssueTypeLabels[issue.issue_type],
+    severity: issue.severity,
+    severity_label: claimConsistencySeverityLabels[issue.severity],
+    source_kind: context.source_kind,
+    source_kind_label: context.source_kind_label,
+    source_label: context.source_label,
+    field_path: context.field_path,
+    text_excerpt: context.text.length > 520 ? `${context.text.slice(0, 517)}...` : context.text,
+    matched_terms: issue.matched_terms,
+    missing_terms: issue.missing_terms,
+    recommendation: issue.recommendation,
+    guardrail: {
+      boundary_class: guardrail.boundary_class,
+      boundary_class_label: guardrail.boundary_class_label,
+      guardrail_summary: guardrail.guardrail_summary,
+      required_caveats: guardrail.required_caveats.slice(0, 4),
+      unsupported_claims: guardrail.unsupported_claims.slice(0, 3),
+      overclaim_risks: guardrail.overclaim_risks.map((risk) => ({
+        value: risk.value,
+        label: risk.label
+      }))
+    },
+    paths: {
+      source_page_path: context.href,
+      source_record_path: context.record_path,
+      track_page_path: `/tracks/${context.track_id}`,
+      claim_guardrails_path: guardrail.paths.claim_guardrails_path,
+      evidence_page_path: guardrail.paths.evidence_page_path
+    }
+  }));
+}
+
+function getClaimConsistencyIssueTypeCounts(rows: Array<{ issue_type: ClaimConsistencyIssueType }>) {
+  return claimConsistencyIssueTypes
+    .map((issueType) => ({
+      value: issueType,
+      label: claimConsistencyIssueTypeLabels[issueType],
+      count: rows.filter((row) => row.issue_type === issueType).length
+    }))
+    .filter((item) => item.count > 0);
+}
+
+function getClaimConsistencySeverityCounts(rows: Array<{ severity: ClaimConsistencySeverity }>) {
+  return claimConsistencySeverities
+    .map((severity) => ({
+      value: severity,
+      label: claimConsistencySeverityLabels[severity],
+      count: rows.filter((row) => row.severity === severity).length
+    }))
+    .filter((item) => item.count > 0);
+}
+
+function getClaimConsistencySourceKindCounts(rows: Array<{ source_kind: ClaimConsistencySourceKind }>) {
+  return claimConsistencySourceKinds
+    .map((sourceKind) => ({
+      value: sourceKind,
+      label: claimConsistencySourceKindLabels[sourceKind],
+      count: rows.filter((row) => row.source_kind === sourceKind).length
+    }))
+    .filter((item) => item.count > 0);
+}
+
+function cleanClaimConsistencyAuditFilters(filters: ClaimConsistencyAuditFilters = {}) {
+  const limit = filters.limit && Number.isFinite(filters.limit) ? Math.max(1, Math.min(500, filters.limit)) : undefined;
+
+  return {
+    q: filters.q?.trim() ?? "",
+    track: filters.track ?? "",
+    issue_type: filters.issue_type ?? "",
+    severity: filters.severity ?? "",
+    source_kind: filters.source_kind ?? "",
+    limit
+  };
+}
+
+function getClaimConsistencyAuditQueryPath(path: string, filters: ClaimConsistencyAuditFilters) {
+  const params = new URLSearchParams();
+  const cleaned = cleanClaimConsistencyAuditFilters(filters);
+
+  for (const [key, value] of Object.entries(cleaned)) {
+    if (!value) {
+      continue;
+    }
+
+    params.set(key, String(value));
+  }
+
+  const query = params.toString();
+  return query ? `${path}?${query}` : path;
+}
+
+function getAppliedClaimConsistencyAuditFilters(filters: ReturnType<typeof cleanClaimConsistencyAuditFilters>) {
+  return Object.fromEntries(
+    Object.entries(filters)
+      .filter(([, value]) => Boolean(value))
+      .map(([key, value]) => [key, String(value)])
+  );
+}
+
+function applyClaimConsistencyAuditFilters<
+  T extends {
+    track_id: string;
+    track_name: string;
+    issue_type: ClaimConsistencyIssueType;
+    issue_type_label: string;
+    severity: ClaimConsistencySeverity;
+    severity_label: string;
+    source_kind: ClaimConsistencySourceKind;
+    source_kind_label: string;
+    source_label: string;
+    field_path: string;
+    text_excerpt: string;
+    recommendation: string;
+  }
+>(rows: T[], filters: ClaimConsistencyAuditFilters) {
+  const selected = cleanClaimConsistencyAuditFilters(filters);
+  const query = selected.q.toLocaleLowerCase();
+
+  return rows.filter((row) => {
+    const searchableText = [
+      row.track_id,
+      row.track_name,
+      row.issue_type,
+      row.issue_type_label,
+      row.severity,
+      row.severity_label,
+      row.source_kind,
+      row.source_kind_label,
+      row.source_label,
+      row.field_path,
+      row.text_excerpt,
+      row.recommendation
+    ]
+      .join(" ")
+      .toLocaleLowerCase();
+
+    return (
+      (!query || searchableText.includes(query)) &&
+      (!selected.track || row.track_id === selected.track) &&
+      (!selected.issue_type || row.issue_type === selected.issue_type) &&
+      (!selected.severity || row.severity === selected.severity) &&
+      (!selected.source_kind || row.source_kind === selected.source_kind)
+    );
+  });
+}
+
+export async function getClaimConsistencyAuditExport(filters: ClaimConsistencyAuditFilters = {}) {
+  noStore();
+  const selected = cleanClaimConsistencyAuditFilters(filters);
+  const [guardrails, evidenceMap, currentLevStory, stateOfFieldEditions] = await Promise.all([
+    getClaimGuardrailsExport(),
+    getEvidenceMapExport(),
+    loadCurrentLevStory(),
+    loadStateOfFieldEditions()
+  ]);
+  const guardrailByTrackId = new Map(guardrails.tracks.map((track) => [track.id, track]));
+  const contexts = collectClaimConsistencyContexts({
+    guardrails,
+    evidenceMap,
+    currentLevStory,
+    stateOfFieldEditions
+  });
+  const allRows = contexts.flatMap((context) => {
+    const guardrail = guardrailByTrackId.get(context.track_id);
+    return guardrail ? getClaimConsistencyIssueRows({ context, guardrail }) : [];
+  });
+  const severityRank = new Map<ClaimConsistencySeverity, number>([
+    ["critical", 0],
+    ["warning", 1],
+    ["review", 2]
+  ]);
+  const sortedRows = allRows.sort(
+    (left, right) =>
+      (severityRank.get(left.severity) ?? 99) - (severityRank.get(right.severity) ?? 99) ||
+      left.track_name.localeCompare(right.track_name) ||
+      left.source_kind.localeCompare(right.source_kind)
+  );
+  const filteredRows = applyClaimConsistencyAuditFilters(sortedRows, selected);
+  const exportedRows = selected.limit ? filteredRows.slice(0, selected.limit) : filteredRows;
+  const affectedTrackIds = new Set(filteredRows.map((row) => row.track_id));
+
+  return {
+    schema_version: "1.0.0",
+    schema_url: "/data/claim-consistency-audit.schema.json",
+    export_type: "lev_tracker_claim_consistency_audit",
+    generated_at: new Date().toISOString(),
+    last_public_update: evidenceMap.last_public_update,
+    canonical_path: getClaimConsistencyAuditQueryPath("/data/claim-consistency-audit.json", selected),
+    page_path: getClaimConsistencyAuditQueryPath("/claims/audit", selected),
+    applied_filters: getAppliedClaimConsistencyAuditFilters(selected),
+    methodology: {
+      classification_basis:
+        "Issue rows are derived by comparing track-linked public copy against the claim guardrail export for that track. Checks look for missing boundary cues and obvious forbidden inference language.",
+      not_fact_checking:
+        "This is an editorial triage layer, not a source-level fact check, medical review, or formal natural-language entailment model.",
+      primary_uses: [
+        "Find public summaries that may need registry, conflict, biomarker, preclinical, coverage, safety, or durability caveats.",
+        "Give editors a track-by-track QA queue before publishing new summaries.",
+        "Give language-model workflows negative examples and boundary checks before final prose generation."
+      ]
+    },
+    caveats: [
+      "A flagged row is a review prompt, not proof that the public copy is wrong.",
+      "Short copy can be acceptable when a nearby page section supplies the caveat; editors should inspect the source page and record path.",
+      "The audit intentionally favors conservative recall over precision for expert and AI-safety review."
+    ],
+    summary: {
+      scanned_context_count: contexts.length,
+      total_issue_count: sortedRows.length,
+      filtered_issue_count: filteredRows.length,
+      returned_issue_count: exportedRows.length,
+      affected_track_count: affectedTrackIds.size,
+      critical_issue_count: filteredRows.filter((row) => row.severity === "critical").length,
+      warning_issue_count: filteredRows.filter((row) => row.severity === "warning").length,
+      review_issue_count: filteredRows.filter((row) => row.severity === "review").length,
+      issue_type_counts: getClaimConsistencyIssueTypeCounts(filteredRows),
+      severity_counts: getClaimConsistencySeverityCounts(filteredRows),
+      source_kind_counts: getClaimConsistencySourceKindCounts(filteredRows)
+    },
+    facet_options: {
+      tracks: guardrails.facet_options.tracks,
+      issue_types: claimConsistencyIssueTypes.map((issueType) => ({
+        value: issueType,
+        label: claimConsistencyIssueTypeLabels[issueType]
+      })),
+      severities: claimConsistencySeverities.map((severity) => ({
+        value: severity,
+        label: claimConsistencySeverityLabels[severity]
+      })),
+      source_kinds: claimConsistencySourceKinds.map((sourceKind) => ({
+        value: sourceKind,
+        label: claimConsistencySourceKindLabels[sourceKind]
+      }))
+    },
+    source_file_patterns: {
+      public_records: [
+        "taxonomies/track-taxonomy.v1.json",
+        "data/outlooks/*.json",
+        "data/content/current-lev-story/current.json",
+        "data/content/state-of-the-field/*.json"
+      ],
+      derived_from: ["/data/claim-guardrails.json", "/data/evidence-map.json"]
+    },
+    issues: exportedRows
   };
 }
 
