@@ -22,6 +22,7 @@ type EvidenceSearchParams = {
   quality_class?: string | string[];
   limitation?: string | string[];
   human_relevance?: string | string[];
+  consistency_pattern?: string | string[];
   sort?: string | string[];
 };
 
@@ -52,6 +53,9 @@ function getEvidenceFilters(searchParams: EvidenceSearchParams): EvidenceIndexFi
     quality_class: getSingleSearchParam(searchParams.quality_class) as EvidenceIndexFilters["quality_class"],
     limitation: getSingleSearchParam(searchParams.limitation) as EvidenceIndexFilters["limitation"],
     human_relevance: getSingleSearchParam(searchParams.human_relevance) as EvidenceIndexFilters["human_relevance"],
+    consistency_pattern: getSingleSearchParam(
+      searchParams.consistency_pattern
+    ) as EvidenceIndexFilters["consistency_pattern"],
     sort: getSingleSearchParam(searchParams.sort) as EvidenceIndexFilters["sort"]
   };
 }
@@ -274,6 +278,17 @@ export default async function EvidenceExplorerPage({ searchParams }: EvidenceExp
               </select>
             </label>
             <label className="track-search__field">
+              <span>Consistency</span>
+              <select name="consistency_pattern" defaultValue={selected.consistency_pattern}>
+                <option value="">All consistency patterns</option>
+                {facets.consistency_patterns.map((option) => (
+                  <option value={option.value} key={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="track-search__field">
               <span>Reuse</span>
               <select name="source_reuse" defaultValue={selected.source_reuse}>
                 <option value="">All source reuse</option>
@@ -399,6 +414,16 @@ export default async function EvidenceExplorerPage({ searchParams }: EvidenceExp
                       ) : (
                         <span>No limitation tag</span>
                       )}
+                      {finding.consistency_contexts.length ? (
+                        <div className="evidence-consistency-mini">
+                          <span>{finding.consistency_contexts[0].consistency_class_label}</span>
+                          {finding.consistency_contexts[0].pattern_labels.slice(0, 2).map((label) => (
+                            <span className="evidence-chip evidence-chip--muted" key={label}>
+                              {label}
+                            </span>
+                          ))}
+                        </div>
+                      ) : null}
                     </td>
                     <td>
                       {finding.caveats.length ? (

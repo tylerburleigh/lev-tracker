@@ -1,0 +1,587 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "/data/evidence-conflicts.schema.json",
+  "title": "LEV Tracker evidence conflicts export",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "schema_url",
+    "export_type",
+    "generated_at",
+    "last_public_update",
+    "canonical_path",
+    "page_path",
+    "applied_filters",
+    "methodology",
+    "caveats",
+    "consistency_class_legend",
+    "pattern_legend",
+    "summary",
+    "facet_options",
+    "source_file_patterns",
+    "tracks"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "schema_url": {
+      "const": "/data/evidence-conflicts.schema.json"
+    },
+    "export_type": {
+      "const": "lev_tracker_evidence_conflicts"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_public_update": {
+      "type": "string"
+    },
+    "canonical_path": {
+      "type": "string",
+      "pattern": "^/data/evidence-conflicts\\.json"
+    },
+    "page_path": {
+      "type": "string"
+    },
+    "applied_filters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "methodology": {
+      "$ref": "#/$defs/methodology"
+    },
+    "caveats": {
+      "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+    },
+    "consistency_class_legend": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/plainLegendItem"
+      }
+    },
+    "pattern_legend": {
+      "$ref": "#/$defs/filterOptionArray"
+    },
+    "summary": {
+      "$ref": "#/$defs/summary"
+    },
+    "facet_options": {
+      "$ref": "#/$defs/facetOptions"
+    },
+    "source_file_patterns": {
+      "$ref": "#/$defs/sourceFilePatterns"
+    },
+    "tracks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/conflictTrack"
+      }
+    }
+  },
+  "$defs": {
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "consistencyClass": {
+      "$ref": "/data/evidence-index.schema.json#/$defs/consistencyClass"
+    },
+    "consistencyPattern": {
+      "$ref": "/data/evidence-index.schema.json#/$defs/consistencyPattern"
+    },
+    "methodology": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "classification_basis",
+        "not_meta_analysis",
+        "primary_uses"
+      ],
+      "properties": {
+        "classification_basis": {
+          "type": "string"
+        },
+        "not_meta_analysis": {
+          "type": "string"
+        },
+        "primary_uses": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        }
+      }
+    },
+    "filterOption": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "label"
+      ],
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      }
+    },
+    "filterOptionArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/filterOption"
+      }
+    },
+    "plainLegendItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "label",
+        "plain_meaning"
+      ],
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "plain_meaning": {
+          "type": "string"
+        }
+      }
+    },
+    "countRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "label",
+        "count"
+      ],
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "count": {
+          "$ref": "#/$defs/count"
+        }
+      }
+    },
+    "countRowArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/countRow"
+      }
+    },
+    "consistencyClassCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "consistent_positive_signal",
+        "mixed_or_conflicting_signal",
+        "animal_positive_human_limited",
+        "biomarker_positive_function_mixed",
+        "single_source_or_unreplicated",
+        "registry_results_gap",
+        "insufficient_mapped_evidence"
+      ],
+      "properties": {
+        "consistent_positive_signal": {
+          "$ref": "#/$defs/count"
+        },
+        "mixed_or_conflicting_signal": {
+          "$ref": "#/$defs/count"
+        },
+        "animal_positive_human_limited": {
+          "$ref": "#/$defs/count"
+        },
+        "biomarker_positive_function_mixed": {
+          "$ref": "#/$defs/count"
+        },
+        "single_source_or_unreplicated": {
+          "$ref": "#/$defs/count"
+        },
+        "registry_results_gap": {
+          "$ref": "#/$defs/count"
+        },
+        "insufficient_mapped_evidence": {
+          "$ref": "#/$defs/count"
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total_track_count",
+        "filtered_track_count",
+        "returned_track_count",
+        "track_with_patterns_count",
+        "mixed_or_conflicting_track_count",
+        "consistency_class_counts",
+        "pattern_counts"
+      ],
+      "properties": {
+        "total_track_count": {
+          "$ref": "#/$defs/count"
+        },
+        "filtered_track_count": {
+          "$ref": "#/$defs/count"
+        },
+        "returned_track_count": {
+          "$ref": "#/$defs/count"
+        },
+        "track_with_patterns_count": {
+          "$ref": "#/$defs/count"
+        },
+        "mixed_or_conflicting_track_count": {
+          "$ref": "#/$defs/count"
+        },
+        "consistency_class_counts": {
+          "$ref": "#/$defs/consistencyClassCounts"
+        },
+        "pattern_counts": {
+          "$ref": "#/$defs/countRowArray"
+        }
+      }
+    },
+    "facetOptions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tracks",
+        "consistency_classes",
+        "patterns"
+      ],
+      "properties": {
+        "tracks": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "consistency_classes": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "patterns": {
+          "$ref": "#/$defs/filterOptionArray"
+        }
+      }
+    },
+    "findingRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "href",
+        "direction",
+        "direction_label",
+        "evidence_tier",
+        "evidence_tier_label",
+        "endpoint_category",
+        "endpoint_category_label",
+        "source_id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string",
+          "pattern": "^/findings/"
+        },
+        "direction": {
+          "type": "string"
+        },
+        "direction_label": {
+          "type": "string"
+        },
+        "evidence_tier": {
+          "type": "string"
+        },
+        "evidence_tier_label": {
+          "type": "string"
+        },
+        "endpoint_category": {
+          "type": "string"
+        },
+        "endpoint_category_label": {
+          "type": "string"
+        },
+        "source_id": {
+          "type": "string"
+        },
+        "source_name": {
+          "type": "string"
+        },
+        "study_id": {
+          "type": "string"
+        },
+        "study_name": {
+          "type": "string"
+        }
+      }
+    },
+    "findingClusterMap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "positive",
+        "limiting_or_mixed",
+        "animal_positive",
+        "human_limiting_or_mixed",
+        "biomarker_positive",
+        "function_or_clinical_limiting",
+        "registry_no_results"
+      ],
+      "properties": {
+        "positive": {
+          "$ref": "#/$defs/findingRefArray"
+        },
+        "limiting_or_mixed": {
+          "$ref": "#/$defs/findingRefArray"
+        },
+        "animal_positive": {
+          "$ref": "#/$defs/findingRefArray"
+        },
+        "human_limiting_or_mixed": {
+          "$ref": "#/$defs/findingRefArray"
+        },
+        "biomarker_positive": {
+          "$ref": "#/$defs/findingRefArray"
+        },
+        "function_or_clinical_limiting": {
+          "$ref": "#/$defs/findingRefArray"
+        },
+        "registry_no_results": {
+          "$ref": "#/$defs/findingRefArray"
+        }
+      }
+    },
+    "findingRefArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/findingRef"
+      }
+    },
+    "trackCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finding_count",
+        "source_count",
+        "study_count",
+        "positive_finding_count",
+        "limiting_or_mixed_finding_count",
+        "human_positive_finding_count",
+        "human_limiting_or_mixed_finding_count",
+        "animal_positive_finding_count",
+        "biomarker_positive_finding_count",
+        "function_or_clinical_limiting_count",
+        "registry_no_results_count",
+        "positive_source_count",
+        "positive_study_count"
+      ],
+      "properties": {
+        "finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "source_count": {
+          "$ref": "#/$defs/count"
+        },
+        "study_count": {
+          "$ref": "#/$defs/count"
+        },
+        "positive_finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "limiting_or_mixed_finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "human_positive_finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "human_limiting_or_mixed_finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "animal_positive_finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "biomarker_positive_finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "function_or_clinical_limiting_count": {
+          "$ref": "#/$defs/count"
+        },
+        "registry_no_results_count": {
+          "$ref": "#/$defs/count"
+        },
+        "positive_source_count": {
+          "$ref": "#/$defs/count"
+        },
+        "positive_study_count": {
+          "$ref": "#/$defs/count"
+        }
+      }
+    },
+    "trackPaths": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "track_page_path",
+        "evidence_page_path",
+        "evidence_conflicts_path",
+        "evidence_quality_path",
+        "evidence_index_path"
+      ],
+      "properties": {
+        "track_page_path": {
+          "type": "string",
+          "pattern": "^/tracks/"
+        },
+        "evidence_page_path": {
+          "type": "string",
+          "pattern": "^/evidence"
+        },
+        "evidence_conflicts_path": {
+          "type": "string",
+          "pattern": "^/data/evidence-conflicts\\.json"
+        },
+        "evidence_quality_path": {
+          "type": "string",
+          "pattern": "^/data/evidence-quality\\.json"
+        },
+        "evidence_index_path": {
+          "type": "string",
+          "pattern": "^/data/evidence-index\\.json"
+        }
+      }
+    },
+    "conflictTrack": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "href",
+        "primary_hallmark_id",
+        "primary_hallmark_name",
+        "consistency_class",
+        "consistency_class_label",
+        "consistency_class_meaning",
+        "consistency_reason",
+        "patterns",
+        "pattern_labels",
+        "direction_counts",
+        "evidence_tier_counts",
+        "counts",
+        "finding_clusters",
+        "paths"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string",
+          "pattern": "^/tracks/"
+        },
+        "primary_hallmark_id": {
+          "type": "string"
+        },
+        "primary_hallmark_name": {
+          "type": "string"
+        },
+        "stage": {
+          "type": "string"
+        },
+        "stage_label": {
+          "type": "string"
+        },
+        "read_firmness": {
+          "type": "string"
+        },
+        "read_firmness_label": {
+          "type": "string"
+        },
+        "coverage_verdict": {
+          "type": "string"
+        },
+        "coverage_verdict_label": {
+          "type": "string"
+        },
+        "coverage_confidence": {
+          "type": "string"
+        },
+        "coverage_confidence_label": {
+          "type": "string"
+        },
+        "consistency_class": {
+          "$ref": "#/$defs/consistencyClass"
+        },
+        "consistency_class_label": {
+          "type": "string"
+        },
+        "consistency_class_meaning": {
+          "type": "string"
+        },
+        "consistency_reason": {
+          "type": "string"
+        },
+        "patterns": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/consistencyPattern"
+          }
+        },
+        "pattern_labels": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "direction_counts": {
+          "$ref": "#/$defs/countRowArray"
+        },
+        "evidence_tier_counts": {
+          "$ref": "#/$defs/countRowArray"
+        },
+        "counts": {
+          "$ref": "#/$defs/trackCounts"
+        },
+        "finding_clusters": {
+          "$ref": "#/$defs/findingClusterMap"
+        },
+        "paths": {
+          "$ref": "#/$defs/trackPaths"
+        }
+      }
+    },
+    "sourceFilePatterns": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "public_records",
+        "derived_from"
+      ],
+      "properties": {
+        "public_records": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "derived_from": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        }
+      }
+    }
+  }
+}

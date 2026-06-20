@@ -98,7 +98,8 @@ const workflowSteps = [
   "Open sources[].json_path when you need the source-level provenance graph.",
   "Use gaps.tracks[].provenance.source_refs when auditing what could change a public rating.",
   "Use coverage_audit.tracks[].assessment to inspect how map coverage was judged.",
-  "Use findings[].quality when a workflow needs limitation, study-design, or human-relevance labels before summarizing."
+  "Use findings[].quality when a workflow needs limitation, study-design, or human-relevance labels before summarizing.",
+  "Use conflicts.tracks[].patterns to avoid treating one positive result as field consensus."
 ] as const;
 
 const fieldPathRows = [
@@ -128,6 +129,11 @@ const fieldPathRows = [
       "Derived quality and limitation layer for finding-level triage, with quality_class, study-design flags, human-relevance flags, and limitation tags."
   },
   {
+    field: "/data/evidence-conflicts.json",
+    meaning:
+      "Track-level consistency, conflict, and replication map with pattern flags, direction counts, and finding clusters."
+  },
+  {
     field: "/data/evidence-gaps.json",
     meaning: "Track-level gap ledger with outlook gaps, rating-change criteria, coverage gaps, density, and trial horizons."
   },
@@ -147,6 +153,11 @@ const fieldPathRows = [
     field: "findings[].quality",
     meaning:
       "Heuristic classification metadata that keeps source quality, study context, limitations, and human relevance attached to each finding."
+  },
+  {
+    field: "findings[].consistency_contexts",
+    meaning:
+      "Track-level consistency class and pattern labels attached to finding rows for retrieval and anti-cherrypicking filters."
   },
   {
     field: "sources[].json_path",
@@ -240,6 +251,10 @@ export default async function DataAccessPage() {
               <span>Evidence quality JSON</span>
               <ArrowRight aria-hidden="true" size={16} />
             </a>
+            <a className="section-link" href="/data/evidence-conflicts.json">
+              <span>Evidence conflicts JSON</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
             <a className="section-link" href="/data/evidence-gaps.json">
               <span>Evidence gaps JSON</span>
               <ArrowRight aria-hidden="true" size={16} />
@@ -262,6 +277,10 @@ export default async function DataAccessPage() {
             </a>
             <a className="section-link" href="/data/evidence-quality.schema.json">
               <span>Evidence quality schema</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
+            <a className="section-link" href="/data/evidence-conflicts.schema.json">
+              <span>Evidence conflicts schema</span>
               <ArrowRight aria-hidden="true" size={16} />
             </a>
             <a className="section-link" href="/data/evidence-gaps.schema.json">

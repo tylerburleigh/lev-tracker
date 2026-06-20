@@ -165,6 +165,7 @@
         "quality_classes",
         "limitations",
         "human_relevance",
+        "consistency_patterns",
         "species",
         "source_reuse",
         "sorts"
@@ -204,6 +205,9 @@
           "$ref": "#/$defs/filterOptionArray"
         },
         "human_relevance": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "consistency_patterns": {
           "$ref": "#/$defs/filterOptionArray"
         },
         "species": {
@@ -275,6 +279,30 @@
         "safety_unresolved",
         "review_not_primary_evidence",
         "industry_or_conflict_caveat"
+      ]
+    },
+    "consistencyClass": {
+      "enum": [
+        "consistent_positive_signal",
+        "mixed_or_conflicting_signal",
+        "animal_positive_human_limited",
+        "biomarker_positive_function_mixed",
+        "single_source_or_unreplicated",
+        "registry_results_gap",
+        "insufficient_mapped_evidence"
+      ]
+    },
+    "consistencyPattern": {
+      "enum": [
+        "positive_and_null_or_negative",
+        "animal_positive_human_null_or_mixed",
+        "biomarker_positive_function_mixed_or_null",
+        "single_source_positive_signal",
+        "registry_no_results_with_positive_claims",
+        "preclinical_positive_no_human",
+        "review_context_without_primary",
+        "mixed_direction_findings",
+        "replicated_human_positive_signal"
       ]
     },
     "qualityClassCounts": {
@@ -488,6 +516,54 @@
         }
       }
     },
+    "evidenceConsistencyContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "track_id",
+        "track_name",
+        "href",
+        "consistency_class",
+        "consistency_class_label",
+        "consistency_class_meaning",
+        "consistency_reason",
+        "patterns",
+        "pattern_labels"
+      ],
+      "properties": {
+        "track_id": {
+          "type": "string"
+        },
+        "track_name": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string",
+          "pattern": "^/tracks/"
+        },
+        "consistency_class": {
+          "$ref": "#/$defs/consistencyClass"
+        },
+        "consistency_class_label": {
+          "type": "string"
+        },
+        "consistency_class_meaning": {
+          "type": "string"
+        },
+        "consistency_reason": {
+          "type": "string"
+        },
+        "patterns": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/consistencyPattern"
+          }
+        },
+        "pattern_labels": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        }
+      }
+    },
     "savedView": {
       "type": "object",
       "additionalProperties": false,
@@ -638,6 +714,7 @@
         "track_contexts",
         "hallmarks",
         "quality",
+        "consistency_contexts",
         "caveats"
       ],
       "properties": {
@@ -779,6 +856,12 @@
         },
         "quality": {
           "$ref": "#/$defs/evidenceQualityProfile"
+        },
+        "consistency_contexts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidenceConsistencyContext"
+          }
         },
         "caveats": {
           "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"

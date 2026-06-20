@@ -175,6 +175,24 @@ export type EvidenceLimitationTag =
   | "safety_unresolved"
   | "review_not_primary_evidence"
   | "industry_or_conflict_caveat";
+export type EvidenceConsistencyClass =
+  | "consistent_positive_signal"
+  | "mixed_or_conflicting_signal"
+  | "animal_positive_human_limited"
+  | "biomarker_positive_function_mixed"
+  | "single_source_or_unreplicated"
+  | "registry_results_gap"
+  | "insufficient_mapped_evidence";
+export type EvidenceConsistencyPattern =
+  | "positive_and_null_or_negative"
+  | "animal_positive_human_null_or_mixed"
+  | "biomarker_positive_function_mixed_or_null"
+  | "single_source_positive_signal"
+  | "registry_no_results_with_positive_claims"
+  | "preclinical_positive_no_human"
+  | "review_context_without_primary"
+  | "mixed_direction_findings"
+  | "replicated_human_positive_signal";
 
 export type EvidenceIndexFilters = {
   q?: string;
@@ -192,6 +210,7 @@ export type EvidenceIndexFilters = {
   quality_class?: EvidenceQualityClass | "";
   limitation?: EvidenceLimitationTag | "";
   human_relevance?: EvidenceHumanRelevanceFlag | "";
+  consistency_pattern?: EvidenceConsistencyPattern | "";
   sort?: EvidenceIndexSort | "";
   limit?: number;
 };
@@ -230,6 +249,13 @@ export type EvidenceQualityFilters = {
   limitation?: EvidenceLimitationTag | "";
   human_relevance?: EvidenceHumanRelevanceFlag | "";
   source_type?: string;
+  limit?: number;
+};
+
+export type EvidenceConflictFilters = {
+  track?: string;
+  consistency_class?: EvidenceConsistencyClass | "";
+  pattern?: EvidenceConsistencyPattern | "";
   limit?: number;
 };
 
@@ -1210,6 +1236,67 @@ const evidenceLimitationTags: EvidenceLimitationTag[] = [
   "safety_unresolved",
   "review_not_primary_evidence",
   "industry_or_conflict_caveat"
+];
+
+const evidenceConsistencyClassLabels: Record<EvidenceConsistencyClass, string> = {
+  consistent_positive_signal: "Consistent positive signal",
+  mixed_or_conflicting_signal: "Mixed or conflicting signal",
+  animal_positive_human_limited: "Animal-positive, human-limited",
+  biomarker_positive_function_mixed: "Biomarker-positive, function mixed",
+  single_source_or_unreplicated: "Single-source or unreplicated",
+  registry_results_gap: "Registry results gap",
+  insufficient_mapped_evidence: "Insufficient mapped evidence"
+};
+
+const evidenceConsistencyClasses: EvidenceConsistencyClass[] = [
+  "consistent_positive_signal",
+  "mixed_or_conflicting_signal",
+  "animal_positive_human_limited",
+  "biomarker_positive_function_mixed",
+  "single_source_or_unreplicated",
+  "registry_results_gap",
+  "insufficient_mapped_evidence"
+];
+
+const evidenceConsistencyClassPlainMeanings: Record<EvidenceConsistencyClass, string> = {
+  consistent_positive_signal:
+    "Mapped findings lean positive across more than one source or study without a dominant contradiction pattern.",
+  mixed_or_conflicting_signal:
+    "Positive findings coexist with mixed, null, negative, or inconclusive findings in the same track.",
+  animal_positive_human_limited:
+    "Animal-positive evidence exists, but human evidence is absent, mixed, null, or otherwise limiting.",
+  biomarker_positive_function_mixed:
+    "Human biomarker findings look positive while functional, clinical, or healthspan outcomes remain mixed, null, or absent.",
+  single_source_or_unreplicated:
+    "The positive signal currently rests on one source or study, so replication is a central limitation.",
+  registry_results_gap:
+    "Positive or promising claims coexist with registry-linked trials that have no posted results or pending results.",
+  insufficient_mapped_evidence:
+    "Too few promoted findings are mapped to judge consistency or replication."
+};
+
+const evidenceConsistencyPatternLabels: Record<EvidenceConsistencyPattern, string> = {
+  positive_and_null_or_negative: "Positive plus null/negative",
+  animal_positive_human_null_or_mixed: "Animal positive, human null/mixed",
+  biomarker_positive_function_mixed_or_null: "Biomarker positive, function mixed/null",
+  single_source_positive_signal: "Single-source positive signal",
+  registry_no_results_with_positive_claims: "No-results registry with positive claims",
+  preclinical_positive_no_human: "Preclinical positive, no human evidence",
+  review_context_without_primary: "Review context without primary result",
+  mixed_direction_findings: "Mixed-direction findings",
+  replicated_human_positive_signal: "Replicated human positive signal"
+};
+
+const evidenceConsistencyPatterns: EvidenceConsistencyPattern[] = [
+  "positive_and_null_or_negative",
+  "animal_positive_human_null_or_mixed",
+  "biomarker_positive_function_mixed_or_null",
+  "single_source_positive_signal",
+  "registry_no_results_with_positive_claims",
+  "preclinical_positive_no_human",
+  "review_context_without_primary",
+  "mixed_direction_findings",
+  "replicated_human_positive_signal"
 ];
 
 const findingWeightLabels: Record<Confidence, string> = {
@@ -2809,6 +2896,14 @@ export function getEvidenceHumanRelevanceFlagLabel(flag: EvidenceHumanRelevanceF
   return evidenceHumanRelevanceFlagLabels[flag];
 }
 
+export function getEvidenceConsistencyClassLabel(consistencyClass: EvidenceConsistencyClass) {
+  return evidenceConsistencyClassLabels[consistencyClass];
+}
+
+export function getEvidenceConsistencyPatternLabel(pattern: EvidenceConsistencyPattern) {
+  return evidenceConsistencyPatternLabels[pattern];
+}
+
 export function getFindingWeightLabel(confidence: Confidence) {
   return findingWeightLabels[confidence];
 }
@@ -3742,6 +3837,7 @@ function cleanEvidenceIndexFilters(filters: EvidenceIndexFilters = {}) {
     quality_class: filters.quality_class ?? "",
     limitation: filters.limitation ?? "",
     human_relevance: filters.human_relevance ?? "",
+    consistency_pattern: filters.consistency_pattern ?? "",
     sort: filters.sort || "strength",
     limit
   };
@@ -3791,6 +3887,12 @@ function getEvidenceIndexSearchText(row: {
     limitation_tags: string[];
     limitation_labels: string[];
   };
+  consistency_contexts?: Array<{
+    consistency_class: string;
+    consistency_class_label: string;
+    patterns: string[];
+    pattern_labels: string[];
+  }>;
 }) {
   return [
     row.id,
@@ -3826,6 +3928,12 @@ function getEvidenceIndexSearchText(row: {
     ...(row.quality?.human_relevance_flag_labels ?? []),
     ...(row.quality?.limitation_tags ?? []),
     ...(row.quality?.limitation_labels ?? []),
+    ...(row.consistency_contexts ?? []).flatMap((context) => [
+      context.consistency_class,
+      context.consistency_class_label,
+      ...context.patterns,
+      ...context.pattern_labels
+    ]),
     ...row.caveats
   ]
     .filter((value): value is string => Boolean(value))
@@ -3852,6 +3960,9 @@ function applyEvidenceIndexFilters<
       limitation_tags: EvidenceLimitationTag[];
       human_relevance_flags: EvidenceHumanRelevanceFlag[];
     };
+    consistency_contexts?: Array<{
+      patterns: EvidenceConsistencyPattern[];
+    }>;
   }
 >(rows: T[], filters: EvidenceIndexFilters) {
   const selected = cleanEvidenceIndexFilters(filters);
@@ -3874,6 +3985,10 @@ function applyEvidenceIndexFilters<
       (!selected.quality_class || row.quality.quality_class === selected.quality_class) &&
       (!selected.limitation || row.quality.limitation_tags.includes(selected.limitation)) &&
       (!selected.human_relevance || row.quality.human_relevance_flags.includes(selected.human_relevance)) &&
+      (!selected.consistency_pattern ||
+        (row.consistency_contexts ?? []).some((context) =>
+          context.patterns.includes(selected.consistency_pattern as EvidenceConsistencyPattern)
+        )) &&
       (!selected.source_reuse ||
         (selected.source_reuse === "multi_track"
           ? row.source_reuse_track_count > 1
@@ -3960,6 +4075,340 @@ function getEvidenceQualityTagCountRows<T extends string, R extends { quality: u
       count: rows.filter((row) => getValues(row).includes(value)).length
     }))
     .filter((item) => item.count > 0);
+}
+
+type EvidenceConsistencyIndexRow = {
+  id: string;
+  name: string;
+  href: string;
+  source_id: string;
+  study_id?: string;
+  track_ids: string[];
+  direction: string;
+  direction_label: string;
+  evidence_tier: string;
+  evidence_tier_label: string;
+  endpoint_category: string;
+  endpoint_category_label: string;
+  confidence: Confidence;
+  species: string;
+  source_type?: string;
+  quality: {
+    quality_class: EvidenceQualityClass;
+    limitation_tags: EvidenceLimitationTag[];
+    study_design_flags: EvidenceStudyDesignFlag[];
+    human_relevance_flags: EvidenceHumanRelevanceFlag[];
+  };
+  source: {
+    id: string;
+    name: string;
+    short_name?: string;
+    source_type: string;
+    href?: string;
+  } | null;
+  study: {
+    id: string;
+    name: string;
+  } | null;
+};
+
+function getEvidenceConsistencyFindingRef(row: EvidenceConsistencyIndexRow) {
+  return {
+    id: row.id,
+    name: row.name,
+    href: row.href,
+    direction: row.direction,
+    direction_label: row.direction_label,
+    evidence_tier: row.evidence_tier,
+    evidence_tier_label: row.evidence_tier_label,
+    endpoint_category: row.endpoint_category,
+    endpoint_category_label: row.endpoint_category_label,
+    source_id: row.source_id,
+    source_name: row.source?.short_name ?? row.source?.name,
+    study_id: row.study_id,
+    study_name: row.study?.name
+  };
+}
+
+function getEvidenceDirectionCountRows(rows: EvidenceConsistencyIndexRow[]) {
+  const directionOrder = ["positive", "mixed", "inconclusive", "null", "negative", "not_applicable"];
+
+  return directionOrder
+    .map((value) => ({
+      value,
+      label: getReadableDataLabel(value),
+      count: rows.filter((row) => row.direction === value).length
+    }))
+    .filter((item) => item.count > 0);
+}
+
+function getEvidenceTierCountRows(rows: EvidenceConsistencyIndexRow[]) {
+  return uniqueSorted(rows.map((row) => row.evidence_tier)).map((value) => ({
+    value,
+    label: getReadableDataLabel(value),
+    count: rows.filter((row) => row.evidence_tier === value).length
+  }));
+}
+
+function hasFunctionOrClinicalEndpoint(row: EvidenceConsistencyIndexRow) {
+  return (
+    ["functional", "healthspan", "lifespan", "safety"].includes(row.endpoint_category) ||
+    ["human_function", "human_clinical_outcome", "mortality_or_lifespan"].includes(row.evidence_tier)
+  );
+}
+
+function getEvidenceConsistencyPatternRows(patterns: EvidenceConsistencyPattern[]) {
+  return patterns.map((pattern) => ({
+    value: pattern,
+    label: evidenceConsistencyPatternLabels[pattern]
+  }));
+}
+
+function getEvidenceConsistencyClassCounts(rows: Array<{ consistency_class: EvidenceConsistencyClass }>) {
+  return Object.fromEntries(
+    evidenceConsistencyClasses.map((consistencyClass) => [
+      consistencyClass,
+      rows.filter((row) => row.consistency_class === consistencyClass).length
+    ])
+  ) as Record<EvidenceConsistencyClass, number>;
+}
+
+function getEvidenceConsistencyPatternCounts(rows: Array<{ patterns: EvidenceConsistencyPattern[] }>) {
+  return evidenceConsistencyPatterns
+    .map((pattern) => ({
+      value: pattern,
+      label: evidenceConsistencyPatternLabels[pattern],
+      count: rows.filter((row) => row.patterns.includes(pattern)).length
+    }))
+    .filter((item) => item.count > 0);
+}
+
+function getEvidenceConsistencyClass({
+  findingCount,
+  positiveRows,
+  limitingRows,
+  patterns
+}: {
+  findingCount: number;
+  positiveRows: EvidenceConsistencyIndexRow[];
+  limitingRows: EvidenceConsistencyIndexRow[];
+  patterns: EvidenceConsistencyPattern[];
+}): EvidenceConsistencyClass {
+  if (findingCount < 2) {
+    return "insufficient_mapped_evidence";
+  }
+
+  if (patterns.includes("registry_no_results_with_positive_claims")) {
+    return "registry_results_gap";
+  }
+
+  if (patterns.includes("biomarker_positive_function_mixed_or_null")) {
+    return "biomarker_positive_function_mixed";
+  }
+
+  if (
+    patterns.includes("animal_positive_human_null_or_mixed") ||
+    patterns.includes("preclinical_positive_no_human")
+  ) {
+    return "animal_positive_human_limited";
+  }
+
+  if (patterns.includes("positive_and_null_or_negative") || patterns.includes("mixed_direction_findings")) {
+    return "mixed_or_conflicting_signal";
+  }
+
+  if (patterns.includes("single_source_positive_signal")) {
+    return "single_source_or_unreplicated";
+  }
+
+  if (positiveRows.length > 0 && limitingRows.length <= Math.max(1, Math.floor(positiveRows.length / 3))) {
+    return "consistent_positive_signal";
+  }
+
+  return limitingRows.length > 0 ? "mixed_or_conflicting_signal" : "insufficient_mapped_evidence";
+}
+
+function getEvidenceConsistencyReason({
+  consistencyClass,
+  positiveRows,
+  limitingRows,
+  sourceCount,
+  studyCount,
+  patternLabels
+}: {
+  consistencyClass: EvidenceConsistencyClass;
+  positiveRows: EvidenceConsistencyIndexRow[];
+  limitingRows: EvidenceConsistencyIndexRow[];
+  sourceCount: number;
+  studyCount: number;
+  patternLabels: string[];
+}) {
+  const parts = [
+    `${positiveRows.length} positive and ${limitingRows.length} limiting/mixed finding(s)`,
+    `${sourceCount} source(s)`,
+    `${studyCount} study link(s)`
+  ];
+
+  if (patternLabels.length) {
+    parts.push(`patterns: ${patternLabels.slice(0, 3).join(", ")}`);
+  }
+
+  return `${evidenceConsistencyClassLabels[consistencyClass]}. ${parts.join("; ")}.`;
+}
+
+function getEvidenceConsistencyTrackRows({
+  evidenceMap,
+  rows
+}: {
+  evidenceMap: Awaited<ReturnType<typeof getEvidenceMapExport>>;
+  rows: EvidenceConsistencyIndexRow[];
+}) {
+  return evidenceMap.tracks.map((track) => {
+    const trackRows = rows.filter((row) => row.track_ids.includes(track.id));
+    const positiveRows = trackRows.filter((row) => row.direction === "positive");
+    const nullOrNegativeRows = trackRows.filter((row) => row.direction === "null" || row.direction === "negative");
+    const mixedRows = trackRows.filter((row) => row.direction === "mixed" || row.direction === "inconclusive");
+    const limitingRows = [...nullOrNegativeRows, ...mixedRows];
+    const humanRows = trackRows.filter((row) => row.species === "human");
+    const humanPositiveRows = positiveRows.filter((row) => row.species === "human");
+    const humanLimitingRows = limitingRows.filter((row) => row.species === "human");
+    const animalPositiveRows = positiveRows.filter((row) => row.species === "animal");
+    const biomarkerPositiveRows = positiveRows.filter(
+      (row) => row.evidence_tier === "human_biomarker" || row.endpoint_category === "biomarker"
+    );
+    const functionOrClinicalRows = trackRows.filter(hasFunctionOrClinicalEndpoint);
+    const functionOrClinicalLimitingRows = limitingRows.filter(hasFunctionOrClinicalEndpoint);
+    const registryNoResultsRows = trackRows.filter((row) => row.quality.limitation_tags.includes("no_posted_results"));
+    const reviewContextRows = trackRows.filter(
+      (row) =>
+        row.quality.study_design_flags.includes("review_or_meta_analysis") ||
+        row.evidence_tier === "review_or_meta_analysis" ||
+        row.evidence_tier === "regulatory_or_program_update"
+    );
+    const primaryResultRows = trackRows.filter(
+      (row) =>
+        !row.quality.study_design_flags.includes("review_or_meta_analysis") &&
+        row.evidence_tier !== "review_or_meta_analysis" &&
+        row.evidence_tier !== "regulatory_or_program_update"
+    );
+    const sourceIds = uniqueSorted(trackRows.map((row) => row.source_id));
+    const studyIds = uniqueSorted(trackRows.map((row) => row.study_id));
+    const positiveSourceIds = uniqueSorted(positiveRows.map((row) => row.source_id));
+    const positiveStudyIds = uniqueSorted(positiveRows.map((row) => row.study_id));
+    const humanPositiveSourceIds = uniqueSorted(humanPositiveRows.map((row) => row.source_id));
+    const humanPositiveStudyIds = uniqueSorted(humanPositiveRows.map((row) => row.study_id));
+    const patternSet = new Set<EvidenceConsistencyPattern>();
+
+    if (positiveRows.length > 0 && nullOrNegativeRows.length > 0) {
+      patternSet.add("positive_and_null_or_negative");
+    }
+
+    if (mixedRows.length > 0) {
+      patternSet.add("mixed_direction_findings");
+    }
+
+    if (animalPositiveRows.length > 0 && (humanLimitingRows.length > 0 || humanPositiveRows.length === 0)) {
+      patternSet.add("animal_positive_human_null_or_mixed");
+    }
+
+    if (
+      biomarkerPositiveRows.length > 0 &&
+      (functionOrClinicalLimitingRows.length > 0 || functionOrClinicalRows.length === 0)
+    ) {
+      patternSet.add("biomarker_positive_function_mixed_or_null");
+    }
+
+    if (positiveRows.length > 0 && positiveSourceIds.length <= 1) {
+      patternSet.add("single_source_positive_signal");
+    }
+
+    if (registryNoResultsRows.length > 0 && positiveRows.length > 0) {
+      patternSet.add("registry_no_results_with_positive_claims");
+    }
+
+    if (animalPositiveRows.length > 0 && humanRows.length === 0) {
+      patternSet.add("preclinical_positive_no_human");
+    }
+
+    if (reviewContextRows.length > 0 && primaryResultRows.length === 0) {
+      patternSet.add("review_context_without_primary");
+    }
+
+    if (humanPositiveRows.length >= 2 && humanPositiveSourceIds.length >= 2 && humanPositiveStudyIds.length >= 2) {
+      patternSet.add("replicated_human_positive_signal");
+    }
+
+    const patterns = getOrderedEvidenceValues(patternSet, evidenceConsistencyPatterns);
+    const patternLabels = patterns.map((pattern) => evidenceConsistencyPatternLabels[pattern]);
+    const consistencyClass = getEvidenceConsistencyClass({
+      findingCount: trackRows.length,
+      positiveRows,
+      limitingRows,
+      patterns
+    });
+
+    return {
+      id: track.id,
+      name: track.name,
+      href: track.href,
+      primary_hallmark_id: track.primary_hallmark_id,
+      primary_hallmark_name: track.primary_hallmark_name,
+      stage: track.outlook?.stage,
+      stage_label: track.outlook?.stage_label,
+      read_firmness: track.outlook?.confidence,
+      read_firmness_label: track.outlook?.read_firmness_label,
+      coverage_verdict: track.coverage?.coverage_verdict,
+      coverage_verdict_label: track.coverage?.coverage_verdict_label,
+      coverage_confidence: track.coverage?.coverage_confidence,
+      coverage_confidence_label: track.coverage?.coverage_confidence_label,
+      consistency_class: consistencyClass,
+      consistency_class_label: evidenceConsistencyClassLabels[consistencyClass],
+      consistency_class_meaning: evidenceConsistencyClassPlainMeanings[consistencyClass],
+      consistency_reason: getEvidenceConsistencyReason({
+        consistencyClass,
+        positiveRows,
+        limitingRows,
+        sourceCount: sourceIds.length,
+        studyCount: studyIds.length,
+        patternLabels
+      }),
+      patterns,
+      pattern_labels: patternLabels,
+      direction_counts: getEvidenceDirectionCountRows(trackRows),
+      evidence_tier_counts: getEvidenceTierCountRows(trackRows),
+      counts: {
+        finding_count: trackRows.length,
+        source_count: sourceIds.length,
+        study_count: studyIds.length,
+        positive_finding_count: positiveRows.length,
+        limiting_or_mixed_finding_count: limitingRows.length,
+        human_positive_finding_count: humanPositiveRows.length,
+        human_limiting_or_mixed_finding_count: humanLimitingRows.length,
+        animal_positive_finding_count: animalPositiveRows.length,
+        biomarker_positive_finding_count: biomarkerPositiveRows.length,
+        function_or_clinical_limiting_count: functionOrClinicalLimitingRows.length,
+        registry_no_results_count: registryNoResultsRows.length,
+        positive_source_count: positiveSourceIds.length,
+        positive_study_count: positiveStudyIds.length
+      },
+      finding_clusters: {
+        positive: positiveRows.map(getEvidenceConsistencyFindingRef),
+        limiting_or_mixed: limitingRows.map(getEvidenceConsistencyFindingRef),
+        animal_positive: animalPositiveRows.map(getEvidenceConsistencyFindingRef),
+        human_limiting_or_mixed: humanLimitingRows.map(getEvidenceConsistencyFindingRef),
+        biomarker_positive: biomarkerPositiveRows.map(getEvidenceConsistencyFindingRef),
+        function_or_clinical_limiting: functionOrClinicalLimitingRows.map(getEvidenceConsistencyFindingRef),
+        registry_no_results: registryNoResultsRows.map(getEvidenceConsistencyFindingRef)
+      },
+      paths: {
+        track_page_path: track.href,
+        evidence_page_path: `/evidence?track=${encodeURIComponent(track.id)}`,
+        evidence_conflicts_path: `/data/evidence-conflicts.json?track=${encodeURIComponent(track.id)}`,
+        evidence_quality_path: `/data/evidence-quality.json?track=${encodeURIComponent(track.id)}`,
+        evidence_index_path: `/data/evidence-index.json?track=${encodeURIComponent(track.id)}`
+      }
+    };
+  });
 }
 
 export async function getScopedEvidenceMapExport(trackId: string) {
@@ -4491,7 +4940,7 @@ export async function getEvidenceIndexExport(filters: EvidenceIndexFilters = {})
     }
   }
 
-  const allRows = evidenceMap.findings.map((finding) => {
+  const baseRows = evidenceMap.findings.map((finding) => {
     const source = sourceById.get(finding.source_id);
     const study = finding.study_id ? studyById.get(finding.study_id) : undefined;
     const rowInterventions = (finding.intervention_ids ?? [])
@@ -4555,27 +5004,50 @@ export async function getEvidenceIndexExport(filters: EvidenceIndexFilters = {})
       quality
     };
 
+    return row;
+  });
+  const consistencyRows = getEvidenceConsistencyTrackRows({ evidenceMap, rows: baseRows });
+  const consistencyByTrackId = new Map(consistencyRows.map((track) => [track.id, track]));
+  const allRows = baseRows.map((row) => {
+    const rowStudy = row.study_id ? studyById.get(row.study_id) : undefined;
+    const consistencyContexts = row.track_ids
+      .map((trackId) => consistencyByTrackId.get(trackId))
+      .filter((track): track is NonNullable<typeof track> => Boolean(track))
+      .map((track) => ({
+        track_id: track.id,
+        track_name: track.name,
+        href: track.href,
+        consistency_class: track.consistency_class,
+        consistency_class_label: track.consistency_class_label,
+        consistency_class_meaning: track.consistency_class_meaning,
+        consistency_reason: track.consistency_reason,
+        patterns: track.patterns,
+        pattern_labels: track.pattern_labels
+      }));
+
     return {
       ...row,
+      consistency_contexts: consistencyContexts,
       searchable_text: getEvidenceIndexSearchText({
         ...row,
-        source: source
+        consistency_contexts: consistencyContexts,
+        source: row.source
           ? {
-              id: source.id,
-              name: source.name,
-              short_name: source.short_name,
-              source_type: source.source_type,
-              venue: source.venue,
-              year: source.year
+              id: row.source.id,
+              name: row.source.name,
+              short_name: row.source.short_name,
+              source_type: row.source.source_type,
+              venue: row.source.venue,
+              year: row.source.year
             }
           : undefined,
-        study: study
+        study: rowStudy
           ? {
-              id: study.id,
-              name: study.name,
-              summary: study.summary,
-              population: study.population,
-              model_system: study.model_system
+              id: rowStudy.id,
+              name: rowStudy.name,
+              summary: rowStudy.summary,
+              population: rowStudy.population,
+              model_system: rowStudy.model_system
             }
           : undefined
       })
@@ -4636,6 +5108,20 @@ export async function getEvidenceIndexExport(filters: EvidenceIndexFilters = {})
       summary: "Registry-linked findings where absent or pending results are central to interpretation.",
       kind: "evidence",
       filters: { quality_class: "registry_or_no_results" }
+    },
+    {
+      id: "animal-positive-human-limited",
+      label: "Animal positive, human limited",
+      summary: "Findings in tracks where animal-positive signals outpace direct or consistent human evidence.",
+      kind: "evidence",
+      filters: { consistency_pattern: "animal_positive_human_null_or_mixed" }
+    },
+    {
+      id: "biomarker-positive-function-mixed",
+      label: "Biomarker positive, function mixed",
+      summary: "Findings in tracks where biomarker-positive signals do not yet align cleanly with functional outcomes.",
+      kind: "evidence",
+      filters: { consistency_pattern: "biomarker_positive_function_mixed_or_null" }
     },
     {
       id: "multi-track-sources",
@@ -4746,6 +5232,10 @@ export async function getEvidenceIndexExport(filters: EvidenceIndexFilters = {})
       human_relevance: evidenceHumanRelevanceFlags.map((flag) => ({
         value: flag,
         label: evidenceHumanRelevanceFlagLabels[flag]
+      })),
+      consistency_patterns: evidenceConsistencyPatterns.map((pattern) => ({
+        value: pattern,
+        label: evidenceConsistencyPatternLabels[pattern]
       })),
       species: [
         { value: "human", label: "Human" },
@@ -4948,6 +5438,169 @@ export async function getTrackEvidenceQualityProfile(trackId: string) {
     human_relevance: qualityExport.summary.human_relevance_counts.slice(0, 6),
     data_path: `/data/evidence-quality.json?track=${encodeURIComponent(trackId)}`,
     page_path: `/evidence?track=${encodeURIComponent(trackId)}`
+  };
+}
+
+function cleanEvidenceConflictFilters(filters: EvidenceConflictFilters = {}) {
+  const limit = filters.limit && Number.isFinite(filters.limit) ? Math.max(1, Math.min(200, filters.limit)) : undefined;
+
+  return {
+    track: filters.track ?? "",
+    consistency_class: filters.consistency_class ?? "",
+    pattern: filters.pattern ?? "",
+    limit
+  };
+}
+
+function getEvidenceConflictQueryPath(path: string, filters: EvidenceConflictFilters) {
+  const params = new URLSearchParams();
+  const cleaned = cleanEvidenceConflictFilters(filters);
+
+  for (const [key, value] of Object.entries(cleaned)) {
+    if (!value) {
+      continue;
+    }
+
+    params.set(key, String(value));
+  }
+
+  const query = params.toString();
+  return query ? `${path}?${query}` : path;
+}
+
+function getAppliedEvidenceConflictFilters(filters: ReturnType<typeof cleanEvidenceConflictFilters>) {
+  return Object.fromEntries(
+    Object.entries(filters)
+      .filter(([, value]) => Boolean(value))
+      .map(([key, value]) => [key, String(value)])
+  );
+}
+
+function getEvidenceConsistencyLegend() {
+  return evidenceConsistencyClasses.map((consistencyClass) => ({
+    value: consistencyClass,
+    label: evidenceConsistencyClassLabels[consistencyClass],
+    plain_meaning: evidenceConsistencyClassPlainMeanings[consistencyClass]
+  }));
+}
+
+function applyEvidenceConflictFilters<
+  T extends {
+    id: string;
+    consistency_class: EvidenceConsistencyClass;
+    patterns: EvidenceConsistencyPattern[];
+  }
+>(rows: T[], filters: EvidenceConflictFilters) {
+  const selected = cleanEvidenceConflictFilters(filters);
+
+  return rows.filter(
+    (row) =>
+      (!selected.track || row.id === selected.track) &&
+      (!selected.consistency_class || row.consistency_class === selected.consistency_class) &&
+      (!selected.pattern || row.patterns.includes(selected.pattern))
+  );
+}
+
+export async function getEvidenceConflictsExport(filters: EvidenceConflictFilters = {}) {
+  noStore();
+  const selected = cleanEvidenceConflictFilters(filters);
+  const [evidenceMap, evidenceIndex] = await Promise.all([
+    getEvidenceMapExport(),
+    getEvidenceIndexExport({ sort: "strength" })
+  ]);
+  const allRows = getEvidenceConsistencyTrackRows({ evidenceMap, rows: evidenceIndex.findings }).sort(
+    (left, right) =>
+      right.counts.limiting_or_mixed_finding_count - left.counts.limiting_or_mixed_finding_count ||
+      right.patterns.length - left.patterns.length ||
+      left.name.localeCompare(right.name)
+  );
+  const filteredRows = applyEvidenceConflictFilters(allRows, selected);
+  const exportedRows = selected.limit ? filteredRows.slice(0, selected.limit) : filteredRows;
+
+  return {
+    schema_version: "1.0.0",
+    schema_url: "/data/evidence-conflicts.schema.json",
+    export_type: "lev_tracker_evidence_conflicts",
+    generated_at: new Date().toISOString(),
+    last_public_update: evidenceMap.last_public_update,
+    canonical_path: getEvidenceConflictQueryPath("/data/evidence-conflicts.json", selected),
+    page_path: selected.track ? `/tracks/${encodeURIComponent(selected.track)}` : "/evidence",
+    applied_filters: getAppliedEvidenceConflictFilters(selected),
+    methodology: {
+      classification_basis:
+        "Consistency classes and patterns are derived from promoted finding directions, evidence tiers, endpoint categories, species context, quality limitation tags, source IDs, study IDs, and registry no-results flags.",
+      not_meta_analysis:
+        "This export is a tracker-level conflict and replication triage map; it is not a statistical meta-analysis or formal systematic-review synthesis.",
+      primary_uses: [
+        "Find tracks where positive signals coexist with null, negative, mixed, or no-results evidence.",
+        "Identify animal-positive or biomarker-positive areas that lack aligned human functional or clinical replication.",
+        "Give expert and language-model workflows explicit guardrails against cherry-picking a single positive finding."
+      ]
+    },
+    caveats: [
+      "Consistency labels describe promoted tracker findings and may miss unpublished, unmapped, or newly published literature.",
+      "A conflict pattern does not prove an intervention fails; it marks where interpretation needs source-level review.",
+      "A consistent positive signal is still not medical advice or proof of lifespan extension."
+    ],
+    consistency_class_legend: getEvidenceConsistencyLegend(),
+    pattern_legend: getEvidenceConsistencyPatternRows(evidenceConsistencyPatterns),
+    summary: {
+      total_track_count: allRows.length,
+      filtered_track_count: filteredRows.length,
+      returned_track_count: exportedRows.length,
+      track_with_patterns_count: exportedRows.filter((row) => row.patterns.length > 0).length,
+      mixed_or_conflicting_track_count: exportedRows.filter(
+        (row) =>
+          row.consistency_class === "mixed_or_conflicting_signal" ||
+          row.consistency_class === "animal_positive_human_limited" ||
+          row.consistency_class === "biomarker_positive_function_mixed" ||
+          row.consistency_class === "registry_results_gap"
+      ).length,
+      consistency_class_counts: getEvidenceConsistencyClassCounts(filteredRows),
+      pattern_counts: getEvidenceConsistencyPatternCounts(filteredRows)
+    },
+    facet_options: {
+      tracks: evidenceMap.tracks.map((track) => ({ value: track.id, label: track.name })),
+      consistency_classes: evidenceConsistencyClasses.map((consistencyClass) => ({
+        value: consistencyClass,
+        label: evidenceConsistencyClassLabels[consistencyClass]
+      })),
+      patterns: evidenceConsistencyPatterns.map((pattern) => ({
+        value: pattern,
+        label: evidenceConsistencyPatternLabels[pattern]
+      }))
+    },
+    source_file_patterns: {
+      public_records: ["data/sources/*.json", "data/studies/*.json", "data/findings/*.json"],
+      derived_from: ["/data/evidence-index.json", "/data/evidence-quality.json", "/data/evidence-map.json"]
+    },
+    tracks: exportedRows
+  };
+}
+
+export async function getTrackEvidenceConsistencyProfile(trackId: string) {
+  noStore();
+  const conflictExport = await getEvidenceConflictsExport({ track: trackId });
+  const track = conflictExport.tracks[0];
+
+  if (!track) {
+    return undefined;
+  }
+
+  return {
+    track_id: track.id,
+    consistency_class: track.consistency_class,
+    consistency_class_label: track.consistency_class_label,
+    consistency_class_meaning: track.consistency_class_meaning,
+    consistency_reason: track.consistency_reason,
+    patterns: track.patterns.map((pattern) => ({
+      value: pattern,
+      label: evidenceConsistencyPatternLabels[pattern]
+    })),
+    counts: track.counts,
+    direction_counts: track.direction_counts,
+    data_path: `/data/evidence-conflicts.json?track=${encodeURIComponent(track.id)}`,
+    page_path: `/evidence?track=${encodeURIComponent(track.id)}`
   };
 }
 

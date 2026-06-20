@@ -18,6 +18,7 @@ import {
   getReadFirmnessLabel,
   getStageLabel,
   getStudiesForTrack,
+  getTrackEvidenceConsistencyProfile,
   getTrackEvidenceQualityProfile,
   getTrackEvidenceSupport,
   getTrackById,
@@ -160,6 +161,7 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
     recentChanges,
     trackActivity,
     trackQualityProfile,
+    trackConsistencyProfile,
     lastUpdated
   ] =
     await Promise.all([
@@ -170,6 +172,7 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
       getRecentChangesForSubject("track", trackId),
       getActivityForTrack(trackId),
       getTrackEvidenceQualityProfile(trackId),
+      getTrackEvidenceConsistencyProfile(trackId),
       getOverallLastUpdated()
     ]);
 
@@ -297,6 +300,60 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
                   ) : (
                     <p>No human-relevance flags are currently derived.</p>
                   )}
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {trackConsistencyProfile ? (
+        <section className="band band--compact">
+          <div className="page-shell evidence-quality-profile evidence-consistency-profile">
+            <div className="evidence-quality-profile__main">
+              <span className="section-kicker">Evidence consistency</span>
+              <h2>{trackConsistencyProfile.consistency_class_label}</h2>
+              <p>{trackConsistencyProfile.consistency_reason}</p>
+              <div className="evidence-source-row">
+                <Link className="mini-link" href={trackConsistencyProfile.page_path}>
+                  Open filtered evidence
+                </Link>
+                <a className="mini-link" href={trackConsistencyProfile.data_path}>
+                  Conflicts JSON
+                </a>
+              </div>
+            </div>
+            <div className="evidence-quality-profile__grid">
+              <article>
+                <h3>Class</h3>
+                <div className="evidence-consistency-summary">
+                  <strong>{trackConsistencyProfile.consistency_class_label}</strong>
+                  <p>{trackConsistencyProfile.consistency_class_meaning}</p>
+                </div>
+              </article>
+              <article>
+                <h3>Pattern flags</h3>
+                <div className="evidence-quality-profile__rows">
+                  {trackConsistencyProfile.patterns.length ? (
+                    trackConsistencyProfile.patterns.map((item) => (
+                      <div key={item.value}>
+                        <strong>{item.label}</strong>
+                      </div>
+                    ))
+                  ) : (
+                    <p>No conflict or replication pattern is currently derived.</p>
+                  )}
+                </div>
+              </article>
+              <article>
+                <h3>Direction mix</h3>
+                <div className="evidence-quality-profile__rows">
+                  {trackConsistencyProfile.direction_counts.map((item) => (
+                    <div key={item.value}>
+                      <strong>{item.label}</strong>
+                      <span>{item.count}</span>
+                    </div>
+                  ))}
                 </div>
               </article>
             </div>

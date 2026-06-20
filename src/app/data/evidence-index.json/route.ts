@@ -24,6 +24,7 @@ function getEvidenceIndexFilters(searchParams: URLSearchParams): EvidenceIndexFi
     quality_class: (searchParams.get("quality_class") ?? undefined) as EvidenceIndexFilters["quality_class"],
     limitation: (searchParams.get("limitation") ?? undefined) as EvidenceIndexFilters["limitation"],
     human_relevance: (searchParams.get("human_relevance") ?? undefined) as EvidenceIndexFilters["human_relevance"],
+    consistency_pattern: (searchParams.get("consistency_pattern") ?? undefined) as EvidenceIndexFilters["consistency_pattern"],
     sort: (searchParams.get("sort") ?? undefined) as EvidenceIndexFilters["sort"],
     limit: Number.isFinite(limit) ? limit : undefined
   };
