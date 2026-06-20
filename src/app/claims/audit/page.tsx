@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ClipboardCheck, Database, Search, X } from "lucide-react";
+import { ArrowRight, BarChart3, ClipboardCheck, Database, Search, X } from "lucide-react";
 
 import { PageHero } from "@/components/page-hero";
 import { SiteShell } from "@/components/site-shell";
@@ -106,6 +106,13 @@ function formatNumber(value: number) {
   return value.toLocaleString("en-US");
 }
 
+function formatPercent(value: number) {
+  return new Intl.NumberFormat("en-US", {
+    style: "percent",
+    maximumFractionDigits: 0
+  }).format(value);
+}
+
 function firstItems<T>(items: T[], limit: number) {
   return items.slice(0, limit);
 }
@@ -124,6 +131,33 @@ export default async function ClaimsAuditPage({ searchParams }: ClaimsAuditPageP
   const reviewRows = claimAudit.summary.review_status_counts;
   const lifecycleRows = claimAudit.summary.lifecycle_state_counts;
   const sourceRows = claimAudit.summary.source_kind_counts;
+  const progress = claimAudit.summary.review_progress;
+  const progressCards = [
+    {
+      label: "Reviewed",
+      value: formatPercent(progress.reviewed_ratio),
+      count: `${formatNumber(progress.reviewed_issue_count)} of ${formatNumber(progress.current_issue_count)} current rows`,
+      ratio: progress.reviewed_ratio
+    },
+    {
+      label: "Open backlog",
+      value: formatNumber(progress.unreviewed_issue_count),
+      count: `${formatNumber(progress.unresolved_issue_count)} unresolved rows still visible`,
+      ratio: progress.current_issue_count ? progress.unreviewed_issue_count / progress.current_issue_count : 0
+    },
+    {
+      label: "Suppressed",
+      value: formatPercent(progress.suppressed_ratio),
+      count: `${formatNumber(progress.suppressed_issue_count)} fixed or false-positive rows`,
+      ratio: progress.suppressed_ratio
+    },
+    {
+      label: "Resolved drift",
+      value: formatNumber(progress.resolved_issue_count),
+      count: `${formatNumber(progress.resolution_entry_count)} ledger entries tracked`,
+      ratio: progress.resolution_entry_count ? progress.resolved_issue_count / progress.resolution_entry_count : 0
+    }
+  ];
   const summaryRows = [
     ...reviewRows.map((row) => ({
       ...row,
@@ -198,6 +232,76 @@ export default async function ClaimsAuditPage({ searchParams }: ClaimsAuditPageP
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="band band--compact">
+        <div className="page-shell claim-review-progress">
+          <div className="tracks-table__head">
+            <div>
+              <BarChart3 aria-hidden="true" size={18} />
+              <span className="section-kicker">Review progress</span>
+              <h2>{formatPercent(progress.reviewed_ratio)} of matching rows have reviewer state</h2>
+              <p className="claim-audit-subhead">
+                {formatNumber(progress.unreviewed_issue_count)} open rows /{" "}
+                {formatNumber(progress.recurring_issue_count)} recurring rows /{" "}
+                {formatNumber(progress.resolved_issue_count)} ledger-only resolved rows
+              </p>
+            </div>
+            <a className="section-link" href={claimAudit.canonical_path}>
+              <span>Progress JSON</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
+          </div>
+          <div className="claim-review-progress-grid">
+            {progressCards.map((card) => (
+              <article className="claim-progress-card" key={card.label}>
+                <span>{card.label}</span>
+                <strong>{card.value}</strong>
+                <p>{card.count}</p>
+                <div className="claim-progress-meter" aria-hidden="true">
+                  <span style={{ width: `${Math.min(100, Math.round(card.ratio * 100))}%` }} />
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="claim-priority-list">
+            {claimAudit.summary.priority_track_queue.slice(0, 6).map((track) => (
+              <article className="claim-priority-row" key={track.track_id}>
+                <div>
+                  <Link href={track.audit_path}>
+                    <strong>{track.track_name}</strong>
+                  </Link>
+                  <p>
+                    {track.top_issue_type?.label ?? "Mixed issue types"} ·{" "}
+                    {track.top_source_kind?.label ?? "Mixed sources"}
+                  </p>
+                </div>
+                <div className="claim-priority-row__metrics">
+                  <span className="micro-badge micro-badge--gold">
+                    {formatNumber(track.unresolved_issue_count)} unresolved
+                  </span>
+                  <span className="micro-badge micro-badge--outline">
+                    {formatNumber(track.warning_issue_count)} warning
+                  </span>
+                  <span className="micro-badge micro-badge--muted">Priority {track.priority_score}</span>
+                </div>
+                <div className="evidence-gap-trace claims-link-list">
+                  <Link href={track.track_href}>Track</Link>
+                  <Link href={track.audit_path}>Rows</Link>
+                  <a href={track.review_packet_path}>Packet</a>
+                </div>
+              </article>
+            ))}
+          </div>
+          {!claimAudit.summary.priority_track_queue.length ? (
+            <div className="tracks-table__empty">
+              <strong>No priority tracks match those filters.</strong>
+              <Link className="mini-link" href="/claims/audit">
+                Reset filters
+              </Link>
+            </div>
+          ) : null}
         </div>
       </section>
 

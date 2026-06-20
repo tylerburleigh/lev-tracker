@@ -7219,6 +7219,146 @@ function getClaimConsistencyLifecycleStateCounts(
     .filter((item) => item.count > 0);
 }
 
+function getClaimConsistencyRatio(count: number, total: number) {
+  return total > 0 ? Number((count / total).toFixed(3)) : 0;
+}
+
+function getClaimConsistencyReviewProgress(
+  rows: Array<{
+    resolution: {
+      review_status: ClaimConsistencyReviewStatus;
+      lifecycle_state: ClaimConsistencyLifecycleState;
+      unresolved: boolean;
+    };
+  }>,
+  resolvedIssueCount: number,
+  resolutionEntryCount: number
+) {
+  const currentIssueCount = rows.length;
+  const openIssueCount = rows.filter((row) => row.resolution.review_status === "open").length;
+  const fixedIssueCount = rows.filter((row) => row.resolution.review_status === "fixed").length;
+  const falsePositiveIssueCount = rows.filter((row) => row.resolution.review_status === "false_positive").length;
+  const reviewedIssueCount = currentIssueCount - openIssueCount;
+  const unresolvedIssueCount = rows.filter((row) => row.resolution.unresolved).length;
+  const suppressedIssueCount = fixedIssueCount + falsePositiveIssueCount;
+
+  return {
+    scope: "applied_filters",
+    current_issue_count: currentIssueCount,
+    reviewed_issue_count: reviewedIssueCount,
+    unreviewed_issue_count: openIssueCount,
+    unresolved_issue_count: unresolvedIssueCount,
+    suppressed_issue_count: suppressedIssueCount,
+    recurring_issue_count: rows.filter((row) => row.resolution.lifecycle_state === "recurring").length,
+    resolved_issue_count: resolvedIssueCount,
+    resolution_entry_count: resolutionEntryCount,
+    reviewed_ratio: getClaimConsistencyRatio(reviewedIssueCount, currentIssueCount),
+    unresolved_ratio: getClaimConsistencyRatio(unresolvedIssueCount, currentIssueCount),
+    suppressed_ratio: getClaimConsistencyRatio(suppressedIssueCount, currentIssueCount)
+  };
+}
+
+function getClaimConsistencyTopCount<T extends string>(values: T[], labels: Record<T, string>) {
+  const counts = new Map<T, number>();
+
+  for (const value of values) {
+    counts.set(value, (counts.get(value) ?? 0) + 1);
+  }
+
+  const top = Array.from(counts.entries()).sort(
+    ([leftValue, leftCount], [rightValue, rightCount]) =>
+      rightCount - leftCount || labels[leftValue].localeCompare(labels[rightValue])
+  )[0];
+
+  if (!top) {
+    return undefined;
+  }
+
+  const [value, count] = top;
+  return {
+    value,
+    label: labels[value],
+    count
+  };
+}
+
+function getClaimConsistencyPriorityTrackQueue(
+  rows: Array<{
+    track_id: string;
+    track_name: string;
+    track_href: string;
+    issue_type: ClaimConsistencyIssueType;
+    severity: ClaimConsistencySeverity;
+    source_kind: ClaimConsistencySourceKind;
+    resolution: {
+      review_status: ClaimConsistencyReviewStatus;
+      lifecycle_state: ClaimConsistencyLifecycleState;
+      unresolved: boolean;
+    };
+  }>
+) {
+  const rowsByTrackId = new Map<string, typeof rows>();
+
+  for (const row of rows) {
+    rowsByTrackId.set(row.track_id, [...(rowsByTrackId.get(row.track_id) ?? []), row]);
+  }
+
+  return Array.from(rowsByTrackId.entries())
+    .map(([trackId, trackRows]) => {
+      const first = trackRows[0];
+      const criticalIssueCount = trackRows.filter((row) => row.severity === "critical").length;
+      const warningIssueCount = trackRows.filter((row) => row.severity === "warning").length;
+      const reviewIssueCount = trackRows.filter((row) => row.severity === "review").length;
+      const openIssueCount = trackRows.filter((row) => row.resolution.review_status === "open").length;
+      const unresolvedIssueCount = trackRows.filter((row) => row.resolution.unresolved).length;
+      const recurringIssueCount = trackRows.filter((row) => row.resolution.lifecycle_state === "recurring").length;
+      const reviewedIssueCount = trackRows.length - openIssueCount;
+      const topIssueType = getClaimConsistencyTopCount(
+        trackRows.map((row) => row.issue_type),
+        claimConsistencyIssueTypeLabels
+      );
+      const topSourceKind = getClaimConsistencyTopCount(
+        trackRows.map((row) => row.source_kind),
+        claimConsistencySourceKindLabels
+      );
+
+      return {
+        track_id: trackId,
+        track_name: first.track_name,
+        track_href: first.track_href,
+        priority_score:
+          criticalIssueCount * 1000 +
+          warningIssueCount * 120 +
+          reviewIssueCount * 30 +
+          openIssueCount * 8 +
+          recurringIssueCount * 5,
+        total_issue_count: trackRows.length,
+        unresolved_issue_count: unresolvedIssueCount,
+        open_issue_count: openIssueCount,
+        reviewed_issue_count: reviewedIssueCount,
+        recurring_issue_count: recurringIssueCount,
+        critical_issue_count: criticalIssueCount,
+        warning_issue_count: warningIssueCount,
+        review_issue_count: reviewIssueCount,
+        top_issue_type: topIssueType,
+        top_source_kind: topSourceKind,
+        audit_path: getClaimConsistencyAuditQueryPath("/claims/audit", { track: trackId }),
+        review_packet_path: getClaimConsistencyAuditQueryPath("/data/claim-consistency-review-packet.json", {
+          track: trackId,
+          review_status: "open",
+          limit: 25
+        })
+      };
+    })
+    .sort(
+      (left, right) =>
+        right.priority_score - left.priority_score ||
+        right.unresolved_issue_count - left.unresolved_issue_count ||
+        left.track_name.localeCompare(right.track_name)
+    )
+    .slice(0, 10);
+}
+
 function enrichClaimConsistencyRowsWithResolution<
   T extends {
     fingerprint: string;
@@ -7497,6 +7637,12 @@ export async function getClaimConsistencyAuditExport(filters: ClaimConsistencyAu
       fixed_issue_count: filteredRows.filter((row) => row.resolution.review_status === "fixed").length,
       false_positive_issue_count: filteredRows.filter((row) => row.resolution.review_status === "false_positive").length,
       resolution_entry_count: resolutionLedger.resolutions.length,
+      review_progress: getClaimConsistencyReviewProgress(
+        filteredRows,
+        resolvedIssueRecords.length,
+        resolutionLedger.resolutions.length
+      ),
+      priority_track_queue: getClaimConsistencyPriorityTrackQueue(filteredRows),
       issue_type_counts: getClaimConsistencyIssueTypeCounts(filteredRows),
       severity_counts: getClaimConsistencySeverityCounts(filteredRows),
       source_kind_counts: getClaimConsistencySourceKindCounts(filteredRows),

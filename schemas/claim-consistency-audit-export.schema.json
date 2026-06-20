@@ -421,6 +421,8 @@
         "fixed_issue_count",
         "false_positive_issue_count",
         "resolution_entry_count",
+        "review_progress",
+        "priority_track_queue",
         "issue_type_counts",
         "severity_counts",
         "source_kind_counts",
@@ -482,6 +484,15 @@
         "resolution_entry_count": {
           "$ref": "#/$defs/count"
         },
+        "review_progress": {
+          "$ref": "#/$defs/reviewProgress"
+        },
+        "priority_track_queue": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/priorityTrack"
+          }
+        },
         "issue_type_counts": {
           "$ref": "#/$defs/countRowArray"
         },
@@ -496,6 +507,141 @@
         },
         "lifecycle_state_counts": {
           "$ref": "#/$defs/countRowArray"
+        }
+      }
+    },
+    "reviewProgress": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope",
+        "current_issue_count",
+        "reviewed_issue_count",
+        "unreviewed_issue_count",
+        "unresolved_issue_count",
+        "suppressed_issue_count",
+        "recurring_issue_count",
+        "resolved_issue_count",
+        "resolution_entry_count",
+        "reviewed_ratio",
+        "unresolved_ratio",
+        "suppressed_ratio"
+      ],
+      "properties": {
+        "scope": {
+          "const": "applied_filters"
+        },
+        "current_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "reviewed_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "unreviewed_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "unresolved_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "suppressed_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "recurring_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "resolved_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "resolution_entry_count": {
+          "$ref": "#/$defs/count"
+        },
+        "reviewed_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "unresolved_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "suppressed_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "priorityTrack": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "track_id",
+        "track_name",
+        "track_href",
+        "priority_score",
+        "total_issue_count",
+        "unresolved_issue_count",
+        "open_issue_count",
+        "reviewed_issue_count",
+        "recurring_issue_count",
+        "critical_issue_count",
+        "warning_issue_count",
+        "review_issue_count",
+        "audit_path",
+        "review_packet_path"
+      ],
+      "properties": {
+        "track_id": {
+          "type": "string"
+        },
+        "track_name": {
+          "type": "string"
+        },
+        "track_href": {
+          "type": "string",
+          "pattern": "^/tracks/.+"
+        },
+        "priority_score": {
+          "$ref": "#/$defs/count"
+        },
+        "total_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "unresolved_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "open_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "reviewed_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "recurring_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "critical_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "warning_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "review_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "top_issue_type": {
+          "$ref": "#/$defs/countRow"
+        },
+        "top_source_kind": {
+          "$ref": "#/$defs/countRow"
+        },
+        "audit_path": {
+          "type": "string",
+          "pattern": "^/claims/audit\\?track=.+"
+        },
+        "review_packet_path": {
+          "type": "string",
+          "pattern": "^/data/claim-consistency-review-packet\\.json\\?track=.+"
         }
       }
     },
