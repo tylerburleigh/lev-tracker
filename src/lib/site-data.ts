@@ -279,6 +279,7 @@ export type EvidenceConflictFilters = {
 };
 
 export type ClaimGuardrailFilters = {
+  q?: string;
   track?: string;
   boundary_class?: ClaimBoundaryClass | "";
   overclaim_risk?: ClaimOverclaimRisk | "";
@@ -6193,6 +6194,7 @@ function cleanClaimGuardrailFilters(filters: ClaimGuardrailFilters = {}) {
   const limit = filters.limit && Number.isFinite(filters.limit) ? Math.max(1, Math.min(200, filters.limit)) : undefined;
 
   return {
+    q: filters.q?.trim() ?? "",
     track: filters.track ?? "",
     boundary_class: filters.boundary_class ?? "",
     overclaim_risk: filters.overclaim_risk ?? "",
@@ -6227,17 +6229,49 @@ function getAppliedClaimGuardrailFilters(filters: ReturnType<typeof cleanClaimGu
 function applyClaimGuardrailFilters<
   T extends {
     id: string;
+    name: string;
+    primary_hallmark_name: string;
+    stage_label?: string;
+    read_firmness_label?: string;
     boundary_class: ClaimBoundaryClass;
-    overclaim_risks: Array<{ value: ClaimOverclaimRisk }>;
+    boundary_class_label: string;
+    guardrail_summary: string;
+    supported_claims: string[];
+    unsupported_claims: string[];
+    required_caveats: string[];
+    overclaim_risks: Array<{ value: ClaimOverclaimRisk; label?: string; reason?: string }>;
   }
 >(rows: T[], filters: ClaimGuardrailFilters) {
   const selected = cleanClaimGuardrailFilters(filters);
+  const query = selected.q.toLocaleLowerCase();
 
   return rows.filter(
-    (row) =>
-      (!selected.track || row.id === selected.track) &&
-      (!selected.boundary_class || row.boundary_class === selected.boundary_class) &&
-      (!selected.overclaim_risk || row.overclaim_risks.some((risk) => risk.value === selected.overclaim_risk))
+    (row) => {
+      const searchableText = [
+        row.id,
+        row.name,
+        row.primary_hallmark_name,
+        row.stage_label,
+        row.read_firmness_label,
+        row.boundary_class,
+        row.boundary_class_label,
+        row.guardrail_summary,
+        ...row.supported_claims,
+        ...row.unsupported_claims,
+        ...row.required_caveats,
+        ...row.overclaim_risks.flatMap((risk) => [risk.value, risk.label, risk.reason])
+      ]
+        .filter((value): value is string => Boolean(value))
+        .join(" ")
+        .toLocaleLowerCase();
+
+      return (
+        (!query || searchableText.includes(query)) &&
+        (!selected.track || row.id === selected.track) &&
+        (!selected.boundary_class || row.boundary_class === selected.boundary_class) &&
+        (!selected.overclaim_risk || row.overclaim_risks.some((risk) => risk.value === selected.overclaim_risk))
+      );
+    }
   );
 }
 

@@ -3631,6 +3631,81 @@ time {
   line-height: 1.5;
 }
 
+.claims-overview .data-scoped-main > svg {
+  color: var(--coral);
+}
+
+.claims-boundary-grid .data-scoped-card strong {
+  font-size: 1.6rem;
+}
+
+.claims-risk-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--text);
+  border-bottom: 1px solid var(--paper-rule);
+}
+
+.claims-risk-pill {
+  display: grid;
+  gap: 6px;
+  padding: 12px 16px;
+  border-left: 1px solid var(--paper-rule);
+}
+
+.claims-risk-pill:first-child {
+  border-left: 0;
+}
+
+.claims-risk-pill strong {
+  font-size: 0.95rem;
+  line-height: 1.25;
+}
+
+.claims-risk-pill span {
+  color: var(--text-soft);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.claim-guardrails-table {
+  min-width: 1240px;
+}
+
+.claim-guardrails-table tbody th {
+  width: 24rem;
+}
+
+.claim-guardrails-table .micro-badge {
+  display: inline-flex;
+  width: fit-content;
+  margin: 0 0 8px;
+}
+
+.claims-risk-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.claims-risk-tags .evidence-chip {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 0;
+  font-size: 0.72rem;
+}
+
+.claims-caveat-list {
+  margin-top: 8px;
+}
+
+.claims-link-list a {
+  display: inline-flex;
+}
+
 .evidence-gap-trace,
 .evidence-gap-source-links {
   display: flex;
@@ -4991,6 +5066,7 @@ time {
   .data-usage-panel,
   .data-card-grid,
   .data-stat-grid,
+  .claims-risk-strip,
   .evidence-quality-profile__grid,
   .coverage-read-grid,
   .coverage-method-grid,
@@ -5026,7 +5102,15 @@ time {
     border-left: 0;
   }
 
+  .claims-risk-pill:nth-child(odd) {
+    border-left: 0;
+  }
+
   .data-scoped-card:nth-child(n + 3) {
+    border-top: 1px solid var(--paper-rule);
+  }
+
+  .claims-risk-pill:nth-child(n + 3) {
     border-top: 1px solid var(--paper-rule);
   }
 
@@ -5157,6 +5241,7 @@ time {
   .data-usage-panel,
   .data-card-grid,
   .data-stat-grid,
+  .claims-risk-strip,
   .coverage-read-grid,
   .coverage-method-grid,
   .guide-route-grid,
@@ -5204,6 +5289,15 @@ time {
   }
 
   .data-scoped-card:first-child {
+    border-top: 0;
+  }
+
+  .claims-risk-pill {
+    border-left: 0;
+    border-top: 1px solid var(--paper-rule);
+  }
+
+  .claims-risk-pill:first-child {
     border-top: 0;
   }
 

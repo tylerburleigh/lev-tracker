@@ -9,6 +9,7 @@ function getClaimGuardrailFilters(searchParams: URLSearchParams): ClaimGuardrail
   const limit = limitValue ? Number(limitValue) : undefined;
 
   return {
+    q: searchParams.get("q") ?? undefined,
     track: searchParams.get("track") ?? undefined,
     boundary_class: (searchParams.get("boundary_class") ?? undefined) as ClaimGuardrailFilters["boundary_class"],
     overclaim_risk: (searchParams.get("overclaim_risk") ?? undefined) as ClaimGuardrailFilters["overclaim_risk"],
