@@ -193,6 +193,25 @@ export type EvidenceConsistencyPattern =
   | "review_context_without_primary"
   | "mixed_direction_findings"
   | "replicated_human_positive_signal";
+export type ClaimBoundaryClass =
+  | "human_claim_bounded"
+  | "early_human_signal_only"
+  | "preclinical_or_mechanistic_only"
+  | "conflicted_or_mixed_claim"
+  | "registry_pending_claim"
+  | "coverage_limited_claim"
+  | "not_yet_claimable";
+export type ClaimOverclaimRisk =
+  | "human_lifespan_extension"
+  | "clinical_use_or_medical_advice"
+  | "class_wide_generalization"
+  | "dose_schedule_transfer"
+  | "biomarker_surrogate_leap"
+  | "preclinical_translation_leap"
+  | "single_study_or_source_overweight"
+  | "safety_or_durability_overclaim"
+  | "registry_results_absent"
+  | "coverage_completeness_overclaim";
 
 export type EvidenceIndexFilters = {
   q?: string;
@@ -256,6 +275,13 @@ export type EvidenceConflictFilters = {
   track?: string;
   consistency_class?: EvidenceConsistencyClass | "";
   pattern?: EvidenceConsistencyPattern | "";
+  limit?: number;
+};
+
+export type ClaimGuardrailFilters = {
+  track?: string;
+  boundary_class?: ClaimBoundaryClass | "";
+  overclaim_risk?: ClaimOverclaimRisk | "";
   limit?: number;
 };
 
@@ -1297,6 +1323,69 @@ const evidenceConsistencyPatterns: EvidenceConsistencyPattern[] = [
   "review_context_without_primary",
   "mixed_direction_findings",
   "replicated_human_positive_signal"
+];
+
+const claimBoundaryClassLabels: Record<ClaimBoundaryClass, string> = {
+  human_claim_bounded: "Human claim, bounded",
+  early_human_signal_only: "Early human signal only",
+  preclinical_or_mechanistic_only: "Preclinical or mechanistic only",
+  conflicted_or_mixed_claim: "Conflicted or mixed claim",
+  registry_pending_claim: "Registry-pending claim",
+  coverage_limited_claim: "Coverage-limited claim",
+  not_yet_claimable: "Not yet claimable"
+};
+
+const claimBoundaryClasses: ClaimBoundaryClass[] = [
+  "human_claim_bounded",
+  "early_human_signal_only",
+  "preclinical_or_mechanistic_only",
+  "conflicted_or_mixed_claim",
+  "registry_pending_claim",
+  "coverage_limited_claim",
+  "not_yet_claimable"
+];
+
+const claimBoundaryClassPlainMeanings: Record<ClaimBoundaryClass, string> = {
+  human_claim_bounded:
+    "The tracker can make a narrow human-evidence statement, but caveats must stay attached.",
+  early_human_signal_only:
+    "The tracker can describe early human biomarker or limited-function signals, not durable healthspan or lifespan benefit.",
+  preclinical_or_mechanistic_only:
+    "The tracker can describe biological plausibility or nonhuman signals, not direct human benefit.",
+  conflicted_or_mixed_claim:
+    "The tracker must emphasize mixed, null, or conflicting evidence when summarizing this track.",
+  registry_pending_claim:
+    "The tracker must emphasize unresolved registry results before treating the evidence as settled.",
+  coverage_limited_claim:
+    "The tracker must qualify claims because map coverage is not strong enough to separate field scarcity from missing review work.",
+  not_yet_claimable:
+    "The tracker should avoid a substantive efficacy claim until more promoted evidence or coverage is available."
+};
+
+const claimOverclaimRiskLabels: Record<ClaimOverclaimRisk, string> = {
+  human_lifespan_extension: "Human lifespan extension",
+  clinical_use_or_medical_advice: "Clinical use or medical advice",
+  class_wide_generalization: "Class-wide generalization",
+  dose_schedule_transfer: "Dose or schedule transfer",
+  biomarker_surrogate_leap: "Biomarker surrogate leap",
+  preclinical_translation_leap: "Preclinical translation leap",
+  single_study_or_source_overweight: "Single-study or source overweight",
+  safety_or_durability_overclaim: "Safety or durability overclaim",
+  registry_results_absent: "Registry results absent",
+  coverage_completeness_overclaim: "Coverage completeness overclaim"
+};
+
+const claimOverclaimRisks: ClaimOverclaimRisk[] = [
+  "human_lifespan_extension",
+  "clinical_use_or_medical_advice",
+  "class_wide_generalization",
+  "dose_schedule_transfer",
+  "biomarker_surrogate_leap",
+  "preclinical_translation_leap",
+  "single_study_or_source_overweight",
+  "safety_or_durability_overclaim",
+  "registry_results_absent",
+  "coverage_completeness_overclaim"
 ];
 
 const findingWeightLabels: Record<Confidence, string> = {
@@ -2902,6 +2991,14 @@ export function getEvidenceConsistencyClassLabel(consistencyClass: EvidenceConsi
 
 export function getEvidenceConsistencyPatternLabel(pattern: EvidenceConsistencyPattern) {
   return evidenceConsistencyPatternLabels[pattern];
+}
+
+export function getClaimBoundaryClassLabel(boundaryClass: ClaimBoundaryClass) {
+  return claimBoundaryClassLabels[boundaryClass];
+}
+
+export function getClaimOverclaimRiskLabel(risk: ClaimOverclaimRisk) {
+  return claimOverclaimRiskLabels[risk];
 }
 
 export function getFindingWeightLabel(confidence: Confidence) {
@@ -5601,6 +5698,653 @@ export async function getTrackEvidenceConsistencyProfile(trackId: string) {
     direction_counts: track.direction_counts,
     data_path: `/data/evidence-conflicts.json?track=${encodeURIComponent(track.id)}`,
     page_path: `/evidence?track=${encodeURIComponent(track.id)}`
+  };
+}
+
+type ClaimGuardrailEvidenceMapTrack = Awaited<ReturnType<typeof getEvidenceMapExport>>["tracks"][number];
+type ClaimGuardrailConflictTrack = Awaited<ReturnType<typeof getEvidenceConflictsExport>>["tracks"][number];
+type ClaimGuardrailQualityFinding = Awaited<ReturnType<typeof getEvidenceQualityExport>>["findings"][number];
+type ClaimRiskReasonMap = Partial<Record<ClaimOverclaimRisk, string>>;
+
+function uniqueTextRows(values: Array<string | undefined>) {
+  return Array.from(new Set(values.map((value) => value?.trim()).filter((value): value is string => Boolean(value))));
+}
+
+function formatClaimItems(items: string[]) {
+  if (items.length <= 1) {
+    return items[0] ?? "";
+  }
+
+  if (items.length === 2) {
+    return `${items[0]} and ${items[1]}`;
+  }
+
+  return `${items.slice(0, -1).join(", ")}, and ${items[items.length - 1]}`;
+}
+
+function hasCoverageLimit(track: ClaimGuardrailEvidenceMapTrack) {
+  return (
+    !track.coverage ||
+    track.coverage.coverage_verdict === "thin" ||
+    track.coverage.coverage_confidence === "low"
+  );
+}
+
+function getClaimBoundaryClass({
+  track,
+  conflictTrack
+}: {
+  track: ClaimGuardrailEvidenceMapTrack;
+  conflictTrack: ClaimGuardrailConflictTrack;
+}): ClaimBoundaryClass {
+  if (!track.outlook || track.evidence_counts.finding_count === 0) {
+    return "not_yet_claimable";
+  }
+
+  if (hasCoverageLimit(track)) {
+    return "coverage_limited_claim";
+  }
+
+  if (
+    conflictTrack.consistency_class === "registry_results_gap" ||
+    conflictTrack.counts.registry_no_results_count > 0
+  ) {
+    return "registry_pending_claim";
+  }
+
+  if (
+    conflictTrack.consistency_class === "mixed_or_conflicting_signal" ||
+    conflictTrack.consistency_class === "animal_positive_human_limited" ||
+    conflictTrack.consistency_class === "biomarker_positive_function_mixed"
+  ) {
+    return "conflicted_or_mixed_claim";
+  }
+
+  switch (track.outlook.stage) {
+    case "durable_disease_or_mortality_relevance":
+    case "human_functional_benefit":
+      return "human_claim_bounded";
+    case "human_biomarker_signal":
+      return "early_human_signal_only";
+    case "animal_signal":
+    case "mechanistic_plausibility":
+      return "preclinical_or_mechanistic_only";
+    default:
+      return "not_yet_claimable";
+  }
+}
+
+function getClaimRiskRows(risks: Set<ClaimOverclaimRisk>, reasons: ClaimRiskReasonMap) {
+  return claimOverclaimRisks
+    .filter((risk) => risks.has(risk))
+    .map((risk) => ({
+      value: risk,
+      label: claimOverclaimRiskLabels[risk],
+      reason: reasons[risk] ?? "This risk should remain explicit when this track is summarized."
+    }));
+}
+
+function getClaimBoundaryLegend() {
+  return claimBoundaryClasses.map((boundaryClass) => ({
+    value: boundaryClass,
+    label: claimBoundaryClassLabels[boundaryClass],
+    plain_meaning: claimBoundaryClassPlainMeanings[boundaryClass]
+  }));
+}
+
+function getClaimBoundaryClassCounts(rows: Array<{ boundary_class: ClaimBoundaryClass }>) {
+  return Object.fromEntries(
+    claimBoundaryClasses.map((boundaryClass) => [
+      boundaryClass,
+      rows.filter((row) => row.boundary_class === boundaryClass).length
+    ])
+  ) as Record<ClaimBoundaryClass, number>;
+}
+
+function getClaimOverclaimRiskCounts(rows: Array<{ overclaim_risks: Array<{ value: ClaimOverclaimRisk }> }>) {
+  return claimOverclaimRisks
+    .map((risk) => ({
+      value: risk,
+      label: claimOverclaimRiskLabels[risk],
+      count: rows.filter((row) => row.overclaim_risks.some((item) => item.value === risk)).length
+    }))
+    .filter((item) => item.count > 0);
+}
+
+function getClaimGuardrailSupportedClaims({
+  track,
+  boundaryClass
+}: {
+  track: ClaimGuardrailEvidenceMapTrack;
+  boundaryClass: ClaimBoundaryClass;
+}) {
+  if (!track.outlook) {
+    return [
+      `The tracker has not promoted a current public efficacy read for ${track.name}.`,
+      `The appropriate use is provenance review, not a substantive benefit claim.`
+    ];
+  }
+
+  const stageLabel = track.outlook.stage_label;
+  const readFirmness = track.outlook.read_firmness_label.toLocaleLowerCase();
+  const claims = [
+    `The current tracker read for ${track.name} is ${stageLabel} with ${readFirmness} read firmness.`
+  ];
+
+  switch (track.outlook.stage) {
+    case "durable_disease_or_mortality_relevance":
+      claims.push(
+        `${track.name} has human disease, mortality, or durable-outcome relevance in the tracker, but that remains narrower than a LEV or clinical-use claim.`
+      );
+      break;
+    case "human_functional_benefit":
+      claims.push(
+        `${track.name} has some human functional evidence in the tracker, with interpretation bounded by limitations, safety, and durability.`
+      );
+      break;
+    case "human_biomarker_signal":
+      claims.push(
+        `${track.name} has early human biomarker or limited-function signals, not established durable healthspan or lifespan benefit.`
+      );
+      break;
+    case "animal_signal":
+      claims.push(
+        `${track.name} has promoted animal or preclinical signals, not established direct human benefit.`
+      );
+      break;
+    case "mechanistic_plausibility":
+      claims.push(
+        `${track.name} has biological rationale or mechanistic plausibility in the tracker, not demonstrated human benefit.`
+      );
+      break;
+  }
+
+  if (boundaryClass === "coverage_limited_claim") {
+    claims.push(`Any summary should say that map coverage is not strong enough to treat low counts as field scarcity.`);
+  }
+
+  if (boundaryClass === "registry_pending_claim") {
+    claims.push(`Any summary should say that unresolved or absent registry results could change the read.`);
+  }
+
+  if (boundaryClass === "conflicted_or_mixed_claim") {
+    claims.push(`Any summary should keep mixed, null, limiting, or unreplicated evidence visible.`);
+  }
+
+  return uniqueTextRows(claims);
+}
+
+function getClaimGuardrailUnsupportedClaims({
+  track,
+  boundaryClass,
+  conflictTrack
+}: {
+  track: ClaimGuardrailEvidenceMapTrack;
+  boundaryClass: ClaimBoundaryClass;
+  conflictTrack: ClaimGuardrailConflictTrack;
+}) {
+  const claims = [
+    `${track.name} extends human lifespan, reverses aging, or delivers LEV.`,
+    `${track.name} is safe or effective for personal use.`,
+    `A favorable finding for ${track.name} establishes clinical readiness, dosing guidance, or medical advice.`,
+    `All interventions in ${track.name} share the same benefit-risk profile.`,
+    `Animal, mechanistic, or biomarker results for ${track.name} prove durable human healthspan benefit.`
+  ];
+
+  if (boundaryClass === "registry_pending_claim" || conflictTrack.counts.registry_no_results_count > 0) {
+    claims.push(`Pending or absent trial results for ${track.name} can be treated as positive evidence.`);
+  }
+
+  if (boundaryClass === "coverage_limited_claim") {
+    claims.push(`Low mapped evidence for ${track.name} proves the field itself is empty.`);
+  }
+
+  return uniqueTextRows(claims);
+}
+
+function getClaimGuardrailCaveats({
+  track,
+  conflictTrack,
+  qualityRows,
+  topLimitations
+}: {
+  track: ClaimGuardrailEvidenceMapTrack;
+  conflictTrack: ClaimGuardrailConflictTrack;
+  qualityRows: ClaimGuardrailQualityFinding[];
+  topLimitations: Array<{ value: EvidenceLimitationTag; label: string; count: number }>;
+}) {
+  const coverageCaveat = track.coverage
+    ? `Coverage: ${track.coverage.coverage_verdict_label ?? "Unrated map"}; ${
+        track.coverage.coverage_confidence_label ?? "unrated map confidence"
+      }.`
+    : "Coverage has not been assessed enough to separate field scarcity from incomplete map work.";
+  const limitationLabels = topLimitations.slice(0, 4).map((item) => item.label.toLocaleLowerCase());
+  const limitationCaveat = limitationLabels.length
+    ? `Top derived limitations include ${formatClaimItems(limitationLabels)}.`
+    : undefined;
+  const qualityCaveat = qualityRows.length
+    ? `Quality labels summarize ${qualityRows.length} promoted finding(s), not a formal risk-of-bias review.`
+    : undefined;
+
+  return uniqueTextRows([
+    "Not medical advice; do not convert tracker labels into dosing, treatment, or personal-use guidance.",
+    "Track-level claims may not apply to every exemplar intervention in the family.",
+    coverageCaveat,
+    conflictTrack.consistency_reason,
+    limitationCaveat,
+    qualityCaveat,
+    ...(track.outlook?.main_evidence_gaps ?? []),
+    ...(track.outlook?.strongest_current_evidence ?? []).map((item) => `Strongest current evidence: ${item}.`)
+  ]).slice(0, 10);
+}
+
+function getClaimGuardrailUpgradeConditions({
+  track,
+  boundaryClass
+}: {
+  track: ClaimGuardrailEvidenceMapTrack;
+  boundaryClass: ClaimBoundaryClass;
+}) {
+  const conditions = [
+    ...(track.outlook?.what_would_change_the_rating ?? []),
+    "Independent human functional or clinical replication with acceptable safety and durability.",
+    "Source-level review that resolves the main limitation tags without introducing stronger counterevidence."
+  ];
+
+  if (boundaryClass === "registry_pending_claim") {
+    conditions.push("Posted registry results resolving the active or no-results trial uncertainty.");
+  }
+
+  if (boundaryClass === "coverage_limited_claim") {
+    conditions.push("Higher-confidence coverage assessment showing the map is adequate or strong.");
+  }
+
+  return uniqueTextRows(conditions).slice(0, 8);
+}
+
+function getClaimGuardrailWeakenConditions({
+  boundaryClass
+}: {
+  boundaryClass: ClaimBoundaryClass;
+}) {
+  const conditions = [
+    "Null, negative, or mixed human functional or clinical results.",
+    "Safety or durability signals dominate the benefit interpretation.",
+    "Independent replication fails or shows materially smaller effects.",
+    "Coverage repair finds missing limiting evidence."
+  ];
+
+  if (boundaryClass === "registry_pending_claim") {
+    conditions.push("Registry trials remain unpublished or report null, negative, or safety-limiting results.");
+  }
+
+  if (boundaryClass === "coverage_limited_claim") {
+    conditions.push("A stronger map shows the current positive read was missing important counterevidence.");
+  }
+
+  return uniqueTextRows(conditions);
+}
+
+function getClaimGuardrailTrackRows({
+  evidenceMap,
+  conflictsExport,
+  qualityExport
+}: {
+  evidenceMap: Awaited<ReturnType<typeof getEvidenceMapExport>>;
+  conflictsExport: Awaited<ReturnType<typeof getEvidenceConflictsExport>>;
+  qualityExport: Awaited<ReturnType<typeof getEvidenceQualityExport>>;
+}) {
+  const conflictByTrackId = new Map(conflictsExport.tracks.map((track) => [track.id, track]));
+  const qualityRowsByTrackId = new Map<string, ClaimGuardrailQualityFinding[]>();
+
+  for (const row of qualityExport.findings) {
+    for (const trackId of row.track_ids) {
+      qualityRowsByTrackId.set(trackId, [...(qualityRowsByTrackId.get(trackId) ?? []), row]);
+    }
+  }
+
+  return evidenceMap.tracks.map((track) => {
+    const conflictTrack = conflictByTrackId.get(track.id);
+
+    if (!conflictTrack) {
+      throw new Error(`Missing evidence consistency row for track ${track.id}`);
+    }
+
+    const qualityRows = qualityRowsByTrackId.get(track.id) ?? [];
+    const limitationSet = new Set(qualityRows.flatMap((row) => row.quality.limitation_tags));
+    const topLimitations = getEvidenceQualityTagCountRows({
+      rows: qualityRows,
+      order: evidenceLimitationTags,
+      labels: evidenceLimitationTagLabels,
+      getValues: (row) => row.quality.limitation_tags
+    }).slice(0, 6);
+    const boundaryClass = getClaimBoundaryClass({ track, conflictTrack });
+    const risks = new Set<ClaimOverclaimRisk>();
+    const riskReasons: ClaimRiskReasonMap = {};
+    const addRisk = (risk: ClaimOverclaimRisk, reason: string) => {
+      risks.add(risk);
+      riskReasons[risk] = reason;
+    };
+
+    addRisk(
+      "human_lifespan_extension",
+      "Evidence stages below LEV do not establish generalized human lifespan extension."
+    );
+    addRisk(
+      "clinical_use_or_medical_advice",
+      "Tracker labels are evidence-map summaries, not treatment recommendations."
+    );
+    addRisk(
+      "class_wide_generalization",
+      "Track families group heterogeneous interventions that may not share one benefit-risk profile."
+    );
+    addRisk(
+      "dose_schedule_transfer",
+      "Source findings do not automatically transfer across dose, schedule, formulation, or population."
+    );
+
+    if (
+      track.outlook?.stage === "human_biomarker_signal" ||
+      limitationSet.has("surrogate_or_biomarker_endpoint") ||
+      conflictTrack.patterns.includes("biomarker_positive_function_mixed_or_null")
+    ) {
+      addRisk(
+        "biomarker_surrogate_leap",
+        "Biomarker or limited-function signals should not be rewritten as durable healthspan outcomes."
+      );
+    }
+
+    if (
+      track.outlook?.stage === "mechanistic_plausibility" ||
+      track.outlook?.stage === "animal_signal" ||
+      limitationSet.has("animal_only") ||
+      conflictTrack.patterns.includes("preclinical_positive_no_human") ||
+      conflictTrack.patterns.includes("animal_positive_human_null_or_mixed")
+    ) {
+      addRisk(
+        "preclinical_translation_leap",
+        "Preclinical or mechanism-heavy evidence should not be treated as direct human benefit."
+      );
+    }
+
+    if (
+      conflictTrack.patterns.includes("single_source_positive_signal") ||
+      (conflictTrack.counts.positive_finding_count > 0 && conflictTrack.counts.positive_source_count <= 1)
+    ) {
+      addRisk(
+        "single_study_or_source_overweight",
+        "The positive signal is not yet independently replicated across enough mapped sources."
+      );
+    }
+
+    if (
+      track.outlook?.stage !== "durable_disease_or_mortality_relevance" ||
+      limitationSet.has("safety_unresolved") ||
+      conflictTrack.counts.function_or_clinical_limiting_count > 0
+    ) {
+      addRisk(
+        "safety_or_durability_overclaim",
+        "Safety, durability, and functional endpoint limits should remain attached to the claim."
+      );
+    }
+
+    if (
+      conflictTrack.patterns.includes("registry_no_results_with_positive_claims") ||
+      conflictTrack.counts.registry_no_results_count > 0
+    ) {
+      addRisk(
+        "registry_results_absent",
+        "No-results or unresolved registry records should not be counted as positive evidence."
+      );
+    }
+
+    if (hasCoverageLimit(track)) {
+      addRisk(
+        "coverage_completeness_overclaim",
+        "Map coverage is not strong enough to infer that low mapped evidence means the field is empty."
+      );
+    }
+
+    const supportedClaims = getClaimGuardrailSupportedClaims({ track, boundaryClass });
+    const unsupportedClaims = getClaimGuardrailUnsupportedClaims({ track, boundaryClass, conflictTrack });
+    const requiredCaveats = getClaimGuardrailCaveats({
+      track,
+      conflictTrack,
+      qualityRows,
+      topLimitations
+    });
+    const limitationPhrase = topLimitations.length
+      ? ` Key caveats include ${formatClaimItems(
+          topLimitations
+            .slice(0, 3)
+            .map((item) => item.label.toLocaleLowerCase())
+        )}.`
+      : "";
+    const stageLabel = track.outlook?.stage_label ?? "Not rated yet";
+    const readFirmness = track.outlook?.read_firmness_label ?? "Unrated";
+    const guardrailSummary = `${claimBoundaryClassLabels[boundaryClass]}. The tracker currently reads ${
+      track.name
+    } as ${stageLabel} with ${readFirmness.toLocaleLowerCase()} read firmness; ${
+      conflictTrack.consistency_class_label
+    } and map-coverage caveats must stay attached.${limitationPhrase}`;
+
+    return {
+      id: track.id,
+      name: track.name,
+      href: track.href,
+      primary_hallmark_id: track.primary_hallmark_id,
+      primary_hallmark_name: track.primary_hallmark_name,
+      stage: track.outlook?.stage,
+      stage_label: track.outlook?.stage_label,
+      read_firmness: track.outlook?.confidence,
+      read_firmness_label: track.outlook?.read_firmness_label,
+      coverage_verdict: track.coverage?.coverage_verdict,
+      coverage_verdict_label: track.coverage?.coverage_verdict_label,
+      coverage_confidence: track.coverage?.coverage_confidence,
+      coverage_confidence_label: track.coverage?.coverage_confidence_label,
+      boundary_class: boundaryClass,
+      boundary_class_label: claimBoundaryClassLabels[boundaryClass],
+      boundary_class_meaning: claimBoundaryClassPlainMeanings[boundaryClass],
+      guardrail_summary: guardrailSummary,
+      supported_claims: supportedClaims,
+      unsupported_claims: unsupportedClaims,
+      must_not_infer: unsupportedClaims,
+      allowed_summary_phrasing: uniqueTextRows([
+        `The tracker currently reads ${track.name} as ${stageLabel} with ${readFirmness.toLocaleLowerCase()} read firmness.`,
+        `A fair summary should mention ${claimBoundaryClassLabels[boundaryClass].toLocaleLowerCase()} and ${conflictTrack.consistency_class_label.toLocaleLowerCase()}.`,
+        topLimitations.length
+          ? `Key caveats include ${formatClaimItems(
+              topLimitations
+                .slice(0, 3)
+                .map((item) => item.label.toLocaleLowerCase())
+            )}.`
+          : undefined
+      ]),
+      required_caveats: requiredCaveats,
+      overclaim_risks: getClaimRiskRows(risks, riskReasons),
+      claim_upgrade_conditions: getClaimGuardrailUpgradeConditions({ track, boundaryClass }),
+      claim_weaken_conditions: getClaimGuardrailWeakenConditions({ boundaryClass }),
+      conflict: {
+        consistency_class: conflictTrack.consistency_class,
+        consistency_class_label: conflictTrack.consistency_class_label,
+        consistency_reason: conflictTrack.consistency_reason,
+        patterns: conflictTrack.patterns,
+        pattern_labels: conflictTrack.pattern_labels,
+        counts: conflictTrack.counts
+      },
+      quality_snapshot: {
+        finding_count: qualityRows.length,
+        quality_class_counts: getEvidenceQualityClassCounts(qualityRows),
+        top_limitations: topLimitations
+      },
+      paths: {
+        track_page_path: track.href,
+        claim_guardrails_path: `/data/claim-guardrails.json?track=${encodeURIComponent(track.id)}`,
+        evidence_conflicts_path: `/data/evidence-conflicts.json?track=${encodeURIComponent(track.id)}`,
+        evidence_quality_path: `/data/evidence-quality.json?track=${encodeURIComponent(track.id)}`,
+        evidence_index_path: `/data/evidence-index.json?track=${encodeURIComponent(track.id)}`,
+        evidence_page_path: `/evidence?track=${encodeURIComponent(track.id)}`
+      }
+    };
+  });
+}
+
+function cleanClaimGuardrailFilters(filters: ClaimGuardrailFilters = {}) {
+  const limit = filters.limit && Number.isFinite(filters.limit) ? Math.max(1, Math.min(200, filters.limit)) : undefined;
+
+  return {
+    track: filters.track ?? "",
+    boundary_class: filters.boundary_class ?? "",
+    overclaim_risk: filters.overclaim_risk ?? "",
+    limit
+  };
+}
+
+function getClaimGuardrailQueryPath(path: string, filters: ClaimGuardrailFilters) {
+  const params = new URLSearchParams();
+  const cleaned = cleanClaimGuardrailFilters(filters);
+
+  for (const [key, value] of Object.entries(cleaned)) {
+    if (!value) {
+      continue;
+    }
+
+    params.set(key, String(value));
+  }
+
+  const query = params.toString();
+  return query ? `${path}?${query}` : path;
+}
+
+function getAppliedClaimGuardrailFilters(filters: ReturnType<typeof cleanClaimGuardrailFilters>) {
+  return Object.fromEntries(
+    Object.entries(filters)
+      .filter(([, value]) => Boolean(value))
+      .map(([key, value]) => [key, String(value)])
+  );
+}
+
+function applyClaimGuardrailFilters<
+  T extends {
+    id: string;
+    boundary_class: ClaimBoundaryClass;
+    overclaim_risks: Array<{ value: ClaimOverclaimRisk }>;
+  }
+>(rows: T[], filters: ClaimGuardrailFilters) {
+  const selected = cleanClaimGuardrailFilters(filters);
+
+  return rows.filter(
+    (row) =>
+      (!selected.track || row.id === selected.track) &&
+      (!selected.boundary_class || row.boundary_class === selected.boundary_class) &&
+      (!selected.overclaim_risk || row.overclaim_risks.some((risk) => risk.value === selected.overclaim_risk))
+  );
+}
+
+export async function getClaimGuardrailsExport(filters: ClaimGuardrailFilters = {}) {
+  noStore();
+  const selected = cleanClaimGuardrailFilters(filters);
+  const [evidenceMap, conflictsExport, qualityExport] = await Promise.all([
+    getEvidenceMapExport(),
+    getEvidenceConflictsExport(),
+    getEvidenceQualityExport()
+  ]);
+  const boundaryRank = new Map(claimBoundaryClasses.map((boundaryClass, index) => [boundaryClass, index]));
+  const allRows = getClaimGuardrailTrackRows({ evidenceMap, conflictsExport, qualityExport }).sort(
+    (left, right) =>
+      (boundaryRank.get(left.boundary_class) ?? 0) - (boundaryRank.get(right.boundary_class) ?? 0) ||
+      right.overclaim_risks.length - left.overclaim_risks.length ||
+      left.name.localeCompare(right.name)
+  );
+  const filteredRows = applyClaimGuardrailFilters(allRows, selected);
+  const exportedRows = selected.limit ? filteredRows.slice(0, selected.limit) : filteredRows;
+
+  return {
+    schema_version: "1.0.0",
+    schema_url: "/data/claim-guardrails.schema.json",
+    export_type: "lev_tracker_claim_guardrails",
+    generated_at: new Date().toISOString(),
+    last_public_update: evidenceMap.last_public_update,
+    canonical_path: getClaimGuardrailQueryPath("/data/claim-guardrails.json", selected),
+    page_path: selected.track ? `/tracks/${encodeURIComponent(selected.track)}` : "/data",
+    applied_filters: getAppliedClaimGuardrailFilters(selected),
+    methodology: {
+      classification_basis:
+        "Claim boundary classes and overclaim risks are derived from public outlook stage, read firmness, map coverage, finding-level quality tags, track-level consistency patterns, source replication counts, and registry no-results flags.",
+      not_claim_adjudication:
+        "This export is a phrasing and interpretation guardrail layer. It is not medical advice, a formal guideline, or a systematic-review certainty grade.",
+      primary_uses: [
+        "Keep expert-facing summaries attached to the evidence boundary that the tracker can actually support.",
+        "Give language-model workflows explicit supported-claim and unsupported-claim lists before generating prose.",
+        "Audit whether track pages, data exports, and downstream summaries overstate biomarker, preclinical, registry, safety, durability, or lifespan claims."
+      ]
+    },
+    caveats: [
+      "Claim guardrails are conservative heuristic metadata derived from tracker records and should be checked against source records before citation.",
+      "A bounded human claim is still not a clinical-use recommendation or evidence of human lifespan extension.",
+      "Coverage-limited labels mean the tracker may need more source discovery; they do not prove the research field is empty."
+    ],
+    boundary_class_legend: getClaimBoundaryLegend(),
+    overclaim_risk_legend: claimOverclaimRisks.map((risk) => ({
+      value: risk,
+      label: claimOverclaimRiskLabels[risk]
+    })),
+    summary: {
+      total_track_count: allRows.length,
+      filtered_track_count: filteredRows.length,
+      returned_track_count: exportedRows.length,
+      boundary_class_counts: getClaimBoundaryClassCounts(filteredRows),
+      overclaim_risk_counts: getClaimOverclaimRiskCounts(filteredRows),
+      high_risk_track_count: filteredRows.filter((row) => row.overclaim_risks.length >= 6).length,
+      coverage_limited_track_count: filteredRows.filter((row) => row.boundary_class === "coverage_limited_claim").length,
+      registry_pending_track_count: filteredRows.filter((row) => row.boundary_class === "registry_pending_claim").length
+    },
+    facet_options: {
+      tracks: evidenceMap.tracks.map((track) => ({ value: track.id, label: track.name })),
+      boundary_classes: claimBoundaryClasses.map((boundaryClass) => ({
+        value: boundaryClass,
+        label: claimBoundaryClassLabels[boundaryClass]
+      })),
+      overclaim_risks: claimOverclaimRisks.map((risk) => ({
+        value: risk,
+        label: claimOverclaimRiskLabels[risk]
+      }))
+    },
+    source_file_patterns: {
+      public_records: ["data/outlooks/*.json", "data/coverage-status/*.json", "data/sources/*.json", "data/studies/*.json", "data/findings/*.json"],
+      derived_from: [
+        "/data/evidence-map.json",
+        "/data/evidence-index.json",
+        "/data/evidence-quality.json",
+        "/data/evidence-conflicts.json"
+      ]
+    },
+    tracks: exportedRows
+  };
+}
+
+export async function getTrackClaimGuardrailProfile(trackId: string) {
+  noStore();
+  const guardrailsExport = await getClaimGuardrailsExport({ track: trackId });
+  const track = guardrailsExport.tracks[0];
+
+  if (!track) {
+    return undefined;
+  }
+
+  return {
+    track_id: track.id,
+    boundary_class: track.boundary_class,
+    boundary_class_label: track.boundary_class_label,
+    boundary_class_meaning: track.boundary_class_meaning,
+    guardrail_summary: track.guardrail_summary,
+    supported_claims: track.supported_claims,
+    unsupported_claims: track.unsupported_claims,
+    must_not_infer: track.must_not_infer,
+    required_caveats: track.required_caveats,
+    overclaim_risks: track.overclaim_risks,
+    data_path: track.paths.claim_guardrails_path,
+    page_path: track.paths.evidence_page_path
   };
 }
 

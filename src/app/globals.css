@@ -3613,6 +3613,24 @@ time {
   line-height: 1.5;
 }
 
+.claim-guardrail-profile {
+  border-top-color: var(--coral);
+}
+
+.claim-guardrail-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.claim-guardrail-list li {
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
 .evidence-gap-trace,
 .evidence-gap-source-links {
   display: flex;

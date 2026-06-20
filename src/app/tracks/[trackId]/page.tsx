@@ -18,6 +18,7 @@ import {
   getReadFirmnessLabel,
   getStageLabel,
   getStudiesForTrack,
+  getTrackClaimGuardrailProfile,
   getTrackEvidenceConsistencyProfile,
   getTrackEvidenceQualityProfile,
   getTrackEvidenceSupport,
@@ -162,6 +163,7 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
     trackActivity,
     trackQualityProfile,
     trackConsistencyProfile,
+    trackClaimGuardrailProfile,
     lastUpdated
   ] =
     await Promise.all([
@@ -173,6 +175,7 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
       getActivityForTrack(trackId),
       getTrackEvidenceQualityProfile(trackId),
       getTrackEvidenceConsistencyProfile(trackId),
+      getTrackClaimGuardrailProfile(trackId),
       getOverallLastUpdated()
     ]);
 
@@ -355,6 +358,52 @@ export default async function TrackDetailPage({ params }: TrackDetailPageProps) 
                     </div>
                   ))}
                 </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {trackClaimGuardrailProfile ? (
+        <section className="band band--compact" id="claim-boundaries">
+          <div className="page-shell evidence-quality-profile claim-guardrail-profile">
+            <div className="evidence-quality-profile__main">
+              <span className="section-kicker">Claim boundaries</span>
+              <h2>{trackClaimGuardrailProfile.boundary_class_label}</h2>
+              <p>{trackClaimGuardrailProfile.guardrail_summary}</p>
+              <div className="evidence-source-row">
+                <Link className="mini-link" href={trackClaimGuardrailProfile.page_path}>
+                  Open filtered evidence
+                </Link>
+                <a className="mini-link" href={trackClaimGuardrailProfile.data_path}>
+                  Guardrails JSON
+                </a>
+              </div>
+            </div>
+            <div className="evidence-quality-profile__grid">
+              <article>
+                <h3>Can say</h3>
+                <ul className="claim-guardrail-list">
+                  {trackClaimGuardrailProfile.supported_claims.slice(0, 3).map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </article>
+              <article>
+                <h3>Must not imply</h3>
+                <ul className="claim-guardrail-list">
+                  {trackClaimGuardrailProfile.must_not_infer.slice(0, 3).map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </article>
+              <article>
+                <h3>Required caveats</h3>
+                <ul className="claim-guardrail-list">
+                  {trackClaimGuardrailProfile.required_caveats.slice(0, 4).map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
               </article>
             </div>
           </div>

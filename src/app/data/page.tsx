@@ -99,7 +99,8 @@ const workflowSteps = [
   "Use gaps.tracks[].provenance.source_refs when auditing what could change a public rating.",
   "Use coverage_audit.tracks[].assessment to inspect how map coverage was judged.",
   "Use findings[].quality when a workflow needs limitation, study-design, or human-relevance labels before summarizing.",
-  "Use conflicts.tracks[].patterns to avoid treating one positive result as field consensus."
+  "Use conflicts.tracks[].patterns to avoid treating one positive result as field consensus.",
+  "Use claim_guardrails.tracks[] before generating final summaries or training examples."
 ] as const;
 
 const fieldPathRows = [
@@ -134,6 +135,11 @@ const fieldPathRows = [
       "Track-level consistency, conflict, and replication map with pattern flags, direction counts, and finding clusters."
   },
   {
+    field: "/data/claim-guardrails.json",
+    meaning:
+      "Track-level supported claims, unsupported claims, required caveats, and overclaim-risk labels for expert and AI summaries."
+  },
+  {
     field: "/data/evidence-gaps.json",
     meaning: "Track-level gap ledger with outlook gaps, rating-change criteria, coverage gaps, density, and trial horizons."
   },
@@ -158,6 +164,10 @@ const fieldPathRows = [
     field: "findings[].consistency_contexts",
     meaning:
       "Track-level consistency class and pattern labels attached to finding rows for retrieval and anti-cherrypicking filters."
+  },
+  {
+    field: "claim_guardrails.tracks[].supported_claims / unsupported_claims",
+    meaning: "Boundaries for what a downstream summary may say and what it must not imply."
   },
   {
     field: "sources[].json_path",
@@ -255,6 +265,10 @@ export default async function DataAccessPage() {
               <span>Evidence conflicts JSON</span>
               <ArrowRight aria-hidden="true" size={16} />
             </a>
+            <a className="section-link" href="/data/claim-guardrails.json">
+              <span>Claim guardrails JSON</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
             <a className="section-link" href="/data/evidence-gaps.json">
               <span>Evidence gaps JSON</span>
               <ArrowRight aria-hidden="true" size={16} />
@@ -281,6 +295,10 @@ export default async function DataAccessPage() {
             </a>
             <a className="section-link" href="/data/evidence-conflicts.schema.json">
               <span>Evidence conflicts schema</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
+            <a className="section-link" href="/data/claim-guardrails.schema.json">
+              <span>Claim guardrails schema</span>
               <ArrowRight aria-hidden="true" size={16} />
             </a>
             <a className="section-link" href="/data/evidence-gaps.schema.json">

@@ -1,0 +1,549 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "/data/claim-guardrails.schema.json",
+  "title": "LEV Tracker claim guardrails export",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "schema_url",
+    "export_type",
+    "generated_at",
+    "last_public_update",
+    "canonical_path",
+    "page_path",
+    "applied_filters",
+    "methodology",
+    "caveats",
+    "boundary_class_legend",
+    "overclaim_risk_legend",
+    "summary",
+    "facet_options",
+    "source_file_patterns",
+    "tracks"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "schema_url": {
+      "const": "/data/claim-guardrails.schema.json"
+    },
+    "export_type": {
+      "const": "lev_tracker_claim_guardrails"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_public_update": {
+      "type": "string"
+    },
+    "canonical_path": {
+      "type": "string",
+      "pattern": "^/data/claim-guardrails\\.json"
+    },
+    "page_path": {
+      "type": "string"
+    },
+    "applied_filters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "methodology": {
+      "$ref": "#/$defs/methodology"
+    },
+    "caveats": {
+      "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+    },
+    "boundary_class_legend": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/plainLegendItem"
+      }
+    },
+    "overclaim_risk_legend": {
+      "$ref": "#/$defs/filterOptionArray"
+    },
+    "summary": {
+      "$ref": "#/$defs/summary"
+    },
+    "facet_options": {
+      "$ref": "#/$defs/facetOptions"
+    },
+    "source_file_patterns": {
+      "$ref": "#/$defs/sourceFilePatterns"
+    },
+    "tracks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/guardrailTrack"
+      }
+    }
+  },
+  "$defs": {
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "claimBoundaryClass": {
+      "enum": [
+        "human_claim_bounded",
+        "early_human_signal_only",
+        "preclinical_or_mechanistic_only",
+        "conflicted_or_mixed_claim",
+        "registry_pending_claim",
+        "coverage_limited_claim",
+        "not_yet_claimable"
+      ]
+    },
+    "claimOverclaimRisk": {
+      "enum": [
+        "human_lifespan_extension",
+        "clinical_use_or_medical_advice",
+        "class_wide_generalization",
+        "dose_schedule_transfer",
+        "biomarker_surrogate_leap",
+        "preclinical_translation_leap",
+        "single_study_or_source_overweight",
+        "safety_or_durability_overclaim",
+        "registry_results_absent",
+        "coverage_completeness_overclaim"
+      ]
+    },
+    "methodology": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "classification_basis",
+        "not_claim_adjudication",
+        "primary_uses"
+      ],
+      "properties": {
+        "classification_basis": {
+          "type": "string"
+        },
+        "not_claim_adjudication": {
+          "type": "string"
+        },
+        "primary_uses": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        }
+      }
+    },
+    "filterOption": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "label"
+      ],
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      }
+    },
+    "filterOptionArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/filterOption"
+      }
+    },
+    "plainLegendItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "label",
+        "plain_meaning"
+      ],
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "plain_meaning": {
+          "type": "string"
+        }
+      }
+    },
+    "countRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "label",
+        "count"
+      ],
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "count": {
+          "$ref": "#/$defs/count"
+        }
+      }
+    },
+    "countRowArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/countRow"
+      }
+    },
+    "riskRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "label",
+        "reason"
+      ],
+      "properties": {
+        "value": {
+          "$ref": "#/$defs/claimOverclaimRisk"
+        },
+        "label": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    },
+    "riskRowArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/riskRow"
+      }
+    },
+    "claimBoundaryClassCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "human_claim_bounded",
+        "early_human_signal_only",
+        "preclinical_or_mechanistic_only",
+        "conflicted_or_mixed_claim",
+        "registry_pending_claim",
+        "coverage_limited_claim",
+        "not_yet_claimable"
+      ],
+      "properties": {
+        "human_claim_bounded": {
+          "$ref": "#/$defs/count"
+        },
+        "early_human_signal_only": {
+          "$ref": "#/$defs/count"
+        },
+        "preclinical_or_mechanistic_only": {
+          "$ref": "#/$defs/count"
+        },
+        "conflicted_or_mixed_claim": {
+          "$ref": "#/$defs/count"
+        },
+        "registry_pending_claim": {
+          "$ref": "#/$defs/count"
+        },
+        "coverage_limited_claim": {
+          "$ref": "#/$defs/count"
+        },
+        "not_yet_claimable": {
+          "$ref": "#/$defs/count"
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total_track_count",
+        "filtered_track_count",
+        "returned_track_count",
+        "boundary_class_counts",
+        "overclaim_risk_counts",
+        "high_risk_track_count",
+        "coverage_limited_track_count",
+        "registry_pending_track_count"
+      ],
+      "properties": {
+        "total_track_count": {
+          "$ref": "#/$defs/count"
+        },
+        "filtered_track_count": {
+          "$ref": "#/$defs/count"
+        },
+        "returned_track_count": {
+          "$ref": "#/$defs/count"
+        },
+        "boundary_class_counts": {
+          "$ref": "#/$defs/claimBoundaryClassCounts"
+        },
+        "overclaim_risk_counts": {
+          "$ref": "#/$defs/countRowArray"
+        },
+        "high_risk_track_count": {
+          "$ref": "#/$defs/count"
+        },
+        "coverage_limited_track_count": {
+          "$ref": "#/$defs/count"
+        },
+        "registry_pending_track_count": {
+          "$ref": "#/$defs/count"
+        }
+      }
+    },
+    "facetOptions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tracks",
+        "boundary_classes",
+        "overclaim_risks"
+      ],
+      "properties": {
+        "tracks": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "boundary_classes": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "overclaim_risks": {
+          "$ref": "#/$defs/filterOptionArray"
+        }
+      }
+    },
+    "conflictSnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "consistency_class",
+        "consistency_class_label",
+        "consistency_reason",
+        "patterns",
+        "pattern_labels",
+        "counts"
+      ],
+      "properties": {
+        "consistency_class": {
+          "$ref": "/data/evidence-index.schema.json#/$defs/consistencyClass"
+        },
+        "consistency_class_label": {
+          "type": "string"
+        },
+        "consistency_reason": {
+          "type": "string"
+        },
+        "patterns": {
+          "type": "array",
+          "items": {
+            "$ref": "/data/evidence-index.schema.json#/$defs/consistencyPattern"
+          }
+        },
+        "pattern_labels": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "counts": {
+          "$ref": "/data/evidence-conflicts.schema.json#/$defs/trackCounts"
+        }
+      }
+    },
+    "qualitySnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finding_count",
+        "quality_class_counts",
+        "top_limitations"
+      ],
+      "properties": {
+        "finding_count": {
+          "$ref": "#/$defs/count"
+        },
+        "quality_class_counts": {
+          "$ref": "/data/evidence-index.schema.json#/$defs/qualityClassCounts"
+        },
+        "top_limitations": {
+          "$ref": "#/$defs/countRowArray"
+        }
+      }
+    },
+    "trackPaths": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "track_page_path",
+        "claim_guardrails_path",
+        "evidence_conflicts_path",
+        "evidence_quality_path",
+        "evidence_index_path",
+        "evidence_page_path"
+      ],
+      "properties": {
+        "track_page_path": {
+          "type": "string",
+          "pattern": "^/tracks/"
+        },
+        "claim_guardrails_path": {
+          "type": "string",
+          "pattern": "^/data/claim-guardrails\\.json"
+        },
+        "evidence_conflicts_path": {
+          "type": "string",
+          "pattern": "^/data/evidence-conflicts\\.json"
+        },
+        "evidence_quality_path": {
+          "type": "string",
+          "pattern": "^/data/evidence-quality\\.json"
+        },
+        "evidence_index_path": {
+          "type": "string",
+          "pattern": "^/data/evidence-index\\.json"
+        },
+        "evidence_page_path": {
+          "type": "string",
+          "pattern": "^/evidence"
+        }
+      }
+    },
+    "guardrailTrack": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "href",
+        "primary_hallmark_id",
+        "primary_hallmark_name",
+        "boundary_class",
+        "boundary_class_label",
+        "boundary_class_meaning",
+        "guardrail_summary",
+        "supported_claims",
+        "unsupported_claims",
+        "must_not_infer",
+        "allowed_summary_phrasing",
+        "required_caveats",
+        "overclaim_risks",
+        "claim_upgrade_conditions",
+        "claim_weaken_conditions",
+        "conflict",
+        "quality_snapshot",
+        "paths"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string",
+          "pattern": "^/tracks/"
+        },
+        "primary_hallmark_id": {
+          "type": "string"
+        },
+        "primary_hallmark_name": {
+          "type": "string"
+        },
+        "stage": {
+          "type": "string"
+        },
+        "stage_label": {
+          "type": "string"
+        },
+        "read_firmness": {
+          "type": "string"
+        },
+        "read_firmness_label": {
+          "type": "string"
+        },
+        "coverage_verdict": {
+          "type": "string"
+        },
+        "coverage_verdict_label": {
+          "type": "string"
+        },
+        "coverage_confidence": {
+          "type": "string"
+        },
+        "coverage_confidence_label": {
+          "type": "string"
+        },
+        "boundary_class": {
+          "$ref": "#/$defs/claimBoundaryClass"
+        },
+        "boundary_class_label": {
+          "type": "string"
+        },
+        "boundary_class_meaning": {
+          "type": "string"
+        },
+        "guardrail_summary": {
+          "type": "string"
+        },
+        "supported_claims": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "unsupported_claims": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "must_not_infer": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "allowed_summary_phrasing": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "required_caveats": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "overclaim_risks": {
+          "$ref": "#/$defs/riskRowArray"
+        },
+        "claim_upgrade_conditions": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "claim_weaken_conditions": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "conflict": {
+          "$ref": "#/$defs/conflictSnapshot"
+        },
+        "quality_snapshot": {
+          "$ref": "#/$defs/qualitySnapshot"
+        },
+        "paths": {
+          "$ref": "#/$defs/trackPaths"
+        }
+      }
+    },
+    "sourceFilePatterns": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "public_records",
+        "derived_from"
+      ],
+      "properties": {
+        "public_records": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "derived_from": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        }
+      }
+    }
+  }
+}
