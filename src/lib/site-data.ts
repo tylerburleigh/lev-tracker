@@ -315,6 +315,7 @@ export type ClaimConsistencyAuditFilters = {
   lifecycle_state?: ClaimConsistencyLifecycleState | "";
   limit?: number;
 };
+export type ClaimConsistencyReviewPacketFilters = ClaimConsistencyAuditFilters;
 
 export type TrialCompletionDateKind = "actual" | "estimated" | "unknown";
 export type TrialResultsStatus = "posted" | "not_posted" | "pending" | "unknown";
@@ -7544,6 +7545,272 @@ export async function getClaimConsistencyAuditExport(filters: ClaimConsistencyAu
     },
     resolved_issues: resolvedIssueRecords,
     issues: exportedRows
+  };
+}
+
+type ClaimConsistencyAuditIssueRow = Awaited<ReturnType<typeof getClaimConsistencyAuditExport>>["issues"][number];
+
+function getClaimConsistencyReviewPacketQueryPath(path: string, filters: ClaimConsistencyReviewPacketFilters) {
+  return getClaimConsistencyAuditQueryPath(path, filters);
+}
+
+function getClaimConsistencyReviewGroupId(groupKey: string) {
+  return `ccrp_${createHash("sha256").update(groupKey).digest("hex").slice(0, 16)}`;
+}
+
+function getClaimConsistencyReviewGroupPriority(rows: ClaimConsistencyAuditIssueRow[]) {
+  const severityWeight = rows.some((row) => row.severity === "critical")
+    ? 1000
+    : rows.some((row) => row.severity === "warning")
+      ? 500
+      : 100;
+  const unresolvedWeight = rows.filter((row) => row.resolution.unresolved).length * 4;
+  const repeatWeight = Math.min(250, rows.length * 10);
+  const recurringWeight = rows.filter((row) => row.resolution.lifecycle_state === "recurring").length * 8;
+
+  return severityWeight + unresolvedWeight + repeatWeight + recurringWeight;
+}
+
+function getClaimConsistencyReviewGroupPriorityReasons(rows: ClaimConsistencyAuditIssueRow[]) {
+  const reasons = [];
+  const severityLabels = Array.from(new Set(rows.map((row) => row.severity_label)));
+  const unresolvedCount = rows.filter((row) => row.resolution.unresolved).length;
+  const recurringCount = rows.filter((row) => row.resolution.lifecycle_state === "recurring").length;
+
+  if (severityLabels.length) {
+    reasons.push(`${severityLabels.join(" / ")} severity`);
+  }
+
+  if (unresolvedCount) {
+    reasons.push(`${unresolvedCount} unresolved issue${unresolvedCount === 1 ? "" : "s"}`);
+  }
+
+  if (rows.length > 1) {
+    reasons.push(`${rows.length} repeated rows`);
+  }
+
+  if (recurringCount) {
+    reasons.push(`${recurringCount} recurring row${recurringCount === 1 ? "" : "s"}`);
+  }
+
+  return reasons;
+}
+
+function getClaimConsistencyReviewPacketGroups(
+  rows: ClaimConsistencyAuditIssueRow[],
+  generatedAt: string
+) {
+  const groupedRows = new Map<string, ClaimConsistencyAuditIssueRow[]>();
+
+  for (const row of rows) {
+    const groupKey = [
+      row.track_id,
+      row.issue_type,
+      row.source_kind,
+      row.paths.source_record_path
+    ].join("\u001f");
+    groupedRows.set(groupKey, [...(groupedRows.get(groupKey) ?? []), row]);
+  }
+
+  return Array.from(groupedRows.entries()).map(([groupKey, groupRows]) => {
+    const sortedRows = [...groupRows].sort(
+      (left, right) =>
+        left.field_path.localeCompare(right.field_path) ||
+        left.fingerprint.localeCompare(right.fingerprint)
+    );
+    const first = sortedRows[0];
+    const fieldPaths = Array.from(new Set(sortedRows.map((row) => row.field_path))).sort();
+    const fingerprints = sortedRows.map((row) => row.fingerprint);
+    const unresolvedRows = sortedRows.filter((row) => row.resolution.unresolved);
+    const matchedTerms = Array.from(new Set(sortedRows.flatMap((row) => row.matched_terms))).sort();
+    const missingTerms = Array.from(new Set(sortedRows.flatMap((row) => row.missing_terms))).sort();
+    const sourcePagePaths = Array.from(new Set(sortedRows.map((row) => row.paths.source_page_path))).sort();
+    const severityRank = new Map<ClaimConsistencySeverity, number>([
+      ["critical", 0],
+      ["warning", 1],
+      ["review", 2]
+    ]);
+    const highestSeverityRow = sortedRows.reduce((highest, row) =>
+      (severityRank.get(row.severity) ?? 99) < (severityRank.get(highest.severity) ?? 99) ? row : highest
+    );
+    const priorityScore = getClaimConsistencyReviewGroupPriority(sortedRows);
+
+    return {
+      id: getClaimConsistencyReviewGroupId(groupKey),
+      group_key: {
+        track_id: first.track_id,
+        issue_type: first.issue_type,
+        source_kind: first.source_kind,
+        source_record_path: first.paths.source_record_path
+      },
+      track_id: first.track_id,
+      track_name: first.track_name,
+      track_href: first.track_href,
+      issue_type: first.issue_type,
+      issue_type_label: first.issue_type_label,
+      source_kind: first.source_kind,
+      source_kind_label: first.source_kind_label,
+      source_record_path: first.paths.source_record_path,
+      highest_severity: highestSeverityRow.severity,
+      highest_severity_label: highestSeverityRow.severity_label,
+      review_statuses: claimConsistencyReviewStatuses
+        .map((status) => ({
+          value: status,
+          label: claimConsistencyReviewStatusLabels[status],
+          count: sortedRows.filter((row) => row.resolution.review_status === status).length
+        }))
+        .filter((item) => item.count > 0),
+      lifecycle_states: claimConsistencyLifecycleStates
+        .map((state) => ({
+          value: state,
+          label: claimConsistencyLifecycleStateLabels[state],
+          count: sortedRows.filter((row) => row.resolution.lifecycle_state === state).length
+        }))
+        .filter((item) => item.count > 0),
+      issue_count: sortedRows.length,
+      unresolved_issue_count: unresolvedRows.length,
+      affected_field_count: fieldPaths.length,
+      priority_score: priorityScore,
+      priority_reasons: getClaimConsistencyReviewGroupPriorityReasons(sortedRows),
+      recommendation: first.recommendation,
+      matched_terms: matchedTerms,
+      missing_terms: missingTerms,
+      field_paths: fieldPaths,
+      fingerprints,
+      guardrail: {
+        boundary_class: first.guardrail.boundary_class,
+        boundary_class_label: first.guardrail.boundary_class_label,
+        guardrail_summary: first.guardrail.guardrail_summary,
+        required_caveats: first.guardrail.required_caveats,
+        unsupported_claims: first.guardrail.unsupported_claims,
+        overclaim_risks: first.guardrail.overclaim_risks
+      },
+      representative_excerpts: sortedRows.slice(0, 3).map((row) => ({
+        fingerprint: row.fingerprint,
+        field_path: row.field_path,
+        source_label: row.source_label,
+        source_page_path: row.paths.source_page_path,
+        text_excerpt: row.text_excerpt,
+        severity: row.severity,
+        severity_label: row.severity_label,
+        review_status: row.resolution.review_status,
+        review_status_label: row.resolution.review_status_label,
+        lifecycle_state: row.resolution.lifecycle_state,
+        lifecycle_state_label: row.resolution.lifecycle_state_label
+      })),
+      trace_paths: {
+        source_page_paths: sourcePagePaths,
+        source_record_path: first.paths.source_record_path,
+        track_page_path: first.paths.track_page_path,
+        claim_guardrails_path: first.paths.claim_guardrails_path,
+        evidence_page_path: first.paths.evidence_page_path,
+        resolution_path: first.resolution.resolution_path
+      },
+      suggested_resolution_entries: sortedRows.slice(0, 10).map((row) => ({
+        fingerprint: row.fingerprint,
+        review_status: "accepted" as const,
+        reviewed_at: generatedAt,
+        reviewer_role: "human_curator",
+        note: `Grouped review packet ${getClaimConsistencyReviewGroupId(groupKey)}; replace status or note if this row is fixed, deferred, or a false positive.`,
+        action_required: row.recommendation,
+        last_seen_at: generatedAt,
+        applies_to: {
+          track_id: row.track_id,
+          issue_type: row.issue_type,
+          source_record_path: row.paths.source_record_path,
+          field_path: row.field_path
+        }
+      }))
+    };
+  });
+}
+
+function getClaimConsistencyReviewGroupCounts(rows: Array<{ issue_type: ClaimConsistencyIssueType }>) {
+  return claimConsistencyIssueTypes
+    .map((issueType) => ({
+      value: issueType,
+      label: claimConsistencyIssueTypeLabels[issueType],
+      count: rows.filter((row) => row.issue_type === issueType).length
+    }))
+    .filter((item) => item.count > 0);
+}
+
+export async function getClaimConsistencyReviewPacketExport(filters: ClaimConsistencyReviewPacketFilters = {}) {
+  noStore();
+  const selected = cleanClaimConsistencyAuditFilters(filters);
+  const auditFilters = { ...selected, limit: undefined };
+  const audit = await getClaimConsistencyAuditExport(auditFilters);
+  const generatedAt = new Date().toISOString();
+  const rowsForGrouping =
+    selected.review_status || selected.lifecycle_state
+      ? audit.issues
+      : audit.issues.filter((row) => row.resolution.unresolved);
+  const allGroups = getClaimConsistencyReviewPacketGroups(rowsForGrouping, generatedAt).sort(
+    (left, right) =>
+      right.priority_score - left.priority_score ||
+      right.issue_count - left.issue_count ||
+      left.track_name.localeCompare(right.track_name) ||
+      left.issue_type.localeCompare(right.issue_type)
+  );
+  const exportedGroups = selected.limit ? allGroups.slice(0, selected.limit) : allGroups;
+  const affectedTrackIds = new Set(allGroups.map((group) => group.track_id));
+  const unresolvedGroupCount = allGroups.filter((group) => group.unresolved_issue_count > 0).length;
+
+  return {
+    schema_version: "1.0.0",
+    schema_url: "/data/claim-consistency-review-packet.schema.json",
+    export_type: "lev_tracker_claim_consistency_review_packet",
+    generated_at: generatedAt,
+    last_public_update: audit.last_public_update,
+    canonical_path: getClaimConsistencyReviewPacketQueryPath("/data/claim-consistency-review-packet.json", selected),
+    page_path: getClaimConsistencyAuditQueryPath("/claims/audit", selected),
+    applied_filters: getAppliedClaimConsistencyAuditFilters(selected),
+    methodology: {
+      grouping_basis:
+        "Rows are grouped by track_id, issue_type, source_kind, and source_record_path so reviewers can make one decision for repeated public-copy findings from the same source record.",
+      priority_basis:
+        "Priority score favors critical and warning severities, unresolved rows, recurring rows, and repeated issue count.",
+      primary_uses: [
+        "Review a smaller set of editorial decisions before editing public copy.",
+        "Prepare ledger entries for recurring accepted issues, deferrals, fixes, or false-positive decisions.",
+        "Give language-model workflows group-level negative examples instead of thousands of near-duplicate rows."
+      ]
+    },
+    caveats: [
+      "A review group is a triage unit, not proof that every included row needs the same final disposition.",
+      "Suggested ledger entries default to accepted and should be edited by a reviewer when a row is fixed, deferred, or a false positive.",
+      "Filtering by review_status or lifecycle_state changes which rows are eligible for grouping."
+    ],
+    summary: {
+      source_issue_count: audit.summary.filtered_issue_count,
+      reviewable_issue_count: rowsForGrouping.length,
+      total_group_count: allGroups.length,
+      returned_group_count: exportedGroups.length,
+      unresolved_group_count: unresolvedGroupCount,
+      affected_track_count: affectedTrackIds.size,
+      critical_group_count: allGroups.filter((group) => group.highest_severity === "critical").length,
+      warning_group_count: allGroups.filter((group) => group.highest_severity === "warning").length,
+      review_group_count: allGroups.filter((group) => group.highest_severity === "review").length,
+      suggested_ledger_entry_count: exportedGroups.reduce(
+        (total, group) => total + group.suggested_resolution_entries.length,
+        0
+      ),
+      issue_type_group_counts: getClaimConsistencyReviewGroupCounts(allGroups),
+      source_kind_group_counts: claimConsistencySourceKinds
+        .map((sourceKind) => ({
+          value: sourceKind,
+          label: claimConsistencySourceKindLabels[sourceKind],
+          count: allGroups.filter((group) => group.source_kind === sourceKind).length
+        }))
+        .filter((item) => item.count > 0)
+    },
+    facet_options: audit.facet_options,
+    source_exports: {
+      audit_json: audit.canonical_path,
+      audit_schema: audit.schema_url,
+      resolution_ledger: audit.resolution_policy.path
+    },
+    groups: exportedGroups
   };
 }
 

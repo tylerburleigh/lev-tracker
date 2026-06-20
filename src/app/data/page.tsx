@@ -102,7 +102,8 @@ const workflowSteps = [
   "Use conflicts.tracks[].patterns to avoid treating one positive result as field consensus.",
   "Use claim_guardrails.tracks[] before generating final summaries or training examples.",
   "Use claim_consistency_audit.issues[] to review public-copy drift against guardrails.",
-  "Use claim_consistency_audit.issues[].resolution to separate new, recurring, fixed, and false-positive audit rows."
+  "Use claim_consistency_audit.issues[].resolution to separate new, recurring, fixed, and false-positive audit rows.",
+  "Use claim_consistency_review_packet.groups[] when reviewers need grouped decisions instead of individual audit rows."
 ] as const;
 
 const fieldPathRows = [
@@ -147,6 +148,11 @@ const fieldPathRows = [
       "Editorial review queue that links potentially drifting public copy to track guardrails, source pages, backing record paths, and resolution metadata."
   },
   {
+    field: "/data/claim-consistency-review-packet.json",
+    meaning:
+      "Grouped claim-audit decision packet with representative excerpts, priority scoring, and suggested resolution-ledger entries."
+  },
+  {
     field: "/data/evidence-gaps.json",
     meaning: "Track-level gap ledger with outlook gaps, rating-change criteria, coverage gaps, density, and trial horizons."
   },
@@ -185,6 +191,11 @@ const fieldPathRows = [
     field: "claim_consistency_audit.issues[].fingerprint / resolution",
     meaning:
       "Stable issue key and reviewer-ledger status for tracking whether audit rows are new, recurring, fixed, accepted, deferred, or false positives."
+  },
+  {
+    field: "claim_consistency_review_packet.groups[]",
+    meaning:
+      "Track, issue, source-record, and source-kind groups that collapse repeated audit rows into reviewer-sized decisions."
   },
   {
     field: "sources[].json_path",
@@ -290,6 +301,10 @@ export default async function DataAccessPage() {
               <span>Claim consistency audit JSON</span>
               <ArrowRight aria-hidden="true" size={16} />
             </a>
+            <a className="section-link" href="/data/claim-consistency-review-packet.json">
+              <span>Claim review packet JSON</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
             <a className="section-link" href="/data/evidence-gaps.json">
               <span>Evidence gaps JSON</span>
               <ArrowRight aria-hidden="true" size={16} />
@@ -324,6 +339,10 @@ export default async function DataAccessPage() {
             </a>
             <a className="section-link" href="/data/claim-consistency-audit.schema.json">
               <span>Claim consistency audit schema</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
+            <a className="section-link" href="/data/claim-consistency-review-packet.schema.json">
+              <span>Claim review packet schema</span>
               <ArrowRight aria-hidden="true" size={16} />
             </a>
             <a className="section-link" href="/data/evidence-gaps.schema.json">

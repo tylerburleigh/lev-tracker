@@ -3757,6 +3757,49 @@ time {
   font-size: 1.6rem;
 }
 
+.claim-review-packet {
+  display: grid;
+  gap: 18px;
+}
+
+.claim-review-packet-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--text);
+  border-bottom: 1px solid var(--paper-rule);
+}
+
+.claim-review-packet-card {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border-left: 1px solid var(--paper-rule);
+}
+
+.claim-review-packet-card:first-child,
+.claim-review-packet-card:nth-child(3n + 1) {
+  border-left: 0;
+}
+
+.claim-review-packet-card:nth-child(n + 4) {
+  border-top: 1px solid var(--paper-rule);
+}
+
+.claim-review-packet-card h3 {
+  font-size: 1.05rem;
+}
+
+.claim-review-packet-card__topline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.claim-review-packet-card__topline .micro-badge {
+  margin: 0;
+}
+
 .evidence-gap-trace,
 .evidence-gap-source-links {
   display: flex;
@@ -5114,6 +5157,7 @@ time {
 
   .data-use-grid,
   .data-scoped-grid,
+  .claim-review-packet-grid,
   .data-usage-panel,
   .data-card-grid,
   .data-stat-grid,
@@ -5157,11 +5201,19 @@ time {
     border-left: 0;
   }
 
+  .claim-review-packet-card:nth-child(odd) {
+    border-left: 0;
+  }
+
   .data-scoped-card:nth-child(n + 3) {
     border-top: 1px solid var(--paper-rule);
   }
 
   .claims-risk-pill:nth-child(n + 3) {
+    border-top: 1px solid var(--paper-rule);
+  }
+
+  .claim-review-packet-card:nth-child(n + 3) {
     border-top: 1px solid var(--paper-rule);
   }
 
@@ -5289,6 +5341,7 @@ time {
   .trial-watch-grid,
   .data-use-grid,
   .data-scoped-grid,
+  .claim-review-packet-grid,
   .data-usage-panel,
   .data-card-grid,
   .data-stat-grid,
@@ -5303,6 +5356,14 @@ time {
   .review-gate-grid,
   .admin-button-row {
     grid-template-columns: 1fr;
+  }
+
+  .claim-review-packet-card {
+    border-left: 0;
+  }
+
+  .claim-review-packet-card + .claim-review-packet-card {
+    border-top: 1px solid var(--paper-rule);
   }
 
   .hallmark-glance__summary {

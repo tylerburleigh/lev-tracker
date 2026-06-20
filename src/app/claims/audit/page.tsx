@@ -7,6 +7,7 @@ import { formatDate } from "@/lib/date";
 import {
   type ClaimConsistencyAuditFilters,
   getClaimConsistencyAuditExport,
+  getClaimConsistencyReviewPacketExport,
   getOverallLastUpdated
 } from "@/lib/site-data";
 
@@ -62,6 +63,21 @@ function getClaimAuditPath(filters: ClaimConsistencyAuditFilters) {
   return query ? `/claims/audit?${query}` : "/claims/audit";
 }
 
+function getClaimPacketJsonPath(filters: ClaimConsistencyAuditFilters) {
+  const params = new URLSearchParams();
+
+  for (const [key, value] of Object.entries(filters)) {
+    if (!value) {
+      continue;
+    }
+
+    params.set(key, String(value));
+  }
+
+  const query = params.toString();
+  return query ? `/data/claim-consistency-review-packet.json?${query}` : "/data/claim-consistency-review-packet.json";
+}
+
 function getSeverityTone(severity: string) {
   switch (severity) {
     case "critical":
@@ -98,9 +114,11 @@ export default async function ClaimsAuditPage({ searchParams }: ClaimsAuditPageP
   const resolvedSearchParams = (await searchParams) ?? {};
   const selected = getClaimAuditFilters(resolvedSearchParams);
   const tableFilters = { ...selected, limit: selected.limit ?? 50 };
-  const [lastUpdated, claimAudit] = await Promise.all([
+  const packetFilters = { ...selected, review_status: selected.review_status || "open", limit: 6 };
+  const [lastUpdated, claimAudit, reviewPacket] = await Promise.all([
     getOverallLastUpdated(),
-    getClaimConsistencyAuditExport(tableFilters)
+    getClaimConsistencyAuditExport(tableFilters),
+    getClaimConsistencyReviewPacketExport(packetFilters)
   ]);
   const { facet_options: facets, summary } = claimAudit;
   const reviewRows = claimAudit.summary.review_status_counts;
@@ -180,6 +198,64 @@ export default async function ClaimsAuditPage({ searchParams }: ClaimsAuditPageP
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="band band--compact">
+        <div className="page-shell claim-review-packet">
+          <div className="tracks-table__head">
+            <div>
+              <span className="section-kicker">Review packet</span>
+              <h2>{formatNumber(reviewPacket.summary.returned_group_count)} grouped decisions</h2>
+              <p className="claim-audit-subhead">
+                {formatNumber(reviewPacket.summary.reviewable_issue_count)} rows collapsed into{" "}
+                {formatNumber(reviewPacket.summary.total_group_count)} groups
+              </p>
+            </div>
+            <a className="section-link" href={reviewPacket.canonical_path}>
+              <span>Packet JSON</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
+          </div>
+          <div className="claim-review-packet-grid">
+            {reviewPacket.groups.map((group) => {
+              const auditHref = getClaimAuditPath({
+                ...selected,
+                track: group.track_id,
+                issue_type: group.issue_type,
+                source_kind: group.source_kind,
+                review_status: selected.review_status || "open"
+              });
+              const firstExcerpt = group.representative_excerpts[0];
+
+              return (
+                <article className="claim-review-packet-card" key={group.id}>
+                  <div className="claim-review-packet-card__topline">
+                    <span className="micro-badge micro-badge--gold">{group.highest_severity_label}</span>
+                    <span className="micro-badge micro-badge--outline">{group.issue_count} rows</span>
+                    <span className="micro-badge micro-badge--muted">Priority {group.priority_score}</span>
+                  </div>
+                  <h3>{group.track_name}</h3>
+                  <p>{group.issue_type_label}</p>
+                  {firstExcerpt ? <p className="claim-audit-text">{firstExcerpt.text_excerpt}</p> : null}
+                  <code className="claim-audit-path">{group.source_record_path}</code>
+                  <div className="evidence-gap-trace claims-link-list">
+                    <Link href={auditHref}>Rows</Link>
+                    <a href={group.trace_paths.claim_guardrails_path}>Guardrails</a>
+                    <Link href={group.trace_paths.evidence_page_path}>Explorer</Link>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+          {!reviewPacket.groups.length ? (
+            <div className="tracks-table__empty">
+              <strong>No grouped review decisions match those filters.</strong>
+              <a className="mini-link" href={getClaimPacketJsonPath({ ...selected, limit: 25 })}>
+                Open packet JSON
+              </a>
+            </div>
+          ) : null}
         </div>
       </section>
 

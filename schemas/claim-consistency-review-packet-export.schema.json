@@ -1,0 +1,693 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "/data/claim-consistency-review-packet.schema.json",
+  "title": "LEV Tracker claim consistency review packet export",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "schema_url",
+    "export_type",
+    "generated_at",
+    "last_public_update",
+    "canonical_path",
+    "page_path",
+    "applied_filters",
+    "methodology",
+    "caveats",
+    "summary",
+    "facet_options",
+    "source_exports",
+    "groups"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "schema_url": {
+      "const": "/data/claim-consistency-review-packet.schema.json"
+    },
+    "export_type": {
+      "const": "lev_tracker_claim_consistency_review_packet"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_public_update": {
+      "type": "string"
+    },
+    "canonical_path": {
+      "type": "string",
+      "pattern": "^/data/claim-consistency-review-packet\\.json"
+    },
+    "page_path": {
+      "type": "string",
+      "pattern": "^/claims/audit"
+    },
+    "applied_filters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "methodology": {
+      "$ref": "#/$defs/methodology"
+    },
+    "caveats": {
+      "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+    },
+    "summary": {
+      "$ref": "#/$defs/summary"
+    },
+    "facet_options": {
+      "$ref": "#/$defs/facetOptions"
+    },
+    "source_exports": {
+      "$ref": "#/$defs/sourceExports"
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reviewGroup"
+      }
+    }
+  },
+  "$defs": {
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "fingerprint": {
+      "type": "string",
+      "pattern": "^cca_[a-f0-9]{20}$"
+    },
+    "groupId": {
+      "type": "string",
+      "pattern": "^ccrp_[a-f0-9]{16}$"
+    },
+    "claimBoundaryClass": {
+      "enum": [
+        "human_claim_bounded",
+        "early_human_signal_only",
+        "preclinical_or_mechanistic_only",
+        "conflicted_or_mixed_claim",
+        "registry_pending_claim",
+        "coverage_limited_claim",
+        "not_yet_claimable"
+      ]
+    },
+    "claimOverclaimRisk": {
+      "enum": [
+        "human_lifespan_extension",
+        "clinical_use_or_medical_advice",
+        "class_wide_generalization",
+        "dose_schedule_transfer",
+        "biomarker_surrogate_leap",
+        "preclinical_translation_leap",
+        "single_study_or_source_overweight",
+        "safety_or_durability_overclaim",
+        "registry_results_absent",
+        "coverage_completeness_overclaim"
+      ]
+    },
+    "claimConsistencyIssueType": {
+      "enum": [
+        "possible_unsupported_inference",
+        "medical_advice_language",
+        "missing_registry_boundary",
+        "missing_conflict_boundary",
+        "missing_biomarker_boundary",
+        "missing_preclinical_boundary",
+        "missing_coverage_boundary",
+        "missing_safety_or_durability_boundary"
+      ]
+    },
+    "claimConsistencySeverity": {
+      "enum": [
+        "critical",
+        "warning",
+        "review"
+      ]
+    },
+    "claimConsistencySourceKind": {
+      "enum": [
+        "track_outlook",
+        "track_supporting_evidence",
+        "track_taxonomy",
+        "current_story",
+        "state_of_field"
+      ]
+    },
+    "claimConsistencyReviewStatus": {
+      "enum": [
+        "open",
+        "accepted",
+        "false_positive",
+        "fixed",
+        "deferred"
+      ]
+    },
+    "claimConsistencyLifecycleState": {
+      "enum": [
+        "new",
+        "recurring",
+        "resolved"
+      ]
+    },
+    "methodology": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "grouping_basis",
+        "priority_basis",
+        "primary_uses"
+      ],
+      "properties": {
+        "grouping_basis": {
+          "type": "string"
+        },
+        "priority_basis": {
+          "type": "string"
+        },
+        "primary_uses": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        }
+      }
+    },
+    "filterOption": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "label"
+      ],
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      }
+    },
+    "filterOptionArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/filterOption"
+      }
+    },
+    "countRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "label",
+        "count"
+      ],
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "count": {
+          "$ref": "#/$defs/count"
+        }
+      }
+    },
+    "countRowArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/countRow"
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_issue_count",
+        "reviewable_issue_count",
+        "total_group_count",
+        "returned_group_count",
+        "unresolved_group_count",
+        "affected_track_count",
+        "critical_group_count",
+        "warning_group_count",
+        "review_group_count",
+        "suggested_ledger_entry_count",
+        "issue_type_group_counts",
+        "source_kind_group_counts"
+      ],
+      "properties": {
+        "source_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "reviewable_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "total_group_count": {
+          "$ref": "#/$defs/count"
+        },
+        "returned_group_count": {
+          "$ref": "#/$defs/count"
+        },
+        "unresolved_group_count": {
+          "$ref": "#/$defs/count"
+        },
+        "affected_track_count": {
+          "$ref": "#/$defs/count"
+        },
+        "critical_group_count": {
+          "$ref": "#/$defs/count"
+        },
+        "warning_group_count": {
+          "$ref": "#/$defs/count"
+        },
+        "review_group_count": {
+          "$ref": "#/$defs/count"
+        },
+        "suggested_ledger_entry_count": {
+          "$ref": "#/$defs/count"
+        },
+        "issue_type_group_counts": {
+          "$ref": "#/$defs/countRowArray"
+        },
+        "source_kind_group_counts": {
+          "$ref": "#/$defs/countRowArray"
+        }
+      }
+    },
+    "facetOptions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tracks",
+        "issue_types",
+        "severities",
+        "source_kinds",
+        "review_statuses",
+        "lifecycle_states"
+      ],
+      "properties": {
+        "tracks": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "issue_types": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "severities": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "source_kinds": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "review_statuses": {
+          "$ref": "#/$defs/filterOptionArray"
+        },
+        "lifecycle_states": {
+          "$ref": "#/$defs/filterOptionArray"
+        }
+      }
+    },
+    "sourceExports": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "audit_json",
+        "audit_schema",
+        "resolution_ledger"
+      ],
+      "properties": {
+        "audit_json": {
+          "type": "string",
+          "pattern": "^/data/claim-consistency-audit\\.json"
+        },
+        "audit_schema": {
+          "const": "/data/claim-consistency-audit.schema.json"
+        },
+        "resolution_ledger": {
+          "const": "ops/claim-consistency-resolutions.v1.json"
+        }
+      }
+    },
+    "groupKey": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "track_id",
+        "issue_type",
+        "source_kind",
+        "source_record_path"
+      ],
+      "properties": {
+        "track_id": {
+          "type": "string"
+        },
+        "issue_type": {
+          "$ref": "#/$defs/claimConsistencyIssueType"
+        },
+        "source_kind": {
+          "$ref": "#/$defs/claimConsistencySourceKind"
+        },
+        "source_record_path": {
+          "type": "string"
+        }
+      }
+    },
+    "riskRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "label"
+      ],
+      "properties": {
+        "value": {
+          "$ref": "#/$defs/claimOverclaimRisk"
+        },
+        "label": {
+          "type": "string"
+        }
+      }
+    },
+    "guardrailSnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "boundary_class",
+        "boundary_class_label",
+        "guardrail_summary",
+        "required_caveats",
+        "unsupported_claims",
+        "overclaim_risks"
+      ],
+      "properties": {
+        "boundary_class": {
+          "$ref": "#/$defs/claimBoundaryClass"
+        },
+        "boundary_class_label": {
+          "type": "string"
+        },
+        "guardrail_summary": {
+          "type": "string"
+        },
+        "required_caveats": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "unsupported_claims": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "overclaim_risks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/riskRef"
+          }
+        }
+      }
+    },
+    "representativeExcerpt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fingerprint",
+        "field_path",
+        "source_label",
+        "source_page_path",
+        "text_excerpt",
+        "severity",
+        "severity_label",
+        "review_status",
+        "review_status_label",
+        "lifecycle_state",
+        "lifecycle_state_label"
+      ],
+      "properties": {
+        "fingerprint": {
+          "$ref": "#/$defs/fingerprint"
+        },
+        "field_path": {
+          "type": "string"
+        },
+        "source_label": {
+          "type": "string"
+        },
+        "source_page_path": {
+          "type": "string"
+        },
+        "text_excerpt": {
+          "type": "string"
+        },
+        "severity": {
+          "$ref": "#/$defs/claimConsistencySeverity"
+        },
+        "severity_label": {
+          "type": "string"
+        },
+        "review_status": {
+          "$ref": "#/$defs/claimConsistencyReviewStatus"
+        },
+        "review_status_label": {
+          "type": "string"
+        },
+        "lifecycle_state": {
+          "$ref": "#/$defs/claimConsistencyLifecycleState"
+        },
+        "lifecycle_state_label": {
+          "type": "string"
+        }
+      }
+    },
+    "tracePaths": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_page_paths",
+        "source_record_path",
+        "track_page_path",
+        "claim_guardrails_path",
+        "evidence_page_path",
+        "resolution_path"
+      ],
+      "properties": {
+        "source_page_paths": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "source_record_path": {
+          "type": "string"
+        },
+        "track_page_path": {
+          "type": "string"
+        },
+        "claim_guardrails_path": {
+          "type": "string",
+          "pattern": "^/data/claim-guardrails\\.json\\?track=.+"
+        },
+        "evidence_page_path": {
+          "type": "string"
+        },
+        "resolution_path": {
+          "const": "ops/claim-consistency-resolutions.v1.json"
+        }
+      }
+    },
+    "suggestedResolutionEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fingerprint",
+        "review_status",
+        "reviewed_at",
+        "reviewer_role",
+        "note",
+        "action_required",
+        "last_seen_at",
+        "applies_to"
+      ],
+      "properties": {
+        "fingerprint": {
+          "$ref": "#/$defs/fingerprint"
+        },
+        "review_status": {
+          "$ref": "#/$defs/claimConsistencyReviewStatus"
+        },
+        "reviewed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "reviewer_role": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "action_required": {
+          "type": "string"
+        },
+        "last_seen_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "applies_to": {
+          "$ref": "#/$defs/appliesTo"
+        }
+      }
+    },
+    "appliesTo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "track_id",
+        "issue_type",
+        "source_record_path",
+        "field_path"
+      ],
+      "properties": {
+        "track_id": {
+          "type": "string"
+        },
+        "issue_type": {
+          "$ref": "#/$defs/claimConsistencyIssueType"
+        },
+        "source_record_path": {
+          "type": "string"
+        },
+        "field_path": {
+          "type": "string"
+        }
+      }
+    },
+    "reviewGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "group_key",
+        "track_id",
+        "track_name",
+        "track_href",
+        "issue_type",
+        "issue_type_label",
+        "source_kind",
+        "source_kind_label",
+        "source_record_path",
+        "highest_severity",
+        "highest_severity_label",
+        "review_statuses",
+        "lifecycle_states",
+        "issue_count",
+        "unresolved_issue_count",
+        "affected_field_count",
+        "priority_score",
+        "priority_reasons",
+        "recommendation",
+        "matched_terms",
+        "missing_terms",
+        "field_paths",
+        "fingerprints",
+        "guardrail",
+        "representative_excerpts",
+        "trace_paths",
+        "suggested_resolution_entries"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/groupId"
+        },
+        "group_key": {
+          "$ref": "#/$defs/groupKey"
+        },
+        "track_id": {
+          "type": "string"
+        },
+        "track_name": {
+          "type": "string"
+        },
+        "track_href": {
+          "type": "string",
+          "pattern": "^/tracks/.+"
+        },
+        "issue_type": {
+          "$ref": "#/$defs/claimConsistencyIssueType"
+        },
+        "issue_type_label": {
+          "type": "string"
+        },
+        "source_kind": {
+          "$ref": "#/$defs/claimConsistencySourceKind"
+        },
+        "source_kind_label": {
+          "type": "string"
+        },
+        "source_record_path": {
+          "type": "string"
+        },
+        "highest_severity": {
+          "$ref": "#/$defs/claimConsistencySeverity"
+        },
+        "highest_severity_label": {
+          "type": "string"
+        },
+        "review_statuses": {
+          "$ref": "#/$defs/countRowArray"
+        },
+        "lifecycle_states": {
+          "$ref": "#/$defs/countRowArray"
+        },
+        "issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "unresolved_issue_count": {
+          "$ref": "#/$defs/count"
+        },
+        "affected_field_count": {
+          "$ref": "#/$defs/count"
+        },
+        "priority_score": {
+          "type": "number",
+          "minimum": 0
+        },
+        "priority_reasons": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "recommendation": {
+          "type": "string"
+        },
+        "matched_terms": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "missing_terms": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "field_paths": {
+          "$ref": "/data/evidence-map.schema.json#/$defs/stringArray"
+        },
+        "fingerprints": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/fingerprint"
+          }
+        },
+        "guardrail": {
+          "$ref": "#/$defs/guardrailSnapshot"
+        },
+        "representative_excerpts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/representativeExcerpt"
+          }
+        },
+        "trace_paths": {
+          "$ref": "#/$defs/tracePaths"
+        },
+        "suggested_resolution_entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/suggestedResolutionEntry"
+          }
+        }
+      }
+    }
+  }
+}
