@@ -6,6 +6,7 @@ import {
   ClipboardCheck,
   ClipboardList,
   Compass,
+  Database,
   FlaskConical,
   Radar,
   Search,
@@ -18,6 +19,7 @@ import {
 const navItems = [
   { href: "/", label: "Overview", icon: Compass },
   { href: "/guide", label: "Guide", icon: CircleHelp },
+  { href: "/knowledge", label: "Knowledge", icon: Database },
   { href: "/hallmarks", label: "Hallmarks", icon: Sigma },
   { href: "/tracks", label: "Tracks", icon: Waypoints },
   { href: "/evidence", label: "Evidence", icon: FlaskConical },

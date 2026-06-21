@@ -4079,6 +4079,167 @@ time {
   font-size: 0.9rem;
 }
 
+.knowledge-overview .data-scoped-main > svg {
+  color: var(--mint);
+}
+
+.knowledge-endpoint-grid .data-scoped-card {
+  min-height: 190px;
+}
+
+.knowledge-review-strip {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.knowledge-review-strip__main {
+  display: grid;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 2px solid var(--text);
+}
+
+.knowledge-review-strip__main h2 {
+  margin: 0;
+  font-size: clamp(1.35rem, 1.8vw, 1.8rem);
+  line-height: 1.18;
+}
+
+.knowledge-review-strip__counts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--text);
+  border-bottom: 1px solid var(--paper-rule);
+}
+
+.knowledge-priority-layout .claim-priority-row {
+  grid-template-columns: minmax(260px, 1fr) minmax(260px, 1fr);
+}
+
+.knowledge-type-tabs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(124px, 1fr));
+  margin-bottom: 16px;
+  border-top: 1px solid var(--text);
+  border-bottom: 1px solid var(--paper-rule);
+}
+
+.knowledge-type-tabs__item {
+  display: grid;
+  gap: 4px;
+  min-height: 76px;
+  padding: 13px 14px;
+  border-left: 1px solid var(--paper-rule);
+  color: var(--text);
+}
+
+.knowledge-type-tabs__item:first-child {
+  border-left: 0;
+}
+
+.knowledge-type-tabs__item strong {
+  font-size: 1.12rem;
+  line-height: 1;
+}
+
+.knowledge-type-tabs__item span {
+  color: var(--text-soft);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.knowledge-type-tabs__item.is-active {
+  background: rgba(255, 253, 246, 0.72);
+}
+
+.knowledge-search__form {
+  grid-template-columns: minmax(240px, 1.4fr) minmax(180px, 0.8fr) minmax(140px, 0.55fr) minmax(180px, 0.7fr);
+}
+
+.knowledge-entity-table {
+  min-width: 1320px;
+}
+
+.knowledge-entity-table tbody th {
+  width: 26rem;
+}
+
+.knowledge-entity-table tbody th p {
+  margin: 8px 0 0;
+  color: var(--text-soft);
+  font-size: 0.84rem;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.knowledge-badge-list,
+.knowledge-alias-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.knowledge-alias-row {
+  margin-top: 10px;
+}
+
+.knowledge-entity-table .micro-badge {
+  display: inline-flex;
+  margin: 0;
+}
+
+.knowledge-path-list,
+.knowledge-id-list,
+.knowledge-context-list {
+  display: grid;
+  gap: 8px;
+}
+
+.knowledge-path-list a {
+  display: grid;
+  gap: 2px;
+  color: var(--text);
+}
+
+.knowledge-path-list a span,
+.knowledge-id-list strong {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.knowledge-path-list code,
+.knowledge-id-list span,
+.knowledge-context-list span,
+.knowledge-result-note {
+  color: var(--text-soft);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  line-height: 1.38;
+  overflow-wrap: anywhere;
+}
+
+.knowledge-id-list div {
+  display: grid;
+  gap: 2px;
+}
+
+.knowledge-context-list span {
+  display: block;
+}
+
+.knowledge-result-note {
+  margin: 0;
+}
+
 .data-usage-layout {
   display: grid;
   grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.1fr);
@@ -5188,6 +5349,7 @@ time {
   .reader-grid,
   .data-export-layout,
   .data-scoped-layout,
+  .knowledge-review-strip,
   .data-usage-layout,
   .data-card-layout,
   .evidence-quality-profile,
@@ -5253,6 +5415,7 @@ time {
 
   .data-use-grid,
   .data-scoped-grid,
+  .knowledge-review-strip__counts,
   .claim-review-progress-grid,
   .claim-review-packet-grid,
   .data-usage-panel,
@@ -5345,6 +5508,10 @@ time {
   .claim-priority-row {
     grid-template-columns: 1fr;
     align-items: start;
+  }
+
+  .knowledge-priority-layout .claim-priority-row {
+    grid-template-columns: 1fr;
   }
 
   .tracks-table__signals {
@@ -5451,6 +5618,8 @@ time {
   .trial-watch-grid,
   .data-use-grid,
   .data-scoped-grid,
+  .knowledge-review-strip,
+  .knowledge-review-strip__counts,
   .claim-review-progress-grid,
   .claim-review-packet-grid,
   .data-usage-panel,
@@ -5532,6 +5701,20 @@ time {
 
   .claims-risk-pill:first-child {
     border-top: 0;
+  }
+
+  .knowledge-type-tabs {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .knowledge-type-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .knowledge-type-tabs__item {
+    flex: 0 0 136px;
   }
 
   .data-usage-panel article {

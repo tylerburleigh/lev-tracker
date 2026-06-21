@@ -247,6 +247,10 @@ export default async function DataAccessPage() {
             <Database aria-hidden="true" size={16} />
             <span>Coverage dashboard</span>
           </Link>
+          <Link className="action-button action-button--secondary" href="/knowledge">
+            <Braces aria-hidden="true" size={16} />
+            <span>Knowledge browser</span>
+          </Link>
         </div>
       </PageHero>
 
@@ -279,6 +283,10 @@ export default async function DataAccessPage() {
               <span>Knowledge-base index JSON</span>
               <ArrowRight aria-hidden="true" size={16} />
             </a>
+            <Link className="section-link" href="/knowledge">
+              <span>Open knowledge browser</span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </Link>
             <Link className="section-link" href="/coverage">
               <span>Open coverage dashboard</span>
               <ArrowRight aria-hidden="true" size={16} />
